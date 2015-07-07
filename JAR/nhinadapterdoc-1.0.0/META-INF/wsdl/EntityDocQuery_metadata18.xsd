@@ -1,0 +1,39 @@
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xsd:schema xmlns:addr="http://www.w3.org/2005/08/addressing" xmlns:nhin-cdc="http://www.hhs.gov/healthit/nhin/cdc" xmlns:tns="urn:gov:hhs:fha:nhinc:common:subscriptionb2overrideforcdc" xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" xmlns:xdsb="urn:ihe:iti:xds-b:2007" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:gov:hhs:fha:nhinc:common:subscriptionb2overrideforcdc">
+  <xsd:import namespace="http://www.w3.org/2005/08/addressing" schemaLocation="EntityDocQuery_metadata5.xsd"/>
+  <xsd:import namespace="http://docs.oasis-open.org/wsn/b-2" schemaLocation="EntityDocQuery_metadata2.xsd"/>
+  <xsd:import namespace="http://www.hhs.gov/healthit/nhin/cdc" schemaLocation="EntityDocQuery_metadata11.xsd"/>
+  <xsd:complexType name="SubscribeCdcBioPackageType">
+    <xsd:sequence><!-- 
+            <xsd:element name="ConsumerReference" type="addr:EndpointReferenceType"></xsd:element>
+            <xsd:element name="Filter" type="wsnt:FilterType" minOccurs="0"></xsd:element>
+            <xsd:element name="SubscriptionPolicy" type="tns:SubscriptionPolicy"></xsd:element>
+            -->
+      <xsd:element minOccurs="0" ref="wsnt:ConsumerReference"/>
+      <xsd:element minOccurs="0" ref="wsnt:Filter"/>
+      <xsd:element name="SubscriptionPolicy" type="tns:SubscriptionPolicyType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SubscriptionPolicyType">
+    <xsd:sequence>
+      <xsd:element ref="nhin-cdc:CdcBioPackageSubscriptionCriteria"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="NotificationMessageHolderType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" ref="wsnt:SubscriptionReference"/>
+      <xsd:element minOccurs="0" ref="wsnt:Topic"/>
+      <xsd:element name="Message">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element ref="nhin-cdc:CdcBioPackagePayload"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="NotifyCdcBioPackageType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="NotificationMessage" type="tns:NotificationMessageHolderType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

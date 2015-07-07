@@ -1,0 +1,191 @@
+@future
+Feature: This feature has scenarios that exercise the load testing for the different data types for eHMP given the data has been synched.
+
+
+@future @mutipleUsers_access_vitals_sametime
+Scenario: Capture time taken for multiple user login at the same time and access Vitals data
+	Given 2,000 users are requesting vitals at the same time 
+	And the patient with Vitals is synched
+	When each request is successful
+  	Then capture the time taken for the request to complete
+  	And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_vitals
+Scenario: Capture time taken for multiple user access Vitals data
+	Given 100 requests are posted to get "vitals" 
+	And the patient with Vitals is synched
+	When increment the requests by 100 upto 90,000 requests
+	And each request is successful
+  	Then capture the time taken for total requests to complete
+  	And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_allergy_sametime
+Scenario: Capture time taken for multiple user login at the same time and access allergy data
+	Given 2,000 users are requesting allergy at the same time 
+	And the patient with allergy is synched
+	When each request is successful
+  	Then capture the time taken for the request to complete
+  	And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_allergy
+Scenario: Capture time taken for multiple user access allergy data
+	Given 100 requests are posted to get "allergy" 
+	And the patient with allergy is synched
+	When increment the requests by 100 upto 90,000 requests
+	And each request is successful
+  	Then capture the time taken for total requests to complete
+  	And the each request is processed under 2 seconds
+
+
+@future @mutipleUsers_access_lab_sametime
+Scenario: Capture time taken for multiple user login at the same time and access lab data
+	Given 2,000 users are requesting lab at the same time 
+	And the patient with lab is synched
+	When each request is successful
+  	Then capture the time taken for the request to complete
+  	And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_lab
+Scenario: Capture time taken for multiple user access lab data
+	Given 100 requests are posted to get "lab" 
+	And the patient with lab is synched
+	When increment the requests by 100 upto 90,000 requests
+	And each request is successful
+  	Then capture the time taken for total requests to complete
+  	And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_demographics_sametime
+Scenario: Capture time taken for multiple user login at the same time and access demographics data
+	Given 2,000 users are requesting demographics at the same time 
+	And the patient with demographics is synched
+	When each request is successful
+  	Then capture the time taken for the request to complete
+  	And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_demographics
+Scenario: Capture time taken for multiple user access demographics data
+	Given 100 requests are posted to get "dempgraphics" 
+	And the patient with demographics is synched
+	When increment the requests by 100 upto 90,000 requests
+	And each request is successful
+  	Then capture the time taken for total requests to complete
+  	And the each request is processed under 2 seconds
+
+
+@future @mutipleUsers_access_radiology_sametime
+Scenario: Capture time taken for multiple user login at the same time and access radiology data
+	Given 2,000 users are requesting radiology at the same time 
+	And the patient with radiology is synched
+	When each request is successful
+  	Then capture the time taken for the request to complete
+  	And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_radiology
+Scenario: Capture time taken for multiple user access radiology data
+	Given 100 requests are posted to get "radiology" 
+	And the patient with radiology is synched
+	When increment the requests by 100 upto 90,000 requests
+	And each request is successful
+  	Then capture the time taken for total requests to complete
+  	And the each request is processed under 2 seconds
+
+@future
+Feature: This feature has scenarios that exercise the load testing for the different data types for eHMP given the patient has data accross 4 VistA instances and the data has not been synched.
+
+
+@future @mutipleUsers_access_vitals_sametime
+Scenario: Capture time taken for multiple user login at the same time and access Vitals data
+  Given 2,000 users are requesting vitals at the same time 
+  And the patient has data across 4 VistA instances
+  And the patient with Vitals is not synched
+  When each request is successful
+    Then capture the time taken for the request to complete
+    And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_vitals
+Scenario: Capture time taken for multiple user access Vitals data
+  Given 100 requests are posted to get "vitals" 
+  And the patient has data across 4 VistA instances
+  And the patient with Vitals is not synched
+  When increment the requests by 100 upto 90,000 requests
+  And each request is successful
+    Then capture the time taken for total requests to complete
+    And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_allergy_sametime
+Scenario: Capture time taken for multiple user login at the same time and access allergy data
+  Given 2,000 users are requesting allergy at the same time 
+  And the patient has data across 4 VistA instances
+  And the patient with allergy is not synched
+  When each request is successful
+    Then capture the time taken for the request to complete
+    And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_allergy
+Scenario: Capture time taken for multiple user access allergy data
+  Given 100 requests are posted to get "allergy" 
+  And the patient has data across 4 VistA instances
+  And the patient with allergy is not synched
+  When increment the requests by 100 upto 90,000 requests
+  And each request is successful
+    Then capture the time taken for total requests to complete
+    And the each request is processed under 2 seconds
+
+
+@future @mutipleUsers_access_lab_sametime
+Scenario: Capture time taken for multiple user login at the same time and access lab data
+  Given 2,000 users are requesting lab at the same time 
+  And the patient has data across 4 VistA instances
+  And the patient with lab is not synched
+  When each request is successful
+    Then capture the time taken for the request to complete
+    And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_lab
+Scenario: Capture time taken for multiple user access lab data
+  Given 100 requests are posted to get "lab" 
+  And the patient has data across 4 VistA instances
+  And the patient with lab is not synched
+  When increment the requests by 100 upto 90,000 requests
+  And each request is successful
+    Then capture the time taken for total requests to complete
+    And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_demographics_sametime
+Scenario: Capture time taken for multiple user login at the same time and access demographics data
+  Given 2,000 users are requesting demographics at the same time 
+  And the patient has data across 4 VistA instances
+  And the patient with demographics is not synched
+  When each request is successful
+    Then capture the time taken for the request to complete
+    And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_demographics
+Scenario: Capture time taken for multiple user access demographics data
+  Given 100 requests are posted to get "dempgraphics" 
+  And the patient has data across 4 VistA instances
+  And the patient with demographics is not synched
+  When increment the requests by 100 upto 90,000 requests
+  And each request is successful
+    Then capture the time taken for total requests to complete
+    And the each request is processed under 2 seconds
+
+
+@future @mutipleUsers_access_radiology_sametime
+Scenario: Capture time taken for multiple user login at the same time and access radiology data
+  Given 2,000 users are requesting radiology at the same time 
+  And the patient has data across 4 VistA instances
+  And the patient with radiology is not synched
+  When each request is successful
+    Then capture the time taken for the request to complete
+    And the each request is processed under 2 seconds
+
+@future @mutipleUsers_access_radiology
+Scenario: Capture time taken for multiple user access radiology data
+  Given 100 requests are posted to get "radiology" 
+  And the patient has data across 4 VistA instances
+  And the patient with radiology is  not synched
+  When increment the requests by 100 upto 90,000 requests
+  And each request is successful
+    Then capture the time taken for total requests to complete
+    And the each request is processed under 2 seconds

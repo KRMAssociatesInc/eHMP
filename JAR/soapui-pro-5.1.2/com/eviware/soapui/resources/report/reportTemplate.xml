@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportTemplate" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <property name="ireport.encoding" value="UTF-8"/>
+   <template>"../../styles.jrtx"</template>
+   <!-- FIELDS & PARAMS -->
+   <title>
+      <band height="70">
+         <textField>
+            <reportElement x="159" y="13" width="229" height="42"/>
+            <textElement>
+               <font size="26"/>
+            </textElement>
+             <textFieldExpression class="java.lang.String">$F{name} + " Report"</textFieldExpression>
+         </textField>
+      </band>
+   </title>
+   <pageHeader>
+      <band/>
+   </pageHeader>
+   <detail>
+      <band height="122">
+         
+      <!-- SUBREPORTS UNDER HERE -->
+      
+      </band>
+   </detail>
+</jasperReport>

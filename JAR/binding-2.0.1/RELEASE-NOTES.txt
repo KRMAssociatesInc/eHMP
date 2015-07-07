@@ -1,0 +1,596 @@
+
+
+                        JGoodies Data Binding
+                            Version 2.0.1
+                            Release Notes
+                        
+
+INTRODUCTION
+
+    This maintenance release fixes a minor bug in the SelectionInList.
+    
+    
+BUGS FIXED
+
+    #122: Broken SelectionInList#setSelectionIndex upper bound check
+    
+    
+OTHER CHANGES
+
+    #123: Improved the SelectionInList JavaDocs regarding null selections
+          if the List or ListModel contains null.
+          
+    o Added Bindings#flushImmediately() and #isFocusOwnerBuffering().
+    o Corrected the IndirectListModel documentation.
+    
+    
+-------------------------------------------------------------------------
+Find below release notes for previous versions.
+
+
+
+                        JGoodies Data Binding
+                            Version 2.0.0
+                            Release Notes
+                        
+
+INTRODUCTION
+
+    With this major update the JGoodies Binding has been moved to Java 5. 
+    Key classes and methods have been generified, sources use annotations, 
+    and the code uses the enhanced for loop.
+    This version is binary incompatible with previous versions. 
+    
+    
+CHANGES THAT AFFECT THE COMPATIBILITY
+
+    o Replaced the 1.5 SelectionInList and SelectionInListModel by 
+      the 1.4 SelectionInList. Replaced ListHolder, ListModelHolder
+      by IndirectListModel. 
+    o Added #getList() to SelectionInList and IndirectListModel.
+    o SelectionInList#getListModel throws a ClassCastException
+      if the list holder doesn't hold a ListModel.
+    o Generified the following classes: ArrayListModel, LinkedListModel, 
+      SelectionInList, IndirectListModel, AbstractTableAdapter, 
+      PresentationModel, BeanAdapter, and PropertyAdapter.
+    o PropertyConnector constructor is private, use #connect instead.
+    o PropertyConnector#connect returns the PropertyConnector. 
+    o Bindings#bind(JComboBox, SelectionInList) and 
+      #bind(JList, SelectionInList) synchronize the component
+      properties "visible" and "enabled" with the SelectionInList's
+      selection holder, if this is a ComponentValueModel.
+    
+
+BUGS FIXED
+
+    #119: SelectionInList may fire wrong ListDataEvents.
+        
+    
+NEW FEATURES
+
+    o Added PropertyConnector#connectAndUpdate(ValueModel, Object, String)
+    o AbstractTableAdapter#getRow is public
+    o AbstractTableAdapter constructor with column names uses varargs.
+
+
+OTHER CHANGES
+
+    o Source code cleanup: enhanced for loop, annotations, 
+      marked private fields as final, removed trailing blanks.
+    o Fixed JavaDoc typos.
+    
+    
+HOW TO MIGRATE FROM VERSION 1.4 TO 2.0
+
+    o Add type information to ArrayListModels, LinkedListModels, 
+      SelectionInLists, SelectionInListModels, PresentationModels,
+      BeanAdapters, PropertyAdapters, AbstractTableAdapters.
+    o Remove unnecessary type casts.
+    o Replace PropertyConnector constructor calls by
+      PropertyConnector#connect or #connectAndUpdate.
+     
+
+CHANGES PLANNED FOR FUTURE VERSIONS
+
+    o ExtendedPropertyChangeSupport shall:
+       + provide an optional weak registration of listeners,
+       + an option to notify listeners in the event-dispatch-thread,
+       + add debug features to detect inconsistencies between 
+        a bean's property names and the names used to register
+        a listener or used to fire a property change.
+        
+        
+-------------------------------------------------------------------------
+Find below release notes for previous versions.
+
+
+
+                        JGoodies Data Binding
+                            Version 1.5.0
+                            Release Notes
+                        
+
+INTRODUCTION
+
+    This version is the first step towards the generified Binding 2.0.
+    It is binary incompatible with previous versions. Stable extras
+    have been moved to the core, and the SelectionInList has changed.
+    
+    
+BUGS FIXED
+
+    #118: BeanAdapter#getValue, #setValue bypass internal adapter.
+    
+    
+NEW FEATURES
+
+    o SelectionInListModel is now in the core. The Bindings class
+      and the BasicComponentFactory have been extended to bind or 
+      create JComboBoxes and JLists from SelectionInListModel.
+    o The old SelectionInList that worked with List and ListModel
+      has been replaced by a new SelectionInList that works with
+      List only.
+    o Added DelayedPropertyChangeHandler#getDelay and #setDelay.
+    o Moved the ChangeTracker and LoggingUtils from extras to core.
+
+
+HOW TO MIGRATE TO VERSION 1.5
+
+    o For every 1.4 SelectionInList you should check whether it
+      works with a ListModel vs. List or Array. In the first case,
+      use a SelectionInListModel; for List and Arrays you can keep
+      the SelectionInList.
+     
+
+-------------------------------------------------------------------------
+Find below release notes for previous versions.
+
+
+                        JGoodies Data Binding
+                            Version 1.4.0
+                            Release Notes
+                        
+
+INTRODUCTION
+
+    This release comes with a behavior change in the PropertyConnector
+    and extends the API to make it easier to subclass the BeanAdapter.
+    
+    This version is binary compatible with the 1.3.x versions,
+    but the changed behavior was worth a new minor version number.
+    However, most API users won't notice the difference and will
+    just benefit from the PropertyConnector change.
+    
+    The PropertyConnector change improves a nasty situation with
+    JFormattedTextFields that fire unnecessary "value" change events,
+    if a user clicks in a formatted text field without changing it.
+    If the value is null, a bean property connected to such a field
+    will likely fire a property change event, because null may
+    indicate a null value or 'unknown'. The default binding for
+    JFormattedTextField is implemented with the PropertyConnector.
+    
+    The new PropertyConnector reads a target value and compares it
+    with the value to be set. In case these are identical, no
+    operation will be performed, and no change event will be fired.
+    This addresses the case where the JFormattedTextField sends
+    a change event from null to null. And it avoids unnecessary
+    events in other situations too.
+    
+    
+NEW FEATURES
+
+    o BeanAdapter.SimplePropertyAdapter not final.
+    o BeanAdapter.SimplePropertyAdapter constructor protected
+      as well as #fireChange and #setBean0
+    o Added BeanAdapter#createPropertyAdapter.
+
+
+OTHER CHANGES
+
+    #117: PropertyConnector shall not fire unnecessary change events
+    o Updated the Forms library used for the tutorial to version 1.1.
+    
+    
+-------------------------------------------------------------------------
+Find below release notes for previous versions.
+
+
+                        JGoodies Data Binding
+                            Version 1.3.2
+                            Release Notes
+                        
+
+INTRODUCTION
+
+    This release fixes a bug in ListModel implementations and a regression
+    with the PropertyConnector and read-only properties.
+    
+    
+BUGS FIXED
+
+    #115: ListDataEvents inconsistent with the ListModel
+    #116: PropertyConnector may fail with read-only property
+    
+    
+-------------------------------------------------------------------------
+Find below release notes for previous versions.
+
+
+                        JGoodies Data Binding
+                            Version 1.3.1
+                            Release Notes
+                        
+
+INTRODUCTION
+
+    This release changes the behavior of the PropertyConnector
+    in the case that a target bean setter modifies the value set,
+    or completely rejects the new value (issue #114). For example, 
+    a bean setter may trim a String or turn it into upper case.
+    
+    If setters don't modify or reject values, the old and new
+    behavior are almost identical. The difference is in an extra
+    read operation on the target bean side, that is used to compare
+    the value set with the (potentially modified ) target value.
+    
+    The new behavior is now consistent with the TextComponentConnector
+    that honors subject value modifications too.
+    
+    
+OTHER CHANGES
+
+    o Removed the deprecated BeanUtils#getPropertyDescriptor methods.
+    o Added a test case that the SelectionInList handles
+      vetos in a custom selection index holder.
+
+    
+-------------------------------------------------------------------------
+Find below release notes for previous versions.
+
+
+
+                        JGoodies Data Binding
+                            Version 1.3.0
+                            Release Notes
+                        
+
+INTRODUCTION
+
+    This release contains a few binary incompatible changes.
+    
+    
+CHANGES THAT AFFECT THE BINARY COMPATIBILITY
+
+    o Removed the deprecated DocumentAdapter that has been replaced
+      by the TextComponentConnector in version 1.2.
+    o Removed Bindings#bind(ValueModel, JTextArea, Document, boolean) and
+      Bindings#bind(ValueModel, JTextField, Document, boolean) that have been
+      marked as deprecated in version 1.2.
+
+
+NEW FEATURES
+
+    #112: Poor bean channel construction in PresentationModel.
+      Added PresentationModel#createBeanAdapter(ValueModel).
+      PresentationModel subclasses may override this method to configure
+      the bean adapter, for example whether it observes changes or not.
+    o BeanAdapter is no longer final.
+    o Added BeanAdapter#getBeanChannel.
+    o Added Model#firePropertyChange(PropertyChangeEvent) that allows
+      to fire IndexedPropertyChangeEvents in Java 5 or later.
+    o Added Model#fireVetoableChange(PropertyChangeEvent).
+    #109: Add AbstractConverter#release
+    
+-------------------------------------------------------------------------
+Find below release notes for previous versions.
+
+
+                        JGoodies Data Binding
+                            Version 1.2.0
+                            Release Notes
+                        
+
+INTRODUCTION
+
+    This release brings a few improvements and API extensions.
+
+    
+NEW FEATURES
+
+     51: Added LoggingUtils to the source code extras.
+         Reduces the effort required to log property changes.
+         
+     98: Bindings#bind(JComponent, String, ValueModel) reduces the
+         effort required to bind a component property to a ValueModel.
+         
+    103: PresentationModel#release. Setting the bean to null is
+         still the preferred method to release listeners.
+    
+    104: SelectionInList#release, 
+         ListHolder#release, 
+         ListModelHolder#release,
+         SpinnerToValueModelConnector#release,
+         SelectionInList2#release
+         SelectionInListModel#release
+         Instead of calling these #release methods, you typically
+         release the PresentationModel or BeanAdapter that has created
+         the (Value)Models used in the above classes.
+         
+    106: Bindings#commitImmediately() is useful to commit a pending edit.
+    
+       o DelayedPropertyChangeHandler#stop.
+       o DelayedReadValueModel#stop.
+       o DelayedWriteValueModel#stop.
+    
+
+CHANGES THAT AFFECT THE BINARY COMPATIBILITY
+
+    o Removed the deprecated Model#fireMulticastPropertyChange, which 
+      has been replaced by #fireMultiplePropertiesChanged in 1.0.3.
+
+
+CHANGES THAT AFFECT THE BEHAVIOR 
+
+    101: Model's change support is non-transient. And so serializable
+         listeners will be serialized with the observed Model.
+         AbstractConverter uses a PropertyChangeListener instead
+         of implementing PropertyChangeListener.
+         Most Binding API users register listeners with the
+         Binding classes, not the Model directly. And so, 
+         this change won't affect most users. The change affects 
+         only those who register listeners with a Model diretly.
+         
+    105: After a text update the caret is now at position 0,
+         where it was at the end of the text before.
+         This is achieved by the new TextComponentAdapter.
+         
+         Bindings#bind(ValueModel, JTextArea, boolean) and
+         Bindings#bind(ValueModel, JTextField, boolean) now use
+         the new TextComponentAdapter. And these methods keep
+         the text area's/text field's Document, where version 1.1.x
+         used a new PlainDocument instead.
+         
+    107: BeanAdapter#release removes all listeners from the bean
+         that have been registered with #addBeanPropertyChangeListener.
+         
+
+
+OTHER CHANGES
+
+    o Marked DocumentAdapter as deprecated. This class will be removed 
+      from the JGoodies Binding version 1.3.
+    o Marked Bindings#bind(ValueModel, JTextArea, Document, boolean) and
+      Bindings#bind(ValueModel, JTextField, Document, boolean) as deprecated.
+      These methods will be removed from the Binding version 1.3.
+
+
+-------------------------------------------------------------------------
+Find below release notes for previous versions.
+
+    
+
+                        JGoodies Data Binding
+                            Version 1.1.2 
+                            Release Notes
+                        
+
+INTRODUCTION
+
+    This release fixes a bug and brings minor source code improvements.
+
+    
+BUGS FIXED
+
+    o Issue 100: Deadlock in ExtendedPropertyChangeSupport
+                 with identity check enabled.
+
+
+NEW FEATURES
+
+    The PropertyConnector can now connect beans that do not
+    support bound properties. This is intended for the case
+    where only one bean fires property change events.
+    
+
+OTHER CHANGES
+
+    o Marked several inner classes as final.
+    o Added JavaDocs and fixed JavaDoc typos.
+    o FAQ is now online at https://binding.dev.java.net/faq.html.
+    o Added a reference to the JSR 295 - Beans Binding.
+
+-------------------------------------------------------------------------
+Find below release notes for previous versions.
+
+
+    
+                        JGoodies Data Binding
+                            Version 1.1.1 
+                            Release Notes
+                        
+
+INTRODUCTION
+
+    This maintenance release fixes issue #87 and bug #92.
+    It is recommended to use version to 1.1.1.
+
+    
+CHANGES THAT AFFECT THE COMPATIBILITY
+
+    The changes affect the behavior, not the binary compatibility.
+
+    o Since 1.1.1 the SelectionInList's default selection holder
+      checks the identity. This allows to use it as bean channel
+      in PresentationModel, BeanAdapter, PropertyAdapter.
+      It may now fire more changes than the previous holder,
+      that fired only if the old and new selection were not equal.
+    o The fix for issue #92 may lead to more or less events
+      fired by all AbstractConverter subclasses.
+    
+    
+BUGS FIXED
+
+    o Issue 87: SelectionInList default selection holder 
+                shall check identity.
+    o Issue 92: AbstractConverter converts null event values.
+
+
+NEW FEATURES
+
+    Most BeanUtils methods allow to provide the bean type now,
+    where the bean instance was used before. This makes it easier
+    to use package private beans that implement a public interface.
+    
+          
+OTHER CHANGES
+
+    o Changed the visibility for enclosed types to reduce 
+      the amount of synthetic accessors.
+    o Fixed JavaDoc typos.
+    o Minor source style improvements.
+    o The ANT build can create a Maven bundle.
+
+
+-------------------------------------------------------------------------
+Find below release notes for previous versions.
+
+
+
+                        JGoodies Data Binding
+                             Version 1.1
+                            Release Notes
+                        
+
+INTRODUCTION
+
+    This release fixes bugs and provides new features and classes.
+    It is recommended to upgrade your library version to 1.1.
+    
+    The 1.1 API is slightly incompatible with previous versions.
+    However, existing valid code will typically work as before.
+    Most changes are sanity checks; they ensure that arguments 
+    comply with constraints that are described in the JavaDocs.
+    
+    The topics for the 1.1 release are:
+    1) Bug fixing and API clarification.
+    2) New distribution layout. 
+    3) Move stable extra sources to the library core.
+    4) Improved support for PropertyVetoExceptions.  
+    5) Improved support in the presentation model layer
+       for operating on frequently used component state:
+       enabled, editable, visible. This is implemented
+       by the new class ComponentValueModel. 
+
+    Due to a timely rollout of the 1.1 final, other improvements 
+    planned for the 1.1. version have been moved to future releases. 
+    The work on version 1.2 will begin immediately, and the 
+    list handling classes available in the 1.1 preview builds 
+    will be moved back to the library core.
+        
+
+CHANGES THAT AFFECT THE COMPATIBILITY
+
+    o SelectionInList keeps the selection after list changes,
+      even if the selection is cleared during the change.
+      This happens for example when the SelectionInList is bound
+      to a JTable that may - as a side effect - clear the selection 
+      in JTable#tableChanged (see also issue 85).
+      
+    o The methods Bindings#bind(JTextComponent, *) have been replaced 
+      by Bindings#bind(JTextArea, *) and #bind(JTextField, *).
+      This clarifies that these methods were not intended
+      (and not able) to bind JEditorPanes and JTextPanes.
+
+    The changes below are sanity checks that have been added
+    to verify that parameters comply with the constraints
+    that are described in the JavaDocs.
+    
+    o BeanAdapter and PresentationModel methods that get a
+      property name throw an NPE if the property name is null.
+      
+    o PresentationModel, BeanAdapter and PropertyAdapter
+      throw an IllegalArgumentException if the bean channel
+      is a ValueHolder that has the identityCheck feature disabled.
+      
+    o SelectionInList throws an IllegalArgumentException 
+      if the listHolder is a ValueModel that has 
+      the identity check feature disabled.
+      
+    o SelectionInList constructor throws a ClassCastException
+      if the list holder content is neither a List nor a ListModel.
+    
+    
+BUGS FIXED
+
+    o Issue 78: SelectionInList#EmptyListModel may cause memory leak.
+    o Issue 79: PropertyConnector updates a read-only property.
+    o Issue 82: Clarify interval of list model content changes.
+    o Issue 85: SelectionInList loses selection when bound to a table. 
+    
+    
+DISTRIBUTION CHANGES
+
+    o Issue 74: The sources no longer ship as a source Zip archive.
+      They now come in the directory structure used by the CVS. 
+      This makes it easier to build the distribution using ANT.     
+      If you want to attach the library sources in an IDE, 
+      point to folder 'src/core'.
+    
+    
+NEW FEATURES
+
+    o Issue 73: Improve support for constrained bean properties:
+        + PropertyAdapter#setVetoableValue(Object)
+        + BeanAdapter#setVetoableValue(String, Object)
+        + BeanAdapter.SimplePropertyAdapter#setVetoableValue(Object)
+        
+    o Issue 75: Add access to (buffered) values to PresentationModel:
+        + PresentationModel#getValue(String)
+        + PresentationModel#setValue(String, Object)
+        + PresentationModel#setVetoableValue(String, Object)
+        + PresentationModel#getBufferedValue(String)
+        + PresentationModel#setBufferedValue(String, Object)
+                
+    o Issue 76: Move extras to the library core:
+        + com.jgoodies.binding.adapter.SpinnerAdapterFactory
+        + com.jgoodies.binding.adapter.SpinnerToValueModelConnector
+        + com.jgoodies.binding.beans.DelayedPropertyChangeHandler
+        + com.jgoodies.binding.value.AbstractVetoableValueModel
+        + com.jgoodies.binding.value.DelayedReadValueModel
+        
+    o Issue 77: Provide component state in the PresentationModel. 
+      A ComponentValueModel provides bound properties for: 
+      enabled, visible, editable. The Bindings class can register 
+      a handler with the ComponentValueModel that updates 
+      the component's state automatically. And the PresentationModel 
+      has new factory methods that vend a plain or buffered
+      ComponentValueModel. Added:
+        + com.jgoodies.binding.value.ComponentValueModel
+        + Bindings#addComponentPropertyHandler
+        + Bindings#removeComponentPropertyHandler
+        + PresentationModel#getComponentModel(String)
+        + PresentationModel#getBufferedComponentModel(String) 
+      For an example see the ComponentValueModel class comment
+      and the tutorial's ComponentValueModel example.
+      This feature is implemented for text components, radio buttons 
+      and check boxes. Lists, tables, combos and color choosers 
+      bound using the Bindings class, ignore the ComponentValueModel. 
+      See also issue #86 in the Binding's issue tracker.
+        
+    o New classes for indirect access to Lists and ListModels:
+        + ListHolder is a ListModel that holds a List in a ValueModel.
+        + ListModelHolder is a ListModel that holds a ListModel
+          in a ValueModel.
+          
+    o New Extra source: The NonNullValueModel converts null values
+      in #getValue to a given default value.
+          
+          
+OTHER CHANGES
+
+    o Improved and corrected JavaDocs.
+    o Added tests for writing a constrained bean property.
+    o Added a bunch of tests for SelectionInList list changes.
+    o Minor Java source style improvements.
+    o Fixed an NPE in the tutorial's ComponentsExample.
+

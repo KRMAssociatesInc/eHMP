@@ -1,0 +1,28 @@
+{
+  "_id": "osyncusers",
+  "users": [{
+    "accessCode": "user1",
+    "lastlogin": "20150330",
+    "patientList": [{
+      "pid": "patient1",
+      "data": "some data",
+      "information": "some more data"
+    }, {
+      "pid": "patient2",
+      "data": "some different data",
+      "information": "some more different data"
+    }]
+  }, {
+    "accessCode": "user2",
+    "lastlogin": "20150329",
+    "patientList": [{
+      "pid": "patient2",
+      "data": "some different data",
+      "information": "some more different data"
+    }, {
+      "pid": "patient3",
+      "data": "some information",
+      "information": "some more information"
+    }]
+  }]
+}

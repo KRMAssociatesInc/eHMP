@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <reference id="httpService" interface="org.osgi.service.http.HttpService">
+        <reference-listener ref="extJSNamespaceRegistrar" bind-method="bindHttpService" unbind-method="unbindHttpService"/>
+    </reference>
+
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="coversheet">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Coversheet"/>
+            <entry key="service.description" value="Coversheet Tab in the style of CPRS"/>
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="problems-tab">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Problems Tab"/>
+            <entry key="service.description" value="Problems Tab in the style of CPRS"/>
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="meds-tab">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Meds Tab"/>
+            <entry key="service.description" value="Meds Tab in the style of CPRS"/>
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="orders-tab">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Orders Tab"/>
+            <entry key="service.description" value="Orders Tab in the style of CPRS"/>
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="notes-tab">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Notes Tab"/>
+            <entry key="service.description" value="Notes Tab in the style of CPRS"/>
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="consults-tab">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Consults Tab"/>
+            <entry key="service.description" value="Consults Tab in the style of CPRS"/>
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="surgery-tab">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Surgery Tab"/>
+            <entry key="service.description" value="Surgery Tab in the style of CPRS"/>
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="dcSummaries-tab">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Discharge Summaries Tab"/>
+            <entry key="service.description" value="Discharge Summaries Tab in the style of CPRS"/>
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="labs-tab">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Labs Tab"/>
+            <entry key="service.description" value="Labs Tab in the style of CPRS"/>
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="reports-tab">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Reports Tab"/>
+            <entry key="service.description" value="Reports Tab in the style of CPRS"/>
+        </service-properties>
+    </service>
+
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="coversheet-problems">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Coversheet Active Problems"/>
+            <entry key="service.description" value="Active Problems overview in the style of the CPRS Coversheet"/>
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="coversheet-medications">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Coversheet Active Medications"/>
+            <!--<entry key="service.description" value="Active Problems overview in the style of the CPRS Coversheet"/>-->
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="coversheet-allergies">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Coversheet Allergies/Adverse Reactions"/>
+            <!--<entry key="service.description" value="Active Problems overview in the style of the CPRS Coversheet"/>-->
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="coversheet-appointments">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Coversheet Appointments/Visits/Admissions"/>
+            <!--<entry key="service.description" value="Active Problems overview in the style of the CPRS Coversheet"/>-->
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="coversheet-labs">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Coversheet Recent Labs"/>
+            <!--<entry key="service.description" value="Active Problems overview in the style of the CPRS Coversheet"/>-->
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="coversheet-vitals">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Coversheet Recent Vitals"/>
+            <!--<entry key="service.description" value="Active Problems overview in the style of the CPRS Coversheet"/>-->
+        </service-properties>
+    </service>
+    <service interface="gov.va.hmp.module.ExtJSComponent" ref="coversheet-reminders">
+        <service-properties>
+            <entry key="hmp.module.name" value="Classic Coversheet Reminders"/>
+            <!--<entry key="service.description" value="Active Problems overview in the style of the CPRS Coversheet"/>-->
+        </service-properties>
+    </service>
+
+    <bean id="coversheet" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.CoverSheet"/>
+    </bean>
+    <bean id="coversheet-problems" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.coversheet.ActiveProblems"/>
+    </bean>
+    <bean id="coversheet-medications" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.coversheet.ActiveMedications"/>
+    </bean>
+    <bean id="coversheet-allergies" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.coversheet.Allergies"/>
+    </bean>
+    <bean id="coversheet-appointments" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.coversheet.Appointments"/>
+    </bean>
+    <bean id="coversheet-labs" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.coversheet.RecentLabs"/>
+    </bean>
+    <bean id="coversheet-vitals" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.coversheet.RecentVitals"/>
+    </bean>
+    <bean id="coversheet-reminders" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.coversheet.Reminders"/>
+    </bean>
+
+    <bean id="problems-tab" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.Problems"/>
+    </bean>
+    <bean id="meds-tab" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.Meds"/>
+    </bean>
+    <bean id="orders-tab" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.Orders"/>
+    </bean>
+    <bean id="notes-tab" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.Notes"/>
+    </bean>
+    <bean id="consults-tab" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.Consults"/>
+    </bean>
+    <bean id="surgery-tab" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.Surgery"/>
+    </bean>
+    <bean id="dcSummaries-tab" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.DischargeSummaries"/>
+    </bean>
+    <bean id="labs-tab" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.Labs"/>
+    </bean>
+    <bean id="reports-tab" class="gov.va.hmp.plugins.classic.SinglePatientBlueprintExtJSComponent">
+        <argument value="gov.va.cprs.Reports"/>
+    </bean>
+
+    <bean id="extJSNamespaceRegistrar" class="gov.va.hmp.plugins.classic.ExtJSNamespaceResourceRegistrar" >
+        <property name="extJSClasses">
+            <set>
+                <ref component-id="coversheet"/>
+                <ref component-id="problems-tab"/>
+                <ref component-id="meds-tab"/>
+                <ref component-id="orders-tab"/>
+                <ref component-id="notes-tab"/>
+                <ref component-id="consults-tab"/>
+                <ref component-id="surgery-tab"/>
+                <ref component-id="dcSummaries-tab"/>
+                <ref component-id="labs-tab"/>
+                <ref component-id="reports-tab"/>
+            </set>
+        </property>
+    </bean>
+</blueprint>

@@ -1,0 +1,12 @@
+{{#if visit}}
+<div>{{visit.locationDisplayName}} - {{visit.formattedDate}}</div>
+{{#if visit.selectedProvider}}
+<div><b>Provider</b>: {{visit.selectedProvider.displayName}}</div>
+{{else}}
+<div>No provider</div>
+{{/if}}
+{{else}}
+	<div>No Visit Context Set</div>
+{{/if}}
+
+<button id="visitSelectBtn" class="btn btn-primary">Select Visit</button>

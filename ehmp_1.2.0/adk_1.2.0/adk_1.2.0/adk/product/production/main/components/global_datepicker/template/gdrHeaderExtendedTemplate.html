@@ -1,0 +1,14 @@
+<span role="button" type="button" id="navigation-dateButton"><i class="fa fa-calendar"></i></span>
+<span>
+	{{#compare selectedId "custom-range-apply-global" }}
+		{{#if fromDate}}
+			{{customFromDate}} - {{customToDate}}
+		{{/if}}
+	{{else}}
+		{{#if fromDate}}
+			{{fromDate}} - {{toDate}}
+		{{/if}}
+	{{/compare}}
+
+	{{#unless fromDate}}All{{/unless}}
+</span>

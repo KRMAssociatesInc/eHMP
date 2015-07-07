@@ -1,0 +1,594 @@
+KIDS Distribution saved on May 05, 2015@17:00:13
+USR RULE TYPO FIX TO USRRULA
+**KIDS**:HMPEJK*1.0*8^
+
+**INSTALL NAME**
+HMPEJK*1.0*8
+"BLD",8835,0)
+HMPEJK*1.0*8^^0^3150505^y
+"BLD",8835,4,0)
+^9.64PA^^
+"BLD",8835,6.3)
+14
+"BLD",8835,"KRN",0)
+^9.67PA^779.2^20
+"BLD",8835,"KRN",.4,0)
+.4
+"BLD",8835,"KRN",.401,0)
+.401
+"BLD",8835,"KRN",.402,0)
+.402
+"BLD",8835,"KRN",.403,0)
+.403
+"BLD",8835,"KRN",.5,0)
+.5
+"BLD",8835,"KRN",.84,0)
+.84
+"BLD",8835,"KRN",3.6,0)
+3.6
+"BLD",8835,"KRN",3.8,0)
+3.8
+"BLD",8835,"KRN",9.2,0)
+9.2
+"BLD",8835,"KRN",9.8,0)
+9.8
+"BLD",8835,"KRN",9.8,"NM",0)
+^9.68A^2^2
+"BLD",8835,"KRN",9.8,"NM",1,0)
+USRCLASS^^0^B13752539
+"BLD",8835,"KRN",9.8,"NM",2,0)
+USRRULA^^0^B27113394
+"BLD",8835,"KRN",9.8,"NM","B","USRCLASS",1)
+
+"BLD",8835,"KRN",9.8,"NM","B","USRRULA",2)
+
+"BLD",8835,"KRN",19,0)
+19
+"BLD",8835,"KRN",19.1,0)
+19.1
+"BLD",8835,"KRN",101,0)
+101
+"BLD",8835,"KRN",409.61,0)
+409.61
+"BLD",8835,"KRN",771,0)
+771
+"BLD",8835,"KRN",779.2,0)
+779.2
+"BLD",8835,"KRN",870,0)
+870
+"BLD",8835,"KRN",8989.51,0)
+8989.51
+"BLD",8835,"KRN",8989.52,0)
+8989.52
+"BLD",8835,"KRN",8994,0)
+8994
+"BLD",8835,"KRN","B",.4,.4)
+
+"BLD",8835,"KRN","B",.401,.401)
+
+"BLD",8835,"KRN","B",.402,.402)
+
+"BLD",8835,"KRN","B",.403,.403)
+
+"BLD",8835,"KRN","B",.5,.5)
+
+"BLD",8835,"KRN","B",.84,.84)
+
+"BLD",8835,"KRN","B",3.6,3.6)
+
+"BLD",8835,"KRN","B",3.8,3.8)
+
+"BLD",8835,"KRN","B",9.2,9.2)
+
+"BLD",8835,"KRN","B",9.8,9.8)
+
+"BLD",8835,"KRN","B",19,19)
+
+"BLD",8835,"KRN","B",19.1,19.1)
+
+"BLD",8835,"KRN","B",101,101)
+
+"BLD",8835,"KRN","B",409.61,409.61)
+
+"BLD",8835,"KRN","B",771,771)
+
+"BLD",8835,"KRN","B",779.2,779.2)
+
+"BLD",8835,"KRN","B",870,870)
+
+"BLD",8835,"KRN","B",8989.51,8989.51)
+
+"BLD",8835,"KRN","B",8989.52,8989.52)
+
+"BLD",8835,"KRN","B",8994,8994)
+
+"MBREQ")
+0
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"RTN")
+2
+"RTN","USRCLASS")
+0^1^B13752539
+"RTN","USRCLASS",1,0)
+USRCLASS ; SLC/JER - User Class Management actions ;11/25/09
+"RTN","USRCLASS",2,0)
+ ;;1.0;AUTHORIZATION/SUBSCRIPTION;**7,11,33**;Jun 20, 1997;Build 14
+"RTN","USRCLASS",3,0)
+EDIT ; Edit user classes
+"RTN","USRCLASS",4,0)
+ N USRDA,USRDATA,USREXPND,USRI,USRSTAT,DIROUT,USRCHNG
+"RTN","USRCLASS",5,0)
+ N USRLST,NAME,NAME1,NAME2,LINE,CANTMSG,DA
+"RTN","USRCLASS",6,0)
+ D:'$D(VALMY) EN^VALM2(XQORNOD(0)) S USRI=0,USRCHNG=0
+"RTN","USRCLASS",7,0)
+ F  S USRI=$O(VALMY(USRI)) Q:+USRI'>0  D  Q:$D(DIROUT)!(+$P(USRDATA,U,2)'>0)
+"RTN","USRCLASS",8,0)
+ . S USRDATA=$S(VALMAR="^TMP(""USRCLASS"",$J)":$G(^TMP("USRCLASSIDX",$J,USRI)),1:$G(^TMP("USREXPIDX",$J,USRI)))
+"RTN","USRCLASS",9,0)
+ . I (+$P(USRDATA,U,2)'>0) D  Q
+"RTN","USRCLASS",10,0)
+ . . S CANTMSG=1,VALMBCK="Q",USRCHNG=0
+"RTN","USRCLASS",11,0)
+ . W !!,"Editing #",+USRDATA,!
+"RTN","USRCLASS",12,0)
+ . S USRDA=+$P(USRDATA,U,2)
+"RTN","USRCLASS",13,0)
+ . S NAME=$P(^USR(8930,USRDA,0),U),NAME1="|_ "_NAME,NAME2="-"_NAME
+"RTN","USRCLASS",14,0)
+ . S LINE=^TMP("USRCLASS",$J,USRI,0)
+"RTN","USRCLASS",15,0)
+ . D EDIT1
+"RTN","USRCLASS",16,0)
+ . I (LINE[NAME1)!(LINE[NAME2) D  Q
+"RTN","USRCLASS",17,0)
+ . . S CANTMSG=1,VALMBCK="Q",USRCHNG=0
+"RTN","USRCLASS",18,0)
+ . I +$G(USRCHNG) S USRLST=$S($L($G(USRLST)):$G(USRLST)_", ",1:"")_USRI
+"RTN","USRCLASS",19,0)
+ . I $D(USRDATA) D
+"RTN","USRCLASS",20,0)
+ .. D UPDATE^USRL(USRDATA)
+"RTN","USRCLASS",21,0)
+ .. I $D(DA) D POSTX^HMPEVNT("asu-class",USRDA) ; asu class was changed
+"RTN","USRCLASS",22,0)
+ .. I '$D(DA) D POSTX^HMPEVNT("asu-class",USRDA,"@") ; asu class was deleted
+"RTN","USRCLASS",23,0)
+ .. ;D ECLASS^HMPAT   ;send edits to HMP
+"RTN","USRCLASS",24,0)
+ Q:$D(DIROUT)
+"RTN","USRCLASS",25,0)
+ I $D(CANTMSG) D  K VALMY S VALMBCK="Q" Q
+"RTN","USRCLASS",26,0)
+  . W !!,"  Expanded entries cannot be refreshed; please re-enter the option"
+"RTN","USRCLASS",27,0)
+  . W !,"to see the result of your edits." H 3
+"RTN","USRCLASS",28,0)
+ W !,"  Refreshing the list. If expanded entries require refreshing please"
+"RTN","USRCLASS",29,0)
+ W !,"collapse and re-expand the entries." H 2
+"RTN","USRCLASS",30,0)
+ S VALMSG="** "_$S($L($G(USRLST)):"Item"_$S($L($G(USRLST),",")>1:"s ",1:" ")_$G(USRLST),1:"Nothing")_" Edited **"
+"RTN","USRCLASS",31,0)
+ K VALMY S VALMBCK="R"
+"RTN","USRCLASS",32,0)
+ Q
+"RTN","USRCLASS",33,0)
+EDIT1 ; Single record edit
+"RTN","USRCLASS",34,0)
+ ; Receives USRDA
+"RTN","USRCLASS",35,0)
+ N DIE,DR
+"RTN","USRCLASS",36,0)
+ I '+$G(USRDA) W !,"No Classes selected." H 2 Q
+"RTN","USRCLASS",37,0)
+ S DIE="^USR(8930,",DA=USRDA,DR="[USR CLASS STRUCTURE EDIT]"
+"RTN","USRCLASS",38,0)
+ D FULL^VALM1,^DIE
+"RTN","USRCLASS",39,0)
+ S USRCHNG=1 ;Needs check if not really changed.
+"RTN","USRCLASS",40,0)
+ Q
+"RTN","USRCLASS",41,0)
+EXPAND ; Expand/Collapse user class hierarchy display
+"RTN","USRCLASS",42,0)
+ N USRDNM,USRLNM,USRSTAT,USRVALMY
+"RTN","USRCLASS",43,0)
+ D:'$D(VALMY) EN^VALM2(XQORNOD(0))
+"RTN","USRCLASS",44,0)
+ I $D(VALMY) M USRVALMY=VALMY D EC^USRECCL(.USRVALMY)
+"RTN","USRCLASS",45,0)
+ W !,"Refreshing the list."
+"RTN","USRCLASS",46,0)
+ K VALMY S VALMBCK="R"
+"RTN","USRCLASS",47,0)
+ S USRSTAT=+$P($G(^TMP("USRCLASS",$J,0)),U,2)
+"RTN","USRCLASS",48,0)
+ S USRDNM=$P($G(^TMP("USRCLASS",$J,0)),U,3)
+"RTN","USRCLASS",49,0)
+ S USRLNM=$P($G(^TMP("USRCLASS",$J,0)),U,4)
+"RTN","USRCLASS",50,0)
+ S VALMCNT=+$G(@VALMAR@(0))
+"RTN","USRCLASS",51,0)
+ S VALMBCK="R"
+"RTN","USRCLASS",52,0)
+ Q
+"RTN","USRCLASS",53,0)
+CREATE ; Class constructor
+"RTN","USRCLASS",54,0)
+ N USRCREAT
+"RTN","USRCLASS",55,0)
+ N DIC,DLAYGO,X,Y,USRSTAT,USRDNM,USRLNM D FULL^VALM1
+"RTN","USRCLASS",56,0)
+ S (DIC,DLAYGO)=8930,DIC(0)="AELMQ",DIC("A")="Select CLASS: "
+"RTN","USRCLASS",57,0)
+ D ^DIC Q:+Y'>0
+"RTN","USRCLASS",58,0)
+ S USRCREAT=+$P(Y,U,3)
+"RTN","USRCLASS",59,0)
+ S DA=+Y,DIE=DIC,DIE("NO^")="BACK",DR="[USR CLASS STRUCTURE EDIT]"
+"RTN","USRCLASS",60,0)
+ D ^DIE
+"RTN","USRCLASS",61,0)
+ S USRSTAT=+$P($G(^TMP("USRCLASS",$J,0)),U,2)
+"RTN","USRCLASS",62,0)
+ S USRDNM=$P($G(^TMP("USRCLASS",$J,0)),U,3)
+"RTN","USRCLASS",63,0)
+ S USRLNM=$P($G(^TMP("USRCLASS",$J,0)),U,4)
+"RTN","USRCLASS",64,0)
+ I 'USRCREAT Q  ; Don't rebuild without cause
+"RTN","USRCLASS",65,0)
+ ;send new class to HMP via VxSync
+"RTN","USRCLASS",66,0)
+ D POSTX^HMPEVNT("asu-class",DA)
+"RTN","USRCLASS",67,0)
+ ;D ECLASS^HMPAT   ;send edits to HMP
+"RTN","USRCLASS",68,0)
+ D BUILD^USRCLST(USRSTAT,USRDNM,USRLNM)
+"RTN","USRCLASS",69,0)
+ S VALMCNT=+$G(@VALMAR@(0))
+"RTN","USRCLASS",70,0)
+ S VALMBCK="R"
+"RTN","USRCLASS",71,0)
+ Q
+"RTN","USRCLASS",72,0)
+MEMBERS ; List Members of classes and their subclasses
+"RTN","USRCLASS",73,0)
+ N USRDA,USRDATA,USREXPND,USRI,USRSTAT,VALMCNT,DIROUT
+"RTN","USRCLASS",74,0)
+ D:'$D(VALMY) EN^VALM2(XQORNOD(0)) S USRI=0
+"RTN","USRCLASS",75,0)
+ F  S USRI=$O(VALMY(USRI)) Q:+USRI'>0  D  Q:$D(DIROUT)
+"RTN","USRCLASS",76,0)
+ . S USRDATA=$S(VALMAR="^TMP(""USRCLASS"",$J)":$G(^TMP("USRCLASSIDX",$J,USRI)),1:$G(^TMP("USREXPIDX",$J,USRI)))
+"RTN","USRCLASS",77,0)
+ . W !!,"Listing Members of #",+USRDATA,!
+"RTN","USRCLASS",78,0)
+ . S USRDA=+$P(USRDATA,U,2) D EN^VALM("USR LIST MEMBERSHIP BY CLASS")
+"RTN","USRCLASS",79,0)
+ . I $D(USRDATA) D UPDATE^USRL(USRDATA)
+"RTN","USRCLASS",80,0)
+ W !,"Refreshing the list."
+"RTN","USRCLASS",81,0)
+ S VALMSG="Members listed"
+"RTN","USRCLASS",82,0)
+ K VALMY S VALMBCK="R"
+"RTN","USRCLASS",83,0)
+ Q
+"RTN","USRRULA")
+0^2^B27113394
+"RTN","USRRULA",1,0)
+USRRULA  ; SLC/JER - Rule Browser actions ;2/6/98  17:12
+"RTN","USRRULA",2,0)
+ ;;1.0;AUTHORIZATION/SUBSCRIPTION;**3,28,29**;Jun 20, 1997;Build 14
+"RTN","USRRULA",3,0)
+EDIT ; Edit an existing rule
+"RTN","USRRULA",4,0)
+ N DUP,REDIT,USRDA,USRI,DIROUT,USRCHNG,USRLST,USRRBLD,SAVEDATA
+"RTN","USRRULA",5,0)
+ I '$D(VALMY) D EN^VALM2(XQORNOD(0))
+"RTN","USRRULA",6,0)
+ S (USRCHNG,USRI)=0
+"RTN","USRRULA",7,0)
+ F  S USRI=$O(VALMY(USRI)) Q:+USRI'>0  D  Q:$D(DIROUT)
+"RTN","USRRULA",8,0)
+ . S USRDA=+$O(^TMP("USRRUL",$J,"INDEX",USRI,0)) Q:+USRDA'>0
+"RTN","USRRULA",9,0)
+ . W !!,"Editing #",+USRI,!
+"RTN","USRRULA",10,0)
+ . S SAVEDATA=$G(^USR(8930.1,USRDA,0))
+"RTN","USRRULA",11,0)
+ . D EDIT1
+"RTN","USRRULA",12,0)
+ . I +$G(USRCHNG) S USRLST=$S($L($G(USRLST)):$G(USRLST)_", ",1:"")_USRI
+"RTN","USRRULA",13,0)
+ I $G(DUP) D
+"RTN","USRRULA",14,0)
+ . S ^USR(8930.1,USRDA,0)=$G(SAVEDATA)
+"RTN","USRRULA",15,0)
+ . S VALMSG="** Item Not Edited - Duplicate of Another Rule **"
+"RTN","USRRULA",16,0)
+ W !,"Refreshing the list."
+"RTN","USRRULA",17,0)
+ I $L($G(USRLST)) D
+"RTN","USRRULA",18,0)
+ . S USRRBLD=$P($G(@VALMAR@(0)),U,1,4) D INIT^USRRUL,HDR^USRRUL
+"RTN","USRRULA",19,0)
+ K VALMY S VALMBCK="R"
+"RTN","USRRULA",20,0)
+ I $G(DUP) Q
+"RTN","USRRULA",21,0)
+ I '$G(REDIT) S VALMSG="** "_$S($L($G(USRLST)):"Item"_$S($L($G(USRLST),",")>1:"s ",1:" ")_$G(USRLST),1:"Nothing")_" Edited **"
+"RTN","USRRULA",22,0)
+ Q
+"RTN","USRRULA",23,0)
+EDIT1 ; Single record edit
+"RTN","USRRULA",24,0)
+ ; Receives USRDA
+"RTN","USRRULA",25,0)
+ N DA,DIE,DR
+"RTN","USRRULA",26,0)
+ I '+$G(USRDA) W !,"No Classes selected." H 2 S USRCHNG=0 Q
+"RTN","USRRULA",27,0)
+ S DIE="^USR(8930.1,",DA=USRDA,DR="[USR DEFINE AUTHORIZATIONS]"
+"RTN","USRRULA",28,0)
+ D FULL^VALM1,^DIE S USRCHNG=1
+"RTN","USRRULA",29,0)
+ D POSTX^HMPEVNT("asu-rule",DA)
+"RTN","USRRULA",30,0)
+ I '$D(DA) W !!,"<Business Rule DELETED>" H 3 Q
+"RTN","USRRULA",31,0)
+ S XUSRQ=^USR(8930.1,+DA,0),REDIT=0
+"RTN","USRRULA",32,0)
+ I $P(XUSRQ,"^",1)=""!($P(XUSRQ,"^",2)="")!($P(XUSRQ,"^",3)="")!(($P(XUSRQ,"^",4)="")&($P(XUSRQ,"^",6)="")) D  Q
+"RTN","USRRULA",33,0)
+ . S ^USR(8930.1,USRDA,0)=$G(SAVEDATA)
+"RTN","USRRULA",34,0)
+ . S VALMSG="** Item Not Edited - Required Fields Missing **" S REDIT=1 Q
+"RTN","USRRULA",35,0)
+ I $P(XUSRQ,"^",5)'="" D
+"RTN","USRRULA",36,0)
+ . I $P(XUSRQ,"^",4)="" D  Q
+"RTN","USRRULA",37,0)
+ . . S ($P(XUSRQ,"^",5),$P(^USR(8930.1,+DA,0),"^",5))=""
+"RTN","USRRULA",38,0)
+ . . S VALMSG="**USER CLASS REQ with AND FLAG -AND FLAG Removed**" S REDIT=1 Q
+"RTN","USRRULA",39,0)
+ . I $P(XUSRQ,"^",6)="" D  Q
+"RTN","USRRULA",40,0)
+ . . S ($P(XUSRQ,"^",5),$P(^USR(8930.1,+DA,0),"^",5))=""
+"RTN","USRRULA",41,0)
+ . . S VALMSG="**USER ROLE REQ with AND FLAG -AND FLAG Removed**" S REDIT=1 Q
+"RTN","USRRULA",42,0)
+ S DUP=$$DUP
+"RTN","USRRULA",43,0)
+ Q
+"RTN","USRRULA",44,0)
+ADD ; Add a member to the class
+"RTN","USRRULA",45,0)
+ N DA,DR,DIC,DIK,DLAYGO,DUP,X,Y,USRRBLD,USRCNT,XUSRQ D FULL^VALM1
+"RTN","USRRULA",46,0)
+ W !,"Please Enter a New Business Rule:",!
+"RTN","USRRULA",47,0)
+ S (DIC,DLAYGO)=8930.1,DIC(0)="NL",X=$$DOCPICK
+"RTN","USRRULA",48,0)
+ Q:+X'>0
+"RTN","USRRULA",49,0)
+ S X=""""_"`"_+X_""""
+"RTN","USRRULA",50,0)
+ D ^DIC K DLAYGO Q:+Y'>0  S DA=+Y
+"RTN","USRRULA",51,0)
+ S DIE=8930.1,DR="[USR DEFINE AUTHORIZATIONS]"
+"RTN","USRRULA",52,0)
+ D ^DIE
+"RTN","USRRULA",53,0)
+ I $D(DA) D POSTX^HMPEVNT("asu-rule",DA)
+"RTN","USRRULA",54,0)
+ I '$D(DA) S VALMSG="<Business Rule DELETED>" Q
+"RTN","USRRULA",55,0)
+ S DIK="^USR(8930.1,"
+"RTN","USRRULA",56,0)
+ S XUSRQ=^USR(8930.1,+DA,0)
+"RTN","USRRULA",57,0)
+ I $P(XUSRQ,"^",1)=""!($P(XUSRQ,"^",2)="")!($P(XUSRQ,"^",3)="")!(($P(XUSRQ,"^",4)="")&($P(XUSRQ,"^",6)="")) D  Q
+"RTN","USRRULA",58,0)
+ . S VALMSG="** Item Deleted - Required Fields Missing **"
+"RTN","USRRULA",59,0)
+ . D ^DIK
+"RTN","USRRULA",60,0)
+ K DIK
+"RTN","USRRULA",61,0)
+ S DUP=$$DUP
+"RTN","USRRULA",62,0)
+ S USRCNT=+$P($G(@VALMAR@(0)),U,5)
+"RTN","USRRULA",63,0)
+ I +USRCNT D
+"RTN","USRRULA",64,0)
+ . I 'DUP D ADD^USRRUL(DA)
+"RTN","USRRULA",65,0)
+ . S $P(@VALMAR@(0),U,5)=+USRCNT D HDR^USRRUL I 1
+"RTN","USRRULA",66,0)
+ E  S USRRBLD=$P($G(@VALMAR@(0)),U,1,4) D INIT^USRRUL,HDR^USRRUL
+"RTN","USRRULA",67,0)
+ S USRCNT=+$P($G(@VALMAR@(0)),U,5)
+"RTN","USRRULA",68,0)
+ S $P(@VALMAR@("#"),":",2)=+USRCNT
+"RTN","USRRULA",69,0)
+ S USRCHNG=1,VALMBCK="R"
+"RTN","USRRULA",70,0)
+ I $G(DUP) D  Q
+"RTN","USRRULA",71,0)
+ . S DIK="^USR(8930.1,"
+"RTN","USRRULA",72,0)
+ . D ^DIK
+"RTN","USRRULA",73,0)
+ . K DIK
+"RTN","USRRULA",74,0)
+ . S VALMSG="** Item Deleted - Duplicate Rule **" Q
+"RTN","USRRULA",75,0)
+ S VALMSG="** Item "_+USRCNT_" Added **"
+"RTN","USRRULA",76,0)
+ Q
+"RTN","USRRULA",77,0)
+DOCPICK() ; Function to pick a document for which rule will be created
+"RTN","USRRULA",78,0)
+ N DIC,X,Y
+"RTN","USRRULA",79,0)
+ ; I +$G(^TMP("USRRUL",$J,0))
+"RTN","USRRULA",80,0)
+ S DIC=8925.1,DIC(0)="AEMQ",DIC("A")="Select DOCUMENT DEFINITION: "
+"RTN","USRRULA",81,0)
+ S DIC("S")="I +$$CANPICK^TIULP(+Y),$S($P($G(^TIU(8925.1,+Y,0)),U,4)=""CO"":0,$P($G(^TIU(8925.1,+Y,0)),U,4)=""O"":0,$P($G(^TIU(8925.1,+Y,0)),U)[""ADDENDUM"":0,1:1)"
+"RTN","USRRULA",82,0)
+ D ^DIC K DIC("S")
+"RTN","USRRULA",83,0)
+ Q Y
+"RTN","USRRULA",84,0)
+ ;
+"RTN","USRRULA",85,0)
+DUP()    ; Function to determine if new or edited rule is a duplicate of an existing rule
+"RTN","USRRULA",86,0)
+ N DHIT,XDA,XDATA,DIK
+"RTN","USRRULA",87,0)
+ S (DHIT,XDA)=0 F  S XDA=$O(^USR(8930.1,XDA)) Q:XDA=""  Q:+XDA'>0  D  Q:DHIT
+"RTN","USRRULA",88,0)
+ . I XDA=+DA Q
+"RTN","USRRULA",89,0)
+ . S XDATA=$G(^USR(8930.1,XDA,0))
+"RTN","USRRULA",90,0)
+ . I $P($G(^USR(8930.1,+DA,0)),"^",1,4)=$P($G(XDATA),"^",1,4)&($P($G(^USR(8930.1,+DA,0)),"^",6)=$P($G(XDATA),"^",6)) D 
+"RTN","USRRULA",91,0)
+ . . I $P($G(^USR(8930.1,+DA,0)),"^",5)=$P($G(XDATA),"^",5) S DHIT=1 Q
+"RTN","USRRULA",92,0)
+ . . I $P($G(^USR(8930.1,+DA,0)),"^",5)="",$P($G(XDATA),"^",5)="!" S DHIT=1 Q
+"RTN","USRRULA",93,0)
+ . . I $P($G(^USR(8930.1,+DA,0)),"^",5)="!",$P($G(XDATA),"^",5)="" S DHIT=1 Q
+"RTN","USRRULA",94,0)
+ Q DHIT
+"RTN","USRRULA",95,0)
+ ;
+"RTN","USRRULA",96,0)
+DELETE   ; Delete a member to the class
+"RTN","USRRULA",97,0)
+ N USRDA,USRCHNG,USRI,USRLST,DIE,X,Y,USRRBLD K DIROUT
+"RTN","USRRULA",98,0)
+ D FULL^VALM1
+"RTN","USRRULA",99,0)
+ I '$D(VALMY) D EN^VALM2(XQORNOD(0))
+"RTN","USRRULA",100,0)
+ S USRI=0
+"RTN","USRRULA",101,0)
+ F  S USRI=$O(VALMY(USRI)) Q:+USRI'>0  D  Q:$D(DIROUT)
+"RTN","USRRULA",102,0)
+ . S USRDA=+$O(^TMP("USRRUL",$J,"INDEX",USRI,0)) Q:+USRDA'>0
+"RTN","USRRULA",103,0)
+ . W !!,"Deleting #",+USRI,!
+"RTN","USRRULA",104,0)
+ . D DELETE1(USRDA),POSTX^HMPEVNT("asu-rule",USRDA,"@")
+"RTN","USRRULA",105,0)
+ . S:+USRCHNG USRLST=$S(+$G(USRLST):USRLST_", ",1:"")_+USRI
+"RTN","USRRULA",106,0)
+ I +$G(USRLST) D
+"RTN","USRRULA",107,0)
+ . S USRRBLD=$P($G(@VALMAR@(0)),U,1,4) D INIT^USRRUL,HDR^USRRUL
+"RTN","USRRULA",108,0)
+ K VALMY S VALMBCK="R"
+"RTN","USRRULA",109,0)
+ S VALMSG="** "_$S($L($G(USRLST)):"Item"_$S($L($G(USRLST),",")>1:"s ",1:" ")_$G(USRLST),1:"Nothing")_" deleted **"
+"RTN","USRRULA",110,0)
+ Q
+"RTN","USRRULA",111,0)
+DELETE1(DA) ; Delete one member from a class
+"RTN","USRRULA",112,0)
+ N DIE,DR,USRI,USRULE D XLATE^USRAEDT(.USRULE,+DA)
+"RTN","USRRULA",113,0)
+ I $G(USRULE)']"" W !,"Record #",DA," NOT FOUND!" Q
+"RTN","USRRULA",114,0)
+ W !,"Removing the rule:",!
+"RTN","USRRULA",115,0)
+ F USRI=1:1:$L(USRULE,"|") W !,$P(USRULE,"|",USRI)
+"RTN","USRRULA",116,0)
+ W !
+"RTN","USRRULA",117,0)
+ I '$$READ^USRU("Y","Are you SURE","NO") S USRCHNG=0 W !,"Business Rule NOT Removed." Q
+"RTN","USRRULA",118,0)
+ W !,"Deleting Business Rule"
+"RTN","USRRULA",119,0)
+ S USRCHNG=1
+"RTN","USRRULA",120,0)
+ S DIK="^USR(8930.1," D ^DIK K DIK W "."
+"RTN","USRRULA",121,0)
+ Q
+"VER")
+8.0^22.0
+**END**
+**END**

@@ -1,0 +1,63 @@
+{
+  "id":"100022_Allergy_20140108_1611",
+  "allergies": {
+    "patientIEN":"100022",
+    "list": [
+      {
+        "key":"GMRAGNT",
+        "value":"ALCOHOL^52;GMRD(120.82,",
+        "ordinal":""
+      },
+      {
+        "key":"GMRATYPE",
+        "value":"DF^Drug,Food",
+        "ordinal":""  
+      },
+      {
+        "key":"GMRANATR",
+        "value":"A^Allergy",
+        "ordinal":""
+      },
+      {
+        "key":"GMRAORIG",
+        "value":"10000000224",
+        "ordinal":""
+      },
+      {
+        "key":"GMRAORDT",
+        "value":"3140108.1611",
+        "ordinal":""
+      },
+      {
+        "key":"GMRASYMP",
+        "value":"1",
+        "ordinal":"0"
+      },
+      {
+        "key":"GMRASYMP",
+        "value":"258^PAIN IN LEG^^^",
+        "ordinal":"1"
+      },
+      {
+        "key":"GMRACHT",
+        "value":"1",
+        "ordinal":"0"
+      },
+      {
+        "key":"GMRACHT",
+        "value":"3140108.161159",
+        "ordinal":"1"
+      },
+      {
+        "key":"GMRAOBHX",
+        "value":"h^HISTORICAL",
+        "ordinal":""
+      },      
+      {
+        "key":"GMRASEVR",
+        "value":"2",
+        "ordinal":""
+      }
+    ]
+  }
+}

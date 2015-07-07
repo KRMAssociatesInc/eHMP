@@ -1,0 +1,20 @@
+<!-- <div class="row"> -->
+<div class="col-md-12">
+  <label>Viewing
+	{{#compare selectedId "custom-range-apply" }}
+		{{#if fromDate}}
+			{{customFromDate}}
+			to
+			{{customToDate}}
+		{{/if}}
+	{{else}}
+		{{#if fromDate}}
+			{{fromDate}}
+			to
+			{{toDate}}
+		{{/if}}
+	{{/compare}}
+
+	{{#unless fromDate}}All{{/unless}}
+	</label>
+</div>

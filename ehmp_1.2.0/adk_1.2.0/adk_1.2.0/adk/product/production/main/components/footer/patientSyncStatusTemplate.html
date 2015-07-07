@@ -1,0 +1,40 @@
+{{#if syncStatus}}
+<span tabindex="0" class="patient-status-icon" id="sync-patient-data" type="button">
+    <span>
+        Sync All Source to VX
+    </span>
+</span>
+
+<span tabindex="0" class="patient-status-icon" id="refresh-patient-data" type="button">
+    <span>
+        Refresh All Data
+    </span>
+</span>
+
+{{#each syncStatus}} {{#if completed}} {{#compare completed true}}
+<span tabindex="0" class="patient-status-icon" type="button" data-toggle="tooltip" data-html="true" data-placement="top" data-original-title="<div style='margin-bottom:5px'>{{hoverTip}}</div> Last synced{{#if timeStamp}} {{timeStamp}} ago {{else}} Current {{/if}} {{#if newDataSince}} <br/> New data since {{newDataSince}} ago{{/if}}">
+{{#if newDataSince}}
+    <i class="text-warning fa fa-clock-o"></i> {{title}}
+{{else}}
+    <i class="text-success fa fa-check-circle"></i> {{title}}
+{{/if}}
+    <span class="sr-only">
+        synced as of {{timeStamp}}.
+    </span>
+</span>
+{{/compare}} {{#compare completed 'error'}}
+<span tabindex="0" class="patient-status-icon" data-toggle="tooltip" data-placement="top" data-original-title="<div style='margin-bottom:5px'>{{hoverTip}}</div> Sync Error" >
+    <i class="text-error fa fa-minus-circle"></i> {{title}}
+    <span class="sr-only">sync error.</span>
+</span>
+{{/compare}} {{else}}
+<span tabindex="0" class="patient-status-icon loading-muted" data-toggle="tooltip" type="button" data-html="true" data-placement="top" data-original-title="<div style='margin-bottom:5px'>{{hoverTip}}</div> Syncing in progress...">
+    <i class="fa fa-spinner fa-spin"></i> {{title}}
+    <span class="sr-only">Last synced.</span>
+</span>
+{{/if}} {{/each}}
+<span tabindex="0" class="patient-status-icon" id="open-sync-modal" type="button">
+    <i class="fa fa-angle-double-up fa-2x"></i>
+</span>
+{{{helpIconLink 'status_bar' 'helpIconLinkRightDown'}}}
+{{/if}}

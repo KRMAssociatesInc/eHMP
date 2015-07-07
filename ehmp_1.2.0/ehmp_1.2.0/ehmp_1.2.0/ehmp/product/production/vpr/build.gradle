@@ -1,0 +1,48 @@
+description = 'Health Management Platform Solr Configuration'
+
+apply plugin:'jetty'
+
+ext {
+    solrHttpPort = 3434
+}
+
+configurations {
+    solrWebApp
+    solrWebAppLogging
+}
+
+dependencies {
+//    solrWebApp group: 'org.apache.solr', name: 'solr', version: versions.solrLuceneVersion, ext: 'war'
+
+    solrWebAppLogging group: 'org.slf4j', name: 'slf4j-api', version: versions.slf4jVersion
+    solrWebAppLogging group: 'ch.qos.logback', name: 'logback-classic', version: versions.logbackVersion
+    solrWebAppLogging group: 'ch.qos.logback', name: 'logback-core', version: versions.logbackVersion
+}
+
+task packageVPR(type: Tar) {
+  compression = Compression.GZIP
+  baseName = 'vpr'
+  version = getVersionByCommitCountForProject(":production:vpr", "src/main/solr")
+  destinationDir buildDir
+  from "${projectDir}/src/main/solr"
+}
+
+artifacts {
+  archives file: packageVPR.archivePath, name: 'vpr', type: 'tar', builtBy: packageVPR
+}
+
+
+
+//task runSolr(type: JettyRunWar) {
+//    webApp = configurations.solrWebApp.singleFile
+//    additionalRuntimeJars = configurations.solrWebAppLogging
+
+    // jetty configuration
+//    httpPort = solrHttpPort
+//    contextPath = 'solr'
+//}
+
+// executed before jetty starts
+//runSolr.doFirst {
+//    System.setProperty("solr.solr.home", "./solrhome")
+//}

@@ -1,0 +1,24 @@
+{
+    "name": "node-mockhdr",
+    "version": "0.0.1",
+    "description": "Provides resources for Mock HDR functionality.",
+    "main": "mockhdr-server.js",
+    "dependencies": {
+        "async": "~0.8.0",
+        "express": "~4.8.0",
+        "bunyan": "~0.22.3",
+        "body-parser": "~1.0.0",
+        "lodash": "^2.4.1",
+        "yargs": "^1.2.6",
+        "libxmljs": "~0.14.0"
+    },
+    "devDependencies": {
+      "jasmine-node": "^1.14.5",
+      "request": "~2.37.0"
+    },
+    "author": "Ben.Hosp",
+    "contributors": [
+      "Ben Hosp <ben.hosp@agilex.com>"
+    ],
+    "license": "BSD"
+}

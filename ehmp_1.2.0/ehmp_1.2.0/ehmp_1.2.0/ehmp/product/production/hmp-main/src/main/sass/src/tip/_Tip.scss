@@ -1,0 +1,133 @@
+.#{$prefix}tip {
+  @include border-radius($tip-error-border-radius);
+  border-width: $tip-border-width;
+  background-color: $tip-background-color;
+  position: absolute;
+  overflow: visible; /*arrow needs to be able to stick out*/
+  text-align: left;
+}
+
+.#{$prefix}tip-header-text {
+  color: $tip-header-color;
+  font-size: $tip-header-font-size;
+  font-weight: $tip-header-font-weight;
+}
+
+.#{$prefix}tip-header-draggable .#{$prefix}tip-header-text {
+  cursor: move;
+}
+
+//// Tip is a Panel. It uses dock layout. Body style must be the same
+.#{$prefix}tip-body,
+.#{$prefix}form-invalid-tip-body {
+  overflow: hidden;
+  position: relative;
+  padding: $tip-body-padding;
+}
+
+.#{$prefix}tip-header,
+.#{$prefix}tip-body {
+  color: $tip-body-color;
+  font-size: $tip-body-font-size;
+  font-weight: $tip-body-font-weight;
+  text-decoration: none;
+
+  a {
+    color: $tip-body-link-color;
+  }
+
+  pre {
+    width: 100%;
+  }
+}
+
+.#{$prefix}tip-header {
+  margin: 1px;
+  border-top-left-radius: $tip-border-radius;
+  border-top-right-radius: $tip-border-radius;
+}
+
+.#{$prefix}tip-header-default {
+  background-color: $tip-header-background-color;
+  border-bottom-width: 1px !important;
+  border-bottom-style: solid;
+  border-bottom-color: darken($tip-header-background-color, 5%);
+}
+
+.#{$prefix}tip-anchor {
+  position: absolute;
+  overflow: hidden;
+  height: 0;
+  width: 0;
+  border-style: solid;
+  border-width: 5px;
+  border-color: $tip-border-color;
+  // @tag iezoomhack
+}
+
+.#{$prefix}tip-anchor {
+  width: 10px;
+  height: 10px;
+}
+
+.#{$prefix}tip-anchor-top {
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.#{$prefix}tip-anchor-bottom {
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.#{$prefix}tip-anchor-left {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.#{$prefix}tip-anchor-right {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+
+// qtips
+//#ext-quicktips-tip.#{$prefix}tip {
+//  border-radius: $border-radius-base;
+//
+//  .#{$prefix}tip-body {
+//    max-width: $tooltip-max-width;
+//    padding: 3px 8px;
+//    color: $tooltip-color;
+//    text-align: center;
+//    text-decoration: none;
+//    background-color: $tooltip-bg;
+//   }
+//}
+
+//error qtip
+.#{$prefix}tip-form-invalid {
+  border-color: $tip-error-border-color;
+  @include border-radius($tip-error-border-radius);
+  border-width: $tip-error-border-width;
+  background-color: $tip-error-background-color;
+
+  ul {
+    margin: 0;
+  }
+
+  .#{$prefix}tip-body-form-invalid {
+    background-image: none;
+    color: $tip-error-body-color;
+    font-size: $tip-error-body-font-size;
+    padding: $tip-error-body-padding;
+    text-align: center;
+
+    ul {
+      margin: 0;
+    }
+  }
+}

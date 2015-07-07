@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd"
+    xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+    xmlns="http://www.opensaml.org/xmltooling-config">
+
+    <!-- WS-Policy 2004 Object Providers -->
+    <ObjectProviders>
+    
+        <!-- wsp:All -->
+        <ObjectProvider qualifiedName="wsp:All">
+            <BuilderClass
+                className="org.opensaml.ws.wspolicy.impl.AllBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wspolicy.impl.AllMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wspolicy.impl.AllUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsp:AppliesTo -->
+        <ObjectProvider qualifiedName="wsp:AppliesTo">
+            <BuilderClass
+                className="org.opensaml.ws.wspolicy.impl.AppliesToBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wspolicy.impl.AppliesToMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wspolicy.impl.AppliesToUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsp:ExactlyOne -->
+        <ObjectProvider qualifiedName="wsp:ExactlyOne">
+            <BuilderClass
+                className="org.opensaml.ws.wspolicy.impl.ExactlyOneBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wspolicy.impl.ExactlyOneMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wspolicy.impl.ExactlyOneUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsp:Policy -->
+        <ObjectProvider qualifiedName="wsp:Policy">
+            <BuilderClass
+                className="org.opensaml.ws.wspolicy.impl.PolicyBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wspolicy.impl.PolicyMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wspolicy.impl.PolicyUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsp:PolicyAttachment -->
+        <ObjectProvider qualifiedName="wsp:PolicyAttachment">
+            <BuilderClass
+                className="org.opensaml.ws.wspolicy.impl.PolicyAttachmentBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wspolicy.impl.PolicyAttachmentMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wspolicy.impl.PolicyAttachmentUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsp:PolicyReference -->
+        <ObjectProvider qualifiedName="wsp:PolicyReference">
+            <BuilderClass
+                className="org.opensaml.ws.wspolicy.impl.PolicyReferenceBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wspolicy.impl.PolicyReferenceMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wspolicy.impl.PolicyReferenceUnmarshaller" />
+        </ObjectProvider>
+
+    </ObjectProviders>
+
+</XMLTooling>

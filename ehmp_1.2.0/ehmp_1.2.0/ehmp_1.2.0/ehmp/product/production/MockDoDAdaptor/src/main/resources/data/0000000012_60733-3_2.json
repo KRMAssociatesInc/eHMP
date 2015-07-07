@@ -1,0 +1,86 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "CompleteNote": "CONSULT REPORT\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n                                                                       Order Request for EETEST, EARL\n\nRequesting HCP:  SJF, TWENTY FOUR\nRequesting Location:  BLUE MTF\nOrder ID number:  120525-00014\nMCP Referral #:  20120000830\nNo. of Visits:  1\nReferral Authorized Until:  22 Jun 2012\nReason for Consult:\nTESTING CONSULTS\nPriority:  ROUTINE\nProvisional Diagnosis:\nACV:\nReviewed Date/Time:  25 Jun 2012@21:00:00\nAppoint Status:  ADMIN CLOSURE - 30 DAY AUTO\nAppointment Review Comment:\nThis referral/consult order has been administratively closed. It has been\n30 days or greater since it was ordered, and has no related appointment.\nReviewer:  POSTMASTER,  \n\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n                                                                                    CONSULT RESULT\n\nAppointment Date:\nRequesting HCP:  SJF, TWENTY FOUR\nClinic:  GOLD MTF\nConsulting HCP:  ,  \n\nProblem List:\nNote:\nThis referral/consult order has been administratively closed. It has been\n30 days or greater since it was ordered, and has no related appointment.\nAdministratively Closed on 25 Jun 2012",
+        "NoteTypeName": "Consultation Report",
+        "EnteredBy": "Interface User",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20120626010008",
+        "NoteTitle": "Consultation Report",
+        "VerifiedBy": "",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20120626010008",
+        "LoincCode": "11536-0",
+        "Facility": "4th Medical Group/0090",
+        "NoteTypeCode": "258",
+        "EventId": "1000003854"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2156179705",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "SJF, FOUR",
+        "NoteFormat": "rtf",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20120514161515",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "SJF, FOUR",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20120514160904",
+        "LoincCode": "34109-9",
+        "Facility": "4th Medical Group^Blue MTF",
+        "NoteTypeCode": "",
+        "EventId": "1000003855"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2156211634",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "SJF, TWENTY FOUR",
+        "NoteFormat": "rtf",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20120525213954",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "SJF, TWENTY FOUR",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20120525210735",
+        "LoincCode": "34109-9",
+        "Facility": "4th Medical Group^Blue MTF",
+        "NoteTypeCode": "",
+        "EventId": "1000003856"
+      },
+      "dataType": 12
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

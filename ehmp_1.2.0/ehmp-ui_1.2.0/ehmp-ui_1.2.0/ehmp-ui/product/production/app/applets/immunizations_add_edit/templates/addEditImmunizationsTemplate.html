@@ -1,0 +1,83 @@
+<h3 id="immunization-add-loading"><i class="fa fa-spinner fa-spin"></i> Loading...</h3>
+<div id="add-edit-imm" class="grayed-out" aria-hidden="true">
+    <div id="status-row" class="row">
+        <div class="col-sm-12">
+            <span class="btn-group btn-group-sm stretch" id="status">
+                <button type="button" data-is-active="false" id="immunization-btn-observer" class="btn toggle-btn toggle-off">VA-Administered</button>
+                <button type="button" data-is-active="false" id="immunization-btn-historical" class="btn toggle-btn toggle-off">Historical</button>
+            </span>
+        </div>
+    </div>
+    <div id="imm-data-entry" class="hidden" aria-hidden="true">
+        <div id="imm-lot-row" class="row">
+            <div id="lot-num-historical-region" class="form-group col-sm-4 hidden" aria-hidden="true">
+                <label class="label-group" for="lot-num-historical">Lot Number</label>
+                <input id="lot-num-historical" maxlength="25" type="text" class="form-control"/>
+            </div>
+            <div id="lot-num-obs-region" class="form-group col-sm-4"></div>
+            <div class="form-group col-sm-4">
+                <label class="label-group" for="expiration-date-select">Expiration Date</label>
+                <div id="expiration-date-select" class="input-group">
+                    <input type="text" class="form-control datepicker" id="expiration-date" autocomplete="off" disabled>
+                      <span id="date-picker-icon" max-length="10" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label class="label-group" for="manufacturer">Manufacturer</label>
+                <input id="manufacturer" maxlength="75" name="manufacturer" class="form-control" disabled/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-12 hidden" id="info-source-region" aria-hidden="true"></div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label class="label-group" for="admin-date-time-select">Administration Date/Time</label>
+                <div id="admin-date-time-select" class="input-group">
+                    <input type="text" class="form-control datepicker" id="admin-date-time" autocomplete="off">
+                      <span id="date-picker-icon" max-length="10" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+            <div class="form-group col-sm-4" id="admin-provider-region"></div>
+            <div class="form-group col-sm-4" id="ordering-provider-region"></div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4" id="location-region"></div>
+            <div class="form-group col-sm-4" id="route-admin-region"></div>
+            <div class="form-group col-sm-4" id="anatomic-location-region"></div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4">
+                <label class="label-group" for="dose">Dose</label>
+                <input class="form-control" id="dose"/>
+            </div>
+            <div class="form-group col-sm-4" id="series-region"></div>
+            <div class="form-group col-sm-4" id="reaction-region"></div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-4" id="vis-region">
+                <label class="label-group" for="vis-date">VIS Date Offered</label>
+                <div id="vis-date" class="input-group">
+                    <input type="text" class="form-control datepicker" id="vis-date-offered" autocomplete="off">
+                      <span id="date-picker-icon" max-length="10" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>
+            <div id="vis-padding-column" class="col-sm-4 hidden" aria-hidden="true">&nbsp;</div>
+            <div class="col-sm-4">&nbsp;</div>
+            <label id="contraindication-wrapper" class="col-sm-4">
+                <input id="repeat-contraindication" type="checkbox">Repeat Contraindication
+            </label>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-12" id="info-statement-block">
+                <label class="label-group" for="info-statement-region">Information Statement</label>
+                <div id="info-statement-region"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <textarea id="administration-notes" class="form-control" placeholder="Administration Notes..." rows="5"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{"apiVersion":"1.0","data":{
+        "updated":20120813184611,
+        "totalItems":2,
+        "items":[
+            {
+                "facilityName":"SLC-FO HMP DEV",
+                "high":110,
+                "low":60,
+                "observed":201107070900,
+                "result":90,
+                "specimen":"SERUM",
+                "typeName":"GLUCOSE",
+                "uid":"urn:va:F484:8:lab:CH;6889291.91;2",
+                "units":"mg/dL"
+            },
+            {
+                "facilityName":"CAMP MASTER",
+                "high":110,
+                "low":60,
+                "observed":200801300800,
+                "result":101,
+                "specimen":"SERUM",
+                "typeName":"GLUCOSE",
+                "uid":"urn:va:F484:8:lab:CH;6919868.919994;2",
+                "units":"mg/dL"
+            }
+        ]
+    }
+}

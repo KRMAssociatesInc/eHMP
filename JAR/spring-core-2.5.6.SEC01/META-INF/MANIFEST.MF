@@ -1,0 +1,50 @@
+Manifest-Version: 1.0
+Export-Package: org.springframework.asm;version="2.5.6.SEC01",org.spri
+ ngframework.asm.commons;version="2.5.6.SEC01";uses:="org.springframew
+ ork.asm",org.springframework.asm.signature;version="2.5.6.SEC01",org.
+ springframework.core;version="2.5.6.SEC01";uses:="org.apache.commons.
+ logging,org.springframework.asm,org.springframework.util",org.springf
+ ramework.core.annotation;version="2.5.6.SEC01",org.springframework.co
+ re.enums;version="2.5.6.SEC01",org.springframework.core.io;version="2
+ .5.6.SEC01",org.springframework.core.io.support;version="2.5.6.SEC01"
+ ;uses:="org.springframework.core.io,org.springframework.util",org.spr
+ ingframework.core.style;version="2.5.6.SEC01",org.springframework.cor
+ e.task;version="2.5.6.SEC01",org.springframework.core.task.support;ve
+ rsion="2.5.6.SEC01";uses:="org.springframework.core.task",org.springf
+ ramework.core.type;version="2.5.6.SEC01",org.springframework.core.typ
+ e.classreading;version="2.5.6.SEC01";uses:="org.springframework.asm,o
+ rg.springframework.core.io,org.springframework.core.type",org.springf
+ ramework.core.type.filter;version="2.5.6.SEC01";uses:="org.springfram
+ ework.core.type,org.springframework.core.type.classreading",org.sprin
+ gframework.metadata;version="2.5.6.SEC01",org.springframework.metadat
+ a.commons;version="2.5.6.SEC01",org.springframework.util;version="2.5
+ .6.SEC01";uses:="org.apache.commons.logging",org.springframework.util
+ .comparator;version="2.5.6.SEC01",org.springframework.util.xml;versio
+ n="2.5.6.SEC01";uses:="javax.xml.transform,org.apache.commons.logging
+ ,org.w3c.dom,org.xml.sax"
+Implementation-Title: Spring Framework
+Spring-Version: 2.5.6.SEC01
+Implementation-Version: 2.5.6.SEC01
+Bundle-Name: Spring Core
+Created-By: 10.0-b23 (Sun Microsystems Inc.)
+Ant-Version: Apache Ant 1.7.0
+Bundle-Vendor: SpringSource
+Bundle-Version: 2.5.6.SEC01
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.springframework.core
+Import-Package: edu.emory.mathcs.backport.java.util.concurrent;version
+ ="[3.0.0, 4.0.0)";resolution:=optional,javax.xml.transform;resolution
+ :=optional,org.apache.commons.attributes;version="[2.2.0, 3.0.0)";res
+ olution:=optional,org.apache.commons.collections;version="[3.2.0, 4.0
+ .0)";resolution:=optional,org.apache.commons.collections.map;version=
+ "[3.2.0, 4.0.0)";resolution:=optional,org.apache.commons.logging;vers
+ ion="[1.0.4, 2.0.0)",org.apache.log4j;version="[1.2.15, 2.0.0)";resol
+ ution:=optional,org.apache.log4j.xml;version="[1.2.15, 2.0.0)";resolu
+ tion:=optional,org.aspectj.bridge;version="[1.5.4, 2.0.0)";resolution
+ :=optional,org.aspectj.weaver;version="[1.5.4, 2.0.0)";resolution:=op
+ tional,org.aspectj.weaver.bcel;version="[1.5.4, 2.0.0)";resolution:=o
+ ptional,org.aspectj.weaver.patterns;version="[1.5.4, 2.0.0)";resoluti
+ on:=optional,org.eclipse.core.runtime;common="split";resolution:=opti
+ onal,org.w3c.dom;resolution:=optional,org.xml.sax;resolution:=optiona
+ l
+

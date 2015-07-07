@@ -1,0 +1,48 @@
+@include extjs-toolbar-ui(
+    'hmp-appbar',
+  $background-color: $appbar-background-color !important,
+  $background-gradient: null,
+  $border-color: $appbar-background-color
+);
+
+.#{$prefix}toolbar-hmp-appbar {
+  border: 0;
+
+  .#{$prefix}toolbar-separator-horizontal {
+    border-left-color: lighten($appbar-background-color, 10%) !important;
+    border-right-color: $appbar-background-color !important;
+  }
+
+  .#{$prefix}btn {
+    @include border-radius(0);
+
+    .#{$prefix}btn-inner {
+      color: contrast-color($appbar-background-color, $color, #fff);
+    }
+    .#{$prefix}btn-arrow:after {
+      color: contrast-color($appbar-background-color, $color, #fff);
+    }
+    .#{$prefix}btn-split-right {
+//      background-image: theme-background-image('button/default-samll-s-arrow');
+    }
+  }
+
+  .#{$prefix}btn-over,.#{$prefix}btn-menu-active {
+    background-image: none;
+    background-color: $body-background-color;
+
+    .#{$prefix}btn-inner {
+      color: $color;
+    }
+    .#{$prefix}btn-arrow:after {
+      color: $color;
+    }
+    .#{$prefix}btn-split-right {
+//      background-image: theme-background-image('button/plain-small-s-arrow');
+    }
+  }
+
+  .#{$prefix}btn-menu-active {
+    border-bottom-color: $body-background-color;
+  }
+}

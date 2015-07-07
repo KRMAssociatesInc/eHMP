@@ -1,0 +1,44 @@
+<div class="row">
+	<div class="col-sm-3">{{name}}</div>
+		<div class="col-sm-3">
+			{{#if unit-options }}
+			<div>
+				<select disabled title='{{name}}' data-type='reading' id="{{sname}}-reading" class="form-control input-xs fill">
+					{{#each unit-1-options}}
+					<option>{{this}} </option>
+					{{/each}}
+				</select>
+			</div>
+			{{else}}
+				<div>
+					<input disabled aria-label='{{name}} {{sel-unit-name}}' data-type='reading' id="{{sname}}-reading" autocomplete="off" type="text" class="form-control input-sm">
+					<span id="{{sname}}-inner-error-container" class="help-inline applet-error" role='alert' aria-hidden='true' aria-atomic="true" tabindex="0"></span>
+				</div>
+			{{/if}}
+		</div>
+		<div class="col-sm-3">
+			{{#if unit-2-name}}
+			<div>
+				<div class="btn-group">
+				  <button disabled aria-label='{{unit-1-name}} selected' id="{{sname}}-u1-btn"  aria-pressed='true' data-disabled='toggle' data-type="unit" data-subtype='u1' data-value="{{unit-1-name}}" type="button" class="btn btn-primary btn-xs">{{unit-1-name}}</button>
+				  <button disabled aria-label='{{unit-2-name}}' id="{{sname}}-u2-btn"  aria-pressed='false' data-disabled='toggle' data-type="unit" data-subtype='u2' data-value="{{unit-2-name}}" class="btn btn-default btn-xs">{{unit-2-name}}</button>
+				</div>
+			</div>
+			{{else}}
+			<div id="{{sname}}-unit-label">{{unit-1-name}}</div>
+			{{/if}}
+		</div>
+	<div class="col-sm-3">
+		<span>
+		<button disabled id="{{sname}}-u-btn" tabindex="0" data-disabled='toggle' data-type="u-r" data-subtype="unavailable" type="button" class="btn btn-default btn-xs" aria-label="{{unavailable-label}}">U</button>
+		<button disabled id="{{sname}}-r-btn"  data-disabled='toggle' data-type="u-r" data-subtype="refused" type="button" class="btn btn-default btn-xs" aria-label="{{refused-label}}">R</button>
+		{{#if qual-1-name}}
+		<button disabled id="{{sname}}-q-btn" tabindex="0" data-disabled='toggle' data-type="qualifier" type="button" class="btn btn-default btn-xs pull-right" aria-label="Qualifiers for {{name}}">Qualifier</button>
+		{{else}}
+		<button disabled tabindex='0' id="{{sname}}-q-btn" data-disabled='disable' data-type="qualifier" type="button" class="btn btn-default btn-xs pull-right" aria-label="Qualifiers for {{name}}">Qualifier</button>
+		{{/if}}
+		</span>
+	</div>
+</div>
+<div>&nbsp;</div>
+

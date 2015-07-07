@@ -1,0 +1,33 @@
+{
+    "getPatientChecks": {
+        "patientRecordFlags": [
+            {
+                "approved": "AVIVAUSER,TWENTYNINE",
+                "assignTS": 20130711101045,
+                "assignmentStatus": "Active",
+                "category": "I (NATIONAL)",
+                "name": "HIGH RISK FOR SUICIDE",
+                "nextReviewDT": 20131009,
+                "originatingSite": "SLC-FO HMP MYDEV  ",
+                "ownerSite": "SLC-FO HMP MYDEV  ",
+                "text": "Patient has a history of depression.  Current life stressors are high, \r\nthoiughts of suicide, and access to fire arms make this patient at high \r\nrisk.\r\n \r\nAll No-Shows must be followed up by phone!\r\n \r\nCall the Suicide Preventions Coordinators with any questions.  \r\n333-444-5567.",
+                "type": "CLINICAL"
+            }
+        ],
+        "sensitive": {
+            "dfn": 229,
+            "logAccess": true,
+            "mayAccess": true,
+            "text": "\r\n***RESTRICTED RECORD***\r\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \r\n* This record is protected by the Privacy Act of 1974 and the Health    *\r\n* Insurance Portability and Accountability Act of 1996. If you elect    *\r\n* to proceed, you will be required to prove you have a need to know.    *\r\n* Accessing this patient is tracked, and your station Security Officer  *\r\n* will contact you for your justification.                              *\r\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
+        },
+        "similar": {
+            "text": "foo"
+        }
+    },
+    "getPatientInfo": {
+       "fullName": "AVIVAPATIENT,TWENTYFOUR",
+        "cwadf": "CA",
+        "roomBed": "3C-4",
+        "inpatientLocation": "ONCOLOGY"
+    }
+}

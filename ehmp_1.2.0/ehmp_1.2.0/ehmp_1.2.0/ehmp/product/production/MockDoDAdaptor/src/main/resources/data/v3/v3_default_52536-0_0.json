@@ -1,0 +1,121 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001439"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "52536-0"
+          }
+        ],
+        "facility": null,
+        "address": [
+          {
+            "type": "Home Address",
+            "city": null,
+            "country": null,
+            "county": null,
+            "postalCode": null,
+            "state": null,
+            "street": [
+              "Any Street"
+            ]
+          }
+        ],
+        "phone": [
+          {
+            "area": null,
+            "country": null,
+            "local": null
+          }
+        ],
+        "branch": null,
+        "birthDate": "19350407000000",
+        "deersEligibility": [
+          {
+            "display": "Ineligible"
+          }
+        ],
+        "patientId": [
+          {
+            "id": "D101050002"
+          }
+        ],
+        "email": null,
+        "enrollmentLocation": {
+          "name": "1st Medical Group"
+        },
+        "name": {
+          "first": "PATIENT",
+          "middle": "Q",
+          "last": "TEN",
+          "suffix": null
+        },
+        "fmp": null,
+        "maritalStatus": [
+          {
+            "display": "Single, Never Married"
+          }
+        ],
+        "patientCategory": [
+          {
+            "display": "F11 - United States Air Force (USAF) Active Duty (AD)"
+          }
+        ],
+        "race": [
+          {
+            "display": "White"
+          }
+        ],
+        "rank": [
+          {
+            "display": "Captain O3-F"
+          }
+        ],
+        "religion": null,
+        "sex": "F",
+        "sponsor": {
+          "branch": null,
+          "rank": [
+            {
+              "display": "Captain O3-F"
+            }
+          ],
+          "ssn": "551315004",
+          "assignedUnit": {
+            "name": "NO LONGER ELIGIBLE     (NOELIG)"
+          }
+        },
+        "assignedUnit": {
+          "name": "NO LONGER ELIGIBLE     (NOELIG)"
+        }
+      },
+      "dataType": 13
+    }
+  ]
+}

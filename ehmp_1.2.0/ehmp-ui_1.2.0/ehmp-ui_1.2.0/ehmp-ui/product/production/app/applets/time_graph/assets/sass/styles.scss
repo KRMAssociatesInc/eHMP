@@ -1,0 +1,20 @@
+[data-appletid="time_graph"] {
+    .time_range {
+        font-size: 130%;
+    }
+    .time_range_title {
+        color: #C0C0C0;
+        font-size: 130%;
+    }
+    .inline {
+        display: inline-block
+    }
+    .tl_reset {
+        display: none;
+        color: white;
+    }
+    .rb-container {
+        z-index: 100;
+        position: relative;
+    }
+}

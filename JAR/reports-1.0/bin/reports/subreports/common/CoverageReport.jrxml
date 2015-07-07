@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="groovy" pageWidth="535" pageHeight="842" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<template><![CDATA["../../styles.jrtx"]]></template>
+	<style name="elementStyle" isDefault="false">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Boolean.valueOf($F{elementType}.equals( "TESTCASE" ))]]></conditionExpression>
+			<style isDefault="false" style="elementStyle">
+				<box leftPadding="10"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Boolean.valueOf($F{elementType}.equals( "OPERATION" ))]]></conditionExpression>
+			<style isDefault="false" style="elementStyle">
+				<box leftPadding="10"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Boolean.valueOf($F{elementType}.equals( "REQUEST" ))]]></conditionExpression>
+			<style isDefault="false" style="elementStyle">
+				<box leftPadding="20"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Boolean.valueOf($F{elementType}.equals( "RESPONSE" ))]]></conditionExpression>
+			<style isDefault="false" style="elementStyle">
+				<box leftPadding="20"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Boolean.valueOf($F{elementType}.equals( "METHOD" ))]]></conditionExpression>
+			<style isDefault="false" style="elementStyle">
+				<box leftPadding="20"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Boolean.valueOf($F{elementType}.equals( "WSDLREQUEST" ))]]></conditionExpression>
+			<style isDefault="false" style="elementStyle">
+				<box leftPadding="20"/>
+			</style>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Boolean.valueOf($F{elementType}.equals( "INTERFACE" ))]]></conditionExpression>
+			<style isDefault="false" style="elementStyle" isBold="true"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Boolean.valueOf($F{elementType}.equals( "TESTSUITE" ))]]></conditionExpression>
+			<style isDefault="false" style="elementStyle" isBold="true"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="dataset1">
+		<field name="elementDisplayName" class="java.lang.String"/>
+		<field name="elementRatio" class="java.lang.Float"/>
+		<field name="coverageRatio" class="java.lang.Float"/>
+		<field name="assertionCoverageRatio" class="java.lang.Float"/>
+	</subDataset>
+	<field name="datasource" class="com.eviware.soapui.reporting.reports.support.ExportableJRBeanCollectionDataSource"/>
+	<field name="displayName" class="java.lang.String"/>
+	<field name="ratioDisplay" class="java.lang.String"/>
+	<field name="percentageDisplay" class="java.lang.String"/>
+	<field name="elementType" class="java.lang.String"/>
+	<field name="icon" class="java.lang.String"/>
+	<field name="modelItem" class="com.eviware.soapui.model.ModelItem"/>
+	<detail>
+		<band height="23">
+			<stackedBarChart>
+				<chart isShowLegend="false">
+					<reportElement mode="Transparent" x="325" y="0" width="209" height="22" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="dataset1">
+							<dataSourceExpression><![CDATA[$F{datasource}]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Assertion Coverage"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{elementDisplayName}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{assertionCoverageRatio}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Coverage"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{elementDisplayName}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{coverageRatio}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Not Covered"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{elementDisplayName}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{elementRatio}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="false" isShowTickLabels="false" isShowTickMarks="false">
+					<plot orientation="Horizontal">
+						<seriesColor seriesOrder="0" color="#0AA300"/>
+						<seriesColor seriesOrder="1" color="#00DF00"/>
+						<seriesColor seriesOrder="2" color="#DF0000"/>
+					</plot>
+					<categoryAxisFormat>
+						<axisFormat axisLineColor="#FFFFFF">
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#FFFFFF" axisLineColor="#FFFFFF">
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</stackedBarChart>
+			<textField>
+				<reportElement style="elementStyle" x="22" y="4" width="230" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{displayName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="391" y="4" width="100" height="15" forecolor="#000000"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ratioDisplay}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="4" width="75" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{percentageDisplay}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RealSize" isUsingCache="true" onErrorType="Blank">
+				<reportElement x="0" y="3" width="22" height="16"/>
+				<imageExpression class="java.lang.String"><![CDATA["logo:" + $F{icon}.substring( $F{icon}.lastIndexOf( '/'))]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

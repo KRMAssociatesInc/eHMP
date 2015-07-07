@@ -1,0 +1,45 @@
+[data-appletid="appointments"] {
+    div.panel-body {
+      overflow: auto;
+    }
+    .nav-pills-appts {
+    	font-weight: 400;
+        border-radius:0.5em;
+        a {
+            padding: 5px 10px;
+        }
+    }
+    .nav-pills-appts-type {
+    	font-weight: 400;
+        border-radius:0.5em;
+        a {
+            padding: 5px 10px;
+        }
+    }
+    .table.table-no-border >tbody>tr>td, .table.table-no-border >tbody>tr>th {
+    	border: none;
+    	width: 100%;
+    }
+
+    .tableModal {
+    	width: 90%;
+    	max-width: 90%;
+    	margin: 10px 35px -5px 35px;
+    }
+
+    .rowHeader {
+    	border-bottom: 1px solid #e4e4e4;
+    	font-weight: bold;
+        font-size: medium;
+    }
+
+    .th-font {
+    	color:#999999;
+    }
+    .list-group-item {
+        border-radius: 0;
+        padding: 2px 5px;
+        border: 0;
+        border-bottom: 1px solid lightgrey;
+    }
+}

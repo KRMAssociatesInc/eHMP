@@ -1,0 +1,360 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "EncounterId": "2157580332",
+        "EvalManagementCode": "",
+        "EncounterNumber": "GTLK-1000",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131007153940",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131007155640",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580343",
+            "Procedure": "Pulmonary Function Tests Peak Expiratory Flow",
+            "EnteredByDate": "20131007155647",
+            "Code": "94150",
+            "ProcedureDate": "20131007153940",
+            "EventId": "1000000015"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Hemoptysis",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "786.3",
+            "EventId": "1000000016"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "Notes Entered by: BHIE,USERONE 07 Oct 2013 1139\r\n------------------------------\r\nCough",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000000017"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157580347",
+        "EvalManagementCode": "99211",
+        "EncounterNumber": "GTLK-1001",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131007155712",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131007155949",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580358",
+            "Procedure": "Infectious Agent Genotype Analysis By Nucleic Acid HIV-1",
+            "EnteredByDate": "20131007155951",
+            "Code": "87906",
+            "ProcedureDate": "20131007155858",
+            "EventId": "1000000018"
+          },
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580357",
+            "Procedure": "Inf Agt Antig Det Nucleic Acid Amp Probe HIV-1",
+            "EnteredByDate": "20131007155950",
+            "Code": "87535",
+            "ProcedureDate": "20131007155853",
+            "EventId": "1000000019"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Menstrual migraine, without mention of intractable migraine without mention of status migrainosus",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "346.40",
+            "EventId": "1000000020"
+          },
+          {
+            "Status": "",
+            "Diagnosis": "Long-term (current) use of non-steroidal anti-inflammatories (NSAID)",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "V58.64",
+            "EventId": "1000000021"
+          }
+        ],
+        "DischargeDisposition": "*****",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "*****",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000000022"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157580443",
+        "EvalManagementCode": "99211",
+        "EncounterNumber": "GTLK-1200",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131017155715",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131017160642",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580454",
+            "Procedure": "Home Care Visit",
+            "EnteredByDate": "20131017160647",
+            "Code": "99600",
+            "ProcedureDate": "20131017160440",
+            "EventId": "1000000023"
+          },
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580456",
+            "Procedure": "Vaccines",
+            "EnteredByDate": "20131017160647",
+            "Code": "90749",
+            "ProcedureDate": "20131017155920",
+            "EventId": "1000000024"
+          },
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580457",
+            "Procedure": "Immunization Administration One Vaccine",
+            "EnteredByDate": "20131017160647",
+            "Code": "90471",
+            "ProcedureDate": "20131017155920",
+            "EventId": "1000000025"
+          },
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580455",
+            "Procedure": "Rabies Vaccine For Intradermal Use",
+            "EnteredByDate": "20131017160647",
+            "Code": "90676",
+            "ProcedureDate": "20131017155827",
+            "EventId": "1000000026"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Menstrual migraine, without mention of intractable migraine without mention of status migrainosus",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "346.40",
+            "EventId": "1000000027"
+          }
+        ],
+        "DischargeDisposition": "*****",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "*****",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000000028"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157580471",
+        "EvalManagementCode": "99212",
+        "EncounterNumber": "GTLK-1300",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131029160033",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131029160355",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580481",
+            "Procedure": "Clinical Social Work Counseling Group",
+            "EnteredByDate": "20131029160400",
+            "Code": "90857",
+            "ProcedureDate": "20131029160253",
+            "EventId": "1000000029"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Menstrual migraine, without mention of intractable migraine without mention of status migrainosus",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "346.40",
+            "EventId": "1000000030"
+          },
+          {
+            "Status": "",
+            "Diagnosis": "Bacterial infection, unspecified, in conditions classified elsewhere and of unspecified site",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "041.9",
+            "EventId": "1000000031"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000000032"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157582871",
+        "EvalManagementCode": "99212",
+        "EncounterNumber": "GTLK-3201",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131206160238",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131206161500",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157582882",
+            "Procedure": "ASTHMA MILD PERSISTENT",
+            "EnteredByDate": "20131206161506",
+            "Code": "1038F",
+            "ProcedureDate": "20131206161157",
+            "EventId": "1000010033"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Asthma, unspecified type, unspecified",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "493.90 0",
+            "EventId": "1000010034"
+          }
+        ],
+        "DischargeDisposition": "Released with Work/Duty Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000000035"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157584352",
+        "EvalManagementCode": "99211",
+        "EncounterNumber": "GTLK-3900",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20140113204049",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20140114210352",
+        "Procedures": [
+
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Cough",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "786.2",
+            "EventId": "1000010036"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000010037"
+      },
+      "dataType": 5
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "6",
+      "RetrievedCount": "6",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

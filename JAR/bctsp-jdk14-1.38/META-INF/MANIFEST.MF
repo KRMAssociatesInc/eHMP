@@ -1,0 +1,49 @@
+Manifest-Version: 1.0
+Created-By: 1.4.2_11-b06 (Sun Microsystems Inc.)
+Ant-Version: Apache Ant 1.6.5
+Specification-Version: 1.1
+Specification-Vendor: BouncyCastle.org
+Implementation-Vendor-Id: org.bouncycastle
+Extension-Name: org.bouncycastle.bctsp
+Implementation-Version: 1.38.0
+Implementation-Vendor: BouncyCastle.org
+
+Name: org/bouncycastle/tsp/TSPUtil.class
+SHA1-Digest: Z+9dDKHrd4V93t4Yx/badptWY2o=
+
+Name: org/bouncycastle/tsp/TimeStampResponse.class
+SHA1-Digest: 7te49Nm125sX1WkdnGNTkuewSTs=
+
+Name: org/bouncycastle/tsp/TSPException.class
+SHA1-Digest: yFs4Oti9hNtbAa2jwmiuQJ8BBa0=
+
+Name: org/bouncycastle/tsp/TimeStampRequestGenerator.class
+SHA1-Digest: oCTr3P6Qf1zmyFzq2D1MkGpQOik=
+
+Name: org/bouncycastle/tsp/TimeStampToken.class
+SHA1-Digest: 27gndmSfaWjo/juKusezXsAQaoo=
+
+Name: org/bouncycastle/tsp/TimeStampTokenGenerator.class
+SHA1-Digest: oFEFNC1dd90PILrhcY4dH6ht7lQ=
+
+Name: org/bouncycastle/tsp/TimeStampRequest.class
+SHA1-Digest: lss+2P8uY78DiG5lUxRN17gHcHA=
+
+Name: org/bouncycastle/tsp/TSPValidationException.class
+SHA1-Digest: Q5qM34AA4NNUyiRULwDKZ76FI1w=
+
+Name: org/bouncycastle/tsp/TimeStampTokenInfo.class
+SHA1-Digest: oDzc3sB9GG20hxm9nXFb7/1pggc=
+
+Name: org/bouncycastle/tsp/GenTimeAccuracy.class
+SHA1-Digest: ma2aWWxX1rSpLfeNlqSyQAyzL+I=
+
+Name: org/bouncycastle/tsp/TSPAlgorithms.class
+SHA1-Digest: lPfVIZMYeIh3jv7B115xHAG07qk=
+
+Name: org/bouncycastle/tsp/TimeStampResponseGenerator$FailInfo.class
+SHA1-Digest: tRv7dj8xwCFz2acxu/9fvslp0jI=
+
+Name: org/bouncycastle/tsp/TimeStampResponseGenerator.class
+SHA1-Digest: s42ex1FYOkckQkUzV/roI3/Nubg=
+

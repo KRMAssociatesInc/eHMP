@@ -1,0 +1,253 @@
+#addEditProblemForm #error-container, #deleteProblemModal #error-container, #searchProblemModal #error-container {
+	font-size: 1.25em;
+	padding: 0;
+	color: #a94442;
+}
+#addEditProblemForm {
+	.toggle-btn:focus {
+		outline: thin dotted;
+	}
+	.btn-default {
+		color: #333333;
+		background-color: #ffffff;
+		border-color: #cccccc;
+		text-shadow: none;
+		background-image: none;
+		&.active {
+			text-shadow: none;
+			color: #ffffff;
+			background-color: #688790;
+			border-color: #ccc;
+		}
+	}
+	.btn-danger.active {
+		background-color: #c12e2a;
+		border-color: #ccc;
+		background-image: none;
+		color: #ddd;
+		&:hover, &:focus {
+			background-color: #c12e2a;
+			border-color: #ccc;
+			background-image: none;
+			color: #ddd;
+		}
+	}
+	.tf-name {
+		color: #949494;
+		background-color: #fff;
+		border-color: #fff;
+		padding-left: 0;	// had to use button to vertical align label. button requires no padding.
+		opacity: 1
+	}
+	.section {
+		margin-bottom: 15px;
+	}
+	.label-group  {
+		display:block;
+		font-weight: normal;
+	}
+	#treatment-list > li {
+		padding: 5px 0px;
+	}
+	// Should get this into custom typeahead styles
+	.typeahead {
+		label {
+			display:block;
+			font-weight: normal;
+		}
+		// This is a duplicate of bootstrap input-sm. This class should be added as mixin or as an option to typeahead.
+		input {
+			height: 30px;
+			padding: 5px 10px;
+			font-size: 12px;
+			line-height: 1.5;
+			border-radius: 3px;
+		}
+	}
+	#respProviderBlock {
+		input {
+			width: 100%;
+		}
+	}
+	#serviceBlock {
+		width:40%;
+		input {
+			width: 100%;
+		}
+	}
+	#addCommentBtn {
+		cursor: pointer;
+        font-size: 2em;
+	}
+    .commentRemainingBlock {
+        clear: both;
+    }
+    .commentText:disabled {
+        border: none;
+    }
+    .save-comment, .cancel-comment, .edit-comment, .remove-comment {
+        font-size: 1.25em;
+    }
+    .edit-comment b {
+        color: #000000;
+        vertical-align: middle;
+    }
+    .save-comment b {
+        color: #688790;
+        vertical-align: middle;
+    }
+    .cancel-comment b, .remove-comment b {
+        color: #c12e2a;
+        vertical-align: middle;
+    }
+    .save-comment b.disabled {
+        cursor: not-allowed;
+        color: #9E9999;
+    }
+}
+#dp-problem {
+	width: 105px;
+}
+#date-picker-icon {
+	cursor: pointer;
+	width: 0;
+}
+#problemStatusSelect label, #problemAcuitySelect label {
+	display: block;
+}
+#problemAcuitySelect {
+	margin-left: 10px;
+}
+#treatmentFactorsBlock li, #comment-list li {
+	list-style: none;
+	border-top: 1px solid #ddd;
+	padding: 5px 0px
+}
+#treatmentFactorsBlock ul:last-child, #commentsBlock ul:last-child {
+	border-bottom: 1px solid #ddd;
+}
+#treatmentFactorsBlock ul, #commentsBlock ul {
+	padding-left: 0;
+}
+.commentDate {
+	color: #949494;
+	padding-right: 5px;
+}
+.commentText {
+	width: 80%;
+}
+#comment-list .glyphicon {
+	padding-left: 3px;
+	cursor: pointer;
+	color:#949494;
+}
+#comment-list, #charRemainingBlock {
+	font-size: smaller;
+}
+#problem-typeahead-list li, #problem-provider-typeahead-list li {
+	cursor: pointer;
+}
+#problem-typeahead-list li:hover, #provider-typeahead-list li:hover,
+#problem-typeahead-list li:focus, #provider-typeahead-list li:focus
+ {
+	background: #f5f5f5
+}
+#problem-provider-typeahead-list li:hover {
+	background: #f5f5f5
+}
+#problem-provider-typeahead-list, #problem-typeahead-list {
+	z-index: 20;
+	position:absolute;
+}
+#searchProblemModal {
+	input[type=checkbox] {
+		margin: 10px 0;
+	}
+	#problem-typeahead-list {
+		position: relative;
+		max-height: 60vh;
+		overflow-y: auto;
+		color: #2e6ca2;
+	}
+}
+#searchProblemModal .list-group-item {
+	border : none;
+}
+#searchProblemModal .list-group {
+	-webkit-box-shadow : none;
+	box-shadow : none;
+}
+#charRemainingBlock {
+	clear: both;
+}
+.bs-callout-danger {
+	color: #d9534f;
+}
+#deleteProblemModal .form-control#reason {
+	border: 1px solid #d9534f;
+}
+#searchProblemModal li[data-name="Loading..."] {
+	font-size: 1.3em;
+	color: #000;
+}
+#searchProblemModal input[type=checkbox]:focus {
+	outline: dotted 1px #333;
+}
+
+.tt-query,
+.twitter-typeahead .tt-hint {
+	margin-bottom: 0;
+}
+.twitter-typeahead{
+    width:96%;
+}
+
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-dropdown-menu {
+  width: 422px;
+  margin-top: 4px;
+  padding: 4px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  line-height: 24px;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+#problemSearchSpinner{
+    display:none;   
+}
+
+#searchProblemModal{
+ 
+    height: 200px;
+    
+}

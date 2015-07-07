@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+    <div class="panel-heading" data-toggle="collapse" data-target="#list_{{ replaceSpaces type }}" href="#list_{{ replaceSpaces type }}" data-parent="#medicationsAccordion" role="region" tabindex="0" id="medGroupType">
+        <h1 class="panel-title" id="listItem">
+            <a>
+                <div id="{{ replaceSpaces type }}Count" class="medCount">{{ meds.length }}</div>
+                <div id="{{ replaceSpaces type }}Group" class="groupName">
+                    {{#if isNonVa }}
+                    <span class="sr-only">Non Veterans Affairs</span>{{ type }}
+                    {{else}}{{ type }} {{/if}}
+                </div>
+            </a>
+        </h1>
+    </div>
+    <div id="list_{{ replaceSpaces type }}" class="panel-collapse collapse out">
+        <div class="panel-body" id="{{ replaceSpaces type }}-med-panel-body"></div>
+    </div>
+</div>

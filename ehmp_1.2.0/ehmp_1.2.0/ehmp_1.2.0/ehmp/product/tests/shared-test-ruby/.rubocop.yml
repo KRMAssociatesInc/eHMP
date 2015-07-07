@@ -1,0 +1,34 @@
+# This configuration defines the rubocop checks.
+
+inherit_from: rubocop-todo.yml
+     
+AllCops:
+  Excludes:
+    - /features/testfeatures/steps/**
+    
+ClassLength:
+  Description: 'Avoid classes longer than 100 lines of code.'
+  Max: 100
+  Enabled: true
+
+LineLength:
+  Description: 'Avoid long lines.'
+  Max: 220
+
+# Configuration parameters: CountComments.
+MethodLength:
+  Description: 'Avoid long methods.'
+  Max: 50
+
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+BracesAroundHashParameters:
+  Description: 'Enforce braces style inside hash parameters.'
+  Enabled: false
+
+Encoding:
+  Description: 'Use UTF-8 as the source file encoding.'
+  Enabled: false
+
+WordArray:
+  Description: Use %w or %W for arrays of words.
+  MinSize: 2

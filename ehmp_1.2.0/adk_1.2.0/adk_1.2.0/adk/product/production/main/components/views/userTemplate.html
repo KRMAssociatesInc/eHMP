@@ -1,0 +1,15 @@
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    {{lastname}}, {{firstname}}
+    <b class="caret"></b>
+</a>
+<ul class="dropdown-menu">
+    <div class="container-fluid">
+        <dt class="text-muted">{{facility}}</dt>
+        <dd class="text-info">{{title}}</dd>
+    </div>
+    <li class="divider"></li>
+    {{#each pages}}
+    <li><a href="#{{pageName}}">{{pageName}}</a>
+    </li>
+    {{/each}}
+</ul>

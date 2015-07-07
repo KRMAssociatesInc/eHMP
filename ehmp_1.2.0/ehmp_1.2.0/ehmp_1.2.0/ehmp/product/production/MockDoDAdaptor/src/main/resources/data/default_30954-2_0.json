@@ -1,0 +1,134 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "ReportId": "07000074",
+        "SupervisedDate": "",
+        "EnteredBy": "Interface User",
+        "ReportStatus": "Transcribed",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "ResultText": "Procedure:WRIST,RT\n20070621103000\nOrder Comment: test\nReason for Order: test\nExam #:07000074\nExam Date/Time:20070621103400\nTranscription Date/Time:20070621103400\nProvider:100000059 LARRY, PROVIDER\nRequesting Location:INTERNAL MEDICINE     SEYMOUR JOHNSON AFB, NC\nStatus:TRANSCRIBED\nResult Code: 4 ABNORMALITY, ATTN. NEEDED\nInterpreted By:100000059 LARRY, PROVIDER\nReport Text: test",
+        "EnteredByDate": "20071130133022",
+        "Procedure": "WRIST,RT",
+        "ApprovedBy": "",
+        "SupervisedBy": "",
+        "HasAmendments": "false",
+        "OrderDateTime": "",
+        "CustodianName": "ahlta",
+        "Amendments": [
+
+        ],
+        "ResultFacility": "4th Medical Group/0090",
+        "Technologist": "",
+        "ResultCode": "4",
+        "ExamStatus": "",
+        "ExamNumber": "07000074",
+        "ResultCodeDescription": "ABNORMALITY,",
+        "InterpretedBy": "100000059 LARRY, PROVIDER",
+        "RadiologyLocation": "INTERNAL MEDICINE     SEYMOUR JOHNSON AFB, NC",
+        "OrderId": "23564658",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "VerifiedBy": "",
+        "Priority": "",
+        "RequestingLocation": "INTERNAL MEDICINE     SEYMOUR JOHNSON AFB, NC",
+        "ExamDateTime": "20070621103400",
+        "VerifiedDate": "",
+        "ProcedureCode": "",
+        "CptCodes": [
+          {
+            "CptDescription": "WRIST,RT",
+            "CptCode": "",
+            "EventId": "1000001512"
+          }
+        ],
+        "Facility": "4th Medical Group/0090",
+        "LoincCode": "30954-2",
+        "OrderNumber": "",
+        "TranscriptionDate": "20070621103400",
+        "ExamId": "23564658",
+        "ReasonForOrder": "test",
+        "RequestingProvider": "100000059 LARRY, PROVIDER",
+        "EventId": "1000001513"
+      },
+      "dataType": 16
+    },
+    {
+      "dataRecord": {
+        "ReportId": "07000073",
+        "SupervisedDate": "",
+        "EnteredBy": "Interface User",
+        "ReportStatus": "Transcribed",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "ResultText": "Procedure:CHEST,AP\n20070621103000\nOrder Comment: test\nReason for Order: test\nExam #:07000073\nExam Date/Time:20070621103700\nTranscription Date/Time:20070621103700\nProvider:100000059 LARRY, PROVIDER\nRequesting Location:INTERNAL MEDICINE     SEYMOUR JOHNSON AFB, NC\nStatus:TRANSCRIBED\nResult Code: 3 MAJOR ABNORMALITY, NO ATTN. NEEDED\nInterpreted By:100000059 LARRY, PROVIDER\nReport Text: test",
+        "EnteredByDate": "20071130133023",
+        "Procedure": "CHEST,AP",
+        "ApprovedBy": "",
+        "SupervisedBy": "",
+        "HasAmendments": "false",
+        "OrderDateTime": "",
+        "CustodianName": "ahlta",
+        "Amendments": [
+
+        ],
+        "ResultFacility": "4th Medical Group/0090",
+        "Technologist": "",
+        "ResultCode": "3",
+        "ExamStatus": "",
+        "ExamNumber": "07000073",
+        "ResultCodeDescription": "MAJOR",
+        "InterpretedBy": "100000059 LARRY, PROVIDER",
+        "RadiologyLocation": "INTERNAL MEDICINE     SEYMOUR JOHNSON AFB, NC",
+        "OrderId": "23564659",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "VerifiedBy": "",
+        "Priority": "",
+        "RequestingLocation": "INTERNAL MEDICINE     SEYMOUR JOHNSON AFB, NC",
+        "ExamDateTime": "20070621103700",
+        "VerifiedDate": "",
+        "ProcedureCode": "",
+        "CptCodes": [
+          {
+            "CptDescription": "CHEST,AP",
+            "CptCode": "",
+            "EventId": "1000001514"
+          }
+        ],
+        "Facility": "4th Medical Group/0090",
+        "LoincCode": "30954-2",
+        "OrderNumber": "",
+        "TranscriptionDate": "20070621103700",
+        "ExamId": "23564659",
+        "ReasonForOrder": "test",
+        "RequestingProvider": "100000059 LARRY, PROVIDER",
+        "EventId": "1000001515"
+      },
+      "dataType": 16
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

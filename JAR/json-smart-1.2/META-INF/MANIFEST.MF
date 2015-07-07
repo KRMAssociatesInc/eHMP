@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1375619081744
+Build-Jdk: 1.6.0_27
+Built-By: uriel
+Bundle-Description: JSON (JavaScript Object Notation) is a lightweight d
+ ata-interchange format.    It is easy for humans to read and write. It 
+ is easy for machines to parse and generate.    It is based on a subset 
+ of the JavaScript Programming Language, Standard ECMA-262 3rd Edition  
+   - December 1999. JSON is a text format that is completely language in
+ dependent but uses    conventions that are familiar to programmers of t
+ he C-family of languages, including C, C++, C#,    Java, JavaScript, Pe
+ rl, Python, and many others.    These properties make JSON an ideal dat
+ a-interchange language.
+Bundle-DocURL: http://www.minidev.net/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: JSON Small and Fast Parser
+Bundle-SymbolicName: net.minidev.json-smart
+Bundle-Vendor: Chemouni Uriel
+Bundle-Version: 1.2.0
+Created-By: Apache Maven Bundle Plugin
+Export-Package: net.minidev.json;uses:="net.minidev.json.parser";version
+ ="1.2.0",net.minidev.json.parser;uses:="net.minidev.json";version="1.2.
+ 0"
+Tool: Bnd-1.50.0

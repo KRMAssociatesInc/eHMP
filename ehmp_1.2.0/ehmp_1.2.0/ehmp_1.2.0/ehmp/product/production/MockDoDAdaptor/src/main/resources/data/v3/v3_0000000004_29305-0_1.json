@@ -1,0 +1,150 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000748"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "29305-0"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "orderable": [
+          {
+            "display": "SOTALOL (BETAPACE) 80MG @$0.08/TAB--PO 8",
+            "code": "3000272497",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20130423110600",
+        "orderNumber": {
+          "id": "130423-00008"
+        },
+        "orderingProvider": null,
+        "status": null,
+        "actionCode": "NW",
+        "childResistant": true,
+        "deliveryLocation": null,
+        "dispensingLocation": null,
+        "alternateDrugText": "SORINE 80 MG TABLET",
+        "duration": "D30",
+        "endDate": "20130523110600",
+        "enteringLocation": null,
+        "giveAmount": "80",
+        "giveFormDescription": "TABLET",
+        "giveUnits": null,
+        "intervalPattern": null,
+        "interval": null,
+        "numberOfRefills": "0",
+        "comments": null,
+        "priorOrderNumber": null,
+        "priority": "ROUTINE",
+        "quantity": "90",
+        "requestedDispenseAmount": "90",
+        "requestedGiveTimeUnit": null,
+        "routeDescription": "PO",
+        "sig": "T 1X",
+        "startDate": "20130423110600",
+        "verifiedBy": null
+      },
+      "dataType": 22
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000750"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "29305-0"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "orderable": [
+          {
+            "display": "ALBUTEROL 0.083% INH SOL PREMIXED--INH 2",
+            "code": "15451500",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20130419142400",
+        "orderNumber": {
+          "id": "130419-00011"
+        },
+        "orderingProvider": {
+          "name": "DOCTOR, ALPHA"
+        },
+        "status": null,
+        "actionCode": "NW",
+        "childResistant": true,
+        "deliveryLocation": null,
+        "dispensingLocation": null,
+        "alternateDrugText": "ALBUTEROL 0.083% INHAL SOLN",
+        "duration": "D90",
+        "endDate": "20130718142300",
+        "enteringLocation": {
+          "name": "Orthopedic Clinic FHCC"
+        },
+        "giveAmount": "3",
+        "giveFormDescription": "SOLUTION",
+        "giveUnits": null,
+        "intervalPattern": null,
+        "interval": null,
+        "numberOfRefills": "0",
+        "comments": null,
+        "priorOrderNumber": null,
+        "priority": "ROUTINE",
+        "quantity": "30",
+        "requestedDispenseAmount": "30",
+        "requestedGiveTimeUnit": null,
+        "routeDescription": "INH",
+        "sig": "U UD AND PRN IN NEBULIZER",
+        "startDate": "20130419142300",
+        "verifiedBy": null
+      },
+      "dataType": 22
+    }
+  ]
+}

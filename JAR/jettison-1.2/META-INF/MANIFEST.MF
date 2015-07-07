@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Export-Package: org.codehaus.jettison.util;version=1.2,org.codehaus.je
+ ttison.badgerfish;uses:="org.codehaus.jettison.util,javax.xml.stream,
+ org.codehaus.jettison.json,org.codehaus.jettison,javax.xml.namespace"
+ ;version=1.2,org.codehaus.jettison.mapped;uses:="org.codehaus.jettiso
+ n.util,javax.xml.stream,org.codehaus.jettison.json,org.codehaus.jetti
+ son,javax.xml.namespace";version=1.2,org.codehaus.jettison.json;versi
+ on=1.2,org.codehaus.jettison;uses:="org.codehaus.jettison.json,javax.
+ xml.parsers,javax.xml.transform.dom,javax.xml.stream.events,org.w3c.d
+ om,javax.xml.namespace,org.codehaus.jettison.util,javax.xml.stream,ja
+ vax.xml.stream.util,javax.xml.transform,javax.xml.transform.stream";v
+ ersion=1.2
+Private-Package: !*
+Implementation-Title: Jettison
+Implementation-Version: 1.2
+Tool: Bnd-0.0.160
+Bundle-Name: jettison
+Created-By: 1.6.0_17 (Apple Inc.)
+Bundle-Version: 1.2
+Bnd-LastModified: 1263724814999
+Bundle-ManifestVersion: 2
+Bundle-Description: A StAX implementation for JSON.
+Import-Package: javax.xml.namespace,javax.xml.parsers,javax.xml.stream
+ ,javax.xml.stream.events,javax.xml.stream.util,javax.xml.transform,ja
+ vax.xml.transform.dom,javax.xml.transform.stream,org.codehaus.jettiso
+ n;version=1.2,org.codehaus.jettison.badgerfish;version=1.2,org.codeha
+ us.jettison.json;version=1.2,org.codehaus.jettison.mapped;version=1.2
+ ,org.codehaus.jettison.util;version=1.2,org.w3c.dom
+Include-Resource: src/main/resources
+Bundle-SymbolicName: org.codehaus.jettison.jettison
+

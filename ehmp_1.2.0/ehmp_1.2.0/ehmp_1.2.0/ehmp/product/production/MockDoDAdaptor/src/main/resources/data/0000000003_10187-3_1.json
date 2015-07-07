@@ -1,0 +1,91 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "ResponseId": "1487",
+        "Comments": [
+
+        ],
+        "QuestionnaireType": "1",
+        "Details": [
+          {
+            "Comments": [
+              {
+                "DateEntered": "20140110122425",
+                "CommentBy": "BHIE, USERONE",
+                "SeqNumber": "1",
+                "NoteNumber": "1",
+                "NoteText": "test questionnaire",
+                "EventId": "1000000564"
+              }
+            ],
+            "QuestionText": "Today's Date",
+            "Answers": [
+              {
+                "Choice": "1",
+                "Answer": "01 Oct 2014",
+                "CorrectAnswer": "1",
+                "AnswerType": "Date",
+                "EventId": "1000000565"
+              }
+            ],
+            "Choices": [
+              {
+                "Choice": "1",
+                "ChoiceText": "01 Oct 2014",
+                "CorrectAnswer": "1",
+                "IsSelected": "true",
+                "AnswerType": "Date",
+                "EventId": "1000000566"
+              }
+            ],
+            "SequenceNum": "1",
+            "EventId": "1000000567"
+          }
+        ],
+        "EnteredBy": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20140110122409",
+        "FacilityName": "NH Great Lakes, IL",
+        "PatientName": "",
+        "FacilityId": "0056",
+        "QuestionnaireName": "Quest 1",
+        "CustodianName": "ahlta",
+        "DateFilledOut": "20140110122459",
+        "CreatorName": "NURSE, ANGELA C",
+        "LoincCode": "10187-3",
+        "Facility": "Family Practice Clinic",
+        "Version": "1",
+        "QuestionnaireId": "1068",
+        "EventId": "1000000568"
+      },
+      "dataType": 15
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+<div id="{{AppletID}}-panels-gist" gistViewType="panels">
+    <div id="gistGrid" class="col-sm-12-offset-0 header-bar">
+        <div id="name-header" class="col-sm-8 {{#if gistHeaders.name.sortable}}selectable{{/if}} header" sortable="{{gistHeaders.name.sortable}}" sortType="{{gistHeaders.name.sortType}}" sortDirection="none" sortKey="{{gistHeaders.name.key}}" {{#if gistHeaders.name.sortable}} tabindex="0"{{/if}}>{{gistHeaders.name.title}}
+            <span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span>
+        </div>
+        <div id="rightSideHeaders" class="col-sm-4">
+            <div id="flags-header" class="col-sm-8 {{#if gistHeaders.flags.sortable}}selectable{{/if}} header noPadding" sortable="{{gistHeaders.flags.sortable}}" sortType="{{gistHeaders.flags.sortType}}" sortDirection="none" sortKey="{{gistHeaders.flags.key}}" {{#if gistHeaders.flags.sortable}} tabindex="0"{{/if}}>{{gistHeaders.flags.title}}
+                <span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span>
+            </div>
+            <div id="age-header" class="col-sm-4 {{#if gistHeaders.age.sortable}}selectable{{/if}} text-center header noPadding" sortable="{{gistHeaders.age.sortable}}" sortType="{{gistHeaders.age.sortType}}" sortDirection="none" sortKey="{{gistHeaders.age.key}}" {{#if gistHeaders.age.sortable}} tabindex="0"{{/if}}>{{gistHeaders.age.title}}
+                <span sortArrow="headerDirectionalIndicator" class="sort-caret fa "></span>
+            </div>
+        </div>
+    </div>
+    <div id="{{AppletID}}-panels-gist-items" class="gistItemList"></div>
+</div>

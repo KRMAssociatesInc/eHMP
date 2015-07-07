@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thresholds>
+  <threshold class="gov.va.hmp.healthtime.IntervalOfTime" branchcount="56" branchsexecuted="39" branchrate="0.6964285714285714" linecount="113" linesexecuted="72" linerate="0.6371681415929203"/>
+  <threshold class="gov.va.hmp.healthtime.PointInTime" branchcount="130" branchsexecuted="102" branchrate="0.7846153846153846" linecount="253" linesexecuted="203" linerate="0.8023715415019763"/>
+  <threshold class="gov.va.hmp.healthtime.PointInTime$1" branchcount="0" branchsexecuted="0" branchrate="1.0" linecount="2" linesexecuted="0" linerate="0.0"/>
+  <threshold class="gov.va.hmp.healthtime.Precision" branchcount="19" branchsexecuted="12" branchrate="0.631578947368421" linecount="28" linesexecuted="20" linerate="0.7142857142857143"/>
+  <threshold class="gov.va.hmp.healthtime.Precision$1" branchcount="0" branchsexecuted="0" branchrate="1.0" linecount="1" linesexecuted="0" linerate="0.0"/>
+  <threshold class="gov.va.hmp.healthtime.format.FileManDateTimeFormat$ThreeDigitYear" branchcount="14" branchsexecuted="5" branchrate="0.35714285714285715" linecount="47" linesexecuted="25" linerate="0.5319148936170213"/>
+  <threshold class="gov.va.hmp.healthtime.format.IntervalOfTimeFormat" branchcount="4" branchsexecuted="2" branchrate="0.5" linecount="12" linesexecuted="3" linerate="0.25"/>
+  <threshold class="gov.va.hmp.healthtime.format.IntervalOfTimeFormatter" branchcount="28" branchsexecuted="20" branchrate="0.7142857142857143" linecount="48" linesexecuted="41" linerate="0.8541666666666666"/>
+  <threshold class="gov.va.hmp.healthtime.format.MdwsDateTimeFormat" branchcount="15" branchsexecuted="0" branchrate="0.0" linecount="21" linesexecuted="0" linerate="0.0"/>
+  <threshold class="gov.va.hmp.healthtime.format.MdwsDateTimeFormat$1" branchcount="0" branchsexecuted="0" branchrate="1.0" linecount="1" linesexecuted="0" linerate="0.0"/>
+  <threshold class="gov.va.hmp.healthtime.format.ParseUtils" branchcount="4" branchsexecuted="4" branchrate="1.0" linecount="5" linesexecuted="3" linerate="0.6"/>
+  <threshold class="gov.va.hmp.healthtime.format.ParseUtils$CharacterLiteral" branchcount="8" branchsexecuted="4" branchrate="0.5" linecount="23" linesexecuted="15" linerate="0.6521739130434783"/>
+  <threshold class="gov.va.hmp.healthtime.format.PointInTimeFormatter" branchcount="20" branchsexecuted="8" branchrate="0.4" linecount="38" linesexecuted="20" linerate="0.5263157894736842"/>
+  <threshold class="gov.va.hmp.healthtime.format.PointInTimeParserBucket" branchcount="2" branchsexecuted="2" branchrate="1.0" linecount="14" linesexecuted="11" linerate="0.7857142857142857"/>
+  <threshold class="gov.va.hmp.healthtime.format.RFC822DateTimeFormat" branchcount="11" branchsexecuted="3" branchrate="0.2727272727272727" linecount="16" linesexecuted="6" linerate="0.375"/>
+  <threshold class="gov.va.hmp.healthtime.format.RFC822DateTimeFormat$1" branchcount="0" branchsexecuted="0" branchrate="1.0" linecount="1" linesexecuted="0" linerate="0.0"/>
+  <threshold class="gov.va.hmp.healthtime.format.RelativeDateTimeFormat" branchcount="4" branchsexecuted="0" branchrate="0.0" linecount="16" linesexecuted="0" linerate="0.0"/>
+  <threshold class="gov.va.hmp.healthtime.format.TwoDigitNumber" branchcount="18" branchsexecuted="15" branchrate="0.8333333333333334" linecount="33" linesexecuted="23" linerate="0.696969696969697"/>
+  <threshold class="gov.va.hmp.healthtime.format.VPRDateTimeFormat" branchcount="16" branchsexecuted="12" branchrate="0.75" linecount="26" linesexecuted="22" linerate="0.8461538461538461"/>
+  <threshold class="gov.va.hmp.healthtime.format.ZeroableTwoDigitNumber" branchcount="16" branchsexecuted="5" branchrate="0.3125" linecount="32" linesexecuted="15" linerate="0.46875"/>
+  <threshold class="gov.va.hmp.healthtime.propertyeditors.IntervalOfTimeEditor" branchcount="2" branchsexecuted="0" branchrate="0.0" linecount="8" linesexecuted="0" linerate="0.0"/>
+  <threshold class="gov.va.hmp.healthtime.propertyeditors.PointInTimeEditor" branchcount="2" branchsexecuted="1" branchrate="0.5" linecount="8" linesexecuted="7" linerate="0.875"/>
+</thresholds>

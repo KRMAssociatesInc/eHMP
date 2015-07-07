@@ -1,0 +1,16 @@
+<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope">
+  <S:Header>
+    <work:WorkContext xmlns:work="http://oracle.com/weblogic/soap/workarea/">rO0ABXdXAB53ZWJsb2dpYy5hcHAuVklDLUUtQXBwbGljYXRpb24AAADWAAAAI3dlYmxvZ2ljLndvcmthcmVhLlN0cmluZ1dvcmtDb250ZXh0AAg0LjAuMS4xNQAA</work:WorkContext>
+  </S:Header>
+  <S:Body>
+    <ns2:getCardStatusResponse xmlns:ns2="http://cardstatusservice.vic.va.domain/">
+      <return>
+        <errorFlag>true</errorFlag>
+        <errorMessage>VHIC down for maintenance, see ANR-12345</errorMessage>
+        <maxTruncated>false</maxTruncated>
+        <results>
+        </results>
+      </return>
+    </ns2:getCardStatusResponse>
+  </S:Body>
+</S:Envelope>

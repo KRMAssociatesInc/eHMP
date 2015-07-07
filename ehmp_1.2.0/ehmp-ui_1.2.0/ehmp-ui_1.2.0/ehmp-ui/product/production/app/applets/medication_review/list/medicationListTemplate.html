@@ -1,0 +1,31 @@
+<!-- Nav buttons -->
+
+<div id="medNavButtons">
+    <ul class="nav nav-pills" id="medViewToggle">
+        <li class="active" id="med-list-view-btn" role="presentation">
+            <a class="toggleViewBtn" href="#medsReviewTab" role="button" data-toggle="tab">List View</a>
+        </li>
+        <li id="med-timeline-view-btn" role="presentation">
+            <a class="toggleViewBtn" href="#timelineTab" role="button" data-toggle="tab">Timeline View</a>
+        </li>
+    </ul>
+
+    {{#hasPermission 'add-patient-med'}}
+        {{#if inVista}}
+        <ul class="nav nav-pills" id="medAdd">
+            <li id="med-add-btn" role="presentation">
+                <a class="toggleViewBtn" id='add-non-va-med-btn' href="#" role="button">Add Non-VA Med</a>
+            </li>
+        </ul>
+        {{/if}}
+    {{/hasPermission}}
+</div>
+
+<div class="tab-content" id="tab-content">
+    <div class="tab-pane active" id="medsReviewTab">
+        <div id="med-review-applet-main" role="main"></div>
+    </div>
+    <div class="tab-pane" id="timelineTab">
+        <div id="timelineTab" role="main"></div>      
+    </div>
+</div>

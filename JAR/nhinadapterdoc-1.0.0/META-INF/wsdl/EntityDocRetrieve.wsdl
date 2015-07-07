@@ -1,0 +1,56 @@
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><!-- 
+  Entity Document Retrieve
+  --><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ihe="urn:ihe:iti:xds-b:2007" xmlns:nccommonentity="urn:gov:hhs:fha:nhinc:common:nhinccommonentity" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:gov:hhs:fha:nhinc:entitydocretrieve" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EntityDocRetrieve" targetNamespace="urn:gov:hhs:fha:nhinc:entitydocretrieve">
+  <documentation>Entity document retrieve</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:ihe:iti:xds-b:2007" schemaLocation="EntityDocRetrieve_metadata2.xsd"/>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:common:nhinccommonentity" schemaLocation="EntityDocRetrieve_metadata15.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="RespondingGateway_CrossGatewayRetrieveRequestMessage">
+    <part element="nccommonentity:RespondingGateway_CrossGatewayRetrieveRequest" name="RespondingGateway_CrossGatewayRetrieveRequest"/>
+  </message>
+  <message name="RespondingGateway_CrossGatewayRetrieveResponseMessage">
+    <part element="ihe:RetrieveDocumentSetResponse" name="RespondingGateway_CrossGatewayRetrieveResponse"/>
+  </message>
+  <portType name="EntityDocRetrievePortType">
+    <operation name="RespondingGateway_CrossGatewayRetrieve">
+      <input message="tns:RespondingGateway_CrossGatewayRetrieveRequestMessage" name="RespondingGateway_CrossGatewayRetrieveRequest" wsaw:Action="urn:gov:hhs:fha:nhinc:entitydocretrieve:RespondingGateway_CrossGatewayRetrieveRequestMessage"/>
+      <output message="tns:RespondingGateway_CrossGatewayRetrieveResponseMessage" name="RespondingGateway_CrossGatewayRetrieveResponse" wsaw:Action="urn:gov:hhs:fha:nhinc:entitydocretrieve:RespondingGateway_CrossGatewayRetrieveResponseMessage"/>
+    </operation>
+  </portType>
+  <binding name="EntityDocRetrieveBindingSoap11" type="tns:EntityDocRetrievePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/><!-- <wsp:PolicyReference URI="#EntityDocRetrievePolicy"/> -->
+    <operation name="RespondingGateway_CrossGatewayRetrieve">
+      <soap:operation soapAction="urn:RespondingGateway_CrossGatewayRetrieve"/>
+      <input name="RespondingGateway_CrossGatewayRetrieveRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="RespondingGateway_CrossGatewayRetrieveResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="EntityDocRetrieve">
+    <port binding="tns:EntityDocRetrieveBindingSoap11" name="EntityDocRetrievePortSoap11">
+      <soap:address location="http://nhiapp-sqa2.domain:80/NHINAdapterGatewayDocRetrieve/EntityDocRetrieve"/>
+    </port>
+  </service>
+  <plnk:partnerLinkType name="EntityDocRetrieve"><!-- A partner link type is automatically generated when a new port type is added. 
+         Partner link types are used by BPEL processes. In a BPEL process, a partner 
+         link represents the interaction between the BPEL process and a partner service. 
+         Each partner link is associated with a partner link type. A partner link type 
+         characterizes the conversational relationship between two services. The 
+         partner link type can have one or two roles.-->
+    <plnk:role name="EntityDocRetrievePortTypeRole" portType="tns:EntityDocRetrievePortType"/>
+  </plnk:partnerLinkType><!--
+    <wsp:Policy wsu:Id="EntityDocRetrievePolicy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsoma:OptimizedMimeSerialization/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    -->
+</definitions>

@@ -1,0 +1,285 @@
+{
+	"apiVersion": "1.01",
+	"data": {
+		"updated": "20140917202353",
+		"currentItemCount": 51,
+		"totalItems": 51,
+		"last": 89,
+		"items": [{
+			"internal": 24,
+			"name": "3ID",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::24"
+		}, {
+			"internal": 23,
+			"name": "3XW",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::23"
+		}, {
+			"internal": 21,
+			"name": "5XD",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::21"
+		}, {
+			"internal": 79,
+			"name": "AT ONSET",
+			"scheduleType": "O",
+			"uid": "urn:va:schedule::79"
+		}, {
+			"externalValue": "TWICE A DAY",
+			"internal": 6,
+			"name": "BID",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::6"
+		}, {
+			"internal": 91,
+			"name": "BID AC",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::91"
+		}, {
+			"internal": 78,
+			"name": "CONTINUOUS DRIP",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::78"
+		}, {
+			"internal": 50,
+			"name": "ENS",
+			"scheduleType": "OC",
+			"uid": "urn:va:schedule::50"
+		}, {
+			"externalValue": "AT BEDTIME",
+			"internal": 77,
+			"name": "HS",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::77"
+		}, {
+			"internal": 83,
+			"name": "MO+TU+WE",
+			"scheduleType": "D",
+			"uid": "urn:va:schedule::83"
+		}, {
+			"internal": 43,
+			"name": "MO-WE-FR",
+			"scheduleType": "D",
+			"uid": "urn:va:schedule::43"
+		}, {
+			"internal": 66,
+			"name": "NOW",
+			"scheduleType": "O",
+			"uid": "urn:va:schedule::66"
+		}, {
+			"internal": 53,
+			"name": "ON CALL",
+			"scheduleType": "OC",
+			"uid": "urn:va:schedule::53"
+		}, {
+			"internal": 57,
+			"name": "ONCE",
+			"scheduleType": "O",
+			"uid": "urn:va:schedule::57"
+		}, {
+			"internal": 63,
+			"name": "PER FS-ORDER",
+			"scheduleType": "OC",
+			"uid": "urn:va:schedule::63"
+		}, {
+			"externalValue": "EVERY 12 HOURS",
+			"internal": 12,
+			"name": "Q12H",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::12"
+		}, {
+			"internal": 49,
+			"name": "Q14D",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::49"
+		}, {
+			"externalValue": "EVERY 24 HOURS",
+			"internal": 67,
+			"name": "Q24H",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::67"
+		}, {
+			"externalValue": "EVERY 2 HOURS",
+			"internal": 68,
+			"name": "Q2H",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::68"
+		}, {
+			"externalValue": "EVERY TWO WEEKS",
+			"internal": 94,
+			"name": "Q2WEEK",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::94"
+		}, {
+			"externalValue": "EVERY 3 HOURS",
+			"internal": 8,
+			"name": "Q3H",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::8"
+		}, {
+			"internal": 46,
+			"name": "Q3H PRN",
+			"scheduleType": "P",
+			"uid": "urn:va:schedule::46"
+		}, {
+			"internal": 47,
+			"name": "Q3HPRN",
+			"scheduleType": "P",
+			"uid": "urn:va:schedule::47"
+		}, {
+			"internal": 71,
+			"name": "Q48H",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::71"
+		}, {
+			"externalValue": "EVERY 4 HOURS",
+			"internal": 1,
+			"name": "Q4H",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::1"
+		}, {
+			"internal": 60,
+			"name": "Q4HPRN",
+			"scheduleType": "P",
+			"uid": "urn:va:schedule::60"
+		}, {
+			"internal": 92,
+			"name": "Q4WEEK",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::92"
+		}, {
+			"internal": 86,
+			"name": "Q5D",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::86"
+		}, {
+			"internal": 87,
+			"name": "Q5H",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::87"
+		}, {
+			"externalValue": "EVERY 6 HOURS",
+			"internal": 2,
+			"name": "Q6H",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::2"
+		}, {
+			"internal": 80,
+			"name": "Q6H-AC",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::80"
+		}, {
+			"internal": 52,
+			"name": "Q72H",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::52"
+		}, {
+			"externalValue": "EVERY 8 HOURS",
+			"internal": 3,
+			"name": "Q8H",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::3"
+		}, {
+			"internal": 62,
+			"name": "Q8H*",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::62"
+		}, {
+			"externalValue": "EVERY MORNING",
+			"internal": 4,
+			"name": "QAM",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::4"
+		}, {
+			"internal": 81,
+			"name": "QAMINSULIN",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::81"
+		}, {
+			"externalValue": "EVERY DAY",
+			"internal": 5,
+			"name": "QDAY",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::5"
+		}, {
+			"externalValue": "EVERY DAY AT 1 PM",
+			"internal": 93,
+			"name": "QDAY-DIG",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::93"
+		}, {
+			"externalValue": "EVERY DAY AT 1 PM",
+			"internal": 95,
+			"name": "QDAY-WARF",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::95"
+		}, {
+			"externalValue": "AT BEDTIME",
+			"internal": 65,
+			"name": "QHS",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::65"
+		}, {
+			"externalValue": "FOUR TIMES A DAY",
+			"internal": 14,
+			"name": "QID",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::14"
+		}, {
+			"internal": 18,
+			"name": "QM",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::18"
+		}, {
+			"externalValue": "EVERY OTHER DAY",
+			"internal": 19,
+			"name": "QOD",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::19"
+		}, {
+			"externalValue": "EVERY EVENING",
+			"internal": 9,
+			"name": "QPM",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::9"
+		}, {
+			"internal": 15,
+			"name": "QWD",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::15"
+		}, {
+			"internal": 69,
+			"name": "STAT",
+			"scheduleType": "O",
+			"uid": "urn:va:schedule::69"
+		}, {
+			"externalValue": "THREE TIMES A DAY",
+			"internal": 13,
+			"name": "TID",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::13"
+		}, {
+			"internal": 22,
+			"name": "TIW",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::22"
+		}, {
+			"internal": 76,
+			"name": "TODAY",
+			"scheduleType": "O",
+			"uid": "urn:va:schedule::76"
+		}, {
+			"externalValue": "WEEKLY",
+			"internal": 74,
+			"name": "WEEKLY",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::74"
+		}, {
+			"internal": 89,
+			"name": "ZZITD@09-13-18",
+			"scheduleType": "C",
+			"uid": "urn:va:schedule::89"
+		}]
+	}
+}

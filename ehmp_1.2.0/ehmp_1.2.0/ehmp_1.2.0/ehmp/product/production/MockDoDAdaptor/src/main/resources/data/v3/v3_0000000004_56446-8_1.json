@@ -1,0 +1,170 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000673"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131121103341",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "checkInDate": "20131121103438",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: BHIE,USERONE 21 Nov 2013 1034\r\n------------------------------\r\ntest visit",
+        "date": "20131121103400",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations, Released with Work/Duty Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "reason": null,
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000674"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131119151638",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "checkInDate": "20131119151735",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: BHIE,USERONE 19 Nov 2013 1517\r\n------------------------------\r\ntest",
+        "date": "20131119151700",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "reason": null,
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000675"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131119144807",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "checkInDate": "20131119144902",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: BHIE,USERONE 19 Nov 2013 1448\r\n------------------------------\r\ntest today",
+        "date": "20131119144800",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "reason": null,
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    }
+  ]
+}

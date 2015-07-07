@@ -1,0 +1,8 @@
+// disable IE10 input clear buttons
+input[type=text]::-ms-clear { display: none; }
+
+input.#{$prefix}form-invalid-field,
+textarea.#{$prefix}form-invalid-field {
+  color: $form-field-invalid-color;
+  background-image: none;
+}

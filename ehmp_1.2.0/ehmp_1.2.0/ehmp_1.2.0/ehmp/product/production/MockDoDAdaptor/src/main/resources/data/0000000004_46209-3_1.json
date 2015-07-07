@@ -1,0 +1,144 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "Description": "SOTALOL (BETAPACE) 80MG @$0.08/TAB--PO 8",
+        "OrderDate": "20130423110600",
+        "OrderingProvider": "",
+        "Type": "MEDICATION",
+        "EnteredBy": "",
+        "OrderId": "130423-00008",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "Ncid": "3000272497",
+        "Status": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "29305-0",
+        "Facility": "",
+        "MedicationOrders": [
+          {
+            "EnteredByName": "DOCTOR, ALPHA",
+            "ActionCode": "NW",
+            "GiveAmount": "80",
+            "RequestedDispenseAmount": "90",
+            "StartDate": "20130423110600",
+            "Duration": "D30",
+            "OrderType": "9",
+            "DeliverToLocationName": "",
+            "PriorOrderNumber": "",
+            "IntervalTimeInterval": "",
+            "RequestedGiveTimeUnit": "",
+            "DrugText": "SOTALOL (BETAPACE) 80MG @$0.08/TAB--PO 8",
+            "ChildResistant": "true",
+            "RouteDescription": "PO",
+            "DispensingLocationName": "",
+            "Quantity": "90",
+            "OrderDate": "20130423110600",
+            "GiveUnits": "",
+            "OrderComment": "",
+            "Sig": "T 1X",
+            "IntervalRepeatPattern": "",
+            "NumberOfRefills": "0",
+            "OrderingProviderName": "",
+            "FacilityName": "NH Great Lakes IL",
+            "Ncid": "3000272497",
+            "Priority": "ROUTINE",
+            "EndDate": "20130523110600",
+            "DrugAlternateText": "SORINE 80 MG TABLET",
+            "EnteringLocationName": "",
+            "OrderNumber": "130423-00008",
+            "GiveFormDescription": "TABLET",
+            "VerifiedByName": "",
+            "EventId": "1000000760"
+          }
+        ],
+        "EventId": "1000000761"
+      },
+      "dataType": 22
+    },
+    {
+      "dataRecord": {
+        "Description": "ALBUTEROL 0.083% INH SOL PREMIXED--INH 2",
+        "OrderDate": "20130419142400",
+        "OrderingProvider": "DOCTOR, ALPHA",
+        "Type": "MEDICATION",
+        "EnteredBy": "",
+        "OrderId": "130419-00011",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "Ncid": "15451500",
+        "Status": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "29305-0",
+        "Facility": "",
+        "MedicationOrders": [
+          {
+            "EnteredByName": "DOCTOR, ALPHA",
+            "ActionCode": "NW",
+            "GiveAmount": "3",
+            "RequestedDispenseAmount": "30",
+            "StartDate": "20130419142300",
+            "Duration": "D90",
+            "OrderType": "9",
+            "DeliverToLocationName": "",
+            "PriorOrderNumber": "",
+            "IntervalTimeInterval": "",
+            "RequestedGiveTimeUnit": "",
+            "DrugText": "ALBUTEROL 0.083% INH SOL PREMIXED--INH 2",
+            "ChildResistant": "true",
+            "RouteDescription": "INH",
+            "DispensingLocationName": "",
+            "Quantity": "30",
+            "OrderDate": "20130419142400",
+            "GiveUnits": "",
+            "OrderComment": "",
+            "Sig": "U UD AND PRN IN NEBULIZER",
+            "IntervalRepeatPattern": "",
+            "NumberOfRefills": "0",
+            "OrderingProviderName": "DOCTOR, ALPHA",
+            "FacilityName": "NH Great Lakes IL",
+            "Ncid": "15451500",
+            "Priority": "ROUTINE",
+            "EndDate": "20130718142300",
+            "DrugAlternateText": "ALBUTEROL 0.083% INHAL SOLN",
+            "EnteringLocationName": "Orthopedic Clinic FHCC",
+            "OrderNumber": "130419-00011",
+            "GiveFormDescription": "SOLUTION",
+            "VerifiedByName": "",
+            "EventId": "1000000762"
+          }
+        ],
+        "EventId": "1000000763"
+      },
+      "dataType": 22
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

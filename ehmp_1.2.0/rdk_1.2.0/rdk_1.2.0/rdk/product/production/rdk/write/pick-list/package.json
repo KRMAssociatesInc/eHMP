@@ -1,0 +1,26 @@
+{
+  "name": "node-vistaexpress",
+  "version": "0.0.1",
+  "description": "Combination of the VistA Core resource server, resources, and RDK",
+  "main": "resourceserver.js",
+  "scripts": {
+    "check": "node_modules/jshint/bin/jshint . --verbose --config .jshintrc.gradle",
+    "test": "node_modules/jasmine-node/bin/jasmine-node tests/unit-tests/ --color --verbose --forceexit --captureExceptions --junitreport --output build/junit-reports",
+    "int-test": "node_modules/jasmine-node/bin/jasmine-node tests/integrationtests/ --color --verbose --matchall --forceexit --captureExceptions --junitreport --output build/junit-reports"
+  },
+  "dependencies": {
+    "async": "~0.8.0",
+    "nedb": "^1.1.2",
+    "underscore": "~1.6.0"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5",
+    "request": "~2.37.0"
+  },
+  "author": "Steven.Reich",
+  "contributors": [
+    "Steven.Reich <Steven.Reich@agilex.com>",
+    "Jason Ray <jason.ray@agilex.com> (https://github.com/jasonray)"
+  ],
+  "license": "BSD"
+}

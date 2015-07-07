@@ -1,0 +1,21 @@
+{
+    "categoryCode" : "urn:va:lab-category:CH",
+    "categoryName" : "Laboratory",
+    "comment" : "TESTING THE EPI PATCH MALARIA SMEAR reported incorrectly as POSITIVE FOR MALARIA ",
+    "displayName" : "MALARIA",
+    "facilityCode" : 500,
+    "facilityName" : "CAMP MASTER",
+    "groupName" : "HE 0520 1",
+    "groupUid" : "urn:va:accession:F484:229:CH;7029478.858493",
+    "localId" : "CH;7029478.858493;488",
+    "observed" : 199705201415,
+    "result" : "POSITIVE",
+    "resulted" : 199705210816,
+    "sample" : "BLOOD  ",
+    "specimen" : "BLOOD",
+    "statusCode" : "urn:va:lab-status:completed",
+    "statusName" : "completed",
+    "typeCode" : "urn:va:ien:60:503:70",
+    "typeName" : "MALARIA SMEAR",
+    "uid" : "urn:va:lab:F484:229:CH;7029478.858493;488"
+}

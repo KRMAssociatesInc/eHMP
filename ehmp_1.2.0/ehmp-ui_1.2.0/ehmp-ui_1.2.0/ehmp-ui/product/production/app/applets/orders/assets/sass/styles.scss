@@ -1,0 +1,114 @@
+[data-appletid="orders"] {
+    label.color-DOD {
+    	background-color: #A56900;
+    }
+    label.color-500, label.color-nonDOD {
+    	background-color: #379BB3;
+    }
+    div.panel-body {
+      overflow: auto;
+    }
+    .nav-pills-orders {
+    	font-weight: 400;
+        border-radius:0.5em;
+        a {
+            padding: 5px 10px;
+        }
+    }
+    .table.table-no-border >tbody>tr>td, .table.table-no-border >tbody>tr>th {
+    	border: none;
+    	width: 100%;
+    }
+
+    .tableModal {
+    	width: 90%;
+    	max-width: 90%;
+    	margin: 10px 35px -5px 35px;
+    }
+
+    .rowHeader {
+    	border-bottom: 1px solid #e4e4e4;
+    	font-weight: bold;
+        font-size: medium;
+    }
+
+    .th-font {
+    	color:#999999;
+    }
+    .list-group-item {
+        border-radius: 0;
+        padding: 2px 5px;
+        border: 0;
+        border-bottom: 1px solid lightgrey;
+    }
+    .ordertypelabel {
+        color: #777;
+        margin-left: 5px;
+        margin-top:  2px;
+        margin-right: 2px;
+        float: left;
+        display: inline;
+        font-size: 12px;
+    }
+    .ordersmenu {
+        position: relative;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        float: left;
+        min-width: 160px;
+        margin: 2px 0 0;
+        font-size: 12px;
+        text-align: left;
+        background-color: #fff;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+     }
+    .order-modal-header {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .ordertypelabel {
+        color: #777;
+        margin-left: 5px;
+        margin-top:  2px;
+        margin-right: 2px;
+        float: left;
+        display: inline;
+        font-size: 12px;
+    }
+    .ordersmenu {
+        position: relative;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        float: left;
+        min-width: 160px;
+        margin: 2px 0 0;
+        font-size: 12px;
+        text-align: left;
+        background-color: #fff;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+     }
+    .order-modal-header {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    #data-grid-orders td {
+        padding: 0.3em 0.5em;
+    }
+}
+

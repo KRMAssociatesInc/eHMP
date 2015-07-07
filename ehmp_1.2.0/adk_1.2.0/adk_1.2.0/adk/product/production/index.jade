@@ -1,0 +1,49 @@
+!!! 5
+
+- var adkMinified = 'app.min.js'
+unless adkMin
+    adkMinified = 'config.js'
+
+html(data-placeholder-focus='false', lang='en', class='no-js ui-mobile-rendering')
+
+    head
+        meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+        meta(charset='utf-8')
+        meta(name='description', content='')
+        meta(name='author', content='Agilex')
+        meta(name='viewport', content='user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width')
+        meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+
+        title eHMP
+
+        link(rel='icon', href='favicon.ico')
+
+        link(href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700', type='text/css', rel='stylesheet')
+        link(href='_assets/css/vendor.css', rel='stylesheet')
+        link(href='_assets/css/adk.css', rel='stylesheet')
+        link(href='app/css/applets.css', rel='stylesheet')
+
+        script(src='_assets/libs/custom/modernizr/modernizr.custom.min.js')
+        script(src='_assets/libs/custom/webtoolkit-base64/webtoolkit.base64.js')
+        script(src='_assets/libs/custom/webtoolkit-base64/ie-btoa-fix.js')
+        script(src='_assets/js/drilldown.js')
+        script.
+            var require = {
+                waitSeconds: 60
+            };
+        script(data-main=adkMinified, src='_assets/libs/custom/require/require-2.1.8.js')
+    body
+        a#screen-reader-screen-description.sr-only.sr-only-focusable.hidden(href='#center-region')
+        div#ccow-controls
+        div#top-region
+        div.container-fluid.no-side-padding
+            div#center-region.row
+        div#bottom-region
+        div#modal-region
+        script(for='WebListener', event='Refresh()').
+            require(['api/CCOWService'], function(CCOWService) {
+                if(document.getElementById('WebListener') !== null){
+                    CCOWService.handleContextChange();
+                }
+            });

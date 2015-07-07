@@ -1,0 +1,33 @@
+<td>
+    <span><p>{{name}}</p></span>
+    <table class="symptoms-fields" width="290">
+        <tr width="290">
+            <td width="135">
+                <label class="sr-only" for="dp-{{count}}-{{IEN}}">Date field for {{name}}</label>
+                <div id='obs-date-gp-{{count}}-{{IEN}}'>
+                    <div class="input-group date">
+                      <input id="dp-{{count}}-{{IEN}}" type="text" autocomplete="off" class="form-control input-sm text-sm datepicker"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    </div>
+                </div>
+            </td>
+            <td width="125">
+                <label class="sr-only" for="tp-{{count}}-{{IEN}}">Time field for {{name}}</label>
+                <div class="input-append input-group bootstrap-timepicker timepicker">
+                    <input id="tp-{{count}}-{{IEN}}" type="text" autocomplete="off" class="symptomTime form-control input-sm text-sm" data-inputmask-regex="([0][1-9]|[1][0-2]):([0-5]\d) (a|p)" placeholder="HH:MM a/p" max-length="10" disabled="true">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                    <span class="help-inline applet-error" aria-atomic="true" tabindex="0"></span>
+
+                </div>
+            </td>
+            <td width="20">
+                <button name="rem-sym" type="button" id="but-{{count}}-{{IEN}}" class="btn btn-default btn-xs xbutton">
+                    <span class="sr-only">Remove Symptom {{name}}</span>
+                    <span id="ico-{{count}}-{{IEN}}" class="fa fa-close xbutton right"></span>
+                </button>
+            </td>
+            <td width="10"></div></td>
+        </tr>
+    </table>
+</td>

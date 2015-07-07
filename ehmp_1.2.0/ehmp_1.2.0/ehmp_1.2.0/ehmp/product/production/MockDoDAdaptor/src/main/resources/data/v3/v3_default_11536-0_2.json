@@ -1,0 +1,654 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "13",
+      "RetrievedCount": "13",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004200"
+        },
+        "enteredBy": {
+          "name": "LANF, FOUR"
+        },
+        "enteredDate": "20130606192148",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "11536-0"
+          }
+        ],
+        "facility": {
+          "name": "Landstuhl RMC/0607"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2157565489",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Consultation Note (Provider) Document",
+        "type": [
+          {
+            "code": "15149159",
+            "display": "Consultation Note (Provider) Document",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": {
+          "name": "LANF, FOUR"
+        },
+        "verifiedDate": "20130606192148"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004201"
+        },
+        "enteredBy": {
+          "name": "LANF, THREE"
+        },
+        "enteredDate": "20120410165452",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "11536-0"
+          }
+        ],
+        "facility": {
+          "name": "Landstuhl RMC/0607"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2156059968",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Administrative Note",
+        "type": [
+          {
+            "code": "15057412",
+            "display": "Administrative Note",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": {
+          "name": "LANF, THREE"
+        },
+        "verifiedDate": "20120410165452"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004202"
+        },
+        "enteredBy": {
+          "name": "MIDTIER, SJFONE"
+        },
+        "enteredDate": "20100622112951",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "11536-0"
+          }
+        ],
+        "facility": {
+          "name": "TMDS Clinic"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2151767199",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Administrative Note",
+        "type": [
+          {
+            "code": "15057412",
+            "display": "Administrative Note",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": null,
+        "verifiedDate": "20100622112951"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004203"
+        },
+        "enteredBy": null,
+        "enteredDate": "20100622112945",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "34109-9"
+          }
+        ],
+        "facility": {
+          "name": "TMDS Facility^TMDS Clinic"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2151767189",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Progress Note",
+        "type": [
+          {
+            "code": null,
+            "display": "Progress Note",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": null,
+        "verifiedDate": "20081006195840"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004204"
+        },
+        "enteredBy": null,
+        "enteredDate": "20100622160951",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "34109-9"
+          }
+        ],
+        "facility": {
+          "name": "TMDS Facility^TMDS Clinic"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2151773215",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Progress Note",
+        "type": [
+          {
+            "code": null,
+            "display": "Progress Note",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": null,
+        "verifiedDate": "20080916040000"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004205"
+        },
+        "enteredBy": {
+          "name": "LANF, THREE"
+        },
+        "enteredDate": "20110519121927",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "34109-9"
+          }
+        ],
+        "facility": {
+          "name": "Landstuhl RMC^LSL Cardiology"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2155379708",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Progress Note",
+        "type": [
+          {
+            "code": null,
+            "display": "Progress Note",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": {
+          "name": "LANF, THREE"
+        },
+        "verifiedDate": "20110519113600"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004206"
+        },
+        "enteredBy": {
+          "name": "LANF, FIVE"
+        },
+        "enteredDate": "20111215220408",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "34109-9"
+          }
+        ],
+        "facility": {
+          "name": "Landstuhl RMC^LSL Cardiology"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2155598149",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Progress Note",
+        "type": [
+          {
+            "code": null,
+            "display": "Progress Note",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": {
+          "name": "LANF, FIVE"
+        },
+        "verifiedDate": "20111020213720"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004207"
+        },
+        "enteredBy": {
+          "name": "SJF, TEN"
+        },
+        "enteredDate": "20121115205508",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "34109-9"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group^Blue MTF"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2156791145",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Progress Note",
+        "type": [
+          {
+            "code": null,
+            "display": "Progress Note",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": {
+          "name": "SJF, TEN"
+        },
+        "verifiedDate": "20121115154424"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004208"
+        },
+        "enteredBy": {
+          "name": "LANF, FOUR"
+        },
+        "enteredDate": "20121126173721",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "34109-9"
+          }
+        ],
+        "facility": {
+          "name": "Landstuhl RMC^LSL Cardiology"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2156824290",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Progress Note",
+        "type": [
+          {
+            "code": null,
+            "display": "Progress Note",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": {
+          "name": "LANF, FOUR"
+        },
+        "verifiedDate": "20111102213626"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004209"
+        },
+        "enteredBy": {
+          "name": "LANF, FOUR"
+        },
+        "enteredDate": "20121126174248",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "34109-9"
+          }
+        ],
+        "facility": {
+          "name": "Landstuhl RMC^LSL Cardiology"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2156824318",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Progress Note",
+        "type": [
+          {
+            "code": null,
+            "display": "Progress Note",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": {
+          "name": "LANF, FOUR"
+        },
+        "verifiedDate": "20121126174007"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004210"
+        },
+        "enteredBy": {
+          "name": "LANF, FOURTY"
+        },
+        "enteredDate": "20130424185344",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "34109-9"
+          }
+        ],
+        "facility": {
+          "name": "Landstuhl RMC^LSL Cardiology"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2157538362",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Progress Note",
+        "type": [
+          {
+            "code": null,
+            "display": "Progress Note",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": {
+          "name": "LANF, FOURTY"
+        },
+        "verifiedDate": "20130422115223"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004211"
+        },
+        "enteredBy": {
+          "name": "SJF, FIVE"
+        },
+        "enteredDate": "20130509201704",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "34109-9"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group^Blue MTF"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2157551844",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Progress Note",
+        "type": [
+          {
+            "code": null,
+            "display": "Progress Note",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": {
+          "name": "SJF, FIVE"
+        },
+        "verifiedDate": "20130509153039"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004212"
+        },
+        "enteredBy": {
+          "name": "LANF, ELEVEN"
+        },
+        "enteredDate": "20130603222115",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "34109-9"
+          }
+        ],
+        "facility": {
+          "name": "Landstuhl RMC^LSL Cardiology"
+        },
+        "complexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2157562874",
+        "contentType": [
+          {
+            "code": "rtf"
+          }
+        ],
+        "title": "Progress Note",
+        "type": [
+          {
+            "code": null,
+            "display": "Progress Note",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "status": null,
+        "verifiedBy": {
+          "name": "LANF, ELEVEN"
+        },
+        "verifiedDate": "20130603221922"
+      },
+      "dataType": 12
+    }
+  ]
+}

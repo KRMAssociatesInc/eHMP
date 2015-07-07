@@ -1,0 +1,15 @@
+<div class="modal-content alert alert-danger">
+    <div id="modal-body">
+        <div class="">
+            <div class="media-left">
+                <i class="fa fa-exclamation-triangle fa-4x pull-left"></i>
+            </div>
+            <div class="media-body">
+                {{#if refreshButton}}
+                <button id="reloadPage" class="btn btn-sm btn-danger pull-right" data-dismiss="modal">{{refreshButton}}</button>
+                {{/if}}
+                <h4 id="mainModalLabel">{{{errormsg}}}</h4>
+            </div>
+        </div>
+    </div>
+</div>

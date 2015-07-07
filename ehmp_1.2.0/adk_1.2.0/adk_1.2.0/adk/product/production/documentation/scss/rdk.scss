@@ -1,0 +1,36 @@
+.rdk {
+  // Overwriting SDK Styles
+  .navbar {
+    border-color: $rdk_color;
+    .navbar-brand {
+      color: $rdk_color;
+    }
+  }
+  #toc > div {
+    a.nav-page-title {
+      color: adjust-color($rdk_color, $saturation:+10%, $lightness:-10%);
+    }
+    // .nav > li > a:hover,
+    // .nav > li > a:focus {
+    //     color: #006599;
+    // }
+
+    & > .nav > li.active,
+    & > .nav > li.activechild {
+      border-left-color: $rdk_color;
+    }
+
+    .nav .active > a {
+      border-left-color: $rdk_color;
+      color: adjust-color($rdk_color, $saturation:+10%, $lightness:-5%);
+    }
+  }
+  .home-button {
+    background-color: $rdk_color;
+  }
+  .page-description {
+    background-color: $rdk_color;
+    color: white;
+  }
+  // End of Overwriting SDK Styles
+}

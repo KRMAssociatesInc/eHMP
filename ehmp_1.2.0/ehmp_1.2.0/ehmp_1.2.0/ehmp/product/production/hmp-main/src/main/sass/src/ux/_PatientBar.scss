@@ -1,0 +1,65 @@
+@include context-bar-ui('pt',$pt-bar-background-color,$pt-bar-text-color);
+
+// patient picture
+.hmp-pt-picture {
+  padding: $pt-picture-padding;
+
+  .x-btn-button {
+    line-height: $pt-picture-size;
+    width: $pt-picture-size !important;
+    height: $pt-picture-size !important;
+  }
+
+  .x-btn-inner {
+    display: none;
+  }
+
+  .x-btn-icon-el {
+    width: $pt-picture-size;
+    height: $pt-picture-size;
+    background-size: $pt-picture-size;
+  }
+
+}
+
+// CWADF labels
+.cpe-cwadf {
+  padding-left: 4px;
+  padding-right: 4px;
+
+  .cwadf-row {
+    overflow: auto;
+    @include clearfix();
+
+    .label {
+      margin: 1px;
+      float:right;
+    }
+  }
+}
+
+// CWADF detail
+#cwadf-nav {
+  .cpe-allergy {
+    font-size: $font-size-h4;
+    line-height: $font-size-h4*1.875;
+
+    .cpe-allergy-product {
+      font-weight: 500;
+    }
+  }
+
+  .overflow-ct {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .overflow-keep {
+      white-space: nowrap;
+    }
+
+    .overflow-truncate {
+      white-space: nowrap;
+    }
+  }
+}

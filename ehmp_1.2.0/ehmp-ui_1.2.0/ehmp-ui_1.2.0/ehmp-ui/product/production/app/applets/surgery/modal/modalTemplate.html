@@ -1,0 +1,63 @@
+<div class="surgeryDetail">
+    <h5 id='surgeryLoadingDiv'><i class="fa fa-spinner fa-spin"></i> Loading...</h5>
+
+    <div class="container-fluid expanded-row" role="main">
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Site:</strong></div>
+            <div class="col-md-10" tabindex='0'>{{facilityName}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Type:</strong></div>
+            <div class="col-md-10" tabindex='0'>{{kind}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Status:</strong></div>
+            <div class="col-md-10 status" tabindex='0'><strong>{{statusName}}</strong></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Date/Time:</strong></div>
+            <div class="col-md-10" tabindex='0'>{{formatDate dateTime "DD-MMM-YYYY hh:mm"}}</div>
+        </div>
+    </div>
+
+    {{#if results}}
+    <h5 role="heading" tabindex='0'>
+        Results
+    </h5>
+
+    <div class="container-fluid expanded-row" role="contentinfo">
+        {{#each results}}
+        <div class="row"><strong><a href='' target='{{hrefId}}' class='js-anchor' id='{{linkId}}'>{{localTitle}}</a></strong></div>
+        {{/each}}
+    </div>
+
+    <div class="container-fluid expanded-row" role="contentinfo">
+        {{#each results}}
+        <div class="row" id='{{hrefId}}'><h5>{{localTitle}} <span><a href='' class="js-anchor-top pull-right">top</a></span></h5>
+            <div class="col-md-3" tabindex='0'><strong>Local Title:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{localTitle}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Date Of Note:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{formatDate entered "DD-MMM-YYYY hh:mm"}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Author:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{authorDisplayName}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Status:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{statusDisplayName}}</div>
+        </div>
+        {{#if text}}
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Text:</strong></div>
+        </div>
+        <div class="row contentText">
+            <div class="col-md-9" tabindex='0'>{{text}}</div>
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
+    {{/if}}
+</div>

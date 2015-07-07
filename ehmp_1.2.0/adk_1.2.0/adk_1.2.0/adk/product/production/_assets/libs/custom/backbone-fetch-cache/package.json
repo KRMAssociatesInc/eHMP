@@ -1,0 +1,29 @@
+{
+  "name": "backbone-fetch-cache",
+  "version": "1.4.0",
+  "author": "Andy Appleton",
+  "description": "Caches calls to Backbone.[Model | Collection].fetch",
+  "license": "MIT",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madglory/backbone-fetch-cache.git"
+  },
+  "keywords": [
+    "backbone",
+    "fetch",
+    "cache"
+  ],
+	"main": "./backbone.fetch-cache.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-jasmine": "~0.4.2",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-contrib-connect": ""
+  }
+}

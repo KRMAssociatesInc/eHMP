@@ -1,0 +1,10 @@
+.DS_Store
+pkg
+doc
+*.gem
+
+spec/rails_app/log
+
+components
+node_modules
+dist

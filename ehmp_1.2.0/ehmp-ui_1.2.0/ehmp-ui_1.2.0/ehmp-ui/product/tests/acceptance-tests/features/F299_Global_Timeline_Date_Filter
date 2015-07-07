@@ -1,0 +1,18 @@
+@F299_Global_Timeline_Date_Filter
+
+Feature: F299 : Global timeline date filter
+
+#POC: Team Pluto
+
+Background:
+    Given user is logged into eHMP-UI
+
+@F298-13.2 @US4052
+Scenario: Displaying on the coversheet and timeline - assuming the user has logged in and patient has data to display on the  "coversheet and timeline"
+Given the timeline sheet is active
+Then the inline timeline is not display
+And the global data timeline picker is displayed
+When the user clicks the global date picker
+Then the timeline is active
+When the user clicks a time frame on the global data picker
+Then the timeline list is updated to reflect the selected data range

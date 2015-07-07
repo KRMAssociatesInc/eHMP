@@ -1,0 +1,117 @@
+[ {
+  "cdrEventId" : "1000010341",
+  "codes" : [ {
+    "code" : "7000",
+    "display" : null,
+    "system" : "DOD_ALLERGY_IEN"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "allergyId" : null,
+  "allergyName" : "Tetracyclines",
+  "comment" : "Rash",
+  "drugClasses" : [ ],
+  "drugIngredients" : [ ],
+  "reactions" : [ ],
+  "severity" : null
+}, {
+  "cdrEventId" : "1000010340",
+  "codes" : [ {
+    "code" : "1000",
+    "display" : null,
+    "system" : "DOD_ALLERGY_IEN"
+  }, {
+    "code" : "C0220892",
+    "display" : "Penicillin",
+    "system" : "UMLS"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "allergyId" : null,
+  "allergyName" : "Penicillins",
+  "comment" : "Vomiting",
+  "drugClasses" : [ ],
+  "drugIngredients" : [ ],
+  "reactions" : [ ],
+  "severity" : null
+}, {
+  "cdrEventId" : "1000010342",
+  "codes" : [ {
+    "code" : "29000",
+    "display" : null,
+    "system" : "DOD_ALLERGY_IEN"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "allergyId" : null,
+  "allergyName" : "Iodine Containing Agents",
+  "comment" : "Nausea",
+  "drugClasses" : [ ],
+  "drugIngredients" : [ ],
+  "reactions" : [ ],
+  "severity" : null
+}, {
+  "cdrEventId" : null,
+  "codes" : [ ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "DODADAPTER_SOURCE_STATUS_REPORT",
+    "name" : "DODADAPTER_SOURCE_STATUS_REPORT",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "DOD",
+    "status" : null
+  },
+  "sourceProtocol" : null,
+  "allergyId" : null,
+  "allergyName" : "<div class='title'>Source Status List</div><table><thead><th scope='col' class='table-header'>Source Name</th><th scope='col' class='table-header'>Source Status</th></thead><tbody><tr class='even'><td>AHLTA</td><td>UNKNOWN, IN_PROGRESS, COMPLETE</td></tr></tbody></table><br/><br/><div class='title'>Errors</div>No errors to report.",
+  "comment" : null,
+  "drugClasses" : [ ],
+  "drugIngredients" : [ ],
+  "reactions" : [ ],
+  "severity" : null
+} ]

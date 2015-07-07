@@ -1,0 +1,910 @@
+Problem:
+
+{
+    "apiVersion": "1.0",
+    "data": {
+        "updated": 20150303082428,
+        "totalItems": 28,
+        "currentItemCount": 28,
+        "items": [
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "locationName": "PRIMARY CARE",
+                "providerName": "VEHU,EIGHT",
+                "problemText": "Diabetes Mellitus Type II or unspecified (ICD-9-CM 250.00)",
+                "icdCode": "urn:icd:250.00",
+                "icdName": "DIABETES MELLI W/O COMP TYP II",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "removed": false,
+                "entered": "20000508",
+                "updated": "20040330",
+                "onset": "19980502",
+                "kind": "Problem",
+                "icdGroup": "250",
+                "uid": "urn:va:problem:9E7A:3:183",
+                "summary": "Diabetes Mellitus Type II or unspecified (ICD-9-CM 250.00)",
+                "pid": "9E7A;3",
+                "localId": "183",
+                "locationDisplayName": "Primary Care",
+                "providerDisplayName": "Vehu,Eight",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "providerUid": "urn:va:user:9E7A:20010",
+                "locationUid": "urn:va:location:9E7A:32"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "locationName": "GENERAL MEDICINE",
+                "providerName": "LABTECH,SPECIAL",
+                "problemText": "Chronic Systolic Heart failure (ICD-9-CM 428.22)",
+                "icdCode": "urn:icd:428.22",
+                "icdName": "CHRONIC SYSTOLIC HEART FAILURE",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "removed": false,
+                "entered": "20040309",
+                "updated": "20040309",
+                "onset": "20040309",
+                "kind": "Problem",
+                "icdGroup": "428",
+                "uid": "urn:va:problem:9E7A:3:323",
+                "summary": "Chronic Systolic Heart failure (ICD-9-CM 428.22)",
+                "pid": "9E7A;3",
+                "localId": "323",
+                "locationDisplayName": "General Medicine",
+                "providerDisplayName": "Labtech,Special",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "codes": [
+                    {
+                        "code": "441481004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Chronic systolic heart failure (disorder)"
+                    }
+                ],
+                "providerUid": "urn:va:user:9E7A:11745",
+                "locationUid": "urn:va:location:9E7A:23"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "locationName": "GENERAL MEDICINE",
+                "providerName": "VEHU,EIGHT",
+                "problemText": "Acute myocardial infarction, unspecified site, episode of care unspecified (ICD-9-CM 410.90)",
+                "icdCode": "urn:icd:410.90",
+                "icdName": "AMI NOS, UNSPECIFIED",
+                "removed": false,
+                "entered": "20050317",
+                "updated": "20050317",
+                "onset": "20050317",
+                "kind": "Problem",
+                "icdGroup": "410",
+                "uid": "urn:va:problem:9E7A:3:499",
+                "summary": "Acute myocardial infarction, unspecified site, episode of care unspecified (ICD-9-CM 410.90)",
+                "pid": "9E7A;3",
+                "localId": "499",
+                "locationDisplayName": "General Medicine",
+                "providerDisplayName": "Vehu,Eight",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "providerUid": "urn:va:user:9E7A:20010",
+                "locationUid": "urn:va:location:9E7A:23"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "service": "MEDICAL",
+                "providerName": "VEHU,ONEHUNDRED",
+                "problemText": "Hypertension (ICD-9-CM 401.9)",
+                "icdCode": "urn:icd:401.9",
+                "icdName": "HYPERTENSION NOS",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "entered": "20070410",
+                "updated": "20070410",
+                "onset": "20050407",
+                "kind": "Problem",
+                "icdGroup": "401",
+                "uid": "urn:va:problem:9E7A:3:627",
+                "summary": "Hypertension (ICD-9-CM 401.9)",
+                "pid": "9E7A;3",
+                "localId": "627",
+                "providerDisplayName": "Vehu,Onehundred",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "codes": [
+                    {
+                        "code": "59621000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Essential hypertension (disorder)"
+                    }
+                ],
+                "providerUid": "urn:va:user:9E7A:10000000031"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "service": "MEDICAL",
+                "providerName": "VEHU,ONEHUNDRED",
+                "problemText": "Hyperlipidemia (ICD-9-CM 272.4)",
+                "icdCode": "urn:icd:272.4",
+                "icdName": "HYPERLIPIDEMIA NEC/NOS",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "entered": "20070410",
+                "updated": "20070410",
+                "onset": "20050407",
+                "kind": "Problem",
+                "icdGroup": "272",
+                "uid": "urn:va:problem:9E7A:3:747",
+                "summary": "Hyperlipidemia (ICD-9-CM 272.4)",
+                "pid": "9E7A;3",
+                "localId": "747",
+                "providerDisplayName": "Vehu,Onehundred",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "providerUid": "urn:va:user:9E7A:10000000031"
+            },
+            {
+                "facilityCode": "561",
+                "facilityName": "New Jersey HCS",
+                "service": "MEDICINE",
+                "providerName": "PROGRAMMER,TWENTY",
+                "problemText": "Occasional, uncontrolled chest pain (ICD-9-CM 411.1)",
+                "icdCode": "urn:icd:411.1",
+                "icdName": "INTERMED CORONARY SYND",
+                "acuityCode": "urn:va:prob-acuity:a",
+                "acuityName": "acute",
+                "removed": false,
+                "entered": "19960514",
+                "updated": "19960514",
+                "onset": "19960315",
+                "kind": "Problem",
+                "icdGroup": "411",
+                "uid": "urn:va:problem:ABCD:17:58",
+                "summary": "Occasional, uncontrolled chest pain (ICD-9-CM 411.1)",
+                "pid": "HDR;10108V420871",
+                "localId": "58",
+                "providerDisplayName": "Programmer,Twenty",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "comments": [
+                    {
+                        "entered": "19960514",
+                        "enteredByName": "PROGRAMMER,TWENTY",
+                        "enteredByCode": "urn:va:user:ABCD:755",
+                        "comment": "SHERIDAN PROBLEM",
+                        "summary": "ProblemComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "25106000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Impending infarction (disorder)"
+                    }
+                ],
+                "providerUid": "urn:va:user:ABCD:755"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "locationName": "PRIMARY CARE",
+                "providerName": "VEHU,EIGHT",
+                "problemText": "Diabetes Mellitus Type II or unspecified (ICD-9-CM 250.00)",
+                "icdCode": "urn:icd:250.00",
+                "icdName": "DIABETES MELLI W/O COMP TYP II",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "removed": false,
+                "entered": "20000508",
+                "updated": "20040330",
+                "onset": "19980502",
+                "kind": "Problem",
+                "icdGroup": "250",
+                "uid": "urn:va:problem:C877:3:183",
+                "summary": "Diabetes Mellitus Type II or unspecified (ICD-9-CM 250.00)",
+                "pid": "C877;3",
+                "localId": "183",
+                "locationDisplayName": "Primary Care",
+                "providerDisplayName": "Vehu,Eight",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "providerUid": "urn:va:user:C877:20010",
+                "locationUid": "urn:va:location:C877:32"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "locationName": "GENERAL MEDICINE",
+                "providerName": "LABTECH,SPECIAL",
+                "problemText": "Chronic Systolic Heart failure (ICD-9-CM 428.22)",
+                "icdCode": "urn:icd:428.22",
+                "icdName": "CHRONIC SYSTOLIC HEART FAILURE",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "removed": false,
+                "entered": "20040309",
+                "updated": "20040309",
+                "onset": "20040309",
+                "kind": "Problem",
+                "icdGroup": "428",
+                "uid": "urn:va:problem:C877:3:323",
+                "summary": "Chronic Systolic Heart failure (ICD-9-CM 428.22)",
+                "pid": "C877;3",
+                "localId": "323",
+                "locationDisplayName": "General Medicine",
+                "providerDisplayName": "Labtech,Special",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "codes": [
+                    {
+                        "code": "441481004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Chronic systolic heart failure (disorder)"
+                    }
+                ],
+                "providerUid": "urn:va:user:C877:11745",
+                "locationUid": "urn:va:location:C877:23"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "locationName": "GENERAL MEDICINE",
+                "providerName": "VEHU,EIGHT",
+                "problemText": "Acute myocardial infarction, unspecified site, episode of care unspecified (ICD-9-CM 410.90)",
+                "icdCode": "urn:icd:410.90",
+                "icdName": "AMI NOS, UNSPECIFIED",
+                "removed": false,
+                "entered": "20050317",
+                "updated": "20050317",
+                "onset": "20050317",
+                "kind": "Problem",
+                "icdGroup": "410",
+                "uid": "urn:va:problem:C877:3:499",
+                "summary": "Acute myocardial infarction, unspecified site, episode of care unspecified (ICD-9-CM 410.90)",
+                "pid": "C877;3",
+                "localId": "499",
+                "locationDisplayName": "General Medicine",
+                "providerDisplayName": "Vehu,Eight",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "providerUid": "urn:va:user:C877:20010",
+                "locationUid": "urn:va:location:C877:23"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "service": "MEDICAL",
+                "providerName": "VEHU,ONEHUNDRED",
+                "problemText": "Hypertension (ICD-9-CM 401.9)",
+                "icdCode": "urn:icd:401.9",
+                "icdName": "HYPERTENSION NOS",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "entered": "20070410",
+                "updated": "20070410",
+                "onset": "20050407",
+                "kind": "Problem",
+                "icdGroup": "401",
+                "uid": "urn:va:problem:C877:3:627",
+                "summary": "Hypertension (ICD-9-CM 401.9)",
+                "pid": "C877;3",
+                "localId": "627",
+                "providerDisplayName": "Vehu,Onehundred",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "codes": [
+                    {
+                        "code": "59621000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Essential hypertension (disorder)"
+                    }
+                ],
+                "providerUid": "urn:va:user:C877:10000000031"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "service": "MEDICAL",
+                "providerName": "VEHU,ONEHUNDRED",
+                "problemText": "Hyperlipidemia (ICD-9-CM 272.4)",
+                "icdCode": "urn:icd:272.4",
+                "icdName": "HYPERLIPIDEMIA NEC/NOS",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "entered": "20070410",
+                "updated": "20070410",
+                "onset": "20050407",
+                "kind": "Problem",
+                "icdGroup": "272",
+                "uid": "urn:va:problem:C877:3:747",
+                "summary": "Hyperlipidemia (ICD-9-CM 272.4)",
+                "pid": "C877;3",
+                "localId": "747",
+                "providerDisplayName": "Vehu,Onehundred",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "providerUid": "urn:va:user:C877:10000000031"
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "BHIE, USERONE",
+                "problemText": "visit for: daycare exam",
+                "icdCode": "",
+                "acuityName": "Chronic",
+                "entered": "20140402195701",
+                "updated": "20140402195701",
+                "onset": "18991230050000",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000523",
+                "summary": "visit for: daycare exam",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "BHIE, USERONE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "115286",
+                        "system": "DOD_MEDCIN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "BHIE, USERONE",
+                "problemText": "shocklike sensation from left elbow to hand",
+                "icdCode": "",
+                "acuityName": "Chronic",
+                "entered": "20140110170111",
+                "updated": "20140110170111",
+                "onset": "18991230050000",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000524",
+                "summary": "shocklike sensation from left elbow to hand",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "BHIE, USERONE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "113578",
+                        "system": "DOD_MEDCIN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "BHIE, USERONE",
+                "problemText": "bone pain fingers of the left hand",
+                "icdCode": "",
+                "acuityName": "Chronic",
+                "entered": "20140109202407",
+                "updated": "20140109202407",
+                "onset": "18991230050000",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000525",
+                "summary": "bone pain fingers of the left hand",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "BHIE, USERONE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "110199",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "12584003",
+                        "system": "http://snomed.info/sct",
+                        "display": "Bone pain (finding)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "BHIE, USERONE",
+                "problemText": "sinus pressure",
+                "icdCode": "",
+                "acuityName": "Chronic",
+                "entered": "20131119203714",
+                "updated": "20131119203714",
+                "onset": "18991230050000",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000526",
+                "summary": "sinus pressure",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "BHIE, USERONE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "282630",
+                        "system": "DOD_MEDCIN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "MIDTIER, CGL TWO",
+                "problemText": "limb swelling",
+                "icdCode": "729.81",
+                "acuityName": "Chronic",
+                "entered": "20131205172618",
+                "updated": "20131205172618",
+                "onset": "20131205171806",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000527",
+                "summary": "limb swelling",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "MIDTIER, CGL TWO",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "116645",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "80068009",
+                        "system": "http://snomed.info/sct",
+                        "display": "Swelling of limb (finding)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "MIDTIER, CGL TWO",
+                "problemText": "joint pain fingers",
+                "icdCode": "719.44",
+                "acuityName": "Chronic",
+                "entered": "20140113175540",
+                "updated": "20140113175540",
+                "onset": "20140109201454",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000528",
+                "summary": "joint pain fingers",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "MIDTIER, CGL TWO",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "1916",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "202472008",
+                        "system": "http://snomed.info/sct",
+                        "display": "Hand joint pain (finding)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "BHIE, USERONE",
+                "problemText": "limb pain",
+                "icdCode": "",
+                "acuityName": "Chronic",
+                "entered": "20131205185155",
+                "updated": "20131205185155",
+                "onset": "18991230050000",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000529",
+                "summary": "limb pain",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "BHIE, USERONE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "116644",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "90834002",
+                        "system": "http://snomed.info/sct",
+                        "display": "Pain in limb (finding)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "BHIE, USERONE",
+                "problemText": "neck pain radiating up the back of the head",
+                "icdCode": "",
+                "acuityName": "Chronic",
+                "entered": "20131202212047",
+                "updated": "20131202212047",
+                "onset": "18991230050000",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000530",
+                "summary": "neck pain radiating up the back of the head",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "BHIE, USERONE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "239",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "81680005",
+                        "system": "http://snomed.info/sct",
+                        "display": "Neck pain (finding)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "BHIE, USERONE",
+                "problemText": "foot pain (soft tissue)",
+                "icdCode": "",
+                "acuityName": "Chronic",
+                "entered": "20131203165141",
+                "updated": "20131203165141",
+                "onset": "18991230050000",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000531",
+                "summary": "foot pain (soft tissue)",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "BHIE, USERONE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "382",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "47933007",
+                        "system": "http://snomed.info/sct",
+                        "display": "Foot pain (finding)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "MIDTIER, CGL TWO",
+                "problemText": "neck pain",
+                "icdCode": "723.1",
+                "acuityName": "Chronic",
+                "entered": "20131203164925",
+                "updated": "20131203164925",
+                "onset": "20131203160613",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000532",
+                "summary": "neck pain",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "MIDTIER, CGL TWO",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "231",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "81680005",
+                        "system": "http://snomed.info/sct",
+                        "display": "Neck pain (finding)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "BHIE, USERONE",
+                "problemText": "MALIGNANT NEOPLASM DIGESTIVE ORGANS GASTROINTESTINAL TRACT",
+                "icdCode": "",
+                "acuityName": "Chronic",
+                "entered": "20131118180256",
+                "updated": "20131118180256",
+                "onset": "18991230050000",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000533",
+                "summary": "MALIGNANT NEOPLASM DIGESTIVE ORGANS GASTROINTESTINAL TRACT",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "BHIE, USERONE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "212959",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "428905002",
+                        "system": "http://snomed.info/sct",
+                        "display": "Malignant neoplasm of gastrointestinal tract (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "BHIE, USERONE",
+                "problemText": "ANEURYSM OF THE GASTRODUODENAL ARTERY",
+                "icdCode": "",
+                "acuityName": "Chronic",
+                "entered": "20131118180257",
+                "updated": "20131118180257",
+                "onset": "18991230050000",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000534",
+                "summary": "ANEURYSM OF THE GASTRODUODENAL ARTERY",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "BHIE, USERONE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "275689",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "33997006",
+                        "system": "http://snomed.info/sct",
+                        "display": "Aneurysm of gastroduodenal artery (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "MIDTIER, CGL TWO",
+                "problemText": "ASTHMA COUGH VARIANT",
+                "icdCode": "493.82",
+                "acuityName": "Chronic",
+                "entered": "20131009165435",
+                "updated": "20131009165435",
+                "onset": "20131009165235",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000535",
+                "summary": "ASTHMA COUGH VARIANT",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "MIDTIER, CGL TWO",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "272885",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "409663006",
+                        "system": "http://snomed.info/sct",
+                        "display": "Cough variant asthma (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "MIDTIER, CGL TWO",
+                "problemText": "ankle joint pain",
+                "icdCode": "719.47",
+                "acuityName": "Chronic",
+                "entered": "20131119203838",
+                "updated": "20131119203838",
+                "onset": "20131119202612",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000536",
+                "summary": "ankle joint pain",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "MIDTIER, CGL TWO",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "945",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "247373008",
+                        "system": "http://snomed.info/sct",
+                        "display": "Ankle pain (finding)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "BHIE, USERONE",
+                "problemText": "pain over nose",
+                "icdCode": "",
+                "acuityName": "Chronic",
+                "entered": "20131119203713",
+                "updated": "20131119203713",
+                "onset": "18991230050000",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000537",
+                "summary": "pain over nose",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "BHIE, USERONE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "89",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "225564006",
+                        "system": "http://snomed.info/sct",
+                        "display": "Pain of nose (finding)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "BHIE, USERONE",
+                "problemText": "gastrointestinal symptoms",
+                "icdCode": "",
+                "acuityName": "Chronic",
+                "entered": "20131118172458",
+                "updated": "20131118172458",
+                "onset": "18991230050000",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000538",
+                "summary": "gastrointestinal symptoms",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "BHIE, USERONE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "1882",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "267045008",
+                        "system": "http://snomed.info/sct",
+                        "display": "Gastrointestinal symptom (finding)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "NH Great Lakes IL",
+                "providerName": "BHIE, USERONE",
+                "problemText": "visit for: preoperative gastrointestinal exam",
+                "icdCode": "",
+                "acuityName": "Chronic",
+                "entered": "20131118172458",
+                "updated": "20131118172458",
+                "onset": "18991230050000",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000003:1000000539",
+                "summary": "visit for: preoperative gastrointestinal exam",
+                "pid": "DOD;0000000003",
+                "locationDisplayName": "Nh Great Lakes Il",
+                "providerDisplayName": "BHIE, USERONE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "281043",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "268937004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Examination of digestive system (procedure)"
+                    }
+                ]
+            }
+        ]
+    }
+}

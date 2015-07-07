@@ -1,0 +1,11 @@
+<div class="demographic-group-header">Phone</div>
+<div class="demographic-group-content">
+	<div id="demo-home-phone" class="demographic-header text-muted" ><span>Home</span>{{#if hPhone.phone.diff}}<span> <i class="fa fa-exclamation-circle demographic-subgroup-icon"></i></span><span class="sr-only">Discrepancies found</span>{{/if}}</div>
+	    <div id="demo-home-phone-val" class='demographic-data' data-diff="{{hPhone.phone.diff}}">{{formatPhone hPhone.phone.value}}</div>
+	<div class='demographic-group-divider'></div>
+	<div id="demo-cell-phone" class="demographic-header text-muted"><span>Cell</span>{{#if cPhone.phone.diff}}<span> <i class="fa fa-exclamation-circle demographic-subgroup-icon"></i></span><span class="sr-only">Discrepancies found</span>{{/if}}</div>
+	    <div  id="demo-cell-phone-val" class='demographic-data' data-diff="{{cPhone.phone.diff}}">{{formatPhone cPhone.phone.value}}</div>
+	<div class='demographic-group-divider'></div>
+	<div id="demo-work-phone" class="demographic-header text-muted"><span>Work</span>{{#if wPhone.phone.diff}}<span> <i class="fa fa-exclamation-circle demographic-subgroup-icon"></i></span><span class="sr-only">Discrepancies found</span>{{/if}}</div>
+	    <div id="demo-work-phone-val" class='demographic-data' data-diff="{{wPhone.phone.diff}}">{{formatPhone wPhone.phone.value}}</div>
+</div>

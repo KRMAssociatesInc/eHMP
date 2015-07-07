@@ -1,0 +1,1 @@
+These in-progress ruby scripts can be used to load data for testing purposes. Some of these used RPC call only contained in the vista data loader patch. Consult the wiki for more info on vista data loader.

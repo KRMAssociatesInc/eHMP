@@ -1,0 +1,25 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "HDR",
+    "systemId": "HDR"
+  },
+  "data": {
+    "updated": "20140409083856",
+    "totalItems": 1,
+    "items": [
+      {
+        "encounterName": "0May 19, 1997",
+        "encounterUid": "urn:va:visit:ABCD:262:386",
+        "entered": 199705190800,
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "localId": 1,
+        "name": "PPD",
+        "reading": 10,
+        "result": "NEGATIVE",
+        "uid": "urn:va:skin:ABCD:262:1"
+      }
+    ]
+  }
+}

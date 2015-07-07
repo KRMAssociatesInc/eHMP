@@ -1,0 +1,636 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "6",
+      "RetrievedCount": "6",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000017"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131007155640",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131007153940",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "786.3",
+                "display": "Hemoptysis"
+              }
+            ]
+          }
+        ],
+        "procedure": [
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131007155647",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "94150",
+                "display": "Pulmonary Function Tests Peak Expiratory Flow"
+              }
+            ],
+            "date": "20131007153940",
+            "recordedId": {
+              "id": "2157580343"
+            }
+          }
+        ],
+        "emCode": null,
+        "encounterNumber": {
+          "id": "GTLK-1000"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": "Notes Entered by: BHIE,USERONE 07 Oct 2013 1139\r\n------------------------------\r\nCough"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000022"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131007155949",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131007155712",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "346.40",
+                "display": "Menstrual migraine, without mention of intractable migraine without mention of status migrainosus"
+              }
+            ]
+          },
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "V58.64",
+                "display": "Long-term (current) use of non-steroidal anti-inflammatories (NSAID)"
+              }
+            ]
+          }
+        ],
+        "procedure": [
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131007155951",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "87906",
+                "display": "Infectious Agent Genotype Analysis By Nucleic Acid HIV-1"
+              }
+            ],
+            "date": "20131007155858",
+            "recordedId": {
+              "id": "2157580358"
+            }
+          },
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131007155950",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "87535",
+                "display": "Inf Agt Antig Det Nucleic Acid Amp Probe HIV-1"
+              }
+            ],
+            "date": "20131007155853",
+            "recordedId": {
+              "id": "2157580357"
+            }
+          }
+        ],
+        "emCode": [
+          {
+            "code": "99211"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-1001"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": "*****"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000028"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131017160642",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131017155715",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "346.40",
+                "display": "Menstrual migraine, without mention of intractable migraine without mention of status migrainosus"
+              }
+            ]
+          }
+        ],
+        "procedure": [
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131017160647",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "99600",
+                "display": "Home Care Visit"
+              }
+            ],
+            "date": "20131017160440",
+            "recordedId": {
+              "id": "2157580454"
+            }
+          },
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131017160647",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90749",
+                "display": "Vaccines"
+              }
+            ],
+            "date": "20131017155920",
+            "recordedId": {
+              "id": "2157580456"
+            }
+          },
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131017160647",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90471",
+                "display": "Immunization Administration One Vaccine"
+              }
+            ],
+            "date": "20131017155920",
+            "recordedId": {
+              "id": "2157580457"
+            }
+          },
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131017160647",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90676",
+                "display": "Rabies Vaccine For Intradermal Use"
+              }
+            ],
+            "date": "20131017155827",
+            "recordedId": {
+              "id": "2157580455"
+            }
+          }
+        ],
+        "emCode": [
+          {
+            "code": "99211"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-1200"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": "*****"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000032"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131029160355",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131029160033",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "346.40",
+                "display": "Menstrual migraine, without mention of intractable migraine without mention of status migrainosus"
+              }
+            ]
+          },
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "041.9",
+                "display": "Bacterial infection, unspecified, in conditions classified elsewhere and of unspecified site"
+              }
+            ]
+          }
+        ],
+        "procedure": [
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131029160400",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90857",
+                "display": "Clinical Social Work Counseling Group"
+              }
+            ],
+            "date": "20131029160253",
+            "recordedId": {
+              "id": "2157580481"
+            }
+          }
+        ],
+        "emCode": [
+          {
+            "code": "99212"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-1300"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": null
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000035"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131206161500",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131206160238",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "493.90 0",
+                "display": "Asthma, unspecified type, unspecified"
+              }
+            ]
+          }
+        ],
+        "procedure": [
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131206161506",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "1038F",
+                "display": "ASTHMA MILD PERSISTENT"
+              }
+            ],
+            "date": "20131206161157",
+            "recordedId": {
+              "id": "2157582882"
+            }
+          }
+        ],
+        "emCode": [
+          {
+            "code": "99212"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-3201"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": null
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010037"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20140114210352",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20140113204049",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "786.2",
+                "display": "Cough"
+              }
+            ]
+          }
+        ],
+        "procedure": [],
+        "emCode": [
+          {
+            "code": "99211"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-3900"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": null
+      },
+      "dataType": 5
+    }
+  ]
+}

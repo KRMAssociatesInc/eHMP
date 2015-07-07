@@ -1,0 +1,17 @@
+
+<div tabindex="0" id='problem_{{id}}' class="col-sm-12 gistItem changecolor">
+    <span class='col-sm-6 info-display' tabindex="0">
+        <span id='problem_name_{{id}}' class="col-sm-5" style="width:90%"><strong>{{name}}</strong> - {{acuityName}}</span>
+        {{#if allGroupedComments}}
+        <span id='comment_{{id}}' class="fa fa-comment col-sm-1 seven-top-padding" style="width:10%"></span> 
+        {{else}}
+        <span id='transparent_{{id}}' class="fa fa-transparent-comment col-sm-1" style="width:10%"></span> 
+        {{/if}}
+    </span>
+    <span class="col-sm-6 quickDraw selectable" id='quickDraw_{{id}}' data-toggle="popover" data-content="Tooltip in the house" tabindex="0">
+    <span id="quickLook_{{id}}" class="quickviewOverlay"></span>
+        <span id='encounter_count_{{id}}' class="col-sm-1" style="width:15%">{{encounterCount}}</span>
+        <span class="col-sm-4 graphContainer chart" style="width:70%"><span class="gChartMin" id='graph_{{id}}'></span></span>
+        <span id='time_since_{{id}}' class="col-sm-1" style="width:15%">{{timeSince}}</span>
+    </span>
+</div>

@@ -1,0 +1,89 @@
+.adk {
+    // Overwriting SDK Styles
+    .navbar {
+      border-color: $adk_color;
+      .navbar-brand {
+          color: $adk_color;
+        }
+    }
+    #toc > div {
+        & > .nav > li.active,
+        & > .nav > li.activechild {
+            border-left-color: $adk_color;
+        }
+        .nav .active > a {
+            border-left-color: $adk_color;
+        }
+    }
+    // End of Overwriting SDK Styles
+
+    .home-button {
+        background-color: $adk_color;
+    }
+    .page-description {
+        background-color: $adk_color;
+        color: white;
+    }
+    .chrome-example {
+        &.panel-primary {
+            border: 1px solid #e7e7e7;
+            border-width: 0 1px 4px 1px;
+        }
+        &.panel-primary>.panel-heading {
+            color: #206473;
+            background-color: #eee;
+            background-image: none;
+            border-color: rgba(239, 246, 254, 0.75);
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            border-radius: 0px;
+            filter: none;
+        }
+        .btn-xs {
+            background: transparent;
+            color: #206473;
+            font-size: 12px;
+            padding: 2px 6px;
+            text-decoration: none;
+        }
+        .panel {
+            margin-bottom: 15px;
+        }
+        .applet-view {
+            background-color: #A2BBC1;
+            height: 60px;
+            padding: 10px;
+            margin: 5px;
+        }
+    }
+    .jumbotron {
+      background-color: $adk_color;
+      color: white;
+    }
+    .c-r-l {
+        background: #ddd;
+        border: 1px solid #aaa;
+        padding: 2px;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 12px;
+        text-align: center;
+        min-width: 230px;
+
+        [class*=col] > div{
+            background: #A9D2D2;
+            margin: 5px 0;
+            padding: 0px 10px;
+            border: 1px solid #eee;
+        }
+        [class*=col] {
+            padding: 0px 5px;
+        }
+        .row {
+            margin: 0;
+        }
+    }
+    .c-r-l.nm [class*=col], .c-r-l.nm {
+        padding: 0;
+    }
+}

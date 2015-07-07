@@ -1,0 +1,382 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "8",
+      "RetrievedCount": "8",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001052"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "C9255",
+                "display": "Injection, paliperidone palmitate, 1 mg"
+              }
+            ],
+            "date": "20130603222032",
+            "recordedId": {
+              "id": "2157562872"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001054"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90834",
+                "display": "Social Work Individual Inpatient Counseling 45-50 Minutes"
+              }
+            ],
+            "date": "20130509201518",
+            "recordedId": {
+              "id": "2157551842"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001056"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "C9255",
+                "display": "Injection, paliperidone palmitate, 1 mg"
+              }
+            ],
+            "date": "20130424184748",
+            "recordedId": {
+              "id": "2157538360"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001058"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "94150",
+                "display": "Pulmonary Function Tests Peak Expiratory Flow"
+              }
+            ],
+            "date": "20121115154424",
+            "recordedId": {
+              "id": "2156791160"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001060"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "22634",
+                "display": null
+              }
+            ],
+            "date": "20120410195004",
+            "recordedId": {
+              "id": "2156824287"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001062"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "22634",
+                "display": null
+              }
+            ],
+            "date": "20120410194959",
+            "recordedId": {
+              "id": "2156824286"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001064"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": null,
+                "display": "Hot water bottle, ice cap or collar, heat and/or cold wrap, any type"
+              }
+            ],
+            "date": "20110519114356",
+            "recordedId": {
+              "id": "2155379723"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001066"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "00162",
+                "display": "Anesthesia For Radical Surgery On Nose And Sinuses"
+              }
+            ],
+            "date": "20080916040000",
+            "recordedId": {
+              "id": "2151773278"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    }
+  ]
+}

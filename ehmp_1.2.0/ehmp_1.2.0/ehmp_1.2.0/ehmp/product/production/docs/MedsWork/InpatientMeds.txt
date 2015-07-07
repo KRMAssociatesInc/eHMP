@@ -1,0 +1,125 @@
+<med>
+	<doses>
+		<dose route='PO' schedule='QD' />
+	</doses>
+	<facility code='500' name='CAMP MASTER' />
+	<id value='1U;I' />
+	<name value='MULTIVITAMIN CAP/TAB' />
+	<orderingProvider code='813' name='PROGRAMMER,TWENTYTWO' />
+	<sig xml:space='preserve'>Give:  PO QD</sig>
+	<start value='2891213.07' />
+	<status value='historical' />
+	<stop value='2900112.17' />
+	<vaStatus value='EXPIRED' />
+	<vaType value='I' />
+</med>
+
+<med>
+	<doses>
+		<dose route='PO' schedule='TID' />
+	</doses>
+	<facility code='500' name='CAMP MASTER' />
+	<id value='27U;I' />
+	<name value='HEPARIN NA 1,000 UNIT/ML INJ (10ML)' />
+	<orderingProvider code='11257' name='WARDCLERK,FIFTYNINE' />
+	<sig xml:space='preserve'>Give:  PO TID</sig>
+	<start value='2951206.09' />
+	<status value='historical' />
+	<stop value='2951211.24' />
+	<vaStatus value='EXPIRED' />
+	<vaType value='I' />
+</med>
+
+<med>
+	<doses>
+		<dose route='PO' schedule='QD' />
+	</doses>
+	<facility code='500' name='CAMP MASTER' />
+	<id value='1U;I' />
+	<name value='MULTIVITAMIN CAP/TAB' />
+	<orderingProvider code='813' name='PROGRAMMER,TWENTYTWO' />
+	<sig xml:space='preserve'>Give:  PO QD</sig>
+	<start value='2891213.07' />
+	<status value='historical' />
+	<stop value='2900112.17' />
+	<vaStatus value='EXPIRED' />
+	<vaType value='I' />
+</med>
+
+<med>
+	<doses>
+		<dose dose='250' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' />
+	</doses>
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<form value='TAB' />
+	<id value='1U;I' />
+	<location code='5' name='3 NORTH SURG' />
+	<name value='LAPATINIB TAB ' />
+	<orderID value='34009' />
+	<orderingProvider code='1089' name='AVIVAUSER,TWELVE' />
+	<products>
+		<product code='2842' name='LAPATINIB 250MG TAB' role='D' >
+			<class code='AN900' name='ANTINEOPLASTIC,OTHER' vuid='4021543' />
+			<vaGeneric code='4233' name='LAPATINIB' vuid='4026029' />
+			<vaProduct code='18221' name='LAPATINIB 250MG TAB' vuid='4025971' />
+		</product>
+	</products>
+	<sig xml:space='preserve'>Give: 250MG PO BID order test done for freshness</sig>
+	<start value='3110818.09' />
+	<status value='active' />
+	<stop value='3110901.24' />
+	<vaStatus value='ACTIVE' />
+	<vaType value='I' />
+</med>
+
+<med>
+	<doses>
+		<dose route='PO' schedule='TID' />
+	</doses>
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<form value='CAP,ORAL' />
+	<id value='85U;I' />
+	<location code='66' name='5 WEST PSYCH' />
+	<name value='HYDROXYUREA CAP,ORAL ' />
+	<orderID value='9034' />
+	<orderingProvider code='10958' name='WARDCLERK,FIFTYTHREE' />
+	<products>
+		<product code='20' name='HYDROXYUREA 500MG CAP' role='D' >
+			<class code='AN300' name='ANTINEOPLASTICS,ANTIMETABOLITES' vuid='4021541' />
+			<vaGeneric code='129' name='HYDROXYUREA' vuid='4017733' />
+			<vaProduct code='1351' name='HYDROXYUREA 500MG CAP' vuid='4001952' />
+		</product>
+	</products>
+	<sig xml:space='preserve'>Give:  PO TID</sig>
+	<start value='2990111.17' />
+	<status value='historical' />
+	<stop value='2990123.23' />
+	<vaStatus value='EXPIRED' />
+	<vaType value='I' />
+</med>
+
+<med>
+	<doses>
+		<dose route='INHL' schedule='TID' />
+	</doses>
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<form value='AEROSOL' />
+	<id value='92U;I' />
+	<location code='66' name='5 WEST PSYCH' />
+	<name value='BECLOMETHASONE DIPROPIONATE AEROSOL ' />
+	<orderID value='9500' />
+	<orderingProvider code='923' name='PROGRAMMER,TWENTYEIGHT' />
+	<products>
+		<product code='1644' name='BECLOMETHASONE 40MCG(HFA) 100D ORAL INHL' role='D' >
+			<class code='RE101' name='ANTI-INFLAMMATORIES,INHALATION' vuid='4021686' />
+			<vaGeneric code='1138' name='BECLOMETHASONE DIPROPIONATE' vuid='4018793' />
+			<vaProduct code='14603' name='BECLOMETHASONE DIPROPIONATE 40MCG/ACTUAT (HFA) INHL,ORAL,7.3GM' vuid='4014967' />
+		</product>
+	</products>
+	<sig xml:space='preserve'>Give:  INHL TID</sig>
+	<start value='2990225.12' />
+	<status value='historical' />
+	<stop value='2990309.23' />
+	<vaStatus value='EXPIRED' />
+	<vaType value='I' />
+</med>

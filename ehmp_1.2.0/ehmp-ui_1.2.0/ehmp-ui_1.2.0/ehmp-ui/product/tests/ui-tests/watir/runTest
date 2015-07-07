@@ -1,0 +1,1 @@
+rspec --color --tag regression --tag acceptance --tag broken --tag smoketest $1 --format documentation

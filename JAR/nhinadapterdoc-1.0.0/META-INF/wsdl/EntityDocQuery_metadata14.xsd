@@ -1,0 +1,106 @@
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xsd:schema xmlns="urn:oasis:names:tc:emergency:EDXL:DE:1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:emergency:EDXL:DE:1.0" version="1.0CD">
+  <xsd:element name="EDXLDistribution">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="distributionID" type="xsd:string"/>
+        <xsd:element name="senderID" type="xsd:string"/>
+        <xsd:element name="dateTimeSent" type="xsd:dateTime"/>
+        <xsd:element name="distributionStatus" type="statusValues"/>
+        <xsd:element name="distributionType" type="typeValues"/>
+        <xsd:element name="combinedConfidentiality" type="xsd:string"/>
+        <xsd:element minOccurs="0" name="language" type="xsd:string"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="senderRole" type="valueListType"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="recipientRole" type="valueListType"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="keyword" type="valueListType"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="distributionReference" type="xsd:string"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="explicitAddress" type="valueSchemeType"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="targetArea" type="targetAreaType"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="contentObject" type="contentObjectType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:annotation/>
+  <xsd:annotation/>
+  <xsd:complexType name="contentObjectType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="contentDescription" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="contentKeyword" type="valueListType"/>
+      <xsd:element minOccurs="0" name="incidentID" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="incidentDescription" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="originatorRole" type="valueListType"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="consumerRole" type="valueListType"/>
+      <xsd:element minOccurs="0" name="confidentiality" type="xsd:string"/>
+      <xsd:choice>
+        <xsd:element name="nonXMLContent" type="nonXMLContentType"/>
+        <xsd:element name="xmlContent" type="xmlContentType"/>
+      </xsd:choice>
+      <xsd:any maxOccurs="unbounded" minOccurs="0" namespace="##other" processContents="lax"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="nonXMLContentType">
+    <xsd:sequence>
+      <xsd:element name="mimeType" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="size" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="digest" type="xsd:string"/>
+      <xsd:element minOccurs="0" name="uri" type="xsd:anyURI"/>
+      <xsd:element minOccurs="0" name="contentData" type="xsd:base64Binary"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="xmlContentType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="keyXMLContent" type="anyXMLType"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="embeddedXMLContent" type="anyXMLType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="anyXMLType">
+    <xsd:sequence>
+      <xsd:any maxOccurs="unbounded" namespace="##other" processContents="lax"/>
+    </xsd:sequence>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+  <xsd:complexType name="valueListType">
+    <xsd:sequence>
+      <xsd:element name="valueListUrn" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" name="value" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="valueSchemeType">
+    <xsd:sequence>
+      <xsd:element name="explicitAddressScheme" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" name="explicitAddressValue" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="targetAreaType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="circle" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="polygon" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="country" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="subdivision" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="locCodeUN" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="statusValues">
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="Actual"/>
+      <xsd:enumeration value="Exercise"/>
+      <xsd:enumeration value="System"/>
+      <xsd:enumeration value="Test"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="typeValues">
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="Report"/>
+      <xsd:enumeration value="Update"/>
+      <xsd:enumeration value="Cancel"/>
+      <xsd:enumeration value="Request"/>
+      <xsd:enumeration value="Response"/>
+      <xsd:enumeration value="Dispatch"/>
+      <xsd:enumeration value="Ack"/>
+      <xsd:enumeration value="Error"/>
+      <xsd:enumeration value="SensorConfiguration"/>
+      <xsd:enumeration value="SensorControl"/>
+      <xsd:enumeration value="SensorStatus"/>
+      <xsd:enumeration value="SensorDetection"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

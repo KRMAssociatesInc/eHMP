@@ -1,0 +1,9 @@
+{{#if isPanel}}
+	 <label class="label label-default js-has-panel"><span>{{isPanel}}</span></label>
+{{/if}}
+
+{{#if isPanel}}
+	{{panelGroupName}}
+{{else}}
+	{{typeName}} - {{specimen}}
+{{/if}}

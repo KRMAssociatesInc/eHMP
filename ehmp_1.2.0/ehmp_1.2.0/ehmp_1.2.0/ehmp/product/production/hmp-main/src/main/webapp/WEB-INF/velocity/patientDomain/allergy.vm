@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>$!item.summary</title>
+    #parse("/layouts/detail.vm")
+</head>
+<body>
+#allergy($item true)
+##<table class="hmp-labeled-values">
+##    <tr>
+##        <td>Causative agent</td>
+##        <td>$!item.summary</td>
+##    </tr>
+##    <tr>
+##        <td>Nature of reaction</td>
+##		#if ($item.mechanism == 'PHARMACOLOGIC')
+##			## Display PHARMACOLOGIC == Adverse Reaction like CPRS does
+##			<td>Adverse Reaction</td>
+##		#else
+##			<td>$!item.mechanism</td>
+##		#end
+##    </tr>
+##    <tr>
+##        <td>&nbsp;</td>
+##        <td>&nbsp;</td>
+##    </tr>
+##    <tr>
+##        <td>Signs/Symptoms</td>
+##        <td>
+##        #foreach($reaction in $item.reactions)#if($velocityCount > 1),&nbsp; #end$!reaction.name
+##        #end
+##        </td>
+##    </tr>
+##    <tr>
+##        <td>&nbsp;</td>
+##        <td>&nbsp;</td>
+##    </tr>
+##    <tr>
+##        <td>Drug Classes</td>
+##        <td>#foreach($drugCls in $item.drugClasses)
+##            #if ($drugCls.name)
+##                $drugCls.name<br/>
+##            #end
+##        #end</td>
+##    </tr>
+##    <tr>
+##        <td>&nbsp;</td>
+##        <td>&nbsp;</td>
+##    </tr>
+##    <tr>
+##        <td>Originator</td>
+##        <td>$hmp.nameCase($!item.originatorName)</td>
+##    </tr>
+##    <tr>
+##        <td>Originated</td>
+##        <td>$hmp.formatDateTime($!item.entered)</td>
+##    </tr>
+##    <tr>
+##        <td>Obs dates/severity</td>
+##        <td>
+##            <table>
+##                #foreach($obs in $item.observations)
+##                    #if ($obs)
+##                        <tr><td>$hmp.formatDate($obs.date)&nbsp;&nbsp;</td><td>$obs.severity</td></tr>
+##                    #end
+##                #end
+##            </table>
+##        </td>
+##    </tr>
+##    <tr>
+##        <td>&nbsp;</td>
+##        <td>&nbsp;</td>
+##    </tr>
+##    <tr>
+##        <td>Verified</td>
+##        <td>$!esc.html($!item.verifierName)</td>
+##    </tr>
+##    <tr>
+##        <td>Observed/Historical</td>
+##        #if($item.historical)
+##            <td>Historical</td>
+##        #else
+##            <td>Observed</td>
+##        #end
+##    </tr>
+##    <tr>
+##        <td>&nbsp;</td>
+##        <td>&nbsp;</td>
+##    </tr>
+##    <tr>
+##        <td>Comments</td>
+##        <td>
+##            #foreach($comment in $item.comments)
+##                #if ($comment)
+##                    <blockquote>
+##                        <p>$comment.comment</p>
+##                        <small>$hmp.formatDateTime($comment.entered) by $comment.enteredByName</small>
+##                    </blockquote>
+##                #end
+##            #end
+##        </td>
+##    </tr>
+##</table>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "Street": "8008 ROSSWOOD DRIVE",
+        "SocialSecurityNumber": "100220119",
+        "Rank": "",
+        "SponsorRank": "",
+        "EnteredBy": "",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "",
+        "LastName": "SAPATIENT",
+        "CustodianName": "ahlta",
+        "Fmp": "",
+        "FirstName": "CHERYL",
+        "BranchOfService": "",
+        "MaritalStatus": "Divorced",
+        "CountryCode": "",
+        "Street2": "",
+        "SponsorSsn": "",
+        "Sex": "F",
+        "Uic": "",
+        "Suffix": "",
+        "Religion": "Methodism",
+        "Race": "White",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EdiPn": "D1606466796",
+        "PhoneNumber": "200-5553434",
+        "OtherIdentifier": "",
+        "Country": "",
+        "City": "CITRUS HTS",
+        "DeersEligibility": "",
+        "DateOfBirth": "19881120000000",
+        "UnitNumber": "904005",
+        "AreaCode": "200",
+        "MiddleName": "",
+        "County": "",
+        "State": "CA",
+        "Email": "",
+        "SponsorUic": "",
+        "PostCode": "95621",
+        "Facility": "",
+        "LoincCode": "52536-0",
+        "SponsorBranchOfService": "",
+        "AddressType": "Home Address",
+        "LocalNumber": "5553434",
+        "PatientCategory": "K61 - Department of Defense (DoD)/Veterans Administration (VA) Sharing Agreement",
+        "EnrollmentFacility": "",
+        "EventId": "1000000916"
+      },
+      "dataType": 13
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

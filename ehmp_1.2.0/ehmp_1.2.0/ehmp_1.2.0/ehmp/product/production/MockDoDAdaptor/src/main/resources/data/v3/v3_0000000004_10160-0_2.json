@@ -1,0 +1,202 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "2157536131"
+        },
+        "enteredBy": {
+          "name": "Interface User"
+        },
+        "enteredDate": "20130423150757",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "10160-0"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL/0056"
+        },
+        "active": false,
+        "comments": "NONE\n^O^",
+        "dispensingPharmacy": {
+          "name": "MAIN PHARMACY"
+        },
+        "fillCost": null,
+        "fillExpirationDate": "20130523150600",
+        "issueDate": "20130423150600",
+        "fillInfo": [
+          {
+            "action": [
+              {
+                "display": "Entered"
+              }
+            ],
+            "dispensingPharmacy": {
+              "name": "MAIN PHARMACY"
+            },
+            "enteredBy": {
+              "name": "Interface User"
+            },
+            "location": {
+              "name": "NH Great Lakes IL/0056"
+            },
+            "fillCost": null,
+            "fillDate": "20130423150600",
+            "fillNumber": "0",
+            "quantity": "90",
+            "units": [
+              {
+                "display": "mg"
+              }
+            ]
+          }
+        ],
+        "drug": [
+          {
+            "display": "SOTALOL HCL, 80 MG, TABLET, ORAL",
+            "code": "3000272497",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "numberOfFills": 0,
+        "provider": {
+          "name": "P20462"
+        },
+        "quantity": "90",
+        "refillsRemaining": 0,
+        "rxNumber": {
+          "id": "130423-00008"
+        },
+        "sig": "",
+        "status": [
+          {
+            "display": "Expired"
+          }
+        ],
+        "daysSupply": 30,
+        "units": [
+          {
+            "display": "mg"
+          }
+        ]
+      },
+      "dataType": 2
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "2157534679"
+        },
+        "enteredBy": {
+          "name": "Interface User"
+        },
+        "enteredDate": "20130419184854",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "10160-0"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL/0056"
+        },
+        "active": false,
+        "comments": "^O^\nNONE",
+        "dispensingPharmacy": {
+          "name": "MAIN PHARMACY"
+        },
+        "fillCost": null,
+        "fillExpirationDate": "20130718182300",
+        "issueDate": "20130419182300",
+        "fillInfo": [
+          {
+            "action": [
+              {
+                "display": "Entered"
+              }
+            ],
+            "dispensingPharmacy": {
+              "name": "MAIN PHARMACY"
+            },
+            "enteredBy": {
+              "name": "Interface User"
+            },
+            "location": {
+              "name": "NH Great Lakes IL/0056"
+            },
+            "fillCost": null,
+            "fillDate": "20130419182300",
+            "fillNumber": "0",
+            "quantity": "30",
+            "units": [
+              {
+                "display": "mg"
+              }
+            ]
+          }
+        ],
+        "drug": [
+          {
+            "display": "Albuterol Sulfate 0.83mg/mL, Nebulization solution, Inhalation",
+            "code": "15451500",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "numberOfFills": 0,
+        "provider": {
+          "name": "DOCTOR, ALPHA"
+        },
+        "quantity": "30",
+        "refillsRemaining": 0,
+        "rxNumber": {
+          "id": "130419-00011"
+        },
+        "sig": "",
+        "status": [
+          {
+            "display": "Expired"
+          }
+        ],
+        "daysSupply": 90,
+        "units": [
+          {
+            "display": "mg"
+          }
+        ]
+      },
+      "dataType": 2
+    }
+  ]
+}

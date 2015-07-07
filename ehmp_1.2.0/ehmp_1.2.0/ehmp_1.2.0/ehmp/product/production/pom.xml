@@ -1,0 +1,280 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>gov.va.hmp</groupId>
+    <artifactId>hmp-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>0.7-S65</version>
+    <name>Health Management Platform Parent</name>
+    <modules>
+        <module>ThirdParty</module>  
+        <module>health-time</module>
+        <module>vista-support</module>
+        <module>hmp-api</module>
+        <module>hmp-help</module>
+        <module>hmp-main</module>
+    </modules>
+    <organization>
+        <name>Department of Veterans Affairs</name>
+        <url>http://www.domain/</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>Public Domain</name>
+            <url>http://creativecommons.org/licenses/publicdomain/</url>
+        </license>
+    </licenses>
+    <issueManagement>
+        <system>JIRA</system>
+        <url>https://webserver.was.redacted.us</url>
+    </issueManagement>
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>http://hmpcode.vainnovations.us:8080/jenkins/job/HMP/</url>
+    </ciManagement>
+    <distributionManagement>
+        <repository>
+            <id>hmp-releases</id>
+            <name>HMP Releases</name>
+            <url>http://hmpcode.vainnovations.us:8080/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>hmp-snapshots</id>
+            <name>HMP Snapshots</name>
+            <url>http://hmpcode.vainnovations.us:8080/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <scm>
+        <connection>scm:git:https://hmpcode.vainnovations.us/git/hmp.git</connection>
+        <developerConnection>scm:git:https://hmpcode.vainnovations.us/git/hmp.git</developerConnection>
+        <url>http://hmpcode.vainnovations.us/browse/hmp</url>
+      <tag>hmp-0.7-S65</tag>
+    </scm>
+    
+    <repositories>
+        <repository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net Repository for Maven</name>
+            <url>http://download.java.net/maven/2/</url>
+        </repository>
+        <repository>
+            <id>version99</id>
+            <name>empty artifacts for commons-logging and log4j</name>
+            <url>http://version99.qos.ch/</url>
+        </repository>
+        <repository>
+            <id>nexus-vistacore</id>
+            <name>Our local repository.</name>
+            <url>https://nexus.vistacore.us/nexus/content/repositories/thirdparty/</url>
+        </repository>
+        <repository>
+          <id>phloc.com</id>
+          <url>http://repo.phloc.com/maven2</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>google-maven-snapshot-repository</id>
+          <name>Google Maven Snapshot Repository</name>
+          <url>https://oss.sonatype.org/content/repositories/google-snapshots/</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>        
+        <repository>
+          <id>Agilex Nexus File Repo</id>
+          <name>Agilex Nexus File Repo </name>
+          <url>https://nexus.vistacore.us/nexus/content/repositories/filerepo/</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>        
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net Repository for Maven</name>
+            <url>http://download.java.net/maven/2/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>rubygems-release</id>
+            <name>Ruby Gems Repository</name>
+            <url>http://rubygems-proxy.torquebox.org/releases/</url>
+            <releases>
+              <enabled>true</enabled>
+              <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+              <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+          <id>phloc.com</id>
+          <url>http://repo.phloc.com/maven2</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+          <id>google-maven-snapshot-repository</id>
+          <name>Google Maven Snapshot Repository</name>
+          <url>https://oss.sonatype.org/content/repositories/google-snapshots/</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository> 
+        <pluginRepository>
+          <id>Agilex Nexus File Repo</id>
+          <name>Agilex Nexus File Repo </name>
+          <url>https://nexus.vistacore.us/nexus/content/repositories/filerepo/</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository> 
+    </pluginRepositories>
+    
+<!--    
+    <pluginRepositories>
+        <pluginRepository>
+            <id>rubygems-release</id>
+            <name>Ruby Gems Repository</name>
+            <url>http://rubygems-proxy.torquebox.org/releases/</url>
+            <releases>
+              <enabled>true</enabled>
+              <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+              <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+-->
+
+<!--    
+    <repositories>
+        <repository>
+            <id>rubygems-release</id>
+            <url>http://rubygems-proxy.torquebox.org/releases</url>
+            <releases>
+              <enabled>true</enabled>
+              <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+              <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <repositories>
+        <repository>
+            <id>hmp-nexus</id>
+            <url>http://hmpcode.vainnovations.us:8080/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>hmp-nexus</id>
+            <url>http://hmpcode.vainnovations.us:8080/nexus/content/groups/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+-->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>1.6</version>
+                    <configuration>
+                        <licenseMerges>
+                            <licenseMerge>
+                                Apache Software License, Version 2.0|
+                                The Apache Software License, Version 2.0|
+                                The Apache License, Version 2.0|
+                                Apache License, Version 2.0|
+                                Apache Public License 2.0|
+                                Apache License 2.0|
+                                Apache 2
+                            </licenseMerge>
+                            <licenseMerge>
+                                MIT License|
+                                The MIT License|
+                                MIT license
+                            </licenseMerge>
+                            <licenseMerge>
+                                BSD License|
+                                The BSD License|
+                                BSD|
+                                BSD licence
+                            </licenseMerge>
+                            <licenseMerge>
+                                BSD 3-Clause License|
+                                The BSD 3-Clause License|
+                                New BSD License|
+                                New BSD license|
+                            </licenseMerge>
+                            <licenseMerge>
+                                GNU Lesser General Public License, Version 2.1|
+                                GNU Lesser General Public License 2.1
+                            </licenseMerge>
+                            <licenseMerge>
+                                Eclipse Public License, Version 1.0|
+                                Eclipse Public License - v 1.0|
+                                Eclipse Public License v1.0
+                            </licenseMerge>
+                        </licenseMerges>
+                        <excludedArtifacts>commons-logging</excludedArtifacts>
+                        <useRepositoryMissingFiles>false</useRepositoryMissingFiles>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <tagNameFormat>hmp-@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.2</version>
+                <executions>
+                    <execution>
+                        <id>set-buildnumber-property</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                        <configuration>
+                            <doCheck>false</doCheck>
+                            <doUpdate>false</doUpdate>
+                            <shortRevisionLength>5</shortRevisionLength>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    <properties>
+<!--
+        <project.scm.id>hmp-code</project.scm.id>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+-->
+        <java.version>1.7</java.version>
+        <health-time.version>2.1.3</health-time.version>
+    </properties>
+</project>

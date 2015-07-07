@@ -1,0 +1,45 @@
+<div class="confirmHeader row">
+    <div class="patientName">
+        {{displayName}}
+        {{{helpIconLink 'patient_search_restricted' 'helpIconInverted'}}}
+    </div>
+</div>
+<div class="fixedHeightZone">
+    {{#each patientRecordFlag}}
+    <div class="sensitivePanel panel panel-danger">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#ackMessagePanel_{{name}}">{{name}}<span class="label label-warning{{#compare category 'I (NATIONAL)'}} label-danger{{/compare}} pull-right">Category {{category}}</span></a>
+            </h4>
+        </div>
+        <div id="ackMessagePanel_{{name}}" class="panel-collapse collapse in ackMessagePanel" tabindex="0">
+            <div class="panel-body">
+                <h5>{{text}}</h5>
+                <div class="patientInfo row">
+                    <div class="col-md-6 infoLabelStyle">Initial Assigned Date:</div>
+                    <div class="col-md-6 no-padding-left">{{formatDate assignTS "MM/DD/YYYY HH:mm"}}</div>
+                </div>
+                <div class="patientInfo row">
+                    <div class="col-md-6 infoLabelStyle">Approved by:</div>
+                    <div class="col-md-6 no-padding-left">{{approved}}</div>
+                </div>
+                <div class="patientInfo row">
+                    <div class="col-md-6 infoLabelStyle">Assignment Status:</div>
+                    <div class="col-md-6 no-padding-left">{{assignmentStatus}}</div>
+                </div>
+                <div class="patientInfo row">
+                    <div class="col-md-6 infoLabelStyle">Owner Site:</div>
+                    <div class="col-md-6 no-padding-left">{{ownerSite}}</div>
+                </div>
+                <div class="patientInfo row">
+                    <div class="col-md-6 infoLabelStyle">Originating Site:</div>
+                    <div class="col-md-6 no-padding-left">{{originatingSite}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <button type="button" id="confirmFlaggedPatinetButton" class="confirm btn btn-primary btn-block " tabIndex="0">Confirm
+        <span class="sr-only">. Confirm</span>
+    </button>
+</div>

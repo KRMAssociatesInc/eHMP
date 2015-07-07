@@ -1,0 +1,53 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "HDR",
+    "systemId": "HDR"
+  },
+  "data": {
+    "updated": "20140409083808",
+    "totalItems": 1,
+    "items": [
+      {
+        "case": 45,
+        "category": "RA",
+        "dateTime": 199702261300,
+        "diagnosis": [
+          {
+            "code": "NORMAL",
+            "primary": true
+          }
+        ],
+        "encounterName": "RADIOLOGY MAIN FLOOR Feb 26, 1997",
+        "encounterUid": "urn:va:visit:ABCD:379:308",
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "hasImages": false,
+        "imageLocation": "RADIOLOGY MAIN FLOOR",
+        "imagingTypeUid": "urn:va:imaging-Type:GENERAL RADIOLOGY",
+        "kind": "Imaging",
+        "localId": "7029773.8699-1",
+        "locationName": "RADIOLOGY MAIN FLOOR",
+        "locationUid": "urn:va:location:ABCD:40",
+        "name": "ANKLE 2 VIEWS",
+        "providers": [
+          {
+            "providerName": "WARDCLERK,SIXTYTHREE",
+            "providerUid": "urn:va:user:ABCD:11273"
+          }
+        ],
+        "results": [
+          {
+            "localTitle": "ANKLE 2 VIEWS",
+            "uid": "urn:va:document:ABCD:379:7029773.8699-1"
+          }
+        ],
+        "statusName": "COMPLETE",
+        "summary": "RADIOLOGIC EXAMINATION, ANKLE; 2 VIEWS",
+        "typeName": "RADIOLOGIC EXAMINATION, ANKLE; 2 VIEWS",
+        "uid": "urn:va:image:ABCD:379:7029773.8699-1",
+        "verified": true
+      }
+    ]
+  }
+}

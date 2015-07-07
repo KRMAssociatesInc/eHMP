@@ -1,0 +1,111 @@
+<div class="consultsDetail">
+    <h5 id='consultsLoadingDiv'><i class="fa fa-spinner fa-spin"></i> Loading...</h5>
+
+    <div class="container-fluid expanded-row" role="main">
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Site:</strong></div>
+            <div class="col-md-10" tabindex='0'>{{facilityName}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Type:</strong></div>
+            <div class="col-md-10" tabindex='0'>{{kind}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Status:</strong></div>
+            <div class="col-md-10 status" tabindex='0'><strong>{{statusName}}</strong></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Date/Time:</strong></div>
+            <div class="col-md-10" tabindex='0'>{{formatDate dateTime "MM/DD/YYYY - HH:mm"}}</div>
+        </div>
+    </div>
+
+
+    <h5 role="heading" tabindex='0'>
+        Order Information
+    </h5>
+
+    <div class="container-fluid expanded-row" role="contentinfo">
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>To Service:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{service}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>From Service:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{fromService}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Requesting Provider:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{providerDisplayName}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Place:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{place}}</div>
+        </div><div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Urgency:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{urgency}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Orderable Item:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{orderName}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Procedure:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{consultProcedure}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Reason:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{reason}}</div>
+        </div>
+    </div>
+
+    <h5 role="heading" tabindex='0'>
+        Results
+    </h5>
+
+    <div class="container-fluid expanded-row" role="contentinfo">
+        <div class="row"><h5>{{summaryKind}}</h5>
+            <div class="col-md-3" tabindex='0'><strong>Local Title:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{summaryLocalTitle}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Date Of Note:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{formatDate summaryEntered "MM/DD/YYYY - HH:mm"}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Author:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{summaryAuthorDisplayName}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Status:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{summaryStatusDisplayName}}</div>
+        </div>
+        {{#if summaryText}}
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Text:</strong></div>
+        </div>
+        <div class="row contentText">
+            <div class="col-md-9" tabindex='0'>{{summaryText}}</div>
+        </div>
+        {{/if}}
+    </div>
+
+    {{#if activity}}
+    <h5 role="heading" tabindex='0'>
+        Activity
+    </h5>
+
+    <div class="container-fluid expanded-row" role="contentinfo">
+        {{#each activity}}
+        <div class="row" tabindex='0'><h5>{{name}}</h5>
+            <div class="col-md-3" tabindex='0'><strong>Date/Time:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{formatDate dateTime "MM/DD/YYYY - HH:mm"}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3" tabindex='0'><strong>Responsible:</strong></div>
+            <div class="col-md-9" tabindex='0'>{{responsible}}</div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>

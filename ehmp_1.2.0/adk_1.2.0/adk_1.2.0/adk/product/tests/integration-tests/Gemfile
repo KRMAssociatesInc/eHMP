@@ -1,0 +1,14 @@
+source 'http://rubygems.org'
+
+# integration-tests/Rakefile dependencies
+gem 'rake',                   '=10.1.1'
+gem 'rspec',                  '=2.14.1'
+gem 'httparty',               '=0.13.0'
+gem 'rubocop',                '=0.18.1'
+gem 'activesupport',          '=4.0.4'
+gem 'rspec-extra-formatters', '=1.0.0'
+
+# VagrantfileUtil.rb dependencies
+gem 'json',                   '=1.8.1'
+gem 'fog',                    '=1.21.0'
+gem 'macaddr',                '=1.6.7'

@@ -1,0 +1,114 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "DateReported": "20130422115420",
+        "EnteredBy": "MIDT, LANDFONE",
+        "Type": "Past Medical History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20130422115420",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "No HORNER'S SYNDROME",
+            "Annotation": "",
+            "EventId": "1000001043"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "32371",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "20130422115419",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "20130422115419",
+        "CouplerType": "Past Medical History",
+        "ReportingClinician": "LANF, FIVE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "-",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "LANF, FIVE",
+        "Status": "Active",
+        "Facility": "Landstuhl RMC/0607",
+        "LoincCode": "11348-0",
+        "Relationship": "",
+        "EventId": "1000001044"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20130422115214",
+        "EnteredBy": "LANF, FIVE",
+        "Type": "Past Medical History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20130422115214",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "no prior serious illness",
+            "Annotation": "",
+            "EventId": "1000001045"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "127630",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "18991230050000",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "18991230050000",
+        "CouplerType": "Past Medical History",
+        "ReportingClinician": "LANF, FIVE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "LANF, FIVE",
+        "Status": "Active",
+        "Facility": "Landstuhl RMC/0607",
+        "LoincCode": "11348-0",
+        "Relationship": "",
+        "EventId": "1000001046"
+      },
+      "dataType": 8
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

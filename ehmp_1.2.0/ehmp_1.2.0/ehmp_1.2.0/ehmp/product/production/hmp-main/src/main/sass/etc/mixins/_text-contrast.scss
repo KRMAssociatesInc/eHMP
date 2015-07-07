@@ -1,0 +1,18 @@
+/**
+ * Mixin that implements text contrast algorithm laid out at http://www.w3.org/WAI/ER/WD-AERT/#color-contrast
+ *
+ * Submitted by bluesaunders at http://codepen.io/bluesaunders/pen/FCLaz as candidate for inclusion in compass.
+ */
+@mixin text-contrast($bg-color, $dark-text, $light-text) {
+  $color-brightness: round((red($bg-color) * 299) + (green($bg-color) * 587) + (blue($bg-color) * 114) / 1000);
+  $light-text-brightness: round((red($light-text) * 299) + (green($light-text) * 587) + (blue($light-text) * 114) / 1000);
+  $dark-text-brightness: round((red($dark-text) * 299) + (green($dark-text) * 587) + (blue($dark-text) * 114) / 1000);
+
+  @if abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness) {
+    color: $light-text;
+  } @else {
+    color: $dark-text;
+  }
+
+  //content: "#{$bg-color}";
+}

@@ -1,0 +1,247 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "ResponseId": "1078",
+        "Comments": [
+
+        ],
+        "QuestionnaireType": "1",
+        "Details": [
+          {
+            "Comments": [
+
+            ],
+            "QuestionText": "Do you feel inferior to your peers?",
+            "Answers": [
+              {
+                "Choice": "1",
+                "Answer": "Yes",
+                "CorrectAnswer": "0",
+                "AnswerType": "Yes/No",
+                "EventId": "1000001489"
+              }
+            ],
+            "Choices": [
+              {
+                "Choice": "2",
+                "ChoiceText": "No",
+                "CorrectAnswer": "",
+                "IsSelected": "false",
+                "AnswerType": "",
+                "EventId": "1000001490"
+              },
+              {
+                "Choice": "1",
+                "ChoiceText": "Yes",
+                "CorrectAnswer": "0",
+                "IsSelected": "true",
+                "AnswerType": "Yes/No",
+                "EventId": "1000001491"
+              }
+            ],
+            "SequenceNum": "1",
+            "EventId": "1000001492"
+          },
+          {
+            "Comments": [
+
+            ],
+            "QuestionText": "Have you lived in more than one home since birth?",
+            "Answers": [
+              {
+                "Choice": "1",
+                "Answer": "Yes",
+                "CorrectAnswer": "0",
+                "AnswerType": "Yes/No",
+                "EventId": "1000001493"
+              }
+            ],
+            "Choices": [
+              {
+                "Choice": "2",
+                "ChoiceText": "No",
+                "CorrectAnswer": "",
+                "IsSelected": "false",
+                "AnswerType": "",
+                "EventId": "1000001494"
+              },
+              {
+                "Choice": "1",
+                "ChoiceText": "Yes",
+                "CorrectAnswer": "0",
+                "IsSelected": "true",
+                "AnswerType": "Yes/No",
+                "EventId": "1000001495"
+              }
+            ],
+            "SequenceNum": "2",
+            "EventId": "1000001496"
+          },
+          {
+            "Comments": [
+
+            ],
+            "QuestionText": "Do you look around a room before you enter?",
+            "Answers": [
+              {
+                "Choice": "1",
+                "Answer": "Yes",
+                "CorrectAnswer": "0",
+                "AnswerType": "Yes/No",
+                "EventId": "1000001497"
+              }
+            ],
+            "Choices": [
+              {
+                "Choice": "2",
+                "ChoiceText": "No",
+                "CorrectAnswer": "",
+                "IsSelected": "false",
+                "AnswerType": "",
+                "EventId": "1000001498"
+              },
+              {
+                "Choice": "1",
+                "ChoiceText": "Yes",
+                "CorrectAnswer": "0",
+                "IsSelected": "true",
+                "AnswerType": "Yes/No",
+                "EventId": "1000001499"
+              }
+            ],
+            "SequenceNum": "3",
+            "EventId": "1000001500"
+          },
+          {
+            "Comments": [
+
+            ],
+            "QuestionText": "Do you cower in the closet all day?",
+            "Answers": [
+              {
+                "Choice": "1",
+                "Answer": "Yes",
+                "CorrectAnswer": "0",
+                "AnswerType": "Yes/No",
+                "EventId": "1000001501"
+              }
+            ],
+            "Choices": [
+              {
+                "Choice": "2",
+                "ChoiceText": "No",
+                "CorrectAnswer": "",
+                "IsSelected": "false",
+                "AnswerType": "",
+                "EventId": "1000001502"
+              },
+              {
+                "Choice": "1",
+                "ChoiceText": "Yes",
+                "CorrectAnswer": "0",
+                "IsSelected": "true",
+                "AnswerType": "Yes/No",
+                "EventId": "1000001503"
+              }
+            ],
+            "SequenceNum": "4",
+            "EventId": "1000001504"
+          },
+          {
+            "Comments": [
+              {
+                "DateEntered": "20070917110445",
+                "CommentBy": "LARRY, PROVIDER",
+                "SeqNumber": "5",
+                "NoteNumber": "1",
+                "NoteText": "YADAYADAYDA",
+                "EventId": "1000001505"
+              },
+              {
+                "DateEntered": "20070917110539",
+                "CommentBy": "LARRY, PROVIDER",
+                "SeqNumber": "5",
+                "NoteNumber": "2",
+                "NoteText": "OHOHOOHOHOHOH",
+                "EventId": "1000001506"
+              }
+            ],
+            "QuestionText": "Do you make squeaky noises when picked up?",
+            "Answers": [
+              {
+                "Choice": "1",
+                "Answer": "Yes",
+                "CorrectAnswer": "0",
+                "AnswerType": "Yes/No",
+                "EventId": "1000001507"
+              }
+            ],
+            "Choices": [
+              {
+                "Choice": "2",
+                "ChoiceText": "No",
+                "CorrectAnswer": "",
+                "IsSelected": "false",
+                "AnswerType": "",
+                "EventId": "1000001508"
+              },
+              {
+                "Choice": "1",
+                "ChoiceText": "Yes",
+                "CorrectAnswer": "0",
+                "IsSelected": "true",
+                "AnswerType": "Yes/No",
+                "EventId": "1000001509"
+              }
+            ],
+            "SequenceNum": "5",
+            "EventId": "1000001510"
+          }
+        ],
+        "EnteredBy": "LARRY, PROVIDER",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20070917110348",
+        "FacilityName": "4th Medical Group",
+        "PatientName": "",
+        "FacilityId": "0090",
+        "QuestionnaireName": "Dr Scardypaws",
+        "CustodianName": "ahlta",
+        "DateFilledOut": "20070917110550",
+        "CreatorName": "SCARDYPAWS, KITTY",
+        "LoincCode": "10187-3",
+        "Facility": "Internal Medicine",
+        "Version": "1",
+        "QuestionnaireId": "94",
+        "EventId": "1000001511"
+      },
+      "dataType": 15
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

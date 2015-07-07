@@ -1,0 +1,49 @@
+<div class="medsItemInner" tabindex="0" aria-label="{{ariaLabelText}} {{graphInfoText}}">
+    <!-- {{ariaLabelAdditionalText}}"-->
+    <!-- dont' need equalHeights here because of subtables -->
+    <div class="row equalHeightsInnerTableWrapper noMargin">
+        <div class="col-sm-8">
+            {{#each subMedsInternalGroupModels.models}}
+            <div class="row">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-7 {{ attributes.topBorderClass }}"></div>
+            </div>
+            <div id='medication_{{ attributes.firstFacilityMed.attributes.id }}' class="row equalHeightsInnerTable">
+                <div id='medication_name_{{ attributes.firstFacilityMed.attributes.id }}' class="col-sm-5 {{ attributes.firstFacilityMed.attributes.genericMedClass }}MedItemName medsItemInnerList" title="{{ attributes.firstFacilityMed.attributes.displayName }}">
+                    {{#if attributes.isFirstOverlappingMed}}
+                    <div class="flex {{#if attributes.firstFacilityMed.attributes.isNotUserSiteMed}} col-sm-11 noPadding {{/if}}">
+                        <div class="ellipsisFormat">
+                            {{ attributes.firstFacilityMed.attributes.displayName }}
+                        </div>
+                    </div>
+                    {{/if}} 
+                    {{#if attributes.firstFacilityMed.attributes.isNotUserSiteMed}}
+                    <div class="fa fa-globe globeIcon col-sm-1"></div> {{/if}}
+                </div>
+                <div id='sig_{{attributes.firstFacilityMed.attributes.id}}' class=" col-sm-4 {{ attributes.firstFacilityMed.attributes.genericMedClass }}MedItemSig medsItemInnerList {{ attributes.firstFacilityMed.attributes.genericMedClass }}MedItemSig medsItemInnerList " title="{{attributes.firstFacilityMed.attributes.doseUnitRouteSchedule}}">
+                    <div class="flex">
+                        <div class="ellipsisFormat">
+                            {{ attributes.firstFacilityMed.attributes.doseUnitRouteSchedule }}
+                        </div>
+                    </div>
+                </div>
+                <div id='time_{{attributes.firstFacilityMed.attributes.id}}' class="col-sm-1 aligncol1 {{ attributes.firstFacilityMed.attributes.genericMedClass }}MedItemTime medsItemInnerList ">
+                    <div class="">
+                    </div>
+                </div>
+                <div id='fillable_{{ attributes.firstFacilityMed.attributes.id }}' class="col-sm-2 aligncol1 {{ attributes.genericMedClass }}MedItemFillable">
+                    {{#if attributes.firstFacilityMed.attributes.CategoryInpatient}}
+                    <span {{#if attributes.firstFacilityMed.attributes.nextAdminData.hasLabel}} class="{{attributes.firstFacilityMed.attributes.nextAdminData.label}}" {{/if}}>
+                            {{ attributes.firstFacilityMed.attributes.nextAdminData.display }} {{ attributes.firstFacilityMed.attributes.nextAdminData.date }}
+                    </span> {{else}}
+                    <span {{#if attributes.firstFacilityMed.attributes.fillableDays.hasLabel}} class="{{attributes.firstFacilityMed.attributes.fillableDays.label}}" {{/if}}>
+                            {{ attributes.firstFacilityMed.attributes.fillableStatus }} {{ attributes.firstFacilityMed.attributes.fillableDays.date }}
+                    </span> {{/if}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div id='chart_{{id}}' class="fullWidth {{ attributes.firstFacilityMed.attributes.genericMedClass }}MedItemChart medsItemInnerList col-sm-4" medsItemChart="true"> </div>
+    </div>
+</div>
+<div id='detail_Area_{{id}}' data-toggle="collapse" data-target="#detail_{{id}}" href="#detail_{{id}}"></div>

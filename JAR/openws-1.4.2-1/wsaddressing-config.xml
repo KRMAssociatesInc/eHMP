@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd"
+    xmlns:wsa="http://www.w3.org/2005/08/addressing"
+    xmlns="http://www.opensaml.org/xmltooling-config">
+
+    <!-- WS-Addressing 1.0 Object Providers -->
+    <ObjectProviders>
+    
+        <!-- wsa:Action -->
+        <ObjectProvider qualifiedName="wsa:Action">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.ActionBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ActionMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ActionUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsa:Address -->
+        <ObjectProvider qualifiedName="wsa:Address">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.AddressBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.AddressMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.AddressUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsa:EndpointReference -->
+        <ObjectProvider qualifiedName="wsa:EndpointReference">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.EndpointReferenceBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.EndpointReferenceMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.EndpointReferenceUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsa:FaultTo -->
+        <ObjectProvider qualifiedName="wsa:FaultTo">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.FaultToBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.FaultToMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.FaultToUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsa:From -->
+        <ObjectProvider qualifiedName="wsa:From">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.FromBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.FromMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.FromUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsa:MessageID -->
+        <ObjectProvider qualifiedName="wsa:MessageID">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.MessageIDBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.MessageIDMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.MessageIDUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsa:Metadata -->
+        <ObjectProvider qualifiedName="wsa:Metadata">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.MetadataBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.MetadataMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.MetadataUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsa:ProblemAction -->
+        <ObjectProvider qualifiedName="wsa:ProblemAction">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.ProblemActionBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ProblemActionMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ProblemActionUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsa:ProblemHeaderQName -->
+        <ObjectProvider qualifiedName="wsa:ProblemHeaderQName">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.ProblemHeaderQNameBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ProblemHeaderQNameMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ProblemHeaderQNameUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsa:ProblemIRI -->
+        <ObjectProvider qualifiedName="wsa:ProblemIRI">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.ProblemIRIBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ProblemIRIMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ProblemIRIUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsa:ReferenceParameters -->
+        <ObjectProvider qualifiedName="wsa:ReferenceParameters">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.ReferenceParametersBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ReferenceParametersMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ReferenceParametersUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsa:RelatesTo -->
+        <ObjectProvider qualifiedName="wsa:RelatesTo">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.RelatesToBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.RelatesToMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.RelatesToUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsa:ReplyTo -->
+        <ObjectProvider qualifiedName="wsa:ReplyTo">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.ReplyToBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ReplyToMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ReplyToUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsa:RetryAfter -->
+        <ObjectProvider qualifiedName="wsa:RetryAfter">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.RetryAfterBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.RetryAfterMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.RetryAfterUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsa:SoapAction -->
+        <ObjectProvider qualifiedName="wsa:SoapAction">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.SoapActionBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.SoapActionMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.SoapActionUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsa:To -->
+        <ObjectProvider qualifiedName="wsa:To">
+            <BuilderClass
+                className="org.opensaml.ws.wsaddressing.impl.ToBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ToMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wsaddressing.impl.ToUnmarshaller" />
+        </ObjectProvider>
+        
+
+    </ObjectProviders>
+
+</XMLTooling>

@@ -1,0 +1,22 @@
+<table class="table table-bordered table-condensed table-striped table-hover">
+	<thead></thead>
+	<tbody>
+        <tr><th>Problem:</th><th>{{problemText}}</th></tr>
+		<tr><th>Onset Date:</th><th>{{formatDate onset}}</th></tr>
+		<tr><th>Status:</th><td>{{statusDisplayName}}</td></tr>
+		<tr><th>Provider:</th><td>{{providerDisplayName}}</td></tr>
+		<tr><th>Clinic:</th><td>{{locationDisplayName}}</td></tr>
+        <tr><th>SC condition:</th><td>{{serviceConnectedDisp}}</td></tr>
+        <tr><th>Exposure:</th><td>{{exposure}}</td></tr>
+		<tr><th>Recorded Date:</th><td>{{formatDate onset}}</td></tr>
+		<tr><th>Recorded By:</th><td>{{providerName}}</td></tr>
+		<tr><th>Entered Date:</th><td>{{formatDate entered}}</td></tr>
+		<tr><th>Entered By:</th><td>{{providerName}}</td></tr>
+		<tr><th>Modified Date:</th><td>{{formatDate updated}}</td></tr>
+        <tr><th>Comments: </th><td>
+           {{#comments}}
+                {{comment}} <br/>               
+           {{/comments}}
+        </td></tr>
+	</tbody>
+</table>

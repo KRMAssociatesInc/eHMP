@@ -1,0 +1,121 @@
+#newVisitForm {
+	padding: 10px;
+}
+
+#date-error, #time-error, #location-error {
+	color: #f80000;
+}
+
+#dp-visit {
+	width: 120px;
+}
+
+#tp-visit {
+	width: 80px;
+}
+
+#date-picker-icon {
+	cursor: pointer;
+}
+
+#newVisitForm .input-group[class*=col-] {
+	float: left;
+}
+
+#newVisitForm .input-group-addon {
+	width: 0;
+}
+
+#dateTimeErrors {
+	clear: both;
+	padding-top: 5px;
+}
+
+#visitModal {
+	margin: -17px -15px 0 -15px;
+}
+
+#visitModal #tp-visit {
+	margin-left: 20px;
+}
+
+#visitModal #provider-typeahead-list li {
+	z-index: 999;
+}
+
+#visitModal span.loading, #visitModal span.empty-activities {
+	padding: 5px;
+}
+
+#visitModal a:hover, #visitModal a:focus, #visitModal a:active {
+	outline: 0;
+}
+
+#visitModal #selectedInfo {
+	font-size: 16px;
+}
+
+#visitModal #selDate {
+	color: #C0C0C0;
+	padding-left: 5px;
+}
+
+#visitModal .list-group-item:first-child {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+#visitModal li {
+	cursor: pointer;
+}
+
+#visitModal li:hover, #visitModal li:focus, #visitModal li.focused {
+	background-color: #ddd;
+	outline: 0;
+}
+
+#selected-visit {
+	padding: 10px;
+	border-top: 2px solid #ddd;
+	height: 50px;
+}
+
+#visitModal .tab-pane {
+	height: 275px;
+	overflow-y: auto;
+}
+
+#visitModal .nav > li > a:hover, .nav > li > a:focus {
+	outline: 0;
+}
+
+#visitModal .nav-tabs > li {
+	width: 33.3%;
+	text-align: center;
+	border: 1px solid #ddd;
+}
+
+#visitModal .nav-tabs > li > a {
+	font-size: 1.25em;
+	color: #aaa;
+}
+
+#visitModal .nav-tabs > li.active > a {
+	border: 0;
+	background-color: #3D5157;
+	color: #fff;
+}
+
+#visitModal .nav-tabs > li.active {
+	margin-top: 1px;
+}
+
+#visitModal .nav-tabs > li > a {
+	margin-right: 0;
+	border-radius: 0;
+}
+
+#provider-select {
+	padding: 10px;
+	height: 80px;
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>gov.va.hmp</groupId>
+		<artifactId>health-time-parent</artifactId>
+		<version>2.1.3</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>gov.va.hmp</groupId>
+	<artifactId>health-time-core</artifactId>
+	<packaging>jar</packaging>
+	<name>CPE Health-Time Library</name>
+	<version>2.1.3</version>
+	<description>A package of Java classes that implement imprecise dates and times. Concrete date/time type is based on
+        HL7's "point in time" data type. Classes implementing different date/time format strings, including conversion
+        to and from VA FileMan dates are included.
+    </description>
+	<dependencies>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${joda-time.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,30 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "CDS",
+    "systemId": "CDS"
+  },
+  "data": {
+    "updated": "20140409083514",
+    "totalItems": 1,
+    "items": [
+      {
+        "displayName": "PN",
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "kind": "Vital Sign",
+        "localId": 333,
+        "locationName": "GEN MED",
+        "locationUid": "urn:va:location:ABCD:9",
+        "observed": 199903091300,
+        "result": 7,
+        "resulted": 19990309154917,
+        "summary": "PAIN 7 ",
+        "typeCode": "urn:va:vuid:4500635",
+        "typeName": "PAIN",
+        "uid": "urn:va:vital:ABCD:105:333",
+        "units": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "CDS",
+    "systemId": "CDS"
+  },
+  "data": {
+    "updated": "20140409083904",
+    "totalItems": 1,
+    "items": [
+      {
+        "categoryName": "DEPRESSION SCREENING",
+        "categoryUid": "urn:va:factor-category:500077",
+        "display": true,
+        "encounterName": "AUDIOLOGY Feb 26, 2002",
+        "encounterUid": "urn:va:visit:ABCD:777:2895",
+        "entered": 20020226160307,
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "kind": "Health Factor",
+        "localId": 32,
+        "locationName": "AUDIOLOGY",
+        "locationUid": "urn:va:location:ABCD:64",
+        "name": "REFUSAL TO COMPLETE SCREENING TOOL",
+        "summary": "REFUSAL TO COMPLETE SCREENING TOOL",
+        "uid": "urn:va:factor:ABCD:777:32"
+      }
+    ]
+  }
+}

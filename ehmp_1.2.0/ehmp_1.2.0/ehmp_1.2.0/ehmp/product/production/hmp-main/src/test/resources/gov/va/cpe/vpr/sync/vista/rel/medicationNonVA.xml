@@ -1,0 +1,20 @@
+<med>
+    <doses>
+        <dose schedule="BID AC" route="PO" dose="1 CAP"/>
+    </doses>
+    <facility name="SLC-FO AVIVA VPLAY" code="962"/>
+    <form value="CAP,ORAL"/>
+    <id value="34611"/>
+    <location name="PRIMARY CARE" code="32"/>
+    <medID value="3N;O"/>
+    <name value="GARLIC OIL CAP,ORAL "/>
+    <orderID value="34611"/>
+    <ordered value="3111222.1321"/>
+    <orderingProvider name="AVIVAUSER,FIVE" code="1100"/>
+    <sig xml:space="preserve">TAKE 1 CAP BY MOUTH BID AC</sig>
+    <status value="not active"/>
+    <stop value="3111222.1324"/>
+    <type value="OTC"/>
+    <vaStatus value="DISCONTINUED"/>
+    <vaType value="N"/>
+</med>

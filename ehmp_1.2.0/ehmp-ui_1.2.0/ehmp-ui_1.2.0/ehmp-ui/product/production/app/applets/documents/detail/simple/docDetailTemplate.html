@@ -1,0 +1,61 @@
+<div class="documentDetail">
+	<div class="topDetailLabel labelStyleColor" tabindex="0">Facility</div>
+	<div class="detailInfo" tabindex="0"> {{facilityName}}&nbsp;</div>
+	<br>
+	<div class="topDetailLabel labelStyleColor" tabindex="0">Author</div>
+	<div class="detailInfo" tabindex="0"> {{authorDisplayName}}&nbsp;</div>
+	<br>
+	<div class="topDetailLabel labelStyleColor" tabindex="0">Status</div>
+    {{#if radiologyBool}}
+        <div class="detailInfo {{statusClass}}" tabindex="0"> {{statusName}}&nbsp;</div>
+    {{else}}
+	   <div class="detailInfo {{statusDisplayClass}}" tabindex="0"> {{statusDisplayName}}&nbsp;</div>
+    {{/if}}
+	<br>
+	<div class="topDetailLabel labelStyleColor" tabindex="0">Date/Time</div>
+	<div class="detailInfo" tabindex="0"> {{dateTimeDisplay}}&nbsp;</div>
+	<br>
+
+    {{#if radiologyBool}}
+        {{#if providers}}<div class="topDetailLabel labelStyleColor" tabindex="0">Providers</div>
+            <div class="detailInfo" tabindex="0">{{#each providers}}{{providerDisplayName}}&nbsp;{{/each}}&nbsp;</div>{{/if}}
+        <br>
+        {{#if results}}
+                <h5 tabindex="0">Results</h5>
+                {{#each results}}
+                {{#if report}}<a class="detail-result-link" data-doc-uid="{{../../uid}}" title="Go to result" tabindex="0">{{localTitle}}</a><br>{{/if}}
+                {{/each}}
+                {{#each results}}
+                {{#if report}}<pre class="resultDoc" data-doc-uid="{{../../uid}}" tabindex="0">{{report}}</pre> {{/if}}
+                {{/each}}
+        {{/if}}
+    {{/if}}
+	{{#if addendaText}}
+	<div tabindex="0"><strong>Addenda</strong><br>{{textDateTime}} &nbsp; Added by {{textAuthor}}</div>
+	<br>
+	<pre tabindex="0">{{content}}</pre><br>
+
+	{{#each addendaText}}
+	<div class="addendaLabel labelStyleColor" tabindex="0">Date of Addendum: </div>
+	<div class="addendaInfo" tabindex="0">{{addendaDateTime}}&nbsp;</div>
+	<br>
+	<div class="addendaLabel labelStyleColor" tabindex="0">Author: </div>
+	<div class="addendaInfo" tabindex="0">{{authorDisplayName}}&nbsp;</div>
+	<br>
+	<div class="addendaLabel labelStyleColor" tabindex="0">Status: </div>
+	<div class="addendaInfo {{status}}" tabindex="0">{{status}}&nbsp;</div>
+	<br>
+	<pre tabindex="0">{{content}}</pre> <br>
+
+	{{/each}}
+	{{else}}
+	    {{#unless radiologyBool}}
+	    	{{#if dodComplexNoteContent}}
+	    	<iframe id="dodContent" class="dodContent" seamless sandbox="allow-same-origin" src="#"></iframe>
+	    	{{else}}
+	    	<pre tabindex="0">{{content}}</pre>
+	    	{{/if}}
+	    {{/unless}}
+	{{/if}}
+
+</div>

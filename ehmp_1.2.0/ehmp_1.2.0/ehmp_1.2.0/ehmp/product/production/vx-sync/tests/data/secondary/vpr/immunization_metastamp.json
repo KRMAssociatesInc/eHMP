@@ -1,0 +1,103 @@
+{
+	"icn": "10110V004877",
+	"stampTime": "20131031094920.853",
+	"sourceMetaStamp": {
+		"9E7A": {
+			"pid": "9E7A;8",
+			"localId": "8",
+			"stampTime": "20131031094920.853",
+			"domainMetaStamp": {
+				"immunization": {
+					"domain": "immunization",
+					"stampTime": "20131031094920.853",
+					"eventMetaStamp": {
+						"urn:va:immunization:9E7A:8:42": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:immunization:9E7A:8:54": {
+							"stampTime": "20131031094920.853"
+						}
+					}
+				}
+			}
+		},
+		"HDR": {
+			"pid": "HDR;10110V004877",
+			"localId": "10110V004877",
+			"stampTime": "20131031094920.853",
+			"domainMetaStamp": {
+				"immunization": {
+					"domain": "immunization",
+					"stampTime": "20131031094920.853",
+					"eventMetaStamp": {
+						"urn:va:immunization:ABCD:229:44": {
+							"stampTime": "20131031094920.853"
+						}
+					}
+				}
+			}
+		},
+		"C877": {
+			"pid": "C877;8",
+			"localId": "8",
+			"stampTime": "20131031094920.853",
+			"domainMetaStamp": {
+				"immunization": {
+					"domain": "immunization",
+					"stampTime": "20131031094920.853",
+					"eventMetaStamp": {
+						"urn:va:immunization:C877:8:42": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:immunization:C877:8:54": {
+							"stampTime": "20131031094920.853"
+						}
+					}
+				}
+			}
+		},
+		"DOD": {
+			"pid": "DOD;0000000008",
+			"localId": "0000000008",
+			"stampTime": "20131031094920.853",
+			"domainMetaStamp": {
+				"immunization": {
+					"domain": "immunization",
+					"stampTime": "20131031094920.853",
+					"eventMetaStamp": {
+						"urn:va:immunization:DOD:0000000008:1000001602": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:immunization:DOD:0000000008:1000001603": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:immunization:DOD:0000000008:1000001604": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:immunization:DOD:0000000008:1000001605": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:immunization:DOD:0000000008:1000001606": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:immunization:DOD:0000000008:1000001607": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:immunization:DOD:0000000008:1000001608": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:immunization:DOD:0000000008:1000001609": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:immunization:DOD:0000000008:1000001610": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:immunization:DOD:0000000008:1000001611": {
+							"stampTime": "20131031094920.853"
+						}
+					}
+				}
+			}
+		}
+	}
+}

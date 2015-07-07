@@ -1,0 +1,80 @@
+<html>
+   ###parse("/layouts/detail.vm")
+<body>
+#* going with rowbody style instead of this
+<script type="text/javascript">
+	Ext.onReady(function(){
+		return;
+		// some goofy stuff here, searching for 'problem' causes the UID below to
+		// be wrapped in HTML tags later, thus forcing the REGEX stripping later
+		var regex = /(<([^>]+)>)/ig
+		var uid = '${fields.uid}';
+		var url = "/frame/exec?entryPoint=gov.va.cpe.vpr.rowaction&uid=" + uid.replace(regex, "");
+		
+    	var actionPanel = Ext.create('gov.va.cpe.viewdef.RowActionContainer', {
+			renderTo: Ext.get('rowActionContainerID'),
+			menuMax: 20
+		});
+		actionPanel.show();
+    	actionPanel.reset();
+    	actionPanel.fetchActions(url);
+	});
+</script>
+<div id="rowActionContainerID" style="width: 200px; height: 250px; float: right;"></div>
+*#
+<table class="hmp-labeled-values">
+	#if($item.onset)
+    <tr>
+        <td>Onset</td>
+        <td>$hmp.formatDate($item.onset)</td>
+    </tr>
+	#end
+    <tr>
+        <td>Status</td>
+        <td>$!item.statusDisplayName
+			#if($!item.acuityName)
+				/$!item.acuityName
+			#end
+		</td>
+    </tr>
+    <tr>
+        <td>Provider</td>
+        <td>$!item.providerDisplayName</td>
+    </tr>
+    <tr>
+        <td>Location</td>
+        <td>$!item.locationDisplayName</td>
+    </tr>
+    <tr>
+        <td>Facility</td>
+        <td>$!item.facilityName</td>
+    </tr>
+    <tr>
+        <td>Entered</td>
+        <td>$hmp.formatDate($!item.entered)</td>
+    </tr>
+    <tr>
+        <td>Updated</td>
+        <td>$hmp.formatDate($item.updated)</td>
+    </tr>
+    <tr>
+        <td>ICD-9</td>
+        <td>$!item.icdName</td>
+    </tr>
+</table>
+
+#if ($item.comments && $item.comments.size() > 0)
+<table>
+	<tr>
+		<td>
+		<blockquote>
+		#foreach($c in $item.comments)
+		<p>$c.comment<small>$hmp.formatDateTime($c.entered) by $c.enteredByName </small></p>
+		#end
+		</blockquote>
+		</td>
+	</tr>
+</table>	
+#end
+</body>
+</html>

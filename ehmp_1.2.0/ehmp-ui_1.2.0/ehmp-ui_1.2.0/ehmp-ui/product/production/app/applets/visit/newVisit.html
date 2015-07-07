@@ -1,0 +1,34 @@
+<form id="newVisitForm">
+	<div class="form-group col-sm-5" id="locationSelection">
+	</div>
+
+	<div class="form-group col-sm-7">
+	<label for="date-select">Date/Time of Visit</label>
+		<div id="date-select">
+			<div class="input-group date col-sm-4">
+				<label class="sr-only" for="dp-visit">Date field for New Visit Selection</label>
+    			<input type="text" autocomplete="off"  class="form-control datepicker" id="dp-visit" data-date-end-date
+    			<span id="date-picker-icon" max-length="10" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+    			</span>
+			</div>
+			<div class="input-append input-group bootstrap-timepicker col-sm-3">
+				<label class="sr-only" for="tp-visit">Time field for New Visit Selection</label>
+				<input id="tp-visit" type="text" autocomplete="off" class="form-control" data-inputmask-regex="([0][1-9]|[1][0-2]):([0-5]\d)(a|p)" placeholder="HH:MMa/p" value="{{time}}" max-length="10">
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-time"></span>
+				</span>
+			</div>
+		</div>
+		<div id="dateTimeErrors">
+			<div id="time-error"></div>
+			<div id="date-error"></div>
+		</div>
+	</div>
+	<div class="col-sm-7 pull-right">
+		<input class="col-sm-1" type="checkbox" id="visit-historical"/>
+		<div class="col-sm-10">
+			<label for="visit-historical"><strong>Historical Visit</strong></label>
+			<p>A visit that occurred at some time in the past or at some other location (possibly non-VA) but is not used for workload credit.</p>
+		</div>
+	</div>
+</form>

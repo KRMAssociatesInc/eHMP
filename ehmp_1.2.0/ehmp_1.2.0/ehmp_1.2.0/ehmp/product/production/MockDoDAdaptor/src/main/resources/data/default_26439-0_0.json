@@ -1,0 +1,324 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "OrderStatus": "",
+        "EnteredBy": "",
+        "TestName": "",
+        "RepositoryId": "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "EnteredByDate": "",
+        "OrderDateTime": "",
+        "CustodianName": "va",
+        "ResultId": "",
+        "Accession": "SP 00 368",
+        "OrderPriority": "",
+        "OrderingProvider": "",
+        "OrderComment": "LUMP FOUND",
+        "OrderId": "",
+        "SpecimenName": "RIGHT BREAST MASS",
+        "CustodianId": "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "OtherIdentifier": "",
+        "TestId": "",
+        "RequestingLocation": "",
+        "Specimen": "",
+        "CollectionSample": "",
+        "Facility": "ALASKA VAHSRO/463",
+        "LoincCode": "26439-0",
+        "OrderNumber": "SP 00 368",
+        "OrderFacility": "ALASKA VAHSRO/463",
+        "Results": [
+          {
+            "ResultComment": "",
+            "LabTest": "TISSUE ENLARGEMENT",
+            "CertifiedDate": "20000804",
+            "FullReport": "Comment: LUMP FOUND\nReport: 000807 SP 2486\nCol: 04Aug00\nTISSUE(TISSUE)\n\nHcp: SCOTT,FLOYD E\nReq Loc: VA CLINI\n\nTISSUE E\nC:AME14Aug00@0807\nCoPath Report\n\n  Patient: DODSON,LOURESTA L\nSpecimen #:  S00-2486\nAccessioned: 08/07/00\n  Pathologist: ALAAELDEEN M. ELSAYED, Lt Col, USAF, MC, FS\n                                    **ADDENDUM**\n\n  SPECIMEN:\n    RIGHT BREAST MASS\n\n  CLINICAL DIAGNOSIS AND HISTORY:\n    41 YO FEMALE  W/ RIGHT BREAST MASS FOR 10 YEARS. LAST YEAR GETTING\nLARGER SLOWLY.\n\n  PRE-OPERATIVE DIAGNOSIS:\n    RIGHT BREAST MASS\n\n  POST-OPERATIVE DIAGNOSIS:\n    Post-operative Diagnosis: RIGHT BREAST MASS\n\n  GROSS DESCRIPTION:\n    Received in formalin, labeled with patient's name, identification #\nand \"1 right breast mass\" and consists of a segment of breast/soft tissue\nmeasuring approximately 4.5 x 3.2 x 2.3 cm in the longest dimensions and\nweighing 11.3 grams.  The specimen is inked and serially vertically\nsectioned revealing a greyish white fibrous-like cut surface alternating\nwith yellowish adipose-like areas.  Representative sections are submitted\nin two cassettes labeled A1 and A2.\n\n  FINAL DIAGNOSIS:\n    RIGHT BREAST, EXCISIONAL BIOPSY OF \"MASS\":\n        -  BENIGN BREAST TISSUE WITH PERIDUCTAL FIBROSIS, DUCT ECTASIA,\n           BENIGN INTRADUCTAL PAPILLOMA, AND ATYPICAL INTRADUCTAL\nHYPERPLASIA.\n COMMENT:\n    Case forwarded to the Armed Forces Institute of Pathology Department\nof Breast and Gynecologic Pathology.\n\n    REFERRAL:\n    AFIP\n\n\n    lcd/08/09/00\n** Report Electronically Signed **\nALAAELDEEN M. ELSAYED, Lt Col, USAF, MC, FS\n\n\n  ADDENDUM:\n    ** SIGNED OUT 09/01/00 **\n    This addendum is issued to reflect the results of expert consultation\nin AFIP report #2742601 SEQ 00 and is entered into the electronic report\nby the Pathology Department  transcriptionist. A copy of the AFIP report\nis forwarded to the patient's attending physician and medical records.\n    S00-2486 RIGHT BREAST, BIOPSY: FOCAL DUCTAL INTRAEPITHELIAL NEOPLASIA,\n                                   GRADE 1B (DIN 1B) (ATYPICAL INTRADUCTAL\n                                   HYPERPLASIA),FLAT AND CRIBRIFORM TYPES,\n                                   SEE COMMENT.\n                                 : FIBROCYSTIC CHANGES WITH MICROCYSTS AND\n                                   STROMAL FIBROSIS.\n                                 : SCLEROSING ADENOSIS, MILD.\n                                 : PSEUDOANGIOMATOUS STROMAL HYPERPLASIA\n                                   (PASH), MILD.\n\n    THIS CASE WAS REVIEWED IN STAFF CONFERENCE. THE STAFF ESSENTIALLY\nCONCURS WITH YOUR INTERPRETATIONS BUT PREFERS THE ABOVE TERMINOLOGY.  A\nCOPY OF THE RECENTLY PROPOSED CLASSIFICATION SCHEME FOR INTRADUCTAL\nEPITHELIAL PROLIFERATIONS WITH COMPARISON TO CONVENTIONAL TERMINOLOGY IS\nINCLUDED FOR YOUR REFERENCE.\n\n    ALTHOUGH PSEUDOANGIOMATOUS STROMAL HYPERPLASIA (PASH) MAY BE A CAUSE\nOF A CLINICAL BREAST MASS, FOLLOW UP OF ANY PERSISTENT/RESIDUAL BREAST\nMASS IS SUGGESTED, AS CLINICALLY APPROPRIATE.\n\n    A SMALL, DETACHED INTRADUCTAL EPITHELIAL FRAGMENT WITH PROMINENT\nELECTROCAUTERY ARTIFACT IS NOTED WITHIN THE LUMEN OF A DUCT (SLIDE A1);\nTHIS FINDING IS NON-DIAGNOSTIC, BUT A TINY FRAGMENT OF A PAPILLARY LESION\nCAN NOT BE COMPLETELY RULED OUT.\n\n    SIGNED BY: KRIS M. SHEKITKA, M.D.\n\n    khb/09/01/00\n** Addendum Electronically Signed **\nALAAELDEEN M. ELSAYED, Lt  Col, USAF, MC, FS\n\n  CPT Codes:\n    88305 ; 88305 ; SP:LEVEL IV (88305)\n\n  SNOMED CODES\n    1. M32100; M49000; M72175; M85030; P1141; T04000; T04020\n    2. -",
+            "Facility": "ALASKA VAHSRO/463",
+            "CertifiedBy": "",
+            "ResultStatus": "",
+            "Specimens": [
+              {
+                "SpecimenDescription": "RIGHT BREAST MASS",
+                "EventId": "1000001185"
+              }
+            ],
+            "SnoMedCodes": [
+
+            ],
+            "EventId": "1000001186"
+          }
+        ],
+        "CollectionDateTime": "20000804",
+        "EventId": "1000001187"
+      },
+      "dataType": 9
+    },
+    {
+      "dataRecord": {
+        "OrderStatus": "",
+        "EnteredBy": "",
+        "TestName": "RUL NEEDLE BX",
+        "RepositoryId": "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "EnteredByDate": "",
+        "OrderDateTime": "",
+        "CustodianName": "va",
+        "ResultId": "",
+        "Accession": "",
+        "OrderPriority": "",
+        "OrderingProvider": "",
+        "OrderComment": "",
+        "OrderId": "",
+        "SpecimenName": "RUL NEEDLE BX",
+        "CustodianId": "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "OtherIdentifier": "",
+        "TestId": "",
+        "RequestingLocation": "",
+        "Specimen": "",
+        "CollectionSample": "",
+        "Facility": "WASHINGTON/688",
+        "LoincCode": "26439-0",
+        "OrderNumber": "",
+        "OrderFacility": "WASHINGTON/688",
+        "Results": [
+          {
+            "ResultComment": "",
+            "LabTest": "",
+            "CertifiedDate": "19951019",
+            "FullReport": "Report: 36 YEAR OLD WITH AIDS AND RIGHT UPPER LOBE LUNG MASS.\n8 Smears.\nCLASS O     BLOODY, DEGENERATED MATERIAL UNSATISFACTORY FOR EVALUATION.",
+            "Facility": "WASHINGTON/688",
+            "CertifiedBy": "",
+            "ResultStatus": "",
+            "Specimens": [
+              {
+                "SpecimenDescription": "RUL NEEDLE BX",
+                "EventId": "1000001188"
+              }
+            ],
+            "SnoMedCodes": [
+
+            ],
+            "EventId": "1000001189"
+          }
+        ],
+        "CollectionDateTime": "19951019",
+        "EventId": "1000001190"
+      },
+      "dataType": 9
+    },
+    {
+      "dataRecord": {
+        "OrderStatus": "",
+        "EnteredBy": "",
+        "TestName": "LESION BUCCAL MUCOSA",
+        "RepositoryId": "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "EnteredByDate": "",
+        "OrderDateTime": "",
+        "CustodianName": "va",
+        "ResultId": "",
+        "Accession": "CY 01 138",
+        "OrderPriority": "",
+        "OrderingProvider": "",
+        "OrderComment": "********** SEE VISTA IMAGINING FOR SCANNED REPORT **********",
+        "OrderId": "",
+        "SpecimenName": "LESION BUCCAL MUCOSA",
+        "CustodianId": "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "OtherIdentifier": "",
+        "TestId": "",
+        "RequestingLocation": "",
+        "Specimen": "",
+        "CollectionSample": "",
+        "Facility": "ALASKA VAHSRO/463",
+        "LoincCode": "26439-0",
+        "OrderNumber": "CY 01 138",
+        "OrderFacility": "ALASKA VAHSRO/463",
+        "Results": [
+          {
+            "ResultComment": "",
+            "LabTest": "",
+            "CertifiedDate": "20011107",
+            "FullReport": "Comment: ********** SEE VISTA IMAGINING FOR SCANNED REPORT **********",
+            "Facility": "ALASKA VAHSRO/463",
+            "CertifiedBy": "",
+            "ResultStatus": "",
+            "Specimens": [
+              {
+                "SpecimenDescription": "LESION BUCCAL MUCOSA",
+                "EventId": "1000001191"
+              }
+            ],
+            "SnoMedCodes": [
+
+            ],
+            "EventId": "1000001192"
+          }
+        ],
+        "CollectionDateTime": "20011107",
+        "EventId": "1000001193"
+      },
+      "dataType": 9
+    },
+    {
+      "dataRecord": {
+        "OrderStatus": "COMPLETE",
+        "EnteredBy": "",
+        "TestName": "BONE MARROW BIOPSY",
+        "RepositoryId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "EnteredByDate": "",
+        "OrderDateTime": "20080523160000",
+        "CustodianName": "tmds",
+        "ResultId": "6919476",
+        "Accession": "080523 BM 15",
+        "OrderPriority": "ROUTINE",
+        "OrderingProvider": "MCDERMOTT,BARB",
+        "OrderComment": "Mock data from TMDS for 50002",
+        "OrderId": "3738874",
+        "SpecimenName": "BONE MARROW",
+        "CustodianId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "OtherIdentifier": "",
+        "TestId": "719",
+        "RequestingLocation": "CARDIOLOGY WARD",
+        "Specimen": "31131",
+        "CollectionSample": "BONE MARROW",
+        "Facility": "",
+        "LoincCode": "26439-0",
+        "OrderNumber": "080523-00003",
+        "OrderFacility": "NBHC GROTON/DNS:ha.osd.mil/0035",
+        "Results": [
+          {
+            "ResultComment": "Mock data from TMDS for 50002",
+            "LabTest": "CYTOLOGIC NON-GYN",
+            "CertifiedDate": "20080523165536",
+            "FullReport": "080523 CN 19",
+            "Facility": "NBHC GROTON/DNS:ha.osd.mil/0035",
+            "CertifiedBy": "MCDERMOTT,BARB 1",
+            "ResultStatus": "COMPLETE",
+            "Specimens": [
+              {
+                "SpecimenDescription": "[A] =bronch wash {1. PLEURAL FLUID}",
+                "EventId": "1000001194"
+              },
+              {
+                "SpecimenDescription": "[A]  frozen =BONE MARROW {1. BONE MARROW}",
+                "EventId": "1000001195"
+              }
+            ],
+            "SnoMedCodes": [
+              {
+                "SnoMedCodeDescription": "A1:  PLEURAL FLUID",
+                "SnoMedCode": "T-2778004",
+                "EventId": "1000001196"
+              },
+              {
+                "SnoMedCodeDescription": "A1:  BONE MARROW",
+                "SnoMedCode": "T-14016003",
+                "EventId": "1000001197"
+              },
+              {
+                "SnoMedCodeDescription": "A1:  CEREBELLAR CORTEX, MOLECULAR LAYER",
+                "SnoMedCode": "T-33991007",
+                "EventId": "1000001198"
+              }
+            ],
+            "EventId": "1000001199"
+          }
+        ],
+        "CollectionDateTime": "20080523",
+        "EventId": "1000001200"
+      },
+      "dataType": 9
+    },
+    {
+      "dataRecord": {
+        "OrderStatus": "COMPLETE",
+        "EnteredBy": "",
+        "TestName": "CYTOLOGIC GYN",
+        "RepositoryId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "EnteredByDate": "",
+        "OrderDateTime": "20080523153700",
+        "CustodianName": "tmds",
+        "ResultId": "6919476",
+        "Accession": "080523 CG 22",
+        "OrderPriority": "ROUTINE",
+        "OrderingProvider": "MCDERMOTT,BARB",
+        "OrderComment": "Mock data from TMDS for 50002",
+        "OrderId": "3738872",
+        "SpecimenName": "VAGINAL CYTOLOGIC MATERIAL",
+        "CustodianId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "OtherIdentifier": "",
+        "TestId": "2000",
+        "RequestingLocation": "CARDIOLOGY WARD",
+        "Specimen": "8394",
+        "CollectionSample": "SLIDE, PAP SMEAR",
+        "Facility": "",
+        "LoincCode": "26439-0",
+        "OrderNumber": "080523-00001",
+        "OrderFacility": "NBHC GROTON/DNS:ha.osd.mil/0035",
+        "Results": [
+          {
+            "ResultComment": "Mock data from TMDS for 50002",
+            "LabTest": "TISSUE EXAMINATION",
+            "CertifiedDate": "20080523155303",
+            "FullReport": "080523 S 29",
+            "Facility": "NBHC GROTON/DNS:ha.osd.mil/0035",
+            "CertifiedBy": "MCDERMOTT,BARB",
+            "ResultStatus": "COMPLETE",
+            "Specimens": [
+              {
+                "SpecimenDescription": "A1:  CEREBELLAR CORTEX, MOLECULAR LAYER",
+                "EventId": "1000001201"
+              },
+              {
+                "SpecimenDescription": "A2:  SKIN",
+                "EventId": "1000001202"
+              }
+            ],
+            "SnoMedCodes": [
+              {
+                "SnoMedCodeDescription": "A1:  CEREBELLAR CORTEX, MOLECULAR LAYER",
+                "SnoMedCode": "T-33991007",
+                "EventId": "1000001203"
+              },
+              {
+                "SnoMedCodeDescription": "SKIN",
+                "SnoMedCode": "T-39937001",
+                "EventId": "1000001204"
+              },
+              {
+                "SnoMedCodeDescription": "CEREBELLAR CORTEX, MOLECULAR LAYER",
+                "SnoMedCode": "T-3399100A1",
+                "EventId": "1000001205"
+              }
+            ],
+            "EventId": "1000001206"
+          }
+        ],
+        "CollectionDateTime": "20080523",
+        "EventId": "1000001207"
+      },
+      "dataType": 9
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "tmds",
+      "SiteId": "2.16.840.1.113883.3.42.10009.100001.13"
+    },
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "va",
+      "SiteId": "2.16.840.1.113883.3.42.10002.100001.8.22200"
+    },
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "tmds",
+      "SiteId": "2.16.840.1.113883.3.42.10009.100001.13"
+    }
+  ]
+}

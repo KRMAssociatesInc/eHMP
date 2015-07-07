@@ -1,0 +1,94 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2157581604",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "BHIE, USERONE",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131119195611",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "BHIE, USERONE",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20131119194901",
+        "LoincCode": "34109-9",
+        "Facility": "NH Great Lakes IL^Family Practice Clinic",
+        "NoteTypeCode": "",
+        "EventId": "1000000688"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2157581617",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "BHIE, USERONE",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131119202018",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "BHIE, USERONE",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20131119201730",
+        "LoincCode": "34109-9",
+        "Facility": "NH Great Lakes IL^Family Practice Clinic",
+        "NoteTypeCode": "",
+        "EventId": "1000000689"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2157581741",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "BHIE, USERONE",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131121154409",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "BHIE, USERONE",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20131121153434",
+        "LoincCode": "34109-9",
+        "Facility": "NH Great Lakes IL^Family Practice Clinic",
+        "NoteTypeCode": "",
+        "EventId": "1000000690"
+      },
+      "dataType": 12
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

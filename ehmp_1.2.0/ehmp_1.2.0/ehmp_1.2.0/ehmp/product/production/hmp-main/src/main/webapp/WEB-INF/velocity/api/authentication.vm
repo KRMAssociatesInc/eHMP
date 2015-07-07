@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>#springMessage("platform.name") &raquo; Authentication</title>
+    #parse("/layouts/api.vm")
+</head>
+
+<body>
+<h1>Authentication</h1>
+
+<p>The REST APIs have a number of methods that require user authentication
+    to access or publish data.</p>
+
+<p>There are currently two techniques for authenticating with the REST APIs, though others are under
+    consideration while the #springMessage("platform.name") is still under development.</p>
+
+<h2 id="manual">Sign in manually</h2>
+
+<p></p>
+
+<h2 id="basic">Basic Auth</h2>
+
+<p><a href="http://en.wikipedia.org/wiki/Basic_access_authentication">Basic Authentication</a> sends user credentials
+    in the header of the HTTP request. This makes it easy to use, but insecure if <a
+            href="http://en.wikipedia.org/wiki/Transport_Layer_Security">SSL/TLS</a>
+    is not enabled.  Therefore, the #springMessage("platform.name") should always have <a
+            href="http://en.wikipedia.org/wiki/Transport_Layer_Security">SSL/TLS</a>
+    enabled when deployed in production.</p>
+
+<h3>Credentials</h3>
+
+<p>VistA authentication credentials are composed of an access/verify code pair authenticated against a specific station number in a specific VistA system, whereas Basic Auth
+    employs a username/password pair.</p>
+
+<p>The convention we have adopted to map VistA credentials to Basic Auth is to set the username to the 'vista id' and 'station number', separated by a semicolon,
+    and the password to the 'access code' and 'verify code' separated by a semi-colon.  The "vista id" is defined as the CRC16 of the DOMAIN (in the Kernel System Parameters File) of the VistA system you want to authenticate against.</p>
+
+<p>For example:</p>
+<pre>TBD</pre>
+
+<h3>Browsers</h3>
+
+<p>Flex and/or Desktop clients can manage their HTTP headers for Basic Auth appropriately for interaction with the API.
+    Existing browsers, however, retain the Basic Auth authentication information until the tab or browser is closed or the user clears the history.
+    #springMessage("platform.name") developers employ the <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/60/">WebDeveloper Firefox Add-on</a>
+    to clear the authentication information when interacting with the API using a browser.  But this disadvantage is one
+    of the reasons to consider alternative authentication techniques for the API in the future.</p>
+
+<h2 id="oauth">OAuth</h2>
+
+<p>In the near future we plan to support <a
+        href="http://oauth.net/">OAuth</a> authentication in much the same way commercial web service APIs like <a
+        href="https://dev.twitter.com/docs">Twitter</a> implement it.
+</p>
+
+<p>The OAuth authentication mechanism will allow the #springMessage("platform.name") to issue API keys to applications wanting to integrate with the platform, which in turn enables applications to provide the following information:</p>
+<ol>
+    <li>Which application is making the request</li>
+    <li>Which user the request is on behalf of</li>
+    <li>Whether the application has permission to carry out the request on the user's behalf</li>
+    <li>Whether the request has been tampered by a third party while in transit</li>
+</ol>
+
+<p>We anticipate that once OAuth has been implemented we will deprecate the <a href="#basic">Basic Auth</a> mechanism.
+</p>
+
+</body>
+</html>

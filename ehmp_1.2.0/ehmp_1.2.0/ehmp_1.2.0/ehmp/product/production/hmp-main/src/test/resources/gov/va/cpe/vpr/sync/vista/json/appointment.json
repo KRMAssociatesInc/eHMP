@@ -1,0 +1,25 @@
+{
+    "appointmentStatus":"SCHEDULED\/KEPT",
+    "categoryCode":"urn:va:encounter-category:OV",
+    "categoryName":"Outpatient Visit",
+    "dateTime":201207271200,
+    "facilityCode":500,
+    "facilityName":"CAMP MASTER",
+    "localId":"A;3120727.12;195",
+    "locationName":"",
+    "locationUid":"urn:va:location:500:0",
+    "patientClassCode":"AMB",
+    "patientClassName":"Ambulatory",
+    "providers":[
+        {
+            "providerName":"WARDCLERK,FIFTYEIGHT",
+            "providerUid":"urn:va:user:F484:11256"
+        }
+    ],
+    "service":"MEDICINE",
+    "stopCode":303,
+    "stopCodeName":"CARDIOLOGY",
+    "typeCode":9,
+    "typeName":"REGULAR",
+    "uid":"urn:va:appointment:F484:100842:A;3120727.12;195"
+}

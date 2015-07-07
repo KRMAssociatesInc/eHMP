@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-md-4 text-right text-muted">Primary ICD-9-CM:</div>
+  <div class="col-md-8 text-left">{{icdCode}}</div>
+</div>
+<div class="row">
+  <div class="col-md-4 text-right text-muted">SNOMED CT:</div>
+  <div class="col-md-8 text-left">{{snomedCode}}</div>
+</div>
+&nbsp;
+<div class="row">
+  <div class="col-md-4 text-right text-muted">Onset:</div>
+  <div class="col-md-8 text-left">{{onsetFormatted}}</div>
+</div>
+<div class="row">
+  <div class="col-md-4 text-right text-muted">Acuity:</div>
+  <div class="col-md-8 text-left">{{acuityName}}</div>
+</div>
+<div class="row">
+  <div class="col-md-4 text-right text-muted">Provider:</div>
+  <div class="col-md-8 text-left">{{providerDisplayName}}</div>
+</div>
+<div class="row">
+  <div class="col-md-4 text-right text-muted">Facility:</div>
+  <div class="col-md-8 text-left">{{facilityName}}</div>
+</div>
+<div class="row">
+  <div class="col-md-4 text-right text-muted">Location:</div>
+  <div class="col-md-8 text-left">{{locationDisplayName}}</div>
+</div>
+&nbsp;
+<!--<div class="row">
+  <div class="col-md-4 text-right text-muted">Recorded:</div>
+  <div class="col-md-8 text-left"><strong>&lt;Data not available&gt; by &lt;Data not available&gt;</strong></div>
+</div>-->
+<div class="row">
+  <div class="col-md-4 text-right text-muted">Entered:</div>
+  <div class="col-md-8 text-left">{{formatDate entered}}</div>
+</div>
+<div class="row">
+  <div class="col-md-4 text-right text-muted">Updated:</div>
+  <div class="col-md-8 text-left">{{formatDate updated}}</div>
+</div>
+&nbsp;
+<div class="row">
+  <div class="col-md-12"><hr/><h4>Comments:</h4></div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    {{#comments}}
+    <div class="row">
+      <div class="col-md-2 col-md-offset-2">{{formatDate entered}}</div>
+      <div class="col-md-7">{{enteredByName}}</div>
+    </div>
+    <div class="row">
+      <div class="col-md-9 col-md-offset-2">{{comment}}<br/></div>
+    </div>
+    &nbsp;
+    {{/comments}}
+
+  </div>
+</div>

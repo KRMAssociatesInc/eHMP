@@ -1,0 +1,48 @@
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><!-- 
+  Entity Document Query WSDL
+  --><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:nccommonentity="urn:gov:hhs:fha:nhinc:common:nhinccommonentity" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:gov:hhs:fha:nhinc:entitydocquery" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EntityDocQuery" targetNamespace="urn:gov:hhs:fha:nhinc:entitydocquery">
+  <documentation>Entity Document Query</documentation>
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" schemaLocation="EntityDocQuery_metadata19.xsd"/>
+      <xsd:import namespace="urn:gov:hhs:fha:nhinc:common:nhinccommonentity" schemaLocation="EntityDocQuery_metadata15.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="RespondingGateway_CrossGatewayQueryRequestMessage">
+    <part element="nccommonentity:RespondingGateway_CrossGatewayQueryRequest" name="RespondingGateway_CrossGatewayQueryRequest"/>
+  </message>
+  <message name="RespondingGateway_CrossGatewayQueryResponseMessage">
+    <part element="query:AdhocQueryResponse" name="RespondingGateway_CrossGatewayQueryResponse"/>
+  </message>
+  <portType name="EntityDocQueryPortType">
+    <operation name="RespondingGateway_CrossGatewayQuery">
+      <input message="tns:RespondingGateway_CrossGatewayQueryRequestMessage" name="RespondingGateway_CrossGatewayQueryRequest" wsaw:Action="urn:gov:hhs:fha:nhinc:entitydocquery:RespondingGateway_CrossGatewayQueryRequest"/>
+      <output message="tns:RespondingGateway_CrossGatewayQueryResponseMessage" name="RespondingGateway_CrossGatewayQueryResponse" wsaw:Action="urn:gov:hhs:fha:nhinc:entitydocquery:RespondingGateway_CrossGatewayQueryResponse"/>
+    </operation>
+  </portType>
+  <binding name="EntityDocQueryBindingSoap11" type="tns:EntityDocQueryPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="RespondingGateway_CrossGatewayQuery">
+      <soap:operation soapAction="urn:RespondingGateway_CrossGatewayQuery"/>
+      <input name="RespondingGateway_CrossGatewayQueryRequest">
+        <soap:body use="literal"/>
+      </input>
+      <output name="RespondingGateway_CrossGatewayQueryResponse">
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="EntityDocQuery">
+    <port binding="tns:EntityDocQueryBindingSoap11" name="EntityDocQueryPortSoap11">
+      <soap:address location="http://nhiapp-sqa2.domain:80/NHINAdapterGatewayDocQuery/EntityDocQuery"/>
+    </port>
+  </service>
+  <plnk:partnerLinkType name="EntityDocQuery"><!-- A partner link type is automatically generated when a new port type is added. 
+         Partner link types are used by BPEL processes. In a BPEL process, a partner 
+         link represents the interaction between the BPEL process and a partner service. 
+         Each partner link is associated with a partner link type. A partner link type 
+         characterizes the conversational relationship between two services. The 
+         partner link type can have one or two roles.-->
+    <plnk:role name="EntityDocQueryPortTypeRole" portType="tns:EntityDocQueryPortType"/>
+  </plnk:partnerLinkType>
+</definitions>

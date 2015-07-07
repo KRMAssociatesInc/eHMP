@@ -1,0 +1,137 @@
+/*
+  backgrid-paginator
+  http://github.com/wyuenho/backgrid
+
+  Copyright (c) 2013 Jimmy Yuen Ho Wong and contributors
+  Licensed under the MIT license.
+*/
+
+.backgrid-paginator {
+  text-align: center;
+  border-top: none;
+  -webkit-border-radius: 0 0 4px 4px;
+     -moz-border-radius: 0 0 4px 4px;
+          border-radius: 0 0 4px 4px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.backgrid-paginator ul {
+  display: inline-block;
+  *display: inline;
+ /* margin: 6px 0 1px 0;*/
+  float: right;
+  *zoom: 1;
+
+}
+
+ .backgrid-paginator {
+    height: 20px;
+    background: #FFFFFF;
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+    /* Opera */ 
+    background-image: -o-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #F2F2F2));
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #F2F2F2 100%);
+}
+
+
+.backgrid-paginator ul > li {
+  display: inline;
+  list-style:none;
+  float:left;
+    /*margin:0 2px;*/
+}
+
+.backgrid-paginator ul > li > a,
+.backgrid-paginator ul > li > span {
+float: right;
+width: 3px;
+height: 3px;
+margin-top: 7px;
+margin-right: 6px;
+padding: 0;
+line-height: 5px;
+text-decoration: none;
+text-indent: -10000px;
+background: #B2C5CF;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 100%;
+/*box-shadow: inset 1px 1px 1px rgba(0, 0 ,0, 0.4);*/
+}
+
+
+
+.backgrid-paginator ul > li:nth-last-child(2) > a{
+width: 25px;
+text-align: center;
+margin: 0;
+height: 20px;
+line-height: 20px;
+background:none;
+text-indent: 0px; 
+border-radius: 0;
+border-left: 1px solid #E4E4E4;
+
+
+}
+.backgrid-paginator ul > li:nth-last-child(2)> a:before{
+content:"\f0d9";
+line-height: 20px;
+font-family: "FontAwesome"; 
+color:#628896;
+display:block;
+}
+
+.backgrid-paginator ul > li:last-child >a{
+width: 25px;
+text-align: center;
+margin: 0;
+height: 20px;
+line-height: 20px;
+background:none;
+text-indent: 0px; 
+border-radius: 0;
+border-left: 1px solid #E4E4E4;
+}
+
+.backgrid-paginator ul > li:last-child >a:before{
+content:"\f0da"; 
+line-height: 20px;
+font-family: "FontAwesome"; 
+color:#628896; 
+display: block;
+}
+
+
+.backgrid-paginator ul > li > a:hover:before{
+    background-color: #FFFFFF;
+    color:#00CCCC;
+}
+
+.backgrid-paginator ul > .active > a,
+.backgrid-paginator ul > .active > span {
+  background-color: #206473;
+}
+
+.backgrid-paginator ul > .active > a,
+.backgrid-paginator ul > .active > span {
+  color: #206473;
+  cursor: default;
+}
+
+.backgrid-paginator ul > .disabled > span,
+.backgrid-paginator ul > .disabled > a,
+.backgrid-paginator ul > .disabled > a:hover {
+  color: #B2C5CF;
+  cursor: default;
+}

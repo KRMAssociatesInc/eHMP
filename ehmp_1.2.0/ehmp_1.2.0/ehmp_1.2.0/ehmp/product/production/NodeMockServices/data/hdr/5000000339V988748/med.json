@@ -1,0 +1,90 @@
+{
+    "apiVersion": "1.01",
+    "params": {
+        "domain": "HDR",
+        "systemId": "HDR"
+    },
+    "data": {
+        "updated": "201503031447",
+        "totalItems": 1,
+        "items": [
+            {
+                "dosages": [
+                    {
+                        "amount": 1,
+                        "dose": 500,
+                        "instructions": "500MG",
+                        "noun": "TABLET",
+                        "relativeStart": 0,
+                        "relativeStop": 527040,
+                        "routeName": "PO",
+                        "scheduleName": 1,
+                        "start": 20140604,
+                        "stop": 20150605,
+                        "units": "MG"
+                    }
+                ],
+                "facilityCode": 442,
+                "facilityName": "CHEYENNE VAMC",
+                "fills": [
+                    {
+                        "daysSupplyDispensed": 30,
+                        "dispenseDate": 20140604,
+                        "quantityDispensed": 1,
+                        "releaseDate": "",
+                        "routing": "W"
+                    }
+                ],
+                "lastFilled": 20140604,
+                "localId": "2210634;O",
+                "medStatus": "urn:sct:55561003",
+                "medStatusName": "active",
+                "medType": "urn:sct:73639000",
+                "name": "METHOCARBAMOL TAB",
+                "orders": [
+                    {
+                        "daysSupply": 30,
+                        "fillCost": 0.026,
+                        "fillsAllowed": 11,
+                        "fillsRemaining": 11,
+                        "locationName": "ZZCHY PC MAYS",
+                        "locationUid": "urn:va:location:9016:1286",
+                        "orderUid": "urn:va:order:9016:9106:5587940",
+                        "ordered": 201406041142,
+                        "pharmacistName": "BODDULURI,PADMA",
+                        "pharmacistUid": "urn:va:user:9016:520736421",
+                        "prescriptionId": 2298006,
+                        "providerName": "BODDULURI,PADMA",
+                        "providerUid": "urn:va:user:9016:520736421",
+                        "quantityOrdered": 1,
+                        "vaRouting": "W"
+                    }
+                ],
+                "overallStart": 20140604,
+                "overallStop": 20150605,
+                "patientInstruction": "",
+                "productFormName": "TAB",
+                "products": [
+                    {
+                        "drugClassCode": "urn:vadc:MS200",
+                        "drugClassName": "SKELETAL MUSCLE RELAXANTS",
+                        "ingredientCode": "urn:va:vuid:4017879",
+                        "ingredientCodeName": "METHOCARBAMOL",
+                        "ingredientName": "METHOCARBAMOL TAB",
+                        "ingredientRole": "urn:sct:410942007",
+                        "strength": "500 MG",
+                        "suppliedCode": "urn:va:vuid:4002631",
+                        "suppliedName": "METHOCARBAMOL 500MG TAB"
+                    }
+                ],
+                "qualifiedName": "METHOCARBAMOL TAB",
+                "sig": "TAKE ONE TABLET BY MOUTH 1",
+                "stopped": 20150605,
+                "type": "Prescription",
+                "uid": "urn:va:med:9016:9106:5587940",
+                "vaStatus": "ACTIVE",
+                "vaType": "O"
+            }
+        ]
+    }
+}

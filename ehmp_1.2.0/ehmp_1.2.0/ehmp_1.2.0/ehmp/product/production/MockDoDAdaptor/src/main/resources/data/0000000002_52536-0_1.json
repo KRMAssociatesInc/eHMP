@@ -1,0 +1,78 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "Street": "Any Street",
+        "SocialSecurityNumber": "666000608",
+        "Rank": "Lieutenant Commander O4-N",
+        "SponsorRank": "",
+        "EnteredBy": "",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "",
+        "LastName": "EIGHT",
+        "CustodianName": "ahlta",
+        "Fmp": "",
+        "FirstName": "OUTPATIENT",
+        "BranchOfService": "",
+        "MaritalStatus": "Married",
+        "CountryCode": "",
+        "Street2": "",
+        "SponsorSsn": "",
+        "Sex": "M",
+        "Uic": "N4060A     (ECRC FWD SD IRQ)",
+        "Suffix": "",
+        "Religion": "Unknown",
+        "Race": "White",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EdiPn": "D1032993229",
+        "PhoneNumber": "200-5551212",
+        "OtherIdentifier": "",
+        "Country": "",
+        "City": "WARMINSTER",
+        "DeersEligibility": "",
+        "DateOfBirth": "19450309000000",
+        "UnitNumber": "921819",
+        "AreaCode": "200",
+        "MiddleName": "ROBERT",
+        "County": "",
+        "State": "Any Town",
+        "Email": "",
+        "SponsorUic": "",
+        "PostCode": "18974",
+        "Facility": "",
+        "LoincCode": "52536-0",
+        "SponsorBranchOfService": "",
+        "AddressType": "Home Address",
+        "LocalNumber": "5551212",
+        "PatientCategory": "N11 - United States Navy (USN) Active Duty (AD)",
+        "EnrollmentFacility": "",
+        "EventId": "1000010260"
+      },
+      "dataType": 13
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

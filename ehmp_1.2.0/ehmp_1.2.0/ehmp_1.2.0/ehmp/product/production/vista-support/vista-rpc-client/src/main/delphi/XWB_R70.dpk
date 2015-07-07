@@ -1,0 +1,68 @@
+package XWB_R70;
+
+{ **************************************************************
+	Package: XWB - Kernel RPCBroker
+	Date Created: Sept 18, 1997 (Version 1.1)
+	Site Name: Oakland, OI Field Office, Dept of Veteran Affairs
+	Developers: Danila Manapsal, Don Craven, Joel Ivey
+	Description: Package File.
+	Current Release: Version 1.1 Patch 47 (Jun. 17, 2008))
+*************************************************************** }
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'VistA RPC Broker Runtime Package'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  vcl,
+  rtl;
+
+contains
+  Xwbut1 in 'Xwbut1.pas' {in 'Xwbut1.pas'},
+  Hash in 'Hash.pas' {in 'Hash.pas'},
+  Loginfrm in 'Loginfrm.pas' {in 'Loginfrm.pas'},
+  MFunStr in 'MFunStr.pas' {in 'Mfunstr.pas'},
+  Rpcberr in 'Rpcberr.pas' {in 'Rpcberr.pas'},
+  Rpcconf1 in 'Rpcconf1.pas' {in 'Rpcconf1.pas'},
+  RpcNet in 'RpcNet.pas' {in 'Rpcnet.pas'},
+  seldiv in 'seldiv.pas' {in 'SelDiv.pas'},
+  Sgnoncnf in 'Sgnoncnf.pas' {in 'Sgnoncnf.pas'},
+  Splvista in 'Splvista.pas' {in 'Splvista.pas'},
+  Trpcb in 'Trpcb.pas' {in 'Trpcb.pas'},
+  VCEdit in 'VCEdit.pas' {in 'Vcedit.pas'},
+  WSockc in 'WSockc.pas' {in 'WSockc.pas'},
+  frmSignonMessage in 'frmSignonMessage.pas' {in 'frmSignonMessage.pas'},
+  RpcSLogin in 'RpcSLogin.pas' {in 'Rpcslogin.pas'},
+  XWBRich20 in 'XWBRich20.PAS',
+  AddServer in 'AddServer.pas' {frmAddServer},
+  fRPCBErrMsg in 'fRPCBErrMsg.pas' {frmErrMsg},
+  fDebugInfo in 'fDebugInfo.pas' {frmDebugInfo},
+  fSgnonDlg in 'fSgnonDlg.pas' {frmSignonDialog},
+  CCOWRPCBroker in 'CCOWRPCBroker.pas',
+  CCOW_const in 'CCOW_const.pas',
+  VERGENCECONTEXTORLib_TLB in 'VERGENCECONTEXTORLib_TLB.pas',
+  XlfSid in 'XlfSid.pas';
+
+end.

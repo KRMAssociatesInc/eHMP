@@ -1,0 +1,32 @@
+<div id="medsReviewApplet_mainContentArea_{{medicationClass}}Medications_accordion_{{id}}" class=" mainAccordion verticalAlignMiddle panel-heading selectable accordion-toggle" data-toggle="collapse" data-parent="#medsReviewApplet_mainContentArea" href="#medsReviewApplet_mainContentArea_listArea_{{medicationClass}}Medications_{{id}}" tabindex="0" aria-label="{{medicationClass}} Medication Accordion Group." {{#if expandOnInitialRender}} fistMedsReviewAccordionGroup="true" {{/if}}>
+    <span class="mainAccordionIndicator fa fa-caret-right"></span><b>{{medicationClass}} MEDS</b>
+</div>
+<div id="medsReviewApplet_mainContentArea_listArea_{{medicationClass}}Medications_{{id}}" class="mainAccordionPanel panel-collapse collapse">
+    <div id="medsReviewApplet_mainContentArea_listArea_{{medicationClass}}Medications_content_{{id}}" class="panel-body displayTable {{#if hasEmptyView}} emptyViewHeight {{/if}}">
+        <div id="{{id}}-medication-list">
+            {{#unless hasEmptyView}}
+            <div id="{{medicationClass}}-medicationListGrid" class="row  header-bar equalHeightsHeader noMargin">
+                <div class="col-sm-8">
+                    <div class="row equalHeightsInnerTable">
+                        <div id="{{medicationClass}}-name-header" class="col-sm-5 selectable header" sortable="true" sortType="alphabetical" sortDirection="none" sortKey="displayName" aria-label="{{medicationClass}} Medication Name Column Header" tabindex="0" tooltip-data-key="medications_name">Name
+                            <span sortArrow="headerDirectionalIndicator" class="sort-caret fa "></span>
+                        </div>
+                        <div id="{{medicationClass}}-sig-header" class="col-sm-4 selectable header" sortable="true" sortType="alphabetical" sortDirection="none" sortKey="doseUnitRouteSchedule" aria-label="{{medicationClass}} Medication Sig Column Header" tabindex="0" tooltip-data-key="medications_sig">Sig
+                            <span sortArrow="headerDirectionalIndicator" class="sort-caret fa "></span>
+                        </div>
+                        <div id="{{medicationClass}}-time-header" class="col-sm-1 selectable header aligncol1" sortable="true" sortType="date" sortDirection="none" sortKey="lastAction" aria-label="{{medicationClass}} Medication Last Change Column Header" tabindex="0" tooltip-data-key="medications_last"> Last &#916
+                            <span sortArrow="headerDirectionalIndicator" class="sort-caret fa "></span>
+                        </div>
+                        <div id="{{medicationClass}}-{{#if inpatient}}next{{else}}fillable{{/if}}-header" class="col-sm-2 selectable header aligncol1" sortable="true" sortType="custom" sortDirection="none" sortKey="" aria-label="{{medicationClass}} Medication {{#if inpatient}} Next {{else}} Fillable {{/if}} Column Header" tabindex="0" tooltip-data-key="medications_next">{{#if inpatient}} Status/Next {{else}} Status/Fillable {{/if}}
+                            <span sortArrow="headerDirectionalIndicator" class="sort-caret fa "></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="{{medicationClass}}-graph-header" class="headerGraph col-sm-4" tabindex="0" medsItemChart="true">
+                </div>
+            </div>
+            {{/unless}}
+            <div id="{{id}}-medication-list-items" class="medicationItemList"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+[ {
+  "cdrEventId" : null,
+  "codes" : [ ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "DODADAPTER_SOURCE_STATUS_REPORT",
+    "name" : "DODADAPTER_SOURCE_STATUS_REPORT",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "DOD",
+    "status" : null
+  },
+  "sourceProtocol" : null,
+  "accessionNumber" : null,
+  "examDate" : -4890758400000,
+  "examId" : null,
+  "reasonForOrder" : null,
+  "status" : null,
+  "study" : "
+<div class='title'>Source Status List</div>
+<table>
+    <thead>
+        <th scope='col' class='table-header'>Source Name</th>
+        <th scope='col' class='table-header'>Source Status</th>
+    </thead>
+    <tbody>
+        <tr class='even'>
+            <td>AHLTA</td>
+            <td>UNKNOWN, IN_PROGRESS, COMPLETE</td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<br/>
+<div class='title'>Errors</div>No errors to report.",
+  "approvedBy" : null,
+  "caseNumber" : null,
+  "impressionText" : null,
+  "interpretingHCP" : null,
+  "priority" : null,
+  "reportIEN" : null,
+  "reportStatus" : null,
+  "reportText" : null,
+  "resultCode" : null,
+  "severity" : null,
+  "transcribeDate" : null
+} ]

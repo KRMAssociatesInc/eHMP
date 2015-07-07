@@ -1,0 +1,130 @@
+//.#{$prefix}grid-row-expander {
+//  background-image: none;
+//  @include fa-icon($fa-var-caret-down);
+//  font-size: $row-expander-font-size;
+//
+//  width: $row-expander-width;
+//  height: $row-expander-height;
+//
+//  // This prevents IEQuirks from collapsing the icon's margin-top into the cell-inner's padding-top.
+//  // Without this, the icon moves upwards due to above collapsing effect.
+//  //float: left;
+//
+//  // This prevents IEquirks from stretching the icon div to accommodate the &nbsp; at the grid cell's own specified line height.
+//  // Without this, the icon expands above its configured row-expander-height.
+//  line-height: $row-expander-line-height;
+//
+//  // Centers the icon within the standard sized row for the theme.
+//  margin: $row-expander-margin;
+//}
+//
+//.#{$prefix}grid-row-collapsed {
+//  .#{$prefix}grid-row-expander {
+//    background-image: none;
+//    @include fa-icon($fa-var-caret-right);
+//  }
+//}
+//
+//.#{$prefix}grid-td-expander {
+//  vertical-align: top;
+//
+//  .#{$prefix}grid-cell-inner {
+//    padding: 3px;
+//  }
+//}
+
+/**
+ * Remove most spacing between table cells.
+ */
+//.#{$prefix}grid-rowbody {
+//  table {
+//    border-collapse: inherit;
+//    border-spacing: 0;
+//    font-size: $font-size;
+//
+//    td {
+//      vertical-align: top;
+//      padding: 0;
+//    }
+//  }
+
+//  .nav-stacked > li {
+//    position:relative;
+//  }
+//  .nav-stacked > li > a {
+//    white-space: nowrap;
+//    @include border-right-radius(0);
+//
+//    .label,.badge {
+//      z-index: 3;
+//    }
+//  }
+//
+//  .nav-stacked > li:before,
+//  .nav-stacked > li:after,
+//  .nav-stacked > li > a:before,
+//  .nav-stacked > li > a:after {
+//    /* All pseudo elements are
+//       abs. positioned and on right */
+//    position: absolute;
+//    right: 0;
+//  }
+//  .nav-stacked > li:hover,
+//  .nav-stacked > li:focus,
+//  .nav-stacked > li > a:hover,
+//  .nav-stacked > li > a:focus {
+//    z-index: 30;
+//  }
+//  /* Only active tabs need pseudo elements at all */
+//  .nav-stacked .active:after,
+//  .nav-stacked .active:before,
+//  .nav-stacked .active a:after,
+//  .nav-stacked .active a:before {
+//    content: "";
+//  }
+//  .nav-stacked .active:before,
+//  .nav-stacked .active:after {
+//    background: $grid-row-cell-selected-background-color;
+//
+//    /* Squares below circles */
+//    z-index: 1;
+//  }
+//  /* Squares */
+//  .nav-stacked > li:before,
+//  .nav-stacked > li:after {
+//    background: $grid-row-cell-selected-background-color;
+//    width: 5px;
+//    height: 5px;
+//  }
+//  .nav-stacked > li:before {
+//    top: -5px;
+//  }
+//  .nav-stacked > li:after {
+//    bottom: -5px;
+//  }
+//  /* Circles */
+//  .nav-stacked > li > a:after,
+//  .nav-stacked > li > a:before {
+//    width: 10px;
+//    height: 10px;
+//    /* Circles are circular */
+//    -webkit-border-radius: 5px;
+//    -moz-border-radius:    5px;
+//    border-radius:         5px;
+//    background: #fff;
+//
+//    /* Circles over squares */
+//    z-index: 2;
+//  }
+//  .nav-stacked .active a:after,
+//  .nav-stacked .active a:before {
+//    background: #fff;
+//  }
+//
+//  .nav-stacked li a:before {
+//    top: -10px;
+//  }
+//  .nav-stacked li a:after {
+//    bottom: -10px;
+//  }
+//}

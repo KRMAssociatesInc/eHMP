@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>$!item.summary</title>
+</head>
+<body>
+<table class="hmp-labeled-values">
+    <tr>
+        <td>Location</td>
+        <td>$!item.locationName</td>
+    </tr>
+    <tr>
+        <td>Comments</td>
+        <td>#if($item.comment)<pre>$!item.comment</pre> #else None#end</td>
+    </tr>
+</table>
+</body>
+</html>

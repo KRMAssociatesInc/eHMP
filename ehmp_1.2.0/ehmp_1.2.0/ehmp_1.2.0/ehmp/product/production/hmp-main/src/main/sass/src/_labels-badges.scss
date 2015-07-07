@@ -1,0 +1,33 @@
+// extensions to Twitter Bootstrap's built-in labels and badges
+.badge-primary {
+  background-color: $brand-primary;
+}
+.badge-success {
+  background-color: $brand-success;
+}
+.badge-info {
+  background-color: $brand-info;
+}
+.badge-warning {
+  background-color: $brand-warning;
+}
+.badge-danger {
+  background-color: $brand-danger;
+}
+
+.label-well,
+.badge-well {
+  color: $text-color;
+  background-color: $well-bg;
+}
+
+.label-well[href],
+.badge-well[href] {
+  background-color: darken($well-bg, 10%);
+}
+
+.label-inverse,
+.badge-inverse {
+  color: $label-color;
+  background-color: $text-color;
+}

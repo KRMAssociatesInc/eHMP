@@ -1,0 +1,64 @@
+<div id="{{sname}}-hide-show" class="hide">
+<!--div class="gray-container"-->
+<div class="expanded-row">
+	<table class="table">
+		<tr class="active">
+			<td><div class="title">{{qual-1-name}}</div>
+			</td>
+			<td>
+			{{qual-2-name}}
+			</td>
+			<td>
+			{{qual-3-name}}
+			</td>
+			<td>
+			{{qual-4-name}}
+			</td>
+		</tr>
+		<tr class="active">
+			<td>
+				{{#if qual-1-name}}
+				<label for="{{sname}}-{{qual-1-name}}-sel" class="sr-only">{{qual-1-name}} select box</label>
+				<select id="{{sname}}-{{qual-1-name}}-sel" data-type="qualifier-options" data-name="{{qual-1-name}}" class="form-control input-sm">
+					{{#each qual-1-options}}
+					<option id="{{sname}}-{{qual-1-name}}-{{this.name}}" data-category="qual-1-sel" data-fileien="{{this.fileIEN}}">{{this.name}}</option>
+					{{/each}}
+				</select>
+				{{/if}}
+			</td>
+			<td>
+				{{#if qual-2-name}}
+				<label for="{{sname}}-{{qual-2-name}}-sel" class="sr-only">{{qual-2-name}} select box</label>
+				<select id="{{sname}}-{{qual-2-name}}-sel" data-type="qualifier-options" data-name="{{qual-2-name}}" class="form-control input-sm">
+					{{#each qual-2-options}}
+					<option id="{{sname}}-{{qual-2-name}}-{{this.name}}" data-category="qual-2-sel" data-fileien="{{this.fileIEN}}">{{this.name}}</option>
+					{{/each}}
+				</select>
+				{{/if}}
+			</td>
+			<td>
+				{{#if qual-3-name}}
+				<label for="{{sname}}-{{qual-3-name}}-sel" class="sr-only">{{qual-3-name}} select box</label>
+				<select id="{{sname}}-{{qual-3-name}}-sel" data-type="qualifier-options" data-name="{{qual-3-name}}" class="form-control input-sm">
+					{{#each qual-3-options}}
+					<option id="{{sname}}-{{qual-3-name}}-{{this.name}}" data-category="qual-3-sel" data-fileien="{{this.fileIEN}}">{{this.name}}</option>
+					{{/each}}
+				</select>
+				{{/if}}
+			</td>
+			<td>
+				{{#if qual-4-name}}
+				<label for="{{sname}}-{{qual-4-name}}-sel" class="sr-only">{{qual-4-name}} select box</label>
+				<select id="{{sname}}-{{qual-4-name}}-sel" data-type="qualifier-options" data-name="{{qual-4-name}}" class="form-control input-sm">
+					{{#each qual-4-options}}
+					<option data-category="qual-4-sel" data-fileien="{{this.fileIEN}}">{{this.name}}</option>
+					{{/each}}
+				</select>
+				{{/if}}
+			</td>
+
+		</tr>
+	</table>
+</div>
+<div class="expanded-row">&nbsp;</div>
+</div>

@@ -1,0 +1,133 @@
+<!--
+	TODO LIST:
+		The onsetdata block margin  needs to be fixed. This only shows on chrome.
+-->
+<form id="addEditProblemForm" role="form">
+
+    <div class="container-fluid">
+       	<div class="error-container" id="error-container" tabindex="-1"></div>
+
+		<div class="section form-inline">
+			<div id="problemStatusSelect" class="form-group">
+				<div><label class="label-group" for="status">Status</label></div>
+				<span class="btn-group btn-group-sm" role="group" id="status">
+		  			<button type="button" id="active" data-value="A^ACTIVE" class="btn btn-default toggle-btn">Active</button>
+		  			<button type="button" id="inactive" data-value="I^INACTIVE" class="btn btn-default toggle-btn">Inactive</button>
+				</span>
+			</div>
+
+			<div id="problemAcuitySelect" class="form-group">
+				<div><label class="label-group" for="status">Acuity</label></div>
+				<span class="btn-group btn-group-sm" role="group" id="acuity">
+					<button type="button" id="unknown" data-value="U^UNKNOWN" class="btn btn-default toggle-btn">Unknown</button>
+					<button type="button" id="acute" data-value="A^ACUTE" class="btn btn-default toggle-btn">Acute</button>
+					<button type="button" id="chronic" data-value="C^CHRONIC" class="btn btn-default btn-danger toggle-btn">Chronic</button>
+				</span>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="section form-inline">
+			<div id="onsetDateBlock" class="form-group">
+				<div><label class="label-group" for="onset-date-select">Onset Date</label></div>
+				<div id="onset-date-select" class="input-group input-group-sm">
+		    		<input type="text" class="form-control datepicker" id="dp-problem" data-date-end-date="0d" value="{{date}}" autocomplete="off">
+		    		<span id="date-picker-icon" max-length="10" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+				</div>
+			</div>
+
+			<div id="respProviderBlock" class="form-group typeahead">
+                <label for="respProvider">Resp Provider</label>
+                <input class="typeahead form-control" type="search" autocomplete="off" id="respProvider" tabindex="0" data-uid="" placeholder="Enter your resp provider" value="{{serviceVisitProvider}}"/>
+			</div>
+            
+			<div id="serviceBlock" class="form-group typeahead">
+                <label for="serviceLocation">Service Provider</label>
+                <input class="typeahead form-control" type="search" autocomplete="off" id="serviceLocation" tabindex="0" data-uid="" placeholder="Enter your service" value="{{serviceLocationName}}"/>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="section">
+			<div id="treatmentFactorsBlock">
+				<label for="treatment-list">Treatment Factors</label>
+				<ul id="treatment-list">
+				{{#if showServiceConnected}}
+					<li class="clearfix">
+						<button type="button" class="btn btn-sm tf-name pull-left" disabled>Service Connected</button>
+						<span id="tf-serviceconnected" class="btn-group btn-group-sm pull-right" role="group">
+							<button type="button" id="serviceConnectedYes" data-value="Yes" class="btn btn-default toggle-btn">Yes</button>
+							<button type="button" id="serviceConnectedNo" data-value="No" class="btn btn-default toggle-btn">No</button>
+						</span>
+					</li>
+				{{/if}}
+				{{#if showAgentOrange}}
+					<li class="clearfix">
+						<button type="button" class="btn btn-sm tf-name pull-left" disabled>Agent Orange</button>
+						<span id="tf-agentorange" class="btn-group btn-group-sm pull-right" role="group">
+							<button type="button" id="agentOrangeYes" data-value="Yes" class="btn btn-default toggle-btn">Yes</button>
+							<button type="button" id="agentOrangeNo" data-value="No" class="btn btn-default toggle-btn">No</button>
+						</span>
+					</li>
+				{{/if}}
+				{{#if showRadiation}}
+					<li class="clearfix">
+						<button type="button" class="btn btn-sm tf-name pull-left" disabled>Radiation</button>
+						<span id="tf-radiation" class="btn-group btn-group-sm pull-right" role="group">
+							<button type="button" id="radiationYes" data-value="Yes" class="btn btn-default toggle-btn">Yes</button>
+							<button type="button" id="radiationNo" data-value="No" class="btn btn-default toggle-btn">No</button>
+						</span>
+					</li>
+				{{/if}}
+				{{#if showSouthwestAsiaConditions}}
+					<li class="clearfix">
+						<button type="button" class="btn btn-sm tf-name pull-left" disabled>Southwest Asia Conditions</button>
+						<span id="tf-swasiaconditions" class="btn-group btn-group-sm pull-right" role="group">
+							<button type="button" id="swAsiaConditionsYes" data-value="Yes" class="btn btn-default toggle-btn">Yes</button>
+							<button type="button" id="swAsiaConditionsNo" data-value="No" class="btn btn-default toggle-btn">No</button>
+						</span>
+					</li>
+				{{/if}}
+				{{#if showShipboardHazard}}
+					<li class="clearfix">
+						<button type="button" class="btn btn-sm tf-name pull-left" disabled>Shipboard Hazard and Defense</button>
+						<span id="tf-shipboardhazard" class="btn-group btn-group-sm pull-right" role="group">
+							<button type="button" id="shipboardHazardYes" data-value="Yes" class="btn btn-default toggle-btn">Yes</button>
+							<button type="button" id="shipboardHazardNo" data-value="No" class="btn btn-default toggle-btn">No</button>
+						</span>
+					</li>
+				{{/if}}
+				{{#if showMST}}
+					<li class="clearfix">
+						<button type="button" class="btn btn-sm tf-name pull-left" disabled>MST</button>
+						<span id="tf-mst" class="btn-group btn-group-sm pull-right" role="group">
+							<button type="button" id="mstYes" data-value="YES" class="btn btn-default toggle-btn">Yes</button>
+							<button type="button" id="mstNo" data-value="NO" class="btn btn-default toggle-btn">No</button>
+						</span>
+					</li>
+				{{/if}}
+				{{#if showHeadNeckCancer}}
+					<li class="clearfix">
+						<button type="button" class="btn btn-sm tf-name pull-left" disabled>Head and/or Neck Cancer</button>
+						<span id="tf-headneckcancer" class="btn-group btn-group-sm pull-right" role="group">
+							<button type="button" id="headNeckCancerYes" data-value="Yes" class="btn btn-default toggle-btn">Yes</button>
+							<button type="button" id="headNeckCancerNo" data-value="No" class="btn btn-default toggle-btn">No</button>
+						</span>
+					</li>
+				{{/if}}
+				</ul>
+			</div>
+		</div>
+
+		<div class="section">
+			<div id="commentsBlock">
+				<label for="comment-list">Comments</label>
+                <span id="addCommentBtn" role="button" tabindex="0" class="glypicon glyphicon-plus pull-right"></span>
+				<div id="comment-list">
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

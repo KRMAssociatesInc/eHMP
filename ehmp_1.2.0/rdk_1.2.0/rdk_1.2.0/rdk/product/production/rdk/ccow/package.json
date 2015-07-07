@@ -1,0 +1,14 @@
+{
+    "name": "node-ccow",
+    "version": "0.0.1",
+    "description": "Provides resources for eHMP CCOW functionality.",
+    "main": "ccow-server.js",
+    "dependencies": {
+        "express": "~4.1.1",
+        "bunyan": "~0.22.3",
+        "body-parser": "~1.0.0",
+        "java": "~0.4.3",
+        "yargs": "^1.2.6",
+        "node-uuid": "~1.4.1"
+    }
+}

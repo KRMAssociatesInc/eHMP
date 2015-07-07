@@ -1,0 +1,34 @@
+{
+      "documentDefUid" : "urn:va:doc-def:F484:1281",
+      "documentClass" : "SURGICAL REPORTS",
+      "documentTypeCode" : "SR",
+      "documentTypeName" : "Surgery Report",
+      "encounterName" : "OR4 Dec 08, 2006",
+      "encounterUid" : "urn:va:visit:F484:8:5554",
+      "entered" : 200612080730,
+      "facilityCode" : "500D",
+      "facilityName" : "SLC-FO HMP DEV",
+      "localId" : 3531,
+      "localTitle" : "ANESTHESIA REPORT",
+      "referenceDateTime" : 200612080730,
+      "status" : "completed",
+      "subject" : "Case #: 10016",
+      "text" : [ {
+        "clinicians" : [ {
+          "name" : "PROVIDER,THREE",
+          "role" : "AU",
+          "uid" : "urn:va:user:F484:986"
+        }, {
+          "name" : "PROVIDER,THREE",
+          "role" : "S",
+          "signature" : "THREE PROVIDER PHYSICIAN",
+          "signedDateTime" : 20061208182750,
+          "uid" : "urn:va:user:F484:986"
+        } ],
+        "content" : "Hello, Kitty!",
+        "dateTime" : 200612080730,
+        "status" : "completed",
+    	"uid":"urn:va:document:F484:229:4329"
+      } ],
+      "uid":"urn:va:document:F484:229:4329"
+    }

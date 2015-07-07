@@ -1,0 +1,12 @@
+{{#if severe}}
+  <label class="label label-danger">{{acuityName}}</label>
+{{else}}
+  {{#if moderate}}
+    <label class="label label-warning">{{acuityName}}</label>
+  {{else}}
+    {{#if mild}}
+      <label class="label label-info">{{acuityName}}</label>
+    {{else}}
+  {{/if}}
+  {{/if}}
+{{/if}}

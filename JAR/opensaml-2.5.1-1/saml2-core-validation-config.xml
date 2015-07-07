@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol" xmlns="http://www.opensaml.org/xmltooling-config" xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd">
+            
+     <!-- Validation rules for SAML 2.0 SAMLObjects -->
+    <ValidatorSuites>
+    
+        <!--  SAML 2.0 Schema Validation Rules -->
+        <ValidatorSuite id="saml2-core-schema-validator">
+            <Validator qualifiedName="saml2:Action" className="org.opensaml.saml2.core.validator.ActionSchemaValidator"/>
+            <Validator qualifiedName="saml2p:Artifact" className="org.opensaml.saml2.core.validator.ArtifactSchemaValidator"/>
+            <Validator qualifiedName="saml2p:ArtifactResolve" className="org.opensaml.saml2.core.validator.ArtifactResolveSchemaValidator"/>
+            <Validator qualifiedName="saml2p:ArtifactResponse" className="org.opensaml.saml2.core.validator.ArtifactResponseSchemaValidator"/>
+            <Validator qualifiedName="saml2:Assertion" className="org.opensaml.saml2.core.validator.AssertionSchemaValidator"/>
+            <Validator qualifiedName="saml2:AssertionIDRef" className="org.opensaml.saml2.core.validator.AssertionIDRefSchemaValidator"/>
+            <Validator qualifiedName="saml2:AssertionIDRequest" className="org.opensaml.saml2.core.validator.AssertionIDRequestSchemaValidator"/>
+            <Validator qualifiedName="saml2:AssertionURIRef" className="org.opensaml.saml2.core.validator.AssertionURIRefSchemaValidator"/>
+            <Validator qualifiedName="saml2:Attribute" className="org.opensaml.saml2.core.validator.AttributeSchemaValidator"/>
+            <Validator qualifiedName="saml2p:AttributeQuery" className="org.opensaml.saml2.core.validator.AttributeQuerySchemaValidator"/>
+            <Validator qualifiedName="saml2:AttributeStatement" className="org.opensaml.saml2.core.validator.AttributeStatementSchemaValidator"/>
+            <Validator qualifiedName="saml2:Audience" className="org.opensaml.saml2.core.validator.AudienceSchemaValidator"/>
+            <Validator qualifiedName="saml2:AudienceRestriction" className="org.opensaml.saml2.core.validator.AudienceRestrictionSchemaValidator"/>
+            <Validator qualifiedName="saml2:AuthenticatingAuthority" className="org.opensaml.saml2.core.validator.AuthenticatingAuthoritySchemaValidator"/>
+            <Validator qualifiedName="saml2:AuthnContextClassRef" className="org.opensaml.saml2.core.validator.AuthnContextClassRefSchemaValidator"/>
+            <Validator qualifiedName="saml2:AuthnContextDeclRef" className="org.opensaml.saml2.core.validator.AuthnContextDeclRefSchemaValidator"/>
+            <Validator qualifiedName="saml2:AuthnContextDecl" className="org.opensaml.saml2.core.validator.AuthnContextDeclSchemaValidator"/>
+            <Validator qualifiedName="saml2p:AuthnQuery" className="org.opensaml.saml2.core.validator.AuthnQuerySchemaValidator"/>
+            <Validator qualifiedName="saml2p:AuthnRequest" className="org.opensaml.saml2.core.validator.AuthnRequestSchemaValidator"/>
+            <Validator qualifiedName="saml2:AuthnStatement" className="org.opensaml.saml2.core.validator.AuthnStatementSchemaValidator"/>
+            <Validator qualifiedName="saml2p:AuthzDecisionQuery" className="org.opensaml.saml2.core.validator.AuthzDecisionQuerySchemaValidator"/>
+            <Validator qualifiedName="saml2:AuthzDecisionStatement" className="org.opensaml.saml2.core.validator.AuthzDecisionStatementSchemaValidator"/>
+            <Validator qualifiedName="saml2:AuthnContextClassRef" className="org.opensaml.saml2.core.validator.AuthnContextClassRefSchemaValidator"/>
+            <Validator qualifiedName="saml2:Evidence" className="org.opensaml.saml2.core.validator.EvidenceSchemaValidator"/>
+            <Validator qualifiedName="saml2p:GetComplete" className="org.opensaml.saml2.core.validator.GetCompleteSchemaValidator"/>
+            <Validator qualifiedName="saml2p:IDPEntry" className="org.opensaml.saml2.core.validator.IDPEntrySchemaValidator"/>
+            <Validator qualifiedName="saml2p:IDPList" className="org.opensaml.saml2.core.validator.IDPListSchemaValidator"/>
+            <Validator qualifiedName="saml2:Issuer" className="org.opensaml.saml2.core.validator.IssuerSchemaValidator"/>
+            <Validator qualifiedName="saml2p:LogoutRequest" className="org.opensaml.saml2.core.validator.LogoutRequestSchemaValidator"/>
+            <Validator qualifiedName="saml2p:LogoutResponse" className="org.opensaml.saml2.core.validator.LogoutResponseSchemaValidator"/>
+            <Validator qualifiedName="saml2p:ManageNameIDRequest" className="org.opensaml.saml2.core.validator.ManageNameIDRequestSchemaValidator"/>
+            <Validator qualifiedName="saml2p:ManageNameIDResponse" className="org.opensaml.saml2.core.validator.ManageNameIDResponseSchemaValidator"/>
+            <Validator qualifiedName="saml2:NameID" className="org.opensaml.saml2.core.validator.NameIDSchemaValidator"/>
+            <Validator qualifiedName="saml2p:NameIDMappingRequest" className="org.opensaml.saml2.core.validator.NameIDMappingRequestSchemaValidator"/>
+            <Validator qualifiedName="saml2p:NameIDMappingResponse" className="org.opensaml.saml2.core.validator.NameIDMappingResponseSchemaValidator"/>
+            <Validator qualifiedName="saml2p:NewID" className="org.opensaml.saml2.core.validator.NewIDSchemaValidator"/>
+            <Validator qualifiedName="saml2p:RequestedAuthnContext" className="org.opensaml.saml2.core.validator.RequestedAuthnContextSchemaValidator"/>
+            <Validator qualifiedName="saml2p:RequesterID" className="org.opensaml.saml2.core.validator.RequesterIDSchemaValidator"/>
+            <Validator qualifiedName="saml2p:Response" className="org.opensaml.saml2.core.validator.ResponseSchemaValidator"/>
+            <Validator qualifiedName="saml2:SessionIndex" className="org.opensaml.saml2.core.validator.SessionIndexSchemaValidator"/>
+            <Validator qualifiedName="saml2p:Status" className="org.opensaml.saml2.core.validator.StatusSchemaValidator"/>
+            <Validator qualifiedName="saml2p:StatusCode" className="org.opensaml.saml2.core.validator.StatusCodeSchemaValidator"/>
+            <Validator qualifiedName="saml2p:StatusMessage" className="org.opensaml.saml2.core.validator.StatusMessageSchemaValidator"/>
+            <Validator qualifiedName="saml2:Subject" className="org.opensaml.saml2.core.validator.SubjectSchemaValidator"/>
+            <Validator qualifiedName="saml2:SubjectConfirmation" className="org.opensaml.saml2.core.validator.SubjectConfirmationSchemaValidator"/>
+        </ValidatorSuite>
+    
+        <!-- SAML 2.0 Specification Validation Rules -->
+        <ValidatorSuite id="saml2-core-spec-validator">
+            <Validator qualifiedName="saml2:Assertion" className="org.opensaml.saml2.core.validator.AssertionSpecValidator"/>
+            <Validator qualifiedName="saml2:Conditions" className="org.opensaml.saml2.core.validator.ConditionsSpecValidator"/>
+        </ValidatorSuite>
+        
+    </ValidatorSuites>
+ 
+</XMLTooling>

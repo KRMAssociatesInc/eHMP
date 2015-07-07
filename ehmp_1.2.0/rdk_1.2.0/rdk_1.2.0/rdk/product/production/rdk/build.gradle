@@ -1,0 +1,57 @@
+ext.set('repo', 'releases')
+ext.set('groupId', 'us.vistacore.rdk')
+ext.set('artifactId', 'rdk')
+
+task installNpm(type: Exec) {
+  group "RDK Tasks"
+  description "installs package(s)"
+  commandLine "npm", "install"
+}
+
+task cleanNPM(type: Delete) {
+  group "RDK Tasks"
+  description "Clean up node_modules"
+  //commandLine "rm -rf ${projectDir}/node_modules"
+  delete "${projectDir}/node_modules"
+}
+clean.dependsOn cleanNPM
+
+task build(dependsOn: [clean, installNpm]) {
+  group "RDK Tasks"
+  description "installs package(s)"
+}
+
+task check(type: Exec, dependsOn: [build]) {
+  group "RDK Tasks"
+  description "installs package(s) and runs jshint"
+  commandLine "npm", "run-script", "check"
+}
+
+task test(type: Exec, dependsOn: [build]) {
+  group "RDK Tasks"
+  description "installs package(s) and runs unit tests"
+  commandLine "npm", "test"
+}
+
+task rdkIntTests(type: Exec, dependsOn: [build]) {
+  group "RDK Tasks"
+  description "installs package(s) and runs integration tests"
+  commandLine "npm", "run-script", "int-test"
+}
+
+task rdkAllTests(dependsOn: [test, rdkIntTests]) {
+  group "RDK Tasks"
+  description "runs unit and integration tests"
+}
+
+task zipRDK(type: Zip, dependsOn: [build]) {
+  extension = 'zip'
+  baseName = 'rdk'
+  version = version
+  destinationDir parent.parent.buildDir
+  from projectDir
+}
+
+artifacts {
+  archives zipRDK
+}

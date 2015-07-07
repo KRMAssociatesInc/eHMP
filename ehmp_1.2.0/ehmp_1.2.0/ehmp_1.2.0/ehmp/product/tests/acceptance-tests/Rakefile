@@ -1,0 +1,213 @@
+# Encoding: utf-8
+
+require 'rubygems'
+require 'cucumber'
+require 'cucumber/rake/task'
+require 'rubocop/rake_task'
+require File.dirname(__FILE__) + '/Parallel.rb'
+require File.dirname(__FILE__) + '/../../../infrastructure/vagrant/aws/VagrantfileUtil.rb'
+require File.dirname(__FILE__) + '/../../../infrastructure/vagrant/Servers.rb'
+require File.dirname(__FILE__) + '/../../../infrastructure/vagrant/PatientSynchronizer.rb'
+
+$LOAD_PATH.push(File.expand_path(File.dirname(__FILE__) + '/features/lib'))
+
+# Check environment sanity and fail fast if not correct
+fail 'WORKSPACE environment variable not set. Did you "source infrastructure/set.env.sh"?' unless ENV.keys.include?('WORKSPACE')
+fail 'GEM_HOME environment variable not set. Did you "source infrastructure/set.env.sh"?' unless ENV.keys.include?('GEM_HOME')
+
+task default: [:endToEndTests]
+
+task endToEndTests: [:codequality]
+
+task codequality: [
+  :info,
+  :rubocop
+]
+
+task :endToEndTests, [:env] => [:environment_setup]
+task :syncCache, [:env] => [:environment_setup]
+
+desc 'Syncs and subscribes eHMP to a list of patients used for automated testing'
+task :syncCache do
+  patient_sync_list = [
+#    "10104V248233",
+    "5000000318V495398",
+    "5000000342V438646",
+    "10107V395912",
+#    "10108V420871",
+    "10110V004877",
+    "10117V810068",
+    "10118V572553",
+    "10146V393772",
+    "10181V049578",
+    "11016V630869",
+    "5000000009V082878",
+    "5000000116V912836",
+    "5000000217V519385",
+    "10101V964144",
+    "5000000317V387446",
+    "9E7A;1",
+    "5000000341V359724",
+    "9E7A;100184",
+    "9E7A;164",
+    "9E7A;167",
+    "9E7A;20",
+    "9E7A;230",
+    "9E7A;287",
+    "9E7A;71",
+    "9E7A;737",
+    "C877;1",
+    "C877;100184",
+    "C877;737",
+    "C877;164",
+    "10188V866369",
+    "5000000339V988748",
+    "9E7A;631",
+    "5000000327V828570",
+    "C877;631",
+    "9E7A;100599",
+    "C877;100599",
+    "C877;287",
+    "10105V001065",
+    "10113V428140",
+    "10114V651499",
+    "10199V865898",
+    "10112V399621",
+    "11010V543403",
+    "9E7A;9",
+    "C877;9",
+    "10123V057919",
+    "9E7A;65",
+    "11000V221996",
+    "10119V246915",
+    "10132V467385",
+    "10102V813496",
+    "5000000232V962263"
+  ]
+
+  PatientSynchronizer.wait_until_operational_data_loaded "http://#{ENV["JDS_IP"]}:9080", 600, ["9E7A", "C877"]
+  PatientSynchronizer.synchronize_patient_list "http://#{ENV["VX_SYNC_IP"]}:8080", 3600, patient_sync_list
+end
+
+desc 'Runs end-to-end acceptance tests'
+task :endToEndTests, :env do |t, args|
+  # TODO: add first phase single-process test (selected by tag) followed by second-phase parallel tests
+  Parallel::Cucumber::Rake::Task.new(:endToEndTestsRun) do |x|
+    case args[:env]
+    when "aws"
+      p "Using aws cucumber parallel options"
+      x.cucumber_opts = 'features -o "--format pretty --tags ~@single --tags ~@future --tags ~@debug --tags ~@UI --profile parallel"'
+    when "ede"
+      p "Using ede cucumber parallel options"
+      x.cucumber_opts = 'features -o "--format pretty --tags ~@single --tags ~@future --tags ~@debug --tags ~@UI --profile parallel"'
+    else
+      p "Using virtualbox cucumber parallel options"
+      x.cucumber_opts = 'features -o "--format pretty --tags ~@single --tags ~@future --tags ~@debug --tags ~@UI --tags ~@multiple_server"'
+    end
+    # NB: Force use of single process if ENV["PARALLEL_TEST_PROCESSORS"] is not set to some valid value
+    if ENV["PARALLEL_TEST_PROCESSORS"].nil?
+      x.cucumber_opts += ' -n 1'
+    end
+  end
+
+  start_time = Time.now
+  Rake::Task[:endToEndTestsRun].invoke
+  complete_time = Time.now
+  puts "/*TIMELINE*/ ['acceptance tests', new Date(#{start_time.strftime "%Y,%m,%d,%H,%M,%S,0"}) , new Date(#{complete_time.strftime "%Y,%m,%d,%H,%M,%S,0"})]"
+end
+
+task :compileJson do
+  p "Compiling Json Report"
+  result="[\n"
+  Dir.glob("cucumber{,?}.json").each do |x|
+    file = File.open(x, "r")
+    data = file.read
+    file.close
+    File.delete(x)
+    unless data==""
+      result+=data[2, data.length-4] + ",\n"
+    end
+  end
+  File.open("cucumber.json", 'w') do |f|
+    f.write(result[0, result.length-2]+"\n]")
+  end
+end
+
+## Placeholder task for executing all Acceptance Tests for all Mobile Applications
+Cucumber::Rake::Task.new(:allAcceptanceTests) do |t|
+  t.cucumber_opts = 'features --format pretty --tags ~@future'
+end
+
+task :info do
+  puts '=========================================================================='
+  puts '#     Running codequality checks.                                        #'
+  puts '#     For details, see https://wiki.vistacore.us/display/VACORE/Ruby     #'
+  puts '=========================================================================='
+end
+
+desc 'Rubocop code quality checks configured in .rubocop.yml file'
+Rubocop::RakeTask.new(:rubocop) do |rubocop|
+  # Specify config file in non-standard location.
+  rubocop.options = ['-c.rubocop.yml']
+
+  # Specify Ruby file locations
+  rubocop.patterns = ['**/*.rb', 'Rakefile']
+
+  # Show emacs style output, and offense counts
+  # See https://github.com/bbatsov/rubocop#formatters for other output options
+  rubocop.formatters = ['emacs', 'o']
+
+  # Abort rake on failure
+  rubocop.fail_on_error = true
+end
+
+task :environment_setup, :env do |task, args|
+  env = args[:env] || 'virtualbox'
+
+  environment_endpoints(env)
+end
+
+def environment_endpoints(env)
+  case env
+  when "virtualbox"
+    p "Running with virtualbox environments"
+    ENV["VX_SYNC_IP"] = Servers::VXSync.localIP
+    ENV["VE_API_IP"] = Servers::Mocks.localIP
+    ENV["JDS_IP"] = Servers::JDS.localIP
+    ENV["VE2_VE_API_IP"] = Servers::VE2_VE_API.localIP
+    ENV["VE2_JDS_IP"] = Servers::VE2_JDS.localIP
+  when "aws"
+    p "Running with aws environments"
+    ENV["VX_SYNC_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "vx-sync")
+    ENV["VE_API_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "mocks")
+    ENV["JDS_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "jds")
+    ENV["SOLR_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "solr")
+    ENV["VE2_VE_API_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "ve2-ve-api-local")
+    ENV["VE2_JDS_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "ve2-jds")
+    puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    puts "vx-sync = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "vx-sync")}"
+    puts "jds = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "jds")}"
+    puts "solr = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "solr")}"
+    puts "mocks = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "mocks")}"
+    puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  when "ede"
+    p "Running with ede environments"
+    # TODO: Update these when we decide on a permanent location for EDE IP addresses
+    ENV["EHMP_IP"] = Servers::EHMP.localIP
+    ENV["VE_API_IP"] = Servers::VE_API.localIP
+    ENV["JDS_IP"] = Servers::JDS.localIP
+    ENV["VE2_EHMP_IP"] = Servers::VE2_EHMP.localIP
+    ENV["VE2_VE_API_IP"] = Servers::VE2_VE_API.localIP
+    ENV["VE2_JDS_IP"] = Servers::VE2_JDS.localIP
+  when "ede-lxc"
+    p "Running with ede-lxc environments"
+    ENV["EHMP_IP"] = Containers::EHMP.localIP
+    ENV["VE_API_IP"] = Containers::VE_API.localIP
+    ENV["JDS_IP"] = Containers::JDS.localIP
+    ENV["VE2_EHMP_IP"] = Containers::VE2_EHMP.localIP
+    ENV["VE2_VE_API_IP"] = Containers::VE2_VE_API.localIP
+    ENV["VE2_JDS_IP"] = Containers::VE2_JDS.localIP
+  else
+    fail "Unrecognized environment type: #{env}. Allowable types are: 'virtualbox', 'aws', and 'ede'"
+  end
+end

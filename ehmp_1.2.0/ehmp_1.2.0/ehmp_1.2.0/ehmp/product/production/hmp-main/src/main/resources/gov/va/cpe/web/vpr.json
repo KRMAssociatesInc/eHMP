@@ -1,0 +1,41 @@
+{
+    "apiVersion": 1,
+    "description": "Foo Bar",
+    "apis": [
+        {
+            "path": "/vpr/v1/{pid}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "nickname": "demographics",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "pid",
+                            "description": "a patient identifier",
+                            "dataType": "string",
+                            "required": true
+                        },
+                        {
+                            "paramType": "query",
+                            "name": "format",
+                            "description": "the preferred response format",
+                            "dataType": "string",
+                            "required": false,
+                            "enum": ["json", "xml"]
+                        }
+                    ],
+                    "summary": "Returns patient demographics.",
+                    "notes": "In VistA, the patient's ID is their Internal Control Number or ICN assigned by the Master Patient Index (MPI)."
+                }
+            ],
+            "errorResponses": [
+                {
+                    "code": 404,
+                    "message": "The patient cannot be found"
+                }
+            ]
+        }
+    ],
+    "produces": []
+}

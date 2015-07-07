@@ -1,0 +1,44 @@
+#immunization-visit {
+    height: 75px;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 5px 15px 5px;
+}
+
+#immunization-search-list {
+    li {
+        border: none;
+        cursor: pointer;
+        color: #2e6ca2;
+    }
+    li:hover {
+        background: #f5f5f5;
+    }
+}
+
+#search-view {
+    clear: both;
+    padding: 15px 5px 15px 5px;
+}
+
+#admin-provider-typeahead-list li, #ordering-provider-typeahead-list li, #location-typeahead-list li {
+	cursor: pointer;
+}
+
+#admin-provider-typeahead-list li:hover, #ordering-provider-typeahead-list li:hover,
+#admin-provider-typeahead-list li:focus, #ordering-provider-typeahead-list li:focus,
+#location-typeahead-list li:hover, #location-typeahead-list li:focus
+{
+	background: #f5f5f5
+}
+
+#admin-provider-typeahead-list, #ordering-provider-typeahead-list, #location-typeahead-list {
+    max-height: 325px;
+    color: #2e6ca2;
+    z-index: 20;
+	position:absolute;
+    overflow-y: auto;
+}
+
+#add-edit-imm .checkbox {
+    padding-left: 10px;
+}

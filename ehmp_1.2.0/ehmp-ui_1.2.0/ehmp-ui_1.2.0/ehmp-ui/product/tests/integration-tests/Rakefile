@@ -1,0 +1,81 @@
+# Encoding: utf-8
+require 'rubygems'
+require 'rspec/core/rake_task'
+require 'rubocop/rake_task'
+require 'json'
+require_relative 'lib/environment.rb'
+
+# Check environment sanity and fail fast if not correct
+fail 'WORKSPACE environment variable not set. Did you "source infrastructure/set.env.sh"?' unless ENV.keys.include?('WORKSPACE')
+fail 'GEM_HOME environment variable not set. Did you "source infrastructure/set.env.sh"?' unless ENV.keys.include?('GEM_HOME')
+
+task default: [:test]
+
+task test: [
+  :codequality,
+  :environment_setup,
+  :rspec
+]
+
+task codequality: [
+  :info,
+  :rubocop
+]
+
+TEST_PATTERN = 'spec/**/*_spec.rb'
+
+desc 'Entry task for passing arguments'
+task :test, [:environment] => [:environment_setup]
+
+desc 'Setup environment endpoints'
+task :environment_setup, :environment do |task, args|
+  # default to virtualbox
+  @environment = args[:environment] || 'virtualbox'
+
+  # saves environment JSON hash to environment variable
+  ENV['INTTEST_SERVICES'] = Environment.get_services(@environment).to_json
+end
+
+RSpec::Core::RakeTask.new(:rspec) do |task, args|
+  test_pattern = TEST_PATTERN
+
+  # use arguments to run specific spec
+  unless args.test.nil?
+    test_pattern = "spec/**/#{args.test}_spec.rb"
+    fail 'Test not found!' if Dir.glob(test_pattern).size < 1
+  end
+
+  # set formatting for ci test runs
+  unless @environment == 'virtualbox'
+    task.rspec_opts = ['-r rspec-extra-formatters -f JUnitFormatter  -o TEST-rspec_results.xml']
+  end
+  task.pattern = test_pattern
+end
+
+task :info do
+  puts '=========================================================================='
+  puts '#     Running codequality checks.                                        #'
+  puts '=========================================================================='
+end
+
+desc 'Rubocop code quality checks configured in .rubocop.yml file'
+Rubocop::RakeTask.new(:rubocop) do |rubocop|
+  # Specify config file in non-standard location.
+  rubocop.options = ['-c.rubocop.yml']
+
+  # Specify Ruby file locations
+  rubocop.patterns = ['**/*.rb', 'Rakefile_orig']
+
+  # Show emacs style output, and offense counts
+  # See https://github.com/bbatsov/rubocop#formatters for other output options
+  rubocop.formatters = ['emacs', 'o']
+
+  # Abort rake on failure
+  rubocop.fail_on_error = true
+end
+
+desc 'Prints the current environment configuration'
+task :services, :environment do |task, args|
+  env = args[:environment] || 'virtualbox'
+  puts JSON.pretty_generate(Environment.get_services(env))
+end

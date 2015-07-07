@@ -1,0 +1,423 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "ReportId": "13000234",
+        "SupervisedDate": "",
+        "EnteredBy": "Interface User",
+        "ReportStatus": "Complete",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "ResultText": "Procedure:*ANKLE, RT\n20130509112800\nOrder Comment: NO BRIEF COMMENT\nReason for Order: PREPROD SMOKE TEST\nExam #:13000234\nExam Date/Time:20130509113100\nTranscription Date/Time:20130509113500\nProvider:42998 QQQTESTGREAT, DOC A\nRequesting Location:ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H\nStatus:COMPLETE\nResult Code: 1 NORMAL\nInterpreted By:42834 DOCTOR, ALPHA\nApproved By: 42834 DOCTOR, ALPHA\nApproved Date:20130509113500\nReport Text: REPORT TEXT \n\nImpresssion: IMPRESSION TEXT",
+        "EnteredByDate": "20130509153554",
+        "Procedure": "*ANKLE, RT",
+        "ApprovedBy": "42834 DOCTOR, ALPHA",
+        "SupervisedBy": "",
+        "HasAmendments": "false",
+        "OrderDateTime": "20130509113500",
+        "CustodianName": "ahlta",
+        "Amendments": [
+
+        ],
+        "ResultFacility": "NH Great Lakes IL/0056",
+        "Technologist": "",
+        "ResultCode": "1",
+        "ExamStatus": "",
+        "ExamNumber": "13000234",
+        "ResultCodeDescription": "NORMAL",
+        "InterpretedBy": "42834 DOCTOR, ALPHA",
+        "RadiologyLocation": "ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H",
+        "OrderId": "2157551128",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "VerifiedBy": "42834 DOCTOR, ALPHA",
+        "Priority": "",
+        "RequestingLocation": "ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H",
+        "ExamDateTime": "20130509113100",
+        "VerifiedDate": "20130509113500",
+        "ProcedureCode": "",
+        "CptCodes": [
+          {
+            "CptDescription": "*ANKLE, RT",
+            "CptCode": "",
+            "EventId": "1000000855"
+          }
+        ],
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "30954-2",
+        "OrderNumber": "",
+        "TranscriptionDate": "20130509113500",
+        "ExamId": "2157551128",
+        "ReasonForOrder": "PREPROD SMOKE TEST",
+        "RequestingProvider": "42998 QQQTESTGREAT, DOC A",
+        "EventId": "1000000856"
+      },
+      "dataType": 16
+    },
+    {
+      "dataRecord": {
+        "ReportId": "13000228",
+        "SupervisedDate": "",
+        "EnteredBy": "Interface User",
+        "ReportStatus": "Complete",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "ResultText": "Procedure:*ANKLE, RT\n20130507103900\nOrder Comment: NO BRIEF COMMENT\nReason for Order: REAS\nExam #:13000228\nExam Date/Time:20130507104000\nTranscription Date/Time:20130507104200\nProvider:42998 QQQTESTGREAT, DOC A\nRequesting Location:ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H\nStatus:COMPLETE\nResult Code: 1 NORMAL\nInterpreted By:42834 DOCTOR, ALPHA\nApproved By: 42834 DOCTOR, ALPHA\nApproved Date:20130507104200\nReport Text: REPORT TEXT \n\nImpresssion: IMPRESSION TEXT",
+        "EnteredByDate": "20130507144239",
+        "Procedure": "*ANKLE, RT",
+        "ApprovedBy": "42834 DOCTOR, ALPHA",
+        "SupervisedBy": "",
+        "HasAmendments": "false",
+        "OrderDateTime": "20130507104200",
+        "CustodianName": "ahlta",
+        "Amendments": [
+
+        ],
+        "ResultFacility": "NH Great Lakes IL/0056",
+        "Technologist": "",
+        "ResultCode": "1",
+        "ExamStatus": "",
+        "ExamNumber": "13000228",
+        "ResultCodeDescription": "NORMAL",
+        "InterpretedBy": "42834 DOCTOR, ALPHA",
+        "RadiologyLocation": "ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H",
+        "OrderId": "2157547705",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "VerifiedBy": "42834 DOCTOR, ALPHA",
+        "Priority": "",
+        "RequestingLocation": "ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H",
+        "ExamDateTime": "20130507104000",
+        "VerifiedDate": "20130507104200",
+        "ProcedureCode": "",
+        "CptCodes": [
+          {
+            "CptDescription": "*ANKLE, RT",
+            "CptCode": "",
+            "EventId": "1000000857"
+          }
+        ],
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "30954-2",
+        "OrderNumber": "",
+        "TranscriptionDate": "20130507104200",
+        "ExamId": "2157547705",
+        "ReasonForOrder": "REAS",
+        "RequestingProvider": "42998 QQQTESTGREAT, DOC A",
+        "EventId": "1000000858"
+      },
+      "dataType": 16
+    },
+    {
+      "dataRecord": {
+        "ReportId": "13000204",
+        "SupervisedDate": "",
+        "EnteredBy": "Interface User",
+        "ReportStatus": "Complete",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "ResultText": "Procedure:CHEST, PA\n20130403173900\nOrder Comment: NO BRIEF COMMENT\nReason for Order: rea\nExam #:13000204\nExam Date/Time:20130403173900\nTranscription Date/Time:20130403174000\nProvider:42998 QQQTESTGREAT, DOC A\nRequesting Location:ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H\nStatus:COMPLETE\nResult Code: 1 NORMAL\nInterpreted By:42834 DOCTOR, ALPHA\nApproved By: 42834 DOCTOR, ALPHA\nApproved Date:20130403174000\nReport Text: ADD REPORT TEXT \n\nImpresssion: ADD IMPRESSION TEXT",
+        "EnteredByDate": "20130403214104",
+        "Procedure": "CHEST, PA",
+        "ApprovedBy": "42834 DOCTOR, ALPHA",
+        "SupervisedBy": "",
+        "HasAmendments": "false",
+        "OrderDateTime": "20130403174000",
+        "CustodianName": "ahlta",
+        "Amendments": [
+
+        ],
+        "ResultFacility": "NH Great Lakes IL/0056",
+        "Technologist": "",
+        "ResultCode": "1",
+        "ExamStatus": "",
+        "ExamNumber": "13000204",
+        "ResultCodeDescription": "NORMAL",
+        "InterpretedBy": "42834 DOCTOR, ALPHA",
+        "RadiologyLocation": "ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H",
+        "OrderId": "2157169939",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "VerifiedBy": "42834 DOCTOR, ALPHA",
+        "Priority": "",
+        "RequestingLocation": "ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H",
+        "ExamDateTime": "20130403173900",
+        "VerifiedDate": "20130403174000",
+        "ProcedureCode": "",
+        "CptCodes": [
+          {
+            "CptDescription": "CHEST, PA",
+            "CptCode": "",
+            "EventId": "1000000859"
+          }
+        ],
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "30954-2",
+        "OrderNumber": "",
+        "TranscriptionDate": "20130403174000",
+        "ExamId": "2157169939",
+        "ReasonForOrder": "rea",
+        "RequestingProvider": "42998 QQQTESTGREAT, DOC A",
+        "EventId": "1000000860"
+      },
+      "dataType": 16
+    },
+    {
+      "dataRecord": {
+        "ReportId": "13000126",
+        "SupervisedDate": "",
+        "EnteredBy": "Interface User",
+        "ReportStatus": "Complete",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "ResultText": "Procedure:*ANKLE, RT\n20130222084300\nExam #:13000126\nExam Date/Time:20130222084400\nTranscription Date/Time:20130222084500\nProvider:42836 QQQTESTGREAT, DOC A\nRequesting Location:ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H\nStatus:COMPLETE\n<E>\nAmended Result Cod: 1 NORMAL\nInterpreted By:42834 DOCTOR, ALPHA\nSupervised By:42834 Alpha Stumpxxx\nApproved By: 42834 DOCTOR, ALPHA\nApproved Date:20130222084500\nSupervised By: 42834 Alpha Stumpxxx\nSupervised By Date:20130222084500\nReport Text: ADDING REPORT TEXT \n\nImpresssion: ADDING IMPRESSION TEXT FOR SMOKE TEST",
+        "EnteredByDate": "20130222134546",
+        "Procedure": "*ANKLE, RT",
+        "ApprovedBy": "42834 DOCTOR, ALPHA",
+        "SupervisedBy": "",
+        "HasAmendments": "true",
+        "OrderDateTime": "20130222084500",
+        "CustodianName": "ahlta",
+        "Amendments": [
+          {
+            "ApprovingSupervisor": "",
+            "InterpretingProvider": "",
+            "VerifiedDate": "",
+            "SupervisedDate": "",
+            "DateTime": "",
+            "Facility": "",
+            "ResultCode": "",
+            "ReportText": "ADDING REPORT TEXT\n\nImpresssion: ADDING IMPRESSION TEXT FOR SMOKE TEST",
+            "ResultCodeDescription": "",
+            "VerifiedBy": "",
+            "EventId": "1000000861"
+          }
+        ],
+        "ResultFacility": "NH Great Lakes IL/0056",
+        "Technologist": "",
+        "ResultCode": "",
+        "ExamStatus": "",
+        "ExamNumber": "13000126",
+        "ResultCodeDescription": "",
+        "InterpretedBy": "42834 DOCTOR, ALPHA",
+        "RadiologyLocation": "ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H",
+        "OrderId": "2157080322",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "VerifiedBy": "42834 DOCTOR, ALPHA",
+        "Priority": "",
+        "RequestingLocation": "ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H",
+        "ExamDateTime": "20130222084400",
+        "VerifiedDate": "20130222084500",
+        "ProcedureCode": "",
+        "CptCodes": [
+          {
+            "CptDescription": "*ANKLE, RT",
+            "CptCode": "",
+            "EventId": "1000000862"
+          }
+        ],
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "30954-2",
+        "OrderNumber": "",
+        "TranscriptionDate": "20130222084500",
+        "ExamId": "2157080322",
+        "ReasonForOrder": "",
+        "RequestingProvider": "42836 QQQTESTGREAT, DOC A",
+        "EventId": "1000000863"
+      },
+      "dataType": 16
+    },
+    {
+      "dataRecord": {
+        "ReportId": "13000125",
+        "SupervisedDate": "",
+        "EnteredBy": "Interface User",
+        "ReportStatus": "Complete",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "ResultText": "Procedure:*WRIST,RT\n20130222082700\nOrder Comment: NO BRIEF COMMENT\nReason for Order: SMOKE TEST\nExam #:13000125\nExam Date/Time:20130222083300\nTranscription Date/Time:20130222083400\nProvider:42835 QQQTESTGREAT, DOC B\nRequesting Location:DERMATOLOGY CLINIC 200H     NH GREAT LAKES, 200H\nStatus:COMPLETE\nResult Code: 1 NORMAL\nInterpreted By:42835 QQQTESTGREAT, DOC B\nApproved By: 42835 QQQTESTGREAT, DOC B\nApproved Date:20130222083500\nReport Text: PATIENT HAS NO INJURIES",
+        "EnteredByDate": "20130222133550",
+        "Procedure": "*WRIST,RT",
+        "ApprovedBy": "42835 QQQTESTGREAT, DOC B",
+        "SupervisedBy": "",
+        "HasAmendments": "false",
+        "OrderDateTime": "20130222083500",
+        "CustodianName": "ahlta",
+        "Amendments": [
+
+        ],
+        "ResultFacility": "NH Great Lakes IL/0056",
+        "Technologist": "",
+        "ResultCode": "1",
+        "ExamStatus": "",
+        "ExamNumber": "13000125",
+        "ResultCodeDescription": "NORMAL",
+        "InterpretedBy": "42835 QQQTESTGREAT, DOC B",
+        "RadiologyLocation": "DERMATOLOGY CLINIC 200H     NH GREAT LAKES, 200H",
+        "OrderId": "2157080318",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "VerifiedBy": "42835 QQQTESTGREAT, DOC B",
+        "Priority": "",
+        "RequestingLocation": "DERMATOLOGY CLINIC 200H     NH GREAT LAKES, 200H",
+        "ExamDateTime": "20130222083300",
+        "VerifiedDate": "20130222083500",
+        "ProcedureCode": "",
+        "CptCodes": [
+          {
+            "CptDescription": "*WRIST,RT",
+            "CptCode": "",
+            "EventId": "1000000864"
+          }
+        ],
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "30954-2",
+        "OrderNumber": "",
+        "TranscriptionDate": "20130222083400",
+        "ExamId": "2157080318",
+        "ReasonForOrder": "SMOKE TEST",
+        "RequestingProvider": "42835 QQQTESTGREAT, DOC B",
+        "EventId": "1000000865"
+      },
+      "dataType": 16
+    },
+    {
+      "dataRecord": {
+        "ReportId": "13000094",
+        "SupervisedDate": "",
+        "EnteredBy": "Interface User",
+        "ReportStatus": "Complete",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "ResultText": "Procedure:CHEST, PA\n20130211161900\nExam #:13000094\nExam Date/Time:20130211162000\nTranscription Date/Time:20130211162100\nProvider:42836 QQQTESTGREAT, DOC A\nRequesting Location:ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H\nStatus:COMPLETE\n<E>\nAmended Result Cod: 1 NORMAL\nInterpreted By:42834 DOCTOR, ALPHA\nSupervised By:42834 Alpha Stumpxxx\nApproved By: 42834 DOCTOR, ALPHA\nApproved Date:20130211162100\nSupervised By: 42834 Alpha Stumpxxx\nSupervised By Date:20130211162100\nReport Text: REPORT TEXT ADDED \n\nImpresssion: IMPRESSION TEXT ADDED",
+        "EnteredByDate": "20130211233027",
+        "Procedure": "CHEST, PA",
+        "ApprovedBy": "42834 DOCTOR, ALPHA",
+        "SupervisedBy": "",
+        "HasAmendments": "true",
+        "OrderDateTime": "20130211162100",
+        "CustodianName": "ahlta",
+        "Amendments": [
+          {
+            "ApprovingSupervisor": "",
+            "InterpretingProvider": "",
+            "VerifiedDate": "",
+            "SupervisedDate": "",
+            "DateTime": "",
+            "Facility": "",
+            "ResultCode": "",
+            "ReportText": "REPORT TEXT ADDED\n\nImpresssion: IMPRESSION TEXT ADDED",
+            "ResultCodeDescription": "",
+            "VerifiedBy": "",
+            "EventId": "1000000866"
+          }
+        ],
+        "ResultFacility": "NH Great Lakes IL/0056",
+        "Technologist": "",
+        "ResultCode": "",
+        "ExamStatus": "",
+        "ExamNumber": "13000094",
+        "ResultCodeDescription": "",
+        "InterpretedBy": "42834 DOCTOR, ALPHA",
+        "RadiologyLocation": "ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H",
+        "OrderId": "2157039035",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "VerifiedBy": "42834 DOCTOR, ALPHA",
+        "Priority": "",
+        "RequestingLocation": "ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H",
+        "ExamDateTime": "20130211162000",
+        "VerifiedDate": "20130211162100",
+        "ProcedureCode": "",
+        "CptCodes": [
+          {
+            "CptDescription": "CHEST, PA",
+            "CptCode": "",
+            "EventId": "1000000867"
+          }
+        ],
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "30954-2",
+        "OrderNumber": "",
+        "TranscriptionDate": "20130211162100",
+        "ExamId": "2157039035",
+        "ReasonForOrder": "",
+        "RequestingProvider": "42836 QQQTESTGREAT, DOC A",
+        "EventId": "1000000868"
+      },
+      "dataType": 16
+    },
+    {
+      "dataRecord": {
+        "ReportId": "12000768",
+        "SupervisedDate": "",
+        "EnteredBy": "Interface User",
+        "ReportStatus": "Complete",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "ResultText": "Procedure:*ANKLE, RT\n20120918083800\nOrder Comment: NO BRIEF COMMENT\nReason for Order: reason for study\nExam #:12000768\nExam Date/Time:20120918083800\nTranscription Date/Time:20120918084000\nProvider:42834 DOCTOR, ALPHA\nRequesting Location:ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H\nStatus:COMPLETE\nResult Code: 1 NORMAL\nInterpreted By:42834 DOCTOR, ALPHA\nSupervised By:42834 Alpha Stumpxxx\nApproved By: 42834 DOCTOR, ALPHA\nApproved Date:20120918084000\nReport Text: ADDING REPORT TEXT \n\nImpresssion: ADDING IMPRESSION TEXT",
+        "EnteredByDate": "20120918124037",
+        "Procedure": "*ANKLE, RT",
+        "ApprovedBy": "42834 DOCTOR, ALPHA",
+        "SupervisedBy": "",
+        "HasAmendments": "false",
+        "OrderDateTime": "20120918084000",
+        "CustodianName": "ahlta",
+        "Amendments": [
+
+        ],
+        "ResultFacility": "NH Great Lakes IL/0056",
+        "Technologist": "",
+        "ResultCode": "1",
+        "ExamStatus": "",
+        "ExamNumber": "12000768",
+        "ResultCodeDescription": "NORMAL",
+        "InterpretedBy": "42834 DOCTOR, ALPHA",
+        "RadiologyLocation": "ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H",
+        "OrderId": "2156598795",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "VerifiedBy": "42834 DOCTOR, ALPHA",
+        "Priority": "",
+        "RequestingLocation": "ORTHOPEDIC CLINIC 200H     NH GREAT LAKES, 200H",
+        "ExamDateTime": "20120918083800",
+        "VerifiedDate": "20120918084000",
+        "ProcedureCode": "",
+        "CptCodes": [
+          {
+            "CptDescription": "*ANKLE, RT",
+            "CptCode": "",
+            "EventId": "1000000869"
+          }
+        ],
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "30954-2",
+        "OrderNumber": "",
+        "TranscriptionDate": "20120918084000",
+        "ExamId": "2156598795",
+        "ReasonForOrder": "reason for study",
+        "RequestingProvider": "42834 DOCTOR, ALPHA",
+        "EventId": "1000000870"
+      },
+      "dataType": 16
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "7",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "7",
+      "RetrievedCount": "7",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

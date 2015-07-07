@@ -1,0 +1,147 @@
+{
+  "dataList": [
+    {
+      "dataRecord": {
+        "CompleteNote": "Patient is not doing well.",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "",
+        "NoteFormat": "PLAINTEXT",
+        "CustodianId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "NoteTitle": "PROG NOTES",
+        "VerifiedBy": "CHRISTOPHER, ELKINS",
+        "CustodianName": "tmds",
+        "VerifiedDate": "20131108000000",
+        "LoincCode": "11536-0",
+        "Facility": "3002/3002",
+        "NoteTypeCode": "TMDS",
+        "EventId": "1000001265"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "CompleteNote": "Patient given medication.",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "",
+        "NoteFormat": "PLAINTEXT",
+        "CustodianId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "NoteTitle": "DOCTORS NOTE",
+        "VerifiedBy": "CHRISTOPHER, ELKINS",
+        "CustodianName": "tmds",
+        "VerifiedDate": "20131108000000",
+        "LoincCode": "11536-0",
+        "Facility": "3002/3002",
+        "NoteTypeCode": "TMDS",
+        "EventId": "1000001266"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "CompleteNote": "This BHIE test , Making sure all service is documented",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "",
+        "NoteFormat": "PLAINTEXT",
+        "CustodianId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "NoteTitle": "DISCHARGE NOTE",
+        "VerifiedBy": "CHRISTOPHER, ELKINS",
+        "CustodianName": "tmds",
+        "VerifiedDate": "20131111000000",
+        "LoincCode": "11536-0",
+        "Facility": "3002/3002",
+        "NoteTypeCode": "TMDS",
+        "EventId": "1000001267"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "CompleteNote": "This is BHIE testing for Mitta",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "",
+        "NoteFormat": "PLAINTEXT",
+        "CustodianId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "NoteTitle": "PROG NOTES",
+        "VerifiedBy": "CHRISTOPHER, ELKINS",
+        "CustodianName": "tmds",
+        "VerifiedDate": "20131111000000",
+        "LoincCode": "11536-0",
+        "Facility": "3002/3002",
+        "NoteTypeCode": "TMDS",
+        "EventId": "1000001268"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2165396154",
+        "CompleteNote": "For BHIE Testing 1.0.1.5",
+        "NoteTypeName": "Consultation Note (Provider) Document",
+        "EnteredBy": "AHLTADTE, ATTEND B",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131121185924",
+        "NoteTitle": "Consultation Note (Provider) Document",
+        "VerifiedBy": "AHLTADTE, ATTEND B",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20131121185924",
+        "LoincCode": "11536-0",
+        "Facility": "NH Great Lakes IL/0056",
+        "NoteTypeCode": "15149159",
+        "EventId": "1000001269"
+      },
+      "dataType": 12
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UP",
+      "SiteName": "tmds",
+      "SiteId": "2.16.840.1.113883.3.42.10009.100001.13"
+    },
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "27",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "tmds",
+      "SiteId": "2.16.840.1.113883.3.42.10009.100001.13"
+    },
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "4",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "tmds",
+      "SiteId": "2.16.840.1.113883.3.42.10009.100001.13"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope">
+   <S:Header>
+      <work:WorkContext xmlns:work="http://oracle.com/weblogic/soap/workarea/">rO0ABXdWAB53ZWJsb2dpYy5hcHAuVklDLUUtQXBwbGljYXRpb24AAADWAAAAI3dlYmxvZ2ljLndvcmthcmVhLlN0cmluZ1dvcmtDb250ZXh0AAc0LjQuMS4zAAA=</work:WorkContext>
+   </S:Header>
+   <S:Body>
+      <ns2:getVeteranPicturesResponse xmlns:ns2="http://cardpictureservice.vic.va.insigniatechnology.com/">
+         <return>
+            <errorFlag>false</errorFlag>
+            <maxTruncated>false</maxTruncated>
+            <results>
+               <cardId>1114</cardId>
+               <icn>5000000123V015819</icn>
+            </results>
+         </return>
+      </ns2:getVeteranPicturesResponse>
+   </S:Body>
+</S:Envelope>

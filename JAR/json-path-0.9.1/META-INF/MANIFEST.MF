@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1382637933453
+Build-Jdk: 1.7.0_17
+Built-By: kalle
+Bundle-Description: Java JsonPath implementation
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
+Bundle-ManifestVersion: 2
+Bundle-Name: json-path
+Bundle-SymbolicName: com.jayway.jsonpath.json-path
+Bundle-Version: 0.9.1
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.jayway.jsonpath;uses:="com.jayway.jsonpath.spi,org.s
+ lf4j";version="0.9.1",com.jayway.jsonpath.spi;uses:="com.jayway.jsonpat
+ h";version="0.9.1"
+Import-Package: net.minidev.json;version="[1.2,2)",net.minidev.json.pars
+ er;version="[1.2,2)",org.codehaus.jackson;version="[1.9,2)";resolution:
+ =optional,org.codehaus.jackson.map;version="[1.9,2)";resolution:=option
+ al,org.codehaus.jackson.map.type;version="[1.9,2)";resolution:=optional
+ ,org.codehaus.jackson.type;version="[1.9,2)";resolution:=optional,org.s
+ lf4j;version="[1.7,2)"
+Tool: Bnd-1.50.0

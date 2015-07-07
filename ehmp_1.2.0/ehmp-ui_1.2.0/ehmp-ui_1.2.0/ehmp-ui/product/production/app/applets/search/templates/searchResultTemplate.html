@@ -1,0 +1,23 @@
+<div class="{{Class}} sortResultItem" data-uid="{{ uid }}" title="Select Search Result" tabindex="0" date="{{ datetime }}" count="{{ count }}" sortText="{{ summary }}">
+	<div class="container-fluid">
+	{{#if subGroupResult}}
+<div class="row">{{{subGroupContent}}}</div>{{/if}}
+{{#if basicResult}}
+	{{#if singleResult}}
+		<div class="row">
+			<div class="col-sm-1 text-center"><span id="ResultCount{{ resultId }}" class="badge singleResultBadge">{{ count }}</span></div>
+			<div class="col-sm-9 result-summary" id="ResultSummary{{ resultId }}">{{{ summary }}}</div>
+		</div>{{/if}}
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-3 datetime" id="ResultDate{{ resultId }}" class="datetime">{{ datetime }}</div>
+			<div class="col-sm-3" id="ResultDomain{{ resultId }}">{{#if signer}}<span class="fa fa-pencil" title="/eh/ {{ signer }} - Signed: {{ datetime }}"></span>{{/if}} {{#if name}} {{{name}}} {{/if}} {{#if problemStatus}} {{{problemStatus}}} {{else}} {{{ domain }}} {{/if}}</div>
+			<div class="col-sm-3" id="ResultFacility{{ resultId }}">{{ facility }}</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-8" id="ResultHighlights{{ resultId }}">{{{ highlights }}}</div>
+		</div>
+		{{/if}}
+	</div>
+</div>

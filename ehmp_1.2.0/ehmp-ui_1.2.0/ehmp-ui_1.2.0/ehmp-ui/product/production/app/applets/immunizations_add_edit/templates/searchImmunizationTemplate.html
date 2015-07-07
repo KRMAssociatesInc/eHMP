@@ -1,0 +1,13 @@
+<div class="input-group">
+    <label class="sr-only" for="immunization-search-term">Search for available VA vaccines or type a non-VA vaccine name</label>
+    <span class="input-group-addon">
+        <i class="fa fa-search"></i>
+    </span>
+    <input class="form-control" autocomplete="off" id="immunization-search-term" tabindex="0" placeholder="Search for available VA vaccines" disabled>
+</div>
+<div id="immunizations-no-results" class="hidden" aria-hidden="true">
+    <span><i>No results</i></span>
+</div>
+<h4 id="immunization-loading"><i class="fa fa-spinner fa-spin"></i> Loading...</h4>
+<h4 id="immunization-loading-error" aria-hidden="true" class="hidden">An unexpected error occurred, immunization data could not be loaded</h4>
+<ul class="list-group" id="immunization-search-list"></ul>

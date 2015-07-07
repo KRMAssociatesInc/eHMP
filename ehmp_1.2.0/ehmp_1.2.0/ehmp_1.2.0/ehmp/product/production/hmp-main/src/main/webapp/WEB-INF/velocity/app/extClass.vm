@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>${title}</title>
+    #parse("/layouts/main.vm")
+    <script type="text/javascript">
+        Ext.require('${extClass}');
+        Ext.onReady(function () {
+            Ext.create('${extClass}');
+        });
+    </script>
+</head>
+<body>
+    #parse("/splash.vm")
+</body>
+</html>

@@ -1,0 +1,207 @@
+{
+    "apiVersion":"1.01",
+    "data":{
+        "updated":"20120629181416-0700",
+        "totalItems":7,
+        "items":[
+            {
+                "comment":"",
+                "entered":20120629161729,
+                "facilityCode":"500D",
+                "facilityName":"SLC-FO HMP DEV",
+                "interpretation":"N",
+                "localId":"{FC75A09B-19E1-4253-ADB6-8FD5043B5027}",
+                "locationCode":"urn:va:location:500D:56",
+                "locationName":"5TH FLOOR",
+                "methodCode":4688684,
+                "methodName":"LIFT SCALE",
+                "observed":201206291614,
+                "qualifiers":[
+                    {
+                        "code":4688703,
+                        "name":"SITTING",
+                        "type":"position"
+                    },
+                    {
+                        "code":4688652,
+                        "name":"DRY",
+                        "type":"quality"
+                    }
+                ],
+                "resultStatus":"complete",
+                "typeCode":"urn:vuid:4500639",
+                "typeName":"WEIGHT",
+                "uid":"urn:va:F484:231:obs:{FC75A09B-19E1-4253-ADB6-8FD5043B5027}",
+                "units":"lb",
+                "value":200,
+                "vuid":4500639
+            }
+            ,
+            {
+                "comment":"",
+                "entered":20120629161729,
+                "facilityCode":"500D",
+                "facilityName":"SLC-FO HMP DEV",
+                "interpretation":"N",
+                "localId":"{1DFFB13C-E1BF-4182-86A1-B2604FEB8A6A}",
+                "locationCode":"urn:va:location:500D:56",
+                "locationName":"5TH FLOOR",
+                "observed":201206291614,
+                "qualifiers":[
+                    {
+                        "code":4688634,
+                        "name":"ACTUAL",
+                        "type":"quality"
+                    }
+                ],
+                "resultStatus":"complete",
+                "typeCode":"urn:vuid:4688724",
+                "typeName":"HEIGHT",
+                "uid":"urn:va:F484:231:obs:{1DFFB13C-E1BF-4182-86A1-B2604FEB8A6A}",
+                "units":"in",
+                "value":72,
+                "vuid":4688724
+            }
+            ,
+            {
+                "bodySiteName":"FACE",
+                "comment":"",
+                "entered":20120629161729,
+                "facilityCode":"500D",
+                "facilityName":"SLC-FO HMP DEV",
+                "interpretation":"",
+                "localId":"{10679BEE-035F-4DC1-BD3D-F705EAA6A02C}",
+                "locationCode":"urn:va:location:500D:56",
+                "locationName":"5TH FLOOR",
+                "observed":201206291614,
+                "resultStatus":"complete",
+                "typeCode":"urn:vuid:4500635",
+                "typeName":"PAIN LEVEL",
+                "uid":"urn:va:F484:231:obs:{10679BEE-035F-4DC1-BD3D-F705EAA6A02C}",
+                "units":"",
+                "value":7,
+                "vuid":4500635
+            }
+            ,
+            {
+                "bodySiteCode":4500642,
+                "bodySiteName":"ORAL",
+                "comment":"",
+                "entered":20120629161729,
+                "facilityCode":"500D",
+                "facilityName":"SLC-FO HMP DEV",
+                "interpretation":"H",
+                "localId":"{D4953826-902D-4722-9520-BE1916BF739B}",
+                "locationCode":"urn:va:location:500D:56",
+                "locationName":"5TH FLOOR",
+                "observed":201206291614,
+                "qualifiers":[
+                    {
+                        "code":4688634,
+                        "name":"ACTUAL",
+                        "type":"quality"
+                    }
+                ],
+                "resultStatus":"complete",
+                "typeCode":"urn:vuid:4500638",
+                "typeName":"TEMPERATURE",
+                "uid":"urn:va:F484:231:obs:{D4953826-902D-4722-9520-BE1916BF739B}",
+                "units":"F",
+                "value":102.5,
+                "vuid":4500638
+            }
+            ,
+            {
+                "comment":"",
+                "entered":20120629161729,
+                "facilityCode":"500D",
+                "facilityName":"SLC-FO HMP DEV",
+                "interpretation":"H",
+                "localId":"{00D1E90B-BC88-437E-8F75-3476AD6BD0E9}",
+                "locationCode":"urn:va:location:500D:56",
+                "locationName":"5TH FLOOR",
+                "methodCode":4688638,
+                "methodName":"ASSISTED VENTILATOR",
+                "observed":201206291614,
+                "qualifiers":[
+                    {
+                        "code":4688694,
+                        "name":"TRENDELENBURG",
+                        "type":"position"
+                    }
+                ],
+                "resultStatus":"complete",
+                "typeCode":"urn:vuid:4688725",
+                "typeName":"RESPIRATORY RATE",
+                "uid":"urn:va:F484:231:obs:{00D1E90B-BC88-437E-8F75-3476AD6BD0E9}",
+                "units":"rpm",
+                "value":30,
+                "vuid":4688725
+            }
+            ,
+            {
+                "bodySiteCode":4688645,
+                "bodySiteName":"CAROTID",
+                "comment":"",
+                "entered":20120629161729,
+                "facilityCode":"500D",
+                "facilityName":"SLC-FO HMP DEV",
+                "interpretation":"N",
+                "localId":"{6235D67C-81E5-4B52-BFCA-3BE63A7BCB2A}",
+                "locationCode":"urn:va:location:500D:56",
+                "locationName":"5TH FLOOR",
+                "methodName":"ELECTROCARDIOGRAM",
+                "observed":201206291614,
+                "qualifiers":[
+                    {
+                        "code":4688682,
+                        "name":"SEMIFOWLERS",
+                        "type":"position"
+                    },
+                    {
+                        "code":4688653,
+                        "name":"ESTIMATED",
+                        "type":"quality"
+                    }
+                ],
+                "resultStatus":"complete",
+                "typeCode":"urn:vuid:4500636",
+                "typeName":"PULSE",
+                "uid":"urn:va:F484:231:obs:{6235D67C-81E5-4B52-BFCA-3BE63A7BCB2A}",
+                "units":"bpm",
+                "value":100,
+                "vuid":4500636
+            }
+            ,
+            {
+                "bodySiteCode":4688676,
+                "bodySiteName":"R ARM",
+                "comment":"",
+                "entered":20120629161729,
+                "facilityCode":"500D",
+                "facilityName":"SLC-FO HMP DEV",
+                "interpretation":"H",
+                "localId":"{A2BE5098-C273-4C7F-96A4-4FE0CEA6BECB}",
+                "locationCode":"urn:va:location:500D:56",
+                "locationName":"5TH FLOOR",
+                "methodCode":4688697,
+                "methodName":"AT REST",
+                "observed":201206291614,
+                "qualifiers":[
+                    {
+                        "code":4688703,
+                        "name":"SITTING",
+                        "type":"position"
+                    }
+                ],
+                "resultStatus":"complete",
+                "typeCode":"urn:vuid:4500634",
+                "typeName":"BLOOD PRESSURE",
+                "uid":"urn:va:F484:231:obs:{A2BE5098-C273-4C7F-96A4-4FE0CEA6BECB}",
+                "units":"",
+                "value":"180\/95",
+                "vuid":4500634
+            }
+        ]
+    }
+}

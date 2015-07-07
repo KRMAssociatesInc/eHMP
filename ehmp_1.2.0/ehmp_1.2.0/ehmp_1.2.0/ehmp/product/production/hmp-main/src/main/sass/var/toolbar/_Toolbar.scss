@@ -1,0 +1,28 @@
+$toolbar-background-color: $body-bg !default;
+$toolbar-border-color: $body-bg !default;
+$toolbar-border-width: 0px !default;
+
+$toolbar-footer-background-color: $body-bg !default;
+
+$toolbar-separator-color: #ddd !default;
+$toolbar-separator-highlight-color: #fff !default;
+
+$toolbar-scroller-margin-top: 8px;
+$toolbar-scroller-border-color: #ddd;
+
+$toolbar-scroller-height:24px;
+
+//$toolbar-scroller-width:14px;
+//$toolbar-scroller-padding: 0px 4px;
+//$toolbar-scroller-fa-icon-left: $fa-var-caret-left;
+//$toolbar-scroller-fa-icon-right: $fa-var-caret-right;
+
+$toolbar-scroller-width:18px;
+$toolbar-scroller-padding: 0px 2px;
+$toolbar-scroller-fa-icon-left: $fa-var-arrow-circle-left;
+$toolbar-scroller-fa-icon-right: $fa-var-arrow-circle-right;
+
+//$toolbar-scroller-width:18px;
+//$toolbar-scroller-padding: 0px 2px;
+//$toolbar-scroller-fa-icon-left: $fa-var-chevron-circle-left;
+//$toolbar-scroller-fa-icon-right: $fa-var-chevron-circle-right;

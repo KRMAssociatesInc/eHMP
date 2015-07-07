@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 cwad-title">
+            <strong>{{name}}</strong>
+            <span class="label label-warning{{#compare category 'I (NATIONAL)'}} label-danger{{/compare}}">Category {{category}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 textDetails">{{text}}</div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-2 text-right text-muted">Initial Assigned Date</div>
+        <div class="col-xs-3">{{formatDate assignTS "MM/DD/YYYY HH:mm"}}</div>
+        <div class="col-xs-3 text-right text-muted">Assignment Status</div>
+        <div class="col-xs-4">{{assignmentStatus}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right text-muted">Approved by</div>
+        <div class="col-xs-3">{{approved}}</div>
+        <div class="col-xs-3 text-right text-muted">Owner Site</div>
+        <div class="col-xs-4">{{ownerSite}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right text-muted">Next Review Date</div>
+        <div class="col-xs-3"><!-- Next Review Date to go here --></div>
+        <div class="col-xs-3 text-right text-muted">Originating Site</div>
+        <div class="col-xs-4">{{originatingSite}}</div>
+    </div>
+</div>

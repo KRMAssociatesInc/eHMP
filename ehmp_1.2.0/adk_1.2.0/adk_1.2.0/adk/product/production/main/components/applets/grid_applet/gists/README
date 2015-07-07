@@ -1,0 +1,40 @@
+------------------------------------------------------------------------------------------------
+|Contributers: Jonathan McGuire(Team Jupiter)												   |
+|Last Modified: 12/23/2014																	   |
+|File Name: README																			   |
+------------------------------------------------------------------------------------------------
+OVERVIEW
+	
+	This file is for user referense for adding new gist view types to the ADK
+
+INSTRUCTIONS
+	
+	1.	Determine if your Gist View will Have A header bar or not
+			a. if 'YES'	
+				i.		create a new header template in the 'templates' directory and name it '{fill in gist type}Header.html'
+						see other header files in folder for examples.
+				ii. 	in gistView.js add a new dependancy for your new header template.
+						ex:	"hbs!main/components/applets/grid_applet/gists/templates/someHeader"
+				iii.	In gistView.js find '/*---ADD HEADER LOGIC HERE---*/' and add new logic for your header template like this:
+							if (this.viewType.toUpperCase() === "{fill in gist type}") {
+                			headers = options.appletConfiguration.gistHeaders;
+                			this.headersTemplate = someHeader(headers);}
+            b. if 'NO' 
+            	Do Nothing
+    2.	Create and add your gist view item template
+    		a.	create a new item template in the 'templates' directory and name it '{fill in gist type}.html'
+					see other item files in folder for examples.
+			b. 	in gistBuilderHelper.js add a new dependancy for your new header template.
+					ex:	"hbs!main/components/applets/grid_applet/gists/templates/someHeader"
+			c.	in gistBuilderHelper.js.js find the finction 'getGistItem'
+				i. The logic ist structured to return an extention of Backbone Marionette ItemView. 
+				ii. the best thing to do is to copy the last 'else if' logic statement and paste it to the end of the logic block
+				iii. then name the item to return something like 'var {gist-type}Item = ...' 
+				iv. find the 'template' attribute and change it to the template you defined in steps a-b.
+				v.  this is all you need to get the basic template in to the ADK. If the onRender() function has content in it delete 		the content and you may optionally add your own rendering code here.
+	3.	Naming Convention
+		In Both your item and header templates it is important that you try to keep the names of the handlebars names as generic as possible. this will allow for other appletets to seamlessly use the templates again using a different set of data. When you create the item template please update the MAPPING scetion of this file for future users to reference. The naming convention is vital to how you will set up the view in you applet. For more infomation on how to set up your applet to have a gist view option please visit the wiki.
+
+MAPPING
+
+	INTERVENTIONS: name, description, graphic, age, count

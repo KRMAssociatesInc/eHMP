@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"
+ xmlns="http://www.opensaml.org/xmltooling-config">
+    
+    <ObjectProviders>
+        
+        <!-- AgreementMethod -->
+        <ObjectProvider qualifiedName="xenc:AgreementMethod">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.AgreementMethodBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.AgreementMethodMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.AgreementMethodUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- CarriedKeyName -->
+        <ObjectProvider qualifiedName="xenc:CarriedKeyName">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.CarriedKeyNameBuilder" />
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSStringMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSStringUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- CipherData -->
+        <ObjectProvider qualifiedName="xenc:CipherData">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.CipherDataBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.CipherDataMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.CipherDataUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- CipherReference -->
+        <ObjectProvider qualifiedName="xenc:CipherReference">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.CipherReferenceBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.CipherReferenceMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.CipherReferenceUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- CipherValue -->
+        <ObjectProvider qualifiedName="xenc:CipherValue">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.CipherValueBuilder" />
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSBase64BinaryMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSBase64BinaryUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- DataReference -->
+        <ObjectProvider qualifiedName="xenc:DataReference">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.DataReferenceBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.DataReferenceMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.DataReferenceUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- DHKeyValue -->
+        <ObjectProvider qualifiedName="xenc:DHKeyValue">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.DHKeyValueBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.DHKeyValueMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.DHKeyValueUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- EncryptedData -->
+        <ObjectProvider qualifiedName="xenc:EncryptedData">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.EncryptedDataBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.EncryptedDataMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.EncryptedDataUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- EncryptedKey -->
+        <ObjectProvider qualifiedName="xenc:EncryptedKey">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.EncryptedKeyBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.EncryptedKeyMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.EncryptedKeyUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- EncryptionMethod -->
+        <ObjectProvider qualifiedName="xenc:EncryptionMethod">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.EncryptionMethodBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.EncryptionMethodMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.EncryptionMethodUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- EncryptionProperties -->
+        <ObjectProvider qualifiedName="xenc:EncryptionProperties">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.EncryptionPropertiesBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.EncryptionPropertiesMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.EncryptionPropertiesUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- EncryptionProperty -->
+        <ObjectProvider qualifiedName="xenc:EncryptionProperty">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.EncryptionPropertyBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.EncryptionPropertyMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.EncryptionPropertyUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- Generator -->
+        <ObjectProvider qualifiedName="xenc:Generator">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.GeneratorBuilder" />
+            <MarshallingClass className="org.opensaml.xml.signature.impl.CryptoBinaryMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.signature.impl.CryptoBinaryUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- KANonce -->
+        <ObjectProvider qualifiedName="xenc:KA-Nonce">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.KANonceBuilder" />
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSBase64BinaryMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSBase64BinaryUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- KeyReference -->
+        <ObjectProvider qualifiedName="xenc:KeyReference">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.KeyReferenceBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.KeyReferenceMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.KeyReferenceUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- KeySize -->
+        <ObjectProvider qualifiedName="xenc:KeySize">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.KeySizeBuilder" />
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSIntegerMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSIntegerUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- OAEPparams -->
+        <ObjectProvider qualifiedName="xenc:OAEPparams">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.OAEPparamsBuilder" />
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSBase64BinaryMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSBase64BinaryUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- OriginatorKeyInfo -->
+        <ObjectProvider qualifiedName="xenc:OriginatorKeyInfo">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.OriginatorKeyInfoBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.OriginatorKeyInfoMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.OriginatorKeyInfoUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- P -->
+        <ObjectProvider qualifiedName="xenc:P">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.PBuilder" />
+            <MarshallingClass className="org.opensaml.xml.signature.impl.CryptoBinaryMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.signature.impl.CryptoBinaryUnmarshaller" />
+        </ObjectProvider>     
+        
+        <!-- pgenCounter -->
+        <ObjectProvider qualifiedName="xenc:pgenCounter">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.PgenCounterBuilder" />
+            <MarshallingClass className="org.opensaml.xml.signature.impl.CryptoBinaryMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.signature.impl.CryptoBinaryUnmarshaller" />
+        </ObjectProvider>     
+        
+        <!-- Public -->
+        <ObjectProvider qualifiedName="xenc:Public">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.PublicBuilder" />
+            <MarshallingClass className="org.opensaml.xml.signature.impl.CryptoBinaryMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.signature.impl.CryptoBinaryUnmarshaller" />
+        </ObjectProvider>     
+        
+        <!-- Q -->
+        <ObjectProvider qualifiedName="xenc:Q">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.QBuilder" />
+            <MarshallingClass className="org.opensaml.xml.signature.impl.CryptoBinaryMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.signature.impl.CryptoBinaryUnmarshaller" />
+        </ObjectProvider>     
+        
+        <!-- RecipientKeyInfo -->
+        <ObjectProvider qualifiedName="xenc:RecipientKeyInfo">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.RecipientKeyInfoBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.RecipientKeyInfoMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.RecipientKeyInfoUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- ReferenceList -->
+        <ObjectProvider qualifiedName="xenc:ReferenceList">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.ReferenceListBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.ReferenceListMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.ReferenceListUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- seed -->
+        <ObjectProvider qualifiedName="xenc:seed">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.SeedBuilder" />
+            <MarshallingClass className="org.opensaml.xml.signature.impl.CryptoBinaryMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.signature.impl.CryptoBinaryUnmarshaller" />
+        </ObjectProvider>     
+        
+        <!-- Transforms -->
+        <ObjectProvider qualifiedName="xenc:Transforms">
+            <BuilderClass className="org.opensaml.xml.encryption.impl.TransformsBuilder" />
+            <MarshallingClass className="org.opensaml.xml.encryption.impl.TransformsMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.encryption.impl.TransformsUnmarshaller" />
+        </ObjectProvider>
+ 
+    </ObjectProviders>
+
+</XMLTooling>

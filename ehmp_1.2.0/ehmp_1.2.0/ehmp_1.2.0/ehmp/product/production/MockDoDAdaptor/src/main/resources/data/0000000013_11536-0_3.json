@@ -1,0 +1,300 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2157565489",
+        "CompleteNote": "this is for tux testing\n and editing it",
+        "NoteTypeName": "Consultation Note (Provider) Document",
+        "EnteredBy": "LANF, FOUR",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20130606192148",
+        "NoteTitle": "Consultation Note (Provider) Document",
+        "VerifiedBy": "LANF, FOUR",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20130606192148",
+        "LoincCode": "11536-0",
+        "Facility": "Landstuhl RMC/0607",
+        "NoteTypeCode": "15149159",
+        "EventId": "1000001030"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2156059968",
+        "CompleteNote": "",
+        "NoteTypeName": "Administrative Note",
+        "EnteredBy": "LANF, THREE",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20120410165452",
+        "NoteTitle": "Administrative Note",
+        "VerifiedBy": "LANF, THREE",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20120410165452",
+        "LoincCode": "11536-0",
+        "Facility": "Landstuhl RMC/0607",
+        "NoteTypeCode": "15057412",
+        "EventId": "1000001031"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2155379708",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "LANF, THREE",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20110519121927",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "LANF, THREE",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20110519113600",
+        "LoincCode": "34109-9",
+        "Facility": "Landstuhl RMC^LSL Cardiology",
+        "NoteTypeCode": "",
+        "EventId": "1000001032"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2155598149",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "LANF, FIVE",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20111215220408",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "LANF, FIVE",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20111020213720",
+        "LoincCode": "34109-9",
+        "Facility": "Landstuhl RMC^LSL Cardiology",
+        "NoteTypeCode": "",
+        "EventId": "1000001033"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2156791145",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "SJF, TEN",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20121115205508",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "SJF, TEN",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20121115154424",
+        "LoincCode": "34109-9",
+        "Facility": "4th Medical Group^Blue MTF",
+        "NoteTypeCode": "",
+        "EventId": "1000001034"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2156824290",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "LANF, FOUR",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20121126173721",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "LANF, FOUR",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20111102213626",
+        "LoincCode": "34109-9",
+        "Facility": "Landstuhl RMC^LSL Cardiology",
+        "NoteTypeCode": "",
+        "EventId": "1000001035"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2156824318",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "LANF, FOUR",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20121126174248",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "LANF, FOUR",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20121126174007",
+        "LoincCode": "34109-9",
+        "Facility": "Landstuhl RMC^LSL Cardiology",
+        "NoteTypeCode": "",
+        "EventId": "1000001036"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2157538362",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "LANF, FOURTY",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20130424185344",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "LANF, FOURTY",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20130422115223",
+        "LoincCode": "34109-9",
+        "Facility": "Landstuhl RMC^LSL Cardiology",
+        "NoteTypeCode": "",
+        "EventId": "1000001037"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2157551844",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "SJF, FIVE",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20130509201704",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "SJF, FIVE",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20130509153039",
+        "LoincCode": "34109-9",
+        "Facility": "4th Medical Group^Blue MTF",
+        "NoteTypeCode": "",
+        "EventId": "1000001038"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2157562874",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "LANF, ELEVEN",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20130603222115",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "LANF, ELEVEN",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20130603221922",
+        "LoincCode": "34109-9",
+        "Facility": "Landstuhl RMC^LSL Cardiology",
+        "NoteTypeCode": "",
+        "EventId": "1000001039"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2151767199",
+        "CompleteNote": "Flight\nArrival Date: 06-OCT-2008\t\tArrival Time: 00:00 \t\tFlight Number: HA 168\t\tPrecedence Type: ROUTINE\nOriginating Camp: JPTA_IR37-31st CSH - BUCCA\t\t\t\tClassification: \n\nComments: \n\nSpecial Equipment: CHEST TUBE; PUMP, INTRAVENEOUS INFUSION\n\nInjury / Illness\nOperation: OTHER\t\t\tInjury Nature: NBI\t\tMedical Service: CARD\nDiagnosis: 427.5, CARDIAC ARREST\nPatient Condition: Very seriously ill/injured\nEnabling Care: \nAmputation Cause: \n\nFacility: W1HHAA\nTreatment Status: SURGERY\nAdministrative Notes: Patient went into cardiac arrest night before skirmish at Bag End.\nUser: Administrator, JPTA System",
+        "NoteTypeName": "Administrative Note",
+        "EnteredBy": "MIDTIER, SJFONE",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20100622112951",
+        "NoteTitle": "Administrative Note",
+        "VerifiedBy": "",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20100622112951",
+        "LoincCode": "11536-0",
+        "Facility": "TMDS Clinic",
+        "NoteTypeCode": "15057412",
+        "EventId": "1000001040"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2151767189",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20100622112945",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20081006195840",
+        "LoincCode": "34109-9",
+        "Facility": "TMDS Facility^TMDS Clinic",
+        "NoteTypeCode": "",
+        "EventId": "1000001041"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2151773215",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20100622160951",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20080916040000",
+        "LoincCode": "34109-9",
+        "Facility": "TMDS Facility^TMDS Clinic",
+        "NoteTypeCode": "",
+        "EventId": "1000001042"
+      },
+      "dataType": 12
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "13",
+      "RetrievedCount": "13",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

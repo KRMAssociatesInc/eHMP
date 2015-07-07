@@ -1,0 +1,504 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "7",
+      "RetrievedCount": "7",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004115"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "29305-0"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "orderable": [
+          {
+            "display": "ASTEMIZOLE--PO 10MG TAB",
+            "code": "3000268019",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20130512170700",
+        "orderNumber": {
+          "id": "130512-00010"
+        },
+        "orderingProvider": {
+          "name": "SJF, FIVE"
+        },
+        "status": null,
+        "actionCode": "DC",
+        "childResistant": true,
+        "deliveryLocation": null,
+        "dispensingLocation": null,
+        "alternateDrugText": "HISMANAL 10MG TABLET",
+        "duration": "D30",
+        "endDate": "20130611170600",
+        "enteringLocation": {
+          "name": "Blue MTF"
+        },
+        "giveAmount": "10",
+        "giveFormDescription": "TABLET",
+        "giveUnits": null,
+        "intervalPattern": null,
+        "interval": null,
+        "numberOfRefills": "0",
+        "comments": null,
+        "priorOrderNumber": null,
+        "priority": "ROUTINE",
+        "quantity": "30",
+        "requestedDispenseAmount": "30",
+        "requestedGiveTimeUnit": null,
+        "routeDescription": "PO",
+        "sig": "TAKE 1 TABLET DAILY #30 RF0",
+        "startDate": "20130512170700",
+        "verifiedBy": null
+      },
+      "dataType": 22
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004117"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "29305-0"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "orderable": [
+          {
+            "display": "ACETAMINOPHEN--PO 325MG TAB",
+            "code": "3000261885",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20130512170600",
+        "orderNumber": {
+          "id": "130512-00008"
+        },
+        "orderingProvider": {
+          "name": "SJF, FIVE"
+        },
+        "status": null,
+        "actionCode": "DC",
+        "childResistant": true,
+        "deliveryLocation": null,
+        "dispensingLocation": null,
+        "alternateDrugText": "ACETAMINOPHEN 325MG TABLET",
+        "duration": "D30",
+        "endDate": "20130611170500",
+        "enteringLocation": {
+          "name": "Blue MTF"
+        },
+        "giveAmount": "325",
+        "giveFormDescription": "TABLET",
+        "giveUnits": null,
+        "intervalPattern": null,
+        "interval": null,
+        "numberOfRefills": "0",
+        "comments": null,
+        "priorOrderNumber": null,
+        "priority": "ROUTINE",
+        "quantity": "7",
+        "requestedDispenseAmount": "7",
+        "requestedGiveTimeUnit": null,
+        "routeDescription": "PO",
+        "sig": "#RFO10 #7 RF0",
+        "startDate": "20130512170600",
+        "verifiedBy": null
+      },
+      "dataType": 22
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004119"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "29305-0"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "orderable": [
+          {
+            "display": "IBUPROFEN--PO 800MG TAB",
+            "code": "3000265540",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20130512170600",
+        "orderNumber": {
+          "id": "130512-00009"
+        },
+        "orderingProvider": {
+          "name": "SJF, FIVE"
+        },
+        "status": null,
+        "actionCode": "DC",
+        "childResistant": true,
+        "deliveryLocation": null,
+        "dispensingLocation": null,
+        "alternateDrugText": "MOTRIN 800 MG TABLET",
+        "duration": "D30",
+        "endDate": "20130611170500",
+        "enteringLocation": {
+          "name": "Blue MTF"
+        },
+        "giveAmount": "800",
+        "giveFormDescription": "TABLET",
+        "giveUnits": null,
+        "intervalPattern": null,
+        "interval": null,
+        "numberOfRefills": "0",
+        "comments": null,
+        "priorOrderNumber": null,
+        "priority": "ROUTINE",
+        "quantity": "60",
+        "requestedDispenseAmount": "60",
+        "requestedGiveTimeUnit": null,
+        "routeDescription": "PO",
+        "sig": "TAKE 1 TABLET 3 TIMES DAILY WITH FOOD #60 RF0",
+        "startDate": "20130512170600",
+        "verifiedBy": null
+      },
+      "dataType": 22
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004121"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "29305-0"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "orderable": [
+          {
+            "display": "IBUPROFEN--PO 800MG TAB",
+            "code": "3000265540",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20130512165800",
+        "orderNumber": {
+          "id": "130512-00007"
+        },
+        "orderingProvider": {
+          "name": "SJF, FIVE"
+        },
+        "status": null,
+        "actionCode": "CA",
+        "childResistant": true,
+        "deliveryLocation": null,
+        "dispensingLocation": null,
+        "alternateDrugText": "MOTRIN 800 MG TABLET",
+        "duration": "D30",
+        "endDate": "20130611165800",
+        "enteringLocation": {
+          "name": "Blue MTF"
+        },
+        "giveAmount": "800",
+        "giveFormDescription": "TABLET",
+        "giveUnits": null,
+        "intervalPattern": null,
+        "interval": null,
+        "numberOfRefills": "0",
+        "comments": null,
+        "priorOrderNumber": null,
+        "priority": "ROUTINE",
+        "quantity": "60",
+        "requestedDispenseAmount": "60",
+        "requestedGiveTimeUnit": null,
+        "routeDescription": "PO",
+        "sig": "TAKE 1 TABLET 3 TIMES DAILY WITH FOOD #60 RF0",
+        "startDate": "20130512165900",
+        "verifiedBy": null
+      },
+      "dataType": 22
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004123"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "29305-0"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "orderable": [
+          {
+            "display": "ACETAMINOPHEN DROPS--PO 100MG/ML SOLN",
+            "code": "15479451",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20130501140700",
+        "orderNumber": {
+          "id": "130501-00006"
+        },
+        "orderingProvider": {
+          "name": "SJF, FIVE"
+        },
+        "status": null,
+        "actionCode": "CA",
+        "childResistant": true,
+        "deliveryLocation": null,
+        "dispensingLocation": null,
+        "alternateDrugText": "INFANT'S TYLENOL SUSP DROP",
+        "duration": "D30",
+        "endDate": "20130531140700",
+        "enteringLocation": {
+          "name": "GOLD MTF CHCS GF"
+        },
+        "giveAmount": "100",
+        "giveFormDescription": "SOLUTION",
+        "giveUnits": null,
+        "intervalPattern": null,
+        "interval": null,
+        "numberOfRefills": "0",
+        "comments": null,
+        "priorOrderNumber": null,
+        "priority": "ROUTINE",
+        "quantity": "1",
+        "requestedDispenseAmount": "1",
+        "requestedGiveTimeUnit": null,
+        "routeDescription": "PO",
+        "sig": "TAKE ONE PER DAY #1 RF0",
+        "startDate": "20130501140800",
+        "verifiedBy": null
+      },
+      "dataType": 22
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004125"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "29305-0"
+          }
+        ],
+        "facility": {
+          "name": "Landstuhl RMC"
+        },
+        "orderable": [
+          {
+            "display": "NAPROXEN--PO 500MG TAB",
+            "code": "3000265552",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20071102140200",
+        "orderNumber": {
+          "id": "071102-06025"
+        },
+        "orderingProvider": null,
+        "status": null,
+        "actionCode": "DC",
+        "childResistant": true,
+        "deliveryLocation": null,
+        "dispensingLocation": {
+          "name": "ABG Primary Care"
+        },
+        "alternateDrugText": "NAPROXEN 500 MG TABLET",
+        "duration": "T",
+        "endDate": null,
+        "enteringLocation": {
+          "name": "ILS Primary Care"
+        },
+        "giveAmount": "500",
+        "giveFormDescription": "TABLET",
+        "giveUnits": null,
+        "intervalPattern": null,
+        "interval": null,
+        "numberOfRefills": "3",
+        "comments": null,
+        "priorOrderNumber": null,
+        "priority": "20071102140200",
+        "quantity": "20",
+        "requestedDispenseAmount": "20",
+        "requestedGiveTimeUnit": null,
+        "routeDescription": "PO",
+        "sig": null,
+        "startDate": null,
+        "verifiedBy": null
+      },
+      "dataType": 22
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000004127"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "29305-0"
+          }
+        ],
+        "facility": {
+          "name": "Landstuhl RMC"
+        },
+        "orderable": [
+          {
+            "display": "CYCLOBENZAPRINE--PO 10MG TAB",
+            "code": "3000262072",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20071102140200",
+        "orderNumber": {
+          "id": "071102-06030"
+        },
+        "orderingProvider": null,
+        "status": null,
+        "actionCode": "DC",
+        "childResistant": true,
+        "deliveryLocation": null,
+        "dispensingLocation": {
+          "name": "ABG Primary Care"
+        },
+        "alternateDrugText": "CYCLOBENZAPRINE 10 MG TABLET",
+        "duration": "T",
+        "endDate": null,
+        "enteringLocation": {
+          "name": "ILS Primary Care"
+        },
+        "giveAmount": "10",
+        "giveFormDescription": "TABLET",
+        "giveUnits": null,
+        "intervalPattern": null,
+        "interval": null,
+        "numberOfRefills": "2",
+        "comments": null,
+        "priorOrderNumber": null,
+        "priority": "20071102140200",
+        "quantity": "30",
+        "requestedDispenseAmount": "30",
+        "requestedGiveTimeUnit": null,
+        "routeDescription": "PO",
+        "sig": null,
+        "startDate": null,
+        "verifiedBy": null
+      },
+      "dataType": 22
+    }
+  ]
+}

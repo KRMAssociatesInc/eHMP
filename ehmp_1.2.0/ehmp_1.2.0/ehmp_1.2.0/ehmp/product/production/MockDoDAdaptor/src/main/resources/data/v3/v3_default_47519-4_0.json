@@ -1,0 +1,796 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "17",
+      "RetrievedCount": "17",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001456"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "92499",
+                "display": "Unlisted ophthalmological service or procedure"
+              }
+            ],
+            "date": "20030325151930",
+            "recordedId": {
+              "id": "14152227"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001458"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "87185",
+                "display": "Susceptibility studies, antimicrobial agent; enzyme detection (eg, beta lactamase), per enzyme"
+              }
+            ],
+            "date": "20030325151930",
+            "recordedId": {
+              "id": "14152228"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001460"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "51040",
+                "display": "Cystostomy, cystotomy with drainage"
+              }
+            ],
+            "date": "20030325151930",
+            "recordedId": {
+              "id": "14152229"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001462"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "16020",
+                "display": "Dressings and/or debridement, initial or subsequent; without anesthesia, office or hospital, small"
+              }
+            ],
+            "date": "20030325151929",
+            "recordedId": {
+              "id": "14152226"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001464"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "11760",
+                "display": "Repair of nail bed"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151083"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001466"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "65260",
+                "display": "Removal of foreign body, intraocular; from posterior segment, magnetic extraction, anterior or posterior route"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151084"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001468"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "97010",
+                "display": "Application of a modality to one or more areas; hot or cold packs"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151085"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001470"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "44970",
+                "display": "Laparoscopy, surgical, appendectomy"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151086"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001472"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "45330",
+                "display": "Sigmoidoscopy, flexible; diagnostic, with or without collection of specimen(s) by brushing or washing (separate procedure)"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151087"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001474"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "45385",
+                "display": "Colonoscopy, flexible, proximal to splenic flexure; with removal of tumor(s), polyp(s), or other lesion(s) by snare technique"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151088"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001476"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "47562",
+                "display": "Laparoscopy, surgical; cholecystectomy"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151089"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001478"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "45378",
+                "display": "Colonoscopy, flexible, proximal to splenic flexure; diagnostic, with or without collection of specimen(s) by brushing or washing, with or without colon decompression (separate procedure)"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151091"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001480"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "43259",
+                "display": "Upper gastrointestinal endoscopy including esophagus, stomach, and either the duodenum and/or jejunum as appropriate; with endoscopic ultrasound examination, including the esophagus, stomach, and either the duodenum and/or jejunum as appropriate"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151092"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001482"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "31622",
+                "display": "Bronchoscopy, rigid or flexible, with or without fluoroscopic guidance; diagnostic, with or without cell washing (separate procedure)"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151093"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001484"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "29894",
+                "display": "Arthroscopy, ankle (tibiotalar and fibulotalar joints), surgical; with removal of loose body or foreign body"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151094"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001486"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "42809",
+                "display": "Removal of foreign body from pharynx"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151095"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001488"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "19318",
+                "display": "Reduction mammaplasty"
+              }
+            ],
+            "date": "20030318080000",
+            "recordedId": {
+              "id": "14151096"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    }
+  ]
+}

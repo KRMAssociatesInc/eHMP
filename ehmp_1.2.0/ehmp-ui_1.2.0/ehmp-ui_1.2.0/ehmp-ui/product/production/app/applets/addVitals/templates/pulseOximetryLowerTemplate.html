@@ -1,0 +1,36 @@
+<div id="{{sname}}-hide-show" class="hide">
+<div class="gray-container">
+	<table class="table" cellspacing="15">
+		<tr class="active">
+			<td>{{qual-1-name}}
+			</td>
+			<td>{{qual-2-name}}
+			</td>
+			<td>{{qual-3-name}}
+			</td>
+		</tr>
+		<tr class="active">
+			<td>
+				<label for="{{sname}}-{{qual-1-sname}}-text" class="sr-only">{{qual-1-name}} text</label>
+				<input class="form-control input-sm" data-type="{{qual-1-sname}}-reading" data-type="qualifier-input" data-name="{{qual-1-sname}}" id="{{sname}}-{{qual-1-sname}}-text" type="text" autocomplete="off">
+				<span id="{{qual-1-sname}}-error" class="help-td applet-error" role="alert" aria-atomic="true" tabindex="0"></span>
+			</td>
+			<td>
+				<label for="{{sname}}-{{qual-2-sname}}-text" class="sr-only">{{qual-2-name}} text</label>
+				<input class="form-control input-sm" data-type="{{qual-2-sname}}-reading" data-type="qualifier-input" data-name="{{qual-2-sname}}" id="{{sname}}-{{qual-2-sname}}-text" type="text" autocomplete="off">
+				<span id="{{qual-2-sname}}-error" class="help-td applet-error" role="alert" aria-atomic="true" tabindex="0"></span>
+			</td>
+			<td>
+				<label for="{{qual-3-name}}-sel" class="sr-only">{{qual-3-name}} select box</label>
+				<select data-name="{{qual-3-sname}}" id="{{qual-3-name}}-sel" data-type="qualifier-options" class="form-control input-sm">
+					{{#each qual-3-options}}
+					<option data-category="qual-3-sel" data-fileien="{{this.fileIEN}}">{{this.name}}</option>
+					{{/each}}
+				</select>
+				<span class="help-td applet-error" role="alert" aria-atomic="true" tabindex="0"></span>
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="expanded-row">&nbsp;</div>
+</div>

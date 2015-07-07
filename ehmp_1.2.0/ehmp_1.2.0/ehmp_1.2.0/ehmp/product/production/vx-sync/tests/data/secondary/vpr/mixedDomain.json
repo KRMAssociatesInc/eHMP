@@ -1,0 +1,67 @@
+{
+    "apiVersion": "1.0",
+    "data": {
+        "updated": 20141215144116,
+        "totalItems": 649,
+        "currentItemCount": 649,
+        "items": [{
+            "facilityCode": "500",
+            "facilityName": "CAMP MASTER",
+            "groupName": "CH 0323 2426",
+            "groupUid": "urn:va:accession:9E7A:8:CH;6899693.879999",
+            "categoryCode": "urn:va:lab-category:CH",
+            "categoryName": "Laboratory",
+            "observed": "201003051200",
+            "resulted": "201003231255",
+            "specimen": "SERUM",
+            "comment": "Ordering Provider: Seventeen Labtech Report Released Date/Time: Mar 23, 2010@12:55\r\n Performing Lab: ALBANY VA MEDICAL CENTER\r\n                VA MEDICAL CENTER 1 3RD sT. ALBANY, NY 12180-0097\r\n ",
+            "typeCode": "urn:va:ien:60:244:72",
+            "displayName": "HDL",
+            "result": "58",
+            "units": "MG/DL",
+            "low": "40",
+            "high": "60",
+            "resultNumber": 58,
+            "kind": "Laboratory",
+            "abnormal": false,
+            "micro": false,
+            "qualifiedName": "HDL (SERUM)",
+            "uid": "urn:va:lab:9E7A:8:CH;6899693.879999;80",
+            "summary": "HDL (SERUM) 58 MG/DL",
+            "pid": "9E7A;8",
+            "localId": "CH;6899693.879999;80",
+            "typeName": "HDL",
+            "lnccodes": [
+                "urn:va:ien:60:244:72"
+            ],
+            "statusCode": "urn:va:lab-status:completed",
+            "statusName": "completed",
+            "displayOrder": 3.9,
+            "typeId": 244,
+            "sample": ""
+        }, {
+            "facilityCode": "DOD",
+            "facilityName": "DOD",
+            "kind": "Allergy/Adverse Reaction",
+            "uid": "urn:va:allergy:DOD:0000000008:1000001122",
+            "summary": "ENOXACIN (ENOXACIN)",
+            "pid": "DOD;0000000008",
+            "products": [{
+                "name": "ENOXACIN (ENOXACIN)",
+                "summary": "AllergyProduct{uid='null'}"
+            }],
+            "comments": [{
+                "comment": "Urticaria",
+                "summary": "AllergyComment{uid='null'}"
+            }],
+            "codes": [{
+                "code": "61021",
+                "system": "DOD_ALLERGY_IEN"
+            }, {
+                "code": "C0014310",
+                "system": "urn:oid:2.16.840.1.113883.6.86",
+                "display": "Enoxacin"
+            }]
+        }]
+    }
+}

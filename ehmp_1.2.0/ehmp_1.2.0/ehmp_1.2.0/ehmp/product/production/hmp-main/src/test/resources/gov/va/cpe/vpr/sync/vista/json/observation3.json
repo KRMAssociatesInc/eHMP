@@ -1,0 +1,21 @@
+{
+    "entered" : 20130215143150,
+    "facilityCode" : "500D",
+    "facilityName" : "SLC-FO HMP DEV",
+    "interpretationCode" : "urn:hl7:observation-interpretation:U",
+    "interpretationName" : "Unknown",
+    "localId" : "{B14A750E-9849-4A50-9725-95EBD2289526}",
+    "locationName" : "GEN MED",
+    "locationUid" : "urn:va:location:F484:9",
+    "observed" : 201302150653,
+    "result" : "TRIPLE",
+    "setID" : "{1BDC4488-C9CD-415E-BB93-F52C5945CB1A}",
+    "setName" : "triple lumen cath L Subclavian",
+    "setStart" : 201302141427,
+    "setType" : "IV",
+    "statusCode" : "urn:va:observation-status:complete",
+    "statusName" : "complete",
+    "typeCode" : "urn:va:clioterminology:{E038D201-2840-B759-4D91-44A093768F8B}",
+    "typeName" : "CENTRAL LINE TYPE",
+    "uid" : "urn:va:obs:F484:25:{B14A750E-9849-4A50-9725-95EBD2289526}"
+}

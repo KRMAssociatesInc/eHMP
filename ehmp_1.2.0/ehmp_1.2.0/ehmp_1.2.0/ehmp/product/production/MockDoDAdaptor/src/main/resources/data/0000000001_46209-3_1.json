@@ -1,0 +1,137 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "LabOrders": [
+          {
+            "EnteredByName": "BHIE, USERONE",
+            "StatusComments": "",
+            "AlternateSpecimenText": "BLOOD",
+            "ScheduleTypeName": "One Time",
+            "StartDate": "20140402171600",
+            "NurseSignatureName": "",
+            "Duration": "D1",
+            "PriorOrderNumber": "",
+            "StatusName": "Ordered",
+            "IntervalTimeInterval": "",
+            "Frequency": "",
+            "ProcessingPriority": "R",
+            "OrderStatusName": "Ordered",
+            "OrderDate": "20140402171400",
+            "OrderComment": "Jane testing",
+            "IntervalRepeatPattern": "",
+            "AdminTimes": "",
+            "OrderingProviderName": "BHIE, USERONE",
+            "TestStatusName": "",
+            "FacilityName": "NH Great Lakes IL",
+            "Ncid": "14674837",
+            "UniversalServiceText": "CBC PROFILE",
+            "Priority": "ROUTINE",
+            "GroupNumber": "966070",
+            "EndDate": "20150401171600",
+            "EnteringLocationName": "Family Practice Clinic",
+            "NurseSignatureDate": "",
+            "OrderNumber": "140402-00001",
+            "CollectionMethod": "",
+            "VerifiedByName": "",
+            "SpecimenText": "PLASMA",
+            "OrderRequiredData": "",
+            "EventId": "1000010062"
+          }
+        ],
+        "Description": "CBC PROFILE",
+        "OrderDate": "20140402171400",
+        "OrderingProvider": "BHIE, USERONE",
+        "Type": "LAB",
+        "EnteredBy": "",
+        "OrderId": "140402-00001",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "Ncid": "14674837",
+        "Status": "Ordered",
+        "CustodianName": "ahlta",
+        "LoincCode": "26436-6",
+        "Facility": "",
+        "EventId": "1000010063"
+      },
+      "dataType": 21
+    },
+    {
+      "dataRecord": {
+        "Description": "ACETAMINOPHEN 325MG TAB *OTC*--PO 325MG",
+        "OrderDate": "20140402171600",
+        "OrderingProvider": "BHIE, USERONE",
+        "Type": "MEDICATION",
+        "EnteredBy": "",
+        "OrderId": "140402-00003",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "Ncid": "3000261885",
+        "Status": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "29305-0",
+        "Facility": "",
+        "MedicationOrders": [
+          {
+            "EnteredByName": "BHIE, USERONE",
+            "ActionCode": "DC",
+            "GiveAmount": "325",
+            "RequestedDispenseAmount": "50",
+            "StartDate": "20140402171800",
+            "Duration": "D3",
+            "OrderType": "9",
+            "DeliverToLocationName": "",
+            "PriorOrderNumber": "",
+            "IntervalTimeInterval": "",
+            "RequestedGiveTimeUnit": "",
+            "DrugText": "ACETAMINOPHEN 325MG TAB *OTC*--PO 325MG",
+            "ChildResistant": "true",
+            "RouteDescription": "PO",
+            "DispensingLocationName": "",
+            "Quantity": "50",
+            "OrderDate": "20140402171600",
+            "GiveUnits": "",
+            "OrderComment": "Jane Testing",
+            "Sig": "TAKE 1 TABLET BY MOUTH EVERY SIX HOURS AS NEEDED HEADACHE/FEVER/PAIN OR AS DIRECTED",
+            "IntervalRepeatPattern": "",
+            "NumberOfRefills": "0",
+            "OrderingProviderName": "BHIE, USERONE",
+            "FacilityName": "NH Great Lakes IL",
+            "Ncid": "3000261885",
+            "Priority": "ROUTINE",
+            "EndDate": "20140405171700",
+            "DrugAlternateText": "TYLENOL 325 MG TABLET",
+            "EnteringLocationName": "Family Practice Clinic",
+            "OrderNumber": "140402-00003",
+            "GiveFormDescription": "TABLET",
+            "VerifiedByName": "",
+            "EventId": "1000010064"
+          }
+        ],
+        "EventId": "1000010065"
+      },
+      "dataType": 22
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

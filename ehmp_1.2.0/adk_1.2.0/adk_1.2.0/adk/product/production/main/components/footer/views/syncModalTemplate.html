@@ -1,0 +1,213 @@
+<div id="sync-status-modal" class="row">
+  <div id="source-list-panel" class="col-md-3">
+    <p>
+      <b>Source</b>
+    </p>
+    <ul id="sync-source-sites" role="list">
+    {{#if mySite}}
+      <li role="list-item" data-source="mySite" class="{{#compare selectedSource.sourceName 'mySite'}}selected{{/compare}}">
+        <div>
+          {{#compare mySite.status 'completed'}}
+              {{#if mySite.newDataSince}}
+                <i class="fa fa-refresh"></i>
+              {{else}}
+                <i class="fa fa-check-circle"></i>
+              {{/if}}
+          {{/compare}}
+          {{#compare mySite.status 'inProgress'}}
+              <i class="fa fa-spinner fa-spin"></i>
+          {{/compare}}
+          {{#compare mySite.status 'needsRefresh'}}
+              <i class="fa fa-refresh"></i>
+          {{/compare}}
+          {{#compare mySite.status 'error'}}
+              <i class="fa fa-exclamation-circle"></i>
+          {{/compare}}
+          My Site
+        </div>
+        <div class="source-sync-details">
+          <div>New data since {{#if mySite.newDataSince}} {{mySite.newDataSince}} {{else}} Current {{/if}}</div>
+        </div>
+      </li>
+    {{/if}}
+    {{#if allVa}}
+     <li role="list-item" data-source="allVa" class="{{#compare selectedSource.sourceName 'allVa'}}selected{{/compare}}">
+        <div>
+          {{#compare allVa.status 'completed'}}
+              {{#if allVa.newDataSince}}
+                <i class="fa fa-refresh"></i>
+              {{else}}
+                <i class="fa fa-check-circle"></i>
+              {{/if}}
+          {{/compare}}
+          {{#compare allVa.status 'inProgress'}}
+              <i class="fa fa-spinner fa-spin"></i>
+          {{/compare}}
+          {{#compare allVa.status 'needsRefresh'}}
+              <i class="fa fa-refresh"></i>
+          {{/compare}}
+          {{#compare allVa.status 'error'}}
+              <i class="fa fa-exclamation-circle"></i>
+          {{/compare}}
+          All VA
+         </div>
+         <div class="source-sync-details">
+            <div>Last synced {{#if allVa.mostRecentTime}}{{allVa.mostRecentTime}} {{#if allVa.leastRecentTime}} - {{allVa.leastRecentTime}}{{/if}} ago{{/if}}<div>
+            <div>New data since {{#if allVa.newDataSince}} {{allVa.newDataSince}} {{else}} Current {{/if}}</div>
+         </div>
+      </li>
+    {{/if}}
+    {{#if dod}}
+      <li role="list-item" data-source="dod" class="{{#compare selectedSource.sourceName 'dod'}}selected{{/compare}}">
+        <div>
+          {{#compare dod.status 'completed'}}
+              <i class="fa fa-check-circle"></i>
+          {{/compare}}
+          {{#compare dod.status 'inProgress'}}
+              <i class="fa fa-spinner fa-spin"></i>
+          {{/compare}}
+          {{#compare dod.status 'error'}}
+              <i class="fa fa-exclamation-circle"></i>
+          {{/compare}}
+          DoD
+        </div>
+        <div class="source-sync-details">
+          <div>Last synced {{#if dod.mostRecentTime}}{{dod.mostRecentTime}} ago{{/if}}<div>
+        </div>
+      </li>
+    {{/if}}
+    {{#if communities}}
+      <li role="list-item" data-source="communities" class="{{#compare selectedSource.sourceName 'communities'}}selected{{/compare}}">
+        <div>
+          {{#compare communities.status 'completed'}}
+              <i class="fa fa-check-circle"></i>
+          {{/compare}}
+          {{#compare communities.status 'inProgress'}}
+              <i class="fa fa-spinner fa-spin"></i>
+          {{/compare}}
+          {{#compare communities.status 'error'}}
+              <i class="fa fa-exclamation-circle"></i>
+          {{/compare}}
+          Communities
+        </div>
+        <div class="source-sync-details">
+          <div>Last synced {{#if communities.mostRecentTime}}{{communities.mostRecentTime}} ago{{/if}}<div>
+        </div>
+      </li>
+    {{/if}}
+    </ul>
+  </div>
+  <div id="sync-site-detail" class="col-md-9">
+    <div id="force-site-sync-status" class="row">
+      {{#if msgSuccessfulSync}}
+        <p id="force-site-sync-status-success" class="bg-success"><b>{{currentDateTime}} - Sync was successful</b><button id="msg-successful-sync" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+      {{/if}}
+      {{#if msgFailedSync}}
+        <p id="force-site-sync-status-error" class="bg-danger"><b>{{currentDateTime}} - Error detected during sync</b><button id="msg-failed-sync" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+      {{/if}}
+    </div>
+    <div id="sync-site-detail-header" class="row">
+      <h4 class="col-md-4">{{selectedSource.sourceDisplayName}}</h4>
+      <button class="btn btn-default" id="force-source-sync"
+      {{#compare forceSyncStatus 'inProgress'}}
+         disabled="disabled"><span><i class="fa fa-spinner fa-spin"></i> Sync in progress</span>
+      {{/compare}}
+      {{#compare forceSyncStatus 'completed'}}
+        >Sync {{selectedSource.sourceDisplayName}} to VX
+      {{/compare}}
+      </button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          {{#compare selectedSource.sourceName 'allVa'}}
+          <th scope="col" class="sortable renderable site" id="sync-detail-header-site">
+            <a>Site</a>
+            {{#compare sortColumn 'siteDisplayName'}}
+              <b class="fa 
+              {{#compare sortOrder 'asc'}}
+                fa-caret-up
+              {{/compare}}
+              {{#compare sortOrder 'desc'}}
+                fa-caret-down
+              {{/compare}}
+              "></b>
+            {{/compare}}
+             
+          </th>
+          {{/compare}}
+          <th scope="col" class="sortable renderable domain" id="sync-detail-header-domain">
+            <a>Domain</a>
+            {{#compare sortColumn 'domainDisplayName'}}
+              <b class="fa 
+              {{#compare sortOrder 'asc'}}
+                fa-caret-up
+              {{/compare}}
+              {{#compare sortOrder 'desc'}}
+                fa-caret-down
+              {{/compare}}
+              "></b>
+            {{/compare}}
+          </th>
+          <th scope="col" class="sortable renderable last-synced" id="sync-detail-header-last-synced">
+            <a>Last Synced to VX</a>
+            {{#compare sortColumn 'stampTime'}}
+              <b class="fa 
+              {{#compare sortOrder 'asc'}}
+                fa-caret-up
+              {{/compare}}
+              {{#compare sortOrder 'desc'}}
+                fa-caret-down
+              {{/compare}}
+              "></b>
+            {{/compare}}
+          </th>
+          {{#compare selectedSource.sourceType 'primary'}}
+          <th scope="col" class="sortable renderable new-data-since" id="sync-detail-header-new-data-since">
+            <a>New VX Data Since</a>
+            {{#compare sortColumn 'newDataSince'}}
+              <b class="fa 
+              {{#compare sortOrder 'asc'}}
+                fa-caret-up
+              {{/compare}}
+              {{#compare sortOrder 'desc'}}
+                fa-caret-down
+              {{/compare}}
+              "></b>
+            {{/compare}}
+          </th>
+          {{/compare}}
+        </tr>
+      </thead>
+      <tbody>
+      {{#each selectedSource.allDomains}}
+          <tr>
+            {{#compare ../selectedSource.sourceName 'allVa'}}
+              <td class="handlebars-cell sortable renderable">{{this.siteDisplayName}}</td>
+            {{/compare}}
+            <td class="handlebars-cell sortable renderable">{{this.domainDisplayName}}</td>
+            <td class="handlebars-cell sortable renderable">
+              {{#compare this.status 'completed'}}
+                {{#compare this.siteType 'secondary'}}
+                  {{this.displayTime}} ago
+                {{/compare}}
+                {{#compare this.siteType 'primary'}}
+                  Current
+                {{/compare}}
+              {{/compare}}
+              {{#compare this.status 'inProgress'}}
+                <span><i class="fa fa-spinner fa-spin"></i> Sync in progress</span>
+              {{/compare}}
+              {{#compare this.status 'error'}}
+                  <span class="sync-failed-text"><i class="fa fa-exclamation-circle"></i> Sync failed</span>
+              {{/compare}}
+            </td>
+            {{#compare ../selectedSource.sourceType 'primary'}}
+              <td class="handlebars-cell sortable renderable">{{#if this.newDataSince}}{{this.displayNewDataSince}}{{else}}Current{{/if}}</td>
+            {{/compare}}
+          </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

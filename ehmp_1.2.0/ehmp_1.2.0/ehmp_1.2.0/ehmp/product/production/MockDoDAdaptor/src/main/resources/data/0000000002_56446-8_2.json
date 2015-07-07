@@ -1,0 +1,42 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "AppointmentDateTime": "20131009133900",
+        "EnteredBy": "BHIE, USERONE",
+        "EventId": "1000000192",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "Disposition": "Released w/o Limitations",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131009134008",
+        "CheckoutTime": "",
+        "AppointmentReason": "Notes Entered by: BHIE,USERONE 09 Oct 2013 1339\r\n------------------------------\r\nJane Shen testing on Drawing with image.",
+        "PatientFullName": "PEDRO ROBERT DANIELS",
+        "Status": "KEPT",
+        "DateOfBirth": "",
+        "CustodianName": "ahlta",
+        "CheckinTime": "20131009134014",
+        "AppointmentClassification": "0",
+        "EventStartTime": "",
+        "LoincCode": "56446-8",
+        "Facility": "NH Great Lakes IL",
+        "AppointmentComment": "",
+        "AppointmentType": "OPAC",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic"
+      },
+      "dataType": 6
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "9",
+      "RetrievedCount": "9",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

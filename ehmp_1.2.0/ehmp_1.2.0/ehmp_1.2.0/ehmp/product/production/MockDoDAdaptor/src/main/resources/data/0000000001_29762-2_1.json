@@ -1,0 +1,200 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "DateReported": "20131007154133",
+        "EnteredBy": "BHIE, USERONE",
+        "Type": "Social History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20131007154133",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "marital history",
+            "Annotation": "",
+            "EventId": "1000000104"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "4290",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "18991230050000",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "18991230050000",
+        "CouplerType": "Social History",
+        "ReportingClinician": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "BHIE, USERONE",
+        "Status": "Active",
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "29762-2",
+        "Relationship": "",
+        "EventId": "1000000105"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20131007154133",
+        "EnteredBy": "BHIE, USERONE",
+        "Type": "Social History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20131007154133",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "work history",
+            "Annotation": "",
+            "EventId": "1000000106"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "120058",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "18991230050000",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "18991230050000",
+        "CouplerType": "Social History",
+        "ReportingClinician": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "BHIE, USERONE",
+        "Status": "Active",
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "29762-2",
+        "Relationship": "",
+        "EventId": "1000000107"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20131007154133",
+        "EnteredBy": "BHIE, USERONE",
+        "Type": "Social History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20131007154133",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "No military history",
+            "Annotation": "",
+            "EventId": "1000000108"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "120089",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "18991230050000",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "18991230050000",
+        "CouplerType": "Social History",
+        "ReportingClinician": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "-",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "BHIE, USERONE",
+        "Status": "Active",
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "29762-2",
+        "Relationship": "",
+        "EventId": "1000000109"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20131007154133",
+        "EnteredBy": "BHIE, USERONE",
+        "Type": "Social History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20131007154133",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "habits",
+            "Annotation": "",
+            "EventId": "1000000110"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "120044",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "18991230050000",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "18991230050000",
+        "CouplerType": "Social History",
+        "ReportingClinician": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "BHIE, USERONE",
+        "Status": "Active",
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "29762-2",
+        "Relationship": "",
+        "EventId": "1000000111"
+      },
+      "dataType": 8
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "4",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "4",
+      "RetrievedCount": "4",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

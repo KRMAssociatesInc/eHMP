@@ -1,0 +1,258 @@
+.editorTop{
+    margin: 0px 20px 20px 20px;
+    padding: 20px 50px 0px;
+    #exitEditing {
+    float: right;
+    right: 10px;
+    background-color: #455a64;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight:bold;
+    }
+    input#searchApplets{
+        border-radius: 5px;
+        width: 400px;
+        height: 22px;
+        border: 1px solid gray;
+    }
+    button:hover{
+            background-color:#FFF;
+            border:1px solid #028482 ;
+    }
+}
+
+#mainOverlayRegion{
+    background-color: #cfd8dc;
+}
+
+.carousel {
+    background-color: #B0BEC5;
+    height: 110px !important;
+    padding-top: 10px;
+    .arrowArea{
+        float: left; 
+        width: 100px; 
+        height: 100px;
+            a{
+            text-decoration: none; 
+            }
+    }
+    .clearBoth {
+        clear: both;
+    }
+    .item{
+        background: #B0BEC5;    
+        text-align: center;
+        height: 100px !important;        
+        padding-top: 10px;
+        display: none;
+    }
+
+    .carousel-inner{
+        background: #B0BEC5;
+        float: left; 
+        height: 100px;
+        .active {
+            display: block;
+        }
+    }
+    .pagination{
+        bottom:  -20px;        
+    }
+
+    .carousel-indicators li {
+        margin-right: 10px;
+        background-color: #90A4AE;
+        border:none;
+        width: 12px;
+        height: 12px;
+        margin: 0;
+        margin: 0px 5px;
+    }
+    .carousel-indicators .active{
+        background-color:#465b66 !important;
+        border:none;
+        width: 12px;
+        height: 12px;
+        margin: 0;
+        margin: 0px 5px;
+    }
+    .applet-thumbnail{
+        width: 80px;
+        height: 55px;
+        padding: 10px 3px;
+        border: 1px solid #FFF;
+        background-color: #ECEFF1;
+        font-size: 9px;
+        position: absolute;
+        z-index: 9999;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+            p{
+                color:#616161;
+            }
+    }
+    .applet-thumbnail:hover{
+        width: 80px;
+        height: 55px;
+        padding: 10px 3px;
+        border: 1px solid #00cccc;
+        background-color: #ECEFF1;
+        font-size: 9px;
+        position: absolute;
+        z-index: 9999;
+        border-radius: 4px;
+        font-weight: bold; 
+        cursor: pointer;
+      }
+     .carousel-control {
+        width: 10%;
+         .right-arrow-carousel{
+            margin-right: -15px;
+        }
+         .left-arrow-carousel{
+            margin-left: -15px;
+        } 
+    }
+
+    .glyphicon-chevron-right{
+        font-size: 40px;
+        top: 15px;
+        right: -10px;
+        color: #90A4AE;
+    }
+
+    .glyphicon-chevron-left {
+        font-size: 40px;
+        left: 60px;
+        top: 15px;
+        color: #90A4AE;
+    }
+}
+
+.applet-gridster{
+    // margin: 50px;
+    padding: 20px 0px;
+    background-color: black;
+    top: 160px; 
+    position: absolute; 
+    width: 100%;
+    overflow-x: hidden;
+    h2{
+        color: #FFF;
+        position: fixed;
+        text-align: center;
+        width: 100%;
+    }
+    .gridster {
+        width: 100% !important;
+    }
+    .gridster ul {
+        list-style: none;
+    }
+    .gridster ul li {
+        background-color: gray;
+        color: #fff;
+        padding: 10px 5px;
+    }
+    #gridster2 {
+        margin-top: 6.5em;
+    }
+    #gridster2 ul {
+        list-style: none;
+        min-height: 300px;
+        li {
+            color: #333333;
+            padding: 10px 5px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-align: center;
+            word-break: word-break;
+        }
+        li:not(.dragHere){
+            background-color: white;
+        }
+        .preview-holder {
+            border: 3px dashed #fff;
+            color: #fff;
+        }
+        .view-switchboard {
+            border: 1px solid grey;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0px 0px 20px rgba(0,0,0,0.8);
+            -moz-box-shadow: inset 0px 0px 20px rgba(0,0,0,0.8);
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
+            height: 13em;
+            width: 40em;
+            float: none;
+            padding-top: 12px;
+            background-color: white;
+            -webkit-transform: translate(-20em, -6.5em);
+            -ms-transform: translate(-20em, -6.5em);
+            transform: translate(-20em, -6.5em);
+            top:6em;
+            left:50%;
+            position: relative;
+            z-index: 100;
+        }
+        .options-list {
+            height: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .options-panel {
+            float: none;
+            padding: 0;
+        }
+        .options-panel li {
+            padding-bottom: 0;
+        }
+    }
+    .bringToFront {
+        z-index: 100;
+    }
+    .edit-applet{
+        float: right;
+        cursor: pointer;
+        margin-right: 2px;
+    }
+    .edit-applet:hover, .edit-applet:active, .edit-applet:focus{
+        color:#00CCCC;
+    }
+    .applet-exit-options-button {
+        float: right;
+        margin: -1.7em 0.5em 0 0;
+    }
+    .applet-title-switchboard {
+        color: #556871;
+    }
+}
+.formatButtonText p.applet-title{
+        word-break: break-word;
+}
+
+.gridsterContainer {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#boundaryIndicator{
+    position: fixed;
+    margin-left: 2px;
+    margin-top: 65px;
+    height: 380px;
+    color: #00CCFF;
+    text-align: center;
+    font-weight: bold;
+    .wireframe{
+        margin-bottom: 5px;
+        border: solid 1px #00CCFF;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+}

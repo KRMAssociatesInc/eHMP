@@ -1,0 +1,27 @@
+.gistPopover {
+	max-width: 600px;
+	overflow: scroll;
+
+	table.lab-panels-tooltip tbody {
+		td {
+			border: 1px solid #e5e5e5;
+		}
+		.result {
+			padding: 0;
+
+			span {
+				display: inline-block;
+				width: 100%;
+				padding: 2px 8px;
+				text-align: center;
+			}
+			.label-danger, .label-warning {
+				color: #fff;
+			}
+			.label-danger:hover {
+				color: #fff;
+				background-color: #CC0000;
+			}
+		}
+	}
+}

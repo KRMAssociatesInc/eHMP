@@ -1,0 +1,110 @@
+A5AGITC ;SLC/KCM -- OS functions specific to Intersystems Cache
+ ;;1.0;GIT Tools;;Feb 8, 2013
+ ;
+VALDIR(PATH) ; return msg if directory path is NOT valid
+ N OK
+ S OK=##class(%Library.File).DirectoryExists(PATH)
+ I 'OK Q "Directory does not exist"
+ Q ""
+ ;
+VALRTN(RTN,DIR) ; return msg if file version of routine NOT in git directory
+ N OK
+ S RTN=$$FULLNAME(RTN_".int",$G(DIR))
+ S OK=##class(%Library.File).Exists(RTN)
+ I 'OK Q "Routine not found in git directory."
+ Q ""
+ ;
+FULLNAME(FILE,DIR) ; return full name with directory included
+ I '$L($G(DIR)) S DIR=^A5AGIT("directory")
+ Q ##class(%Library.File).NormalizeFilename(FILE,DIR)
+ ;
+FILESET(PATH,PATTERN,LIST) ; given directory path, put file names in LIST
+ N RS,STS,X
+ S RS=##class(%ResultSet).%New()
+ S RS.ClassName="%Library.File"
+ S RS.QueryName="FileSet"
+ S STS=RS.Execute(PATH,PATTERN)
+ I STS F  S STS=RS.Next() Q:'STS  D
+ . S X=$P(##class(%Library.File).GetFilename(RS.Name),".int")
+ . S LIST(X)=""
+ D RS.Close()
+ Q
+RTNSET(PATTERN,LIST) ; put routine names into LIST
+ N ROOT,X
+ S ROOT=$P(PATTERN,"*")
+ I $D(^ROUTINE(ROOT)) S LIST(ROOT)=""
+ S X=ROOT F  S X=$O(^ROUTINE(X)) Q:'$L(X)  Q:$E(X,1,$L(ROOT))'=ROOT  S LIST(X)=""
+ Q
+ ;
+CRC32(X) ; Returns a 32-bit CRC for string in X
+ Q $ZCRC(X,7)
+ ;
+FTG(FILE,GBL) ; Read from file & put each node into @GBL@(line,0)
+ N I,LINE,EOF
+ O FILE
+ S EOF=0,I=0
+ F  D READLN(.LINE) Q:EOF  S I=I+1 S @GBL@(I,0)=LINE
+ C FILE
+ Q
+SAVEFILE(FILE,ROOT) ;
+ N X,POP,$ET,CNT
+ S $ET="S POP=1,$ECODE=""""",POP=0
+ O FILE:("WN"):2 I '$T!POP W !,"Error opening file" Q
+ S $ET="S $EC="""" C FILE W !,""Write Error"" Q"
+ S CNT=0,X=ROOT,ROOT=$E(ROOT,1,$L(ROOT)-1) ; drop closing paranthesis
+ F  S X=$Q(@X) Q:$E(X,1,$L(ROOT))'=ROOT  D
+ . S CNT=CNT+1
+ . U FILE W:CNT'=1 ! W @X ;for routines, last line has no CRLF
+ C FILE
+ Q
+LOADFILE(FILE,BODY) ; Read from file & put into ARY(line,0)
+ N I,LINE,EOF
+ K ARY
+ O FILE
+ S EOF=0,I=0
+ F  D READLN(.LINE) Q:EOF  S I=I+1 S BODY(I,0)=LINE
+ C FILE
+ Q
+READLN(LINE) ; Read file into array
+ ; expects FILE as the file handle
+ ; called from LOADFILE
+ N $ES,$ET
+ S $ET="D CHKEOF^A5AGITC Q"
+ U FILE R LINE:5
+ Q
+CHKEOF ; Check for EOF
+ I $ZE["ENDOFFILE" S EOF=1,$EC=""
+ Q
+ ;
+SLCTRTN ; Select routines and put them into ^UTILITY($J,"routine name")
+ N TRSEL
+ S TRSEL=$P($T(TRSEL+1),";;",2,99)
+ X TRSEL
+ Q
+SAVERTN(X,BODY) ; Save routine as X from lines in DIF starting at XCNP
+ N SAVEX,DIE,XCN
+ S SAVEX=$P($T(TSAVE+1),";;",2,99),DIE="BODY(",XCN=0
+ X SAVEX ; saves routine in BODY as X
+ Q
+LOADRTN(X,BODY) ; Load routine into root identified by DIF starting at XCNP
+ N LOADX,DIF,XCNP
+ K BODY
+ S LOADX=$P($T(TLOAD+1),";;",2,99),DIF="BODY(",XCNP=0
+ X LOADX ; loads routine named in X into BODY
+ Q
+COMPARE(GIT,UCI) ; compare git version to this version
+ N COMMAND,STS
+ S COMMAND=^A5AGIT("compareApp")
+ S COMMAND=$P(COMMAND,"%1")_GIT_$P(COMMAND,"%1",2)
+ S COMMAND=$P(COMMAND,"%2")_UCI_$P(COMMAND,"%2",2)
+ W !,"Waiting for command to finish..."
+ S STS=$ZF(-1,COMMAND)
+ W $S('STS:"command failed",1:"done"),!
+ Q
+TRSEL ;; User selection of routines returned in ^UTILITY($J,"routine name")
+ ;;K ^UTILITY($J) D KERNEL^%RSET K %ST ;Special entry point for VA
+TLOAD ;; Load routine specified in X into @(DIF_XCNP_",0)"
+ ;;N %,%N S %N=0 X "ZL @X F XCNP=XCNP+1:1 S %N=%N+1,%=$T(+%N) Q:$L(%)=0  S @(DIF_XCNP_"",0)"")=%"
+TSAVE ;; Save routine X from @(DIE_XCN_",0)" -- modified so DIE not required to be global
+ ;;N XCS,XCM S XCS="F XCM=1:1 S XCN=$O(@(DIE_XCN_"")"")) Q:+XCN'=XCN  S %=@(DIE_XCN_"",0)"") Q:$E(%,1)=""$""  I $E(%,1)'="";"" ZI %" X "ZR  X XCS ZS @X"
+ ;

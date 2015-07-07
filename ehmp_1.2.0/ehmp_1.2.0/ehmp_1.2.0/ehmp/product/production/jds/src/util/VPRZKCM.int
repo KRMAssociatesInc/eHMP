@@ -1,0 +1,105 @@
+VPRZKCM	; General Enforcing Utilities
+ ;
+TFDEL ; Delete treating facilities from VDEV
+ N NM,PID,IEN
+ S NM="AVIVA" F  S NM=$O(^DPT("B",NM)) Q:$E(NM,1,5)'="AVIVA"  D
+ . S PID=0 F  S PID=$O(^DPT("B",NM,PID)) Q:'PID  D
+ . . S IEN=0 F  S IEN=$O(^DGCN(391.91,"B",PID,IEN)) Q:'IEN  D TFRMV(IEN)
+ Q
+TFRMV(IEN) ; Remove treating facility unless it is CAMP MASTER or SLC-FO
+ N TFNM,X0
+ S X0=^DGCN(391.91,IEN,0)
+ S PTNM=$P(^DPT($P(X0,U),0),U)
+ S TFNM=$P(^DIC(4,$P(X0,U,2),0),U)
+ W !,PTNM,?35,TFNM
+ Q:TFNM="CAMP MASTER"
+ Q:TFNM?1"SLC-FO"1.E
+ ;
+ W "   removed"
+ N DA,DIK S DA=IEN,DIK="^DGCN(391.91," D ^DIK
+ Q
+TIUA(VPR,DFN) ; -- Return a progress note for the patient (dfn is ignored)
+ ; RPC = ZZVPRZKCM TIUA
+ S VPR=$NA(^TMP("VPR",$J)) K ^TMP("VPR",$J)
+ S ^TMP("VPR",$J,1)="<results version='1.1' timeZone='-0700' >"
+ S ^TMP("VPR",$J,2)="<documents total='32' >"
+ S ^TMP("VPR",$J,3)="<document>"
+ S ^TMP("VPR",$J,4)="<category value='PN' />"
+ S ^TMP("VPR",$J,5)="<clinicians>"
+ S ^TMP("VPR",$J,6)="<clinician code='1089' name='AVIVAUSER,TWELVE' role='A' />"
+ S ^TMP("VPR",$J,7)="<clinician code='1089' name='AVIVAUSER,TWELVE' role='S' dateTime='3120113.140249' signature='TWELVE AVIVAUSER ' />"
+ S ^TMP("VPR",$J,8)="</clinicians>"
+ S ^TMP("VPR",$J,9)="<content xml:space='preserve'> LOCAL TITLE: C&amp;P ACROMEGALY                                     "_$c(13,10)_"DATE OF NOTE: JAN 13, 2012@14:01     ENTRY DATE: JAN 13, 2012@14:01:59      "_$c(13,10)_"      AUTHOR: AVIVAUSER,TWELVE     EXP COSIGNER:                           "_$c(13,10)_"     URGENCY:                            STATUS: COMPLETED                     "_$c(13,10,13,10)_"new note"_$c(13,10)_" "_$c(13,10)_"/es/ TWELVE AVIVAUSER"_$c(13,10,13,10)_"Signed: 01/13/2012 14:02</content>"
+ S ^TMP("VPR",$J,10)="<documentClass value='PROGRESS NOTES' />"
+ S ^TMP("VPR",$J,11)="<encounter value='7193' />"
+ S ^TMP("VPR",$J,12)="<facility code='500D' name='SLC-FO AVIVA VDEV' />"
+ S ^TMP("VPR",$J,13)="<id value='4277' />"
+ S ^TMP("VPR",$J,14)="<localTitle value='C&amp;P ACROMEGALY' />"
+ S ^TMP("VPR",$J,15)="<referenceDateTime value='3120113.1401' />"
+ S ^TMP("VPR",$J,16)="<status value='completed' />"
+ S ^TMP("VPR",$J,17)="<type value='PN' />"                                       
+ S ^TMP("VPR",$J,18)="</document>"
+ S ^TMP("VPR",$J,19)="</documents>"
+ S ^TMP("VPR",$J,20)="</results>"
+ Q
+TIUB(VPR,DFN) ; -- Return a progress note for the patient (dfn is ignored)
+ ; RPC = ZZVPRZKCM TIUB
+ S VPR=$NA(^TMP("VPR",$J)) K ^TMP("VPR",$J)
+ S ^TMP("VPR",$J,1)="<results version='1.1' timeZone='-0700' >"
+ S ^TMP("VPR",$J,2)="<documents total='32' >"
+ S ^TMP("VPR",$J,3)="<document>"
+ S ^TMP("VPR",$J,4)="<category value='PN' />"
+ S ^TMP("VPR",$J,5)="<clinicians>"
+ S ^TMP("VPR",$J,6)="<clinician code='1089' name='AVIVAUSER,TWELVE' role='A' />"
+ S ^TMP("VPR",$J,7)="<clinician code='1089' name='AVIVAUSER,TWELVE' role='S' dateTime='3120113.140249' signature='TWELVE AVIVAUSER ' />"
+ S ^TMP("VPR",$J,8)="</clinicians>"
+ S ^TMP("VPR",$J,9)="<content xml:space='preserve'> LOCAL TITLE: C&amp;P ACROMEGALY                                     "
+ S ^TMP("VPR",$J,9.1)="DATE OF NOTE: JAN 13, 2012@14:01     ENTRY DATE: JAN 13, 2012@14:01:59      "
+ S ^TMP("VPR",$J,9.2)="      AUTHOR: AVIVAUSER,TWELVE     EXP COSIGNER:                           "
+ S ^TMP("VPR",$J,9.3)="     URGENCY:                            STATUS: COMPLETED                     "
+ S ^TMP("VPR",$J,9.4)=""
+ S ^TMP("VPR",$J,9.5)="new note"
+ S ^TMP("VPR",$J,9.6)=" "
+ S ^TMP("VPR",$J,9.7)="/es/ TWELVE AVIVAUSER"
+ S ^TMP("VPR",$J,9.8)=""
+ S ^TMP("VPR",$J,9.9)="Signed: 01/13/2012 14:02</content>"
+ S ^TMP("VPR",$J,10)="<documentClass value='PROGRESS NOTES' />"
+ S ^TMP("VPR",$J,11)="<encounter value='7193' />"
+ S ^TMP("VPR",$J,12)="<facility code='500D' name='SLC-FO AVIVA VDEV' />"
+ S ^TMP("VPR",$J,13)="<id value='4277' />"
+ S ^TMP("VPR",$J,14)="<localTitle value='C&amp;P ACROMEGALY' />"
+ S ^TMP("VPR",$J,15)="<referenceDateTime value='3120113.1401' />"
+ S ^TMP("VPR",$J,16)="<status value='completed' />"
+ S ^TMP("VPR",$J,17)="<type value='PN' />"                                       
+ S ^TMP("VPR",$J,18)="</document>"
+ S ^TMP("VPR",$J,19)="</documents>"
+ S ^TMP("VPR",$J,20)="</results>"
+ Q
+TIUC(VPR,DFN) ; -- Return a progress note for the patient (dfn is ignored)
+ ; RPC = ZZVPRZKCM TIUB
+ S VPR=$NA(^TMP("VPR",$J)) K ^TMP("VPR",$J)
+ S ^TMP("VPR",$J,1)="<results version='1.1' timeZone='-0700' >"
+ S ^TMP("VPR",$J,2)="<documents total='32' >"
+ S ^TMP("VPR",$J,3)="<document>"
+ S ^TMP("VPR",$J,4)="<category value='PN' />"
+ S ^TMP("VPR",$J,5)="<clinicians>"
+ S ^TMP("VPR",$J,6)="<clinician code='1089' name='AVIVAUSER,TWELVE' role='A' />"
+ S ^TMP("VPR",$J,7)="<clinician code='1089' name='AVIVAUSER,TWELVE' role='S' dateTime='3120113.140249' signature='TWELVE AVIVAUSER ' />"
+ S ^TMP("VPR",$J,8)="</clinicians>"
+ S ^TMP("VPR",$J,9)="<content xml:space='preserve'>"
+ N VPRY D TGET^TIUSRVR1(.VPRY,4277)
+ N I S I=0 F  S I=$O(@VPRY@(I)) Q:'I  S @VPRY@(I)=$$ESC^VPRD(@VPRY@(I))
+ M ^TMP("VPR",$J,9.5)=^TMP("TIUVIEW",$J)
+ S ^TMP("VPR",$J,9.9)="</content>"
+ S ^TMP("VPR",$J,10)="<documentClass value='PROGRESS NOTES' />"
+ S ^TMP("VPR",$J,11)="<encounter value='7193' />"
+ S ^TMP("VPR",$J,12)="<facility code='500D' name='SLC-FO AVIVA VDEV' />"
+ S ^TMP("VPR",$J,13)="<id value='4277' />"
+ S ^TMP("VPR",$J,14)="<localTitle value='C&amp;P ACROMEGALY' />"
+ S ^TMP("VPR",$J,15)="<referenceDateTime value='3120113.1401' />"
+ S ^TMP("VPR",$J,16)="<status value='completed' />"
+ S ^TMP("VPR",$J,17)="<type value='PN' />"                                       
+ S ^TMP("VPR",$J,18)="</document>"
+ S ^TMP("VPR",$J,19)="</documents>"
+ S ^TMP("VPR",$J,20)="</results>"
+ Q

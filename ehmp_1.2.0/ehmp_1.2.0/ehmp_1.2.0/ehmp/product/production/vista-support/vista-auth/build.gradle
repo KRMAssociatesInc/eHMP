@@ -1,0 +1,51 @@
+apply plugin: 'java' 
+apply plugin: 'maven-publish'
+
+configurations {
+    provided
+}
+
+version = "0.13.1"
+
+dependencies {
+    compile project(':production:vista-support:vista-rpc-client')
+	
+	compile "commons-codec:commons-codec:${versions.commonsCodecVersion}"
+	compile "org.springframework:spring-webmvc:${versions.springVersion}"
+	compile "org.springframework.security:spring-security-core:${versions.springSecurityVersion}"
+	compile "org.springframework.security:spring-security-config:${versions.springSecurityVersion}"
+	compile "org.springframework.security:spring-security-web:${versions.springSecurityVersion}"
+
+	provided "javax.servlet:javax.servlet-api:${versions.servletVersion}"
+	compile "javax.servlet:javax.servlet-api:${versions.servletVersion}"
+
+	runtime "org.slf4j:jcl-over-slf4j:${versions.slf4jVersion}"
+	
+	testCompile "org.springframework:spring-test:${versions.springVersion}"
+	testCompile "org.easymock:easymock:${versions.easymockVersion}"
+	testCompile "org.mockito:mockito-core:${versions.mockitoVersion}"
+	testCompile "junit:junit:${versions.junitVersion}"
+	
+	testRuntime "org.slf4j:slf4j-nop:${versions.slf4jVersion}"
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'VistA Authentication Support', 
+					'Implementation-Version': version,
+					'Implementation-Vendor': 'US Department of Veterans Affairs'
+    }
+}
+
+// TODO remove the version number out. DOn't hardcode it.
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'gov.va.hmp'
+            artifactId 'vista-auth'
+            version '0.13.1'
+
+            from components.java
+        }
+    }
+}

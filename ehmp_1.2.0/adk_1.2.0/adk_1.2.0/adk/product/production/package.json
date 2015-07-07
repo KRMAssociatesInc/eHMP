@@ -1,0 +1,22 @@
+{
+  "name": "adk",
+  "title": "Application Development Kit",
+  "artifact-name": "adk",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-requirejs": "~0.4.4",
+    "grunt-contrib-jasmine": "~0.5.1",
+    "grunt-contrib-compress": "*",
+    "grunt-template-jasmine-requirejs": "~0.1.5",
+    "grunt-contrib-compass": "~0.5.0",
+    "uglify-js": "~2.2.5",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-dependo": "~0.1.0",
+    "grunt-shell": "~0.3.1",
+    "grunt-notify": "~0.2.13",
+    "grunt-contrib-copy": "~0.5.0",
+    "async": "~0.2.9"
+  }
+}

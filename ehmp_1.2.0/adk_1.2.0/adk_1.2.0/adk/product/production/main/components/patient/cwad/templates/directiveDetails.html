@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 cwad-title">
+            <strong>{{kind}}</strong>
+            <span class="text-muted">{{formatDate entered "MM/DD/YYYY"}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right text-muted">Local Title</div>
+        <div class="col-xs-3">{{localTitle}}</div>
+        <div class="col-xs-3 text-right text-muted">Standard Title</div>
+        <div class="col-xs-4"><!-- standard title to go here --></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right text-muted">Date of Note</div>
+        <div class="col-xs-3">{{formatDate signedDateTime "MM/DD/YYYY HH:mm"}}</div>
+        <div class="col-xs-3 text-right text-muted">Entry Date</div>
+        <div class="col-xs-4">{{formatDate entered "MM/DD/YYYY HH:mm"}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right text-muted">Author</div>
+        <div class="col-xs-3">{{formatName author ',' ' '}}</div>
+        <div class="col-xs-3 text-right text-muted">Exp. Cosigner</div>
+        <div class="col-xs-4"><!-- exp. cosigner to go here --></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right text-muted">Urgency</div>
+        <div class="col-xs-3"><!-- urgency to go here --></div>
+        <div class="col-xs-3 text-right text-muted">Status</div>
+        <div class="col-xs-4">{{statusDisplayName}}</div>
+    </div>
+    {{#each text}}
+        {{#if content}}
+        <br/>
+        <div class="row">
+            <div class="col-xs-12 content">{{stringCleanUp content}}</div>
+        </div>
+        {{/if}}
+    {{/each}}
+</div>

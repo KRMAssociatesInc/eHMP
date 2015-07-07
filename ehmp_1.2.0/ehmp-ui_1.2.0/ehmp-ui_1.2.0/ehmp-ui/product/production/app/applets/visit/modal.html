@@ -1,0 +1,28 @@
+<div id="visitModal">
+	<div id="provider-select">
+
+	</div>
+
+	<ul class="nav nav-tabs" role="tablist">
+	  <li class="active">
+	  	<a id="visit-tab-appts" href="#appts" role="tab" data-toggle="tab" aria-controls="appts" tabindex="0">Clinic Appointments</a>
+	  </li>
+	  <li>
+	  	<a id="visit-tab-admits" href="#admits" role="tab" data-toggle="tab" aria-controls="admits" tabindex="-1">Hospital Admissions</a>
+	  </li>
+	  <li>
+	  	<a id="visit-tab-new" href="#new-visit" role="tab" data-toggle="tab" aria-controls="new-visit" tabindex="-1">New Visit</a>
+	  </li>
+	</ul>
+
+	<div class="tab-content">
+	  <div class="tab-pane active" id="appts" role="tabpanel" aria-labelledby="visit-tab-appts" tabindex="0"></div>
+	  <div class="tab-pane" id="admits" role="tabpanel" aria-labelledby="visit-tab-admits" tabindex="-1"></div>
+	  <div class="tab-pane" id="new-visit" role="tabpanel" aria-labelledby="visit-tab-new" tabindex="-1"></div>
+	</div>
+
+	<div id="selected-visit">
+		<div>Encounter Location</div>
+		<div>{{locationDisplayName}} {{formattedDate}}</div>
+	</div>
+</div>

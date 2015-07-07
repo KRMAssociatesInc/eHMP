@@ -1,0 +1,925 @@
+{
+    "apiVersion": "1.0",
+    "data": {
+        "updated": 20141215144035,
+        "totalItems": 32,
+        "currentItemCount": 32,
+        "items": [
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "entered": "200503172015",
+                "verified": "20050317201533",
+                "kind": "Allergy/Adverse Reaction",
+                "originatorName": "VEHU,TEN",
+                "verifierName": "<auto-verified>",
+                "mechanism": "PHARMACOLOGIC",
+                "uid": "urn:va:allergy:9E7A:8:753",
+                "summary": "PENICILLIN",
+                "pid": "9E7A;8",
+                "localId": "753",
+                "historical": true,
+                "reference": "125;GMRD(120.82,",
+                "products": [
+                    {
+                        "name": "PENICILLIN",
+                        "vuid": "urn:va:vuid:",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "ITCHING,WATERING EYES",
+                        "vuid": "urn:va:vuid:",
+                        "summary": "AllergyReaction{uid='null'}"
+                    }
+                ],
+                "drugClasses": [
+                    {
+                        "code": "AM114",
+                        "name": "PENICILLINS AND BETA-LACTAM ANTIMICROBIALS",
+                        "summary": "AllergyDrugClass{uid='null'}"
+                    }
+                ],
+                "typeName": "DRUG"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "entered": "200712171515",
+                "verified": "20071217151553",
+                "kind": "Allergy/Adverse Reaction",
+                "originatorName": "PROVIDER,ONE",
+                "verifierName": "<auto-verified>",
+                "mechanism": "ALLERGY",
+                "uid": "urn:va:allergy:9E7A:8:876",
+                "summary": "CHOCOLATE",
+                "pid": "9E7A;8",
+                "localId": "876",
+                "historical": true,
+                "reference": "3;GMRD(120.82,",
+                "products": [
+                    {
+                        "name": "CHOCOLATE",
+                        "vuid": "urn:va:vuid:4636681",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "DIARRHEA",
+                        "vuid": "urn:va:vuid:4637011",
+                        "summary": "AllergyReaction{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "C0008299",
+                        "system": "urn:oid:2.16.840.1.113883.6.86",
+                        "display": "Chocolate"
+                    }
+                ],
+                "typeName": "DRUG, FOOD"
+            },
+            {
+                "facilityCode": "561",
+                "facilityName": "New Jersey HCS",
+                "entered": "199401190822",
+                "verified": "19940119082339",
+                "kind": "Allergy/Adverse Reaction",
+                "originatorName": "PROGRAMMER,TWENTY",
+                "verifierName": "PROGRAMMER,TWENTY",
+                "mechanism": "ALLERGY",
+                "uid": "urn:va:allergy:ABCD:16:106",
+                "summary": "MILK",
+                "pid": "HDR;10110V004877",
+                "localId": "106",
+                "historical": true,
+                "reference": "29;GMRD(120.82,",
+                "products": [
+                    {
+                        "name": "MILK",
+                        "vuid": "urn:va:vuid:4636981",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "NAUSEA,VOMITING",
+                        "vuid": "urn:va:vuid:",
+                        "summary": "AllergyReaction{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "entered": "19940119082309",
+                        "enteredByName": "PROGRAMMER,TWENTY",
+                        "enteredByDisplayName": "Programmer,Twenty",
+                        "comment": " TESTING DIETETICS",
+                        "summary": "AllergyComment{uid='null'}",
+                        "enteredByUid": "urn:va:user:ABCD:755"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "C0349375",
+                        "system": "urn:oid:2.16.840.1.113883.6.86",
+                        "display": "Skim milk"
+                    }
+                ],
+                "typeName": "DRUG, FOOD"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "entered": "200503172015",
+                "verified": "20050317201533",
+                "kind": "Allergy/Adverse Reaction",
+                "originatorName": "VEHU,TEN",
+                "verifierName": "<auto-verified>",
+                "mechanism": "PHARMACOLOGIC",
+                "uid": "urn:va:allergy:C877:8:753",
+                "summary": "PENICILLIN",
+                "pid": "C877;8",
+                "localId": "753",
+                "historical": true,
+                "reference": "125;GMRD(120.82,",
+                "products": [
+                    {
+                        "name": "PENICILLIN",
+                        "vuid": "urn:va:vuid:",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "ITCHING,WATERING EYES",
+                        "vuid": "urn:va:vuid:",
+                        "summary": "AllergyReaction{uid='null'}"
+                    }
+                ],
+                "drugClasses": [
+                    {
+                        "code": "AM114",
+                        "name": "PENICILLINS AND BETA-LACTAM ANTIMICROBIALS",
+                        "summary": "AllergyDrugClass{uid='null'}"
+                    }
+                ],
+                "typeName": "DRUG"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "entered": "200712171515",
+                "verified": "20071217151553",
+                "kind": "Allergy/Adverse Reaction",
+                "originatorName": "PROVIDER,ONE",
+                "verifierName": "<auto-verified>",
+                "mechanism": "ALLERGY",
+                "uid": "urn:va:allergy:C877:8:876",
+                "summary": "CHOCOLATE",
+                "pid": "C877;8",
+                "localId": "876",
+                "historical": true,
+                "reference": "3;GMRD(120.82,",
+                "products": [
+                    {
+                        "name": "CHOCOLATE",
+                        "vuid": "urn:va:vuid:4636681",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "DIARRHEA",
+                        "vuid": "urn:va:vuid:4637011",
+                        "summary": "AllergyReaction{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "C0008299",
+                        "system": "urn:oid:2.16.840.1.113883.6.86",
+                        "display": "Chocolate"
+                    }
+                ],
+                "typeName": "DRUG, FOOD"
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001122",
+                "summary": "ENOXACIN (ENOXACIN)",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ENOXACIN (ENOXACIN)",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Urticaria",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "61021",
+                        "system": "DOD_ALLERGY_IEN"
+                    },
+                    {
+                        "code": "C0014310",
+                        "system": "urn:oid:2.16.840.1.113883.6.86",
+                        "display": "Enoxacin"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001123",
+                "summary": "GENTIAN VIOLET (GENTIAN VIOLET)",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "GENTIAN VIOLET (GENTIAN VIOLET)",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Rash",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "13022000",
+                        "system": "DOD_ALLERGY_IEN"
+                    },
+                    {
+                        "code": "C0017440",
+                        "system": "urn:oid:2.16.840.1.113883.6.86",
+                        "display": "Gentian Violet"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001124",
+                "summary": "POLOXAMER 407 (POLOXAMER)",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "POLOXAMER 407 (POLOXAMER)",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Anaphylaxis",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "1010311051",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001125",
+                "summary": "DECITABINE (DECITABINE)",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "DECITABINE (DECITABINE)",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Anaphylaxis",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "1033712000",
+                        "system": "DOD_ALLERGY_IEN"
+                    },
+                    {
+                        "code": "C0049065",
+                        "system": "urn:oid:2.16.840.1.113883.6.86",
+                        "display": "decitabine"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001126",
+                "summary": "BEE POLLEN (BEE POLLEN)",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "BEE POLLEN (BEE POLLEN)",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Rash",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "14236002",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001127",
+                "summary": "CEFACLOR (CEFACLOR)",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "CEFACLOR (CEFACLOR)",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Nausea",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "1140",
+                        "system": "DOD_ALLERGY_IEN"
+                    },
+                    {
+                        "code": "C0007537",
+                        "system": "urn:oid:2.16.840.1.113883.6.86",
+                        "display": "Cefaclor"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001128",
+                "summary": "SODIUM CHLORIDE {Class}",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "SODIUM CHLORIDE {Class}",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Nausea",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "7090000",
+                        "system": "DOD_ALLERGY_IEN"
+                    },
+                    {
+                        "code": "C0037494",
+                        "system": "urn:oid:2.16.840.1.113883.6.86",
+                        "display": "Sodium Chloride"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001129",
+                "summary": "PEANUT OIL (PEANUT OIL)",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "PEANUT OIL (PEANUT OIL)",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Urticaria",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "15220000",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001130",
+                "summary": "SODIUM CHLORIDE 0.45% (1/2 NORMAL SALINE)",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "SODIUM CHLORIDE 0.45% (1/2 NORMAL SALINE)",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Urticaria",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "7090054",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001131",
+                "summary": "SODIUM CHLORIDE 0.45% (SODIUM CL FOR INHALATION)",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "SODIUM CHLORIDE 0.45% (SODIUM CL FOR INHALATION)",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Nausea",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "18254001",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001132",
+                "summary": "ALFALFA",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALFALFA",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "13746024",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001133",
+                "summary": "ALFENTANIL HCL",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALFENTANIL HCL",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "12014",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001134",
+                "summary": "ALBUTEROL",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALBUTEROL",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "78020",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001135",
+                "summary": "ALBUTEROL SULFATE",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALBUTEROL SULFATE",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "78013",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001136",
+                "summary": "ALBUTEROL SULFATE ER",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALBUTEROL SULFATE ER",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "5556105",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001137",
+                "summary": "ALFALFA",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALFALFA",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "13746000",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001138",
+                "summary": "ALBUMIN",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALBUMIN",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "13837289",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001139",
+                "summary": "ALBUMIN",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALBUMIN",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "12728004",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001140",
+                "summary": "ALBUMIN HUMAN",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALBUMIN HUMAN",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "12728000",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001141",
+                "summary": "ALBUMIN (HUMAN)",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALBUMIN (HUMAN)",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "7951005",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001142",
+                "summary": "ALEMTUZUMAB",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALEMTUZUMAB",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "5753005",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001143",
+                "summary": "ALEFACEPT",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALEFACEPT",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "1024899000",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001144",
+                "summary": "ALCOHOL",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALCOHOL",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "11681019",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001145",
+                "summary": "ALCOHOL",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALCOHOL",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "11681018",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001146",
+                "summary": "ALCLOMETASONE DIPROPIONATE",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALCLOMETASONE DIPROPIONATE",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "2475",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001147",
+                "summary": "ALCAFTADINE",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "ALCAFTADINE",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ],
+                "comments": [
+                    {
+                        "comment": "Unknown",
+                        "summary": "AllergyComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "1037330000",
+                        "system": "DOD_ALLERGY_IEN"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "kind": "Allergy/Adverse Reaction",
+                "uid": "urn:va:allergy:DOD:0000000008:1000001148",
+                "summary": "Not Assessed",
+                "pid": "DOD;0000000008",
+                "products": [
+                    {
+                        "name": "Not Assessed",
+                        "summary": "AllergyProduct{uid='null'}"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,103 @@
+<div class='container-fluid' role='form'>
+    <div name="row2a1">
+        <div class="col-sm-12">
+            <div class="error-container" id="error-container"></div>
+       </div>
+    </div>
+	<div class='row'>
+		<div class='col-sm-12'>
+			<legend>Activity</legend>
+		</div>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6' style="color: gray;">Nature of Order</h6>
+		<h6 class='text-left col-sm-6'>{{ nature }}</h6>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>Ordered by</h6>
+		<h6 class='text-left col-sm-6'>{{ orderedBy }}</h6>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>Signature</h6>
+		<h6 class='text-left col-sm-6'>{{ signature }}</h6>
+	</div>
+</div>
+<div class='container-fluid'>
+	<div class='row'>
+		<div class='col-sm-12'>
+			<legend>Current Data</legend>
+		</div>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>Attending Physician</h6>
+		<h6 class='text-left col-sm-6'>{{ attending }}</h6>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>Treating Specialty</h6>
+		<h6 class='text-left col-sm-6'>{{ specialty }}</h6>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>Ordering Location</h6>
+		<h6 class='text-left col-sm-6'>{{ location }}</h6>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>Start Date/Time</h6>
+		<h6 class='text-left col-sm-6'>{{ start }}</h6>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>End Date/Time</h6>
+		<h6 class='text-left col-sm-6'>{{ end }}</h6>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>Current Status</h6>
+		<h6 class='text-left col-sm-6'>{{ status }}</h6>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>Order #</h6>
+		<h6 class='text-left col-sm-6'>{{ orderNo }}</h6>
+	</div>
+</div>
+<div class='container-fluid'>
+	<div class='row'>
+		<div class='col-sm-12'>
+			<legend>Order</legend>
+		</div>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>Herbal/OTC/Non-VA Medication</h6>
+		<h6 class='text-left col-sm-6'>{{ medication }}</h6>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>Instructions</h6>
+		<h6 class='text-left col-sm-6'>{{ instructions }}</h6>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>Sig</h6>
+		<h6 class='text-left col-sm-6'>{{ sig }}</h6>
+	</div>
+</div>
+<div class='container-fluid'>
+	<div class='row'>
+		<div class='col-sm-12'>
+			<legend>Comments</legend>
+		</div>
+	</div>
+	<div class='row'>
+		<h6 class='text-right text-muted col-sm-6'>Statement/Explanation</h6>
+		<h6 class='text-left col-sm-6'>{{ comments }}</h6>
+	</div>
+</div>
+<hr/>
+<div class='container-fluid'>
+	{{#if data}}
+	<h5 class='text-danger'>Reason for Discontinue</h5>
+	{{/if}}
+	<div id='reasons-container'>
+		<!-- {{#each reasonsIndex}}
+		<input type='radio' name='reason' id='{{@index}}' value='{{id}}'/>
+		<label for='{{@index}}'>{{name}}</label><br/>
+		{{else}}<em>Loading Reasons...</em>
+		{{/each}} -->
+	</div>
+</div>
+</div>

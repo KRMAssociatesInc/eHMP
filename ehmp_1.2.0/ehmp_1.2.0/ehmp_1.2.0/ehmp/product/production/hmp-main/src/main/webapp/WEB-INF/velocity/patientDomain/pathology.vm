@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>$!item.summary</title>
+    #parse("/layouts/detail.vm")
+</head>
+<body>
+  <p>$!item.summary</p>
+</body>
+</html>

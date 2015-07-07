@@ -1,0 +1,259 @@
+allprojects {
+  apply plugin: 'maven'
+
+  ext.set('repo','releases')
+  ext.set('groupId', 'us.vistacore.ehmp-ui')
+  ext.set('artifactId','ehmp-ui')
+  ext.set('repoVersion', getRepoVersion())
+  ext.set('branchName', getCurrentBranchName())
+  ext.set('currentCommitHash', getCurrentCommitHash())
+  ext.set('commitCountDir', projectDir)
+
+  def repoCommitCountClosure = {
+    def proc1 = ['sh', '-c', "git rev-list --full-history --all ${->commitCountDir}"].execute()
+    def proc2 = 'wc -l'.execute()
+    proc1 | proc2
+    return proc2.text.trim()
+  }
+  
+  repoCommitCount = "${->repoCommitCountClosure()}"
+  version = "${->repoVersion + '.' + repoCommitCount}"
+
+  repositories {
+    mavenCentral()
+  }
+
+  task bundleInstall{
+    doLast{
+      exec {
+        workingDir = "${rootDir}/production/applets/test_resources/"
+        executable = "bundle"
+        args = ['install']
+      }
+    }
+  }
+}
+
+def getRepoVersion() {
+    def v
+    v = "1.2.0" 
+    if (v.endsWith('.'))
+        v = v.substring(0, v.length()-1)
+    return v
+}
+
+def getCurrentBranchName() {
+    def branchName
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        branchName = repoVersion + '.' + 'cmd /C git rev-parse --abbrev-ref HEAD'.execute().text.trim()
+    } else {
+        branchName = ['sh', '-c', 'git rev-parse --abbrev-ref HEAD'].execute().text.trim()
+    }
+    return branchName
+}
+
+def getCurrentCommitHash() {
+    def commitHash
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commitHash = repoVersion + '.' + 'cmd /C git rev-parse HEAD'.execute().text.trim()
+    } else {
+        commitHash = ['sh', '-c', 'git rev-parse HEAD'].execute().text.trim()
+    }
+    return commitHash
+}
+
+def createAppletStructure() {
+  def stagedFiles = ['sh', '-c', 'git diff --name-only --cached'].execute().text
+
+  if(!stagedFiles) {
+    def console = System.console()
+
+    if(console) {
+      appletName = console.readLine('> \n\nPlease enter the name of the Applet. (No dashes allowed.): ')
+
+      if(appletName.contains("-"))
+        println "\nError: Invalid character found."
+      else {
+        if(appletName) {
+          exec {
+            executable = "/opt/chef/embedded/bin/ruby"
+            args = ['appletRepo.rb', appletName]
+            workingDir = "${rootDir}/../infrastructure/applet-template"
+          }
+        } else {
+          println "\nError: no applet name given."
+        }
+      }
+    } else {
+      println "\nCannot get console."
+    } 
+  } else {
+    println "\nStaged files found. Please commit them before creating an applet infrastructure."
+  }
+}
+
+def deleteAppletStructure() {
+  def stagedFiles = ['sh', '-c', 'git diff --name-only --cached'].execute().text
+
+  if(!stagedFiles) {
+    def console = System.console()
+
+    if(console) {
+      appletName = console.readLine('> \n\nPlease enter the name of the Applet. (No dashes allowed.): ')
+
+      if(appletName.contains("-"))
+        println "\nError: Invalid character found."
+      else {
+        if(appletName) {
+          exec {
+            executable = "/opt/chef/embedded/bin/ruby"
+            args = ['appletModify.rb', appletName]
+            workingDir = "${rootDir}/../infrastructure/applet-template"
+          }
+        } else {
+          println "\nError: no applet name given."
+        }
+      }
+    } else {
+      println "\nCannot get console."
+    } 
+  } else {
+    println "\nStaged files found. Please commit or unstage them before creating an applet infrastructure."
+  }
+}
+
+task generateVersionPropertiesFile() {
+  doLast {
+      def ehmpuiVersion = version
+      def commitHash = getCurrentCommitHash()
+
+      println "EHMPUI_VERSION='${ehmpuiVersion}'"
+      println "COMMIT_HASH='${commitHash}'"
+
+      project.buildDir.mkdirs()
+      delete{
+          delete "${project.buildDir}/version.properties"
+      }
+      new File("${project.buildDir}/version.properties") << """EHMPUI_VERSION=${ehmpuiVersion}
+COMMIT_HASH=${commitHash}"""
+  }
+}
+
+task createApplet() {
+  group "Applet"
+  description "Creates the applet directory structure and stages it."
+  doLast {
+    createAppletStructure()
+  }
+}
+
+task deleteApplet() {
+  group "Applet"
+  description "Delete the applet directory structure."
+  doLast {
+    deleteAppletStructure()
+  }
+}
+
+task zipEhmpuiApp(type: Zip) {
+  from('production/min/applets')
+    {
+      into 'applets'
+      excludes = ["*/**/node_modules","*/**/test","*/**/build.gradle","*/**/Gruntfile.js"]
+    }
+  from('production/min/screens')
+    {
+      into 'screens'
+    }
+  from('production/assets/css')
+    {
+      into 'css'
+    }
+  from('production/app.json')
+  includeEmptyDirs true
+  baseName = 'ehmp-ui'
+  version = project(':production').version 
+  destinationDir buildDir
+}
+
+task acceptanceTest{
+  group "test"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/acceptance-tests"
+      executable = "bundle"
+      args = ['exec', 'rake', 'codequality', 'baseTests', 'recentTests']
+    }
+  }
+}
+
+task smokeTest{
+  group "test"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/acceptance-tests"
+      executable = "bundle"
+      args = ['exec', 'rake', 'smokeTests']
+    }
+  }
+}
+
+task baseTest{
+  group "test"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/acceptance-tests"
+      executable = "bundle"
+      args = ['exec', 'rake', 'baseTests']
+    }
+  }
+}
+
+task recentTest{
+  group "test"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/acceptance-tests"
+      executable = "bundle"
+      args = ['exec', 'rake', 'recentTests']
+    }
+  }
+}
+
+task triageTest{
+  group "test"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/acceptance-tests"
+      executable = "bundle"
+      args = ['exec', 'rake', 'failingTests']
+    }
+  }
+}
+
+task regressionTest{
+  group "test"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/acceptance-tests"
+      executable = "bundle"
+      args = ['exec', 'rake', 'codequality', 'regressionTests']
+    }
+  }
+}
+
+task appAcceptanceTestIE{
+  group "App"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/acceptance-tests"
+      executable = "bundle"
+      args = ['exec', 'rake', 'BTYPE=IE']
+    }
+  }
+}
+
+
+artifacts {
+  archives zipEhmpuiApp
+}

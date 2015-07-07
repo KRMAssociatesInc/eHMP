@@ -1,0 +1,22 @@
+<visit>
+    <arrivalDateTime value="2950101.15"/>
+    <dateTime value="2950101.15"/>
+    <departureDateTime value="2950402.16"/>
+    <documents>
+        <document id="374" localTitle="Discharge Summary" nationalTitle="DISCHARGE SUMMARY"/>
+    </documents>
+    <facility code="960" name="SLC-FO AVIVA VDEV"/>
+    <id value="1048"/>
+    <location value="DRUG"/>
+    <patientClass value="IMP"/>
+    <providers>
+        <provider code="986" name="PROVIDER,THREE" role="P" primary="1"/>
+        <provider code="11531" name="PROVIDER,ONEHUNDREDNINETYONE" role="A"/>
+    </providers>
+    <reason narrative="DETOX"/>
+    <service value="PSYCHIATRY"/>
+    <serviceCategory code="H" name="HOSPITALIZATION"/>
+    <specialty value="GEN INTERMEDIATE PSYCH"/>
+    <type name="HOSPITALIZATION"/>
+    <visitString value="220;2950101.15;H"/>
+</visit>

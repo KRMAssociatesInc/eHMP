@@ -1,0 +1,67 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "EncounterId": "2156571989",
+        "EvalManagementCode": "99202",
+        "EncounterNumber": "GTLK-10342",
+        "EnteredBy": "DOCTOR, ALPHA",
+        "AppointmentDate": "20120910142151",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20120910142607",
+        "Procedures": [
+
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Unspecified local infection of skin and subcutaneous tissue",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "686.9",
+            "EventId": "1000000720"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "Notes Entered by: DOCTOR,ALPHA 10 Sep 2012 1021\r\n------------------------------\r\nAcne",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "DOCTOR, ALPHA",
+        "Clinic": "Orthopedic Clinic FHCC",
+        "EventId": "1000000721"
+      },
+      "dataType": 5
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

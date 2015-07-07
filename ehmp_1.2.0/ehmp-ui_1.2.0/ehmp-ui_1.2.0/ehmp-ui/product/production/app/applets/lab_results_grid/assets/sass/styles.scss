@@ -1,0 +1,112 @@
+span.header-hover:hover, #lab-results-summary-expand:hover, #lab-results-summary-filter:hover {
+    cursor: pointer;
+}
+
+label.color-DOD {
+    background-color: #A56900;
+}
+label.color-500, label.color-nonDOD {
+    background-color: #397BB3;
+}
+
+h3 small{
+    color:#ffffff;
+}
+
+.js-backgrid .backgrid-paginator ul {
+    padding: 0;
+}
+
+#date-range-filter {
+    margin-bottom: 7px;
+}
+#date-range-filter .default-range {
+    background: white;
+    padding: 1px 2px;
+    font-size: 11px;
+    margin: 6px 4px;
+}
+#date-range-filter .active-range {
+    background: #357ebd;
+    color: white;
+}
+#date-range-filter .daterange:not(.active-range):hover {
+    background: #357ebd;
+    color: white;
+}
+
+#lr-data-table-view h5 {
+    /*display: block;*/
+    padding-left: 15px;
+}
+.overflowEllipsis {
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+.header-bar {
+    box-shadow: 0px 0px 4px 0px #999999;
+    height: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 10px;
+}
+.header{
+    margin-top: 3px;
+}
+.descriptionClass{
+    padding-left:12px;
+}
+.resultClass {
+    padding-left:10px;
+    margin-right:10px;
+}
+.smallergreyText {
+    color:#999999;
+}
+[data-appletid="lab_results_grid"] {
+    div.gistItem {
+        border-bottom: 2px solid #f0f0f0;
+        .graph-container {
+            z-index:2;
+            height:21px;
+            overflow:hidden;
+            text-align:right;
+            padding-right:0px;
+            position:absolute;
+            top: 50%;
+            margin-top: -11px;
+        }
+        .noTopBottomFixedHeight{
+            height: 21px !important;
+            padding-bottom: 0 !important;
+            padding-top: 0 !important;
+        }
+    }
+}
+.popover table > caption {
+    font-weight: bold;
+    font-size: 14px;
+    padding-bottom:5px;
+}
+.popover .more {
+    padding-top:5px;
+    text-align: center;
+
+}
+.ageHeader {
+    padding-left:15px;
+}
+
+#data-grid-lab_results_grid-modalView .handlebars-cell label{
+    cursor:default !important;
+}
+
+
+.noPadding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.noMargin {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}

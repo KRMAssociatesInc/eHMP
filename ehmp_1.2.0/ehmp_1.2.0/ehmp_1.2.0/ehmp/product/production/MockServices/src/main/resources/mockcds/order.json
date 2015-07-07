@@ -1,0 +1,32 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "CDS",
+    "systemId": "CDS"
+  },
+  "data": {
+    "updated": "20140409083558",
+    "totalItems": 1,
+    "items": [
+      {
+        "content": "IRON BLOOD   SERUM LB #912   SP\r\n",
+        "displayGroup": "LAB",
+        "entered": 19970930092508,
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "localId": 7141.1,
+        "locationName": "CENTRAL OFFICE",
+        "locationUid": "urn:va:location:ABCD:48",
+        "providerName": "PROVIDER,ONE",
+        "providerUid": "urn:va:user:ABCD:983",
+        "service": "LR",
+        "start": 199709300925,
+        "statusCode": "urn:va:order-status:comp",
+        "statusName": "COMPLETE",
+        "statusVuid": "urn:va:vuid:4501088",
+        "stop": 199710221456,
+        "uid": "urn:va:order:ABCD:92:7141.1"
+      }
+    ]
+  }
+}

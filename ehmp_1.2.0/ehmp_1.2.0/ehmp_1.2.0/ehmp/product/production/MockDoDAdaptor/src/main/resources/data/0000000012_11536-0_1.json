@@ -1,0 +1,70 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "CompleteNote": "CONSULT REPORT\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n                                                                       Order Request for SAPATIENT, CHERYL\n\nRequesting HCP:  DOCTOR, ALPHA\nRequesting Location:  CARDIOLOGY CLINIC 200H\nOrder ID number:  130328-00014\nMCP Referral #:  20130000715\nNo. of Visits:  1\nReferral Authorized Until:  25 Apr 2013\nReason for Consult:\nskin rash\nPriority:  ROUTINE\nProvisional Diagnosis:\ndry skin\nACV:\nReviewed Date/Time:  28 Apr 2013@21:00:00\nAppoint Status:  ADMIN CLOSURE - 30 DAY AUTO\nAppointment Review Comment:\nThis referral/consult order has been administratively closed. It has been\n30 days or greater since it was ordered, and has no related appointment.\nReviewer:  POSTMASTER,  \n\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n                                                                                    CONSULT RESULT\n\nAppointment Date:\nRequesting HCP:  DOCTOR, ALPHA\nClinic:  DERMATOLOGY CLINIC 200H\nConsulting HCP:  ,  \n\nProblem List:\nNote:\nThis referral/consult order has been administratively closed. It has been\n30 days or greater since it was ordered, and has no related appointment.\nAdministratively Closed on 28 Apr 2013",
+        "NoteTypeName": "Consultation Report",
+        "EnteredBy": "Interface User",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20130429010020",
+        "NoteTitle": "Consultation Report",
+        "VerifiedBy": "",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20130429010020",
+        "LoincCode": "11536-0",
+        "Facility": "NH Great Lakes IL/0056",
+        "NoteTypeCode": "258",
+        "EventId": "1000000914"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "CompleteNote": "CONSULT REPORT\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n                                                                       Order Request for SAPATIENT, CHERYL\n\nRequesting HCP:  DOCTOR, ALPHA\nRequesting Location:  ORTHOPEDIC CLINIC 200H\nOrder ID number:  130328-00013\nMCP Referral #:  20130000714\nNo. of Visits:  1\nReferral Authorized Until:  25 Apr 2013\nReason for Consult:\nOUTPATIENT.\nRfR VA Order\nPriority:  ROUTINE\nProvisional Diagnosis:\nPDx\nACV:\nReviewed Date/Time:  28 Apr 2013@21:00:00\nAppoint Status:  ADMIN CLOSURE - 30 DAY AUTO\nAppointment Review Comment:\nThis referral/consult order has been administratively closed. It has been\n30 days or greater since it was ordered, and has no related appointment.\nReviewer:  POSTMASTER,  \n\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n                                                                                    CONSULT RESULT\n\nAppointment Date:\nRequesting HCP:  DOCTOR, ALPHA\nClinic:  DERMATOLOGY CLINIC 200H\nConsulting HCP:  ,  \n\nProblem List:\nNote:\nThis referral/consult order has been administratively closed. It has been\n30 days or greater since it was ordered, and has no related appointment.\nAdministratively Closed on 28 Apr 2013",
+        "NoteTypeName": "Consultation Report",
+        "EnteredBy": "Interface User",
+        "NoteFormat": "plaintext",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20130429010021",
+        "NoteTitle": "Consultation Report",
+        "VerifiedBy": "",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20130429010021",
+        "LoincCode": "11536-0",
+        "Facility": "NH Great Lakes IL/0056",
+        "NoteTypeCode": "258",
+        "EventId": "1000000915"
+      },
+      "dataType": 12
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

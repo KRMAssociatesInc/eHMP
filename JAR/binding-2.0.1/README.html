@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>JGoodies Binding :: README</title>
+        <link rel="stylesheet" type="text/css" href="docs/style.css" >
+	<meta name="description" content="The JGoodies Binding provides an elegant means to present object properties in a user interface.">
+	<meta name="author"	     content="Karsten Lentzsch">
+	<meta name="keywords"	 content="JGoodies Data Binding Java Swing UI Design Usability Lentzsch Kiel">
+	<meta name="robots"	     content="index, follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" marginheight="0" marginwidth="0" topmargin="0" bottommargin="0" >
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+    <td colspan="3" bgcolor="DDDCDC"><a href="README.html"><img 
+	src="docs/images/banner.gif" width="436" height="46" alt=":: JGOODIES :: Binding" border="0"></a></td>
+</tr>
+<tr>
+    <td colspan="3" height="1" bgcolor="C9C8C8"></td>
+</tr>
+<tr>
+    <td width="160" height="500" valign="top" bgcolor="F4f3f3" class="nav" nowrap="nowrap">
+    <div style="margin-left: 17px; margin-top: 17px; margin-right: 10px; ; margin-bottom: 17px; line-height: 18px;">
+
+        <!-- ************ Anfang der Seitennavigation **************************** -->
+
+	<b>General</b>
+	<br>::&nbsp;<a class="nav" href="README.html"><b>Readme</b></a>
+	<br>::&nbsp;<a class="nav" href="RELEASE-NOTES.txt">Release Notes</a>
+	<br>::&nbsp;<a class="nav" href="LICENSE.txt">License</a>
+	<br>::&nbsp;<a class="nav" href="docs/references.html">References</a>
+	<br>::&nbsp;<a class="nav" href="https://binding.dev.java.net/faq.html">FAQ</a>
+	<p>
+	<b>User's Guide</b>
+	<br>::&nbsp;<a class="nav" href="docs/guide/introduction.html">Introduction</a>
+	<br>::&nbsp;<a class="nav" href="docs/guide/domainobjects.html">Domain Objects</a>
+	<br>::&nbsp;<a class="nav" href="docs/guide/domainadapters.html">Domain Adapters</a>
+	<br>::&nbsp;<a class="nav" href="docs/guide/valuemodels.html">Value Models</a>
+	<br>::&nbsp;<a class="nav" href="docs/guide/viewadapters.html">View Adapters</a>
+	<br>::&nbsp;<a class="nav" href="docs/guide/tasks.html">Tasks</a>
+	<p>
+	<a class="nav" href="docs/api/index.html"><b>API Docs</b></a>
+	<p>
+	<b>Web Pages</b>
+	<br>::&nbsp;<a class="nav" href="https://binding.dev.java.net/">Project Home</a>
+	<br>::&nbsp;<a class="nav" href="https://binding.dev.java.net/servlets/ProjectDocumentList">Downloads</a>
+	<br>::&nbsp;<a class="nav" href="https://binding.dev.java.net/servlets/ProjectNewsList">Announcements</a>
+	<br>::&nbsp;<a class="nav" href="https://binding.dev.java.net/servlets/ProjectMailingListList">Mailing Lists</a>
+	<br>::&nbsp;<a class="nav" href="https://binding.dev.java.net/servlets/ProjectIssues">Issue Tracker</a>
+	<br>::&nbsp;<a class="nav" href="https://www.jgoodies.com/freeware/">More Examples</a>
+
+        
+         <!-- *********** Ende der Seitennavigation ******************************* -->
+
+    </div>
+    </td>
+    <td width="1" bgcolor="E7E5E5"><img src="/images/banner.gif" width="1" height="1" alt=""></td>
+    <td width="90%" valign="top" >
+	<div style="margin-left: 20px; margin-top: 17px; margin-bottom: 17px">
+
+        <!-- ************ Anfang des Inhalts ***************************************** -->
+	
+	<table width="530" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	  <td>
+	<h1>:: Readme :: Binding 2.0.1 ::</h1>
+	
+	<p>
+     The JGoodies Binding synchronizes object properties with Swing components.
+     And it helps you represent the state and behavior of a presentation 
+	independently of the GUI components used in the interface.
+     
+     <p>
+     Since version 2.0 the Binding requires Java 5 or later. 
+     The accompanying Binding tutorial sources require the 
+     <a href="http://forms.dev.java.net/">JGoodies Forms</a> library 
+     and use the 
+     <a href="http://looks.dev.java.net/">JGoodies Looks</a> if in the classpath.
+     Binding versions for Java 1.4 are available in the 
+     <a href="http://www.jgoodies.com/downloads/archive.html">JGoodies Archive</a>.
+     
+     
+     <h2>Top Questions</h2>
+     
+	    ::&nbsp;<a href="https://binding.dev.java.net/faq.html#What_are_the_main_benefits">What are the main benefits?</a>
+	<br>::&nbsp;<a href="https://binding.dev.java.net/faq.html#commercial_use">Can I use the Binding in a commercial product?</a>
+	<br>::&nbsp;<a href="https://binding.dev.java.net/faq.html#How_to_get_started">How to get started?</a>
+	<br>::&nbsp;<a href="https://binding.dev.java.net/faq.html#Where_do_I_get_support">Where do I get support?</a>
+	<br>::&nbsp;<a href="https://binding.dev.java.net/faq.html#How_to_report_a_problem">How to report a problem?</a>
+     
+	 
+
+	<h2>Distribution Contents</h2>
+
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		    <td><tt>binding-2.0.1.jar</tt></td>
+		    <td>&nbsp;</td>
+		    <td>the library jar </td>
+		</tr>
+		<tr><td colspan="3">&nbsp;</td></tr>
+		<tr>
+		    <td><tt>docs/api</tt></td>
+		    <td width="10">&nbsp;</td>
+		    <td>JavaDocs directory</td>
+		</tr>
+		<tr><td colspan="3">&nbsp;</td></tr>
+		<tr>
+		    <td><tt>lib/forms-1.1.0</tt></td>
+		    <td>&nbsp;</td>
+		    <td>Forms library required for the tutorial sources only</td>
+		</tr>
+		<tr><td colspan="3">&nbsp;</td></tr>
+		<tr>
+		    <td><tt>src/core</tt></td>
+		    <td>&nbsp;</td>
+		    <td>Java sources for the library core</td>
+		</tr>
+		<tr>
+		    <td><tt>src/extras</tt></td>
+		    <td>&nbsp;</td>
+		    <td>Java sources for useful extensions</td>
+		</tr>
+		<tr>
+		    <td><tt>src/test</tt></td>
+		    <td>&nbsp;</td>
+		    <td>Java sources for unit tests</td>
+		</tr>
+		<tr>
+		    <td><tt>src/tutorial</tt></td>
+		    <td>&nbsp;</td>
+		    <td>Java tutorial sources</td>
+		</tr>
+		<tr><td colspan="3">&nbsp;</td></tr>
+		<tr>
+		    <td><tt>LICENSE.txt</tt></td>
+		    <td>&nbsp;</td>
+		    <td>the license agreement</td>
+		</tr>
+		<tr>
+		    <td><tt>README.html</tt></td>
+		    <td>&nbsp;</td>
+		    <td>this readme file</td>
+		</tr>
+		<tr>
+		    <td><tt>RELEASE-NOTES.txt</tt></td>
+		    <td>&nbsp;</td>
+		    <td>Release Notes</td>
+		</tr>
+		<tr>
+		    <td><tt>build.xml</tt></td>
+		    <td>&nbsp;</td>
+		    <td>ANT build file</td>
+		</tr>
+		<tr>
+		    <td><tt>default.properties</tt></td>
+		    <td>&nbsp;</td>
+		    <td>ANT default build properties</td>
+		</tr>
+		</table>
+
+
+	<h2>Acknowledgments</h2>
+	
+	The Binding project has been financed by customers of the 
+	<a href="http://www.jgoodies.com/products/index.html">JGoodies Swing Suite</a>. 
+	It is only with their money that I can provide, maintain and improve 
+	this library at no charge.
+
+    <p>
+	The Binding has been inspired by the VisualWorks ValueModel hierarchy,
+	the PresentationModel pattern, and the Java Beans standard.
+	
+	
+	<h2>You can Help</h2>
+		
+	If you save time and money using the JGoodies Binding, please help me
+	finance my&nbsp;Java desktop activities by licensing the commercial 
+	<a href="http://www.jgoodies.com/products/index.html">JGoodies Swing Suite</a>.
+
+
+
+	</td>
+	</tr>
+	</table>
+
+
+        <!-- ************ Ende des Inhalts ************************************** -->
+	</div>
+    </td>
+</tr>
+
+<tr>
+    <td nowrap="nowrap" bgcolor="F4f3f3">
+      <div style="font-size: 10px; margin-left: 17px; margin-top: 20px; margin-right: 10px; margin-bottom: 4px;">
+      (c) 2007 JGoodies
+      </div>
+    </td>
+    <td width="1" bgcolor="E7E5E5"></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td colspan="2" height="1" bgcolor="E7E5E5"></td>
+    <td></td>
+</tr>
+
+</table>
+
+</body>
+</html>

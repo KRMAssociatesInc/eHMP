@@ -1,0 +1,54 @@
+description = 'CPE Health-Time Solr Support'
+//description = '''Custom field type for solr implementing support for HL7's "point in time"/"timestamp" data type.'''
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+group = 'gov.va.hmp'
+version = '2.0.23'
+
+configurations {
+	all*.exclude(group: 'com.sun.jdmk', module: 'jmxtools')
+	all*.exclude(group: 'com.sun.jmx', module: 'jmxri')
+	all*.exclude(group: 'javax.jms', module: 'jms')
+	all*.exclude(group: 'javax.mail', module: 'mail')
+}
+
+dependencies {
+    compile project(':production:health-time:health-time-core')
+	compile "org.apache.solr:solr-core:${versions.solrLuceneVersion}"
+    compile group: 'org.apache.lucene', name: 'lucene-core', version: versions.solrLuceneVersion
+
+	testCompile "junit:junit:${versions.junitVersion}"
+	testRuntime "org.slf4j:slf4j-nop:${versions.slf4jVersion}"
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Solr Health-Time Support'
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'gov.va.hmp'
+            artifactId 'health-time-solr'
+            version '2.0.23'
+
+            from components.java
+        }
+    }
+}
+
+task jarPath {
+  def folder = new File("${rootDir}/artifact_versions")
+  folder.mkdirs()
+
+  def file = new File("${rootDir}/artifact_versions/health_time_solr.version")
+
+  if (file.exists()) {
+    file.delete()
+  }
+  
+  file.write("${project.jar.archivePath}")
+}

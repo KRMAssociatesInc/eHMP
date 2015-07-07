@@ -1,0 +1,97 @@
+http://code.osehra.org/Prod/Visual/files/8994-1277.html
+
+GMV VITALS/CAT/QUAL (1277)    REMOTE PROCEDURE (8994)
+
+Search:
+Name	Value
+NAME	GMV VITALS/CAT/QUAL
+TAG	GETVITAL
+ROUTINE	GMVUTL7
+RETURN VALUE TYPE	ARRAY
+AVAILABILITY	SUBSCRIPTION
+INACTIVE	ACTIVE
+WORD WRAP ON	TRUE
+DESCRIPTION
+Returns all qualifier information for the vital types selected.
+
+This remote procedure call is documented in Integration Agreement 4359.
+INPUT PARAMETER
+INPUT PARAMETER:   GMVLIST
+PARAMETER TYPE:   LITERAL
+MAXIMUM DATA LENGTH:   60
+REQUIRED:   YES
+SEQUENCE NUMBER:   1
+DESCRIPTION:
+A list of vital type abbreviations (FILE 120.51, Field 1) separated by
+up-arrows (e.g., "HT^WT" for height and weight). When the value is null,
+all qualifier information will be returned for all vital types.
+RETURN PARAMETER DESCRIPTION
+Returns the qualifier information for the selected vital types in the
+array specified. Includes the abnormal high and low values for the vital
+type, if any.
+
+The result array contains:
+ RESULT(n)=piece1^piece2^piece3^piece4^piece5^piece6^piece7^piece8^piece9
+ RESULT(n.nnn)=pieceA^pieceB^pieceC^pieceD
+
+  where n is a sequential number starting with 1
+        piece1 = V for vital type
+        piece2 = FILE 120.51 IEN for this vital type
+        piece3 = vital type name (FILE 120.51, Field .01)
+        piece4 = Abbreviation (FILE 120.51, Field 1)
+        piece5 = PCE Abbreviation (FILE 120.51, Field 7)
+        piece6 = If vital type is Blood Pressure this is the
+                 abnormal systolic high value (File 120.57, Field 5.7).
+                 If vital type is Temperature, this is the abnormal high
+                 value (File 120.57, Field 5.1)
+                 If vital type is Respiration, this is the abnormal high
+                 value (File 120.57, Field 5.5)
+                 If vital type is Pulse, this is the abnormal high value
+                 (File 120.57, Field 5.3)
+                 If vital type is Central Venous Pressure, this is the
+                 abnormal high value (File 120.57, Field 6.1)
+        piece7 = If vital type is Blood Pressure this is the
+                 abnormal diastolic high value (File 120.57, Field 5.71).
+                 If vital type is Temperature, this is the abnormal low
+                 value (File 120.57, Field 5.2)
+                 If vital type is Respiration, this is the abnormal low
+                 value (File 120.57, Field 5.6)
+                 If vital type is Pulse, this is the abnormal low value
+                 (File 120.57, Field 5.4)
+                 If vital type is Central Venous Pressure, this is the
+                 abnormal low value (File 120.57, Field 6.2)
+        piece8 = If vital type is Blood Pressure this is the
+                 abnormal systolic low value (File 120.57, Field 5.8).
+                 If vital type is Central Pressure, this is the abnormal
+                 O2 saturation (File 120.57, Field 6.3)
+        piece9 = If vital type is Blood Pressure this is the
+                 abnormal diastolic low value (File 120.57, Field 5.81).
+
+ RESULT(n.nnn)=pieceA^pieceB^pieceC^pieceD
+  where pieceA = C for CATEGORY or Q for QUALIFIER
+
+  if pieceA is C, then
+        pieceB = FILE 120.53 IEN for this category
+        pieceC = category name (FILE 120.53, Field .01)
+        pieceD = null
+
+  if pieceB is Q, then
+        pieceB = FILE 120.52 IEN for this qualifier
+        pieceC = qualifier name (FILE 120.52, Field .01)
+        pieceD = synonym (FILE 120.52, Field .02)
+
+Example:
+ > S GMVLIST="HT^WT"
+ > D GETVITAL^GMVUTL7(.RESULT,GMVLIST) ZW RESULT
+ > RESULT(1)="V^8^HEIGHT^HT^HT^"
+ > RESULT(1.001)="C^4^QUALITY"
+ > RESULT(1.002)="Q^42^ACTUAL^A"
+ > RESULT(1.003)="Q^43^ESTIMATED^E"
+ > RESULT(1.004)="Q^107^Stated^St"
+ > RESULT(2)="V^9^WEIGHT^WT^WT^"
+ > RESULT(2.001)="C^2^METHOD"
+ > RESULT(2.002)="Q^39^OTHER^Oth"
+ > RESULT(2.003)="Q^50^SITTING^Si"
+ > RESULT(2.004)="Q^51^STANDING^St"
+ > RESULT(2.005)="C^4^QUALITY"
+ > RESULT(2.006)="Q^42^ACTUAL^A"

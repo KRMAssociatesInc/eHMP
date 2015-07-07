@@ -1,0 +1,27 @@
+<table id='{{uid}}' data-toggle="popup" class='table table-condensed has-popover'>
+    <thead>
+        <tr class='row'>
+            <th>Last Update</th>
+            <th>Medication</th>
+            <th>Sig</th>
+            <th>Since</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if popoverMeds}} {{#each popoverMeds}}
+        <tr class='row'>
+            <td>{{attributes.overallStartFormat}}</td>
+            <td>{{attributes.normalizedName}}</td>
+            <td>{{attributes.sig}}</td>
+            <td>{{formatTimeSince attributes.age}}</td>
+        </tr>
+        {{/each}} {{/if}}
+    </tbody>
+    {{#if numberOfMedsNotShownInPopover}}
+    <tfoot>
+        <tr class='row'>
+            <td colspan="4" align="center" class"popoverFooter"><b>{{numberOfMedsNotShownInPopover}} More<b></td>
+        </tr>
+    <tfoot>
+    {{/if}}
+</table>

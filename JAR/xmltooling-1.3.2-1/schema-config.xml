@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://www.opensaml.org/xmltooling-config">
+    
+    <ObjectProviders>
+
+        <!-- XML Schema Any -->
+        <ObjectProvider qualifiedName="xs:anyType">
+            <BuilderClass className="org.opensaml.xml.schema.impl.XSAnyBuilder" />
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSAnyMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSAnyUnmarshaller" />
+        </ObjectProvider>
+    
+        <!-- XML Schema String -->
+        <ObjectProvider qualifiedName="xs:string">
+            <BuilderClass className="org.opensaml.xml.schema.impl.XSStringBuilder" />
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSStringMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSStringUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- XML Schema dateTime -->
+        <ObjectProvider qualifiedName="xs:dateTime">
+            <BuilderClass className="org.opensaml.xml.schema.impl.XSDateTimeBuilder" />
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSDateTimeMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSDateTimeUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- XML Schema QName -->
+        <ObjectProvider qualifiedName="xs:QName">
+            <BuilderClass className="org.opensaml.xml.schema.impl.XSQNameBuilder" />
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSQNameMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSQNameUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- XML Schema base64Binary -->
+        <ObjectProvider qualifiedName="xs:base64Binary">
+            <BuilderClass className="org.opensaml.xml.schema.impl.XSBase64BinaryBuilder" />
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSBase64BinaryMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSBase64BinaryUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- XML Schema integer -->
+        <ObjectProvider qualifiedName="xs:integer">
+            <BuilderClass className="org.opensaml.xml.schema.impl.XSIntegerBuilder" />
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSIntegerMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSIntegerUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- XML Schema anyURI -->
+        <ObjectProvider qualifiedName="xs:anyURI">
+            <BuilderClass className="org.opensaml.xml.schema.impl.XSURIBuilder" />
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSURIMarshaller" />
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSURIUnmarshaller" />
+        </ObjectProvider>
+        
+    </ObjectProviders>
+
+</XMLTooling>

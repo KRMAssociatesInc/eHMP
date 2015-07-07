@@ -1,0 +1,55 @@
+#/.chef/*.pem
+.kitchen
+*.lock
+.gradle
+#.classpath
+#.project
+.settings/
+/extras
+/.chef/berkshelf/cookbooks/
+Berksfile.lock
+.vagrant
+node_modules
+_SpecRunner.html
+build
+npm-debug.log
+.grunt
+manifest_tmp
+/product/tests/acceptance-tests/.lastBundleInstallFlag
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+# vim
+.swp
+
+# chef/vagrant generated files #
+################################
+.filecache
+/infrastructure/vagrant/virtualbox/ehmp-ui/dist-files
+
+/infrastructure/workspace-management/build
+/product/.metadata
+# bndtools workspace configuration project
+/product/cnf
+/product/build
+/product/production/build
+
+# editor/ide config files
+.idea
+
+
+*.scssc
+*.css
+
+# page object test screenshots ignored
+/product/tests/page-object-tests/screenshots
+/product/tests/page-object-tests/cucumber.json
+/product/tests/page-object-tests/cucumber.html

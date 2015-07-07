@@ -1,0 +1,75 @@
+{{#if navHeader}}
+<p class="text-right"><button type="button" tabindex="0" class="btn btn-default labResultsPrev"><i class="fa fa-arrow-up"></i>&nbsp;Previous</button> &nbsp; <button type="button" tabindex="0" class="btn btn-default labResultsNext"><i class="fa fa-arrow-down"></i>&nbsp;Next</button></p>
+{{/if}}
+<div class="table-responsive"><table class="table">
+    <thead>
+        <tr tabindex="0">
+            <th tabindex="0" id="date">Date</th>
+            <th tabindex="0" id="lab-test">Lab Test</th>
+            <th tabindex="0" id="flag">Flag</th>
+            <th tabindex="0" id="result">Result</th>
+            <th tabindex="0" id="unit">Unit</th>
+            <th tabindex="0" id="reference-range">Ref Range</th>
+            <th tabindex="0" id="site">Facility</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr tabindex="0"><td tabindex="0" id="date">{{formatDate observed}}</td>
+        <td tabindex="0" id="lab-test">{{typeName}} - {{specimen}}</td>
+        <td tabindex="0" id="flag">{{#if flagTooltip}}
+            <label class="label {{labelClass}}" title="{{flagTooltip}}">{{interpretationCode}}</label>
+            {{/if}}
+            {{#if showFlagIcon}}
+            <i class="fa fa-flag"></i>
+        {{/if}}</td>
+        <td tabindex="0" id="result">{{result}}</td>
+        <td tabindex="0" id="unit">{{units}}</td>
+        <td tabindex="0" id="reference-range">
+            {{#if referenceRange}}
+            {{referenceRange}}
+            {{else}}
+                {{#if high}}
+                    {{low}}-{{high}}
+                {{/if}}
+            {{/if}}
+        </td>
+        <td tabindex="0" id="site">{{facilityMoniker}}</td></tr>
+    </tbody>
+</table></div>
+<form class="form-inline" role="form">
+    <div id="date-range-filter"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5" id="lr-data-table-view">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{typeName}} - {{specimen}}</h3>
+                        <div class="row">
+                            <!-- <div class="col-xs-6"><small>
+                                {{#if high}}
+                                Ref Range:  {{low}}-{{high}}
+                                {{/if}}
+                            </small></div> -->
+                            <div class="col-md-12">
+                                <small>Total Tests: <span id="total-tests"></span></small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="js-backgrid"></div>
+                    
+                </div>
+            </div>
+            <div class="col-md-7" id="lr-graph">
+                
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{typeName}} - {{specimen}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="js-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

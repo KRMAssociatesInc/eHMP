@@ -1,0 +1,109 @@
+@mixin context-bar-ui(
+$ui,
+$context-bar-background-color: null,
+$context-bar-text-color: null,
+$border-radius: 12px
+) {
+  .hmp-#{$ui}-bar-ct {
+    padding: 0px 6px 0px 6px;
+
+    @include border-top-radius($border-radius);
+
+    background-color: $context-bar-background-color;
+    color: $context-bar-text-color;
+
+    .x-btn-arrow {
+      background-image: none;
+    }
+  }
+
+  .hmp-#{$ui}-bar-item {
+    @include border-radius(0);
+    margin: 0px 3px;
+    padding: 3px 8px;
+    color: $context-bar-text-color;
+    font-size: $font-size;
+    overflow: hidden;
+
+    td {
+      font-family: $font-family;
+      font-size: $font-size-small;
+      color: $context-bar-text-color;
+    }
+
+    .hmp-provider-detail {
+      margin-top: 2px;
+      font-family: $font-family;
+      font-size: $font-size-small;
+      color: $context-bar-text-color;
+      div {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .text-muted {
+      @include muted-for-background($context-bar-background-color);
+    }
+
+    .hmp-labeled-values {
+      td:nth-child(odd) {
+        @include muted-for-background($context-bar-background-color);
+        font-weight: normal;
+      }
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+      margin: 0;
+      color: $context-bar-text-color;
+    }
+  }
+  //.hmp-#{$ui}-bar-item.x-btn {
+  //  background-color: transparent;
+  //  background-image: none;
+  //  border-color: transparent;
+  //}
+  .hmp-#{$ui}-bar-item.x-btn-over {
+    background-color: darken($context-bar-background-color, 5%) !important;
+    background-image: none;
+  }
+  .hmp-#{$ui}-bar-item.x-btn-menu-active {
+    background-color: darken($context-bar-background-color, 5%) !important;
+    //background-image: none;
+    //color: $color;
+    //border-color: #999;
+
+    //td {
+    //  font-family: $font-family;
+    //  font-size: $fontSizeSmall;
+    //  color: $color;
+    //}
+    //
+    //.hmp-labeled-values {
+    //  td:nth-child(odd) {
+    //    color: $form-label-color;
+    //  }
+    //}
+    //
+    //h1, h2, h3, h4, h5, h6 {
+    //  color: $color;
+    //}
+  }
+}
+
+.hmp-context-bar-ct {
+  background-color: $body-bg;
+  padding: 0px;
+
+  @include border-top-radius(12px);
+  @include border-bottom-radius($border-radius-large);
+
+  .hmp-context-bar-body {
+    padding: 10px;
+    border-width: 0px 1px 1px;
+    border-style: solid;
+    border-color: $panel-default-border;
+    @include border-bottom-radius($border-radius-large);
+  }
+}

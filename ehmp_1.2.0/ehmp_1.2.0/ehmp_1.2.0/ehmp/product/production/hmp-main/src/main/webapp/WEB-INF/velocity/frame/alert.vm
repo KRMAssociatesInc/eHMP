@@ -1,0 +1,46 @@
+<table class="hmp-labeled-values">
+	<tr>
+		<td><i class="fa fa-warning-sign hmp-alert-icon"></i></td>
+		<td><strong>${alert.description}</strong></td>
+	</tr>
+    <tr>
+        <td>Date</td>
+        <td>${hmp.formatDate($!alert.referenceDateTime)}</td>
+    </tr>
+    #if($alert.severe)
+    <tr>
+        <td>Severity</td>
+        <td>???</td>
+    </tr>
+    #end
+	#if(!$links.isEmpty())
+	<tr><td>Relevant Data</td><td>
+        #foreach($it in $links)
+			<div>${it.summary}</div>
+		#end
+	</td></tr>
+	#end
+	#if(!$alert.getActions().isEmpty())
+	<tr><td>Actions/<br/>Mitigating Factors</td><td>
+		<form id="AlertDialogFormID">
+		#foreach($ob in $alert.getActions())
+			#if ($ob.type.equals('ObsDateRequestAction'))
+				<input type="checkbox" name="" value=""/>${ob.getTitle()}
+				<input type="date" name="${ob.getValue()}" value=""
+				  onBlur="gov.va.cpe.AlertDialog.obs(this.name, '', this.value);"
+				  /><br>
+			#else
+				<input type="checkbox" name="${ob.getValue()}" value="1"
+					onClick="gov.va.cpe.AlertDialog.obs(this.name, this.value);"
+					/>${ob.getTitle()}<br>
+				
+			#end
+		#end
+		</form>
+	</td></tr>
+	#end
+	<tr>
+		<td>Comment/Note:</td>
+		<td><textarea style="width: 100%; height: 100%;"></textarea></td>
+	</tr>			
+</table>

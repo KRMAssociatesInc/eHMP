@@ -1,0 +1,612 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "13",
+      "RetrievedCount": "13",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000078"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "1038F",
+                "display": "ASTHMA MILD PERSISTENT"
+              }
+            ],
+            "date": "20131206161157",
+            "recordedId": {
+              "id": "2157582882"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000080"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90857",
+                "display": "Clinical Social Work Counseling Group"
+              }
+            ],
+            "date": "20131029160253",
+            "recordedId": {
+              "id": "2157580481"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000082"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "99600",
+                "display": "Home Care Visit"
+              }
+            ],
+            "date": "20131017160440",
+            "recordedId": {
+              "id": "2157580454"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000084"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90749",
+                "display": "Vaccines"
+              }
+            ],
+            "date": "20131017155920",
+            "recordedId": {
+              "id": "2157580456"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000086"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90471",
+                "display": "Immunization Administration One Vaccine"
+              }
+            ],
+            "date": "20131017155920",
+            "recordedId": {
+              "id": "2157580457"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000088"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90676",
+                "display": "Rabies Vaccine For Intradermal Use"
+              }
+            ],
+            "date": "20131017155827",
+            "recordedId": {
+              "id": "2157580455"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000090"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "87906",
+                "display": "Infectious Agent Genotype Analysis By Nucleic Acid HIV-1"
+              }
+            ],
+            "date": "20131007155858",
+            "recordedId": {
+              "id": "2157580358"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000092"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "87535",
+                "display": "Inf Agt Antig Det Nucleic Acid Amp Probe HIV-1"
+              }
+            ],
+            "date": "20131007155853",
+            "recordedId": {
+              "id": "2157580357"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000094"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "94150",
+                "display": "Pulmonary Function Tests Peak Expiratory Flow"
+              }
+            ],
+            "date": "20131007153940",
+            "recordedId": {
+              "id": "2157580343"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000096"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": null,
+                "display": "history of prior surgery   [For Hx of Tx, use H prefix]"
+              }
+            ],
+            "date": "18991230050000",
+            "recordedId": {
+              "id": "2157580314"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000098"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": null,
+                "display": "No late procedural complications"
+              }
+            ],
+            "date": "18991230050000",
+            "recordedId": {
+              "id": "2157580315"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000100"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": null,
+                "display": "reported skin test for tuberculosis"
+              }
+            ],
+            "date": "18991230050000",
+            "recordedId": {
+              "id": "2157580316"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000102"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": null,
+                "display": "No reported Pap smear"
+              }
+            ],
+            "date": "18991230050000",
+            "recordedId": {
+              "id": "2157580317"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    }
+  ]
+}

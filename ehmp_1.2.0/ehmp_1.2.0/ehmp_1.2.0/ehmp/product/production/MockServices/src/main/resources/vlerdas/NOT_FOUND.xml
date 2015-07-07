@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+   <feed xmlns="http://www.w3.org/2005/Atom" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3.org/2005/Atom ../XMLschemas/atom/atom.xsd"
+        xmlns:vler="http://domain/vler/schemas/vlerSupersetSchema/0.4/vler"
+        xmlns:pr="http://domain/vler/schemas/benefits/integratedCare/careCoordinatorProfile/0.5"
+        xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0">
+     <title type="text">VLER DAS</title>
+     <updated>2014-07-21T12:29:29Z</updated>
+     <id>https://domain/vler/das/1/2.16.840.1.113883.3.42.10001.00001.12/1000050533/health/vitals</id>
+     <entry>
+       <title>VLER DAS Data</title>
+       <id>https://domain/vler/das/1/2.16.840.1.113883.3.42.10001.00001.12/1000050
+533/health/vitals</id>
+       <updated>2014-07-21T12:29:29Z</updated>
+       <author>
+         <name>VLERDAS</name>
+       </author>
+       <content>
+       </content>
+     </entry>
+   </feed>
+
+

@@ -1,0 +1,16 @@
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Visit Information</a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+                <span class="pull-right"><button id="change-visit-btn" type="button" class="btn btn-primary pull-right">Change</button></span>
+				<span>Location: {{#if visit.locationDisplayName}} {{visit.locationDisplayName}} {{visit.formattedDate}}{{else}}No visit set {{/if}}</span><br/>
+				<span>Provider: {{#if visit.selectedProvider}} {{visit.selectedProvider.displayName}} {{/if}}</span>
+            </div>
+        </div>
+    </div>
+</div>

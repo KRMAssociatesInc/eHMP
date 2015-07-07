@@ -1,0 +1,14 @@
+<div class="immunizations-modal-footer">
+	<div class="pull-left">
+        <button id="error" class="btn btn-danger" >Entered in Error</button>
+		{{#hasPermission 'add-patient-immunization'}}
+			{{#unless enableWriteback}}<div class="tooltip-wrapper pull-right" role="button" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Disabled for edit.<br/>Non-local site.">{{/unless}}
+	    		<button id="edit-immunization" class="btn btn-primary" aria-label="Edit" {{#unless enableWriteback}}disabled{{/unless}}>Edit</button>
+			{{#unless enableWriteback}}</div>{{/unless}}
+		{{/hasPermission}}
+	</div>
+	<div class="pull-right">
+		<button type="button" class="btn btn-default" data-dismiss="modal" id="modal-close-button">Close</button>
+	</div>
+
+</div>

@@ -1,0 +1,86 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "LabOrders": [
+          {
+            "EnteredByName": "BHIE, USERONE",
+            "StatusComments": "",
+            "AlternateSpecimenText": "BLOOD",
+            "ScheduleTypeName": "One Time",
+            "StartDate": "20140402171600",
+            "NurseSignatureName": "",
+            "Duration": "D1",
+            "PriorOrderNumber": "",
+            "StatusName": "Ordered",
+            "IntervalTimeInterval": "",
+            "Frequency": "",
+            "ProcessingPriority": "R",
+            "OrderStatusName": "Ordered",
+            "OrderDate": "20140402171400",
+            "OrderComment": "Jane testing",
+            "IntervalRepeatPattern": "",
+            "AdminTimes": "",
+            "OrderingProviderName": "BHIE, USERONE",
+            "TestStatusName": "",
+            "FacilityName": "NH Great Lakes IL",
+            "Ncid": "14674837",
+            "UniversalServiceText": "CBC PROFILE",
+            "Priority": "ROUTINE",
+            "GroupNumber": "966070",
+            "EndDate": "20150401171600",
+            "EnteringLocationName": "Family Practice Clinic",
+            "NurseSignatureDate": "",
+            "OrderNumber": "140402-00001",
+            "CollectionMethod": "",
+            "VerifiedByName": "",
+            "SpecimenText": "PLASMA",
+            "OrderRequiredData": "",
+            "EventId": "1000000033"
+          }
+        ],
+        "Description": "CBC PROFILE",
+        "OrderDate": "20140402171400",
+        "OrderingProvider": "BHIE, USERONE",
+        "Type": "LAB",
+        "EnteredBy": "",
+        "OrderId": "140402-00001",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "Ncid": "14674837",
+        "Status": "Ordered",
+        "CustodianName": "ahlta",
+        "LoincCode": "26436-6",
+        "Facility": "",
+        "EventId": "1000000034"
+      },
+      "dataType": 21
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

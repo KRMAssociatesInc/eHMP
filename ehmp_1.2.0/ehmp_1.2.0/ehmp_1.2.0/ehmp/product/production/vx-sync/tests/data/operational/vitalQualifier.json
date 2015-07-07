@@ -1,0 +1,32 @@
+{
+	"apiVersion": "1.01",
+	"data": {
+		"updated": "20141007195624",
+		"currentItemCount": 19,
+		"totalItems": 19,
+		"last": 19,
+		"items": [{
+			"effectiveDate": 20070607145058,
+			"localId": 129,
+			"masterVuid": "YES",
+			"qualifer": "urn:va:vitalqualifier-list:9E7A:129",
+			"status": "ACTIVE",
+			"synonym": "Hip",
+			"uid": "urn:va:vitalqualifier-list:9E7A:129",
+			"vtype": [{
+				"category": "LOCATION",
+				"vitalType": "BLOOD PRESSURE"
+			}, {
+				"category": "METHOD",
+				"vitalType": "TEMPERATURE"
+			}, {
+				"category": "POSITION",
+				"vitalType": "RESPIRATION"
+			}, {
+				"category": "QUALITY",
+				"vitalType": ""
+			}],
+			"vuid": "urn:va:vuid:4697470"
+		}]
+	}
+}

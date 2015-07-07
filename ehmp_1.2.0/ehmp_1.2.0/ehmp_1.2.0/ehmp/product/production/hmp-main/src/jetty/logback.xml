@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LOGBACK Configuration File for HMP Development (i.e. mvn jetty:run)
+
+  http://logback.qos.ch/manual/configuration.html
+  -->
+<configuration debug="true">
+    <!-- enable configuration of logback at runtime via JMX -->
+    <contextName>${project.name}</contextName>
+
+	<!--
+      This default ConsoleAppender is used to log all messages
+      to System.out
+    -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.eclipse.jetty" level="warn"/>
+
+    <logger name="org.springframework" level="warn"/>
+    <logger name="org.apache.solr" level="warn"/>
+
+    <logger name="gov.va.hmp.Bootstrap" level="debug"/>
+
+    <!-- user audit -->
+    <logger name="audit" level="info"/>
+
+    <!-- metrics -->
+    <logger name="metrics" level="info"/>
+
+    <!-- CPE context management -->
+    <!--<logger name="gov.va.cpe.pt.ThreadLocalPatientContext" level="debug"/>-->
+    <!--<logger name="gov.va.cpe.roster.ThreadLocalRosterContext" level="debug"/>-->
+    <!--<logger name="gov.va.cpe.board.ThreadLocalBoardContext" level="debug"/>-->
+    <!--<logger name="gov.va.cpe.team.ThreadLocalTeamContext" level="debug"/>-->
+    <!--<logger name="gov.va.cpe.web.CPESessionContextIntegrationFilter" level="debug"/>-->
+
+    <!-- ViewDef rendering -->
+    <logger name="gov.va.cpe.vpr.queryeng.ViewDef" level="debug"/>
+
+    <!-- VPR automatic updates -->
+    <logger name="gov.va.cpe.vpr.sync.vista.VprUpdateJob" level="error"/>
+    <logger name="gov.va.cpe.vpr.sync.vista.VistaVprDataExtractEventStreamDAO" level="error"/>
+    <logger name="gov.va.cpe.vpr.sync.msg.VprUpdateCompleteMessageHandler" level="info"/>
+
+    <!-- VistA RPC logging -->
+    <logger name="gov.va.hmp.vista.rpc.RpcTemplate" level="error"/>
+    <!--<logger name="gov.va.hmp.vista.rpc.RpcTemplate" level="debug"/>-->
+    <!--<logger name="gov.va.cpe.vista.rpc.wire" level="debug"/>-->
+
+    <!-- JDS logging -->
+    <logger name="gov.va.cpe.vpr.pom.jds.JdsTemplate" level="warn"/>
+    <logger name="org.springframework.web.client.RestTemplate" level="warn"/>
+    
+    <!-- VPR Calls -->
+    <logger name="gov.va.cpe.vpr.sync.vista.VistaPatientDataService" level="debug"/>
+
+    <logger name="gov.va.hmp.util.LoggingUtil" level="debug"/>
+    <logger name="gov.va.cpe.vpr.sync.msg.ClearPatientMessageHandler" level="debug"/>
+
+    <!-- HTTP logging (JDS and Solr) -->
+    <!--<logger name="org.apache.http" level="debug"/>-->
+    <!--<logger name="org.apache.http.wire" level="error"/>-->
+
+    <!-- sync messages -->
+    <!--<logger name="gov.va.cpe.vpr.sync.msg" level="info"/>-->
+
+    <!-- Spring MVC -->
+    <!--<logger name="gov.va.cpe.vpr.web.servlet.resource.ResourceHttpRequestHandler" level="debug"/>-->
+
+    <!-- OSGi -->
+    <logger name="gov.va.hmp.plugins.osgi.OsgiFrameworkLauncherFactoryBean" level="info"/>
+
+    <!-- Access Policy Engine -->
+    <!--<logger name="gov.va.hmp.access" level="debug"/>-->
+
+    <root level="warn">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

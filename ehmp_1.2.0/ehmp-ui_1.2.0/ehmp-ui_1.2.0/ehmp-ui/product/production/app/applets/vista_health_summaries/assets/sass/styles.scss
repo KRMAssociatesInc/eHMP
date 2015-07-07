@@ -1,0 +1,17 @@
+[data-appletid="vista_health_summaries"] {
+	.backgrid {
+		tr {
+			color: #666;
+			&.selectable {
+				border-bottom: 2px solid #f3f3f3;
+				border-top: 2px solid #f3f3f3;
+			}
+		}
+		td.renderable {
+			padding: 8px 8px;
+		}
+		td.renderable+td.renderable {
+			border-left: 1px solid #e5e5e5;
+		}
+	}
+}

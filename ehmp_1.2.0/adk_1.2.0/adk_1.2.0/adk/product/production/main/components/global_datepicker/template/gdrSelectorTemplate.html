@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="gdt-padding">
+        <div class="pull-left">
+            <button id="all-range-global" name="all-range-global" type="button" class="gdt-btn daterange btn btn-xs default-range" tabindex="0" title="All range">All</button>
+            <!-- TODO 5y feature for 7F sprint -->
+            <!--<button id="5yr-range-global" name="5yr-range-global" type="button" class="gdt-btn daterange btn btn-xs default-range" tabindex="0" title="5 years range">-->
+                <!--<span class="sr-only">5 years global date range.</span>5y</button>-->
+            <button id="2yr-range-global" name="2yr-range-global" type="button" class="gdt-btn daterange btn btn-xs default-range" tabindex="0" title="2 years range">
+                <span class="sr-only">2 years global date range.</span>2y</button>
+            <button id="1yr-range-global" name="1yr-range-global" type="button" class="gdt-btn daterange btn btn-xs default-range" tabindex="0" title="1 year range">
+                <span class="sr-only">1 year global date range.</span>1y</button>
+            <button id="3mo-range-global" name="3mo-range-global" type="button" class="gdt-btn daterange btn btn-xs default-range" tabindex="0" title="3 months range">
+                <span class="sr-only">3 months global date range.</span>3m</button>
+            <button id="1mo-range-global" name="1mo-range-global" type="button" class="gdt-btn daterange btn btn-xs default-range" tabindex="0" title="1 month range">
+                <span class="sr-only">1 month global date range.</span>1m</button>
+            <button id="7d-range-global" name="7d-range-global" type="button" class="gdt-btn daterange btn btn-xs default-range" tabindex="0" title="7 days range">
+                <span class="sr-only">7 days global date range.</span>7d</button>
+            <button id="72hr-range-global" name="72hr-range-global" type="button" class="gdt-btn daterange btn btn-xs default-range" tabindex="0" title="72 hours range">
+                <span class="sr-only">72 hours global date range.</span>72h</button>
+            <button id="24hr-range-global" name="24hr-range-global" type="button" class="gdt-btn daterange btn btn-xs default-range" tabindex="0" title="24 hours range">
+                <span class="sr-only">24 hours global date range.</span>24h</button>
+        </div>
+        <div class="form-inline pull-right">
+            <div class="input-group date" id="custom-date-from-global">
+                <input type="text" class="form-control input-sm gdt-input" id="filter-from-date-global" name="filter-from-date-global" size="10" title="Please select a date in the past." tabindex="0" aria-label="custom date range, from date" style="height: 25px;width: 86px; text-align: center; padding-left: 0px;padding-right: 0px" />
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+            <span class="inputHelperText">to</span>
+
+            <div class="input-group date" id="custom-date-to-global">
+                <input type="text" class="form-control input-sm gdt-input" id="filter-to-date-global" name="filter-to-date-global" size="11" title="Please select a date that is not in the past." tabindex="0" aria-label="custom date range, to date"  style="height: 25px;width: 86px; text-align: center; padding-left: 0px;padding-right: 0px" />
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+            <button id="cancel-global" name="cancel-global" type="button" class="gdt-btn btn btn-xs btn-default" title="Cancel global daterange timeline." tabindex="0">CANCEL</button>
+            <button id="custom-range-apply-global" name="custom-range-apply-global" type="button" class="gdt-btn btn btn-xs btn-default" title="Apply custom date range filtering." tabindex="0" disabled>APPLY</button>
+        </div>
+    </div>
+    <div class="container-fluid scroll-no-padding">
+        <div class="row">
+            <div class="col-md-12 center-block">
+                <div id="trend-history-chart" role="image" alt="All Events Graph"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 center-block">
+                <div id="timeline-summary" class="timeline-summary-scrollable"></div>
+            </div>
+        </div>
+    </div>
+</div>

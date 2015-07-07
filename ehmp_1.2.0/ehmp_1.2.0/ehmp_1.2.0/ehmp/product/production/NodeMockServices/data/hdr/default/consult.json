@@ -1,0 +1,27 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "HDR",
+    "systemId": "HDR"
+  },
+  "data": {
+    "updated": "20140409083720",
+    "totalItems": 1,
+    "items": [
+      {
+        "category": "P",
+        "consultProcedure": "COLONOSCOPY",
+        "dateTime": 199603181318,
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "localId": 82,
+        "orderName": "",
+        "orderUid": "urn:va:order:ABCD:12:5389.1",
+        "service": "GASTROENTEROLOGY",
+        "statusName": "ACTIVE",
+        "typeName": "COLONOSCOPY GASTROENTEROLOGY Proc",
+        "uid": "urn:va:consult:ABCD:12:82"
+      }
+    ]
+  }
+}

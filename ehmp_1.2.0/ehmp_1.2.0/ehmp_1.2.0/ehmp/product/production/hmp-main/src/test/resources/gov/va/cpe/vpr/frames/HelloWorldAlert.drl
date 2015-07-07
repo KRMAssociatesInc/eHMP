@@ -1,0 +1,33 @@
+import gov.va.cpe.vpr.pom.PatientEvent
+import gov.va.cpe.vpr.Patient
+import gov.va.cpe.vpr.Medication
+import gov.va.cpe.vpr.Allergy
+import gov.va.cpe.vpr.frameeng.FrameAction.AlertAction
+import gov.va.cpe.vpr.pom.IGenericPatientObjectDAO
+
+global IGenericPatientObjectDAO DAO;
+
+rule "Hello World"
+  when
+      $e : PatientEvent(source.class == Patient.class)
+      $p : Patient() from $e.source
+  then
+      insert(new AlertAction("drools alert", $p.getSsn()));
+end
+
+/* Example of rule chaining.... */
+rule "alert triggered alert"
+	when
+		AlertAction(title == "drools alert")
+	then
+		insert(new AlertAction(drools.getRule().getName(), "this is to alert you of an alert"));
+end
+
+rule "allergy/medication contraindication"
+	when
+		$e : PatientEvent(source.class == Medication.class, $pid : source.pid)
+		$allergies : Allergy() from DAO.findAllByPID(Allergy.class, $pid, null)
+	then
+		
+end
+

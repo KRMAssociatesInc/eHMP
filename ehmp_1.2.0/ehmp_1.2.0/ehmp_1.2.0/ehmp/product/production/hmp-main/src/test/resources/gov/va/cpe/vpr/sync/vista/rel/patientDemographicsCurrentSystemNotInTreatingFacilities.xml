@@ -1,0 +1,41 @@
+<patient>
+    <address streetLine1='Any Street' city='Any Town' stateProvince='WEST VIRGINIA'/>
+    <aliases>
+        <alias fullName='P484'/>
+    </aliases>
+    <bid value='F0484'/>
+    <dob value='2350407'/>
+    <facilities>
+        <facility code='998' name='ABILENE (CAA)' latestDate='3010101'/>
+        <facility code='997' name='CHARLESTON (CBB)' latestDate='3010101'/>
+        <facility code='995' name='CENTRAL CITY (CCC)' latestDate='3010101' homeSite='1'/>
+        <facility code='994' name='LUBBOCK (CDD)' latestDate='3010101'/>
+        <facility code='988' name='BOCA RATON (CEE)' latestDate='3010101'/>
+        <facility code='996' name='CHAMPAIGN (CFF)' latestDate='3010101'/>
+        <facility code='993' name='YUMA (CGG)' latestDate='3010101'/>
+        <facility code='992' name='LAREDO (CHH)' latestDate='3010101'/>
+        <facility code='989' name='PARK CITY (CII)' latestDate='3010101'/>
+        <facility code='991' name='JAMESTOWN (CJJ)' latestDate='3010101'/>
+        <facility code='990' name='SOUTH BEND (CKK)' latestDate='3010101'/>
+        <facility code='999' name='LYNCHBURG (CLL)' latestDate='3010101'/>
+        <facility code='987' name='ASPEN (CMM)' latestDate='3010101'/>
+    </facilities>
+    <familyName value='FOURHUNDREDEIGHTYFOUR'/>
+    <fullName value='FOURHUNDREDEIGHTYFOUR,PATIENT'/>
+    <gender value='M'/>
+    <givenNames value='PATIENT'/>
+    <icn value='-1'/>
+    <id value='100484'/>
+    <lrdfn value='0'/>
+    <sc value='0'/>
+    <ssn value='666000484'/>
+    <supports>
+        <support contactType='NOK' name='VETERAN,BROTHER'>
+        </support>
+    </supports>
+    <telecomList>
+        <telecom usageType='H' value='222-555-8235'/>
+        <telecom usageType='WP' value='222-555-7720'/>
+    </telecomList>
+    <veteran value='1'/>
+</patient>

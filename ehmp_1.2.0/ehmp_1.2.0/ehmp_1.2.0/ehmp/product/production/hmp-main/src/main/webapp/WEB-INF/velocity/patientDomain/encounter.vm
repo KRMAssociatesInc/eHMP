@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>$!item.summary</title>
+    #parse("/layouts/detail.vm")
+</head>
+
+<body>
+<table class="hmp-labeled-values">
+    <tr>
+        <td>Date</td>
+        <td>$hmp.formatDateTime($!item.dateTime)</td>
+    </tr>
+    <tr>
+        <td>Type</td>
+        <td>$!item.typeDisplayName</td>
+    </tr>
+    <tr>
+        <td>Category</td>
+        <td>$!item.categoryName</td>
+    </tr>
+    <tr>
+        <td>Patient Class</td>
+        <td>$!item.patientClassName</td>
+    </tr>
+    #if($item.appointmentStatus)
+    <tr>
+        <td>Appointment Status</td>
+        <td>$!item.appointmentStatus</td>
+    </tr>
+    #end
+    <tr>
+        <td>Location</td>
+        <td>$!item.locationDisplayName</td>
+    </tr>
+    <tr>
+        <td>Stop Code</td>
+        <td>$!item.stopCodeName</td>
+    </tr>
+    <tr>
+        <td>Facility</td>
+        <td>$!item.facilityName</td>
+    </tr>
+	#foreach($prov in $item.providers)
+        <tr>
+            <td>#if($!prov.primary)Primary#else Additional#end Provider</td>
+            <td>$!prov.providerDisplayName</td>
+        </tr>
+	#end
+	#if($item.movements) 
+		<tr><td colspan="3">
+		<table style="width: 100%" class="hmp-labeled-values">
+		#foreach($loc in $item.movements)
+			<tr>
+				<td>${hmp.formatDateTime($!loc.dateTime)}</td>
+				<td>$!{loc.locationName}</td>
+				<td>$!{loc.movementType}</td>
+			</tr>
+		#end
+		</table></td></tr>
+	#end
+</table>
+</body>
+</html>

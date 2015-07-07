@@ -1,0 +1,87 @@
+<div class="panel panel-default" role="listitem">
+    <div class="row list-item-summary panel-heading {{expirationLabel}}Shading" data-toggle="collapse" data-target="#detail_{{ detailId }}" href="#detail_{{ detailId }}" data-class="panel-info" data-parent="#medicationsAccordion" id="medGroupItem" tabindex="0">
+        <div class="col-md-1 pull-left list-item-summary-sidescript">
+            <div class="row statusBadge {{standardizedVaStatus}}Status"><span class="statusLabel">{{standardizedVaStatus}}</span></div>
+            <br>
+            <div class="row medSubcategory {{subcategory}}">{{subcategory}}</div>
+        </div>
+        <div class="col-md-9 pull-left list-item-summary-text">
+            <p class="list-item-summary-line">
+                <span class="col-md-8 medTitle">
+                    <strong class="pull-left medTitleStyle">
+                        <span id="summary_{{detailId}}" class="capitalize" tabindex="">{{name}}</span>
+                        &nbsp;
+                        <span class="scheduleStyleColor">
+                            {{#if dose}}{{dose}} {{dosagesUnits}} {{else}} {{instructions}} {{/if}} {{routeName}} {{scheduleName}}
+                        </span>
+                        {{#if activeCount}}
+                        <span class="activeMedCount">&nbsp;&nbsp; {{activeCount}} Active Orders</span>{{/if}} {{#if pendingCount}}
+                        <span class="pendingMedCount">&nbsp;&nbsp; {{pendingCount}} Pending Orders</span>{{/if}}
+                    </strong>
+                </span>
+            </p>
+            <br>
+            <p class="list-item-summary-line pull-left">
+                <span class="medSubtitle">{{#if lastDatePrefix}}
+                    <span class="labelStyleColor">{{ lastDatePrefix }}</span>
+                    {{#if lastDate}}
+                    <span>{{formatDate lastDate}}</span>{{else}}
+                    <span>No Data</span>{{/if}} &nbsp;
+                    <span class="{{ lastFillStyle }}">{{ lastFillDetails }}</span>
+                    &nbsp; {{/if}} {{#if dailyOrScheduledDosePrefix}}
+                    <span class="text-muted">{{ dailyOrScheduledDosePrefix }}</span>
+                    <span>{{ dailyOrScheduledDose }}</span>
+                    &nbsp; {{/if}}
+                    <span class="stop-date">
+                        <span class="labelStyleColor">{{ expirationLabel }}</span>
+                        <span>{{formatDate summaryViewDate}}</span>
+                    </span>
+                </span>
+            </p>
+        </div>
+        <div class="col-md-2 list-item-summary-facility pull-left">
+            <span class="medFacility pull-left">{{ standardizedFacilityCode }}</span>
+        </div>
+        <div id="list-item-graph-panel" class="list-item-graph pull-right"></div>
+    </div>
+</div>
+
+<div id="detail_{{ detailId }}" class="medicationReviewDetail panel-collapse collapse out panel panel-success light-grey-background">
+    <div class="panel-body">
+        {{#if isNonVa}}
+        {{#hasPermission 'remove-patient-med|edit-patient-med'}}
+        <div id="order-nav-outer-div">
+            <div id="order-nav-inner-div" class="pull-right">
+                <ul class="nav nav-pills order-nav-button" role="tablist">
+                    {{#hasPermission 'edit-patient-med'}}
+                    <button id="edit" class="btn btn-primary orderNav">Modify</button>
+                    {{/hasPermission}}
+                    {{#hasPermission 'remove-patient-med'}}
+                    {{#if isNotDiscontinued}}
+                    <button id="discontinue" class="btn btn-danger orderNav">Discontinue</button>
+                    {{/if}}
+                    {{/hasPermission}}
+                </ul>
+            </div>
+        </div>
+        {{/hasPermission}}
+        {{/if}}
+        <div class="col-sm-2 orderHx-list pull-left">
+            <h2 class="orderHx">
+                <span class="order-history-header" id="order-history-label-{{detailId}}">Order Hx</span>
+            </h2>
+            <div id="order-history-panel" class="pull-left" role="list"></div>
+            <h5 class="infoButton">
+                <span class="info-button-header" id="info-button-label-{{detailId}}"><p></p><p>Links</p><p></p></span>
+            </h5>
+            <div id="info-button-panel" class="pull-left" role="list"></div>
+            <h5 class="infoButton">
+                <span class="info-button-header" id="info-button-patient-label-{{detailId}}"><p></p><p>Patient Education</p><p></p></span>
+            </h5>
+            <div id="info-button-patient-panel" class="pull-left" role="list"></div>
+
+        </div>
+
+        <div id="order-detail-panel" class="col-sm-10 pull-left dataValue"></div>
+    </div>
+</div>

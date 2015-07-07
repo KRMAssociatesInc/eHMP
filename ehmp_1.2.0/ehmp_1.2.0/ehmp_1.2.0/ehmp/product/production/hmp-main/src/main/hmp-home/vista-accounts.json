@@ -1,0 +1,18 @@
+{
+    "apiVersion":"${project.version}",
+    "data":{
+        "totalItems":1,
+        "items":[
+            {
+	                "name":"CAMP MASTER",
+	                "vistaId":"B362",
+	                "division":"500",
+	                "host":"10.2.2.101",
+	                "port":9210,
+	                "production":false,
+	                "vprUserCredentials":"pu1234;pu1234!!",
+	                "vprAutoUpdate":true
+		    }
+        ]
+    }
+}

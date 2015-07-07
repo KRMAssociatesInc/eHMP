@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CWADF</title>
+</head>
+<body>
+<div id="cwadf-nav">
+    <ul class="nav nav-pills nav-stacked affix" data-spy="affix" style="max-width: 260px">
+        #if($allergies.size() > 0)
+            <li class="dropdown-header">Allergies / Adverse Reactions</li>
+            #foreach($item in $allergies)
+                <li class="overflow-ct clearfix cpe-allergy"><a href="#cwadf-$esc.jqId($item.uid)"><span class="cpe-allergy-product overflow-keep">$item.products</span><span class="pull-right text-muted overflow-truncate">$item.reactions</span></a></li>
+            #end
+        #end
+        #if($flags.size() > 0)
+            <li class="dropdown-header">Patient Record Flags</li>
+            #foreach($flag in $flags)
+                <li class="clearfix"><a href="#cwadf-$esc.jqId($flag.uid)">$flag.name<span class="pull-right text-muted">$!hmp.formatDate($!flag.assignTS)</span></a></li>
+            #end
+        #end
+        #if($notes.size() > 0)
+            <li class="dropdown-header">Crisis Notes, Warning Notes, Directives</li>
+            #foreach($item in $notes)
+                <li class="overflow-ct clearfix"><a href="#cwadf-$esc.jqId($item.uid)"><span class="overflow-truncate">$item.kind</span><span class="pull-right text-muted overflow-keep">$!hmp.formatDate($!item.referenceDateTime)</span></a></li>
+            #end
+        #end
+    </ul>
+</div>
+<div style="padding-left: 270px; white-space: normal">
+        #foreach($item in $allergies)
+            <h4 id="cwadf-$esc.jqId($item.uid)">$item.products<span class="text-muted" style="margin-left: 10px">$item.reactions</span>
+            </h4>
+            #allergy($item)
+##            #parse("allergy.vm")
+##            <table class="hmp-labeled-values">
+##                <tr>
+##                    <td>Originator</td>
+##                    <td>$hmp.nameCase($!item.originatorName)</td>
+##                    <td>Nature of reaction</td>
+##                    <td>$!item.mechanism</td>
+##                </tr>
+##                <tr>
+##                    <td>Originated</td>
+##                    <td>$hmp.formatDateTime($!item.entered)</td>
+##                    <td>Observed/Historical</td>
+##                    #if($item.historical)
+##                        <td>Historical</td>
+##                    #else
+##                        <td>Observed</td>
+##                    #end
+##                </tr>
+##                <tr>
+##                    <td>Verified</td>
+##                    <td>$!esc.html($!item.verifierName)</td>
+##                    <td>Obs dates/severity</td>
+##                    <td>
+##                        #foreach($obs in $item.observations)
+##                            #if ($obs)
+##                                <div>$hmp.formatDate($obs.date)&nbsp;$obs.severity</div>
+##                            #end
+##                        #end
+##                    </td>
+##                </tr>
+##                <tr>
+##                    <td >Drug Classes</td>
+##                    <td colspan="3">
+##                    #foreach($drugCls in $item.drugClasses)
+##                        #if ($drugCls.name)
+##                            <div>$drugCls.name</div>
+##                        #end
+##                    #end
+##                    </td>
+##                </tr>
+##                <tr>
+##                    <td>Comments</td>
+##                    <td colspan="3">
+##                        #foreach($comment in $item.comments)
+##                            #if ($comment)
+##                                <blockquote>
+##                                    <p>$comment.comment</p>
+##                                    <small>$hmp.formatDateTime($comment.entered) by $comment.enteredByName</small>
+##                                </blockquote>
+##                            #end
+##                        #end
+##                    </td>
+##                </tr>
+##            </table>
+            <hr/>
+        #end
+    #foreach($flag in $flags)
+        <div id="cwadf-$esc.jqId($flag.uid)">
+            <h2>${flag.name}<span style="margin-left: 10px" class="label#if($flag.category=="I (NATIONAL)") label-danger#else label-warning#end">Category ${flag.category}</span></h2>
+            <p class="lead">${flag.text}</p>
+            <table class="hmp-labeled-values" style="margin-top: 1em">
+                <tr><td>Initial Assigned Date</td><td>$hmp.formatDateTime($flag.assignTS)</td><td>Assignment Status</td><td>${flag.assignmentStatus}</td></tr>
+                <tr><td>Approved by</td><td>${flag.approved}</td><td>Owner Site</td><td>${flag.ownerSite}</td></tr>
+                <tr><td>Next Review Date</td><td>$hmp.formatDateTime($flag.nextReviewDT)</td><td>Originating Site</td><td>${flag.originatingSite}</td></tr>
+            </table>
+        </div>
+        <hr/>
+    #end
+        #foreach($item in $notes)
+                #if($item.text && $item.text[0])
+                    <h4 id="cwadf-$esc.jqId($item.uid)">$item.kind<span
+                            class="text-muted" style="margin-left: 10px">$!hmp.formatDate($item.referenceDateTime)</span></h4>
+                    <table class="hmp-labeled-values">
+                        <tr>
+                            <td>Local Title</td>
+                            <td>$!item.localTitle</td>
+                            <td>Standard Title</td>
+                            <td>$!item.nationalTitle.title</td>
+                        </tr>
+                        <tr>
+                            <td>Date of Note</td>
+                            <td>$!hmp.formatDateTime($!item.referenceDateTime)</td>
+                            <td>Entry Date</td>
+                            <td>$!hmp.formatDateTime($!item.entered)</td>
+                        </tr>
+                        <tr>
+                            <td>Author</td>
+                            <td>$!item.authorDisplayName</td>
+                            <td>Exp. Cosigner</td>
+                            <td>$!item.cosignerDisplayName</td>
+                        </tr>
+                        <tr>
+                            <td>Urgency</td>
+                            <td>$!item.urgency</td>
+                            <td>Status</td>
+                            <td>$!item.statusDisplayName</td>
+                        </tr>
+                        #if($item.attending)
+                            <tr>
+                                <td>Attending</td>
+                                <td>$!item.attendingDisplayName</td>
+                            </tr>#end
+                    </table>
+                    <br/>
+                    <pre class="cpe-document-body">${item.text[0].content}
+#foreach($clin in $item.clinicians)
+#if($clin.role.equals('S'))
+/es/ ${clin.signature}
+Signed: $hmp.formatDateTime($clin.signedDateTime)
+#end
+#end
+</pre>
+                    #foreach($txt in $item.text)
+                        #if($velocityCount>1)
+                            #if($txt.content)
+                                #set($docid="doc-result-addendum$txt.uid")
+                                #set($anumb="ADDENDUM-${velocityCount}")
+                                #collapsible($docid $anumb $txt "addendum")
+                            #end
+                        #end
+                    #end
+                #end
+            #end
+            #if ($velocityHasNext)
+                <hr/>
+            #end
+        ## when there are multiple items being displayed at the end of the page, the calculations of scroll bar location
+        ## and highlighting menu are not so accurate ...  so give some extra space after the last item (MSTHRE-2646)
+        ## any better way??
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+</body>
+</html>

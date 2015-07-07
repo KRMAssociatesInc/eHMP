@@ -1,0 +1,113 @@
+<div class="panel" id="panel--{{elKind}}" style="margin-bottom:auto;">
+    <div id="panel--{{elKind}}--head"
+         class=" panel-heading noPadding collapsed"
+         data-parrent="#panel-encGist"
+
+         {{#unless empty}}
+            data-toggle="collapse"
+         {{/unless}}>
+        <div id="{{elKind}}"
+             class="row noMargin equalHeights selectable encGist">
+            <div class="col-sm-5 text left-side info-display  {{#unless empty}} quickDraw {{/unless}}">
+                <div class="border-vertical">
+                    {{#unless empty}}
+                        <span id="caret" arrowPosition="right" class="right-caret"></span>
+                    {{/unless}}
+                    {{#if empty}}
+                        <span id="caret"  arrowPosition="none" class="empty-caret"></span>
+                    {{/if}}
+                    {{kind}}
+                </div>
+            </div>
+            <div id="button_{{elKind}}"
+                 class="col-sm-7 {{#unless empty}} quickDraw {{/unless}} right-side info-display has-popover"
+                 {{#unless empty}}
+                    data-toggle="popover"
+                    title="{{#if futureTime}}
+                            Next
+                        {{else}}
+                            Recent
+                        {{/if}}
+                        {{kind}}"
+                    data-content="<table id='encounters_tooltip_{{elKind}}' class='table table-condensed'>
+                        <thead>
+                            <tr class='row'>
+                                {{#if visit}}       <th>Date</th><th>Appt Status</th><th>Clinic Name</th><th>Provider</th><th>Facility</th>      {{/if}}
+                                {{#if admission}}   <th>Date</th><th>Diagnosis</th><th>Facility</th>            {{/if}}
+                                {{#if procedure}}   <th>Date</th><th>Procedure Name</th><th>Service</th><th>Facility</th>                        {{/if}}
+                                {{#if appointment}} <th>Date</th><th>Appt Status</th><th>Clinic Name</th><th>Provider</th><th>Facility</th>      {{/if}}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#if admission}}
+                                {{#if recent}}
+                                    {{#each recent}}
+                                        <tr class='row'>
+                                            <td>{{showDate}}</td>
+                                              {{!--<td>{{service}}</td>--}}
+                                            <td>{{reasonName}}</td>
+                                              {{!--<td>{{encProvider}}</td>--}}
+                                            <td>{{facilityMoniker}}</td>
+                                        </tr>
+                                    {{/each}}
+                                {{/if}}
+                            {{/if}}
+                            {{#if visit}}
+                                {{#if recent}}
+                                    {{#each recent}}
+                                        <tr class='row'>
+                                            <td>{{showDate}}</td>
+                                            <td>{{appointmentStatus}}</td>
+                                            <td>{{stopCodeName}}</td>
+                                            <td>{{encProvider}}</td>
+                                            <td>{{facilityMoniker}}</td>
+                                        </tr>
+                                    {{/each}}
+                                {{/if}}
+                            {{/if}}
+                            {{#if appointment}}
+                                {{#if recent}}
+                                    {{#each recent}}
+                                        <tr class='row'>
+                                            <td>{{showDate}}</td>
+                                            <td>{{appointmentStatus}}</td>
+                                            <td>{{stopCodeName}}</td>
+                                            <td>{{encProvider}}</td>
+                                            <td>{{facilityMoniker}}</td>
+                                        </tr>
+                                    {{/each}}
+                                {{/if}}
+                            {{/if}}
+                            {{#if procedure}}
+                                {{#if recent}}
+                                    {{#each recent}}
+                                        <tr class='row'>
+                                            <td>{{showDate}}</td>
+                                            <td>{{procName}}</td>
+                                            <td>{{service}}</td>
+                                            <td>{{facilityMoniker}}</td>
+                                        </tr>
+                                    {{/each}}
+                                {{/if}}
+                            {{/if}}
+                            </tbody>
+                        </table>"
+                 {{/unless}}>
+                <div class="row">
+                    <div class="col-sm-3 text text-center border-vertical">
+                        {{timeSinceLast}}
+                    </div>
+                    <div class="col-sm-3 text text-center">
+                        {{count}}
+                    </div>
+                    <div class="col-sm-6 noPadding">
+                        <div id='encounter-chart-container-{{elKind}}' class="gChartMinEnc"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="subpanel--{{elKind}}" class="panel-collapse gistSubList collapse" data-toggle="false" role="tabpanel">
+    </div>
+</div>    
+

@@ -1,0 +1,61 @@
+.nav {
+    /*background: #eee;*/
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+    background-color: transparent;
+    color: darkblue;
+}
+.nav .nav {
+    display: none;
+}
+
+#toc > .nav > li > ul {
+    margin-top: -10px;
+}
+
+.nav .active .nav,
+.nav .activechild .nav {
+    display: block;
+}
+
+#toc > .nav > li.active,
+#toc > .nav > li.activechild {
+    border-left: 1px solid orangered;
+    margin-left: -1px;
+}
+
+.nav .active > a {
+    border-left: 5px solid orangered;
+    margin-left: -3px; /* overlap the 1px border by 2px on each side */
+    color: #b22222;
+}
+
+.nav .nav .active > a {
+    padding-left: 28px; /* 30px default -2 for border */
+
+}
+
+#toc > .nav > li.active > a {
+    padding-left: 13px; /* 15px default -2 for border */
+}
+
+.nav .nav > li > a {
+    padding-left: 30px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.affix {
+    transform: none;
+}
+
+/*#toc > .nav > li.activechild > a,*/
+/*#toc > .nav > li.active > a {*/
+    /*padding-bottom: 1px;*/
+/*}*/
+
+pre {
+    /* background-color: #FDF6E3;  /* solarized light */
+    /*background-color: #F8F8F8;  *//* github */
+}

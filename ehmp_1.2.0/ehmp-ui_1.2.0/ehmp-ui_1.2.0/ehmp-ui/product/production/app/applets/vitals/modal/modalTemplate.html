@@ -1,0 +1,60 @@
+{{#if navHeader}} <p class="text-right"><button type="button" tabindex="0" class="btn btn-default vitalsPrev"><i class="fa fa-arrow-up"></i>&nbsp;Previous</button> &nbsp; <button type="button" tabindex="0" class="btn btn-default vitalsNext"><i class="fa fa-arrow-down"></i>&nbsp;Next</button></p>
+{{/if}}
+<div class="table-responsive"><table class="table">
+    <thead>
+        <tr tabindex="0">
+            <th tabindex="0" id="displayName">Vital</th>
+            <th tabindex="0" id="result">Result</th>
+            <th tabindex="0" id="observedFormatted">Date Observed</th>
+            <th tabindex="0" id="facility">Facility</th>
+            <th tabindex="0" id="type">Type</th>
+            <th tabindex="0" id="dateEntered">Date Entered</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr tabindex="0"><td tabindex="0" id="displayName">{{#if tooltipName}}{{tooltipName}}{{else}}{{displayName}}{{/if}}</td>
+        <td tabindex="0" id="result">{{#if formattedHeight}}
+        {{formattedHeight}}
+        {{else}}{{originalResult}} {{units}}
+        {{/if}}
+{{#if metricResult}}
+    <span class='grayText'>({{metricResult}} {{metricUnits}})</span>
+{{/if}}</td>
+        <td tabindex="0" id="observedFormatted">{{#if observed}}
+    {{observedFormatted}}<span class='grayText'>{{observedTimeFormatted}}</span>
+{{/if}}</td>
+        <td tabindex="0" id="facility"><span class="grayText">{{facilityMoniker}}</span></td>
+        <td tabindex="0" id="type">{{typeName}}</td>
+        <td tabindex="0" id="dateEntered">{{resultedFormatted}}<span class='grayText'>{{resultedTimeFormatted}}</span></td></tr>
+    </tbody>
+</table></div>
+<form class="form-inline" role="form">
+    <div id="date-range-filter"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5" id="lr-data-table-view">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{#if tooltipName}}{{tooltipName}}{{else}}{{displayName}}{{/if}}</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <small>Vitals Tests: <span id="total-tests"></span></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive"><div class="js-backgrid"></div></div>
+                </div>
+            </div>
+            <div class="col-md-7" id="lr-graph">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{#if tooltipName}}{{tooltipName}}{{else}}{{displayName}}{{/if}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="js-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

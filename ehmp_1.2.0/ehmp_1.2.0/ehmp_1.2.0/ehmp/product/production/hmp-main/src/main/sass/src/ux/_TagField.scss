@@ -1,0 +1,54 @@
+.hmp-tag-field {
+  border: 1px solid $form-field-border-color;
+  @include border-radius($form-field-border-radius);
+
+  .#{$prefix}form-trigger-wrap {
+    border: none;
+    @include border-radius(0px);
+  }
+}
+
+.hmp-tags-wrap-cell {
+  white-space: nowrap;
+}
+
+.hmp-tag {
+  margin-left: 2px;
+
+  .tag-remove {
+    margin-left: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    @include opacity(0.80);
+    cursor: pointer;
+  }
+  .tag-remove:hover,
+  .tag-remove:focus {
+    text-decoration: none;
+    @include opacity(1.0);
+  }
+}
+
+.hmp-tag-picker {
+  padding: 6px;
+  background-color: $dropdown-bg;
+  //border-color: #b5b5b5 1px solid;
+  @include border-radius($border-radius-large);
+}
+
+.hmp-tag-tile {
+  height: 58px;
+  width: 138px;
+  padding: 3px;
+  margin: 0px 6px 6px;
+  min-width: 0px;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  white-space: normal;
+  @include border-radius($border-radius-large);
+}
+
+.hmp-tag-tile-over {
+  border: $dropdown-border 1px solid;
+}

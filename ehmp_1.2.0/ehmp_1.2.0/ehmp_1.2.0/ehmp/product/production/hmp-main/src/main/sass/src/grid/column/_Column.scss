@@ -1,0 +1,85 @@
+.#{$prefix}column-header {
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+
+  border-top: none;
+  border-bottom: none;
+  border-left:  none;
+  border-right: $grid-column-header-border-width solid $grid-header-background-color;
+}
+
+.#{$prefix}group-header {
+  padding: 0;
+  border-left-width: 0;
+}
+.#{$prefix}group-sub-header {
+  background: transparent;
+  border-top: 1px solid $grid-header-background-color;
+  border-left-width: 0;
+}
+
+.#{$prefix}column-header-inner {
+  zoom: 1;
+  position: relative;
+  white-space: nowrap;
+  //line-height: 14px;
+  padding: $grid-header-padding;
+
+  font: $grid-column-header-font;
+
+  @if $grid-header-color {
+    color: $grid-header-color;
+  }
+
+  .#{$prefix}column-header-text {
+    white-space: nowrap;
+  }
+}
+
+.#{$prefix}column-header-trigger {
+  display: none;
+  height: 100%;
+  width: $grid-header-trigger-width;
+  background: no-repeat left center;
+  background-color: $grid-header-background-color;
+  background-image: theme-background-image('grid/hd-pop');
+  position: absolute;
+  right: 1;
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.#{$prefix}column-header-over, .#{$prefix}column-header-open {
+  .#{$prefix}column-header-trigger {
+    display: block;
+  }
+}
+
+.#{$prefix}column-header-align-right {
+  text-align: right;
+
+  .#{$prefix}column-header-text {
+    padding-right: 0.5ex;
+    margin-right: 6px;
+  }
+}
+.#{$prefix}column-header-align-center {
+  text-align: center;
+}
+.#{$prefix}column-header-align-left {
+  text-align: left;
+}
+
+// Sort direction indicator is a background of the text span.
+.#{$prefix}column-header-sort-ASC .#{$prefix}column-header-text {
+  padding-right: 16px;
+  background: no-repeat right -1px;
+  background-image: theme-background-image('grid/sort_asc');
+}
+.#{$prefix}column-header-sort-DESC .#{$prefix}column-header-text {
+  padding-right: 16px;
+  background: no-repeat right -1px;
+  background-image: theme-background-image('grid/sort_desc');
+}

@@ -1,0 +1,137 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "Description": "IBUPROFEN 100MG/5ML SUSP ($.30/120ML)--P",
+        "OrderDate": "20131118100800",
+        "OrderingProvider": "BHIE, USERONE",
+        "Type": "MEDICATION",
+        "EnteredBy": "",
+        "OrderId": "131118-00002",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "Ncid": "3000268424",
+        "Status": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "29305-0",
+        "Facility": "",
+        "MedicationOrders": [
+          {
+            "EnteredByName": "BHIE, USERONE",
+            "ActionCode": "DC",
+            "GiveAmount": "100",
+            "RequestedDispenseAmount": "120",
+            "StartDate": "20131118100800",
+            "Duration": "D6",
+            "OrderType": "9",
+            "DeliverToLocationName": "",
+            "PriorOrderNumber": "",
+            "IntervalTimeInterval": "",
+            "RequestedGiveTimeUnit": "",
+            "DrugText": "IBUPROFEN 100MG/5ML SUSP ($.30/120ML)--P",
+            "ChildResistant": "true",
+            "RouteDescription": "PO",
+            "DispensingLocationName": "",
+            "Quantity": "120",
+            "OrderDate": "20131118100800",
+            "GiveUnits": "",
+            "OrderComment": "",
+            "Sig": "TAKE ONE TEASPOONFUL BY MOUTH EVERY 6-8 HOURS WITH FOOD AS NEEDED FOR HIGH FEVER OR PAIN",
+            "IntervalRepeatPattern": "",
+            "NumberOfRefills": "0",
+            "OrderingProviderName": "BHIE, USERONE",
+            "FacilityName": "NH Great Lakes IL",
+            "Ncid": "3000268424",
+            "Priority": "ROUTINE",
+            "EndDate": "20131124100700",
+            "DrugAlternateText": "CHILDREN'S MOTRIN 100 MG/5 ML",
+            "EnteringLocationName": "Family Practice Clinic",
+            "OrderNumber": "131118-00002",
+            "GiveFormDescription": "SUSPENSION",
+            "VerifiedByName": "",
+            "EventId": "1000000293"
+          }
+        ],
+        "EventId": "1000000294"
+      },
+      "dataType": 22
+    },
+    {
+      "dataRecord": {
+        "Description": "ACETAMINOPHEN 325MG TAB--PO 325MG TAB",
+        "OrderDate": "20131118100700",
+        "OrderingProvider": "BHIE, USERONE",
+        "Type": "MEDICATION",
+        "EnteredBy": "",
+        "OrderId": "131118-00001",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "Ncid": "3000261885",
+        "Status": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "29305-0",
+        "Facility": "",
+        "MedicationOrders": [
+          {
+            "EnteredByName": "BHIE, USERONE",
+            "ActionCode": "DC",
+            "GiveAmount": "325",
+            "RequestedDispenseAmount": "24",
+            "StartDate": "20131118100800",
+            "Duration": "D3",
+            "OrderType": "9",
+            "DeliverToLocationName": "",
+            "PriorOrderNumber": "",
+            "IntervalTimeInterval": "",
+            "RequestedGiveTimeUnit": "",
+            "DrugText": "ACETAMINOPHEN 325MG TAB--PO 325MG TAB",
+            "ChildResistant": "true",
+            "RouteDescription": "PO",
+            "DispensingLocationName": "",
+            "Quantity": "24",
+            "OrderDate": "20131118100700",
+            "GiveUnits": "",
+            "OrderComment": "",
+            "Sig": "TAKE 1 TABLET BY MOUTH EVERY 6 HOURS AS NEEDED FOR HEADACHE/FEVER/PAIN OR AS DIRECTED",
+            "IntervalRepeatPattern": "",
+            "NumberOfRefills": "0",
+            "OrderingProviderName": "BHIE, USERONE",
+            "FacilityName": "NH Great Lakes IL",
+            "Ncid": "3000261885",
+            "Priority": "ROUTINE",
+            "EndDate": "20131121100700",
+            "DrugAlternateText": "MAPAP 325 MG TABLET",
+            "EnteringLocationName": "Family Practice Clinic",
+            "OrderNumber": "131118-00001",
+            "GiveFormDescription": "TABLET",
+            "VerifiedByName": "",
+            "EventId": "1000000295"
+          }
+        ],
+        "EventId": "1000000296"
+      },
+      "dataType": 22
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

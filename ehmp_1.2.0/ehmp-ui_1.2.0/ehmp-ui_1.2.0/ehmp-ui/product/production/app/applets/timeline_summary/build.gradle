@@ -1,0 +1,76 @@
+ext.set('groupId', 'us.vistacore.timeline_summary')
+ext.set('applet', 'timeline_summary')
+
+def localApplet = ['APP_ZIP': "${-> ziptimeline_summary.outputs.files.singleFile.getCanonicalPath()}", 'APPLET' : "timeline_summary"]
+
+ext.set('envVars', localApplet)
+
+buildscript {
+  repositories {
+      jcenter()
+      maven { url 'http://dl.bintray.com/robfletcher/gradle-plugins' }
+  }
+  dependencies {
+      classpath 'com.moowork.gradle:gradle-grunt-plugin:0.5'
+  }
+}
+
+apply plugin: 'grunt'
+
+task createNodeModulesLink << {
+  File link = new File(projectDir, 'node_modules')
+  if (!link.exists()) {
+   ant.symlink(resource: "${parent.parent.projectDir}/node_modules", link: "${projectDir}/node_modules")
+  }
+}
+
+task installNpmFortimeline_summary (type: Exec, dependsOn:[createNodeModulesLink] ) {
+  commandLine "npm", "install"
+  workingDir "../../"
+}
+
+task ziptimeline_summary(type: Zip) {
+  archiveName = "app.zip"
+  destinationDir parent.parent.buildDir
+  from('../../test') {
+    include = ["screens"]
+  }
+  from('../../') {
+    includes = ["app.json"]
+  }
+}
+
+task buildtimeline_summary(dependsOn:[installNpmFortimeline_summary, grunt_build]) {
+  group 'timeline_summary'
+  description 'Installs NPM and uses grunt to build timeline_summary'
+}
+
+task testtimeline_summary(dependsOn:[installNpmFortimeline_summary, grunt_test]) {
+  group 'timeline_summary'
+  description 'Installs NPM and runs grunts tests.'
+}
+
+task intTesttimeline_summary(dependsOn: [installNpmFortimeline_summary, grunt_inttest]) {
+  group 'timeline_summary'
+  description 'Installs NPM and runs grunts integration tests.'
+}
+
+task deploytimeline_summary(dependsOn:[ziptimeline_summary, deployApplet]) {
+  group 'timeline_summary'
+  description 'Locally deploys timeline_summary applet to eHMP-UI app.'
+}
+
+task timeline_summaryAcceptanceTest(dependsOn: [bundleInstall, acceptanceTestAll]){
+  group "timeline_summary"
+  description "Runs the timeline_summary acceptance tests in a FireFox browser"
+}
+
+task build {}
+task test{}
+build.dependsOn buildtimeline_summary
+test.dependsOn testtimeline_summary
+deployApplet.mustRunAfter ziptimeline_summary
+grunt_deploy.mustRunAfter installNpmFortimeline_summary
+grunt_build.mustRunAfter installNpmFortimeline_summary
+grunt_test.mustRunAfter installNpmFortimeline_summary
+grunt_inttest.mustRunAfter installNpmFortimeline_summary

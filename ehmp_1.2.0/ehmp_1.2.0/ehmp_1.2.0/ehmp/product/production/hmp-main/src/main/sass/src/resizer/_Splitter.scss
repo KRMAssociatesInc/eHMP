@@ -1,0 +1,20 @@
+.#{$prefix}layout-split-left,
+.#{$prefix}layout-split-right {
+  top: 50%;
+  margin-top: round(-$collapse-tool-size / 2);
+  width: $splitter-size;
+  height: $collapse-tool-size;
+}
+
+.#{$prefix}layout-split-top,
+.#{$prefix}layout-split-bottom {
+  left: 50%;
+  width: $collapse-tool-size;
+  height: $splitter-size;
+  margin-left: round(-$collapse-tool-size / 2);
+}
+
+.#{$prefix}splitter-active {
+  background-color: $splitter-active-background-color;
+  @include opacity($splitter-active-opacity);
+}

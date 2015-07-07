@@ -1,0 +1,13 @@
+<div id="appts-filter-bar">
+    <span>Source: </span><div class="dropdown btn-group btn-input clearfix" id="appts-site-dropdown-menu-btn-group" style="overflow: visible;">
+      <button class="btn btn-default dropdown-toggle form-control" type="button" id="appts-dropdown-menu-site" data-toggle="dropdown" style="font-size:12px;"><span data-bind="label" id="appts-site-menu-btn-label-span" style="width:20px;">All VA + DOD</span><span>&nbsp;&nbsp;<span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="font-size:12px;">
+        {{#each siteitems}}
+          {{#if show}}
+            <li role="presentation"  class="nav-pills-appts" id="{{site}}"><a role="menuitem" tabindex="-1" href="#">{{siteLabel}}</a></li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+</div>

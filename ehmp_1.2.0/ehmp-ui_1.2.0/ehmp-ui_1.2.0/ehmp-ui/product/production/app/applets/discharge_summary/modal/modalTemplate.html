@@ -1,0 +1,31 @@
+<div class="dischargeSummaryDetail">
+
+    <div class="container-fluid" role="main">
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Facility:</strong></div>
+            <div class="col-md-10" tabindex='0'>{{summaryFacilityName}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Author:</strong></div>
+            <div class="col-md-3" tabindex='0'>{{summaryAuthorDisplayName}}</div>
+            <div class="col-md-3" tabindex='0'><strong>Expected Cosigner:</strong></div>
+            <div class="col-md-4" tabindex='0'>{{summaryCosignerDisplayName}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Status:</strong></div>
+            <div class="col-md-10 status {{summaryStatusClass}}" tabindex='0'><strong>{{summaryStatusDisplayName}}</strong></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Attending:</strong></div>
+            <div class="col-md-10" tabindex='0'>{{summaryAttendingDisplayName}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2" tabindex='0'><strong>Date/Time:</strong></div>
+            <div class="col-md-10" tabindex='0'>{{formatDate summaryDateTime "MM/DD/YYYY - HH:mm"}}</div>
+        </div>
+    </div>
+
+    <div>
+        <pre tabindex="0">{{summaryText}}</pre>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+/** @class Ext.tab.Bar */
+//
+
+$tabbar-base-color: $body-bg !default;
+$tabbar-background-gradient: 'none' !default;
+$tabbar-strip-height: 1px !default;
+$tabbar-border-width: 0 !default;
+$tabbar-strip-border-width: 0 !default;
+$tabbar-strip-plain-border-width: $tabbar-strip-border-width !default;
+$tabbar-strip-border-color: $nav-tabs-border-color !default;
+$tabbar-strip-background-color: $tabbar-strip-border-color !default;
+
+$tabbar-scroller-width: 24px !default;
+$tabbar-scroller-opacity: .5 !default;
+$tabbar-scroller-opacity-over: .6 !default;
+$tabbar-scroller-opacity-pressed: .7 !default;
+$tabbar-scroller-opacity-disabled: .25 !default;
+$tabbar-scroller-include-hover-background-position: false !default;
+$tabbar-scroller-include-plain-icon: true !default;
+
+$tabbar-closable-icon-include-hover-background-position: true !default;
+$tabbar-closable-icon-include-pressed-background-position: true !default;

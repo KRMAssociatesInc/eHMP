@@ -1,0 +1,493 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "EncounterId": "2151767189",
+        "EvalManagementCode": "",
+        "EncounterNumber": "61637",
+        "EnteredBy": "",
+        "AppointmentDate": "20081006195840",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20100622112945",
+        "Procedures": [
+
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+
+        ],
+        "DischargeDisposition": "",
+        "FacilityNcid": "16131252",
+        "LoincCode": "46240-8",
+        "Facility": "TMDS Facility",
+        "VisitReason": "",
+        "AppointmentType": "INPATIENT",
+        "Provider": "",
+        "Clinic": "TMDS Clinic",
+        "EventId": "1000000966"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2151773215",
+        "EvalManagementCode": "",
+        "EncounterNumber": "61640",
+        "EnteredBy": "",
+        "AppointmentDate": "20080916040000",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20100622160951",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "TMDS Facility",
+            "EnteredBy": "MIDTIER, SJFONE",
+            "ProcedureId": "2151773278",
+            "Procedure": "Anesthesia For Radical Surgery On Nose And Sinuses",
+            "EnteredByDate": "20100622160959",
+            "Code": "00162",
+            "ProcedureDate": "20080916040000",
+            "EventId": "1000000967"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Smallpox, unspecified",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "050.9",
+            "EventId": "1000000968"
+          }
+        ],
+        "DischargeDisposition": "",
+        "FacilityNcid": "16131252",
+        "LoincCode": "46240-8",
+        "Facility": "TMDS Facility",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "",
+        "Clinic": "TMDS Clinic",
+        "EventId": "1000000969"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2155379708",
+        "EvalManagementCode": "99201",
+        "EncounterNumber": "LAND-7484",
+        "EnteredBy": "LANF, THREE",
+        "AppointmentDate": "20110519113600",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20110519121927",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "Landstuhl RMC/0607",
+            "EnteredBy": "MIDT, LANDFONE",
+            "ProcedureId": "2155379723",
+            "Procedure": "Hot water bottle, ice cap or collar, heat and/or cold wrap, any type",
+            "EnteredByDate": "20110519121932",
+            "Code": "",
+            "ProcedureDate": "20110519114356",
+            "EventId": "1000000970"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Migraine, unspecified, without mention of intractable migraine without mention of status migrainosus",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "346.90",
+            "EventId": "1000000971"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1181588",
+        "LoincCode": "46240-8",
+        "Facility": "Landstuhl RMC",
+        "VisitReason": "Notes Entered by: LANF,FIVE 19 May 2011 0735\r\n------------------------------\r\nLTM - RIP Test",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "LANF, THREE",
+        "Clinic": "LSL Cardiology",
+        "EventId": "1000000972"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2155598149",
+        "EvalManagementCode": "99211",
+        "EncounterNumber": "LAND-11107",
+        "EnteredBy": "LANF, FIVE",
+        "AppointmentDate": "20111020213720",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20111215220408",
+        "Procedures": [
+
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Migraine, unspecified, without mention of intractable migraine without mention of status migrainosus",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "346.90",
+            "EventId": "1000000973"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1181588",
+        "LoincCode": "46240-8",
+        "Facility": "Landstuhl RMC",
+        "VisitReason": "Notes Entered by: LANF,FIVE 20 Oct 2011 1736\r\n------------------------------\r\nLTM - Test",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "LANF, FIVE",
+        "Clinic": "LSL Cardiology",
+        "EventId": "1000000974"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2156791145",
+        "EvalManagementCode": "99212",
+        "EncounterNumber": "SEYJ-53053",
+        "EnteredBy": "SJF, TEN",
+        "AppointmentDate": "20121115154424",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20121115205508",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "",
+            "EnteredBy": "MIDTIER, SJFONE",
+            "ProcedureId": "2156791160",
+            "Procedure": "Pulmonary Function Tests Peak Expiratory Flow",
+            "EnteredByDate": "20121115205509",
+            "Code": "94150",
+            "ProcedureDate": "20121115154424",
+            "EventId": "1000000975"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Migraine, unspecified, without mention of intractable migraine without mention of status migrainosus",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "346.90",
+            "EventId": "1000000976"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1048021",
+        "LoincCode": "46240-8",
+        "Facility": "4th Medical Group",
+        "VisitReason": "Notes Entered by: SJF,TEN 15 Nov 2012 1044\r\n------------------------------\r\nLTM Test",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "SJF, TEN",
+        "Clinic": "Blue MTF",
+        "EventId": "1000000977"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2156824290",
+        "EvalManagementCode": "99212",
+        "EncounterNumber": "LAND-11898",
+        "EnteredBy": "LANF, FOUR",
+        "AppointmentDate": "20111102213626",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20121126173721",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "Landstuhl RMC/0607",
+            "EnteredBy": "MIDT, LANDFONE",
+            "ProcedureId": "2156824287",
+            "Procedure": "",
+            "EnteredByDate": "20121126173721",
+            "Code": "22634",
+            "ProcedureDate": "20120410195004",
+            "EventId": "1000000978"
+          },
+          {
+            "Status": "Active",
+            "Facility": "Landstuhl RMC/0607",
+            "EnteredBy": "MIDT, LANDFONE",
+            "ProcedureId": "2156824286",
+            "Procedure": "",
+            "EnteredByDate": "20121126173720",
+            "Code": "22634",
+            "ProcedureDate": "20120410194959",
+            "EventId": "1000000979"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Other specified anomalies of skin",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "757.39",
+            "EventId": "1000000980"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1181588",
+        "LoincCode": "46240-8",
+        "Facility": "Landstuhl RMC",
+        "VisitReason": "Notes Entered by: LANF,ONE 02 Nov 2011 1736\r\n------------------------------\r\nLTM - Test of thinapp",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "LANF, FOUR",
+        "Clinic": "LSL Cardiology",
+        "EventId": "1000000981"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2156824318",
+        "EvalManagementCode": "99211",
+        "EncounterNumber": "LAND-59705",
+        "EnteredBy": "LANF, FOUR",
+        "AppointmentDate": "20121126174007",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20121126174248",
+        "Procedures": [
+
+        ],
+        "Status": "Updated",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Migraine, unspecified, without mention of intractable migraine without mention of status migrainosus",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "346.90",
+            "EventId": "1000000982"
+          },
+          {
+            "Status": "",
+            "Diagnosis": "Cluster headache syndrome, unspecified",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "339.00",
+            "EventId": "1000000983"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1181588",
+        "LoincCode": "46240-8",
+        "Facility": "Landstuhl RMC",
+        "VisitReason": "LTM - TFS 7780 test",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "LANF, FOUR",
+        "Clinic": "LSL Cardiology",
+        "EventId": "1000000984"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157538362",
+        "EvalManagementCode": "99211",
+        "EncounterNumber": "LAND-98026",
+        "EnteredBy": "LANF, FOURTY",
+        "AppointmentDate": "20130422115223",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20130424185344",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "Landstuhl RMC/0607",
+            "EnteredBy": "MIDT, LANDFONE",
+            "ProcedureId": "2157538360",
+            "Procedure": "Injection, paliperidone palmitate, 1 mg",
+            "EnteredByDate": "20130424185343",
+            "Code": "C9255",
+            "ProcedureDate": "20130424184748",
+            "EventId": "1000000985"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Contact dermatitis and other eczema due to drugs and medicines in contact with skin",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "692.3",
+            "EventId": "1000000986"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1181588",
+        "LoincCode": "46240-8",
+        "Facility": "Landstuhl RMC",
+        "VisitReason": "Notes Entered by: LANF,FIVE 22 Apr 2013 0752\r\n------------------------------\r\nLTM - Test",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "LANF, FOURTY",
+        "Clinic": "LSL Cardiology",
+        "EventId": "1000000987"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157551844",
+        "EvalManagementCode": "99211",
+        "EncounterNumber": "SEYJ-16648",
+        "EnteredBy": "SJF, FIVE",
+        "AppointmentDate": "20130509153039",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20130509201704",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "4th Medical Group/0090",
+            "EnteredBy": "MIDTIER, SJFONE",
+            "ProcedureId": "2157551842",
+            "Procedure": "Social Work Individual Inpatient Counseling 45-50 Minutes",
+            "EnteredByDate": "20130509201704",
+            "Code": "90834",
+            "ProcedureDate": "20130509201518",
+            "EventId": "1000000988"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Anxiety disorder in conditions classified elsewhere",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "293.84",
+            "EventId": "1000000989"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1048021",
+        "LoincCode": "46240-8",
+        "Facility": "4th Medical Group",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "SJF, FIVE",
+        "Clinic": "Blue MTF",
+        "EventId": "1000000990"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157562874",
+        "EvalManagementCode": "99211",
+        "EncounterNumber": "LAND-108625",
+        "EnteredBy": "LANF, ELEVEN",
+        "AppointmentDate": "20130603221922",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20130603222115",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "Landstuhl RMC/0607",
+            "EnteredBy": "MIDT, LANDFONE",
+            "ProcedureId": "2157562872",
+            "Procedure": "Injection, paliperidone palmitate, 1 mg",
+            "EnteredByDate": "20130603222114",
+            "Code": "C9255",
+            "ProcedureDate": "20130603222032",
+            "EventId": "1000000991"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Migraine, unspecified, without mention of intractable migraine without mention of status migrainosus",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "346.90",
+            "EventId": "1000000992"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1181588",
+        "LoincCode": "46240-8",
+        "Facility": "Landstuhl RMC",
+        "VisitReason": "Notes Entered by: LANF,ELEVEN 03 Jun 2013 1818\r\n------------------------------\r\nLTM - HCPCS Test",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "LANF, ELEVEN",
+        "Clinic": "LSL Cardiology",
+        "EventId": "1000000993"
+      },
+      "dataType": 5
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "10",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "10",
+      "RetrievedCount": "10",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

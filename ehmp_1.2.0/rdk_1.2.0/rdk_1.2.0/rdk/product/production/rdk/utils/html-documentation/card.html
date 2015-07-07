@@ -1,0 +1,48 @@
+<div ng-if="link.parameters">
+    <div class="col-lg-12" ng-repeat="(method, parameters) in link.parameters">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title"
+                     ng-click="isCollapsed = !isCollapsed"
+                     ng-init="isCollapsed = true">
+                <button class="btn btn-sm btn-default"
+                      ng-class="{active: !isCollapsed}">{{isCollapsed ? '&plus;' : '&minus;'}}</button>
+                    <span ng-bind-html="link.title|fuzzyFilterHighlight:search.title:'strong'"></span>
+                </div>
+                <div><span class="label label-default">{{method|uppercase}}</span> <a ng-href="{{link.href}}">{{link.href}}</a></div>
+            </div>
+            <div class="panel-body" ng-if="link.description[method]" ng-show="!isCollapsed">
+                <p>{{link.description[method]|linky}}</p>
+            </div>
+            <table class="table table-bordered" ng-show="!isCollapsed">
+                <tr ng-repeat="(parameter, info) in parameters">
+                    <td>{{parameter}}</td>
+                    <td>
+                        <dl class="dl-horizontal parameters">
+                            <dt ng-repeat-start="(infoType, infoValue) in info">
+                                {{infoType}}
+                            </dt>
+                            <dd ng-repeat-end>
+                                <span ng-bind-html="infoValue.toString()|linky"></span>
+                            </dd>
+                        </dl>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div ng-if="!link.parameters">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                <button class="btn btn-sm btn-default" disabled="disabled">&times;</button>
+                    <span ng-bind-html="link.title|fuzzyFilterHighlight:search.title:'strong'"></span>
+                </div>
+                <div><span class="label label-warning">Missing documentation</span> <a ng-href="{{link.href}}">{{link.href}}</a></div>
+            </div>
+        </div>
+    </div>
+</div>

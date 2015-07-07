@@ -1,0 +1,38 @@
+{
+	"icn": "10110V004877",
+	"stampTime": "20131031094920.853",
+	"sourceMetaStamp": {
+		"9E7A": {
+			"pid": "9E7A;8",
+			"localId": "8",
+			"stampTime": "20131031094920.853",
+			"domainMetaStamp": {
+				"lab": {
+					"domain": "lab",
+					"stampTime": "20131031094920.853",
+					"eventMetaStamp": {
+						"urn:va:lab:9E7A:8:CH;6899693.879999;80": {
+							"stampTime": "20131031094920.853"
+						}
+					}
+				}
+			}
+		},
+		"DOD": {
+			"pid": "DOD;0000000008",
+			"localId": "0000000008",
+			"stampTime": "20131031094920.853",
+			"domainMetaStamp": {
+				"allergy": {
+					"domain": "allergy",
+					"stampTime": "20131031094920.853",
+					"eventMetaStamp": {
+						"urn:va:allergy:DOD:0000000008:1000001122": {
+							"stampTime": "20131031094920.853"
+						}
+					}
+				}
+			}
+		}
+	}
+}

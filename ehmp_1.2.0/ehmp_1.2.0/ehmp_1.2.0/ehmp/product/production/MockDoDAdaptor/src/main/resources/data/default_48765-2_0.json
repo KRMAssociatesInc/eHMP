@@ -1,0 +1,539 @@
+{
+  "dataList": [
+    {
+      "dataRecord": {
+        "OnsetDate": "20131203050000",
+        "Allergen": "ENOXACIN (ENOXACIN)",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "AHLTADTE, ATTEND B",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "61021",
+        "EnteredByDate": "20131203203628",
+        "Reaction": "Urticaria",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001122"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20131203050000",
+        "Allergen": "GENTIAN VIOLET (GENTIAN VIOLET)",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "AHLTADTE, ATTEND B",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "13022000",
+        "EnteredByDate": "20131218205255",
+        "Reaction": "Rash",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001123"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20131203050000",
+        "Allergen": "POLOXAMER 407 (POLOXAMER)",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "AHLTADTE, ATTEND B",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "1010311051",
+        "EnteredByDate": "20131203202720",
+        "Reaction": "Anaphylaxis",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001124"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20131203050000",
+        "Allergen": "DECITABINE (DECITABINE)",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "AHLTADTE, ATTEND B",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "1033712000",
+        "EnteredByDate": "20131203201510",
+        "Reaction": "Anaphylaxis",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001125"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20131218050000",
+        "Allergen": "BEE POLLEN (BEE POLLEN)",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "AHLTADTE, ATTEND B",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "14236002",
+        "EnteredByDate": "20131218201049",
+        "Reaction": "Rash",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001126"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20131203050000",
+        "Allergen": "CEFACLOR (CEFACLOR)",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "AHLTADTE, ATTEND B",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "1140",
+        "EnteredByDate": "20131218205100",
+        "Reaction": "Nausea",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001127"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20131203050000",
+        "Allergen": "SODIUM CHLORIDE {Class}",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "AHLTADTE, ATTEND B",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "7090000",
+        "EnteredByDate": "20131203201151",
+        "Reaction": "Nausea",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001128"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20131218050000",
+        "Allergen": "PEANUT OIL (PEANUT OIL)",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "AHLTADTE, ATTEND B",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "15220000",
+        "EnteredByDate": "20131218185613",
+        "Reaction": "Urticaria",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001129"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20131203050000",
+        "Allergen": "SODIUM CHLORIDE 0.45% (1/2 NORMAL SALINE)",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "AHLTADTE, ATTEND B",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "7090054",
+        "EnteredByDate": "20131203200743",
+        "Reaction": "Urticaria",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001130"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20131203050000",
+        "Allergen": "SODIUM CHLORIDE 0.45% (SODIUM CL FOR INHALATION)",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "AHLTADTE, ATTEND B",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "18254001",
+        "EnteredByDate": "20131203200705",
+        "Reaction": "Nausea",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001131"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALFALFA",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "13746024",
+        "EnteredByDate": "20131025185512",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001132"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALFENTANIL HCL",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "12014",
+        "EnteredByDate": "20131025185512",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001133"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALBUTEROL",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "78020",
+        "EnteredByDate": "20131025185511",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001134"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALBUTEROL SULFATE",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "78013",
+        "EnteredByDate": "20131025185511",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001135"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALBUTEROL SULFATE ER",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "5556105",
+        "EnteredByDate": "20131025185511",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001136"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALFALFA",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "13746000",
+        "EnteredByDate": "20131025185512",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001137"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALBUMIN",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "13837289",
+        "EnteredByDate": "20131025185511",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001138"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALBUMIN",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "12728004",
+        "EnteredByDate": "20131025185511",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001139"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALBUMIN HUMAN",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "12728000",
+        "EnteredByDate": "20131025185511",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001140"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALBUMIN (HUMAN)",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "7951005",
+        "EnteredByDate": "20131025185511",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001141"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALEMTUZUMAB",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "5753005",
+        "EnteredByDate": "20131025185512",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001142"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALEFACEPT",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "1024899000",
+        "EnteredByDate": "20131025185511",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001143"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALCOHOL",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "11681019",
+        "EnteredByDate": "20131025185511",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001144"
+      },
+      "dataType": 1
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UP",
+      "SiteName": "va",
+      "SiteId": "2.16.840.1.113883.3.42.10002.100001.8.22200"
+    },
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "share:  Portsmouth",
+      "SiteId": "2.16.840.1.113883.3.42.10002.100001.8.124"
+    },
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "share:  Portsmouth",
+      "SiteId": "2.16.840.1.113883.3.42.10002.100001.8.124"
+    },
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "0",
+      "SiteStatus": "COMPLETE_WITH_ERRORS",
+      "SiteName": "share:  Portsmouth",
+      "SiteId": "2.16.840.1.113883.3.42.10002.100001.8.124"
+    },
+    {
+      "ExpectedCount": "26",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "errorList": [
+    {
+      "ErrorSeverity": "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error",
+      "ErrorCode": "XDSRepositoryError",
+      "ErrorValue": "Request to repository (2.16.840.1.113883.3.42.10002.100001.8.124) failed",
+      "ErrorLocation": ""
+    }
+  ]
+}

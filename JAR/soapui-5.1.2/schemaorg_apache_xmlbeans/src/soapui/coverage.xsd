@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2004-2014 SmartBear Software
+  ~
+  ~ Licensed under the EUPL, Version 1.1 or - as soon as they will be approved by the European Commission - subsequent
+  ~ versions of the EUPL (the "Licence");
+  ~ You may not use this work except in compliance with the Licence.
+  ~ You may obtain a copy of the Licence at:
+  ~
+  ~ http://ec.europa.eu/idabc/eupl
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software distributed under the Licence is
+  ~ distributed on an "AS IS" basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+  ~ express or implied. See the Licence for the specific language governing permissions and limitations
+  ~ under the Licence.
+-->
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://eviware.com/soapui/coverage"
+	elementFormDefault="qualified"
+	xmlns:tns="http://eviware.com/soapui/coverage">
+
+	<element name="projectCoverage" type="tns:ProjectCoverageType"/>
+
+	<complexType name="ProjectCoverageType">
+		<sequence>
+			<element name="name" type="string"/>
+			<element name="contractCoverage" type="tns:CoverageType"/>
+			<element name="interface" type="tns:InterfaceCoverageType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<element name="interfaceCoverage" type="tns:InterfaceCoverageType"/>
+
+	<complexType name="InterfaceCoverageType">
+		<sequence>
+			<element name="name" type="string"/>
+			<element name="ref" type="string"/>
+			<element name="contractCoverage" type="tns:CoverageType"/>
+			<element name="operation" type="tns:OperationCoverageType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<element name="operationCoverage" type="tns:OperationCoverageType"/>
+	
+	<complexType name="OperationCoverageType">
+		<sequence>
+			<element name="interfaceName" type="string"/>
+			<element name="name" type="string"/>
+			<element name="ref" type="string"/>
+			<element name="contractCoverage" type="tns:CoverageType"/>
+			<element name="message" type="tns:MessageType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	
+	<!-- A request or response. -->
+	<complexType name="MessageType">
+		<sequence>
+			<element name="contractCoverage" type="tns:CoverageType"/>
+			<element name="line" type="tns:LineType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="type" type="string"/>
+	</complexType>
+
+	<complexType name="LineType">
+		<sequence>
+			<element name="text" type="string"/>
+			<element name="segment" type="tns:SegmentType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<!-- attribute name="lineNo" type="integer"/ -->
+		<attribute name="coverage" type="string"/>
+	</complexType>
+
+	<complexType name="SegmentType">
+		<sequence>
+			<element name="text" type="string"/>
+		</sequence>
+		<attribute name="coverage" type="string"/>
+	</complexType>
+
+	<complexType name="CoverageType">
+		<sequence>
+			<element name="coverage" type="integer"/>
+			<element name="assertionCoverage" type="integer"/>
+			<element name="count" type="integer"/>
+		</sequence>
+	</complexType>
+
+</schema>

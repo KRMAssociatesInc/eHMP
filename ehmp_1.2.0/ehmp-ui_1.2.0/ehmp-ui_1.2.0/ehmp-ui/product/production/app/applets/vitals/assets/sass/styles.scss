@@ -1,0 +1,172 @@
+.vitalsWrapper {
+    max-height: 150px;
+    overflow-y: scroll;
+}
+
+.grayText {
+    color: #999999;
+}
+
+.notLatestVital {
+    color: #707070;
+    font-style: italic;
+}
+
+label.color-DOD {
+    background-color: #A56900;
+}
+label.color-500, label.color-nonDOD {
+    background-color: #397BB3;
+}
+/*Coversheet View Template Styles*/
+.row-fluid {
+    margin: 1em 0;
+    width: auto;
+}
+.row-fluid a {
+  display: block;
+
+}
+ #vertLine {
+    width: 0px;
+    margin-top: 3px;
+    border: 1px solid #E5E5E5;
+    height: 76px;
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+}
+.vitals-problem-name {
+     white-space: nowrap;
+}
+.no-record{
+     text-align: center;
+     font-style: italic;
+}
+.no-value{
+    text-align: center;
+}
+.a-table table{
+   float: left;
+width: 49%;
+margin: 2px;
+margin-left: 5px;
+border-right: 1px solid #B9B9B9;
+}
+.b-table table{
+    float:left; width: 48%; margin-top: 2px;
+    // border-left: 1px solid #BCBCBC;
+}
+.a-table td, .b-table td {
+    padding: 2px 5px
+}
+tr:nth-child(even) {
+    background-color: #f2f8fe;
+}
+tr.clickable{
+    cursor:pointer;
+}
+tr.clickable:hover{
+background-color: #f5f5f5;
+}
+td.right-aligned{
+    text-align: right;
+}
+.emptyTextVital {
+    font-style: italic;
+    color: #707070;
+    min-height: 40px;
+    padding: 10px;
+}
+
+.smallergreyText {
+    color:#999999;
+    padding-left:2px;
+}
+
+[data-appletid="vitals"] {
+    span.header-hover:hover{
+        cursor: pointer;
+    }
+    div.gistItem {
+        border-bottom: 2px solid #f0f0f0;
+        .sub-elements {
+            display: none;
+        };
+        .graph-container {
+            vertical-align: middle;
+            z-index: 2;
+            height: 21px;
+            overflow:hidden;
+            text-align: right;
+            padding-right: 0px;
+            position:absolute;
+            top: 50%;
+            margin-top: -11px;
+        }
+    }
+
+    .border-vertical {
+        border-right: 1px solid #e5e5e5;
+    }
+    .info-display {
+        margin-left: -10px;
+        margin-right: 10px;
+    }
+    .clearBoth {
+        clear: both;
+    }
+    .emptyGistList {
+        font-style: italic;
+        color: gray;
+        min-height: 40px;
+        padding: 10px;
+    }
+    .changecolor + .tooltip > .tooltip-inner {
+    border: 1px solid #CCCCCC;
+    text-align:left;
+    max-width: 320px;
+        .row{
+            background-color: #000;
+            color: #fff;
+        }
+    }
+    .changeArrow{
+    color: #37779e;
+    font-size: 15px;
+    }
+    .header-bar {
+    box-shadow: 0px 0px 4px 0px #999999;
+    height: 20px;
+    margin-bottom: 5px;
+    }
+    .warning{
+    color: #CC0000;
+    font-weight: bold;
+    }
+    .col-condensed{
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .quickDraw:hover {
+        background-color: #F2F8FE;
+        .quickviewOverlay{
+            display: block;
+            }
+    }
+    // .quickDraw:focus {
+    //     background-color: #F2F8FE;
+    //     outline:0;
+    //     .quickviewOverlay{
+    //         display: block;
+    //      }
+    // }
+    .quickDraw{
+         height: 100%;
+    }
+    .noTopBottomFixedHeight{
+        height: 21px !important;
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+    }
+}

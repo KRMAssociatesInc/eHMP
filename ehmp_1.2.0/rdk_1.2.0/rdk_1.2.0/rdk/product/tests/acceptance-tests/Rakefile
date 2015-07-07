@@ -1,0 +1,100 @@
+require 'rubygems'
+require 'cucumber'
+require 'cucumber/rake/task'
+require 'rubocop/rake_task'
+
+require File.dirname(__FILE__) + '/../../../infrastructure/vagrant/aws/VagrantfileUtil.rb'
+require File.dirname(__FILE__) + '/../../../infrastructure/vagrant/Servers.rb'
+
+$LOAD_PATH.push(File.expand_path(File.dirname(__FILE__) + '/features/lib'))
+
+# Taken from corresponding ehmp Rakefile, may not be necessary
+# Check environment sanity and fail fast if not correct
+fail 'WORKSPACE environment variable not set. Did you "source infrastructure/set.env.sh"?' unless ENV.keys.include?('WORKSPACE')
+fail 'GEM_HOME environment variable not set. Did you "source infrastructure/set.env.sh"?' unless ENV.keys.include?('GEM_HOME')
+
+task :default => [:endToEndTests]
+
+task endToEndTests: [:codequality]
+task endToEndStableTests: [:codequality]
+task endToEndUnstableTests: [:codequality]
+
+task codequality: [
+  :info,
+  :rubocop
+]
+
+task :endToEndTests, [:env] => [:environment_setup]
+task :endToEndStableTests, [:env] => [:environment_setup]
+task :endToEndUnstableTests, [:env] => [:environment_setup]
+task :endToEndOncTests, [:env] => [:environment_setup]
+
+## Attempting to run a sample acceptance test in the features directory
+Cucumber::Rake::Task.new(:endToEndTests) do |t|
+  t.cucumber_opts = "--format Cucumber::Formatter::JsonExpanded --out results.json features --color --format pretty --tags ~@future --tags ~@UI --tags ~@debug --tags ~@manual -f json_pretty -o cucumber.json -f html -o cucumber.html"
+end
+
+## Attempting to run a sample acceptance test in the features directory
+Cucumber::Rake::Task.new(:endToEndStableTests) do |t|
+  t.cucumber_opts = "--format Cucumber::Formatter::JsonExpanded --out results.json features --color --format pretty --tags ~@unstable --tags ~@onc --tags ~@future --tags ~@UI --tags ~@debug --tags ~@manual -f json_pretty -o cucumber.json -f html -o cucumber.html"
+end
+
+Cucumber::Rake::Task.new(:endToEndUnstableTests) do |t|
+  t.cucumber_opts = "--format Cucumber::Formatter::JsonExpanded --out results.json features --color --format pretty --tags @unstable -f json_pretty -o cucumber.json -f html -o cucumber.html"
+end
+
+Cucumber::Rake::Task.new(:endToEndOncTests) do |t|
+  t.cucumber_opts = "--format Cucumber::Formatter::JsonExpanded --out results.json features --color --format pretty --tags ~@unstable --tags @onc --tags ~@future --tags ~@UI --tags ~@debug --tags ~@manual -f json_pretty -o cucumber.json -f html -o cucumber.html"
+end
+
+## Placeholder task for executing all Acceptance Tests for all Mobile Applications
+Cucumber::Rake::Task.new(:allAcceptanceTests) do |t|
+  t.cucumber_opts = "features --color --format pretty --tags ~@future"
+end
+
+task :info do
+  puts '=========================================================================='
+  puts '#     Running codequality checks.                                        #'
+  puts '#     For details, see https://wiki.vistacore.us/display/VACORE/Ruby     #'
+  puts '=========================================================================='
+end
+
+# Rubocop files not created yet
+desc 'Rubocop code quality checks configured in .rubocop.yml file'
+Rubocop::RakeTask.new(:rubocop) do |rubocop|
+  # Specify config file in non-standard location.
+  rubocop.options = ['-c.rubocop.yml']
+
+  # Specify Ruby file locations
+  rubocop.patterns = ['**/*.rb', 'Rakefile']
+
+  # Show emacs style output, and offense counts
+  # See https://github.com/bbatsov/rubocop#formatters for other output options
+  rubocop.formatters = ['emacs', 'o']
+
+  # Abort rake on failure
+  rubocop.fail_on_error = true
+end
+
+task :environment_setup, :env do |task, args|
+  env = args[:env] || 'virtualbox'
+
+  environment_endpoints(env)
+end
+
+def environment_endpoints(env)
+  case env
+  when "virtualbox"
+    ENV["RDK_IP"] = Servers::RDK.localIP
+    ENV["RDK_PORT"] = "8888"
+  when "aws"
+    ENV["RDK_IP"] = VagrantfileUtil::AWS.get_private_ip("rdk")
+    ENV["RDK_PORT"] = "8888"
+    ENV["Perf_Monitor_IP"] = '10.150.78.227'
+    puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    puts "vx-sync = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "vx-sync")}"
+    puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  else
+    fail "Unrecognized environment type: #{env}. Allowable types are: 'virtualbox' and 'aws'"
+  end
+end

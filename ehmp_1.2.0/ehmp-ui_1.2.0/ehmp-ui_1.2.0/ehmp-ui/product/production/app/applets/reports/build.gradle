@@ -1,0 +1,76 @@
+ext.set('groupId', 'us.vistacore.reports')
+ext.set('applet', 'reports')
+
+def localApplet = ['APP_ZIP': "${-> zipreports.outputs.files.singleFile.getCanonicalPath()}", 'APPLET' : "reports"]
+
+ext.set('envVars', localApplet)
+
+buildscript {
+  repositories {
+      jcenter()
+      maven { url 'http://dl.bintray.com/robfletcher/gradle-plugins' }
+  }
+  dependencies {
+      classpath 'com.moowork.gradle:gradle-grunt-plugin:0.5'
+  }
+}
+
+apply plugin: 'grunt'
+
+task createNodeModulesLink << {
+  File link = new File(projectDir, 'node_modules')
+  if (!link.exists()) {
+   ant.symlink(resource: "${parent.parent.projectDir}/node_modules", link: "${projectDir}/node_modules")
+  }
+}
+
+task installNpmForreports (type: Exec, dependsOn:[createNodeModulesLink] ) {
+  commandLine "npm", "install"
+  workingDir "../../"
+}
+
+task zipreports(type: Zip) {
+  archiveName = "app.zip"
+  destinationDir parent.parent.buildDir
+  from('../../test') {
+    include = ["screens"]
+  }
+  from('../../') {
+    includes = ["app.json"]
+  }
+}
+
+task buildreports(dependsOn:[installNpmForreports, grunt_build]) {
+  group 'reports'
+  description 'Installs NPM and uses grunt to build reports'
+}
+
+task testreports(dependsOn:[installNpmForreports, grunt_test]) {
+  group 'reports'
+  description 'Installs NPM and runs grunts tests.'
+}
+
+task intTestreports(dependsOn: [installNpmForreports, grunt_inttest]) {
+  group 'reports'
+  description 'Installs NPM and runs grunts integration tests.'
+}
+
+task deployreports(dependsOn:[zipreports, deployApplet]) {
+  group 'reports'
+  description 'Locally deploys reports applet to eHMP-UI app.'
+}
+
+task reportsAcceptanceTest(dependsOn: [bundleInstall, acceptanceTestAll]){
+  group "reports"
+  description "Runs the reports acceptance tests in a FireFox browser"
+}
+
+task build {}
+task test{}
+build.dependsOn buildreports
+test.dependsOn testreports
+deployApplet.mustRunAfter zipreports
+grunt_deploy.mustRunAfter installNpmForreports
+grunt_build.mustRunAfter installNpmForreports
+grunt_test.mustRunAfter installNpmForreports
+grunt_inttest.mustRunAfter installNpmForreports

@@ -1,0 +1,66 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "9",
+      "RetrievedCount": "9",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000192"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131009134008",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "checkInDate": "20131009134014",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20131009133900",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "reason": "Notes Entered by: BHIE,USERONE 09 Oct 2013 1339\r\n------------------------------\r\nJane Shen testing on Drawing with image.",
+        "status": "KEPT",
+        "type": "OPAC"
+      },
+      "dataType": 6
+    }
+  ]
+}

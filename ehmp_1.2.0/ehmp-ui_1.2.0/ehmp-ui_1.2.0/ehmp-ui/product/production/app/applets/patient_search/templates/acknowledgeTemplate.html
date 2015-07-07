@@ -1,0 +1,50 @@
+<div class="confirmHeader row">
+    <div class="patientName">{{displayName}} {{{helpIconLink 'patient_search_restricted'}}}</div>
+</div>
+<div class="fixedHeightZone">
+    <div class="sensitivePanel panel panel-danger">
+        <div id="ackMsgTitleId" class="panel-heading" tabindex="0">
+            <h4 class="panel-title" tabindex="-1">
+                <a data-toggle="collapse" data-parent="#accordion" href="#ackMessagePanel" tabindex="-1">
+            {{ackTitle}}
+            <span class="acknowledged text-success pull-right hidden">Acknowledged <i class="fa fa-check-square-o"></i></span>
+        </a>
+            </h4><span class="sr-only">The selected RESTRICTED RECORD patient is acknowledged.</span>
+        </div>
+        <div id="ackMessagePanel" class="panel-collapse collapse in" tabindex="0">
+            <div class="panel-body">
+            <span class="sr-only">RESTRICTED RECORD.</span>
+                {{ackMessage}}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="patientDetails hidden">
+        <div class="patientInfo row">
+            <div class="col-md-6 infoLabelStyle">DOB:</div>
+            <div class="col-md-6 no-padding-left">{{formatDate birthDate "MM/DD/YYYY"}}</div>
+            <br>
+            <div class="col-md-6 infoLabelStyle">Age:</div>
+            <div class="col-md-6 no-padding-left">{{getAge birthDate}}y</div>
+            <br>
+            <div class="col-md-6 infoLabelStyle">Gender:</div>
+            <div class="col-md-6 no-padding-left">{{genderName}}</div>
+            <br>
+            <div class="col-md-6 infoLabelStyle">SSN:</div>
+            <div class="col-md-6 no-padding-left">{{formatSSN ssn false}}</div>
+        </div>
+    </div>
+</div>
+<button type="button" id="ackButton" class="confirm btn btn-danger btn-block" tabIndex="0">Acknowledge {{ackTitle}}
+    <span class="sr-only">Click to acknowledge patient, {{displayName}}, is a {{ackTitle}}.</span>
+</button>
+<button type="button" id="confirmationButton" class="confirm btn btn-primary btn-block hidden" tabIndex="0" data-loading-text="<i class='fa fa-spinner fa-spin'></i> <span> Loading Patient Data...</span>" data-sync-text="<i class='fa fa-spinner fa-spin'></i> <span> Syncing Patient Data...</span>">Confirm Selection
+    <span class="sr-only">Confirm patient {{displayName}}, with social security number {{formatSSN ssn false}}, date of birth {{formatDate birthDate "MM/DD/YYYY"}}, age {{getAge birthDate}}, and gender {{genderName}}? Press enter to select this patient. Confirm.</span>
+</button>
+<div class="hidden" tabindex="-1" id="screenReaderSyncing">
+    Syncing Patient.
+</div>
+<div class="hidden" tabindex="-1" id="screenReaderLoading">
+    Loading Patient.
+</div>

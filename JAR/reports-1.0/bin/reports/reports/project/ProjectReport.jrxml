@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ProjectReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30">
+	<property name="ireport.encoding" value="UTF-8"/>
+	<template><![CDATA["../../styles.jrtx"]]></template>
+	<parameter name="IncludeOverview" class="java.lang.Boolean">
+		<property name="interactive" value="true"/>
+		<property name="label" value="Include Project Overview"/>
+		<parameterDescription><![CDATA[Includes Project Overview information in report]]></parameterDescription>
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IncludeResults" class="java.lang.Boolean">
+		<property name="interactive" value="true"/>
+		<property name="label" value="Include Latest Results"/>
+		<property name="depends" value="ProjectTestSuiteResults"/>
+		<parameterDescription><![CDATA[Includes Latest Test Results in report]]></parameterDescription>
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FlowLayout" class="java.lang.Boolean">
+		<property name="interactive" value="true"/>
+		<property name="label" value="Flow Layout"/>
+		<parameterDescription><![CDATA[Choose flow layout for report]]></parameterDescription>
+		<defaultValueExpression><![CDATA[false]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ErrorDetails" class="java.lang.Boolean">
+		<property name="interactive" value="true"/>
+		<property name="label" value="Detailed Error Information"/>
+		<property name="depends" value="ProjectFailedTestSteps"/>
+		<parameterDescription><![CDATA[Adds details for failed test items to report]]></parameterDescription>
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IncludeCoverage" class="java.lang.Boolean">
+		<property name="interactive" value="true"/>
+		<property name="label" value="Include Project Coverage"/>
+                <property name="depends" value="ProjectCoverage"/>
+		<parameterDescription><![CDATA[Includes Project Coverage information in report]]></parameterDescription>
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="HeaderLogo" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["../../logos/header_logo.jpg"]]></defaultValueExpression>
+	</parameter>
+	<pageHeader>
+		<band height="51">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} == 1 || !$P{FlowLayout}]]></printWhenExpression>
+			<image scaleImage="Clip" hAlign="Right" onErrorType="Blank">
+				<reportElement x="0" y="0" width="535" height="51"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{HeaderLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="68">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} == 1 || !$P{FlowLayout}]]></printWhenExpression>
+			<staticText>
+				<reportElement style="MainHeader" x="1" y="0" width="534" height="34"/>
+				<textElement/>
+				<text><![CDATA[Project Results for]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="MainHeader" x="0" y="34" width="535" height="34"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["${=project.name}"]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="292">
+			<subreport isUsingCache="true">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="1" width="535" height="30" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{IncludeOverview}]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="IncludeOverview">
+					<subreportParameterExpression><![CDATA[$P{IncludeOverview}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Type">
+					<subreportParameterExpression><![CDATA["Project"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IncludeResults">
+					<subreportParameterExpression><![CDATA[$P{IncludeResults}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FlowLayout">
+					<subreportParameterExpression><![CDATA[$P{FlowLayout}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{ReportMetrics}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport:MetricsReport"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="32" width="536" height="30" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{IncludeOverview}]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="IncludeOverview">
+					<subreportParameterExpression><![CDATA[$P{IncludeOverview}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Type">
+					<subreportParameterExpression><![CDATA["Project"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IncludeResults">
+					<subreportParameterExpression><![CDATA[$P{IncludeResults}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FlowLayout">
+					<subreportParameterExpression><![CDATA[$P{FlowLayout}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{TestProperties}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport:PropertiesReport"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement positionType="Float" x="0" y="63" width="534" height="1">
+					<printWhenExpression><![CDATA[$P{IncludeOverview} && !$P{FlowLayout}]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<subreport>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="65" width="535" height="30" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{IncludeOverview}]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="IncludeOverview">
+					<subreportParameterExpression><![CDATA[$P{IncludeOverview}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Type">
+					<subreportParameterExpression><![CDATA["TestSuite"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IncludeResults">
+					<subreportParameterExpression><![CDATA[$P{IncludeResults}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FlowLayout">
+					<subreportParameterExpression><![CDATA[$P{FlowLayout}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{ProjectRequirements}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport:RequirementsReport"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement positionType="Float" x="0" y="96" width="100" height="1">
+					<printWhenExpression><![CDATA[$P{IncludeOverview} && !$P{FlowLayout}]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<subreport>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="98" width="535" height="30" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{IncludeOverview}]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="IncludeOverview">
+					<subreportParameterExpression><![CDATA[$P{IncludeOverview}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Type">
+					<subreportParameterExpression><![CDATA["TestSuite"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IncludeResults">
+					<subreportParameterExpression><![CDATA[$P{IncludeResults}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FlowLayout">
+					<subreportParameterExpression><![CDATA[$P{FlowLayout}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{ProjectTestSuites}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport:ModelItemListReport"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement positionType="Float" x="0" y="129" width="100" height="1">
+					<printWhenExpression><![CDATA[$P{IncludeOverview} && !$P{FlowLayout}]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<subreport>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="131" width="535" height="30" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{IncludeOverview}]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="IncludeOverview">
+					<subreportParameterExpression><![CDATA[$P{IncludeOverview}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Type">
+					<subreportParameterExpression><![CDATA["MockService"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IncludeResults">
+					<subreportParameterExpression><![CDATA[$P{IncludeResults}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FlowLayout">
+					<subreportParameterExpression><![CDATA[$P{FlowLayout}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{ProjectMockServices}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport:ModelItemListReport"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="164" width="100" height="1" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$P{FlowLayout} && $P{IncludeResults}]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<subreport isUsingCache="true" runToBottom="false">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="1" y="161" width="535" height="30" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{IncludeResults}]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="IncludeOverview">
+					<subreportParameterExpression><![CDATA[$P{IncludeOverview}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Type">
+					<subreportParameterExpression><![CDATA["Result"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IncludeResults">
+					<subreportParameterExpression><![CDATA[$P{IncludeResults}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FlowLayout">
+					<subreportParameterExpression><![CDATA[$P{FlowLayout}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{ProjectResultMetrics}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport:MetricsReport"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="197" width="535" height="1" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$P{FlowLayout} && $P{IncludeResults} && $P{ProjectTestSuiteResults}.hasData()]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<subreport isUsingCache="false" runToBottom="true">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="198" width="535" height="30" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{IncludeResults}]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="IncludeOverview">
+					<subreportParameterExpression><![CDATA[$P{IncludeOverview}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IncludeResults">
+					<subreportParameterExpression><![CDATA[$P{IncludeResults}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FlowLayout">
+					<subreportParameterExpression><![CDATA[$P{FlowLayout}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{ProjectTestSuiteResults}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport:ProjectTestSuiteResultsOverviewReport"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="228" width="535" height="1" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$P{FlowLayout} && $P{IncludeResults} && $P{ProjectTestSuiteResults}.hasData()]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<subreport>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="229" width="535" height="30" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{IncludeResults}]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="IncludeOverview">
+					<subreportParameterExpression><![CDATA[$P{IncludeOverview}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IncludeResults">
+					<subreportParameterExpression><![CDATA[$P{IncludeResults}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FlowLayout">
+					<subreportParameterExpression><![CDATA[$P{FlowLayout}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ErrorDetails">
+					<subreportParameterExpression><![CDATA[$P{ErrorDetails}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{ProjectTestSuiteResults}.cloneDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport:ProjectTestSuiteResultsReport"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="259" width="535" height="1" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$P{FlowLayout} && $P{ProjectCoverage}.hasData()]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<subreport>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="1" y="260" width="535" height="30" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{IncludeCoverage}]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="IncludeOverview">
+					<subreportParameterExpression><![CDATA[$P{IncludeOverview}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ProjectCoverage">
+					<subreportParameterExpression><![CDATA[$P{ProjectCoverage}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IncludeResults">
+					<subreportParameterExpression><![CDATA[$P{IncludeResults}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FlowLayout">
+					<subreportParameterExpression><![CDATA[$P{FlowLayout}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ErrorDetails">
+					<subreportParameterExpression><![CDATA[$P{ErrorDetails}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{ProjectCoverage}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport:ProjectCoverageChart"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="23">
+			<printWhenExpression><![CDATA[!$P{FlowLayout}]]></printWhenExpression>
+			<textField>
+				<reportElement x="0" y="0" width="535" height="20" forecolor="#999999"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["created with soapUI Pro on " + new Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="23">
+			<textField>
+				<reportElement x="0" y="0" width="535" height="20" forecolor="#999999"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["created with soapUI Pro on " + new Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

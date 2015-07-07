@@ -1,0 +1,17 @@
+<div class="pull-left">
+{{#if isNew}}
+	<button type="button" class="btn btn-default" id="btn-add-non-va-med-back">Back</button>
+	<button type="button" class="btn btn-primary" disabled  id="btn-add-non-va-med-accept">Save</button>
+{{else}}
+	{{#hasPermission 'edit-patient-med'}}
+		{{#if isLocal}}
+		<button type="button" class="btn btn-primary" disabled  id="btn-add-non-va-med-accept">Save</button>
+		{{else}}
+		<label>Only data originating in your facility may be edited.</label>
+		{{/if}}
+	{{/hasPermission}}
+{{/if}}
+</div>
+<div class="pull-right">
+	<button type="button" class="btn btn-default" data-dismiss="modal" id="btn-add-non-va-med-cancel">Cancel</button>
+</div>

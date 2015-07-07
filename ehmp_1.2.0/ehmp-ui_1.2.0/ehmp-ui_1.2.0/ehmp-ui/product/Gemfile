@@ -1,0 +1,6 @@
+gem 'berkshelf', '=2.0.11'
+gem 'hashie', '=2.0.3'
+gem 'faraday', '=0.8.8'
+gem 'buff-extensions', '=0.5.0'
+gem 'varia_model', '=0.1.1'
+gem 'timers', '=1.1.0'

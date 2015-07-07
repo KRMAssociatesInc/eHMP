@@ -1,0 +1,22 @@
+rootProject.name = 'parent'
+
+include ':production:vx-sync'
+include ':production:soap-handler'
+
+//include ':production:health-time:health-time-core'
+//include ':production:health-time:health-time-hibernate'
+//include ':production:health-time:health-time-solr'
+//include ':production:health-time:health-time-jackson'
+
+//include ':production:vista-support:vista-rpc-client'
+//include ':production:vista-support:vista-auth'
+//include ':production:vista-support:vista-rpc-client-metrics'
+
+include ':tests:acceptance-tests'
+include ':tests:integration-tests'
+
+//include ':production:vista-rpc-resource'
+include ':production:MockMVI'
+include ':production:vpr'
+include ':production:NodeMockServices'
+include ':production:asu'

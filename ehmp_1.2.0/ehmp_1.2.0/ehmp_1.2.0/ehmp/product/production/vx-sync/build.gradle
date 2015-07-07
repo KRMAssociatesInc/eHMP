@@ -1,0 +1,72 @@
+ext.set('repo', 'releases')
+ext.set('groupId', 'us.vistacore.ehmp')
+ext.set('artifactId', 'vxsync')
+
+
+task cleanNPM(type: Delete) {
+  group "VX-Sync Tasks"
+  description "Clean up node_modules"
+  //commandLine "rm -rf ${projectDir}/node_modules"
+  delete "${projectDir}/node_modules"
+}
+
+task installNpm(type: Exec) {
+  group "VX-Sync Tasks"
+  description "installs package(s)"
+  commandLine "npm", "install"
+}
+installNpm.mustRunAfter cleanNPM
+
+build.dependsOn installNpm
+
+task npmCheck(type: Exec, dependsOn: [cleanNPM, installNpm]) {
+  group "VX-Sync Tasks"
+  description "installs package(s) and runs jshint"
+  commandLine "npm", "run-script", "check"
+}
+
+task unitTest(type: Exec) {
+  group "VX-Sync Tasks"
+  description "installs package(s) and runs unit tests"
+  commandLine "npm", "test"
+}
+unitTest.dependsOn installNpm
+test.dependsOn unitTest
+
+task vxsyncIntTests{
+  group "VX-Sync Tasks"
+  description "installs package(s) and runs integration tests"
+  doLast{
+    exec {
+      executable = "rake"
+      args = ['inttest']
+    }
+  }
+}
+
+task vxsyncAllTests(dependsOn: [test, vxsyncIntTests]) {
+  group "VX-Sync Tasks"
+  description "runs unit and integration tests"
+}
+
+task zipVXSync(type: Zip) {
+  extension = 'zip'
+  baseName = 'vxsync'
+  version = getVersionByCommitCountForProject(":production:vx-sync")  
+  destinationDir buildDir
+  from projectDir
+  exclude 'build'
+  exclude 'logs'
+  exclude 'tests'
+}
+
+zipVXSync.dependsOn installNpm
+build.dependsOn zipVXSync
+uploadArchives.dependsOn zipVXSync
+
+artifacts {
+  archives zipVXSync.archivePath
+}
+
+unitTest.mustRunAfter cleanNPM, installNpm
+vxsyncIntTests.mustRunAfter cleanNPM, installNpm

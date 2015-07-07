@@ -1,0 +1,31 @@
+<div id='{{@index}}' tabindex="0" data-content="{{tooltip}}" data-toggle="popover" {{! data-placement="top"}} class='gistItem columnItem selectable changecolor'>
+
+{{#if vitalColumns}}
+	<span class="sr-only">{{fullName}}</span>
+	<span id="{{observationType}}_problem_name_{{normalizedName}}" class="col-sm-3">{{{descriptionColumn}}}</span>
+	{{#if isValid}}
+		{{#if resultAndUnitsMerged}}
+			<span id="{{observationType}}_problem_result_{{normalizedName}}" class="col-sm-4 paddingLeft">{{finalResult}}</span>
+		{{else}}
+			<span id="{{observationType}}_problem_result_{{normalizedName}}" class="col-sm-2 vitalsResult paddingLeft">{{result}}</span>
+			<span id="{{observationType}}_problem_units_{{normalizedName}}" class="col-sm-2 vitalsUnits">{{finalUnits}}</span>
+		{{/if}}
+		{{#if interpretationField}}
+			<span class="sr-only">{{interpretationField}}</span>
+		{{/if}}
+	{{else}}
+		<span class="col-sm-4 paddingLeft no-value">{{result}}</span>
+	{{/if}}
+{{else}}
+	<span id="{{observationType}}_problem_name_{{displayName}}" class="col-sm-5 overflowEllipsis">{{shortName}}</span>
+	<span id="{{observationType}}_problem_result_{{displayName}}" class="col-sm-1 labsResult overflowEllipsis">{{result}}</span>
+	<span id="{{observationType}}_problem_units_{{displayName}}" class="labsUnits col-sm-2">{{units}}</span>
+{{/if}}
+{{#if result}}
+	<span id="{{observationType}}_graph_{{displayName}}" class="col-sm-3 graph-container">{{{sparkline graphOptions result previousResult low high interpretationCode previousInterpretationCode standardDeviation}}}</span>
+{{else}}
+	<span id="{{observationType}}_no_record_{{displayName}}" class="col-sm-3 no-record">No record</span>
+{{/if}}
+<span class="sr-only">{{numericTime}}</span>
+<span id="{{observationType}}_time_since_{{displayName}}" class="col-sm-1">{{timeSince}}</span>
+</div>

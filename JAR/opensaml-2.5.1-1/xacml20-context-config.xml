@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xacml-context="urn:oasis:names:tc:xacml:2.0:context:schema:os" xmlns="http://www.opensaml.org/xmltooling-config">
+
+    <!-- XACML 2.0 Context Object Providers -->
+    <ObjectProviders>
+    
+        <!-- ActionType -->
+        <ObjectProvider qualifiedName="xacml-context:Action">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.ActionTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.ActionTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.ActionTypeUnmarshaller"/>
+        </ObjectProvider>
+        
+         <!-- ActionType -->
+        <ObjectProvider qualifiedName="xacml-context:ActionType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.ActionTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.ActionTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.ActionTypeUnmarshaller"/>
+        </ObjectProvider>
+       
+         <!-- AttributeType -->
+        <ObjectProvider qualifiedName="xacml-context:Attribute">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.AttributeTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.AttributeTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.AttributeTypeUnmarshaller"/>
+        </ObjectProvider>
+
+		<!-- AttributeType -->
+        <ObjectProvider qualifiedName="xacml-context:AttributeType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.AttributeTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.AttributeTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.AttributeTypeUnmarshaller"/>
+        </ObjectProvider>
+
+        <!-- AttributeValueType -->
+        <ObjectProvider qualifiedName="xacml-context:AttributeValue">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.AttributeValueTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.AttributeValueTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.AttributeValueTypeUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- AttributeValueType -->
+        <ObjectProvider qualifiedName="xacml-context:AttributeValueType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.AttributeValueTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.AttributeValueTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.AttributeValueTypeUnmarshaller"/>
+        </ObjectProvider>
+        
+       <!-- Decisiontype  -->
+        <ObjectProvider qualifiedName="xacml-context:Decision">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.DecisionTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.DecisionTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.DecisionTypeUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- Decisiontype  -->
+        <ObjectProvider qualifiedName="xacml-context:DecisionType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.DecisionTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.DecisionTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.DecisionTypeUnmarshaller"/>
+        </ObjectProvider>
+      
+        <!-- xacml:EnvironmentType -->
+        <ObjectProvider qualifiedName="xacml-context:Environment">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.EnvironmentTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.EnvironmentTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.EnvironmentTypeUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- xacml:EnvironmentType -->
+        <ObjectProvider qualifiedName="xacml-context:EnvironmentType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.EnvironmentTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.EnvironmentTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.EnvironmentTypeUnmarshaller"/>
+        </ObjectProvider>
+
+        <!-- MissingAttributeDetailType -->
+        <ObjectProvider qualifiedName="xacml-context:MissingAttributeDetail">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.MissingAttributeDetailTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.MissingAttributeDetailTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.MissingAttributeDetailTypeUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- MissingAttributeDetailType -->
+        <ObjectProvider qualifiedName="xacml-context:MissingAttributeDetailType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.MissingAttributeDetailTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.MissingAttributeDetailTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.MissingAttributeDetailTypeUnmarshaller"/>
+        </ObjectProvider>
+
+       <!-- RequestType -->
+        <ObjectProvider qualifiedName="xacml-context:Request">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.RequestTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.RequestTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.RequestTypeUnmarshaller"/>
+        </ObjectProvider>
+        
+          <!-- RequestType -->
+        <ObjectProvider qualifiedName="xacml-context:RequestType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.RequestTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.RequestTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.RequestTypeUnmarshaller"/>
+        </ObjectProvider>
+
+        <!--  ResourceContentType -->
+        <ObjectProvider qualifiedName="xacml-context:ResourceContent">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.ResourceContentTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.ResourceContentTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.ResourceContentTypeUnmarshaller"/>
+        </ObjectProvider>
+                      
+        <!--  ResourceContentType -->
+        <ObjectProvider qualifiedName="xacml-context:ResourceContentType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.ResourceContentTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.ResourceContentTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.ResourceContentTypeUnmarshaller"/>
+        </ObjectProvider>
+                    
+        <!-- ResourceType -->
+    	<ObjectProvider qualifiedName="xacml-context:Resource">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.ResourceTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.ResourceTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.ResourceTypeUnmarshaller"/>
+        </ObjectProvider>
+     
+	    <!-- ResourceType -->
+        <ObjectProvider qualifiedName="xacml-context:ResourceType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.ResourceTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.ResourceTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.ResourceTypeUnmarshaller"/>
+        </ObjectProvider>
+       
+        <!-- ResponseType -->
+        <ObjectProvider qualifiedName="xacml-context:Response">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.ResponseTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.ResponseTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.ResponseTypeUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- ResponseType -->
+        <ObjectProvider qualifiedName="xacml-context:ResponseType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.ResponseTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.ResponseTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.ResponseTypeUnmarshaller"/>
+        </ObjectProvider>
+     
+     	<!-- ResultType -->
+        <ObjectProvider qualifiedName="xacml-context:Result">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.ResultTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.ResultTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.ResultTypeUnmarshaller"/>
+        </ObjectProvider>
+        
+        	<!-- ResultType -->
+        <ObjectProvider qualifiedName="xacml-context:ResultType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.ResultTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.ResultTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.ResultTypeUnmarshaller"/>
+        </ObjectProvider>
+       
+        <!-- StatusCodeType -->
+        <ObjectProvider qualifiedName="xacml-context:StatusCode">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.StatusCodeTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.StatusCodeTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.StatusCodeTypeUnmarshaller"/>
+        </ObjectProvider> 
+        
+        <!-- StatusCodeType -->
+        <ObjectProvider qualifiedName="xacml-context:StatusCodeType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.StatusCodeTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.StatusCodeTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.StatusCodeTypeUnmarshaller"/>
+        </ObjectProvider> 
+       
+        <!-- StatusDetailType -->
+        <ObjectProvider qualifiedName="xacml-context:StatusDetail">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.StatusDetailTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.StatusDetailTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.StatusDetailTypeUnmarshaller"/>
+        </ObjectProvider> 
+        
+        <!-- StatusDetailType -->
+        <ObjectProvider qualifiedName="xacml-context:StatusDetailType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.StatusDetailTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.StatusDetailTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.StatusDetailTypeUnmarshaller"/>
+        </ObjectProvider> 
+
+    	<!-- StatusType -->
+        <ObjectProvider qualifiedName="xacml-context:Status">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.StatusTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.StatusTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.StatusTypeUnmarshaller"/>
+        </ObjectProvider>
+       
+     	<!-- StatusType -->
+        <ObjectProvider qualifiedName="xacml-context:StatusType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.StatusTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.StatusTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.StatusTypeUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- XML Schema String -->
+        <ObjectProvider qualifiedName="xacml-context:StatusMessage">
+            <BuilderClass className="org.opensaml.xml.schema.impl.XSStringBuilder"/>
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSStringMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSStringUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- MissingAttributeDetailType -->
+        <ObjectProvider qualifiedName="xacml-context:StatusMessage">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.StatusMessageTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.StatusMessageTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.StatusMessageTypeUnmarshaller"/>
+        </ObjectProvider>
+            
+        <!-- SubjectType -->
+        <ObjectProvider qualifiedName="xacml-context:Subject">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.SubjectTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.SubjectTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.SubjectTypeUnmarshaller"/>
+        </ObjectProvider>     
+        
+          <!-- SubjectType -->
+        <ObjectProvider qualifiedName="xacml-context:SubjectType">
+            <BuilderClass className="org.opensaml.xacml.ctx.impl.SubjectTypeImplBuilder"/>
+            <MarshallingClass className="org.opensaml.xacml.ctx.impl.SubjectTypeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xacml.ctx.impl.SubjectTypeUnmarshaller"/>
+        </ObjectProvider>     
+       
+    </ObjectProviders>
+    
+ </XMLTooling>

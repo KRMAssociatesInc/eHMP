@@ -1,0 +1,162 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000717"
+        },
+        "enteredBy": {
+          "name": "ZZZQQQTESTLESS, DOC B"
+        },
+        "enteredDate": "20121017141754",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "checkInDate": null,
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20121018080000",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Dermatology Clinic FHCC"
+        },
+        "provider": {
+          "name": "ZZZQQQTESTLESS, DOC B"
+        },
+        "reason": "NONE",
+        "status": "PENDING",
+        "type": "ROUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000718"
+        },
+        "enteredBy": {
+          "name": "ZZZQQQTESTLESS, DOC B"
+        },
+        "enteredDate": "20121017142600",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "checkInDate": null,
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20121017143000",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "General Surgery Clinic FHCC"
+        },
+        "provider": {
+          "name": "ZZZQQQTESTLESS, DOC B"
+        },
+        "reason": "PRE-SURGERY",
+        "status": "KEPT",
+        "type": "SPEC"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000719"
+        },
+        "enteredBy": {
+          "name": "DOCTOR, ALPHA"
+        },
+        "enteredDate": "20120910102408",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "checkInDate": "20120910102152",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20120910102100",
+        "dispositions": [
+          [
+            {
+              "display": "3M Health Information Systems, Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Orthopedic Clinic FHCC"
+        },
+        "provider": {
+          "name": "DOCTOR, ALPHA"
+        },
+        "reason": "Notes Entered by: DOCTOR,ALPHA 10 Sep 2012 1021\r\n------------------------------\r\nAcne",
+        "status": "KEPT",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+# Encoding: utf-8
+require 'rubygems'
+require 'rubocop'
+require 'rubocop-rspec'
+require 'rubocop/rake_task'
+require 'rspec/core/rake_task'
+
+require_relative '../../../../infrastructure/vagrant/Servers'
+require_relative '../../../../infrastructure/vagrant/aws/VagrantfileUtil.rb'
+
+# Check environment sanity and fail fast if not correct
+FAIL_MSG = 'Please first source infrastructure/set.env.sh.'
+fail FAIL_MSG unless ENV.keys.include?('WORKSPACE') || ENV.keys.include?('GEM_HOME')
+fileLocation = "#{File.expand_path(File.dirname(__FILE__))}"
+
+namespace :ui_tests do
+  task default: [:acceptance]
+
+  RuboCop::RakeTask.new(:rubocop) do |rubocop|
+    puts '=========================================================================='
+    puts '#     Validating code quality.                                           #'
+    puts '#     For details, see https://github.com/bbatsov/ruby-style-guide       #'
+    puts '=========================================================================='
+    rubocop.requires << 'rubocop-rspec'
+
+    # Specify config file in non-standard location.
+    rubocop.options = ["-c#{fileLocation}/.rubocop.yml"]
+
+    # Specify Ruby file locations
+    rubocop.patterns = ["#{fileLocation}/**/*.rb"]
+
+    # Show emacs style output, and offense counts
+    # See https://github.com/bbatsov/rubocop#formatters for other output options
+    rubocop.formatters = %w(emacs o)
+
+    # Abort rake on failure
+    rubocop.fail_on_error = ENV['RUBOCOPBYPASS'].nil? ? true : false
+  end
+
+  task :environment_setup, :env do |_task, args|
+    env = args[:env] || 'virtualbox'
+    case env
+    when 'virtualbox'
+      ip = Servers::EHMPUI.localIP
+      ENV['EHMPUI_IP'] = 'http://' + "#{ip}"
+    when 'aws'
+      ip = VagrantfileUtil::AWS.get_private_ip('ehmp-ui', 'ehmp-balancer')
+      ENV['EHMPUI_IP'] = 'https://' + "#{ip}"
+    else
+      fail "Unrecognized environment type: #{env}. Allowable types are: 'virtualbox' and 'aws'"
+    end
+  end
+
+  class RSpec::Core::RakeTaskCustom < RSpec::Core::RakeTask
+    def run_task(verbose)
+      Rake::Task['ui_tests:rubocop'].invoke
+      super
+    end
+  end
+  
+  common = "--color #{fileLocation}/spec/. --format documentation --format html --out #{fileLocation}/results.html"
+  # Rake tasks for spec under here:
+
+  desc 'Custom test for ui-team development'
+  RSpec::Core::RakeTaskCustom.new(:spec) do |task|
+    task.pattern = "#{fileLocation}/spec/Pilot_Patient_Search_spec.rb"
+    task.rspec_opts = "--tag acceptance #{common}"
+  end
+
+  desc 'runs: --tag acceptance --tag regression --tag smoketest'
+  RSpec::Core::RakeTaskCustom.new(:regression) do |task|
+    task.rspec_opts = "--tag acceptance --tag regression --tag smoketest #{common}"
+  end
+
+  desc 'runs: --tag acceptance'
+  RSpec::Core::RakeTaskCustom.new(:acceptance) do |task|
+    task.rspec_opts = "--tag acceptance #{common}"
+  end
+
+  desc 'runs: --tag broken'
+  RSpec::Core::RakeTaskCustom.new(:broken) do |task|
+    task.rspec_opts = "--tag broken #{common}"
+  end
+
+  desc 'runs: --tag acceptance --tag smoketest'
+  RSpec::Core::RakeTaskCustom.new(:smokeplusacceptance) do |task|
+    task.rspec_opts = "--tag acceptance --tag smoketest #{common}"
+  end
+
+  desc 'runs: --tag smoketest'
+  RSpec::Core::RakeTaskCustom.new(:smoke) do |task|
+    task.rspec_opts = "--tag smoketest #{common}"
+  end
+
+  desc 'requires a file and tag, ui_tests:rspec["filename","tag"]'
+  RSpec::Core::RakeTaskCustom.new(:rspec, :file, :tag) do |task, args|
+    fail "File does not exists: #{fileLocation}/spec/#{args[:file]}" unless File.exist? "#{fileLocation}/spec/#{args[:file]}"
+    task.pattern = "#{fileLocation}/spec/#{args[:file]}"
+    task.rspec_opts = "--tag #{args[:tag]}"
+  end
+
+  desc 'requires a tag, ui_tests:rspecTag["tag"]'
+  RSpec::Core::RakeTaskCustom.new(:rspecTag, :tag) do |task, args|
+    task.rspec_opts = "--tag #{args[:tag]}"
+  end
+end

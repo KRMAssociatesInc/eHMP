@@ -1,0 +1,242 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000677"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131119195611",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131119194901",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "719.47",
+                "display": "Pain in joint, ankle and foot"
+              }
+            ]
+          }
+        ],
+        "procedure": [],
+        "emCode": [
+          {
+            "code": "99201"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-2604"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": "Notes Entered by: GURSHTEYN,ATTENDING 25 May 2012 0613\r\n------------------------------\r\nSOH_Patient_Search Automated Test"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000679"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131119202018",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131119201730",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "719.47",
+                "display": "Pain in joint, ankle and foot"
+              }
+            ]
+          }
+        ],
+        "procedure": [],
+        "emCode": [
+          {
+            "code": "99211"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-2605"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": "Notes Entered by: GURSHTEYN,ATTENDING 25 May 2012 0613\r\n------------------------------\r\nADM_WriteBack - Automated Test."
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000683"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131121154409",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131121153434",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "719.47",
+                "display": "Pain in joint, ankle and foot"
+              }
+            ]
+          },
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "989.5",
+                "display": "Toxic effect of venom"
+              }
+            ]
+          },
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "989.5",
+                "display": "Toxic effect of venom"
+              }
+            ]
+          }
+        ],
+        "procedure": [],
+        "emCode": [
+          {
+            "code": "99213"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-2804"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": null
+      },
+      "dataType": 5
+    }
+  ]
+}

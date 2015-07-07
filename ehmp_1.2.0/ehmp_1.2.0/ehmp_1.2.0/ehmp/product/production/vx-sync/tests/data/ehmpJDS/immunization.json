@@ -1,0 +1,411 @@
+{
+    "apiVersion": "1.0",
+    "data": {
+        "updated": 20150303090938,
+        "totalItems": 22,
+        "currentItemCount": 22,
+        "items": [
+            {
+                "facilityCode": "561",
+                "facilityName": "New Jersey HCS",
+                "administeredDateTime": "20000404105506",
+                "cptCode": "urn:cpt:90732",
+                "cptName": "PNEUMOCOCCAL VACCINE",
+                "performerUid": "urn:va:user:ABCD:11278",
+                "encounterUid": "urn:va:visit:ABCD:229:1975",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:ABCD:229:44",
+                "summary": "PNEUMOCOCCAL",
+                "pid": "HDR;10108V420871",
+                "localId": "44",
+                "name": "PNEUMOCOCCAL",
+                "contraindicated": false,
+                "codes": [
+                    {
+                        "code": "33",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "pneumococcal polysaccharide vaccine, 23 valent"
+                    }
+                ],
+                "performerName": "WARDCLERK,SIXTYEIGHT",
+                "locationUid": "urn:va:location:ABCD:64",
+                "locationName": "AUDIOLOGY",
+                "encounterName": "AUDIOLOGY Apr 04, 2000"
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20140113000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000652",
+                "summary": "Tdap",
+                "pid": "DOD;0000000003",
+                "name": "Tdap",
+                "seriesName": "0",
+                "codes": [
+                    {
+                        "code": "115",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "tetanus toxoid, reduced diphtheria toxoid, and acellular pertussis vaccine, adsorbed"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20140109000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000653",
+                "summary": "Anthrax",
+                "pid": "DOD;0000000003",
+                "name": "Anthrax",
+                "seriesName": "2",
+                "codes": [
+                    {
+                        "code": "24",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "anthrax vaccine"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20140109000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000654",
+                "summary": "Hep B - Adult",
+                "pid": "DOD;0000000003",
+                "name": "Hep B - Adult",
+                "seriesName": "3",
+                "codes": [
+                    {
+                        "code": "43",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "hepatitis B vaccine, adult dosage"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20140109000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000655",
+                "summary": "Dengue Fever",
+                "pid": "DOD;0000000003",
+                "name": "Dengue Fever",
+                "seriesName": "0",
+                "codes": [
+                    {
+                        "code": "56",
+                        "system": "urn:oid:2.16.840.1.113883.12.292"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131205000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000656",
+                "summary": "DTaP",
+                "pid": "DOD;0000000003",
+                "name": "DTaP",
+                "seriesName": "2",
+                "codes": [
+                    {
+                        "code": "20",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "diphtheria, tetanus toxoids and acellular pertussis vaccine"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131203000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000657",
+                "summary": "Td",
+                "pid": "DOD;0000000003",
+                "name": "Td",
+                "seriesName": "0",
+                "codes": [
+                    {
+                        "code": "9",
+                        "system": "urn:oid:2.16.840.1.113883.12.292"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131203000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000658",
+                "summary": "Influenza",
+                "pid": "DOD;0000000003",
+                "name": "Influenza",
+                "seriesName": "0",
+                "codes": [
+                    {
+                        "code": "16",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "influenza virus vaccine, whole virus"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131203000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000659",
+                "summary": "Hep B - Adult",
+                "pid": "DOD;0000000003",
+                "name": "Hep B - Adult",
+                "seriesName": "2",
+                "codes": [
+                    {
+                        "code": "43",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "hepatitis B vaccine, adult dosage"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131202000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000660",
+                "summary": "MMR",
+                "pid": "DOD;0000000003",
+                "name": "MMR",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "3",
+                        "system": "urn:oid:2.16.840.1.113883.12.292"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131202000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000661",
+                "summary": "Hep B - Adult",
+                "pid": "DOD;0000000003",
+                "name": "Hep B - Adult",
+                "seriesName": "0",
+                "codes": [
+                    {
+                        "code": "43",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "hepatitis B vaccine, adult dosage"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131202000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000662",
+                "summary": "IPPD",
+                "pid": "DOD;0000000003",
+                "name": "IPPD",
+                "seriesName": "0",
+                "codes": [
+                    {
+                        "code": "96",
+                        "system": "urn:oid:2.16.840.1.113883.12.292"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131118000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000663",
+                "summary": "Hep B - Adult",
+                "pid": "DOD;0000000003",
+                "name": "Hep B - Adult",
+                "seriesName": "2",
+                "codes": [
+                    {
+                        "code": "43",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "hepatitis B vaccine, adult dosage"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131115000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000664",
+                "summary": "Anthrax",
+                "pid": "DOD;0000000003",
+                "name": "Anthrax",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "24",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "anthrax vaccine"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131115000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000665",
+                "summary": "Hep B - Adult",
+                "pid": "DOD;0000000003",
+                "name": "Hep B - Adult",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "43",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "hepatitis B vaccine, adult dosage"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131007000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000666",
+                "summary": "Adenovirus Type 4",
+                "pid": "DOD;0000000003",
+                "name": "Adenovirus Type 4",
+                "seriesName": "0",
+                "codes": [
+                    {
+                        "code": "54",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "adenovirus vaccine, type 4, live, oral"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131006000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000667",
+                "summary": "Influenza",
+                "pid": "DOD;0000000003",
+                "name": "Influenza",
+                "seriesName": "0",
+                "codes": [
+                    {
+                        "code": "16",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "influenza virus vaccine, whole virus"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20121202000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000668",
+                "summary": "Cholera",
+                "pid": "DOD;0000000003",
+                "name": "Cholera",
+                "seriesName": "0",
+                "codes": [
+                    {
+                        "code": "26",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "cholera vaccine"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20120702000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000669",
+                "summary": "Cholera",
+                "pid": "DOD;0000000003",
+                "name": "Cholera",
+                "seriesName": "0",
+                "codes": [
+                    {
+                        "code": "26",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "cholera vaccine"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20111003000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000670",
+                "summary": "Yellow Fever",
+                "pid": "DOD;0000000003",
+                "name": "Yellow Fever",
+                "seriesName": "0",
+                "codes": [
+                    {
+                        "code": "37",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "yellow fever vaccine"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20101130000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000671",
+                "summary": "Hep B - Adult",
+                "pid": "DOD;0000000003",
+                "name": "Hep B - Adult",
+                "seriesName": "3",
+                "codes": [
+                    {
+                        "code": "43",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "hepatitis B vaccine, adult dosage"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20091202000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000003:1000000672",
+                "summary": "BCG",
+                "pid": "DOD;0000000003",
+                "name": "BCG",
+                "seriesName": "0",
+                "codes": [
+                    {
+                        "code": "19",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "Bacillus Calmette-Guerin vaccine"
+                    }
+                ]
+            }
+        ]
+    }
+}

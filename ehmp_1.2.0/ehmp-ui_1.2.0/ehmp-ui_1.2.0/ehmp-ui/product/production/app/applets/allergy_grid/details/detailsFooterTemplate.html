@@ -1,0 +1,12 @@
+<div class="pull-left">
+{{#hasPermission 'remove-patient-allergy'}}
+	{{#if data}}
+	<button id="error" class="btn btn-danger">Entered in Error</button>
+	{{else}}
+	<label>Only data originating in your facility may be edited.</label>
+	{{/if}}
+{{/hasPermission}}
+</div>
+<div class="pull-right">
+	<button id="modal-close-button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>

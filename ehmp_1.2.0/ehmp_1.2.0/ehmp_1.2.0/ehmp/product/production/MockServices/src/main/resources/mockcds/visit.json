@@ -1,0 +1,48 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "CDS",
+    "systemId": "CDS"
+  },
+  "data": {
+    "updated": "20140409083928",
+    "totalItems": 1,
+    "items": [
+      {
+        "categoryCode": "urn:va:encounter-category:AD",
+        "categoryName": "Admission",
+        "current": true,
+        "dateTime": 199411301200,
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "localId": "H2767",
+        "locationName": "GEN MED",
+        "locationUid": "urn:va:location:ABCD:9",
+        "patientClassCode": "urn:va:patient-class:IMP",
+        "patientClassName": "Inpatient",
+        "providers": [
+          {
+            "providerName": "WARDCLERK,FIFTYFOUR",
+            "providerUid": "urn:va:user:ABCD:11247",
+            "role": "A"
+          },
+          {
+            "primary": true,
+            "providerName": "WARDCLERK,FIFTYFOUR",
+            "providerUid": "urn:va:user:ABCD:11247",
+            "role": "P"
+          }
+        ],
+        "reasonName": "CHEST PAINS",
+        "service": "MEDICINE",
+        "specialty": "GENERAL MEDICINE",
+        "stay": {
+          "arrivalDateTime": 199411301200
+        },
+        "summary": "${MEDICINE}:GEN MED",
+        "typeName": "HOSPITALIZATION",
+        "uid": "urn:va:visit:ABCD:242:H2767"
+      }
+    ]
+  }
+}

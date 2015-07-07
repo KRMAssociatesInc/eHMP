@@ -1,0 +1,47 @@
+<div>
+    <ul id='vitalsEiE-error-messages'></ul>
+    <div id='vitals-entered-in-error' class='form-group'>
+        <table class='vitalsEiE table' tabindex='0'>
+            <thead>
+                <tr>
+                    <th>Vitals</th>
+                    <th>Facility</th>
+                    <th>Entered By</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each models}}
+                <tr>
+                    <td class="vitalsEiE-checkbox">
+                        <input type='checkbox' id="{{attributes.localId}}" date-typeName="{{attributes.typeName}}" tabindex='0'/>&nbsp;&nbsp;
+                                    {{attributes.displayName}}: {{attributes.resultUnits}}
+                        <!--span data-toggle="tooltip" data-placement="right" title="{{attributes.tooltip}}" data-html="true" class="{{attributes.labelClass}}">
+                            <input type='checkbox' id="{{attributes.localId}}" date-typeName="{{attributes.typeName}}" tabindex='0' aria-disabled="{{attributes.disabled}}"/>&nbsp;&nbsp;
+                                {{attributes.displayName}}: {{attributes.resultUnits}}
+                        </span-->
+                        <!--label class="sr-only" for="{{attributes.localId}}">{{attributes.tooltip}}</label-->
+                    </td>
+                    <td><span>{{attributes.facilityMoniker}}</span></td>
+                    <td><span>{{attributes.enteredByName}}</span></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <br class='separator'/>
+    <div id='vitals-reason-for-removal'>
+        <label for='reasonForRemoval'>Reason for Removal</label>
+        <p>
+            <input id='v-eie-r1' type='radio' name='reason' value='1' tabindex='0'/><label class="sr-only" for='v-eie-r1'>Incorrect Date/Time</label> <span>Incorrect Date/Time</span>
+        </p>
+        <p>
+            <input id='v-eie-r2' type='radio' name='reason' value='2' tabindex='0'/><label class="sr-only" for='v-eie-r2'>Incorrect Reading</label> <span>Incorrect Reading</span>
+        </p>
+        <p>
+            <input id='v-eie-r3' type='radio' name='reason' value='3' tabindex='0'/><label class="sr-only" for='v-eie-r3'>Incorrect Patient</label> <span>Incorrect Patient</span>
+        </p>
+        <p>
+            <input id='v-eie-r4' type='radio' name='reason' value='4' tabindex='0'/><label class="sr-only" for='v-eie-r4'>Invalid Reading</label> <span>Invalid Reading</span>
+        </p>
+    </div>
+</div>

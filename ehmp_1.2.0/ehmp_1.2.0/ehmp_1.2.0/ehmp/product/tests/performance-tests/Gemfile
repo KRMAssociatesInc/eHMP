@@ -1,0 +1,25 @@
+source 'http://rubygems.org'
+source 'https://gem.vistacore.us'
+
+gem 'rake'
+gem 'cucumber'
+gem 'rspec'
+gem 'httparty'
+gem 'json'
+gem 'selenium-webdriver'
+gem 'phantomjs'
+gem 'agilex-loadgen'
+gem 'nokogiri',				  '=1.5.11'
+gem 'berkshelf'
+
+# The following are required by VagrantfileUtil.rb:
+gem 'json'
+gem 'fog',                    '=1.21.0'
+gem 'macaddr',                '=1.6.7'
+#gem 'yaml'
+#gem 'pp'
+
+# The following are required by Berkshelfpatch:
+gem 'chozo'
+gem 'thread'
+

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: jenkins
+Build-Jdk: 1.7.0_55
+Class-Path: ../lib/*.jar ../lib/analytics-core-5.1.0.jar ../lib/log4j-
+ 1.2.14.jar
+Created-By: Apache Maven 3.1.1
+Main-Class: TrackOutAppAction
+Archiver-Version: Plexus Archiver
+

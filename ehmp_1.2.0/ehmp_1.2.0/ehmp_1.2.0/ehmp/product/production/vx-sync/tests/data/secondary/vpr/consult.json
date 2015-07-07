@@ -1,0 +1,937 @@
+{
+    "apiVersion": "1.0",
+    "data": {
+        "updated": 20141215144051,
+        "totalItems": 19,
+        "currentItemCount": 19,
+        "items": [
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "fromService": "5 WEST PSYCH",
+                "orderName": "HEMATOLOGY NEW NAME",
+                "patientClassCode": "urn:va:patient-class:IMP",
+                "patientClassName": "Inpatient",
+                "place": "Bedside",
+                "statusName": "COMPLETE",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 199905041505,
+                        "entered": 199905041505,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "ENTERED IN CPRS",
+                        "responsible": "PROVIDER,TWOHUNDREDNINETYSEVEN"
+                    },
+                    {
+                        "dateTime": 199905041505,
+                        "device": "",
+                        "entered": 199905041505,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "PRINTED TO"
+                    },
+                    {
+                        "dateTime": 19990504151350,
+                        "entered": 19990504151350,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "COMPLETE/UPDATE",
+                        "responsible": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "resultUid": "urn:va:document:9E7A:8:1079"
+                    }
+                ],
+                "uid": "urn:va:consult:9E7A:8:209",
+                "summary": "HEMATOLOGY HEMATOLOGY NEW NAME Cons",
+                "pid": "9E7A;8",
+                "localId": "209",
+                "typeName": "HEMATOLOGY HEMATOLOGY NEW NAME Cons",
+                "dateTime": "199905041505",
+                "category": "C",
+                "reason": "this is for patient ant,test",
+                "consultProcedure": "Consult",
+                "service": "HEMATOLOGY NEW NAME",
+                "orderUid": "urn:va:order:9E7A:8:9869",
+                "providerUid": "urn:va:user:9E7A:11712",
+                "providerName": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                "providerDisplayName": "Provider,Twohundredninetyseven",
+                "results": [
+                    {
+                        "localTitle": "BLEEDING DISORDER",
+                        "uid": "urn:va:document:9E7A:8:1079",
+                        "summary": "ProcedureResult{uid='urn:va:document:9E7A:8:1079'}"
+                    }
+                ],
+                "lastAction": "COMPLETE/UPDATE"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "fromService": "5 WEST PSYCH",
+                "orderName": "HEMATOLOGY NEW NAME",
+                "patientClassCode": "urn:va:patient-class:IMP",
+                "patientClassName": "Inpatient",
+                "place": "Bedside",
+                "statusName": "COMPLETE",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 19990513130638,
+                        "entered": 19990513130638,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "ENTERED IN CPRS",
+                        "responsible": "PROVIDER,TWOHUNDREDNINETYSEVEN"
+                    },
+                    {
+                        "dateTime": 19990513130638,
+                        "device": "",
+                        "entered": 19990513130638,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "PRINTED TO"
+                    },
+                    {
+                        "dateTime": 19990513131536,
+                        "entered": 19990513131536,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "COMPLETE/UPDATE",
+                        "responsible": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "resultUid": "urn:va:document:9E7A:8:1090"
+                    },
+                    {
+                        "dateTime": 19990513141448,
+                        "entered": 19990513141448,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "NEW NOTE ADDED",
+                        "responsible": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "resultUid": "urn:va:document:9E7A:8:1091"
+                    }
+                ],
+                "uid": "urn:va:consult:9E7A:8:216",
+                "summary": "HEMATOLOGY HEMATOLOGY NEW NAME Cons",
+                "pid": "9E7A;8",
+                "localId": "216",
+                "typeName": "HEMATOLOGY HEMATOLOGY NEW NAME Cons",
+                "dateTime": "19990513130638",
+                "category": "C",
+                "reason": "this is a test againe",
+                "consultProcedure": "Consult",
+                "service": "HEMATOLOGY NEW NAME",
+                "orderUid": "urn:va:order:9E7A:8:9898",
+                "providerUid": "urn:va:user:9E7A:11712",
+                "providerName": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                "providerDisplayName": "Provider,Twohundredninetyseven",
+                "results": [
+                    {
+                        "localTitle": "BLEEDING DISORDER",
+                        "uid": "urn:va:document:9E7A:8:1090",
+                        "summary": "ProcedureResult{uid='urn:va:document:9E7A:8:1090'}"
+                    },
+                    {
+                        "localTitle": "BLEEDING DISORDER",
+                        "uid": "urn:va:document:9E7A:8:1091",
+                        "summary": "ProcedureResult{uid='urn:va:document:9E7A:8:1091'}"
+                    }
+                ],
+                "lastAction": "NEW NOTE ADDED"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "fromService": "5 WEST PSYCH",
+                "orderName": "JEANIE'S SERVICE",
+                "patientClassCode": "urn:va:patient-class:IMP",
+                "patientClassName": "Inpatient",
+                "place": "Bedside",
+                "statusName": "DISCONTINUED",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 20000217115517,
+                        "entered": 20000217115517,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "ENTERED IN CPRS",
+                        "responsible": "PROVIDER,TWOHUNDREDNINETYSEVEN"
+                    },
+                    {
+                        "dateTime": 20070411163226,
+                        "entered": 20070411163226,
+                        "enteredBy": "VEHU,NINETYNINE",
+                        "name": "DISCONTINUED",
+                        "responsible": "VEHU,NINETYNINE"
+                    }
+                ],
+                "uid": "urn:va:consult:9E7A:8:259",
+                "summary": "JEANIE'S SERVICE Cons",
+                "pid": "9E7A;8",
+                "localId": "259",
+                "typeName": "JEANIE'S SERVICE Cons",
+                "dateTime": "20000217115517",
+                "category": "C",
+                "reason": "TEST",
+                "consultProcedure": "Consult",
+                "service": "JEANIE'S SERVICE",
+                "orderUid": "urn:va:order:9E7A:8:12072",
+                "providerUid": "urn:va:user:9E7A:11712",
+                "providerName": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                "providerDisplayName": "Provider,Twohundredninetyseven",
+                "lastAction": "DISCONTINUED"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "fromService": "5 WEST PSYCH",
+                "orderName": "CARDIOLOGY",
+                "patientClassCode": "urn:va:patient-class:AMB",
+                "patientClassName": "Ambulatory",
+                "place": "Consultant's choice",
+                "statusName": "COMPLETE",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 20000521095636,
+                        "entered": 20000521095636,
+                        "enteredBy": "VEHU,SIXTYONE",
+                        "name": "ENTERED IN CPRS",
+                        "responsible": "VEHU,SIXTYONE"
+                    },
+                    {
+                        "comment": "Consult Completed.  No sign of further detriation in condition.  ",
+                        "dateTime": 20071231125256,
+                        "entered": 20071231125256,
+                        "enteredBy": "LABTECH,FORTYEIGHT",
+                        "name": "COMPLETE/UPDATE",
+                        "responsible": "LABTECH,FORTYEIGHT"
+                    }
+                ],
+                "uid": "urn:va:consult:9E7A:8:327",
+                "summary": "CARDIOLOGY Cons",
+                "pid": "9E7A;8",
+                "localId": "327",
+                "typeName": "CARDIOLOGY Cons",
+                "dateTime": "20000521095636",
+                "category": "C",
+                "reason": "heart palpitations",
+                "consultProcedure": "Consult",
+                "service": "CARDIOLOGY",
+                "orderUid": "urn:va:order:9E7A:8:12388",
+                "providerUid": "urn:va:user:9E7A:20069",
+                "providerName": "VEHU,SIXTYONE",
+                "providerDisplayName": "Vehu,Sixtyone",
+                "provisionalDx": "chest pains",
+                "lastAction": "COMPLETE/UPDATE"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "fromService": "GENERAL MEDICINE",
+                "orderName": "HEMATOLOGY CONSULT",
+                "patientClassCode": "urn:va:patient-class:AMB",
+                "patientClassName": "Ambulatory",
+                "place": "Consultant's choice",
+                "statusName": "DISCONTINUED",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 20040401230330,
+                        "entered": 20040401230330,
+                        "enteredBy": "PATHOLOGY,ONE",
+                        "name": "CPRS RELEASED ORDER",
+                        "responsible": "PATHOLOGY,ONE"
+                    },
+                    {
+                        "comment": "Per Policy, Consult was discontinued, patient failed to show.",
+                        "dateTime": 20071231125747,
+                        "entered": 20071231125747,
+                        "enteredBy": "LABTECH,FORTYEIGHT",
+                        "name": "DISCONTINUED",
+                        "responsible": "LABTECH,FORTYEIGHT"
+                    }
+                ],
+                "uid": "urn:va:consult:9E7A:8:385",
+                "summary": "HEMATOLOGY CONSULT Cons",
+                "pid": "9E7A;8",
+                "localId": "385",
+                "typeName": "HEMATOLOGY CONSULT Cons",
+                "dateTime": "20040401230330",
+                "category": "C",
+                "reason": "Decreased WBC - less than 1.0 for a period of 8 weeks.",
+                "consultProcedure": "Consult",
+                "service": "HEMATOLOGY CONSULT",
+                "orderUid": "urn:va:order:9E7A:8:15484",
+                "providerUid": "urn:va:user:9E7A:11748",
+                "providerName": "PATHOLOGY,ONE",
+                "providerDisplayName": "Pathology,One",
+                "lastAction": "DISCONTINUED"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "fromService": "GENERAL MEDICINE",
+                "orderName": "AUDIOLOGY OUTPATIENT",
+                "patientClassCode": "urn:va:patient-class:AMB",
+                "patientClassName": "Ambulatory",
+                "place": "Consultant's choice",
+                "statusName": "COMPLETE",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 20040401230330,
+                        "entered": 20040401230330,
+                        "enteredBy": "PATHOLOGY,ONE",
+                        "name": "CPRS RELEASED ORDER",
+                        "responsible": "PATHOLOGY,ONE"
+                    },
+                    {
+                        "dateTime": 20040401230443,
+                        "entered": 20040401230443,
+                        "enteredBy": "PATHOLOGY,ONE",
+                        "name": "COMPLETE/UPDATE",
+                        "responsible": "PATHOLOGY,ONE",
+                        "resultUid": "urn:va:document:9E7A:8:3114"
+                    }
+                ],
+                "uid": "urn:va:consult:9E7A:8:386",
+                "summary": "AUDIOLOGY OUTPATIENT Cons",
+                "pid": "9E7A;8",
+                "localId": "386",
+                "typeName": "AUDIOLOGY OUTPATIENT Cons",
+                "dateTime": "20040401230330",
+                "category": "C",
+                "reason": "83 year old FEMALE referred for suspected hearing loss.",
+                "consultProcedure": "Consult",
+                "service": "AUDIOLOGY OUTPATIENT",
+                "orderUid": "urn:va:order:9E7A:8:15483",
+                "providerUid": "urn:va:user:9E7A:11748",
+                "providerName": "PATHOLOGY,ONE",
+                "providerDisplayName": "Pathology,One",
+                "results": [
+                    {
+                        "localTitle": "AUDIOLOGY - HEARING LOSS CONSULT",
+                        "uid": "urn:va:document:9E7A:8:3114",
+                        "summary": "ProcedureResult{uid='urn:va:document:9E7A:8:3114'}"
+                    }
+                ],
+                "lastAction": "COMPLETE/UPDATE"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "fromService": "GEN MED",
+                "orderName": "",
+                "patientClassCode": "urn:va:patient-class:IMP",
+                "patientClassName": "Inpatient",
+                "place": "Consultant's choice",
+                "statusName": "DISCONTINUED",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 199510301200,
+                        "entered": 199510301200,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "ENTERED IN CPRS",
+                        "responsible": "PROGRAMMER,TWENTYEIGHT"
+                    },
+                    {
+                        "dateTime": 19951030120027,
+                        "entered": 19951030120027,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "CPRS RELEASED ORDER",
+                        "responsible": "PROGRAMMER,TWENTYEIGHT"
+                    },
+                    {
+                        "comment": "Patient failed to show, closing per policy.",
+                        "dateTime": 20071231125939,
+                        "entered": 20071231125939,
+                        "enteredBy": "LABTECH,FORTYEIGHT",
+                        "name": "DISCONTINUED",
+                        "responsible": "LABTECH,FORTYEIGHT"
+                    }
+                ],
+                "uid": "urn:va:consult:9E7A:8:77",
+                "summary": "MEDICINE Cons",
+                "pid": "9E7A;8",
+                "localId": "77",
+                "typeName": "MEDICINE Cons",
+                "dateTime": "19951030",
+                "category": "C",
+                "reason": "TEST",
+                "consultProcedure": "Consult",
+                "service": "MEDICINE",
+                "orderUid": "urn:va:order:9E7A:8:4905.1",
+                "lastAction": "DISCONTINUED"
+            },
+            {
+                "kind": "Procedure",
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "fromService": "GEN MED",
+                "orderName": "",
+                "statusName": "COMPLETE",
+                "activity": [
+                    {
+                        "dateTime": 199603181419,
+                        "entered": 199603181419,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "SERVICE ENTERED",
+                        "responsible": "PROGRAMMER,TWENTYEIGHT"
+                    },
+                    {
+                        "comment": "RELIVN QOERVB Q3GH85 [Q935GH 'AEO8HT5GR A9W3H85 G[A93AGY 8EGH PQ9374G ",
+                        "dateTime": 19960318141954,
+                        "entered": 19960318141954,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "COMPLETE/UPDATE",
+                        "responsible": "WARDCLERK,FIFTYTHREE"
+                    }
+                ],
+                "uid": "urn:va:consult:9E7A:8:83",
+                "summary": "COLONOSCOPY GASTROENTEROLOGY Proc",
+                "pid": "9E7A;8",
+                "localId": "83",
+                "typeName": "COLONOSCOPY GASTROENTEROLOGY Proc",
+                "dateTime": "199603181419",
+                "category": "P",
+                "consultProcedure": "COLONOSCOPY",
+                "service": "GASTROENTEROLOGY",
+                "orderUid": "urn:va:order:9E7A:8:0",
+                "lastAction": "COMPLETE/UPDATE",
+                "interpretation": "SIGNIFICANT FINDINGS"
+            },
+            {
+                "kind": "Procedure",
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "fromService": "GEN MED",
+                "orderName": "",
+                "patientClassCode": "urn:va:patient-class:IMP",
+                "patientClassName": "Inpatient",
+                "place": "Consultant's choice",
+                "statusName": "COMPLETE",
+                "urgency": "Next available",
+                "activity": [
+                    {
+                        "dateTime": 199605161448,
+                        "entered": 199605161448,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "ENTERED IN CPRS",
+                        "responsible": "PROGRAMMER,TWENTYEIGHT"
+                    },
+                    {
+                        "dateTime": 19960516144915,
+                        "entered": 19960516144915,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "CPRS RELEASED ORDER",
+                        "responsible": "PROGRAMMER,TWENTYEIGHT"
+                    },
+                    {
+                        "dateTime": 19960516144915,
+                        "device": "",
+                        "entered": 19960516144915,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "PRINTED TO",
+                        "responsible": "PROGRAMMER,TWENTYEIGHT"
+                    },
+                    {
+                        "comment": "Consult Completed.  No sign of further detriation in condition.  ",
+                        "dateTime": 20071231125252,
+                        "entered": 20071231125252,
+                        "enteredBy": "LABTECH,FORTYEIGHT",
+                        "name": "COMPLETE/UPDATE",
+                        "responsible": "LABTECH,FORTYEIGHT"
+                    }
+                ],
+                "uid": "urn:va:consult:9E7A:8:91",
+                "summary": "EKG REQUEST CARDIOLOGY Proc",
+                "pid": "9E7A;8",
+                "localId": "91",
+                "typeName": "EKG REQUEST CARDIOLOGY Proc",
+                "dateTime": "19960516",
+                "category": "P",
+                "reason": "NO RELATED SERVICE... LETS SEE HOW THIS WORKS",
+                "consultProcedure": "EKG REQUEST",
+                "service": "CARDIOLOGY",
+                "orderUid": "urn:va:order:9E7A:8:5577.1",
+                "provisionalDx": "VERY ILL",
+                "lastAction": "COMPLETE/UPDATE",
+                "attention": "WARDCLERK,FIFTYTHREE"
+            },
+            {
+                "kind": "Procedure",
+                "facilityCode": "561",
+                "facilityName": "New Jersey HCS",
+                "orderName": "",
+                "statusName": "ACTIVE",
+                "uid": "urn:va:consult:ABCD:12:82",
+                "summary": "COLONOSCOPY GASTROENTEROLOGY Proc",
+                "pid": "HDR;10110V004877",
+                "localId": "82",
+                "typeName": "COLONOSCOPY GASTROENTEROLOGY Proc",
+                "dateTime": "199603181318",
+                "category": "P",
+                "consultProcedure": "COLONOSCOPY",
+                "service": "GASTROENTEROLOGY",
+                "orderUid": "urn:va:order:ABCD:12:5389.1"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "fromService": "5 WEST PSYCH",
+                "orderName": "HEMATOLOGY NEW NAME",
+                "patientClassCode": "urn:va:patient-class:IMP",
+                "patientClassName": "Inpatient",
+                "place": "Bedside",
+                "statusName": "COMPLETE",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 199905041505,
+                        "entered": 199905041505,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "ENTERED IN CPRS",
+                        "responsible": "PROVIDER,TWOHUNDREDNINETYSEVEN"
+                    },
+                    {
+                        "dateTime": 199905041505,
+                        "device": "",
+                        "entered": 199905041505,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "PRINTED TO"
+                    },
+                    {
+                        "dateTime": 19990504151350,
+                        "entered": 19990504151350,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "COMPLETE/UPDATE",
+                        "responsible": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "resultUid": "urn:va:document:C877:8:1079"
+                    }
+                ],
+                "uid": "urn:va:consult:C877:8:209",
+                "summary": "HEMATOLOGY HEMATOLOGY NEW NAME Cons",
+                "pid": "C877;8",
+                "localId": "209",
+                "typeName": "HEMATOLOGY HEMATOLOGY NEW NAME Cons",
+                "dateTime": "199905041505",
+                "category": "C",
+                "reason": "this is for patient ant,test",
+                "consultProcedure": "Consult",
+                "service": "HEMATOLOGY NEW NAME",
+                "orderUid": "urn:va:order:C877:8:9869",
+                "providerUid": "urn:va:user:C877:11712",
+                "providerName": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                "providerDisplayName": "Provider,Twohundredninetyseven",
+                "results": [
+                    {
+                        "localTitle": "BLEEDING DISORDER",
+                        "uid": "urn:va:document:C877:8:1079",
+                        "summary": "ProcedureResult{uid='urn:va:document:C877:8:1079'}"
+                    }
+                ],
+                "lastAction": "COMPLETE/UPDATE"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "fromService": "5 WEST PSYCH",
+                "orderName": "HEMATOLOGY NEW NAME",
+                "patientClassCode": "urn:va:patient-class:IMP",
+                "patientClassName": "Inpatient",
+                "place": "Bedside",
+                "statusName": "COMPLETE",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 19990513130638,
+                        "entered": 19990513130638,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "ENTERED IN CPRS",
+                        "responsible": "PROVIDER,TWOHUNDREDNINETYSEVEN"
+                    },
+                    {
+                        "dateTime": 19990513130638,
+                        "device": "",
+                        "entered": 19990513130638,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "PRINTED TO"
+                    },
+                    {
+                        "dateTime": 19990513131536,
+                        "entered": 19990513131536,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "COMPLETE/UPDATE",
+                        "responsible": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "resultUid": "urn:va:document:C877:8:1090"
+                    },
+                    {
+                        "dateTime": 19990513141448,
+                        "entered": 19990513141448,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "NEW NOTE ADDED",
+                        "responsible": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "resultUid": "urn:va:document:C877:8:1091"
+                    }
+                ],
+                "uid": "urn:va:consult:C877:8:216",
+                "summary": "HEMATOLOGY HEMATOLOGY NEW NAME Cons",
+                "pid": "C877;8",
+                "localId": "216",
+                "typeName": "HEMATOLOGY HEMATOLOGY NEW NAME Cons",
+                "dateTime": "19990513130638",
+                "category": "C",
+                "reason": "this is a test againe",
+                "consultProcedure": "Consult",
+                "service": "HEMATOLOGY NEW NAME",
+                "orderUid": "urn:va:order:C877:8:9898",
+                "providerUid": "urn:va:user:C877:11712",
+                "providerName": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                "providerDisplayName": "Provider,Twohundredninetyseven",
+                "results": [
+                    {
+                        "localTitle": "BLEEDING DISORDER",
+                        "uid": "urn:va:document:C877:8:1090",
+                        "summary": "ProcedureResult{uid='urn:va:document:C877:8:1090'}"
+                    },
+                    {
+                        "localTitle": "BLEEDING DISORDER",
+                        "uid": "urn:va:document:C877:8:1091",
+                        "summary": "ProcedureResult{uid='urn:va:document:C877:8:1091'}"
+                    }
+                ],
+                "lastAction": "NEW NOTE ADDED"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "fromService": "5 WEST PSYCH",
+                "orderName": "JEANIE'S SERVICE",
+                "patientClassCode": "urn:va:patient-class:IMP",
+                "patientClassName": "Inpatient",
+                "place": "Bedside",
+                "statusName": "DISCONTINUED",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 20000217115517,
+                        "entered": 20000217115517,
+                        "enteredBy": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                        "name": "ENTERED IN CPRS",
+                        "responsible": "PROVIDER,TWOHUNDREDNINETYSEVEN"
+                    },
+                    {
+                        "dateTime": 20070411163226,
+                        "entered": 20070411163226,
+                        "enteredBy": "VEHU,NINETYNINE",
+                        "name": "DISCONTINUED",
+                        "responsible": "VEHU,NINETYNINE"
+                    }
+                ],
+                "uid": "urn:va:consult:C877:8:259",
+                "summary": "JEANIE'S SERVICE Cons",
+                "pid": "C877;8",
+                "localId": "259",
+                "typeName": "JEANIE'S SERVICE Cons",
+                "dateTime": "20000217115517",
+                "category": "C",
+                "reason": "TEST",
+                "consultProcedure": "Consult",
+                "service": "JEANIE'S SERVICE",
+                "orderUid": "urn:va:order:C877:8:12072",
+                "providerUid": "urn:va:user:C877:11712",
+                "providerName": "PROVIDER,TWOHUNDREDNINETYSEVEN",
+                "providerDisplayName": "Provider,Twohundredninetyseven",
+                "lastAction": "DISCONTINUED"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "fromService": "5 WEST PSYCH",
+                "orderName": "CARDIOLOGY",
+                "patientClassCode": "urn:va:patient-class:AMB",
+                "patientClassName": "Ambulatory",
+                "place": "Consultant's choice",
+                "statusName": "COMPLETE",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 20000521095636,
+                        "entered": 20000521095636,
+                        "enteredBy": "VEHU,SIXTYONE",
+                        "name": "ENTERED IN CPRS",
+                        "responsible": "VEHU,SIXTYONE"
+                    },
+                    {
+                        "comment": "Consult Completed.  No sign of further detriation in condition.  ",
+                        "dateTime": 20071231125256,
+                        "entered": 20071231125256,
+                        "enteredBy": "LABTECH,FORTYEIGHT",
+                        "name": "COMPLETE/UPDATE",
+                        "responsible": "LABTECH,FORTYEIGHT"
+                    }
+                ],
+                "uid": "urn:va:consult:C877:8:327",
+                "summary": "CARDIOLOGY Cons",
+                "pid": "C877;8",
+                "localId": "327",
+                "typeName": "CARDIOLOGY Cons",
+                "dateTime": "20000521095636",
+                "category": "C",
+                "reason": "heart palpitations",
+                "consultProcedure": "Consult",
+                "service": "CARDIOLOGY",
+                "orderUid": "urn:va:order:C877:8:12388",
+                "providerUid": "urn:va:user:C877:20069",
+                "providerName": "VEHU,SIXTYONE",
+                "providerDisplayName": "Vehu,Sixtyone",
+                "provisionalDx": "chest pains",
+                "lastAction": "COMPLETE/UPDATE"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "fromService": "GENERAL MEDICINE",
+                "orderName": "HEMATOLOGY CONSULT",
+                "patientClassCode": "urn:va:patient-class:AMB",
+                "patientClassName": "Ambulatory",
+                "place": "Consultant's choice",
+                "statusName": "DISCONTINUED",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 20040401230330,
+                        "entered": 20040401230330,
+                        "enteredBy": "PATHOLOGY,ONE",
+                        "name": "CPRS RELEASED ORDER",
+                        "responsible": "PATHOLOGY,ONE"
+                    },
+                    {
+                        "comment": "Per Policy, Consult was discontinued, patient failed to show.",
+                        "dateTime": 20071231125747,
+                        "entered": 20071231125747,
+                        "enteredBy": "LABTECH,FORTYEIGHT",
+                        "name": "DISCONTINUED",
+                        "responsible": "LABTECH,FORTYEIGHT"
+                    }
+                ],
+                "uid": "urn:va:consult:C877:8:385",
+                "summary": "HEMATOLOGY CONSULT Cons",
+                "pid": "C877;8",
+                "localId": "385",
+                "typeName": "HEMATOLOGY CONSULT Cons",
+                "dateTime": "20040401230330",
+                "category": "C",
+                "reason": "Decreased WBC - less than 1.0 for a period of 8 weeks.",
+                "consultProcedure": "Consult",
+                "service": "HEMATOLOGY CONSULT",
+                "orderUid": "urn:va:order:C877:8:15484",
+                "providerUid": "urn:va:user:C877:11748",
+                "providerName": "PATHOLOGY,ONE",
+                "providerDisplayName": "Pathology,One",
+                "lastAction": "DISCONTINUED"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "fromService": "GENERAL MEDICINE",
+                "orderName": "AUDIOLOGY OUTPATIENT",
+                "patientClassCode": "urn:va:patient-class:AMB",
+                "patientClassName": "Ambulatory",
+                "place": "Consultant's choice",
+                "statusName": "COMPLETE",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 20040401230330,
+                        "entered": 20040401230330,
+                        "enteredBy": "PATHOLOGY,ONE",
+                        "name": "CPRS RELEASED ORDER",
+                        "responsible": "PATHOLOGY,ONE"
+                    },
+                    {
+                        "dateTime": 20040401230443,
+                        "entered": 20040401230443,
+                        "enteredBy": "PATHOLOGY,ONE",
+                        "name": "COMPLETE/UPDATE",
+                        "responsible": "PATHOLOGY,ONE",
+                        "resultUid": "urn:va:document:C877:8:3114"
+                    }
+                ],
+                "uid": "urn:va:consult:C877:8:386",
+                "summary": "AUDIOLOGY OUTPATIENT Cons",
+                "pid": "C877;8",
+                "localId": "386",
+                "typeName": "AUDIOLOGY OUTPATIENT Cons",
+                "dateTime": "20040401230330",
+                "category": "C",
+                "reason": "83 year old FEMALE referred for suspected hearing loss.",
+                "consultProcedure": "Consult",
+                "service": "AUDIOLOGY OUTPATIENT",
+                "orderUid": "urn:va:order:C877:8:15483",
+                "providerUid": "urn:va:user:C877:11748",
+                "providerName": "PATHOLOGY,ONE",
+                "providerDisplayName": "Pathology,One",
+                "results": [
+                    {
+                        "localTitle": "AUDIOLOGY - HEARING LOSS CONSULT",
+                        "uid": "urn:va:document:C877:8:3114",
+                        "summary": "ProcedureResult{uid='urn:va:document:C877:8:3114'}"
+                    }
+                ],
+                "lastAction": "COMPLETE/UPDATE"
+            },
+            {
+                "kind": "Consult",
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "fromService": "GEN MED",
+                "orderName": "",
+                "patientClassCode": "urn:va:patient-class:IMP",
+                "patientClassName": "Inpatient",
+                "place": "Consultant's choice",
+                "statusName": "DISCONTINUED",
+                "urgency": "Routine",
+                "activity": [
+                    {
+                        "dateTime": 199510301200,
+                        "entered": 199510301200,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "ENTERED IN CPRS",
+                        "responsible": "PROGRAMMER,TWENTYEIGHT"
+                    },
+                    {
+                        "dateTime": 19951030120027,
+                        "entered": 19951030120027,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "CPRS RELEASED ORDER",
+                        "responsible": "PROGRAMMER,TWENTYEIGHT"
+                    },
+                    {
+                        "comment": "Patient failed to show, closing per policy.",
+                        "dateTime": 20071231125939,
+                        "entered": 20071231125939,
+                        "enteredBy": "LABTECH,FORTYEIGHT",
+                        "name": "DISCONTINUED",
+                        "responsible": "LABTECH,FORTYEIGHT"
+                    }
+                ],
+                "uid": "urn:va:consult:C877:8:77",
+                "summary": "MEDICINE Cons",
+                "pid": "C877;8",
+                "localId": "77",
+                "typeName": "MEDICINE Cons",
+                "dateTime": "19951030",
+                "category": "C",
+                "reason": "TEST",
+                "consultProcedure": "Consult",
+                "service": "MEDICINE",
+                "orderUid": "urn:va:order:C877:8:4905.1",
+                "lastAction": "DISCONTINUED"
+            },
+            {
+                "kind": "Procedure",
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "fromService": "GEN MED",
+                "orderName": "",
+                "statusName": "COMPLETE",
+                "activity": [
+                    {
+                        "dateTime": 199603181419,
+                        "entered": 199603181419,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "SERVICE ENTERED",
+                        "responsible": "PROGRAMMER,TWENTYEIGHT"
+                    },
+                    {
+                        "comment": "RELIVN QOERVB Q3GH85 [Q935GH 'AEO8HT5GR A9W3H85 G[A93AGY 8EGH PQ9374G ",
+                        "dateTime": 19960318141954,
+                        "entered": 19960318141954,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "COMPLETE/UPDATE",
+                        "responsible": "WARDCLERK,FIFTYTHREE"
+                    }
+                ],
+                "uid": "urn:va:consult:C877:8:83",
+                "summary": "COLONOSCOPY GASTROENTEROLOGY Proc",
+                "pid": "C877;8",
+                "localId": "83",
+                "typeName": "COLONOSCOPY GASTROENTEROLOGY Proc",
+                "dateTime": "199603181419",
+                "category": "P",
+                "consultProcedure": "COLONOSCOPY",
+                "service": "GASTROENTEROLOGY",
+                "orderUid": "urn:va:order:C877:8:0",
+                "lastAction": "COMPLETE/UPDATE",
+                "interpretation": "SIGNIFICANT FINDINGS"
+            },
+            {
+                "kind": "Procedure",
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "fromService": "GEN MED",
+                "orderName": "",
+                "patientClassCode": "urn:va:patient-class:IMP",
+                "patientClassName": "Inpatient",
+                "place": "Consultant's choice",
+                "statusName": "COMPLETE",
+                "urgency": "Next available",
+                "activity": [
+                    {
+                        "dateTime": 199605161448,
+                        "entered": 199605161448,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "ENTERED IN CPRS",
+                        "responsible": "PROGRAMMER,TWENTYEIGHT"
+                    },
+                    {
+                        "dateTime": 19960516144915,
+                        "entered": 19960516144915,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "CPRS RELEASED ORDER",
+                        "responsible": "PROGRAMMER,TWENTYEIGHT"
+                    },
+                    {
+                        "dateTime": 19960516144915,
+                        "device": "",
+                        "entered": 19960516144915,
+                        "enteredBy": "PROGRAMMER,TWENTY",
+                        "name": "PRINTED TO",
+                        "responsible": "PROGRAMMER,TWENTYEIGHT"
+                    },
+                    {
+                        "comment": "Consult Completed.  No sign of further detriation in condition.  ",
+                        "dateTime": 20071231125252,
+                        "entered": 20071231125252,
+                        "enteredBy": "LABTECH,FORTYEIGHT",
+                        "name": "COMPLETE/UPDATE",
+                        "responsible": "LABTECH,FORTYEIGHT"
+                    }
+                ],
+                "uid": "urn:va:consult:C877:8:91",
+                "summary": "EKG REQUEST CARDIOLOGY Proc",
+                "pid": "C877;8",
+                "localId": "91",
+                "typeName": "EKG REQUEST CARDIOLOGY Proc",
+                "dateTime": "19960516",
+                "category": "P",
+                "reason": "NO RELATED SERVICE... LETS SEE HOW THIS WORKS",
+                "consultProcedure": "EKG REQUEST",
+                "service": "CARDIOLOGY",
+                "orderUid": "urn:va:order:C877:8:5577.1",
+                "provisionalDx": "VERY ILL",
+                "lastAction": "COMPLETE/UPDATE",
+                "attention": "WARDCLERK,FIFTYTHREE"
+            }
+        ]
+    }
+}

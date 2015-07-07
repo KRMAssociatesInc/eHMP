@@ -1,0 +1,107 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000916"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "52536-0"
+          }
+        ],
+        "facility": null,
+        "address": [
+          {
+            "type": "Home Address",
+            "city": "CITRUS HTS",
+            "country": null,
+            "county": null,
+            "postalCode": "95621",
+            "state": "CA",
+            "street": [
+              "8008 ROSSWOOD DRIVE"
+            ]
+          }
+        ],
+        "phone": [
+          {
+            "area": "200",
+            "country": null,
+            "local": "5553434"
+          }
+        ],
+        "branch": null,
+        "birthDate": "19881120000000",
+        "deersEligibility": null,
+        "patientId": [
+          {
+            "id": "D1606466796"
+          }
+        ],
+        "email": null,
+        "enrollmentLocation": null,
+        "name": {
+          "first": "CHERYL",
+          "middle": null,
+          "last": "SAPATIENT",
+          "suffix": null
+        },
+        "fmp": null,
+        "maritalStatus": [
+          {
+            "display": "Divorced"
+          }
+        ],
+        "patientCategory": [
+          {
+            "display": "K61 - Department of Defense (DoD)/Veterans Administration (VA) Sharing Agreement"
+          }
+        ],
+        "race": [
+          {
+            "display": "White"
+          }
+        ],
+        "rank": null,
+        "religion": [
+          {
+            "display": "Methodism"
+          }
+        ],
+        "sex": "F",
+        "sponsor": {
+          "branch": null,
+          "rank": null,
+          "ssn": null,
+          "assignedUnit": null
+        },
+        "assignedUnit": null
+      },
+      "dataType": 13
+    }
+  ]
+}

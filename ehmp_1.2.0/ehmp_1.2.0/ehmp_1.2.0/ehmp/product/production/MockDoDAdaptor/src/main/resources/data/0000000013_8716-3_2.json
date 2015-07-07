@@ -1,0 +1,885 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "CustodianName": "ahlta",
+        "Comments": "",
+        "VitalsResults": [
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, SJFONE",
+            "TestName": "Peak Expiratory Flow Rate [PEFR]",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20121115172122",
+            "TestValue": "420",
+            "TestUnitsCode": "",
+            "TestUnits": "l/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "30742",
+            "PerformingProvider": "SJF, TEN",
+            "EndTime": "20121115172122",
+            "CollectionMethod": "",
+            "StartTime": "20121115172122",
+            "UniqueId": "1000001069"
+          }
+        ],
+        "VitalsId": "2156791162",
+        "EncounterNumber": "SEYJ-53053",
+        "Facility": "4th Medical Group/0090",
+        "EnteredBy": "MIDTIER, SJFONE",
+        "LoincCode": "8716-3",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20121115205509",
+        "OtherIdentifier": "",
+        "EventId": "1000001070"
+      },
+      "dataType": 4
+    },
+    {
+      "dataRecord": {
+        "CustodianName": "ahlta",
+        "Comments": "",
+        "VitalsResults": [
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, SJFONE",
+            "TestName": "Blood pressure, diastolic (BPD)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20121115155101",
+            "TestValue": "55",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "SJF, TEN",
+            "EndTime": "20121115155101",
+            "CollectionMethod": "",
+            "StartTime": "20121115155101",
+            "UniqueId": "1000001071"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, SJFONE",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20121115155101",
+            "TestValue": "111",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "SJF, TEN",
+            "EndTime": "20121115155101",
+            "CollectionMethod": "",
+            "StartTime": "20121115155101",
+            "UniqueId": "1000001072"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, SJFONE",
+            "TestName": "Peak Expiratory Flow Rate [PEFR]",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20121115155101",
+            "TestValue": "433",
+            "TestUnitsCode": "",
+            "TestUnits": "l/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "30742",
+            "PerformingProvider": "SJF, TEN",
+            "EndTime": "20121115155101",
+            "CollectionMethod": "",
+            "StartTime": "20121115155101",
+            "UniqueId": "1000001073"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, SJFONE",
+            "TestName": "Respiratory rate (breaths)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20121115155101",
+            "TestValue": "33",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "86290005",
+            "Ncid": "2124",
+            "PerformingProvider": "SJF, TEN",
+            "EndTime": "20121115155101",
+            "CollectionMethod": "",
+            "StartTime": "20121115155101",
+            "UniqueId": "1000001074"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, SJFONE",
+            "TestName": "Temperature (body temperature)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20121115155101",
+            "TestValue": "99.9",
+            "TestUnitsCode": "258712004",
+            "TestUnits": "F",
+            "Modifiers": [
+              {
+                "Value": "37.722222",
+                "UnitsCode": "258710007",
+                "Units": "C",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001075"
+              }
+            ],
+            "TestCode": "386725007",
+            "Ncid": "2154",
+            "PerformingProvider": "SJF, TEN",
+            "EndTime": "20121115155101",
+            "CollectionMethod": "",
+            "StartTime": "20121115155101",
+            "UniqueId": "1000001076"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, SJFONE",
+            "TestName": "Pulse taking",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20121115155101",
+            "TestValue": "97",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "364075005",
+            "Ncid": "2051",
+            "PerformingProvider": "SJF, TEN",
+            "EndTime": "20121115155101",
+            "CollectionMethod": "",
+            "StartTime": "20121115155101",
+            "UniqueId": "1000001077"
+          }
+        ],
+        "VitalsId": "2156791163",
+        "EncounterNumber": "SEYJ-53053",
+        "Facility": "4th Medical Group/0090",
+        "EnteredBy": "MIDTIER, SJFONE",
+        "LoincCode": "8716-3",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20121115205509",
+        "OtherIdentifier": "",
+        "EventId": "1000001078"
+      },
+      "dataType": 4
+    },
+    {
+      "dataRecord": {
+        "CustodianName": "ahlta",
+        "Comments": "",
+        "VitalsResults": [
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Blood pressure, diastolic (BPD)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111215215605",
+            "TestValue": "83",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "LANF, TWELVE",
+            "EndTime": "20111215215605",
+            "CollectionMethod": "",
+            "StartTime": "20111215215605",
+            "UniqueId": "1000001079"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111215215605",
+            "TestValue": "120",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "LANF, TWELVE",
+            "EndTime": "20111215215605",
+            "CollectionMethod": "",
+            "StartTime": "20111215215605",
+            "UniqueId": "1000001080"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Pulse taking",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111215215605",
+            "TestValue": "66",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "364075005",
+            "Ncid": "2051",
+            "PerformingProvider": "LANF, TWELVE",
+            "EndTime": "20111215215605",
+            "CollectionMethod": "",
+            "StartTime": "20111215215605",
+            "UniqueId": "1000001081"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Patient's height value",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111215215605",
+            "TestValue": "67",
+            "TestUnitsCode": "258677007",
+            "TestUnits": "in",
+            "Modifiers": [
+              {
+                "Value": "0",
+                "UnitsCode": "258672001",
+                "Units": "cm",
+                "CreatedDate": "20120209192417",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001082"
+              }
+            ],
+            "TestCode": "50373000",
+            "Ncid": "110675",
+            "PerformingProvider": "LANF, TWELVE",
+            "EndTime": "20111215215605",
+            "CollectionMethod": "",
+            "StartTime": "20111215215605",
+            "UniqueId": "1000001083"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Temperature (body temperature)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111215215605",
+            "TestValue": "98.1",
+            "TestUnitsCode": "258712004",
+            "TestUnits": "F",
+            "Modifiers": [
+              {
+                "Value": "36.722222",
+                "UnitsCode": "258710007",
+                "Units": "C",
+                "CreatedDate": "20120209192417",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001084"
+              }
+            ],
+            "TestCode": "386725007",
+            "Ncid": "2154",
+            "PerformingProvider": "LANF, TWELVE",
+            "EndTime": "20111215215605",
+            "CollectionMethod": "",
+            "StartTime": "20111215215605",
+            "UniqueId": "1000001085"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Weight (body weight)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111215215605",
+            "TestValue": "105",
+            "TestUnitsCode": "258693003",
+            "TestUnits": "lb",
+            "Modifiers": [
+              {
+                "Value": "0",
+                "UnitsCode": "258682000",
+                "Units": "gm",
+                "CreatedDate": "20120209192417",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001086"
+              }
+            ],
+            "TestCode": "27113001",
+            "Ncid": "2178",
+            "PerformingProvider": "LANF, TWELVE",
+            "EndTime": "20111215215605",
+            "CollectionMethod": "",
+            "StartTime": "20111215215605",
+            "UniqueId": "1000001087"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Respiratory rate (breaths)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111215215605",
+            "TestValue": "5",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "86290005",
+            "Ncid": "2124",
+            "PerformingProvider": "LANF, TWELVE",
+            "EndTime": "20111215215605",
+            "CollectionMethod": "",
+            "StartTime": "20111215215605",
+            "UniqueId": "1000001088"
+          }
+        ],
+        "VitalsId": "2155598161",
+        "EncounterNumber": "LAND-11107",
+        "Facility": "Landstuhl RMC/0607",
+        "EnteredBy": "MIDT, LANDFONE",
+        "LoincCode": "8716-3",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20111215220412",
+        "OtherIdentifier": "",
+        "EventId": "1000001089"
+      },
+      "dataType": 4
+    },
+    {
+      "dataRecord": {
+        "CustodianName": "ahlta",
+        "Comments": "",
+        "VitalsResults": [
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Blood pressure, diastolic (BPD)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111102214240",
+            "TestValue": "80",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "LANF, ONE",
+            "EndTime": "20111102214240",
+            "CollectionMethod": "",
+            "StartTime": "20111102214240",
+            "UniqueId": "1000001090"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111102214240",
+            "TestValue": "120",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "LANF, ONE",
+            "EndTime": "20111102214240",
+            "CollectionMethod": "",
+            "StartTime": "20111102214240",
+            "UniqueId": "1000001091"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Pulse taking",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111102214240",
+            "TestValue": "55",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "364075005",
+            "Ncid": "2051",
+            "PerformingProvider": "LANF, ONE",
+            "EndTime": "20111102214240",
+            "CollectionMethod": "",
+            "StartTime": "20111102214240",
+            "UniqueId": "1000001092"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Patient's height value",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111102214240",
+            "TestValue": "63",
+            "TestUnitsCode": "258677007",
+            "TestUnits": "in",
+            "Modifiers": [
+              {
+                "Value": "0",
+                "UnitsCode": "258672001",
+                "Units": "cm",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001093"
+              }
+            ],
+            "TestCode": "50373000",
+            "Ncid": "110675",
+            "PerformingProvider": "LANF, ONE",
+            "EndTime": "20111102214240",
+            "CollectionMethod": "",
+            "StartTime": "20111102214240",
+            "UniqueId": "1000001094"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Temperature (body temperature)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111102214240",
+            "TestValue": "99.1",
+            "TestUnitsCode": "258712004",
+            "TestUnits": "F",
+            "Modifiers": [
+              {
+                "Value": "37.277778",
+                "UnitsCode": "258710007",
+                "Units": "C",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001095"
+              }
+            ],
+            "TestCode": "386725007",
+            "Ncid": "2154",
+            "PerformingProvider": "LANF, ONE",
+            "EndTime": "20111102214240",
+            "CollectionMethod": "",
+            "StartTime": "20111102214240",
+            "UniqueId": "1000001096"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Weight (body weight)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111102214240",
+            "TestValue": "112",
+            "TestUnitsCode": "258693003",
+            "TestUnits": "lb",
+            "Modifiers": [
+              {
+                "Value": "0",
+                "UnitsCode": "258682000",
+                "Units": "gm",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001097"
+              }
+            ],
+            "TestCode": "27113001",
+            "Ncid": "2178",
+            "PerformingProvider": "LANF, ONE",
+            "EndTime": "20111102214240",
+            "CollectionMethod": "",
+            "StartTime": "20111102214240",
+            "UniqueId": "1000001098"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Respiratory rate (breaths)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20111102214240",
+            "TestValue": "33",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "86290005",
+            "Ncid": "2124",
+            "PerformingProvider": "LANF, ONE",
+            "EndTime": "20111102214240",
+            "CollectionMethod": "",
+            "StartTime": "20111102214240",
+            "UniqueId": "1000001099"
+          }
+        ],
+        "VitalsId": "2156824289",
+        "EncounterNumber": "LAND-11898",
+        "Facility": "Landstuhl RMC/0607",
+        "EnteredBy": "MIDT, LANDFONE",
+        "LoincCode": "8716-3",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20121126173721",
+        "OtherIdentifier": "",
+        "EventId": "1000001100"
+      },
+      "dataType": 4
+    },
+    {
+      "dataRecord": {
+        "CustodianName": "ahlta",
+        "Comments": "Just a comment",
+        "VitalsResults": [
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Blood pressure, diastolic (BPD)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20110519113718",
+            "TestValue": "60",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "LANF, FIVE",
+            "EndTime": "20110519113718",
+            "CollectionMethod": "",
+            "StartTime": "20110519113718",
+            "UniqueId": "1000001101"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20110519113718",
+            "TestValue": "120",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "LANF, FIVE",
+            "EndTime": "20110519113718",
+            "CollectionMethod": "",
+            "StartTime": "20110519113718",
+            "UniqueId": "1000001102"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Pulse taking",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20110519113718",
+            "TestValue": "88",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "364075005",
+            "Ncid": "2051",
+            "PerformingProvider": "LANF, FIVE",
+            "EndTime": "20110519113718",
+            "CollectionMethod": "",
+            "StartTime": "20110519113718",
+            "UniqueId": "1000001103"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Respiratory rate (breaths)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20110519113718",
+            "TestValue": "33",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "86290005",
+            "Ncid": "2124",
+            "PerformingProvider": "LANF, FIVE",
+            "EndTime": "20110519113718",
+            "CollectionMethod": "",
+            "StartTime": "20110519113718",
+            "UniqueId": "1000001104"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Temperature (body temperature)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20110519113718",
+            "TestValue": "99.1",
+            "TestUnitsCode": "258712004",
+            "TestUnits": "F",
+            "Modifiers": [
+              {
+                "Value": "37.277778",
+                "UnitsCode": "258710007",
+                "Units": "C",
+                "CreatedDate": "20120209192420",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001105"
+              }
+            ],
+            "TestCode": "386725007",
+            "Ncid": "2154",
+            "PerformingProvider": "LANF, FIVE",
+            "EndTime": "20110519113718",
+            "CollectionMethod": "",
+            "StartTime": "20110519113718",
+            "UniqueId": "1000001106"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Smoking Status Now Observation",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20110519113718",
+            "TestValue": "Yes",
+            "TestUnitsCode": "",
+            "TestUnits": "",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "1604139",
+            "PerformingProvider": "LANF, FIVE",
+            "EndTime": "20110519113718",
+            "CollectionMethod": "",
+            "StartTime": "20110519113718",
+            "UniqueId": "1000001107"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Patient's height value",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20110519113718",
+            "TestValue": "62",
+            "TestUnitsCode": "258677007",
+            "TestUnits": "in",
+            "Modifiers": [
+              {
+                "Value": "0",
+                "UnitsCode": "258672001",
+                "Units": "cm",
+                "CreatedDate": "20120209192420",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001108"
+              }
+            ],
+            "TestCode": "50373000",
+            "Ncid": "110675",
+            "PerformingProvider": "LANF, FIVE",
+            "EndTime": "20110519113718",
+            "CollectionMethod": "",
+            "StartTime": "20110519113718",
+            "UniqueId": "1000001109"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Pain Severity Scale",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20110519113718",
+            "TestValue": "5/10",
+            "TestUnitsCode": "",
+            "TestUnits": "Adult",
+            "Modifiers": [
+
+            ],
+            "TestCode": "405161002",
+            "Ncid": "959595",
+            "PerformingProvider": "LANF, FIVE",
+            "EndTime": "20110519113718",
+            "CollectionMethod": "",
+            "StartTime": "20110519113718",
+            "UniqueId": "1000001110"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Pain Scale Comment",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20110519113718",
+            "TestValue": "Head",
+            "TestUnitsCode": "",
+            "TestUnits": "Adult",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "959596",
+            "PerformingProvider": "LANF, FIVE",
+            "EndTime": "20110519113718",
+            "CollectionMethod": "",
+            "StartTime": "20110519113718",
+            "UniqueId": "1000001111"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Alcohol Use",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20110519113718",
+            "TestValue": "Yes",
+            "TestUnitsCode": "",
+            "TestUnits": "",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "959598",
+            "PerformingProvider": "LANF, FIVE",
+            "EndTime": "20110519113718",
+            "CollectionMethod": "",
+            "StartTime": "20110519113718",
+            "UniqueId": "1000001112"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDT, LANDFONE",
+            "TestName": "Weight (body weight)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20110519113718",
+            "TestValue": "108",
+            "TestUnitsCode": "258693003",
+            "TestUnits": "lb",
+            "Modifiers": [
+              {
+                "Value": "0",
+                "UnitsCode": "258682000",
+                "Units": "gm",
+                "CreatedDate": "20120209192420",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001113"
+              }
+            ],
+            "TestCode": "27113001",
+            "Ncid": "2178",
+            "PerformingProvider": "LANF, FIVE",
+            "EndTime": "20110519113718",
+            "CollectionMethod": "",
+            "StartTime": "20110519113718",
+            "UniqueId": "1000001114"
+          }
+        ],
+        "VitalsId": "2155379725",
+        "EncounterNumber": "LAND-7484",
+        "Facility": "Landstuhl RMC/0607",
+        "EnteredBy": "MIDT, LANDFONE",
+        "LoincCode": "8716-3",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20110519121933",
+        "OtherIdentifier": "",
+        "EventId": "1000001115"
+      },
+      "dataType": 4
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "5",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "5",
+      "RetrievedCount": "5",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

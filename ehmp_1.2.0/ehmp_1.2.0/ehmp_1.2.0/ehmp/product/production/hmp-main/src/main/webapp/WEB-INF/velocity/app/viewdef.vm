@@ -1,0 +1,87 @@
+<%@page import="gov.va.cpe.vpr.frameeng.FrameRegistry.FrameStats"%>
+<%@page import="java.io.PrintWriter"%>
+<%@page import="gov.va.cpe.vpr.queryeng.ViewParam.RequiredParam"%>
+<%@page import="gov.va.cpe.vpr.frameeng.FrameJob.FrameTask"%>
+<%@page import="gov.va.cpe.vpr.queryeng.ViewParam.PatientIDParam"%>
+<%@page import="gov.va.cpe.vpr.frameeng.Frame"%>
+<%@page import="gov.va.cpe.vpr.frameeng.FrameRunner"%>
+<%@page import="gov.va.cpe.vpr.queryeng.ViewDef"%>
+<%@page import="gov.va.cpe.vpr.queryeng.ViewDef.ViewRenderAction"%>
+<%@page import="gov.va.cpe.vpr.frameeng.FrameRegistry"%>
+<%@page import="gov.va.cpe.vpr.frameeng.IFrame"%>
+<%@page import="org.springframework.context.ApplicationContext"%>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<html>
+<head profile="http://www.w3.org/2005/10/profile">
+    <title>CPE</title>
+    #parse("/layouts/main.vm")
+</head>
+
+
+<%
+	ApplicationContext ctx = applicationContext;
+	FrameRunner runner = ctx.getBean(FrameRunner.class);
+	FrameRegistry registry = ctx.getBean(FrameRegistry.class); 
+	List<IFrame> views = registry.findAllByClass(ViewDef.class);
+	/*
+	TODO: get stats
+	TODO: get laoder?
+	ViewDef x;
+	
+	// viewdef stuff
+	x.getColumns();
+	
+	// frame stuff
+	x.getReferences();
+	*/
+%>
+
+
+<body>
+	<table border=1>
+		<tr>
+			<td>id</td>
+			<td>name</td>
+			<td>triggers</td>
+			<td>params</td>
+			<td>param keys</td>
+			<td>appinfo</td>
+		</tr>
+	<g:each in="${views}">
+		<tr>
+			<td><a href="/vpr/view/${it.getID()}?pid=1626&mode=json">${it.getID()}</a></td>
+			<td>${it.getName()}</td>
+			<td>
+				<% FrameStats stats = registry.getFrameStats(it) %>
+				Run Count: <%= stats.RUN_COUNT %><br/>
+			</td>
+			<td><g:each in="${it.getTriggers()}"><li>${it}</li></g:each></td>
+			<td><g:each in="${it.getParamDefs()}"><li>${it}</li></g:each></td>
+			<td>${it.getParamDefaultVals()}</td>
+			<td>${it.getAppInfo()}</td>
+		</tr>
+		<tr>
+			<td colspan="5">
+			<%
+				String result = null;
+				def input = [pid:'1626'];
+				if (!it.getParamDefs(RequiredParam.class).isEmpty()) {
+					result = "REQUIRED PARAMS: Skipped....";
+				} else {
+				try {
+					FrameTask task = runner.exec((Frame) it, input);
+					ViewRenderAction ret = task.getAction(ViewRenderAction.class);
+					result = "ROWS: " + ret.getResults().size();
+				} catch (Exception ex) {
+					ex.printStackTrace();
+					result = "<font color='red'><b>ERROR:</b></font> " + ex.getMessage();
+				}
+				}
+			%>
+			<%=result%>
+			</td>
+		</tr>
+	</g:each>
+	</table>
+</body>
+</html>

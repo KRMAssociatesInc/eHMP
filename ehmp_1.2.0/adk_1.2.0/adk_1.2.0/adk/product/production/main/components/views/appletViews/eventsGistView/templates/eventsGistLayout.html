@@ -1,0 +1,77 @@
+<div id="{{appletID}}-event-gist" gistviewtype="events">
+	<div id="eventGistGrid" class="row header-bar noMargin">
+        <div class="col-sm-6">
+            <div class="row noMargin">
+                <div id="name-header"
+                     class="col-sm-9 noPadding {{#if gistHeaders.name.sortable}}selectable{{/if}} header"
+                     sortable="{{gistHeaders.name.sortable}}"
+                     sortType="{{gistHeaders.name.sortType}}"
+                     sortDirection="none"
+                     sortKey="{{gistHeaders.name.key}}"
+                     {{#if gistHeaders.name.sortable}}
+                        tabindex="0"
+                     {{/if}}
+                     tooltip-data-key="{{gistHeaders.name.hoverTip}}">
+                        {{gistHeaders.name.title}}
+                        <span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span>
+                </div>
+                <div id="comment-header"
+                     class="col-sm-3 noPadding {{#if gistHeaders.acuityName.sortable}}selectable{{/if}} header"
+                     sortable="{{gistHeaders.acuityName.sortable}}"
+                     sortType="{{gistHeaders.acuityName.sortType}}"
+                     sortDirection="none"
+                     sortKey="{{gistHeaders.acuityName.key}}"
+                     {{#if gistHeaders.acuityName.sortable}}
+                        tabindex="0"
+                     {{/if}}
+                     tooltip-data-key="{{gistHeaders.acuityName.hoverTip}}">
+                        {{gistHeaders.acuityName.title}}
+                        <span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 noPadding">
+            <div class="row noMargin">
+                <div id="count-header2"
+                     class="col-sm-3 {{#if gistHeaders.age.sortable}}selectable{{/if}} header noPadding text-center"
+                     sortable="{{gistHeaders.age.sortable}}"
+                     sortType="{{gistHeaders.age.sortType}}"
+                     sortDirection="none"
+                     sortKey="{{gistHeaders.age.key}}"
+                     {{#if gistHeaders.age.sortable}} tabindex="0"{{/if}}
+                     tooltip-data-key="{{gistHeaders.age.hoverTip}}">
+                        {{gistHeaders.age.title}}
+                        <span sortArrow="headerDirectionalIndicator"
+                              class="sort-caret fa">
+                        </span>
+                </div>
+                <div id="count-header1"
+                     class="col-sm-2 noPadding {{#if gistHeaders.itemsInGraphCount.sortable}}selectable{{/if}} header"
+                     sortable="{{gistHeaders.itemsInGraphCount.sortable}}"
+                     sortType="{{gistHeaders.itemsInGraphCount.sortType}}"
+                     sortDirection="none"
+                     sortKey="{{gistHeaders.itemsInGraphCount.key}}"
+                     {{#if gistHeaders.itemsInGraphCount.sortable}}
+                        tabindex="0"
+                     {{/if}}
+                     tooltip-data-key="{{gistHeaders.itemsInGraphCount.hoverTip}}">
+                        {{gistHeaders.itemsInGraphCount.title}}
+                        <span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span>
+                </div>
+                <div id="graph-header"
+                     class="col-sm-7 noPadding quickDraw {{#if gistHeaders.graph.sortable}}selectable{{/if}} header"
+                     sortable="{{gistHeaders.graph.sortable}}"
+                     sortType="{{gistHeaders.graph.sortType}}"
+                     sortDirection="none"
+                     sortKey="{{gistHeaders.graph.key}}"
+                     {{#if gistHeaders.graph.sortable}}
+                        tabindex="0"
+                     {{/if}} >
+                        {{gistHeaders.graph.title}}
+                        <span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span>
+                </div>
+            </div>
+        </div>
+	</div>
+	<div id="{{appletID}}-event-gist-items" class="gistItemList"></div>
+</div>

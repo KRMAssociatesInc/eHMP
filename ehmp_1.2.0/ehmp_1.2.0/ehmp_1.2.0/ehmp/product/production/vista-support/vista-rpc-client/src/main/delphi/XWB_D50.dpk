@@ -1,0 +1,47 @@
+package XWB_D50;
+
+{ **************************************************************
+	Package: XWB - Kernel RPCBroker
+	Date Created: Sept 18, 1997 (Version 1.1)
+	Site Name: Oakland, OI Field Office, Dept of Veteran Affairs
+	Developers: Danila Manapsal, Don Craven, Joel Ivey
+	Description: Package File.
+	Current Release: Version 1.1 Patch 47 (Jun. 17, 2008))
+*************************************************************** }
+
+{$R *.RES}
+{$R 'XWB_D50.DCR'}
+{$ALIGN ON}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'VistA RPC Broker'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  XWB_R50,
+  Vcl50;
+
+contains
+  RpcbEdtr in 'RpcbEdtr.pas' {in 'Rpcbedtr.pas'},
+  XWBReg in 'XWBReg.pas' {in 'XWBReg.pas'};
+
+end.

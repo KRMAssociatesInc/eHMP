@@ -1,0 +1,4 @@
+@driver.get(@base_url + "/#lab-results-list")
+# ERROR: Caught exception [ERROR: Unsupported command [selectWindow | null | ]]
+@driver.find_element(:id, "details").click
+@driver.find_element(:css, "button.close").click

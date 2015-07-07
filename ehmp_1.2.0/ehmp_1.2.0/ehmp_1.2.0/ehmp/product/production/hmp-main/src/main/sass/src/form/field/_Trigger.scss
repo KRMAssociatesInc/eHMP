@@ -1,0 +1,124 @@
+.#{$prefix}form-trigger {
+  width: $form-trigger-width;
+  height: $form-field-content-height;
+  background-image: none;
+  @include border-right-radius($form-field-border-radius);
+
+  @if $form-trigger-border-width != 0 {
+    border-width: $form-trigger-border-width;
+    border-color: $form-trigger-border-color;
+    border-style: $form-trigger-border-style;
+  }
+}
+
+.#{$prefix}trigger-cell {
+  width: $form-trigger-width;
+}
+
+.#{$prefix}form-trigger-over {
+  @if $form-trigger-border-width != 0 and $form-trigger-border-color-over != $form-trigger-border-color {
+    border-color: $form-trigger-border-color-over;
+  }
+}
+
+.#{$prefix}form-trigger-wrap-focus .#{$prefix}form-trigger {
+  @if $form-trigger-border-width != 0 and $form-trigger-border-color-focus != $form-trigger-border-color {
+    border-color: $form-trigger-border-color-focus;
+  }
+}
+
+//.#{$prefix}form-trigger-wrap-focus .#{$prefix}form-trigger-over {
+//  background-position: -($form-trigger-width * 4) 0;
+//}
+
+.#{$prefix}form-trigger-click,
+.#{$prefix}form-trigger-wrap-focus .#{$prefix}form-trigger-click {
+  @if $form-trigger-border-width != 0 and $form-trigger-border-color-pressed != $form-trigger-border-color-over {
+    border-color: $form-trigger-border-color-pressed;
+  }
+}
+
+.#{$prefix}form-arrow-trigger {
+  color: $gray-light;
+  font-size: 16px;
+  line-height: 1.5em;
+  padding-left: 5px;
+
+  @include fa-icon($fa-var-caret-down);
+}
+
+.#{$prefix}form-arrow-trigger-over {
+  color: $gray;
+}
+
+.#{$prefix}form-clear-trigger {
+//  background-image: theme-background-image('form/clear-trigger');
+}
+
+.#{$prefix}form-search-trigger {
+  color: $gray-light;
+  font-size: 14px;
+  line-height: 1.5em;
+
+  @include fa-icon($fa-var-search);
+}
+.#{$prefix}form-search-trigger-over {
+  color: $gray;
+}
+
+.hmp-item-disabled .#{$prefix}form-trigger {
+  cursor: default;
+}
+
+.hmp-item-disabled .#{$prefix}form-arrow-trigger-over,
+.hmp-item-disabled .#{$prefix}form-search-trigger-over{
+  color: $gray-light;
+}
+
+.#{$prefix}form-trigger-wrap {
+  border: $form-field-border-width solid;
+  border-color: $form-field-border-color;
+  @include border-radius($form-field-border-radius);
+//  line-height: $form-field-font-size;
+
+  .#{$prefix}form-text {
+    border-width: 0;
+    @include border-right-radius(0);
+    @include box-shadow(none);
+
+    padding-top: top($form-field-padding) - 1;
+    padding-bottom: bottom($form-field-padding) - 1;
+    height: $form-field-height - vertical($form-field-border-width);
+
+    @if $include-content-box {
+      .#{$prefix}content-box & {
+        height: $form-field-content-height;
+      }
+    }
+  }
+
+  .#{$prefix}form-trigger-input-cell-noedit {
+    @include border-left-radius($form-field-border-radius);
+  }
+
+  .#{$prefix}form-text.#{$prefix}trigger-noedit {
+    background-color: transparent;
+    border-right: none !important;
+
+    cursor: pointer;
+    cursor: hand;
+  }
+
+  .#{$prefix}form-trigger-wrap-focus & {
+    border-color: $form-field-focus-border-color;
+  }
+
+  .#{$prefix}form-invalid & {
+    border-color: $form-field-invalid-border-color;
+  }
+
+  .#{$prefix}trigger-cell {
+    vertical-align: middle;
+    @include border-right-radius($form-field-border-radius);
+  }
+}

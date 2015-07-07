@@ -1,0 +1,113 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "OrderStatus": "",
+        "PlacerSystemName": "NH Great Lakes Lab Interface Context",
+        "EnteredBy": "",
+        "TestName": "Routine Culture",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "",
+        "OrderDateTime": "20130402133500",
+        "CustodianName": "ahlta",
+        "CertifiedDate": "20130402134618",
+        "ResultId": "110997",
+        "Accession": "130402 MI 322",
+        "ResultStatusName": "",
+        "FillerSystemName": "NH Great Lakes Lab Interface Context",
+        "OrderPriority": "ROUTINE",
+        "OrderingProvider": "42834 DOCTOR, ALPHA",
+        "OrderComment": "For Test: CULTURE & SUSCEPTIBILITY LAB-2517",
+        "OrderId": "2157166573",
+        "SpecimenName": "Foot",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "IsPanel": "false",
+        "OtherIdentifier": "",
+        "TestStatusName": "Final",
+        "TestId": "110997",
+        "RequestingLocation": "NH Great Lakes IL",
+        "Specimen": "",
+        "Tests": [
+          {
+            "Name": "Routine Culture",
+            "Results": [
+              {
+                "ResultStatusDescription": "Final",
+                "Name": "Routine Culture",
+                "Result": "GRAM STAIN: GRAM NEGATIVE COCCI",
+                "Organisms": [
+                  {
+                    "Quantity": "10000",
+                    "Antibiotics": [
+                      {
+                        "AntibioticName": "ampicillin",
+                        "Interpretation": "Susceptible",
+                        "AntibioticResult": "Susceptib*",
+                        "EventId": "1000000907"
+                      },
+                      {
+                        "AntibioticName": "Amoxicillin/Clavulanic Acid",
+                        "Interpretation": "Susceptible",
+                        "AntibioticResult": "Susceptib*",
+                        "EventId": "1000000908"
+                      },
+                      {
+                        "AntibioticName": "Ampicillin/Sulbactam",
+                        "Interpretation": "Resistant",
+                        "AntibioticResult": "Resistant",
+                        "EventId": "1000000909"
+                      }
+                    ],
+                    "Organism": "Pseudomonas aeruginosa",
+                    "EventId": "1000000910"
+                  }
+                ],
+                "CertifiedDate": "20130402134618",
+                "FullReport": "Routine Culture\n                Order #               130402-00006 (NH Great Lakes Lab Interface Context)\n                Filler #              130402 MI 322 (NH Great Lakes Lab Interface Context)\n                Status:               Final\n                Ordering Provider:    DOCTOR, ALPHA\n                Priority:             ROUTINE\n                Date Ordered:         02 Apr 2013 1335\n                Date Resulted:        02 Apr 2013 1346\n                COLLECT_SAMPLE:       WOUND\n                Order Comment:        For Test: CULTURE & SUSCEPTIBILITY LAB-2517\n                                      \n                GRAM STAIN            GRAM NEGATIVE COCCI\n                                      \n                Specimen:             Foot\n                Collected:            02 Apr 2013 1738\n\n                Results:              \n                Quantity: 10000       Pseudomonas aeruginosa\n                MIC Sensitivity:      \n                                      ampicillin Susceptib* Susceptible\n                                      Amoxicillin/Clavulanic Acid Susceptib* Susceptible\n                                      Ampicillin/Sulbactam Resistant",
+                "ResultId": "",
+                "Facility": "NH Great Lakes IL/0056",
+                "ResultIndependent": "",
+                "CertifiedBy": "",
+                "ResultStatus": "Final",
+                "EventId": "1000000911"
+              }
+            ],
+            "EventId": "1000000912"
+          }
+        ],
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "18725-2",
+        "CollectionSample": "WOUND",
+        "OrderNumber": "130402-00006",
+        "OrderFacility": "NH Great Lakes IL/0056",
+        "CollectionDateTime": "20130402173800",
+        "EventId": "1000000913"
+      },
+      "dataType": 11
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

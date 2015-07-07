@@ -1,0 +1,27 @@
+defaultTasks 'integrationTest'
+
+task bundleInstall{
+  inputs.file new File(projectDir, 'Gemfile')
+  inputs.file new File(projectDir, 'Gemfile.lock')
+  outputs.file new File(projectDir, '.lastBundleInstallFlag')
+
+  doLast{
+    exec {
+      executable = "bundle"
+      args = ['install']
+    }
+
+    ant.touch(file: new File(projectDir, '.lastBundleInstallFlag'))
+  }
+}
+
+task integrationTest(dependsOn: bundleInstall){
+  group test.group
+  description "Runs the integration tests for eHMP"
+  doLast{
+    exec {
+      executable = "bundle"
+      args = ['exec', 'rake']
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "CDS",
+    "systemId": "CDS"
+  },
+  "data": {
+    "updated": "20140409083852",
+    "totalItems": 1,
+    "items": [
+      {
+        "administeredDateTime": 20000404105506,
+        "contraindicated": false,
+        "cptCode": "urn:cpt:90732",
+        "cptName": "PNEUMOCOCCAL VACCINE",
+        "encounterName": "AUDIOLOGY Apr 04, 2000",
+        "encounterUid": "urn:va:visit:ABCD:229:1975",
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "localId": 44,
+        "locationName": "AUDIOLOGY",
+        "locationUid": "urn:va:location:ABCD:64",
+        "name": "PNEUMOCOCCAL",
+        "performerName": "WARDCLERK,SIXTYEIGHT",
+        "performerUid": "urn:va:user:ABCD:11278",
+        "summary": "PNEUMOCOCCAL VACCINE",
+        "uid": "urn:va:immunization:ABCD:229:44"
+      }
+    ]
+  }
+}

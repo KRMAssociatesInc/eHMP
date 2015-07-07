@@ -1,0 +1,360 @@
+KIDS Distribution saved on Apr 22, 2015@16:15:56
+fix for defect 811, patient flag updates not in JDS
+**KIDS**:HMP HRUB 2.0^
+
+**INSTALL NAME**
+HMP HRUB 2.0
+"BLD",9080,0)
+HMP HRUB 2.0^^0^3150422^n
+"BLD",9080,1,0)
+^^4^4^3150422^
+"BLD",9080,1,1,0)
+ 
+"BLD",9080,1,2,0)
+installs a new protocol: HMP DGPF ASSIGN FLAG then makes the new protocol
+"BLD",9080,1,3,0)
+a ITEM to DGPF ASSIGN FLAG, DGPF ASSIGN FLAG will be edited to have a TYPE
+"BLD",9080,1,4,0)
+of 'extended action'
+"BLD",9080,4,0)
+^9.64PA^^
+"BLD",9080,6.3)
+8
+"BLD",9080,"INIT")
+POST^HMP0311P
+"BLD",9080,"KRN",0)
+^9.67PA^779.2^20
+"BLD",9080,"KRN",.4,0)
+.4
+"BLD",9080,"KRN",.401,0)
+.401
+"BLD",9080,"KRN",.402,0)
+.402
+"BLD",9080,"KRN",.403,0)
+.403
+"BLD",9080,"KRN",.5,0)
+.5
+"BLD",9080,"KRN",.84,0)
+.84
+"BLD",9080,"KRN",3.6,0)
+3.6
+"BLD",9080,"KRN",3.8,0)
+3.8
+"BLD",9080,"KRN",9.2,0)
+9.2
+"BLD",9080,"KRN",9.8,0)
+9.8
+"BLD",9080,"KRN",19,0)
+19
+"BLD",9080,"KRN",19.1,0)
+19.1
+"BLD",9080,"KRN",101,0)
+101
+"BLD",9080,"KRN",101,"NM",0)
+^9.68A^1^1
+"BLD",9080,"KRN",101,"NM",1,0)
+HMP DGPF ASSIGN FLAG^^0
+"BLD",9080,"KRN",101,"NM","B","HMP DGPF ASSIGN FLAG",1)
+
+"BLD",9080,"KRN",409.61,0)
+409.61
+"BLD",9080,"KRN",409.61,"NM",0)
+^9.68A^^
+"BLD",9080,"KRN",771,0)
+771
+"BLD",9080,"KRN",779.2,0)
+779.2
+"BLD",9080,"KRN",870,0)
+870
+"BLD",9080,"KRN",8989.51,0)
+8989.51
+"BLD",9080,"KRN",8989.52,0)
+8989.52
+"BLD",9080,"KRN",8994,0)
+8994
+"BLD",9080,"KRN","B",.4,.4)
+
+"BLD",9080,"KRN","B",.401,.401)
+
+"BLD",9080,"KRN","B",.402,.402)
+
+"BLD",9080,"KRN","B",.403,.403)
+
+"BLD",9080,"KRN","B",.5,.5)
+
+"BLD",9080,"KRN","B",.84,.84)
+
+"BLD",9080,"KRN","B",3.6,3.6)
+
+"BLD",9080,"KRN","B",3.8,3.8)
+
+"BLD",9080,"KRN","B",9.2,9.2)
+
+"BLD",9080,"KRN","B",9.8,9.8)
+
+"BLD",9080,"KRN","B",19,19)
+
+"BLD",9080,"KRN","B",19.1,19.1)
+
+"BLD",9080,"KRN","B",101,101)
+
+"BLD",9080,"KRN","B",409.61,409.61)
+
+"BLD",9080,"KRN","B",771,771)
+
+"BLD",9080,"KRN","B",779.2,779.2)
+
+"BLD",9080,"KRN","B",870,870)
+
+"BLD",9080,"KRN","B",8989.51,8989.51)
+
+"BLD",9080,"KRN","B",8989.52,8989.52)
+
+"BLD",9080,"KRN","B",8994,8994)
+
+"INIT")
+POST^HMP0311P
+"KRN",101,6127,-1)
+0^1
+"KRN",101,6127,0)
+HMP DGPF ASSIGN FLAG^^^A^^^^^^^^HEALTH MANAGEMENT PLATFORM
+"KRN",101,6127,1,0)
+^101.06^2^2^3150422^^
+"KRN",101,6127,1,1,0)
+Used to trigger a JDS update when the DGPF ASSIGN FLAG action protocol is used.
+"KRN",101,6127,1,2,0)
+A patient must have been selected and the DFN value is in DGDFN.
+"KRN",101,6127,20)
+I $G(DGDFN),$L($T(POST^HMPEVNT)) D POST^HMPEVNT(DGDFN,"flags",DGDFN)
+"MBREQ")
+0
+"ORD",15,101)
+101;15;;;PRO^XPDTA;PROF1^XPDIA;PROE1^XPDIA;PROF2^XPDIA;;PRODEL^XPDIA
+"ORD",15,101,0)
+PROTOCOL
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"RTN")
+1
+"RTN","HMP0311P")
+0^^B14101699
+"RTN","HMP0311P",1,0)
+HMP0311P ; Agilex/hrubovcak ;Mar 20, 2015@14:34:08
+"RTN","HMP0311P",2,0)
+ ;;2.0;Health Management Platform;****;;Build 8
+"RTN","HMP0311P",3,0)
+ ;Per VA Directive 6402, this routine should not be modified.
+"RTN","HMP0311P",4,0)
+ ;
+"RTN","HMP0311P",5,0)
+ Q
+"RTN","HMP0311P",6,0)
+ ; Post-init logic
+"RTN","HMP0311P",7,0)
+POST ; make HMP DGPF ASSIGN FLAG protocol an ITEM
+"RTN","HMP0311P",8,0)
+ ;
+"RTN","HMP0311P",9,0)
+ N HMPDGIEN,HMPERR,HMPEXIT,HMPFDA,HMPIEN,HMPRTCL,J,PRTCLITM,V,X,Y
+"RTN","HMP0311P",10,0)
+ ;
+"RTN","HMP0311P",11,0)
+ D MES^XPDUTL($T(+0)_" post-init routine started "_$$HTE^XLFDT($H))
+"RTN","HMP0311P",12,0)
+ S V=$$SVDATA D MES^XPDUTL("Old data saved in "_V)
+"RTN","HMP0311P",13,0)
+ S HMPRTCL="HMP DGPF ASSIGN FLAG",HMPIEN=$O(^ORD(101,"B",HMPRTCL,0))
+"RTN","HMP0311P",14,0)
+ ; protocol missing, write message and exit
+"RTN","HMP0311P",15,0)
+ I '(HMPIEN>0) D MES^XPDUTL(HMPRTCL_" protocol not found. It must be installed to proceed.") Q
+"RTN","HMP0311P",16,0)
+ ;
+"RTN","HMP0311P",17,0)
+ S Y="DGPF ASSIGN FLAG",HMPDGIEN=$O(^ORD(101,"B",Y,0))
+"RTN","HMP0311P",18,0)
+ ; protocol missing, write message and exit
+"RTN","HMP0311P",19,0)
+ I '(HMPDGIEN>0) D MES^XPDUTL(Y_" protocol not found.  No ITEM update performed.") Q
+"RTN","HMP0311P",20,0)
+ ; make DGPF ASSIGN FLAG an extended action
+"RTN","HMP0311P",21,0)
+ S HMPFDA(101,HMPDGIEN_",",4)="X"
+"RTN","HMP0311P",22,0)
+ D UPDATE^DIE("","HMPFDA","","HMPERR")
+"RTN","HMP0311P",23,0)
+ I $D(HMPERR) D  Q  ; something went wrong
+"RTN","HMP0311P",24,0)
+ .D MES^XPDUTL("FileMan error when editing DGPF ASSIGN FLAG protocol")
+"RTN","HMP0311P",25,0)
+ .N V S V="HMPERR" F  S V=$Q(@V) Q:V=""  D MES^XPDUTL(V_" = "_@V)
+"RTN","HMP0311P",26,0)
+ ;
+"RTN","HMP0311P",27,0)
+ ; is protocol already an item?
+"RTN","HMP0311P",28,0)
+ S HMPEXIT=$O(^ORD(101,HMPDGIEN,10,"B",HMPIEN,0))
+"RTN","HMP0311P",29,0)
+ I HMPEXIT D MES^XPDUTL(HMPRTCL_" already an ITEM in "_Y_".  No update needed.") Q
+"RTN","HMP0311P",30,0)
+ ;
+"RTN","HMP0311P",31,0)
+ ; add protocol as ITEM
+"RTN","HMP0311P",32,0)
+ K HMPFDA,HMPERR
+"RTN","HMP0311P",33,0)
+ S HMPFDA(101.01,"+1,"_HMPDGIEN_",",.01)=HMPIEN
+"RTN","HMP0311P",34,0)
+ D UPDATE^DIE("","HMPFDA","PRTCLITM","HMPERR")
+"RTN","HMP0311P",35,0)
+ I $D(HMPERR) D  Q  ; something went wrong
+"RTN","HMP0311P",36,0)
+ .D MES^XPDUTL("FileMan error when adding ITEM to DGPF ASSIGN FLAG protocol")
+"RTN","HMP0311P",37,0)
+ .N V S V="HMPERR" F  S V=$Q(@V) Q:V=""  D MES^XPDUTL(V_" = "_@V)
+"RTN","HMP0311P",38,0)
+ ; new ITEM sub-file IEN will be in PRTCLITM(1)
+"RTN","HMP0311P",39,0)
+ D MES^XPDUTL(HMPRTCL_" protocol update finished "_$$HTE^XLFDT($H))
+"RTN","HMP0311P",40,0)
+ ;
+"RTN","HMP0311P",41,0)
+ Q
+"RTN","HMP0311P",42,0)
+ ;
+"RTN","HMP0311P",43,0)
+SVDATA() ; extrinsic variable, save original FileMan data, returns storage node
+"RTN","HMP0311P",44,0)
+ ;
+"RTN","HMP0311P",45,0)
+ D DT^DICRW
+"RTN","HMP0311P",46,0)
+ N FMERRCNT,HMPXTMP,HMPIEN,LN,NTRY,TXT,V,X,Y
+"RTN","HMP0311P",47,0)
+ S Y=$$NOW^XLFDT,HMPXTMP=$NA(^XTMP("HMP INSTALL LOG",Y))  ; XTMP storage location
+"RTN","HMP0311P",48,0)
+ ; ^XTMP log data expires in 90 days
+"RTN","HMP0311P",49,0)
+ S X=$G(@HMPXTMP@(0)) S:X="" @HMPXTMP@(0)=$$FMADD^XLFDT(DT,90)_U_Y_"^HMP installation "_$$FMTE^XLFDT(Y)
+"RTN","HMP0311P",50,0)
+ ;
+"RTN","HMP0311P",51,0)
+ S FMERRCNT=0  ; FileMan error counter
+"RTN","HMP0311P",52,0)
+ ; save entries in FileMan items list
+"RTN","HMP0311P",53,0)
+ F LN=1:1 S TXT=$P($T(FMITMS+LN),";;",2,99) Q:TXT=""  D
+"RTN","HMP0311P",54,0)
+ .N FLNO,FMARRY,FMERR  ; file #, FileMan returned value and error message arrays
+"RTN","HMP0311P",55,0)
+ .S FLNO=+$P(TXT,U),X=$P(TXT,U,2,99)  ; file number and target entry
+"RTN","HMP0311P",56,0)
+ .Q:'(FLNO>1)!(X="")  ; file and entry required
+"RTN","HMP0311P",57,0)
+ .S HMPIEN=$$FIND1^DIC(FLNO,"","",X,"","","FMERR")  ; lookup value in X is external format
+"RTN","HMP0311P",58,0)
+ .I $D(FMERR) D  Q  ; log error message and quit
+"RTN","HMP0311P",59,0)
+ ..S V="FMERR",FMERRCNT=FMERRCNT+1 F  S V=$Q(@V) Q:V=""  S @HMPXTMP@("FM LOOKUP ERROR",FMERRCNT,V)=@V
+"RTN","HMP0311P",60,0)
+ .;
+"RTN","HMP0311P",61,0)
+ .S:'(HMPIEN>0) FMERRCNT=FMERRCNT+1,@HMPXTMP@("FM ENTRY NOT FOUND",FMERRCNT)=TXT  ; entry
+"RTN","HMP0311P",62,0)
+ .S:HMPIEN>0 @HMPXTMP@("ENTRY",FLNO,HMPIEN)="entry found"
+"RTN","HMP0311P",63,0)
+ .K FMERR  ; just in case
+"RTN","HMP0311P",64,0)
+ .D GETS^DIQ(FLNO,HMPIEN_",","**","EN","FMARRY","FMERR")  ; data including sub-files, ignore null values
+"RTN","HMP0311P",65,0)
+ .I $D(FMERR) D  ; log error message
+"RTN","HMP0311P",66,0)
+ ..S V="FMERR",FMERRCNT=FMERRCNT+1 F  S V=$Q(@V) Q:V=""  S @HMPXTMP@("FM DATA ERROR",FMERRCNT,V)=@V
+"RTN","HMP0311P",67,0)
+ .; save the data
+"RTN","HMP0311P",68,0)
+ .M @HMPXTMP@("ENTRY")=FMARRY
+"RTN","HMP0311P",69,0)
+ ;
+"RTN","HMP0311P",70,0)
+ Q HMPXTMP  ; return ^XTMP storage location
+"RTN","HMP0311P",71,0)
+ ;
+"RTN","HMP0311P",72,0)
+FMITMS ; list of FileMan entries: "file # ^ .01 field value"
+"RTN","HMP0311P",73,0)
+ ;;101^DGPF ASSIGN FLAG
+"RTN","HMP0311P",74,0)
+ ;
+"VER")
+8.0^22.0
+**END**
+**END**

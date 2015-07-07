@@ -1,0 +1,5 @@
+# config/cucumber.yml
+##YALM Template
+---
+default: --profile custom_test
+custom_test: features --color --format pretty --tags ~@future -f json_pretty -o cucumber.json -f html -o cucumber.html

@@ -1,0 +1,24 @@
+<div style="background-color: black; height: 26px; width: 100%"></div>
+<noscript>
+    <style type="text/css">
+        body { margin: 0; }
+    </style>
+    <div>
+        <div style="width: 100%;text-align: center; padding-top: 186px; background: url(#springUrl('/images/hmp_logo_straight.jpg')) no-repeat;background-position: center 110px">
+            <div style="font-size: 16px;color: #333"><h3>Oops!</h3>The #springMessage("platform.name") won't work because JavaScript is disabled...</div>
+        </div>
+    </div>
+</noscript>
+<div id="frameworkload" style="visibility:hidden;background-color: transparent">
+    <!-- TODO: Sub in different image for framework initializing stuff -->
+    <div style="width: 100%;text-align: center; padding-top: 186px; background: url(#springUrl('/images/tri-64a.png')) no-repeat;background-position: center 110px">
+        <div style="font-size: 16px">Initializing User Interface</div>
+    </div>
+</div>
+<script type="text/javascript">
+    var splashTimer = window.setTimeout(showsplash, 500);
+    function showsplash() {
+        var splash = document.getElementById('frameworkload');
+        if (splash) splash.style.visibility = 'visible';
+    }
+</script>

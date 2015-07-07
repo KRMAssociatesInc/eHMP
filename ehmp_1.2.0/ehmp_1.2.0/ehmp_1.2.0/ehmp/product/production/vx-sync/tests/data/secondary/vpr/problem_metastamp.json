@@ -1,0 +1,136 @@
+{
+  "icn": "10110V004877",
+  "stampTime": "20131031094920.853",
+  "sourceMetaStamp": {
+    "9E7A": {
+      "pid": "9E7A;8",
+      "localId": "8",
+      "stampTime": "20131031094920.853",
+      "domainMetaStamp": {
+        "problem": {
+          "domain": "problem",
+          "stampTime": "20131031094920.853",
+          "eventMetaStamp": {
+            "urn:va:problem:9E7A:8:185": {
+              "stampTime": "20131031094920.853"
+            },
+            "urn:va:problem:9E7A:8:325": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:9E7A:8:501": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:9E7A:8:628": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:9E7A:8:748": {
+              "stamptime": "20131031094920.853"
+            }
+          }
+        }
+      }
+    },
+    "HDR": {
+      "pid": "HDR;10110V004877",
+      "localId": "10110V004877",
+      "stampTime": "20131031094920.853",
+      "domainMetaStamp": {
+        "problem": {
+          "domain": "problem",
+          "stampTime": "20131031094920.853",
+          "eventMetaStamp": {
+            "urn:va:problem:ABCD:17:58": {
+              "stamptime": "20131031094920.853"
+            }
+          }
+        }
+      }
+    },
+    "C877": {
+      "pid": "C877;8",
+      "localId": "8",
+      "stampTime": "20131031094920.853",
+      "domainMetaStamp": {
+        "problem": {
+          "domain": "problem",
+          "stampTime": "20131031094920.853",
+          "eventMetaStamp": {
+            "urn:va:problem:C877:8:185": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:C877:8:325": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:C877:8:501": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:C877:8:628": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:C877:8:748": {
+              "stamptime": "20131031094920.853"
+            }
+          }
+        }
+      }
+    },
+    "DOD": {
+      "pid": "DOD;0000000008",
+      "localId": "0000000008",
+      "stampTime": "20131031094920.853",
+      "domainMetaStamp": {
+        "problem": {
+          "domain": "problem",
+          "stampTime": "20131031094920.853",
+          "eventMetaStamp": {
+            "urn:va:problem:DOD:0000000008:1000001440": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001441": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001442": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001443": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001444": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001445": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001446": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001447": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001448": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001449": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001450": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001451": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001452": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001453": {
+              "stamptime": "20131031094920.853"
+            },
+            "urn:va:problem:DOD:0000000008:1000001454": {
+              "stamptime": "20131031094920.853"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1790 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "36",
+      "RetrievedCount": "36",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001149"
+        },
+        "enteredBy": {
+          "name": "GONZO, ATTEND"
+        },
+        "enteredDate": "20080409110456",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20080409110016",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20080409105900",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "GONZO, ATTEND"
+        },
+        "reason": "Congestion and cold",
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001150"
+        },
+        "enteredBy": {
+          "name": "YOO, ATTEND"
+        },
+        "enteredDate": "20071130074918",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20071130074921",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20071130074843",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "YOO, ATTEND"
+        },
+        "reason": "heartburn",
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001151"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070917095527",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070917095527",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: LARRY,PROVIDER 17 Sep 2007 0955\r\n------------------------------\r\ntest",
+        "date": "20070917095507",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations, 3M Health Information Systems"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "KEPT",
+        "type": "EST$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001152"
+        },
+        "enteredBy": {
+          "name": "DENTAL, LARRY"
+        },
+        "enteredDate": "20070904131952",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070904131819",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: DENTAL,LARRY 04 Sep 2007 1317\r\n------------------------------\r\ntest",
+        "date": "20070904131708",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Dental"
+        },
+        "provider": {
+          "name": "DENTAL, LARRY"
+        },
+        "reason": "testeststest",
+        "status": "KEPT",
+        "type": "SPEC"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001153"
+        },
+        "enteredBy": {
+          "name": "DARIUS, PROVIDER"
+        },
+        "enteredDate": "20070829101128",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070829101129",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: LARRY,PROVIDER 29 Aug 2007 1011\r\n------------------------------\r\nDB Two",
+        "date": "20070829101108",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "DARIUS, PROVIDER"
+        },
+        "reason": "DB Two",
+        "status": "KEPT",
+        "type": "EST"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001154"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070829100828",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070829100828",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: LARRY,PROVIDER 29 Aug 2007 1007\r\n------------------------------\r\nDB Two",
+        "date": "20070829100740",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "DB Two",
+        "status": "CANCEL",
+        "type": "EST$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001155"
+        },
+        "enteredBy": {
+          "name": "PROVIDER, SJONE"
+        },
+        "enteredDate": "20070827115303",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070827115200",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070827115140",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "PROVIDER, SJONE"
+        },
+        "reason": "cold",
+        "status": "CANCEL",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001156"
+        },
+        "enteredBy": {
+          "name": "DARIUS, PROVIDER"
+        },
+        "enteredDate": "20070827110620",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070827110654",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070827110626",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "DARIUS, PROVIDER"
+        },
+        "reason": "sick",
+        "status": "CANCEL",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001157"
+        },
+        "enteredBy": {
+          "name": "KEVIN, PROVIDER"
+        },
+        "enteredDate": "20070827082546",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070827082850",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070827082819",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "KEVIN, PROVIDER"
+        },
+        "reason": "Ankle Swollen",
+        "status": "CANCEL",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001158"
+        },
+        "enteredBy": {
+          "name": "TENNISHA, PROVIDER"
+        },
+        "enteredDate": "20070827081748",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070827082053",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070827082014",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "TENNISHA, PROVIDER"
+        },
+        "reason": "stomach virus",
+        "status": "CANCEL",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001159"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070824145635",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070824145525",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: LARRY,PROVIDER 24 Aug 2007 1454\r\n------------------------------\r\ntest",
+        "date": "20070824145444",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "CANCEL",
+        "type": "EST$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001160"
+        },
+        "enteredBy": {
+          "name": "DARIUS, PROVIDER"
+        },
+        "enteredDate": "20070824122447",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070824122519",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070824122459",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "DARIUS, PROVIDER"
+        },
+        "reason": "TEST",
+        "status": "CANCEL",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001161"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070824111709",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070824111546",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: LARRY,PROVIDER 24 Aug 2007 1115\r\n------------------------------\r\nest",
+        "date": "20070824111517",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "CANCEL",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001162"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070820094327",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070820094201",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: LARRY,PROVIDER 20 Aug 2007 0941\r\n------------------------------\r\ntest",
+        "date": "20070820094150",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "CANCEL",
+        "type": "EST"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001163"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070820094241",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070820094116",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: LARRY,PROVIDER 20 Aug 2007 0941\r\n------------------------------\r\ntest",
+        "date": "20070820094101",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "CANCEL",
+        "type": "EST"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001164"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070817082924",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070817082804",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070817082741",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": null,
+        "status": "CANCEL",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001165"
+        },
+        "enteredBy": {
+          "name": "DARIUS, PROVIDER"
+        },
+        "enteredDate": "20070814131839",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070814131453",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070814131355",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "DARIUS, PROVIDER"
+        },
+        "reason": "shoulder pain",
+        "status": "CANCEL",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001166"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070808104503",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070808104705",
+        "checkOutDate": null,
+        "classification": "3",
+        "comments": null,
+        "date": "20070808104614",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "medicine refill",
+        "status": "KEPT",
+        "type": "T-CON*"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001167"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070726093151",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070726093049",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: LARRY,PROVIDER 26 Jul 2007 0928\r\n------------------------------\r\ntest",
+        "date": "20070726092823",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "CANCEL",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001168"
+        },
+        "enteredBy": {
+          "name": "DAISY, PROVIDER"
+        },
+        "enteredDate": "20070724095109",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070724095220",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: DAISY,PROVIDER 24 Jul 2007 0951\r\n------------------------------\r\ntest",
+        "date": "20070724095158",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "DAISY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "KEPT",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001169"
+        },
+        "enteredBy": {
+          "name": "DAISY, PROVIDER"
+        },
+        "enteredDate": "20070723103105",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070723103210",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070723103204",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "DAISY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "KEPT",
+        "type": "EST"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001170"
+        },
+        "enteredBy": {
+          "name": "DAISY, PROVIDER"
+        },
+        "enteredDate": "20070723103055",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070723103201",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: DAISY,PROVIDER 23 Jul 2007 1031\r\n------------------------------\r\ntest",
+        "date": "20070723103146",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "DAISY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001171"
+        },
+        "enteredBy": {
+          "name": "DAISY, PROVIDER"
+        },
+        "enteredDate": "20070723103031",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070723103143",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: DAISY,PROVIDER 23 Jul 2007 1031\r\n------------------------------\r\ntest",
+        "date": "20070723103129",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "DAISY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "KEPT",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001172"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070717140124",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070717140532",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070717140507",
+        "dispositions": [
+          [
+            {
+              "display": "Sick at Home/Quarters"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "Influenza",
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001173"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070717134719",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070717135127",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070717135114",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "Otits Media",
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001174"
+        },
+        "enteredBy": {
+          "name": "PROVIDER, FULLTWO"
+        },
+        "enteredDate": "20070717103403",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070717103515",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070717103453",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "PROVIDER, FULLTWO"
+        },
+        "reason": "sleep apnea",
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001175"
+        },
+        "enteredBy": {
+          "name": "DAISY, PROVIDER"
+        },
+        "enteredDate": "20070713135804",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070713135722",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070713135703",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "DAISY, PROVIDER"
+        },
+        "reason": "medicine refill",
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001176"
+        },
+        "enteredBy": {
+          "name": "DAISY, PROVIDER"
+        },
+        "enteredDate": "20070712134436",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070712134531",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070712134448",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "DAISY, PROVIDER"
+        },
+        "reason": "sore throat",
+        "status": "KEPT",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001177"
+        },
+        "enteredBy": {
+          "name": "AYINDE, PROVIDER"
+        },
+        "enteredDate": "20070711153619",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070711153625",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070711153609",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "AYINDE, PROVIDER"
+        },
+        "reason": null,
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001178"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070710085613",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070710085706",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: LARRY,PROVIDER 10 Jul 2007 0856\r\n------------------------------\r\ntest",
+        "date": "20070710085642",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "CANCEL",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001179"
+        },
+        "enteredBy": {
+          "name": "STEVEN, PROVIDER"
+        },
+        "enteredDate": "20070702114306",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070702114344",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070702114304",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "STEVEN, PROVIDER"
+        },
+        "reason": "head ache",
+        "status": "KEPT",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001180"
+        },
+        "enteredBy": {
+          "name": "USER, SUPER"
+        },
+        "enteredDate": "20070629132705",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070629132840",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": null,
+        "date": "20070629132813",
+        "dispositions": [
+          [
+            {
+              "display": "Released with Work/Duty Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "USER, SUPER"
+        },
+        "reason": "cold",
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001181"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070627150825",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070627150742",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: LARRY,PROVIDER 27 Jun 2007 1506\r\n------------------------------\r\nSENSITIVE",
+        "date": "20070627150658",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "SENSITIVE",
+        "status": "KEPT",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001182"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070626151448",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070626151359",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: LARRY,PROVIDER 26 Jun 2007 1513\r\n------------------------------\r\ntest",
+        "date": "20070626151340",
+        "dispositions": [
+          [
+            {
+              "display": "Released w/o Limitations"
+            }
+          ]
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "KEPT",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001183"
+        },
+        "enteredBy": {
+          "name": "LARRY, PROVIDER"
+        },
+        "enteredDate": "20070621093308",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070621093224",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: LARRY,PROVIDER 21 Jun 2007 0932\r\n------------------------------\r\ntest",
+        "date": "20070621093214",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "LARRY, PROVIDER"
+        },
+        "reason": "test",
+        "status": "KEPT",
+        "type": "ACUT$"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000001184"
+        },
+        "enteredBy": {
+          "name": "PROVIDER, FULLFOUR"
+        },
+        "enteredDate": "20070621091951",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "56446-8"
+          }
+        ],
+        "facility": {
+          "name": "4th Medical Group"
+        },
+        "checkInDate": "20070621091909",
+        "checkOutDate": null,
+        "classification": "0",
+        "comments": "Notes Entered by: PROVIDER,FULLFOUR 21 Jun 2007 0918\r\n------------------------------\r\ntest",
+        "date": "20070621091857",
+        "dispositions": [
+          null
+        ],
+        "location": {
+          "name": "Internal Medicine"
+        },
+        "provider": {
+          "name": "PROVIDER, FULLFOUR"
+        },
+        "reason": "test",
+        "status": "KEPT",
+        "type": "ACUT"
+      },
+      "dataType": 6
+    }
+  ]
+}

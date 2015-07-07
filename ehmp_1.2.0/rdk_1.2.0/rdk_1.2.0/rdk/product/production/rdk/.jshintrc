@@ -1,0 +1,35 @@
+{
+     "globals": {
+        "jasmine": false,
+        "beforeEach": false,
+        "afterEach": false,
+        "spyOn": false,
+        "it": false,
+        "console": false,
+        "describe": false,
+        "expect": false,
+        "beforeEach": false,
+        "waits": false,
+        "waitsFor": false,
+        "runs": false,
+        "xit": false,
+        "xdescribe": false
+    },
+
+    "nonew": true,
+    "curly": true,
+    "noarg": true,
+    "trailing": true,
+    "forin": true,
+    "noempty": true,
+    "node": true,
+    "eqeqeq": true,
+    "strict": true,
+    "undef": true,
+    "bitwise": true,
+    "nonbsp": true,
+    "freeze": true,
+    "newcap": true,
+    "quotmark": "single",
+    "unused": true
+}

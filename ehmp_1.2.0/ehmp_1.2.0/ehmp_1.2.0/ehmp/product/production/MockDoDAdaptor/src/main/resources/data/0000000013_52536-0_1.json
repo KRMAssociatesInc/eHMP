@@ -1,0 +1,78 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "Street": "",
+        "SocialSecurityNumber": "304001797",
+        "Rank": "Captain O3-A",
+        "SponsorRank": "",
+        "EnteredBy": "",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "",
+        "LastName": "ROLF",
+        "CustodianName": "ahlta",
+        "Fmp": "",
+        "FirstName": "DAWN",
+        "BranchOfService": "",
+        "MaritalStatus": "",
+        "CountryCode": "",
+        "Street2": "",
+        "SponsorSsn": "",
+        "Sex": "F",
+        "Uic": "SM1CFD74     (00 0004 LOGISTICS SQ)",
+        "Suffix": "",
+        "Religion": "Not Given/No Preference",
+        "Race": "",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EdiPn": "D5010119501",
+        "PhoneNumber": "",
+        "OtherIdentifier": "",
+        "Country": "",
+        "City": "",
+        "DeersEligibility": "",
+        "DateOfBirth": "19751113000000",
+        "UnitNumber": "795987",
+        "AreaCode": "",
+        "MiddleName": "MARIE",
+        "County": "",
+        "State": "",
+        "Email": "",
+        "SponsorUic": "",
+        "PostCode": "",
+        "Facility": "",
+        "LoincCode": "52536-0",
+        "SponsorBranchOfService": "",
+        "AddressType": "Home Address",
+        "LocalNumber": "",
+        "PatientCategory": "A11 - United States Army (USA) Active Duty (AD) Enlisted",
+        "EnrollmentFacility": "",
+        "EventId": "1000001047"
+      },
+      "dataType": 13
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

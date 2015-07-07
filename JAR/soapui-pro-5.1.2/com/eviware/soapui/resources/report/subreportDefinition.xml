@@ -1,0 +1,7 @@
+<subreport isUsingCache="true">
+	<reportElement positionType="Float"
+		isPrintRepeatedValues="false" x="0" y="0" width="500" height="30" />
+	<dataSourceExpression>$P{SUBREPORT_DSSOURCE_NAME_TYPE}
+	</dataSourceExpression>
+	<subreportExpression>"subreport:SOURCE_NAME"</subreportExpression>
+</subreport>

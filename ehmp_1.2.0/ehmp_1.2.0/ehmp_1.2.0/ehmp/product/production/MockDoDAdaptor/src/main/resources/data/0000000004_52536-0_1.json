@@ -1,0 +1,78 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "Street": "PSC 2 BOX 5284",
+        "SocialSecurityNumber": "796402300",
+        "Rank": "Lieutenant Colonel O5-A",
+        "SponsorRank": "",
+        "EnteredBy": "",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "",
+        "LastName": "CHAPMAN",
+        "CustodianName": "ahlta",
+        "Fmp": "",
+        "FirstName": "VICKI",
+        "BranchOfService": "",
+        "MaritalStatus": "Unknown Marital Status",
+        "CountryCode": "",
+        "Street2": "",
+        "SponsorSsn": "",
+        "Sex": "F",
+        "Uic": "W3U814     (W3U8 CC AIR HQ RAMSTEIN)",
+        "Suffix": "",
+        "Religion": "Unknown",
+        "Race": "Unknown Race",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EdiPn": "D1394687886",
+        "PhoneNumber": "200-5551212",
+        "OtherIdentifier": "",
+        "Country": "",
+        "City": "APO",
+        "DeersEligibility": "",
+        "DateOfBirth": "20100420000000",
+        "UnitNumber": "904237",
+        "AreaCode": "200",
+        "MiddleName": "LATIA",
+        "County": "",
+        "State": "AE",
+        "Email": "",
+        "SponsorUic": "",
+        "PostCode": "09012",
+        "Facility": "",
+        "LoincCode": "52536-0",
+        "SponsorBranchOfService": "",
+        "AddressType": "Home Address",
+        "LocalNumber": "5551212",
+        "PatientCategory": "A41 - United States Army (USA) Family Member Active Duty",
+        "EnrollmentFacility": "",
+        "EventId": "1000000691"
+      },
+      "dataType": 13
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

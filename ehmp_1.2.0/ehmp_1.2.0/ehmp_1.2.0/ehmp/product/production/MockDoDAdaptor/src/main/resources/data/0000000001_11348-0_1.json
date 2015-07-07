@@ -1,0 +1,157 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "DateReported": "20131007154133",
+        "EnteredBy": "BHIE, USERONE",
+        "Type": "Past Medical History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20131007154133",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "reported tests",
+            "Annotation": "",
+            "EventId": "1000000055"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "3370",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "18991230050000",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "18991230050000",
+        "CouplerType": "Past Medical History",
+        "ReportingClinician": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "BHIE, USERONE",
+        "Status": "Active",
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "11348-0",
+        "Relationship": "",
+        "EventId": "1000000056"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20131007154133",
+        "EnteredBy": "BHIE, USERONE",
+        "Type": "Past Medical History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20131007154133",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "No reported prior surgical / procedural history",
+            "Annotation": "",
+            "EventId": "1000000057"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "3406",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "18991230050000",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "18991230050000",
+        "CouplerType": "Past Medical History",
+        "ReportingClinician": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "-",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "BHIE, USERONE",
+        "Status": "Active",
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "11348-0",
+        "Relationship": "",
+        "EventId": "1000000058"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20131007154133",
+        "EnteredBy": "BHIE, USERONE",
+        "Type": "Past Medical History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20131007154133",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "no recent change in medical history",
+            "Annotation": "",
+            "EventId": "1000000059"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "123674",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "18991230050000",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "18991230050000",
+        "CouplerType": "Past Medical History",
+        "ReportingClinician": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "BHIE, USERONE",
+        "Status": "Active",
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "11348-0",
+        "Relationship": "",
+        "EventId": "1000000060"
+      },
+      "dataType": 8
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+@mixin muted-for-background($bg-color, $tint: 70%) {
+  @include text-contrast($bg-color, tint($bg-color, $tint), $gray-light);
+}

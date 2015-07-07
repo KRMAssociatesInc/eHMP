@@ -1,0 +1,56 @@
+defaultTasks 'acceptanceTest'
+
+task bundleInstall{
+  inputs.file new File(projectDir, 'Gemfile')
+  inputs.file new File(projectDir, 'Gemfile.lock')
+  outputs.file new File(projectDir, '.lastBundleInstallFlag')
+
+  doLast{
+    exec {
+      executable = "bundle"
+      args = ['install']
+    }
+
+    ant.touch(file: new File(projectDir, '.lastBundleInstallFlag'))
+  }
+}
+
+task acceptanceTest(dependsOn: bundleInstall){
+  description "Runs the acceptance tests for RDK"
+  doLast{
+    exec {
+      executable = "bundle"
+      args = ['exec', 'rake']
+    }
+  }
+}
+
+task acceptanceTestStable(dependsOn: bundleInstall){
+  description "Runs the stable acceptance tests for RDK"
+  doLast{
+    exec {
+      executable = "bundle"
+      args = ['exec', 'rake', 'endToEndStableTests']
+    }
+  }
+}
+
+task acceptanceTestUnstable(dependsOn: bundleInstall){
+  description "Runs the unstable acceptance tests for RDK"
+  doLast{
+    exec {
+      executable = "bundle"
+      args = ['exec', 'rake', 'endToEndUnstableTests']
+    }
+  }
+}
+
+task acceptanceTestOnc(dependsOn: bundleInstall){
+  description "Runs the ONC (writeback) acceptance tests for RDK"
+  doLast{
+    exec {
+      executable = "bundle"
+      args = ['exec', 'rake', 'endToEndOncTests']
+    }
+  }
+}

@@ -1,0 +1,324 @@
+{
+    "apiVersion": "1.0",
+    "data": {
+        "updated": 20141215144104,
+        "totalItems": 15,
+        "currentItemCount": 15,
+        "items": [
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "administeredDateTime": "19950718091835",
+                "cptCode": "urn:cpt:90707",
+                "cptName": "MMR VACCINE SC",
+                "encounterUid": "urn:va:visit:9E7A:8:1797",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:9E7A:8:42",
+                "summary": "MEASLES,MUMPS,RUBELLA (MMR)",
+                "pid": "9E7A;8",
+                "localId": "42",
+                "name": "MEASLES,MUMPS,RUBELLA (MMR)",
+                "contraindicated": false,
+                "seriesName": "BOOSTER",
+                "reactionName": "NONE",
+                "codes": [
+                    {
+                        "code": "3",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "measles, mumps and rubella virus vaccine"
+                    }
+                ],
+                "reactionCode": "urn:va:reaction:9E7A:8:0",
+                "seriesCode": "urn:va:series:9E7A:8:BOOSTER",
+                "encounterName": "00"
+            },
+            {
+                "facilityCode": "888",
+                "facilityName": "FT. LOGAN",
+                "administeredDateTime": "20000405112729",
+                "cptCode": "urn:cpt:90732",
+                "cptName": "PNEUMOCOCCAL VACCINE",
+                "performerUid": "urn:va:user:9E7A:11620",
+                "encounterUid": "urn:va:visit:9E7A:8:2005",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:9E7A:8:54",
+                "summary": "PNEUMOCOCCAL",
+                "pid": "9E7A;8",
+                "localId": "54",
+                "name": "PNEUMOCOCCAL",
+                "contraindicated": false,
+                "codes": [
+                    {
+                        "code": "33",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "pneumococcal polysaccharide vaccine, 23 valent"
+                    }
+                ],
+                "performerName": "STUDENT,FOUR",
+                "locationUid": "urn:va:location:9E7A:240",
+                "locationName": "20 MINUTE",
+                "encounterName": "20 MINUTE Apr 05, 2000"
+            },
+            {
+                "facilityCode": "561",
+                "facilityName": "New Jersey HCS",
+                "administeredDateTime": "20000404105506",
+                "cptCode": "urn:cpt:90732",
+                "cptName": "PNEUMOCOCCAL VACCINE",
+                "performerUid": "urn:va:user:ABCD:11278",
+                "encounterUid": "urn:va:visit:ABCD:229:1975",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:ABCD:229:44",
+                "summary": "PNEUMOCOCCAL",
+                "pid": "HDR;10110V004877",
+                "localId": "44",
+                "name": "PNEUMOCOCCAL",
+                "contraindicated": false,
+                "codes": [
+                    {
+                        "code": "33",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "pneumococcal polysaccharide vaccine, 23 valent"
+                    }
+                ],
+                "performerName": "WARDCLERK,SIXTYEIGHT",
+                "locationUid": "urn:va:location:ABCD:64",
+                "locationName": "AUDIOLOGY",
+                "encounterName": "AUDIOLOGY Apr 04, 2000"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "administeredDateTime": "19950718091835",
+                "cptCode": "urn:cpt:90707",
+                "cptName": "MMR VACCINE SC",
+                "encounterUid": "urn:va:visit:C877:8:1797",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:C877:8:42",
+                "summary": "MEASLES,MUMPS,RUBELLA (MMR)",
+                "pid": "C877;8",
+                "localId": "42",
+                "name": "MEASLES,MUMPS,RUBELLA (MMR)",
+                "contraindicated": false,
+                "seriesName": "BOOSTER",
+                "reactionName": "NONE",
+                "codes": [
+                    {
+                        "code": "3",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "measles, mumps and rubella virus vaccine"
+                    }
+                ],
+                "reactionCode": "urn:va:reaction:C877:8:0",
+                "seriesCode": "urn:va:series:C877:8:BOOSTER",
+                "encounterName": "00"
+            },
+            {
+                "facilityCode": "888",
+                "facilityName": "FT. LOGAN",
+                "administeredDateTime": "20000405112729",
+                "cptCode": "urn:cpt:90732",
+                "cptName": "PNEUMOCOCCAL VACCINE",
+                "performerUid": "urn:va:user:C877:11620",
+                "encounterUid": "urn:va:visit:C877:8:2005",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:C877:8:54",
+                "summary": "PNEUMOCOCCAL",
+                "pid": "C877;8",
+                "localId": "54",
+                "name": "PNEUMOCOCCAL",
+                "contraindicated": false,
+                "codes": [
+                    {
+                        "code": "33",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "pneumococcal polysaccharide vaccine, 23 valent"
+                    }
+                ],
+                "performerName": "STUDENT,FOUR",
+                "locationUid": "urn:va:location:C877:240",
+                "locationName": "20 MINUTE",
+                "encounterName": "20 MINUTE Apr 05, 2000"
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131024000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000008:1000001602",
+                "summary": "Influenza",
+                "pid": "DOD;0000000008",
+                "name": "Influenza",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "16",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "influenza virus vaccine, whole virus"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131024000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000008:1000001603",
+                "summary": "MMR",
+                "pid": "DOD;0000000008",
+                "name": "MMR",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "03",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "measles, mumps and rubella virus vaccine"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131024000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000008:1000001604",
+                "summary": "Rotavirus",
+                "pid": "DOD;0000000008",
+                "name": "Rotavirus",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "74",
+                        "system": "urn:oid:2.16.840.1.113883.12.292"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131024000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000008:1000001605",
+                "summary": "Td",
+                "pid": "DOD;0000000008",
+                "name": "Td",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "09",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "tetanus and diphtheria toxoids, adsorbed, for adult use"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131024000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000008:1000001606",
+                "summary": "Yellow Fever",
+                "pid": "DOD;0000000008",
+                "name": "Yellow Fever",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "37",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "yellow fever vaccine"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131024000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000008:1000001607",
+                "summary": "Tetanus toxoid",
+                "pid": "DOD;0000000008",
+                "name": "Tetanus toxoid",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "35",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "tetanus toxoid, adsorbed"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131024000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000008:1000001608",
+                "summary": "Typhoid - Oral",
+                "pid": "DOD;0000000008",
+                "name": "Typhoid - Oral",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "25",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "typhoid vaccine, live, oral"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131024000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000008:1000001609",
+                "summary": "Vaccinia Immune Globulin",
+                "pid": "DOD;0000000008",
+                "name": "Vaccinia Immune Globulin",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "79",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "vaccinia immune globulin"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131024000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000008:1000001610",
+                "summary": "Varicella",
+                "pid": "DOD;0000000008",
+                "name": "Varicella",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "21",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "varicella virus vaccine"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "administeredDateTime": "20131024000000",
+                "kind": "Immunization",
+                "uid": "urn:va:immunization:DOD:0000000008:1000001611",
+                "summary": "Tdap",
+                "pid": "DOD;0000000008",
+                "name": "Tdap",
+                "seriesName": "1",
+                "codes": [
+                    {
+                        "code": "115",
+                        "system": "urn:oid:2.16.840.1.113883.12.292",
+                        "display": "tetanus toxoid, reduced diphtheria toxoid, and acellular pertussis vaccine, adsorbed"
+                    }
+                ]
+            }
+        ]
+    }
+}

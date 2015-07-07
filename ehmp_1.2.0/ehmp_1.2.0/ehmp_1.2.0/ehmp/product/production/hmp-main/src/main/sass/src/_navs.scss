@@ -1,0 +1,5 @@
+// Pills
+// -------------------------
+.nav-pills > li.active > a .text-muted {
+  @include muted-for-background($nav-pills-active-link-hover-bg);
+}

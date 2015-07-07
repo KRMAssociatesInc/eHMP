@@ -1,0 +1,18 @@
+require: rubocop-rspec
+
+# Configuration parameters: CountComments.
+MethodLength:
+  Description: 'Avoid long methods.'
+  Max: 50
+
+Debugger:
+  Description: 'Check for debugger calls.'
+  Enabled: true
+
+LineLength:
+  Description: 'Avoid long lines.'
+  Max: 180
+
+Style/FileName:
+  Description: 'Added because of Cucumbers unqiue name style'
+  Enabled: false

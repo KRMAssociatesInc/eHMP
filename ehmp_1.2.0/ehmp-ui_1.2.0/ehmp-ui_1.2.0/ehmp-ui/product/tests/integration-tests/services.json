@@ -1,0 +1,67 @@
+{
+  "jds": {
+    "services": {
+      "rest": {
+        "ssl": false,
+        "port": 9080
+      }
+    }
+  },
+  "solr": {
+    "services": {
+      "http": {
+        "ssl": false,
+        "port": 8983
+      }
+    }
+  },
+  "openinfobutton": {
+    "services": {
+      "http": {
+        "ssl": false,
+        "port": 80
+      }
+    }
+  },
+  "vista-panorama": {
+    "services": {
+      "fmql": {
+        "ssl": true,
+        "port": 443
+      },
+      "m-web": {
+        "ssl": false,
+        "port": 9211
+      },
+      "vista-rpc": {
+        "port": 9210
+      }
+    }
+  },
+  "vista-kodak": {
+    "services": {
+      "fmql": {
+        "ssl": true,
+        "port": 443
+      },
+      "m-web": {
+        "ssl": false,
+        "port": 9211
+      },
+      "vista-rpc": {
+        "port": 9210
+      }
+    }
+  },
+  "jmeadows": {
+    "services": {
+      "rest": {
+        "ssl": false,
+        "port": 80
+      }
+    }
+  },
+  "ehmp": {
+    "services": { }
+  }
+}

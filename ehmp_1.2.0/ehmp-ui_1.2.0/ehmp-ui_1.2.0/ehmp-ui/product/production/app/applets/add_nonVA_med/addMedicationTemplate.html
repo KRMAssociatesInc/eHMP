@@ -1,0 +1,147 @@
+<div id="error-container" />
+<div id="medication-form" class="container-fluid">
+<h5 id='edit-meds-loading-indicator'><i class="fa fa-spinner fa-spin"></i> Loading...</h5>
+    <form role="form">
+        <div class="form-group" id="top-row-table">
+            <div class="row row-buffer" id="visit-region"></div>
+            <div class="row row-buffer">
+                <div class="col-md-4 gutter">
+                    <label for="dosage" class="control-label">Dosage</label>
+                    {{#hasPermission 'edit-patient-med'}}
+                    {{#if isLocal}}
+                    <input class="form-control" id="dosage" name="dosage" type="text" autocomplete="off" list="dosages">
+                    {{else}}
+                    <input class="form-control" id="dosage" name="dosage" type="text" autocomplete="off" list="dosages" disabled>
+                    {{/if}}
+                    {{/hasPermission}}
+                    <datalist id="dosages"></datalist>
+                </div>
+                <div class="col-md-4 gutter">
+                    <label for="route" class="control-label">Route</label>
+                    {{#hasPermission 'edit-patient-med'}}
+                    {{#if isLocal}}
+                    <input class="form-control" id="route" name="route" type="text" autocomplete="off" list="routes">
+                    {{else}}
+                    <input class="form-control" id="route" name="route" type="text" autocomplete="off" list="routes" disabled>
+                    {{/if}}
+                    {{/hasPermission}}
+                    <datalist id="routes"></datalist>
+                </div>
+                <div class="col-md-3 gutter">
+                    <label for="schedule" class="control-label">Schedule</label>
+                    {{#hasPermission 'edit-patient-med'}}
+                    {{#if isLocal}}
+                    <input class="form-control" id="schedule" name="schedule" type="text" autocomplete="off" list="schedules">
+                    {{else}}
+                    <input class="form-control" id="schedule" name="schedule" type="text" autocomplete="off" list="schedules" disabled>
+                    {{/if}}
+                    {{/hasPermission}}
+                    <datalist id="schedules"></datalist>
+                </div>
+                <div class="col-md-1 gutter" style="padding-top: 26px">
+                    {{#hasPermission 'edit-patient-med'}}
+                    {{#if isLocal}}
+                    <input type="checkbox" id="prn" name="prn">
+                    {{else}}
+                    <input type="checkbox" id="prn" name="prn" disabled>
+                    {{/if}}
+                    {{/hasPermission}}
+                    <label for="prn" class="control-label">PRN</label>
+                </div>
+            </div>
+
+            <div class="row row-buffer">
+                <div class="col-md-12">
+                    <label class="sr-only" for="comments">Comments</label>
+                    {{#hasPermission 'edit-patient-med'}}
+                    {{#if isLocal}}
+                    <textarea class="form-control resize-vertical" rows="3" id="comments" placeholder="Comments..."></textarea>
+                    {{else}}
+                    <textarea class="form-control resize-vertical" rows="3" id="comments" placeholder="Comments..." disabled></textarea>
+                    {{/if}}
+                    {{/hasPermission}}
+                </div>
+            </div>
+
+            <div class="row row-buffer">
+                <div class="col-md-12">
+                    <label class="control-label">Statement/Explanation</label>
+                    <div>
+                        {{#hasPermission 'edit-patient-med'}}
+                        {{#if isLocal}}
+                        <input type="radio" id="notRecommended" name="recommendation">
+                        {{else}}
+                        <input type="radio" id="notRecommended" name="recommendation" disabled>
+                        {{/if}}
+                        {{/hasPermission}}
+                        <label class="normal-font-weight" for="notRecommended">Non-VA medication not recommended by VA provider.</label>
+                    </div>
+                    <div>
+                        {{#hasPermission 'edit-patient-med'}}
+                        {{#if isLocal}}
+                        <input type="radio" id="recommended" name="recommendation">
+                        {{else}}
+                        <input type="radio" id="recommended" name="recommendation" disabled>
+                        {{/if}}
+                        {{/hasPermission}}
+                        <label class="normal-font-weight" for="recommended">Non-VA medication recommended by VA provider.</label>
+                    </div>
+                    <div>
+                        {{#hasPermission 'edit-patient-med'}}
+                        {{#if isLocal}}
+                        <input type="radio" id="undeclared" name="recommendation" checked>
+                        {{else}}
+                        <input type="radio" id="undeclared" name="recommendation" checked disabled>
+                        {{/if}}
+                        {{/hasPermission}}
+                        <label class="normal-font-weight" for="undeclared">Undeclared</label>
+                    </div>
+                    <br>
+                    <div>
+                        {{#hasPermission 'edit-patient-med'}}
+                        {{#if isLocal}}
+                        <input type="checkbox" id="nonVApharmacy" name="nonVApharmacy">
+                        {{else}}
+                        <input type="checkbox" id="nonVApharmacy" name="nonVApharmacy" disabled>
+                        {{/if}}
+                        {{/hasPermission}}
+                        <label class="normal-font-weight" for="nonVApharmacy">Patient wants to buy from Non-VA pharmacy.</label>
+                    </div>
+                    <div>
+                        {{#hasPermission 'edit-patient-med'}}
+                        {{#if isLocal}}
+                        <input type="checkbox" id="nonVAprovider" name="nonVAprovider">
+                        {{else}}
+                        <input type="checkbox" id="nonVAprovider" name="nonVAprovider" disabled>
+                        {{/if}}
+                        {{/hasPermission}}
+                        <label class="normal-font-weight" for="nonVAprovider">Medication prescribed by Non-VA provider.</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="row row-buffer">
+        <div class="col-md-12">
+        	<label for="startDate" class="control-label">Start Date</label>
+        	<div id="date-gp" class="input-group date third-width">
+                {{#hasPermission 'edit-patient-med'}}
+                {{#if isLocal}}
+                <input type="text" autocomplete="off" id="startDate" name="startDate" class="datepicker form-control input-sm"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                {{else}}
+                <input type="text" autocomplete="off" id="startDate" name="startDate" class="datepicker form-control input-sm" disabled>
+                {{/if}}
+                {{/hasPermission}}
+                   <span class="help-inline applet-error" role="alert" aria-atomic="true" tabindex="0"></span>
+            </div>
+        </div>
+    </div>
+        <div class="row horizontal_line"></div>
+        <div class="row row-buffer">
+            <div class="col-md-12">
+                <label>Preview</label>
+                <div id="previewOrder" name="previewOrder" class="break-word"></div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>

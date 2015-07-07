@@ -1,0 +1,301 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "OrderStatus": "",
+        "PlacerSystemName": "",
+        "EnteredBy": "",
+        "TestName": "URINE CULTURE",
+        "RepositoryId": "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "EnteredByDate": "",
+        "OrderDateTime": "",
+        "CustodianName": "va",
+        "CertifiedDate": "",
+        "ResultId": "",
+        "Accession": "MICRO 99 1086",
+        "ResultStatusName": "",
+        "FillerSystemName": "",
+        "OrderPriority": "",
+        "OrderingProvider": "",
+        "OrderComment": "",
+        "OrderId": "",
+        "SpecimenName": "URINE",
+        "CustodianId": "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "IsPanel": "false",
+        "OtherIdentifier": "",
+        "TestStatusName": "",
+        "TestId": "",
+        "RequestingLocation": "",
+        "Specimen": "",
+        "Tests": [
+          {
+            "Name": "URINE CULTURE",
+            "Results": [
+              {
+                "ResultStatusDescription": "",
+                "Name": "URINE CULTURE",
+                "Result": "---- MICROBIOLOGY ----\nAccession: MICRO 99 1086               Received: Aug 26, 1999 09:22\nCollection sample: URINE               Collection date: Aug 26, 1999 09:22\nProvider: HENLEY,SHIRLEY J\n\n\n    Test(s) ordered:  URINE CULTURE        completed: Aug 30, 1999 10:17\n\n* BACTERIOLOGY FINAL REPORT => Aug 30, 1999   TECH CODE: 3584\nCULTURE RESULTS: >100,000 CFU/ML ESCHERICHIA COLI\n\nANTIBIOTIC SUSCEPTIBILITY TEST RESULTS:\n              ESCHERICHIA COLI\n              :\nAMPICILLIN    S\nNITROFURANTOINS\nTETRACYCLINE  S\nTRIMETH/SULFA S\nGENTAMICIN    S\nCEPHALOTHIN   S\nCEFUROXIME    S\nCEFTRIAXONE   S\nTRIMETHOPRIM  S\nCIPROFLOXACIN S\nAUGMENTIN     S\n\nBacteriology Remark(s):\n  TEST PERFORMED AT QUEST LABORATORY, REC'D 8/27/99",
+                "Organisms": [
+
+                ],
+                "CertifiedDate": "199908260922",
+                "FullReport": "",
+                "ResultId": "",
+                "Facility": "ALASKA VAHSRO/463",
+                "ResultIndependent": "",
+                "CertifiedBy": "",
+                "ResultStatus": "",
+                "EventId": "1000001226"
+              }
+            ],
+            "EventId": "1000001227"
+          }
+        ],
+        "Facility": "ALASKA VAHSRO/463",
+        "LoincCode": "18725-2",
+        "CollectionSample": "URINE",
+        "OrderNumber": "MICRO 99 1086",
+        "OrderFacility": "ALASKA VAHSRO/463",
+        "CollectionDateTime": "199908260922",
+        "EventId": "1000001228"
+      },
+      "dataType": 11
+    },
+    {
+      "dataRecord": {
+        "OrderStatus": "COMPLETE",
+        "PlacerSystemName": "",
+        "EnteredBy": "",
+        "TestName": "",
+        "RepositoryId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "EnteredByDate": "",
+        "OrderDateTime": "20060427100300",
+        "CustodianName": "tmds",
+        "CertifiedDate": "",
+        "ResultId": "6939571.8994;3965780;BT",
+        "Accession": "060427 BT 24",
+        "ResultStatusName": "",
+        "FillerSystemName": "",
+        "OrderPriority": "ROUTINE",
+        "OrderingProvider": "SCHMIDT,DONNA",
+        "OrderComment": "Mock data from TMDS for 50002",
+        "OrderId": "3738811",
+        "SpecimenName": "URINE",
+        "CustodianId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "IsPanel": "false",
+        "OtherIdentifier": "",
+        "TestStatusName": "",
+        "TestId": "1403",
+        "RequestingLocation": "N CICUM",
+        "Specimen": "248453",
+        "Tests": [
+          {
+            "Name": "Result Bean Name",
+            "Results": [
+              {
+                "ResultStatusDescription": "Amended Final Report",
+                "Name": "ORGANISMS",
+                "Result": "BACTERIA SEEN",
+                "Organisms": [
+                  {
+                    "Quantity": "100,000",
+                    "Antibiotics": [
+                      {
+                        "AntibioticName": "MPICILLIN",
+                        "Interpretation": "R",
+                        "AntibioticResult": "R",
+                        "EventId": "1000001229"
+                      },
+                      {
+                        "AntibioticName": "CEFTAZIDIME",
+                        "Interpretation": "R",
+                        "AntibioticResult": "R",
+                        "EventId": "1000001230"
+                      },
+                      {
+                        "AntibioticName": "CEFAZOLIN",
+                        "Interpretation": "I",
+                        "AntibioticResult": "I",
+                        "EventId": "1000001231"
+                      }
+                    ],
+                    "Organism": "ESCHERICHIA COLI",
+                    "EventId": "1000001232"
+                  }
+                ],
+                "CertifiedDate": "20060427",
+                "FullReport": "Mock data from TMDS for 50002",
+                "ResultId": "",
+                "Facility": "NBHC GROTON/DNS:ha.osd.mil/0035",
+                "ResultIndependent": "",
+                "CertifiedBy": "SCHMIDT,DONNA",
+                "ResultStatus": "/A",
+                "EventId": "1000001233"
+              }
+            ],
+            "EventId": "1000001234"
+          }
+        ],
+        "Facility": "",
+        "LoincCode": "18725-2",
+        "CollectionSample": "URINE/CLEAN CATCH",
+        "OrderNumber": "3738811",
+        "OrderFacility": "NEWPORT HOSPITAL (CIVILIAN)/DNS:ha.osd.mil/5401",
+        "CollectionDateTime": "20060427100600",
+        "EventId": "1000001235"
+      },
+      "dataType": 11
+    },
+    {
+      "dataRecord": {
+        "OrderStatus": "COMPLETE",
+        "PlacerSystemName": "",
+        "EnteredBy": "",
+        "TestName": "WOUND CULTURE",
+        "RepositoryId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "EnteredByDate": "",
+        "OrderDateTime": "20060315090500",
+        "CustodianName": "tmds",
+        "CertifiedDate": "",
+        "ResultId": "6939683.9094;3965764;BT",
+        "Accession": "060315 MOM 32",
+        "ResultStatusName": "",
+        "FillerSystemName": "",
+        "OrderPriority": "ROUTINE",
+        "OrderingProvider": "ROUTINE",
+        "OrderComment": "Mock data from TMDS for 50002",
+        "OrderId": "3738792",
+        "SpecimenName": "FOOT",
+        "CustodianId": "2.16.840.1.113883.3.42.10009.100001.13",
+        "IsPanel": "false",
+        "OtherIdentifier": "",
+        "TestStatusName": "",
+        "TestId": "548",
+        "RequestingLocation": "N CICUM",
+        "Specimen": "227183",
+        "Tests": [
+          {
+            "Name": "WOUND CULTURE",
+            "Results": [
+              {
+                "ResultStatusDescription": "Final Report",
+                "Name": "BACT RESULT",
+                "Result": "BActeria seen",
+                "Organisms": [
+                  {
+                    "Quantity": "100000",
+                    "Antibiotics": [
+                      {
+                        "AntibioticName": "AMPICILLIN",
+                        "Interpretation": "2",
+                        "AntibioticResult": "S",
+                        "EventId": "1000001236"
+                      },
+                      {
+                        "AntibioticName": "CEFAZOLIN",
+                        "Interpretation": "R",
+                        "AntibioticResult": "R",
+                        "EventId": "1000001237"
+                      },
+                      {
+                        "AntibioticName": "AMX/K CLAVULANATE",
+                        "Interpretation": "R",
+                        "AntibioticResult": "R",
+                        "EventId": "1000001238"
+                      }
+                    ],
+                    "Organism": "ENTEROBACTER AEROGENES",
+                    "EventId": "1000001239"
+                  }
+                ],
+                "CertifiedDate": "20060315",
+                "FullReport": "Mock data from TMDS for 50002",
+                "ResultId": "",
+                "Facility": "NBHC GROTON/DNS:ha.osd.mil/0035",
+                "ResultIndependent": "",
+                "CertifiedBy": "SCHMIDT,DONNA",
+                "ResultStatus": "F",
+                "EventId": "1000001240"
+              }
+            ],
+            "EventId": "1000001241"
+          }
+        ],
+        "Facility": "",
+        "LoincCode": "18725-2",
+        "CollectionSample": "WOUND",
+        "OrderNumber": "060315-00002",
+        "OrderFacility": "NEWPORT HOSPITAL (CIVILIAN)/DNS:ha.osd.mil/5401",
+        "CollectionDateTime": "20060315090600",
+        "EventId": "1000001242"
+      },
+      "dataType": 11
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "tmds",
+      "SiteId": "2.16.840.1.113883.3.42.10009.100001.13"
+    },
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "0",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "0",
+      "RetrievedCount": "0",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "va",
+      "SiteId": "2.16.840.1.113883.3.42.10002.100001.8.22200"
+    },
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "va",
+      "SiteId": "2.16.840.1.113883.3.42.10002.100001.8.22200"
+    },
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "va",
+      "SiteId": "2.16.840.1.113883.3.42.10002.100001.8.22200"
+    },
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "tmds",
+      "SiteId": "2.16.840.1.113883.3.42.10009.100001.13"
+    },
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "tmds",
+      "SiteId": "2.16.840.1.113883.3.42.10009.100001.13"
+    }
+  ]
+}

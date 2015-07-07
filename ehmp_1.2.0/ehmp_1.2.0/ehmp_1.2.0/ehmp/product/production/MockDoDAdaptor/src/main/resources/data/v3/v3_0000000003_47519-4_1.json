@@ -1,0 +1,566 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "12",
+      "RetrievedCount": "12",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000541"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "15277",
+                "display": null
+              }
+            ],
+            "date": "20131205172550",
+            "recordedId": {
+              "id": "2157582834"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000543"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90746",
+                "display": "Hepatitis B Vaccine (Active); 20 Years and Above"
+              }
+            ],
+            "date": "20131203161654",
+            "recordedId": {
+              "id": "2157582432"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000545"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90471",
+                "display": "Immunization Administration One Vaccine"
+              }
+            ],
+            "date": "20131203161654",
+            "recordedId": {
+              "id": "2157582433"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000547"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "00300",
+                "display": "Anesthesia Neck For Procedures On Skin / Subcutaneous Tissue"
+              }
+            ],
+            "date": "20131202213908",
+            "recordedId": {
+              "id": "2157582351"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010549"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90471",
+                "display": "Immunization Administration One Vaccine"
+              }
+            ],
+            "date": "20131202212127",
+            "recordedId": {
+              "id": "2157582350"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010551"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90746",
+                "display": "Hepatitis B Vaccine (Active); 20 Years and Above"
+              }
+            ],
+            "date": "20131202212126",
+            "recordedId": {
+              "id": "2157582349"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010553"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "82930",
+                "display": "Gastric Acid, Free"
+              }
+            ],
+            "date": "20131118173257",
+            "recordedId": {
+              "id": "2157581506"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010555"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "74235",
+                "display": "Balloon Cath Removal Esoph Foreign Body Supervis & Interpret"
+              }
+            ],
+            "date": "20131118173232",
+            "recordedId": {
+              "id": "2157581505"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010557"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "74150",
+                "display": "CT Scan Of The Abdomen"
+              }
+            ],
+            "date": "20131118173055",
+            "recordedId": {
+              "id": "2157581504"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000559"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Deleted due to an entry made in error"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "82930",
+                "display": "Gastric Acid, Free AND Total"
+              }
+            ],
+            "date": "20131118172235",
+            "recordedId": {
+              "id": "2157581507"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000561"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "99601",
+                "display": "Home Care Visit Administration Of Aerosolized Pentamidine"
+              }
+            ],
+            "date": "20131009171045",
+            "recordedId": {
+              "id": "2157580390"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000563"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "86003",
+                "display": "Allergy Testing Chestnut Specific IgE (___ IU/ml)"
+              }
+            ],
+            "date": "20131009165339",
+            "recordedId": {
+              "id": "2157580375"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    }
+  ]
+}

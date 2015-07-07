@@ -1,0 +1,296 @@
+    var myQueryParam = req.param('myQueryParam');
+    var optionalParameter = req.param('myPostBodyParam');
+        var pid = req.param('pid');
+        var use = req.param('use');
+        var adviceId = req.param('adviceId');
+    var pid = req.param('pid');
+    var use = req.param('use');
+    var useCachedValue = req.param('cache');
+    if (req.query !== {}) {
+        if (req.query.startPeriod !== undefined) {
+            query += '?startPeriod=' + req.query.startPeriod;
+        if (req.query.endPeriod !== undefined) {
+            query += '&endPeriod=' + req.query.endPeriod;
+    var id = req.param('id');
+    var id = req.param('id');
+    var id = req.param('id');
+    var dfn = req.param('dfn');
+    var reminderId = req.param('reminderId');
+    var dfn = req.param('dfn');
+    var pid = req.param('pid');
+    if (_.isUndefined(req.param('pid'))) {
+    var jdsPath = '/status/' + req.query.pid,
+    req.logger.info('PARAMS', req.params, _.isUndefined(req.param('site')));
+    if (_.isUndefined(req.param('pid'))) {
+    } else if (_.isUndefined(req.param('siteid'))) {
+    } else if (_.isUndefined(req.param('reportid'))) {
+        var pid = req.param('pid'),
+            site = req.param('siteid'),
+            reportId = req.param('reportid'),
+    var searchName = req.param('searchforName');
+    var limit = req.param('limit');
+    var order = req.param('order');
+    var pid = req.param('pid');
+    var pid = req.param('pid');
+                var start = req.param('start') || 0;
+                var limit = req.param('limit');
+    var pid = req.param('pid');
+    var pid = req.param('pid');
+    var orderUid = req.param('orderUid');
+    var pid = req.param('pid');
+    var start = parseInt(req.param('start')) || 0;
+    var limit = parseInt(req.param('limit')) || 0;
+    var order = req.query.order;
+    var typeName = req.param('typeName');
+    var pid = req.param('pid');
+    var observedFrom = req.param('observedFrom');
+    var observedTo = req.param('observedTo');
+    var start = req.param('start') || 0;
+    var limit = req.param('limit');
+    var order = req.query.order;
+    req.logger.debug('TEST: ' + req.param.metricId);
+    if ((req.query.metricId !== undefined) && (req.query.startPeriod !== undefined)) {
+        if (!metricIdRegex.test(req.query.metricId)) {
+        if (!dateTimeRegex.test(req.query.startPeriod)) {
+        if (req.query.endPeriod !== undefined && !dateTimeRegex.test(req.query.endPeriod)) {
+        if (req.query.granularity !== undefined && !granularityRegex.test(req.query.granularity)) {
+        if (req.query.origin !== undefined && !originRegex.test(req.query.origin)) {
+    if (req.param('dashboardId') !== undefined) {
+//        if (req.param('dashboardId') !== undefined && !dashboardIdRegex.test(req.param('dashboardId'))) {
+    if (req.param('metricGroupId') !== undefined) {
+//        if (req.param('metricGroupId') !== undefined && !metricGroupIdRegex.test(req.param('metricGroupId'))) {
+//    if ((req.param('metricGroupId') !== undefined && req.param('metricId') !== undefined)) {
+//        if (!idRegex.test(req.param('metricGroupId'))) {
+//        if (!idRegex.test(req.param('metricId'))) {
+        var path = '/?metricId=' +  req.query.metricId + '&startPeriod=' + req.query.startPeriod;
+        if (req.query.endPeriod !== undefined) {
+            path += '&endPeriod=' + req.query.endPeriod;
+        if (req.query.granularity !== undefined) {
+            path += '&granularity=' + req.query.granularity;
+        if (req.query.origin !== undefined) {
+            path += '&origin=' + req.query.origin;
+    if (req.query.userId !== undefined) {
+        uid = req.query.userId;
+        config.options.path = '/metric/dashboard/' + req.param('dashboardId');
+    config.options.path = '/metric/dashboard/' + req.param('dashboardId');
+    var dashboardId = req.param('dashboardId');
+    var metricGroupId = req.param('id');
+    if (req.query && req.query.id) {
+        query += '?id=' + req.query.id;
+    else if (req.query && req.query.name) {
+        query += '?name=' + req.query.name;
+    if (req.query && req.query.id) {
+        query += req.query.id;
+    if (req.query && req.query.id) {
+        query += '?id=' + req.query.id;
+    else if (req.query && req.query.name) {
+        query += '?name=' + req.query.name;
+    if (req.query && req.query.id) {
+        query = req.query.id;
+    if (req.query && req.query.id) {
+        query += '?id=' + req.query.id;
+    else if (req.query && req.query.name) {
+        query += '?name=' + req.query.name;
+    if (req.query && req.query.id) {
+        query = req.query.id;
+    if (req.query && req.query.id) {
+        id += req.query.id;
+    if (req.query && req.query.pid) {
+        pid += req.query.pid;
+    if (req.query && req.query.id) {
+        id += req.query.id;
+    if (req.query && req.query.pid) {
+        pid += req.query.pid;
+    var pid = req.param('pid');
+    var pid = req.param('pid');
+    var vistaId = req.param('vistaId');
+    var time = req.param('time');
+    var uid = req.param('uid');
+    var pid = req.param('pid');
+    var pid = req.param('uid');
+    var pid = req.query.pid;
+    var jdsQuery = _.pick(req.query, 'start', 'limit', 'filter', 'order');
+    var pid = req.param('pid');
+    var uid = req.param('uid');
+    var start = req.param('start') || 0;
+    var limit = req.param('limit');
+    var order = req.query.order;
+    var vlerCallType = req.param('callType');
+    var vler_uid = req.param('vler_uid');
+    var pid = req.param('pid');
+    var uid = req.param('uid');
+    var order = req.query.order;
+        req.logger.error('For request parameter limit: invalid value "' + req.param('limit') + '": must be an integer greater than or equal to 0');
+    var pid = req.param('pid');
+    if (!_.every(['pid', 'query', 'group_value', 'group_field'], _.has.bind(null, req.query))) {
+    //var domain = req.query.domain;
+    var pid = req.query.pid;
+    var query = req.query.query;
+    //var domain = req.query.domain;
+    var group_value = req.query.group_value;
+    var group_field = req.query.group_field;
+                //if(req.query.range) {
+                //if(req.query.stop_code_name) {
+    var hmpEmulatedResponseObject = buildResponseObjectSkeleton(reqQuery);
+    data.query = reqQuery.query;     // query and original appear to be always the same
+    data.original = reqQuery.query;  // "original search", PatientSearch.java:80
+    var reqQuery = req.query;
+    req.logger.info('performing solr Suggest search using query [%s]', reqQuery.query);
+    if (nullchecker.isNullish(reqQuery.pid)) {
+    if (nullchecker.isNullish(reqQuery.query) || reqQuery.query.length < 3) {
+    var escapedQuery = solrSimpleClient.escapeQueryChars(reqQuery.query);
+//                        'pid:' + reqQuery.pid
+            var hmpEmulatedSuggestResponseObject = buildSuggestResponseObjectSkeleton(reqQuery);
+            hmpEmulatedSuggestResponseObject = transformSuggestSolrToHmp(results, hmpEmulatedSuggestResponseObject, reqQuery);
+            hmpEmulatedSuggestResponseObject = transformSuggestLOINCToHmp(hmpEmulatedSuggestResponseObject, reqQuery);
+            hmpEmulatedSuggestResponseObject = transformSuggestLabPanelsToHmp(hmpEmulatedSuggestResponseObject, reqQuery);
+            hmpEmulatedSuggestResponseObject = transformSuggestLabGroupsToHmp(hmpEmulatedSuggestResponseObject, reqQuery);
+    var loincArray = loincSearch(reqQuery.query);
+        nextResponseItem = buildSuggestResponseObjectItemSkeleton(loincItem, reqQuery);
+    var labPanels = labPanelSearch(reqQuery.query);
+        nextResponseItem = buildSuggestResponseObjectItemSkeleton(labPanel, reqQuery);
+    var labGroups = labGroupSearch(reqQuery.query);
+        nextResponseItem = buildSuggestResponseObjectItemSkeleton(labGroup, reqQuery);
+    var escapedQuery = solrSimpleClient.escapeQueryChars(reqQuery.query);
+                nextResponseItem = buildSuggestResponseObjectItemSkeleton(item.term, reqQuery);
+                nextResponseItem = buildSuggestResponseObjectItemSkeleton(item.term, reqQuery, true);
+                    if (solrResponseObject.spellcheck.suggestions[0] === reqQuery.query) {
+                            nextResponseItem = buildSuggestResponseObjectItemSkeleton(item.word, reqQuery,true);
+                        nextResponseItem = buildSuggestResponseObjectItemSkeleton(item, reqQuery);
+                        nextResponseItem = buildSuggestResponseObjectItemSkeleton(item, reqQuery);
+        {query: reqQuery.query, display: 'Search for: "' + reqQuery.query + '"', textSearchTerm: reqQuery.query}
+    //var splitDisplay = itemObject.query.split(reqQuery.query.toLowerCase());
+    var reqQuery = req.query;
+                jdsUtils.getFullPatientFromPid(reqQuery.pid, req, cb);
+            reqQuery.pidJoinedList = allPids;
+                reqQuery.pidJoinedList = '(' + reqQuery.pidJoinedList + ')';
+            //console.log('reqQuery.pidJoinedList: ' + reqQuery.pidJoinedList);
+            req.audit.patientId = reqQuery.pid;
+            req.audit.patientPidList = reqQuery.pidJoinedList;
+            req.audit.additionalMessage.searchCriteria = util.format('query=%s', reqQuery.query);
+            req.audit.additionalMessage.searchCriteria = util.format('domains=%s', reqQuery.domains);
+            if (nullchecker.isNullish(reqQuery.pid)) {
+            if (nullchecker.isNullish(reqQuery.query)) {
+            req.logger.info('performing search using query [%s] on domain [%s]', reqQuery.query, reqQuery.domains);
+            if (nullchecker.isNullish(reqQuery.types)) {
+                domains = [].concat(reqQuery.types);
+                var specializedSolrQuery = buildSpecializedSolrQuery(reqQuery, facetMap, domain);
+            executeAndTransformSolrQuerys(specializedSolrQueryStrings, res, req, reqQuery, facetMap, domains);
+    //         var hmpEmulatedResponseObject = hmpSolrResponseTransformer.addSpecializedResultsToResponse(results, reqQuery, facetMap, domains);
+    //         hmpEmulatedResponseObject.params = reqQuery;
+            var hmpEmulatedResponseObject = hmpSolrResponseTransformer.addSpecializedResultsToResponse(results, reqQuery, facetMap, domains);
+            hmpEmulatedResponseObject.params = reqQuery;
+ * @param reqQuery
+    if (!reqQuery || !reqQuery.pid) {
+    var start = reqQuery.start || 0;
+    var limit = reqQuery.limit || 101;
+            ('pid:' + reqQuery.pidJoinedList), ('domain:' + domain),
+        q: '"' + reqQuery.query + '"',
+    //    if (reqQuery.indexOf('range') >= 0) {
+ * @param reqQuery
+    var specializedSolrQuery = buildSpecializedSolrQueryDispatch[domain](reqQuery, facetMap, domain);
+    var queryString = buildSolrQuery(reqQuery, facetMap, domain);
+    var solrQueryString = buildSolrQuery(reqQuery, facetMap, domain, queryParameters);
+    var solrQueryString = buildSolrQuery(reqQuery, facetMap, domain, queryParameters);
+    var solrQueryString = buildSolrQuery(reqQuery, facetMap, domain, queryParameters);
+    var solrQueryString = buildSolrQuery(reqQuery, facetMap, domain, queryParameters);
+    var solrQueryString = buildSolrQuery(reqQuery, facetMap, domain, queryParameters);
+    var solrQueryString = buildSolrQuery(reqQuery, facetMap, domain, queryParameters);
+    req.audit.patientId = req.query.pid;
+    req.audit.additionalMessage.searchCriteria = util.format('pid=%s,uid=%s,', req.query.pid, req.query.uid);
+    if(!_.every(['pid', 'uid'], _.has.bind(null, req.query))) {
+    //var domain = req.query.domain;
+    var pid = req.query.pid;
+    var uid = req.query.uid;
+    var fullName = req.param('fullName');
+    var limit = req.param('limit') || req.param('itemsPerPage');
+    var start = req.param('start') || req.param('startIndex') || 0;
+    var resultsRecordType = req.param('resultsRecordType') || '';
+    var order = req.query.order;
+    var maxrows = req.query.maxrows;
+    params.fname = req.query.fname || req.body.fname;
+    params.lname = req.query.lname || req.body.lname;
+    params.ssn = req.query.ssn || req.body.ssn;
+    params.dob = req.query.dob || req.body.dob;
+    var last5 = req.param('last5');
+    var start = req.param('start') || 0;
+    var limit = req.param('limit');
+    var order = req.query.order;
+    var pid = req.param('pid');
+    var searchfor = req.param('searchfor') || '';
+    var uncoded = req.param('uncoded');
+    var limit = req.param('limit') || '';
+    var pid = req.param('pid');
+    var use = req.param('use');
+    var useCachedValue = req.param('cache');
+    var type = req.param('type');
+    var pid = req.param('pid');
+    var fromDate = req.param('fromDate');
+    var toDate = req.param('toDate');
+    var start = req.param('start') || 0;
+    var limit = req.param('limit');
+    var order = req.query.order;
+    var orderId = req.param('orderId');
+    var dfn = req.param('dfn');
+    var pid = req.param('pid');
+    var range = req.param('name');
+    var facilityCode = req.param('facilityCode');
+    var siteCode = req.param('siteCode');
+    var queryObj = _.pick(req.query, 'start', 'limit', 'order');
+    var location = req.param('locationUid');
+    if (req.param('refId') !== undefined) {
+        refId = req.param('refId');
+    var startDate = req.param('startDate') || '';
+    var stopDate = req.param('stopDate') || moment().format('YYYYMMDD');
+    if(req.query.filter) {
+        jdsQuery.filter = req.query.filter;
+    if(req.query.order) {
+        jdsQuery.order = req.query.order;
+    var sourceWorkspaceId = req.query.fromId;
+    var destinationWorkSpaceId = req.query.toId;
+    return req.param('instanceId') || null;
+    var id = req.param('id') || null;
+    return req.param('instanceId') || null;
+    return req.param('filter') || null;
+    var screenType = req.param('screenType');
+    var id = req.param('id') || null;
+    return req.param('instanceId') || null;
+    var id = req.param('id') || null;
+    return req.param('instanceId') || null;
+    return req.param('graphType') || null;
+    return req.param('typeName') || null;
+        params: req.params
+        params: req.params
+    var patientId = req.param('pid');
+    var order = req.query.order;
+    var fcode = req.param('fcode');
+    var pname = req.param('pname') || '';
+    var limit = req.param('limit');
+    var order = req.query.order;
+    var fcode = req.param('fcode');
+    var fname = req.param('fname');
+    var order = req.query.order;
+    var pid = req.param('pid');
+    var order = req.query.order;
+    var json = JSON.parse(req.param('payload'));
+    var dfn = req.param('dfn'),
+        ts = req.param('ts'),
+        type = req.param('type'),
+        flag = req.param('flag');
+    var dfn = req.param('dfn'),
+        start = req.param('start'),
+        end = req.param('end');
+    var types = req.query.types;
+        res.send(rdk.httpstatus.internal_server_error, 'Invalid parameters.\n' + JSON.stringify(req.params));
+        searchParam: req.param('searchParam')
+        requestObj = JSON.parse(req.param('param'));
+        requestObj = JSON.parse(req.param('param'));
+    var userSearchParam = req.param('searchParam');
+        requestObj = JSON.parse(req.param('param'));
+        requestObj = JSON.parse(req.param('param'));
+        requestObj = JSON.parse(req.param('param'));
+    requestObj.dlg = JSON.parse(req.param('dlg'));
+    var requestParameters;// = req.query;
+        requestParameters = JSON.parse(req.param('param'));
+    var pid = req.param('pid');
+        requestObj = JSON.parse(req.param('param'));

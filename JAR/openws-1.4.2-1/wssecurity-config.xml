@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd"
+    xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+    xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+    xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd"
+    xmlns="http://www.opensaml.org/xmltooling-config">
+
+    <!-- WS-Security 2004 Object Providers -->
+    <ObjectProviders>
+    
+        <!-- wsse:BinarySecurityToken -->
+        <ObjectProvider qualifiedName="wsse:BinarySecurityToken">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.BinarySecurityTokenBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.BinarySecurityTokenMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.BinarySecurityTokenUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsu:Created -->
+        <ObjectProvider qualifiedName="wsu:Created">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.CreatedBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.CreatedMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.CreatedUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsse:Embedded -->
+        <ObjectProvider qualifiedName="wsse:Embedded">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.EmbeddedBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.EmbeddedMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.EmbeddedUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsse11:EncryptedHeader -->
+        <ObjectProvider qualifiedName="wsse11:EncryptedHeader">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.EncryptedHeaderBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.EncryptedHeaderMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.EncryptedHeaderUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsu:Expires -->
+        <ObjectProvider qualifiedName="wsu:Expires">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.ExpiresBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.ExpiresMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.ExpiresUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsse11:Iteration -->
+        <ObjectProvider qualifiedName="wsse11:Iteration">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.IterationBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.IterationMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.IterationUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsse:KeyIdentifier -->
+        <ObjectProvider qualifiedName="wsse:KeyIdentifier">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.KeyIdentifierBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.KeyIdentifierMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.KeyIdentifierUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsse:Nonce -->
+        <ObjectProvider qualifiedName="wsse:Nonce">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.NonceBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.NonceMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.NonceUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsse:Password -->
+        <ObjectProvider qualifiedName="wsse:Password">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.PasswordBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.PasswordMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.PasswordUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsse:Reference -->
+        <ObjectProvider qualifiedName="wsse:Reference">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.ReferenceBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.ReferenceMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.ReferenceUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsse11:Salt -->
+        <ObjectProvider qualifiedName="wsse11:Salt">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.SaltBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.SaltMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.SaltUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsse:Security -->
+        <ObjectProvider qualifiedName="wsse:Security">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.SecurityBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.SecurityMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.SecurityUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsse:SecurityTokenReference -->
+        <ObjectProvider qualifiedName="wsse:SecurityTokenReference">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.SecurityTokenReferenceBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.SecurityTokenReferenceMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.SecurityTokenReferenceUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsu:SignatureConfirmation -->
+        <ObjectProvider qualifiedName="wsu:SignatureConfirmation">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.SignatureConfirmationBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.SignatureConfirmationMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.SignatureConfirmationUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsu:Timestamp -->
+        <ObjectProvider qualifiedName="wsu:Timestamp">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.TimestampBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.TimestampMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.TimestampUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsse:TransformationParameters -->
+        <ObjectProvider qualifiedName="wsse:TransformationParameters">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.TransformationParametersBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.TransformationParametersMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.TransformationParametersUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wsse:Username -->
+        <ObjectProvider qualifiedName="wsse:Username">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.UsernameBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.UsernameMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.UsernameUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wsse:UsernameToken -->
+        <ObjectProvider qualifiedName="wsse:UsernameToken">
+            <BuilderClass
+                className="org.opensaml.ws.wssecurity.impl.UsernameTokenBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.UsernameTokenMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wssecurity.impl.UsernameTokenUnmarshaller" />
+        </ObjectProvider>
+
+    </ObjectProviders>
+    
+    <IDAttributes>
+        <IDAttribute>wsu:Id</IDAttribute>
+    </IDAttributes>
+
+</XMLTooling>

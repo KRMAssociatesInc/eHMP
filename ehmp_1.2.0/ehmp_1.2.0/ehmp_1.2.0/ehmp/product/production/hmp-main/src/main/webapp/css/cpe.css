@@ -1,0 +1,105 @@
+table.labeled-values td {
+    margin: 0;
+    padding: 5px;
+}
+
+table.labeled-values td:first-child {
+    font-weight: bold;
+    text-align: right;
+}
+
+div.search-result {
+    padding-left: 4;
+    padding-right: 4;
+}
+
+.search-result-summary {
+    font-size: 0.9em;
+}
+
+.search-result-over {
+    background-color: #EFEFEF;
+    border-color: #DDDDDD;
+}
+
+.search-result-selected {
+    background-color: #DFE8F6 !important;
+    border-color: #A3BAE9;
+}
+
+.search-result-count {
+    font-weight: normal;
+    margin-left: 6px;
+}
+
+.search-result-highlight {
+    font-size: .8em;
+    color: #505963;
+}
+
+.search-result-highlight em {
+    font-weight: bold;
+}
+
+.search-result-attributes {
+    font-size: .8em;
+    color: #4595c1;
+}
+
+span.search-term-match {
+    background-color: yellow !important;
+}
+
+.chart-tip {
+    background-color: white;
+    font-weight: normal;
+}
+
+.chart-tip em {
+    color: red;
+    font-weight: bold;
+}
+
+div.preformatted {
+    white-space: pre;
+    font-family: monospace;
+    display: block;
+}
+
+.x-mask-error div {
+    background-color: #EEEEEE;
+    background-image: url("../ext-4.0.7/resources/themes/images/gray/window/icon-error.gif"); /* TODO: should be able to set a relative path here using a sass variable? */
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    border: 1px solid #B3B3B3;
+    height: 50px;
+    color: #222222;
+    cursor: none;
+    font: 11px tahoma, arial, verdana, sans-serif;
+    padding: 5px 10px 5px 25px;
+}
+
+.new-data span {
+    /*background-color: orange !important;*/
+    background-color:orange !important;
+    /*background-image:none;*/
+    /*border-bottom-color:orange;*/
+    /*color: orange !important;*/
+}
+
+.new-data-click span {
+    background-color: #ccffff !important;
+    /*background-image:none;*/
+    /*border-bottom-color: #ccffff;*/
+}
+
+.patient-banner-new {
+	padding:5px;
+	border: 1px solid grey;
+	background-color: orange;
+}
+
+.external-link a {
+	padding-right: 13px;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=) center right no-repeat;
+}

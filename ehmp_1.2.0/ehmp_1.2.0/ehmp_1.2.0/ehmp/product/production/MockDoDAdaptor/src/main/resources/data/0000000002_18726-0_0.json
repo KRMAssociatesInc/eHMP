@@ -1,0 +1,86 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "Description": "ANKLE & STRESS VIEWS RT",
+        "OrderDate": "20130502133100",
+        "OrderingProvider": "DOCTOR, ALPHA",
+        "RadiologyOrders": [
+          {
+            "EnteredByName": "DOCTOR, ALPHA",
+            "StatusComments": "",
+            "EnteredByDate": "",
+            "AlternateSpecimenText": "",
+            "ScheduleTypeName": "One Time",
+            "StartDate": "20130502000000",
+            "NurseSignatureName": "",
+            "Duration": "D1",
+            "PriorOrderNumber": "",
+            "StatusName": "Ordered",
+            "IntervalTimeInterval": "",
+            "Frequency": "",
+            "ProcessingPriority": "",
+            "OrderStatusName": "Ordered",
+            "OrderDate": "20130502133100",
+            "OrderComment": "testing ccr 4427",
+            "IntervalRepeatPattern": "",
+            "AdminTimes": "",
+            "OrderingProviderName": "DOCTOR, ALPHA",
+            "TestStatusName": "",
+            "FacilityName": "NH Great Lakes IL",
+            "Ncid": "126754",
+            "UniversalServiceText": "ANKLE & STRESS VIEWS RT",
+            "Priority": "ROUTINE",
+            "GroupNumber": "966057",
+            "EndDate": "20140502133000",
+            "EnteringLocationName": "Dermatology Clinic FHCC",
+            "NurseSignatureDate": "",
+            "OrderNumber": "130502-00007",
+            "CollectionMethod": "",
+            "SpecimenText": "",
+            "OrderRequiredData": "",
+            "EventId": "1000010248"
+          }
+        ],
+        "Type": "RADIOLOGY",
+        "EnteredBy": "",
+        "OrderId": "130502-00007",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "Ncid": "126754",
+        "Status": "Ordered",
+        "CustodianName": "ahlta",
+        "LoincCode": "18726-0",
+        "Facility": "",
+        "EventId": "1000010249"
+      },
+      "dataType": 23
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

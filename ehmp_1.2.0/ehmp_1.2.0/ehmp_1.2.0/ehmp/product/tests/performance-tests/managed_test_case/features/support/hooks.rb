@@ -1,0 +1,2 @@
+require "agilex-loadgen/Metadata"
+

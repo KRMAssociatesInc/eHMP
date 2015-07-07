@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>gov.va.hmp</groupId>
+		<artifactId>health-time-parent</artifactId>
+		<version>2.1.3</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>gov.va.hmp</groupId>
+	<artifactId>health-time-solr</artifactId>
+	<packaging>jar</packaging>
+	<name>Solr Health-Time Support</name>
+	<version>2.1.3</version>
+	<description>Custom field type for solr implementing support for HL7's "point in time"/"timestamp" data type.</description>
+   	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>health-time-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.apache.solr</groupId>
+		  <artifactId>solr-core</artifactId>
+		  <version>${solr.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-nop</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+      		</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+    		</plugin>
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+    		</plugin>
+		</plugins>
+	</build>
+</project>

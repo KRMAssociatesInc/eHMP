@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:idpdisco="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" xmlns="http://www.opensaml.org/xmltooling-config" xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd">
+
+	<!-- SAML 2.0 Protocol IdP Discovery Protocol Object providers -->
+	<ObjectProviders>
+
+		<!-- DiscoveryResponse provider -->
+		<ObjectProvider qualifiedName="idpdisco:DiscoveryResponse">
+			<BuilderClass className=" org.opensaml.samlext.idpdisco.DiscoveryResponseBuilder"/>
+			<MarshallingClass className="org.opensaml.samlext.idpdisco.DiscoveryResponseMarshaller"/>
+			<UnmarshallingClass className="org.opensaml.samlext.idpdisco.DiscoveryResponseUnmarshaller"/>
+		</ObjectProvider>
+		
+	</ObjectProviders>
+</XMLTooling>

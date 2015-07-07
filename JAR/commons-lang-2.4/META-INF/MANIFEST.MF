@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: 1.4.2_16 (Apple Computer, Inc.)
+Built-By: hen
+Build-Jdk: 1.4.2_16
+Implementation-Title: Commons Lang
+Implementation-Vendor: The Apache Software Foundation
+Implementation-Vendor-Id: org.apache
+Implementation-Version: 2.4
+Specification-Title: Commons Lang
+Specification-Vendor: The Apache Software Foundation
+Specification-Version: 2.4
+X-Compile-Source-JDK: 1.3
+X-Compile-Target-JDK: 1.2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Import-Package: org.apache.commons.lang;version="2.4",org.apache.commo
+ ns.lang.builder;version="2.4",org.apache.commons.lang.enum;version="2
+ .4",org.apache.commons.lang.enums;version="2.4",org.apache.commons.la
+ ng.exception;version="2.4",org.apache.commons.lang.math;version="2.4"
+ ,org.apache.commons.lang.mutable;version="2.4",org.apache.commons.lan
+ g.text;version="2.4",org.apache.commons.lang.time;version="2.4"
+Bnd-LastModified: 1205638979942
+Export-Package: org.apache.commons.lang.math;version="2.4",org.apache.
+ commons.lang.enums;version="2.4",org.apache.commons.lang.builder;vers
+ ion="2.4",org.apache.commons.lang.exception;version="2.4",org.apache.
+ commons.lang.enum;version="2.4",org.apache.commons.lang.mutable;versi
+ on="2.4",org.apache.commons.lang.text;version="2.4",org.apache.common
+ s.lang.time;version="2.4",org.apache.commons.lang;version="2.4"
+Bundle-Version: 2.4
+Bundle-Description: Commons Lang, a package of Java utility classes fo
+ r the        classes that are in java.lang's hierarchy, or are consid
+ ered to be so        standard as to justify existence in java.lang.
+Bundle-Name: Commons Lang
+Bundle-DocURL: http://commons.apache.org/lang/
+Bundle-ManifestVersion: 2
+Bundle-Vendor: The Apache Software Foundation
+Bundle-SymbolicName: org.apache.commons.lang
+Tool: Bnd-0.0.238
+

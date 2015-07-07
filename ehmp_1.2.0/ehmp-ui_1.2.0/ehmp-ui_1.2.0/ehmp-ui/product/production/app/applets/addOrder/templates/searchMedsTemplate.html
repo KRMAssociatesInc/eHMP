@@ -1,0 +1,22 @@
+<div id="med-order-form-container">
+</div>
+<div class="input-group" >
+    <span class="input-group-addon">
+        <i class="fa fa-search"></i>
+    </span>
+    <input type="text" class="form-control" id="medsSearchInput" onfocus="this.value = this.value;" placeholder="Enter at least 3 letters to lookup medication" tabIndex="0" autofocus />
+</div>
+<div>
+	<div>
+		<div id="meds-loading-indicator" aria-hidden="true">
+    		<span><h5><i class="fa fa-spinner fa-spin"></i> Loading...</h5></span>
+    	</div>
+    </div>
+	<div id="search-scroll" class="meds-search-scrolling-container">
+		<ul class="nav nav-pills" role="menu">
+			<li id="med-results-inner-container" class="open full-width">
+		    	<ul id="meds-search-result-item-container" class="list-group"></ul>
+		    </li>
+		</ul>
+	</div>
+</div>

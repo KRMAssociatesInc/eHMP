@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd"
+    xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512"
+    xmlns="http://www.opensaml.org/xmltooling-config">
+
+    <!-- WS-Trust 1.3 Object Providers -->
+    <ObjectProviders>
+
+        <!-- wst:AllowPostdating -->
+        <ObjectProvider qualifiedName="wst:AllowPostdating">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.AllowPostdatingBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.AllowPostdatingMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.AllowPostdatingUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:AuthenticationType -->
+        <ObjectProvider qualifiedName="wst:AuthenticationType">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.AuthenticationTypeBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.AuthenticationTypeMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.AuthenticationTypeUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Authenticator -->
+        <ObjectProvider qualifiedName="wst:Authenticator">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.AuthenticatorBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.AuthenticatorMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.AuthenticatorUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:BinaryExchange -->
+        <ObjectProvider qualifiedName="wst:BinaryExchange">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.BinaryExchangeBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.BinaryExchangeMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.BinaryExchangeUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:BinarySecret -->
+        <ObjectProvider qualifiedName="wst:BinarySecret">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.BinarySecretBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.BinarySecretMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.BinarySecretUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:CancelTarget -->
+        <ObjectProvider qualifiedName="wst:CancelTarget">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.CancelTargetBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.CancelTargetMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.CancelTargetUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:CanonicalizationAlgorithm -->
+        <ObjectProvider qualifiedName="wst:CanonicalizationAlgorithm">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.CanonicalizationAlgorithmBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.CanonicalizationAlgorithmMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.CanonicalizationAlgorithmUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Challenge -->
+        <ObjectProvider qualifiedName="wst:Challenge">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.ChallengeBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ChallengeMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ChallengeUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Claims -->
+        <ObjectProvider qualifiedName="wst:Claims">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.ClaimsBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ClaimsMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ClaimsUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Code -->
+        <ObjectProvider qualifiedName="wst:Code">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.CodeBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.CodeMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.CodeUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:CombinedHash -->
+        <ObjectProvider qualifiedName="wst:CombinedHash">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.CombinedHashBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.CombinedHashMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.CombinedHashUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:ComputedKey -->
+        <ObjectProvider qualifiedName="wst:ComputedKey">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.ComputedKeyBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ComputedKeyMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ComputedKeyUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wst:ComputedKeyAlgorithm -->
+        <ObjectProvider qualifiedName="wst:ComputedKeyAlgorithm">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.ComputedKeyAlgorithmBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ComputedKeyAlgorithmMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ComputedKeyAlgorithmUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Delegatable -->
+        <ObjectProvider qualifiedName="wst:Delegatable">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.DelegatableBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.DelegatableMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.DelegatableUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:DelegateTo -->
+        <ObjectProvider qualifiedName="wst:DelegateTo">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.DelegateToBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.DelegateToMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.DelegateToUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Encryption -->
+        <ObjectProvider qualifiedName="wst:Encryption">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.EncryptionBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.EncryptionMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.EncryptionUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wst:EncryptionAlgorithm -->
+        <ObjectProvider qualifiedName="wst:EncryptionAlgorithm">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.EncryptionAlgorithmBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.EncryptionAlgorithmMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.EncryptionAlgorithmUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wst:EncryptWith -->
+        <ObjectProvider qualifiedName="wst:EncryptWith">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.EncryptWithBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.EncryptWithMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.EncryptWithUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Entropy -->
+        <ObjectProvider qualifiedName="wst:Entropy">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.EntropyBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.EntropyMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.EntropyUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Forwardable -->
+        <ObjectProvider qualifiedName="wst:Forwardable">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.ForwardableBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ForwardableMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ForwardableUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:IssuedTokens -->
+        <ObjectProvider qualifiedName="wst:IssuedTokens">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.IssuedTokensBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.IssuedTokensMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.IssuedTokensUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Issuer -->
+        <ObjectProvider qualifiedName="wst:Issuer">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.IssuerBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.IssuerMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.IssuerUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:KeyExchangeToken -->
+        <ObjectProvider qualifiedName="wst:KeyExchangeToken">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.KeyExchangeTokenBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.KeyExchangeTokenMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.KeyExchangeTokenUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:KeySize -->
+        <ObjectProvider qualifiedName="wst:KeySize">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.KeySizeBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.KeySizeMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.KeySizeUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:KeyType -->
+        <ObjectProvider qualifiedName="wst:KeyType">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.KeyTypeBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.KeyTypeMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.KeyTypeUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:KeyWrapAlgorithm -->
+        <ObjectProvider qualifiedName="wst:KeyWrapAlgorithm">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.KeyWrapAlgorithmBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.KeyWrapAlgorithmMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.KeyWrapAlgorithmUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Lifetime -->
+        <ObjectProvider qualifiedName="wst:Lifetime">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.LifetimeBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.LifetimeMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.LifetimeUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:OnBehalfOf -->
+        <ObjectProvider qualifiedName="wst:OnBehalfOf">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.OnBehalfOfBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.OnBehalfOfMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.OnBehalfOfUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Participant -->
+        <ObjectProvider qualifiedName="wst:Participant">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.ParticipantBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ParticipantMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ParticipantUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Participants -->
+        <ObjectProvider qualifiedName="wst:Participants">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.ParticipantsBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ParticipantsMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ParticipantsUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Primary -->
+        <ObjectProvider qualifiedName="wst:Primary">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.PrimaryBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.PrimaryMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.PrimaryUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:ProofEncryption -->
+        <ObjectProvider qualifiedName="wst:ProofEncryption">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.ProofEncryptionBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ProofEncryptionMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ProofEncryptionUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Reason -->
+        <ObjectProvider qualifiedName="wst:Reason">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.ReasonBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ReasonMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ReasonUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wst:Renewing -->
+        <ObjectProvider qualifiedName="wst:Renewing">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RenewingBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RenewingMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RenewingUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:RenewTarget -->
+        <ObjectProvider qualifiedName="wst:RenewTarget">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RenewTargetBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RenewTargetMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RenewTargetUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:RequestedAttachedReference -->
+        <ObjectProvider
+            qualifiedName="wst:RequestedAttachedReference">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RequestedAttachedReferenceBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestedAttachedReferenceMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestedAttachedReferenceUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:RequestedProofToken -->
+        <ObjectProvider qualifiedName="wst:RequestedProofToken">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RequestedProofTokenBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestedProofTokenMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestedProofTokenUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wst:RequestedSecurityToken -->
+        <ObjectProvider qualifiedName="wst:RequestedSecurityToken">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RequestedSecurityTokenBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestedSecurityTokenMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestedSecurityTokenUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wst:RequestedTokenCancelled -->
+        <ObjectProvider qualifiedName="wst:RequestedTokenCancelled">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RequestedTokenCancelledBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestedTokenCancelledMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestedTokenCancelledUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wst:RequestedUnattachedReference -->
+        <ObjectProvider
+            qualifiedName="wst:RequestedUnattachedReference">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RequestedUnattachedReferenceBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestedUnattachedReferenceMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestedUnattachedReferenceUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:RequestKET -->
+        <ObjectProvider qualifiedName="wst:RequestKET">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RequestKETBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestKETMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestKETUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wst:RequestSecurityToken -->
+        <ObjectProvider qualifiedName="wst:RequestSecurityToken">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RequestSecurityTokenBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestSecurityTokenMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestSecurityTokenUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wst:RequestSecurityTokenCollection -->
+        <ObjectProvider
+            qualifiedName="wst:RequestSecurityTokenCollection">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RequestSecurityTokenCollectionBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestSecurityTokenCollectionMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestSecurityTokenCollectionUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:RequestSecurityTokenResponse -->
+        <ObjectProvider
+            qualifiedName="wst:RequestSecurityTokenResponse">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RequestSecurityTokenResponseBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestSecurityTokenResponseMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestSecurityTokenResponseUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:RequestSecurityTokenResponseCollection -->
+        <ObjectProvider
+            qualifiedName="wst:RequestSecurityTokenResponseCollection">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RequestSecurityTokenResponseCollectionBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestSecurityTokenResponseCollectionMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestSecurityTokenResponseCollectionUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:RequestType -->
+        <ObjectProvider qualifiedName="wst:RequestType">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.RequestTypeBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestTypeMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.RequestTypeUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:SignatureAlgorithm -->
+        <ObjectProvider qualifiedName="wst:SignatureAlgorithm">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.SignatureAlgorithmBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.SignatureAlgorithmMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.SignatureAlgorithmUnmarshaller" />
+        </ObjectProvider>
+        
+        <!-- wst:SignChallenge -->
+        <ObjectProvider qualifiedName="wst:SignChallenge">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.SignChallengeBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.SignChallengeMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.SignChallengeUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:SignChallengeResponse -->
+        <ObjectProvider qualifiedName="wst:SignChallengeResponse">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.SignChallengeResponseBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.SignChallengeResponseMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.SignChallengeResponseUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:SignWith -->
+        <ObjectProvider qualifiedName="wst:SignWith">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.SignWithBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.SignWithMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.SignWithUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:Status -->
+        <ObjectProvider qualifiedName="wst:Status">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.StatusBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.StatusMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.StatusUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:TokenType -->
+        <ObjectProvider qualifiedName="wst:TokenType">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.TokenTypeBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.TokenTypeMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.TokenTypeUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:UseKey -->
+        <ObjectProvider qualifiedName="wst:UseKey">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.UseKeyBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.UseKeyMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.UseKeyUnmarshaller" />
+        </ObjectProvider>
+
+        <!-- wst:ValidateTarget -->
+        <ObjectProvider qualifiedName="wst:ValidateTarget">
+            <BuilderClass
+                className="org.opensaml.ws.wstrust.impl.ValidateTargetBuilder" />
+            <MarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ValidateTargetMarshaller" />
+            <UnmarshallingClass
+                className="org.opensaml.ws.wstrust.impl.ValidateTargetUnmarshaller" />
+        </ObjectProvider>
+
+    </ObjectProviders>
+
+</XMLTooling>

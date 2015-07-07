@@ -1,0 +1,1364 @@
+[ {
+  "cdrEventId" : "1000000582",
+  "codes" : [ {
+    "code" : "55284-4",
+    "display" : "Blood pressure systolic and diastolic",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389373824000,
+  "qualifiers" : null,
+  "rate" : "110/40",
+  "units" : "mmHg",
+  "unitsCode" : "mmHg",
+  "vitalType" : "BLOOD PRESSURE",
+  "vitalsIEN" : "2157584331"
+}, {
+  "cdrEventId" : "1000000583",
+  "codes" : [ {
+    "code" : "2051",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8867-4",
+    "display" : "Heart rate",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389373824000,
+  "qualifiers" : null,
+  "rate" : "40",
+  "units" : "/min",
+  "unitsCode" : "/min",
+  "vitalType" : "PULSE",
+  "vitalsIEN" : "2157584331"
+}, {
+  "cdrEventId" : "1000000584",
+  "codes" : [ {
+    "code" : "1604139",
+    "display" : null,
+    "system" : "DOD_NCID"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389373824000,
+  "qualifiers" : null,
+  "rate" : "No",
+  "units" : "",
+  "unitsCode" : null,
+  "vitalType" : "Smoking Status Now Observation",
+  "vitalsIEN" : "2157584331"
+}, {
+  "cdrEventId" : "1000000586",
+  "codes" : [ {
+    "code" : "2154",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8310-5",
+    "display" : "Body temperature",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389373824000,
+  "qualifiers" : null,
+  "rate" : "98",
+  "units" : "F",
+  "unitsCode" : "F",
+  "vitalType" : "TEMPERATURE",
+  "vitalsIEN" : "2157584331"
+}, {
+  "cdrEventId" : "1000000588",
+  "codes" : [ {
+    "code" : "2178",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "3141-9",
+    "display" : "Body weight Measured",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389373824000,
+  "qualifiers" : null,
+  "rate" : "135",
+  "units" : "lb",
+  "unitsCode" : "lb",
+  "vitalType" : "WEIGHT",
+  "vitalsIEN" : "2157584331"
+}, {
+  "cdrEventId" : "1000000590",
+  "codes" : [ {
+    "code" : "110675",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8302-2",
+    "display" : "Body height",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389373824000,
+  "qualifiers" : null,
+  "rate" : "63",
+  "units" : "in",
+  "unitsCode" : "in",
+  "vitalType" : "HEIGHT",
+  "vitalsIEN" : "2157584331"
+}, {
+  "cdrEventId" : "1000000591",
+  "codes" : [ {
+    "code" : "2124",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "9279-1",
+    "display" : "Respiratory rate",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389373824000,
+  "qualifiers" : null,
+  "rate" : "40",
+  "units" : "/min",
+  "unitsCode" : "/min",
+  "vitalType" : "RESPIRATION",
+  "vitalsIEN" : "2157584331"
+}, {
+  "cdrEventId" : "1000000594",
+  "codes" : [ {
+    "code" : "55284-4",
+    "display" : "Blood pressure systolic and diastolic",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389297828000,
+  "qualifiers" : null,
+  "rate" : "110/40",
+  "units" : "mmHg",
+  "unitsCode" : "mmHg",
+  "vitalType" : "BLOOD PRESSURE",
+  "vitalsIEN" : "2157584317"
+}, {
+  "cdrEventId" : "1000000595",
+  "codes" : [ {
+    "code" : "2051",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8867-4",
+    "display" : "Heart rate",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389297828000,
+  "qualifiers" : null,
+  "rate" : "36",
+  "units" : "/min",
+  "unitsCode" : "/min",
+  "vitalType" : "PULSE",
+  "vitalsIEN" : "2157584317"
+}, {
+  "cdrEventId" : "1000000596",
+  "codes" : [ {
+    "code" : "1604139",
+    "display" : null,
+    "system" : "DOD_NCID"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389297828000,
+  "qualifiers" : null,
+  "rate" : "No",
+  "units" : "",
+  "unitsCode" : null,
+  "vitalType" : "Smoking Status Now Observation",
+  "vitalsIEN" : "2157584317"
+}, {
+  "cdrEventId" : "1000000598",
+  "codes" : [ {
+    "code" : "2154",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8310-5",
+    "display" : "Body temperature",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389297828000,
+  "qualifiers" : null,
+  "rate" : "98",
+  "units" : "F",
+  "unitsCode" : "F",
+  "vitalType" : "TEMPERATURE",
+  "vitalsIEN" : "2157584317"
+}, {
+  "cdrEventId" : "1000000600",
+  "codes" : [ {
+    "code" : "2178",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "3141-9",
+    "display" : "Body weight Measured",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389297828000,
+  "qualifiers" : null,
+  "rate" : "135",
+  "units" : "lb",
+  "unitsCode" : "lb",
+  "vitalType" : "WEIGHT",
+  "vitalsIEN" : "2157584317"
+}, {
+  "cdrEventId" : "1000000602",
+  "codes" : [ {
+    "code" : "110675",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8302-2",
+    "display" : "Body height",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389297828000,
+  "qualifiers" : null,
+  "rate" : "67",
+  "units" : "in",
+  "unitsCode" : "in",
+  "vitalType" : "HEIGHT",
+  "vitalsIEN" : "2157584317"
+}, {
+  "cdrEventId" : "1000000603",
+  "codes" : [ {
+    "code" : "2124",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "9279-1",
+    "display" : "Respiratory rate",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1389297828000,
+  "qualifiers" : null,
+  "rate" : "40",
+  "units" : "/min",
+  "unitsCode" : "/min",
+  "vitalType" : "RESPIRATION",
+  "vitalsIEN" : "2157584317"
+}, {
+  "cdrEventId" : "1000000606",
+  "codes" : [ {
+    "code" : "55284-4",
+    "display" : "Blood pressure systolic and diastolic",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386263759000,
+  "qualifiers" : null,
+  "rate" : "110/40",
+  "units" : "mmHg",
+  "unitsCode" : "mmHg",
+  "vitalType" : "BLOOD PRESSURE",
+  "vitalsIEN" : "2157582836"
+}, {
+  "cdrEventId" : "1000000607",
+  "codes" : [ {
+    "code" : "2051",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8867-4",
+    "display" : "Heart rate",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386263759000,
+  "qualifiers" : null,
+  "rate" : "40",
+  "units" : "/min",
+  "unitsCode" : "/min",
+  "vitalType" : "PULSE",
+  "vitalsIEN" : "2157582836"
+}, {
+  "cdrEventId" : "1000000608",
+  "codes" : [ {
+    "code" : "1604139",
+    "display" : null,
+    "system" : "DOD_NCID"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386263759000,
+  "qualifiers" : null,
+  "rate" : "No",
+  "units" : "",
+  "unitsCode" : null,
+  "vitalType" : "Smoking Status Now Observation",
+  "vitalsIEN" : "2157582836"
+}, {
+  "cdrEventId" : "1000000610",
+  "codes" : [ {
+    "code" : "2178",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "3141-9",
+    "display" : "Body weight Measured",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386263759000,
+  "qualifiers" : null,
+  "rate" : "127",
+  "units" : "lb",
+  "unitsCode" : "lb",
+  "vitalType" : "WEIGHT",
+  "vitalsIEN" : "2157582836"
+}, {
+  "cdrEventId" : "1000000612",
+  "codes" : [ {
+    "code" : "110675",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8302-2",
+    "display" : "Body height",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386263759000,
+  "qualifiers" : null,
+  "rate" : "63",
+  "units" : "in",
+  "unitsCode" : "in",
+  "vitalType" : "HEIGHT",
+  "vitalsIEN" : "2157582836"
+}, {
+  "cdrEventId" : "1000000613",
+  "codes" : [ {
+    "code" : "959598",
+    "display" : null,
+    "system" : "DOD_NCID"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386263759000,
+  "qualifiers" : null,
+  "rate" : "No",
+  "units" : "",
+  "unitsCode" : null,
+  "vitalType" : "Alcohol Use",
+  "vitalsIEN" : "2157582836"
+}, {
+  "cdrEventId" : "1000000615",
+  "codes" : [ {
+    "code" : "2154",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8310-5",
+    "display" : "Body temperature",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386263759000,
+  "qualifiers" : null,
+  "rate" : "98",
+  "units" : "F",
+  "unitsCode" : "F",
+  "vitalType" : "TEMPERATURE",
+  "vitalsIEN" : "2157582836"
+}, {
+  "cdrEventId" : "1000000618",
+  "codes" : [ {
+    "code" : "55284-4",
+    "display" : "Blood pressure systolic and diastolic",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386018099000,
+  "qualifiers" : null,
+  "rate" : "110/80",
+  "units" : "mmHg",
+  "unitsCode" : "mmHg",
+  "vitalType" : "BLOOD PRESSURE",
+  "vitalsIEN" : "2157582353"
+}, {
+  "cdrEventId" : "1000000619",
+  "codes" : [ {
+    "code" : "2051",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8867-4",
+    "display" : "Heart rate",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386018099000,
+  "qualifiers" : null,
+  "rate" : "40",
+  "units" : "/min",
+  "unitsCode" : "/min",
+  "vitalType" : "PULSE",
+  "vitalsIEN" : "2157582353"
+}, {
+  "cdrEventId" : "1000000620",
+  "codes" : [ {
+    "code" : "2124",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "9279-1",
+    "display" : "Respiratory rate",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386018099000,
+  "qualifiers" : null,
+  "rate" : "40",
+  "units" : "/min",
+  "unitsCode" : "/min",
+  "vitalType" : "RESPIRATION",
+  "vitalsIEN" : "2157582353"
+}, {
+  "cdrEventId" : "1000000621",
+  "codes" : [ {
+    "code" : "1604139",
+    "display" : null,
+    "system" : "DOD_NCID"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386018099000,
+  "qualifiers" : null,
+  "rate" : "No",
+  "units" : "",
+  "unitsCode" : null,
+  "vitalType" : "Smoking Status Now Observation",
+  "vitalsIEN" : "2157582353"
+}, {
+  "cdrEventId" : "1000000623",
+  "codes" : [ {
+    "code" : "2178",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "3141-9",
+    "display" : "Body weight Measured",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386018099000,
+  "qualifiers" : null,
+  "rate" : "120",
+  "units" : "lb",
+  "unitsCode" : "lb",
+  "vitalType" : "WEIGHT",
+  "vitalsIEN" : "2157582353"
+}, {
+  "cdrEventId" : "1000000625",
+  "codes" : [ {
+    "code" : "110675",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8302-2",
+    "display" : "Body height",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386018099000,
+  "qualifiers" : null,
+  "rate" : "63",
+  "units" : "in",
+  "unitsCode" : "in",
+  "vitalType" : "HEIGHT",
+  "vitalsIEN" : "2157582353"
+}, {
+  "cdrEventId" : "1000000626",
+  "codes" : [ {
+    "code" : "959598",
+    "display" : null,
+    "system" : "DOD_NCID"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386018099000,
+  "qualifiers" : null,
+  "rate" : "No",
+  "units" : "",
+  "unitsCode" : null,
+  "vitalType" : "Alcohol Use",
+  "vitalsIEN" : "2157582353"
+}, {
+  "cdrEventId" : "1000000628",
+  "codes" : [ {
+    "code" : "2154",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8310-5",
+    "display" : "Body temperature",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1386018099000,
+  "qualifiers" : null,
+  "rate" : "98",
+  "units" : "F",
+  "unitsCode" : "F",
+  "vitalType" : "TEMPERATURE",
+  "vitalsIEN" : "2157582353"
+}, {
+  "cdrEventId" : "1000000631",
+  "codes" : [ {
+    "code" : "55284-4",
+    "display" : "Blood pressure systolic and diastolic",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1384794614000,
+  "qualifiers" : null,
+  "rate" : "110/80",
+  "units" : "mmHg",
+  "unitsCode" : "mmHg",
+  "vitalType" : "BLOOD PRESSURE",
+  "vitalsIEN" : "2157581509"
+}, {
+  "cdrEventId" : "1000000632",
+  "codes" : [ {
+    "code" : "2051",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8867-4",
+    "display" : "Heart rate",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1384794614000,
+  "qualifiers" : null,
+  "rate" : "44",
+  "units" : "/min",
+  "unitsCode" : "/min",
+  "vitalType" : "PULSE",
+  "vitalsIEN" : "2157581509"
+}, {
+  "cdrEventId" : "1000000633",
+  "codes" : [ {
+    "code" : "2124",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "9279-1",
+    "display" : "Respiratory rate",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1384794614000,
+  "qualifiers" : null,
+  "rate" : "44",
+  "units" : "/min",
+  "unitsCode" : "/min",
+  "vitalType" : "RESPIRATION",
+  "vitalsIEN" : "2157581509"
+}, {
+  "cdrEventId" : "1000000635",
+  "codes" : [ {
+    "code" : "2154",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8310-5",
+    "display" : "Body temperature",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1384794614000,
+  "qualifiers" : null,
+  "rate" : "98",
+  "units" : "F",
+  "unitsCode" : "F",
+  "vitalType" : "TEMPERATURE",
+  "vitalsIEN" : "2157581509"
+}, {
+  "cdrEventId" : "1000000636",
+  "codes" : [ {
+    "code" : "14597876",
+    "display" : null,
+    "system" : "DOD_NCID"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1384794614000,
+  "qualifiers" : null,
+  "rate" : "20",
+  "units" : "",
+  "unitsCode" : null,
+  "vitalType" : "Vision Uncorrected Both Eyes",
+  "vitalsIEN" : "2157581509"
+}, {
+  "cdrEventId" : "1000000638",
+  "codes" : [ {
+    "code" : "110675",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8302-2",
+    "display" : "Body height",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1384794614000,
+  "qualifiers" : null,
+  "rate" : "63",
+  "units" : "in",
+  "unitsCode" : "in",
+  "vitalType" : "HEIGHT",
+  "vitalsIEN" : "2157581509"
+}, {
+  "cdrEventId" : "1000000639",
+  "codes" : [ {
+    "code" : "1604139",
+    "display" : null,
+    "system" : "DOD_NCID"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1384794614000,
+  "qualifiers" : null,
+  "rate" : "No",
+  "units" : "",
+  "unitsCode" : null,
+  "vitalType" : "Smoking Status Now Observation",
+  "vitalsIEN" : "2157581509"
+}, {
+  "cdrEventId" : "1000000640",
+  "codes" : [ {
+    "code" : "14510350",
+    "display" : null,
+    "system" : "DOD_NCID"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1384794614000,
+  "qualifiers" : null,
+  "rate" : "20",
+  "units" : "",
+  "unitsCode" : null,
+  "vitalType" : "Vision Uncorrected Left Eye",
+  "vitalsIEN" : "2157581509"
+}, {
+  "cdrEventId" : "1000000641",
+  "codes" : [ {
+    "code" : "14510351",
+    "display" : null,
+    "system" : "DOD_NCID"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1384794614000,
+  "qualifiers" : null,
+  "rate" : "20",
+  "units" : "",
+  "unitsCode" : null,
+  "vitalType" : "Vision Uncorrected Right Eye",
+  "vitalsIEN" : "2157581509"
+}, {
+  "cdrEventId" : "1000000643",
+  "codes" : [ {
+    "code" : "2178",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "3141-9",
+    "display" : "Body weight Measured",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1384794614000,
+  "qualifiers" : null,
+  "rate" : "130",
+  "units" : "lb",
+  "unitsCode" : "lb",
+  "vitalType" : "WEIGHT",
+  "vitalsIEN" : "2157581509"
+}, {
+  "cdrEventId" : "1000000647",
+  "codes" : [ {
+    "code" : "110675",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "8302-2",
+    "display" : "Body height",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1381337493000,
+  "qualifiers" : null,
+  "rate" : "77",
+  "units" : "in",
+  "unitsCode" : "in",
+  "vitalType" : "HEIGHT",
+  "vitalsIEN" : "2157580377"
+}, {
+  "cdrEventId" : "1000010649",
+  "codes" : [ {
+    "code" : "2178",
+    "display" : null,
+    "system" : "DOD_NCID"
+  }, {
+    "code" : "3141-9",
+    "display" : "Body weight Measured",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1381337493000,
+  "qualifiers" : null,
+  "rate" : "222",
+  "units" : "lb",
+  "unitsCode" : "lb",
+  "vitalType" : "WEIGHT",
+  "vitalsIEN" : "2157580377"
+}, {
+  "cdrEventId" : "1000010650",
+  "codes" : [ {
+    "code" : "55284-4",
+    "display" : "Blood pressure systolic and diastolic",
+    "system" : "LOINC"
+  } ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "NH Great Lakes IL/0056",
+    "name" : "AHLTA",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "2.16.840.1.113883.3.42.126.100001.13",
+    "status" : null
+  },
+  "sourceProtocol" : "DODADAPTER",
+  "dateTimeTaken" : 1381337493000,
+  "qualifiers" : null,
+  "rate" : "120/99",
+  "units" : "mmHg",
+  "unitsCode" : "mmHg",
+  "vitalType" : "BLOOD PRESSURE",
+  "vitalsIEN" : "2157580377"
+}, {
+  "cdrEventId" : null,
+  "codes" : [ ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "DODADAPTER_SOURCE_STATUS_REPORT",
+    "name" : "DODADAPTER_SOURCE_STATUS_REPORT",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "DOD",
+    "status" : null
+  },
+  "sourceProtocol" : null,
+  "dateTimeTaken" : -4890758400000,
+  "qualifiers" : null,
+  "rate" : null,
+  "units" : null,
+  "unitsCode" : null,
+  "vitalType" : "
+<div class='title'>Source Status List</div>
+<table>
+    <thead>
+        <th scope='col' class='table-header'>Source Name</th>
+        <th scope='col' class='table-header'>Source Status</th>
+    </thead>
+    <tbody>
+        <tr class='even'>
+            <td>AHLTA</td>
+            <td>UNKNOWN, IN_PROGRESS, COMPLETE</td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<br/>
+<div class='title'>Errors</div>No errors to report.",
+  "vitalsIEN" : null
+} ]

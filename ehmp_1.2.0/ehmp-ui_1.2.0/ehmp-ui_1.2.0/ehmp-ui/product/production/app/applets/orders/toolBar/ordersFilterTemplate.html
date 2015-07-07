@@ -1,0 +1,14 @@
+<p>
+<div id="orders-filter-bar">
+  <span class="ordertypelabel">Order Type:</span>
+    <div style="float: left;">
+    <select id="order-type-options" class="ordersmenu">
+      {{#each item}}
+        {{#if show}}
+          <option value="{{service}}">{{kind}}</option>
+        {{/if}}
+      {{/each}}
+    </select>
+    </div>
+</div>
+</p>

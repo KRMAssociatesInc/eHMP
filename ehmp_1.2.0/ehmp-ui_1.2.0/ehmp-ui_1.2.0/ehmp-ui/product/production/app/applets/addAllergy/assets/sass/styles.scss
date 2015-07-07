@@ -1,0 +1,541 @@
+.add-allergy-styles {
+    table {
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+    td, th {
+        padding: 0;
+    }
+    .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        // background-image: none;
+        // border: 1px solid transparent;
+        /**
+  border-radius: 4px;
+  **/
+    }
+    .btn:focus, .btn:active:focus, .btn.active:focus {
+        outline: thin dotted;
+        /**
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  **/
+    }
+    .btn:hover, .btn:focus {
+        color: #333;
+        text-decoration: none;
+    }
+    .btn:active, .btn.active {
+        background-image: none;
+        outline: 0;
+        /**
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  **/
+    }
+    // .btn-default {
+    //   color: #333;
+    //   background-color: #fff;
+    //   border-color: #ccc;
+    // }
+    .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+        color: #333;
+        background-color: #e6e6e6;
+        /**border-color: #adadad;**/
+    }
+    .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+        background-image: none;
+    }
+    .btn-xs, .btn-group-xs > .btn {
+        padding: 1px 5px;
+        font-size: 12px;
+        line-height: 1.5;
+        border-radius: 3px;
+    }
+    .allergen-search-result-header {
+        background-color: #999999;
+    }
+    #allergensLoadingIndicator {
+        width: 100%;
+        height: 126px;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        position: absolute;
+        display: none;
+    }
+    .allergen-search-result-header-text {
+        float: left;
+        padding-left: 10px;
+        padding-top: 6px;
+        width: 70%;
+    }
+    .allergen-search-result-composite-count {
+        width: 30%;
+        text-align: right;
+        padding-right: 10px;
+    }
+    #allergen-search-result-item-container.list-group {
+        margin-bottom: 0px;
+    }
+    .list-group-item {
+        border: none;
+        position: relative;
+        display: block;
+        padding: 6px 10px;
+        margin-bottom: -1px;
+        background-color: #fff;
+        text-shadow: none;
+        color: #333;
+        background-image: none;
+    }
+    .list-group-item:hover, .list-group-item:focus {
+        /**
+  color: #555;
+  background-color: #f5f5f5;
+  **/
+        
+        color: #fff;
+        background-color: #00CCCC;
+        background-image: none;
+        text-decoration: none;
+        text-shadow: none;
+        border: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .allergen-search-scrolling-container {
+        max-height: 65vh;
+        min-height: 65vh;
+        overflow-y: scroll;
+    }
+    .allergen-search-result-header span {
+        color: white;
+        cursor: default;
+    }
+    #ali-span {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:45px;
+    }
+    #ali-img {
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #allergen-search-scroll {
+        max-height: 60vh;
+        min-height: 60vh;
+        overflow: scroll;
+        .allergen-search-result-header-text a:hover {
+            background-color: transparent;
+            background-image: none;
+            text-shadow: none;
+            text-decoration: none;
+        }
+    }
+    #allergen-loading-indicator span {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto
+    }
+    #allergen-loading-indicator img {
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto
+    }
+    .ninety-five-width {
+        width: 95%;
+    }
+    .full-width {
+        width: 100%;
+    }
+    .nav-full {
+        width: 100%;
+        padding-right: 0;
+    }
+    .sixty-width {
+        width: 60%;
+        padding-left: 10px;
+    }
+    .obs-left-col {
+        width: 55%;
+        padding-left: 10px;
+        float: left;
+    }
+    .obs-right-col {
+        width: 43%;
+        padding-left: 10px;
+        padding-right: 10px;
+        float: right;
+    }
+    .symptoms-left-col {
+        width: 35%;
+        padding-left: 30px;
+        float: left;
+    }
+    .symptoms-right-col {
+        width: 61%;
+        padding-left: 20px;
+        padding-right: 30px;
+        float: right;
+    }
+    .symptoms-left-header {
+        width: 35%;
+        float: left;
+        padding-left: 18px;
+    }
+    .symptoms-right-header {
+        width: 61%;
+        float: right;
+        padding-left: 5px;
+    }
+    #obs-form {
+        visibility: hidden;
+    }
+    #obs-date-box {
+        width: 50%;
+        float: left;
+    }
+    #obs-time-box {
+        width: 50%;
+        float: right;
+        padding-left: 10px;
+    }
+    .resize-vertical {
+        resize: vertical;
+    }
+    .symptoms-box {
+        width: 100%;
+        height: 166px;
+    }
+    .lgborder {
+        border: 1px solid #d3d3d3;
+    }
+    .rdborder {
+        border: 1px solid #F00;
+    }
+    .blborder {
+        border: 1px solid #0FF;
+    }
+    .timepicker {
+        /**line-height: 15.5pt;**/
+        
+        line-height: 20pt;
+        width: 100%;
+        vertical-align: middle;
+    }
+    .symptom-tp {
+        width: 75px;
+    }
+    .tbl-spacer {
+        width: 10px;
+    }
+    table {
+        table-layout: fixed;
+    }
+    td {
+        padding-left: 10px;
+    }
+    .td-10-px {
+        width: 10px;
+    }
+    .td-20-px {
+        width: 20px;
+    }
+    .td-32-pct {
+        width: 32%;
+    }
+    .td-38-pct {
+        width: 38%;
+    }
+    .td-33-pct {
+        width: 33%;
+    }
+    .td-37-pct {
+        width: 37%;
+    }
+    .input-dp-sm {
+        line-height: 15.5pt;
+        width: 90px;
+        float: left;
+    }
+    .text-sm {
+        font-size: 10px;
+    }
+    .symptom-input {
+        line-height: 15.5pt;
+        width: 90px;
+    }
+    #symptomsContainer {
+        position: relative;
+    }
+    #symptomSearchBoxContainer {
+        height: 40px;
+        border-bottom-style: none;
+    }
+    #symptomSearchInput {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    #symptomsList {
+        float: left;
+        width: 100%;
+        height: 126px;
+        position: absolute;
+        overflow: auto;
+    }
+    #symptomsLoadingIndicator {
+        width: 100%;
+        height: 126px;
+        position: absolute;
+        top: 40px;
+        left: 0px;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        display: none;
+    }
+
+    #allergy-loading-annoucement {
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    #limg-span {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    #limg-img {
+        vertical-align: middle;
+    }
+    #symptoms-selected-container {
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    #comments {
+        width: 100%;
+    }
+    .datepicker {
+        z-index: 1151 !important;
+    }
+    .red {
+        color: red;
+    }
+    .float-left {
+        float: left;
+    }
+    .float-right {
+        float: right;
+    }
+    .add-allergy-float-left {
+        float: left;
+    }
+    .add-allergy-float-right {
+        float: right;
+    }
+    .errorMessage {
+        color: red;
+        border: 0;
+        background: 0 0;
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: 1em;
+    }
+    .value-label {
+        color: black;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    .stretch {
+        width: 100%;
+    }
+    .share {
+        width: 50%;
+    }
+    .half {
+        width: 50%
+    }
+    .toggle-btn {
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.428571429;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        /**
+  border-radius: 4px;
+  **/
+        
+        width: 50%;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+    .symptom {
+        font-size: 8;
+    }
+    .xbutton {
+        color: #999;
+    }
+    .toggle-btn:focus {
+        outline: thin dotted;
+        /**
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+  **/
+    }
+    .toggle-btn:hover, .toggle-btn:focus {
+        color: #333333;
+        text-decoration: none;
+    }
+    .toggle-btn:active, .toggle-btn.active {
+        background-image: none;
+        outline: 0;
+        /**
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  **/
+    }
+    .toggle-on, .toggle-on:hover, .toggle-on:focus, .toggle-on:active, .toggle-on.active {
+        color: #ffffff;
+        background-color: #688790;
+        border-color: #cccccc
+    }
+    .toggle-off {
+        color: #333333;
+        background-color: #ffffff;
+        border-color: #cccccc;
+    }
+    .toggle-off:hover, .toggle-off:focus, .toggle-off:active, .toggle-off.active {
+        color: #fff;
+        background-color: #688790;
+        /**border-color:#adadad**/
+    }
+    #severity-btns {
+        width: 100%;
+        float: right;
+    }
+    .severity-btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 12px;
+        width: 33%;
+        font-weight: normal;
+        line-height: 1.428571429;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+    .severity-none, .severity-none:focus {
+        color: #333333;
+        background-color: #ffffff;
+        border-color: #cccccc
+    }
+    .severity-none:hover, .severity-none:focus, .severity-none:active, .severity-none.active {
+        color: #333;
+        background-color: #ebebeb;
+        border-color: #adadad
+    }
+    .severity-mild, .severity-mild:hover, .severity-mild:focus, .severity-mild:active, .bseverity-mild.active {
+        color: #333333;
+        background-color: #ffff00;
+        border-color: #cccccc
+    }
+    .severity-moderate, .severity-moderate:hover, .severity-moderate:focus, .severity-moderate:active, .bseverity-moderate.active {
+        color: #ffffff;
+        background-color: #ff6600;
+        border-color: #cccccc
+    }
+    .severity-severe, .severity-severe:hover, .severity-severe:focus, .severity-severe:active, .severity-severe.active {
+        color: #ffffff;
+        background-color: #ff0000;
+        border-color: #cccccc
+    }
+    .nav {
+        padding-bottom: 5px;
+        padding-top: 5px;
+        padding-right: 0px;
+    }
+    .help-inline {
+        position: absolute;
+        left: 0px;
+        bottom: -2em;
+        font-size: .7em;
+    }
+    .symptoms-fields {
+        margin-bottom: 1em;
+    }
+    .allergen-search-result-header {
+        width: 100%;
+        height: 30px;
+        background-color: #3D5157;
+    }
+    #allergen-search-result-item-container a.list-group-item {
+        border: 0px;
+    }
+    #allergenSearchInput {
+        width: 95%;
+    }
+    .symptoms-left-col {
+        width: 37%;
+    }
+    .symptoms-right-col {
+        width: 59%;
+    }
+    .symptoms-left-header {
+        width: 37%;
+    }
+    .symptoms-right-header {
+        width: 59%;
+    }
+    .td-30-pct {
+        width: 30%;
+    }
+    .td-340pct {
+        width: 40%;
+    }
+}

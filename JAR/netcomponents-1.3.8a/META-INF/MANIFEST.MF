@@ -1,0 +1,422 @@
+Manifest-Version: 1.0
+
+Name: com/oroinc/io/CopyStreamEvent.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: GdtmiJZIBawEvf84Nlw7ESPNCQs=
+MD5-Digest: R7alfEVpOdpxLcimMj1smA==
+
+Name: com/oroinc/io/CopyStreamException.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 6GA0enwnRnnl6wAjJdhTbqj8R70=
+MD5-Digest: VS2SBV6Hqz/F+MJEhy4KPg==
+
+Name: com/oroinc/io/CopyStreamListener.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: yc05AMGfs+CsBaeV+DFQYmNj2Ik=
+MD5-Digest: m2Bsxfep45Ubx8q8PELARw==
+
+Name: com/oroinc/io/CopyStreamAdapter.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: uAHr6acdE/TkJpd0eJIshIG72NU=
+MD5-Digest: ifgdcaAyJYVNdF+Bl1HwlA==
+
+Name: com/oroinc/io/Util.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: pIXETp045kgwTIzZfXERqlp+SvI=
+MD5-Digest: C6mGJy9b7eSt7oolw19uKA==
+
+Name: com/oroinc/io/ToNetASCIIInputStream.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: +mRoEvpyxBhgWa1KJrg1spZLZ0U=
+MD5-Digest: lPCBwpqgcvnEGUGdm7jI0Q==
+
+Name: com/oroinc/io/FromNetASCIIInputStream.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Zexp5nCCIQn/5GmKA69lEOsE22A=
+MD5-Digest: eFbUbNb4JU2hgxiRr4gPCg==
+
+Name: com/oroinc/io/ToNetASCIIOutputStream.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: CLJVj/avmAwBhF8DOZdvWhMn/Cg=
+MD5-Digest: 4dOPBGtsqxTTX0/KPjrBlg==
+
+Name: com/oroinc/io/FromNetASCIIOutputStream.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: dK3Ns+SDNEIIu2JYGWXS12O9w3Q=
+MD5-Digest: poYIpfybzl/is7JylLYQzA==
+
+Name: com/oroinc/io/DotTerminatedMessageReader.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 8r13m4GKlHqZFrEnTJJFVbUPpFw=
+MD5-Digest: xEnrfaM1fvG3EDjOuWsYXg==
+
+Name: com/oroinc/io/DotTerminatedMessageWriter.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: SNJDb2Sim5dyVJt+VSn862uHZ/8=
+MD5-Digest: llGLjIkjHLkwCL0bGFQqVQ==
+
+Name: com/oroinc/io/SocketInputStream.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: m/QafuyLR2MxSFXEpRP0b73H2f0=
+MD5-Digest: MrylyqN5tUQdrki1zRp/Vw==
+
+Name: com/oroinc/io/SocketOutputStream.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: k25MsSRBP8uipnR6fxN77gkLuxQ=
+MD5-Digest: zIiABlW0XSNv2qALEz5/iw==
+
+Name: com/oroinc/util/ListenerList.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: JhNxa/XF2zM5VCsiv+Sfgc/80sY=
+MD5-Digest: yc4UnofGK8cIThYW7Eafwg==
+
+Name: com/oroinc/net/MalformedServerReplyException.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: ZDz/TXkWxTbjPuRSnPiQtz47p10=
+MD5-Digest: TbEZir1Tzz8DZVsZnAqgkA==
+
+Name: com/oroinc/net/ProtocolCommandEvent.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: RsQGvDg8eVWA5ffeLgqX07XBIZg=
+MD5-Digest: zaZG6OrAzawO0yjKY3YJtg==
+
+Name: com/oroinc/net/ProtocolCommandListener.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Nd9y0sSt9AFeWrSYi2kDhX1Lizs=
+MD5-Digest: 7yl9z40bYvtD1Yt2UBsJ8w==
+
+Name: com/oroinc/net/ProtocolCommandSupport.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 3YkdjOMAmfIboF9uAwXoZq2BioU=
+MD5-Digest: qcGo0CgcyE0zWwPhvdkRMg==
+
+Name: com/oroinc/net/DatagramSocketFactory.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: oqFVAZ/6mRyDkjsrqcitzb2+jCI=
+MD5-Digest: UOM23B94U/hjU3R0iWEq4g==
+
+Name: com/oroinc/net/DefaultDatagramSocketFactory.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 6OSiyZ8EmM9IVHoRqFWl5/EUibM=
+MD5-Digest: /O28d9vqeYGCX7YzD6xgJQ==
+
+Name: com/oroinc/net/DatagramSocketClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: rfOoPfX85b2rx5YCiaHQ1GsYXHM=
+MD5-Digest: MBFD4D7vb/b9gvErG0GihA==
+
+Name: com/oroinc/net/SocketFactory.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: +B6tuHsHjoUYyW1vFcaVfG7N354=
+MD5-Digest: 7OeA2EnjiTjCX9TMTgfDDg==
+
+Name: com/oroinc/net/DefaultSocketFactory.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: vm1Svzcav2BhNEM5a3oReDKecB4=
+MD5-Digest: KVHGvfKcQfwqw35TLGTv7Q==
+
+Name: com/oroinc/net/SocketClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: vAb2aBgrE0bCOgEAmJxhhWVsViA=
+MD5-Digest: NcEDywcPHmwiI5lavJsFww==
+
+Name: com/oroinc/net/FingerClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: n3eYhekFdobNFC35Kiq8NoqFEY0=
+MD5-Digest: mqdjCJU+oHM507O0ikRPhA==
+
+Name: com/oroinc/net/WhoisClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 70bG82BVIMgQ6IBhmtPE0/HXncI=
+MD5-Digest: uIMECu6YZhnF+xLrj2tOuw==
+
+Name: com/oroinc/net/DaytimeTCPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: D7xKK9v6sGX1wIOXGkkSNmKqx+o=
+MD5-Digest: rkGqMzV9mQPaOeFXv/r8Fg==
+
+Name: com/oroinc/net/DaytimeUDPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: lmrEAZ1JTf6if+OF/OL0xi0RvsY=
+MD5-Digest: SetkHrQchMjjRmpmsHJtUg==
+
+Name: com/oroinc/net/TimeTCPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: OAba1neyDhfSY4ygw57iVk6Yqx4=
+MD5-Digest: AXdaWO/jcOX/tMS+4+PxQw==
+
+Name: com/oroinc/net/TimeUDPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: SnD4UkkBn7L4mcW4gG3LPncN/r8=
+MD5-Digest: SjC0/enKAyaRtCb6ktO1qg==
+
+Name: com/oroinc/net/DiscardTCPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: +0IfJ03pPfz4RfWtqfFrycOSXLk=
+MD5-Digest: h+tyNMQSKJ2EiAWCp1T/gA==
+
+Name: com/oroinc/net/DiscardUDPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 0SspvchHrF4wrSIO+u9E0CSFiM8=
+MD5-Digest: l8Eejp5qM1TSQ+Vw/ASIPA==
+
+Name: com/oroinc/net/EchoTCPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: hH9b4CEQUSFDuFb1q0gQ1W9dUjo=
+MD5-Digest: iBjmdHhxjTdgoY+Bslc5QQ==
+
+Name: com/oroinc/net/EchoUDPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: GyGlcaF9TnozZrZ8PndXG06Dg2U=
+MD5-Digest: 3pYjJpxuU8hf6mce/zpelg==
+
+Name: com/oroinc/net/CharGenTCPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: hwK1d3oofayCWLCQmDaAuLYWkV0=
+MD5-Digest: 8SEjT69CjS1J9tBskJElOQ==
+
+Name: com/oroinc/net/CharGenUDPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Qe7QNoxFZdj9iM0FO2VDXj6TdAI=
+MD5-Digest: iozXB4OfZW17Nl2IhS4NqQ==
+
+Name: com/oroinc/net/tftp/TFTPPacketException.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: wUOhjz/oIoTqZRNosxV0Nfi2dMA=
+MD5-Digest: 487aNpRLf10zkLPtrlpvFA==
+
+Name: com/oroinc/net/tftp/TFTPPacket.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: mEjNfccK6uzLKyBQfjq9MoS6/rY=
+MD5-Digest: qEnk0Ov3inE2TqcdwOQNNw==
+
+Name: com/oroinc/net/tftp/TFTPReadRequestPacket.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Dc9N3SnE+01UZuaCold76vLXc1A=
+MD5-Digest: YTOicbueVIaMOE7GbjrpwA==
+
+Name: com/oroinc/net/tftp/TFTPRequestPacket.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: QjBsTy+F9wTu1ApKd4qp64mOxzo=
+MD5-Digest: vgwVHf1v/4Oo0PO2KfEZTA==
+
+Name: com/oroinc/net/tftp/TFTPWriteRequestPacket.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: cF1QJR9o+EafoMNHPhopqH0Vang=
+MD5-Digest: lq/yW6k8sGpgXTkbt//ASA==
+
+Name: com/oroinc/net/tftp/TFTPDataPacket.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: DdI5ihCN/OEy4kp4aupvCM9TYu4=
+MD5-Digest: zLyb0ib5Bcjx+OxpDeUvUA==
+
+Name: com/oroinc/net/tftp/TFTPAckPacket.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: l7UiJbqIf8jyNyqmBA8oRSXqpXs=
+MD5-Digest: 7OmDgws2c16dzfmeHXmQQQ==
+
+Name: com/oroinc/net/tftp/TFTPErrorPacket.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 9OTnAG8iAtLTQqGkYwr4XyaDzoo=
+MD5-Digest: T/a2qML8BsPnY35gX7+LRw==
+
+Name: com/oroinc/net/tftp/TFTP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: uSKewcwvBp6btXy5PUs6okCDWQs=
+MD5-Digest: hxFxsKHVYuR74BUz/PVtLw==
+
+Name: com/oroinc/net/tftp/TFTPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: RRXyNYcUpnigG9WQtJYTb0xOnZI=
+MD5-Digest: +9R6Z2s17ztK2Vw3G6D4fQ==
+
+Name: com/oroinc/net/telnet/TelnetOption.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: wQZRNFaE7NixFZeSvmSzcZr1s/I=
+MD5-Digest: GZuHIIUeN8Hh90ZQIN/DMQ==
+
+Name: com/oroinc/net/telnet/TelnetCommand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: wGr8dGmIo1JcT73zQemB7Yayh+Q=
+MD5-Digest: AiR56av5XhLFUXQC0laFnQ==
+
+Name: com/oroinc/net/telnet/Telnet.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: LDQa2sJGOEtewg8mH0xIaIbrFAs=
+MD5-Digest: m4c/Ps+1sV03QbXkONhfhA==
+
+Name: com/oroinc/net/telnet/TelnetInputStream.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: yJtmJ35c+MoRn4ekYcB1UT2lTTY=
+MD5-Digest: vTDPe9IFYBJlrV1QnQUwGQ==
+
+Name: com/oroinc/net/telnet/TelnetClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: y8nC5G5i9fL44UvHKLLgGbgCWD8=
+MD5-Digest: 0oF6nIJK87axGW7pGCXMgA==
+
+Name: com/oroinc/net/telnet/TelnetOutputStream.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: ZDF6eieT9nNb7NbJlbOk9o4UUyE=
+MD5-Digest: x72GzgFnDtBzYVVTOl2kTw==
+
+Name: com/oroinc/net/ftp/FTPCommand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: gu7txQMqFmb+U3/pEAMctz/fggo=
+MD5-Digest: rJEVRdnkCG1h3PTo2w1A0A==
+
+Name: com/oroinc/net/ftp/FTPReply.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: g9eSboo5DBaH0NUdFlAhuRPOemM=
+MD5-Digest: 8oL5IukmBBl2QH/9mPkZ5Q==
+
+Name: com/oroinc/net/ftp/FTPFile.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: HZweJyQiEIBQjOMM76JFMNsVwPk=
+MD5-Digest: x75gFzGD4sa1OQCNx0rL8Q==
+
+Name: com/oroinc/net/ftp/FTPFileListParser.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: B+aFOSPMFstfQ3R2NJtt0gVHFxA=
+MD5-Digest: VuVIsG1aFMzXEY90BzOwXA==
+
+Name: com/oroinc/net/ftp/DefaultFTPFileListParser.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: b7l9zCRpZAhZdyDxjGqyCvW9gBY=
+MD5-Digest: IYlsKLBsEQ7qQ28Y98Y6Rw==
+
+Name: com/oroinc/net/ftp/FTPConnectionClosedException.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: sKR95YYC49Q7waf4saUI5h+Czf4=
+MD5-Digest: uW2cVTXhUKrgSIVRkAkpMg==
+
+Name: com/oroinc/net/ftp/FTP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: o8i79GUv8yk3a+QaNpNS1hzvlU8=
+MD5-Digest: g0RwY0Nd98qiOzuia3Wkwg==
+
+Name: com/oroinc/net/ftp/FTPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 7qeV8cFoTcLGygkT0HTWe40NhOM=
+MD5-Digest: UkGjxIY+ZrbPEou8w7eJBg==
+
+Name: com/oroinc/net/pop3/POP3Reply.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: GXsBjIOnqkZEc+B1Gf4gxT1m23Y=
+MD5-Digest: gZsztAqlsH+vUNwO7NWvDg==
+
+Name: com/oroinc/net/pop3/POP3Command.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: xpMBPnOVOLTfBt7jzTWO6obWcIM=
+MD5-Digest: rNBb2KPFzWjJ5diUaYK1yQ==
+
+Name: com/oroinc/net/pop3/POP3MessageInfo.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Z7TLhi3vNS6sKNAyuR+wiCHdsCw=
+MD5-Digest: b2+7/ub52P6ZVMLbsKE1Ow==
+
+Name: com/oroinc/net/pop3/POP3.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: w0JfPC2myqotkAvS7+V4shwqPcM=
+MD5-Digest: sttR06rxh58KoYG4StsFUg==
+
+Name: com/oroinc/net/pop3/POP3Client.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: +n76jnzFjx6SNX6iI2xWo4YdE0w=
+MD5-Digest: AgLyTqI4X4+TxkWfjnm8/g==
+
+Name: com/oroinc/net/nntp/ArticlePointer.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: e0LoPrgsZ9Zw8oAG6kmPhE5RDEQ=
+MD5-Digest: 2qDAtMx8vzjQfmL9WdbFxQ==
+
+Name: com/oroinc/net/nntp/NewsgroupInfo.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: tIjjjyMZ0dLz6u+3XheOvhW5bh8=
+MD5-Digest: fJNzGJT8NWrjF+79XlY8Qw==
+
+Name: com/oroinc/net/nntp/SimpleNNTPHeader.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: emJXb7neB/ohRF+rfhCF0d8ozQg=
+MD5-Digest: 3khldr7JmZSa6jUeuOaBiw==
+
+Name: com/oroinc/net/nntp/NewGroupsOrNewsQuery.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: MlSvhvgdN5ip6pC6Obsi+7/DeC8=
+MD5-Digest: vI7cSSsWOh7GMKNl2M73iw==
+
+Name: com/oroinc/net/nntp/NNTPCommand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: w/8taVcHiK5vFVWPkQJbQreHJII=
+MD5-Digest: yhwb5PH43by33D5jXSdRKg==
+
+Name: com/oroinc/net/nntp/NNTPReply.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 0ZLO6VjKfZgu9kLDd/aIQQnPXCU=
+MD5-Digest: hO4hcVaD7TbGFJaLrfxHFA==
+
+Name: com/oroinc/net/nntp/NNTPConnectionClosedException.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: EfLmDgqgGS02AjNtddQbZuWz4a0=
+MD5-Digest: m1crxTkch0CCg1OxCTVEGg==
+
+Name: com/oroinc/net/nntp/NNTP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: YmB+oYRrSn2D+mQF7QqOGc8XLQk=
+MD5-Digest: f25lgUt0fK5wXYdHm1w/pQ==
+
+Name: com/oroinc/net/nntp/NNTPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: y7bEbvPnrbZy+ANdzSsobFgyxSs=
+MD5-Digest: 8Ut5CykSTXpnsfQho4iNNA==
+
+Name: com/oroinc/net/smtp/SMTPCommand.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: egBPCooJ7UF8V3MlYPbERSF5Miw=
+MD5-Digest: EQcQbNo4p1TWbfyIVub9ag==
+
+Name: com/oroinc/net/smtp/SMTPReply.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 6cjGVP0nPs9OUqvKmsDqSOoh/c4=
+MD5-Digest: HNaCNd0x7YuSkO7VMfC7dg==
+
+Name: com/oroinc/net/smtp/SMTPConnectionClosedException.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: waR7xMuHh74TZBBMxoqdGnThBu8=
+MD5-Digest: j01tA4meTIukkqSEELjoUA==
+
+Name: com/oroinc/net/smtp/RelayPath.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: M8l5KoYPZlY18bLu2n2u6rCQcDo=
+MD5-Digest: C/qw+feAcuSfUc5JhQb9bg==
+
+Name: com/oroinc/net/smtp/SimpleSMTPHeader.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: pttXgGPbo9j55amcTPJ5OU/idts=
+MD5-Digest: 7XE45tmRyEpBURr9Hqk5Ng==
+
+Name: com/oroinc/net/smtp/SMTP.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: tGMmXOXNPpOJMxnQyEheSb4iwhA=
+MD5-Digest: 0FycC6yBC0Yfqq98B/WlyQ==
+
+Name: com/oroinc/net/smtp/SMTPClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: nTbmmjjRLViYOHu0QvYTZRYtLKc=
+MD5-Digest: dgSQDMDpZE6Ozc1tV8/uPA==
+
+Name: com/oroinc/net/bsd/RExecClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: wMEeRhq28sDKKQmkSidXKRPeHDs=
+MD5-Digest: aaBg1PjQdANp5fTVHCiFyg==
+
+Name: com/oroinc/net/bsd/RCommandClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: S837oj3+7j1ZFPnRIYzfrwTiD0A=
+MD5-Digest: Ur9VvtJeB6lHRee4LPytRA==
+
+Name: com/oroinc/net/bsd/RLoginClient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: jrD42tbGAx0pZQK6ChnXCj2Vgkc=
+MD5-Digest: 6ZGJSAIiGskSl/s0SFSM/w==
+

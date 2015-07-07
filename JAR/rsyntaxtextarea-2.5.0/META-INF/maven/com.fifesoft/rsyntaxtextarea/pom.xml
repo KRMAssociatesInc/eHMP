@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.fifesoft</groupId>
+		<artifactId>rtext-root-pom</artifactId>
+		<version>3</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+
+	<groupId>com.fifesoft</groupId>
+	<artifactId>rsyntaxtextarea</artifactId>
+	<version>2.5.0</version>
+	<packaging>jar</packaging>
+	<name>RSyntaxTextArea</name>
+	<description>
+		RSyntaxTextArea is the syntax highlighting text editor used in RText, pulled out into its 
+		own jar so it is easily usable in any application. Features include Syntax highlighting for 20+ 
+		languages, Code completion, Regex find and replace, Macros, Code templates, Unlimited undo/redo
+		Line numbering and bracket matching.
+  	</description>
+	<inceptionYear>2003</inceptionYear>
+	<url>http://www.fifesoft.com/rsyntaxtextarea/</url>
+	<licenses>
+		<license>
+			<name>Modified BSD License</name>
+			<url>http://fifesoft.com/rsyntaxtextarea/RSyntaxTextArea.License.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<url>http://svn.fifesoft.com/viewvc-1.0.5/bin/cgi/viewvc.cgi/RSyntaxTextArea/?root=RSyntaxTextArea</url>
+		<connection>http://svn.fifesoft.com/svn/RSyntaxTextArea/RSyntaxTextArea/</connection>
+	</scm>
+	<developers>
+		<developer>
+			<name>Robert Futrell</name>
+			<url>http://www.fifesoft.com</url>
+		</developer>
+	</developers>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${compiler-plugin-version}</version>
+				<executions>
+					<execution>
+						<id>default-compile</id>
+						<configuration>
+							<fork>true</fork>
+							<executable>${javac15-compiler-executable}</executable>
+							<compilerVersion>1.5</compilerVersion>
+							<source>1.5</source>
+							<target>1.5</target>
+						</configuration>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+

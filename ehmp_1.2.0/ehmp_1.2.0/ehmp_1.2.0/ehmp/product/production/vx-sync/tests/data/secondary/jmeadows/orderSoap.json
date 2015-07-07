@@ -1,0 +1,36 @@
+[ {
+  "cdrEventId" : null,
+  "codes" : [ ],
+  "patientId" : null,
+  "patientName" : null,
+  "site" : {
+    "agency" : "DOD",
+    "dmisId" : null,
+    "endpoints" : [ ],
+    "id" : null,
+    "moniker" : "DODADAPTER_SOURCE_STATUS_REPORT",
+    "name" : "DODADAPTER_SOURCE_STATUS_REPORT",
+    "permissions" : [ ],
+    "region" : null,
+    "siteCode" : "DOD",
+    "status" : null
+  },
+  "sourceProtocol" : null,
+  "completedDate" : null,
+  "description" : "
+<div class='title'>Patient Orders</div>undefined</br>undefined</br>undefined<div class='title'>Source Status List</div>undefined<table>undefined<thead>
+<th scope='col' class='table-header'>Source Name</th>
+<th scope='col' class='table-header'>Source Status</th>undefined</thead>undefined<tbody>
+<tr class='even'>
+    <td>AHLTA</td>
+    <td>UNKNOWN, IN_PROGRESS, COMPLETE</td>
+</tr>undefined</tbody>undefined</table>undefined<br/>undefined<br/>undefined<div class='title'>Errors</div>No errors to report.undefined</br>undefined</br>",
+  "orderDate" : null,
+  "orderDetail" : null,
+  "orderResult" : null,
+  "orderid" : null,
+  "orderingProvider" : null,
+  "startDate" : -4890758400000,
+  "status" : null,
+  "type" : null
+} ]

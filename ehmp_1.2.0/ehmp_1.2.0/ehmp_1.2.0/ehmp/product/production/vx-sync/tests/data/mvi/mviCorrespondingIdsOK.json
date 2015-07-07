@@ -1,0 +1,388 @@
+{
+  "realmCode": [],
+  "typeId": null,
+  "templateId": [],
+  "id": {
+    "nullFlavor": [],
+    "root": "2.16.840.1.113883.4.349",
+    "extension": "WS1407171236331391776995038",
+    "assigningAuthorityName": null,
+    "displayable": null
+  },
+  "creationTime": {
+    "nullFlavor": [],
+    "value": "20140717123633"
+  },
+  "securityText": null,
+  "versionCode": {
+    "nullFlavor": [],
+    "originalText": null,
+    "qualifier": [],
+    "translation": [],
+    "code": "3.0",
+    "codeSystem": null,
+    "codeSystemName": null,
+    "codeSystemVersion": null,
+    "displayName": null
+  },
+  "interactionId": {
+    "nullFlavor": [],
+    "root": "2.16.840.1.113883.1.6",
+    "extension": "PRPA_IN201310UV02",
+    "assigningAuthorityName": null,
+    "displayable": null
+  },
+  "profileId": [],
+  "processingCode": {
+    "nullFlavor": [],
+    "originalText": null,
+    "qualifier": [],
+    "translation": [],
+    "code": "T",
+    "codeSystem": null,
+    "codeSystemName": null,
+    "codeSystemVersion": null,
+    "displayName": null
+  },
+  "processingModeCode": {
+    "nullFlavor": [],
+    "originalText": null,
+    "qualifier": [],
+    "translation": [],
+    "code": "T",
+    "codeSystem": null,
+    "codeSystemName": null,
+    "codeSystemVersion": null,
+    "displayName": null
+  },
+  "acceptAckCode": {
+    "nullFlavor": [],
+    "originalText": null,
+    "qualifier": [],
+    "translation": [],
+    "code": "NE",
+    "codeSystem": null,
+    "codeSystemName": null,
+    "codeSystemVersion": null,
+    "displayName": null
+  },
+  "attachmentText": [],
+  "receiver": [{
+    "realmCode": [],
+    "typeId": null,
+    "templateId": [],
+    "telecom": null,
+    "device": {
+      "realmCode": [],
+      "typeId": null,
+      "templateId": [],
+      "id": [{
+        "nullFlavor": [],
+        "root": "PSIM_TOOLS",
+        "extension": "200EHMP",
+        "assigningAuthorityName": null,
+        "displayable": null
+      }],
+      "name": [],
+      "desc": null,
+      "existenceTime": null,
+      "telecom": [],
+      "manufacturerModelName": null,
+      "softwareName": null,
+      "asAgent": null,
+      "asLocatedEntity": [],
+      "nullFlavor": [],
+      "classCode": "DEV",
+      "determinerCode": "INSTANCE"
+    },
+    "nullFlavor": [],
+    "typeCode": "RCV"
+  }],
+  "respondTo": [],
+  "sender": {
+    "realmCode": [],
+    "typeId": null,
+    "templateId": [],
+    "telecom": null,
+    "device": {
+      "realmCode": [],
+      "typeId": null,
+      "templateId": [],
+      "id": [{
+        "nullFlavor": [],
+        "root": "2.16.840.1.113883.4.349",
+        "extension": "200M",
+        "assigningAuthorityName": null,
+        "displayable": null
+      }],
+      "name": [],
+      "desc": null,
+      "existenceTime": null,
+      "telecom": [],
+      "manufacturerModelName": null,
+      "softwareName": null,
+      "asAgent": null,
+      "asLocatedEntity": [],
+      "nullFlavor": [],
+      "classCode": "DEV",
+      "determinerCode": "INSTANCE"
+    },
+    "nullFlavor": [],
+    "typeCode": "SND"
+  },
+  "attentionLine": [],
+  "acknowledgement": [{
+    "realmCode": [],
+    "typeId": null,
+    "templateId": [],
+    "typeCode": {
+      "nullFlavor": [],
+      "originalText": null,
+      "qualifier": [],
+      "translation": [],
+      "code": "AA",
+      "codeSystem": null,
+      "codeSystemName": null,
+      "codeSystemVersion": null,
+      "displayName": null
+    },
+    "messageWaitingNumber": null,
+    "messageWaitingPriorityCode": null,
+    "targetMessage": {
+      "realmCode": [],
+      "typeId": null,
+      "templateId": [],
+      "id": {
+        "nullFlavor": [],
+        "root": "2.16.840.1.113883.4.349",
+        "extension": "MCID-YOUR_IDENTIFIER_001",
+        "assigningAuthorityName": null,
+        "displayable": null
+      },
+      "nullFlavor": []
+    },
+    "acknowledgementDetail": [],
+    "nullFlavor": []
+  }],
+  "controlActProcess": {
+    "realmCode": [],
+    "typeId": null,
+    "templateId": [],
+    "id": [],
+    "code": {
+      "nullFlavor": [],
+      "originalText": null,
+      "qualifier": [],
+      "translation": [],
+      "code": "PRPA_TE201310UV02",
+      "codeSystem": null,
+      "codeSystemName": null,
+      "codeSystemVersion": null,
+      "displayName": null
+    },
+    "text": null,
+    "effectiveTime": null,
+    "priorityCode": [],
+    "reasonCode": [],
+    "languageCode": null,
+    "overseer": [],
+    "authorOrPerformer": [],
+    "dataEnterer": [],
+    "informationRecipient": [],
+    "subject": [{
+      "realmCode": [],
+      "typeId": null,
+      "templateId": [],
+      "registrationEvent": {
+        "realmCode": [],
+        "typeId": null,
+        "templateId": [],
+        "id": [{
+          "nullFlavor": ["NA"],
+          "root": null,
+          "extension": null,
+          "assigningAuthorityName": null,
+          "displayable": null
+        }],
+        "statusCode": {
+          "nullFlavor": [],
+          "originalText": null,
+          "qualifier": [],
+          "translation": [],
+          "code": "active",
+          "codeSystem": null,
+          "codeSystemName": null,
+          "codeSystemVersion": null,
+          "displayName": null
+        },
+        "effectiveTime": null,
+        "subject1": {
+          "realmCode": [],
+          "typeId": null,
+          "templateId": [],
+          "patient": {
+            "realmCode": [],
+            "typeId": null,
+            "templateId": [],
+            "id": [{
+              "nullFlavor": [],
+              "root": "2.16.840.1.113883.4.1",
+              "extension": "666000618^PI^200SSA^USSSA^A",
+              "assigningAuthorityName": null,
+              "displayable": null
+            }, {
+              "nullFlavor": [],
+              "root": "2.16.840.1.113883.4.349",
+              "extension": "100625^PI^9E7A^USVHA",
+              "assigningAuthorityName": null,
+              "displayable": null
+            }, {
+              "nullFlavor": [],
+              "root": "2.16.840.1.113883.4.349",
+              "extension": "100625^PI^C877^USVHA",
+              "assigningAuthorityName": null,
+              "displayable": null
+            }, {
+              "nullFlavor": [],
+              "root": "2.16.840.1.113883.4.349",
+              "extension": "0005000000126V406128^PI^200ESR^USVHA^H",
+              "assigningAuthorityName": null,
+              "displayable": null
+            }, {
+              "nullFlavor": [],
+              "root": "2.16.840.1.113883.4.349",
+              "extension": "0005000000126V406128^PI^200ESR^USVHA^PCE",
+              "assigningAuthorityName": null,
+              "displayable": null
+            }, {
+              "nullFlavor": [],
+              "root": "2.16.840.1.113883.4.349",
+              "extension": "5000000126V406128^NI^200M^USVHA^P",
+              "assigningAuthorityName": null,
+              "displayable": null
+            }],
+            "statusCode": {
+              "nullFlavor": [],
+              "originalText": null,
+              "qualifier": [],
+              "translation": [],
+              "code": "active",
+              "codeSystem": null,
+              "codeSystemName": null,
+              "codeSystemVersion": null,
+              "displayName": null
+            },
+            "effectiveTime": null,
+            "veryImportantPersonCode": null,
+            "patientPerson": null,
+            "patientNonPersonLivingSubject": null,
+            "providerOrganization": null,
+            "coveredPartyOf": [],
+            "nullFlavor": [],
+            "classCode": ["PAT"]
+          },
+          "nullFlavor": [],
+          "typeCode": "SBJ"
+        },
+        "author": null,
+        "custodian": {
+          "realmCode": [],
+          "typeId": null,
+          "templateId": [],
+          "assignedEntity": {
+            "realmCode": [],
+            "typeId": null,
+            "templateId": [],
+            "id": [{
+              "nullFlavor": [],
+              "root": "2.16.840.1.113883.4.349",
+              "extension": null,
+              "assigningAuthorityName": null,
+              "displayable": null
+            }],
+            "code": null,
+            "addr": [],
+            "telecom": [],
+            "assignedPerson": null,
+            "assignedDevice": null,
+            "assignedOrganization": null,
+            "representedOrganization": null,
+            "nullFlavor": [],
+            "classCode": "ASSIGNED"
+          },
+          "nullFlavor": [],
+          "typeCode": ["CST"],
+          "contextControlCode": "AP"
+        },
+        "inFulfillmentOf": [],
+        "definition": [],
+        "replacementOf": [{
+          "realmCode": [],
+          "typeId": null,
+          "templateId": [],
+          "priorRegistration": {
+            "realmCode": [],
+            "typeId": null,
+            "templateId": [],
+            "id": [{
+              "nullFlavor": [],
+              "root": "2.16.840.1.113883.4.349",
+              "extension": "5000000126V406128^NI^200M^USVHA^D",
+              "assigningAuthorityName": null,
+              "displayable": null
+            }],
+            "statusCode": null,
+            "subject1": null,
+            "subject2": null,
+            "nullFlavor": [],
+            "classCode": ["REG"],
+            "moodCode": ["EVN"]
+          },
+          "nullFlavor": [],
+          "typeCode": ["RPLC"]
+        }],
+        "nullFlavor": [],
+        "classCode": ["REG"],
+        "moodCode": ["EVN"]
+      },
+      "nullFlavor": [],
+      "typeCode": ["SUBJ"],
+      "contextConductionInd": false
+    }],
+    "reasonOf": [],
+    "queryAck": {
+      "realmCode": [],
+      "typeId": null,
+      "templateId": [],
+      "queryId": {
+        "nullFlavor": [],
+        "root": "1.2.840.114350.1.13.99999.4567.34",
+        "extension": "MCID-YOUR_IDENTIFIER_001",
+        "assigningAuthorityName": null,
+        "displayable": null
+      },
+      "statusCode": null,
+      "queryResponseCode": {
+        "nullFlavor": [],
+        "originalText": null,
+        "qualifier": [],
+        "translation": [],
+        "code": "OK",
+        "codeSystem": null,
+        "codeSystemName": null,
+        "codeSystemVersion": null,
+        "displayName": null
+      },
+      "resultTotalQuantity": null,
+      "resultCurrentQuantity": null,
+      "resultRemainingQuantity": null,
+      "nullFlavor": []
+    },
+    "queryByParameter": null,
+    "nullFlavor": [],
+    "classCode": "CACT",
+    "moodCode": "EVN"
+  },
+  "nullFlavor": [],
+  "itsversion": "XML_1.0"
+}

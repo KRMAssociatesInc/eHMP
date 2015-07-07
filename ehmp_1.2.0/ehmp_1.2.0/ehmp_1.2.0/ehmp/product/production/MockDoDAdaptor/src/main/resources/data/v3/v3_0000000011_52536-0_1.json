@@ -1,0 +1,107 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000850"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "52536-0"
+          }
+        ],
+        "facility": null,
+        "address": [
+          {
+            "type": "Home Address",
+            "city": "SAN DIEGO",
+            "country": null,
+            "county": null,
+            "postalCode": "92131",
+            "state": "CA",
+            "street": [
+              "Any Street"
+            ]
+          }
+        ],
+        "phone": [
+          {
+            "area": null,
+            "country": null,
+            "local": null
+          }
+        ],
+        "branch": null,
+        "birthDate": "19350407000000",
+        "deersEligibility": null,
+        "patientId": [
+          {
+            "id": "D1606222536"
+          }
+        ],
+        "email": null,
+        "enrollmentLocation": null,
+        "name": {
+          "first": "PATIENT",
+          "middle": null,
+          "last": "ONEHUNDREDSIXTEEN",
+          "suffix": null
+        },
+        "fmp": null,
+        "maritalStatus": [
+          {
+            "display": "Divorced"
+          }
+        ],
+        "patientCategory": [
+          {
+            "display": "K61 - Department of Defense (DoD)/Veterans Administration (VA) Sharing Agreement"
+          }
+        ],
+        "race": [
+          {
+            "display": "Unknown Race"
+          }
+        ],
+        "rank": null,
+        "religion": [
+          {
+            "display": "Unknown"
+          }
+        ],
+        "sex": "M",
+        "sponsor": {
+          "branch": null,
+          "rank": null,
+          "ssn": null,
+          "assignedUnit": null
+        },
+        "assignedUnit": null
+      },
+      "dataType": 13
+    }
+  ]
+}

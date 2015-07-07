@@ -1,0 +1,1058 @@
+<!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:ns1="http://webservice.vds.domain.ext/" xmlns:ns2="http://webservice.bhie.domain.ext/" xmlns:tns="http://webservice.jmeadows.domain.ext/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webservice.jmeadows.domain.ext/" version="1.0">
+  <xs:import namespace="http://webservice.vds.domain.ext/" schemaLocation="JMeadowsDataService_metadata2.xsd"/>
+  <xs:import namespace="http://webservice.bhie.domain.ext/" schemaLocation="JMeadowsDataService_metadata1.xsd"/>
+  <xs:element name="JMeadowsException" type="tns:JMeadowsException"/>
+  <xs:element name="auditVARestrictedAccess" type="tns:auditVARestrictedAccess"/>
+  <xs:element name="auditVARestrictedAccessResponse" type="tns:auditVARestrictedAccessResponse"/>
+  <xs:element name="getAdmissionDetails" type="tns:getAdmissionDetails"/>
+  <xs:element name="getAdmissionDetailsResponse" type="tns:getAdmissionDetailsResponse"/>
+  <xs:element name="getAdmissionDiagnosis" type="tns:getAdmissionDiagnosis"/>
+  <xs:element name="getAdmissionDiagnosisResponse" type="tns:getAdmissionDiagnosisResponse"/>
+  <xs:element name="getAdmissionProcedures" type="tns:getAdmissionProcedures"/>
+  <xs:element name="getAdmissionProceduresResponse" type="tns:getAdmissionProceduresResponse"/>
+  <xs:element name="getAllergyDetail" type="tns:getAllergyDetail"/>
+  <xs:element name="getAllergyDetailResponse" type="tns:getAllergyDetailResponse"/>
+  <xs:element name="getAuthUser" type="tns:getAuthUser"/>
+  <xs:element name="getAuthUserResponse" type="tns:getAuthUserResponse"/>
+  <xs:element name="getBHIENoteImage" type="tns:getBHIENoteImage"/>
+  <xs:element name="getBHIENoteImageResponse" type="tns:getBHIENoteImageResponse"/>
+  <xs:element name="getClinicalReminderDetail" type="tns:getClinicalReminderDetail"/>
+  <xs:element name="getClinicalReminderDetailResponse" type="tns:getClinicalReminderDetailResponse"/>
+  <xs:element name="getConsultReport" type="tns:getConsultReport"/>
+  <xs:element name="getConsultReportResponse" type="tns:getConsultReportResponse"/>
+  <xs:element name="getIehrUserProfile" type="tns:getIehrUserProfile"/>
+  <xs:element name="getIehrUserProfileResponse" type="tns:getIehrUserProfileResponse"/>
+  <xs:element name="getJanusGUIConfig" type="tns:getJanusGUIConfig"/>
+  <xs:element name="getJanusGUIConfigResponse" type="tns:getJanusGUIConfigResponse"/>
+  <xs:element name="getLabOrderResult" type="tns:getLabOrderResult"/>
+  <xs:element name="getLabOrderResultResponse" type="tns:getLabOrderResultResponse"/>
+  <xs:element name="getLoginInfo" type="tns:getLoginInfo"/>
+  <xs:element name="getLoginInfoResponse" type="tns:getLoginInfoResponse"/>
+  <xs:element name="getMedicationDetail" type="tns:getMedicationDetail"/>
+  <xs:element name="getMedicationDetailResponse" type="tns:getMedicationDetailResponse"/>
+  <xs:element name="getOrderDetail" type="tns:getOrderDetail"/>
+  <xs:element name="getOrderDetailResponse" type="tns:getOrderDetailResponse"/>
+  <xs:element name="getOutpatientProcedures" type="tns:getOutpatientProcedures"/>
+  <xs:element name="getOutpatientProceduresResponse" type="tns:getOutpatientProceduresResponse"/>
+  <xs:element name="getPatientAdmissions" type="tns:getPatientAdmissions"/>
+  <xs:element name="getPatientAdmissionsResponse" type="tns:getPatientAdmissionsResponse"/>
+  <xs:element name="getPatientAllergies" type="tns:getPatientAllergies"/>
+  <xs:element name="getPatientAllergiesResponse" type="tns:getPatientAllergiesResponse"/>
+  <xs:element name="getPatientAppointments" type="tns:getPatientAppointments"/>
+  <xs:element name="getPatientAppointmentsResponse" type="tns:getPatientAppointmentsResponse"/>
+  <xs:element name="getPatientClinicalReminders" type="tns:getPatientClinicalReminders"/>
+  <xs:element name="getPatientClinicalRemindersResponse" type="tns:getPatientClinicalRemindersResponse"/>
+  <xs:element name="getPatientConsultRequests" type="tns:getPatientConsultRequests"/>
+  <xs:element name="getPatientConsultRequestsResponse" type="tns:getPatientConsultRequestsResponse"/>
+  <xs:element name="getPatientCurrentVitals" type="tns:getPatientCurrentVitals"/>
+  <xs:element name="getPatientCurrentVitalsResponse" type="tns:getPatientCurrentVitalsResponse"/>
+  <xs:element name="getPatientDemographics" type="tns:getPatientDemographics"/>
+  <xs:element name="getPatientDemographicsDetail" type="tns:getPatientDemographicsDetail"/>
+  <xs:element name="getPatientDemographicsDetailResponse" type="tns:getPatientDemographicsDetailResponse"/>
+  <xs:element name="getPatientDemographicsResponse" type="tns:getPatientDemographicsResponse"/>
+  <xs:element name="getPatientDischargeSummaries" type="tns:getPatientDischargeSummaries"/>
+  <xs:element name="getPatientDischargeSummariesResponse" type="tns:getPatientDischargeSummariesResponse"/>
+  <xs:element name="getPatientEncounters" type="tns:getPatientEncounters"/>
+  <xs:element name="getPatientEncountersReport" type="tns:getPatientEncountersReport"/>
+  <xs:element name="getPatientEncountersReportResponse" type="tns:getPatientEncountersReportResponse"/>
+  <xs:element name="getPatientEncountersResponse" type="tns:getPatientEncountersResponse"/>
+  <xs:element name="getPatientForms" type="tns:getPatientForms"/>
+  <xs:element name="getPatientFormsResponse" type="tns:getPatientFormsResponse"/>
+  <xs:element name="getPatientHistory" type="tns:getPatientHistory"/>
+  <xs:element name="getPatientHistoryResponse" type="tns:getPatientHistoryResponse"/>
+  <xs:element name="getPatientImmunizations" type="tns:getPatientImmunizations"/>
+  <xs:element name="getPatientImmunizationsResponse" type="tns:getPatientImmunizationsResponse"/>
+  <xs:element name="getPatientInsurances" type="tns:getPatientInsurances"/>
+  <xs:element name="getPatientInsurancesResponse" type="tns:getPatientInsurancesResponse"/>
+  <xs:element name="getPatientLabReport" type="tns:getPatientLabReport"/>
+  <xs:element name="getPatientLabReportResponse" type="tns:getPatientLabReportResponse"/>
+  <xs:element name="getPatientLabResults" type="tns:getPatientLabResults"/>
+  <xs:element name="getPatientLabResultsResponse" type="tns:getPatientLabResultsResponse"/>
+  <xs:element name="getPatientLabTestResults" type="tns:getPatientLabTestResults"/>
+  <xs:element name="getPatientLabTestResultsResponse" type="tns:getPatientLabTestResultsResponse"/>
+  <xs:element name="getPatientLabs" type="tns:getPatientLabs"/>
+  <xs:element name="getPatientLabsResponse" type="tns:getPatientLabsResponse"/>
+  <xs:element name="getPatientMedications" type="tns:getPatientMedications"/>
+  <xs:element name="getPatientMedicationsResponse" type="tns:getPatientMedicationsResponse"/>
+  <xs:element name="getPatientOrders" type="tns:getPatientOrders"/>
+  <xs:element name="getPatientOrdersResponse" type="tns:getPatientOrdersResponse"/>
+  <xs:element name="getPatientProblemList" type="tns:getPatientProblemList"/>
+  <xs:element name="getPatientProblemListResponse" type="tns:getPatientProblemListResponse"/>
+  <xs:element name="getPatientProgressNotes" type="tns:getPatientProgressNotes"/>
+  <xs:element name="getPatientProgressNotesResponse" type="tns:getPatientProgressNotesResponse"/>
+  <xs:element name="getPatientRads" type="tns:getPatientRads"/>
+  <xs:element name="getPatientRadsResponse" type="tns:getPatientRadsResponse"/>
+  <xs:element name="getPatientVitals" type="tns:getPatientVitals"/>
+  <xs:element name="getPatientVitalsResponse" type="tns:getPatientVitalsResponse"/>
+  <xs:element name="getProblemDetail" type="tns:getProblemDetail"/>
+  <xs:element name="getProblemDetailResponse" type="tns:getProblemDetailResponse"/>
+  <xs:element name="getProgressNote" type="tns:getProgressNote"/>
+  <xs:element name="getProgressNoteResponse" type="tns:getProgressNoteResponse"/>
+  <xs:element name="getProviderAdmissions" type="tns:getProviderAdmissions"/>
+  <xs:element name="getProviderAdmissionsResponse" type="tns:getProviderAdmissionsResponse"/>
+  <xs:element name="getProviderAppointments" type="tns:getProviderAppointments"/>
+  <xs:element name="getProviderAppointmentsResponse" type="tns:getProviderAppointmentsResponse"/>
+  <xs:element name="getProviderConsultsReceived" type="tns:getProviderConsultsReceived"/>
+  <xs:element name="getProviderConsultsReceivedResponse" type="tns:getProviderConsultsReceivedResponse"/>
+  <xs:element name="getProviderConsultsRequested" type="tns:getProviderConsultsRequested"/>
+  <xs:element name="getProviderConsultsRequestedResponse" type="tns:getProviderConsultsRequestedResponse"/>
+  <xs:element name="getProviderFlags" type="tns:getProviderFlags"/>
+  <xs:element name="getProviderFlagsResponse" type="tns:getProviderFlagsResponse"/>
+  <xs:element name="getProviderLabAbnormalResults" type="tns:getProviderLabAbnormalResults"/>
+  <xs:element name="getProviderLabAbnormalResultsResponse" type="tns:getProviderLabAbnormalResultsResponse"/>
+  <xs:element name="getProviderOrdersPending" type="tns:getProviderOrdersPending"/>
+  <xs:element name="getProviderOrdersPendingResponse" type="tns:getProviderOrdersPendingResponse"/>
+  <xs:element name="getProviderOrdersResulted" type="tns:getProviderOrdersResulted"/>
+  <xs:element name="getProviderOrdersResultedResponse" type="tns:getProviderOrdersResultedResponse"/>
+  <xs:element name="getProviderProfile" type="tns:getProviderProfile"/>
+  <xs:element name="getProviderProfileResponse" type="tns:getProviderProfileResponse"/>
+  <xs:element name="getProviderUnsignedNotes" type="tns:getProviderUnsignedNotes"/>
+  <xs:element name="getProviderUnsignedNotesResponse" type="tns:getProviderUnsignedNotesResponse"/>
+  <xs:element name="getRadiologyReport" type="tns:getRadiologyReport"/>
+  <xs:element name="getRadiologyReportResponse" type="tns:getRadiologyReportResponse"/>
+  <xs:element name="getServiceErrors" type="tns:getServiceErrors"/>
+  <xs:element name="getServiceErrorsResponse" type="tns:getServiceErrorsResponse"/>
+  <xs:element name="getSites" type="tns:getSites"/>
+  <xs:element name="getSitesResponse" type="tns:getSitesResponse"/>
+  <xs:element name="getUserAlerts" type="tns:getUserAlerts"/>
+  <xs:element name="getUserAlertsResponse" type="tns:getUserAlertsResponse"/>
+  <xs:element name="getVLERDocument" type="tns:getVLERDocument"/>
+  <xs:element name="getVLERDocumentList" type="tns:getVLERDocumentList"/>
+  <xs:element name="getVLERDocumentListResponse" type="tns:getVLERDocumentListResponse"/>
+  <xs:element name="getVLERDocumentResponse" type="tns:getVLERDocumentResponse"/>
+  <xs:element name="getVersion" type="tns:getVersion"/>
+  <xs:element name="getVersionResponse" type="tns:getVersionResponse"/>
+  <xs:element name="getVisitNotes" type="tns:getVisitNotes"/>
+  <xs:element name="getVisitNotesResponse" type="tns:getVisitNotesResponse"/>
+  <xs:element name="getWardAdmissions" type="tns:getWardAdmissions"/>
+  <xs:element name="getWardAdmissionsResponse" type="tns:getWardAdmissionsResponse"/>
+  <xs:element name="logAudit" type="tns:logAudit"/>
+  <xs:element name="logAuditResponse" type="tns:logAuditResponse"/>
+  <xs:element name="login" type="tns:login"/>
+  <xs:element name="loginEnterprise" type="tns:loginEnterprise"/>
+  <xs:element name="loginEnterpriseResponse" type="tns:loginEnterpriseResponse"/>
+  <xs:element name="loginResponse" type="tns:loginResponse"/>
+  <xs:element name="lookupPatient" type="tns:lookupPatient"/>
+  <xs:element name="lookupPatientPDWS" type="tns:lookupPatientPDWS"/>
+  <xs:element name="lookupPatientPDWSResponse" type="tns:lookupPatientPDWSResponse"/>
+  <xs:element name="lookupPatientResponse" type="tns:lookupPatientResponse"/>
+  <xs:element name="selectPatient" type="tns:selectPatient"/>
+  <xs:element name="selectPatientForVASensitive" type="tns:selectPatientForVASensitive"/>
+  <xs:element name="selectPatientForVASensitiveResponse" type="tns:selectPatientForVASensitiveResponse"/>
+  <xs:element name="selectPatientMVI" type="tns:selectPatientMVI"/>
+  <xs:element name="selectPatientMVIResponse" type="tns:selectPatientMVIResponse"/>
+  <xs:element name="selectPatientResponse" type="tns:selectPatientResponse"/>
+  <xs:element name="setIehrUserProfile" type="tns:setIehrUserProfile"/>
+  <xs:element name="setIehrUserProfileResponse" type="tns:setIehrUserProfileResponse"/>
+  <xs:element name="setJanusGUIConfig" type="tns:setJanusGUIConfig"/>
+  <xs:element name="setJanusGUIConfigResponse" type="tns:setJanusGUIConfigResponse"/>
+  <xs:element name="setProviderFlags" type="tns:setProviderFlags"/>
+  <xs:element name="setProviderFlagsResponse" type="tns:setProviderFlagsResponse"/>
+  <xs:element name="updateUserSubjectDN" type="tns:updateUserSubjectDN"/>
+  <xs:element name="updateUserSubjectDNResponse" type="tns:updateUserSubjectDNResponse"/>
+  <xs:complexType name="getProviderUnsignedNotes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="jMeadowsQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:int"/>
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="itemId" type="xs:string"/>
+      <xs:element minOccurs="0" name="max" type="xs:int"/>
+      <xs:element minOccurs="0" name="patient" type="ns1:patient"/>
+      <xs:element minOccurs="0" name="recordSiteCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="requestingApp" type="xs:string"/>
+      <xs:element minOccurs="0" name="sortBy" type="xs:string"/>
+      <xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="user" type="ns1:user"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderUnsignedNotesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:progressNote"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="JMeadowsException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllergyDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllergyDetailResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:allergyDetail"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderLabAbnormalResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderLabAbnormalResultsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:labResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getUserAlerts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getUserAlertsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:alert"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderConsultsRequested">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderConsultsRequestedResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:consult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientRads">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientRadsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:radiologyReport"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginEnterprise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cardID" type="xs:string"/>
+      <xs:element minOccurs="0" name="siteCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="accessCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="verifyCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="requestingApp" type="xs:string"/>
+      <xs:element minOccurs="0" name="ipAddress" type="xs:string"/>
+      <xs:element minOccurs="0" name="subjectDN" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginEnterpriseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:user"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSites">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getSitesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:site"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:user"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setIehrUserProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="iehrUserProfile" type="tns:iehrUserProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="iehrUserProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cfg" type="xs:string"/>
+      <xs:element minOccurs="0" name="flags" type="xs:string"/>
+      <xs:element minOccurs="0" name="locID" type="xs:string"/>
+      <xs:element minOccurs="0" name="smartCardAgency" type="xs:string"/>
+      <xs:element minOccurs="0" name="smartCardID" type="xs:string"/>
+      <xs:element minOccurs="0" name="userID" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setIehrUserProfileResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="selectPatientMVI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="selectPatientMVIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responsePatientSelect"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responsePatientSelect">
+    <xs:sequence>
+      <xs:element name="allowVAAccess" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="errorMsg" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="externalIDs" nillable="true" type="tns:externalID"/>
+      <xs:element minOccurs="0" name="patient" type="ns1:patient"/>
+      <xs:element name="success" type="xs:boolean"/>
+      <xs:element name="VARestricted" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="externalID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="issuer" type="xs:string"/>
+      <xs:element minOccurs="0" name="source" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceName" type="xs:string"/>
+      <xs:element minOccurs="0" name="type" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getJanusGUIConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getJanusGUIConfigResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientHistoryResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:patientHistory"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="patientHistory">
+    <xs:complexContent>
+      <xs:extension base="ns1:dataBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dateReported" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="enteredBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="type" type="xs:string"/>
+          <xs:element minOccurs="0" name="repositoryId" type="xs:string"/>
+          <xs:element minOccurs="0" name="enteredByDate" type="xs:dateTime"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="findings" nillable="true" type="tns:finding"/>
+          <xs:element minOccurs="0" name="unverifiedFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="encComment" type="xs:string"/>
+          <xs:element minOccurs="0" name="custodianName" type="xs:string"/>
+          <xs:element minOccurs="0" name="historyMedcinId" type="xs:string"/>
+          <xs:element minOccurs="0" name="periodEndDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="chronicity" type="xs:string"/>
+          <xs:element minOccurs="0" name="dateOnset" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="sensitivity" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="comments" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="periodStartDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="couplerType" type="xs:string"/>
+          <xs:element minOccurs="0" name="reportingClinician" type="xs:string"/>
+          <xs:element minOccurs="0" name="custodianId" type="xs:string"/>
+          <xs:element minOccurs="0" name="otherIdentifier" type="xs:string"/>
+          <xs:element minOccurs="0" name="relationshipId" type="xs:string"/>
+          <xs:element minOccurs="0" name="formattedFindings" type="xs:string"/>
+          <xs:element minOccurs="0" name="source" type="xs:string"/>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+          <xs:element minOccurs="0" name="facility" type="xs:string"/>
+          <xs:element minOccurs="0" name="loincCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="relationship" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="finding">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="annotation" type="xs:string"/>
+      <xs:element minOccurs="0" name="category" type="xs:string"/>
+      <xs:element minOccurs="0" name="flag" type="xs:string"/>
+      <xs:element minOccurs="0" name="item" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientProgressNotes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientProgressNotesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:progressNote"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientConsultRequests">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientConsultRequestsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:consult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderAdmissions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderAdmissionsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:patientAdmission"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientCurrentVitals">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientCurrentVitalsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:vitals"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProgressNote">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProgressNoteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:freeTextReport"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientLabs">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientLabsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:labOrder"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="selectPatientForVASensitive">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="selectPatientForVASensitiveResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="login">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="siteCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="accessCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="verifyCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="requestingApp" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="loginResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:user"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientAllergies">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientAllergiesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:allergy"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getVLERDocumentList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getVLERDocumentListResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:vlerDocument"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setProviderFlags">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+      <xs:element minOccurs="0" name="flags" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setProviderFlagsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getServiceErrors">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getServiceErrorsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupPatientPDWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:pdwsQueryBean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pdwsQueryBean">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dob" type="xs:string"/>
+      <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+      <xs:element minOccurs="0" name="gender" type="xs:string"/>
+      <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientId" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientIdType" type="xs:string"/>
+      <xs:element minOccurs="0" name="requestingApp" type="xs:string"/>
+      <xs:element minOccurs="0" name="user" type="ns1:user"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupPatientPDWSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responsePatientQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responsePatientQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorMsg" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="patients" nillable="true" type="ns1:patient"/>
+      <xs:element name="success" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProblemDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProblemDetailResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:problemDetail"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientProblemList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientProblemListResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:problem"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getWardAdmissions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getWardAdmissionsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:patientAdmission"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientEncounters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientEncountersResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:encounter"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="logAudit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="siteCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="userIen" type="xs:string"/>
+      <xs:element minOccurs="0" name="providerIen" type="xs:string"/>
+      <xs:element minOccurs="0" name="userNPI" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+      <xs:element minOccurs="0" name="patId" type="xs:string"/>
+      <xs:element minOccurs="0" name="category" type="xs:string"/>
+      <xs:element minOccurs="0" name="requestingApp" type="xs:string"/>
+      <xs:element minOccurs="0" name="startDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="endDate" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="logAuditResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="auditVARestrictedAccess">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="auditVARestrictedAccessResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getVisitNotes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getVisitNotesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:freeTextReport"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientDemographicsDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientDemographicsDetailResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:patientDemographicsDetail"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientMedications">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientMedicationsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:medication"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderOrdersPending">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderOrdersPendingResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:order"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientForms">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientFormsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:form"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="form">
+    <xs:complexContent>
+      <xs:extension base="ns1:dataBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="formId" type="xs:string"/>
+          <xs:element minOccurs="0" name="formDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="enteredBy" type="xs:string"/>
+          <xs:element minOccurs="0" name="documentTitle" type="xs:string"/>
+          <xs:element minOccurs="0" name="facilityName" type="xs:string"/>
+          <xs:element minOccurs="0" name="deploymentForm" type="ns1:progressNote"/>
+          <xs:element minOccurs="0" name="questionnaireBean" type="ns1:questionnaireBean"/>
+          <xs:element minOccurs="0" name="docType" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getLabOrderResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLabOrderResultResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:labResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLoginInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cardID" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLoginInfoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:auditEntry"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="auditEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="auditID" type="xs:string"/>
+      <xs:element minOccurs="0" name="cardID" type="xs:string"/>
+      <xs:element minOccurs="0" name="category" type="xs:string"/>
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="entryDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ipAddress" type="xs:string"/>
+      <xs:element minOccurs="0" name="patID" type="xs:string"/>
+      <xs:element minOccurs="0" name="queryType" type="xs:string"/>
+      <xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="systemID" type="xs:string"/>
+      <xs:element minOccurs="0" name="userID" type="xs:string"/>
+      <xs:element minOccurs="0" name="userNPI" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientClinicalReminders">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientClinicalRemindersResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:clinicalReminder"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getBHIENoteImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getBHIENoteImageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns2:noteImage"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getConsultReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getConsultReportResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:freeTextReport"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientDemographics">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientDemographicsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:patientDemographics"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getClinicalReminderDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getClinicalReminderDetailResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:freeTextReport"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientInsurances">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientInsurancesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:insuranceBean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderFlags">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderFlagsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAuthUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="authUserInfoQuery" type="tns:authUserInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="authUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cardId" type="xs:string"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element minOccurs="0" name="facility" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="organization" type="xs:string"/>
+      <xs:element minOccurs="0" name="phone" type="xs:string"/>
+      <xs:element minOccurs="0" name="subjectDN" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAuthUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:authUserInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setJanusGUIConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+      <xs:element minOccurs="0" name="cfg" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setJanusGUIConfigResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientLabTestResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientLabTestResultsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:labResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupPatient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupPatientResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:patient"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderAppointments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderAppointmentsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:patientAppointments"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAdmissionDiagnosis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAdmissionDiagnosisResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:diagnosis"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getRadiologyReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getRadiologyReportResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:radiologyReport"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getIehrUserProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="smartCardID" type="xs:string"/>
+      <xs:element minOccurs="0" name="smartCardAgency" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getIehrUserProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:iehrUserProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientLabReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientLabReportResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:freeTextReport"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientVitals">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientVitalsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:vitals"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getVLERDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="vDoc" type="ns1:vlerDocument"/>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getVLERDocumentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:vlerDocument"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientLabResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientLabResultsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:labResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderConsultsReceived">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderConsultsReceivedResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:consult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getVersion">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getVersionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAdmissionProcedures">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAdmissionProceduresResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:procedure"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOrderDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOrderDetailResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:freeTextReport"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientEncountersReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientEncountersReportResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:freeTextReport"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateUserSubjectDN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="authUserInfoQuery" type="tns:authUserInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateUserSubjectDNResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOutpatientProcedures">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOutpatientProceduresResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:procedure"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="selectPatient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="selectPatientResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:patient"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMedicationDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMedicationDetailResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:freeTextReport"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientAppointments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientAppointmentsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:patientAppointments"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientDischargeSummaries">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientDischargeSummariesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:progressNote"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientAdmissions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientAdmissionsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:patientAdmission"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAdmissionDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAdmissionDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns1:admissionDetail"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientImmunizations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientImmunizationsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:immunization"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientOrders">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPatientOrdersResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:order"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderOrdersResulted">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="queryBean" type="tns:jMeadowsQuery"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProviderOrdersResultedResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ns1:order"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

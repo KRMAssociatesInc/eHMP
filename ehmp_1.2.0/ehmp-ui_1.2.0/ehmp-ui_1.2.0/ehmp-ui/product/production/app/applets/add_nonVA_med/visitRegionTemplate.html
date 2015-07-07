@@ -1,0 +1,9 @@
+
+<div class="col-sm-8 gutter">
+	<b>Visit Information</b><br>
+	Location: <span id="locationDisplayName">{{#if visit.locationDisplayName}} {{visit.locationDisplayName}} {{visit.formattedDate}} {{else}}No visit set {{/if}}</span><br>
+	Provider: <span id="provider-name">{{#if visit.selectedProvider}} {{visit.selectedProvider.displayName}} {{/if}}</span>
+</div>
+<div class="col-sm-4">
+	<span class="pull-right"><button type="button" id="add-non-va-med-btn" class="btn btn-primary pull-right">Change</button></span>
+</div>

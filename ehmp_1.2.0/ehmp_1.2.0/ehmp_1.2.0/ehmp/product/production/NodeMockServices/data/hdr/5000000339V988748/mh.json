@@ -1,0 +1,25 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "HDR",
+    "systemId": "HDR"
+  },
+  "data": {
+    "updated": "20140409083837",
+    "totalItems": 1,
+    "items": [
+      {
+        "administeredDateTime": 19901017,
+        "displayName": 93,
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "isCopyright": false,
+        "localId": "39;1;93;1;2901017",
+        "name": "HX2",
+        "providerName": "RESIDENT,NEW",
+        "providerUid": "urn:va:user:ABCD:1000",
+        "uid": "urn:va:mh:ABCD:39:39;1;93;1;2901017"
+      }
+    ]
+  }
+}

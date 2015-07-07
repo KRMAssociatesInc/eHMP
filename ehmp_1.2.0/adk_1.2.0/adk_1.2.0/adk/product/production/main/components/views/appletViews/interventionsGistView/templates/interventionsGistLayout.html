@@ -1,0 +1,22 @@
+<div id="{{appletID}}-interventions-gist" gistViewType="interventions">
+    <div id="gistGrid" class="col-sm-12-offset-0 header-bar">
+        <div id="Name-header" class="col-sm-4 {{#if gistHeaders.name.sortable}}selectable{{/if}} header" sortable="{{gistHeaders.name.sortable}}" sortType="{{gistHeaders.name.sortType}}" sortDirection="none" sortKey="{{gistHeaders.name.key}}" {{#if gistHeaders.name.sortable}} tabindex="0"{{/if}} tooltip-data-key='{{gistHeaders.name.hoverTip}}'>{{gistHeaders.name.title}}
+            <span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span>
+        </div>
+        <div id="Description-header" class="col-sm-4 {{#if gistHeaders.description.sortable}}selectable{{/if}} header" sortable="{{gistHeaders.description.sortable}}" sortType="{{gistHeaders.description.sortType}}" sortDirection="none" sortKey="{{gistHeaders.description.key}}" {{#if gistHeaders.description.sortable}} tabindex="0"{{/if}}>{{gistHeaders.description.title}}
+            <span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span>
+        </div>
+        <div id="rightSideHeaders" class="col-sm-4">
+            <div id="Severity-header" class="col-sm-4 {{#if gistHeaders.count.sortable}}selectable{{/if}} text-center header noPadding" sortable="{{gistHeaders.count.sortable}}" sortType="{{gistHeaders.count.sortType}}" sortDirection="none" sortKey="{{gistHeaders.count.key}}" {{#if gistHeaders.count.sortable}} tabindex="0"{{/if}} tooltip-data-key='{{gistHeaders.count.hoverTip}}'>{{gistHeaders.count.title}}
+                <span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span>
+            </div>
+            <div id="Graphic-header" class="col-sm-4 {{#if gistHeaders.graphic.sortable}}selectable{{/if}} text-center header noPadding" sortable="{{gistHeaders.graphic.sortable}}" sortType="{{gistHeaders.graphic.sortType}}" sortDirection="none" sortKey="{{gistHeaders.graphic.key}}" {{#if gistHeaders.graphic.sortable}} tabindex="0"{{/if}} tooltip-data-key='{{gistHeaders.graphic.hoverTip}}'>{{gistHeaders.graphic.title}}
+                <span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span>
+            </div>
+            <div id="Age-header" class="col-sm-4 {{#if gistHeaders.age.sortable}}selectable{{/if}} text-center header noPadding" sortable="{{gistHeaders.age.sortable}}" sortType="{{gistHeaders.age.sortType}}" sortDirection="none" sortKey="{{gistHeaders.age.key}}" {{#if gistHeaders.age.sortable}} tabindex="0"{{/if}} tooltip-data-key='{{gistHeaders.age.hoverTip}}'>{{gistHeaders.age.title}}
+                <span sortArrow="headerDirectionalIndicator" class="sort-caret fa "></span>
+            </div>
+        </div>
+    </div>
+    <div id="{{appletID}}-interventions-gist-items" class="gistList"></div>
+</div>

@@ -1,0 +1,80 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "OrderStatus": "",
+        "EnteredBy": "DOCTOR, ALPHA",
+        "TestName": "Gynecology Cytology Report",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20130610040100",
+        "OrderDateTime": "20130610091700",
+        "CustodianName": "ahlta",
+        "ResultId": "2157567069",
+        "Accession": "130610 P 33",
+        "OrderPriority": "ROUTINE",
+        "OrderingProvider": "DOCTOR, ALPHA",
+        "OrderComment": "",
+        "OrderId": "2157567069",
+        "SpecimenName": "",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "TestId": "",
+        "RequestingLocation": "NH Great Lakes IL",
+        "Specimen": "",
+        "CollectionSample": "",
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "26439-0",
+        "OrderNumber": "130610-00003",
+        "OrderFacility": "NH Great Lakes IL/0056",
+        "Results": [
+          {
+            "ResultComment": "",
+            "LabTest": "Gynecology Cytology Report",
+            "CertifiedDate": "",
+            "FullReport": "Procedure:CYTOLOGIC GYN\nOrder #:130610-00003\nProvider:42834 DOCTOR, ALPHA\nOrdered Date:20130610091700\nPriority:ROUTINE\nSpecimen:UNKNOWN\nResulted Date:20130610091728.1-0400\n130610 P 33                     Col: 10Jun13                 CYTOLOGY(UNKNOWN)\n                             Hcp: DOCTOR,ALPHA               Req Loc: ORTHOPED\n                                  CYTO GYN                    C:AD10Jun13@0917\nCoPath Report\nPatient: SMITH,JIM                           Specimen #:  CG13-33\n                                             Accessioned: 06/10/13\nPathologist: Doctor Alpha\n\n\n\n\n\n\nSOURCE OF SPECIMEN:\n  VAGINAL CYTOLOGIC MATERIAL\n    Smears Received:          1\n\n\n\nCLINICAL DIAGNOSIS AND HISTORY:\n  Post-Menopausal: No\n  Hysterectomy: No\n  Birth Control Pills: No\n  I.U.D.: No\n  Hormone Therapy: No\n  Cytology Comment: SMOKE TEST\n\n\n\n\n\n\nGROSS DESCRIPTION:\n  GROSS DESCRIPTION - SMOKE TEST\n\n\n\nFINAL DIAGNOSIS:\n  CYTOTECH COMMENTS - SMOKE TEST\n\n\n\n\n\n\n                                        ** Report Electronically Signed **\n  doca/06/10/13                            Doctor Alpha",
+            "Facility": "NH Great Lakes IL/0056",
+            "CertifiedBy": "",
+            "ResultStatus": "Certify",
+            "Specimens": [
+              {
+                "SpecimenDescription": "UNKNOWN",
+                "EventId": "1000000726"
+              }
+            ],
+            "SnoMedCodes": [
+
+            ],
+            "EventId": "1000000727"
+          }
+        ],
+        "CollectionDateTime": "20130610040100",
+        "EventId": "1000000728"
+      },
+      "dataType": 9
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

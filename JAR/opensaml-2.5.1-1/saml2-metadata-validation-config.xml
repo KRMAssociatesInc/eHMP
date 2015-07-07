@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:saml2md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns="http://www.opensaml.org/xmltooling-config" xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd">
+            
+     <!-- Validation rules for SAML 2.0 Metadata SAMLObjects -->
+    <ValidatorSuites>
+    
+        <!--  SAML 2.0 Metadata Schema Validation Rules -->
+        <ValidatorSuite id="saml2-metadata-schema-validator">
+            <Validator qualifiedName="saml2md:AdditionalMetadataLocation" className="org.opensaml.saml2.metadata.validator.AdditionalMetadataLocationSchemaValidator"/>
+            <Validator qualifiedName="saml2md:AffiliateMember" className="org.opensaml.saml2.metadata.validator.AffiliateMemberSchemaValidator"/>
+            <Validator qualifiedName="saml2md:AffiliationDescriptorLocation" className="org.opensaml.saml2.metadata.validator.AffiliationDescriptorSchemaValidator"/>
+            <Validator qualifiedName="saml2md:ArtifactResolutionService" className="org.opensaml.saml2.metadata.validator.ArtifactResolutionServiceSchemaValidator"/>
+            <Validator qualifiedName="saml2md:AssertionConsumerService" className="org.opensaml.saml2.metadata.validator.AssertionConsumerServiceSchemaValidator"/>
+            <Validator qualifiedName="saml2md:AssertionIDRequestService" className="org.opensaml.saml2.metadata.validator.AssertionIDRequestServiceSchemaValidator"/>
+            <Validator qualifiedName="saml2md:AttributeAuthorityDescriptor" className="org.opensaml.saml2.metadata.validator.AttributeAuthorityDescriptorSchemaValidator"/>
+            <Validator qualifiedName="saml2md:AttributeConsumingService" className="org.opensaml.saml2.metadata.validator.AttributeConsumingServiceSchemaValidator"/>
+            <Validator qualifiedName="saml2md:AttributeProfile" className="org.opensaml.saml2.metadata.validator.AttributeProfileSchemaValidator"/>
+            <Validator qualifiedName="saml2md:AttributeService" className="org.opensaml.saml2.metadata.validator.AttributeServiceSchemaValidator"/>
+            <Validator qualifiedName="saml2md:AuthnAuthorityDescriptor" className="org.opensaml.saml2.metadata.validator.AuthnAuthorityDescriptorSchemaValidator"/>
+            <Validator qualifiedName="saml2md:AuthnQueryService" className="org.opensaml.saml2.metadata.validator.AuthnQueryServiceSchemaValidator"/>
+            <Validator qualifiedName="saml2md:AuthzSercice" className="org.opensaml.saml2.metadata.validator.AuthzServiceSchemaValidator"/>
+            <Validator qualifiedName="saml2md:CompanyProfile" className="org.opensaml.saml2.metadata.validator.CompanySchemaValidator"/>
+            <Validator qualifiedName="saml2md:ContactPersonProfile" className="org.opensaml.saml2.metadata.validator.ContactPersonSchemaValidator"/>
+            <Validator qualifiedName="saml2md:EmailAddress" className="org.opensaml.saml2.metadata.validator.EmailAddressSchemaValidator"/>
+            <Validator qualifiedName="saml2md:EncryptionMethod" className="org.opensaml.saml2.metadata.validator.EncryptionMethodSchemaValidator"/>
+            <Validator qualifiedName="saml2md:EntitiesDescriptor" className="org.opensaml.saml2.metadata.validator.EntitiesDescriptorSchemaValidator"/>
+            <Validator qualifiedName="saml2md:EntityDescriptor" className="org.opensaml.saml2.metadata.validator.EntityDescriptorSchemaValidator"/>
+            <Validator qualifiedName="saml2md:GivenName" className="org.opensaml.saml2.metadata.validator.GivenNameSchemaValidator"/>
+            <Validator qualifiedName="saml2md:IDPSSODescriptor" className="org.opensaml.saml2.metadata.validator.IDPSSODescriptorSchemaValidator"/>
+            <Validator qualifiedName="saml2md:KeyDescriptor" className="org.opensaml.saml2.metadata.validator.KeyDescriptorSchemaValidator"/>
+            <Validator qualifiedName="saml2md:ManageNameIDService" className="org.opensaml.saml2.metadata.validator.ManageNameIDServiceSchemaValidator"/>
+            <Validator qualifiedName="saml2md:NameIDFormat" className="org.opensaml.saml2.metadata.validator.NameIDFormatSchemaValidator"/>
+            <Validator qualifiedName="saml2md:NameIDMappingService" className="org.opensaml.saml2.metadata.validator.NameIDMappingServiceSchemaValidator"/>
+            <Validator qualifiedName="saml2md:OrganizationDisplayName" className="org.opensaml.saml2.metadata.validator.OrganizationDisplayNameSchemaValidator"/>
+            <Validator qualifiedName="saml2md:OrganizationName" className="org.opensaml.saml2.metadata.validator.OrganizationNameSchemaValidator"/>
+            <Validator qualifiedName="saml2md:Organization" className="org.opensaml.saml2.metadata.validator.OrganizationSchemaValidator"/>
+            <Validator qualifiedName="saml2md:OrganizationURL" className="org.opensaml.saml2.metadata.validator.OrganizationURLSchemaValidator"/>
+            <Validator qualifiedName="saml2md:PDPDescriptor" className="org.opensaml.saml2.metadata.validator.PDPDescriptorSchemaValidator"/>
+            <Validator qualifiedName="saml2md:RequestedAttribute" className="org.opensaml.saml2.metadata.validator.RequestedAttributeSchemaValidator"/>
+            <Validator qualifiedName="saml2md:ServiceDescription" className="org.opensaml.saml2.metadata.validator.ServiceDescriptionSchemaValidator"/>
+            <Validator qualifiedName="saml2md:ServiceName" className="org.opensaml.saml2.metadata.validator.ServiceNameSchemaValidator"/>
+            <Validator qualifiedName="saml2md:SingleLogoutService" className="org.opensaml.saml2.metadata.validator.SingleLogoutServiceSchemaValidator"/>
+            <Validator qualifiedName="saml2md:SingleSignOnService" className="org.opensaml.saml2.metadata.validator.SingleSignOnServiceSchemaValidator"/>
+            <Validator qualifiedName="saml2md:SPSSODescriptor" className="org.opensaml.saml2.metadata.validator.SPSSODescriptorSchemaValidator"/>
+            <Validator qualifiedName="saml2md:Surname" className="org.opensaml.saml2.metadata.validator.SurNameSchemaValidator"/>
+            <Validator qualifiedName="saml2md:TelephoneNumber" className="org.opensaml.saml2.metadata.validator.TelephoneNumberSchemaValidator"/>
+        </ValidatorSuite>
+    
+        <!-- SAML 2.0 Metadata Specification Validation Rules -->
+        <ValidatorSuite id="saml2-metadata-spec-validator">
+            <Validator qualifiedName="saml2md:ArtifactResolutionService" className="org.opensaml.saml2.metadata.validator.ArtifactResolutionServiceSpecValidator"/>
+            <Validator qualifiedName="saml2md:AttributeAuthorityDescriptor" className="org.opensaml.saml2.metadata.validator.AttributeAuthorityDescriptorSpecValidator"/>
+            <Validator qualifiedName="saml2md:AuthnAuthorityDescriptor" className="org.opensaml.saml2.metadata.validator.AuthnAuthorityDescriptorSpecValidator"/>
+            <Validator qualifiedName="saml2md:EntitiesDescriptor" className="org.opensaml.saml2.metadata.validator.EntitiesDescriptorSpecValidator"/>
+            <Validator qualifiedName="saml2md:EntityDescriptor" className="org.opensaml.saml2.metadata.validator.EntityDescriptorSpecValidator"/>
+            <Validator qualifiedName="saml2md:IDPSSODescriptor" className="org.opensaml.saml2.metadata.validator.IDPSSODescriptorSpecValidator"/>
+            <Validator qualifiedName="saml2md:NameIDMappingService" className="org.opensaml.saml2.metadata.validator.NameIDMappingServiceSpecValidator"/>
+            <Validator qualifiedName="saml2md:PDPDescriptor" className="org.opensaml.saml2.metadata.validator.PDPDescriptorSpecValidator"/>
+            <Validator qualifiedName="saml2md:SingleSignOnService" className="org.opensaml.saml2.metadata.validator.SingleSignOnServiceSpecValidator"/>
+            <Validator qualifiedName="saml2md:SPSSODescriptor" className="org.opensaml.saml2.metadata.validator.SPSSODescriptorSpecValidator"/>
+        </ValidatorSuite>
+        
+    </ValidatorSuites>
+ 
+</XMLTooling>

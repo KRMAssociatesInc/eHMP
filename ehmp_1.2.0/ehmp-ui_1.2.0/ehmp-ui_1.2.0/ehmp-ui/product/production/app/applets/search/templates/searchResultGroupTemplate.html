@@ -1,0 +1,31 @@
+<div class="searchGroup panel panel-default {{subGroupClass}} {{#if subGroup}} sortResultItem searchResultItemFilterable{{/if}}" role="menuitem" {{#if subGroup}} sortText="{{ groupName }}" date="{{datetime}}" count="{{ count }}" subGroupType="{{subGroupType}}" groupOnText="{{groupOnText}}" {{/if}}>
+	<div class="searchGroupTitle text-search-accessible accordion-toggle panel-heading row {{#if subGroup}} subGroupHeader {{/if}}" role="button" data-toggle="collapse" data-target="#{{ groupId }}" tabindex="0" title="Search Result Group: {{ groupName }}">
+		<span class="searchGroupTitleArrow col-md-2 fa fa-chevron-right"></span>
+		{{#if subGroup}}
+		<div class="col-sm-1 text-center"><span id="ResultCount{{ resultId }}" class="badge subgroupBadge">{{ count }}</span></div>{{/if}}
+
+		{{#if subGroup}}
+		<h4 class="col-md-10 panel-title subgroupTitle">
+		{{else}}
+		<h4 class="col-md-10 panel-title">
+		{{/if}}
+
+			<!-- <a class="accordion-toggle" data-toggle="collapse" data-parent="#searchResults" href="#{{ groupId }}">{{ groupName }}</a> -->
+			<div id="{{ titleElemId }}" class = "groupName">{{{ groupName }}}</div>
+		</h4>
+	</div>
+	<div class="panel-collapse collapse" id="{{ groupId }}">
+
+		<div class=" {{#if mainGroup}} {{mainGroup}} {{/if}} groupContent list-group">
+		{{#if subGroup}}
+			<div class="subgroupDataFetchSpinner">
+                <h5>
+                    <i class="fa fa-spinner fa-spin"></i>
+                    Loading...
+                </h5>
+            </div>
+            {{/if}}
+			<!-- group result content goes here -->
+		</div>
+	</div>
+</div>

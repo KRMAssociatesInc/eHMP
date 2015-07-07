@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>$!item.patient.familyName, $!item.patient.givenNames &raquo; $!item.summary</title>
+    #parse("/layouts/detail.vm")
+</head>
+
+<body>
+<p>$!item.typeName $!item.typeCode $hmp.formatDate($!item.dateTime)</p>
+<table class="hmp-labeled-values">
+    <tr>
+          <td>Facility</td>
+          <td>$!item.facilityName</td>
+      </tr>
+    <tr>
+        <td>Category</td>
+        <td>$!item.category</td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td>$!item.status</td>
+    </tr>
+	#foreach($prov in $!item.providers)
+        <tr>
+            <td>Provider</td>
+            <td>$!prov.provider.name</td>
+        </tr>
+	#end
+	#foreach($result in $item.results)
+		#if($result.report)
+			<tr>
+                Report
+            </tr>
+            <tr>
+                <pre>$!result.report</pre>
+            </tr>
+		#end
+		#if($result.localTitle)
+			<tr>
+                $!result.localTitle
+            </tr>
+            <tr>
+                <pre>$!result.document</pre>
+            </tr>
+		#end
+	#end
+</table>
+</body>
+</html>

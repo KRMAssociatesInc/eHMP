@@ -1,0 +1,107 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-4 dataLabel" tabindex="0">Date</div>
+        <div class="col-xs-8 dataValue" tabindex="0" id="dateTime">{{formatDate dateTime "MM/DD/YYYY - HH:mm"}}</div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4 dataLabel" tabindex="0">Type</div>
+        <div class="col-xs-8 dataValue" tabindex="0" id="typeDisplayName">{{typeDisplayName}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 dataLabel" tabindex="0">Category</div>
+        <div class="col-xs-8 dataValue" tabindex="0" id="categoryName">
+            {{#if categoryName}}
+                {{categoryName}}
+            {{else}}
+            <a class="sr-only">Blank</a>
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4 dataLabel" tabindex="0">Patient Class</div>
+        <div class="col-xs-8 dataValue" tabindex="0" id="patientClassName">
+            {{#if patientClassName}}
+                {{patientClassName}}
+            {{else}}
+                <a class="sr-only">Blank</a>
+            {{/if}}
+        </div>
+    </div>
+    {{#if appointmentStatus}}
+        <div class="row">
+            <div class="col-xs-4 dataLabel" tabindex="0">Appointment Status</div>
+            <div class="col-xs-8 dataValue" tabindex="0" id="appointmentStatus">{{appointmentStatus}}</div>
+        </div>
+    {{/if}}
+
+    <div class="row">
+        <div class="col-xs-4 dataLabel" tabindex="0">Location</div>
+        <div class="col-xs-8 dataValue" tabindex="0" id="locationDisplayName">
+            {{#if locationDisplayName}}
+                {{locationDisplayName}}
+            {{else}}
+                <a class="sr-only">Blank</a>
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4 dataLabel" tabindex="0">Stop Code</div>
+        <div class="col-xs-8 dataValue" tabindex="0" id="stopCodeName">
+            {{#if stopCodeName}}
+                {{stopCodeName}}
+            {{else}}
+                <a class="sr-only">Blank</a>
+            {{/if}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4 dataLabel" tabindex="0">Facility</div>
+        <div class="col-xs-8 dataValue" tabindex="0" id="facilityName">{{facilityName}}</div>
+    </div>
+
+    {{#if providers}}
+    <br/>
+    <div class="row">
+        <div tabindex="0" class="sectionHeader" id="providerSection">Providers</div>
+        {{#each providers}}
+            <div class="row">
+                {{#if primary}}
+                <div class="col-xs-4 dataLabel" tabindex="0">Primary:</div>
+                {{else}}
+                <div class="col-xs-4 dataLabel" tabindex="0">Additional Provider:</div>
+                {{/if}}
+                <div class="col-xs-8 dataValue" tabindex="0" id="providerDisplayName">{{providerDisplayName}}</div>
+            </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+
+    {{#if movements}}
+    <br/>
+    <div class="row">
+        <div tabindex="0" class="sectionHeader" id="movementSection">Movements</div>
+        {{#each movements}}
+            <div class="row">
+                <div class="col-xs-offset-4">
+                    <div class="col-xs-3 dataValue" tabindex="0" id="movementDateTime">{{formatDate dateTime}}</div>
+                    <div class="col-xs-3 dataValue" tabindex="0" id="movementLocationName">
+                        {{#if locationName}}
+                        {{locationName}}
+                        {{else}}
+                        <a class="sr-only">Blank</a>
+                        {{/if}}
+                    </div>
+                    <div class="col-xs-3 dataValue" tabindex="0" id="movementType">{{movementType}}</div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+</div>
+

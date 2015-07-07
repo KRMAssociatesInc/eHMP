@@ -1,0 +1,22 @@
+<table id='{{panelName}}' class='table table-condensed lab-panels-tooltip'>
+    <thead>
+        <tr class='row'>
+            <th>Date</th>
+            <th>Facility</th>{{#each panelCodes}}
+            	<th>{{this.display}}</th>
+        {{/each}}</tr>
+    </thead>
+    <tbody>{{#each panels}}
+        <tr class='row'>
+            <td>{{attributes.panelDate}}</td>
+            <td>{{attributes.panelFacility}}</td>
+            {{#each ../panelCodes}}<td class="result">
+	            {{#each ../attributes/results}}
+                    {{#ifExp this.attributes.typeCode '===' ../code}}
+                        <span class="{{this.attributes.interpretationFlag.class}}">{{this.attributes.result}} {{#ifExp this.attributes.interpretationFlag.name '!==' 'N'}} {{this.attributes.interpretationFlag.name}} {{/ifExp}}</span>
+                    {{/ifExp}}
+                {{/each}}
+            </td>{{/each}}
+        </tr>{{/each}}
+    </tbody>
+</table>

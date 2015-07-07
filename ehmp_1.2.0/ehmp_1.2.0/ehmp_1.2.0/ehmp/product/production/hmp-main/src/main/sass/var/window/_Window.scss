@@ -1,0 +1,48 @@
+$include-window-default-ui: false;
+
+$window-base-color: #fff !default;
+
+$window-border-radius: $border-radius-large !default;
+$window-border-width: 1px !default;
+$window-border-color: $modal-content-fallback-border-color $modal-content-fallback-border-color $modal-header-border-color $modal-content-fallback-border-color !default;
+$window-inner-border-color: $window-base-color !default;
+$window-inner-border-width: 0 !default;
+$window-background-color: $window-base-color !default;
+
+$window-body-border-width: 1px !default;
+$window-body-border-style: solid !default;
+$window-body-border-color: $window-base-color !default;
+$window-body-background-color: $window-base-color !default;
+$window-body-color: $color !default;
+
+$window-header-padding: $modal-title-padding $modal-title-padding ($modal-title-padding+$window-border-radius) $modal-title-padding !default;
+$window-header-font-size: $font-size-large !default;
+$window-header-line-height: ($window-header-font-size * 1.25) !default;
+$window-header-color: $color !default;
+$window-header-font-weight: bold;
+$window-header-border-color: $modal-header-border-color;
+
+//$window-tool-padding: $panel-tool-padding !default;
+$window-tool-margin: 2px 0px 0px 0px !default;
+// margin for tool displayed at top of vertical header
+//$window-tool-top-margin: $panel-tool-top-margin !default;
+
+$window-header-font-family: $font-family !default;
+//$window-header-text-padding: $panel-header-text-padding !default;
+//$window-header-text-transform: $panel-header-text-transform !default;
+
+$window-header-icon-width: 14px !default;
+$window-header-icon-height: 14px !default;
+//$window-header-icon-margin: $panel-header-icon-margin !default;
+
+//$window-header-border-width: 1px !default;
+//$window-header-inner-border-color: red !default;
+//$window-header-inner-border-width: 1px !default;
+
+// ghost window
+//$window-ghost-opacity: $panel-ghost-opacity !default;
+
+// footer
+$window-footer-padding: $modal-title-padding;
+$window-footer-border-color: $modal-footer-border-color;
+$window-footer-background-color: $panel-footer-bg;

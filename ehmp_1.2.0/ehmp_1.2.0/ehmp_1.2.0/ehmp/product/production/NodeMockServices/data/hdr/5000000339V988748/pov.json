@@ -1,0 +1,27 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "HDR",
+    "systemId": "HDR"
+  },
+  "data": {
+    "updated": "20140409083854",
+    "totalItems": 1,
+    "items": [
+      {
+        "encounterName": "CECELIA\u0027S CLINIC Dec 01, 1997",
+        "encounterUid": "urn:va:visit:ABCD:85:927",
+        "entered": 199712010800,
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "icdCode": "urn:icd:721.2",
+        "localId": 158,
+        "locationName": "CECELIA\u0027S CLINIC",
+        "locationUid": "urn:va:location:ABCD:273",
+        "name": "THORACIC SPONDYLOSIS WITHOUT MYELOPATHY",
+        "type": "P",
+        "uid": "urn:va:pov:ABCD:85:158"
+      }
+    ]
+  }
+}

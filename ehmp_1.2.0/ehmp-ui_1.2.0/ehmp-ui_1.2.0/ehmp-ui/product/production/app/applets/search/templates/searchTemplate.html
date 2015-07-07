@@ -1,0 +1,64 @@
+<div id="search-applet-main" class="col-sm-12">
+
+    <div id="search-result-header" class="row">
+
+        <div class="grid-filter-daterange col-sm-12">
+            <form class="form-inline">
+                <div id="search-results-message" class="col-sm-1">
+                    <b id="numberOfResults">0</b>&nbsp;results
+                </div>
+                <div class="pull-right">
+                    <button id="all-range-text-search" name="all-range-search-record" type="button" class="daterange btn btn-xs default-range active-range" tabindex="0" title="All range">All</button>
+                    <button id="2yr-range-text-search" name="2yr-range-search-record" type="button" class="daterange btn btn-xs default-range" tabindex="0" title="2 years range">
+                        <span class="sr-only">2 years date range.</span>2yr</button>
+                    <button id="1yr-range-text-search" name="1yr-range-search-record" type="button" class="daterange btn btn-xs default-range" tabindex="0" title="1 year range">
+                        <span class="sr-only">1 year date range.</span>1yr</button>
+                    <button id="3mo-range-text-search" name="3mo-range-search-record" type="button" class="daterange btn btn-xs default-range" tabindex="0" title="3 months range">
+                        <span class="sr-only">3 months date range.</span>3mo</button>
+                    <button id="1mo-range-text-search" name="1mo-range-search-record" type="button" class="daterange btn btn-xs default-range" tabindex="0" title="1 month range">
+                        <span class="sr-only">1 month date range.</span>1mo</button>
+                    <button id="7d-range-text-search" name="7d-range-search-record" type="button" class="daterange btn btn-xs default-range" tabindex="0" title="7 days range">
+                        <span class="sr-only">7 days date range.</span>7d</button>
+                    <button id="72hr-range-text-search" name="72hr-range-search-record" type="button" class="daterange btn btn-xs default-range" tabindex="0" title="72 hours range">
+                        <span class="sr-only">72 hours date range.</span>72hr</button>
+                    <button id="24hr-range-text-search" name="24hr-range-search-record" type="button" class="daterange btn btn-xs default-range" tabindex="0" title="24 hours range">
+                        <span class="sr-only">24 hours date range.</span>24hr</button>
+
+                    &nbsp;
+
+                    <div class="input-group date" id="custom-date-range1-search-record">
+                        <input type="text" autocomplete="off" class="form-control input-sm" id="fromDateText" name="filter-from-date-search-record" size="11" title="Enter or pick the first custom range date." tabindex="0">
+                        <span id="fromCalendar" class="input-group-addon"><i class="fa fa-calendar"></i>
+                        </span>
+                    </div>
+
+                    <span class="add-on">to</span>&nbsp;
+
+                    <div class="input-group date" id="custom-date-range2-search-record">
+                        <input type="text" autocomplete="off" class="form-control input-sm" id="toDateText" name="filter-to-date-search-record" size="11" title="Enter or pick the second custom range date." tabindex="0">
+                        <span id="toCalendar" class="input-group-addon"><i class="fa fa-calendar"></i>
+                        </span>
+                    </div>
+
+                    &nbsp;
+                    <button id="custom-range-apply" name="custom-range-apply-search-record" type="button" class="btn btn-sm btn-default" title="Appy custom date range filtering." tabindex="0" disabled="">Apply</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="searchResultsArea" class="row">
+        <div class="col-sm-12"><p>Search is still under development and may not return all expected results. Please review the patient record manually to ensure accuracy.</p></div>
+        <div id="searchSpinner" class="col-sm-12">
+            <h5>
+                <i class="fa fa-spinner fa-spin"></i>
+                Loading...
+            </h5>
+        </div>
+        <div id="searchResults" class="col-sm-12 panel-group"></div>
+
+    </div>
+
+    <!-- </nav> -->
+
+
+</div>

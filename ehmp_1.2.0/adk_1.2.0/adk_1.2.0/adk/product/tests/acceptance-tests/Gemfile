@@ -1,0 +1,13 @@
+source 'http://rubygems.org'
+
+gem 'rake'
+gem 'rspec'
+gem 'cucumber'
+gem 'selenium-webdriver'
+gem 'rubocop',    			  '=0.18.1'
+gem 'phantomjs'
+gem 'httparty'
+gem 'jsonpath'
+
+gem 'fog',                    '=1.21.0'
+gem 'macaddr',                '=1.6.7'

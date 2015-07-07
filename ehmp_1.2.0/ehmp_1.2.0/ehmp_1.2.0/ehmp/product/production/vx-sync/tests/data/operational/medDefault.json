@@ -1,0 +1,1300 @@
+{
+	"apiVersion": "1.01",
+	"data": {
+		"updated": "20140917201001",
+		"currentItemCount": 259,
+		"totalItems": 259,
+		"last": 273,
+		"items": [{
+			"abbreviation": "PO",
+			"externalName": "MOUTH",
+			"internal": 1,
+			"name": "ORAL (BY MOUTH)",
+			"uid": "urn:va:route::1"
+		}, {
+			"abbreviation": "SL",
+			"externalName": "UNDER THE TONGUE",
+			"internal": 2,
+			"name": "SUBLINGUAL",
+			"uid": "urn:va:route::2"
+		}, {
+			"abbreviation": "BUCC",
+			"externalName": "CHEEK AND GUM UNTIL DISSOLVED",
+			"internal": 3,
+			"name": "BUCCAL",
+			"uid": "urn:va:route::3"
+		}, {
+			"abbreviation": "NG",
+			"internal": 4,
+			"name": "NG TUBE",
+			"uid": "urn:va:route::4"
+		}, {
+			"internal": 5,
+			"name": "J TUBE",
+			"uid": "urn:va:route::5"
+		}, {
+			"internal": 6,
+			"name": "G TUBE",
+			"uid": "urn:va:route::6"
+		}, {
+			"internal": 8,
+			"name": "TRACH",
+			"uid": "urn:va:route::8"
+		}, {
+			"abbreviation": "RTL",
+			"externalName": "RECTUM",
+			"internal": 9,
+			"name": "RECTAL",
+			"uid": "urn:va:route::9"
+		}, {
+			"abbreviation": "VAG",
+			"externalName": "VAGINA",
+			"internal": 10,
+			"name": "VAGINAL",
+			"uid": "urn:va:route::10"
+		}, {
+			"internal": 11,
+			"name": "CATHETER",
+			"uid": "urn:va:route::11"
+		}, {
+			"abbreviation": "GLUG",
+			"internal": 12,
+			"name": "GARGLE",
+			"uid": "urn:va:route::12"
+		}, {
+			"abbreviation": "IRRG",
+			"internal": 13,
+			"name": "IRRIGATION",
+			"uid": "urn:va:route::13"
+		}, {
+			"abbreviation": "IV",
+			"internal": 14,
+			"name": "INTRAVENOUS",
+			"uid": "urn:va:route::14"
+		}, {
+			"abbreviation": "IM",
+			"internal": 15,
+			"name": "INTRAMUSCULAR",
+			"uid": "urn:va:route::15"
+		}, {
+			"internal": 16,
+			"name": "DEEP IM",
+			"uid": "urn:va:route::16"
+		}, {
+			"abbreviation": "SC",
+			"internal": 17,
+			"name": "SUBCUTANEOUS",
+			"uid": "urn:va:route::17"
+		}, {
+			"abbreviation": "ID",
+			"internal": 18,
+			"name": "INTRADERMAL",
+			"uid": "urn:va:route::18"
+		}, {
+			"abbreviation": "INTH",
+			"internal": 19,
+			"name": "INTRATHECAL",
+			"uid": "urn:va:route::19"
+		}, {
+			"abbreviation": "OD",
+			"externalName": "RIGHT EYE",
+			"internal": 20,
+			"name": "RIGHT EYE",
+			"uid": "urn:va:route::20"
+		}, {
+			"abbreviation": "OS",
+			"internal": 21,
+			"name": "LEFT EYE",
+			"uid": "urn:va:route::21"
+		}, {
+			"abbreviation": "OU",
+			"internal": 22,
+			"name": "BOTH EYES",
+			"uid": "urn:va:route::22"
+		}, {
+			"abbreviation": "AD",
+			"internal": 23,
+			"name": "RIGHT EAR",
+			"uid": "urn:va:route::23"
+		}, {
+			"abbreviation": "AS",
+			"externalName": "LEFT EAR",
+			"internal": 24,
+			"name": "LEFT EAR",
+			"uid": "urn:va:route::24"
+		}, {
+			"abbreviation": "AU",
+			"internal": 25,
+			"name": "BOTH EARS",
+			"uid": "urn:va:route::25"
+		}, {
+			"abbreviation": "TOP",
+			"externalName": "AFFECTED AREA",
+			"internal": 26,
+			"name": "TOPICAL",
+			"uid": "urn:va:route::26"
+		}, {
+			"abbreviation": "CAUD",
+			"internal": 27,
+			"name": "CAUDAL BLOCK",
+			"uid": "urn:va:route::27"
+		}, {
+			"abbreviation": "DENT",
+			"internal": 28,
+			"name": "DENTAL",
+			"uid": "urn:va:route::28"
+		}, {
+			"abbreviation": "ED",
+			"internal": 29,
+			"name": "EPIDURAL",
+			"uid": "urn:va:route::29"
+		}, {
+			"abbreviation": "PO",
+			"externalName": "BY MOUTH",
+			"internal": 30,
+			"name": "ORAL",
+			"uid": "urn:va:route::30"
+		}, {
+			"abbreviation": "IF",
+			"internal": 31,
+			"name": "INFILTRATION",
+			"uid": "urn:va:route::31"
+		}, {
+			"abbreviation": "INHL",
+			"externalName": "INHALATION",
+			"internal": 32,
+			"name": "INHALATION",
+			"uid": "urn:va:route::32"
+		}, {
+			"abbreviation": "IAM",
+			"internal": 33,
+			"name": "INTRA-AMNIOTIC",
+			"uid": "urn:va:route::33"
+		}, {
+			"abbreviation": "IA",
+			"internal": 34,
+			"name": "INTRA-ARTICULAR",
+			"uid": "urn:va:route::34"
+		}, {
+			"abbreviation": "IAER",
+			"internal": 35,
+			"name": "INTRA-ARTERIAL",
+			"uid": "urn:va:route::35"
+		}, {
+			"abbreviation": "INBU",
+			"internal": 36,
+			"name": "INTRABURSAL",
+			"uid": "urn:va:route::36"
+		}, {
+			"abbreviation": "IC",
+			"internal": 37,
+			"name": "INTRACARDIAC",
+			"uid": "urn:va:route::37"
+		}, {
+			"abbreviation": "ICAV",
+			"internal": 38,
+			"name": "INTRACAVITY",
+			"uid": "urn:va:route::38"
+		}, {
+			"abbreviation": "INF",
+			"internal": 39,
+			"name": "INTRAFOLLICULAR",
+			"uid": "urn:va:route::39"
+		}, {
+			"abbreviation": "IO",
+			"internal": 40,
+			"name": "INTRAOCULAR",
+			"uid": "urn:va:route::40"
+		}, {
+			"abbreviation": "IP",
+			"internal": 41,
+			"name": "INTRAPERITONEAL",
+			"uid": "urn:va:route::41"
+		}, {
+			"abbreviation": "IS",
+			"internal": 42,
+			"name": "INTRASPINAL",
+			"uid": "urn:va:route::42"
+		}, {
+			"abbreviation": "ISY",
+			"internal": 43,
+			"name": "INTRASYNOVIAL",
+			"uid": "urn:va:route::43"
+		}, {
+			"abbreviation": "IT",
+			"internal": 44,
+			"name": "INTRATHORACIC",
+			"uid": "urn:va:route::44"
+		}, {
+			"abbreviation": "ITRC",
+			"internal": 45,
+			"name": "INTRATRACHEAL",
+			"uid": "urn:va:route::45"
+		}, {
+			"abbreviation": "IU",
+			"internal": 46,
+			"name": "INTRAUTERINE",
+			"uid": "urn:va:route::46"
+		}, {
+			"abbreviation": "MISC",
+			"internal": 47,
+			"name": "MISCELLANEOUS",
+			"uid": "urn:va:route::47"
+		}, {
+			"abbreviation": "OPH",
+			"internal": 48,
+			"name": "OPTHALMIC",
+			"uid": "urn:va:route::48"
+		}, {
+			"abbreviation": "OTIC",
+			"internal": 49,
+			"name": "OTIC",
+			"uid": "urn:va:route::49"
+		}, {
+			"abbreviation": "PER",
+			"internal": 50,
+			"name": "PERCUTANEOUS",
+			"uid": "urn:va:route::50"
+		}, {
+			"abbreviation": "RBUL",
+			"internal": 51,
+			"name": "RETROBULBAR",
+			"uid": "urn:va:route::51"
+		}, {
+			"abbreviation": "URH",
+			"internal": 52,
+			"name": "URTHRAL",
+			"uid": "urn:va:route::52"
+		}, {
+			"abbreviation": "NO",
+			"internal": 53,
+			"name": "NOSE",
+			"uid": "urn:va:route::53"
+		}, {
+			"abbreviation": "IRRGTOP",
+			"internal": 54,
+			"name": "IRRIGATION TOPICAL",
+			"uid": "urn:va:route::54"
+		}, {
+			"abbreviation": "IS IM",
+			"internal": 55,
+			"name": "INTRASPINAL INTRAMUSCULAR",
+			"uid": "urn:va:route::55"
+		}, {
+			"abbreviation": "ISY IA IM",
+			"internal": 56,
+			"name": "INTRASYNOVIAL INTRA-ARTICULAR INTRAMUSCULAR",
+			"uid": "urn:va:route::56"
+		}, {
+			"abbreviation": "ISY MISCIM",
+			"internal": 57,
+			"name": "INTRASYNOVIAL MISC INTRAMUSCULAR",
+			"uid": "urn:va:route::57"
+		}, {
+			"abbreviation": "ISY ORALIM",
+			"internal": 58,
+			"name": "INTRASYNOVIAL ORAL INTRAMUSCULAR",
+			"uid": "urn:va:route::58"
+		}, {
+			"abbreviation": "IV IAER",
+			"internal": 59,
+			"name": "INTRAVENOUS INTRA-ARTERIAL",
+			"uid": "urn:va:route::59"
+		}, {
+			"abbreviation": "IV IAERIC",
+			"internal": 60,
+			"name": "INTRAVENOUS INTRA-ARTERIAL INTRACARDIAC",
+			"uid": "urn:va:route::60"
+		}, {
+			"abbreviation": "IV IM",
+			"internal": 61,
+			"name": "INTRAVENOUS INTRAMUSCULAR",
+			"uid": "urn:va:route::61"
+		}, {
+			"abbreviation": "IV IM ITRC",
+			"internal": 62,
+			"name": "INTRAVENOUS INTRAMUSCULAR INTRATRACHEAL",
+			"uid": "urn:va:route::62"
+		}, {
+			"abbreviation": "IV IM SC",
+			"internal": 63,
+			"name": "INTRAVENOUS INTRAMUSCULAR SUBCUTANEOUS",
+			"uid": "urn:va:route::63"
+		}, {
+			"abbreviation": "IV INH MISC",
+			"internal": 64,
+			"name": "INTRAVENOUS INH MISC",
+			"uid": "urn:va:route::64"
+		}, {
+			"abbreviation": "IV MISC",
+			"internal": 65,
+			"name": "INTRAVENOUS MISCELLANEOUS",
+			"uid": "urn:va:route::65"
+		}, {
+			"abbreviation": "IV ORAL",
+			"internal": 66,
+			"name": "INTRAVENOUS ORAL",
+			"uid": "urn:va:route::66"
+		}, {
+			"abbreviation": "IV ORALVAG",
+			"internal": 67,
+			"name": "INTRAVENOUS ORAL VAGINAL",
+			"uid": "urn:va:route::67"
+		}, {
+			"abbreviation": "IV SC",
+			"internal": 68,
+			"name": "INTRAVENOUS SUBCUTANEOUS",
+			"uid": "urn:va:route::68"
+		}, {
+			"abbreviation": "IV SC IM",
+			"internal": 69,
+			"name": "INTRAVENOUS SUBCUTANEOUS INTRAMUSCULAR",
+			"uid": "urn:va:route::69"
+		}, {
+			"abbreviation": "IV TOP",
+			"internal": 70,
+			"name": "INTRAVENOUS TOPICAL",
+			"uid": "urn:va:route::70"
+		}, {
+			"abbreviation": "MISCIM ISY",
+			"internal": 71,
+			"name": "MISCELLANEOUS INTRAMUSCULAR INTRASYNOVIAL",
+			"uid": "urn:va:route::71"
+		}, {
+			"abbreviation": "MISCIM IV",
+			"internal": 72,
+			"name": "MISCELLANEOUS INTRAMUSCULAR INTRAVENOUS",
+			"uid": "urn:va:route::72"
+		}, {
+			"abbreviation": "MISCORAL",
+			"internal": 73,
+			"name": "MISCELLANEOUS ORAL",
+			"uid": "urn:va:route::73"
+		}, {
+			"abbreviation": "MISCTOP",
+			"internal": 74,
+			"name": "MISCELLANEOUS TOPICAL",
+			"uid": "urn:va:route::74"
+		}, {
+			"abbreviation": "MISCTOP IF",
+			"internal": 75,
+			"name": "MISCELLANEOUS TOPICAL INFILTRATION",
+			"uid": "urn:va:route::75"
+		}, {
+			"abbreviation": "NAS ORAL",
+			"internal": 76,
+			"name": "NASAL ORAL",
+			"uid": "urn:va:route::76"
+		}, {
+			"abbreviation": "OPH TOP",
+			"internal": 77,
+			"name": "OPHTHALMIC TOPICAL",
+			"uid": "urn:va:route::77"
+		}, {
+			"abbreviation": "ORALID PER",
+			"internal": 78,
+			"name": "ORAL INTRADERMAL PERIOSTEAL",
+			"uid": "urn:va:route::78"
+		}, {
+			"abbreviation": "ORALIM",
+			"internal": 79,
+			"name": "ORAL INTRAMUSCULAR",
+			"uid": "urn:va:route::79"
+		}, {
+			"abbreviation": "ORALINHL",
+			"internal": 80,
+			"name": "ORAL INHALATION",
+			"uid": "urn:va:route::80"
+		}, {
+			"abbreviation": "ORALIV",
+			"internal": 81,
+			"name": "ORAL INTRAVENOUS",
+			"uid": "urn:va:route::81"
+		}, {
+			"abbreviation": "ORALMISCIM",
+			"internal": 82,
+			"name": "ORAL MISC INTRAMUSCULAR",
+			"uid": "urn:va:route::82"
+		}, {
+			"abbreviation": "ORALRTL",
+			"internal": 83,
+			"name": "ORAL RECTAL",
+			"uid": "urn:va:route::83"
+		}, {
+			"abbreviation": "ORALSL",
+			"internal": 84,
+			"name": "ORAL SUBLINGUAL",
+			"uid": "urn:va:route::84"
+		}, {
+			"abbreviation": "ORALTOP DENT",
+			"internal": 85,
+			"name": "ORAL TOPICAL DENTRAL",
+			"uid": "urn:va:route::85"
+		}, {
+			"abbreviation": "OTICIO",
+			"internal": 86,
+			"name": "OTIC INTRAOCULAR",
+			"uid": "urn:va:route::86"
+		}, {
+			"abbreviation": "RBULCAUDIF",
+			"internal": 87,
+			"name": "RETROBULAR CAUDAL INFILTRATION",
+			"uid": "urn:va:route::87"
+		}, {
+			"abbreviation": "RTL ORAL",
+			"internal": 88,
+			"name": "RECTAL ORAL",
+			"uid": "urn:va:route::88"
+		}, {
+			"abbreviation": "RTL TOP",
+			"internal": 89,
+			"name": "RECTAL TOPICAL",
+			"uid": "urn:va:route::89"
+		}, {
+			"abbreviation": "SC ED CAUD",
+			"internal": 90,
+			"name": "SUBCUTANEOUS EPIDURAL CAUDAL",
+			"uid": "urn:va:route::90"
+		}, {
+			"abbreviation": "SC ID",
+			"internal": 91,
+			"name": "SUBCUTANEOUS INTRADERMAL",
+			"uid": "urn:va:route::91"
+		}, {
+			"abbreviation": "SC ID IM",
+			"internal": 92,
+			"name": "SUBCUTANEOUS INTRADERMAL INTRAMUSCULAR",
+			"uid": "urn:va:route::92"
+		}, {
+			"abbreviation": "SC IM",
+			"internal": 93,
+			"name": "SUBCUTANEOUS INTRAMUSCULAR",
+			"uid": "urn:va:route::93"
+		}, {
+			"abbreviation": "SC IM ID",
+			"internal": 94,
+			"name": "SUBCUTANEOUS INTRAMUSCULAR INTRADERMAL",
+			"uid": "urn:va:route::94"
+		}, {
+			"abbreviation": "SC IM IV",
+			"internal": 95,
+			"name": "SUBCUTANEOUS INTRAMUSCULAR INTRAVENOUS",
+			"uid": "urn:va:route::95"
+		}, {
+			"abbreviation": "SC IV",
+			"internal": 96,
+			"name": "SUBCUTANEOUS INTRAVENOUS",
+			"uid": "urn:va:route::96"
+		}, {
+			"abbreviation": "SC IV IM",
+			"internal": 97,
+			"name": "SUBCUTANEOUS INTRAVENOUS INTRAMUSCULAR",
+			"uid": "urn:va:route::97"
+		}, {
+			"abbreviation": "SC MISC",
+			"internal": 98,
+			"name": "SUBCUTANEOUS MISCELLANEOUS",
+			"uid": "urn:va:route::98"
+		}, {
+			"abbreviation": "SC TOP ORAL",
+			"internal": 99,
+			"name": "SUBCUTANEOUS TOPICAL ORAL",
+			"uid": "urn:va:route::99"
+		}, {
+			"abbreviation": "TOP BUCC",
+			"internal": 100,
+			"name": "TOPICAL BUCCAL",
+			"uid": "urn:va:route::100"
+		}, {
+			"abbreviation": "TOP DENT",
+			"internal": 101,
+			"name": "TOPICAL DENTAL",
+			"uid": "urn:va:route::101"
+		}, {
+			"abbreviation": "TOP IF MISC",
+			"internal": 102,
+			"name": "TOPICAL INFILTRATION MISC",
+			"uid": "urn:va:route::102"
+		}, {
+			"abbreviation": "TOP MISC",
+			"internal": 103,
+			"name": "TOPICAL MISCELLANEOUS",
+			"uid": "urn:va:route::103"
+		}, {
+			"abbreviation": "TOP MISCIF",
+			"internal": 104,
+			"name": "TOPICAL MISCELLANEOUS INFILTRATION",
+			"uid": "urn:va:route::104"
+		}, {
+			"abbreviation": "TOP OPH",
+			"internal": 105,
+			"name": "TOPICAL OPHTHALMIC",
+			"uid": "urn:va:route::105"
+		}, {
+			"abbreviation": "TOP SC MISC",
+			"internal": 106,
+			"name": "TOPICAL SUBCUTANEOUS MISCELLANEOUS",
+			"uid": "urn:va:route::106"
+		}, {
+			"abbreviation": "TOP URH OTIC",
+			"internal": 107,
+			"name": "TOPICAL URETHRAL OTIC",
+			"uid": "urn:va:route::107"
+		}, {
+			"abbreviation": "TOP VAG RTL",
+			"internal": 108,
+			"name": "TOPICAL VAGINAL RECTAL",
+			"uid": "urn:va:route::108"
+		}, {
+			"abbreviation": "URH IRRGICAV",
+			"internal": 109,
+			"name": "URETHRAL IRRIGATION INTRACAVITY",
+			"uid": "urn:va:route::109"
+		}, {
+			"abbreviation": "URH IV IAER",
+			"internal": 110,
+			"name": "URETHRAL INTRAVENOUS INTRA-ARTERIAL",
+			"uid": "urn:va:route::110"
+		}, {
+			"abbreviation": "VAG TOP",
+			"internal": 111,
+			"name": "VAGINAL TOPICAL",
+			"uid": "urn:va:route::111"
+		}, {
+			"abbreviation": "BUCCORAL",
+			"internal": 112,
+			"name": "BUCCAL ORAL",
+			"uid": "urn:va:route::112"
+		}, {
+			"abbreviation": "BUCCSL",
+			"internal": 113,
+			"name": "BUCCAL SUBLINGUAL",
+			"uid": "urn:va:route::113"
+		}, {
+			"abbreviation": "CAUDED",
+			"internal": 114,
+			"name": "CAUDAL EPIDURAL",
+			"uid": "urn:va:route::114"
+		}, {
+			"abbreviation": "DENTIF",
+			"internal": 115,
+			"name": "DENTAL INFILTRATION",
+			"uid": "urn:va:route::115"
+		}, {
+			"abbreviation": "DENTALIM",
+			"internal": 116,
+			"name": "DENTAL INTRAMUSCULAR",
+			"uid": "urn:va:route::116"
+		}, {
+			"abbreviation": "DENTORAL",
+			"internal": 117,
+			"name": "DENTAL ORAL",
+			"uid": "urn:va:route::117"
+		}, {
+			"abbreviation": "DENTORALTOP",
+			"internal": 118,
+			"name": "DENTAL ORAL TOPICAL",
+			"uid": "urn:va:route::118"
+		}, {
+			"abbreviation": "DENTTOP",
+			"internal": 119,
+			"name": "DENTAL TOPICAL",
+			"uid": "urn:va:route::119"
+		}, {
+			"abbreviation": "ED CAUDSC",
+			"internal": 120,
+			"name": "EPIDURAL CAUDAL SUBCUTANEOUS",
+			"uid": "urn:va:route::120"
+		}, {
+			"abbreviation": "ED IF CAUD",
+			"internal": 121,
+			"name": "EPIDURAL INFILTRATION CAUDAL",
+			"uid": "urn:va:route::121"
+		}, {
+			"abbreviation": "IA IM",
+			"internal": 122,
+			"name": "INTRA-ARTICULAR INTRAMUSCULAR",
+			"uid": "urn:va:route::122"
+		}, {
+			"abbreviation": "IA IM IV",
+			"internal": 123,
+			"name": "INTRA-ARTICULAR INTRAMUSCULAR INTRAVENOUS",
+			"uid": "urn:va:route::123"
+		}, {
+			"abbreviation": "IA ISY IM",
+			"internal": 124,
+			"name": "INTRA-ARTICULAR INTRASYNOVIAL INTRAMUSCULAR",
+			"uid": "urn:va:route::124"
+		}, {
+			"abbreviation": "IC IA IV",
+			"internal": 125,
+			"name": "INTRACARDIAC INTRA-ARTICULAR INTRAVENOUS",
+			"uid": "urn:va:route::125"
+		}, {
+			"abbreviation": "ICAVINTHMISC",
+			"internal": 126,
+			"name": "INTRACAVITY INTHATHECAL MISCELLANEOUS",
+			"uid": "urn:va:route::126"
+		}, {
+			"abbreviation": "ID IM",
+			"internal": 127,
+			"name": "INTRADERMAL INTRAMUSCULAR",
+			"uid": "urn:va:route::127"
+		}, {
+			"abbreviation": "ID IM SC",
+			"internal": 128,
+			"name": "INTRADERMAL INTRAMUSCULAR SUBCUTANEOUS",
+			"uid": "urn:va:route::128"
+		}, {
+			"abbreviation": "ID SC",
+			"internal": 129,
+			"name": "INTRADERMAL SUBCUTANEOUS",
+			"uid": "urn:va:route::129"
+		}, {
+			"abbreviation": "IF DEN",
+			"internal": 130,
+			"name": "INFILTRATION DENTAL",
+			"uid": "urn:va:route::130"
+		}, {
+			"abbreviation": "IF ED CAUD",
+			"internal": 131,
+			"name": "INFILTRATION EPIDURAL CAUDAL",
+			"uid": "urn:va:route::131"
+		}, {
+			"abbreviation": "IF TOP MISC",
+			"internal": 132,
+			"name": "INFILTRATION TOPICAL MISCELLANEOUS",
+			"uid": "urn:va:route::132"
+		}, {
+			"abbreviation": "IM IA",
+			"internal": 133,
+			"name": "INTRAMUSCULAR INTRA-ARTICULAR",
+			"uid": "urn:va:route::133"
+		}, {
+			"abbreviation": "IM IA ISY",
+			"internal": 134,
+			"name": "INTRAMUSCULAR INTRA-ARTICULAR INTRASYNOVIAL",
+			"uid": "urn:va:route::134"
+		}, {
+			"abbreviation": "IM ID IA",
+			"internal": 135,
+			"name": "INTRAMUSCULAR INTRADERMAL INTRA-ARTICULAR",
+			"uid": "urn:va:route::135"
+		}, {
+			"abbreviation": "IM ID SC",
+			"internal": 136,
+			"name": "INTRAMUSCULAR INTRADERMAL SUBCUTANEOUS",
+			"uid": "urn:va:route::136"
+		}, {
+			"abbreviation": "IM INHL",
+			"internal": 137,
+			"name": "INTRAMUSCULAR INHALATION",
+			"uid": "urn:va:route::137"
+		}, {
+			"abbreviation": "IM ISY",
+			"internal": 138,
+			"name": "INTRAMUSCULAR INTRASYNOVIAL",
+			"uid": "urn:va:route::138"
+		}, {
+			"abbreviation": "IM ISY MISC",
+			"internal": 139,
+			"name": "INTRAMUSCULAR INTRASYNOVIAL MISC",
+			"uid": "urn:va:route::139"
+		}, {
+			"abbreviation": "IM ISY SC",
+			"internal": 140,
+			"name": "INTRAMUSCULAR INTRASYNOVIAL SUBCUTANEOUS",
+			"uid": "urn:va:route::140"
+		}, {
+			"abbreviation": "IM IV",
+			"internal": 141,
+			"name": "INTRAMUSCULAR INTRAVENOUS",
+			"uid": "urn:va:route::141"
+		}, {
+			"abbreviation": "IM IV IA",
+			"internal": 142,
+			"name": "INTRAMUSCULAR INTRAVENOUS INTRA-ARTICULAR",
+			"uid": "urn:va:route::142"
+		}, {
+			"abbreviation": "IM IV ID",
+			"internal": 143,
+			"name": "INTRAMUSCULAR INTRAVENOUS INTRADERMAL",
+			"uid": "urn:va:route::143"
+		}, {
+			"abbreviation": "IM IN IP",
+			"internal": 144,
+			"name": "INTRAMUSCULAR INTRAVENOUS INTRAPERITONEAL",
+			"uid": "urn:va:route::144"
+		}, {
+			"abbreviation": "IM IV SC",
+			"internal": 145,
+			"name": "INTRAMUSCULAR INTRAVENOUS SUBCUTANEOUS",
+			"uid": "urn:va:route::145"
+		}, {
+			"abbreviation": "IM SC",
+			"internal": 146,
+			"name": "INTRAMUSCULAR SUBCUTANEOUS",
+			"uid": "urn:va:route::146"
+		}, {
+			"abbreviation": "IM SC ID",
+			"internal": 147,
+			"name": "INTRAMUSCULAR SUBCUTANEOUS INTRADERMAL",
+			"uid": "urn:va:route::147"
+		}, {
+			"abbreviation": "IM SC IV",
+			"internal": 148,
+			"name": "INTRAMUSCULAR SUBCUTANEOUS INTRAVENOUS",
+			"uid": "urn:va:route::148"
+		}, {
+			"abbreviation": "IM SC MISC",
+			"internal": 149,
+			"name": "INTRAMUSCULAR SUBCUTANEOUS MISC",
+			"uid": "urn:va:route::149"
+		}, {
+			"abbreviation": "INH NAS",
+			"internal": 150,
+			"name": "INHALATION NASAL",
+			"uid": "urn:va:route::150"
+		}, {
+			"abbreviation": "INHLIRRG",
+			"internal": 151,
+			"name": "INHALATION IRRIGATION",
+			"uid": "urn:va:route::151"
+		}, {
+			"abbreviation": "INHLIV",
+			"internal": 152,
+			"name": "INHALATION INTRAVENOUS",
+			"uid": "urn:va:route::152"
+		}, {
+			"abbreviation": "INHLMISC",
+			"internal": 153,
+			"name": "INHALATION MISCELLANEOUS",
+			"uid": "urn:va:route::153"
+		}, {
+			"abbreviation": "INTHIM IV",
+			"internal": 154,
+			"name": "INTRATHECAL INTRAMUSCULAR INTRAVENOUS",
+			"uid": "urn:va:route::154"
+		}, {
+			"abbreviation": "INTHIS",
+			"internal": 155,
+			"name": "INTRATHECAL INTRASPINAL",
+			"uid": "urn:va:route::155"
+		}, {
+			"abbreviation": "IP IRRG",
+			"internal": 156,
+			"name": "INTRAPERITONEAL IRRIGATION",
+			"uid": "urn:va:route::156"
+		}, {
+			"abbreviation": "IRRGINHL",
+			"internal": 157,
+			"name": "IRRIGATION INHALATION",
+			"uid": "urn:va:route::157"
+		}, {
+			"abbreviation": "URH",
+			"internal": 158,
+			"name": "URETHRAL",
+			"uid": "urn:va:route::158"
+		}, {
+			"abbreviation": "IMP",
+			"internal": 159,
+			"name": "IMPLANT",
+			"uid": "urn:va:route::159"
+		}, {
+			"abbreviation": "IVPB",
+			"internal": 160,
+			"name": "IV PIGGYBACK",
+			"uid": "urn:va:route::160"
+		}, {
+			"abbreviation": "OPH",
+			"internal": 161,
+			"name": "OPHTHALMIC",
+			"uid": "urn:va:route::161"
+		}, {
+			"abbreviation": "IV INH MISC",
+			"internal": 162,
+			"name": "INTRAVENOUS INHALATION MISCELLANEOUS",
+			"uid": "urn:va:route::162"
+		}, {
+			"abbreviation": "ORALMISCIM",
+			"internal": 163,
+			"name": "ORAL MISCELLANEOUS INTRAMUSCULAR",
+			"uid": "urn:va:route::163"
+		}, {
+			"abbreviation": "RBULCAUDIF",
+			"internal": 164,
+			"name": "RETROBULBAR CAUDAL INFILTRATION",
+			"uid": "urn:va:route::164"
+		}, {
+			"abbreviation": "ICAVINTHMISC",
+			"internal": 165,
+			"name": "INTRACAVITY INTRATHECAL MISCELLANEOUS",
+			"uid": "urn:va:route::165"
+		}, {
+			"abbreviation": "IM ISY MISC",
+			"internal": 166,
+			"name": "INTRAMUSCULAR INTRASYNOVIAL MISCELLANEOUS",
+			"uid": "urn:va:route::166"
+		}, {
+			"abbreviation": "IM IV IP",
+			"internal": 167,
+			"name": "INTRAMUSCULAR INTRAVENOUS INTRAPERITONEAL",
+			"uid": "urn:va:route::167"
+		}, {
+			"abbreviation": "IM SC MISC",
+			"internal": 168,
+			"name": "INTRAMUSCULAR SUBCUTANEOUS MISCELLANEOUS",
+			"uid": "urn:va:route::168"
+		}, {
+			"abbreviation": "IV SC INTH",
+			"internal": 169,
+			"name": "INTRAVENOUS SUBCUTANEOUS INTRATHECAL",
+			"uid": "urn:va:route::169"
+		}, {
+			"abbreviation": "TRANSDERMAL",
+			"internal": 170,
+			"name": "TRANSDERMAL",
+			"uid": "urn:va:route::170"
+		}, {
+			"internal": 171,
+			"name": "BLOOD TEST",
+			"uid": "urn:va:route::171"
+		}, {
+			"abbreviation": "BUCCDENTIF",
+			"internal": 172,
+			"name": "BUCCAL DENTAL INFILTRATION",
+			"uid": "urn:va:route::172"
+		}, {
+			"abbreviation": "CAUDED MISC",
+			"internal": 173,
+			"name": "CAUDAL EPIDURAL MISCELLANEOUS",
+			"uid": "urn:va:route::173"
+		}, {
+			"abbreviation": "CAUDSC IF",
+			"internal": 174,
+			"name": "CAUDAL SUBCUTANEOUS INFILTRATION",
+			"uid": "urn:va:route::174"
+		}, {
+			"abbreviation": "DENTSC",
+			"internal": 175,
+			"name": "DENTAL SUBCUTANEOUS",
+			"uid": "urn:va:route::175"
+		}, {
+			"abbreviation": "DENTSC IF",
+			"internal": 176,
+			"name": "DENTAL SUBCUTANEOUS INFILTRATION",
+			"uid": "urn:va:route::176"
+		}, {
+			"abbreviation": "DENTTOP BUCC",
+			"internal": 177,
+			"name": "DENTAL TOPICAL BUCCAL",
+			"uid": "urn:va:route::177"
+		}, {
+			"abbreviation": "ED IF IV",
+			"internal": 178,
+			"name": "EPIDURAL INFILTRATION INTRAVENOUS",
+			"uid": "urn:va:route::178"
+		}, {
+			"abbreviation": "ED INTH",
+			"internal": 179,
+			"name": "EPIDURAL INTRATHECAL",
+			"uid": "urn:va:route::179"
+		}, {
+			"abbreviation": "ED IS IF",
+			"internal": 180,
+			"name": "EPIDURAL INTRASPINAL INFILTRATION",
+			"uid": "urn:va:route::180"
+		}, {
+			"abbreviation": "ED RBUL",
+			"internal": 181,
+			"name": "EPIDURAL RETROBULBAR",
+			"uid": "urn:va:route::181"
+		}, {
+			"abbreviation": "ED SC IF",
+			"internal": 182,
+			"name": "EPIDURAL SUBCUTANEOUS INFILTRATION",
+			"uid": "urn:va:route::182"
+		}, {
+			"abbreviation": "IA ID",
+			"internal": 183,
+			"name": "INTRA-ARTICULAR INTRADERMAL",
+			"uid": "urn:va:route::183"
+		}, {
+			"abbreviation": "IA IM MISC",
+			"internal": 184,
+			"name": "INTRA-ARTICULAR INTRAMUSCULAR MISCELLANEOUS",
+			"uid": "urn:va:route::184"
+		}, {
+			"abbreviation": "IA IM IL",
+			"internal": 185,
+			"name": "INTRA-ARTICULAR INTRAMUSCULAR INTRALESIONAL",
+			"uid": "urn:va:route::185"
+		}, {
+			"abbreviation": "IA IM SC",
+			"internal": 186,
+			"name": "INTRA-ARTICULAR INTRAMUSCULAR SUBCUTANEOUS",
+			"uid": "urn:va:route::186"
+		}, {
+			"abbreviation": "IA ISY",
+			"internal": 187,
+			"name": "INTRA-ARTICULAR INTRASYNOVIAL",
+			"uid": "urn:va:route::187"
+		}, {
+			"abbreviation": "IA ISY ID",
+			"internal": 188,
+			"name": "INTRA-ARTICULAR INTRASYNOVIAL INTRADERMAL",
+			"uid": "urn:va:route::188"
+		}, {
+			"abbreviation": "IA MISC",
+			"internal": 189,
+			"name": "INTRA-ARTICULAR MISCELLANEOUS",
+			"uid": "urn:va:route::189"
+		}, {
+			"abbreviation": "IAERIV ICAV",
+			"internal": 190,
+			"name": "INTRA-ARTERIAL INTRAVENOUS INTRACAVITY",
+			"uid": "urn:va:route::190"
+		}, {
+			"abbreviation": "IAERIV IM",
+			"internal": 191,
+			"name": "INTRA-ARTERIAL INTRAVENOUS INTRAMUSCULAR",
+			"uid": "urn:va:route::191"
+		}, {
+			"abbreviation": "IAERIV SC",
+			"internal": 192,
+			"name": "INTRA-ARTERIAL INTRAVENOUS SUBCUTANEOUS",
+			"uid": "urn:va:route::192"
+		}, {
+			"abbreviation": "IC IM IV",
+			"internal": 193,
+			"name": "INTRACARDIAC INTRAMUSCULAR INTRAVENOUS",
+			"uid": "urn:va:route::193"
+		}, {
+			"abbreviation": "IC IV",
+			"internal": 194,
+			"name": "INTRACARDIAC INTRAVENOUS",
+			"uid": "urn:va:route::194"
+		}, {
+			"abbreviation": "IC SC IM",
+			"internal": 195,
+			"name": "INTRACARDIAC SUBCUTANEOUS INTRAMUSCULAR",
+			"uid": "urn:va:route::195"
+		}, {
+			"abbreviation": "ICLGIA IM",
+			"internal": 196,
+			"name": "INTRACARTILAGIN INTRA-ARTICULAR INTRAMUSCULAR",
+			"uid": "urn:va:route::196"
+		}, {
+			"abbreviation": "IF CAUD",
+			"internal": 197,
+			"name": "INFILTRATION CAUDAL",
+			"uid": "urn:va:route::197"
+		}, {
+			"abbreviation": "IF ED",
+			"internal": 198,
+			"name": "INFILTRATION EPIDURAL",
+			"uid": "urn:va:route::198"
+		}, {
+			"abbreviation": "IF ED IM",
+			"internal": 199,
+			"name": "INFILTRATION EPIDURAL INTRAMUSCULAR",
+			"uid": "urn:va:route::199"
+		}, {
+			"abbreviation": "IF IM",
+			"internal": 200,
+			"name": "INFILTRATION INTRAMUSCULAR",
+			"uid": "urn:va:route::200"
+		}, {
+			"abbreviation": "IF IV",
+			"internal": 201,
+			"name": "INFILTRATION INTRAVENOUS",
+			"uid": "urn:va:route::201"
+		}, {
+			"abbreviation": "IF MISC",
+			"internal": 202,
+			"name": "INFILTRATION MISCELLANEOUS",
+			"uid": "urn:va:route::202"
+		}, {
+			"abbreviation": "IF MISCIM",
+			"internal": 203,
+			"name": "INFILTRATION MISCELLANEOUS INTRAMUSCULAR",
+			"uid": "urn:va:route::203"
+		}, {
+			"abbreviation": "IF MISCSC",
+			"internal": 204,
+			"name": "INFILTRATION MISCELLANEOUS SUBCUTANEOUS",
+			"uid": "urn:va:route::204"
+		}, {
+			"abbreviation": "IF SC",
+			"internal": 205,
+			"name": "INFILTRATION SUBCUTANEOUS",
+			"uid": "urn:va:route::205"
+		}, {
+			"abbreviation": "IF SC IM",
+			"internal": 206,
+			"name": "INFILTRATION SUBCUTANEOUS INTRAMUSCULAR",
+			"uid": "urn:va:route::206"
+		}, {
+			"abbreviation": "IM IA ISY ID",
+			"internal": 207,
+			"name": "IM INTRA-ARTICULAR INTRASYNOVIAL INTRADERMAL",
+			"uid": "urn:va:route::207"
+		}, {
+			"abbreviation": "IM ICAVISY",
+			"internal": 208,
+			"name": "INTRAMUSCULAR INTRACAVITY INTRASYNOVIAL",
+			"uid": "urn:va:route::208"
+		}, {
+			"abbreviation": "IM ISY INTH",
+			"internal": 209,
+			"name": "INTRAMUSCULAR INTRASYNOVIAL INTRATHECAL",
+			"uid": "urn:va:route::209"
+		}, {
+			"abbreviation": "IM ISY IV",
+			"internal": 210,
+			"name": "INTRAMUSCULAR INTRASYNOVIAL INTRAVENOUS",
+			"uid": "urn:va:route::210"
+		}, {
+			"abbreviation": "IM IV IAER INTH",
+			"internal": 211,
+			"name": "IM INTRAVENOUS INTRA-ARTERIAL INTRATHECAL",
+			"uid": "urn:va:route::211"
+		}, {
+			"abbreviation": "IM IV IU",
+			"internal": 212,
+			"name": "INTRAMUSCULAR INTRAVENOUS INTRAUTERINE",
+			"uid": "urn:va:route::212"
+		}, {
+			"abbreviation": "IM MISC",
+			"internal": 213,
+			"name": "INTRAMUSCULAR MISCELLANEOUS",
+			"uid": "urn:va:route::213"
+		}, {
+			"internal": 214,
+			"name": "IN VITRO",
+			"uid": "urn:va:route::214"
+		}, {
+			"abbreviation": "IM SC IU",
+			"internal": 215,
+			"name": "INTRAMUSCULAR SUBCUTANEOUS INTRAUTERINE",
+			"uid": "urn:va:route::215"
+		}, {
+			"abbreviation": "INHL ORAL",
+			"internal": 216,
+			"name": "INHALATION ORAL",
+			"uid": "urn:va:route::216"
+		}, {
+			"abbreviation": "INTHIV",
+			"internal": 217,
+			"name": "INTRATHECAL INTRAVENOUS",
+			"uid": "urn:va:route::217"
+		}, {
+			"internal": 218,
+			"name": "INTRADISCAL",
+			"uid": "urn:va:route::218"
+		}, {
+			"internal": 219,
+			"name": "INTRALESIONAL",
+			"uid": "urn:va:route::219"
+		}, {
+			"internal": 220,
+			"name": "INTRAVASCULAR",
+			"uid": "urn:va:route::220"
+		}, {
+			"abbreviation": "IRRG OPH",
+			"internal": 221,
+			"name": "IRRIGATION OPHTHALMIC",
+			"uid": "urn:va:route::221"
+		}, {
+			"abbreviation": "IRRGOPH NAS",
+			"internal": 222,
+			"name": "IRRIGATION OPHTHALMIC NASAL",
+			"uid": "urn:va:route::222"
+		}, {
+			"abbreviation": "IS IL IM",
+			"internal": 223,
+			"name": "INTRASPINAL INTRALESIONAL INTRAMUSCULAR",
+			"uid": "urn:va:route::223"
+		}, {
+			"abbreviation": "ISY IC IM",
+			"internal": 224,
+			"name": "INTRASYNOVIAL INTRACARDIAC INTRAMUSCULAR",
+			"uid": "urn:va:route::224"
+		}, {
+			"abbreviation": "ISY MISCIA",
+			"internal": 225,
+			"name": "INTRASYNOVIAL MISCELLANOUS INTRA-ARTICULAR",
+			"uid": "urn:va:route::225"
+		}, {
+			"abbreviation": "IV IA",
+			"internal": 226,
+			"name": "INTRAVENOUS INTRA-ARTICULAR",
+			"uid": "urn:va:route::226"
+		}, {
+			"abbreviation": "IV IAERIA",
+			"internal": 227,
+			"name": "INTRAVENOUS INTRA-ARTERIAL INTRA-ARTICULAR",
+			"uid": "urn:va:route::227"
+		}, {
+			"abbreviation": "IV ID SC",
+			"internal": 228,
+			"name": "INTRAVENOUS INTRADERMAL SUBCUTANEOUS",
+			"uid": "urn:va:route::228"
+		}, {
+			"abbreviation": "IV IF MISC",
+			"internal": 229,
+			"name": "INTRAVENOUS INFILTRATION MISCELLANEOUS",
+			"uid": "urn:va:route::229"
+		}, {
+			"abbreviation": "NASAL",
+			"internal": 230,
+			"name": "NASAL",
+			"uid": "urn:va:route::230"
+		}, {
+			"abbreviation": "SQ",
+			"internal": 231,
+			"name": "SUBCUTANEOUS",
+			"uid": "urn:va:route::231"
+		}, {
+			"abbreviation": "IV INTHED",
+			"internal": 232,
+			"name": "INTRAVENOUS INTRATHECAL EPIDURAL",
+			"uid": "urn:va:route::232"
+		}, {
+			"abbreviation": "IV IP",
+			"internal": 233,
+			"name": "INTRAVENOUS INTRAPERITONEAL",
+			"uid": "urn:va:route::233"
+		}, {
+			"abbreviation": "IT IV IA",
+			"internal": 234,
+			"name": "INTRATHORACIC INTRAVENOUS INTRA-ARTICULAR",
+			"uid": "urn:va:route::234"
+		}, {
+			"abbreviation": "IV IU",
+			"internal": 235,
+			"name": "INTRAVENOUS INTRAUTERINE",
+			"uid": "urn:va:route::235"
+		}, {
+			"abbreviation": "IV MISCTOP",
+			"internal": 236,
+			"name": "INTRAVENOUS MISCELLANEOUS TOPICAL",
+			"uid": "urn:va:route::236"
+		}, {
+			"abbreviation": "IV ORALURH",
+			"internal": 237,
+			"name": "INTRAVENOUS ORAL URETHRAL",
+			"uid": "urn:va:route::237"
+		}, {
+			"abbreviation": "URH",
+			"internal": 238,
+			"name": "URETHAL",
+			"uid": "urn:va:route::238"
+		}, {
+			"abbreviation": "SC MISCTOP",
+			"internal": 239,
+			"name": "SUBCUTANEOUS MISCELLANEOUS TOPICAL",
+			"uid": "urn:va:route::239"
+		}, {
+			"abbreviation": "MISCDENT",
+			"internal": 240,
+			"name": "MISCELLANEOUS DENTAL",
+			"uid": "urn:va:route::240"
+		}, {
+			"abbreviation": "MISCIV SC",
+			"internal": 244,
+			"name": "MISCELLANEOUS INTRAVENOUS SUBCUTANEOUS",
+			"uid": "urn:va:route::244"
+		}, {
+			"abbreviation": "MISCSC IS",
+			"internal": 246,
+			"name": "MISCELLANEOUS SUBCUTANEOUS INTRASPINAL",
+			"uid": "urn:va:route::246"
+		}, {
+			"abbreviation": "MISCURH",
+			"internal": 247,
+			"name": "MISCELLANEOUS URETHRAL",
+			"uid": "urn:va:route::247"
+		}, {
+			"abbreviation": "OPH OTIC",
+			"internal": 248,
+			"name": "OPHTHALMIC OTIC",
+			"uid": "urn:va:route::248"
+		}, {
+			"abbreviation": "ORAL TOP",
+			"internal": 249,
+			"name": "ORAL TOPICAL",
+			"uid": "urn:va:route::249"
+		}, {
+			"abbreviation": "ORAL VAG",
+			"internal": 250,
+			"name": "ORAL VAGINAL",
+			"uid": "urn:va:route::250"
+		}, {
+			"abbreviation": "SC IA",
+			"internal": 254,
+			"name": "SUBCUTANEOUS INTRA-ARTICULAR",
+			"uid": "urn:va:route::254"
+		}, {
+			"abbreviation": "TOP ICAV",
+			"internal": 260,
+			"name": "TOPICAL INTRACAVITY",
+			"uid": "urn:va:route::260"
+		}, {
+			"abbreviation": "TOP URH",
+			"internal": 262,
+			"name": "TOPICAL URETHRAL",
+			"uid": "urn:va:route::262"
+		}, {
+			"internal": 263,
+			"name": "URINE TEST",
+			"uid": "urn:va:route::263"
+		}, {
+			"internal": 264,
+			"name": "URINE\/BLOOD TEST",
+			"uid": "urn:va:route::264"
+		}, {
+			"abbreviation": "IM PO SC",
+			"internal": 265,
+			"name": "INTRAMUSCULAR ORAL SUBCUTANEOUS",
+			"uid": "urn:va:route::265"
+		}, {
+			"internal": 266,
+			"name": "INTRAVESICAL",
+			"uid": "urn:va:route::266"
+		}, {
+			"abbreviation": "PO SC",
+			"internal": 267,
+			"name": "ORAL\/SUBCUTANEOUS",
+			"uid": "urn:va:route::267"
+		}, {
+			"internal": 268,
+			"name": "INTRAPLEURAL",
+			"uid": "urn:va:route::268"
+		}, {
+			"internal": 269,
+			"name": "BY MOUTH",
+			"uid": "urn:va:route::269"
+		}, {
+			"abbreviation": "IVP",
+			"externalName": "IV PUSH",
+			"internal": 270,
+			"name": "IV PUSH",
+			"uid": "urn:va:route::270",
+			"useInIV": true
+		}, {
+			"internal": 271,
+			"name": "PO\/IM",
+			"uid": "urn:va:route::271"
+		}, {
+			"internal": 272,
+			"name": "INTRAVITREAL",
+			"uid": "urn:va:route::272"
+		}, {
+			"abbreviation": "TST",
+			"internal": 273,
+			"name": "TESTING",
+			"uid": "urn:va:route::273"
+		}]
+	}
+}

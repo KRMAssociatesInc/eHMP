@@ -1,0 +1,33 @@
+description = 'CPE Health-Time Hibernate Support'
+//description = '''To ease the integration of CPE DateTimes and Hibernate. It aims to provide the classes necessary to
+//    persist PointInTime and IntervalOfTime objects.'''
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+group = 'gov.va.hmp'
+version = '2.0.23'
+
+dependencies {
+    compile project(':production:health-time:health-time-core')
+	compile "org.hibernate:hibernate-core:${versions.hibernateCoreVersion}"
+	testCompile "junit:junit:${versions.junitVersion}"
+	testRuntime "org.slf4j:slf4j-nop:${versions.slf4jVersion}"
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'CPE Health-Time Hibernate Support'
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'gov.va.hmp'
+            artifactId 'health-time-hibernate'
+            version '2.0.23'
+
+            from components.java
+        }
+    }
+}

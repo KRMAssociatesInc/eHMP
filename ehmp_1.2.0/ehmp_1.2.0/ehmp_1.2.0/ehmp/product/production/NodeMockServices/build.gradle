@@ -1,0 +1,27 @@
+ext.set('repo', 'releases')
+ext.set('groupId', 'us.vistacore.ehmp')
+ext.set('artifactId', 'NodeMockServices')
+
+task cleanNpm(type: Exec) {
+  group "NodeMockServices Tasks"
+  description "clean package(s)"
+  commandLine  '/bin/bash', '-l', '-c', "npm prune"
+}
+
+task installNpm(type: Exec, dependsOn: [cleanNpm]) {
+  group "NodeMockServices Tasks"
+  description "installs package(s)"
+  commandLine  '/bin/bash', '-l', '-c', "npm install"
+}
+
+task zipNodeMockServices(type: Zip, dependsOn: [installNpm]) {
+  extension = 'zip'
+  baseName = 'nodeMockServices'
+  version = version
+  destinationDir parent.parent.buildDir
+  from projectDir
+}
+
+artifacts {
+  archives zipNodeMockServices
+}

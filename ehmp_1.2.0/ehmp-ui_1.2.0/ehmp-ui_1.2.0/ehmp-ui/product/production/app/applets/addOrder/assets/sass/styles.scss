@@ -1,0 +1,114 @@
+.add-medication-styles {
+
+	.col-md-1 .gutter {
+		padding-top: 26px;
+	}
+	.gutter {
+		padding-right: 0px;
+	}
+
+	.row-buffer {
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+
+	.normal-font-weight {
+		font-weight:normal;
+	}
+
+	.full-width {
+		width: 100%;
+	}
+
+	.help-inline {
+        position: absolute;
+        left: 0px;
+        bottom: -1.5em;
+	}
+
+	.resize-vertical {
+		resize: vertical;
+	}
+
+	#meds-search-result-item-container a.list-group-item {
+	  border: 0px;
+	  color: #428bc8;
+	}
+
+	.meds-search-scrolling-container {
+	  max-height:70vh;
+	  min-height:70vh;
+	  overflow-y:scroll;
+	}
+
+
+	.break-word {
+		word-wrap: break-word;
+	}
+
+	#search-scroll {
+	  max-height:60vh;
+	  min-height:60vh;
+	  overflow:scroll;
+	}
+
+	.horizontal_line {
+      border-top: 1px solid #e5e5e5;
+	}
+
+	.list-group-item:hover,
+	.list-group-item:focus {
+	  color: #fff;
+	  background-color: #3D5157;
+	  background-image: none;
+	  text-decoration: none;
+	  text-shadow: none;
+	  border: none;
+	  -moz-box-shadow: none;
+	  -webkit-box-shadow: none;
+	  box-shadow: none;
+	}
+
+	/*vertical increment & decrement button selectors*/
+	
+	.spinner {
+	    width: 10px;
+	}
+	.btn-vertical {
+	    position: relative;
+	    white-space: nowrap;
+	    vertical-align: middle;
+	    text-align: center;
+	    display: table-cell;
+	}
+	.btn-vertical > .btn {
+	    display: block;
+	    width: 15px;
+	    padding: 8px;
+	    position: relative;
+	    text-align: center;
+	    border-radius: 0;
+	}
+	.btn-vertical > .btn:first-child {
+	    border-top-right-radius: 4px;
+	    border-top-left-radius: 4px;
+	}
+	.btn-vertical > .btn:last-child {
+	    margin-top: -2px;
+	    border-bottom-right-radius: 4px;
+	    border-bottom-left-radius: 4px;
+	}
+	.btn-vertical i {
+	    position: absolute;
+	    top: 0;
+	    left: 4px;
+	}
+	.btn-spacing {
+	    margin-left: -17px;
+	}
+
+}
+
+.text-exclamation-warning {
+		color: #FFCC00;
+}

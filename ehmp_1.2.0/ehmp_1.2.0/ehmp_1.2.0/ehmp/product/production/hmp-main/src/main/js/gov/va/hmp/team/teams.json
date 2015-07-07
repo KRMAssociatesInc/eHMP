@@ -1,0 +1,81 @@
+{
+    "data":{
+        "totalItems":7,
+        "items":[
+            {
+                "displayName":"Ward 9C Blue Team",
+                "staff":[
+                    {
+                        "positionName":"Nurse (RN)",
+                        "positionUid":"",
+                        "personUid":null,
+                        "personName":null
+                    },
+                    {
+                        "positionName":"Nurse (LPN)",
+                        "positionUid":"",
+                        "personUid":null,
+                        "personName":null
+                    },
+                    {
+                        "positionName":"Nursing Assistant (NA)",
+                        "positionUid":"",
+                        "personUid":null,
+                        "personName":null
+                    },
+                    {
+                        "positionName":"Social Worker",
+                        "positionUid":"",
+                        "personUid":null,
+                        "personName":null
+                    }
+                ],
+                "rosterId":5,
+                "ownerName":"AVIVAUSER,THIRTYTHREE",
+            },
+            {
+                "displayName":"Red Team",
+                "staff":[
+                ],
+                "rosterId":15,
+                "ownerName":"VEHU,ELEVEN",
+            },
+            {
+                "displayName":"OEF OIF Team",
+                "staff":[
+                    {
+                        "positionName":"OIF OEF Clinical Case Manager",
+                        "personUid":null
+                    }
+                ],
+                "ownerName":"VEHU,TEN",
+                "rosterId":15
+            },
+            {
+                "displayName":"Primary Care Team 1",
+                "staff":[
+                ],
+                "ownerName":"VEHU,TEN",
+                "rosterId":15
+            },
+            {
+                "displayName":"Primary Care Team 2",
+                "staff":[
+                ],
+                "ownerName":"VEHU,TEN"
+            },
+            {
+                "displayName":"Primary Care Team 3",
+                "staff":[
+                ],
+                "ownerName":"VEHU,TEN"
+            },
+            {
+                "displayName":"Mental Health Team",
+                "staff":[
+                ],
+                "ownerName":"AVIVAUSER,THIRTYTHREE",
+            }
+        ]
+    }
+}

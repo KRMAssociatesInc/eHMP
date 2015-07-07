@@ -1,0 +1,108 @@
+{
+    "address":[
+        {
+            "city":"Any Town",
+            "zip":"99998-0071",
+            "state":"WEST VIRGINIA",
+            "line1":"Any Street"
+        }
+    ],
+    "alias":[
+        {
+            "fullName":"P4"
+        }
+    ],
+    "briefId":"A0004",
+    "birthDate":"19350407",
+    "ethnicity":[
+        {
+            "code": "9999-4",
+            "summary": "PatientEthnicity{uid='null'}"
+        }
+    ],
+    "exposure":[
+        {
+            "name":"No",
+            "uid":"urn:va:N"
+        },
+        {
+            "name":"No",
+            "uid":"urn:va:N"
+        },
+        {
+            "name":"No",
+            "uid":"urn:va:N"
+        },
+        {
+            "name":"Unknown",
+            "uid":"urn:va:U"
+        },
+        {
+            "name":"Unknown",
+            "uid":"urn:va:U"
+        },
+        {
+            "name":"No",
+            "uid":"urn:va:N"
+        }
+    ],
+    "facility":[
+        {
+            "code":500,
+            "homeSite":false,
+            "latestDate":20110701,
+            "localPatientId":229,
+            "name":"CAMP MASTER",
+            "systemId":"F484"
+        }
+    ],
+    "familyName":"AVIVAPATIENT",
+    "patientRecordFlag":[
+        {
+            "name":"WANDERER",
+            "text":"patient has a history of wandering off and getting lost"
+        }
+    ],
+    "genderCode":"urn:va:pat-gender:M",
+    "genderName":"Male",
+    "givenNames":"TWENTYFOUR",
+    "icn":10104,
+    "localId":229,
+    "maritalStatusCode": "urn:va:pat-maritalStatus:D",
+    "maritalStatusName": "Divorced",
+    "race": [
+        {
+            "code": "2054-5",
+            "summary": "PatientRace{uid='null'}"
+        }
+    ],
+    "religionCode":"urn:va:pat-religion:4",
+    "religionName":"METHODIST",
+    "sensitive":true,
+    "ssn":666000004,
+    "contact":[
+        {
+            "typeCode":"urn:va:pat-contact:NOK",
+            "typeName":"Next of Kin",
+            "name":"VETERAN,BROTHER"
+        }
+    ],
+    "telecom":[
+        {
+            "value":"(222)555-8235",
+            "use":"H"
+        },
+        {
+            "value":"(222)555-7720",
+            "use":"WP"
+        }
+    ],
+    "uid":"urn:va:patient:F484:229:229",
+    "veteran": true,
+    "lrdfn":"177",
+    "serviceConnected":true,
+    "serviceConnectedPercent":10
+
+
+
+}

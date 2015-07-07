@@ -1,0 +1,5 @@
+<div class="demographic-group-header">Email</div>
+<div class="demographic-group-content">
+{{#if email.diff}}<div id="demo-email" class="demographic-header text-muted"><span>&nbsp;</span><span> <i class="fa fa-exclamation-circle demographic-subgroup-icon"></i></span><span class="sr-only">Discrepancies found</span></div>{{/if}}
+	<div id="demo-email-val" class='demographic-data' data-diff="{{email.diff}}">{{email.email.value}}&nbsp;</div>
+</div>

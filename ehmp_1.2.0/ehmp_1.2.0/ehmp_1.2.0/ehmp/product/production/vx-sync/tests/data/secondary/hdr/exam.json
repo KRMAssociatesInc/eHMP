@@ -1,0 +1,26 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "HDR",
+    "systemId": "HDR"
+  },
+  "data": {
+    "updated": "20140409083858",
+    "totalItems": 1,
+    "items": [
+      {
+        "encounterName": "19 LINDA\u0027S FUNNY CLINIC Jan 15, 1998",
+        "encounterUid": "urn:va:visit:ABCD:34:1075",
+        "entered": 199801150800,
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "localId": 2,
+        "locationName": "19 LINDA\u0027S FUNNY CLINIC",
+        "locationUid": "urn:va:location:ABCD:169",
+        "name": "NECK EXAM",
+        "result": "NORMAL",
+        "uid": "urn:va:exam:ABCD:34:2"
+      }
+    ]
+  }
+}

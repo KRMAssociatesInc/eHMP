@@ -1,0 +1,78 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "Street": "Any Street",
+        "SocialSecurityNumber": "666000116",
+        "Rank": "",
+        "SponsorRank": "",
+        "EnteredBy": "",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "",
+        "LastName": "ONEHUNDREDSIXTEEN",
+        "CustodianName": "ahlta",
+        "Fmp": "",
+        "FirstName": "PATIENT",
+        "BranchOfService": "",
+        "MaritalStatus": "Divorced",
+        "CountryCode": "",
+        "Street2": "",
+        "SponsorSsn": "",
+        "Sex": "M",
+        "Uic": "",
+        "Suffix": "",
+        "Religion": "Unknown",
+        "Race": "Unknown Race",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EdiPn": "D1606222536",
+        "PhoneNumber": "",
+        "OtherIdentifier": "",
+        "Country": "",
+        "City": "SAN DIEGO",
+        "DeersEligibility": "",
+        "DateOfBirth": "19350407000000",
+        "UnitNumber": "894085",
+        "AreaCode": "",
+        "MiddleName": "",
+        "County": "",
+        "State": "CA",
+        "Email": "",
+        "SponsorUic": "",
+        "PostCode": "92131",
+        "Facility": "",
+        "LoincCode": "52536-0",
+        "SponsorBranchOfService": "",
+        "AddressType": "Home Address",
+        "LocalNumber": "",
+        "PatientCategory": "K61 - Department of Defense (DoD)/Veterans Administration (VA) Sharing Agreement",
+        "EnrollmentFacility": "",
+        "EventId": "1000000850"
+      },
+      "dataType": 13
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

@@ -1,0 +1,1259 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "CustodianName": "ahlta",
+        "Comments": "",
+        "VitalsResults": [
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Pulse taking",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "80",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "364075005",
+            "Ncid": "2051",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001528"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Pulse taking",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "80",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "364075005",
+            "Ncid": "2051",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001529"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Smoking Status Now Observation",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "No",
+            "TestUnitsCode": "",
+            "TestUnits": "",
+            "Modifiers": [
+              {
+                "Value": "Standing",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001530"
+              },
+              {
+                "Value": "Standing",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001531"
+              }
+            ],
+            "TestCode": "",
+            "Ncid": "1604139",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001532"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "98",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+              {
+                "Value": "Standing",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001533"
+              }
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001534"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "98",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001535"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Pulse taking",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "65",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+              {
+                "Value": "Standing",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001536"
+              },
+              {
+                "Value": "Sitting",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001537"
+              }
+            ],
+            "TestCode": "364075005",
+            "Ncid": "2051",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001538"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Pulse taking",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "65",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "364075005",
+            "Ncid": "2051",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001539"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, diastolic (BPD),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "70",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+              {
+                "Value": "Sitting",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001540"
+              },
+              {
+                "Value": "Sitting",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001541"
+              }
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001542"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, diastolic (BPD),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "70",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001543"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "120",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+              {
+                "Value": "Sitting",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001544"
+              },
+              {
+                "Value": "Sitting",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001545"
+              }
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001546"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "120",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001547"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Pulse taking",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "60",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+              {
+                "Value": "Sitting",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001548"
+              },
+              {
+                "Value": "Supine",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001549"
+              }
+            ],
+            "TestCode": "364075005",
+            "Ncid": "2051",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001550"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Pulse taking",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "60",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "364075005",
+            "Ncid": "2051",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001551"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, diastolic (BPD),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "63",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+              {
+                "Value": "Supine",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001552"
+              },
+              {
+                "Value": "Supine",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001553"
+              }
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001554"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, diastolic (BPD),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "63",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001555"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "117",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+              {
+                "Value": "Supine",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001556"
+              },
+              {
+                "Value": "Supine",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001557"
+              }
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001558"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "117",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001559"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Respiratory rate (breaths)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "24",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+              {
+                "Value": "Supine",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001560"
+              }
+            ],
+            "TestCode": "86290005",
+            "Ncid": "2124",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001561"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Temperature (body temperature)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "100.5",
+            "TestUnitsCode": "258712004",
+            "TestUnits": "F",
+            "Modifiers": [
+              {
+                "Value": "38.055556",
+                "UnitsCode": "258710007",
+                "Units": "C",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001562"
+              }
+            ],
+            "TestCode": "386725007",
+            "Ncid": "2154",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001563"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Weight (body weight)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "125",
+            "TestUnitsCode": "258693003",
+            "TestUnits": "lb",
+            "Modifiers": [
+              {
+                "Value": "0",
+                "UnitsCode": "258682000",
+                "Units": "gm",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001564"
+              }
+            ],
+            "TestCode": "27113001",
+            "Ncid": "2178",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001565"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Patient's height value",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "5' 6''",
+            "TestUnitsCode": "",
+            "TestUnits": "yd",
+            "Modifiers": [
+              {
+                "Value": "457.2",
+                "UnitsCode": "258672001",
+                "Units": "cm",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001566"
+              }
+            ],
+            "TestCode": "50373000",
+            "Ncid": "110675",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001567"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Pain Severity Scale",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "3/10",
+            "TestUnitsCode": "",
+            "TestUnits": "Clinical Workstation",
+            "Modifiers": [
+
+            ],
+            "TestCode": "405161002",
+            "Ncid": "959595",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001568"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Pain Scale Comment",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "overall body aches",
+            "TestUnitsCode": "",
+            "TestUnits": "Clinical Workstation",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "959596",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001569"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "No",
+            "TestUnitsCode": "",
+            "TestUnits": "",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "959598",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001570"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, diastolic (BPD),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "58",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+              {
+                "Value": "Standing",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001571"
+              }
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001572"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, diastolic (BPD),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717180926",
+            "TestValue": "58",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717180926",
+            "CollectionMethod": "",
+            "StartTime": "20070717180926",
+            "UniqueId": "1000001573"
+          }
+        ],
+        "VitalsId": "23569766",
+        "EncounterNumber": "SEYJ-2268",
+        "Facility": "4th Medical Group/0090",
+        "EnteredBy": "SERVER, LEGACY GATEWAY",
+        "LoincCode": "8716-3",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20070717185136",
+        "OtherIdentifier": "",
+        "EventId": "1000001574"
+      },
+      "dataType": 4
+    },
+    {
+      "dataRecord": {
+        "CustodianName": "ahlta",
+        "Comments": "",
+        "VitalsResults": [
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, diastolic (BPD),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717175212",
+            "TestValue": "88",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717175212",
+            "CollectionMethod": "",
+            "StartTime": "20070717175212",
+            "UniqueId": "1000001575"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717175212",
+            "TestValue": "122",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+              {
+                "Value": "Standing",
+                "UnitsCode": "",
+                "Units": "",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "Patient Position",
+                "EventId": "1000001576"
+              }
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717175212",
+            "CollectionMethod": "",
+            "StartTime": "20070717175212",
+            "UniqueId": "1000001577"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Pulse taking",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717175212",
+            "TestValue": "80",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "364075005",
+            "Ncid": "2051",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717175212",
+            "CollectionMethod": "",
+            "StartTime": "20070717175212",
+            "UniqueId": "1000001578"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Respiratory rate (breaths)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717175212",
+            "TestValue": "18",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "86290005",
+            "Ncid": "2124",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717175212",
+            "CollectionMethod": "",
+            "StartTime": "20070717175212",
+            "UniqueId": "1000001579"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Temperature (body temperature)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717175212",
+            "TestValue": "101.2",
+            "TestUnitsCode": "258712004",
+            "TestUnits": "F",
+            "Modifiers": [
+              {
+                "Value": "38.444444",
+                "UnitsCode": "258710007",
+                "Units": "C",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001580"
+              }
+            ],
+            "TestCode": "386725007",
+            "Ncid": "2154",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717175212",
+            "CollectionMethod": "",
+            "StartTime": "20070717175212",
+            "UniqueId": "1000001581"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Smoking Status Now Observation",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717175212",
+            "TestValue": "No",
+            "TestUnitsCode": "",
+            "TestUnits": "",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "1604139",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717175212",
+            "CollectionMethod": "",
+            "StartTime": "20070717175212",
+            "UniqueId": "1000001582"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Patient's height value",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717175212",
+            "TestValue": "40.9",
+            "TestUnitsCode": "258677007",
+            "TestUnits": "in",
+            "Modifiers": [
+              {
+                "Value": "103.886",
+                "UnitsCode": "258672001",
+                "Units": "cm",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001583"
+              }
+            ],
+            "TestCode": "50373000",
+            "Ncid": "110675",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717175212",
+            "CollectionMethod": "",
+            "StartTime": "20070717175212",
+            "UniqueId": "1000001584"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Pain Severity Scale",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717175212",
+            "TestValue": "4/10",
+            "TestUnitsCode": "",
+            "TestUnits": "Clinical Workstation",
+            "Modifiers": [
+
+            ],
+            "TestCode": "405161002",
+            "Ncid": "959595",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717175212",
+            "CollectionMethod": "",
+            "StartTime": "20070717175212",
+            "UniqueId": "1000001585"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Pain Scale Comment",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717175212",
+            "TestValue": "both ears",
+            "TestUnitsCode": "",
+            "TestUnits": "Clinical Workstation",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "959596",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717175212",
+            "CollectionMethod": "",
+            "StartTime": "20070717175212",
+            "UniqueId": "1000001586"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717175212",
+            "TestValue": "No",
+            "TestUnitsCode": "",
+            "TestUnits": "",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "959598",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717175212",
+            "CollectionMethod": "",
+            "StartTime": "20070717175212",
+            "UniqueId": "1000001587"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Weight (body weight)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070717175212",
+            "TestValue": "30",
+            "TestUnitsCode": "258693003",
+            "TestUnits": "lb",
+            "Modifiers": [
+              {
+                "Value": "0",
+                "UnitsCode": "258682000",
+                "Units": "gm",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001588"
+              }
+            ],
+            "TestCode": "27113001",
+            "Ncid": "2178",
+            "PerformingProvider": "LARRY, PROVIDER",
+            "EndTime": "20070717175212",
+            "CollectionMethod": "",
+            "StartTime": "20070717175212",
+            "UniqueId": "1000001589"
+          }
+        ],
+        "VitalsId": "23569708",
+        "EncounterNumber": "SEYJ-2264",
+        "Facility": "4th Medical Group/0090",
+        "EnteredBy": "SERVER, LEGACY GATEWAY",
+        "LoincCode": "8716-3",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20070717175904",
+        "OtherIdentifier": "",
+        "EventId": "1000001590"
+      },
+      "dataType": 4
+    },
+    {
+      "dataRecord": {
+        "CustodianName": "ahlta",
+        "Comments": "",
+        "VitalsResults": [
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, diastolic (BPD),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070713152703",
+            "TestValue": "80",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "DAISY, PROVIDER",
+            "EndTime": "20070713152703",
+            "CollectionMethod": "",
+            "StartTime": "20070713152703",
+            "UniqueId": "1000001591"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070713152703",
+            "TestValue": "120",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "DAISY, PROVIDER",
+            "EndTime": "20070713152703",
+            "CollectionMethod": "",
+            "StartTime": "20070713152703",
+            "UniqueId": "1000001592"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Temperature (body temperature)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070713152703",
+            "TestValue": "98",
+            "TestUnitsCode": "258712004",
+            "TestUnits": "F",
+            "Modifiers": [
+              {
+                "Value": "-17.777778",
+                "UnitsCode": "258710007",
+                "Units": "C",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001593"
+              }
+            ],
+            "TestCode": "386725007",
+            "Ncid": "2154",
+            "PerformingProvider": "DAISY, PROVIDER",
+            "EndTime": "20070713152703",
+            "CollectionMethod": "",
+            "StartTime": "20070713152703",
+            "UniqueId": "1000001594"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Smoking Status Now Observation",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070713152703",
+            "TestValue": "No",
+            "TestUnitsCode": "",
+            "TestUnits": "",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "1604139",
+            "PerformingProvider": "DAISY, PROVIDER",
+            "EndTime": "20070713152703",
+            "CollectionMethod": "",
+            "StartTime": "20070713152703",
+            "UniqueId": "1000001595"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Patient's height value",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070713152703",
+            "TestValue": "70",
+            "TestUnitsCode": "258677007",
+            "TestUnits": "in",
+            "Modifiers": [
+              {
+                "Value": "0",
+                "UnitsCode": "258672001",
+                "Units": "cm",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001596"
+              }
+            ],
+            "TestCode": "50373000",
+            "Ncid": "110675",
+            "PerformingProvider": "DAISY, PROVIDER",
+            "EndTime": "20070713152703",
+            "CollectionMethod": "",
+            "StartTime": "20070713152703",
+            "UniqueId": "1000001597"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070713152703",
+            "TestValue": "No",
+            "TestUnitsCode": "",
+            "TestUnits": "",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "959598",
+            "PerformingProvider": "DAISY, PROVIDER",
+            "EndTime": "20070713152703",
+            "CollectionMethod": "",
+            "StartTime": "20070713152703",
+            "UniqueId": "1000001598"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "SERVER, LEGACY GATEWAY",
+            "TestName": "Weight (body weight)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20070713152703",
+            "TestValue": "180",
+            "TestUnitsCode": "258693003",
+            "TestUnits": "lb",
+            "Modifiers": [
+              {
+                "Value": "0",
+                "UnitsCode": "258682000",
+                "Units": "gm",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000001599"
+              }
+            ],
+            "TestCode": "27113001",
+            "Ncid": "2178",
+            "PerformingProvider": "DAISY, PROVIDER",
+            "EndTime": "20070713152703",
+            "CollectionMethod": "",
+            "StartTime": "20070713152703",
+            "UniqueId": "1000001600"
+          }
+        ],
+        "VitalsId": "23569401",
+        "EncounterNumber": "SEYJ-2167",
+        "Facility": "4th Medical Group/0090",
+        "EnteredBy": "SERVER, LEGACY GATEWAY",
+        "LoincCode": "8716-3",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20070713175354",
+        "OtherIdentifier": "",
+        "EventId": "1000001601"
+      },
+      "dataType": 4
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

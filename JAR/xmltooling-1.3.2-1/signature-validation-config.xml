@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+            xmlns="http://www.opensaml.org/xmltooling-config">
+            
+     <!-- Validation rules for XML Signature XMLObjects-->
+    <ValidatorSuites>
+    
+        <!--  XML Signature Schema Validation Rules -->
+        <ValidatorSuite id="signature-schema-validator">
+            <Validator qualifiedName="ds:DSAKeyValue" className="org.opensaml.xml.signature.validator.DSAKeyValueSchemaValidator" />
+            <Validator qualifiedName="ds:Exponent" className="org.opensaml.xml.signature.validator.CryptoBinarySchemaValidator" />
+            <Validator qualifiedName="ds:G" className="org.opensaml.xml.signature.validator.CryptoBinarySchemaValidator" />
+            <Validator qualifiedName="ds:J" className="org.opensaml.xml.signature.validator.CryptoBinarySchemaValidator" />
+            <Validator qualifiedName="ds:KeyInfo" className="org.opensaml.xml.signature.validator.KeyInfoTypeSchemaValidator" />
+            <Validator qualifiedName="ds:KeyName" className="org.opensaml.xml.schema.validator.XSStringSchemaValidator" />
+            <Validator qualifiedName="ds:KeyValue" className="org.opensaml.xml.signature.validator.KeyValueSchemaValidator" />
+            <Validator qualifiedName="ds:MgmtData" className="org.opensaml.xml.schema.validator.XSStringSchemaValidator" />
+            <Validator qualifiedName="ds:Modulus" className="org.opensaml.xml.signature.validator.CryptoBinarySchemaValidator" />
+            <Validator qualifiedName="ds:P" className="org.opensaml.xml.signature.validator.CryptoBinarySchemaValidator" />
+            <Validator qualifiedName="ds:PgenCounter" className="org.opensaml.xml.signature.validator.CryptoBinarySchemaValidator" />
+            <Validator qualifiedName="ds:PGPData" className="org.opensaml.xml.signature.validator.PGPDataSchemaValidator" />
+            <Validator qualifiedName="ds:PGPKeyID" className="org.opensaml.xml.schema.validator.XSBase64BinarySchemaValidator" />
+            <Validator qualifiedName="ds:PGPKeyPacket" className="org.opensaml.xml.schema.validator.XSBase64BinarySchemaValidator" />
+            <Validator qualifiedName="ds:Q" className="org.opensaml.xml.signature.validator.CryptoBinarySchemaValidator" />
+            <Validator qualifiedName="ds:RetrievalMethod" className="org.opensaml.xml.signature.validator.RetrievalMethodSchemaValidator" />
+            <Validator qualifiedName="ds:RSAKeyValue" className="org.opensaml.xml.signature.validator.RSAKeyValueSchemaValidator" />
+            <Validator qualifiedName="ds:Seed" className="org.opensaml.xml.signature.validator.CryptoBinarySchemaValidator" />
+            <Validator qualifiedName="ds:Signature" className="org.opensaml.xml.signature.validator.SignatureSchemaValidator" />
+            <Validator qualifiedName="ds:SPKIData" className="org.opensaml.xml.signature.validator.SPKIDataSchemaValidator" />
+            <Validator qualifiedName="ds:SPKISexp" className="org.opensaml.xml.schema.validator.XSBase64BinarySchemaValidator" />
+            <Validator qualifiedName="ds:Transform" className="org.opensaml.xml.signature.validator.TransformSchemaValidator" />
+            <Validator qualifiedName="ds:Transforms" className="org.opensaml.xml.signature.validator.TransformsSchemaValidator" />
+            <Validator qualifiedName="ds:X509Certificate" className="org.opensaml.xml.schema.validator.XSBase64BinarySchemaValidator" />
+            <Validator qualifiedName="ds:X509CRL" className="org.opensaml.xml.schema.validator.XSBase64BinarySchemaValidator" />
+            <Validator qualifiedName="ds:X509Data" className="org.opensaml.xml.signature.validator.X509DataSchemaValidator" />
+            <Validator qualifiedName="ds:X509IssuerName" className="org.opensaml.xml.schema.validator.XSStringSchemaValidator" />
+            <Validator qualifiedName="ds:X509IssuerSerial" className="org.opensaml.xml.signature.validator.X509IssuerSerialSchemaValidator" />
+            <Validator qualifiedName="ds:X509SerialNumber" className="org.opensaml.xml.signature.validator.X509SerialNumberSchemaValidator" />
+            <Validator qualifiedName="ds:X509SKI" className="org.opensaml.xml.schema.validator.XSBase64BinarySchemaValidator" />
+            <Validator qualifiedName="ds:X509SubjectName" className="org.opensaml.xml.schema.validator.XSStringSchemaValidator" />
+            <Validator qualifiedName="ds:XPath" className="org.opensaml.xml.schema.validator.XSStringSchemaValidator" />
+            <Validator qualifiedName="ds:Y" className="org.opensaml.xml.signature.validator.CryptoBinarySchemaValidator" />
+        </ValidatorSuite>
+    
+        <!-- XML Signature Specification Validation Rules -->
+        <!--
+        <ValidatorSuite id="signature-spec-validator">
+        </ValidatorSuite>
+        -->
+        
+    </ValidatorSuites>
+ 
+</XMLTooling>

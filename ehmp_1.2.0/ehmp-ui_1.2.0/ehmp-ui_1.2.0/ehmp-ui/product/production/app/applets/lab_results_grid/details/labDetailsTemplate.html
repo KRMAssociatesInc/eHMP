@@ -1,0 +1,79 @@
+<div class="container-fluid expanded-row">
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table table-striped table-hover table-bordered" id="single-lab-result-table">
+				<tr id="lab-results-details-header" tabindex="0">
+					<th class="renderable" id="lab-results-details-observed" col-name="observed" tabindex="0"><span class="header-hover">Date</span><span></span></th>
+					<th class="renderable" id="lab-results-details-typeName" col-name="typeName" tabindex="0"><span class="header-hover">Lab Test</span><span></span></th>
+					<th class="renderable" id="lab-results-details-flag" col-name="flag" tabindex="0"><span class="header-hover">Flag</span><span></span></th>
+					<th class="renderable" id="lab-results-details-result" col-name="result" tabindex="0"><span class="header-hover">Result</span><span></span></th>
+					<th class="renderable" id="lab-results-details-unit" col-name="unit" tabindex="0"><span class="header-hover">Unit</span><span></span></th>
+					<th class="renderable" id="lab-results-details-referenceRange" col-name="referenceRange" tabindex="0"><span class="header-hover">Ref Range</span><span></span></th>
+					<th class="renderable" id="lab-results-details-facilityCode" col-name="facilityCode" tabindex="0"><span class="header-hover">Site</span><span></span></th>
+				</tr>
+				<tbody>
+					<tr tabindex="0">
+						<td class="renderable" tabindex="0">{{formatDate observed}}</td>
+						<td class="renderable" tabindex="0">{{typeName}}</td>
+						<td class="renderable" tabindex="0"><label class="label label-danger">{{interpretationCode}}</label></td>
+						<td class="renderable" tabindex="0">{{result}}</td>
+						<td class="renderable" tabindex="0">{{units}}</td>
+						<td class="renderable" tabindex="0">
+							{{#if referenceRange}}
+							{{referenceRange}}
+							{{/if}}
+							{{#if high}}
+							{{low}}-{{high}}
+						{{/if}}</td>
+						<td class="renderable" tabindex="0">{{facilityMoniker}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="panel-heading">
+				<h3 class="test-type">{{typeName}}</h3>
+				<span>Ref Range:&nbsp;
+				{{#if referenceRange}}
+				{{referenceRange}}
+				{{/if}}
+				{{#if high}}
+				{{low}}-{{high}}
+				{{/if}}
+				</span>
+			</div>
+			<table class="table table-striped table-hover table-bordered" id="historical-lab-result-table">
+				<tr id="historical-results-header" tabindex="0">
+					<th class="renderable" id="historical-results-observed" col-name="observed" tabindex="0"><span class="header-hover">Date</span><span></span></th>
+					<th class="renderable" id="historical-results-result" col-name="result" tabindex="0"><span class="header-hover">Result</span><span></span></th>
+					<th class="renderable" id="historical-results-facilityCode" col-name="facilityCode" tabindex="0"><span class="header-hover">Site</span><span></span></th>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-6 container-fluid">
+			<div id="graph-placeholder">
+				<table class="table table-hover" id="dev-table" style="border: 1px solid #ddd">
+					<thead>
+						<tr>
+							<th class="renderable">Graph</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="renderable"><img src ="" width="100%" height="150" class="pull-right"></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="table table-hover" id="dev-table" style="border: 1px solid #ddd">
+					<thead>
+						<tr>
+							<th class="renderable">Comments</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="row-fluid">
+							<td class="renderable" id="lab-results-comments-field">{{comment}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>

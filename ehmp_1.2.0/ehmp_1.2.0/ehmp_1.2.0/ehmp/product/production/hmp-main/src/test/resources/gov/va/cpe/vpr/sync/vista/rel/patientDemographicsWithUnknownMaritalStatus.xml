@@ -1,0 +1,49 @@
+<patient>
+    <address streetLine1='Any Street' city='Any Town' stateProvince='WEST VIRGINIA' postalCode='99998-0071'/>
+    <aliases>
+        <alias fullName='P46'/>
+    </aliases>
+    <bid value='F0046'/>
+    <disabilities>
+        <disability vaCode='508' printName='SCARS'/>
+        <disability vaCode='742' printName='POST-TRAUMATIC STRESS DISORDER' sc='10' scPercent='1'/>
+    </disabilities>
+    <dob value='2350407'/>
+    <facilities>
+        <facility code='500' name='CAMP MASTER' latestDate='3040126'/>
+        <facility code='998' name='ABILENE (CAA)' latestDate='3010101'/>
+        <facility code='997' name='CHARLESTON (CBB)' latestDate='3010101'/>
+        <facility code='995' name='CENTRAL CITY (CCC)' latestDate='3010101' homeSite='1'/>
+        <facility code='994' name='LUBBOCK (CDD)' latestDate='3010101'/>
+        <facility code='988' name='BOCA RATON (CEE)' latestDate='3010101'/>
+        <facility code='996' name='CHAMPAIGN (CFF)' latestDate='3010101'/>
+        <facility code='993' name='YUMA (CGG)' latestDate='3010101'/>
+        <facility code='992' name='LAREDO (CHH)' latestDate='3010101'/>
+        <facility code='989' name='PARK CITY (CII)' latestDate='3010101'/>
+        <facility code='991' name='JAMESTOWN (CJJ)' latestDate='3010101'/>
+        <facility code='990' name='SOUTH BEND (CKK)' latestDate='3010101'/>
+        <facility code='999' name='LYNCHBURG (CLL)' latestDate='3010101'/>
+        <facility code='987' name='ASPEN (CMM)' latestDate='3010101'/>
+    </facilities>
+    <familyName value='FORTYSIX'/>
+    <fullName value='FORTYSIX,PATIENT'/>
+    <gender value='M'/>
+    <givenNames value='PATIENT'/>
+    <icn value='10146'/>
+    <id value='301'/>
+    <lrdfn value='281'/>
+    <maritalStatus value='U'/>
+    <religion value='29'/>
+    <sc value='1'/>
+    <scPercent value='10'/>
+    <ssn value='666000046'/>
+    <supports>
+        <support contactType='NOK' name='VETERAN,BROTHER'>
+        </support>
+    </supports>
+    <telecomList>
+        <telecom usageType='H' value='222-555-8235'/>
+        <telecom usageType='WP' value='222-555-7720'/>
+    </telecomList>
+    <veteran value='1'/>
+</patient>

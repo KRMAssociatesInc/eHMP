@@ -1,0 +1,36 @@
+<fieldset>
+	<legend class="sr-only">Search for filter</legend>
+	<label class="sr-only" for="input-filter-search">Enter Filter</label>
+	<span class="search">&nbsp;</span>
+	<input pattern="[^\*%&\^$#\!]*" id="input-filter-search" type="search" title="Enter Filter (special characters not allowed)"
+	{{#if placeholder}}
+	placeholder="{{placeholder}}"
+	{{/if}}
+	name="{{name}}"
+	{{#if value}}
+	value="{{value}}"
+	{{/if}}
+	/>
+	<a class="clear" data-backgrid-action="clear" href="#">
+		<i class="fa fa-times"></i>
+		<span class="sr-only">Press enter to clear filter text</span>
+	</a>
+	{{#if onUserWorkspace}}
+		<button type="submit" class="filter-add btn btn-default" value="ADD">Add</button>
+	{{/if}}
+	<div class="filter-container hidden">
+		{{#if onUserWorkspace}}	
+		<div class="filter-wrapper">
+			<div class="filter-name">
+				<label for="filtername">Filter Name:</label>
+				<span class="text-left filter-title">Filtered</span>
+		 	 	<input id="filtername" class="input-mini filter-title-input hidden" type="text" maxlength="30"  />
+		 	</div>
+			<div class="remove-all-div"><a href="javascript:" title="Remove All" class="remove-all">Remove All</a></div>
+		</div>
+		<br>
+		{{/if}}
+		<div class="udaf-border"></div>
+		<div class="udaf"></div>
+	</div>
+</fieldset>

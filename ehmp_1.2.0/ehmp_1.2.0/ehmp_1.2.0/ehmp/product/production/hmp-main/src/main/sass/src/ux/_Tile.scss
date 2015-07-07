@@ -1,0 +1,53 @@
+.hmp-tile {
+  height: 58px;
+  width: 138px;
+  padding: 4px;
+  margin: 9px 12px 9px 9px;
+  min-width: 0px;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  white-space: normal;
+  background-color: #f4f4f4;
+  opacity: 1;
+  border: #bbb 1px solid;
+  border-radius: 6px;
+  cursor: move;
+}
+
+.hmp-tile-over {
+  border: #bbb 1px solid;
+  box-shadow: #999 0px 0px 4px 0px;
+}
+
+.hmp-tile-icon {
+  height: 48px;
+  width: 48px;
+  float: left;
+}
+
+.hmp-tile-inner {
+  padding: 2px 4px 2px 4px;
+  vertical-align: middle;
+  white-space: normal;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.hmp-tile-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  z-index: 3;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+
+.hmp-tile-over .hmp-tile-close {
+  background-image: url('/lib/ext-4.2.2.1144/resources/themes/images/gray/tools/tool-sprites.gif');
+}

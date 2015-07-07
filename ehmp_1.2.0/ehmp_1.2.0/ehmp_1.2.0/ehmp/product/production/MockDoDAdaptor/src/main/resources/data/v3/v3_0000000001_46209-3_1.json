@@ -1,0 +1,159 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010063"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "26436-6"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "orderable": [
+          {
+            "display": "CBC PROFILE",
+            "code": "14674837",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20140402171400",
+        "orderNumber": {
+          "id": "140402-00001"
+        },
+        "orderingProvider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Ordered"
+          }
+        ],
+        "adminTimes": null,
+        "alternateSpecimenText": "BLOOD",
+        "collectionMethod": null,
+        "duration": "D1",
+        "endDate": "20150401171600",
+        "enteringLocation": {
+          "name": "Family Practice Clinic"
+        },
+        "frequency": null,
+        "groupNumber": null,
+        "signedDate": null,
+        "signedBy": null,
+        "intervalPattern": null,
+        "interval": null,
+        "comments": "Jane testing",
+        "priorOrderNumber": null,
+        "priority": "ROUTINE",
+        "processingPriority": "R",
+        "scheduleType": [
+          {
+            "display": "One Time"
+          }
+        ],
+        "specimenText": "PLASMA",
+        "startDate": "20140402171600",
+        "statusComments": null,
+        "verifiedBy": null
+      },
+      "dataType": 21
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010065"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "29305-0"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "orderable": [
+          {
+            "display": "ACETAMINOPHEN 325MG TAB *OTC*--PO 325MG",
+            "code": "3000261885",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20140402171600",
+        "orderNumber": {
+          "id": "140402-00003"
+        },
+        "orderingProvider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": null,
+        "actionCode": "DC",
+        "childResistant": true,
+        "deliveryLocation": null,
+        "dispensingLocation": null,
+        "alternateDrugText": "TYLENOL 325 MG TABLET",
+        "duration": "D3",
+        "endDate": "20140405171700",
+        "enteringLocation": {
+          "name": "Family Practice Clinic"
+        },
+        "giveAmount": "325",
+        "giveFormDescription": "TABLET",
+        "giveUnits": null,
+        "intervalPattern": null,
+        "interval": null,
+        "numberOfRefills": "0",
+        "comments": "Jane Testing",
+        "priorOrderNumber": null,
+        "priority": "ROUTINE",
+        "quantity": "50",
+        "requestedDispenseAmount": "50",
+        "requestedGiveTimeUnit": null,
+        "routeDescription": "PO",
+        "sig": "TAKE 1 TABLET BY MOUTH EVERY SIX HOURS AS NEEDED HEADACHE/FEVER/PAIN OR AS DIRECTED",
+        "startDate": "20140402171800",
+        "verifiedBy": null
+      },
+      "dataType": 22
+    }
+  ]
+}

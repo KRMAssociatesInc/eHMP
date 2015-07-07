@@ -1,0 +1,37 @@
+{
+    "data":{
+        "totalItems":5,
+        "items":[
+            {
+                "name":"MENTAL HEALTH TEAM1",
+                "purpose":"MENTAL HEALTH TREATMENT",
+                "service":"PSYCHIATRY",
+                "facilityName":"CAMP MASTER"
+            },
+            {
+                "name":"OEF OIF TEAM",
+                "purpose":"OIF OEF",
+                "service":"MEDICAL",
+                "facilityName":"CAMP MASTER"
+            },
+            {
+                "name":"PRIMARY CARE TEAM1",
+                "purpose":"PRIMARY CARE",
+                "service":"MEDICAL",
+                "facilityName":"CAMP MASTER"
+            },
+            {
+                "name":"PRIMARY CARE TEAM2",
+                "purpose":"PRIMARY CARE",
+                "service":"MEDICINE",
+                "facilityName":"CAMP MASTER"
+            },
+            {
+                "name":"RED TEAM",
+                "purpose":"PRIMARY CARE",
+                "service":"MEDICINE",
+                "facilityName":"CAMP MASTER"
+            }
+        ]
+    }
+}

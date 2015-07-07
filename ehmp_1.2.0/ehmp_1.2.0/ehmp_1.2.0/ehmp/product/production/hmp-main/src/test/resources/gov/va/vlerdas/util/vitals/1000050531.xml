@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+   <feed xmlns="http://www.w3.org/2005/Atom" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3.org/2005/Atom ../XMLschemas/atom/atom.xsd"
+        xmlns:vler="http://domain/vler/schemas/vlerSupersetSchema/0.4/vler"
+        xmlns:pr="http://domain/vler/schemas/benefits/integratedCare/careCoordinatorProfile/0.5"
+        xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0">
+     <title type="text">VLER DAS</title>
+     <updated>2014-07-21T12:29:29Z</updated>
+     <id>https://domain/vler/das/1/2.16.840.1.113883.3.42.10001.00001.12/1000050531/health/vitals</id>
+     <entry>
+       <title>VLER DAS Data</title>
+       <id>https://domain/vler/das/1/2.16.840.1.113883.3.42.10001.00001.12/1000050
+531/health/vitals</id>
+       <updated>2014-07-21T12:29:29Z</updated>
+       <author>
+         <name>Fred Deitz</name>
+       </author>
+       <content>
+	  <vitals>
+		<identifiers>
+			<identifier>c6f88321-67ad-11db-bd13-0800200c9a66</identifier>
+		</identifiers>
+		<vital>
+			<name>Height</name>
+			<code>8302-2</code>
+			<code_system_name>LOINC</code_system_name>
+		</vital>
+		<status>completed</status>
+		<date>
+			<date>1999-11-14T00:00:00.000Z</date>
+			<precision>day</precision>
+		</date>
+		<interpretations>Normal</interpretations>
+		<value>177</value>
+		<unit>cm</unit>
+        </vitals>
+	   <vitals>
+		<identifiers>
+			<identifier>c6f88321-67ad-11db-bd13-0800200c9a66</identifier>
+		</identifiers>
+		<vital>
+			<name>Patient Body Weight - Measured</name>
+			<code>3141-9</code>
+			<code_system_name>LOINC</code_system_name>
+		</vital>
+		<status>completed</status>
+		<date>
+			<date>1999-11-14T00:00:00.000Z</date>
+			<precision>day</precision>
+		</date>
+		<interpretations>Normal</interpretations>
+		<value>86</value>
+		<unit>kg</unit>
+	   </vitals>
+	   <vitals>
+		<identifiers>
+			<identifier>c6f88321-67ad-11db-bd13-0800200c9a66</identifier>
+		</identifiers>
+		<vital>
+			<name>Intravascular Systolic</name>
+			<code>8480-6</code>
+			<code_system_name>LOINC</code_system_name>
+		</vital>
+		<status>completed</status>
+		<date>
+			<date>1999-11-14T00:00:00.000Z</date>
+			<precision>day</precision>
+		</date>
+		<interpretations>Normal</interpretations>
+		<value>132</value>
+		<unit>mm[Hg]</unit>
+	  </vitals>
+	  <vitals>
+		<identifiers>
+			<identifier>c6f88321-67ad-11db-bd13-0800200c9a66</identifier>
+		</identifiers>
+		<vital>
+			<name>Height</name>
+			<code>8302-2</code>
+			<code_system_name>LOINC</code_system_name>
+		</vital>
+		<status>completed</status>
+		<date>
+			<date>2000-04-07T00:00:00.000Z</date>
+			<precision>day</precision>
+		</date>
+		<interpretations>Normal</interpretations>
+		<value>177</value>
+		<unit>cm</unit>
+	   </vitals>
+	   <vitals>
+		<identifiers>
+			<identifier>c6f88321-67ad-11db-bd13-0800200c9a66</identifier>
+		</identifiers>
+		<vital>
+			<name>Patient Body Weight - Measured</name>
+			<code>3141-9</code>
+			<code_system_name>LOINC</code_system_name>
+		</vital>
+		<status>completed</status>
+		<date>
+			<date>2000-04-07T00:00:00.000Z</date>
+			<precision>day</precision>
+		</date>
+		<interpretations>Normal</interpretations>
+		<value>88</value>
+		<unit>kg</unit>
+	  </vitals>
+	  <vitals>
+		<identifiers>
+			<identifier>c6f88321-67ad-11db-bd13-0800200c9a66</identifier>
+		</identifiers>
+		<vital>
+			<name>Intravascular Systolic</name>
+			<code>8480-6</code>
+			<code_system_name>LOINC</code_system_name>
+		</vital>
+		<status>completed</status>
+		<date>
+			<date>2000-04-07T00:00:00.000Z</date>
+			<precision>day</precision>
+		</date>
+		<interpretations>Normal</interpretations>
+		<value>145</value>
+		<unit>mm[Hg]</unit>
+       </vitals>
+       </content>
+     </entry>
+   </feed>
+
+

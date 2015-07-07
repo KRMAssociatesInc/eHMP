@@ -1,0 +1,1218 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "DateReported": "20070824154023",
+        "EnteredBy": "",
+        "Type": "Past Medical History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "",
+        "Findings": [
+          {
+            "Category": "48038",
+            "Flag": "",
+            "Item": "continue with the HART questionnaire at this time: yes",
+            "Annotation": "",
+            "EventId": "1000001296"
+          },
+          {
+            "Category": "12100",
+            "Flag": "",
+            "Item": "female",
+            "Annotation": "",
+            "EventId": "1000001297"
+          },
+          {
+            "Category": "31314",
+            "Flag": "",
+            "Item": "date of birth: mm/dd/yyyy: 09/14/1942",
+            "Annotation": "",
+            "EventId": "1000001298"
+          },
+          {
+            "Category": "26479",
+            "Flag": "",
+            "Item": "age: 64: yr",
+            "Annotation": "",
+            "EventId": "1000001299"
+          },
+          {
+            "Category": "35579",
+            "Flag": "",
+            "Item": "height in feet: 5: ft",
+            "Annotation": "",
+            "EventId": "1000001300"
+          },
+          {
+            "Category": "35581",
+            "Flag": "",
+            "Item": "height in inches: 11: in",
+            "Annotation": "",
+            "EventId": "1000001301"
+          },
+          {
+            "Category": "16647",
+            "Flag": "",
+            "Item": "weight: 210: lb",
+            "Annotation": "",
+            "EventId": "1000001302"
+          },
+          {
+            "Category": "16645",
+            "Flag": "",
+            "Item": "height: 71: in",
+            "Annotation": "",
+            "EventId": "1000001303"
+          },
+          {
+            "Category": "4769",
+            "Flag": "",
+            "Item": "BMI: 17",
+            "Annotation": "",
+            "EventId": "1000001304"
+          },
+          {
+            "Category": "47583",
+            "Flag": "",
+            "Item": "disease (condition) & behavioral risk factors score: 3",
+            "Annotation": "",
+            "EventId": "1000001305"
+          },
+          {
+            "Category": "7613",
+            "Flag": "",
+            "Item": "White",
+            "Annotation": "",
+            "EventId": "1000001306"
+          },
+          {
+            "Category": "23561",
+            "Flag": "",
+            "Item": "marital status: single, never married",
+            "Annotation": "",
+            "EventId": "1000001307"
+          },
+          {
+            "Category": "47501",
+            "Flag": "",
+            "Item": "children living in household: yes",
+            "Annotation": "",
+            "EventId": "1000001308"
+          },
+          {
+            "Category": "24532",
+            "Flag": "",
+            "Item": "highest level of schooling completed: college",
+            "Annotation": "",
+            "EventId": "1000001309"
+          },
+          {
+            "Category": "24184",
+            "Flag": "",
+            "Item": "military status: National Guard",
+            "Annotation": "",
+            "EventId": "1000001310"
+          },
+          {
+            "Category": "24417",
+            "Flag": "",
+            "Item": "service branch: Coast Guard",
+            "Annotation": "",
+            "EventId": "1000001311"
+          },
+          {
+            "Category": "47505",
+            "Flag": "",
+            "Item": "current or retired grade: officer: r",
+            "Annotation": "",
+            "EventId": "1000001312"
+          },
+          {
+            "Category": "56204",
+            "Flag": "",
+            "Item": "deployments to combat zone completed since last PHA: two",
+            "Annotation": "",
+            "EventId": "1000001313"
+          },
+          {
+            "Category": "56211",
+            "Flag": "",
+            "Item": "total number of days deployed to a combat zone: 361-540",
+            "Annotation": "",
+            "EventId": "1000001314"
+          },
+          {
+            "Category": "32547",
+            "Flag": "",
+            "Item": "location of operation: SW Asia",
+            "Annotation": "",
+            "EventId": "1000001315"
+          },
+          {
+            "Category": "50451",
+            "Flag": "",
+            "Item": "location of operation: North America",
+            "Annotation": "",
+            "EventId": "1000001316"
+          },
+          {
+            "Category": "50650",
+            "Flag": "",
+            "Item": "deployment country: Kuwait",
+            "Annotation": "",
+            "EventId": "1000001317"
+          },
+          {
+            "Category": "50465",
+            "Flag": "",
+            "Item": "deployment country: CONUS",
+            "Annotation": "",
+            "EventId": "1000001318"
+          },
+          {
+            "Category": "24599",
+            "Flag": "",
+            "Item": "general health: very good",
+            "Annotation": "",
+            "EventId": "1000001319"
+          },
+          {
+            "Category": "32535",
+            "Flag": "",
+            "Item": "current medical or dental problems: no",
+            "Annotation": "",
+            "EventId": "1000001320"
+          },
+          {
+            "Category": "56220",
+            "Flag": "",
+            "Item": "ability to climb stairs limited a little by current health",
+            "Annotation": "",
+            "EventId": "1000001321"
+          },
+          {
+            "Category": "56224",
+            "Flag": "",
+            "Item": "accomplished less some of the time due to health-past 4 wks",
+            "Annotation": "",
+            "EventId": "1000001322"
+          },
+          {
+            "Category": "56228",
+            "Flag": "",
+            "Item": "work limited most of the time by physical health-past 4 wks",
+            "Annotation": "",
+            "EventId": "1000001323"
+          },
+          {
+            "Category": "56233",
+            "Flag": "",
+            "Item": "emotional prob: did less work most of the time - past 4 wks",
+            "Annotation": "",
+            "EventId": "1000001324"
+          },
+          {
+            "Category": "56238",
+            "Flag": "",
+            "Item": "emotional prob: time worked < carefully-past 4 weeks: most",
+            "Annotation": "",
+            "EventId": "1000001325"
+          },
+          {
+            "Category": "56246",
+            "Flag": "",
+            "Item": "pain interfered with work extremely during the past 4 weeks",
+            "Annotation": "",
+            "EventId": "1000001326"
+          },
+          {
+            "Category": "56249",
+            "Flag": "",
+            "Item": "felt calm/peaceful some of the time during the past 4 weeks",
+            "Annotation": "",
+            "EventId": "1000001327"
+          },
+          {
+            "Category": "56255",
+            "Flag": "",
+            "Item": "had a lot of energy a little of the time during past 4 weeks",
+            "Annotation": "",
+            "EventId": "1000001328"
+          },
+          {
+            "Category": "56258",
+            "Flag": "",
+            "Item": "felt depressed most of the time during the past 4 weeks",
+            "Annotation": "",
+            "EventId": "1000001329"
+          },
+          {
+            "Category": "56263",
+            "Flag": "",
+            "Item": "social life affected most of the time by health - past 4 wks",
+            "Annotation": "",
+            "EventId": "1000001330"
+          },
+          {
+            "Category": "44423",
+            "Flag": "",
+            "Item": "difficulty falling/staying asleep or waking up too early",
+            "Annotation": "",
+            "EventId": "1000001331"
+          },
+          {
+            "Category": "47618",
+            "Flag": "",
+            "Item": "less than 5 hours of sleep on 3 or more consecutive nights",
+            "Annotation": "",
+            "EventId": "1000001332"
+          },
+          {
+            "Category": "47624",
+            "Flag": "",
+            "Item": "medical services for sleep problems adequate: yes",
+            "Annotation": "",
+            "EventId": "1000001333"
+          },
+          {
+            "Category": "47626",
+            "Flag": "",
+            "Item": "average hours of sleep (work/school nights): 6",
+            "Annotation": "",
+            "EventId": "1000001334"
+          },
+          {
+            "Category": "47627",
+            "Flag": "",
+            "Item": "average hours of sleep (non-work/school nights): 6",
+            "Annotation": "",
+            "EventId": "1000001335"
+          },
+          {
+            "Category": "56268",
+            "Flag": "",
+            "Item": "treated by physician or healthcare provider since last PHA",
+            "Annotation": "",
+            "EventId": "1000001336"
+          },
+          {
+            "Category": "56272",
+            "Flag": "",
+            "Item": "reason for treatment by healthcare provider since last PHA: 6",
+            "Annotation": "",
+            "EventId": "1000001337"
+          },
+          {
+            "Category": "19544",
+            "Flag": "",
+            "Item": "gained more than 10 lbs. in the past year",
+            "Annotation": "",
+            "EventId": "1000001338"
+          },
+          {
+            "Category": "56279",
+            "Flag": "",
+            "Item": "currently on light duty",
+            "Annotation": "",
+            "EventId": "1000001339"
+          },
+          {
+            "Category": "56285",
+            "Flag": "",
+            "Item": "reason for being on light duty: 6",
+            "Annotation": "",
+            "EventId": "1000001340"
+          },
+          {
+            "Category": "56290",
+            "Flag": "",
+            "Item": "received (currently/in past) Workmen's Comp since last PHA",
+            "Annotation": "",
+            "EventId": "1000001341"
+          },
+          {
+            "Category": "56297",
+            "Flag": "",
+            "Item": "reason for receiving Workmen's Compensation: 8",
+            "Annotation": "",
+            "EventId": "1000001342"
+          },
+          {
+            "Category": "46664",
+            "Flag": "",
+            "Item": "allergic or has bad reactions to shell fish",
+            "Annotation": "",
+            "EventId": "1000001343"
+          },
+          {
+            "Category": "20749",
+            "Flag": "",
+            "Item": "allergic or has bad reactions to vaccines",
+            "Annotation": "",
+            "EventId": "1000001344"
+          },
+          {
+            "Category": "56304",
+            "Flag": "",
+            "Item": "medical warning tags: yes",
+            "Annotation": "",
+            "EventId": "1000001345"
+          },
+          {
+            "Category": "17861",
+            "Flag": "",
+            "Item": "antacids taken regularly",
+            "Annotation": "",
+            "EventId": "1000001346"
+          },
+          {
+            "Category": "47633",
+            "Flag": "",
+            "Item": "decongestants (nasal sprays such as Afrin) taken regularly",
+            "Annotation": "",
+            "EventId": "1000001347"
+          },
+          {
+            "Category": "47628",
+            "Flag": "",
+            "Item": "routinely takes high dose/megavitamin therapy",
+            "Annotation": "",
+            "EventId": "1000001348"
+          },
+          {
+            "Category": "26394",
+            "Flag": "",
+            "Item": "heart problems (chest pain/heart attack/arrhythmia/angina)",
+            "Annotation": "",
+            "EventId": "1000001349"
+          },
+          {
+            "Category": "47642",
+            "Flag": "",
+            "Item": "kidney problem (infections, stones, dialysis, etc.)",
+            "Annotation": "",
+            "EventId": "1000001350"
+          },
+          {
+            "Category": "47646",
+            "Flag": "",
+            "Item": "immune system problems (immunocompromised/immunosuppressed)",
+            "Annotation": "",
+            "EventId": "1000001351"
+          },
+          {
+            "Category": "56308",
+            "Flag": "",
+            "Item": "had eye surgery (RK, PRK, LASIK, etc.) since last PHA",
+            "Annotation": "",
+            "EventId": "1000001352"
+          },
+          {
+            "Category": "56311",
+            "Flag": "",
+            "Item": "ability to carry/fire weapon affected by bone/muscle problem",
+            "Annotation": "",
+            "EventId": "1000001353"
+          },
+          {
+            "Category": "56315",
+            "Flag": "",
+            "Item": "ability to wear gas mask affected by bone/muscle problem",
+            "Annotation": "",
+            "EventId": "1000001354"
+          },
+          {
+            "Category": "47653",
+            "Flag": "",
+            "Item": "# of days of vigorous exercise in a typical week: 6: Day",
+            "Annotation": "",
+            "EventId": "1000001355"
+          },
+          {
+            "Category": "47656",
+            "Flag": "",
+            "Item": "# of days of moderate exercise in a typical week: 4: Day",
+            "Annotation": "",
+            "EventId": "1000001356"
+          },
+          {
+            "Category": "47659",
+            "Flag": "",
+            "Item": "# of days of strength exercise in a typical week: 5: Day",
+            "Annotation": "",
+            "EventId": "1000001357"
+          },
+          {
+            "Category": "47665",
+            "Flag": "",
+            "Item": "smoked a pipe at least 20 times during lifetime",
+            "Annotation": "",
+            "EventId": "1000001358"
+          },
+          {
+            "Category": "24762",
+            "Flag": "",
+            "Item": "tobacco products currently used: cigars",
+            "Annotation": "",
+            "EventId": "1000001359"
+          },
+          {
+            "Category": "47710",
+            "Flag": "",
+            "Item": "drinks alcohol once a month or less (1)",
+            "Annotation": "",
+            "EventId": "1000001360"
+          },
+          {
+            "Category": "24808",
+            "Flag": "",
+            "Item": "1 or 2 drinks on a typical day (0)",
+            "Annotation": "",
+            "EventId": "1000001361"
+          },
+          {
+            "Category": "24815",
+            "Flag": "",
+            "Item": "6 or more drinks on one occasion: monthly (2)",
+            "Annotation": "",
+            "EventId": "1000001362"
+          },
+          {
+            "Category": "35586",
+            "Flag": "",
+            "Item": "alcohol use audit score: 9",
+            "Annotation": "",
+            "EventId": "1000001363"
+          },
+          {
+            "Category": "24818",
+            "Flag": "",
+            "Item": "unable to stop drinking in past year: never (0)",
+            "Annotation": "",
+            "EventId": "1000001364"
+          },
+          {
+            "Category": "24825",
+            "Flag": "",
+            "Item": "unable to perform due to drinking in past year: monthly (2)",
+            "Annotation": "",
+            "EventId": "1000001365"
+          },
+          {
+            "Category": "24829",
+            "Flag": "",
+            "Item": "needed eye-opener to get going in past year: < monthly (1)",
+            "Annotation": "",
+            "EventId": "1000001366"
+          },
+          {
+            "Category": "24834",
+            "Flag": "",
+            "Item": "felt guilt/remorse after drinking (past year): < monthly (1)",
+            "Annotation": "",
+            "EventId": "1000001367"
+          },
+          {
+            "Category": "24838",
+            "Flag": "",
+            "Item": "couldn't remember night before due to drinking: never (0)",
+            "Annotation": "",
+            "EventId": "1000001368"
+          },
+          {
+            "Category": "24843",
+            "Flag": "",
+            "Item": "injured self/others due to drinking: yes (not past year) (2)",
+            "Annotation": "",
+            "EventId": "1000001369"
+          },
+          {
+            "Category": "47716",
+            "Flag": "",
+            "Item": "others concerned about your drinking: no (0)",
+            "Annotation": "",
+            "EventId": "1000001370"
+          },
+          {
+            "Category": "590",
+            "Flag": "",
+            "Item": "family history of heart attack/angina before the age of 50",
+            "Annotation": "",
+            "EventId": "1000001371"
+          },
+          {
+            "Category": "21767",
+            "Flag": "",
+            "Item": "family history of cancer or malignancy of any kind",
+            "Annotation": "",
+            "EventId": "1000001372"
+          },
+          {
+            "Category": "25011",
+            "Flag": "",
+            "Item": "last Pap smear: less than 1 year ago",
+            "Annotation": "",
+            "EventId": "1000001373"
+          },
+          {
+            "Category": "56324",
+            "Flag": "",
+            "Item": "had a baby in the last 4 months",
+            "Annotation": "",
+            "EventId": "1000001374"
+          },
+          {
+            "Category": "47809",
+            "Flag": "",
+            "Item": "blood pressure last taken: less than 6 months ago",
+            "Annotation": "",
+            "EventId": "1000001375"
+          },
+          {
+            "Category": "48035",
+            "Flag": "",
+            "Item": "been told twice had hypertension (other than pregnancy): yes",
+            "Annotation": "",
+            "EventId": "1000001376"
+          },
+          {
+            "Category": "24931",
+            "Flag": "",
+            "Item": "cholesterol last checked: 1 year but less than 2 years ago",
+            "Annotation": "",
+            "EventId": "1000001377"
+          },
+          {
+            "Category": "24980",
+            "Flag": "",
+            "Item": "last blood stool test: less than 1 year ago",
+            "Annotation": "",
+            "EventId": "1000001378"
+          },
+          {
+            "Category": "47822",
+            "Flag": "",
+            "Item": "last sigmoidoscopy/colonoscopy: less than 1 year ago",
+            "Annotation": "",
+            "EventId": "1000001379"
+          },
+          {
+            "Category": "47826",
+            "Flag": "",
+            "Item": "last sigmoidoscopy/colonoscopy: never",
+            "Annotation": "",
+            "EventId": "1000001380"
+          },
+          {
+            "Category": "56326",
+            "Flag": "",
+            "Item": "noticed change in a wart or mole since last PHA",
+            "Annotation": "",
+            "EventId": "1000001381"
+          },
+          {
+            "Category": "18326",
+            "Flag": "",
+            "Item": "history of skin cancer in past",
+            "Annotation": "",
+            "EventId": "1000001382"
+          },
+          {
+            "Category": "47838",
+            "Flag": "",
+            "Item": "birth control used: no, I'm trying to have a child",
+            "Annotation": "",
+            "EventId": "1000001383"
+          },
+          {
+            "Category": "47840",
+            "Flag": "",
+            "Item": "birth control used: I am unable to have a child",
+            "Annotation": "",
+            "EventId": "1000001384"
+          },
+          {
+            "Category": "56336",
+            "Flag": "",
+            "Item": "diagnosed with a mental health disorder",
+            "Annotation": "",
+            "EventId": "1000001385"
+          },
+          {
+            "Category": "50557",
+            "Flag": "",
+            "Item": "nightmares about a frightening event in life (past month)",
+            "Annotation": "",
+            "EventId": "1000001386"
+          },
+          {
+            "Category": "50563",
+            "Flag": "",
+            "Item": "felt numb due to frightening event in life (past month)",
+            "Annotation": "",
+            "EventId": "1000001387"
+          },
+          {
+            "Category": "56338",
+            "Flag": "",
+            "Item": "felt in danger of being injured/killed while deployed: yes",
+            "Annotation": "",
+            "EventId": "1000001388"
+          },
+          {
+            "Category": "48014",
+            "Flag": "",
+            "Item": "anger interfered with work/life (past 12 mos.): a lot",
+            "Annotation": "",
+            "EventId": "1000001389"
+          },
+          {
+            "Category": "47916",
+            "Flag": "",
+            "Item": "recent depression made work/home life difficult: extremely",
+            "Annotation": "",
+            "EventId": "1000001390"
+          },
+          {
+            "Category": "47908",
+            "Flag": "",
+            "Item": "bothered by hypo/hyperactivity (last 2 wks):nearly every day",
+            "Annotation": "",
+            "EventId": "1000001391"
+          },
+          {
+            "Category": "48017",
+            "Flag": "",
+            "Item": "receiving adequate medical services for anger problems: no",
+            "Annotation": "",
+            "EventId": "1000001392"
+          },
+          {
+            "Category": "47904",
+            "Flag": "",
+            "Item": "trouble concentrating (last 2 wks): nearly every day",
+            "Annotation": "",
+            "EventId": "1000001393"
+          },
+          {
+            "Category": "47900",
+            "Flag": "",
+            "Item": "bothered by low self-esteem (last 2 wks): nearly every day",
+            "Annotation": "",
+            "EventId": "1000001394"
+          },
+          {
+            "Category": "47896",
+            "Flag": "",
+            "Item": "bothered by poor appetite (last 2 wks): nearly every day",
+            "Annotation": "",
+            "EventId": "1000001395"
+          },
+          {
+            "Category": "47892",
+            "Flag": "",
+            "Item": "bothered by feeling tired (last 2 wks): nearly every day",
+            "Annotation": "",
+            "EventId": "1000001396"
+          },
+          {
+            "Category": "47887",
+            "Flag": "",
+            "Item": "trouble falling/staying asleep (past 2 wks): > half the days",
+            "Annotation": "",
+            "EventId": "1000001397"
+          },
+          {
+            "Category": "47877",
+            "Flag": "",
+            "Item": "bothered by feeling depressed (last 2 wks): > half the days",
+            "Annotation": "",
+            "EventId": "1000001398"
+          },
+          {
+            "Category": "56398",
+            "Flag": "",
+            "Item": "PHQ-2 Score: 4",
+            "Annotation": "",
+            "EventId": "1000001399"
+          },
+          {
+            "Category": "47873",
+            "Flag": "",
+            "Item": "bothered by little interest (last 2 wks): > half the days",
+            "Annotation": "",
+            "EventId": "1000001400"
+          },
+          {
+            "Category": "56333",
+            "Flag": "",
+            "Item": "tanning history: burns minimally; always tans well",
+            "Annotation": "",
+            "EventId": "1000001401"
+          },
+          {
+            "Category": "56328",
+            "Flag": "",
+            "Item": "history of precancerous skin lesions, atypical nevi or moles",
+            "Annotation": "",
+            "EventId": "1000001402"
+          },
+          {
+            "Category": "25016",
+            "Flag": "",
+            "Item": "last Pap smear: don't know/not sure",
+            "Annotation": "",
+            "EventId": "1000001403"
+          },
+          {
+            "Category": "47828",
+            "Flag": "",
+            "Item": "last mammogram: 3 years but less than 5 years ago",
+            "Annotation": "",
+            "EventId": "1000001404"
+          },
+          {
+            "Category": "24683",
+            "Flag": "",
+            "Item": "eats high fat foods (hamburgers/bacon) daily",
+            "Annotation": "",
+            "EventId": "1000001405"
+          },
+          {
+            "Category": "56318",
+            "Flag": "",
+            "Item": "cannot walk 2.5 miles due to a medical condition",
+            "Annotation": "",
+            "EventId": "1000001406"
+          },
+          {
+            "Category": "56306",
+            "Flag": "",
+            "Item": "does not take prescription medications regularly",
+            "Annotation": "",
+            "EventId": "1000001407"
+          },
+          {
+            "Category": "47622",
+            "Flag": "",
+            "Item": "sleep problems make work/getting along: very difficult",
+            "Annotation": "",
+            "EventId": "1000001408"
+          },
+          {
+            "Category": "5198",
+            "Flag": "",
+            "Item": "cardiac risk: present",
+            "Annotation": "",
+            "EventId": "1000001409"
+          },
+          {
+            "Category": "23144",
+            "Flag": "",
+            "Item": "overall health status (self-reported): good",
+            "Annotation": "",
+            "EventId": "1000001410"
+          },
+          {
+            "Category": "2509",
+            "Flag": "",
+            "Item": "sleep problems",
+            "Annotation": "",
+            "EventId": "1000001411"
+          },
+          {
+            "Category": "44112",
+            "Flag": "",
+            "Item": "alternative medication use",
+            "Annotation": "",
+            "EventId": "1000001412"
+          },
+          {
+            "Category": "48647",
+            "Flag": "",
+            "Item": "over the counter medication use",
+            "Annotation": "",
+            "EventId": "1000001413"
+          },
+          {
+            "Category": "8100",
+            "Flag": "",
+            "Item": "chronic disease status",
+            "Annotation": "",
+            "EventId": "1000001414"
+          },
+          {
+            "Category": "5375",
+            "Flag": "",
+            "Item": "tobacco use",
+            "Annotation": "",
+            "EventId": "1000001415"
+          },
+          {
+            "Category": "17700",
+            "Flag": "",
+            "Item": "family medical history",
+            "Annotation": "",
+            "EventId": "1000001416"
+          },
+          {
+            "Category": "26106",
+            "Flag": "",
+            "Item": "potential problem drinking (by AUDIT)",
+            "Annotation": "",
+            "EventId": "1000001417"
+          },
+          {
+            "Category": "20996",
+            "Flag": "",
+            "Item": "mammography: not current",
+            "Annotation": "",
+            "EventId": "1000001418"
+          },
+          {
+            "Category": "8058",
+            "Flag": "",
+            "Item": "anger management",
+            "Annotation": "",
+            "EventId": "1000001419"
+          },
+          {
+            "Category": "41793",
+            "Flag": "",
+            "Item": "BMI: range < 18.5",
+            "Annotation": "",
+            "EventId": "1000001420"
+          },
+          {
+            "Category": "49530",
+            "Flag": "",
+            "Item": "medium risk for needing healthcare services in the next year",
+            "Annotation": "",
+            "EventId": "1000001421"
+          },
+          {
+            "Category": "18195",
+            "Flag": "",
+            "Item": "pap smear: not current",
+            "Annotation": "",
+            "EventId": "1000001422"
+          },
+          {
+            "Category": "12014",
+            "Flag": "",
+            "Item": "history of hypertension",
+            "Annotation": "",
+            "EventId": "1000001423"
+          },
+          {
+            "Category": "5134",
+            "Flag": "",
+            "Item": "high fat intake",
+            "Annotation": "",
+            "EventId": "1000001424"
+          },
+          {
+            "Category": "52296",
+            "Flag": "",
+            "Item": "colon/rectal cancer screening tests: current",
+            "Annotation": "",
+            "EventId": "1000001425"
+          }
+        ],
+        "UnverifiedFlag": "No",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "",
+        "PeriodEndDate": "",
+        "Chronicity": "PKC",
+        "DateOnset": "20070824154023",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "",
+        "CouplerType": "HART-R",
+        "ReportingClinician": "LARRY, PROVIDER",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "RelationshipId": "",
+        "FormattedFindings": "Finding Summary\r\n\r\nGeneral Information\r\n    female\r\n    date of birth: mm/dd/yyyy: 09/14/1942\r\n    age: 64: yr\r\n    weight: 210: lb\r\n    height: 71: in\r\n    BMI: 17\r\n    White\r\n    marital status: single, never married\r\n    children living in household: yes\r\n    highest level of schooling completed: college\r\n    military status: National Guard\r\n    service branch: Coast Guard\r\n    current or retired grade: officer: r\r\n    deployments to combat zone completed since last PHA: two\r\n    total number of days deployed to a combat zone: 361-540\r\n    location of operation: SW Asia\r\n    location of operation: North America\r\n    deployment country: Kuwait\r\n    deployment country: CONUS\r\n\r\nOverall Health and Activities\r\n    disease (condition) & behavioral risk factors score: 3\r\n    general health: very good\r\n    current medical or dental problems: no\r\n    ability to climb stairs limited a little by current health\r\n    accomplished less some of the time due to health-past 4 wks\r\n    work limited most of the time by physical health-past 4 wks\r\n    emotional prob: did less work most of the time - past 4 wks\r\n    emotional prob: time worked < carefully-past 4 weeks: most\r\n    pain interfered with work extremely during the past 4 weeks\r\n    felt calm/peaceful some of the time during the past 4 weeks\r\n    had a lot of energy a little of the time during past 4 weeks\r\n    felt depressed most of the time during the past 4 weeks\r\n    social life affected most of the time by health - past 4 wks\r\n    difficulty falling/staying asleep or waking up too early\r\n    less than 5 hours of sleep on 3 or more consecutive nights\r\n    medical services for sleep problems adequate: yes\r\n    average hours of sleep (work/school nights): 6\r\n    average hours of sleep (non-work/school nights): 6\r\n    treated by physician or healthcare provider since last PHA\r\n    reason for treatment by healthcare provider since last PHA: 6\r\n    gained more than 10 lbs. in the past year\r\n    currently on light duty\r\n    reason for being on light duty: 6\r\n    received (currently/in past) Workmen's Comp since last PHA\r\n    reason for receiving Workmen's Compensation: 8\r\n    allergic or has bad reactions to shell fish\r\n    allergic or has bad reactions to vaccines\r\n    medical warning tags: yes\r\n    sleep problems make work/getting along: very difficult\r\n\r\nMedication Use\r\n    antacids taken regularly\r\n    decongestants (nasal sprays such as Afrin) taken regularly\r\n    routinely takes high dose/megavitamin therapy\r\n    does not take prescription medications regularly\r\n\r\nChronic Diseases or Conditions\r\n    heart problems (chest pain/heart attack/arrhythmia/angina)\r\n    kidney problem (infections, stones, dialysis, etc.)\r\n    immune system problems (immunocompromised/immunosuppressed)\r\n    had eye surgery (RK, PRK, LASIK, etc.) since last PHA\r\n\r\nExercise and Fitness\r\n    ability to carry/fire weapon affected by bone/muscle problem\r\n    ability to wear gas mask affected by bone/muscle problem\r\n    # of days of vigorous exercise in a typical week: 6: Day\r\n    # of days of moderate exercise in a typical week: 4: Day\r\n    # of days of strength exercise in a typical week: 5: Day\r\n    cannot walk 2.5 miles due to a medical condition\r\n\r\nNutrition\r\n    eats high fat foods (hamburgers/bacon) daily\r\n\r\nTobacco Use\r\n    smoked a pipe at least 20 times during lifetime\r\n    tobacco products currently used: cigars\r\n\r\nAlcohol Use\r\n    drinks alcohol once a month or less (1)\r\n    1 or 2 drinks on a typical day (0)\r\n    alcohol use audit score: 9\r\n    unable to stop drinking in past year: never (0)\r\n    unable to perform due to drinking in past year: monthly (2)\r\n    needed eye-opener to get going in past year: < monthly (1)\r\n    felt guilt/remorse after drinking (past year): < monthly (1)\r\n    couldn't remember night before due to drinking: never (0)\r\n    injured self/others due to drinking: yes (not past year) (2)\r\n    others concerned about your drinking: no (0)\r\n\r\nFamily History\r\n    family history of heart attack/angina before the age of 50\r\n    family history of cancer or malignancy of any kind\r\n\r\nClinical Preventive Services\r\n    last Pap smear: less than 1 year ago\r\n    had a baby in the last 4 months\r\n    blood pressure last taken: less than 6 months ago\r\n    been told twice had hypertension (other than pregnancy): yes\r\n    cholesterol last checked: 1 year but less than 2 years ago\r\n    last blood stool test: less than 1 year ago\r\n    last sigmoidoscopy/colonoscopy: less than 1 year ago\r\n    last sigmoidoscopy/colonoscopy: never\r\n    noticed change in a wart or mole since last PHA\r\n    history of skin cancer in past\r\n    tanning history: burns minimally; always tans well\r\n    history of precancerous skin lesions, atypical nevi or moles\r\n    last Pap smear: don't know/not sure\r\n    last mammogram: 3 years but less than 5 years ago\r\n\r\nReproductive Health Issues\r\n    birth control used: no, I'm trying to have a child\r\n    birth control used: I am unable to have a child\r\n\r\nMental Health/Stress Management\r\n    diagnosed with a mental health disorder\r\n    nightmares about a frightening event in life (past month)\r\n    felt numb due to frightening event in life (past month)\r\n    felt in danger of being injured/killed while deployed: yes\r\n    anger interfered with work/life (past 12 mos.): a lot\r\n    recent depression made work/home life difficult: extremely\r\n    bothered by hypo/hyperactivity (last 2 wks):nearly every day\r\n    receiving adequate medical services for anger problems: no\r\n    trouble concentrating (last 2 wks): nearly every day\r\n    bothered by low self-esteem (last 2 wks): nearly every day\r\n    bothered by poor appetite (last 2 wks): nearly every day\r\n    bothered by feeling tired (last 2 wks): nearly every day\r\n    trouble falling/staying asleep (past 2 wks): > half the days\r\n    bothered by feeling depressed (last 2 wks): > half the days\r\n    PHQ-2 Score: 4\r\n    bothered by little interest (last 2 wks): > half the days\r\n\r\nTraumatic Brain Injury - Events\r\n    None\r\n\r\nTraumatic Brain Injury - Effects\r\n    None\r\n\r\nTraumatic Brain Injury - Symptoms\r\n    None\r\n\r\nTraumatic Brain Injury - Past Week\r\n    None\r\n\r\nData Used for Reporting\r\n    cardiac risk: present\r\n    overall health status (self-reported): good\r\n    sleep problems\r\n    alternative medication use\r\n    over the counter medication use\r\n    chronic disease status\r\n    tobacco use\r\n    family medical history\r\n    potential problem drinking (by AUDIT)\r\n    mammography: not current\r\n    anger management\r\n    BMI: range < 18.5\r\n    medium risk for needing healthcare services in the next year\r\n    pap smear: not current\r\n    history of hypertension\r\n    high fat intake\r\n    colon/rectal cancer screening tests: current\r\n\r\nAdministrative Findings\r\n    continue with the HART questionnaire at this time: yes\r\n    height in feet: 5: ft\r\n    height in inches: 11: in\r\n\r\nObsolete Findings\r\n    6 or more drinks on one occasion: monthly (2)\r\n\r\nPrimary Options selected for consideration\r\n    None\r\n\r\nProvider comments\r\n    None\r\n\r\nAdditional Information\r\n    None",
+        "Source": "LARRY, PROVIDER",
+        "Status": "",
+        "Facility": "",
+        "LoincCode": "11348-0",
+        "Relationship": "",
+        "EventId": "1000001426"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20070628121808",
+        "EnteredBy": "USER, MULTISITE",
+        "Type": "Past Medical History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20070628121808",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "reported test for stool blood",
+            "Annotation": "",
+            "EventId": "1000001427"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "4423",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "20070628121715",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "20070628121715",
+        "CouplerType": "Past Medical History",
+        "ReportingClinician": "USER, MULTISITE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "RelationshipId": "",
+        "FormattedFindings": "Other Past History Comment",
+        "Source": "KEVIN, PROVIDER",
+        "Status": "Active",
+        "Facility": "4th Medical Group/0090",
+        "LoincCode": "11348-0",
+        "Relationship": "",
+        "EventId": "1000001428"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20070628121808",
+        "EnteredBy": "USER, MULTISITE",
+        "Type": "Past Medical History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20070628121808",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "reported previous cardiac problems",
+            "Annotation": "",
+            "EventId": "1000001429"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "3498",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "20070628121715",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "20070628121715",
+        "CouplerType": "Past Medical History",
+        "ReportingClinician": "USER, MULTISITE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "KEVIN, PROVIDER",
+        "Status": "Active",
+        "Facility": "4th Medical Group/0090",
+        "LoincCode": "11348-0",
+        "Relationship": "",
+        "EventId": "1000001430"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20070628121809",
+        "EnteredBy": "USER, MULTISITE",
+        "Type": "Past Medical History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20070628121809",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "reported blood pressure check",
+            "Annotation": "",
+            "EventId": "1000001431"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "3989",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "20070628121716",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "20070628121716",
+        "CouplerType": "Past Medical History",
+        "ReportingClinician": "USER, MULTISITE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "KEVIN, PROVIDER",
+        "Status": "Active",
+        "Facility": "4th Medical Group/0090",
+        "LoincCode": "11348-0",
+        "Relationship": "",
+        "EventId": "1000001432"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20070628121809",
+        "EnteredBy": "USER, MULTISITE",
+        "Type": "Past Medical History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20070628121809",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "current diet is high in fat content",
+            "Annotation": "",
+            "EventId": "1000001433"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "4078",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "20070628121716",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "20070628121716",
+        "CouplerType": "Past Medical History",
+        "ReportingClinician": "USER, MULTISITE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "KEVIN, PROVIDER",
+        "Status": "Active",
+        "Facility": "4th Medical Group/0090",
+        "LoincCode": "11348-0",
+        "Relationship": "",
+        "EventId": "1000001434"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20070628121809",
+        "EnteredBy": "USER, MULTISITE",
+        "Type": "Past Medical History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20070628121809",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "reported cholesterol test",
+            "Annotation": "",
+            "EventId": "1000001435"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "3800",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "20070628121716",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "20070628121716",
+        "CouplerType": "Past Medical History",
+        "ReportingClinician": "USER, MULTISITE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "KEVIN, PROVIDER",
+        "Status": "Active",
+        "Facility": "4th Medical Group/0090",
+        "LoincCode": "11348-0",
+        "Relationship": "",
+        "EventId": "1000001436"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20070628121810",
+        "EnteredBy": "USER, MULTISITE",
+        "Type": "Past Medical History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20070628121810",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "No reported previous mental illness",
+            "Annotation": "",
+            "EventId": "1000001437"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "3912",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "20070628121716",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "20070628121716",
+        "CouplerType": "Past Medical History",
+        "ReportingClinician": "USER, MULTISITE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "-",
+        "RelationshipId": "",
+        "FormattedFindings": "",
+        "Source": "KEVIN, PROVIDER",
+        "Status": "Active",
+        "Facility": "4th Medical Group/0090",
+        "LoincCode": "11348-0",
+        "Relationship": "",
+        "EventId": "1000001438"
+      },
+      "dataType": 8
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "7",
+      "RetrievedCount": "7",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

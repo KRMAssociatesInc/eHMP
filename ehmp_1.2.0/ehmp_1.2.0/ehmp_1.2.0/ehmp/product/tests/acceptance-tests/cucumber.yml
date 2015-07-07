@@ -1,0 +1,2 @@
+parallel: --format json_pretty --out cucumber<%= ENV['TEST_ENV_NUMBER'] %>.json --format html --out cucumber<%= ENV['TEST_ENV_NUMBER'] %>.html
+single: -f json_pretty -o cucumber0.json -f html -o cucumberSingle.html

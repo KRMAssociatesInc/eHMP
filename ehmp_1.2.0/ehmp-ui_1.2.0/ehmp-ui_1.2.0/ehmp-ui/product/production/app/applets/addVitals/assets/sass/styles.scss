@@ -1,0 +1,73 @@
+.add-vitals-styles {
+
+  #vitals-tbl-container .btn-primary{
+    color: #00FFFF;
+    background-color: #688790;
+    border-color: #3D5157
+}
+#vitals-tbl-container .btn-default:focus {
+  color: white;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+  outline: transparent;
+}
+
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  background-image: none;
+}
+
+#vitals-loading-indicator {
+    width: 100%;
+    height: 126px;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    position: absolute;
+  }
+
+/** keep this for layout **/
+.btn-xs,
+.btn-group-xs > .btn {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+/**  end keep **/
+
+
+}

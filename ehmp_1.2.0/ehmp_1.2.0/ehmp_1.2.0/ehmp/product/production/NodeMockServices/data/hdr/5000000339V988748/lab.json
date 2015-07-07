@@ -1,0 +1,40 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "HDR",
+    "systemId": "HDR"
+  },
+  "data": {
+    "updated": "20140409083733",
+    "totalItems": 1,
+    "items": [
+      {
+        "categoryCode": "urn:va:lab-category:CH",
+        "categoryName": "Laboratory",
+        "comment": "Ordering Provider: Sixteen Provider Report Released Date/Time: Apr 02, 1991@16:34\r\n ",
+        "displayName": "GLUCOSE",
+        "displayOrder": 1,
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "groupName": "CH 0402 9",
+        "groupUid": "urn:va:accession:ABCD:15:CH;7089596.8377",
+        "high": 110,
+        "localId": "CH;7089596.8377;2",
+        "low": 60,
+        "observed": 199104021623,
+        "result": 106,
+        "resulted": 199104021634,
+        "sample": "",
+        "specimen": "SERUM",
+        "statusCode": "urn:va:lab-status:completed",
+        "statusName": "completed",
+        "typeCode": "urn:lnc:2344-0",
+        "typeId": 175,
+        "typeName": "GLUCOSE",
+        "uid": "urn:va:lab:ABCD:15:CH;7089596.8377;2",
+        "units": "mg/dL",
+        "vuid": "urn:va:vuid:4665449"
+      }
+    ]
+  }
+}

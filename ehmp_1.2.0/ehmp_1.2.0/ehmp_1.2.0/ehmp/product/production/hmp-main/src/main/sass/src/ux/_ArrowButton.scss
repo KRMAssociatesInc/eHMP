@@ -1,0 +1,177 @@
+$experimental-support-for-svg: true;
+
+@mixin ios6-arrow-button (
+$background-color: #41618d,
+$border-color: darken($background-color, 5%),
+$text-color: #fff,
+$font-family: null
+){
+  @include inline-block;
+  @include appearance(none);
+  background: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 26px;
+  min-width: 20px;
+  cursor: pointer;
+  overflow: visible;
+  &.left {
+    &:before {
+      @include box-sizing( border-box);
+      background-color: $background-color;
+      @include background-size( 20px 18px);
+      @include transform(rotate(-45deg) scale(0.86) skew(-9deg, -9deg));
+      @include transform-origin(50%);
+      position: relative;
+      @include inline-block;
+      top: 0;
+      left: 16px;
+      width: 22px;
+      height: 22px;
+      border: 1px solid #f00;
+      border-width: 1px;
+      border-width: 0 0 1px 1px;
+      border-color: $border-color transparent transparent $border-color;
+      background-position: -2px 0;
+      background-repeat: no-repeat;
+      content: "";
+      @include border-radius(0 6px 0 6px);
+      @include border-top-right-radius(8px 5px);
+      @include border-bottom-left-radius(5px 8px);
+    }
+    &:after {
+      @include box-sizing(border-box);
+      @include border-radius(4px 4px 4px 4px);
+      background-color: $background-color;
+      @include background-size(26px 26px);
+      position: relative;
+      top: 0;
+      left: 2px;
+      @include inline-block;
+      padding: 5px 10px 5px 5px;
+      margin: 0;
+      width: auto;
+      height: 26px;
+      border: 1px solid $border-color;
+      border-width: 0 0 1px 0;
+      content: attr(data-title);
+      text-decoration: none;
+      white-space: nowrap;
+      font-weight: 500;
+      color: $text-color;
+      font-size: 12px;
+      font-family: $font-family;
+      line-height: 16px;
+    }
+    &:hover:after {
+      background-color: darken($background-color, 8%);
+      border-color: darken($border-color, 12%);
+      @include background-size(26px 26px);
+    }
+    &:hover:before {
+      background-color: darken($background-color, 8%);
+      border-color: darken($border-color, 12%);
+      @include background-size(20px 18px);
+    }
+  }
+  &.right {
+    &:before {
+      @include box-sizing(border-box);
+      @include border-radius(4px 4px 4px 4px);
+      background-color: $background-color;
+      @include background-size(26px 26px);
+      position: relative;
+      top: 0;
+      right: 2px;
+      @include inline-block;
+      padding: 5px 5px 5px 10px;
+      margin: 0;
+      width: auto;
+      height: 26px;
+      border: 1px solid $border-color;
+      border-width: 0px 0px 1px 0px;
+      content: attr(data-title);
+      text-decoration: none;
+      white-space: nowrap;
+      font-weight: 500;
+      color: $text-color;
+      font-size: 12px;
+      font-family: $font-family;
+      line-height: 16px;
+      z-index: 2;
+    }
+    &:after {
+      @include box-sizing(border-box);
+      background-color: $background-color;
+      @include background-size(20px 18px);
+      @include transform(rotate(135deg) scale(0.86) skew(-9deg, -9deg));
+      @include transform-origin(50%);
+      position: relative;
+      @include inline-block;
+      top: 0;
+      left: -16px;
+      width: 22px;
+      height: 22px;
+      border: 1px solid #f00;
+      border-width: 1px;
+      border-width: 0 0 1px 1px;
+      border-color: $border-color $border-color transparent transparent;
+      background-position: -2px 0;
+      background-repeat: no-repeat;
+      content: "";
+      @include border-radius(0 6px 0 6px);
+      @include border-top-right-radius(8px 5px);
+      @include border-bottom-left-radius(5px 8px);
+      z-index: 1;
+    }
+    &:hover:before {
+      background-color: darken($background-color, 8%);
+      border-color: darken($border-color, 12%);
+      @include background-size(26px 26px);
+    }
+    &:hover:after {
+      background-color: darken($background-color, 8%);
+      border-color: darken($border-color, 12%);
+      @include background-size(20px 18px);
+    }
+  }
+}
+
+.ios-6-arrow-blue {
+  @include ios6-arrow-button(
+    $font-family: $button-small-font-family
+  );
+}
+.ios-6-arrow-light {
+  @include ios6-arrow-button(
+    $background-color: #cccccc,
+    $border-color: darken(#cccccc, 5%),
+    $text-color: #474747,
+    $font-family: $button-small-font-family
+  );
+}
+.ios-6-arrow-dark {
+  @include ios6-arrow-button(
+    $background-color: #444,
+    $border-color: lighten(#111, 60%),
+    $text-color: #fff,
+    $font-family: $button-small-font-family
+  );
+}
+.ios-6-arrow-multi-pt {
+  @include ios6-arrow-button(
+    $background-color: $multi-patient-bar-background-color,
+    $text-color: #fff,
+    $font-family: $button-small-font-family
+  );
+}
+
+.ios-6-arrow-single-pt {
+  @include ios6-arrow-button(
+    $background-color: $pt-bar-background-color,
+    $text-color: #fff,
+    $font-family: $button-small-font-family
+  );
+}

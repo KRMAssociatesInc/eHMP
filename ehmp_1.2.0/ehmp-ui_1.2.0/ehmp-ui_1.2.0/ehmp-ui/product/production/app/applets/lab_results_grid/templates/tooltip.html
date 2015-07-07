@@ -1,0 +1,37 @@
+<table id='{{uid}}' class='table table-condensed has-popover'>
+	<thead>
+		<tr class='row'>
+			<th>Value</th>
+			<th></th>
+			<th>Ref. Range</th>
+			<th>Observed</th>
+			<th>Facility</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class='row'>
+			<td>{{result}} {{units}}</td>
+			<td>{{#if abnormal}}<span class='label {{labelClass}}'>{{interpretationCode}}</span>{{/if}}</td>
+			{{#if referenceRange}}
+			<td>{{referenceRange}} {{units}}</td>
+			{{else}}
+			<td>N/A</td>
+			{{/if}}
+			<td>{{observedFormatted}}</td>
+			<td>{{facilityMoniker}}</td>
+		</tr>
+		{{#each limitedoldValues}}
+		<tr class='row'>
+			<td>{{attributes.result}} {{attributes.units}}</td>
+			<td>{{#if attributes.abnormal}}<span class='label {{attributes.labelClass}}'>{{attributes.interpretationCode}}</span>{{/if}}</td>
+			{{#if attributes.referenceRange}}
+			<td>{{attributes.referenceRange}} {{attributes.units}}</td>
+			{{else}}
+			<td>N/A</td>
+			{{/if}}
+			<td>{{attributes.observedFormatted}}</td>
+			<td>{{attributes.facilityMoniker}}</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

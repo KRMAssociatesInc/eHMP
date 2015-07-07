@@ -1,0 +1,505 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "EncounterId": "2157580365",
+        "EvalManagementCode": "",
+        "EncounterNumber": "GTLK-1004",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131007161701",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131009165427",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580375",
+            "Procedure": "Allergy Testing Chestnut Specific IgE (___ IU/ml)",
+            "EnteredByDate": "20131009165432",
+            "Code": "86003",
+            "ProcedureDate": "20131009165339",
+            "EventId": "1000010353"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Cough variant asthma",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "493.82 2",
+            "EventId": "1000010354"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "Notes Entered by: GLF,ONE 03 May 2012 1303\r\n------------------------------\r\nTiffany",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000010355"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157580379",
+        "EvalManagementCode": "99211",
+        "EncounterNumber": "GTLK-1100",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131009171009",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131009172039",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580390",
+            "Procedure": "Home Care Visit Administration Of Aerosolized Pentamidine",
+            "EnteredByDate": "20131009172042",
+            "Code": "99601",
+            "ProcedureDate": "20131009171045",
+            "EventId": "1000010356"
+          }
+        ],
+        "Status": "Updated",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Disorder of eye, unspecified",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "379.90",
+            "EventId": "1000010357"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "Notes Entered by: BHIE,USERONE 09 Oct 2013 1309\r\n------------------------------\r\ntesting drawing module",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000010358"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157581493",
+        "EvalManagementCode": "99213",
+        "EncounterNumber": "GTLK-2502",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131118170913",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131118173425",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157581506",
+            "Procedure": "Gastric Acid, Free",
+            "EnteredByDate": "20131118173429",
+            "Code": "82930",
+            "ProcedureDate": "20131118173257",
+            "EventId": "1000010359"
+          },
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157581505",
+            "Procedure": "Balloon Cath Removal Esoph Foreign Body Supervis & Interpret",
+            "EnteredByDate": "20131118173429",
+            "Code": "74235",
+            "ProcedureDate": "20131118173232",
+            "EventId": "1000010360"
+          },
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157581504",
+            "Procedure": "CT Scan Of The Abdomen",
+            "EnteredByDate": "20131118173429",
+            "Code": "74150",
+            "ProcedureDate": "20131118173055",
+            "EventId": "1000010361"
+          },
+          {
+            "Status": "Deleted due to an entry made in error",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157581507",
+            "Procedure": "Gastric Acid, Free AND Total",
+            "EnteredByDate": "20131118173429",
+            "Code": "82930",
+            "ProcedureDate": "20131118172235",
+            "EventId": "1000010362"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Other and unspecified diseases of appendix",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "543.9",
+            "EventId": "1000010363"
+          }
+        ],
+        "DischargeDisposition": "Sick at Home/Quarters",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000010364"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157581630",
+        "EvalManagementCode": "99211",
+        "EncounterNumber": "GTLK-2606",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131119202540",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131119203833",
+        "Procedures": [
+
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Pain in joint, ankle and foot",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "719.47",
+            "EventId": "1000010365"
+          }
+        ],
+        "DischargeDisposition": "Released with Work/Duty Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000010366"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157582336",
+        "EvalManagementCode": "99213",
+        "EncounterNumber": "GTLK-2900",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131202210030",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131202213928",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157582351",
+            "Procedure": "Anesthesia Neck For Procedures On Skin / Subcutaneous Tissue",
+            "EnteredByDate": "20131202213933",
+            "Code": "00300",
+            "ProcedureDate": "20131202213908",
+            "EventId": "1000010367"
+          },
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157582350",
+            "Procedure": "Immunization Administration One Vaccine",
+            "EnteredByDate": "20131202213933",
+            "Code": "90471",
+            "ProcedureDate": "20131202212127",
+            "EventId": "1000010368"
+          },
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157582349",
+            "Procedure": "Hepatitis B Vaccine (Active); 20 Years and Above",
+            "EnteredByDate": "20131202213933",
+            "Code": "90746",
+            "ProcedureDate": "20131202212126",
+            "EventId": "1000010369"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Acute cystitis",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "595.0",
+            "EventId": "1000010370"
+          }
+        ],
+        "DischargeDisposition": "Released with Work/Duty Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000010371"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157582421",
+        "EvalManagementCode": "99211",
+        "EncounterNumber": "GTLK-3000",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131203160359",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131203164917",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157582432",
+            "Procedure": "Hepatitis B Vaccine (Active); 20 Years and Above",
+            "EnteredByDate": "20131203164921",
+            "Code": "90746",
+            "ProcedureDate": "20131203161654",
+            "EventId": "1000010372"
+          },
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157582433",
+            "Procedure": "Immunization Administration One Vaccine",
+            "EnteredByDate": "20131203164921",
+            "Code": "90471",
+            "ProcedureDate": "20131203161654",
+            "EventId": "1000010373"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Cervicalgia",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "723.1",
+            "EventId": "1000010374"
+          }
+        ],
+        "DischargeDisposition": "Sick at Home/Quarters",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000000375"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157582823",
+        "EvalManagementCode": "99212",
+        "EncounterNumber": "GTLK-3103",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131205171456",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131205172610",
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157582834",
+            "Procedure": "",
+            "EnteredByDate": "20131205172614",
+            "Code": "15277",
+            "ProcedureDate": "20131205172550",
+            "EventId": "1000000376"
+          }
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Swelling of limb",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "729.81",
+            "EventId": "1000000377"
+          }
+        ],
+        "DischargeDisposition": "Sick at Home/Quarters",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000000378"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157584304",
+        "EvalManagementCode": "99212",
+        "EncounterNumber": "GTLK-3800",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20140109200252",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20140113175535",
+        "Procedures": [
+
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Pain in joint, hand",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "719.44",
+            "EventId": "1000000379"
+          }
+        ],
+        "DischargeDisposition": "Released with Work/Duty Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000000380"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157584319",
+        "EvalManagementCode": "99212",
+        "EncounterNumber": "GTLK-3801",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20140110170850",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20140113175542",
+        "Procedures": [
+
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Headache",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "784.0",
+            "EventId": "1000000381"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000000382"
+      },
+      "dataType": 5
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "9",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "9",
+      "RetrievedCount": "9",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

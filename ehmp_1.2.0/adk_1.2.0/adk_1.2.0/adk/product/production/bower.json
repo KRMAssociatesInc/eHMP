@@ -1,0 +1,129 @@
+{
+  "name": "ADK",
+  "version": "0.0.0",
+  "authors": [
+    "Alexander Luong <alexander.luong@asmr.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "docs",
+    "example",
+    "site"
+  ],
+  "dependencies": {
+    "backbone-sessionStorage": "git://gist.github.com/3875274.git",
+    "typeahead.js": "git://github.com/twitter/typeahead.js.git#v0.10.5",
+    "lodash": "1.3.1",
+    "jquery": "1.9.1",
+    "backbone.paginator": "2.0.0",
+    "jasmine": "1.3.1",
+    "async": "0.2.9",
+    "moment": "2.7.0",
+    "fastclick": "0.6.11",
+    "placeholders": "3.0.2",
+    "backgrid": "0.3.5",
+    "gridster": "git://github.com/Hokua/gridster.js.git#v0.5.8",
+    "backgrid-filter": "~0.3.5",
+    "backgrid-moment-cell": "~0.3.5",
+    "bootstrap": "3.2.0",
+    "bootstrap-timepicker": "~0.2.6",
+    "bootstrap-datepicker": "~1.3.1",
+    "font-awesome": "~4.2.0",
+    "backbone": "1.1.2",
+    "backbone-sorted-collection": "0.3.8",
+    "backbone.radio": "0.6.0",
+    "crossfilter": "~1.3.11",
+    "highstock-release": "~2.0.4",
+    "pattern-fill": "git://github.com/highslide-software/pattern-fill.git",
+    "bowser" : "0.7.2",
+    "grouped_categories": "https://github.com/blacklabel/grouped_categories.git",
+    "libphonenumberjs": "*"
+  },
+  "resolutions": {
+    "backbone": "1.1.2",
+    "jquery": "1.9.1",
+    "moment": "2.7.0",
+    "bootstrap": "3.2.0"
+  },
+  "install": {
+    "base": "_assets/libs/bower",
+    "path": {
+      "/backbone[-|.](?!js|min)/": "backbone/{key}",
+      "/backgrid[-]/": "backgrid/{key}",
+      "/bootstrap[-](?!theme)/": "bootstrap/{key}",
+      "/(bootstrap|font-awesome).*(css)$/": "{key}/css",
+      "js": "{key}",
+      "rb": "{key}",
+      "map": "{key}",
+      "/[c|sc|le]ss$/": "{key}",
+      "/(eot|svg|ttf|woff|otf])$/": "{key}/fonts"
+    },
+    "sources": {
+      "async": "bower_components/async/lib/async.js",
+      "backbone": "bower_components/backbone/backbone.js",
+      "backbone-sessionStorage": "bower_components/backbone-sessionStorage/backbone.sessionStorage.js",
+      "backbone.paginator": "bower_components/backbone.paginator/lib/backbone.paginator.js",
+      "backbone.radio": "bower_components/backbone.radio/src/backbone.radio.js",
+      "backbone-sorted-collection": "bower_components/backbone-sorted-collection/backbone-sorted-collection.js",
+      "backgrid": [
+        "bower_components/backgrid/lib/backgrid.min.js",
+        "bower_components/backgrid/lib/backgrid.min.css"
+      ],
+      "backgrid-filter": [
+        "bower_components/backgrid-filter/backgrid-filter.min.js",
+        "bower_components/backgrid-filter/backgrid-filter.min.css"
+      ],
+      "backgrid-moment-cell": [
+        "bower_components/backgrid-moment-cell/backgrid-moment-cell.min.js",
+        "bower_components/backgrid-moment-cell/backgrid-moment-cell.min.css"
+      ],
+      "bootstrap": [
+        "bower_components/bootstrap/dist/js/bootstrap.min.js",
+        "bower_components/bootstrap/dist/css/bootstrap.min.css",
+        "bower_components/bootstrap/dist/css/bootstrap-theme.min.css",
+        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf",
+        "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"
+      ],
+      "bootstrap-datepicker": [
+        "bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js",
+        "bower_components/bootstrap-datepicker/css/datepicker3.css"
+      ],
+      "crossfilter": "bower_components/crossfilter/crossfilter.min.js",
+      "font-awesome": [
+        "bower_components/font-awesome/css/font-awesome.min.css",
+        "bower_components/font-awesome/fonts/fontawesome-webfont.ttf",
+        "bower_components/font-awesome/fonts/fontawesome-webfont.woff"
+      ],
+      "grouped_categories": "bower_components/grouped_categories/grouped-categories.js",
+      "gridster": [
+        "bower_components/gridster/dist/jquery.gridster.min.js",
+        "bower_components/gridster/dist/jquery.gridster.min.css"
+      ],
+      "highstock-release": [
+        "bower_components/highstock-release/highstock.src.js",
+        "bower_components/highstock-release/highcharts-more.src.js"
+      ],
+      "jasmine": [
+        "bower_components/jasmine/lib/jasmine-core/jasmine.js",
+        "bower_components/jasmine/lib/jasmine-core/jasmine-html.js",
+        "bower_components/jasmine/lib/jasmine-core/jasmine.css"
+      ],
+      "jquery": [
+        "bower_components/jquery/jquery.min.js"
+      ],
+      "libphonenumberjs": "bower_components/libphonenumberjs/libphonenumber.js",
+      "lodash": "bower_components/lodash/dist/lodash.underscore.min.js",
+      "moment": "bower_components/moment/min/moment.min.js",
+      "pattern-fill": "bower_components/pattern-fill/pattern-fill.js",
+      "placeholders": "bower_components/placeholders/lib/utils.js",
+      "typeahead.js": "bower_components/typeahead.js/dist/typeahead.bundle.min.js",
+      "underscore": "bower_components/underscore/underscore-min.js",
+      "bowser": "bower_components/bowser/bowser.min.js"
+    }
+  }
+}

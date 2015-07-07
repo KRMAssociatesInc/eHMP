@@ -1,0 +1,242 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "CustodianName": "ahlta",
+        "Comments": "test",
+        "VitalsResults": [
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "TestName": "Blood pressure, diastolic (BPD)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20131121153515",
+            "TestValue": "40",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271650006",
+            "Ncid": "1976",
+            "PerformingProvider": "BHIE, USERONE",
+            "EndTime": "20131121153515",
+            "CollectionMethod": "",
+            "StartTime": "20131121153515",
+            "UniqueId": "1000000699"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "TestName": "Blood pressure, systolic (BPS),",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20131121153515",
+            "TestValue": "110",
+            "TestUnitsCode": "259018001",
+            "TestUnits": "mmHg",
+            "Modifiers": [
+
+            ],
+            "TestCode": "271649006",
+            "Ncid": "1985",
+            "PerformingProvider": "BHIE, USERONE",
+            "EndTime": "20131121153515",
+            "CollectionMethod": "",
+            "StartTime": "20131121153515",
+            "UniqueId": "1000000700"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "TestName": "Pulse taking",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20131121153515",
+            "TestValue": "55",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "364075005",
+            "Ncid": "2051",
+            "PerformingProvider": "BHIE, USERONE",
+            "EndTime": "20131121153515",
+            "CollectionMethod": "",
+            "StartTime": "20131121153515",
+            "UniqueId": "1000000701"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "TestName": "Smoking Status Now Observation",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20131121153515",
+            "TestValue": "No",
+            "TestUnitsCode": "",
+            "TestUnits": "",
+            "Modifiers": [
+
+            ],
+            "TestCode": "",
+            "Ncid": "1604139",
+            "PerformingProvider": "BHIE, USERONE",
+            "EndTime": "20131121153515",
+            "CollectionMethod": "",
+            "StartTime": "20131121153515",
+            "UniqueId": "1000000702"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "TestName": "Temperature (body temperature)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20131121153515",
+            "TestValue": "98",
+            "TestUnitsCode": "258712004",
+            "TestUnits": "F",
+            "Modifiers": [
+              {
+                "Value": "-17.777778",
+                "UnitsCode": "258710007",
+                "Units": "C",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000000703"
+              }
+            ],
+            "TestCode": "386725007",
+            "Ncid": "2154",
+            "PerformingProvider": "BHIE, USERONE",
+            "EndTime": "20131121153515",
+            "CollectionMethod": "",
+            "StartTime": "20131121153515",
+            "UniqueId": "1000000704"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "TestName": "Weight (body weight)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20131121153515",
+            "TestValue": "140",
+            "TestUnitsCode": "258693003",
+            "TestUnits": "lb",
+            "Modifiers": [
+              {
+                "Value": "0",
+                "UnitsCode": "258682000",
+                "Units": "gm",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000000705"
+              }
+            ],
+            "TestCode": "27113001",
+            "Ncid": "2178",
+            "PerformingProvider": "BHIE, USERONE",
+            "EndTime": "20131121153515",
+            "CollectionMethod": "",
+            "StartTime": "20131121153515",
+            "UniqueId": "1000000706"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "TestName": "Patient's height value",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20131121153515",
+            "TestValue": "64",
+            "TestUnitsCode": "258677007",
+            "TestUnits": "in",
+            "Modifiers": [
+              {
+                "Value": "0",
+                "UnitsCode": "258672001",
+                "Units": "cm",
+                "CreatedDate": "",
+                "CreatedBy": "",
+                "ModifierTypeCode": "0",
+                "ModifierType": "NormalizedObsId",
+                "EventId": "1000000707"
+              }
+            ],
+            "TestCode": "50373000",
+            "Ncid": "110675",
+            "PerformingProvider": "BHIE, USERONE",
+            "EndTime": "20131121153515",
+            "CollectionMethod": "",
+            "StartTime": "20131121153515",
+            "UniqueId": "1000000708"
+          },
+          {
+            "BodySite": "",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "TestName": "Respiratory rate (breaths)",
+            "Comment": "",
+            "BodySiteCode": "",
+            "PerformedDate": "20131121153515",
+            "TestValue": "40",
+            "TestUnitsCode": "258983007",
+            "TestUnits": "/min",
+            "Modifiers": [
+
+            ],
+            "TestCode": "86290005",
+            "Ncid": "2124",
+            "PerformingProvider": "BHIE, USERONE",
+            "EndTime": "20131121153515",
+            "CollectionMethod": "",
+            "StartTime": "20131121153515",
+            "UniqueId": "1000000709"
+          }
+        ],
+        "VitalsId": "2157581755",
+        "EncounterNumber": "GTLK-2804",
+        "Facility": "NH Great Lakes IL/0056",
+        "EnteredBy": "MIDTIER, CGL TWO",
+        "LoincCode": "8716-3",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20131121154412",
+        "OtherIdentifier": "",
+        "EventId": "1000000710"
+      },
+      "dataType": 4
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

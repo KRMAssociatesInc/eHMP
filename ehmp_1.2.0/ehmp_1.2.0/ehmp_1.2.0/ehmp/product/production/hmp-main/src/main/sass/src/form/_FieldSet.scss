@@ -1,0 +1,38 @@
+.#{$prefix}fieldset {
+  border: none;
+}
+
+.#{$prefix}fieldset-header {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 5px;
+  border: 0;
+  border-bottom: $fieldset-border-width $fieldset-border-style $fieldset-border-color;
+  line-height: $fieldset-header-line-height;
+}
+
+.#{$prefix}fieldset-with-title .#{$prefix}tool {
+  margin-top: 2px;
+}
+
+.#{$prefix}fieldset {
+  .#{$prefix}tool-toggle {
+    background-image: url('/images/icons/arrow_down.png');
+    background-position: 0;
+  }
+  .#{$prefix}tool-over .#{$prefix}tool-toggle {
+    background-position: $fieldset-collapse-tool-background-position-over;
+  }
+}
+
+.#{$prefix}fieldset-collapsed {
+  .#{$prefix}tool-toggle {
+    background-image: url('/images/icons/arrow_right.png');
+    background-position: 0;
+  }
+
+  .#{$prefix}tool-over .#{$prefix}tool-toggle {
+    background-position: 0;
+  }
+}

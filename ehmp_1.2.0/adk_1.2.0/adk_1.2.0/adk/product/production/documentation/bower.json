@@ -1,0 +1,28 @@
+{
+  "name": "documentation",
+  "version": "0.0.0",
+  "authors": [
+    "David Aderton <david.aderton@agilex.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "markdown-it": "~4.0.2",
+    "bootstrap": "~3.3.4",
+    "jquery": "~2.1.3",
+    "waypoints": "~3.1.1",
+    "prism": "git://github.com/PrismJS/prism#6dbe88514254be7f953dc7de28b1a7114f4538da",
+    "markdown-it-container": "~1.0.0",
+    "spinkit": "~1.0.1",
+    "q": "git://github.com/kriskowal/q.git#34ffc83cc487ff5b4bea89a8ddcf08639d7fa451",
+    "font-awesome": "~4.3.0"
+  }
+}

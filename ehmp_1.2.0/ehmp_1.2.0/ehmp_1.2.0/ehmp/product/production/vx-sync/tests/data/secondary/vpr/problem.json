@@ -1,0 +1,857 @@
+{
+    "apiVersion": "1.0",
+    "data": {
+        "updated": 20141215144134,
+        "totalItems": 26,
+        "currentItemCount": 26,
+        "items": [
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "locationName": "PRIMARY CARE",
+                "providerName": "VEHU,TEN",
+                "problemText": "Diabetes Mellitus Type II or unspecified (ICD-9-CM 250.00)",
+                "icdCode": "urn:icd:250.00",
+                "icdName": "DIABETES MELLI W/O COMP TYP II",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "removed": false,
+                "entered": "20000508",
+                "updated": "20040331",
+                "onset": "20000221",
+                "kind": "Problem",
+                "icdGroup": "250",
+                "uid": "urn:va:problem:9E7A:8:185",
+                "summary": "Diabetes Mellitus Type II or unspecified (ICD-9-CM 250.00)",
+                "pid": "9E7A;8",
+                "localId": "185",
+                "locationDisplayName": "Primary Care",
+                "providerDisplayName": "Vehu,Ten",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "providerUid": "urn:va:user:9E7A:20012",
+                "locationUid": "urn:va:location:9E7A:32"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "locationName": "GENERAL MEDICINE",
+                "providerName": "LABTECH,SPECIAL",
+                "problemText": "Chronic Systolic Heart failure (ICD-9-CM 428.22)",
+                "icdCode": "urn:icd:428.22",
+                "icdName": "CHRONIC SYSTOLIC HEART FAILURE",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "removed": false,
+                "entered": "20040309",
+                "updated": "20040309",
+                "onset": "20040309",
+                "kind": "Problem",
+                "icdGroup": "428",
+                "uid": "urn:va:problem:9E7A:8:325",
+                "summary": "Chronic Systolic Heart failure (ICD-9-CM 428.22)",
+                "pid": "9E7A;8",
+                "localId": "325",
+                "locationDisplayName": "General Medicine",
+                "providerDisplayName": "Labtech,Special",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "codes": [
+                    {
+                        "code": "441481004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Chronic systolic heart failure (disorder)"
+                    }
+                ],
+                "providerUid": "urn:va:user:9E7A:11745",
+                "locationUid": "urn:va:location:9E7A:23"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "locationName": "GENERAL MEDICINE",
+                "providerName": "VEHU,TEN",
+                "problemText": "Acute myocardial infarction, unspecified site, episode of care unspecified (ICD-9-CM 410.90)",
+                "icdCode": "urn:icd:410.90",
+                "icdName": "AMI NOS, UNSPECIFIED",
+                "removed": false,
+                "entered": "20050317",
+                "updated": "20050317",
+                "onset": "20050317",
+                "kind": "Problem",
+                "icdGroup": "410",
+                "uid": "urn:va:problem:9E7A:8:501",
+                "summary": "Acute myocardial infarction, unspecified site, episode of care unspecified (ICD-9-CM 410.90)",
+                "pid": "9E7A;8",
+                "localId": "501",
+                "locationDisplayName": "General Medicine",
+                "providerDisplayName": "Vehu,Ten",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "providerUid": "urn:va:user:9E7A:20012",
+                "locationUid": "urn:va:location:9E7A:23"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "service": "MEDICAL",
+                "providerName": "VEHU,ONEHUNDRED",
+                "problemText": "Hypertension (ICD-9-CM 401.9)",
+                "icdCode": "urn:icd:401.9",
+                "icdName": "HYPERTENSION NOS",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "entered": "20070410",
+                "updated": "20070410",
+                "onset": "20050407",
+                "kind": "Problem",
+                "icdGroup": "401",
+                "uid": "urn:va:problem:9E7A:8:628",
+                "summary": "Hypertension (ICD-9-CM 401.9)",
+                "pid": "9E7A;8",
+                "localId": "628",
+                "providerDisplayName": "Vehu,Onehundred",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "codes": [
+                    {
+                        "code": "59621000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Essential hypertension (disorder)"
+                    }
+                ],
+                "providerUid": "urn:va:user:9E7A:10000000031"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP MASTER",
+                "service": "MEDICAL",
+                "providerName": "VEHU,ONEHUNDRED",
+                "problemText": "Hyperlipidemia (ICD-9-CM 272.4)",
+                "icdCode": "urn:icd:272.4",
+                "icdName": "HYPERLIPIDEMIA NEC/NOS",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "entered": "20070410",
+                "updated": "20070410",
+                "onset": "20050407",
+                "kind": "Problem",
+                "icdGroup": "272",
+                "uid": "urn:va:problem:9E7A:8:748",
+                "summary": "Hyperlipidemia (ICD-9-CM 272.4)",
+                "pid": "9E7A;8",
+                "localId": "748",
+                "providerDisplayName": "Vehu,Onehundred",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "providerUid": "urn:va:user:9E7A:10000000031"
+            },
+            {
+                "facilityCode": "561",
+                "facilityName": "New Jersey HCS",
+                "service": "MEDICINE",
+                "providerName": "PROGRAMMER,TWENTY",
+                "problemText": "Occasional, uncontrolled chest pain (ICD-9-CM 411.1)",
+                "icdCode": "urn:icd:411.1",
+                "icdName": "INTERMED CORONARY SYND",
+                "acuityCode": "urn:va:prob-acuity:a",
+                "acuityName": "acute",
+                "removed": false,
+                "entered": "19960514",
+                "updated": "19960514",
+                "onset": "19960315",
+                "kind": "Problem",
+                "icdGroup": "411",
+                "uid": "urn:va:problem:ABCD:17:58",
+                "summary": "Occasional, uncontrolled chest pain (ICD-9-CM 411.1)",
+                "pid": "HDR;10110V004877",
+                "localId": "58",
+                "providerDisplayName": "Programmer,Twenty",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "comments": [
+                    {
+                        "entered": "19960514",
+                        "enteredByName": "PROGRAMMER,TWENTY",
+                        "enteredByCode": "urn:va:user:ABCD:755",
+                        "comment": "SHERIDAN PROBLEM",
+                        "summary": "ProblemComment{uid='null'}"
+                    }
+                ],
+                "codes": [
+                    {
+                        "code": "25106000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Impending infarction (disorder)"
+                    }
+                ],
+                "providerUid": "urn:va:user:ABCD:755"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "locationName": "PRIMARY CARE",
+                "providerName": "VEHU,TEN",
+                "problemText": "Diabetes Mellitus Type II or unspecified (ICD-9-CM 250.00)",
+                "icdCode": "urn:icd:250.00",
+                "icdName": "DIABETES MELLI W/O COMP TYP II",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "removed": false,
+                "entered": "20000508",
+                "updated": "20040331",
+                "onset": "20000221",
+                "kind": "Problem",
+                "icdGroup": "250",
+                "uid": "urn:va:problem:C877:8:185",
+                "summary": "Diabetes Mellitus Type II or unspecified (ICD-9-CM 250.00)",
+                "pid": "C877;8",
+                "localId": "185",
+                "locationDisplayName": "Primary Care",
+                "providerDisplayName": "Vehu,Ten",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "providerUid": "urn:va:user:C877:20012",
+                "locationUid": "urn:va:location:C877:32"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "locationName": "GENERAL MEDICINE",
+                "providerName": "LABTECH,SPECIAL",
+                "problemText": "Chronic Systolic Heart failure (ICD-9-CM 428.22)",
+                "icdCode": "urn:icd:428.22",
+                "icdName": "CHRONIC SYSTOLIC HEART FAILURE",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "removed": false,
+                "entered": "20040309",
+                "updated": "20040309",
+                "onset": "20040309",
+                "kind": "Problem",
+                "icdGroup": "428",
+                "uid": "urn:va:problem:C877:8:325",
+                "summary": "Chronic Systolic Heart failure (ICD-9-CM 428.22)",
+                "pid": "C877;8",
+                "localId": "325",
+                "locationDisplayName": "General Medicine",
+                "providerDisplayName": "Labtech,Special",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "codes": [
+                    {
+                        "code": "441481004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Chronic systolic heart failure (disorder)"
+                    }
+                ],
+                "providerUid": "urn:va:user:C877:11745",
+                "locationUid": "urn:va:location:C877:23"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "locationName": "GENERAL MEDICINE",
+                "providerName": "VEHU,TEN",
+                "problemText": "Acute myocardial infarction, unspecified site, episode of care unspecified (ICD-9-CM 410.90)",
+                "icdCode": "urn:icd:410.90",
+                "icdName": "AMI NOS, UNSPECIFIED",
+                "removed": false,
+                "entered": "20050317",
+                "updated": "20050317",
+                "onset": "20050317",
+                "kind": "Problem",
+                "icdGroup": "410",
+                "uid": "urn:va:problem:C877:8:501",
+                "summary": "Acute myocardial infarction, unspecified site, episode of care unspecified (ICD-9-CM 410.90)",
+                "pid": "C877;8",
+                "localId": "501",
+                "locationDisplayName": "General Medicine",
+                "providerDisplayName": "Vehu,Ten",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "unverified": false,
+                "serviceConnected": false,
+                "providerUid": "urn:va:user:C877:20012",
+                "locationUid": "urn:va:location:C877:23"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "service": "MEDICAL",
+                "providerName": "VEHU,ONEHUNDRED",
+                "problemText": "Hypertension (ICD-9-CM 401.9)",
+                "icdCode": "urn:icd:401.9",
+                "icdName": "HYPERTENSION NOS",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "entered": "20070410",
+                "updated": "20070410",
+                "onset": "20050407",
+                "kind": "Problem",
+                "icdGroup": "401",
+                "uid": "urn:va:problem:C877:8:628",
+                "summary": "Hypertension (ICD-9-CM 401.9)",
+                "pid": "C877;8",
+                "localId": "628",
+                "providerDisplayName": "Vehu,Onehundred",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "codes": [
+                    {
+                        "code": "59621000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Essential hypertension (disorder)"
+                    }
+                ],
+                "providerUid": "urn:va:user:C877:10000000031"
+            },
+            {
+                "facilityCode": "500",
+                "facilityName": "CAMP BEE",
+                "service": "MEDICAL",
+                "providerName": "VEHU,ONEHUNDRED",
+                "problemText": "Hyperlipidemia (ICD-9-CM 272.4)",
+                "icdCode": "urn:icd:272.4",
+                "icdName": "HYPERLIPIDEMIA NEC/NOS",
+                "acuityCode": "urn:va:prob-acuity:c",
+                "acuityName": "chronic",
+                "entered": "20070410",
+                "updated": "20070410",
+                "onset": "20050407",
+                "kind": "Problem",
+                "icdGroup": "272",
+                "uid": "urn:va:problem:C877:8:748",
+                "summary": "Hyperlipidemia (ICD-9-CM 272.4)",
+                "pid": "C877;8",
+                "localId": "748",
+                "providerDisplayName": "Vehu,Onehundred",
+                "statusCode": "urn:sct:55561003",
+                "statusName": "ACTIVE",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "providerUid": "urn:va:user:C877:10000000031"
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "USER, MULTISITE",
+                "problemText": "RENAL DISORDERS",
+                "icdCode": "593.9",
+                "acuityName": "Chronic",
+                "entered": "20070628121805",
+                "updated": "20070917122708",
+                "onset": "20070628121711",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001440",
+                "summary": "RENAL DISORDERS",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "USER, MULTISITE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "30627",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "90708001",
+                        "system": "http://snomed.info/sct",
+                        "display": "Kidney disease (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "SERVER, LEGACY GATEWAY",
+                "problemText": "LUMBAGO",
+                "icdCode": "724.2",
+                "acuityName": "Chronic",
+                "entered": "20070917153546",
+                "updated": "20070917153546",
+                "onset": "20070917142905",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001441",
+                "summary": "LUMBAGO",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "SERVER, LEGACY GATEWAY",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "34447",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "279039007",
+                        "system": "http://snomed.info/sct",
+                        "display": "Low back pain (finding)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "SERVER, LEGACY GATEWAY",
+                "problemText": "(MALE) GENITAL CANCER",
+                "icdCode": "187.9",
+                "acuityName": "Chronic",
+                "entered": "20070926154635",
+                "updated": "20070926154635",
+                "onset": "20070824190003",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001442",
+                "summary": "(MALE) GENITAL CANCER",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "SERVER, LEGACY GATEWAY",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "275493",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "93885006",
+                        "system": "http://snomed.info/sct",
+                        "display": "Primary malignant neoplasm of male genital organ (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "SERVER, LEGACY GATEWAY",
+                "problemText": "ACUTE MYOCARDIAL INFARCTION",
+                "icdCode": "410.90",
+                "acuityName": "Chronic",
+                "entered": "20070926154635",
+                "updated": "20070926154635",
+                "onset": "20070824185947",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001443",
+                "summary": "ACUTE MYOCARDIAL INFARCTION",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "SERVER, LEGACY GATEWAY",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "33317",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "57054005",
+                        "system": "http://snomed.info/sct",
+                        "display": "Acute myocardial infarction (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "SERVER, LEGACY GATEWAY",
+                "problemText": "BONE NEOPLASM - VERTEBRAL COLUMN",
+                "icdCode": "239.2",
+                "acuityName": "Chronic",
+                "entered": "20070926160225",
+                "updated": "20070926160225",
+                "onset": "20070820134232",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001444",
+                "summary": "BONE NEOPLASM - VERTEBRAL COLUMN",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "SERVER, LEGACY GATEWAY",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "39019",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "126552007",
+                        "system": "http://snomed.info/sct",
+                        "display": "Neoplasm of vertebral column (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "SERVER, LEGACY GATEWAY",
+                "problemText": "AORTIC SINUS ANEURYSM",
+                "icdCode": "747.29",
+                "acuityName": "Chronic",
+                "entered": "20070926154635",
+                "updated": "20070926154635",
+                "onset": "20070824185840",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001445",
+                "summary": "AORTIC SINUS ANEURYSM",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "SERVER, LEGACY GATEWAY",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "33222",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "54160000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Congenital aneurysm of sinus of Valsalva (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "SERVER, LEGACY GATEWAY",
+                "problemText": "EYE DISORDERS",
+                "icdCode": "379.90",
+                "acuityName": "Chronic",
+                "entered": "20070926153435",
+                "updated": "20070926153435",
+                "onset": "20070830181607",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001446",
+                "summary": "EYE DISORDERS",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "SERVER, LEGACY GATEWAY",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "30719",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "371405004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Disorder of eye proper (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "SERVER, LEGACY GATEWAY",
+                "problemText": "ASPIRATION PNEUMONIA DUE TO VOMITUS",
+                "icdCode": "507.0",
+                "acuityName": "Chronic",
+                "entered": "20070926154635",
+                "updated": "20070926154635",
+                "onset": "20070824185816",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001447",
+                "summary": "ASPIRATION PNEUMONIA DUE TO VOMITUS",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "SERVER, LEGACY GATEWAY",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "275940",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "42004004",
+                        "system": "http://snomed.info/sct",
+                        "display": "Aspiration pneumonia due to inhalation of vomitus (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "SERVER, LEGACY GATEWAY",
+                "problemText": "nausea",
+                "icdCode": "787.02",
+                "acuityName": "Chronic",
+                "entered": "20070926154635",
+                "updated": "20070926154635",
+                "onset": "20070824185806",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001448",
+                "summary": "nausea",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "SERVER, LEGACY GATEWAY",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "411",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "422587007",
+                        "system": "http://snomed.info/sct",
+                        "display": "Nausea (finding)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "PATIENT, BERT",
+                "problemText": "HEMATOLOGIC DISORDERS",
+                "icdCode": "790.99",
+                "acuityName": "Chronic",
+                "entered": "20070711181537",
+                "updated": "20070917122709",
+                "onset": "20070711181930",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001449",
+                "summary": "HEMATOLOGIC DISORDERS",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "PATIENT, BERT",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "38675",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "414027002",
+                        "system": "http://snomed.info/sct",
+                        "display": "Disorder of hematopoietic structure (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "SERVER, LEGACY GATEWAY",
+                "problemText": "COMMON COLD",
+                "icdCode": "460",
+                "acuityName": "Acute",
+                "entered": "20070629172916",
+                "updated": "20080409214939",
+                "onset": "20070629172947",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001450",
+                "summary": "COMMON COLD",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "SERVER, LEGACY GATEWAY",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "31071",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "82272006",
+                        "system": "http://snomed.info/sct",
+                        "display": "Common cold (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "PATIENT, BERT",
+                "problemText": "HEPATIC DISORDER",
+                "icdCode": "573.9",
+                "acuityName": "Chronic",
+                "entered": "20070711181535",
+                "updated": "20070917122709",
+                "onset": "20070711181925",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001451",
+                "summary": "HEPATIC DISORDER",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "PATIENT, BERT",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "90247",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "235856003",
+                        "system": "http://snomed.info/sct",
+                        "display": "Disorder of liver (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "USER, MULTISITE",
+                "problemText": "MALIGNANT NEOPLASM",
+                "icdCode": "199.1",
+                "acuityName": "Chronic",
+                "entered": "20070702171056",
+                "updated": "20070917122705",
+                "onset": "20070702171127",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001452",
+                "summary": "MALIGNANT NEOPLASM",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "USER, MULTISITE",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "99725",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "363346000",
+                        "system": "http://snomed.info/sct",
+                        "display": "Malignant neoplastic disease (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "PATIENT, BERT",
+                "problemText": "DIABETES MELLITUS",
+                "icdCode": "250.00",
+                "acuityName": "Chronic",
+                "entered": "20070711181534",
+                "updated": "20070917122706",
+                "onset": "20070711181923",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001453",
+                "summary": "DIABETES MELLITUS",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "PATIENT, BERT",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "30479",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "73211009",
+                        "system": "http://snomed.info/sct",
+                        "display": "Diabetes mellitus (disorder)"
+                    }
+                ]
+            },
+            {
+                "facilityCode": "DOD",
+                "facilityName": "DOD",
+                "locationName": "4th Medical Group",
+                "providerName": "PATIENT, BERT",
+                "problemText": "PULMONARY DISEASE",
+                "icdCode": "519.9",
+                "acuityName": "Chronic",
+                "entered": "20070711181534",
+                "updated": "20070917122704",
+                "onset": "20070711181924",
+                "kind": "Problem",
+                "uid": "urn:va:problem:DOD:0000000008:1000001454",
+                "summary": "PULMONARY DISEASE",
+                "pid": "DOD;0000000008",
+                "locationDisplayName": "4th Medical Group",
+                "providerDisplayName": "PATIENT, BERT",
+                "statusName": "Active",
+                "statusDisplayName": "Active",
+                "serviceConnected": false,
+                "comments": [],
+                "codes": [
+                    {
+                        "code": "236576",
+                        "system": "DOD_MEDCIN"
+                    },
+                    {
+                        "code": "19829001",
+                        "system": "http://snomed.info/sct",
+                        "display": "Disorder of lung (disorder)"
+                    }
+                ]
+            }
+        ]
+    }
+}

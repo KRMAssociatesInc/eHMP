@@ -1,0 +1,34 @@
+description = 'CPE Health-Time Jackson Support'
+//description = '''To ease the integration of CPE DateTimes and Hibernate. It aims to provide the classes necessary to
+//    persist PointInTime and IntervalOfTime objects.'''
+group = 'gov.va.hmp'
+version = '2.0.23'
+
+apply plugin: 'maven-publish'
+
+dependencies {
+    compile project(':production:health-time:health-time-core')
+	compile "com.fasterxml.jackson.core:jackson-annotations:${versions.jacksonVersion}"
+	compile "com.fasterxml.jackson.core:jackson-core:${versions.jacksonVersion}"
+	compile "com.fasterxml.jackson.core:jackson-databind:${versions.jacksonVersion}"
+	testCompile "junit:junit:${versions.junitVersion}"
+	testCompile "org.slf4j:slf4j-nop:${versions.slf4jVersion}"
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'CPE Health-Time Hibernate Support'
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'gov.va.hmp'
+            artifactId 'health-time-jackson'
+            version '2.0.23'
+
+            from components.java
+        }
+    }
+}

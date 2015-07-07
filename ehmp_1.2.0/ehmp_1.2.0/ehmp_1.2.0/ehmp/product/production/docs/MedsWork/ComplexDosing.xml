@@ -1,0 +1,244 @@
+<!-- Continuous inpatient IV -->
+<med>
+	<doses>
+		<dose route='IV' />
+	</doses>
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<id value='1446P;I' />
+	<location code='158' name='7A GEN MED' />
+	<name value='PENICILLIN INJ' />
+	<orderID value='34014' />
+	<products>
+		<product code='8' name='PENICILLIN G' role='A' concentration='20 UNITS' >
+			<class code='AM110' name='PENICILLIN-G RELATED PENICILLINS' vuid='4021739' />
+			<vaGeneric code='16' name='PENICILLIN' vuid='4019880' />
+			<vaProduct code='181' name='PENICILLIN G K 5MILLION UNT/VIL INJ' vuid='4000804' />
+		</product>
+		<product code='118' name='CYANOCOBALAMIN' role='A' concentration='10 MCG' >
+			<class code='VT101' name='CYANOCOBALAMIN' vuid='4021896' />
+			<vaGeneric code='17' name='CYANOCOBALAMIN' vuid='4017441' />
+			<vaProduct code='213' name='CYANOCOBALAMIN 1000MCG/ML INJ' vuid='4000836' />
+		</product>
+		<product code='79' name='DEXTROSE 20% IN WATER' role='B' concentration='500 ML' >
+			<class code='TN101' name='IV SOLUTIONS WITHOUT ELECTROLYTES' vuid='4021702' />
+			<vaGeneric code='535' name='DEXTROSE' vuid='4017760' />
+			<vaProduct code='3647' name='DEXTROSE 20% INJ' vuid='4004208' />
+		</product>
+	</products>
+	<rate value='100 ml/hr' />
+	<status value='not active' />
+	<vaStatus value='PENDING' />
+	<vaType value='V' />
+</med>
+
+<!-- Intermittant inpatient IV -->
+<med>
+	<doses>
+		<dose route='IV' schedule='Q2H' />
+	</doses>
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<id value='1451P;I' />
+	<ivLimit value='5 doses' />
+	<location code='158' name='7A GEN MED' />
+	<name value='AMPHOTERICIN B INJ' />
+	<orderID value='34022' />
+	<products>
+		<product code='84' name='AMPHOTERICIN B' role='A' concentration='20 MG' >
+			<class code='AM700' name='ANTIFUNGALS' vuid='4021535' />
+			<vaGeneric code='103' name='AMPHOTERICIN B' vuid='4017616' />
+			<vaProduct code='1099' name='AMPHOTERICIN B 50MG/VIL INJ' vuid='4001702' />
+		</product>
+		<product code='66' name='POTASSIUM CHLORIDE 20MEQ/50ML' role='B' concentration='50 ML' >
+			<class code='TN430' name='POTASSIUM' vuid='4021885' />
+			<vaGeneric code='19' name='POTASSIUM CHLORIDE' vuid='4017447' />
+			<vaProduct code='275' name='POTASSIUM CHLORIDE 20MEQ/50ML INJ,BAG' vuid='4000897' />
+		</product>
+	</products>
+	<rate value='INFUSE OVER 30 Minutes' />
+	<status value='not active' />
+	<vaStatus value='PENDING' />
+	<vaType value='V' />
+</med>
+
+
+<!-- Pending inpatient complex dose split into child orders -->
+<med>
+	<doses>
+		<dose dose='10' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' />
+	</doses>
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<form value='TAB' />
+	<id value='1447P;I' />
+	<location code='158' name='7A GEN MED' />
+	<name value='WARFARIN TAB ' />
+	<orderID value='34017' />
+	<orderingProvider code='1085' name='AVIVAUSER,ONE' />
+	<products>
+		<product code='2653' name='WARFARIN (COUMADIN) NA 10MG TAB' role='D' >
+			<class code='BL110' name='ANTICOAGULANTS' vuid='4021557' />
+			<vaGeneric code='865' name='WARFARIN' vuid='4019972' />
+			<vaProduct code='4654' name='WARFARIN NA 10MG TAB' vuid='4005201' />
+		</product>
+	</products>
+	<sig xml:space='preserve'>Give: 10MG PO BID</sig>
+	<status value='not active' />
+	<vaStatus value='PENDING' />
+	<vaType value='I' />
+</med>
+<med>
+	<doses>
+		<dose dose='7.5' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' />
+	</doses>
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<form value='TAB' />
+	<id value='1448P;I' />
+	<location code='158' name='7A GEN MED' />
+	<name value='WARFARIN TAB ' />
+	<orderID value='34018' />
+	<orderingProvider code='1085' name='AVIVAUSER,ONE' />
+	<products>
+		<product code='2677' name='WARFARIN (C0UMADIN) NA 7.5MG TAB' role='D' >
+			<class code='BL110' name='ANTICOAGULANTS' vuid='4021557' />
+			<vaGeneric code='865' name='WARFARIN' vuid='4019972' />
+			<vaProduct code='4653' name='WARFARIN NA 7.5MG TAB' vuid='4005200' />
+		</product>
+	</products>
+	<sig xml:space='preserve'>Give: 7.5MG PO BID</sig>
+	<status value='not active' />
+	<vaStatus value='PENDING' />
+	<vaType value='I' />
+</med>
+<med>
+	<doses>
+		<dose dose='5' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' />
+	</doses>
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<form value='TAB' />
+	<id value='1449P;I' />
+	<location code='158' name='7A GEN MED' />
+	<name value='WARFARIN TAB ' />
+	<orderID value='34019' />
+	<orderingProvider code='1085' name='AVIVAUSER,ONE' />
+	<products>
+		<product code='1812' name='WARFARIN (C0UMADIN) NA 5MG TAB' role='D' >
+			<class code='BL110' name='ANTICOAGULANTS' vuid='4021557' />
+			<vaGeneric code='865' name='WARFARIN' vuid='4019972' />
+			<vaProduct code='13625' name='WARFARIN NA 5MG TAB,UD' vuid='4013990' />
+		</product>
+	</products>
+	<sig xml:space='preserve'>Give: 5MG PO BID</sig>
+	<status value='not active' />
+	<vaStatus value='PENDING' />
+	<vaType value='I' />
+</med>
+<med>
+	<doses>
+		<dose dose='2.5' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' />
+	</doses>
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<form value='TAB' />
+	<id value='1450P;I' />
+	<location code='158' name='7A GEN MED' />
+	<name value='WARFARIN TAB ' />
+	<orderID value='34020' />
+	<orderingProvider code='1085' name='AVIVAUSER,ONE' />
+	<products>
+		<product code='2657' name='WARFARIN (COUMADIN) NA 2.5MG TAB' role='D' >
+			<class code='BL110' name='ANTICOAGULANTS' vuid='4021557' />
+			<vaGeneric code='865' name='WARFARIN' vuid='4019972' />
+			<vaProduct code='13675' name='WARFARIN NA 2.5MG TAB,UD' vuid='4014040' />
+		</product>
+	</products>
+	<sig xml:space='preserve'>Give: 2.5MG PO BID</sig>
+	<status value='not active' />
+	<vaStatus value='PENDING' />
+	<vaType value='I' />
+</med>
+</meds>
+</results>
+
+
+<!-- Pending outpatient complex dose -->
+<results version='1.0' timeZone='-0700' >
+<meds total='1' >
+<med>
+	<daysSupply value='7' />
+	<doses>
+		<dose dose='10' units='MG' unitsPerDose='4' noun='TABLETS' route='PO' schedule='BID' duration='D1' conjunction='THEN' />
+		<dose dose='7.5' units='MG' unitsPerDose='3' noun='TABLETS' route='PO' schedule='BID' duration='D1' conjunction='THEN' />
+		<dose dose='5' units='MG' unitsPerDose='2' noun='TABLETS' route='PO' schedule='BID' duration='D2' conjunction='THEN' />
+		<dose dose='2.5' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' duration='D3' />
+	</doses>
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<form value='TAB' />
+	<id value='314P;O' />
+	<location code='285' name='DIABETIC' />
+	<name value='WARFARIN TAB' />
+	<orderID value='34021' />
+	<ordered value='3110914.112525' />
+	<orderingProvider code='1085' name='AVIVAUSER,ONE' />
+	<products>
+		<product code='2657' name='WARFARIN (COUMADIN) NA 2.5MG TAB' role='D' >
+			<class code='BL110' name='ANTICOAGULANTS' vuid='4021557' />
+			<vaGeneric code='865' name='WARFARIN' vuid='4019972' />
+			<vaProduct code='13675' name='WARFARIN NA 2.5MG TAB,UD' vuid='4014040' />
+		</product>
+	</products>
+	<quantity value='28' />
+	<routing value='W' />
+	<sig xml:space='preserve'>TAKE FOUR TABLETS BY MOUTH TWICE A DAY FOR 1 DAY, THEN TAKE THREE TABLETS TWICE A DAY FOR 1 DAY, THEN TAKE TWO TABLETS TWICE A DAY FOR 2 DAYS, THEN TAKE ONE TABLET TWICE A DAY FOR 3 DAYS</sig>
+	<status value='not active' />
+	<type value='Prescription' />
+	<vaStatus value='PENDING' />
+	<vaType value='O' />
+</med>
+</meds>
+</results>
+
+<!-- Finished but non-verified outpatient complex dose -->
+<results version='1.0' timeZone='-0700' >
+<meds total='1' >
+<med>
+	<currentProvider code='1085' name='AVIVAUSER,ONE' />
+	<daysSupply value='7' />
+	<doses>
+		<dose dose='10' units='MG' unitsPerDose='4' noun='TABLETS' route='PO' schedule='BID' duration='1D' conjunction='T' doseStart='3110914' doseStop='3111014' />
+		<dose dose='7.5' units='MG' unitsPerDose='3' noun='TABLETS' route='PO' schedule='BID' duration='1D' conjunction='T' doseStart='3110914' doseStop='3111014' />
+		<dose dose='5' units='MG' unitsPerDose='2' noun='TABLETS' route='PO' schedule='BID' duration='2D' conjunction='T' doseStart='3110914' doseStop='3111014' />
+		<dose dose='2.5' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='BID' duration='3D' doseStart='3110914' doseStop='3111014' />
+	</doses>
+	<expires value='3111014' />
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<fillCost value='.1204' />
+	<fillsAllowed value='0' />
+	<fillsRemaining value='0' />
+	<form value='TAB' />
+	<id value='404296R;O' />
+	<lastFilled value='3110914' />
+	<location code='285' name='DIABETIC' />
+	<name value='WARFARIN TAB' />
+	<orderID value='34021' />
+	<ordered value='3110914.112525' />
+	<orderingProvider code='1085' name='AVIVAUSER,ONE' />
+	<pharmacist code='1085' name='AVIVAUSER,ONE' />
+	<prescription value='400006' />
+	<products>
+		<product code='2657' name='WARFARIN (COUMADIN) NA 2.5MG TAB' role='D' >
+			<class code='BL110' name='ANTICOAGULANTS' vuid='4021557' />
+			<vaGeneric code='865' name='WARFARIN' vuid='4019972' />
+			<vaProduct code='13675' name='WARFARIN NA 2.5MG TAB,UD' vuid='4014040' />
+		</product>
+	</products>
+	<ptInstructions xml:space='preserve'>Testing taper for outpatient.</ptInstructions>
+	<quantity value='28' />
+	<routing value='W' />
+	<sig xml:space='preserve'>TAKE FOUR TABLETS BY MOUTH TWICE A DAY FOR 1 DAY, THEN TAKE THREE TABLETS TWICE A DAY FOR 1 DAY, THEN TAKE TWO TABLETS TWICE A DAY FOR 2 DAYS, THEN TAKE ONE TABLET TWICE A DAY FOR 3 DAYS TESTING TAPER FOR OUTPATIENT.</sig>
+	<start value='3110914' />
+	<status value='active' />
+	<stop value='3111014' />
+	<type value='Prescription' />
+	<vaStatus value='NON-VERIFIED' />
+	<vaType value='O' />
+</med>
+</meds>
+</results>

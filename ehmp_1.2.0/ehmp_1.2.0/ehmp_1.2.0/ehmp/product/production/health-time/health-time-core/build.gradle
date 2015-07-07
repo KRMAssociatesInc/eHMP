@@ -1,0 +1,56 @@
+description = 'CPE Health-Time Library'
+//description = '''A package of Java classes that implement imprecise dates and times. Concrete date/time type is based on
+//    HL7's "point in time" data type. Classes implementing different date/time format strings, including conversion
+//    to and from VA FileMan dates are included.'''
+
+group = 'gov.va.hmp'
+version = '2.0.23'
+
+apply plugin: 'maven-publish'
+
+dependencies {
+	compile 'joda-time:joda-time:2.2'
+
+  testCompile "junit:junit:${versions.junitVersion}"
+  testCompile group: 'org.mockito', name: 'mockito-core', version: versions.mockitoVersion
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'CPE Health-Time Library'
+    }
+}
+
+// TODO don't hardcode the version
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'gov.va.hmp'
+            artifactId 'health-time-core'
+            version '2.0.23'
+
+            from components.java
+        }
+    }
+}
+
+sourceSets {
+    test {
+        java {
+            exclude '**/*Tests.java'
+        }
+    }
+}
+
+task jarPath {
+  def folder = new File("${rootDir}/artifact_versions")
+  folder.mkdirs()
+
+  def file = new File("${rootDir}/artifact_versions/health_time_core.version")
+
+  if (file.exists()) {
+    file.delete()
+  }
+
+  file.write("${project.jar.archivePath}")
+}

@@ -1,0 +1,49 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="metricsRegistry" class="gov.va.hmp.metrics.MetricRegistryHolder" factory-method="getMetricRegistry"/>
+    <bean class="gov.va.hmp.metrics.MetricSetBeanPostProcessor" c:metricRegistry-ref="metricsRegistry"/>
+
+    <!--<bean id="memoryUsageMetrics" class="com.codahale.metrics.jvm.MemoryUsageGaugeSet"/>-->
+    <bean id="garbageCollectionMetrics" class="com.codahale.metrics.jvm.GarbageCollectorMetricSet"/>
+    <bean id="vistaRpcSynchronizationConnectionMetrics"
+          class="gov.va.hmp.vista.rpc.metrics.VistaRpcConnectionManagerMetricSet"
+          c:connectionManager-ref="synchronizationConnectionManager"
+          c:metricName="sync"/>
+    <!--<bean id="vistaRpcConnectionMetrics" class="gov.va.hmp.vista.rpc.metrics.VistaRpcConnectionManagerMetricSet"-->
+    <!--c:connectionManager-ref="vistaConnectionManager"-->
+    <!--c:metricName="user"/>-->
+    <bean id="vistaRpcMetrics" class="gov.va.hmp.metrics.VistaRpcElapsedTimeMetricListener"
+          c:metricRegistry-ref="metricsRegistry"/>
+
+    <bean id="slf4jReporter" class="com.ryantenney.metrics.spring.reporter.Slf4jReporterFactoryBean"
+          p:metricRegistry-ref="metricsRegistry">
+        <property name="properties">
+            <map>
+                <entry key="period" value="10000"/>
+            </map>
+        </property>
+    </bean>
+
+    <!--<bean id="jmxReporter" class="com.ryantenney.metrics.spring.reporter.JmxReporterFactoryBean"-->
+    <!--p:metricRegistry-ref="metricsRegistry" p:properties-ref="metricsProperties"/>-->
+
+    <bean id="healthCheckRegistry" class="gov.va.hmp.metrics.health.HealthCheckRegistryHolder"
+          factory-method="getHealthCheckRegistry"/>
+    <bean class="com.ryantenney.metrics.spring.HealthCheckBeanPostProcessor"
+          c:healthChecks-ref="healthCheckRegistry"/>
+
+    <bean class="gov.va.hmp.metrics.health.VistaAccountHealthCheckRegistrar"/>
+
+    <!-- health check beans automatically registered by post processor -->
+    <bean id="deadlockHealth" class="com.codahale.metrics.health.jvm.ThreadDeadlockHealthCheck"/>
+    <bean id="jdsConnectionHealth" class="gov.va.hmp.metrics.health.JdsHealthCheck"/>
+    <bean id="solrConnectionHealth" class="gov.va.hmp.metrics.health.SolrHealthCheck"/>
+    <bean id="infoButtonConnectionHealth" class="gov.va.hmp.metrics.health.OpenInfoButtonHealthCheck"/>
+    <bean id="termEngHealth" class="gov.va.cpe.vpr.termeng.TermEngHealthCheck"/>
+</beans>

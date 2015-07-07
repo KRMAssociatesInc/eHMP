@@ -1,0 +1,37 @@
+<div data-appletid="cds_advice">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>{{title}}</h3>
+        </div>
+    </div>
+
+    &nbsp;
+    <div class="row">
+        <div class="col-md-4 text-right text-muted">Priority:</div>
+        <div class="col-md-8 text-left {{priorityCSS}}">{{priorityText}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 text-right text-muted">Type:</div>
+        <div class="col-md-8 text-left">{{typeText}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 text-right text-muted">Detail:</div>
+        <div class="col-md-8 text-left">{{details.detail}}</div>
+    </div>
+    {{#if details.provenance}}
+    <div class="row">
+        <div class="col-md-4 text-right text-muted">Provenance:</div>
+        <div class="col-md-8 text-left provenance">{{details.provenance}}</div>
+    </div>
+    {{/if}} {{#if dueDate}}
+    <div class="row">
+        <div class="col-md-4 text-right text-muted">Due Date:</div>
+        <div class="col-md-8 text-left">{{dueDate}}</div>
+    </div>
+    {{/if}} {{#if doneDate}}
+    <div class="row">
+        <div class="col-md-4 text-right text-muted">Done Date:</div>
+        <div class="col-md-8 text-left">{{doneDate}}</div>
+    </div>
+    {{/if}}
+</div>

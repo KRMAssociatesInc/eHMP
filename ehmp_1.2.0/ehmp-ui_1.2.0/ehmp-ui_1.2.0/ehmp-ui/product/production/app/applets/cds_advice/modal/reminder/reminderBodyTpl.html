@@ -1,0 +1,21 @@
+<div data-appletid="cds_advice">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>{{title}}</h3>
+        </div>
+    </div>
+
+    {{#if dueDateFormatted}}
+    <div class="details-row">
+        <span class="text-muted">Due Date:</span><span class="details-data">{{dueDateFormatted}}</span>
+    </div>
+    {{/if}} {{#if doneDateFormatted}}
+    <div class="details-row">
+        <span class="text-muted">Done Date:</span><span class="details-data">{{doneDateFormatted}}</span>
+    </div>
+    {{/if}}
+    <div class="details-row">
+        <span class="text-muted">Detail:</span>
+        <p class="details-data">{{details.detail}}</p>
+    </div>
+</div>

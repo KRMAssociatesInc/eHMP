@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"
+            xmlns="http://www.opensaml.org/xmltooling-config">
+            
+     <!-- Validation rules for XML Encryption XMLObjects -->
+    <ValidatorSuites>
+    
+        <!--  XML Encryption Schema Validation Rules -->
+        <ValidatorSuite id="encryption-schema-validator">
+            <Validator qualifiedName="xenc:CarriedKeyName" className="org.opensaml.xml.schema.validator.XSStringSchemaValidator" />
+            <Validator qualifiedName="xenc:CipherData" className="org.opensaml.xml.encryption.validator.CipherDataSchemaValidator" />
+            <Validator qualifiedName="xenc:CipherReference" className="org.opensaml.xml.encryption.validator.CipherReferenceSchemaValidator" />
+            <Validator qualifiedName="xenc:CipherValue" className="org.opensaml.xml.schema.validator.XSBase64BinarySchemaValidator" />
+            <Validator qualifiedName="xenc:DataReference" className="org.opensaml.xml.encryption.validator.ReferenceTypeSchemaValidator" />
+            <Validator qualifiedName="xenc:EncryptedData" className="org.opensaml.xml.encryption.validator.EncryptedTypeSchemaValidator" />
+            <Validator qualifiedName="xenc:EncryptedKey" className="org.opensaml.xml.encryption.validator.EncryptedTypeSchemaValidator" />
+            <Validator qualifiedName="xenc:EncryptionMethod" className="org.opensaml.xml.encryption.validator.EncryptionMethodSchemaValidator" />
+            <Validator qualifiedName="xenc:EncryptionProperties" className="org.opensaml.xml.encryption.validator.EncryptionPropertiesSchemaValidator" />
+            <Validator qualifiedName="xenc:EncryptionProperty" className="org.opensaml.xml.encryption.validator.EncryptionPropertySchemaValidator" />
+            <Validator qualifiedName="xenc:KA-Nonce" className="org.opensaml.xml.schema.validator.XSBase64BinarySchemaValidator" />
+            <Validator qualifiedName="xenc:KeyReference" className="org.opensaml.xml.encryption.validator.ReferenceTypeSchemaValidator" />
+            <Validator qualifiedName="xenc:KeySize" className="org.opensaml.xml.encryption.validator.KeySizeSchemaValidator" />
+            <Validator qualifiedName="xenc:OAEPparams" className="org.opensaml.xml.schema.validator.XSBase64BinarySchemaValidator" />
+            <Validator qualifiedName="xenc:OriginatorKeyInfo" className="org.opensaml.xml.signature.validator.KeyInfoTypeSchemaValidator" />
+            <Validator qualifiedName="xenc:RecipientKeyInfo" className="org.opensaml.xml.signature.validator.KeyInfoTypeSchemaValidator" />
+            <Validator qualifiedName="xenc:ReferenceList" className="org.opensaml.xml.encryption.validator.ReferenceListSchemaValidator" />
+            <Validator qualifiedName="xenc:Transforms" className="org.opensaml.xml.encryption.validator.TransformsSchemaValidator" />
+        </ValidatorSuite>
+    
+        <!-- XML Encryption Specification Validation Rules -->
+        <!--
+        <ValidatorSuite id="encryption-spec-validator">
+        </ValidatorSuite>
+        -->
+        
+    </ValidatorSuites>
+ 
+</XMLTooling>

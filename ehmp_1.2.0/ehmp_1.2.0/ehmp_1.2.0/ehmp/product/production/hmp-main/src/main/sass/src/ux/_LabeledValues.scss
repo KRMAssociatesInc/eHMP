@@ -1,0 +1,63 @@
+// tables
+table.hmp-labeled-values {
+  font-family: $font-family;
+  font-size: $font-size;
+}
+
+table.hmp-labeled-values > tbody > tr > td {
+  margin: 0;
+  padding: 2px 4px;
+  vertical-align: top;
+}
+
+table.hmp-labeled-values > tbody > tr > td:nth-child(odd) {
+  color: $form-label-color;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.#{$prefix}grid-row-selected table.hmp-labeled-values > tbody > tr > td {
+    color: $grid-row-cell-selected-color;
+}
+
+.#{$prefix}grid-row-selected table.hmp-labeled-values > tbody > tr > td:nth-child(odd) {
+  @include muted-for-background($grid-row-cell-selected-background-color);
+}
+
+.#{$prefix}grid-row-selected .#{$prefix}grid-cell-rowbody .#{$prefix}panel-body-default table.hmp-labeled-values > tbody > tr > td {
+  color: $color;
+}
+
+.#{$prefix}grid-row-selected .#{$prefix}grid-cell-rowbody .#{$prefix}panel-body-default table.hmp-labeled-values > tbody > tr > td:nth-child(odd) {
+  color: $form-label-color;
+}
+
+// alerts
+.alert-success dt,
+.alert-success .text-muted,
+.alert-success table.hmp-labeled-values > tbody > tr > td:nth-child(odd) {
+  color: lighten($alert-success-text, 25%);
+}
+.alert-info dt,
+.alert-info .text-muted,
+.alert-info table.hmp-labeled-values > tbody > tr > td:nth-child(odd) {
+  color: lighten($alert-info-text, 25%);
+}
+.alert-warning dt,
+.alert-warning .text-muted,
+.alert-warning table.hmp-labeled-values > tbody > tr > td:nth-child(odd) {
+  color: lighten($alert-warning-text, 25%);
+}
+.alert-danger dt,
+.alert-danger .text-muted,
+.alert-danger table.hmp-labeled-values > tbody > tr > td:nth-child(odd) {
+  color: lighten($alert-danger-text, 25%);
+}
+
+// description lists
+dl {
+  dt {
+    font-weight: normal;
+    color: $form-label-color;
+  }
+}

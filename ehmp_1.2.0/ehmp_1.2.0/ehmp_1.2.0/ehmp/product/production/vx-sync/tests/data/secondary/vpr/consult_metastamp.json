@@ -1,0 +1,102 @@
+{
+	"icn": "10110V004877",
+	"stampTime": "20131031094920.853",
+	"sourceMetaStamp": {
+		"9E7A": {
+			"pid": "9E7A;8",
+			"localId": "8",
+			"stampTime": "20131031094920.853",
+			"domainMetaStamp": {
+				"consult": {
+					"domain": "consult",
+					"stampTime": "20131031094920.853",
+					"eventMetaStamp": {
+						"urn:va:consult:9E7A:8:209": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:9E7A:8:216": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:9E7A:8:259": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:9E7A:8:327": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:9E7A:8:385": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:9E7A:8:386": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:9E7A:8:77": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:9E7A:8:83": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:9E7A:8:91": {
+							"stampTime": "20131031094920.853"
+						}
+					}
+				}
+			}
+		},
+		"HDR": {
+			"pid": "HDR;10110V004877",
+			"localId": "10110V004877",
+			"stampTime": "20131031094920.853",
+			"domainMetaStamp": {
+				"consult": {
+					"domain": "consult",
+					"stampTime": "20131031094920.853",
+					"eventMetaStamp": {
+						"urn:va:consult:ABCD:12:82": {
+							"stampTime": "20131031094920.853"
+						}
+					}
+				}
+			}
+		},
+		"C877": {
+			"pid": "C877;8",
+			"localId": "8",
+			"stampTime": "20131031094920.853",
+			"domainMetaStamp": {
+				"consult": {
+					"domain": "consult",
+					"stampTime": "20131031094920.853",
+					"eventMetaStamp": {
+						"urn:va:consult:C877:8:209": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:C877:8:216": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:C877:8:259": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:C877:8:327": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:C877:8:385": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:C877:8:386": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:C877:8:77": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:C877:8:83": {
+							"stampTime": "20131031094920.853"
+						},
+						"urn:va:consult:C877:8:91": {
+							"stampTime": "20131031094920.853"
+						}
+					}
+				}
+			}
+		}
+	}
+}

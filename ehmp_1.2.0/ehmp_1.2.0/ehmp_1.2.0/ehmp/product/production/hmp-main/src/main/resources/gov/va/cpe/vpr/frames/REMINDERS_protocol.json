@@ -1,0 +1,10 @@
+{
+ 		"id" : "REMINDERS_protocol_20121102",
+        "type" : "protocol_definition",
+        "selfLink": "/frame/info/REMINDERS_protocol_20121102",
+        "name" : "Reminders",
+        "conditionType": "Health Maintenance",
+        "status": "<span style=\"color: red; font-weight: bold;\">n DUE</span>",
+        "class" : "gov.va.cpe.vpr.frameeng.ProtocolFrame",
+        "viewdef" : "gov.va.cpe.vpr.frameeng.AllRemindersFrame"
+}

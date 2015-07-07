@@ -1,0 +1,21 @@
+$include-default-uis: true !default;
+
+// theme config
+@import 'ext-theme-base/sass/etc/all';      // grandparent theme
+@import 'ext-theme-neutral/sass/etc/all';   // parent theme
+@import 'etc/all';
+
+// theme variables (NOTE: order matters here for overriding variables, see http://compass-style.org/help/tutorials/configurable-variables/)
+@import 'var/all';                    // custom theme
+@import 'ext-theme-neutral-var-all';  // parent theme
+@import 'ext-theme-base-var-all';     // grandparent theme
+
+// variables that are colorset dependent
+@import 'var/ux/PatientBar';
+@import 'var/ux/MultiPatientBar';
+
+// src that are colorset dependent
+@import 'src/ux/ContextBar';
+@import 'src/ux/MultiPatientBar';
+@import 'src/ux/PatientBar';
+@import 'src/ux/ArrowButton';

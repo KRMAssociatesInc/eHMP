@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>#springMessage("platform.name") &raquo; Sign In</title>
+</head>
+<body>
+#parse("/framework_loading.vm")
+</body>
+#parse("/layouts/main.vm")
+<script type="text/javascript" async="true">
+    Ext.require(['gov.va.hmp.auth.Login']);
+    Ext.onReady(function () {
+        Ext.create('gov.va.hmp.auth.Login');
+        var splash = document.getElementById('frameworkload');
+        if (splash) splash.style.visibility = 'hidden';
+    });
+</script>
+</html>

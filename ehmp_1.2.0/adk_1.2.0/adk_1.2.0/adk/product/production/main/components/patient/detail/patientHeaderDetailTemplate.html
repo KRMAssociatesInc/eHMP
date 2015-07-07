@@ -1,0 +1,43 @@
+<div id="pt-header-detail-col-one" class="col-md-3">
+    <div class="row">
+        <div class="col-xs-12" id="pt-header-pt-phone"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" id="pt-header-pt-address"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" id="pt-header-email"></div>
+    </div>
+</div>
+<div id="pt-header-detail-col-two" class="col-md-3">
+    <div class="row">
+        <div class="col-xs-12" id="pt-header-em-contact"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" id="pt-header-nok-contact"></div>
+    </div>
+</div>
+<div id="pt-header-detail-col-three" class="col-md-3">
+    <div class="row">
+        <div class="col-xs-12" id="pt-header-em-ins"></div>
+    </div>
+</div>
+<div id="pt-header-detail-col-four" class="col-md-3">
+    <div class="row">
+        <div class="col-xs-12" id="pt-header-em-misc"></div>
+    </div>
+</div>
+{{#if useCcow}}
+    {{#compare ccowStatus 'Connected'}}
+        <h4>Patient Context</h4>
+        <div id="ccowActions">
+            <button id="leaveContext" class="btn btn-default">Leave Context</button>
+        </div>
+    {{/compare}}
+    {{#compare ccowStatus 'Suspended'}}
+        <h4>Patient Context</h4>
+        <div id="ccowActions">
+            <button id="joinContext" class="btn btn-default">Rejoin Context</button>
+        </div>
+    {{/compare}}
+{{/if}}

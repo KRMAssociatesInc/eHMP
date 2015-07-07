@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns="http://www.opensaml.org/xmltooling-config" xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd">
+
+    <!-- SAML V2.0 Metadata Extension for Entity Attributes Object providers -->
+    <ObjectProviders>
+
+        <!-- Description provider -->
+        <ObjectProvider qualifiedName="mdattr:EntityAttributes">
+            <BuilderClass className="org.opensaml.samlext.saml2mdattr.impl.EntityAttributesBuilder"/>
+            <MarshallingClass className="org.opensaml.samlext.saml2mdattr.impl.EntityAttributesMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.samlext.saml2mdattr.impl.EntityAttributesUnmarshaller"/>
+        </ObjectProvider>
+
+    </ObjectProviders>
+</XMLTooling>

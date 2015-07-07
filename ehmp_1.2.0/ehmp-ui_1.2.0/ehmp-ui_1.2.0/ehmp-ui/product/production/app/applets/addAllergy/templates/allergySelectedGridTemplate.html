@@ -1,0 +1,139 @@
+<!--div class="container col-sm-12"-->
+
+    <div class="container-fluid" role="form">
+        <div name="row2a1">
+            <div class="col-sm-12">
+                <div class="error-container" id="error-container"></div>
+           </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <span class="btn-group btn-group-sm stretch" id="immediacy">
+                    <button type="button" is-active="false" id="btn-observer"
+                            data-value="o^OBSERVED" class="btn toggle-btn toggle-off">Observed</button>
+                    <button type="button" is-active="false" id="btn-historical"
+                            data-value="h^HISTORICAL" class="btn toggle-btn toggle-off">Historical</button>
+                </span>
+                <span class="help-inline applet-error" aria-atomic="true" tabindex="0"></span>
+            </div>
+        </div>
+        <br>
+        <div id="obs-form" class="row">
+        	<!--div class="col-sm-7"-->
+            <div class="obs-left-col">
+                <div id="obs-date-box">
+                    <label for="obs-date" class="control-label">Reaction Date</label>
+                    <div id='obs-date-gp'>
+                        <div class="input-group date">
+                          <input id="obs-date" type="text" autocomplete="off" class="form-control input-sm datepicker"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                          <span class="help-inline applet-error" aria-atomic="true" tabindex="0"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="obs-time-box">
+                    <label for="obs-time" class="control-label">Reaction Time</label>
+                    <div class="input-append input-group">
+                        <input id="obs-time" type="text" autocomplete="off" class="form-control input-sm" data-inputmask-regex="([0][1-9]|[1][0-2]):([0-5]\d) (a|p)" placeholder="HH:MM a/p" max-length="10">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-time"></i>
+                        </span>
+                        <span class="help-inline applet-error" aria-atomic="true" tabindex="0"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="obs-right-col">
+                <div class="stretch">
+                    <label for="severity-btns">Severity</label>
+                    <div class="btn-group btn-group-sm stretch" id="severity-btns">
+                        <button type='button' id="btn-mild" data-value="1" class="btn btn-sm severity-btn severity-none">Mild</button>
+                        <button type='button' id="btn-moderate" data-value="2" class="btn btn-sm severity-btn severity-none">Moderate</button>
+                        <button type='button' id="btn-severe" data-value="3" class="btn btn-sm severity-btn severity-none">Severe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container-fluid" role="form">
+        <div class="row">
+        	<div class="col-sm-5">
+        		<div class="row">
+        			<div class="col-sm-12"><label for="nature">Nature of Reaction</label>
+        			</div>
+        		</div>
+        		<div class="row">
+        			<div class="col-sm-12">
+        				<select class="form-control" id="nature" name="nature">
+                            <option selected disabled value="default">Select from list</option>
+                            <option value="A^ALLERGY">Allergy</option>
+                            <option value="P^Pharmacological">Pharmacological</option>
+                            <option value="U^Unknown">Unknown</option>
+                    	</select>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="col-sm-7">
+        	</div>
+        </div>
+    </div>
+    <br>
+    <div class="container-fluid" role="form">
+        <div class="row">
+            <div class="symptoms-right-header"><label for="symptomSearchInput">Signs/Symptoms</label></div>
+            <div class="symptoms-left-header"><label for="symptoms-selected">Selected Symptoms</label></div>
+        </div>
+        <div class="row">
+            <div class="symptoms-left-col">
+                <div class="row">
+                    <!--div class="col-sm-12"-->
+                        <div class="symptoms-box" id="symptomsContainer" >
+                           <div class="lgborder" id="symptomSearchBoxContainer">
+                                <input type="text" autocomplete="off" class="form-control input-sm" id="symptomSearchInput" placeholder="Lookup Sign/Symptom"/>
+                            </div>
+                            <div class="lgborder" id="symptomsList">
+                                <div>
+                                    <ul class="nav nav-pills nav-full" role="menu">
+                                        <li id="symptoms-inner-list" class="open full-width">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="lgborder" id="symptomsLoadingIndicator">
+                                </div>
+                                <div id="allergy-loading-annoucement" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                            </div>
+                        </div>
+                    <!--/div-->
+                </div>
+            </div>
+            <div class="symptoms-right-col">
+                <div class="row">
+                    <!--div class="col-sm-12"-->
+                        <div class="symptoms-box lgborder" id="symptoms-selected-container">
+                            <div id="symptoms-selected"></div>
+                        </div>
+                    <!-- /div -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container-fluid" role="form">
+        <div class="row">
+        	<div class="col-sm-12">
+        		<div class="form-group">
+                        <label class="sr-only" for="comments">Comments</label>
+                        <textarea class="lgborder resize-vertical" id="comments" rows="3" placeholder="Comments..."></textarea>
+                </div>
+        	</div>
+        </div>
+    </div>
+<!--/div-->
+
+
+
+
+

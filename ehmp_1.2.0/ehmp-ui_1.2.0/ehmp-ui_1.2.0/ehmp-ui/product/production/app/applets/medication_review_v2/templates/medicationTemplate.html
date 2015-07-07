@@ -1,0 +1,40 @@
+
+<div id="detail_{{ detailId }}" class="medicationReviewDetail panel-collapse collapse out panel panel-success light-grey-background">
+    <div class="panel-body">
+        {{#if isNonVa}}
+        {{#hasPermission 'remove-patient-med|edit-patient-med'}}
+        <div id="order-nav-outer-div">
+            <div id="order-nav-inner-div" class="pull-right">
+                <ul class="nav nav-pills order-nav-button" role="tablist">
+                    {{#hasPermission 'edit-patient-med'}}
+                    <button id="edit" class="btn btn-primary orderNav">Modify</button>
+                    {{/hasPermission}}
+                    {{#hasPermission 'remove-patient-med'}}
+                    {{#if isNotDiscontinued}}
+                    <button id="discontinue" class="btn btn-danger orderNav">Discontinue</button>
+                    {{/if}}
+                    {{/hasPermission}}
+                </ul>
+            </div>
+        </div>
+        {{/hasPermission}}
+        {{/if}}
+        <div class="col-sm-2 orderHx-list pull-left">
+            <h2 class="orderHx">
+                <span class="order-history-header" id="order-history-label-{{detailId}}">Order Hx</span>
+            </h2>
+            <div id="order-history-panel" class="pull-left" role="list"></div>
+            <h5 class="infoButton">
+                <span class="info-button-header" id="info-button-label-{{detailId}}"><p></p><p>Links</p><p></p></span>
+            </h5>
+            <div id="info-button-panel" class="pull-left" role="list"></div>
+            <h5 class="infoButton">
+                <span class="info-button-header" id="info-button-patient-label-{{detailId}}"><p></p><p>Patient Education</p><p></p></span>
+            </h5>
+            <div id="info-button-patient-panel" class="pull-left" role="list"></div>
+
+        </div>
+
+        <div id="order-detail-panel" class="col-sm-10 pull-left dataValue"></div>
+    </div>
+</div>

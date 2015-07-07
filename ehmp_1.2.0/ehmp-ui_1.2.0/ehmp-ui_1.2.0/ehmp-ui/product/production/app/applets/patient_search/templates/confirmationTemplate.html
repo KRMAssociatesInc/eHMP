@@ -1,0 +1,39 @@
+<div class="confirmHeader row">
+    <div class="patientName">
+        {{displayName}}
+        {{{helpIconLink 'patient_search_confirm' 'helpIconInverted'}}}
+    </div>
+</div>
+<div class="fixedHeightZone">
+    <div class="patientInfo row">
+        <div class="col-md-4"> 
+        <img src='{{patientImage}}' class="center-block" alt="Patient Image" width="100" height="100">
+        </div>
+        <div class="col-md-8">
+            <div class="col-xs-4 col-md-4 infoLabelStyle">DOB:</div>
+            <div class="col-xs-4 col-md-6">{{formatDate birthDate "MM/DD/YYYY"}}</div>
+            <br>
+            <div class="col-xs-4 col-md-4 infoLabelStyle">Age:</div>
+            <div class="col-xs-4 col-md-6">{{getAge birthDate}}y</div>
+            <br>
+            <div class="col-xs-4 col-md-4 infoLabelStyle">Gender:</div>
+            <div class="col-xs-4 col-md-6">{{genderName}}</div>
+            <br>
+            <div class="ccol-xs-4 col-md-4 infoLabelStyle">SSN:</div>
+            <div class="col-xs-4 col-md-6">{{formatSSN ssn false}}</div>
+            {{#if roomBed}}
+            <br>
+            <div class="col-xs-4 col-md-4 infoLabelStyle">Bed/Room:</div>
+            <div class="col-xs-4 col-md-6">{{roomBed}}</div>
+            {{/if}}
+        </div>
+</div>
+<button type="button" id="confirmationButton" class="confirm btn btn-primary btn-block" tabIndex="0" data-loading-text="<i class='fa fa-spinner fa-spin'></i> <span> Loading Patient Data...</span>">Confirm Selection
+    <span class="sr-only">Confirm patient {{displayName}}, with social security number {{formatSSN ssn false}}, date of birth {{formatDate birthDate "MM/DD/YYYY"}}, age {{getAge birthDate}}, and gender {{genderName}}? Press enter to select this patient. Confirm.</span>
+</button>
+<div class="hidden" tabindex="-1" id="screenReaderSyncing">
+    Syncing Patient.
+</div>
+<div class="hidden" tabindex="-1" id="screenReaderLoading">
+    Loading Patient.
+</div>

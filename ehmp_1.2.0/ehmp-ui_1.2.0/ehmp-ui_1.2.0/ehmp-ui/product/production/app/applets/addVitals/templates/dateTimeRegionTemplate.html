@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-6">Day/Time Measured</div>
+</div>
+<div class="row">
+  <div class="col-sm-4" id="vitals-obs-date-box">
+    <label for="vitals-obs-date" class="sr-only">Day Measured</label>
+        <div id='vitals-obs-date-gp'>
+            <div class="input-group date">
+              <input id="vitals-obs-date" type="text" autocomplete="off" class="form-control input-sm" >
+              <span aria-hidden="true" class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+            <span id="vitals-date-err" class="help-inline applet-error" role="alert" aria-hidden="true" aria-atomic="true" tabindex="0"></span>
+        </div>
+    </div>
+
+    <div class="col-sm-4" id="vitals-obs-time-box">
+      <label for="vitals-obs-time" class="sr-only">Time Measured</label>
+       <div class="input-append input-group bootstrap-timepicker">
+            <input id="vitals-obs-time" type="text" autocomplete="off" class="form-control input-sm" data-inputmask-regex="([0][1-9]|[1][0-2]):([0-5]\d) (a|p)" placeholder="HH:MM a/p" max-length="10">
+            <span aria-hidden="true" class="input-group-addon">
+                <span class="glyphicon glyphicon-time"></span>
+            </span>
+        </div>
+        <span id="vitals-time-err" class="help-inline applet-error" role="alert" aria-hidden="true" aria-atomic="true" tabindex="0"></span>
+    </div>
+  <div class="col-sm-4">
+    <button id="patient-on-pass-btn" type="button" class="btn btn-default pull-right">Patient on Pass</button>
+  </div>
+</div>

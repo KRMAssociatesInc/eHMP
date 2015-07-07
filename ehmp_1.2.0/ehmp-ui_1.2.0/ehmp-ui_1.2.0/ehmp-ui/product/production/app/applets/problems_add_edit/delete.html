@@ -1,0 +1,59 @@
+<div id="deleteProblemModal">
+    <div class="col-sm-12" id="error-container">
+    </div>
+	
+	<div class="row">
+	  <div class="col-md-4 text-right text-muted">Primary ICD-9-CM:</div>
+	  <div class="col-md-8 text-left"><strong>{{icdCode}}</strong></div>
+	</div>
+	<div class="row">
+	  <div class="col-md-4 text-right text-muted">SNOMED CT:</div>
+	  <div class="col-md-8 text-left"><strong>{{snomedCode}}</strong></div>
+	</div>
+	&nbsp;
+	<div class="row">
+	  <div class="col-md-4 text-right text-muted">Onset:</div>
+	  <div class="col-md-8 text-left"><strong>{{onsetFormatted}}</strong></div>
+	</div>
+	<div class="row">
+	  <div class="col-md-4 text-right text-muted">Acuity:</div>
+	  <div class="col-md-8 text-left"><strong>{{acuityName}}</strong></div>
+	</div>
+	<div class="row">
+	  <div class="col-md-4 text-right text-muted">Provider:</div>
+	  <div class="col-md-8 text-left"><strong>{{providerDisplayName}}</strong></div>
+	</div>
+	<div class="row">
+	  <div class="col-md-4 text-right text-muted">Facility:</div>
+	  <div class="col-md-8 text-left"><strong>{{facilityName}}</strong></div>
+	</div>
+	<div class="row">
+	  <div class="col-md-4 text-right text-muted">Location:</div>
+	  <div class="col-md-8 text-left"><strong>{{locationDisplayName}}</strong></div>
+	</div>
+	&nbsp;
+	<!-- Leave this comment in. Trying to keep this template consistent with detail view.
+	<div class="row">
+	  <div class="col-md-4 text-right text-muted">Recorded:</div>
+	  <div class="col-md-8 text-left"><strong>&lt;Data not available&gt; by &lt;Data not available&gt;</strong></div>
+	</div>-->
+	<div class="row">
+	  <div class="col-md-4 text-right text-muted">Entered:</div>
+	  <div class="col-md-8 text-left"><strong>{{enteredFormatted}}</strong></div>
+	</div>
+	<div class="row">
+	  <div class="col-md-4 text-right text-muted">Updated:</div>
+	  <div class="col-md-8 text-left"><strong>{{updatedFormatted}}</strong></div>
+	</div>
+	&nbsp;
+	<hr/>
+	<div class="row">
+	  <div class="col-md-12 bs-callout bs-callout-danger">Provide explanation for removal</div>
+	</div>
+	<div class="row">
+	  <div class="col-md-12">
+		<input class="form-control" autocomplete="off" id="reason" data-uid="" placeholder="Add comment..." value="">
+	  </div>
+	</div>
+
+</div>

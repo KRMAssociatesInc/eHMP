@@ -1,0 +1,114 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "DateReported": "20131119171732",
+        "EnteredBy": "BHIE, USERONE",
+        "Type": "Family History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20131119171732",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "cold hands or feet",
+            "Annotation": "",
+            "EventId": "1000000220"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "18991230050000",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "18991230050000",
+        "CouplerType": "Family History",
+        "ReportingClinician": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "RelationshipId": "92564",
+        "FormattedFindings": "",
+        "Source": "BHIE, USERONE",
+        "Status": "Active",
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "10157-6",
+        "Relationship": "Other, see comments",
+        "EventId": "1000000221"
+      },
+      "dataType": 8
+    },
+    {
+      "dataRecord": {
+        "DateReported": "20131118153637",
+        "EnteredBy": "BHIE, USERONE",
+        "Type": "Family History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20131118153637",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "gastrointestinal symptoms",
+            "Annotation": "",
+            "EventId": "1000000222"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "18991230050000",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "18991230050000",
+        "CouplerType": "Family History",
+        "ReportingClinician": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "RelationshipId": "92564",
+        "FormattedFindings": "",
+        "Source": "BHIE, USERONE",
+        "Status": "Active",
+        "Facility": "NH Great Lakes IL/0056",
+        "LoincCode": "10157-6",
+        "Relationship": "Other, see comments",
+        "EventId": "1000000223"
+      },
+      "dataType": 8
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

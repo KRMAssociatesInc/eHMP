@@ -1,0 +1,31 @@
+{
+  "DOD": {
+    "rules": {
+      "dod_basic_expiration": {
+        "type": "basic",
+        "siteId": "DOD",
+        "expirationHours": 48
+      }
+    }
+  }
+  ,
+  "CDS": {
+    "rules": {
+      "cds_basic_expiration": {
+        "type": "basic",
+        "siteId":"CDS",
+        "expirationHours": 8
+      }
+    }
+  }
+  ,
+  "DAS": {
+    "rules": {
+      "vler_basic_expiration": {
+        "type": "basic",
+        "siteId":"DAS",
+        "expirationHours": 24
+      }
+    }
+  }
+}

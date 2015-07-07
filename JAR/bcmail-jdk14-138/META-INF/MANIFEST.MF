@@ -1,0 +1,475 @@
+Manifest-Version: 1.0
+Created-By: 1.4.2_11-b06 (Sun Microsystems Inc.)
+Ant-Version: Apache Ant 1.6.5
+Specification-Version: 1.1
+Specification-Vendor: BouncyCastle.org
+Implementation-Vendor-Id: org.bouncycastle
+Extension-Name: org.bouncycastle.bcmail
+Implementation-Version: 1.38.0
+Implementation-Vendor: BouncyCastle.org
+
+Name: org/bouncycastle/sasn1/DerObject.class
+SHA1-Digest: 2VYaK3gPCJjkj32qArcFv6Az3c4=
+
+Name: org/bouncycastle/sasn1/cms/SignedDataParser.class
+SHA1-Digest: UsUPUQHJNC7LbQaQw27TwfExV8E=
+
+Name: org/bouncycastle/sasn1/Asn1ObjectIdentifier.class
+SHA1-Digest: CkjmGmebTTJJuf2bzRa1Blx/Hqw=
+
+Name: org/bouncycastle/mail/smime/handlers/pkcs7_mime.class
+SHA1-Digest: fEWRiJ14OfHlVDitDlkDe34siAE=
+
+Name: org/bouncycastle/cms/CMSCompressedDataStreamGenerator.class
+SHA1-Digest: ZNWTNFfn3qqBtZlQAY4zIydYJ1g=
+
+Name: org/bouncycastle/mail/smime/examples/ReadLargeSignedMail.class
+SHA1-Digest: nBMA+7lXBd4YLCf4jr6J4L7NkFE=
+
+Name: org/bouncycastle/mail/smime/SMIMEGenerator.class
+SHA1-Digest: XjWqjumj3y1WQJwmZLx5BL4rsS8=
+
+Name: org/bouncycastle/mail/smime/SMIMEEnvelopedGenerator$EnvelopedGen
+ erator.class
+SHA1-Digest: /8xVA8fNEpeLmaVPKOl/mL2RgTI=
+
+Name: org/bouncycastle/cms/CMSEnvelopedHelper.class
+SHA1-Digest: +xisNLqfYMfZ4dXZ3kmaIKUjqGU=
+
+Name: org/bouncycastle/mail/smime/SMIMESignedParser$TemporaryFileInput
+ Stream.class
+SHA1-Digest: ucT2ITxIZhyP+soM/TUbkTPnSV4=
+
+Name: org/bouncycastle/sasn1/BerOctetStringGenerator$BerOctetStream.cl
+ ass
+SHA1-Digest: AzBqTM70kcEdzUqUh8IYpqH8v1Y=
+
+Name: org/bouncycastle/sasn1/DerSequence.class
+SHA1-Digest: rKzBi7XcWyqJQU4/VYnDUQGQifY=
+
+Name: org/bouncycastle/mail/smime/SMIMESignedGenerator.class
+SHA1-Digest: 67Ahk2Kkxn5G2DVao/mTvcE0EjA=
+
+Name: org/bouncycastle/cms/CMSEnvelopedGenerator.class
+SHA1-Digest: 5C6aP4STm0mEe2DLgZZ7aKVNUME=
+
+Name: org/bouncycastle/cms/CMSUtils.class
+SHA1-Digest: 6k4jOHSKrE/c523OYmPFDOXsHlA=
+
+Name: org/bouncycastle/mail/smime/examples/CreateLargeCompressedMail.c
+ lass
+SHA1-Digest: KBdEINdncIxJv0JrJi2o/LqdZ+c=
+
+Name: org/bouncycastle/cms/SignerInformation.class
+SHA1-Digest: BCy4LxaRw8rGlWtykW1R/25RLGc=
+
+Name: org/bouncycastle/mail/smime/handlers/PKCS7ContentHandler.class
+SHA1-Digest: 9jaGfzl+1hPP9DTil3ddKMEJ7RE=
+
+Name: org/bouncycastle/mail/smime/SMIMECompressed.class
+SHA1-Digest: YGU5WZW7fBex5sUH5Bv0dfBMQHQ=
+
+Name: org/bouncycastle/sasn1/DerGenerator.class
+SHA1-Digest: gmWaGL/R/mADAFlQHVrCDWNL8KM=
+
+Name: org/bouncycastle/cms/CMSSignedHelper.class
+SHA1-Digest: 7kkRb3yosaOF1aX9NCj1tFREEeg=
+
+Name: org/bouncycastle/cms/CMSProcessableByteArray.class
+SHA1-Digest: bplCBtFj9CrB9dmi7HJc3j2a7KY=
+
+Name: org/bouncycastle/mail/smime/SMIMEEnvelopedGenerator$1.class
+SHA1-Digest: NbKXNVPrwympTbDHFvJIRHYbNyw=
+
+Name: org/bouncycastle/cms/CMSEnvelopedData.class
+SHA1-Digest: YVfGer0KdAR6y754pOx9sbW3vzU=
+
+Name: org/bouncycastle/mail/smime/SMIMECompressedParser.class
+SHA1-Digest: gFllhwU01+I+ovNHArjKXj/cXAk=
+
+Name: org/bouncycastle/sasn1/BerSequence.class
+SHA1-Digest: iMWivyTS6I2qHKCUFKHZMCxtva4=
+
+Name: org/bouncycastle/cms/CMSSignableByteArray.class
+SHA1-Digest: IjdDFzApfqG4PeY6yBKXLDuw5oI=
+
+Name: org/bouncycastle/mail/smime/examples/CreateEncryptedMail.class
+SHA1-Digest: H0/flncrui8Po/B2JpF5Hftvtsc=
+
+Name: org/bouncycastle/cms/PKCS5Scheme2PBEKey.class
+SHA1-Digest: In4VhRImxBqDRBRj6XpsECi6lO4=
+
+Name: org/bouncycastle/cms/CMSRuntimeException.class
+SHA1-Digest: EWrrZJ+3d3flsa8psaaJ0ylgiUA=
+
+Name: org/bouncycastle/cms/RecipientId.class
+SHA1-Digest: Dp5abXhLCTi3n3MPlj3Ezr6rlnI=
+
+Name: org/bouncycastle/cms/CMSAttributeTableGenerator.class
+SHA1-Digest: rD1Nu/tcioZbDaZZWOb3Oy4WKtQ=
+
+Name: org/bouncycastle/cms/CMSProcessable.class
+SHA1-Digest: HXpEmOPe0FQk0L2gufWlaeu4Ndo=
+
+Name: org/bouncycastle/mail/smime/validator/SignedMailValidatorMessage
+ s_de.properties
+SHA1-Digest: bl/ceN6KwvnANZfjPy9b92yKOj4=
+
+Name: org/bouncycastle/sasn1/BerOctetStringGenerator$1.class
+SHA1-Digest: P1SzrYwiEUpd4gXgncei8bzxrms=
+
+Name: org/bouncycastle/cms/CMSSignedDataGenerator.class
+SHA1-Digest: a0q31qslyXevs6TjtcQhy7KDlwY=
+
+Name: org/bouncycastle/mail/smime/examples/CreateLargeSignedMail.class
+SHA1-Digest: TeTNz2kVYcwLLmlP5cXYUMV81dY=
+
+Name: org/bouncycastle/mail/smime/SMIMEUtil.class
+SHA1-Digest: Q7d/0gpL5sHqn2W4hXDG4r9kVNo=
+
+Name: org/bouncycastle/mail/smime/SMIMESigned.class
+SHA1-Digest: jxbX9CCko5HpTLqdywg7duuEWt4=
+
+Name: org/bouncycastle/sasn1/Asn1InputStream.class
+SHA1-Digest: 8vptDBoAi1egsfxKHY0OP12mbDE=
+
+Name: org/bouncycastle/sasn1/DerSequenceGenerator.class
+SHA1-Digest: aaSzuhMDFN28jLxwMHGS0T9DrZs=
+
+Name: org/bouncycastle/cms/CMSCompressedDataGenerator.class
+SHA1-Digest: qeJvrdqMvHJbcKNsIWV8sHDCn8k=
+
+Name: org/bouncycastle/sasn1/DerObject$BasicDerGenerator.class
+SHA1-Digest: jcPMbsCrMj7KsRnW3UpWtQX+JuM=
+
+Name: org/bouncycastle/mail/smime/examples/CreateCompressedMail.class
+SHA1-Digest: 9iYhw1OKV7vanYN4pWZ5lKod6Kk=
+
+Name: org/bouncycastle/cms/CMSEnvelopedDataStreamGenerator.class
+SHA1-Digest: PQ79JUsMRGnTk5lNjBtZRARUJP0=
+
+Name: org/bouncycastle/sasn1/cms/CompressedDataParser.class
+SHA1-Digest: o/P4VecZosgTUV6itoowp+v3FSU=
+
+Name: org/bouncycastle/cms/CMSSignedDataStreamGenerator.class
+SHA1-Digest: aPwArph2hocb46YXNp+M2nzGFUo=
+
+Name: org/bouncycastle/cms/CMSProcessableFile.class
+SHA1-Digest: EZsc3sWtarnVO+TPxRi88Jfrrqs=
+
+Name: org/bouncycastle/cms/CMSTypedStream$FullReaderStream.class
+SHA1-Digest: NJ4jkway5+XS3mP4SIxUESOndBE=
+
+Name: org/bouncycastle/cms/CMSEnvelopedDataParser.class
+SHA1-Digest: JXb7Lw8pO/dxrosnflKuufWVCqo=
+
+Name: org/bouncycastle/mail/smime/CMSProcessableBodyPart.class
+SHA1-Digest: hqbn/uvsadeI3GCxvSRp/947Nag=
+
+Name: org/bouncycastle/mail/smime/examples/SendSignedAndEncryptedMail.
+ class
+SHA1-Digest: 0sEyhmYpC6JWneqJGu/y3mVx8mE=
+
+Name: org/bouncycastle/cms/CMSSignedData.class
+SHA1-Digest: Tngyj5Tiryb55DUw+6FI0UfMeZg=
+
+Name: org/bouncycastle/mail/smime/SMIMECompressedGenerator$ContentComp
+ ressor.class
+SHA1-Digest: xzqV/2EqWdHS+SnwjQ5aDpYMEho=
+
+Name: org/bouncycastle/sasn1/cms/ContentInfoParser.class
+SHA1-Digest: f2BDUObgmT6X5z13oW/1d981T1U=
+
+Name: org/bouncycastle/sasn1/BerSet.class
+SHA1-Digest: AhvoAXUK4b3W7kpzsRGWUDxC0Vs=
+
+Name: org/bouncycastle/mail/smime/SMIMEException.class
+SHA1-Digest: x1YKN9SCff62ZF1AYLOLFDGRDmM=
+
+Name: org/bouncycastle/cms/PasswordRecipientInformation.class
+SHA1-Digest: SuzecsfGjtVZqhIQsphTd4dtg00=
+
+Name: org/bouncycastle/mail/smime/validator/SignedMailValidatorExcepti
+ on.class
+SHA1-Digest: vjvozlOpkleg134Xd/GFLCGt5bg=
+
+Name: org/bouncycastle/cms/DefaultSignedAttributeTableGenerator.class
+SHA1-Digest: IUQZx3rAFTJAhXkPcuFPnGRVdjA=
+
+Name: org/bouncycastle/cms/CMSSignedDataStreamGenerator$1.class
+SHA1-Digest: Ei2ltmhvzdhbzPHzEtqJYMNVHXs=
+
+Name: org/bouncycastle/mail/smime/examples/CreateLargeEncryptedMail.cl
+ ass
+SHA1-Digest: bL4qQ2yTRpzpMz/claoCIqkV8e0=
+
+Name: org/bouncycastle/mail/smime/handlers/multipart_signed.class
+SHA1-Digest: 6bx3Zu2jlI4frv2l02718dyZmMM=
+
+Name: org/bouncycastle/mail/smime/SMIMEUtil$WriteOnceFileBackedMimeBod
+ yPart.class
+SHA1-Digest: bV88U60wI/cATdxHk8Sq22jHX9A=
+
+Name: org/bouncycastle/sasn1/cms/EnvelopedDataParser.class
+SHA1-Digest: xp9UZb77lRxB8BuFu9SLACtDq98=
+
+Name: org/bouncycastle/cms/CMSPBEKey.class
+SHA1-Digest: /PleA81RApVTNGm4pbztVSVjbng=
+
+Name: org/bouncycastle/mail/smime/SMIMESignedGenerator$Signer.class
+SHA1-Digest: 7VPvL8LjSMGTj2B62lGgyTFH1fw=
+
+Name: org/bouncycastle/sasn1/Asn1Object.class
+SHA1-Digest: iLUF4AikF6s+tsDgWLGe2qrRUXM=
+
+Name: org/bouncycastle/mail/smime/examples/CreateSignedMultipartMail.c
+ lass
+SHA1-Digest: o8QhxadPwgExbOuyEO0jpzLpGsU=
+
+Name: org/bouncycastle/sasn1/Asn1OctetString.class
+SHA1-Digest: IgLbloFg36/6d2MMHe3Kk5nUBHc=
+
+Name: org/bouncycastle/mail/smime/examples/ReadLargeEncryptedMail.clas
+ s
+SHA1-Digest: fURAjkA8nHqa67WjUCLnUyhkhC0=
+
+Name: org/bouncycastle/cms/CMSException.class
+SHA1-Digest: ZS3Ab/t7dgqAHvN3khBpniQ/0hE=
+
+Name: org/bouncycastle/cms/SignerInformationStore.class
+SHA1-Digest: /EPyq35+0hcbBfMKFow2pUBrwtw=
+
+Name: org/bouncycastle/cms/CMSEnvelopedDataGenerator.class
+SHA1-Digest: XnZSoLeHsFwdojiGFf43VfRGcLw=
+
+Name: org/bouncycastle/sasn1/IndefiniteLengthInputStream.class
+SHA1-Digest: HoB35YbhDeJN+RIurAeXijXIu90=
+
+Name: org/bouncycastle/cms/CMSCompressedDataStreamGenerator$CmsCompres
+ sedOutputStream.class
+SHA1-Digest: nUJdRQRorqBFcfGcS8evl6jD9Dk=
+
+Name: org/bouncycastle/cms/SignerId.class
+SHA1-Digest: Pz9wnC/WBupfx6MgxCFa3mFqaWg=
+
+Name: org/bouncycastle/sasn1/Asn1Generator.class
+SHA1-Digest: f26GmDnfToLxtTn0GFvLE5vkh/U=
+
+Name: org/bouncycastle/cms/CMSEnvelopedGenerator$RecipientInf.class
+SHA1-Digest: tip7oMPuIL/6wsa177u983xMdSw=
+
+Name: org/bouncycastle/mail/smime/handlers/x_pkcs7_signature.class
+SHA1-Digest: K72/5HKebpRTz961JjjRvjt3b4Y=
+
+Name: org/bouncycastle/mail/smime/SMIMEEnveloped.class
+SHA1-Digest: zZthN31y8Okpsh8squFNRAyh4JQ=
+
+Name: org/bouncycastle/sasn1/BerOctetStringGenerator.class
+SHA1-Digest: P9Rlk41IJiFhrJLMGdVOUTVLxv8=
+
+Name: org/bouncycastle/sasn1/Asn1Sequence.class
+SHA1-Digest: utHtiaJW9Kq2bUsbycJ+FmLFzhk=
+
+Name: org/bouncycastle/mail/smime/CMSProcessableBodyPartOutbound.class
+SHA1-Digest: ydFljsNyv4CE3LaYOqU+pSkk+58=
+
+Name: org/bouncycastle/cms/CMSSignedDataStreamGenerator$NullOutputStre
+ am.class
+SHA1-Digest: REHj4TRJ0x+skwcYF1uYI9o9d1A=
+
+Name: org/bouncycastle/sasn1/ConstructedOctetStream.class
+SHA1-Digest: zGNQ50JZ4zYz8i3q3kY/voeX5s8=
+
+Name: org/bouncycastle/cms/CMSSignedGenerator.class
+SHA1-Digest: BXs8/Q+R/ApK38lsX6K8aDxvKZo=
+
+Name: org/bouncycastle/cms/CMSSignedDataGenerator$SigOutputStream.clas
+ s
+SHA1-Digest: 2ON/StUvmNJJfL3XoUv1esL5eeY=
+
+Name: org/bouncycastle/cms/CMSSignedDataStreamGenerator$TeeOutputStrea
+ m.class
+SHA1-Digest: 4zTK9goVpYxf/47nWOIoFvGj1eY=
+
+Name: org/bouncycastle/cms/SimpleAttributeTableGenerator.class
+SHA1-Digest: U9M+Bo23f1egGwwIbDNPPxsiIPI=
+
+Name: org/bouncycastle/mail/smime/examples/ExampleUtils.class
+SHA1-Digest: N+GE90qK6UtfxsBwahtKhbuSi5k=
+
+Name: org/bouncycastle/cms/CMSSignedDataStreamGenerator$SignerInf.clas
+ s
+SHA1-Digest: EHO6OJBueEglaWxZWq1n8BwJjVc=
+
+Name: org/bouncycastle/cms/CMSContentInfoParser.class
+SHA1-Digest: M/WR0Mw/3KhcNPpIIALA1R8zeRE=
+
+Name: org/bouncycastle/mail/smime/handlers/x_pkcs7_mime.class
+SHA1-Digest: fm8HQBhDShXPKhg2Zjn7gSPPUNU=
+
+Name: org/bouncycastle/mail/smime/util/FileBackedMimeBodyPart.class
+SHA1-Digest: wZ58uiQgDwiGqCoyMT3IpjuJRPU=
+
+Name: org/bouncycastle/cms/CMSAttributeTableGenerationException.class
+SHA1-Digest: ymdzH15fb3iTIejdPhuJJdL8Y10=
+
+Name: org/bouncycastle/cms/CMSCompressedDataParser.class
+SHA1-Digest: czM4yjZV/xkiXJJENv0kecQ1yDw=
+
+Name: org/bouncycastle/cms/RecipientInformationStore.class
+SHA1-Digest: mCaPvQHNcyUW3TsApPlsxual44g=
+
+Name: org/bouncycastle/cms/CMSSignedDataGenerator$DigOutputStream.clas
+ s
+SHA1-Digest: 27KLNdLptJL80Xa+4C4iTETqosQ=
+
+Name: org/bouncycastle/sasn1/Asn1Set.class
+SHA1-Digest: /aqzNPrp637cvep3obcwijP7Svk=
+
+Name: org/bouncycastle/sasn1/BerSequenceGenerator.class
+SHA1-Digest: zbmAKYkA1c1Y2XRFLC75uXDsahA=
+
+Name: org/bouncycastle/mail/smime/handlers/multipart_signed$LineOutput
+ Stream.class
+SHA1-Digest: QWL3owtxhU6EZ3jpWMzi1gxeHx8=
+
+Name: org/bouncycastle/cms/KEKRecipientInformation.class
+SHA1-Digest: t4jMFzZz9wpxhga0lSDstaqU8Sk=
+
+Name: org/bouncycastle/sasn1/BerTagClass.class
+SHA1-Digest: gmtpWLF5OcmdprdQpL0STmTWZRo=
+
+Name: org/bouncycastle/mail/smime/SMIMESignedParser.class
+SHA1-Digest: PWbQddG2MaZOM4PS2lIUDrzJIuY=
+
+Name: org/bouncycastle/mail/smime/SMIMEStreamingProcessor.class
+SHA1-Digest: 8It7HnjQ5+8N99jVWQGqZcm1xpU=
+
+Name: org/bouncycastle/cms/CMSSignedDataStreamGenerator$CmsSignedDataO
+ utputStream.class
+SHA1-Digest: Dal5/qXDPI+aOi8jv8l54Bacp1k=
+
+Name: org/bouncycastle/cms/CMSEnvelopedDataStreamGenerator$CmsEnvelope
+ dDataOutputStream.class
+SHA1-Digest: USgfWs8tii1eMYyUzktA+UbNoz0=
+
+Name: org/bouncycastle/cms/CMSCompressedData.class
+SHA1-Digest: 9F9syy6KenVy+EwXcMBMWjHkD6g=
+
+Name: org/bouncycastle/mail/smime/SMIMEEnvelopedParser.class
+SHA1-Digest: Y5+n0050nAtC/+EmmYkAtZxETdA=
+
+Name: org/bouncycastle/mail/smime/util/SharedFileInputStream.class
+SHA1-Digest: e5jWmUcKXScRGI9oAhDl1mCaSR8=
+
+Name: org/bouncycastle/mail/smime/examples/ReadSignedMail.class
+SHA1-Digest: N/ct6OgHuFRO8fOZJj6Gz5nb5PA=
+
+Name: org/bouncycastle/sasn1/BerTag.class
+SHA1-Digest: GJ3t98SNJv72Lg7tvNSI6fKPVMc=
+
+Name: org/bouncycastle/mail/smime/validator/SignedMailValidatorMessage
+ s.properties
+SHA1-Digest: gjWwAsLS80/pG9OxKlRBDlkKAkQ=
+
+Name: org/bouncycastle/mail/smime/SMIMEEnvelopedGenerator$WrappingIOEx
+ ception.class
+SHA1-Digest: UmijkJdYePgi9rQYeTrwBKW8qzQ=
+
+Name: org/bouncycastle/cms/CMSSignedDataParser.class
+SHA1-Digest: XVI2ouXlYdffx9bjOvbRykVmQ2E=
+
+Name: org/bouncycastle/sasn1/BerOctetStringGenerator$BufferedBerOctetS
+ tream.class
+SHA1-Digest: aXCHKodaUFP8vtWq+dFYviZarqI=
+
+Name: org/bouncycastle/mail/smime/examples/ReadCompressedMail.class
+SHA1-Digest: 5rQVPm+Q4DSZw1yODGFo0XQFITg=
+
+Name: org/bouncycastle/mail/smime/SMIMESignedGenerator$ContentSigner.c
+ lass
+SHA1-Digest: DIrISWgMTSxmperNgCROcTxCuBY=
+
+Name: org/bouncycastle/mail/smime/examples/CreateSignedMail.class
+SHA1-Digest: wBTX2edaEx5hjmOwi5KOdP+h2FM=
+
+Name: org/bouncycastle/sasn1/LimitedInputStream.class
+SHA1-Digest: Imijn8Tw4+7agXCdPcxAnIfstUc=
+
+Name: org/bouncycastle/cms/RecipientInformation.class
+SHA1-Digest: S+Z2Ks9D9pToe1VFiaXD0WrlsmU=
+
+Name: org/bouncycastle/sasn1/Asn1Integer.class
+SHA1-Digest: DGctvL+6dDTiZEAaqc18uabxYsk=
+
+Name: org/bouncycastle/sasn1/cms/EncryptedContentInfoParser.class
+SHA1-Digest: Q0v823/HGrAUQcvEkho9bfXZveo=
+
+Name: org/bouncycastle/sasn1/BerOctetString.class
+SHA1-Digest: 6sexMmJQvw+xzpaPuajrhkzu9kU=
+
+Name: org/bouncycastle/cms/KeyAgreeRecipientInformation.class
+SHA1-Digest: qQufOUIxusebeRGILZmfmW0ysM0=
+
+Name: org/bouncycastle/mail/smime/SMIMEUtil$LineOutputStream.class
+SHA1-Digest: TjfpC/S9QFrGEB+2yNr79Cptnbk=
+
+Name: org/bouncycastle/mail/smime/examples/ReadLargeCompressedMail.cla
+ ss
+SHA1-Digest: 8eGqtBuF4MtjslhnRzZeYmqgkq0=
+
+Name: org/bouncycastle/mail/smime/handlers/pkcs7_signature.class
+SHA1-Digest: V8oofsKd0W7cTq9KijAIvvw8ZN4=
+
+Name: org/bouncycastle/sasn1/BerGenerator.class
+SHA1-Digest: eRYWZyilmlqXGf+XukGUdYPhO48=
+
+Name: org/bouncycastle/cms/CMSEnvelopableByteArray.class
+SHA1-Digest: r5GanrK+/OZIBhiAWHeRNM+A8OA=
+
+Name: org/bouncycastle/mail/smime/CMSProcessableBodyPartInbound.class
+SHA1-Digest: 8yos4/7LseDxn3oBceexVRP/xjA=
+
+Name: org/bouncycastle/mail/smime/SMIMEEnvelopedGenerator.class
+SHA1-Digest: Z/pNI7/qjB3PuI5uOXQQGmJU7rc=
+
+Name: org/bouncycastle/mail/smime/SMIMECompressedGenerator.class
+SHA1-Digest: xE1Dx/HCWxkSElt3LeOv6nNlT98=
+
+Name: org/bouncycastle/sasn1/Asn1TaggedObject.class
+SHA1-Digest: Apu8dWXiPA0i2PFBgYsmnbVtB24=
+
+Name: org/bouncycastle/mail/smime/examples/ReadEncryptedMail.class
+SHA1-Digest: eSpNdZt7yJKCyKSq4FKglUWiBKQ=
+
+Name: org/bouncycastle/sasn1/Asn1Null.class
+SHA1-Digest: JD+ZVYo6YHyOihlIGkLCZrD0XW4=
+
+Name: org/bouncycastle/cms/KeyTransRecipientInformation.class
+SHA1-Digest: oOjYNa5bsrOcqHSt9aXKGymBKrE=
+
+Name: org/bouncycastle/cms/CMSTypedStream.class
+SHA1-Digest: WG4PQSg38EgsIcjsArhEPDV0YZA=
+
+Name: org/bouncycastle/sasn1/Asn1ObjectIdentifier$OIDTokenizer.class
+SHA1-Digest: 7kuPQeQpzAGyRSYNrY54+njS1Nw=
+
+Name: org/bouncycastle/mail/smime/util/CRLFOutputStream.class
+SHA1-Digest: Y9IRKCZ+Vamw/ed4frdKpK5GDsc=
+
+Name: org/bouncycastle/cms/CMSSignedDataGenerator$SignerInf.class
+SHA1-Digest: wVEg8e2sVkYnwd028yvmr9de4BY=
+
+Name: org/bouncycastle/sasn1/DerOctetString.class
+SHA1-Digest: NaBd1MyUAOde0wcih/25UEnJYTc=
+
+Name: org/bouncycastle/sasn1/DerSet.class
+SHA1-Digest: Nj/L+L4aMo11D2Aa+Pl2vKqgptU=
+
+Name: org/bouncycastle/mail/smime/SMIMEEnvelopedGenerator$ContentEncry
+ ptor.class
+SHA1-Digest: WP6svfrplTKOaWt9iX2q99wHlyQ=
+
+Name: org/bouncycastle/sasn1/DefiniteLengthInputStream.class
+SHA1-Digest: sNwxybJVdyyPX4uGTf2xepEPzzo=
+

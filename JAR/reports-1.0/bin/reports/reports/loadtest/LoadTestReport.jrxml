@@ -1,0 +1,160 @@
+<jasperReport xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LoadTestReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30" xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <property name="ireport.encoding" value="UTF-8"/>
+   <template>"../../styles.jrtx"</template>
+   <subDataset name="dataset1">
+      <field name="COLUMN_1" class="java.lang.String"/>
+      <field name="COLUMN_4" class="java.lang.String"/>
+   </subDataset>
+   <parameter name="FlowLayout" class="java.lang.Boolean">
+      <property name="interactive" value="true"/>
+      <property name="label" value="Flow Layout"/>
+      <parameterDescription>Choose flow layout for report</parameterDescription>
+      <defaultValueExpression>false</defaultValueExpression>
+   </parameter>
+   <parameter name="ErrorDetails" class="java.lang.Boolean">
+      <property name="interactive" value="true"/>
+      <property name="label" value="Detailed Error Information"/>
+      <property name="depends" value="FailedTestSteps"/>
+      <parameterDescription>Adds details for failed test items to report</parameterDescription>
+      <defaultValueExpression>true</defaultValueExpression>
+   </parameter>
+   <parameter name="HeaderLogo" class="java.lang.String" isForPrompting="false">
+      <defaultValueExpression>"../../logos/header_logo.jpg"</defaultValueExpression>
+   </parameter>
+   <pageHeader>
+      <band height="51">
+         <printWhenExpression>$V{PAGE_NUMBER} == 1 || !$P{FlowLayout}</printWhenExpression>
+         <image scaleImage="Clip" hAlign="Right" onErrorType="Blank">
+            <reportElement x="0" y="0" width="535" height="51"/>
+            <imageExpression class="java.lang.String">$P{HeaderLogo}</imageExpression>
+         </image>
+      </band>
+   </pageHeader>
+   <columnHeader>
+      <band height="77">
+         <printWhenExpression>$V{PAGE_NUMBER} == 1 || !$P{FlowLayout}</printWhenExpression>
+         <staticText>
+            <reportElement style="MainHeader" x="0" y="0" width="535" height="35"/>
+            <textElement/>
+            <text>LoadTest Results for</text>
+         </staticText>
+         <textField isStretchWithOverflow="true">
+            <reportElement style="MainHeader" x="0" y="36" width="535" height="40"/>
+            <textElement/>
+            <textFieldExpression class="java.lang.String">"${=loadTest.name}"</textFieldExpression>
+         </textField>
+      </band>
+   </columnHeader>
+   <detail>
+      <band height="549">
+         <subreport isUsingCache="false" runToBottom="false">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="1" y="0" width="535" height="56"/>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="ErrorDetails">
+               <subreportParameterExpression>$P{ErrorDetails}</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$P{LoadTestStatistics}</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:LoadTestStatistics"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="false" runToBottom="false">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="379" width="535" height="45"/>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="ErrorDetails">
+               <subreportParameterExpression>$P{ErrorDetails}</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$P{LoadTestLog}</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:LoadTestLog"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="false" runToBottom="false">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="424" width="535" height="41"/>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="ErrorDetails">
+               <subreportParameterExpression>$P{ErrorDetails}</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$P{LoadTestTestStepHistory}</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:LoadTestTestStepHistory"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="false" runToBottom="false">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="465" width="535" height="41"/>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="ErrorDetails">
+               <subreportParameterExpression>$P{ErrorDetails}</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$P{LoadTestStatisticsHistory}</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:LoadTestStatisticsHistory"</subreportExpression>
+         </subreport>
+         <break>
+            <reportElement positionType="Float" x="0" y="378" width="100" height="1">
+               <printWhenExpression>!$P{FlowLayout}</printWhenExpression>
+            </reportElement>
+         </break>
+         <pieChart>
+            <chart>
+               <reportElement positionType="Float" x="0" y="82" width="535" height="297"/>
+               <chartTitle>
+                  <titleExpression>"Average Step Time Distribution"</titleExpression>
+               </chartTitle>
+               <chartSubtitle/>
+               <chartLegend/>
+            </chart>
+            <pieDataset>
+               <dataset>
+                  <incrementWhenExpression>!$F{COLUMN_1}.equals( "TestCase:" ) &amp;&amp; Float.parseFloat( $F{COLUMN_4}) > 0</incrementWhenExpression>
+                  <datasetRun subDataset="dataset1">
+                     <dataSourceExpression>$P{LoadTestStatistics}.cloneDataSource()</dataSourceExpression>
+                  </datasetRun>
+               </dataset>
+               <keyExpression>$F{COLUMN_1} + " - " + $F{COLUMN_4} + "ms"</keyExpression>
+               <valueExpression>Float.parseFloat($F{COLUMN_4})</valueExpression>
+               <labelExpression>$F{COLUMN_1}</labelExpression>
+            </pieDataset>
+            <piePlot>
+               <plot/>
+            </piePlot>
+         </pieChart>
+         <subreport isUsingCache="false">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="1" y="508" width="535" height="40">
+               <printWhenExpression>$P{ErrorDetails}</printWhenExpression>
+            </reportElement>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="ErrorDetails">
+               <subreportParameterExpression>$P{ErrorDetails}</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$P{FailedTestSteps}</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:FailedTestSteps"</subreportExpression>
+         </subreport>
+         <break>
+            <reportElement positionType="Float" x="0" y="507" width="100" height="1"/>
+         </break>
+      </band>
+   </detail>
+   <pageFooter>
+      <band height="24">
+         <printWhenExpression>!$P{FlowLayout}</printWhenExpression>
+         <textField>
+            <reportElement x="1" y="0" width="535" height="20" forecolor="#999999"/>
+            <textElement textAlignment="Center" verticalAlignment="Middle"/>
+            <textFieldExpression class="java.lang.String">"created with soapUI Pro on " + new Date()</textFieldExpression>
+         </textField>
+      </band>
+   </pageFooter>
+   <lastPageFooter>
+      <band height="24">
+         <textField>
+            <reportElement x="1" y="0" width="535" height="20" forecolor="#999999"/>
+            <textElement textAlignment="Center" verticalAlignment="Middle"/>
+            <textFieldExpression class="java.lang.String">"created with soapUI Pro on " + new Date()</textFieldExpression>
+         </textField>
+      </band>
+   </lastPageFooter>
+</jasperReport>

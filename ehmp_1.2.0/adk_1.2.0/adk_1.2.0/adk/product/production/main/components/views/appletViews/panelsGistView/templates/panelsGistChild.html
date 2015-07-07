@@ -1,0 +1,19 @@
+
+    <div tabindex="0" id="panel_{{id}}" class="row equalHeights noMargin gistItemInner" {{#if userWorkspace}} draggable='true' {{/if}}>
+        <div tabindex="0" class="col-sm-8 quickDraw selectable info-display noPadding">
+            <div class="row equalHeights noMargin border-vertical">
+                <div id='panel-name-{{id}}' class="col-sm-12 panel-name">{{name}}</div>
+            </div>
+        </div>
+        <div tabindex="1" id="panels-gist-popover-{{id}}" class="col-sm-4 quickDraw selectable noPadding" data-toggle="popover" data-content="{{tooltip}}" title="{{name}}">
+            <div class="row noMargin equalHeights">
+                <div id="quickLook_{{id}}" class="quickviewOverlay right-side"></div>
+                <div id="flags_{{id}}" class="col-sm-8 flags border-vertical" >
+                {{#each flags}}
+                    <label class="label {{this.class}}" title="{{this.title}}">{{this.name}}</label>
+                {{/each}}
+                </div>
+                <div id="time_since_{{id}}" class="col-sm-4 age text-center" >{{age}}</div>
+            </div>
+        </div>
+    </div>

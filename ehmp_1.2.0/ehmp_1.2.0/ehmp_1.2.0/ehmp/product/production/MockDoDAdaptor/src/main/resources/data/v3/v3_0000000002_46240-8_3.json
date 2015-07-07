@@ -1,0 +1,817 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "9",
+      "RetrievedCount": "9",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000195"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131009174329",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131009174013",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "379.90",
+                "display": "Disorder of eye, unspecified"
+              }
+            ]
+          }
+        ],
+        "procedure": [
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131009174332",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "99509",
+                "display": "Home Care Visit For Assistance With ADLs / Personal Care"
+              }
+            ],
+            "date": "20131009174248",
+            "recordedId": {
+              "id": "2157580408"
+            }
+          }
+        ],
+        "emCode": null,
+        "encounterNumber": {
+          "id": "GTLK-1101"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Updated"
+          }
+        ],
+        "reason": "Notes Entered by: BHIE,USERONE 09 Oct 2013 1339\r\n------------------------------\r\nJane Shen testing on Drawing with image."
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000198"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131009175447",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131009174805",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "259.9",
+                "display": "Unspecified endocrine disorder"
+              }
+            ]
+          }
+        ],
+        "procedure": [
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131009175451",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "99144",
+                "display": "Conscious Sedation By Dr Performing Service 5 Yrs Or Older"
+              }
+            ],
+            "date": "20131009175314",
+            "recordedId": {
+              "id": "2157580422"
+            }
+          }
+        ],
+        "emCode": [
+          {
+            "code": "99211"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-1102"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": "Notes Entered by: BHIE,USERONE 09 Oct 2013 1347\r\n------------------------------\r\nJane testing drawing with annotations"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000201"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131009180108",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131009175902",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "762.9",
+                "display": "Fetus or newborn affected by unspecified abnormality of chorion and amnion"
+              }
+            ]
+          }
+        ],
+        "procedure": [
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131009180110",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "77300",
+                "display": "Radiation Therapy Basic Dosimetry Calculation"
+              }
+            ],
+            "date": "20131009180043",
+            "recordedId": {
+              "id": "2157580436"
+            }
+          }
+        ],
+        "emCode": [
+          {
+            "code": "99211"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-1103"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": "Notes Entered by: BHIE,USERONE 09 Oct 2013 1358\r\n------------------------------\r\nTest the drawing image as sovlia"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000206"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131115194556",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131115192720",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "V70.0",
+                "display": "Routine general medical examination at a health care facility"
+              }
+            ]
+          }
+        ],
+        "procedure": [
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131115194600",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "99175",
+                "display": "Doctor's Orders: Emetic Administration / Observation"
+              }
+            ],
+            "date": "20131115193733",
+            "recordedId": {
+              "id": "2157581467"
+            }
+          },
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131115194600",
+            "status": [
+              {
+                "display": "Deleted due to an entry made in error"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90471",
+                "display": "Immunization Administration One Vaccine"
+              }
+            ],
+            "date": "20131115193115",
+            "recordedId": {
+              "id": "2157581468"
+            }
+          },
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131115194600",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90746",
+                "display": "Hepatitis B Vaccine (Active); 20 Years and Above"
+              }
+            ],
+            "date": "20131115193114",
+            "recordedId": {
+              "id": "2157581466"
+            }
+          }
+        ],
+        "emCode": [
+          {
+            "code": "99211"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-2406"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": null
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000209"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131118150901",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131118150308",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "784.0",
+                "display": "Headache"
+              }
+            ]
+          }
+        ],
+        "procedure": [
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131118150909",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "70450",
+                "display": "CT Scan Of The Head"
+              }
+            ],
+            "date": "20131118150705",
+            "recordedId": {
+              "id": "2157581482"
+            }
+          }
+        ],
+        "emCode": [
+          {
+            "code": "99212"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-2500"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": null
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000213"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131119171014",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131119164925",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "493.90 1",
+                "display": "Asthma, unspecified type, unspecified"
+              }
+            ]
+          }
+        ],
+        "procedure": [
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131119171020",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "1005F",
+                "display": "Assessment & Intervention History Asthma Symptoms Evaluated"
+              }
+            ],
+            "date": "20131119165219",
+            "recordedId": {
+              "id": "2157581591"
+            }
+          },
+          {
+            "enteredBy": {
+              "name": "MIDTIER, CGL TWO"
+            },
+            "enteredDate": "20131119171020",
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "1038F",
+                "display": "ASTHMA MILD PERSISTENT"
+              }
+            ],
+            "date": "20131119165201",
+            "recordedId": {
+              "id": "2157581590"
+            }
+          }
+        ],
+        "emCode": [
+          {
+            "code": "99211"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-2603"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": null
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000215"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131119215032",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131118170702",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "719.47",
+                "display": "Pain in joint, ankle and foot"
+              }
+            ]
+          }
+        ],
+        "procedure": [],
+        "emCode": [
+          {
+            "code": "99211"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-2501"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": null
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000217"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131206180036",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131206154319",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "355.6",
+                "display": "Lesion of plantar nerve"
+              }
+            ]
+          }
+        ],
+        "procedure": [],
+        "emCode": [
+          {
+            "code": "99212"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-3200"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": "Notes Entered by: GURSHTEYN,ATTENDING 01 Jun 2012 0725\r\n------------------------------\r\nSOH_ORDER_RESULT_VERIFY_LAB_IN_AHLTA_CHCS Automated Test."
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000219"
+        },
+        "enteredBy": {
+          "name": "BHIE, USERONE"
+        },
+        "enteredDate": "20131212212508",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20131212210712",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Family Practice Clinic"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "719.47",
+                "display": "Pain in joint, ankle and foot"
+              }
+            ]
+          }
+        ],
+        "procedure": [],
+        "emCode": [
+          {
+            "code": "99219"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-3501"
+        },
+        "provider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": null
+      },
+      "dataType": 5
+    }
+  ]
+}

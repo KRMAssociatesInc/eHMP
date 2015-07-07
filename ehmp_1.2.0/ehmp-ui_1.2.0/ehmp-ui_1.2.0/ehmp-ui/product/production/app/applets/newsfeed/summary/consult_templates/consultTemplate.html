@@ -1,0 +1,7 @@
+{{#compare category "P"}}
+    {{#compare statusName "PENDING"}}<span class="label label-default">Pending</span>{{/compare}}{{orderName}} ordered {{#if providerDisplayName}}by {{providerDisplayName}}{{/if}}
+
+{{/compare}}
+{{#compare category "P" operator="!="}}
+    {{#compare statusName "PENDING"}}<span class="label label-default">Pending</span>{{/compare}}Consulted {{orderName}}
+{{/compare}}

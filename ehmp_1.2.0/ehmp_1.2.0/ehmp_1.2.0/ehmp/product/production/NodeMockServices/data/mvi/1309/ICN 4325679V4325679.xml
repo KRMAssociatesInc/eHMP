@@ -1,0 +1,75 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vaww="http://vaww.oed.oit.domain">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vaww:PRPA_IN201310UV02>
+      <id root="2.16.840.1.113883.4.349" extension="WS1407171236331391776995038"/>
+    <creationTime value="20140717123633"/>
+    <versionCode code="3.0"/>
+    <interactionId root="2.16.840.1.113883.1.6" extension="PRPA_IN201310UV02"/>
+    <processingCode code="T"/>
+    <processingModeCode code="T"/>
+    <acceptAckCode code="NE"/>
+    <receiver typeCode="RCV">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <id root="PSIM_TOOLS" extension="200EHMP"/>
+        </device>
+    </receiver>
+    <sender typeCode="SND">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.4.349" extension="200M"/>
+        </device>
+    </sender>
+    <acknowledgement>
+        <typeCode code="AA"/>
+        <targetMessage>
+            <id root="2.16.840.1.113883.4.349" extension="MCID-YOUR_IDENTIFIER_001"/>
+        </targetMessage>
+    </acknowledgement>
+    <controlActProcess classCode="CACT" moodCode="EVN">
+        <code code="PRPA_TE201310UV02"/>
+        <subject typeCode="SUBJ">
+            <registrationEvent classCode="REG" moodCode="EVN">
+                <id nullFlavor="NA"/>
+                <statusCode code="active"/>
+                <subject1 typeCode="SBJ">
+                    <patient classCode="PAT">
+                        <id root="2.16.840.1.113883.4.1" extension="432111235^PI^200SSA^USSSA^A"/>
+                        <id root="2.16.840.1.113883.4.349" extension="4325679V4325679^NI^200M^USVHA^P"/>
+                        <statusCode code="active"/>
+                        <patientPerson classCode="PSN" determinerCode="INSTANCE">
+                            <name nullFlavor="NA"/>
+                        </patientPerson>
+                    </patient>
+                </subject1>
+                <custodian typeCode="CST">
+                    <assignedEntity classCode="ASSIGNED">
+                        <id root="2.16.840.1.113883.4.349"/>
+                    </assignedEntity>
+                </custodian>
+                <replacementOf typeCode="RPLC">
+                    <priorRegistration classCode="REG" moodCode="EVN">
+                        <id root="2.16.840.1.113883.4.349" extension="4325679V4325679^NI^200M^USVHA^P"/>
+                    </priorRegistration>
+                </replacementOf>
+            </registrationEvent>
+        </subject>
+        <queryAck>
+            <queryId root="1.2.840.114350.1.13.99999.4567.34" extension="MCID-YOUR_IDENTIFIER_001"/>
+            <queryResponseCode code="OK"/>
+        </queryAck>
+        <queryByParameter>
+            <queryId root="1.2.840.114350.1.13.99999.4567.34" extension="MCID-YOUR_IDENTIFIER_001"/>
+            <statusCode code="new"/>
+            <responsePriorityCode code="I"/>
+            <parameterList>
+                <patientIdentifier>
+                    <value root="2.16.840.1.113883.4.349" extension="4325679V4325679^NI^200M^USVHA"/>
+                    <semanticsText>Patient.Id</semanticsText>
+                </patientIdentifier>
+            </parameterList>
+        </queryByParameter>
+    </controlActProcess>
+
+      </vaww:PRPA_IN201310UV02>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,65 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2155773437",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "SJF, FOUR",
+        "NoteFormat": "rtf",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20120201000550",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "SJF, FOUR",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20120201000146",
+        "LoincCode": "34109-9",
+        "Facility": "4th Medical Group^Blue MTF",
+        "NoteTypeCode": "",
+        "EventId": "1000003812"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2155901562",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "SJF, FOUR",
+        "NoteFormat": "rtf",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20120307235037",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "SJF, FOUR",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20120307222903",
+        "LoincCode": "34109-9",
+        "Facility": "4th Medical Group^Blue MTF",
+        "NoteTypeCode": "",
+        "EventId": "1000003813"
+      },
+      "dataType": 12
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

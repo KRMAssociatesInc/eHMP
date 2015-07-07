@@ -1,0 +1,550 @@
+.workspaceManager-applet {
+    .editorTopManager {
+        padding: 0.5em 2em;
+        color: white;
+    }
+    #doneEditing {
+        padding: 5px 15px;
+        color: white;
+        font-size: 3em;
+        margin-top: 1em;
+    }
+    #doneEditing:hover, #doneEditing:focus {
+        color: #E4EEF8;
+        cursor: pointer;
+    }
+    .tableBanner {
+        background: $primary;
+        color: $white;
+        margin-left: 7%;
+        padding: 5px;
+        .btn{
+        background: transparent;
+        }
+        .btn:hover, .btn:focus{
+            color: $white;
+        }
+    }
+    #searchScreens {
+        border-radius: 20px;
+        line-height: 2em;
+        width: 91%;
+    }
+    .workspaceTable {
+        height: 40em;
+        margin-left: 7%;
+    }
+    #workspaceManager, #list-group {
+        margin: 0 -10px;
+    }
+    #list-group {
+        position: relative;
+        height: 100%;
+        overflow-x: hidden;
+        .row {
+            margin: 0px;
+            cursor: move;
+        }
+        .fa-eye, .fa-ellipsis-v, .fa-share-alt {
+            font-size: 18px !important;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+        }
+        .noPreview {
+            cursor: default;
+            color: gray;
+            font-style: normal;
+        }
+    }
+    .launch-screen{
+        font-style: normal;
+        color: #37779E;
+        cursor: pointer;
+    }
+    .customize-screen{
+        font-style: normal;
+        color: #37779E;
+        cursor: pointer;
+    }
+    .previewWorkspace{
+        font-style: normal;
+        color: #37779E;
+        cursor: pointer;
+    }
+    .duplicate-worksheet, .rearrange-worksheet, .delete-worksheet{
+         cursor: pointer;
+    }
+    .manager-close {
+        opacity: 0;
+        right: 0;
+        z-index: -1;
+    }
+    .manager-open {
+        right: -10em;
+        z-index: 2;
+    }
+    .manageOptions {
+        background-color: white;
+        -webkit-box-shadow: 1px 1px 7px #333;
+        -mox-box-shadow: 1px 1px 7px #333;
+        box-shadow: 1px 1px 7px #333;
+        position: absolute;
+        min-height: 4em;
+        width: 11em;
+        -webkit-transition: left 0.2s ease-out;
+        transition: left 0.2s ease-out;
+        top: 0;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            padding: 1px 0.5em;
+        }
+        li:hover, li:focus, li:active {
+            cursor: pointer;
+            background-color: #E4EEF8;
+        }
+        i {
+            width: 1.5em;
+        }
+    }
+    .tableHeader {
+      color: $white;
+      text-align:center;
+      background-color: $primary-light;
+      font-weight: bold;
+      padding: .5em 0;
+      height: 2.5em;
+      border: 1px solid $primary-light;
+        .col-xs-5 .col-xs-1 {
+            padding-left: 0;
+        }
+    }
+    .tableRow {
+        position: relative;
+        height: 2em;
+        background-color: #fff;
+        width: 100%;
+        line-height:1.8em;
+        .default-row {
+            text-align: center;
+        }
+        .editor-title {
+            font-weight: bold;
+        }
+    }
+    .predefined-screen-row {
+        background-color: #F2F2F2;
+    }
+    .rearrange-row .tableRow {
+        border: 2px solid #00cccc!important;
+        cursor: move;
+    }
+    #mainOverlayRegion {
+        background-color: #cfd8dc;
+    }
+    .complete-background {
+        position: fixed;
+        width: 100%;
+    }
+    .filterRegion {
+        background: white;
+    }
+    .filterTextBox {
+        border: none;
+        width: 100%;
+    }
+    .filterTextBox::-ms-clear {
+        display: none;
+    }
+    .filterTextBox:focus {
+        outline: none;
+    }
+    .deleteActiveRegion {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        z-index: 999;
+        .workspaceManagerForms {
+            background-color: white;
+            border: 1px solid #333;
+            -webkit-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
+            -moz-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+            color: #455A71;
+            padding: 1.5em 2em;
+            text-align: left;
+        }
+        p {
+            font-size: 1.4em;
+        }
+        .deleteActiveScreenForm {
+            height: 20em;
+            max-width: 36em;
+            margin: 15em auto auto;
+        }
+    }
+    .previewRegion {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        z-index: 999;
+        .workspaceManagerForms {
+            background-color: RGBA(0, 0, 0, 0.8);
+            border: 1px solid #333;
+            -webkit-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
+            -moz-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+            color: #455A71;
+            padding: 1.5em 2em;
+            text-align: left;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .previewArea {
+            height: 50%;
+            width: 80%;
+            margin: 15em auto auto;
+            background-color: RGBA(204, 204, 204, 1);
+            border: 8px solid white;
+            padding: 10px;
+            position: relative;
+        }
+        .closePreview {
+            font-size: 14px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+        .wsTitle {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        #gridsterPreview ul {
+            list-style: none;
+            li {
+                background-color: white;
+                color: #333333;
+                padding: 0px 5px;
+                font-weight: bold;
+                border-radius: 4px;
+                text-align: center;
+                word-break: break-all;
+            }
+            .formatButtonText {
+                word-break: break-all;
+            }
+        }
+        .gridsterContainer {
+            height: 100%;
+        }
+    }
+    .addEditFormRegion {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        z-index: 100;
+        .workspaceManagerForms {
+            background-color: white;
+            border: 1px solid #333;
+            -webkit-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
+            -moz-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+            color: #455A71;
+            padding: 1.5em 2em;
+            text-align: left;
+        }
+        p {
+            font-size: 1.4em;
+        }
+        // .errMsg {
+        //     color: red;
+        //     min-height: 1.5em;
+        //     text-align: center;
+        // }
+        .saveMsg {
+            color: green;
+        }
+        .applets-list {
+            background-color: #ECEFF1;
+            min-height: 9em;
+            margin: 0 -2em 1em;
+            padding: 0 2em;
+        }
+        .description-countdown, .title-countdown {
+            float: right;
+        }
+    }
+    #screen-applets-list {
+        margin: 0;
+        padding: 0;
+        max-height: 160px;
+        overflow-y: auto;
+    }
+    #applets-list-title {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .editor-row {
+        border: 1px solid gray;
+    }
+
+    .editor-title {
+        font-weight: bold;
+        .editor-input-element {
+            padding: 0px;
+            font-size: 11px;
+            line-height: 0px;
+            height: inherit;
+        }
+    }
+
+    .form-control {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .form-control:focus {
+        border-radius:0px;
+        outline-offset: -2px;
+        outline: #66afe9 auto 5px;
+    }
+
+    .has-error .form-control:focus {
+        outline-offset: -2px;
+        outline: #843534 auto 5px;
+        border: solid 1px #843534;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+    }
+
+    .form-group {
+        margin-bottom:0;
+    }
+
+    .editor-glyphicon {
+        margin-top: -6px !important;
+        cursor: default;
+    }
+
+    .editor-row:hover {
+        background-color: #E4EEF8;
+    }
+    .no-description {
+        font-style: italic;
+        color: gray;
+    }
+    .editor-input-element {
+        border: none;
+        width: 100%;
+        background-color: transparent;
+        color: #222;
+    }
+
+    .editor-input-element::-ms-clear {
+        display:none;
+    }
+
+    .editor-input-element:focus {
+        padding:0px;
+        height:inherit;
+        font-size:11px;
+        border: solid 1px #66afe9;
+        color: #222;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    }
+    .editor-input-element-error {
+        border: solid 1px Red;
+        border-radius: 5px;
+    }
+    .editor-input-element-required {
+        font-size: 70%;
+        color: Red;
+        font-weight: bold;
+    }
+    .editor-input-element-saved {
+        font-size: 70%;
+        color: Green;
+        font-weight: bold;
+    }
+    .fa-star {
+        color: #37779E;
+        cursor: pointer;
+    }
+    .fa-star-o {
+        cursor: pointer;
+    }
+    .madeDefault {
+            color: #37779E;
+    }
+    .association-manager {
+        input {
+            background-color: white;
+            border-radius: 0;
+            font-size: 12px;
+            height: 30px;
+            padding-top: 8px;
+        }
+        .tt-input{
+           box-shadow: inset 0px 2px 4px;
+        }
+        .tt-dropdown-menu {
+            max-height: 17em;
+            overflow-y: auto;
+            width: 100%;
+        }
+        .tt-suggestion {
+            padding: 0;
+
+            .problem-result {
+                padding: 0 20px;
+                cursor: pointer;
+            }
+            .problem-result:focus, .problem-result:hover {
+                background-color: #E4EEF8;
+                color: black;
+            }
+            .problem-result.disabled {
+                font-style: italic;
+                color: #aaa;
+            }
+        }
+        .tt-cursor {
+            background-color: inherit;
+            color: inherit;
+        }
+        .twitter-typeahead {
+            width: 100%;
+            //padding: 11px 10px 8px 9px;
+        }
+        .typeahead-wrapper {
+            padding: 10px;
+        }
+        .problem-loading-container {
+            position: relative;
+        }
+        #problem-query-status-region {
+            position: absolute;
+            width: 100%;
+            display: none;
+            padding: 0 5px;
+            z-index: 200;
+            overflow: hidden;
+        }
+        .italicized-text {
+            font-style: italic;
+        }
+        .ellipsis-text {
+            overflow-x: hidden;
+            white-space: nowrap !important; //using !important to override inline style applied by twitter-typeahead plugin
+            text-overflow: ellipsis;
+        }
+        .problem-result {
+            cursor: pointer;
+        }
+        #no-results-text {
+            padding: 0 5px;
+        }
+        #no-associations-text {
+            padding: 10px 10px 0 10px;
+        }
+        #problem-list-region {
+            max-height: 160px;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            // select first problem result
+            .problem-list-item-wrapper:first-child .problem-result {
+                border-top: 1px solid #ddd;
+            }
+            .problem-result {
+                border-bottom: 1px solid #ddd;
+                padding: 3px;
+
+                .close {
+                    line-height: 0.7;
+                    margin-right: -1em;
+                }
+            }
+            .problem-result:hover {
+                 background-color: #E4EEF8;
+            }
+            .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .fa-stack {
+                position: relative;
+                display:inline-block;
+                width: 2em;
+                height: inherit;
+                line-height: 1px;
+                vertical-align: middle;
+            }
+            .fa-stack-1x{
+                line-height: inherit;
+                font-size: .4em;
+            }
+            .fa-stack-2x{
+                font-size:.6em;
+                line-height:inherit;
+            }
+            .fa-stack-1x, .fa-stack-2x{
+                position:absolute;
+                width: inherit;
+                text-align: center;
+            }
+        }
+    }
+    .form-group-custom{
+        margin-bottom: 0;
+    }
+    .association-manager-popover {
+        height: 220px;
+        width: 350px;
+        max-width: 350px;
+        box-shadow: 2px 2px 10px 0px gray;
+    }
+    .popover-content{
+        padding:0;
+    }
+    .show-associations {
+        cursor: pointer;
+    }
+    .show-associations.active{
+        background-color: #E4EEF8;
+        border: solid 2px #69A4F;
+    }
+    .filterOpen{
+        color:$white !important;
+    }
+    .applet-title-button{
+        font-size:12px;
+    }
+    .hiddenRow{
+        display:none;
+        background:#f2f2f2;
+        margin-left: 7%;
+        .clear {
+            padding: 0px;
+        }
+    }
+    .border-right{
+        border-right: 1px solid #999999;
+        height: 1.9em;
+    }
+    .border-left{
+        border-left: 1px solid #999999;
+        height: 1.9em;
+    }
+    .no-padding {
+        padding: 0;
+    }
+}
+

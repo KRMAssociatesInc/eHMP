@@ -1,0 +1,246 @@
+ZZKMTET ; SLC/KCM -- Test Error Trapping
+ ;
+EN ; Test unwinding of the stack after an error
+ S $ETRAP="G ETRAP1"
+ D PROCESS
+ W !!,"End  $STACK:",$STACK,"  $ETRAP:",$ETRAP,"  $ECODE:",$ECODE
+ Q
+PROCESS ;
+ N $ESTACK,$ETRAP
+ S $ETRAP="G ETRAP2"
+ W !!,"Continue?"
+ N S R S:100 Q:'$T  Q:'$L(S)
+ W !,"Current X:",$G(X,"undefined")
+ W !,"Stack Level:",$STACK,"   $ESTACK level:",$ESTACK
+ D RTN
+ Q
+RTN ;
+ N X S X="RTN"
+ D A
+ Q
+A ;
+ N X S X="A"
+ D B
+ Q
+B ;
+ N X S X="B"
+ N Y S Y=1/X
+ Q
+ETRAP1 ;
+ W !,"Hit error trap #1"
+ Q
+ETRAP2 ;
+ S $ETRAP="G BAIL"
+ W !!,"Encountered Error"
+ W !,"$ECODE:",$ECODE
+ W !,"Current X:",$G(X,"undefined")
+ W !,"Stack Level:",$STACK,"   $ESTACK level:",$ESTACK
+ N MESSAGE
+ D LOGSTACK("MESSAGE") ZW MESSAGE
+ ;leave $ECODE as non-null so that the error handling continues
+ S $ETRAP="Q:$ESTACK&$QUIT 0 Q:$ESTACK  S $ECODE="""" G PROCESS"
+ Q
+LOGSTACK(%ROOT) ;
+ N %LVL,%TOP,%BOT
+ S %TOP=$STACK-1,%BOT=$STACK-$ESTACK
+ F %LVL=%BOT:1:%TOP S @%ROOT@(%LVL)=$STACK(%LVL,"PLACE")_": "_$STACK(%LVL,"MCODE")
+ Q
+BAIL ;
+ U $P
+ W "HTTP/1.1 500 Internal Server Error",$C(13,10),$C(13,10),!
+ C $P H 1
+ K ^TMP($J)
+ H
+ ;
+INDIR ; Test Indirection
+ N RESULT
+ D RSLT(.RESULT)
+ W !,@RESULT
+ W !,@RESULT@("\",1)
+ W !,@RESULT@("\",2)
+ Q
+RSLT(RESULT) ;
+ K ^TMP($J)
+ S ^TMP($J)=$P($T(J1),";",2,999)
+ S ^TMP($J,"\",1)=$P($T(J2),";",2,999)
+ S ^TMP($J,"\",2)="]}"
+ S RESULT=$NA(^TMP($J))
+ Q
+ ;
+T2M ; 
+ N S,KCM 
+ S S=$P($T(J1),";",2,999)
+ S S=S_$P($T(J2),";",2,999)_"]}"
+ D DECODE^VPRJSON(S,"KCM")
+ ZW KCM
+ Q
+J1 ;{"apiVersion":"1.0","data":{"updated":"201203051332","totalItems":1,"items":[
+J2 ;{"value": "New","onclick":"CreateNewDoc()"}
+ ;
+BYVAL ; Test basic call by value
+ S S="This is the original string"
+ S X="This is the original X"
+ S Y=$$CHGVAL(S)
+ W !,"S=",S
+ W !,"X=",X
+ W !,"Y=",Y
+ Q
+CHGVAL(X) ;
+ S X=$TR(X," ",":")
+ Q X
+ ;
+TJ ; try JSON
+ N X
+ S X("first")="1st Value"
+ S X("percents",1)=20
+ S X("percents",2)=30
+ S X("percents",3)=50
+ W $$ENCODE^VPRJSON("X")
+ Q
+TF() ; try function return values
+ N RTN
+ S RTN="TOP"
+ S RTN(1)="NEXT"
+ S RTN(2)="LAST"
+ Q RTN
+ ; conclusion:  only top gets returned
+FL ; list first lines
+ S X="VPR"
+ F  S X=$O(^ROUTINE(X)) Q:$E(X,1,3)'="VPR"  D
+ . W !,X,?10,$P($T(@("^"_X))," ",2,999)
+ Q
+X2(IN) ;
+ Q IN*2
+ ;
+CASEFN ; Check using functions inside $S
+ N VPRSUB,X
+ S VPRSUB=0
+ S X=$S(VPRSUB="MI":$$MI,1:$$CH)
+ W !,X
+ Q
+MI() ;
+ Q "MICRO"
+ ;
+CH() ;
+ Q "CHEM"
+ ;
+FNTYP(TYPE) ; test using $F to get mapping (easier to just put it in an global array...)
+ S TYPE=$F(":art    :tiu     :visit    :app:     :hf    :imm         :med       :obs        :order:cons     :proc     :surgery  :rad      :prob   :lab       :vs:",TYPE)
+ S TYPE=$E(":allergy:document:encounter:encounter:factor:immunization:medication:observation:order:procedure:procedure:procedure:procedure:problem:laboratory:vitalsign:",TYPE,99)
+ S TYPE=$P(TYPE,":")
+ Q TYPE
+ ;
+OBSUB ; test converting object reference into subscripts
+ S NAME="results[].units.unitType"
+ S OBJ("results",1,"units","unitType")="u1"
+ S OBJ("results",2,"units","unitType")="u2"
+ S OBJ("results",3,"units","unitType")="u3"
+ S REF="OBJ(""results"",NUM,"_"""units"",""unitType"")"
+ Q
+NUMSTR ; check strings that M would treat as numeric
+ W "Enter:" R X Q:'$L(X)
+ I +X=X S ARY(X)="number" W ! ZW ARY G NUMSTR
+ S ARY(X)="not number" W ! ZW ARY
+ G NUMSTR
+FINDOC ;
+ S I=0
+ S DAY=62668,JOB=13726
+ F  S I=$O(^VPRHTTP("log",DAY,JOB,I)) Q:'I  D
+ . S J=0 F  S J=$O(^VPRHTTP("log",DAY,JOB,I,"raw",J)) Q:'J  D
+ . . I ^VPRHTTP("log",DAY,JOB,I,"raw",J)[4270 W !,I,":",J
+ Q
+SUBARY ; test passing in sub array
+ S OBJECT("hl7Date")=2012
+ S OBJECT("hl7Date","\s")=""
+ S OBJECT("summary")="testing"
+ D COLLATE(.OBJECT)
+ Q
+COLLATE(X)
+ W !,"string attrib:",$D(X("\s"))
+ Q
+INVTIME ; test inverse time
+ K X,Y,V,T
+ S X(20121101)=""
+ S X(201211010001)=""
+ S X(20121101103059)=""
+ S X(201211151632)=""
+ S X(20121117)=""
+ S X(201211170630)=""
+ S X(201211180420)=""
+ S X(20121118)=""
+ S X(201211)=""
+ S X(201211011045)=""
+ ;
+ ;S Y="" F  S Y=$O(X(Y)) Q:Y=""  S T(Y_" ")="",V(+$E("99999999999999",1,$L(Y))-$P(Y,"-")_" ")=Y
+ ;S Y="" F  S Y=$O(X(Y)) Q:Y=""  S T(Y_" ")="",V($TR(Y,"9876543210","ABCDEFGHIJ")_" ")=Y
+ S Y="" F  S Y=$O(X(Y)) Q:Y=""  S T(Y_" ")="",V($TR(Y,"0123456789","9876543210")_"=")=Y 
+ W ! ZW X
+ W ! ZW T
+ W ! ZW V
+ S RANGE="20121116..20121117"
+ S START=$P(RANGE,"..")
+ W $O(T(START))
+ Q
+INVT2 ; test inverse time again
+ S X("201201")=""
+ S X("20120101")=""
+ S X("20120000")=""
+ S X("20120131")=""
+ S X("201201311030+0000")=""
+ S X("201201310001+0000")=""
+ S X("201201011000+0000")=""
+ S X("201201020000+0000")=""
+ S X("20120101")=""
+ S X("201202010000")=""
+ S X("20120202")=""
+ S Y="" F  S Y=$O(X(Y)) Q:Y=""  S T(Y_" ")="",V($TR(Y,"0123456789","9876543210")_"=")=Y 
+ W ! ZW X
+ W ! ZW T
+ W ! ZW V
+ Q
+DOSES ; test relative dose collation
+ N X
+ S X("20071020 ")="20071020"
+ S X("20100606 ")="20100606"
+ S X("20120820 ")="20120820"
+ S X($$IRTM("NOW"))="NOW"
+ S X($$IRTM("D1"))="D1"
+ S X($$IRTM("W2"))="W2"
+ S X($$IRTM("L1"))="L1"
+ ZW X
+ Q
+FRTM(X) ; Forward relative time
+ I X="NOW" Q "N0000000"
+ Q "N"_$TR($J($$MIN(X),7)," ","0")
+ Q "?"
+ ;
+IRTM(X) ; Reverse relative time
+ I X="NOW" Q "+9999999"
+ Q "+"_$TR($J(9999999-$$MIN(X),7)," ","0")
+ Q
+MIN(X) ; Return the number of minutes
+ S X=$TR(X,"mhdwly","MHDWLY")
+ I $E(X)="M" Q $E(X,2,$L(X))
+ I $E(X)="H" Q $E(X,2,$L(X))*60
+ I $E(X)="D" Q $E(X,2,$L(X))*1440
+ I $E(X)="W" Q $E(X,2,$L(X))*10080
+ I $E(X)="L" Q $E(X,2,$L(X))*43200
+ I $E(X)="Y" Q $E(X,2,$L(X))*525600
+ Q 0
+WRTRD ; Write a file, read it, delete it
+ O "VPRJT.TXT":"WNS"  ; open for writing
+ U "VPRJT.TXT"
+ W "{apiversion:1.0,data:{"
+ W "totalItems:20,items:["
+ F I=1:1:20 W "{anItem:"_I_"},"
+ W "{lastItem:done}]}}"
+ W $C(13,10)
+ C "VPRJT.TXT"
+ ;
+ U $P W !,"done writing"
+ O "VPRJT.TXT":"RSD" ; for reading and delete when done
+ U "VPRJT.TXT"
+ R X:2 E  U $P W !,"Error Reading"
+ C "VPRJT.TXT"
+ U $P W !,"X:",X
+ Q

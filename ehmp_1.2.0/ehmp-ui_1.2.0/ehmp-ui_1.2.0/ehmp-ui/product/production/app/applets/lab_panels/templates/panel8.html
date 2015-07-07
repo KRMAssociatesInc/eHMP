@@ -1,0 +1,22 @@
+<table class="panel8">
+	<tbody>
+		<tr>
+		{{#each currentResults}}
+			{{#ifExp @index '<' 8}}
+			{{#ifExp 0 '===' (exp @index '%' 2)}}
+			<td class="{{attributes.interpretationClass}}" title="{{attributes.typeName}}">{{attributes.result}} <span>{{{attributes.trend}}}</span></td>
+			{{/ifExp}}
+			{{/ifExp}}
+		{{/each}}
+		</tr>
+		<tr>
+		{{#each currentResults}}
+			{{#ifExp @index '<' 8}}
+			{{#ifExp 1 '===' (exp @index '%' 2)}}
+			<td class="{{attributes.interpretationClass}}" title="{{attributes.typeName}}">{{attributes.result}} <span>{{{attributes.trend}}}</span></td>
+			{{/ifExp}}
+			{{/ifExp}}
+		{{/each}}
+		</tr>
+	</tbody>
+</table>

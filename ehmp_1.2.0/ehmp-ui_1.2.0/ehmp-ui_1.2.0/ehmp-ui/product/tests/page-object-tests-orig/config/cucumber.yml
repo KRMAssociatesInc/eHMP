@@ -1,0 +1,14 @@
+# config/cucumber.yml
+##YALM Template
+---
+#default: --profile html_report --profile stable
+html_report: --format progress --format html --out=ehmp-ui_test_report.html
+stable: --tags @stable
+
+end_to_end: features --color --format pretty --tags ~@future --tags ~@debug --tags ~@UI -f json_pretty -o cucumber.json -f html -o cucumber.html
+end_to_end_stable: features --color --format pretty --tags ~@unstable --tags ~@future --tags ~@debug --tags ~@UI -f json_pretty -o cucumber.json -f html -o cucumber.html
+end_to_end_unstable: features --color --format pretty --tags @unstable --tags ~@future --tags ~@debug -f json_pretty -o cucumber.json -f html -o cucumber.html
+all_tests: features --color --format pretty --tags ~@future
+end_to_end_onc: features --color --format pretty --tags @onc -f json_pretty -o cucumber.json -f html -o cucumber.html
+smoke: features --color --format pretty --tags @smoke -f json_pretty -o cucumber.json -f html -o cucumber.html
+reg_lite: features --color --format pretty --tags @smoke -f json_pretty -o cucumber.json -f html -o cucumber.html

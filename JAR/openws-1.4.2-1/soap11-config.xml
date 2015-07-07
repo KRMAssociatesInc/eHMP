@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xt:XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd"
+ xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:xt="http://www.opensaml.org/xmltooling-config">
+    
+    <!-- SOAP 1.1 Object Providers -->
+    <xt:ObjectProviders>
+    
+        <!-- Body -->
+        <xt:ObjectProvider qualifiedName="soap11:Body">
+            <xt:BuilderClass className="org.opensaml.ws.soap.soap11.impl.BodyBuilder" />
+            <xt:MarshallingClass className="org.opensaml.ws.soap.soap11.impl.BodyMarshaller" />
+            <xt:UnmarshallingClass className="org.opensaml.ws.soap.soap11.impl.BodyUnmarshaller" />
+        </xt:ObjectProvider>
+        
+        <!-- Detail -->
+        <xt:ObjectProvider qualifiedName="detail">
+            <xt:BuilderClass className="org.opensaml.ws.soap.soap11.impl.DetailBuilder" />
+            <xt:MarshallingClass className="org.opensaml.ws.soap.soap11.impl.DetailMarshaller" />
+            <xt:UnmarshallingClass className="org.opensaml.ws.soap.soap11.impl.DetailUnmarshaller" />
+        </xt:ObjectProvider>
+        
+        <!-- Envelope -->
+        <xt:ObjectProvider qualifiedName="soap11:Envelope">
+            <xt:BuilderClass className="org.opensaml.ws.soap.soap11.impl.EnvelopeBuilder" />
+            <xt:MarshallingClass className="org.opensaml.ws.soap.soap11.impl.EnvelopeMarshaller" />
+            <xt:UnmarshallingClass className="org.opensaml.ws.soap.soap11.impl.EnvelopeUnmarshaller" />
+        </xt:ObjectProvider>
+        
+        <!-- Fault -->
+        <xt:ObjectProvider qualifiedName="soap11:Fault">
+            <xt:BuilderClass className="org.opensaml.ws.soap.soap11.impl.FaultBuilder" />
+            <xt:MarshallingClass className="org.opensaml.ws.soap.soap11.impl.FaultMarshaller" />
+            <xt:UnmarshallingClass className="org.opensaml.ws.soap.soap11.impl.FaultUnmarshaller" />
+        </xt:ObjectProvider>
+        
+        <!-- faultcode -->
+        <xt:ObjectProvider qualifiedName="faultactor">
+            <xt:BuilderClass className="org.opensaml.ws.soap.soap11.impl.FaultActorBuilder" />
+            <xt:MarshallingClass className="org.opensaml.xml.schema.impl.XSURIMarshaller" />
+            <xt:UnmarshallingClass className="org.opensaml.xml.schema.impl.XSURIUnmarshaller" />
+        </xt:ObjectProvider>
+        
+        <!-- faultcode -->
+        <xt:ObjectProvider qualifiedName="faultcode">
+            <xt:BuilderClass className="org.opensaml.ws.soap.soap11.impl.FaultCodeBuilder" />
+            <xt:MarshallingClass className="org.opensaml.xml.schema.impl.XSQNameMarshaller" />
+            <xt:UnmarshallingClass className="org.opensaml.xml.schema.impl.XSQNameUnmarshaller" />
+        </xt:ObjectProvider>
+        
+        <!-- faultstring -->
+        <xt:ObjectProvider qualifiedName="faultstring">
+            <xt:BuilderClass className="org.opensaml.ws.soap.soap11.impl.FaultStringBuilder" />
+            <xt:MarshallingClass className="org.opensaml.xml.schema.impl.XSStringMarshaller" />
+            <xt:UnmarshallingClass className="org.opensaml.xml.schema.impl.XSStringUnmarshaller" />
+        </xt:ObjectProvider>
+        
+        <!-- Header -->
+        <xt:ObjectProvider qualifiedName="soap11:Header">
+            <xt:BuilderClass className="org.opensaml.ws.soap.soap11.impl.HeaderBuilder" />
+            <xt:MarshallingClass className="org.opensaml.ws.soap.soap11.impl.HeaderMarshaller" />
+            <xt:UnmarshallingClass className="org.opensaml.ws.soap.soap11.impl.HeaderUnmarshaller" />
+        </xt:ObjectProvider>
+        
+    </xt:ObjectProviders>
+
+</xt:XMLTooling>

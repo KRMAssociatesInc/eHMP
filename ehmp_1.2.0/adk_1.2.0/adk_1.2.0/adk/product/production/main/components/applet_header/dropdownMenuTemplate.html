@@ -1,0 +1,8 @@
+<li><input type="text" name="searchDropdownScreens "id="dropdown-search-element" placeholder="Filter workspace by keyword" maxlength='25'><i id="clearSearch" class="fa fa-times-circle-o" title="Clear Seach Field">Clear</i></li>
+{{#each screens}}
+     <li role="presentation" class="{{routeName}}-button"> <a href="#{{routeName}}" role="button">
+     {{#if defaultScreen}}
+     <i class="fa fa-star"></i>
+     {{/if}}
+     {{title}}</a></li>
+{{/each}}

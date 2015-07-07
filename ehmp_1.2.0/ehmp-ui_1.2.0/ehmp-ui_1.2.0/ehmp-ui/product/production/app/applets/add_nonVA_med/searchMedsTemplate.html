@@ -1,0 +1,24 @@
+<div id="error-container"/>
+<div class="input-group">
+	<label class="sr-only" for="medsSearchInput">Look up a non-VA medication</label>
+    <span class="input-group-addon">
+        <i class="fa fa-search"></i>
+    </span>
+    <input type="text" autocomplete="off" class="form-control ninety-five-width" id="medsSearchInput" onfocus="this.value = this.value;" placeholder="Lookup Non-VA Medication" tabIndex="0" autofocus>
+</div>
+<div>
+	<div>
+		<div id="meds-loading-indicator" aria-hidden="true">
+            <span><h5><i class="fa fa-spinner fa-spin"></i> Loading...</h5></span>
+             <!--<img src="/_assets/img/loading-icon.gif"/>-->
+        </div>
+        <div id="meds-loading-annoucement" role="alert" aria-live="assertive" aria-atomic="true"></div>
+	</div>
+	<div id="search-scroll" class="meds-search-scrolling-container">
+		<ul class="nav nav-pills" role="menu">
+			<li id="med-results-inner-container" class="open full-width">
+		    	<ul id="meds-search-result-item-container" class="list-group"></ul>
+		    </li>
+		</ul>
+	</div>
+</div>

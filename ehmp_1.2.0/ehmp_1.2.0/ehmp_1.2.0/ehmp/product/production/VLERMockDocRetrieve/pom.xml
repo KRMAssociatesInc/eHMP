@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>gov.va.med.vler</groupId>
+<artifactId>VLERMockDocRetrieve</artifactId>
+<packaging>war</packaging>
+<version>1.0.6</version>
+<name>VLERMockDocRetrieve</name>
+<url>http://maven.apache.org</url>
+<properties>
+    <skipTests>true</skipTests>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+<build>
+    <finalName>${project.artifactId}-${project.version}</finalName>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
+    <plugins>
+        <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+                <execution>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+<profiles>
+    <profile>
+        <id>development</id>
+        <properties>
+            <env>development</env>
+        </properties>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+    </profile>
+</profiles>
+<dependencies>
+
+    <!-- JUnit 4.8.2 -->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.8.2</version>
+        <scope>test</scope>
+    </dependency>
+
+    <!-- log4j 1.2.17 -->
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.17</version>
+    </dependency>
+
+    <!-- Apache commons-io 2.3 -->
+    <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>2.3</version>
+    </dependency>
+
+    <!-- Apache commons-lang 2.6 -->
+    <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>2.6</version>
+    </dependency>
+
+    <!-- Apache commons-collections 4.0 -->
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-collections4</artifactId>
+        <version>4.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>1.9</version>
+    </dependency>
+
+    <dependency>
+        <groupId>us.vistacore.vler</groupId>
+        <artifactId>nhinadapterdoc</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+
+</dependencies>
+    <repositories>
+        <repository>
+            <id>vistacore</id>
+            <url>https://nexus.vistacore.us/nexus/content/repositories/filerepo</url>
+        </repository>
+    </repositories>
+</project>

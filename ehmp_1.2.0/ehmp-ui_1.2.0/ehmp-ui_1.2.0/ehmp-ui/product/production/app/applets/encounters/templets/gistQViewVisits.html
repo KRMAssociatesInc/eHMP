@@ -1,0 +1,20 @@
+<table id='{{id}}' data-toggle="popover" class='table table-condensed has-popover' tabindex="0">
+    <thead>
+        <tr class='row'>
+            <th>Date</th>
+            <!--<th>Stop Code</th>-->
+            <th>Appt status</th>
+            <th>Location</th>
+            <th>Provider</th>
+            <th>Facility</th>
+        </tr>
+    </thead>
+    <tbody>{{#if allGroupedEncounters}}{{#each allGroupedEncounters}}<tr class='row'>
+            <td>{{dateTime}}</td>
+            <!--<td>{{StopCode}}</td>-->            
+            <td>{{Status}}</td>
+            <td>{{Location}}</td>
+            <td style="word-break:break-word">{{Provider}}</td>
+            <td>{{Facility}}</td>
+        </tr>{{/each}}{{/if}}</tbody>
+</table>

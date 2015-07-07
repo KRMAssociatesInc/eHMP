@@ -1,0 +1,340 @@
+{
+    "_id": "diabetes-mellitus-cbw_stacked",
+    "userdefinedgraphs": {
+        "applets": [
+            {
+                "graphs": [
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "HEMOGLOBIN A1C"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "WBC"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "GLUCOSE"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "RBC"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "HGB"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "HCT"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "MCV"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "MCH"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "MCHC"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "RDW"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "MPV"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "PLATELET COUNT"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "SEGS"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "BANDS"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "LYMPHS"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "ATYPICAL LYMPHOCYTES"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "MONOS"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "EOSINO"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "BASO"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "META"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "MYELO"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "PROS"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "BLASTS"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "NUCLEATED RBC/100WBC"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "NORMOCYTIC"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "MICROCYTOSIS"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "MACROCYTOSIS"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "ANISOCYTOSIS"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "OVALOCYTES"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "ACANTHOCYTES"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "NORMOCHROMIC"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "POLYCHROMASIA"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "HYPOCHROMIA"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "BASOPHILIC STIPPLING"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "TOXIC GRANULATION"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "ABSOLUTE GRANULOCYTE COUNT"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "POIKILOCYTOSIS"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "Teardrop)"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "UREA NITROGEN"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "SODIUM"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "POTASSIUM"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "CHLORIDE"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "CO2"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "CREATININE"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "CALCIUM"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "TOT PROT"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "ALBUMIN"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "TOT. BIL"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "ALT"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "ALK PHOS"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "CHOLESTEROL"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "TRIGLYCERIDE"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "HDL"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "LDL CHOLESTEROL"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "O2HB%  (SAT)"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "TROPONIN"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "TSH"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "TEMPERATURE"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "PULSE"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "PULSE OXIMETRY"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "BLOOD PRESSURE"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "RESPIRATION"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "HEIGHT"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "WEIGHT"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "BMI"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "CIRCUMFERENCE/GIRTH"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "PAIN"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "NEUTROPHILS %"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "GLUCOSE"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "PLT (ESTM)"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "Color"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "Appearancer"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "Ketone"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "gravity"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "blood"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "Ph"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "urobilinogen"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "nitrite"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "leukocyte"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "esterase"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "epithelial"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "bacterial"
+                    }
+                ],
+                "instanceId": "dmcbw-stackedGraph-1"
+            }
+        ]
+    }
+}

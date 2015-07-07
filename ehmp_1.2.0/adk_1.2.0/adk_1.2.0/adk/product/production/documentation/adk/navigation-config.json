@@ -1,0 +1,23 @@
+{
+    "title": "Application Development Kit (ADK)",
+    "showHomeButton": true,
+    "titleLink": "./#/adk/index",
+    "left_nav_items": [{
+        "name": "Getting started",
+        "url": "./#/adk/getting-started"
+    }, {
+        "name": "Using the ADK",
+        "url": "./#/adk/using-adk"
+    }],
+    "right_nav_items": [{
+        "name": "Libraries",
+        "url": "./#/adk/libraries"
+    }, {
+        "name": "Conventions",
+        "url": "./#/adk/conventions"
+    }],
+    "footer_nav_items": [{
+        "name": "Internal Developers Instructions",
+        "url": "./#/adk/internal-developer-specific"
+    }]
+}

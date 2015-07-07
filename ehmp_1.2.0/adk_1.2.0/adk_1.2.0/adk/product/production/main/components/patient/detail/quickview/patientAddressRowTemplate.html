@@ -1,0 +1,17 @@
+<td>{{facilityName}}</td>
+<td>
+	<div>
+	    <div class='demographic-data' id="ql-pt-haddr-line1" data-diff="{{hAddress.line1.diff}}"> {{hAddress.line1.value}}</div>
+	    {{#if hAddress.line2.value}}<div id="ql-pt-haddr-line2" class='demographic-data' data-diff="{{hAddress.line2.diff}}">{{hAddress.line2.value}}</div> {{/if}}
+	    {{#if hAddress.line3.value}}<div id="ql-pt-haddr-line3" class='demographic-data' data-diff="{{hAddress.line3.diff}}">{{hAddress.line3.value}}</div> {{/if}}
+	    {{#if hAddress.line4.value}}<div id="ql-pt-haddr-line4" class='demographic-data' data-diff="{{hAddress.line4.diff}}">{{hAddress.line4.value}}</div> {{/if}}
+	</div>
+</td>
+<td>
+	<div>
+	    <div class='demographic-data' id="ql-pt-tddr-line1" data-diff="{{tAddress.line1.diff}}"> {{tAddress.line1.value}}</div>
+	    {{#if tAddress.line2.value}}<div id="ql-pt-tddr-line2"  class='demographic-data' data-diff="{{tAddress.line2.diff}}">{{tAddress.line2.value}}</div> {{/if}}
+	    {{#if tAddress.line3.value}}<div id="ql-pt-tddr-line3"  class='demographic-data' data-diff="{{tAddress.line3.diff}}">{{tAddress.line3.value}}</div> {{/if}}
+	    {{#if tAddress.line4.value}}<div id="ql-pt-tddr-line4"  class='demographic-data' data-diff="{{tAddress.line4.diff}}">{{tAddress.line4.value}}</div> {{/if}}
+	</div>
+</td>

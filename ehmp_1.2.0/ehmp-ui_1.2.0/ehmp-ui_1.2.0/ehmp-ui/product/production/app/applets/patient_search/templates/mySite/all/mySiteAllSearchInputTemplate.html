@@ -1,0 +1,18 @@
+<div title="My Site All Search Input">
+    <h4 class="title hidden">
+        <!--My Site Patient Search-->
+    </h4>
+    <div class="text body instructions">
+        <p class="info-padding" tabindex="0"><span class="hidden">
+	        <span class="fa fa-info-circle fa-lg"></span>
+	        Search string must contain at least 3 characters.
+	        </span>
+        </p>
+    </div>
+    <div class="input-group fullWidth">
+        <span class="input-group-addon">
+            <i class="fa fa-search"></i>
+        </span>
+        <input type="text" autocomplete="off" class="form-control" id="patientSearchInput" onfocus="this.value = this.value;" placeholder="Select patient" value="{{searchString}}" tabIndex="0" title="Patient Selection screen, My Site search selected. Enter either: first letter of last name with last four of social security number, or generic name search.  There will be a delay between activation of the search and return of results.">
+    </div>
+</div>

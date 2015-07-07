@@ -1,0 +1,17 @@
+<div id="searchProblemModal">
+    <div class="col-sm-12x" id="error-container"></div>
+    <div id="problem-select">
+
+    </div>
+        <div class="left-inner-addon ">
+            <i class="fa fa-search"></i>
+            <input class="typeahead form-control" type="search" autocomplete="off" id="bs-problem" tabindex="0" data-uid="" placeholder="Enter your search term or SNOMED number"/>
+        </div>    
+    <div class="input-group uncoded-tool-tip" data-toggle="tooltip" data-placement="right" title="Expands search results to include problems which do not have SNOMED codes and/or have ICD 9 code of 799.9">
+        <label for="uncoded"></label>
+        <input type="checkbox" name="chkVAT" id="uncodedNew" value="1" {{uncoded}}> Extend Search
+    </div>
+    <div id="problemSearchSpinner" aria-hidden="true">
+        <span><h5><i class="fa fa-spinner fa-spin"></i> Loading...</h5></span>
+    </div>
+</div>

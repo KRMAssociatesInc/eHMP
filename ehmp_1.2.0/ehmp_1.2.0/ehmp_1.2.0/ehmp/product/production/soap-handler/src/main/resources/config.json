@@ -1,0 +1,104 @@
+{
+  "template": "%s",
+  "defaultName": "VX Sync",
+
+  "logging": {
+    "level": "INFO"
+  },
+
+  "server": {
+    "applicationConnectors": [
+      {
+        "type": "http",
+        "port": 54000
+      }
+    ],
+    "adminConnectors": [
+      {
+        "type": "http",
+        "port": 54001
+      }
+    ]
+  },
+  "service": {
+    "all": true,
+    "hdr": true,
+    "vler": true,
+    "pgd": true,
+    "dod": {
+      "allergy": true,
+      "appointment": true,
+      "consultnote": true,
+      "demographics": true,
+      "encounter": true,
+      "immunization": true,
+      "lab": true,
+      "medication": true,
+      "note": true,
+      "order": true,
+      "patient": true,
+      "problem": true,
+      "radiology": true,
+      "vital": true
+    }
+  },
+  "hdr" :
+  {
+    "uri" : "10.4.4.205:8896",
+    "path": "/repositories.domain.ext/fpds/",
+    "protocol": "http"
+  },
+  "pgd" : {
+    "uri" : "10.4.4.205",
+    "retry" : 3,
+    "protocol": "http"
+  },
+  "vler" : {
+    "host" : "10.4.4.205",
+    "port": 80,
+    "protocol": "http",
+    "docquerypath": "/VLERMockDocQuery/NHINAdapterGatewayDocQuery/EntityDocQuery",
+    "docquerypathquery":"wsdl",
+    "docquerytimeoutms": 45000,
+    "docretrievepath": "/VLERMockDocRetrieve/NHINAdapterGatewayDocRetrieve/EntityDocRetrieve",
+    "docretrievepathquery": "wsdl",
+    "docretrievetimeoutms": 45000,
+    "systemusername" :"ehmp",
+    "systemsitecode": "200"
+  },
+  "jmeadows" : {
+    "host" : "10.4.4.205",
+    "port": 80,
+    "protocol": "http",
+    "retry" : 3,
+    "path" : "/jMeadows/JMeadowsDataService",
+    "query": "wsdl",
+    "timeoutms" : 45000,
+    "userien" : "20012",
+    "username" : "VEHU,TEN",
+    "usersitecode" : 200,
+    "usersitename" : "CAMP MASTER",
+    "parallelismmin" : 4
+  },
+  "mvi" : {
+    "host" : "10.4.4.205",
+    "path" : "/mvi",
+    "port" : 8896,
+    "protocol" : "http",
+    "method" : "POST",
+    "wsdl" : "MockMVI/psim_webservice/IdMWebService?wsdl"
+  },
+  "h2" : {
+    "jlvJdbc": "jdbc:h2:../terminology/src/jlv/termdb;ACCESS_MODE_DATA=r",
+    "lncJdbc": "jdbc:h2:../terminology/src/lncdb/termdb;ACCESS_MODE_DATA=r",
+    "drugJdbc": "jdbc:h2:../terminology/src/drug/termdb;ACCESS_MODE_DATA=r",
+    "lncLucene": "../terminology/src/lncdb/lucene",
+    "drugLucene": "../terminology/src/drug/lucene"
+  },
+  "security" : {
+    "truststore":"",
+    "keystore":"",
+    "ksPassword":"",
+    "tsPassword":""
+  }
+}

@@ -1,0 +1,20 @@
+# This configuration defines the rubocop checks.
+
+LineLength:
+  Enabled: false
+
+ClassLength:
+  Description: 'Avoid long classes.'
+  Max: 100
+  Enabled: true
+
+MethodLength:
+  Description: 'Avoid long methods.'
+  Max: 30
+  CountComments: false
+  Enabled: true
+
+WordArray:
+  Description: Use %w or %W for arrays of words.
+  MinSize: 2
+  Enabled: true

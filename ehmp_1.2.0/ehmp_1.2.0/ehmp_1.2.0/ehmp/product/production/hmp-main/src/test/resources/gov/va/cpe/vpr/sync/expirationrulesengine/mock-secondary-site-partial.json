@@ -1,0 +1,21 @@
+{
+  "CDS": {
+    "rules": {
+      "cds_basic_expiration": {
+        "type": "basic",
+        "siteId":"CDS",
+        "expirationHours": 8
+      }
+    }
+  }
+  ,
+  "DAS": {
+    "rules": {
+      "vler_basic_expiration": {
+        "type": "basic",
+        "siteId":"DAS",
+        "expirationHours": 24
+      }
+    }
+  }
+}

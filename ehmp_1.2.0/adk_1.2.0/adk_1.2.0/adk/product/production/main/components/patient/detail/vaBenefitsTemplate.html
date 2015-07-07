@@ -1,0 +1,27 @@
+<div class="demographic-group-header">Health Benefits and Insurance</div>
+<div class="demographic-group-content">
+	<div id="demo-svc-connected" class="demographic-header text-muted" >Service Connected</div>
+		{{#if serviceConnected}}
+		<div id="demo-svc-connected-status-val">Yes</div>
+		{{else}}
+		<div id="demo-svc-connected-status-val">No</div>
+		{{/if}}
+	<div class='demographic-group-divider'></div>
+	<div id="demo-svc-conditions" class="demographic-header text-muted">Service Connected Conditions</div>
+	<div id="demo-svc-conditions-values" class="demographic-group-scroll">
+		{{#each scCondition}}
+		<div>{{name}} ({{scPercent}}%)</div>
+		{{/each}}
+	</div>
+	<div class='demographic-group-divider'></div>
+	<div id="demo-insurance" class="text-muted">Insurance</div>
+	<table class="table">
+	{{#with insurance}}
+		<tr><td id="demo-insurance-name">Insurance Name</td><td id="demo-insurance-name-val">{{companyName}}</td></tr>
+		<tr><td id="demo-insurance-gp">Group</td><td id="demo-insurance-gp-val">{{groupNumber}}</td></tr>
+		<tr><td id="demo-insurance-holder">Holder</td><td id="demo-insurance-holder-val">{{toLowerCase policyHolder}}</td></tr>
+		<tr><td id="demo-insurance-eff-date">Effective Date</td><td id="demo-insurance-eff-date-val">{{formatDate effDate}}</td></tr>
+		<tr><td id="demo-insurance-exp-date">Expiration Date</td><td id="demo-insurance-exp-date-val">{{formatDate expDate}}</td></tr>
+	</table>
+	{{/with}}
+</div>

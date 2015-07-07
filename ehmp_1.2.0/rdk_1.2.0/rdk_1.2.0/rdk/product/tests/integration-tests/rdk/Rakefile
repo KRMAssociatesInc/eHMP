@@ -1,0 +1,19 @@
+require 'rubygems'
+require 'rspec/core/rake_task'
+
+task :default => [:inttest]
+
+RSpec::Core::RakeTask.new(:inttest, :test) do |t, args|
+	test_pattern = "spec/**/*_spec.rb"
+	if !args.test.nil?
+		test_pattern = "spec/**/#{args.test}_spec.rb"
+		raise "Test not found!" if Dir.glob(test_pattern).size < 1
+	end
+	t.pattern = test_pattern
+end
+
+RSpec::Core::RakeTask.new(:ciIntegrationTest) do |t| 
+  t.pattern = "spec/**/*_spec.rb"
+
+  t.spec_opts = [ '-r rspec-extra-formatters -f JUnitFormatter  -o TEST-rspec_results.xml' ]
+end

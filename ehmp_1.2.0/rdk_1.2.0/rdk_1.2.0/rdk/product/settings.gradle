@@ -1,0 +1,4 @@
+rootProject.name = 'parent'
+
+include ':production:rdk'
+include ':tests/acceptance-tests'

@@ -1,0 +1,12 @@
+<div class='pull-left'>
+{{#hasPermission 'remove-patient-med'}}
+	{{#if data}}
+	<button class='btn btn-danger' disabled='true' id='discontinueSubmit'>Discontinue</button>
+	{{else}}
+	<label>Only data originating in your facility may be edited. |{{data}}|</label>
+	{{/if}}
+{{/hasPermission}}
+</div>
+<div class='pull-right'>
+	<button class='btn btn-default' data-dismiss='modal'>Cancel</button>
+</div>

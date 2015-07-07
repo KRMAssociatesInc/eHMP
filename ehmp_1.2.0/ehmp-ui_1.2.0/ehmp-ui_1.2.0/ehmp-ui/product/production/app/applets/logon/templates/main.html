@@ -1,0 +1,64 @@
+<div class="row logonSection">
+    <form role="form" class="col-md-4 col-sm-5 col-sm-push-6 col-md-push-6">
+        <!-- <div class="text-right" style="margin-top: -16px; margin-bottom: 16px;">
+            <p class="tool">
+                <a href="#" style="display:inline-block;" id="modalOpen" data-toggle="popover" data-content="Sign in to eHMP"><i class="fa fa-question-circle fa-2x"></i></a>
+            </p>
+        </div> -->
+        {{{helpIconLink 'logon' 'helpIconInverted'}}}
+
+        <img src="../../../_assets/img/logo-va-seal.png" class="center-block" width="72" height="72" />
+        <h3 class="text-center text-muted">Enterprise Health Management Platform</h3>
+        <span class="sr-only"> Fill in all three fields and press enter or tab to submit button.</span>
+        <span id="errorMessage" class="text-danger text-center"></span>
+        <div class="form-group" id="facilityForm">
+            <span class="sr-only"> Use arrow keys to select a facility.</span>
+            <div id="authenication-facility-list"></div>
+        </div>
+        <div class="form-group" id="accessForm">
+            <input autocomplete="off" type="password" class="form-control" id="accessCode" name="accessCode" placeholder="Access Code" title="Enter access code">
+        </div>
+        <div class="form-group" id="verifyForm">
+            <input autocomplete="off" type="password" class="form-control" id="verifyCode" name="verifyCode" placeholder="Verify Code" title="Enter verify code">
+        </div>
+        <button type="submit" data-loading-text="<i class='fa fa-spinner fa-spin'></i> Authenticating..." class="btn btn-primary pull-right" id="login"><span class="sr-only"> Press enter to </span>Sign In</button>
+        <div class="hidden" tabindex="-1" id="screenReaderAuthenticating">
+            Authenticating.
+        </div>
+    </form>
+    <div class="col-md-4 col-md-offset-2 col-sm-5 col-xs-pull-0 col-sm-pull-4 securityStatement">
+        <div class="topFade"></div>
+        <div class="text-center">
+            <br><strong class="warning-break">** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING **</strong>
+            <br>
+            This site is intended to be used by authorized VA network users for viewing and retrieving information only except as otherwise explicitly authorized. VA information resides on and transmits through computer systems and networks funded by VA; all use is considered to be understanding and acceptance that there is no reasonable expectation of privacy for any data or transmissions on Government Intranet or Extranet (non-public) networks or systems. All transactions that occur on this system other than the viewing and downloading of Web site information and all data transmitted through this system are subject to review and action including (but not limited to) monitoring, recording, retrieving, copying, auditing, inspecting, investigating, restricting access, blocking, tracking, disclosing to authorized personnel, or any other authorized actions by all authorized VA and law enforcement personnel. All use of this system constitutes understanding and unconditional acceptance of these terms.
+            <br>
+            <br>Unauthorized attempts or acts to either (1) access, upload, change, or delete information on this system, (2) modify this system, (3) deny access to this system, or (4) accrue resources for unauthorized use on this system are strictly prohibited. Such attempts or acts are subject to action that may result in criminal, civil, or administrative penalties.
+            <br><strong class="warning-break">** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING **</strong>
+            <br><div class="tighten warning-break">* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</div>
+            &gt;&gt; Browser support: Internet Explorer 9+
+            <br>&gt;&gt; Recommended window size: 1280 x 800px
+            <br><div class="tighten warning-break">* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</div>
+            <br>
+            <br>
+        </div>
+        <div class="bottomFade"></div>
+    </div>
+
+</div>
+
+<div id="ccowActiveX" aria-hidden="true">
+    <OBJECT ID="tmpWebLocator" CLASSID="CLSID:EE986640-0821-4482-B4A3-C41EB8A18597" codebase="_assets/activex/WebXContextlets.cab#version=3,3,1,8907" name="tmpWebLocator" width=1 height=1 VIEWASTEXT></OBJECT>
+    <OBJECT ID="tmpWebListener" CLASSID="CLSID:2FE0947E-3FB9-455d-82D0-14C52EAC2D70" codebase="_assets/activex/WebXContextlets.cab#version=3,3,1,8907"name="tmpWebListener" width=1 height=1 VIEWASTEXT></OBJECT>
+</div>
+
+<!-- THIS IS FOR DEVELOPMENT USE ONLY. TAKE THIS SECTION OUT -->
+<!-- <div class="row">
+    <br>
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 hidden-xs alert alert-warning" role="alert">
+        <p><b>FOR DEVELOPMENT USE ONLY:</b></p>
+        <span>Facility: <b>Panorama</b></span><br>
+        <span>Access Code: <b>pu1234</b></span><br>
+        <span>Verify Code: <b>pu1234!!</b></span>
+    </div>
+</div> -->

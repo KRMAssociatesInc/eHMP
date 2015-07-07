@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:saml1="urn:oasis:names:tc:SAML:1.0:assertion" xmlns:saml1p="urn:oasis:names:tc:SAML:1.0:protocol" xmlns="http://www.opensaml.org/xmltooling-config" xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd">
+    
+    <!-- Validation rules for SAML 1.0/1.1 SAMLObjects -->
+    <ValidatorSuites>
+    
+        <!--  SAML 1.0/1.1 Schema Validation Rules -->
+        <ValidatorSuite id="saml1-schema-validator">
+            <Validator qualifiedName="saml1:Assertion" className="org.opensaml.saml1.core.validator.AssertionSchemaValidator"/>
+            <Validator qualifiedName="saml1:AttributeDesignator" className="org.opensaml.saml1.core.validator.AttributeDesignatorSchemaValidator"/>
+            <Validator qualifiedName="saml1:Attribute" className="org.opensaml.saml1.core.validator.AttributeSchemaValidator"/>
+            <Validator qualifiedName="saml1:AttributeStatement" className="org.opensaml.saml1.core.validator.AttributeStatementSchemaValidator"/>
+            <Validator qualifiedName="saml1:AudienceRestrictionCondition" className="org.opensaml.saml1.core.validator.AudienceRestrictionConditionSchemaValidator"/>
+            <Validator qualifiedName="saml1p:AuthenticationQuery" className="org.opensaml.saml1.core.validator.AuthenticationQuerySchemaValidator"/>
+            <Validator qualifiedName="saml1:AuthenticationStatement" className="org.opensaml.saml1.core.validator.AuthenticationStatementSchemaValidator"/>
+            <Validator qualifiedName="saml1:AuthorityBinding" className="org.opensaml.saml1.core.validator.AuthorityBindingSchemaValidator"/>
+            <Validator qualifiedName="saml1p:AuthorizationDecisionQuery" className="org.opensaml.saml1.core.validator.AuthorizationDecisionQuerySchemaValidator"/>
+            <Validator qualifiedName="saml1:AuthorizationDecisionStatement" className="org.opensaml.saml1.core.validator.AuthorizationDecisionStatementSchemaValidator"/>
+            <Validator qualifiedName="saml1:Evidence" className="org.opensaml.saml1.core.validator.EvidenceSchemaValidator"/>
+            <Validator qualifiedName="saml1p:Request" className="org.opensaml.saml1.core.validator.RequestSchemaValidator"/>
+            <Validator qualifiedName="saml1p:Response" className="org.opensaml.saml1.core.validator.ResponseSchemaValidator"/>
+            <Validator qualifiedName="saml1p:Status" className="org.opensaml.saml1.core.validator.StatusSchemaValidator"/>
+            <Validator qualifiedName="saml1p:StatusCode" className="org.opensaml.saml1.core.validator.StatusCodeSchemaValidator"/>
+            <Validator qualifiedName="saml1:Subject" className="org.opensaml.saml1.core.validator.SubjectSchemaValidator"/>
+            <Validator qualifiedName="saml1:SubjectConfirmation" className="org.opensaml.saml1.core.validator.SubjectConfirmationSchemaValidator"/>
+            <Validator qualifiedName="saml1:SubjectStatement" className="org.opensaml.saml1.core.validator.SubjectStatementSchemaValidator"/>
+        </ValidatorSuite>
+    
+        <!-- SAML 1.0/1.1 Specification Validation Rules -->
+        <ValidatorSuite id="saml1-spec-validator">
+            <Validator qualifiedName="saml1:Action" className="org.opensaml.saml1.core.validator.ActionSpecValidator"/>
+            <Validator qualifiedName="saml1:Assertion" className="org.opensaml.saml1.core.validator.AssertionSpecValidator"/>
+            <Validator qualifiedName="saml1:Audience" className="org.opensaml.saml1.core.validator.AudienceSpecValidator"/>
+        </ValidatorSuite>
+        
+    </ValidatorSuites>
+    
+</XMLTooling>

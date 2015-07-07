@@ -1,0 +1,22 @@
+<div class="displayRow" {{#if userWorkspace}} draggable="true" {{/if}}>
+<div id="gist-main-info" class="col-sm-8 quickDraw border-vertical selectable virticalCenter" aria-label="{{name}}, {{description}}" tabindex="0">
+<div>
+    <div id="name" name="name"><b>{{name}}</b>
+    </div>
+    <div id="description" description="description">{{description}}</div>
+    </div>
+</div>
+<div class="col-sm-4 quickDraw popoverArea selectable" id="interventions-gist-popover-{{uid}}" tabindex="0" title="{{name}}" data-content="{{tooltip}}" data-toggle="popover">
+    <div class="popoverAreaInner">
+        <div class="col-sm-4 virticalCenter text-center border-vertical">
+            <div id="count" class="verticalCenterInner text-center" count="count">{{count}}</div>
+        </div>
+        <div class="col-sm-4 virticalCenter text-center border-vertical">
+            <div id="graphic" class="verticalCenterInner text-center" graphic="{{graphic}}"></div>
+        </div>
+        <div id="age" title="{{ageReadText}}" age="age" class="col-sm-4 text-center col-condensed virticalCenter">
+            <div id="ageAdjust" class="verticalCenterInner text-center">{{formatTimeSince age}}</div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,70 @@
+allprojects {
+  apply plugin: 'maven'
+
+  ext.set('repo', 'releases')
+  ext.set('groupId', 'us.vistacore.rdk')
+  ext.set('repoVersion', getRepoVersion())
+  ext.set('branchName', getCurrentBranchName())
+  ext.set('currentCommitHash', getCurrentCommitHash())
+  ext.set('commitCountDir', projectDir)
+
+  def repoCommitCountClosure = {
+    def proc1 = ['sh', '-c', "git rev-list --full-history --all ${->commitCountDir}"].execute()
+    def proc2 = 'wc -l'.execute()
+    proc1 | proc2
+    return proc2.text.trim()
+  }
+  
+  repoCommitCount = "${->repoCommitCountClosure()}"
+  version = "${->repoVersion + '.' + repoCommitCount}"
+
+  repositories {
+    mavenCentral()
+  }
+}
+
+
+def getRepoVersion() {
+    def v
+    v = '1.2.0' 
+    if (v.endsWith('.'))
+        v = v.substring(0, v.length()-1)
+    return v
+}
+
+def getCurrentBranchName() {
+    def branchName
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        branchName = repoVersion + '.' + 'cmd /C git rev-parse --abbrev-ref HEAD'.execute().text.trim()
+    } else {
+        branchName = ['sh', '-c', 'git rev-parse --abbrev-ref HEAD'].execute().text.trim()
+    }
+    return branchName
+}
+
+def getCurrentCommitHash() {
+    def commitHash
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commitHash = repoVersion + '.' + 'cmd /C git rev-parse HEAD'.execute().text.trim()
+    } else {
+        commitHash = ['sh', '-c', 'git rev-parse HEAD'].execute().text.trim()
+    }
+    return commitHash
+}
+
+task generateVersionPropertiesFile() {
+    doLast {
+        def rdkVersion = project(':production:rdk').version
+        def commitHash = getCurrentCommitHash()
+
+        println "RDK_VERSION='${rdkVersion}'"
+        println "COMMIT_HASH='${commitHash}'"
+
+        project.buildDir.mkdirs()
+        delete{
+            delete "${project.buildDir}/version.properties"
+        }
+        new File("${project.buildDir}/version.properties") << """RDK_VERSION=${rdkVersion}
+COMMIT_HASH=${commitHash}"""
+    }
+}

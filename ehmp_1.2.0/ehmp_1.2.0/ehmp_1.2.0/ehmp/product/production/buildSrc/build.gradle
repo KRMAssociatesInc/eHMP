@@ -1,0 +1,20 @@
+repositories {
+    mavenLocal()
+    if (project.hasProperty('nexusUser') && project.hasProperty('nexusPassword')) {
+        maven {
+            url "http://hmpcode.vainnovations.us:8080/nexus/content/groups/public"
+            credentials {
+                username nexusUser
+                password nexusPassword
+            }
+        }
+    } else {
+        maven {
+            url 'http://repo.phloc.com/maven2'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.phloc:phloc-css:3.7.0'
+}

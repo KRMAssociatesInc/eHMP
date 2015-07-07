@@ -1,0 +1,98 @@
+[data-appletid="allergy_grid"] {
+    span.header-hover:hover, #problem-list-summary-expand:hover, #problem-list-summary-filter:hover {
+        cursor: pointer;
+    }
+       
+    div.immunGist {
+        color: #666666;
+        box-shadow: 0px 1px 1px #999999;
+        padding: 2px 5px 2px 5px;
+        border-radius: 5px;
+        float: left;
+        margin: 5px;
+        display:inline;        
+    }
+    div.immunGist:hover {
+        color: #000000;
+        background-color: #F0F0F0;
+    }
+    div.gistItem:hover {
+        color: #000000;
+        background-color: #F0F0F0;
+    }     
+    .gistList {
+        padding: 5px;
+    }
+    .gistItemA {   
+        float: left;
+        margin: 5px;
+        display:inline;
+    }
+    .clearBoth {
+        clear: both;
+    }
+       
+    .emptyGistList {
+        font-style: italic; 
+        color: gray; 
+        min-height: 40px; 
+        padding: 10px;
+    }
+    .changecolor + .tooltip > .tooltip-inner {
+    border: 2px solid #CCCCCC;
+    text-align:left;
+    max-width: 650px;
+        .row{
+            background-color: #000; 
+            color: #fff; 
+        }
+    }
+
+    label.color-DOD {
+        background-color: #A56900;
+    }
+    label.color-500, label.color-nonDOD {
+        background-color: #397BB3;
+    }
+    div.gistItem.severe {
+        color: #990000;
+        background-color: #FFA6A3;
+    }
+    div.gistItem.severe:hover {
+        color: #FFFFFF;
+        background-color: #CC0000;
+    }
+    div.gistItem.moderate {
+        color: #CC6600;
+        background-color: #FEE7D5;
+    }
+    div.gistItem.moderate:hover {
+        color: #FFFFFF;
+        background-color: #FF9900;
+    }
+    div.gistItem.mild, div.gistItem.noSeverity {
+        color: #666666;
+        background-color: #FFFFFF;
+    }
+    div.gistItem.mild:hover, div.gistItem.noSeverity:hover {
+        color: #FFFFFF;
+        background-color: #666666;
+    }
+    .allergyBubbleView {
+        padding: 5px;
+    }
+    .summaryItem {
+        float: left;
+        margin: 5px;
+        display:inline;
+    }
+    .clearBoth {
+        clear: both;
+    }
+    .emptyTextAllergy {
+        font-style: italic; 
+        color: gray; 
+        min-height: 40px; 
+        padding: 10px;
+    }
+}

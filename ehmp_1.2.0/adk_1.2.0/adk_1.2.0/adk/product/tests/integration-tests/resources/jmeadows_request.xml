@@ -1,0 +1,28 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <ns2:getPatientAllergies xmlns:ns2="http://webservice.jmeadows.domain.ext/">
+            <queryBean>
+                <endDate>2014-05-14T23:59:59.321-10:00</endDate>
+                <patient>
+                    <EDIPI>0000000001</EDIPI>
+                    <sensitive>false</sensitive>
+                </patient>
+                <requestingApp>eHMP</requestingApp>
+                <startDate>1984-05-14T00:00:00.320-10:00</startDate>
+                <user>
+                    <agency>VA</agency>
+                    <hostSite>
+                        <agency>VA</agency>
+                        <id>0</id>
+                        <moniker>CAMP MASTER</moniker>
+                        <name>CAMP MASTER</name>
+                        <siteCode>200</siteCode>
+                        <status>active</status>
+                    </hostSite>
+                    <name>CAMP MASTER</name>
+                    <userIen>20012</userIen>
+                </user>
+            </queryBean>
+        </ns2:getPatientAllergies>
+    </S:Body>
+</S:Envelope>

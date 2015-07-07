@@ -1,0 +1,16 @@
+<div class="demographic-group-header">Service and Social History</div>
+<div class="demographic-group-content">
+<div id="demo-vet-status" class="demographic-header text-muted">Veteran Status</div>
+{{#if veteran}}
+<div id="demo-vet-status-val">Yes</div>
+{{else}}
+<div id="demo-vet-status-val">No</div>
+{{/if}}
+<div class='demographic-group-divider'></div>
+<div id="demo-marital-status" class="demographic-header text-muted">Marital Status</div>
+<div id="demo-marital-status-val">{{toLowerCase maritalStatusName}}</div>
+<div class='demographic-group-divider'></div>
+<div id="demo-religion-status" class="demographic-header text-muted">Religion</div>
+<div id="demo-religion-status-val">{{toLowerCase religionName}}</div>
+</div>
+

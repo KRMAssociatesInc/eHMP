@@ -1,0 +1,4 @@
+# Configuration parameters: CountComments.
+MethodLength:
+  Description: 'Avoid long methods.'
+  Max: 50

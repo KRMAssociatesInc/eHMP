@@ -1,0 +1,357 @@
+$rowHeight: 23px;
+$defaultRowHeight: 13px;
+$defaultLineHeight: 13px; /* would prefer EM or REM, but messes up 23px tile height */
+$defaultRowPadding: 5px 0;
+$defaultChartHeight: 23px; /* with negative margins; so we can have the mid-height vertical separator */
+$rowBorderBottom: #f0f0f0;
+$rowBorderTop: #e5e5e5;
+$rowBackgroundColor: #fff;
+$rowEmptyRowColor: gray; /* Why the named color.  should be hex */
+
+[data-appletid="encounters"] {
+    /* min width for col-2-sm, with 3 characters (it bumps out) */
+
+    .row.equalHeights .col-sm-2.text {
+        min-width: 3em;
+    }
+    /*
+   .col-sm-5.text.left-side.info-display.border-vertical {
+       width: 50.2%;
+   }
+   */
+    span.header-hover:hover {
+        cursor: pointer;
+    }
+    .has-popover {
+        z-index: 100;
+    }
+    .has-popover:hover {
+        color: #206473;
+    }
+    .popover-custom {
+        max-width: 100%;
+        width: auto;
+    }
+    .popover-title {
+        color: white;
+        background-color: blue;
+        padding: 5px, 5px;
+        font-size: 12px;
+    }
+    /*
+    style available in ehmp-theme.scss
+    div.encGistItem {
+        /*
+        border-bottom: 2px solid #f3f3f3;
+        border-top: 1px solid #e5e5e5;
+        *//*
+        border-radius: 0;
+        color: #666;
+        display: block;
+        height: auto;
+        margin-left: 0;
+        position: relative !important;
+        width: 100%;
+    }
+    */
+    .encPanel {
+        margin-bottom: auto;
+    }
+    div.encGistItem:first-child {
+        border-top: medium none;
+    }
+    .encGistList .encGistItem:nth-child(even) {
+        background-color: #f2f8fe;
+    }
+    .encGistList .encGistItem:hover {
+        color: #000000;
+        background-color: #F0F0F0;
+    }
+    div.gistSubItem {
+        border-radius: 0;
+        clear: both;
+        color: #666;
+        height: auto;
+        margin-left: 0;
+        position: relative !important;
+        width: 100%;
+        .text {
+            top: 0;
+        }
+        .chart {
+            top: 0;
+        }
+    }
+    .gistItem .gistSubItem:nth-child(even) {
+        background-color: #f2f8fe;
+    }
+    .gistItem .gistSubItem:hover {
+        /*color: #000000;
+        background-color: #F0F0F0;
+        */
+    }
+    .encGistList {
+        clear: both;
+        padding: 0;
+    }
+
+
+    /*  ------------------------------------------------------------------------ */
+    /*  --  Subpanel                                                          -- */
+    /*  ------------------------------------------------------------------------ */
+    .panel-collapse {
+        background-image: linear-gradient(to bottom, #afb5b7 0%, #cfd8dc 10px, #cfd8dc 100%);
+
+        &.gistSubList {
+            padding: 0 6px 6px 6px;
+        }
+
+        &.collapse.in {
+
+            .header-bar {
+                box-shadow: 0 0 0 0 #999;
+                border-bottom: 1px solid #dedede;
+                margin-bottom: 2px;
+            }
+
+            *[class*="col-"] {
+                vertical-align: middle;
+
+                *[class*="col-"] {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
+            }
+
+            /* nested rows cause problems in subpanel */
+            .row.equalHeights {
+                & > *[class*="col-"] {
+                    /* have to inherit; otherwise padding gets dropping in double; increasing size to 33 */
+                    .row.equalHeights {
+                        height: inherit;
+                        line-height: inherit;
+                        min-height: inherit;
+
+                        & > *[class*="col-"] {
+                            padding-top: 0;
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            /* for some reason the charts in the subpanel go bonkers when set to 100% */
+            .gChartMin {
+                width: 120px;
+            }
+
+        }
+    }
+    /* the wrapper around the content, includes header */
+    .gistSubList {
+        background-color: #efefef;
+        padding: 0;
+    }
+
+
+    /* Header */
+    .header-bar {
+        box-shadow: 0px 0px 4px 0px #999999;
+        height: 20px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 10px;
+        padding-top: 2px;
+    }
+
+    /* item listing in gist.  think of as clickable row? */
+    div.gistItem {
+        border-bottom: 2px solid #f3f3f3;
+        border-top: 1px solid #e5e5e5;
+
+        /* blue outline of toolbar on selected item */
+        &.toolbarActive {
+            border: 2px solid #1593E0;
+        }
+        /* subpanel */
+        & .panel {
+            border: 0 none;
+            border-radius: 0;
+            margin-bottom: 0 !important;
+        }
+    }
+
+
+    .clearBoth {
+        clear: both;
+    }
+    .emptyGistList {
+        font-style: italic;
+        color: gray;
+        min-height: 40px;
+        padding: 10px;
+    }
+    .changecolor + .tooltip > .tooltip-inner {
+        border: 2px solid #CCCCCC;
+        text-align: left;
+        max-width: 650px;
+        .row {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+    .gistSubList .header-bar {
+        padding-top: 0;
+    }
+    .subheader-bar {
+        background-color: #fff;
+        border-bottom: 1px solid #e5e5e5;
+        color: #206473;
+        font-size: 10px;
+        font-weight: 700;
+        height: 20px;
+        margin-top: 0;
+        padding: 3px 0;
+    }
+    .header {
+        margin-top: 3px;
+        white-space: nowrap;
+    }
+    .headerDirectionalIndicator {
+        padding-left: 0;
+    }
+    .warning {
+        color: #CC0000;
+        font-weight: bold;
+    }
+    .col-condensed {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    /* This is for the inline sparkline chart */
+    /* Style guide dictates a height of 23px */
+    .gChartMinEnc {
+        background-color: #f2f2f2;
+        height: $defaultRowHeight + 10px;
+        min-width: 60px;
+        max-width: 115px; /*180*/
+        overflow: hidden;
+        width: 115px;
+        /*
+        width: 100%;
+        */
+    }
+
+    .gsubChartMine {
+        background-color: #f3f3f3;
+        height: $defaultRowHeight + 10px;
+        overflow: hidden;
+        width: 125px;
+    }
+    .noPadding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .noMargin {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+
+    .panel-heading {
+        border-bottom: 1px solid #e5e5e5;
+        padding: 0;
+    }
+    .changecolor:hover {
+        background-color: #f2f8fe;
+    }
+
+    div.gistSubItem .chart, div.gistSubItem .text {
+        position: relative;
+        top: auto;
+    }
+    div.gistSubItem .text {
+        padding-bottom: 4px;
+        padding-top: 4px;
+    }
+
+    div.gistSubItem .chart {
+        padding-bottom: 3px;
+        padding-top: 3px;
+    }
+    #Age-header.pull-right {
+        float: none !important;
+    }
+    .gistItemInner {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .caret {
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid #000000;
+        display: inline-block;
+        height: 0;
+        opacity: 0.3;
+        margin-right: 3px;
+        width: 0;
+    }
+    .right-caret {
+        border-bottom: 4px solid transparent;
+        border-top: 4px solid transparent;
+        border-left: 4px solid #000000;
+        display: inline-block;
+        height: 0;
+        opacity: 0.3;
+        margin-right: 3px;
+        width: 0;
+    }
+    .empty-caret {
+        border-bottom: 4px solid transparent;
+        border-top: 4px solid transparent;
+        border-left: 4px solid #000000;
+        display: inline-block;
+        height: 0;
+        opacity: 0;
+        margin-right: 3px;
+        width: 0;
+    }
+
+    .gistSubList > div > div {
+        background-color: #fff;
+    }
+
+    .border-vertical {
+        border-right: 1px solid #e5e5e5;
+    }
+    .gistSubList .header-bar span {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .gistSubList .header-bar span:first-child {
+        padding-left: 10px;
+    }
+    .encGistList .panel {
+        border: none;
+    }
+    .quickDraw:hover {
+        background-color: #f2f7fc;
+    }
+    .quickDraw:focus {
+        outline: 0;
+    }
+    .quickviewOverlay {
+        bottom: 0;
+        color: #fff;
+        display: block;
+        left: 0;
+        line-height: 13px;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        z-index: 100;
+    }
+    .breakwords {
+        word-break: break-word;
+    }
+}

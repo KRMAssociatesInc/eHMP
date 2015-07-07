@@ -1,0 +1,101 @@
+<div class="col-sm-9 order-detail" id="order-detail-{{detailId}}" tabindex="">
+    <h3 id="qualifiedName-{{detailId}}" class="col-sm-9 capitalize detailTitle" tabindex="">{{name}} {{dose}} {{dosagesUnits}}</h3>
+    <h3 id="status_{{detailId}}" class="col-sm-3 pull-right detailStatus">{{standardizedVaStatus}}</h3>
+    <br>
+    <p tabindex="" class="labelStyleColor">
+        <span id="med-summary-{{detailId}}">{{sig}}</span>
+    </p>
+    <hr class="horizLine">
+
+    <div class="col-sm-12 order-info-line">
+        <div class="col-sm-3 order-info">
+            <p>
+                <span id="prescription-label-{{detailId}}" class="labelStyleColor" tabindex="">Prescription No.</span>
+            </p>
+            <p>
+                {{#each orders}}
+                <span tabindex="">{{prescriptionId}}</span>
+                {{/each}}
+            </p>
+        </div>
+        <div class="col-sm-6 order-info">
+            <p>
+                <span id="supply-label-{{detailId}}" class="labelStyleColor" tabindex="">Supply</span>
+            </p>{{#each orders}}{{#if quantityOrdered}}
+            <p>
+                <span tabindex="">{{quantityOrdered}} for {{daysSupply}} days ({{fillsRemaining}} of {{fillsAllowed}} remaining)</span>
+            </p>{{/if}}{{/each}}</div>
+        <div class="col-sm-3 order-info">
+            <p>
+                <span id="dose-label-{{detailId}}" class="labelStyleColor" tabindex="">Dose/Schedule</span>
+            </p>
+            <p>{{#each dosages}}
+                <span tabindex="">{{dose}} {{dosagesUnits}} {{routeName}} {{scheduleName}} {{duration}} {{complexDuration}} {{complexConjunction}}</span>{{/each}}</p>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="col-sm-12 order-info-line">
+        <div class="col-sm-3 order-info">
+            <p>
+                <span id="provider-label-{{detailId}}" class="labelStyleColor" tabindex="">Provider</span>
+            </p>
+            <p>
+                <span>{{#each orders}}
+                    <span tabindex="">{{providerName}}</span>{{/each}}</span>
+            </p>
+        </div>
+        <div class="col-sm-3 order-info">
+            <p>
+                <span id="pharmacist-label-{{detailId}}" class="labelStyleColor" tabindex="">Pharmacist</span>
+            </p>
+            <p>
+                <span>{{#each orders}}
+                    <span tabindex="">{{pharmacistName}}</span>{{/each}}</span>
+            </p>
+        </div>
+        <div class="col-sm-3 order-info">
+            <p>
+                <span id="location-label-{{detailId}}" class="labelStyleColor" tabindex="">Location</span>
+            </p>
+            <p>
+                <span>{{#each orders}}
+                    <span tabindex="">{{locationName}}</span>{{/each}}</span>
+            </p>
+        </div>
+        <div class="col-sm-3 order-info">
+            <p>
+                <span id="facility-label-{{detailId}}" class="labelStyleColor" tabindex="">Facility</span>
+            </p>
+            <p>
+                <span>
+                    <span tabindex="">{{facilityName}}</span>
+                </span>
+            </p>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="col-sm-12 fillHx" tabindex="">
+        <h5>
+            <span id="fills-label-{{detailId}}" tabindex="">Fill History</span>
+            <!-- <span class="badge" id="fills-length-{{detailId}}" tabindex="">{{fills.length}}</span> -->
+        </h5>
+        {{#if fills}}
+        <table class="table" id="history-table-{{detailId}}" tabindex="">
+            {{#each fills}}
+            <tr>
+                <td class="fillColumn">{{formatDate dispenseDate}}</td>
+                <td class="fillColumn">
+                    {{#if daysSupplyDispensed}} {{quantityDispensed}} for {{daysSupplyDispensed}} days {{else}} {{quantityDispensed}} dispensed</span>{{/if}}
+                </td>
+                <!-- <span tabindex="">{{#compare routing "W" operator="=="}}Window{{/compare}}{{#compare routing "M" operator="=="}}Mail{{/compare}}</span> -->
+                <td class="fillColumn">
+                    {{../pickUpType}}
+                </td>
+                <td class="fillColumn"></td>
+            </tr>
+            {{/each}}
+        </table>
+        {{else}}
+        <hr class="horizLine">No Fill History {{/if}}
+    </div>
+</div>

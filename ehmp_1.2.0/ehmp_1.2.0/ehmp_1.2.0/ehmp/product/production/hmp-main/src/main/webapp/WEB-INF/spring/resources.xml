@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <context:property-placeholder location="classpath:hmp-defaults.properties"/>
+
+    <context:annotation-config/>
+
+    <context:component-scan base-package="gov.va.hmp,
+            gov.va.cpe.param,
+            gov.va.cpe.vpr,
+            gov.va.cpe.vpr.service,
+            gov.va.cpe.vpr.sync,
+            gov.va.cpe.vpr.sync.vista,
+            gov.va.cpe.vpr.queryeng,
+            gov.va.cprs,
+            gov.va.cpe.vpr.frameeng,
+            gov.va.cpe.roster,
+            gov.va.cpe.board,
+            gov.va.cpe.pt,
+            gov.va.cpe.encounter,
+            gov.va.jmeadows,
+            gov.va.nhin,
+            gov.va.cpe.idn,
+            gov.va.vlerdas,
+            gov.va.vlerdas.service"/>
+
+    <bean id="messageSource"
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+          p:fallbackToSystemLocale="true"
+          p:basename="/WEB-INF/i18n/messages"/>
+
+    <bean id="infoButtonLinkGenerator" class="gov.va.cpe.vpr.ws.link.OpenInfoButtonLinkGenerator"/>
+    <!--
+        //Took it off as it is annotated.
+        <bean id="selfLinkGenerator" class="gov.va.cpe.vpr.ws.link.PatientRelatedSelfLinkGenerator"/>
+     -->
+    <bean id="patientLinkGenerator" class="gov.va.cpe.vpr.ws.link.DomainClassPatientLinkGenerator"
+          p:linkService-ref="linkService">
+        <property name="omitClasses">
+            <list value-type="java.lang.Class">
+                <value>gov.va.cpe.vpr.PatientDisability</value>
+                <value>gov.va.cpe.vpr.PatientEthnicity</value>
+                <value>gov.va.cpe.vpr.PatientExposure</value>
+                <value>gov.va.cpe.vpr.PatientFacility</value>
+                <value>gov.va.cpe.vpr.PatientLanguage</value>
+                <value>gov.va.cpe.vpr.PatientMaritalStatus</value>
+                <value>gov.va.cpe.vpr.PatientRace</value>
+                <value>gov.va.cpe.vpr.Veteran</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="nextPageLinkGenerator" class="gov.va.cpe.vpr.ws.link.NextPageLinkGenerator"/>
+    <bean id="previousPageLinkGenerator" class="gov.va.cpe.vpr.ws.link.PreviousPageLinkGenerator"/>
+
+    <bean id="resultTrendLinkGenerator" class="gov.va.cpe.vpr.ws.link.ResultTrendLinkGenerator"
+          p:linkService-ref="linkService"/>
+    <bean id="vitalSignTrendLinkGenerator" class="gov.va.cpe.vpr.ws.link.VitalSignTrendLinkGenerator"
+          p:linkService-ref="linkService"/>
+    <bean id="medDoseHistoryTrendLinkGenerator" class="gov.va.cpe.vpr.ws.link.MedicationDoseHistoryTrendLinkGenerator"
+          p:linkService-ref="linkService"/>
+
+    <bean id="vistaAccountDao" class="gov.va.hmp.hub.dao.json.JsonVistaAccountDao"/>
+    <bean id="secondarySiteConfig" class="gov.va.hmp.SecondarySiteJson"/>
+    <bean id="expirationRulesEngine" class="gov.va.cpe.vpr.sync.expirationrulesengine.ExpirationRulesEngine"/>
+    <bean id="primarySiteMonitorsMap" class="gov.va.cpe.vpr.sync.vista.PrimarySiteMonitorsMap"/>
+
+    <!-- Policy Implementation: Defaults to ASU -->
+    <bean id="asuPolicyDecisionPoint" class="gov.va.hmp.access.asu.AsuPolicyDecisionPoint"/>
+    <!-- To disable ASU policy enforcement enable this:
+    <bean id="permitAllPolicyDecisionPoint" class="gov.va.hmp.access.PermitAllPolicyDecisionPoint"/>
+ 	-->
+
+    <import resource="metrics-config.xml"/>
+    <import resource="solr-config.xml"/>
+    <import resource="vista-rpc-config.xml"/>
+    <import resource="security-config.xml"/>
+    <import resource="messaging-config.xml"/>
+    <import resource="conversion-config.xml"/>
+    <import resource="datasource-config.xml"/>
+    <import resource="scheduling-config.xml"/>
+    <import resource="frame-config.xml"/>
+    <import resource="webmvc-config.xml"/>
+    <import resource="osgi-config.xml"/>
+</beans>

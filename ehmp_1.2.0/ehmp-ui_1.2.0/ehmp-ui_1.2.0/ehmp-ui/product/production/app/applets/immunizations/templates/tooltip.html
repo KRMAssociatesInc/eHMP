@@ -1,0 +1,26 @@
+<table id='{{uid}}' class='table table-condensed'>
+    <thead>
+        <tr class='row'>
+            <th>Date</th>
+            <th>Series</th>
+            <th>Reaction</th>
+            <th>Since</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class='row'>
+            <td>{{administeredFormatted}}</td>
+            <td>{{seriesNorm}}</td>
+            <td>{{isReaction}}</td>
+            <td>{{formatTimeSince timeSince}}</td>
+        </tr>
+        {{#if group}} {{#each group}}
+        <tr class='row'>
+            <td>{{attributes.administeredFormatted}}</td>
+            <td>{{attributes.seriesNorm}}</td>
+            <td>{{attributes.isReaction}}</td>
+            <td>{{formatTimeSince attributes.timeSince}}</td>
+        </tr>
+        {{/each}} {{/if}}
+    </tbody>
+</table>

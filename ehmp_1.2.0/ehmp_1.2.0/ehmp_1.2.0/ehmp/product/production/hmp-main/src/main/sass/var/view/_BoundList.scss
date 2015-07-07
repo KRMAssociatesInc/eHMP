@@ -1,0 +1,16 @@
+$boundlist-background-color: $dropdown-bg !default;
+$boundlist-border-color: $dropdown-border !default;
+$boundlist-border-radius: 6px !default;
+
+$boundlist-item-height: 26px !default;
+$boundlist-item-padding: 3px 20px !default;
+$boundlist-item-border-color: $boundlist-background-color !default;
+$boundlist-item-border-width: 0 !default;
+
+$boundlist-item-over-background-color: $dropdown-link-active-bg !default;
+$boundlist-item-over-color: $dropdown-link-active-color;
+$boundlist-item-over-border-color: $boundlist-item-over-background-color  !default;
+
+$boundlist-item-selected-background-color: $dropdown-link-active-bg !default;
+$boundlist-item-selected-color: $dropdown-link-active-color !default;
+$boundlist-item-selected-border-color: $boundlist-item-selected-background-color !default;

@@ -1,0 +1,458 @@
+
+
+/*-----Set label colors, fonts, and backgrounds-----*/
+// [data-appletid="medication_review"] {
+
+$labelGrey: #a2a2a2;
+$backgroundGrey: #eeeeee;
+
+/*-----Set label colors, fonts, and backgrounds-----*/
+[data-appletid="medication_review"] {
+    .capitalize {
+        text-transform: capitalize;
+    }
+
+    /*If vaStatus is Discontinued, add shaded background to that medication*/
+    .list-group {
+        .panel {
+            margin-bottom:0;
+        }
+        .panel-default {
+            .panel-body {
+                .DiscontinuedShading {
+                    background-image: url('../images/texture-diagonalline.png');
+                    background-repeat: repeat;
+                    background-color: none;
+                }
+            }
+        }
+    }
+
+/*styles the circular status badge*/
+.ACTIVEStatus {
+    /*green color*/
+    background-color: #4CD964;
+}
+.DISCONTINUEDStatus {
+    /*red color*/
+    background-color: #ff3b30;
+}
+.EXPIREDStatus {
+    /*gray color*/
+    background-color: gray;
+}
+
+    /*If Rx has expired, color its expiration date red*/
+    /*.Expired, .Expired .labelStyleColor {*/
+        /*color: #ff3b30;*/
+    /*}*/
+
+    /*sets default text color for some areas to grey*/
+    .labelStyleColor {
+        color: $labelGrey;
+    }
+
+    /*sets default text color for the schedule and route to dark grey*/
+    .scheduleStyleColor {
+        color: #898989;
+    }
+
+    /*if there are 3 fills remaining, color the Refill text orange*/
+    /*.fewFillsRemain {
+        color: #EE7600;
+    }*/
+
+    /*if there are 0 fills remaining, color the Refill text red*/
+    /*.noFillsRemain {
+        color: #ff3b30;
+    }*/
+
+    .light-grey-background {
+        background-color: $backgroundGrey;
+    }
+    /*------------Styling for Med Group and Summary---------------------*/
+    #medNavButtons {
+        height: 36px;
+        z-index: 10;
+        position: relative;
+        width: auto;
+        padding-top: 4px;
+        background-color:#eeecec;
+        /* IE10 Consumer Preview */
+        background-image: -ms-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+        /* Mozilla Firefox */
+        background-image: -moz-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+        /* Opera */
+        background-image: -o-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+        /* Webkit (Safari/Chrome 10) */
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #F2F2F2));
+        /* Webkit (Chrome 11+) */
+        background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #F2F2F2 100%);
+        /* W3C Markup, IE10 Release Preview */
+        background-image: linear-gradient(to bottom, #FFFFFF 0%, #F2F2F2 100%);
+        .nav-pills {
+            .active .toggleViewBtn{
+                color: white
+            }
+            .toggleViewBtn {
+                padding: 4px 9px;
+                margin: 0;
+                color:black;
+                text-shadow:none;
+            }
+            li a:hover{
+                background-color: #3D5157;
+                background-image: none;
+                color: white;
+                outline: none;
+            }
+        }
+    }
+    #resetBtn {
+        z-index: 12; 
+        position: relative; 
+        top: -30px; 
+        float: right
+    }
+    #tab-content {
+        padding-top: 1px;
+    }
+    #medsLoadingDiv {
+        padding-left: 15px;
+    }
+    #medViewToggle {
+        border: 2px solid #eeecec;
+        border-radius: 5px;
+        margin: 0 0 0 13px;
+        max-width: 300px;
+        float: left;
+        padding: 0;
+    }
+    #medAdd {
+        border: 2px solid #eeecec;
+        border-radius: 5px;
+        margin: 0 0 0 13px;
+        max-width: 170px;
+        float: left;
+        height: 29px;
+        width: 118px;
+        padding: 0 0 0 0;
+    }
+    #med-list-view-btn .toggleViewBtn{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    #med-timeline-view-btn .toggleViewBtn{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    #med-add-btn {
+        > .toggleViewBtn {
+            padding: 4px 9px;
+            margin: 0;
+        }
+    }
+    #medicationsAccordion.panel-group {
+       margin-bottom: 0px;
+    }
+    #medGroupType {
+        background-color: #eeecec;
+        border-radius: 0;
+    }
+    /*Styles the group header div*/
+
+    /*Style the number next to the group name, i.e. "47 Outpatient"*/
+    .medCount {
+        display: inline-block;
+        float: left;
+        text-align: right;
+        min-width: 18px;
+    }
+    .groupName {
+        display: inline-block;
+        padding-left: 7px;
+        text-align: left;
+    }
+    .medTitle {
+        padding-left: 5px;
+    }
+    .medTitleStyle {
+        font-size: 115%;
+    }
+
+    .medSubtitle {
+        padding-left: 5px;
+    }
+    .statusBadge {
+        border-radius: 50%;
+        height: 12px;
+        margin-top: 4px;
+        margin-left: 4px;
+        width: 12px;
+    }
+    .medSubcategory {
+        text-align: center;
+        padding-left: 4px;
+        padding-top: 4px;
+    }
+    /*-----Styling to change the Med Review table from the bootstrap default css-----*/
+    .list-group {
+        margin-bottom: 0;
+    }
+    .panel-group {
+        .panel-heading {
+            +.panel-collapse{
+                > .panel-body {
+                    border: none;
+                    padding: 0;
+                }
+            }
+        }
+        .panel {
+            border-radius: 0;
+        }
+        .panel{
+            +.panel {
+                margin-top: 0;
+            }
+        }
+    }
+    .panel-success {
+        border-color: #eeeeee;
+    }
+    .panel-default {
+        > .panel-heading {
+            background-color: #fff;
+            background-image: none;
+            font-family: 'Open Sans', sans-serif;
+            padding: 7px 15px;
+            cursor: pointer;
+        }
+    }
+    .panel-collapse{
+        .panel-body {
+            padding: 10px;
+        }
+    }
+    .list-item-summary {
+        height: 40px;
+        line-height: .6;
+        margin: 0;
+        min-height: 53px;
+        overflow: hidden;
+    }
+    .list-item-summary-text {
+        padding: 3px 0 0 0;
+        position: relative;
+    }
+    .list-item-summary-line {
+        padding-top: 3px;
+        padding-left: 6px;
+    }
+    .list-item-summary-facility {
+        padding-top: 15px;
+        padding-left: 0;
+    }
+    .list-item-summary-sidescript {
+        padding-left: 3px;
+        width: 120px;
+    }
+    .panel-title {
+        font-size: 90%;
+        max-width: 30%;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    #graphContainer {
+        width: 100%;
+        overflow-y: scroll;
+        max-height: 69vh;
+    }
+    #medicationsAccordion.panel-group {
+        padding: 10px;
+        background-color: white;
+        margin-bottom: 0;
+        .panel {
+            margin-bottom: 10px;
+        }
+    }
+    #medicationsAccordion {
+        .panel-default>.panel-heading:hover {
+            background-color: #eeecec;
+        }
+        .panel-default>.list-item-summary.panel-heading.collapsed {
+            background-color: #FFF;
+            border-right: none;
+        }
+        .panel {
+            box-shadow: none;
+            border: none;
+            .panel {
+                box-shadow: 0 1px 2px rgba(0,0,0,.075);
+                border: 1px solid #ddd;
+            }
+        }
+    }
+    #medGroupType {
+        background-image: -webkit-linear-gradient(top, #f3f9fe 0%, #bcc8d1 100%);
+    }
+}
+
+/*----- Detail Dropdown Styling -----*/
+
+.medicationReviewDetail {
+
+    .orderHx-list {
+        padding-top: 5px;
+        padding-right: 0;
+    }
+
+    .orderHx {
+        display: table-header-group;
+        font-size: 110%;
+        font-weight: bold;
+    }
+
+    #order-history-panel {
+        width: 100%;
+        /*display: inline-block;*/
+    }
+
+    .orders-links-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #order-nav-outer-div {
+        height:45px;
+    }
+
+    #order-nav-inner-div {
+        padding-right: 15%;
+    }
+
+    .order-nav-button {
+        border: 1px solid #eeeeee;
+    }
+
+    .order-nav-button a:hover {
+        border: 1px solid #a4a4a4;
+        border-radius: 5px;
+        background-color: #e0e0e0;
+        color: black;
+    }
+
+    .order-dates-range {
+        margin-top: 10px;
+    }
+    .order-dates {
+        padding-left: 15px;
+    }
+    .order-dates-range:hover {
+     /*   background-color: #red;*/
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        -moz-border-radius: 4px;
+        -webkit-box-shadow: 1px 2px 3px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 3px 4px 5px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: 1px 2px 3px 0px rgba(50, 50, 50, 0.75);
+    }
+    .order-dates:active {
+        background-color: #ffffff;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        -moz-border-radius: 4px;
+        -webkit-box-shadow: 1px 2px 3px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 3px 4px 5px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: 1px 2px 3px 0px rgba(50, 50, 50, 0.75);
+    }
+    .selectedOrder {
+        background-color: #ffffff;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        -webkit-box-shadow: 1px 2px 3px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 3px 4px 5px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: 1px 2px 3px 0px rgba(50, 50, 50, 0.75);
+    }
+
+    #order-detail-panel {
+        background-color: #ffffff;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -webkit-box-shadow: 3px 4px 5px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 3px 4px 5px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: 3px 4px 5px 0px rgba(50, 50, 50, 0.75);
+        display: inline-block;
+        min-height: 400px;
+        padding: 10px;
+        position: relative;
+        width: 70%;
+    }
+
+    .order-detail {
+        width: 97%;
+    }
+
+    .detailTitle {
+        font-size: 130%;
+        margin-top: 10px;
+        padding-left: 0;
+    }
+
+    .detailStatus {
+        font-size: 130%;
+        margin-top: 10px;
+        text-align: right;
+    }
+
+    .horizLine {
+        margin: 15px 0 15px 0;
+        border-color: #bababa;
+    }
+
+    .order-info-line {
+        padding: 0;
+    }
+    .order-info {
+        word-wrap: break-word;
+        padding: 0;
+    }
+    .fillHx {
+        padding: 0;
+    }
+    .fillColumn {
+        width: 20%;
+    }
+
+    #info-button-panel {
+        width: 100%;
+        /*display: inline-block;*/
+    }
+    #info-button-patient-panel {
+        width: 100%;
+        /*display: inline-block;*/
+    }
+    .infoButton {
+        display: table-header-group;
+        font-size: 110%;
+        font-weight: bold;
+    }
+
+    /*sets default text color for some areas to grey*/
+    .labelStyleColor {
+        color: $labelGrey;
+    }
+
+    .light-grey-background {
+        background-color: $backgroundGrey;
+    }
+
+    .capitalize {
+        text-transform: capitalize;
+    }
+}
+#med-review-applet-main {
+    max-height: 69vh;
+}

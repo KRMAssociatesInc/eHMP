@@ -1,0 +1,97 @@
+<div id="error-container" />
+<div id="add-lab-order-form" class="container-fluid">
+	<form role="form">
+		<div class="form-group" id="top-row-table">
+
+			<div class="row row-buffer labTests">
+				<div class="col-md-5 gutter">
+					<label for="onset-date-select">Available Lab Tests</label>
+					<select data-type='reading' id="{{sname}}-reading" class="form-control input-sm fill">
+						{{#each unit-1-options}}
+						<option>{{this}} </option>
+						{{/each}}
+					</select>
+				</div>
+				<div class="col-sm-7 pull-right">
+					<label for="onset-date-select">CBC & DIFF</label>
+				</div>
+				<div class="col-sm-7 pull-right grid-filter">
+					<div class="row padded">  
+						<div class="col-sm-5 right"><label for="onset-date-select">Collection Type</label></div>
+						<div class="col-md-7">
+							<select data-type='reading' id="{{sname}}-reading" class="form-control input-sm fill">
+								{{#each unit-1-options}}
+								<option>{{this}} </option>
+								{{/each}}
+							</select>
+						</div>
+					</div>
+					<div class="row padded"> 
+						<div class="col-sm-5 right"><label for="onset-date-select">Specimen</label></div>
+						<div class="col-md-7">
+							<select data-type='reading' id="{{sname}}-reading" class="form-control input-sm fill">
+								{{#each unit-1-options}}
+								<option>{{this}} </option>
+								{{/each}}
+							</select>
+						</div>
+					</div>
+					<div class="row padded"> 
+						<div class="col-sm-5 right"><label for="onset-date-select">Urgency</label></div>
+						<div class="col-md-7">
+							<select data-type='reading' id="{{sname}}-reading" class="form-control input-sm fill">
+								{{#each unit-1-options}}
+								<option>{{this}} </option>
+								{{/each}}
+							</select>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="row row-buffer">
+				<div class="col-md-3 gutter">
+					<label for="onset-date-select">Collection Type</label>
+					<select data-type='reading' id="{{sname}}-reading" class="form-control input-sm fill">
+						{{#each unit-1-options}}
+						<option>{{this}} </option>
+						{{/each}}
+					</select>
+				</div>
+				<div class="col-md-4 gutter">
+					<label for="onset-date-select">Onset Date</label>
+					<div id="onset-date-select" class="input-group">
+						<input type="text" class="form-control datepicker" id="dp-problem" data-date-end-date="0d" data-date-format="mm/dd/yyyy" placeholder="MM/DD/YYYY" value="{{date}}" autocomplete="off">
+						<span id="date-picker-icon" max-length="10" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+					</div>
+				</div>
+				<div class="col-md-2 gutter">
+					<label for="onset-date-select">How Often?</label>
+					<select data-type='reading' id="{{sname}}-reading" class="form-control input-sm fill">
+						{{#each unit-1-options}}
+						<option>{{this}} </option>
+						{{/each}}
+					</select>
+				</div>
+				<div class="col-md-2 gutter">
+					<label for="onset-date-select">How Long</label>
+					<select data-type='reading' id="{{sname}}-reading" class="form-control input-sm fill">
+						{{#each unit-1-options}}
+						<option>{{this}} </option>
+						{{/each}}
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="row horizontal_line"></div>
+		<div class="row row-buffer">
+			<div class="col-md-12">
+				<label>Preview Order</label>
+				<div id="previewOrder" name="previewOrder" class="break-word"></div>
+			</div>
+		</div>
+	</form>
+</div>
+</div>

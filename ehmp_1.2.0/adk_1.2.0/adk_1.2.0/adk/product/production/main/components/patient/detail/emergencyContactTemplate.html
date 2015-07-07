@@ -1,0 +1,19 @@
+<div class="demographic-group-header">Emergency Contact</div>
+<div class="demographic-group-content">
+	<div id="demo-em-name" class="text-muted demographic-header"><span>{{nameRel.relationship.value}}&nbsp;</span>{{#if nameRel.diff}}<span> <i class="fa fa-exclamation-circle demographic-subgroup-icon"></i></span><span class="sr-only">Discrepancies found</span>{{/if}}</div>
+	<div id="demo-em-name-val" class='demographic-data' data-diff="{{nameRel.name.diff}}">{{nameRel.name.value}}</div>
+	<div class='demographic-group-divider'></div>
+	<div id="demo-em-hphone" class="text-muted demographic-header"><span>Home</span>{{#if hPhone.diff}}<span> <i class="fa fa-exclamation-circle demographic-subgroup-icon"></i></span><span class="sr-only">Discrepancies found</span>{{/if}}</div>
+	<div id="demo-em-hphone-val" class='demographic-data' data-diff="{{hPhone.phone.diff}}">{{formatPhone hPhone.phone.value}}</div> 
+	<div class='demographic-group-divider'></div>
+	<div id="demo-em-wphone" class="text-muted demographic-header"><span>Work</span>{{#if wPhone.diff}}<span> <i class="fa fa-exclamation-circle demographic-subgroup-icon"></i></span><span class="sr-only">Discrepancies found</span>{{/if}}</div>
+	<div id="demo-em-wphone-val" class='demographic-data' data-diff="{{wPhone.phone.diff}}">{{formatPhone wPhone.phone.value}}</div>
+	<div class='demographic-group-divider'></div>
+	<div id="demo-em-address" class="text-muted demographic-header"><span>Address</span>{{#if address.diff}}<span> <i class="fa fa-exclamation-circle demographic-subgroup-icon"></i></span><span class="sr-only">Discrepancies found</span>{{/if}}</div>
+	<div>
+	   {{#if address.line1.value}}<div id="demo-em-line1" class='demographic-data' data-diff="{{address.line1.diff}}">{{address.line1.value}}</div>{{/if}}
+	   {{#if address.line2.value}}<div id="demo-em-line2" class='demographic-data' data-diff="{{address.line2.diff}}">{{address.line2.value}}</div>{{/if}}
+	   {{#if address.line3.value}}<div id="demo-em-line3" class='demographic-data' data-diff="{{address.line3.diff}}">{{address.line3.value}}</div>{{/if}}
+	   {{#if address.line4.value}}<div id="demo-em-line4" class='demographic-data' data-diff="{{address.line4.diff}}">{{address.line4.value}}</div>{{/if}}
+	</div>
+</div>

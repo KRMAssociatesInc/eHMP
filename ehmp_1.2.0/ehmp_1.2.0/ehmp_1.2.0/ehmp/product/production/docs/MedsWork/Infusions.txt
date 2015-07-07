@@ -1,0 +1,111 @@
+--- Pending IV Order ---
+PENICILLIN INJ 20 UNITS,
+CYANOCOBALAMIN INJ,SOLN 10 MCG 1 Bag/Day in
+DEXTROSE INJ,SOLN 500 ml IV 100 ml/hr
+ 
+ 
+<results version='1.0' timeZone='-0700' >
+<meds total='1' >
+<med>
+	<doses>
+		<dose route='IV' />
+	</doses>
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<id value='1446P;I' />
+	<location code='158' name='7A GEN MED' />
+	<name value='PENICILLIN INJ' />
+	<orderID value='34014' />
+	<products>
+		<product code='8' name='PENICILLIN G' role='A' concentration='20 UNITS' >
+			<class code='AM110' name='PENICILLIN-G RELATED PENICILLINS' vuid='4021739' />
+			<vaGeneric code='16' name='PENICILLIN' vuid='4019880' />
+			<vaProduct code='181' name='PENICILLIN G K 5MILLION UNT/VIL INJ' vuid='4000804' />
+		</product>
+		<product code='118' name='CYANOCOBALAMIN' role='A' concentration='10 MCG' >
+			<class code='VT101' name='CYANOCOBALAMIN' vuid='4021896' />
+			<vaGeneric code='17' name='CYANOCOBALAMIN' vuid='4017441' />
+			<vaProduct code='213' name='CYANOCOBALAMIN 1000MCG/ML INJ' vuid='4000836' />
+		</product>
+		<product code='79' name='DEXTROSE 20% IN WATER' role='B' concentration='500 ML' >
+			<class code='TN101' name='IV SOLUTIONS WITHOUT ELECTROLYTES' vuid='4021702' />
+			<vaGeneric code='535' name='DEXTROSE' vuid='4017760' />
+			<vaProduct code='3647' name='DEXTROSE 20% INJ' vuid='4004208' />
+		</product>
+	</products>
+	<rate value='100 ml/hr' />
+	<status value='not active' />
+	<vaStatus value='PENDING' />
+	<vaType value='V' />
+</med>
+</meds>
+</results>
+
+product (vuids or rxNorms):  4019880 / 4017441 / 4017760
+  - use a top level that means IV?
+class (va Drug Class) :  AM110 / VT101 / TN101
+
+product name:  PENICILLIN, CYANOCOBALAMIN in DEXTROSE
+  - also qualified name?
+  
+where to we put the full:  MedA Strength, MedB Strength in BaseA Volume  at 999 ml/hr
+  - need to consider intermittant (schedule + infuse over time)
+  - need to consider duration / total volume
+  ex. infuse over 20 minutes QD for a total of 2 doses  (max dose)
+                                with a total volume 5L  (volume)
+                                for 21 days             (duration)
+                                
+--- More Samples ---
+
+<med>
+	<doses>
+		<dose schedule='Q6H' />
+	</doses>
+	<facility code='500' name='CAMP MASTER' />
+	<id value='8V;I' />
+	<orderingProvider code='11531' name='PROVIDER,ONEHUNDREDNINETYONE' />
+	<products>
+		<product code='2' name='OXACILLIN' role='A' concentration='1 GM' >
+			<class code='AM112' name='PENICILLINASE-RESISTANT PENICILLINS' vuid='4024393' />
+			<vaGeneric code='468' name='OXACILLIN' vuid='4019867' />
+			<vaProduct code='3287' name='OXACILLIN NA 1GM/VIL INJ' vuid='4003857' />
+		</product>
+		<product code='3' name='5% DEXTROSE' role='B' concentration='50 ML' >
+			<class code='TN101' name='IV SOLUTIONS WITHOUT ELECTROLYTES' vuid='4021702' />
+			<vaGeneric code='535' name='DEXTROSE' vuid='4017760' />
+			<vaProduct code='14555' name='DEXTROSE 5% INJ,BAG,50ML' vuid='4014919' />
+		</product>
+	</products>
+	<rate value='OVER 30 MINUTES' />
+	<start value='2950717.15' />
+	<status value='not active' />
+	<stop value='2950718.092026' />
+	<vaStatus value='DISCONTINUED' />
+	<vaType value='V' />
+</med>
+
+<med>
+	<doses>
+		<dose />
+	</doses>
+	<facility code='500' name='CAMP MASTER' />
+	<id value='12V;I' />
+	<orderingProvider code='11257' name='WARDCLERK,FIFTYNINE' />
+	<products>
+		<product code='6' name='CEPHAPIRIN' role='A' concentration='100 GM' >
+			<class code='AM115' name='CEPHALOSPORIN 1ST GENERATION' vuid='4021524' />
+			<vaGeneric />
+			<vaProduct />
+		</product>
+		<product code='10' name='DEXTROSE 5% 1/2 NS' role='B' concentration='1000 ML' >
+			<class code='TN102' name='IV SOLUTIONS WITH ELECTROLYTES' vuid='4021703' />
+			<vaGeneric code='1041' name='DEXTROSE/POTASSIUM CHLORIDE/SODIUM CHLORIDE' vuid='4022505' />
+			<vaProduct code='5690' name='DEXTROSE 5%/NACL 0.45%/KCL 10MEQ/L INJ' vuid='4006215' />
+		</product>
+	</products>
+	<rate value='11 ml/hr' />
+	<start value='2951206.11' />
+	<status value='historical' />
+	<stop value='2960125.11' />
+	<vaStatus value='EXPIRED' />
+	<vaType value='V' />
+</med>

@@ -1,0 +1,121 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vaww="http://vaww.oed.oit.domain">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vaww:PRPA_IN201306UV02>
+      <id root="2.16.840.1.113883.4.349" extension="WS1407171224377861339405567"/>
+    <creationTime value="20140717122437"/>
+    <versionCode code="3.0"/>
+    <interactionId root="2.16.840.1.113883.1.6" extension="PRPA_IN201306UV02"/>
+    <processingCode code="T"/>
+    <processingModeCode code="T"/>
+    <acceptAckCode code="NE"/>
+    <receiver typeCode="RCV">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <id root="PSIM_TOOLS" extension="200EHMP"/>
+        </device>
+    </receiver>
+    <sender typeCode="SND">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.4.349" extension="200M"/>
+        </device>
+    </sender>
+    <acknowledgement>
+        <typeCode code="AA"/>
+        <targetMessage>
+            <id root="1.2.840.114350.1.13.0.1.7.1.1" extension="MCID-YOURMSGID_001"/>
+        </targetMessage>
+        <acknowledgementDetail>
+            <code codeSystemName="MVI" displayName="IMT" code="132"/>
+            <text><![CDATA[Identity Match Threshold]]></text>
+        </acknowledgementDetail>
+        <acknowledgementDetail>
+            <code codeSystemName="MVI" displayName="PDT" code="120"/>
+            <text><![CDATA[Potential Duplicate Threshold]]></text>
+        </acknowledgementDetail>
+    </acknowledgement>
+    <controlActProcess classCode="CACT" moodCode="EVN">
+        <code code="PRPA_TE201306UV02" codeSystem="2.16.840.1.113883.1.6"/>
+        <subject typeCode="SUBJ">
+            <registrationEvent classCode="REG" moodCode="EVN">
+                <id nullFlavor="NA"/>
+                <statusCode code="active"/>
+                <subject1 typeCode="SBJ">
+                    <patient classCode="PAT">
+                        <id root="2.16.840.1.113883.4.349" extension="35^PI^C877^USVHA"/>
+                        <statusCode code="active"/>
+                        <patientPerson>
+                            <name use="L">
+                                <given>PATIENT</given>
+                                <family>ZZZRETFIVEFIFTY</family>
+                            </name>
+                            <telecom value="" use="HP"/>
+                            <administrativeGenderCode code="M"/>
+                            <birthTime value="19350407"/>
+                            <multipleBirthInd value="false"/>
+                            <addr use="PHYS">
+                                <streetAddressLine></streetAddressLine>
+                                <city>TROY</city>
+                                <state>NY</state>
+                                <postalCode>9998-0071</postalCode>
+                                <country>USA</country>
+                            </addr>
+                            <asOtherIDs classCode="SSN">
+                                <id root="2.16.840.1.113883.4.1" extension="666212121"/>
+                                <statusCode code="4"/>
+                                <scopingOrganization classCode="ORG" determinerCode="INSTANCE">
+                                    <id root="1.2.840.114350.1.13.99997.2.3412"/>
+                                </scopingOrganization>
+                            </asOtherIDs>
+                        </patientPerson>
+                        <subjectOf1>
+                            <queryMatchObservation classCode="COND" moodCode="EVN">
+                                <code code="IHE_PDQ"/>
+                                <value xsi:type="INT" value="130"/>
+                            </queryMatchObservation>
+                        </subjectOf1>
+                    </patient>
+                </subject1>
+                <custodian typeCode="CST">
+                    <assignedEntity classCode="ASSIGNED">
+                        <id root="2.16.840.1.113883.4.349"/>
+                    </assignedEntity>
+                </custodian>
+            </registrationEvent>
+        </subject>
+        <queryAck>
+            <queryId root="1.2.840.114350.1.13.28.1.18.5.999" extension="MCID-YOUR_IDENTIFIER_001"/>
+            <queryResponseCode code="OK"/>
+            <resultCurrentQuantity value="1"/>
+        </queryAck>
+        <queryByParameter>
+            <queryId extension="MCID-YOUR_IDENTIFIER_001" root="1.2.840.114350.1.13.28.1.18.5.999"/>
+            <statusCode code="new"/>
+            <modifyCode code="1"/>
+            <initialQuantity value="10"/>
+            <parameterList>
+                <livingSubjectAdministrativeGender>
+                    <value code=""/>
+                    <semanticsText>Gender</semanticsText>
+                </livingSubjectAdministrativeGender>
+                <livingSubjectId>
+                    <value extension="" root="2.16.840.1.113883.4.1"/>
+                    <semanticsText>SSN</semanticsText>
+                </livingSubjectId>
+                <livingSubjectBirthTime>
+                    <value value=""/>
+                    <semanticsText>Date of Birth</semanticsText>
+                </livingSubjectBirthTime>
+                <livingSubjectName>
+                    <value use="L">
+                        <family>ZZZRETFIVEFIFTY</family>
+                        <given>PATIENT</given>
+                    </value>
+                    <semanticsText>Legal Name</semanticsText>
+                </livingSubjectName>
+            </parameterList>
+        </queryByParameter>
+    </controlActProcess>
+
+      </vaww:PRPA_IN201306UV02>
+   </soapenv:Body>
+</soapenv:Envelope>

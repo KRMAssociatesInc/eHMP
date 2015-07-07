@@ -1,0 +1,78 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "Street": "Any Street",
+        "SocialSecurityNumber": "666000808",
+        "Rank": "",
+        "SponsorRank": "",
+        "EnteredBy": "",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "",
+        "LastName": "EIGHT",
+        "CustodianName": "ahlta",
+        "Fmp": "",
+        "FirstName": "INPATIENT",
+        "BranchOfService": "",
+        "MaritalStatus": "",
+        "CountryCode": "",
+        "Street2": "",
+        "SponsorSsn": "",
+        "Sex": "M",
+        "Uic": "N30646     (S CRU TRCOM GTLK)",
+        "Suffix": "",
+        "Religion": "Unknown",
+        "Race": "",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EdiPn": "D1029643310",
+        "PhoneNumber": "555-5059776",
+        "OtherIdentifier": "",
+        "Country": "",
+        "City": "Any Town",
+        "DeersEligibility": "",
+        "DateOfBirth": "19450309000000",
+        "UnitNumber": "921900",
+        "AreaCode": "555",
+        "MiddleName": "",
+        "County": "",
+        "State": "LA",
+        "Email": "",
+        "SponsorUic": "",
+        "PostCode": "70131",
+        "Facility": "",
+        "LoincCode": "52536-0",
+        "SponsorBranchOfService": "",
+        "AddressType": "Home Address",
+        "LocalNumber": "5059776",
+        "PatientCategory": "N13 - United States Navy (USN) Active Duty (AD) Recruit",
+        "EnrollmentFacility": "",
+        "EventId": "1000000061"
+      },
+      "dataType": 13
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

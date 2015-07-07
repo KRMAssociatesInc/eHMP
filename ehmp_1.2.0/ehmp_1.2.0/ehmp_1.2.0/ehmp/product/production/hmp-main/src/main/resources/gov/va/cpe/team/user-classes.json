@@ -1,0 +1,1387 @@
+{
+    "data": {
+        "totalItems": 52,
+        "items": [
+            {
+                "name": "ASSOCIATE CHIEF OF STAFF",
+                "abbreviation": "ACOS",
+                "status": "Active",
+                "displayName": "Associate Chief Of Staff",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:2"
+            },
+            {
+                "name": "CHAPLAIN",
+                "abbreviation": "CHAP",
+                "status": "Active",
+                "displayName": "Chaplain",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:5"
+            },
+            {
+                "name": "CLINICAL CLERK",
+                "abbreviation": "CLCLRK",
+                "status": "Active",
+                "displayName": "Clinical Clerk",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:8"
+            },
+            {
+                "name": "CLINICAL COORDINATOR",
+                "abbreviation": "CLPAC",
+                "status": "Active",
+                "displayName": "Clinical Coordinator",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:9"
+            },
+            {
+                "name": "CLINICAL DIETITIAN",
+                "abbreviation": "CLDIET",
+                "status": "Active",
+                "displayName": "Clinical Dietitian",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:10"
+            },
+            {
+                "name": "DIALYSIS TECHNICIAN",
+                "abbreviation": "DIALTEC",
+                "status": "Active",
+                "displayName": "Dialysis Technician",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:15"
+            },
+            {
+                "name": "DIETITIAN",
+                "abbreviation": "DIET",
+                "status": "Active",
+                "displayName": "Dietitian",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:16"
+            },
+            {
+                "name": "ENDOCRINOLOGIST",
+                "abbreviation": "ENDO",
+                "status": "Active",
+                "displayName": "Endocrinologist",
+                "personClass": "Physicians (M.D. and D.O.)",
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:18"
+            },
+            {
+                "name": "HEALTH CARE TECHNICIAN",
+                "abbreviation": "HCT",
+                "status": "Active",
+                "displayName": "Health Care Technician",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:20"
+            },
+            {
+                "name": "HEMODIALYSIS TECHNICIAN",
+                "abbreviation": "HEMO",
+                "status": "Active",
+                "displayName": "Hemodialysis Technician",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:21"
+            },
+            {
+                "name": "INFECTION CONTROL NURSE",
+                "abbreviation": "ICN",
+                "status": "Active",
+                "displayName": "Infection Control Nurse",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:22"
+            },
+            {
+                "name": "INFECTIOUS DISEASE FELLOW",
+                "abbreviation": "IDF",
+                "status": "Active",
+                "displayName": "Infectious Disease Fellow",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:23"
+            },
+            {
+                "name": "KINESIOTHERAPIST",
+                "abbreviation": "KINESIO",
+                "status": "Inactive",
+                "displayName": "Kinesiotherapist",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:25"
+            },
+            {
+                "name": "LABORATORY TECHNICIAN",
+                "abbreviation": "LABTECH",
+                "status": "Active",
+                "displayName": "Laboratory Technician",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:26"
+            },
+            {
+                "name": "MEDICAL RECORD SUPERVISOR",
+                "abbreviation": "MRS",
+                "status": "Active",
+                "displayName": "Medical Record Supervisor",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:27"
+            },
+            {
+                "name": "MEDICAL TECHNICIAN",
+                "abbreviation": "MTECH",
+                "status": "Active",
+                "displayName": "Medical Technician",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:31"
+            },
+            {
+                "name": "MEDICAL TECHNOLOGIST",
+                "abbreviation": "MTECH",
+                "status": "Active",
+                "displayName": "Medical Technologist",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:32"
+            },
+            {
+                "name": "NURSING ASSISTANT",
+                "abbreviation": "NA",
+                "status": "Active",
+                "displayName": "Nursing Assistant",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:36"
+            },
+            {
+                "name": "OPERATING ROOM TECHNICIAN",
+                "abbreviation": "ORTECH",
+                "status": "Active",
+                "displayName": "Operating Room Technician",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:41"
+            },
+            {
+                "name": "OPHTHALMOLOGIST",
+                "abbreviation": "OPTH",
+                "status": "Active",
+                "displayName": "Ophthalmologist",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:42"
+            },
+            {
+                "name": "OPTOMETRIST",
+                "abbreviation": "OPTOM",
+                "status": "Active",
+                "displayName": "Optometrist",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:43"
+            },
+            {
+                "name": "ORAL SURGERY RESIDENT",
+                "abbreviation": "OSRES",
+                "status": "Active",
+                "displayName": "Oral Surgery Resident",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:44"
+            },
+            {
+                "name": "ORTHOTIST/PROSTHETIST",
+                "abbreviation": "ORTHO",
+                "status": "Active",
+                "displayName": "Orthotist/prosthetist",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:45"
+            },
+            {
+                "name": "OTOLARYNGOLOGY",
+                "abbreviation": "ENT",
+                "status": "Inactive",
+                "displayName": "Otolaryngology",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:46"
+            },
+            {
+                "name": "PHARMACY STUDENT",
+                "abbreviation": "PHSTU",
+                "status": "Active",
+                "displayName": "Pharmacy Student",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:49"
+            },
+            {
+                "name": "PHARMACY TECHNICIAN",
+                "abbreviation": "PHTECH",
+                "status": "Active",
+                "displayName": "Pharmacy Technician",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:50"
+            },
+            {
+                "name": "PHLEBOTOMIST",
+                "abbreviation": "PHLEB",
+                "status": "Active",
+                "displayName": "Phlebotomist",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:51"
+            },
+            {
+                "name": "PHYSICAL THERAPY AID",
+                "abbreviation": "PTA",
+                "status": "Active",
+                "displayName": "Physical Therapy Aid",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:53"
+            },
+            {
+                "name": "PODIATRIST",
+                "abbreviation": "POD",
+                "status": "Active",
+                "displayName": "Podiatrist",
+                "personClass": "Podiatric Medicine and Surgery Service Providers",
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:55"
+            },
+            {
+                "name": "PROCTOLOGIST",
+                "abbreviation": "PROC",
+                "status": "Active",
+                "displayName": "Proctologist",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:56"
+            },
+            {
+                "name": "PROSTHETICS CLERK",
+                "abbreviation": "PROSTH",
+                "status": "Active",
+                "displayName": "Prosthetics Clerk",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:57"
+            },
+            {
+                "name": "PULMONARY FUNCTION TECH",
+                "abbreviation": "PULM",
+                "status": "Active",
+                "displayName": "Pulmonary Function Tech",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:62"
+            },
+            {
+                "name": "PULMONARY TECHNICIAN",
+                "abbreviation": "PULM",
+                "status": "Active",
+                "displayName": "Pulmonary Technician",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:63"
+            },
+            {
+                "name": "RADIOLOGIST",
+                "abbreviation": "RADMD",
+                "status": "Active",
+                "displayName": "Radiologist",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:64"
+            },
+            {
+                "name": "RADIOLOGY RESIDENT",
+                "abbreviation": "RADRES",
+                "status": "Active",
+                "displayName": "Radiology Resident",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:65"
+            },
+            {
+                "name": "RADIOLOGY TECHNICIAN",
+                "abbreviation": "RADTECH",
+                "status": "Active",
+                "displayName": "Radiology Technician",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:66"
+            },
+            {
+                "name": "SENIOR RESIDENT",
+                "abbreviation": "\"\"",
+                "status": "Active",
+                "displayName": "Senior Resident",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:72"
+            },
+            {
+                "name": "STAFF PSYCHOLOGIST",
+                "abbreviation": "\"\"",
+                "status": "Active",
+                "displayName": "Staff Psychologist",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:76"
+            },
+            {
+                "name": "VOCATIONAL REHABILITATION SPECIALIST",
+                "abbreviation": "VR",
+                "status": "Active",
+                "displayName": "Vocational Rehabilitation Spec",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:79"
+            },
+            {
+                "name": "PRIVACY ACT OFFICER",
+                "abbreviation": "PAO",
+                "status": "Active",
+                "displayName": "Privacy Act Officer",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:80"
+            },
+            {
+                "name": "MEDICAL CLERK",
+                "abbreviation": "MEDCLK",
+                "status": "Active",
+                "displayName": "Medical Clerk",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:92"
+            },
+            {
+                "name": "DIETETIC INTERN",
+                "abbreviation": "DI",
+                "status": "Active",
+                "displayName": "Dietetic Intern",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:93"
+            },
+            {
+                "name": "GASTROENTEROLOGIST",
+                "abbreviation": "GIMD",
+                "status": "Active",
+                "displayName": "Gastroenterologist",
+                "personClass": "Physicians (M.D. and D.O.)",
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:96"
+            },
+            {
+                "name": "GERIATRIC INTERNAL MEDICINE",
+                "abbreviation": "GERIMD",
+                "status": "Active",
+                "displayName": "Geriatric Internal Medicine",
+                "personClass": "Physicians (M.D. and D.O.)",
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:97"
+            },
+            {
+                "name": "INFECTIOUS DISEASE INTERNIST",
+                "abbreviation": "INFINT",
+                "status": "Active",
+                "displayName": "Infectious Disease Internist",
+                "personClass": "Physicians (M.D. and D.O.)",
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:98"
+            },
+            {
+                "name": "PULMONOLOGIST",
+                "abbreviation": "PULM",
+                "status": "Active",
+                "displayName": "Pulmonologist",
+                "personClass": "Physicians (M.D. and D.O.)",
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:99"
+            },
+            {
+                "name": "RHEUMATOLOGIST",
+                "abbreviation": "RHEUM",
+                "status": "Active",
+                "displayName": "Rheumatologist",
+                "personClass": "Physicians (M.D. and D.O.)",
+                "subclass": "\"\"",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:100"
+            },
+            {
+                "name": "Nurse Registere",
+                "abbreviation": "RN",
+                "status": "Active",
+                "displayName": "Registered Nurse",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": false,
+                "uid": "urn:va:userClass:F484:102"
+            },
+            {
+                "name": "DGPF PATIENT RECORD FLAGS MGR",
+                "abbreviation": "PRFM",
+                "status": "Active",
+                "displayName": "DGPF Patient Record Flags Mgr",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": false,
+                "uid": "urn:va:userClass:F484:105"
+            },
+            {
+                "name": "LR ANATOMIC PATH EMPTY CLASS",
+                "abbreviation": "LRAPMT",
+                "status": "Active",
+                "displayName": "LR Anatomic Path Empty Class",
+                "personClass": null,
+                "subclass": "\"\"",
+                "okToDistribute": false,
+                "uid": "urn:va:userClass:F484:106"
+            },
+            {
+                "name": "STUDENT",
+                "abbreviation": "STUD",
+                "status": "Active",
+                "displayName": "Student",
+                "personClass": null,
+                "subclass": "MEDICAL STUDENT",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:112",
+                "subclasses": [
+                    {
+                        "name": "MEDICAL STUDENT",
+                        "abbreviation": "MS",
+                        "status": "Active",
+                        "displayName": "Medical Student",
+                        "personClass": null,
+                        "subclass": "MEDICAL STUDENT III",
+                        "okToDistribute": true,
+                        "uid": "urn:va:userClass:F484:108",
+                        "subclasses": [
+                            {
+                                "name": "MEDICAL STUDENT III",
+                                "abbreviation": "MS3",
+                                "status": "Active",
+                                "displayName": "Medical Student III",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:29"
+                            },
+                            {
+                                "name": "MEDICAL STUDENT IV",
+                                "abbreviation": "MS4",
+                                "status": "Active",
+                                "displayName": "Medical Student IV",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:30"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "OCCUPATIONAL THERAPY STUDENT",
+                        "abbreviation": "OTS",
+                        "status": "Active",
+                        "displayName": "Occupational Therapy Student",
+                        "personClass": null,
+                        "subclass": "\"\"",
+                        "okToDistribute": true,
+                        "uid": "urn:va:userClass:F484:40"
+                    },
+                    {
+                        "name": "NURSE STUDENT",
+                        "abbreviation": "\"\"",
+                        "status": "Active",
+                        "displayName": "Nurse Student",
+                        "personClass": null,
+                        "subclass": "\"\"",
+                        "okToDistribute": true,
+                        "uid": "urn:va:userClass:F484:91"
+                    }
+                ]
+            },
+            {
+                "name": "USER",
+                "abbreviation": "USR",
+                "status": "Active",
+                "displayName": "User",
+                "personClass": null,
+                "subclass": "PROVIDER",
+                "okToDistribute": true,
+                "uid": "urn:va:userClass:F484:113",
+                "subclasses": [
+                    {
+                        "name": "PROVIDER",
+                        "abbreviation": "PROV",
+                        "status": "Active",
+                        "displayName": "Provider",
+                        "personClass": null,
+                        "subclass": "NURSE",
+                        "okToDistribute": true,
+                        "uid": "urn:va:userClass:F484:127",
+                        "subclasses": [
+                            {
+                                "name": "NURSE",
+                                "abbreviation": "NURSE",
+                                "status": "Active",
+                                "displayName": "Nurse",
+                                "personClass": null,
+                                "subclass": "NURSE CLINICAL SPECIALIST",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:116",
+                                "subclasses": [
+                                    {
+                                        "name": "NURSE CLINICAL SPECIALIST",
+                                        "abbreviation": "NRSSPEC",
+                                        "status": "Active",
+                                        "displayName": "Nurse Clinical Specialist",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:34"
+                                    },
+                                    {
+                                        "name": "NURSE PRACTITIONER",
+                                        "abbreviation": "NRSPRAC",
+                                        "status": "Active",
+                                        "displayName": "Nurse Practitioner",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:35"
+                                    },
+                                    {
+                                        "name": "NURSING SUPERVISOR",
+                                        "abbreviation": "NRSSUP",
+                                        "status": "Active",
+                                        "displayName": "Nursing Supervisor",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:37"
+                                    },
+                                    {
+                                        "name": "HEAD NURSE",
+                                        "abbreviation": "HEADRN",
+                                        "status": "Active",
+                                        "displayName": "Head Nurse",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:19"
+                                    },
+                                    {
+                                        "name": "NURSE LICENSED PRACTICAL",
+                                        "abbreviation": "LPN",
+                                        "status": "Active",
+                                        "displayName": "Nurse - Licensed Practical",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:90"
+                                    },
+                                    {
+                                        "name": "NURSE ANESTHETIST",
+                                        "abbreviation": "NRSANES",
+                                        "status": "Active",
+                                        "displayName": "Nurse Anesthetist",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:33"
+                                    },
+                                    {
+                                        "name": "INTERDISCIPLINARY USER",
+                                        "abbreviation": "IU",
+                                        "status": "Active",
+                                        "displayName": "Interdisciplinary User",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": false,
+                                        "uid": "urn:va:userClass:F484:104"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "PHYSICIAN ASSISTANT",
+                                "abbreviation": "PA",
+                                "status": "Active",
+                                "displayName": "Physician Assistant",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:54"
+                            },
+                            {
+                                "name": "DENTIST",
+                                "abbreviation": "DENT",
+                                "status": "Active",
+                                "displayName": "Dentist",
+                                "personClass": null,
+                                "subclass": "DENTAL INTERN",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:107",
+                                "subclasses": [
+                                    {
+                                        "name": "DENTAL INTERN",
+                                        "abbreviation": "DI",
+                                        "status": "Active",
+                                        "displayName": "Dental Intern",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:13"
+                                    },
+                                    {
+                                        "name": "DENTAL RESIDENT",
+                                        "abbreviation": "DR",
+                                        "status": "Active",
+                                        "displayName": "Dental Resident",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:14"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "PHYSICIAN",
+                                "abbreviation": "MD",
+                                "status": "Active",
+                                "displayName": "Physician",
+                                "personClass": "Physicians (M.D. and D.O.)",
+                                "subclass": "DISTINGUISHED PHYSICIAN",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:109",
+                                "subclasses": [
+                                    {
+                                        "name": "DISTINGUISHED PHYSICIAN",
+                                        "abbreviation": "VIPMD",
+                                        "status": "Active",
+                                        "displayName": "Distinguished Physician",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:17"
+                                    },
+                                    {
+                                        "name": "STAFF PHYSICIAN",
+                                        "abbreviation": "SMD",
+                                        "status": "Active",
+                                        "displayName": "Staff Physician",
+                                        "personClass": null,
+                                        "subclass": "STAFF SURGEON",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:125",
+                                        "subclasses": [
+                                            {
+                                                "name": "STAFF SURGEON",
+                                                "abbreviation": "\"\"",
+                                                "status": "Active",
+                                                "displayName": "Staff Surgeon",
+                                                "personClass": null,
+                                                "subclass": "\"\"",
+                                                "okToDistribute": true,
+                                                "uid": "urn:va:userClass:F484:77"
+                                            },
+                                            {
+                                                "name": "STAFF PSYCHIATRIST",
+                                                "abbreviation": "PSY",
+                                                "status": "Active",
+                                                "displayName": "Staff Psychiatrist",
+                                                "personClass": null,
+                                                "subclass": "\"\"",
+                                                "okToDistribute": true,
+                                                "uid": "urn:va:userClass:F484:75"
+                                            },
+                                            {
+                                                "name": "CLINICAL SERVICE CHIEF",
+                                                "abbreviation": "SVCC",
+                                                "status": "Active",
+                                                "displayName": "Clinical Service Chief",
+                                                "personClass": null,
+                                                "subclass": "CHIEF, MEDICAL SERVICE",
+                                                "okToDistribute": true,
+                                                "uid": "urn:va:userClass:F484:120",
+                                                "subclasses": [
+                                                    {
+                                                        "name": "CHIEF, MEDICAL SERVICE",
+                                                        "abbreviation": "CMED",
+                                                        "status": "Active",
+                                                        "displayName": "Chief, Medical Service",
+                                                        "personClass": null,
+                                                        "subclass": "\"\"",
+                                                        "okToDistribute": true,
+                                                        "uid": "urn:va:userClass:F484:85"
+                                                    },
+                                                    {
+                                                        "name": "CHIEF, PSYCHIATRY SERVICE",
+                                                        "abbreviation": "CPSYCH",
+                                                        "status": "Active",
+                                                        "displayName": "Chief, Psychiatry Service",
+                                                        "personClass": null,
+                                                        "subclass": "\"\"",
+                                                        "okToDistribute": true,
+                                                        "uid": "urn:va:userClass:F484:87"
+                                                    },
+                                                    {
+                                                        "name": "CHIEF, SURGICAL SERVICE",
+                                                        "abbreviation": "CSURG",
+                                                        "status": "Active",
+                                                        "displayName": "Chief, Surgical Service",
+                                                        "personClass": null,
+                                                        "subclass": "\"\"",
+                                                        "okToDistribute": true,
+                                                        "uid": "urn:va:userClass:F484:86"
+                                                    },
+                                                    {
+                                                        "name": "zztest",
+                                                        "abbreviation": "zRN",
+                                                        "status": "Inactive",
+                                                        "displayName": "zRegistered Nurse",
+                                                        "personClass": null,
+                                                        "subclass": "\"\"",
+                                                        "okToDistribute": false,
+                                                        "uid": "urn:va:userClass:F484:103"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "RESIDENT PHYSICIAN",
+                                        "abbreviation": "RESMD",
+                                        "status": "Active",
+                                        "displayName": "Resident Physician",
+                                        "personClass": null,
+                                        "subclass": "POST GRADUATE YEAR 1 RESIDENT",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:110",
+                                        "subclasses": [
+                                            {
+                                                "name": "POST GRADUATE YEAR 1 RESIDENT",
+                                                "abbreviation": "PGY1",
+                                                "status": "Active",
+                                                "displayName": "PGY1 Resident",
+                                                "personClass": null,
+                                                "subclass": "\"\"",
+                                                "okToDistribute": true,
+                                                "uid": "urn:va:userClass:F484:81"
+                                            },
+                                            {
+                                                "name": "POST GRADUATE YEAR 2 RESIDENT",
+                                                "abbreviation": "PGY2",
+                                                "status": "Active",
+                                                "displayName": "PGY2 Resident",
+                                                "personClass": null,
+                                                "subclass": "\"\"",
+                                                "okToDistribute": true,
+                                                "uid": "urn:va:userClass:F484:82"
+                                            },
+                                            {
+                                                "name": "POST GRADUATE YEAR 3 RESIDENT",
+                                                "abbreviation": "PGY3",
+                                                "status": "Active",
+                                                "displayName": "PGY3 Resident",
+                                                "personClass": null,
+                                                "subclass": "\"\"",
+                                                "okToDistribute": true,
+                                                "uid": "urn:va:userClass:F484:83"
+                                            },
+                                            {
+                                                "name": "POST GRADUATE YEAR 4 RESIDENT",
+                                                "abbreviation": "PGY4",
+                                                "status": "Active",
+                                                "displayName": "PGY4 Resident",
+                                                "personClass": null,
+                                                "subclass": "\"\"",
+                                                "okToDistribute": true,
+                                                "uid": "urn:va:userClass:F484:84"
+                                            },
+                                            {
+                                                "name": "CHIEF RESIDENT",
+                                                "abbreviation": "CR",
+                                                "status": "Active",
+                                                "displayName": "Chief Resident",
+                                                "personClass": null,
+                                                "subclass": "\"\"",
+                                                "okToDistribute": true,
+                                                "uid": "urn:va:userClass:F484:6"
+                                            },
+                                            {
+                                                "name": "PATHOLOGY RESIDENT",
+                                                "abbreviation": "PATHRES",
+                                                "status": "Active",
+                                                "displayName": "Pathology Resident",
+                                                "personClass": null,
+                                                "subclass": "\"\"",
+                                                "okToDistribute": true,
+                                                "uid": "urn:va:userClass:F484:48"
+                                            },
+                                            {
+                                                "name": "PSYCHIATRY RESIDENT",
+                                                "abbreviation": "PSYRES",
+                                                "status": "Active",
+                                                "displayName": "Psychiatry Resident",
+                                                "personClass": null,
+                                                "subclass": "\"\"",
+                                                "okToDistribute": true,
+                                                "uid": "urn:va:userClass:F484:59"
+                                            },
+                                            {
+                                                "name": "PULMONARY FELLOW",
+                                                "abbreviation": "PULM",
+                                                "status": "Active",
+                                                "displayName": "Pulmonary Fellow",
+                                                "personClass": null,
+                                                "subclass": "\"\"",
+                                                "okToDistribute": true,
+                                                "uid": "urn:va:userClass:F484:61"
+                                            },
+                                            {
+                                                "name": "RENAL FELLOW",
+                                                "abbreviation": "RENAL",
+                                                "status": "Active",
+                                                "displayName": "Renal Fellow",
+                                                "personClass": null,
+                                                "subclass": "\"\"",
+                                                "okToDistribute": true,
+                                                "uid": "urn:va:userClass:F484:70"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "ATTENDING PHYSICIAN",
+                                        "abbreviation": "ATT",
+                                        "status": "Active",
+                                        "displayName": "Attending Physician",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:3"
+                                    },
+                                    {
+                                        "name": "PATHOLOGIST",
+                                        "abbreviation": "PATH",
+                                        "status": "Active",
+                                        "displayName": "Pathologist",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:47"
+                                    },
+                                    {
+                                        "name": "PSYCHIATRIST",
+                                        "abbreviation": "PSYCH",
+                                        "status": "Active",
+                                        "displayName": "Psychiatrist",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:58"
+                                    },
+                                    {
+                                        "name": "ALLERGIST",
+                                        "abbreviation": "ALLRG",
+                                        "status": "Active",
+                                        "displayName": "Allergist",
+                                        "personClass": "Physicians (M.D. and D.O.)",
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:94"
+                                    },
+                                    {
+                                        "name": "ALLERGY & IMMUNOLOGY",
+                                        "abbreviation": "ADR",
+                                        "status": "Inactive",
+                                        "displayName": "Allergy & Immunology",
+                                        "personClass": "Physicians (M.D. and D.O.)",
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:88"
+                                    },
+                                    {
+                                        "name": "ANESTHESIOLOGIST",
+                                        "abbreviation": "ANES",
+                                        "status": "Active",
+                                        "displayName": "Anesthesiologist",
+                                        "personClass": "Physicians (M.D. and D.O.)",
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:1"
+                                    },
+                                    {
+                                        "name": "CARDIOLOGIST",
+                                        "abbreviation": "CARD",
+                                        "status": "Active",
+                                        "displayName": "Cardiologist",
+                                        "personClass": "Physicians (M.D. and D.O.)",
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:89"
+                                    },
+                                    {
+                                        "name": "DERMATOLOGIST",
+                                        "abbreviation": "DERM",
+                                        "status": "Active",
+                                        "displayName": "Dermatologist",
+                                        "personClass": "Physicians (M.D. and D.O.)",
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:95"
+                                    },
+                                    {
+                                        "name": "INTERDISCIPLINARY USER",
+                                        "abbreviation": "IU",
+                                        "status": "Active",
+                                        "displayName": "Interdisciplinary User",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": false,
+                                        "uid": "urn:va:userClass:F484:104"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "AUDIOLOGIST",
+                                "abbreviation": "AUD",
+                                "status": "Active",
+                                "displayName": "Audiologist",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:4"
+                            },
+                            {
+                                "name": "DENTAL ASSISTANT",
+                                "abbreviation": "DA",
+                                "status": "Active",
+                                "displayName": "Dental Assistant",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:12"
+                            },
+                            {
+                                "name": "OCCUPATIONAL THERAPIST",
+                                "abbreviation": "OT",
+                                "status": "Active",
+                                "displayName": "Occupational Therapist",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:38"
+                            },
+                            {
+                                "name": "OCCUPATIONAL THERAPY ASSISTANT",
+                                "abbreviation": "OTA",
+                                "status": "Active",
+                                "displayName": "Occupational Therapy Assistant",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:39"
+                            },
+                            {
+                                "name": "PHARMACIST",
+                                "abbreviation": "RP",
+                                "status": "Active",
+                                "displayName": "Pharmacist",
+                                "personClass": null,
+                                "subclass": "CLINICAL PHARMACIST",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:117",
+                                "subclasses": [
+                                    {
+                                        "name": "CLINICAL PHARMACIST",
+                                        "abbreviation": "CLPH",
+                                        "status": "Active",
+                                        "displayName": "Clinical Pharmacist",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:11"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "PHYSICAL THERAPIST",
+                                "abbreviation": "PT",
+                                "status": "Active",
+                                "displayName": "Physical Therapist",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:52"
+                            },
+                            {
+                                "name": "PSYCHOLOGY INTERN",
+                                "abbreviation": "PSYCH",
+                                "status": "Active",
+                                "displayName": "Psychology Intern",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:60"
+                            },
+                            {
+                                "name": "RECREATION THERAPIST",
+                                "abbreviation": "RT",
+                                "status": "Active",
+                                "displayName": "Recreation Therapist",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:67"
+                            },
+                            {
+                                "name": "RECREATIONAL THERAPY ASSISTANT",
+                                "abbreviation": "RTA",
+                                "status": "Active",
+                                "displayName": "Recreational Therapy Assistant",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:68"
+                            },
+                            {
+                                "name": "RESPIRATORY THERAPIST",
+                                "abbreviation": "RT",
+                                "status": "Active",
+                                "displayName": "Respiratory Therapist",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:71"
+                            },
+                            {
+                                "name": "SOCIAL WORKER",
+                                "abbreviation": "SW",
+                                "status": "Active",
+                                "displayName": "Social Worker",
+                                "personClass": null,
+                                "subclass": "INTERDISCIPLINARY USER",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:111",
+                                "subclasses": [
+                                    {
+                                        "name": "INTERDISCIPLINARY USER",
+                                        "abbreviation": "IU",
+                                        "status": "Active",
+                                        "displayName": "Interdisciplinary User",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": false,
+                                        "uid": "urn:va:userClass:F484:104"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "SOCIAL WORK INTERN",
+                                "abbreviation": "\"\"",
+                                "status": "Active",
+                                "displayName": "Social Work Intern",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:73"
+                            },
+                            {
+                                "name": "SPEECH PATHOLOGIST",
+                                "abbreviation": "SP",
+                                "status": "Active",
+                                "displayName": "Speech Pathologist",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:74"
+                            },
+                            {
+                                "name": "RESIDENT PHYSICIAN",
+                                "abbreviation": "RESMD",
+                                "status": "Active",
+                                "displayName": "Resident Physician",
+                                "personClass": null,
+                                "subclass": "POST GRADUATE YEAR 1 RESIDENT",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:110",
+                                "subclasses": [
+                                    {
+                                        "name": "POST GRADUATE YEAR 1 RESIDENT",
+                                        "abbreviation": "PGY1",
+                                        "status": "Active",
+                                        "displayName": "PGY1 Resident",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:81"
+                                    },
+                                    {
+                                        "name": "POST GRADUATE YEAR 2 RESIDENT",
+                                        "abbreviation": "PGY2",
+                                        "status": "Active",
+                                        "displayName": "PGY2 Resident",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:82"
+                                    },
+                                    {
+                                        "name": "POST GRADUATE YEAR 3 RESIDENT",
+                                        "abbreviation": "PGY3",
+                                        "status": "Active",
+                                        "displayName": "PGY3 Resident",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:83"
+                                    },
+                                    {
+                                        "name": "POST GRADUATE YEAR 4 RESIDENT",
+                                        "abbreviation": "PGY4",
+                                        "status": "Active",
+                                        "displayName": "PGY4 Resident",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:84"
+                                    },
+                                    {
+                                        "name": "CHIEF RESIDENT",
+                                        "abbreviation": "CR",
+                                        "status": "Active",
+                                        "displayName": "Chief Resident",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:6"
+                                    },
+                                    {
+                                        "name": "PATHOLOGY RESIDENT",
+                                        "abbreviation": "PATHRES",
+                                        "status": "Active",
+                                        "displayName": "Pathology Resident",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:48"
+                                    },
+                                    {
+                                        "name": "PSYCHIATRY RESIDENT",
+                                        "abbreviation": "PSYRES",
+                                        "status": "Active",
+                                        "displayName": "Psychiatry Resident",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:59"
+                                    },
+                                    {
+                                        "name": "PULMONARY FELLOW",
+                                        "abbreviation": "PULM",
+                                        "status": "Active",
+                                        "displayName": "Pulmonary Fellow",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:61"
+                                    },
+                                    {
+                                        "name": "RENAL FELLOW",
+                                        "abbreviation": "RENAL",
+                                        "status": "Active",
+                                        "displayName": "Renal Fellow",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:70"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "INTERN",
+                                "abbreviation": "INTERN",
+                                "status": "Active",
+                                "displayName": "Intern",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:24"
+                            },
+                            {
+                                "name": "MEDICAL STUDENT",
+                                "abbreviation": "MS",
+                                "status": "Active",
+                                "displayName": "Medical Student",
+                                "personClass": null,
+                                "subclass": "MEDICAL STUDENT III",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:108",
+                                "subclasses": [
+                                    {
+                                        "name": "MEDICAL STUDENT III",
+                                        "abbreviation": "MS3",
+                                        "status": "Active",
+                                        "displayName": "Medical Student III",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:29"
+                                    },
+                                    {
+                                        "name": "MEDICAL STUDENT IV",
+                                        "abbreviation": "MS4",
+                                        "status": "Active",
+                                        "displayName": "Medical Student IV",
+                                        "personClass": null,
+                                        "subclass": "\"\"",
+                                        "okToDistribute": true,
+                                        "uid": "urn:va:userClass:F484:30"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "NURSE PRACTITIONER",
+                                "abbreviation": "NRSPRAC",
+                                "status": "Active",
+                                "displayName": "Nurse Practitioner",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:35"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "MEDICAL INFORMATION SECTION",
+                        "abbreviation": "MIS",
+                        "status": "Active",
+                        "displayName": "Medical Information Section",
+                        "personClass": null,
+                        "subclass": "CHIEF, MIS",
+                        "okToDistribute": true,
+                        "uid": "urn:va:userClass:F484:121",
+                        "subclasses": [
+                            {
+                                "name": "CHIEF, MIS",
+                                "abbreviation": "CMIS",
+                                "status": "Active",
+                                "displayName": "Chief, MIS",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:7"
+                            },
+                            {
+                                "name": "MEDICAL RECORDS TECHNICIAN",
+                                "abbreviation": "MRT",
+                                "status": "Active",
+                                "displayName": "Medical Records Technician",
+                                "personClass": "Other Service",
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:28"
+                            },
+                            {
+                                "name": "MEDICAL RECORD ADMINISTRATOR",
+                                "abbreviation": "MRA",
+                                "status": "Active",
+                                "displayName": "Medical Record Administrator",
+                                "personClass": "Other Service",
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:101"
+                            },
+                            {
+                                "name": "TRANSCRIPTIONIST",
+                                "abbreviation": "\"\"",
+                                "status": "Active",
+                                "displayName": "Transcriptionist",
+                                "personClass": null,
+                                "subclass": "\"\"",
+                                "okToDistribute": true,
+                                "uid": "urn:va:userClass:F484:78"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "REMOTE USER",
+                        "abbreviation": "REM",
+                        "status": "Active",
+                        "displayName": "Remote User",
+                        "personClass": null,
+                        "subclass": "\"\"",
+                        "okToDistribute": true,
+                        "uid": "urn:va:userClass:F484:69"
+                    }
+                ]
+            }
+        ]
+    }
+}

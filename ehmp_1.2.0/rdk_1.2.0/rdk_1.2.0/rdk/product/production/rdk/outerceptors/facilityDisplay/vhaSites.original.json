@@ -1,0 +1,724 @@
+{
+  "vhaSites": [
+    {
+      "siteCode": "402",
+      "moniker": "TOG",
+      "name": "Togus, ME"
+    },
+    {
+      "siteCode": "405",
+      "moniker": "WRJ",
+      "name": "White River Junction, VT"
+    },
+    {
+      "siteCode": "518",
+      "moniker": "BED",
+      "name": "Bedford, MA"
+    },
+    {
+      "siteCode": "523",
+      "moniker": "BHS",
+      "name": "Boston HCS"
+    },
+    {
+      "siteCode": "608",
+      "moniker": "MAN",
+      "name": "Manchester, NH"
+    },
+    {
+      "siteCode": "631",
+      "moniker": "NHM",
+      "name": "North Hampton, MA"
+    },
+    {
+      "siteCode": "650",
+      "moniker": "PRO",
+      "name": "Providence, RI"
+    },
+    {
+      "siteCode": "689",
+      "moniker": "CON",
+      "name": "Connecticut HCS"
+    },
+    {
+      "siteCode": "528",
+      "moniker": "UNY",
+      "name": "Upstate NY HCS"
+    },
+    {
+      "siteCode": "526",
+      "moniker": "BRX",
+      "name": "Bronx, NY"
+    },
+    {
+      "siteCode": "561",
+      "moniker": "NJS",
+      "name": "New Jersey HCS"
+    },
+    {
+      "siteCode": "620",
+      "moniker": "HUV",
+      "name": "Hudson Valley HCS"
+    },
+    {
+      "siteCode": "630",
+      "moniker": "NYH",
+      "name": "NY HCS"
+    },
+    {
+      "siteCode": "632",
+      "moniker": "NOP",
+      "name": "Northport, NY"
+    },
+    {
+      "siteCode": "460",
+      "moniker": "WIM",
+      "name": "Wilmington, DE"
+    },
+    {
+      "siteCode": "503",
+      "moniker": "ALT",
+      "name": "Altoona, PA"
+    },
+    {
+      "siteCode": "529",
+      "moniker": "BUT",
+      "name": "Butler, PA"
+    },
+    {
+      "siteCode": "540",
+      "moniker": "CLA",
+      "name": "Clarksburg, WV"
+    },
+    {
+      "siteCode": "542",
+      "moniker": "COA",
+      "name": "Coatesville, PA"
+    },
+    {
+      "siteCode": "562",
+      "moniker": "ERI",
+      "name": "Erie, PA"
+    },
+    {
+      "siteCode": "595",
+      "moniker": "LEB",
+      "name": "Lebanon, PA"
+    },
+    {
+      "siteCode": "642",
+      "moniker": "PHI",
+      "name": "Philadelphia, PA"
+    },
+    {
+      "siteCode": "646",
+      "moniker": "PTB",
+      "name": "Pittsburgh HCS"
+    },
+    {
+      "siteCode": "693",
+      "moniker": "WBP",
+      "name": "Wilkes Barre, PA"
+    },
+    {
+      "siteCode": "512",
+      "moniker": "BAL",
+      "name": "Maryland HCS"
+    },
+    {
+      "siteCode": "613",
+      "moniker": "MWV",
+      "name": "Martinsburg, WV"
+    },
+    {
+      "siteCode": "688",
+      "moniker": "WAS",
+      "name": "Washington, DC"
+    },
+    {
+      "siteCode": "517",
+      "moniker": "BEC",
+      "name": "Beckley, WV"
+    },
+    {
+      "siteCode": "558",
+      "moniker": "DUR",
+      "name": "Durham, NC"
+    },
+    {
+      "siteCode": "565",
+      "moniker": "FNC",
+      "name": "Fayetteville, NC"
+    },
+    {
+      "siteCode": "590",
+      "moniker": "HAM",
+      "name": "Hampton, VA"
+    },
+    {
+      "siteCode": "637",
+      "moniker": "ASH",
+      "name": "Asheville, NC"
+    },
+    {
+      "siteCode": "652",
+      "moniker": "RIC",
+      "name": "Richmond, VA"
+    },
+    {
+      "siteCode": "658",
+      "moniker": "SAM",
+      "name": "Salem, VA"
+    },
+    {
+      "siteCode": "659",
+      "moniker": "SBY",
+      "name": "Salisbury, NC"
+    },
+    {
+      "siteCode": "508",
+      "moniker": "ATG",
+      "name": "Atlanta, GA"
+    },
+    {
+      "siteCode": "509",
+      "moniker": "AUG",
+      "name": "Augusta, GA"
+    },
+    {
+      "siteCode": "521",
+      "moniker": "BIR",
+      "name": "Birmingham, AL"
+    },
+    {
+      "siteCode": "534",
+      "moniker": "CHA",
+      "name": "Charleston, SC"
+    },
+    {
+      "siteCode": "544",
+      "moniker": "CMS",
+      "name": "Columbia, SC"
+    },
+    {
+      "siteCode": "557",
+      "moniker": "DUB",
+      "name": "Dublin, GA"
+    },
+    {
+      "siteCode": "619",
+      "moniker": "ALA",
+      "name": "Central Alabama HCS"
+    },
+    {
+      "siteCode": "679",
+      "moniker": "TUA",
+      "name": "Tuscaloosa, AL"
+    },
+    {
+      "siteCode": "998",
+      "moniker": "BAY",
+      "name": "Bay Pines CIO Test"
+    },
+    {
+      "siteCode": "516",
+      "moniker": "BAY",
+      "name": "Bay Pines, FL"
+    },
+    {
+      "siteCode": "546",
+      "moniker": "MIA",
+      "name": "Miami, FL"
+    },
+    {
+      "siteCode": "548",
+      "moniker": "WPB",
+      "name": "West Palm Beach, FL"
+    },
+    {
+      "siteCode": "573",
+      "moniker": "NFL",
+      "name": "N. Florida/S. Georgia HCS"
+    },
+    {
+      "siteCode": "672",
+      "moniker": "SAJ",
+      "name": "San Juan, PR"
+    },
+    {
+      "siteCode": "675",
+      "moniker": "ORL",
+      "name": "Orlando, FL"
+    },
+    {
+      "siteCode": "673",
+      "moniker": "TAM",
+      "name": "Tampa, FL"
+    },
+    {
+      "siteCode": "581",
+      "moniker": "HUN",
+      "name": "Huntington, WV"
+    },
+    {
+      "siteCode": "596",
+      "moniker": "LEX",
+      "name": "Lexington, KY"
+    },
+    {
+      "siteCode": "603",
+      "moniker": "LOU",
+      "name": "Louisville, KY"
+    },
+    {
+      "siteCode": "621",
+      "moniker": "MOU",
+      "name": "Mountain Home, TN"
+    },
+    {
+      "siteCode": "626",
+      "moniker": "TVH",
+      "name": "Tennessee Valley HCS"
+    },
+    {
+      "siteCode": "614",
+      "moniker": "MEM",
+      "name": "Memphis, TN"
+    },
+    {
+      "siteCode": "538",
+      "moniker": "CLL",
+      "name": "Chillicothe, OH"
+    },
+    {
+      "siteCode": "539",
+      "moniker": "CIN",
+      "name": "Cincinnati, OH"
+    },
+    {
+      "siteCode": "552",
+      "moniker": "DAY",
+      "name": "Dayton, OH"
+    },
+    {
+      "siteCode": "541",
+      "moniker": "CLE",
+      "name": "Cleveland, OH"
+    },
+    {
+      "siteCode": "757",
+      "moniker": "COS",
+      "name": "Columbus, OH"
+    },
+    {
+      "siteCode": "655",
+      "moniker": "SAG",
+      "name": "Saginaw, MI"
+    },
+    {
+      "siteCode": "515",
+      "moniker": "BAC",
+      "name": "Battle Creek, MI"
+    },
+    {
+      "siteCode": "553",
+      "moniker": "DET",
+      "name": "Detroit, MI"
+    },
+    {
+      "siteCode": "583",
+      "moniker": "IND",
+      "name": "Indianapolis, IN"
+    },
+    {
+      "siteCode": "506",
+      "moniker": "ANN",
+      "name": "Ann Arbor, MI"
+    },
+    {
+      "siteCode": "566",
+      "moniker": "ANT",
+      "name": "Ann Arbor Test"
+    },
+    {
+      "siteCode": "550",
+      "moniker": "DAN",
+      "name": "Danville, IL"
+    },
+    {
+      "siteCode": "610",
+      "moniker": "NIN",
+      "name": "Northern Indiana HCS"
+    },
+    {
+      "siteCode": "695",
+      "moniker": "MIW",
+      "name": "Milwaukee, WI"
+    },
+    {
+      "siteCode": "578",
+      "moniker": "HIN",
+      "name": "Hines, IL"
+    },
+    {
+      "siteCode": "585",
+      "moniker": "IRO",
+      "name": "Iron Mountain, MI"
+    },
+    {
+      "siteCode": "556",
+      "moniker": "NCH",
+      "name": "North Chicago, IL"
+    },
+    {
+      "siteCode": "676",
+      "moniker": "TOM",
+      "name": "Tomah, WI"
+    },
+    {
+      "siteCode": "537",
+      "moniker": "CHW",
+      "name": "Jesse Brown VAMC"
+    },
+    {
+      "siteCode": "607",
+      "moniker": "MAD",
+      "name": "Madison, WI"
+    },
+    {
+      "siteCode": "543",
+      "moniker": "CMO",
+      "name": "Columbia, MO"
+    },
+    {
+      "siteCode": "589",
+      "moniker": "KAN",
+      "name": "Heartland West"
+    },
+    {
+      "siteCode": "657",
+      "moniker": "STL",
+      "name": "Heartland East"
+    },
+    {
+      "siteCode": "677",
+      "moniker": "TOP",
+      "name": "Topeka, KS"
+    },
+    {
+      "siteCode": "686",
+      "moniker": "LEA",
+      "name": "Leavenworth, KS"
+    },
+    {
+      "siteCode": "502",
+      "moniker": "ALX",
+      "name": "Alexandria, LA"
+    },
+    {
+      "siteCode": "598",
+      "moniker": "LIT",
+      "name": "Little Rock, AR"
+    },
+    {
+      "siteCode": "564",
+      "moniker": "FAV",
+      "name": "Fayetteville, AR"
+    },
+    {
+      "siteCode": "586",
+      "moniker": "JAC",
+      "name": "Jackson, MS"
+    },
+    {
+      "siteCode": "580",
+      "moniker": "HOU",
+      "name": "Houston, TX"
+    },
+    {
+      "siteCode": "623",
+      "moniker": "MUS",
+      "name": "Muskogee, OK"
+    },
+    {
+      "siteCode": "635",
+      "moniker": "OKL",
+      "name": "Oklahoma City, OK"
+    },
+    {
+      "siteCode": "667",
+      "moniker": "SHR",
+      "name": "Shreveport, LA"
+    },
+    {
+      "siteCode": "520",
+      "moniker": "BIL",
+      "name": "Biloxi, MS"
+    },
+    {
+      "siteCode": "629",
+      "moniker": "NOL",
+      "name": "New Orleans, LA"
+    },
+    {
+      "siteCode": "740",
+      "moniker": "VCB",
+      "name": "Texas Valley Coastal Bend HCS"
+    },
+    {
+      "siteCode": "674",
+      "moniker": "CTX",
+      "name": "Central Texas HCS"
+    },
+    {
+      "siteCode": "671",
+      "moniker": "STX",
+      "name": "South Texas HCS"
+    },
+    {
+      "siteCode": "549",
+      "moniker": "NTX",
+      "name": "North Texas HCS"
+    },
+    {
+      "siteCode": "504",
+      "moniker": "AMA",
+      "name": "Amarillo, TX"
+    },
+    {
+      "siteCode": "501",
+      "moniker": "ABQ",
+      "name": "Albuquerque, NM"
+    },
+    {
+      "siteCode": "649",
+      "moniker": "PRE",
+      "name": "Prescott, AZ"
+    },
+    {
+      "siteCode": "678",
+      "moniker": "TUC",
+      "name": "Tucson, AZ"
+    },
+    {
+      "siteCode": "519",
+      "moniker": "BIG",
+      "name": "Big Spring, TX"
+    },
+    {
+      "siteCode": "644",
+      "moniker": "PHO",
+      "name": "Phoenix, AZ"
+    },
+    {
+      "siteCode": "378",
+      "moniker": "BLO",
+      "name": "Billings, MT CBOC"
+    },
+    {
+      "siteCode": "741",
+      "moniker": "DEN",
+      "name": "Denver, CO (HAC)"
+    },
+    {
+      "siteCode": "554",
+      "moniker": "ECH",
+      "name": "Eastern Colorado HCS"
+    },
+    {
+      "siteCode": "436",
+      "moniker": "FHM",
+      "name": "Montana HCS"
+    },
+    {
+      "siteCode": "442",
+      "moniker": "CHY",
+      "name": "Cheyenne, WY"
+    },
+    {
+      "siteCode": "575",
+      "moniker": "GRJ",
+      "name": "Grand Junction, CO"
+    },
+    {
+      "siteCode": "666",
+      "moniker": "SHE",
+      "name": "Sheridan, WY"
+    },
+    {
+      "siteCode": "660",
+      "moniker": "SLC",
+      "name": "Salt Lake City, UT"
+    },
+    {
+      "siteCode": "960",
+      "moniker": "SLD",
+      "name": "SLC-FO DEV, UT"
+    },
+    {
+      "siteCode": "962",
+      "moniker": "SLD",
+      "name": "SLC-FO ADEM, UT"
+    },
+    {
+      "siteCode": "463",
+      "moniker": "ANC",
+      "name": "Anchorage, AK"
+    },
+    {
+      "siteCode": "531",
+      "moniker": "BOI",
+      "name": "Boise, ID"
+    },
+    {
+      "siteCode": "687",
+      "moniker": "WWW",
+      "name": "Walla Walla, WA"
+    },
+    {
+      "siteCode": "648",
+      "moniker": "POR",
+      "name": "Portland, OR"
+    },
+    {
+      "siteCode": "668",
+      "moniker": "SPO",
+      "name": "Spokane, WA"
+    },
+    {
+      "siteCode": "663",
+      "moniker": "PUG",
+      "name": "Puget Sound HCS"
+    },
+    {
+      "siteCode": "653",
+      "moniker": "ROS",
+      "name": "Roseburg, OR"
+    },
+    {
+      "siteCode": "692",
+      "moniker": "WCO",
+      "name": "White City OR"
+    },
+    {
+      "siteCode": "612",
+      "moniker": "MAC",
+      "name": "Northern California HCS"
+    },
+    {
+      "siteCode": "662",
+      "moniker": "SFC",
+      "name": "San Francisco, CA"
+    },
+    {
+      "siteCode": "570",
+      "moniker": "FRE",
+      "name": "Fresno, CA"
+    },
+    {
+      "siteCode": "459",
+      "moniker": "HON",
+      "name": "Honolulu, HI"
+    },
+    {
+      "siteCode": "640",
+      "moniker": "PAL",
+      "name": "Palo Alto HCS"
+    },
+    {
+      "siteCode": "654",
+      "moniker": "REN",
+      "name": "Reno, NV"
+    },
+    {
+      "siteCode": "358",
+      "moniker": "MLA",
+      "name": "Manila, PI"
+    },
+    {
+      "siteCode": "691",
+      "moniker": "WLA",
+      "name": "West Los Angeles, CA"
+    },
+    {
+      "siteCode": "605",
+      "moniker": "LOM",
+      "name": "Loma Linda, CA"
+    },
+    {
+      "siteCode": "600",
+      "moniker": "LON",
+      "name": "Long Beach, CA"
+    },
+    {
+      "siteCode": "664",
+      "moniker": "SDC",
+      "name": "San Diego, CA"
+    },
+    {
+      "siteCode": "593",
+      "moniker": "LAS",
+      "name": "Las Vegas, NV"
+    },
+    {
+      "siteCode": "437",
+      "moniker": "FAR",
+      "name": "Fargo, ND"
+    },
+    {
+      "siteCode": "555",
+      "moniker": "DES",
+      "name": "Des Moines, IA"
+    },
+    {
+      "siteCode": "584",
+      "moniker": "IOW",
+      "name": "Iowa City, IA"
+    },
+    {
+      "siteCode": "618",
+      "moniker": "MIN",
+      "name": "Minneapolis, MN"
+    },
+    {
+      "siteCode": "636",
+      "moniker": "OMA",
+      "name": "Central Plains HCS"
+    },
+    {
+      "siteCode": "438",
+      "moniker": "SUX",
+      "name": "Sioux Falls, SD"
+    },
+    {
+      "siteCode": "656",
+      "moniker": "STC",
+      "name": "St. Cloud, MN"
+    },
+    {
+      "siteCode": "568",
+      "moniker": "FTM",
+      "name": "Black Hills HCS"
+    },
+    {
+      "siteCode": "200",
+      "moniker": "DOD",
+      "name": "DoD"
+    },
+    {
+      "siteCode": "500",
+      "moniker": "MPI",
+      "name": "MPI"
+    },
+    {
+      "siteCode": "100",
+      "moniker": "CLM",
+      "name": "Claims System"
+    },
+    {
+      "siteCode": "VBA",
+      "moniker": "VBA",
+      "name": "Veterans Benefits Administration"
+    }
+  ]
+}

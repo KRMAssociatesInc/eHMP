@@ -1,0 +1,127 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "OnsetDate": "20110519114212",
+        "MedcinId": "31887",
+        "EncounterNumber": "0",
+        "EnteredBy": "MIDT, LANDFONE",
+        "EnteredDate": "20110519121938",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "LastModifiedDate": "20130603222118",
+        "ChronicityName": "Chronic",
+        "ProblemId": "2155379726",
+        "CustodianName": "ahlta",
+        "LongDescription": "MIGRAINE HEADACHE",
+        "ProblemName": "MIGRAINE HEADACHE",
+        "StatusName": "Active",
+        "Comments": "",
+        "HospitalLocation": "Landstuhl RMC",
+        "IcdCode": "346.90",
+        "Acuity": "Chronic",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "HospitalDmisId": "0607",
+        "ShortDescription": "MIGRAINE HEADACHE",
+        "Source": "Clinical Evidence",
+        "Status": "1024",
+        "EncounterDate": "20130603221922",
+        "Facility": "",
+        "LoincCode": "11450-4",
+        "Provider": "",
+        "EventId": "1000001048"
+      },
+      "dataType": 3
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20120410185714",
+        "MedcinId": "211334",
+        "EncounterNumber": "0",
+        "EnteredBy": "MIDT, LANDFONE",
+        "EnteredDate": "20121126173722",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "LastModifiedDate": "20121126173722",
+        "ChronicityName": "Chronic",
+        "ProblemId": "2156824302",
+        "CustodianName": "ahlta",
+        "LongDescription": "ANOMALIES OF SKIN",
+        "ProblemName": "ANOMALIES OF SKIN",
+        "StatusName": "Active",
+        "Comments": "",
+        "HospitalLocation": "Landstuhl RMC",
+        "IcdCode": "757.39",
+        "Acuity": "Chronic",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "HospitalDmisId": "0607",
+        "ShortDescription": "ANOMALIES OF SKIN",
+        "Source": "Clinical Evidence",
+        "Status": "1024",
+        "EncounterDate": "20111102213626",
+        "Facility": "",
+        "LoincCode": "11450-4",
+        "Provider": "",
+        "EventId": "1000001049"
+      },
+      "dataType": 3
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20130509201430",
+        "MedcinId": "35095",
+        "EncounterNumber": "0",
+        "EnteredBy": "MIDTIER, SJFONE",
+        "EnteredDate": "20130509201706",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "LastModifiedDate": "20130509201706",
+        "ChronicityName": "Chronic",
+        "ProblemId": "2157551853",
+        "CustodianName": "ahlta",
+        "LongDescription": "ANXIETY DISORDER DUE TO GENERAL MEDICAL CONDITION",
+        "ProblemName": "ANXIETY DISORDER DUE TO GENERAL MEDICAL CONDITION",
+        "StatusName": "Active",
+        "Comments": "",
+        "HospitalLocation": "4th Medical Group",
+        "IcdCode": "293.84",
+        "Acuity": "Chronic",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "HospitalDmisId": "0090",
+        "ShortDescription": "ANXIETY DISORDER DUE TO GENERAL MEDICAL CONDITION",
+        "Source": "Patient",
+        "Status": "1024",
+        "EncounterDate": "20130509153039",
+        "Facility": "",
+        "LoincCode": "11450-4",
+        "Provider": "",
+        "EventId": "1000001050"
+      },
+      "dataType": 3
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

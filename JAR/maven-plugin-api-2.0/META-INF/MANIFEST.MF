@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: Brett
+Build-Jdk: 1.5.0_04
+Extension-Name: maven-plugin-api
+Specification-Title: Maven is a project development management and com
+ prehension tool. Based on the concept of a project object model: buil
+ ds, dependency management, documentation creation, site publication, 
+ and distribution publication are all controlled from the declarative 
+ file. Maven can be extended by plugins to utilise a number of other d
+ evelopment tools for reporting or the build process.
+Specification-Vendor: Apache Software Foundation
+Implementation-Vendor: Apache Software Foundation
+Implementation-Title: maven-plugin-api
+Implementation-Version: 2.0
+

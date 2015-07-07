@@ -1,0 +1,18 @@
+import gov.va.cpe.vpr.pom.PatientEvent
+import gov.va.cpe.vpr.Patient
+import gov.va.cpe.vpr.Medication
+import gov.va.cpe.vpr.Allergy
+import gov.va.cpe.vpr.frameeng.FrameAction.AlertAction
+import gov.va.cpe.vpr.pom.IGenericPatientObjectDAO
+
+global IGenericPatientObjectDAO DAO;
+
+rule "Calculate Score when requested"
+  when
+  	$e : CallEvent(entryPoint == 'FRAMINGHAM')
+    $p : Patient() from $e.source
+  then
+  	$score : 0
+end
+
+

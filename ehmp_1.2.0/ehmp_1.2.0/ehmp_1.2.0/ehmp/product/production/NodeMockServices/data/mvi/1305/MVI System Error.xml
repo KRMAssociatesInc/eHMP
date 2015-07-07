@@ -1,0 +1,63 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vaww="http://vaww.oed.oit.domain">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <vaww:PRPA_IN201306UV02>
+      <id root="2.16.840.1.113883.4.349" extension="WS1407171224377861339405567"/>
+    <creationTime value="20140717122437"/>
+    <versionCode code="3.0"/>
+    <interactionId root="2.16.840.1.113883.1.6" extension="PRPA_IN201306UV02"/>
+    <processingCode code="T"/>
+    <processingModeCode code="T"/>
+    <acceptAckCode code="NE"/>
+    <receiver typeCode="RCV">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <id root="PSIM_TOOLS" extension="200EHMP"/>
+        </device>
+    </receiver>
+    <sender typeCode="SND">
+        <device classCode="DEV" determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.4.349" extension="200M"/>
+        </device>
+    </sender>
+    <acknowledgement>
+        <typeCode code="AR"/>
+        <targetMessage>
+            <id root="1.2.840.114350.1.13.0.1.7.1.1" extension="MCID-YOURMSGID_001"/>
+        </targetMessage>
+        <acknowledgementDetail>
+            <code codeSystem="2.16.840.1.113883.5.1100" displayName="Internal System Error" code="INTERR"/>
+            <text>MVI.DB.ERR:Exception saving MessageLog: Message Type: java.lang.String, CorrelationId: , Root cause: Cannot open connection</text>
+        </acknowledgementDetail>
+        <acknowledgementDetail>
+            <text>
+               <![CDATA[MVI.DB.ERR:Exception saving MessageLog: Message Type: java.lang.String, CorrelationId: , Root cause: Cannot open connection]]>
+            </text>
+        </acknowledgementDetail>
+    </acknowledgement>
+    <controlActProcess classCode="CACT" moodCode="EVN">
+        <code code="PRPA_TE201306UV02" codeSystem="2.16.840.1.113883.1.6"/>
+        <queryAck>
+            <queryId root="1.2.840.114350.1.13.28.1.18.5.999" extension="MCID-YOUR_IDENTIFIER_001"/>
+            <queryResponseCode code="AE"/>
+            <resultCurrentQuantity value="0"/>
+        </queryAck>
+        <queryByParameter>
+            <queryId extension="MCID-YOUR_IDENTIFIER_001" root="1.2.840.114350.1.13.28.1.18.5.999"/>
+            <statusCode code="new"/>
+            <modifyCode code="1"/>
+            <initialQuantity value="10"/>
+            <parameterList>
+                <livingSubjectName>
+                    <value use="L">
+                        <family>ERROR</family>
+                        <given>SYSTEM</given>
+                    </value>
+                    <semanticsText>Legal Name</semanticsText>
+                </livingSubjectName>
+            </parameterList>
+        </queryByParameter>
+    </controlActProcess>
+
+      </vaww:PRPA_IN201306UV02>
+   </soapenv:Body>
+</soapenv:Envelope>

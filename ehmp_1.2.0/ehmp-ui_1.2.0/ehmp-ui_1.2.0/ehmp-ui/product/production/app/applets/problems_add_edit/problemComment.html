@@ -1,0 +1,17 @@
+{{#unless removed}}
+<span class="pull-left commentDate">{{formatDate entered}}</span>
+<input class="pull-left commentText" tabindex="0" maxlength="60" value="{{comment}}" {{#unless edit-mode}} disabled {{/unless}}/>
+<div class="problem-comment-actions pull-right hidden">
+    <div {{#if edit-mode}}class="hidden" aria-hidden="true"{{/if}}>
+        <span class="edit-comment" tabindex="0"><b class="glyphicon glyphicon-pencil"></b></span>
+        <span class="remove-comment" tabindex="0"><b class="glyphicon glyphicon-remove"></b></span>
+    </div>
+    <div {{#unless edit-mode}}class="hidden" aria-hidden="true" {{/unless}}>
+        <span class="save-comment" tabindex="0"><b class="glyphicon glyphicon-ok"></b></span>
+        <span class="cancel-comment" tabindex="0"><b class="glyphicon glyphicon-remove"></b></span>
+    </div>
+</div>
+{{#if edit-mode}}
+<div class="commentRemainingBlock"><span class="commentCharsRemaining">60</span> characters remaining</div>
+{{/if}}
+{{/unless}}

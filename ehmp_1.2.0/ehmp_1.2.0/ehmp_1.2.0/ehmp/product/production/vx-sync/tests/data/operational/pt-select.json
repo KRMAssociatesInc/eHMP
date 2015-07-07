@@ -1,0 +1,119 @@
+{
+	"apiVersion": 1.02,
+	"params": {
+		"domain": "PANORAMA.VISTACORE.US",
+		"systemId": "9E7A"
+	},
+	"data": {
+		"updated": "20150221125155",
+		"totalItems": 6,
+		"lastUpdate": "3150221-1000",
+		"waitingPids": [],
+		"processingPids": [],
+		"remainingObjects": 13976,
+		"items": [{
+			"collection": "pt-select",
+			"seq": 1,
+			"total": 1620,
+			"object": {
+				"birthDate": 19350407,
+				"familyName": "ZZZRETFIVEFIFTYONE",
+				"fullName": "ZZZRETFIVEFIFTYONE,PATIENT",
+				"genderCode": "urn:va:pat-gender:M",
+				"genderName": "Male",
+				"givenNames": "PATIENT",
+				"localId": 1,
+				"pid": "9E7A;1",
+				"sensitive": true,
+				"ssn": 666223456,
+				"uid": "urn:va:pt-select:9E7A:1:1"
+			}
+		}, {
+			"collection": "pt-select",
+			"seq": 2,
+			"total": 1620,
+			"object": {
+				"birthDate": 19350407,
+				"familyName": "ZZZRETFIVEFORTYSEVEN",
+				"fullName": "ZZZRETFIVEFORTYSEVEN,PATIENT",
+				"genderCode": "urn:va:pat-gender:M",
+				"genderName": "Male",
+				"givenNames": "PATIENT",
+				"localId": 2,
+				"pid": "9E7A;2",
+				"sensitive": true,
+				"ssn": 666767766,
+				"uid": "urn:va:pt-select:9E7A:2:2"
+			}
+		}, {
+			"collection": "pt-select",
+			"seq": 3,
+			"total": 1620,
+			"object": {
+				"birthDate": 19350407,
+				"familyName": "EIGHT",
+				"fullName": "EIGHT,PATIENT",
+				"genderCode": "urn:va:pat-gender:M",
+				"genderName": "Male",
+				"givenNames": "PATIENT",
+				"icn": "10108V420871",
+				"localId": 3,
+				"pid": "9E7A;3",
+				"sensitive": false,
+				"ssn": 666000008,
+				"uid": "urn:va:pt-select:9E7A:3:3"
+			}
+		}, {
+			"collection": "pt-select",
+			"seq": 4,
+			"total": 1620,
+			"object": {
+				"birthDate": 19350407,
+				"familyName": "ZZZRETIREDZERO",
+				"fullName": "ZZZRETIREDZERO,PATIENT",
+				"genderCode": "urn:va:pat-gender:M",
+				"genderName": "Male",
+				"givenNames": "PATIENT",
+				"localId": 4,
+				"pid": "9E7A;4",
+				"sensitive": false,
+				"ssn": 666965487,
+				"uid": "urn:va:pt-select:9E7A:4:4"
+			}
+		}, {
+			"collection": "pt-select",
+			"seq": 5,
+			"total": 1620,
+			"object": {
+				"birthDate": 19350407,
+				"familyName": "ZZZRETIREDFIFTYSEVEN",
+				"fullName": "ZZZRETIREDFIFTYSEVEN,PATIENT",
+				"genderCode": "urn:va:pat-gender:M",
+				"genderName": "Male",
+				"givenNames": "PATIENT",
+				"localId": 5,
+				"pid": "9E7A;5",
+				"sensitive": true,
+				"ssn": 666693256,
+				"uid": "urn:va:pt-select:9E7A:5:5"
+			}
+		}, {
+			"collection": "pt-select",
+			"seq": 6,
+			"total": 1620,
+			"object": {
+				"birthDate": 19350407,
+				"familyName": "ZZZRETIREDFIFTYTHREE",
+				"fullName": "ZZZRETIREDFIFTYTHREE,PATIENT",
+				"genderCode": "urn:va:pat-gender:M",
+				"genderName": "Male",
+				"givenNames": "PATIENT",
+				"localId": 6,
+				"pid": "9E7A;6",
+				"sensitive": true,
+				"ssn": 666459871,
+				"uid": "urn:va:pt-select:9E7A:6:6"
+			}
+		}]
+	}
+}

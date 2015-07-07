@@ -1,0 +1,89 @@
+.#{$prefix}window-default {
+  .#{$prefix}toolbar-footer-docked-bottom {
+    padding: $window-footer-padding;
+    background-color: $window-footer-background-color;
+    border-top-width: 1px !important;
+    border-top-style: solid;
+    border-top-color: $window-footer-border-color;
+
+    @include border-bottom-radius($window-border-radius);
+  }
+}
+
+.#{$prefix}window {
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+
+  .#{$prefix}window-header {
+    .#{$prefix}tool {
+        line-height: 1;
+    }
+  }
+}
+
+.#{$prefix}window-ghost {
+  @include opacity($window-ghost-opacity);
+}
+
+@include extjs-window-ui('default');
+
+// Twitter Bootstrap style alerts
+@mixin bootstrap-alert-ui(
+  $alert-context,
+  $alert-border-color,
+  $alert-background-color,
+  $alert-text-color) {
+
+  @include extjs-window-ui(
+    'alert-#{$alert-context}',
+
+    $ui-padding: 0px,
+    $ui-border-radius: $border-radius-base,
+    $ui-border-color: $alert-border-color,
+    $ui-border-width: 1px,
+
+    $ui-header-color: $alert-text-color,
+    $ui-header-padding: 0px,
+    $ui-header-font-size: $font-size-large,
+    $ui-header-font-weight: bold,
+    $ui-header-text-padding: 0,
+    $ui-header-border-color: transparent,
+    $ui-header-border-width: 0px,
+
+    $ui-body-background-color: $alert-background-color,
+    $ui-body-border-width: 0px,
+    $ui-body-border-style: none,
+    $ui-body-color: $alert-text-color,
+
+    $ui-background-color: $alert-background-color
+  );
+
+  .#{$prefix}window-alert-#{$alert-context} {
+    @include box-shadow(none);
+
+    .#{$prefix}window-body-alert-#{$alert-context} {
+      background-color: $alert-background-color;
+    }
+
+    .#{$prefix}window-item {
+      .#{$prefix}window-text {
+        margin: 0;
+        color: $alert-text-color;
+      }
+
+      .#{$prefix}form-display-field {
+        padding: 0;
+        color: $alert-text-color;
+      }
+    }
+
+    .#{$prefix}toolbar-footer-docked-bottom {
+      background-color: $alert-background-color;
+    }
+  }
+};
+
+@include bootstrap-alert-ui('warning', $alert-warning-border, $alert-warning-bg, $alert-warning-text);
+@include bootstrap-alert-ui('error', $alert-danger-border, $alert-danger-bg, $alert-danger-text);
+@include bootstrap-alert-ui('danger', $alert-danger-border, $alert-danger-bg, $alert-danger-text);
+@include bootstrap-alert-ui('success', $alert-success-border, $alert-success-bg, $alert-success-text);
+@include bootstrap-alert-ui('info', $alert-info-border, $alert-info-bg, $alert-info-text);

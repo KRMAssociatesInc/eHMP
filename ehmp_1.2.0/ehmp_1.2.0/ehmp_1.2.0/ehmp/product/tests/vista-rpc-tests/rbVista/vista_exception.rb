@@ -1,0 +1,2 @@
+class VistaException < Exception
+end

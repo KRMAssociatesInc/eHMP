@@ -1,0 +1,39 @@
+<span class="sr-only">{{description}}</span>
+<svg {{#if id}}id="{{id}}"{{/if}} class="gistTrendGraph" width="100%" height="100%" style="padding: {{paddingTop}} {{paddingLeft}}">
+	<svg x="0" y="0" width="100%" height="100%" viewBox="0 0 {{width}} {{height}}" preserveAspectRatio="none">
+		<pattern id="textureHashed" class="textureHashed" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+			<rect x="0" y="0" width="4" height="4" />
+			<path d="M -1 1 l 2 -2 M 0 4 l 4 -4 M 3 5 l 2 -2" />
+		</pattern>
+	{{#each ranges}}
+		<g class="range{{@index}}" {{#if this.low}}data-low="{{this.low}}" {{else}}{{#ifExp this.low '===' 0}}data-low="{{this.low}}" {{/ifExp}}{{/if}}{{#if this.high}}data-high="{{this.high}}" {{else}}{{#ifExp this.high '===' 0}}data-high="{{this.high}}" {{/ifExp}}{{/if}}>
+			<rect class="{{this.rangeClass}}" x="{{this.x}}" y="{{this.y}}" width="{{this.width}}" height="{{this.height}}" />
+		</g>
+	{{/each}}
+	{{#if currentValue}}{{#if previousValue}}
+		<path class="trendLine" d="M {{previousValue.x}} {{previousValue.y}} l {{exp currentValue.x '-' previousValue.x}} {{exp currentValue.y '-' previousValue.y}}" fill="none" />
+	{{/if}}{{/if}}
+	</svg>
+	<svg x="{{border.x}}%" y="{{border.y}}%" width="{{exp 100 '-' (exp 2 '*' border.x)}}%" height="100%">
+		<g class="border0">
+			<rect class="outterBorder" x="0" y="0" width="100%" height="100%" />
+		</g>
+	</svg>
+{{#if currentValue}}
+	<svg x="{{exp currentValue.x '/' (exp width '/' 100)}}%" y="50%" width="{{exp 2 '*' currentValue.b}}" height="{{exp 2 '*' currentValue.a}}" class="valueMarker">
+		<g class="{{currentValue.class}}" data-value="{{currentValue.value}}" >
+			<polygon points="0,-{{currentValue.a}} -{{currentValue.b}},0 0,{{currentValue.a}} {{currentValue.b}},0" />
+		{{#if currentValue.isCritical}}
+			<rect class="{{currentValue.class}}" x="-{{currentValue.b2}}" y="-{{currentValue.a2}}" width="{{exp currentValue.b2 '*' 2}}" height="{{exp currentValue.a2 '*' 2}}" />
+	    {{/if}}
+	    </g>
+	</svg>
+{{/if}}
+{{#if previousValue}}
+	<svg x="{{exp previousValue.x '/' (exp width '/' 100)}}%" y="50%" width="{{exp 2 '*' previousValue.r}}" height="{{exp 2 '*' previousValue.r}}" class="valueMarker">
+		<g class="previousValue" data-value="{{previousValue.value}}" >
+			<circle cx="0" cy="0" r="{{previousValue.r}}" />
+		</g>
+	</svg>
+{{/if}}
+</svg>

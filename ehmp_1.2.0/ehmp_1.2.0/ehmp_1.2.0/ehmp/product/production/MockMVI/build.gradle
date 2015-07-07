@@ -1,0 +1,43 @@
+apply plugin: 'maven'
+apply plugin: 'war'
+
+ext.set('groupId', 'us.vistacore.ehmp')
+ext.set('repoVersion', getRepoVersion())
+ext.set('commitCountDir', projectDir)
+
+def repoCommitCountClosure = {
+  def proc1 = ['sh', '-c', "git rev-list --full-history --all ${->commitCountDir}"].execute()
+  def proc2 = 'wc -l'.execute()
+  proc1 | proc2
+  return proc2.text.trim()
+}
+
+repoCommitCount = "${->repoCommitCountClosure()}"
+version = "${->repoVersion + '.' + repoCommitCount}"
+
+ext.set('infrastructureVersion', version)
+
+repositories {
+  mavenCentral()
+}
+
+def getRepoVersion() {
+    def v
+    v = '1.2.0' 
+    if (v.endsWith('.'))
+        v = v.substring(0, v.length()-1)
+    return v
+}
+
+task packageMockMVI(type: War) {
+  extension = 'war'
+  baseName = 'MockMVI'
+  destinationDir buildDir
+  version = infrastructureVersion
+  from('src/') {
+  }
+}
+
+artifacts {
+  archives packageMockMVI
+}

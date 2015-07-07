@@ -1,0 +1,388 @@
+ext {
+    vendor = 'Department of Veterans Affairs - Health Informatics Initiative'
+
+    versions = [
+            // junit: '4.8.1',
+            // mockito: '1.9.5',
+            // guava: '15+',
+            // dropwizard: '0.7.0-SNAPSHOT',
+            // hystrix: '1.3.8',
+            // hamcrest: '1.3',
+
+            commonsBeanutilsVersion: '1.8.3',
+            commonsLangVersion: '2.6',
+            commonsPoolVersion: '1.6',
+            commonsHttpClientVersion: '3.1',
+            commonsCollectionsVersion: '3.2.1',
+            commonsCodecVersion: '1.4',
+            commonsIoVersion: '2.4',
+            easymockVersion: '3.1',
+
+            healthTimeVersion: '2.1.3',
+            vistaSupportVersion: '0.14.1',
+            groovyVersion: '2.1.5',
+            springVersion: '3.2.8.RELEASE',
+            springSecurityVersion: '3.2.3.RELEASE',
+            jacksonVersion: '2.3.1',
+            metricsVersion: '3.0.2',
+            slf4jVersion: '1.7.6',
+            logbackVersion: '1.1.1',
+            activeMQVersion: '5.8.0',
+            h2Version: '1.3.175',
+            solrLuceneVersion: '4.7.0',
+
+            droolsVersion: '5.4.0.Final',
+            servletVersion: '3.0.1',
+            hibernateCoreVersion: '3.3.1.GA',
+
+            httpmimeVersion: '4.2',
+            httpcoreVersion: '4.2',
+            httpclientVersion: '4.2',
+            xbeanSpringVersion: '3.7',
+
+            // osgi
+            osgiVersion: '5.0.0',
+            felixHttpVersion: '2.2.1',
+            paxLoggingVersion: '1.7.1',
+            ariesVersion: '1.1.0',
+
+            // testing libs
+            junitVersion: '4.11',
+            xmlunitVersion: '1.5',
+            mockitoVersion: '1.9.5',
+            hamcrestVersion: '1.3',
+
+            tomcatVersion: '7.0.47',
+
+            // termdb
+            termdbVersion: '1.UMLS2013AA.20131017',
+            termdbJLVVersion: '1.0'
+        ]
+}
+
+
+allprojects  {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+    apply plugin: 'eclipse'
+
+    if (project.hasProperty("verbose")) {
+        tasks.withType(Test) {
+            testLogging.showStandardStreams = true
+
+            // listen to events in the test execution lifecycle
+            beforeTest { descriptor ->
+                logger.lifecycle(":" + descriptor)
+            }
+        }
+    }
+
+    /*
+    if (project.hasProperty("xlint")) {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint"
+        }
+    }
+
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }
+
+    */
+
+    sourceCompatibility = '1.7'
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+    ext.set('coverageThresholdLinerate', 80)
+    ext.set('coverageThresholdBranchrate', 80)
+
+    // TODO find out which one is correct. groupId or group? version?
+    ext.set('groupId', 'us.vistacore.ehmp')
+    group = 'gov.va.ehmp'
+    // how to set project version?
+    version = '0.7-S51-SNAPSHOT'
+
+    ext.set('repoCommitCount', '0.0.0.0')
+    ext.set('commitCountDir', projectDir)
+
+    def repoCommitCountClosure = {
+        if (System.properties['os.name'].toLowerCase().contains('windows')) {
+            return "cmd /C git rev-list --full-history --all ${->commitCountDir} | wc -l".execute().text.trim()
+        }
+          else {
+            def proc1 = ['sh', '-c', "git rev-list --full-history --all ${->commitCountDir}"].execute()
+            def proc2 = 'wc -l'.execute()
+            proc1 | proc2
+            return proc2.text.trim()
+        }
+    }
+
+    repoCommitCount = "${->repoCommitCountClosure()}"
+
+    // setup
+    ext.set('repoVersion', getRepoVersion())
+    ext.set('branchName', getCurrentBranchName())
+    ext.set('currentCommitHash', getCurrentCommitHash())
+    version = "${->repoVersion + '.' + repoCommitCount}"
+
+    // define a base manifest that includes the git info which can be pulled in
+    // by the child projects
+    ext.baseManifest = manifest {
+        attributes('Build-Version': version,
+                   'Build-Repo-BranchName': branchName,
+                   'Build-Repo-CurrentCommitHash': currentCommitHash)
+    }
+
+    repositories {
+        // mavenLocal()
+        maven { url "http://oss.sonatype.org/content/repositories/snapshots" }
+        maven { url "http://repository.springsource.com/maven/bundles/release" }
+        maven { url "http://repository.springsource.com/maven/bundles/external" }
+        maven { url "http://repository.jboss.org/maven2/" }
+        maven { url "http://download.java.net/maven/2/" }
+        maven { url "https://repository.jboss.org/nexus/content/groups/public" }
+        maven { url "http://dl.bintray.com/robfletcher/gradle-plugins" }
+        maven { url "http://repo.phloc.com/maven2" }
+        maven { url "http://version99.qos.ch" }
+
+
+        /* TODO how to access hmp repository?
+            url "http://hmpcode.vainnovations.us:8080/nexus/content/groups/public"
+            credentials {
+                username nexusUser
+                password nexusPassword
+            }
+        */
+    }
+
+    tasks.withType(Exec) {
+        doFirst {
+            println commandLine
+        }
+    }
+
+
+
+}
+
+
+def getRepoVersion() {
+    def v
+    v = "1.2.0" 
+    if (v.endsWith('.'))
+        v = v.substring(0, v.length()-1)
+    return v
+}
+
+def getCurrentBranchName() {
+    def branchName
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        branchName = repoVersion + '.' + 'cmd /C git rev-parse --abbrev-ref HEAD'.execute().text.trim()
+    } else {
+        branchName = ['sh', '-c', 'git rev-parse --abbrev-ref HEAD'].execute().text.trim()
+    }
+    return branchName
+}
+
+def getCurrentCommitHash() {
+    def commitHash
+    if (System.properties['os.name'].toLowerCase().contains('windows')) {
+        commitHash = repoVersion + '.' + 'cmd /C git rev-parse HEAD'.execute().text.trim()
+    } else {
+        commitHash = ['sh', '-c', 'git rev-parse HEAD'].execute().text.trim()
+    }
+    return commitHash
+}
+
+//This function is used for getting commit count for a project
+//because the allprojects routine hasn't run yet for any project other than ROOT to
+//set the project.version property correctly
+def getVersionByCommitCountForProject(projectString, subDir = null){
+    def commitCountDir = project("${projectString}").projectDir
+
+    if(subDir) {
+        commitCountDir = "${commitCountDir}/${subDir}"
+    }
+
+    def proc1 = ['sh', '-c', "git rev-list --full-history --all ${->commitCountDir}"].execute()
+    def proc2 = 'wc -l'.execute()
+    proc1 | proc2
+    version = "${getRepoVersion() + '.' + proc2.text.trim()}"
+    return version
+}
+
+task generateVersionPropertiesFile() {
+    doLast {
+        def commitHash = getCurrentCommitHash()
+        def backendVersion = project(':production').version
+        def vxSyncVersion = getVersionByCommitCountForProject(':production:vx-sync')
+        def soapHandlerVersion = getVersionByCommitCountForProject(':production:soap-handler')
+        def healthTimeCoreJarVersion = getVersionByCommitCountForProject(':production:health-time:health-time-core')
+        def healthTimeSolrJarVersion = getVersionByCommitCountForProject(':production:health-time:health-time-solr')
+        def mockMviVersion = getVersionByCommitCountForProject(':production:MockMVI')
+        def vprVersion = getVersionByCommitCountForProject(':production:vpr')
+        def nodeMockServicesVersion = getVersionByCommitCountForProject(':production:NodeMockServices')
+        def asuVersion = getVersionByCommitCountForProject(':production:asu')
+
+        println "COMMIT_HASH='${commitHash}'"
+        println "BACKEND_VERSION='${backendVersion}'"
+        println "VX_SYNC_VERSION='${vxSyncVersion}'"
+        println "SOAP_HANDLER_VERSION='${soapHandlerVersion}'"
+        println "HEALTH_TIME_CORE_VERSION='${healthTimeCoreJarVersion}'"
+        println "HEALTH_TIME_SOLR_VERSION='${healthTimeSolrJarVersion}'"
+        println "MOCKMVI_VERSION='${mockMviVersion}'"
+        println "VPR_VERSION='${vprVersion}'"
+        println "NODEMOCKSERVICES_VERSION='${nodeMockServicesVersion}'"
+        println "ASU_VERSION='${asuVersion}'"
+
+        project.buildDir.mkdirs()
+        delete{
+            delete "${project.buildDir}/version.properties"
+        }
+        new File("${project.buildDir}/version.properties") << """COMMIT_HASH=${commitHash}
+BACKEND_VERSION=${backendVersion}
+VX_SYNC_VERSION=${vxSyncVersion}
+SOAP_HANDLER_VERSION=${soapHandlerVersion}
+MOCKMVI_VERSION=${mockMviVersion}
+NODEMOCKSERVICES_VERSION=${nodeMockServicesVersion}
+VPR_VERSION=${vprVersion}
+HEALTH_TIME_SOLR_VERSION=${healthTimeSolrJarVersion}
+HEALTH_TIME_CORE_VERSION=${healthTimeCoreJarVersion}
+ASU_VERSION=${asuVersion}
+"""
+    }
+}
+
+def unapplyForPatentProject() {
+    project.configurations.each { Configuration configuration ->
+      def jarArtifact = configuration.artifacts.find {
+        it.file == jar.archivePath
+      }
+      if (jarArtifact != null) {
+        configuration.artifacts.remove(jarArtifact)
+      }
+    }
+
+    // TODO currently skipping some tasks
+    // [project.test, project.jar, project.uploadArchives, project.coverageXmlReport, project.coverageCheck, project.coverageReport, project.coverageBless].each {
+    [project.test, project.jar, project.uploadArchives].each {
+        it.setDependsOn([])
+    }
+
+    project.build { actions = []; doLast {} }
+    project.jar { actions = []; doLast {} }
+    project.test { actions = []; doLast {} }
+    project.uploadArchives { actions = []; doLast {} }
+}
+
+unapplyForPatentProject()
+
+configurations{
+    crap4jRuntime
+}
+
+dependencies {
+    crap4jRuntime ('dom4j:dom4j:1.6.1') {transitive=false}
+    crap4jRuntime ('org.apache.commons:commons-math:2.1')  {transitive=false}
+    crap4jRuntime "asmlib:asmlib:1.5.0_13"
+    crap4jRuntime "crapertura:crapertura:1.0.0.20100927"
+    crap4jRuntime "org.crap4j:crap4j:1.1.5"
+}
+
+task unpackRO{
+  doLast{
+    exec {
+      workingDir = "${rootDir}/../infrastructure/chef/cookbooks/cache/files/default/jds"
+      executable = "python"
+      args = ['unpackRO.py', "${rootDir}/../infrastructure/vagrant/virtualbox/.filecache/chef/jds.ro"]
+    }
+  }
+}
+
+task crap4jReport() {
+    group test.group
+    doLast {
+        def coverageTempSource = "${project.buildDir}/tmp/coverage/source"
+        def coverageTempClasses = "${project.buildDir}/tmp/coverage/classes"
+        (new File(coverageTempSource)).mkdirs()
+        allprojects.each { proj ->
+            copy{
+                from proj.sourceSets.main.java
+                into coverageTempSource
+            }
+            copy{
+                from proj.sourceSets.main.output.classesDir
+                into coverageTempClasses
+            }
+        }
+
+        ant.taskdef(resource:'tasks.properties', classpath: configurations.coberturaRuntime.asPath)
+
+        ant.'cobertura-merge'(datafile: "${project.buildDir}/coverage.ser"){
+            fileset(
+                dir: projectDir,
+                includes:"**/build/cobertura.ser"
+            )
+        }
+
+        ant.'cobertura-report'(destdir: "${reporting.baseDir}/coverage", format: 'xml', srcdir: coverageTempSource, datafile: "${project.buildDir}/coverage.ser")
+        ant.'cobertura-report'(destdir: "${reporting.baseDir}/coverage", format: 'html', srcdir: coverageTempSource, datafile: "${project.buildDir}/coverage.ser")
+
+        ant.taskdef(name:'crapertura', classname: 'com.schneide.crapertura.ant.CraperturaTask', classpath: configurations.crap4jRuntime.asPath)
+
+        ant.'crapertura'(coberturaReportFile: "${reporting.baseDir}/coverage/coverage.xml", targetDirectory: "${reporting.baseDir}/crap4j", classesDirectory: coverageTempClasses, generateHTMLReport: false)
+        ant.'crapertura'(coberturaReportFile: "${reporting.baseDir}/coverage/coverage.xml", targetDirectory: "${reporting.baseDir}/crap4j", classesDirectory: coverageTempClasses)
+    }
+}
+//trigger build
+
+// Fortify stuff
+// Add a new configuration
+configurations {
+ fortify { extendsFrom compile }
+}
+ 
+// pull in the fortify libs for the new configuration
+dependencies {
+ fortify 'com.fortify:sourceanalyzer:4.1'
+}
+ 
+task fortifySetup << {
+ ant.properties['build.compiler']='com.fortify.dev.ant.SCACompiler'
+ ant.typedef(name: 'sca', classname: 'com.fortify.dev.ant.SourceanalyzerTask',
+ classpath: configurations.fortify.asPath)
+}
+ 
+task fortifyReport << {
+
+    Map<String, String> fortifyProjects = [
+        'ehmp-pep': 'ehmp-pep/**/*',
+        'health-time': 'health-time/*/**/*',
+        'vista-rpc-resource': 'vista-rpc-resource/**/*',
+        'vista-support': 'vista-support/*/**/*',
+        'VX-Sync': 'VX-Sync/**/*.js'
+    ]
+
+    for (e in fortifyProjects) {
+        println "Scanning: ${e.key} => ${e.value}"
+        ant.sca(jdk:"1.7",
+            debug:true ,
+            verbose:true ,
+            failonerror:true ,
+            scan:true ,
+            maxHeap:"4096M" ,
+            logFile:file("$buildDir/reports/fortify/Fortify-${e.key}.log"),
+            resultsFile:file("$buildDir/reports/fortify/${e.key}.fpr")
+        ){
+        fileset(dir:'production') {
+            include(name:"${e.value}")
+            exclude(name:'**/lib/**')
+            exclude(name:'**/test/**')
+            exclude(name:'**/*Test*')
+            exclude(name:'**/build/**')
+            }
+        }
+    }
+}

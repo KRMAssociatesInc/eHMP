@@ -1,0 +1,21 @@
+<td>{{facilityName}}</td>
+<td>
+	<div id="ql-nok-name" class='demographic-data' data-diff="{{nameRel.name.diff}}">{{nameRel.name.value}}</div>
+</td>
+<td>
+	<div id="ql-nok-rel" class='demographic-data' data-diff="{{nameRel.relationship.diff}}">{{nameRel.relationship.value}}</div>
+</td>
+<td>
+	<div id="ql-nok-hphone" class='demographic-data' data-diff="{{hPhone.phone.diff}}">{{formatPhone hPhone.phone.value}}</div>
+</td>
+<td>
+	<div id="ql-nok-wphone" class='demographic-data' data-diff="{{wPhone.phone.diff}}">{{formatPhone wPhone.phone.value}}</div>
+</td>
+<td>
+	<div>
+	    <div id="ql-nok-addr-line1" class='demographic-data' data-diff="{{address.line1.diff}}"> {{address.line1.value}}</div>
+	    {{#if address.line2.value}}<div id="ql-nok-addr-line2" class='demographic-data' data-diff="{{address.line2.diff}}">{{address.line2.value}}</div> {{/if}}
+	    {{#if address.line3.value}}<div id="ql-nok-addr-line3" class='demographic-data' data-diff="{{address.line3.diff}}">{{address.line3.value}}</div> {{/if}}
+	    {{#if address.line4.value}}<div id="ql-nok-addr-line4" class='demographic-data' data-diff="{{address.line4.diff}}">{{address.line4.value}}</div> {{/if}}
+	</div>
+</td>

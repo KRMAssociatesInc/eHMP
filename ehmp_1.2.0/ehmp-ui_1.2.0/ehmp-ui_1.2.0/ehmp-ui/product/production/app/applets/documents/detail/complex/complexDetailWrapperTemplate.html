@@ -1,0 +1,67 @@
+<div class="documentDetail">
+	<!-- <h4>{{localTitle}}</h4> -->
+	<div class="topDetailLabel labelStyleColor" tabindex="0">Facility</div>
+	<div class="topDetailInfo" tabindex="0">{{facilityName}}&nbsp;</div>
+	<br>
+	<div class="topDetailLabel labelStyleColor" tabindex="0">Type</div>
+	<div class="topDetailInfo" tabindex="0">{{kind}}&nbsp;</div>
+	<br>
+	<div class="topDetailLabel labelStyleColor" tabindex="0">Status</div>
+	<div class="topDetailInfo {{statusClass}}" tabindex="0">{{statusName}}&nbsp;</div>
+	<br>
+	<div class="topDetailLabel labelStyleColor" tabindex="0">Date/Time</div>
+	<div class="topDetailInfo" tabindex="0">{{dateTimeDisplay}}&nbsp;</div>
+	<br>
+
+	{{#if surgeryBool}}
+	<div class="topDetailLabel labelStyleColor" tabindex="0">Providers</div>
+	<div class="topDetailInfo" tabindex="0">{{#each providers}}{{providerDisplayName}}&nbsp;{{/each}}&nbsp;</div>{{/if}}
+	{{#if imagingBool}}
+	{{#if providers}}<div class="topDetailLabel labelStyleColor" tabindex="0">Providers</div>
+	<div class="topDetailInfo" tabindex="0">{{#each providers}}{{providerDisplayName}}&nbsp;{{/each}}&nbsp;</div>{{/if}}
+	<br>{{/if}}
+	<br>
+
+	{{#if orderUid}}
+	<h5 tabindex="0">Order Information</h5>
+	{{#if service}}<div class="detailLabel labelStyleColor" tabindex="0">To Service</div>
+	<div class="detailInfo" tabindex="0">{{service}}&nbsp;</div>
+	<br>{{/if}}
+	{{#if fromService}}<div class="detailLabel labelStyleColor" tabindex="0">From Service</div>
+	<div class="detailInfo" tabindex="0">{{fromService}}&nbsp;</div>
+	<br>{{/if}}
+	{{#if providerName}}<div class="detailLabel labelStyleColor" tabindex="0">Requesting Provider</div>
+	<div class="detailInfo {{statusDisplayClass}}" tabindex="0">{{providerName}}&nbsp;</div>
+	<br>{{/if}}
+	{{#if place}}<div class="detailLabel labelStyleColor" tabindex="0">Place</div>
+	<div class="detailInfo" tabindex="0">{{place}}&nbsp;</div>
+	<br>{{/if}}
+	{{#if urgency}}<div class="detailLabel labelStyleColor" tabindex="0">Urgency</div>
+	<div class="detailInfo" tabindex="0">{{urgency}}&nbsp;</div>
+	<br>{{/if}}
+	{{#if orderName}}<div class="detailLabel labelStyleColor" tabindex="0">Orderable Item</div>
+	<div class="detailInfo" tabindex="0">{{orderName}}&nbsp;</div>
+	<br>{{/if}}
+	{{#if consultProcedure}}<div class="detailLabel labelStyleColor" tabindex="0">Procedure</div>
+	<div class="detailInfo {{statusDisplayClass}}" tabindex="0">{{consultProcedure}}&nbsp;</div>
+	<br>{{/if}}
+	{{#if reason}}<div class="detailLabel labelStyleColor" tabindex="0">Reason</div>
+	<div class="detailInfo" tabindex="0">{{reason}}&nbsp;</div>
+	<br>{{/if}}
+	{{#if resultsTitle}}<div class="detailLabel labelStyleColor" tabindex="0">Local Title</div>
+	<div class="detailInfo" tabindex="0">{{resultsTitle}}&nbsp;</div>
+	<br>{{/if}}
+	<br>
+	{{/if}}
+
+	<div id="results-region"></div>
+
+	{{#if activity}}<h5 tabindex="0">Activity</h5>{{/if}}
+	{{#each activity}}
+	<ul>
+	    <li>{{name}}</li>
+	    <li class="subDetail"><span class="labelStyleColor" tabindex="0">Date/Time</span> {{formatDate dateTime "MM/DD/YYYY - HH:mm"}}</li>
+	    <li class="subDetail"><span class="labelStyleColor" tabindex="0">Responsible</span> {{responsible}}</li>
+	</ul>
+	{{/each}}
+</div>

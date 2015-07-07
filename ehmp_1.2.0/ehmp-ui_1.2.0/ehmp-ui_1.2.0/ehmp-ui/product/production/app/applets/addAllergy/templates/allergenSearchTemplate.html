@@ -1,0 +1,24 @@
+<div id="error-container"/>
+<div class="input-group">
+	<label class="sr-only" for="allergenSearchInput">Look up a causative agent</label>
+	<span class="input-group-addon">
+        <i class="fa fa-search"></i>
+    </span>
+	<input type="text" autocomplete="off" class="form-control ninety-five-width" id="allergenSearchInput" onfocus="this.value = this.value;" placeholder="Lookup Causative Agent" tabIndex="0" autofocus>
+</div>
+<div>
+	<div>
+		<div id="allergensLoadingIndicator" aria-hidden="true">
+            <span id="ali-span"><h5><i class="fa fa-spinner fa-spin"></i> Loading...</h5></span>
+             <!--<img id="ali-img" src="/_assets/img/loading-icon.gif"/>-->
+        </div>
+        <div id="allergy-loading-annoucement" role="alert" aria-live="assertive" aria-atomic="true"></div>
+	</div>
+	<div id="allergen-search-scroll" class="allergen-search-scrolling-container">
+	    <ul class="nav nav-pills" role="menu">
+	        <li id="allergen-results-inner-container" class="open full-width">
+	            <ul id="allergen-search-results" class="list-group" role="menu"></ul>
+	        </li>
+	     </ul>
+	</div>
+</div>

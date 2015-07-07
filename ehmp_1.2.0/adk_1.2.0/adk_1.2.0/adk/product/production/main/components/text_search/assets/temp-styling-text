@@ -1,0 +1,40 @@
+/*
+*******WARNING*******
+Do not edit CSS files directly
+All CSS changes should be made in SASS (.scss) files only!!
+*******  END  *******
+
+For more information/documentation on SASS please visit their website at: http://sass-lang.com/
+*/
+
+#text_search {
+    #search-text-group {
+        width: 55%;
+        z-index: 1;
+        margin-top: 5px;
+        padding-left: 15px;
+        padding-bottom: 5px;
+    }
+    #suggestListDiv .dropdown-menu {
+        overflow: auto;
+        margin-left: 15px;
+        width: 850px;s
+        max-height: 300px;
+    }
+    
+    #navigation-navbar .pull-right li a .bold {
+        font-weight: bold;
+    }
+    #navigation-navbar .pull-right li a .text-search-accessible{
+        color: black;
+    }
+    
+    .suggest-label {
+        font-size: 90%;
+    }
+    
+    #suggestSpinner {
+        display: none;
+        padding: 0 10px;
+    }
+}

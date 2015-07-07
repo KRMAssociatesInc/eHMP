@@ -1,0 +1,54 @@
+# Encoding: utf-8
+
+require 'rubygems'
+require 'cucumber'
+require 'cucumber/rake/task'
+require 'rubocop/rake_task'
+
+$LOAD_PATH.push(File.expand_path(File.dirname(__FILE__) + '/features/lib'))
+
+# Check environment sanity and fail fast if not correct
+fail 'WORKSPACE environment variable not set. Did you "source infrastructure/set.env.sh"?' unless ENV.keys.include?('WORKSPACE')
+fail 'GEM_HOME environment variable not set. Did you "source infrastructure/set.env.sh"?' unless ENV.keys.include?('GEM_HOME')
+
+task default: [:endToEndTests]
+
+task endToEndTests: [:codequality]
+
+task codequality: [
+  :info,
+  :rubocop
+]
+
+## Attempting to run a sample acceptance test in the features directory
+Cucumber::Rake::Task.new(:endToEndTests) do |t|
+  t.cucumber_opts = 'features --format pretty'
+end
+
+## Placeholder task for executing all Acceptance Tests for all Mobile Applications
+Cucumber::Rake::Task.new(:allAcceptanceTests) do |t|
+  t.cucumber_opts = 'features --format pretty'
+end
+
+task :info do
+  puts '=========================================================================='
+  puts '#     Running codequality checks.                                        #'
+  puts '#     For details, see https://wiki.vistacore.us/display/VACORE/Ruby     #'
+  puts '=========================================================================='
+end
+
+desc 'Rubocop code quality checks configured in .rubocop.yml file'
+Rubocop::RakeTask.new(:rubocop) do |rubocop|
+  # Specify config file in non-standard location.
+  rubocop.options = ['-c.rubocop.yml']
+
+  # Specify Ruby file locations
+  rubocop.patterns = ['**/*.rb', 'Rakefile']
+
+  # Show emacs style output, and offense counts
+  # See https://github.com/bbatsov/rubocop#formatters for other output options
+  rubocop.formatters = ['emacs', 'o']
+
+  # Abort rake on failure
+  rubocop.fail_on_error = true
+end

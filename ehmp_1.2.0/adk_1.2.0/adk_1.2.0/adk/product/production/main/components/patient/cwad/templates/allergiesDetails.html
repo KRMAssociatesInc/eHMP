@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 cwad-title">
+            <strong>{{#each products}}{{name}}{{/each}}</strong>
+            <span class="text-muted">{{#each reactions}}{{name}}{{/each}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right text-muted">Drug Classes</div>
+        <div class="col-xs-10">{{#each drugClasses}}{{name}}{{/each}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right text-muted">Nature of reaction</div>
+        <div class="col-xs-3">{{#compare kind 'Allergy/Adverse Reaction'}}Adverse Reaction{{/compare}}</div>
+        <div class="col-xs-3 text-right text-muted">Severity</div>
+        <div class="col-md-4">{{severity}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right text-muted">Entered By:</div>
+        <div class="col-xs-3">{{formatName originatorName ',' ' '}}</div>
+        <div class="col-xs-3 text-right text-muted">Originated</div>
+        <div class="col-xs-4">{{formatDate entered "MM/DD/YYYY HH:mm"}}</div>
+    </div>
+     <div class="row">
+        <div class="col-xs-2 text-right text-muted">Verified</div>
+        <div class="col-xs-3">{{formatDate verified "MM/DD/YYYY"}}</div>
+        <div class="col-xs-3 text-right text-muted">Observed/Historical</div>
+        <div class="col-xs-4">{{#if historical}}{{#compare historical true}}Historical{{/compare}}{{#compare historical false}}Observed{{/compare}}{{else}}Observed{{/if}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right text-muted">Facility</div>
+        <div class="col-xs-3">{{facilityName}}</div>
+        <div class="col-xs-3 text-right text-muted">Observed Date</div>
+        <div class="col-xs-4">{{observedDate}}</div>
+    </div>
+   <br/>
+    <div class="row">
+        {{#comments}}
+        <div class="col-xs-12 content">{{comment}}<br/></div>
+        &nbsp;
+        {{/comments}}
+  </div>
+</div>

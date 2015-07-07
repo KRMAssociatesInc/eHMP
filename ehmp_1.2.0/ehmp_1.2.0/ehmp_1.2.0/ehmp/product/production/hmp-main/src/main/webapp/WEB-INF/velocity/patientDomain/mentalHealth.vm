@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mental Health Assessment: $!item.displayName</title>
+    #parse("/layouts/detail.vm")
+</head>
+<body>
+<table class="hmp-labeled-values">
+    <tr>
+        <td>Assessment</td>
+        <td>$!item.displayName</td>
+    </tr>
+    <tr>
+        <td>Administered</td>
+        <td>$hmp.formatDateTime($!item.administeredDateTime)</td>
+    </tr>
+    <tr>
+        <td>Provider</td>
+        <td>$!item.providerName</td>
+    </tr>
+    <tr><td><strong>Scales</strong></td></tr>
+    #foreach($s in $item.scales)
+        <tr>
+            <td>$s.scale.name</td>
+            <td>$!s.scale.rawScore</td>
+        </tr>
+    #end
+    <tr>
+        <td><strong>Responses</strong></td>
+        <td>
+            <dl>#foreach($response in $item.responses)
+        <dt>$response.question.text</dt>
+        <dd>$response.answer.text</dd>
+#end</dl>
+        </td>
+    </tr>
+
+</table>
+</body>
+</html>

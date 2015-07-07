@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:saml1p="urn:oasis:names:tc:SAML:1.0:protocol" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="http://www.opensaml.org/xmltooling-config" xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd">
+
+    <!-- SAML 1.X Protocol Object providers -->
+
+    <ObjectProviders>
+
+        <!-- AssertionArtifact -->
+        <ObjectProvider qualifiedName="saml1p:AssertionArtifact">
+            <BuilderClass className="org.opensaml.saml1.core.impl.AssertionArtifactBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.AssertionArtifactMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.AssertionArtifactUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- AttributeQuery -->
+        <ObjectProvider qualifiedName="saml1p:AttributeQuery">
+            <BuilderClass className="org.opensaml.saml1.core.impl.AttributeQueryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.AttributeQueryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.AttributeQueryUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml1p:AttributeQueryType">
+            <BuilderClass className="org.opensaml.saml1.core.impl.AttributeQueryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.AttributeQueryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.AttributeQueryUnmarshaller"/>
+        </ObjectProvider>
+
+        <!-- AuthenticationQuery -->
+        <ObjectProvider qualifiedName="saml1p:AuthenticationQuery">
+            <BuilderClass className="org.opensaml.saml1.core.impl.AuthenticationQueryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.AuthenticationQueryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.AuthenticationQueryUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml1p:AuthenticationQueryType">
+            <BuilderClass className="org.opensaml.saml1.core.impl.AuthenticationQueryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.AuthenticationQueryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.AuthenticationQueryUnmarshaller"/>
+        </ObjectProvider>
+
+        <!-- AuthorizationDecisionQuery -->
+        <ObjectProvider qualifiedName="saml1p:AuthorizationDecisionQuery">
+            <BuilderClass className="org.opensaml.saml1.core.impl.AuthorizationDecisionQueryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.AuthorizationDecisionQueryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.AuthorizationDecisionQueryUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml1p:AuthorizationDecisionQueryType">
+            <BuilderClass className="org.opensaml.saml1.core.impl.AuthorizationDecisionQueryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.AuthorizationDecisionQueryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.AuthorizationDecisionQueryUnmarshaller"/>
+        </ObjectProvider>
+
+        <!-- RespondWith -->
+        <ObjectProvider qualifiedName="saml1p:RespondWith">
+            <BuilderClass className="org.opensaml.saml1.core.impl.RespondWithBuilder"/>
+            <MarshallingClass className="org.opensaml.xml.schema.impl.XSQNameMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.xml.schema.impl.XSQNameUnmarshaller"/>
+        </ObjectProvider>
+
+        <!-- Response -->
+        <ObjectProvider qualifiedName="saml1p:Response">
+            <BuilderClass className="org.opensaml.saml1.core.impl.ResponseBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.ResponseMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.ResponseUnmarshaller"/>
+        </ObjectProvider>
+
+        <!-- Request -->
+        <ObjectProvider qualifiedName="saml1p:Request">
+            <BuilderClass className="org.opensaml.saml1.core.impl.RequestBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.RequestMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.RequestUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- Status -->
+        <ObjectProvider qualifiedName="saml1p:Status">
+            <BuilderClass className="org.opensaml.saml1.core.impl.StatusBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.StatusMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.StatusUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml1p:StatusType">
+            <BuilderClass className="org.opensaml.saml1.core.impl.StatusBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.StatusMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.StatusUnmarshaller"/>
+        </ObjectProvider>
+
+        <!-- StatusCode -->
+        <ObjectProvider qualifiedName="saml1p:StatusCode">
+            <BuilderClass className="org.opensaml.saml1.core.impl.StatusCodeBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.StatusCodeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.StatusCodeUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml1p:StatusCodeType">
+            <BuilderClass className="org.opensaml.saml1.core.impl.StatusCodeBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.StatusCodeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.StatusCodeUnmarshaller"/>
+        </ObjectProvider>
+
+        <!-- StatusMessage -->
+        <ObjectProvider qualifiedName="saml1p:StatusMessage">
+            <BuilderClass className="org.opensaml.saml1.core.impl.StatusMessageBuilder"/>
+            <MarshallingClass className="org.opensaml.saml1.core.impl.StatusMessageMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml1.core.impl.StatusMessageUnmarshaller"/>
+        </ObjectProvider>
+
+    </ObjectProviders>
+</XMLTooling>

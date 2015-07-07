@@ -1,0 +1,65 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2156179705",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "SJF, FOUR",
+        "NoteFormat": "rtf",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20120514161515",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "SJF, FOUR",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20120514160904",
+        "LoincCode": "34109-9",
+        "Facility": "4th Medical Group^Blue MTF",
+        "NoteTypeCode": "",
+        "EventId": "1000003841"
+      },
+      "dataType": 12
+    },
+    {
+      "dataRecord": {
+        "ComplexDataUrl": "http://localhost:8080/MockDoDAdaptor/async/complex/note/2156211634",
+        "CompleteNote": "",
+        "NoteTypeName": "Progress Note",
+        "EnteredBy": "SJF, TWENTY FOUR",
+        "NoteFormat": "rtf",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20120525213954",
+        "NoteTitle": "Progress Note",
+        "VerifiedBy": "SJF, TWENTY FOUR",
+        "CustodianName": "ahlta",
+        "VerifiedDate": "20120525210735",
+        "LoincCode": "34109-9",
+        "Facility": "4th Medical Group^Blue MTF",
+        "NoteTypeCode": "",
+        "EventId": "1000003842"
+      },
+      "dataType": 12
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "2",
+      "RetrievedCount": "2",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

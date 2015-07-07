@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns="http://www.opensaml.org/xmltooling-config" xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd">
+
+	<!-- SAML 2.0 Protocol IdP Discovery Protocol Object providers -->
+	<ObjectProviders>
+
+		<!-- Description provider -->
+		<ObjectProvider qualifiedName="mdui:Description">
+			<BuilderClass className="org.opensaml.samlext.saml2mdui.impl.DescriptionBuilder"/>
+			<MarshallingClass className="org.opensaml.samlext.saml2mdui.impl.DescriptionMarshaller"/>
+			<UnmarshallingClass className="org.opensaml.samlext.saml2mdui.impl.DescriptionUnmarshaller"/>
+		</ObjectProvider>
+        
+        <!-- DiscoHints provider -->
+        <ObjectProvider qualifiedName="mdui:DiscoHints">
+            <BuilderClass className="org.opensaml.samlext.saml2mdui.impl.DiscoHintsBuilder"/>
+            <MarshallingClass className="org.opensaml.samlext.saml2mdui.impl.DiscoHintsMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.samlext.saml2mdui.impl.DiscoHintsUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- Keywords provider -->
+        <ObjectProvider qualifiedName="mdui:Keywords">
+            <BuilderClass className="org.opensaml.samlext.saml2mdui.impl.KeywordsBuilder"/>
+            <MarshallingClass className="org.opensaml.samlext.saml2mdui.impl.KeywordsMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.samlext.saml2mdui.impl.KeywordsUnmarshaller"/>
+        </ObjectProvider>
+
+        <!-- DisplayName provider -->
+        <ObjectProvider qualifiedName="mdui:DisplayName">
+            <BuilderClass className="org.opensaml.samlext.saml2mdui.impl.DisplayNameBuilder"/>
+            <MarshallingClass className="org.opensaml.samlext.saml2mdui.impl.DisplayNameMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.samlext.saml2mdui.impl.DisplayNameUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- DomainHint provider -->
+        <ObjectProvider qualifiedName="mdui:DomainHint">
+            <BuilderClass className="org.opensaml.samlext.saml2mdui.impl.DomainHintBuilder"/>
+            <MarshallingClass className="org.opensaml.samlext.saml2mdui.impl.DomainHintMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.samlext.saml2mdui.impl.DomainHintUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- GeolocationHint provider -->
+        <ObjectProvider qualifiedName="mdui:GeolocationHint">
+            <BuilderClass className="org.opensaml.samlext.saml2mdui.impl.GeolocationHintBuilder"/>
+            <MarshallingClass className="org.opensaml.samlext.saml2mdui.impl.GeolocationHintMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.samlext.saml2mdui.impl.GeolocationHintUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- InformationURL provider -->
+        <ObjectProvider qualifiedName="mdui:InformationURL">
+            <BuilderClass className="org.opensaml.samlext.saml2mdui.impl.InformationURLBuilder"/>
+            <MarshallingClass className="org.opensaml.samlext.saml2mdui.impl.InformationURLMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.samlext.saml2mdui.impl.InformationURLUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- IPHint provider -->
+        <ObjectProvider qualifiedName="mdui:IPHint">
+            <BuilderClass className="org.opensaml.samlext.saml2mdui.impl.IPHintBuilder"/>
+            <MarshallingClass className="org.opensaml.samlext.saml2mdui.impl.IPHintMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.samlext.saml2mdui.impl.IPHintUnmarshaller"/>
+        </ObjectProvider>
+            
+        <!-- Logo provider -->
+        <ObjectProvider qualifiedName="mdui:Logo">
+            <BuilderClass className="org.opensaml.samlext.saml2mdui.impl.LogoBuilder"/>
+            <MarshallingClass className="org.opensaml.samlext.saml2mdui.impl.LogoMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.samlext.saml2mdui.impl.LogoUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- PrivacyStatementURL provider -->
+        <ObjectProvider qualifiedName="mdui:PrivacyStatementURL">
+            <BuilderClass className="org.opensaml.samlext.saml2mdui.impl.PrivacyStatementURLBuilder"/>
+            <MarshallingClass className="org.opensaml.samlext.saml2mdui.impl.PrivacyStatementURLMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.samlext.saml2mdui.impl.PrivacyStatementURLUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- UIInfo provider -->
+        <ObjectProvider qualifiedName="mdui:UIInfo">
+            <BuilderClass className="org.opensaml.samlext.saml2mdui.impl.UIInfoBuilder"/>
+            <MarshallingClass className="org.opensaml.samlext.saml2mdui.impl.UIInfoMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.samlext.saml2mdui.impl.UIInfoUnmarshaller"/>
+        </ObjectProvider>
+
+	</ObjectProviders>
+</XMLTooling>

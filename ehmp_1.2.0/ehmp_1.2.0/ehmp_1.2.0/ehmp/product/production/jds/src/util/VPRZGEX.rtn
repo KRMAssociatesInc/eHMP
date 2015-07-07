@@ -1,0 +1,121 @@
+Cache for UNIX^INT^Compare XML and JSON extraction times^~Format=Cache.S~^RAW
+%RO on 09 Aug 2013   8:07 PM
+VPRZGEX^INT^1^63043,67729.233679^0
+VPRZGEX ;SLC/KCM - Measure extract performance
+ ;;1.0;VIRTUAL PATIENT RECORD;;Jan 01, 2011
+ ;
+EN ; get timing measurements for running VPR GET PATIENT DATA rpc's
+ S U="^"
+ K ^TMP("VPRZGEX",$J)
+ N PTLST,RUN,DFN,ADDTEXT
+ S ADDTEXT="^document^consult^image^xray^surg^"
+ D BLDPTS(.PTLST)
+ S DFN="" F  S DFN=$O(PTLST(DFN)) Q:'DFN  D
+ . F RUN=1:1:5 D DORUN(RUN,DFN)
+ D SHOW
+ ;K ^TMP("VPRZGEX",$J)
+ Q
+DORUN(VPRZRUN,DFN) ; do a run of the domains (even=XML first, odd=JSON first)
+ N VPRZJB,VPRZJE,VPRZJD,VPRZXB,VPRZXE,VPRZXD
+ N VPRZGLN,VPRZGTX
+ S VPRZRUN=$G(VPRZRUN,1)
+ F VPRZGLN=1:1 S VPRZGTX=$P($T(DOMAINS+VPRZGLN),";;",2,999) Q:VPRZGTX="zzzzz"  D
+ . S VPRZJD=$P(VPRZGTX,","),VPRZXD=$P(VPRZGTX,",",2)
+ . I '$L(VPRZJD)!'$L(VPRZXD) Q  ; need both XML and JSON versions
+ . ;
+ . W !,"DFN:",DFN,?12,"Run:",VPRZRUN," Domain:",VPRZJD
+ . ; alternate which goes first to even out caching effect
+ . I VPRZRUN#2    W " JSON" S VPRZJB=$ZH D GETJ(DFN,VPRZJD) S VPRZJE=$ZH
+ . I 1            W " XML"  S VPRZXB=$ZH D GETX(DFN,VPRZXD) S VPRZXE=$ZH
+ . I '(VPRZRUN#2) W " JSON" S VPRZJB=$ZH D GETJ(DFN,VPRZJD) S VPRZJE=$ZH
+ . S ^TMP("VPRZGEX",$J,DFN,VPRZRUN,VPRZJD,"JSON")=VPRZJE-VPRZJB
+ . S ^TMP("VPRZGEX",$J,DFN,VPRZRUN,VPRZJD,"XML")=VPRZXE-VPRZXB
+ Q
+GETX(DFN,DOMAIN) ; call XML version of the RPC
+ N ROOT,FILTER
+ S FILTER("text")=0 ; make explicit so XML & JSON return same
+ I ADDTEXT[(U_DOMAIN_U) S FILTER("text")=1
+ D GET^VPRD(.ROOT,DFN,DOMAIN,"","","","",.FILTER)
+ Q
+GETJ(DFN,DOMAIN) ; call JSON version of the RPC
+ N ROOT,FILTER
+ S FILTER("patientId")=DFN
+ S FILTER("domain")=DOMAIN
+ S FILTER("text")=0 ; make explicit so XML & JSON return same
+ I ADDTEXT[(U_DOMAIN_U) S FILTER("text")=1
+ D GET^VPRDJ(.ROOT,.FILTER)
+ Q
+BLDPTS(PTLST) ;; Return a list of patients for timing measurements
+ ; first check for a list in PATIENTS+1 and use that if present
+ N I,X
+ S X=$P($T(PATIENTS+1),";;",2,999) I $L(X) D  Q
+ . F I=1:1:$L(X,",") S PTLST($P(X,",",I))=""
+ ; otherwise, use the AVIVA patients
+ N NM
+ S NM="AVIVA" F  S NM=$O(^DPT("B",NM)) Q:$E(NM,1,5)'="AVIVA"  D
+ . S DFN=0 F  S DFN=$O(^DPT("B",NM,DFN)) Q:'DFN  S PTLST(DFN)=""
+ Q
+SHOW ; show the results from ^TMP
+ N DFN,RUN,DOMAIN,JSON,XML,JVAL,XVAL
+ N RUNS S RUNS=4 ; number of runs we're averaging
+ S DFN="" F  S DFN=$O(^TMP("VPRZGEX",$J,DFN)) Q:'DFN  F RUN=2:1:5 D
+ . S DOMAIN="" F  S DOMAIN=$O(^TMP("VPRZGEX",$J,DFN,RUN,DOMAIN)) Q:DOMAIN=""  D
+ . . S JVAL=^TMP("VPRZGEX",$J,DFN,RUN,DOMAIN,"JSON")
+ . . S XVAL=^TMP("VPRZGEX",$J,DFN,RUN,DOMAIN,"XML")
+ . . S JSON("patient",DFN)=$G(JSON("patient",DFN),0)+JVAL
+ . . S JSON("runs",DOMAIN)=$G(JSON("runs",DOMAIN),0)+1
+ . . S JSON("sum",DOMAIN)=$G(JSON("sum",DOMAIN),0)+JVAL
+ . . S XML("patient",DFN)=$G(XML("patient",DFN),0)+XVAL
+ . . S XML("runs",DOMAIN)=$G(XML("runs",DOMAIN),0)+1
+ . . S XML("sum",DOMAIN)=$G(XML("sum",DOMAIN),0)+XVAL
+ ;
+ W !,?15,"XML Mean",?30,"JSON Mean",?50,"(Totals XML / JSON)"
+ S DFN="" F  S DFN=$O(JSON("patient",DFN)) Q:'DFN  D
+ . W !,"DFN:",DFN
+ . W ?15,$J(XML("patient",DFN)/RUNS,8,4)
+ . W ?30,$J(JSON("patient",DFN)/RUNS,8,4)
+ . W ?50,"(",$J(XML("patient",DFN),8,4)," / ",$J(JSON("patient",DFN),8,4),")"
+ ;
+ W !
+ S DOMAIN="" F  S DOMAIN=$O(JSON("sum",DOMAIN)) Q:DOMAIN=""  D
+ . W !,DOMAIN
+ . W ?15,$J(XML("sum",DOMAIN)/XML("runs",DOMAIN),8,4)
+ . W ?30,$J(JSON("sum",DOMAIN)/JSON("runs",DOMAIN),8,4)
+ . W ?50,"(",$J(XML("sum",DOMAIN),8,4)," / ",$J(JSON("sum",DOMAIN),8,4),")"
+ Q
+PATIENTS ;;comma-delimited list of DFN's to use instead of AVIVA patients 
+ ;;
+DOMAINS ;;JSONextract,XMLextract
+ ;;allergy,allerg
+ ;;auxiliary              
+ ;;appointment,appointment
+ ;;diagnosis            
+ ;;document,document
+ ;;factor,factor
+ ;;immunization,immunization
+ ;;lab,lab
+ ;;med,med
+ ;;obs,observ
+ ;;order,order
+ ;;problem,problem
+ ;;procedure,clinicalProc
+ ;;consult,consult
+ ;;image,xray
+ ;;task
+ ;;visit,visit
+ ;;vital,vital
+ ;;mh
+ ;;ptf
+ ;;exam,exam
+ ;;cpt
+ ;;education,educat
+ ;;pov
+ ;;skin,skin
+ ;;treatment
+ ;;roadtrip
+ ;;zzzzz
+ ;;
+ ;;surgery,surg
+
+
+

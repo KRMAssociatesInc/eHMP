@@ -1,0 +1,43 @@
+<td colspan="100%">
+  <h4 class="red-summary"><strong>{{summary}}</strong></h4>
+  <p>Provider:  {{providerName}}<br>
+    Facility:  {{facilityName}}<br>
+    Location:  {{locationDisplayName}}<br>
+    Entered:  {{formatDate entered "MM/DD/YYYY"}}<br>
+    Resolved:  {{formatDate resolved "MM/DD/YYYY"}}</p>
+
+  <p>Onset:  {{formatDate onset "MM/DD/YYYY"}}<br>
+    Acuity: {{acuityName}}<br>
+    Service Connected: {{serviceConnected}}<br>
+  </p>
+
+  <p>Text:<br>
+    {{problemText}}</p>
+
+  <p>Comments:<br>
+  <ul>
+    {{#each comments}}
+    <li>
+      <ul class="list-unstyled">
+        <li>Summary:  {{summary}}</li>
+        <li>Entered:  {{formatDate entered "MM/DD/YYYY"}}</li>
+        <li>Entered by:  {{enteredByName}}</li>
+        <li>Comment:<p class="comment-tab">{{comment}}</p></li>
+      </ul
+    </li>
+    {{/each}}
+  </ul>
+
+  <p>Codes:</p>
+  <ul>
+    {{#each codes}}
+    <li>
+      <ul class="list-unstyled">
+        <li>System: {{system}}</li>
+        <li>Code: {{code}}</li>
+        <li>Display: {{display}}</li>
+      </ul>
+    </li>
+    {{/each}}
+  </ul>
+</td>

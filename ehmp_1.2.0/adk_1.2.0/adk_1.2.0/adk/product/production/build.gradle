@@ -1,0 +1,47 @@
+ext.set('repo', 'releases')
+ext.set('groupId', 'us.vistacore.adk')
+ext.set('artifactId', 'adk')
+
+def adkTar = file("build/adk.tgz")
+group = 'us.vistacore.adk'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.moowork.gradle:gradle-grunt-plugin:0.5'
+    }
+}
+apply plugin: 'grunt'
+
+task installNpm (type: Exec ){
+    commandLine "npm", "install"
+}
+task installBower (type: Exec ){
+    commandLine "bower-installer", "-p", "-r"
+}
+
+task findAndReplace {
+	 new GroovyShell().run(file("replaceIP.groovy"))	
+}
+
+task test {}
+task intTest{}
+intTest.dependsOn installGrunt, installNpm, installBower, grunt_inttest
+test.dependsOn installGrunt, installNpm, installBower, grunt_test
+task build {}
+build.dependsOn installGrunt, installNpm, installBower, grunt_build
+
+uploadArchives.dependsOn installGrunt, installNpm, installBower, grunt_test, grunt_deploy
+grunt_deploy.mustRunAfter installGrunt, installNpm, installBower
+grunt_build.mustRunAfter installGrunt, installNpm, installBower
+grunt_test.mustRunAfter installGrunt, installNpm, installBower
+grunt_inttest.mustRunAfter installGrunt, installNpm, installBower
+grunt_minify.mustRunAfter installGrunt, installNpm, installBower
+
+artifacts {
+    archives adkTar
+}
+
+//trigger build

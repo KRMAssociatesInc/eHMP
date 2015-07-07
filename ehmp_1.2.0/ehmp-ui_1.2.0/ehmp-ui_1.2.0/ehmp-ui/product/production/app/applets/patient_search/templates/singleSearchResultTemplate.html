@@ -1,0 +1,21 @@
+<div class="list-group-item-text row" style="cursor:pointer;cursor:hand">
+	<div class="col-md-6 no-padding-right patientDisplayName">
+		<span class="sr-only">Patient record, name</span>
+		{{fullName}}
+	</div>
+	<div class="col-md-2 no-padding-left ">
+		<span class="sr-only">. Social security number</span>
+		{{formatSSN ssn}}
+	</div>
+	<div class="col-md-2 no-padding">
+		<span class="sr-only">. Date of birth</span>
+		{{formatDate birthDate "MM/DD/YYYY"}}
+		<span class="sr-only">. Age</span>
+		({{getAge birthDate}}y)
+	</div>
+	<div class="col-md-2">
+		<span class="sr-only">. Gender</span>
+		{{genderName}}
+	</div>
+	<span class="sr-only">. Press enter to select this patient.</span>
+</div>

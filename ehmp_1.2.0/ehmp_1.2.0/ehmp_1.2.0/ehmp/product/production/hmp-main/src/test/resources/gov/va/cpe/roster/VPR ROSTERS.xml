@@ -1,0 +1,210 @@
+<results version='1.0'>
+<roster ien='19'  ownername='AVIVAUSER,TWELVE'  ownerid='1089'>
+<rosterName>AGP TEST ALL PATIENT</rosterName>
+<displayName>ALL PATIENT</displayName>
+<sources>
+<source sequence='1'  type='PXRM'  name='AGP RS GET ALL PATIENTS'  id='33'  operation='Union' />
+</sources>
+</roster>
+<roster ien='14'  ownername=''  ownerid='1804'>
+<rosterName>AVIVA TEST PATIENTS</rosterName>
+<displayName>AVIVA TEST PATIENTS</displayName>
+<sources>
+<source sequence='2'  type='Patient'  name='AVIVAPATIENT,ONE'  id='100842'  operation='Union' />
+<source sequence='3'  type='Patient'  name='AVIVAPATIENT,TWO'  id='100843'  operation='Union' />
+<source sequence='4'  type='Patient'  name='AVIVAPATIENT,THREE'  id='100844'  operation='Union' />
+<source sequence='5'  type='Patient'  name='AVIVAPATIENT,FOUR'  id='100845'  operation='Union' />
+<source sequence='6'  type='Patient'  name='AVIVAPATIENT,FIVE'  id='100846'  operation='Union' />
+<source sequence='7'  type='Patient'  name='AVIVAPATIENT,SIX'  id='100847'  operation='Union' />
+<source sequence='8'  type='Patient'  name='AVIVAPATIENT,SEVEN'  id='100841'  operation='Union' />
+<source sequence='9'  type='Patient'  name='AVIVAPATIENT,EIGHT'  id='100848'  operation='Union' />
+<source sequence='10'  type='Patient'  name='AVIVAPATIENT,NINE'  id='100849'  operation='Union' />
+<source sequence='11'  type='Patient'  name='AVIVAPATIENT,TEN'  id='100850'  operation='Union' />
+<source sequence='12'  type='Patient'  name='AVIVAPATIENT,TWENTYONE'  id='237'
+operation='Union' />
+<source sequence='13'  type='Patient'  name='AVIVAPATIENT,TWENTYTWO'  id='205'
+operation='Union' />
+<source sequence='14'  type='Patient'  name='AVIVAPATIENT,TWENTYTHREE'  id='25'
+ operation='Union' />
+<source sequence='15'  type='Patient'  name='AVIVAPATIENT,TWENTYFOUR'  id='229'
+ operation='Union' />
+<source sequence='16'  type='Patient'  name='AVIVAPATIENT,TWENTYFIVE'  id='231'
+ operation='Union' />
+<source sequence='17'  type='Patient'  name='AVIVAPATIENT,TWENTYSIX'  id='418'
+operation='Union' />
+<source sequence='18'  type='Patient'  name='AVIVAPATIENT,TWENTYSEVEN'  id='253'
+  operation='Union' />
+<source sequence='19'  type='Patient'  name='AVIVAPATIENT,TWENTYEIGHT'  id='3'
+operation='Union' />
+<source sequence='20'  type='Patient'  name='AVIVAPATIENT,TWENTYNINE'  id='217'
+ operation='Union' />
+<source sequence='21'  type='Patient'  name='AVIVAPATIENT,THIRTY'  id='8'  operation='Union' />
+</sources>
+</roster>
+<roster ien='3'  ownername=''  ownerid='1804'>
+<rosterName>BOB&apos;S CLINIC</rosterName>
+<displayName>BOB&apos;S CLINIC</displayName>
+<sources>
+<source sequence='2'  type='Clinic'  name='19 LINDA&apos;S FUNNY CLINIC'  id='169'  operation='Union' />
+<source sequence='3'  type='Patient'  name='GRAPHINGPATIENT,TWO'  id='100840'  operation='Union' />
+</sources>
+</roster>
+<roster ien='22'  ownername=''  ownerid='1804'>
+<rosterName>Brian&apos;s New Roster</rosterName>
+<displayName>Brian&apos;s New Roster</displayName>
+<sources>
+<source sequence='2'  type='Patient'  name='AVIVAPATIENT,TEN'  id='100850'  operation='Union' />
+</sources>
+</roster>
+<roster ien='15'  ownername=''  ownerid='1804'>
+<rosterName>CHF PATIENTS</rosterName>
+<displayName>CHF PATIENTS</displayName>
+<sources>
+<source sequence='2'  type='Patient'  name='AVIVAPATIENT,FOUR'  id='100845'  operation='Union' />
+<source sequence='3'  type='Patient'  name='AVIVAPATIENT,FIVE'  id='100846'  operation='Union' />
+<source sequence='4'  type='Patient'  name='AVIVAPATIENT,TWENTYONE'  id='237'  operation='Union' />
+<source sequence='5'  type='Patient'  name='AVIVAPATIENT,TWENTYTWO'  id='205'  operation='Union' />
+<source sequence='6'  type='Patient'  name='AVIVAPATIENT,TWENTYTHREE'  id='25' operation='Union' />
+<source sequence='7'  type='Patient'  name='AVIVAPATIENT,TWENTYFOUR'  id='229' operation='Union' />
+<source sequence='8'  type='Patient'  name='AVIVAPATIENT,TWENTYFIVE'  id='231' operation='Union' />
+<source sequence='9'  type='Patient'  name='AVIVAPATIENT,TWENTYSIX'  id='418'  operation='Union' />
+<source sequence='10'  type='Patient'  name='AVIVAPATIENT,TWENTYSEVEN'  id='253'  operation='Union' />
+<source sequence='11'  type='Patient'  name='AVIVAPATIENT,TWENTYEIGHT'  id='3' operation='Union' />
+<source sequence='12'  type='Patient'  name='AVIVAPATIENT,TWENTYNINE'  id='217' operation='Union' />
+<source sequence='13'  type='Patient'  name='AVIVAPATIENT,THIRTY'  id='8'  operation='Union' />
+<source sequence='14'  type='Patient'  name='AVIVAPATIENT,TWELVE'  id='100852' operation='Union' />
+<source sequence='15'  type='Patient'  name='AVIVAPATIENT,TWENTYTWO'  id='205' operation='Union' />
+<source sequence='16'  type='Patient'  name='AVIVAPATIENT,ONE'  id='100842'  operation='Union' />
+<source sequence='17'  type='Patient'  name='AVIVAPATIENT,NINE'  id='100849'  operation='Union' />
+</sources>
+</roster>
+<roster ien='6'  ownername=''  ownerid='1804'>
+<rosterName>DR FINKLESTEIN&apos;S CPRS LIST</rosterName>
+<displayName>DR FINKLESTEIN&apos;S CPRS LIST</displayName>
+<sources>
+<source sequence='2'  type='OE/RR'  name='CAMP 1-9'  id='65'  operation='Union'/>
+<source sequence='3'  type='Patient'  name='EIGHT,INPATIENT'  id='100716'  operation='Union' />
+</sources>
+</roster>
+<roster ien='2'  ownername=''  ownerid='1804'>
+<rosterName>DR JONATHAN LEED&apos;S WARD</rosterName>
+<displayName>DR JONATHAN LEED&apos;S WARD</displayName>
+<sources>
+<source sequence='2'  type='Ward'  name='7A GEN MED'  id='38'  operation='Union' />
+<source sequence='3'  type='Patient'  name='AVIVAPATIENT,TWENTYTWO'  id='205'  operation='Difference' />
+</sources>
+</roster>
+<roster ien='1'  ownername='PROVIDER,TWENTYTWO'  ownerid='1007'>
+<rosterName>DR SMITH&apos;S CLINIC</rosterName>
+<displayName>Urology Smith</displayName>
+<sources>
+<source sequence='2'  type='Clinic'  name='HOUR CLINIC'  id='200'  operation='Union' />
+<source sequence='3'  type='Patient'  name='TWELVE,PATIENT'  id='204'  operation='Union' />
+</sources>
+</roster>
+<roster ien='9'  ownername='AVIVAUSER,TWENTYTWO'  ownerid='1106'>
+<rosterName>DR WILLIAMS SPECIALTY</rosterName>
+<displayName>Dr Williams Specialty Patients</displayName>
+<sources>
+<source sequence='1'  type='Specialty'  name='CARDIAC SURGERY'  id='66'  operation='Union' />
+</sources>
+</roster>
+<roster ien='4'  ownername=''  ownerid='1804'>
+<rosterName>DR. JONE&apos;S PATIENT LIST</rosterName>
+<displayName>DR. JONE&apos;S PATIENT LIST</displayName>
+<sources>
+<source sequence='2'  type='Patient'  name='AVIVAPATIENT,FIVE'  id='100846'  operation='Union' />
+<source sequence='3'  type='Patient'  name='AVIVAPATIENT,TWENTYFIVE'  id='231' operation='Union' />
+<source sequence='4'  type='Patient'  name='PATIENT,DELETE'  id='376'  operation='Union' />
+<source sequence='5'  type='Patient'  name='ZZZRETONESEVENTY,PATIENT'  id='666' operation='Union' />
+<source sequence='6'  type='VPR Roster'  name='AVIVA TEST PATIENTS'  id='14'  operation='Union' />
+</sources>
+</roster>
+<roster ien='21'  ownername=''  ownerid='1804'>
+<rosterName>JERRY ROSTER TESTING</rosterName>
+<displayName>JERRY ROSTER TESTING</displayName>
+<sources>
+<source sequence='2'  type='Patient'  name='BCMA,EIGHTEEN-PATIENT'  id='100033' operation='Union' />
+</sources>
+</roster>
+<roster ien='26'  ownername='AVIVASURG,NURSE THREE'  ownerid='1115'>
+<rosterName>JERRY TEST CLINIC</rosterName>
+<displayName>JERRY TEST CLINIC AUDIOLOGY</displayName>
+<sources>
+<source sequence='1'  type='Clinic'  name='AUDIOLOGY'  id='64'  operation='Union' />
+</sources>
+</roster>
+<roster ien='27'  ownername='AVIVASURG,NURSE THREE'  ownerid='1115'>
+<rosterName>JERRY TEST SPECIALTY CARD</rosterName>
+<displayName>Cardiology Specialty</displayName>
+<sources>
+<source sequence='1'  type='Specialty'  name='CARDIOLOGY'  id='19'  operation='Union' />
+</sources>
+</roster>
+<roster ien='23'  ownername=''  ownerid='1804'>
+<rosterName>Kevin New</rosterName>
+<displayName>Kevin New</displayName>
+<sources>
+<source sequence='2'  type='Patient'  name='AVIVAPATIENT,ONE'  id='100842'  operation='Union' />
+<source sequence='3'  type='Patient'  name='AVIVAPATIENT,THREE'  id='100844'  operation='Union' />
+</sources>
+</roster>
+<roster ien='24'  ownername=''  ownerid='1804'>
+<rosterName>Roster Tom</rosterName>
+<displayName>Roster Tom</displayName>
+<sources>
+<source sequence='2'  type='Patient'  name='AVIVAPATIENT,FIVE'  id='100846'  operation='Union' />
+<source sequence='3'  type='Patient'  name='AVIVAPATIENT,SIX'  id='100847'  operation='Union' />
+<source sequence='4'  type='OE/RR'  name='KevinCHF'  id='304'  operation='Union' />
+</sources>
+</roster>
+<roster ien='16'  ownername='AVIVAUSER,SEVEN'  ownerid='1091'>
+<rosterName>TASK TEST</rosterName>
+<displayName>JERRYS TASKS</displayName>
+<sources>
+</sources>
+</roster>
+<roster ien='13'  ownername=''  ownerid='1804'>
+<rosterName>UNIT 7A</rosterName>
+<displayName>UNIT 7A</displayName>
+<sources>
+<source sequence='2'  type='Ward'  name='7A GEN MED'  id='38'  operation='Union' />
+</sources>
+</roster>
+<roster ien='18'  ownername=''  ownerid='1804'>
+<rosterName>VA-AVIVA RS PCMM PATIENTS WITH</rosterName>
+<displayName>VA-AVIVA RS PCMM PATIENTS WITH</displayName>
+<sources>
+<source sequence='2'  type='PXRM'  name='VA-AVIVA RS PCMM PATIENTS WITH CHF CODES'  id='25'  operation='Union' />
+</sources>
+</roster>
+<roster ien='17'  ownername='AVIVAUSER,SEVEN'  ownerid='1091'>
+<rosterName>VPR DASHBOARD</rosterName>
+<displayName>VPR Dashboard</displayName>
+<sources>
+</sources>
+</roster>
+<roster ien='5'  ownername='WARDCLERK,SEVENTYSEVEN'  ownerid='11289'>
+<rosterName>WARD 9C BLUE TEAM</rosterName>
+<displayName>Ward 9C Blue Team</displayName>
+<sources>
+<source sequence='1'  type='PCMM Team'  name='TEST TEAM'  id='2'  operation='Union' />
+</sources>
+</roster>
+<roster ien='20'  ownername=''  ownerid='1804'>
+<rosterName>XYZ PROVIDER LIST2</rosterName>
+<displayName>XYZ PROVIDER LIST2</displayName>
+<sources>
+<source sequence='2'  type='Provider'  name='PROVIDER,ONE'  id='983'  operation='Union' />
+</sources>
+</roster>
+<roster ien='25'  ownername=''  ownerid='1804'>
+<rosterName>test_AJC</rosterName>
+<displayName>test_AJC</displayName>
+<sources>
+<source sequence='2'  type='Patient'  name='AVIVAPATIENT,EIGHT'  id='100848'  operation='Union' />
+<source sequence='3'  type='Patient'  name='FIVEHUNDREDFIFTYFIVE,PATIENT'  id='100554'  operation='Union' />
+<source sequence='4'  type='Patient'  name='AVIVAPATIENT,SIX'  id='100847'  operation='Union' />
+</sources>
+</roster>
+</results>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TestCaseResultsReport" language="groovy" pageWidth="535" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<template><![CDATA["../../styles.jrtx"]]></template>
+	<style name="statusStyle" isDefault="false">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Boolean.valueOf($F{status}.equals( "UNKNOWN" ))]]></conditionExpression>
+			<style isDefault="false" style="statusStyle" mode="Opaque" backcolor="#FFFF00"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Boolean.valueOf($F{status}.equals( "FINISHED" ))]]></conditionExpression>
+			<style isDefault="false" style="statusStyle" mode="Opaque" backcolor="#66FF00"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[Boolean.valueOf($F{status}.equals( "FAILED" ))]]></conditionExpression>
+			<style isDefault="false" style="statusStyle" mode="Opaque" forecolor="#FFFF00" backcolor="#FF3333" isBold="true"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="FlowLayout" class="java.lang.Boolean"/>
+	<parameter name="ErrorDetails" class="java.lang.Boolean"/>
+	<field name="startTime" class="java.lang.String"/>
+	<field name="timeTaken" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="testCaseName" class="java.lang.String"/>
+	<field name="reason" class="java.lang.String"/>
+	<field name="testStepResults" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="testProperties" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<field name="failedTestSteps" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<detail>
+		<band height="201">
+			<break>
+				<reportElement x="0" y="1" width="100" height="1">
+					<printWhenExpression><![CDATA[!$P{FlowLayout}]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<textField>
+				<reportElement style="SmallHeader" mode="Opaque" x="0" y="2" width="535" height="32" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="0"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{testCaseName} + " Summary"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="statusStyle" x="0" y="65" width="71" height="15"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="81" y="66" width="109" height="18" backcolor="#FFFFFF"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{startTime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="190" y="67" width="87" height="14" backcolor="#FFFFFF"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{timeTaken}.concat( " ms" )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="277" y="67" width="258" height="14" backcolor="#FFFFFF"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{reason}]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="false">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="119" width="535" height="40" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="FlowLayout">
+					<subreportParameterExpression><![CDATA[$P{FlowLayout}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="testCaseName">
+					<subreportParameterExpression><![CDATA[$F{testCaseName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$F{testStepResults}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport:TestStepResultsReport"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement style="ColumnHeader" x="0" y="40" width="81" height="20"/>
+				<textElement/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="81" y="40" width="109" height="20"/>
+				<textElement/>
+				<text><![CDATA[Start Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="190" y="40" width="87" height="20"/>
+				<textElement/>
+				<text><![CDATA[Time Taken]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ColumnHeader" x="277" y="40" width="258" height="20"/>
+				<textElement/>
+				<text><![CDATA[Reason]]></text>
+			</staticText>
+			<subreport isUsingCache="true">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="88" width="535" height="30" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="Type">
+					<subreportParameterExpression><![CDATA["TestCase"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FlowLayout">
+					<subreportParameterExpression><![CDATA[$P{FlowLayout}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$F{testProperties}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport:PropertiesReport"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="false">
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="161" width="534" height="40">
+					<printWhenExpression><![CDATA[$P{ErrorDetails}]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="FlowLayout">
+					<subreportParameterExpression><![CDATA[$P{FlowLayout}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ErrorDetails">
+					<subreportParameterExpression><![CDATA[$P{ErrorDetails}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$F{failedTestSteps}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport:FailedTestSteps"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="158" width="100" height="1">
+					<printWhenExpression><![CDATA[!$P{FlowLayout}]]></printWhenExpression>
+				</reportElement>
+			</break>
+		</band>
+	</detail>
+</jasperReport>

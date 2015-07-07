@@ -1,0 +1,105 @@
+{
+    "VUID": "",
+    "abbreviation": "STV6",
+    "active": "Yes",
+    "booleanValueFalse": "",
+    "booleanValueTrue": "",
+    "dataType": 2,
+    "description": "ST Segment from Lead 6",
+    "displayName": "ST Segment V6",
+    "helpText": "The part of an electrocardiogram immediately following the QRS complex and merging into the T wave from Lead V6",
+    "multiSelectPicklist": "",
+    "term": "ST SEGMENT V6",
+    "qualifiers": [
+        {
+            "qualOrder": 1,
+            "qualTerm": {
+                "VUID": "",
+                "abbreviation": "ECG",
+                "active": "Yes",
+                "booleanValueFalse": "",
+                "booleanValueTrue": "",
+                "dataType": 0,
+                "description": "No Description",
+                "displayName": "Electrocardiogram",
+                "helpText": "No Help Text",
+                "multiSelectPicklist": "",
+                "term": "ELECTROCARDIOGRAM",
+                "termType": {
+                    "VUID": "",
+                    "id": 3,
+                    "type": "METHOD",
+                    "xmlTag": "METHOD_ID"
+                },
+                "uid": "urn:va:clioterminology:{CF5F1AB9-3B74-7FBA-E38B-C9EF54FE4DC5}",
+                "valueType": 0
+            },
+            "ranking": 0
+        }
+    ],
+    "termType": {
+        "VUID": "",
+        "id": 1,
+        "type": "OBSERVATION",
+        "xmlTag": "TERM_ID"
+    },
+    "units": [
+        {
+            "decPrecision": 2,
+            "maxValue": 1,
+            "minValue": "-0.5",
+            "refHigh": "0.1",
+            "refLow": "-0.05",
+            "unitTerm": {
+                "VUID": "",
+                "abbreviation": "mV",
+                "active": "Yes",
+                "booleanValueFalse": "",
+                "booleanValueTrue": "",
+                "dataType": 0,
+                "description": "No Description",
+                "displayName": "mV",
+                "helpText": "No Help Text",
+                "multiSelectPicklist": "",
+                "term": "MILLIVOLTS",
+                "termType": {
+                    "VUID": "",
+                    "id": 2,
+                    "type": "UNIT",
+                    "xmlTag": "UNIT_ID"
+                },
+                "uid": "urn:va:clioterminology:{40B59357-C9F2-0E5C-DCD7-6C815811F90D}",
+                "valueType": 0
+            }
+        },
+        {
+            "decPrecision": 2,
+            "maxValue": 10,
+            "minValue": -5,
+            "refHigh": 1,
+            "refLow": "-0.5",
+            "unitTerm": {
+                "VUID": "",
+                "abbreviation": "mm",
+                "active": "Yes",
+                "booleanValueFalse": "",
+                "booleanValueTrue": "",
+                "dataType": 0,
+                "description": "No Description",
+                "displayName": "mm",
+                "helpText": "No Help Text",
+                "multiSelectPicklist": "",
+                "term": "MILLIMETERS",
+                "termType": {
+                    "VUID": "",
+                    "id": 2,
+                    "type": "UNIT",
+                    "xmlTag": "UNIT_ID"
+                },
+                "uid": "urn:va:clioterminology:{23F389B2-8308-91DC-2620-EDFFF07B14A5}",
+                "valueType": 2
+            }
+        }
+    ],
+    "uid": "urn:va:clioterminology:{4D796057-5561-652D-D6A0-387DB5D16973}"
+}

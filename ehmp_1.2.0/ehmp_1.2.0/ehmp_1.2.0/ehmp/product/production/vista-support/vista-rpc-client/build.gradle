@@ -1,0 +1,54 @@
+apply plugin: 'java' 
+apply plugin: 'maven-publish'
+
+version = "0.13.1"
+
+dependencies {
+	// compile "org.slf4j:slf4j-nop:$versions.slf4jVersion"
+
+	// ['org.springframework.core','org.springframework.beans','org.springframework.context','org.springframework.transaction'].each {
+	//	compile group:'org.springframework', name: it, version: springVersion
+	// }
+	compile group: 'org.slf4j', name: 'slf4j-api', version: versions.slf4jVersion
+
+	compile "org.springframework:spring-core:$versions.springVersion"
+	compile "org.springframework:spring-beans:$versions.springVersion"
+	compile "org.springframework:spring-context:$versions.springVersion"
+	compile "org.springframework:spring-web:$versions.springVersion"
+	compile "org.springframework:spring-tx:$versions.springVersion"
+	compile "com.fasterxml.jackson.core:jackson-annotations:$versions.jacksonVersion"
+	compile "com.fasterxml.jackson.core:jackson-core:$versions.jacksonVersion"
+	compile "com.fasterxml.jackson.core:jackson-databind:$versions.jacksonVersion"
+	compile "commons-collections:commons-collections:$versions.commonsCollectionsVersion"
+	compile "commons-io:commons-io:$versions.commonsIoVersion"
+	compile "commons-pool:commons-pool:$versions.commonsPoolVersion"
+
+	runtime "org.slf4j:jcl-over-slf4j:$versions.slf4jVersion"
+	
+	// testRuntime "org.slf4j:slf4j-nop:$versions.slf4jVersion"
+
+	testCompile "org.springframework:spring-test:$versions.springVersion"
+	testCompile "org.easymock:easymock:$versions.easymockVersion"
+	testCompile "org.mockito:mockito-core:$versions.mockitoVersion"
+	testCompile "junit:junit:$versions.junitVersion"
+
+
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'VistA RPC Broker'
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'gov.va.hmp'
+            artifactId 'vista-rpc-client'
+            version '0.13.1'
+
+            from components.java
+        }
+    }
+}

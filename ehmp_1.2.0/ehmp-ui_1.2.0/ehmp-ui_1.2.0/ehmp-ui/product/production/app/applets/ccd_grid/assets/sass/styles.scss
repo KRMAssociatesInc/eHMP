@@ -1,0 +1,87 @@
+$green: #549947;
+$red: red;
+$labelGrey: #a2a2a2;
+
+.ccdModal {
+    .c32Text
+    {
+        width: auto;
+        min-width: 100%;
+        display: inline-block;
+        white-space: pre-wrap; /* css-3 */
+        white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        word-break: normal;
+        word-wrap: normal;
+        overflow: hidden;
+
+    }
+    .c32Text table
+    {
+        table-layout: auto;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .c32Text td, .c32Text th{
+        border: 1px solid #D2D4D1;
+        padding: 3px;
+        padding-left: 6px;
+        max-width: 300px;
+        min-width: 100px;
+    }
+    .c32Text td {
+        word-wrap: break-word;
+    }
+
+    .floatLeftRightAlign {
+        display: inline-block;
+        float: left;
+        text-align: right;
+    }
+    .floatRightLeftAlign {
+        display: inline-block;
+        text-align: left;
+    }
+    .capitalize {
+        text-transform: capitalize;
+    }
+    .Completed, .COMPLETED {
+        color: $green;
+    }
+    .Retracted {
+        color: $red;
+    }
+    .labelStyleColor {
+        color: $labelGrey;
+    }
+    .contentText {
+        white-space: pre-line;
+    }
+    a.js-anchor-top {
+        margin-right: 5px;
+    }
+
+    .topDetailLabel {
+        @extend .floatLeftRightAlign;
+        font-weight: bold;
+        font-size: 110%;
+        min-width: 75px;
+    }
+    .topDetailInfos {
+        @extend .floatRightLeftAlign;
+        font-size: 110%;
+        font-weight: bold;
+        padding-left: 7px;
+    }
+    .detailInfo {
+        @extend .floatRightLeftAlign;
+        font-size: 110%;
+        font-weight: bold;
+        padding-left: 7px;
+    }
+}
+.demographics {
+    font-size: 120%;
+    font-weight: bold;
+}

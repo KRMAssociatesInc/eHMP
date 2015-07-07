@@ -1,0 +1,8 @@
+<span role="button" type="button" id="navigation-dateButton"><i class="fa fa-calendar"></i></span>
+<span>
+	{{#ifExp selectedId "===" "all-range-global"}}
+	    All
+	{{else}}
+		{{fromDate}} - {{toDate}}
+	{{/ifExp}}
+</span>

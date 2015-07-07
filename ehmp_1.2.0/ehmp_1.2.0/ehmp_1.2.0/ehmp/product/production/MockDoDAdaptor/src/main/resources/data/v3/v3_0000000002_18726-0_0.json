@@ -1,0 +1,89 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010249"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "18726-0"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "orderable": [
+          {
+            "display": "ANKLE & STRESS VIEWS RT",
+            "code": "126754",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20130502133100",
+        "orderNumber": {
+          "id": "130502-00007"
+        },
+        "orderingProvider": {
+          "name": "DOCTOR, ALPHA"
+        },
+        "status": [
+          {
+            "display": "Ordered"
+          }
+        ],
+        "adminTimes": null,
+        "alternateSpecimenText": null,
+        "collectionMethod": null,
+        "duration": "D1",
+        "endDate": "20140502133000",
+        "enteringLocation": {
+          "name": "Dermatology Clinic FHCC"
+        },
+        "frequency": null,
+        "groupNumber": null,
+        "signedDate": null,
+        "signedBy": null,
+        "intervalPattern": null,
+        "interval": null,
+        "comments": "testing ccr 4427",
+        "priorOrderNumber": null,
+        "priority": "ROUTINE",
+        "processingPriority": null,
+        "scheduleType": [
+          {
+            "display": "One Time"
+          }
+        ],
+        "specimenText": null,
+        "startDate": "20130502000000",
+        "statusComments": null,
+        "verifiedBy": null
+      },
+      "dataType": 23
+    }
+  ]
+}

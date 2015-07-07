@@ -1,0 +1,593 @@
+body.patient-search-screen {
+    /*background-image: -ms-linear-gradient(top left, #678897 0%, #B9C2D1 100%);
+    background-image: -moz-linear-gradient(top left, #678897 0%, #B9C2D1 100%);
+    background-image: -o-linear-gradient(top left, #678897 0%, #B9C2D1 100%);
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #678897), color-stop(1, #B9C2D1));
+    background-image: -webkit-linear-gradient(top left, #678897 0%, #B9C2D1 100%);
+    background-image: linear-gradient(to bottom right, #678897 0%, #B9C2D1 100%);*/
+}
+.btn:focus {
+    outline: dotted 1px #333;
+}
+.patient-search-screen{
+    #center-region {
+        margin-top: 30px;
+        overflow-y: hidden;
+        overflow-x: hidden
+    }
+    .smallColumn {
+        /*margin-right: 40px;*/
+    }
+}
+
+[data-appletid="patient_search"].searchApplet {
+    font-size: 11px;
+    background:$primary-lighter;
+}
+
+.patient-search-screen > .container-fluid {
+    padding: 0;
+}
+[data-appletid="patient_search"] {
+    font-size: 14px;
+    .sidebar {
+        width: 18%;
+        position: fixed;
+        height: 100%;
+        overflow-y: hidden;
+        z-index: 1000;
+        min-width: 180px;
+        left: 0;
+    }
+    .inputRow{
+        padding-left: 20px;
+        position: relative;
+        height: 160px;
+        #searchCloseBtn {
+            color: #7ba8ba;
+            font-size: 50px;
+            opacity: .8;
+            text-shadow:0 1px 0 #333;
+            text-align: right;
+            padding-right: 20px;
+        }
+        #searchCloseBtn:active{
+            color:#628896;
+        }
+    }
+    .instructions {
+        p {
+            font-size: 14px;
+            color: #EEEEEE;
+            min-height: 20px;
+            margin:0;
+        }
+        p.info-padding {
+            padding: 0px 8px;
+            .fa {
+                padding: 0px 5px;
+            }
+        }
+    }
+    .title {
+        color: #EEEEEE;
+        min-height: 19px;
+    }
+    .darkBG {
+        /* background-color: #3D5157; */
+    }
+    .whiteBG {
+        background-color: white;
+    }
+    .clearBG {
+        background-color: rgba(80, 75, 75, 0.0);
+    }
+    .infoLabelStyle {
+        color: gray;
+        text-align:right;
+        font-weight: bold;
+    }
+    input.padding {
+        margin: 2%;
+        width: 96%;
+    }
+    .no-padding {
+        padding:0;
+    }
+    .no-padding-right {
+        padding-right: 0px;
+    }
+    .no-padding-left {
+        padding-left: 0px;
+    }
+    .smallColumn {
+        width: 23.8%
+    }
+    .mediumColumn {
+        width: 28%
+    }
+    .largeColumn {
+        width: 70.6%
+    }
+    #patient-search-error-message, #global-search-error-message, #patient-search-results-loading, .loading, p.error-message.padding {
+        padding: 0px 15px;
+    }
+    #patient-search-results-loading.min-height {
+        /*min-height: 20px;*/
+    }
+    #location-list-results {
+        max-height: 30vh;
+        min-height: 50px;
+        overflow-y: scroll;
+        color: $white;
+        .list-group-item-text {
+            margin: 5px 0;
+        }
+        a.list-group-item {
+            color:$white;
+        }
+    }
+    .border-right {
+        border-right: 1px solid #D7D7D7;
+    }
+    .simple-list {
+        .list-group-item.simple {
+            padding: 10px 15px;
+            background-color: rgba(80, 75, 75, 0.0);
+            padding-top: 3px;
+            padding-bottom: 2px;
+        }
+    }
+    .helpIconLink {
+        &:hover {
+            background: $secondary;
+            color: white;
+            .helpIconLinkAnchor {
+                color: $white;
+                &:hover {
+                    background-color: none;
+                    color: $white;
+                }
+            }
+        }
+        .helpIconLinkAnchor {
+            color: $secondary;
+            &:hover {
+                background-color: none;
+                color: $white;
+            }
+        }
+    }
+    
+    
+    #patient-search-input {
+        padding: 0 0 15px 30px;
+        input {
+            height: 40px;
+            border: 0;
+            box-shadow: none;
+            font-size: 19px;
+            font-weight: 100;
+        }
+        .fullWidth input {
+            border-bottom-right-radius: 24px;
+            border-top-right-radius: 24px;
+            border-right: 1px solid $primary-lighter;
+            border-top: 1px solid $primary-lighter;
+            border-bottom: 1px solid $primary-lighter;
+        }
+        i {
+            font-size: 24px;
+            font-weight: 700;
+            color: $secondary;
+        }
+        .input-group-addon {
+            border-bottom-left-radius: 24px;
+            border-top-left-radius: 24px;
+            background-color: white;
+            border: 0;
+            border-left: 1px solid $primary-lighter;
+            border-top: 1px solid $primary-lighter;
+            border-bottom: 1px solid $primary-lighter;
+        }
+        .fullWidth {
+            width: 35%;
+        }
+        #input-view-region{
+            .form-inline .form-control{
+                width: 20%;
+            }
+            title {
+                min-height: 19px
+            }
+        }
+    }
+    .patient-search-output{
+        margin-left: 10px;
+        margin-top: 0;
+        .pillsAndHeader{
+            width: 70%;
+            padding: 0;
+            #patient-search-pills{
+                padding: 5px 0px;
+                min-height: 33px;
+                background-color: $primary-lighter;
+                margin-top: 10px;
+                .nav >li >a {
+                    padding: 4px 7px;
+                    color:white;
+                }
+                .nav-pills {
+                    margin-left: 10px;
+                    li {
+                        margin: 0 3px;
+                        a {
+                            background-color: $secondary;
+                            border-color: $secondary;
+                            border-radius: 4px;
+                            color:white;
+                            &:hover {
+                                background-color: $primary;
+                            }
+                        }
+                        &.active > a {
+                            background-color: $primary;
+                        }
+                    }
+                }
+            }
+            #resultsNum {
+                width: 70.6%;
+                margin-left:20px;
+                margin-top: 10px;
+                color: white;
+                font-weight: bold;
+            }
+
+        }
+        #main-search-mySiteClinics {
+            a.list-group-item {
+                color:$white;
+            }
+        }
+        #patient-search-confirmation{
+            margin-top: 11px;
+            font-size: 12px;
+            padding: 0;
+            background: $white;
+            .patientInfo {
+                font-size: 14px;
+                margin: 10px 0;
+                line-height: 25px;
+            }
+            .sensitivePanel {
+                margin-bottom: 5px;
+                border: none;
+                box-shadow: none;
+            }
+            .ackMessagePanel {
+                .panel-body {
+                    padding: 10px 5px;
+                    border: 1px solid $primary-light;
+                    h5 {
+                        text-transform: capitalize;
+                        margin-top: 0px;
+                        margin-bottom: 10px;
+                        font-size: 12px;
+                    }
+                }
+                .patientInfo {
+                    margin: 5px 0;
+                    line-height: 11px;
+                    font-size: 11px;
+                }
+            }
+            .label-warning {
+                background-color:$tertiary;
+                color: $grey;
+            }
+            .panel-danger > .panel-heading {
+                background: $primary;
+                color:$white;
+                border-bottom: none;
+                .panel-title {
+                    color: $white;
+                }
+
+            }
+
+        }
+    }
+    #patient-search-main {
+        min-height: 150px;
+        padding: 0;
+        .col-md-3 {
+            position: absolute;
+            top: 17px;
+            z-index: 2000;
+            background-color: $primary;
+            margin: 10px 0 0 3px;
+            padding: 2px;
+        }
+        #location-list-filter-input .form-control {
+            background-color: $white;
+            border-color: $primary-lighter;
+            border-radius: 20px;
+            color: $primary;
+            ::-webkit-input-placeholder {
+                color: $grey;
+            }
+            :-moz-placeholder {
+                color: $grey;
+            }
+            ::-moz-placeholder {
+                color: $grey;
+            }
+            :-ms-input-placeholder {
+                color: $grey;
+            }
+            margin-top: 10px;
+        }
+
+        #patient-search-results{
+            padding: 0;
+            .results-table {
+                padding: 10px;
+            }
+            .list-group {
+                max-height: 50vh;
+                overflow-y: scroll;
+                font-size: 11px;
+            }
+            a.list-group-item {
+                padding-bottom: 10px;
+                padding-top: 10px;
+                color: $grey;
+                background-image:none;
+                &.active {
+                    background-color: $secondary-light;
+                    background-image:none;
+                    text-shadow: none;
+                    .list-group-item-text {
+                        color: $grey;
+                    }
+                }
+                &:hover, &:focus {
+                    background-color: $secondary-light;
+                    background-image:none;
+                    text-shadow: none;
+                    color: $grey;
+                }
+            }
+        }
+
+        #global-search-results{
+            padding: 0;
+            .list-group {
+                max-height: 50vh;
+                overflow-y: scroll;
+                font-size: 11px;
+            }
+            a.list-group-item{
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+        }
+        #my-cprs-search-results{
+            padding: 0;
+            .list-group {
+                max-height: 50vh;
+                overflow-y: scroll;
+                font-size: 11px;
+            }
+            a.list-group-item{
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+        }
+        .searchResults {
+            padding: 0;
+            float: right;
+            background: white;
+
+            #columnHeader {
+                color: white;
+                background-color: $primary;
+                margin:0;
+                line-height: 35px;
+                font-size: 12px;
+                .columnName {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    #patient-search-tab {
+        margin: 19px 0 -20px 7px;
+        li {
+            margin-right: 3px;
+            margin-left: 3px;
+            border-radius: 4px 4px 0 0;
+            a {
+                margin-bottom:10px;
+                margin-right: 0;
+                color: white;
+                padding:5px 10px;
+                font-size: 12px;
+                background-color: $secondary;
+                border-color: $secondary;
+                border-radius: 4px;
+            }
+            a:hover{
+                background-color: $primary;
+                border-color: $primary;
+            }
+            &.active > a {
+                border-color: $primary;
+                background-color: $primary;
+            }
+        }
+    }
+    .list-group {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .list-group-item {
+        border: none;
+        padding: 12px 15px;
+        small {
+            color: rgb(153, 153, 153);
+        }
+    }
+    .list-group-item:nth-child(n) {
+        background-color: $white;
+    }
+    .list-group-item:nth-child(2n) {
+        background-color: $primary-lightest;
+    }
+    .list-group-item:first-child, .list-group-item:last-child {
+        border-radius: 0;
+    }
+    .list-group-item.simple:hover, .list-group-item.simple:focus {
+        background-color: $primary-light;
+        background-image:none;
+        color:white;
+    }
+    .list-group-item.activeItem, .list-group-item.simple.activeItem, .list-group-item.activeItem:hover, .list-group-item.activeItem:focus {
+        text-shadow: 0 -1px 0 #3071a9;
+        z-index: 2;
+        color: #fff;
+        background-color: $primary-light;
+    }
+    span {
+        .patientDisplayName {
+            font-size: 16px;
+        }
+    }
+    .confirmHeader {
+    width: 100%;
+    margin: 0 auto;
+    }
+    .patientName {
+        font-size: 18px;
+        padding: 10px 0;
+        color: $grey;
+        font-weight: 700;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .patientDetails-item {
+        padding: 5px 0;
+    }
+    button.confirm {
+        margin-top: 40px;
+        text-transform: uppercase;
+        background: $secondary;
+        width: 90%;
+        border: none;
+        margin: 10px auto;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        color:#FFF;
+    }
+    button.confirm:focus{
+        outline: dotted 1px;
+    }
+    button.confirm.disabled{
+        background: $secondary;
+        opacity: 1;
+    }
+    .confirmHeading {
+        color: #999999;
+        font-size: 28px;
+        padding: 30px 0;
+    }
+    .fixedHeightZone {
+        max-height: 45vh;
+        overflow-y: auto;
+        padding: 10px 4px;
+    }
+    .noPadding {  //This is a dupilcate of no-padding
+        padding: 0;
+    }
+    .affix {
+        top: 30px;
+        padding-right: 22px;
+    }
+    p.text-info {
+        padding: 10px;
+    }
+    .sensitivePanel {
+        .panel-heading {
+            a {
+                text-decoration: none;
+            }
+            span {
+                font-size: 12px;
+                margin: 3px -10px 0px 0;
+            }
+        }
+    }
+    .acknowledged {
+        font-size: 11px;
+        line-height: 19px;
+        vertical-align: top;
+        i {
+            font-size: 16px;
+            padding-left: 4px;
+            line-height: 16.5px;
+            vertical-align: bottom;
+        }
+    }
+    #locationDateRange {
+        margin: 0 -14px;
+        padding: 0px 5px 0px 5px;
+        text-align: center;
+        border-bottom: 1px solid $primary-light;
+        .grid-filter-daterange {
+            .default-range{
+                margin: 3px 2px;
+            }
+            .active-range {
+                background-color: $secondary;
+            }
+            .daterange:not(.active-range):hover {
+                background-color: $secondary;
+                color: $white;
+            }
+            button {
+                font-size: 9px !important;
+                margin: 1px 0px !important;
+                padding: 0 1px !important;
+                border-radius: 2px;
+            }
+        }
+    }
+    .unAuthorized {
+        margin: 20px 5px;
+    }
+    .helpIconLink {
+        position: absolute;
+        right: 5px;
+        top: 1px;
+    }
+    #patient-search-input+.helpIconLink {
+        right: 20px;
+    }
+    #my-cprs-search-results+.helpIconLink {
+        top: -1px;
+    }
+    .patientDisplayName {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+@media screen and ( max-height: 500px ){
+     #confirmSection {
+        overflow-y: scroll;
+        max-height: 45vh;
+    }
+}
+
+

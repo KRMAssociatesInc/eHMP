@@ -1,0 +1,11 @@
+#parse("/layouts/main.vm")
+
+<script type="text/javascript" src="#springUrl('/lib/sh/shCore.js')"></script>
+<script type="text/javascript" src="#springUrl('/lib/sh/shBrushXml.js')"></script>
+<script type="text/javascript" src="#springUrl('/lib/sh/shBrushJScript.js')"></script>
+
+<link href="#springUrl('/css/shCore.css')" type="text/css" rel="stylesheet"/>
+<link href="#springUrl('/css/shThemeDefault.css')" type="text/css" rel="stylesheet"/>
+
+<link href="#springUrl('/css/api.css')" type="text/css" rel="stylesheet"/>
+

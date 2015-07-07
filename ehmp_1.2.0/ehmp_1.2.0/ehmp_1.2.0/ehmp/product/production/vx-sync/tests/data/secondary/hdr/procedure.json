@@ -1,0 +1,25 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "HDR",
+    "systemId": "HDR"
+  },
+  "data": {
+    "updated": "20140409083725",
+    "totalItems": 1,
+    "items": [
+      {
+        "category": "CP",
+        "dateTime": 199811190800,
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "interpretation": "NORMAL",
+        "kind": "Procedure",
+        "localId": "50;MCAR(699,",
+        "name": "LAPARASCOPY",
+        "statusName": "COMPLETE",
+        "uid": "urn:va:procedure:ABCD:226:50;MCAR(699,"
+      }
+    ]
+  }
+}

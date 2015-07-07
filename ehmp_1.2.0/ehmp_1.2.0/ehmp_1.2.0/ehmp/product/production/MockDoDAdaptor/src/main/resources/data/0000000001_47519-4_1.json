@@ -1,0 +1,340 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157582882",
+            "Procedure": "ASTHMA MILD PERSISTENT",
+            "EnteredByDate": "20131206161506",
+            "Code": "1038F",
+            "ProcedureDate": "20131206161157",
+            "EventId": "1000000077"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000078"
+      },
+      "dataType": 14
+    },
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580481",
+            "Procedure": "Clinical Social Work Counseling Group",
+            "EnteredByDate": "20131029160400",
+            "Code": "90857",
+            "ProcedureDate": "20131029160253",
+            "EventId": "1000000079"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000080"
+      },
+      "dataType": 14
+    },
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580454",
+            "Procedure": "Home Care Visit",
+            "EnteredByDate": "20131017160647",
+            "Code": "99600",
+            "ProcedureDate": "20131017160440",
+            "EventId": "1000000081"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000082"
+      },
+      "dataType": 14
+    },
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580456",
+            "Procedure": "Vaccines",
+            "EnteredByDate": "20131017160647",
+            "Code": "90749",
+            "ProcedureDate": "20131017155920",
+            "EventId": "1000000083"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000084"
+      },
+      "dataType": 14
+    },
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580457",
+            "Procedure": "Immunization Administration One Vaccine",
+            "EnteredByDate": "20131017160647",
+            "Code": "90471",
+            "ProcedureDate": "20131017155920",
+            "EventId": "1000000085"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000086"
+      },
+      "dataType": 14
+    },
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580455",
+            "Procedure": "Rabies Vaccine For Intradermal Use",
+            "EnteredByDate": "20131017160647",
+            "Code": "90676",
+            "ProcedureDate": "20131017155827",
+            "EventId": "1000000087"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000088"
+      },
+      "dataType": 14
+    },
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580358",
+            "Procedure": "Infectious Agent Genotype Analysis By Nucleic Acid HIV-1",
+            "EnteredByDate": "20131007155951",
+            "Code": "87906",
+            "ProcedureDate": "20131007155858",
+            "EventId": "1000000089"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000090"
+      },
+      "dataType": 14
+    },
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580357",
+            "Procedure": "Inf Agt Antig Det Nucleic Acid Amp Probe HIV-1",
+            "EnteredByDate": "20131007155950",
+            "Code": "87535",
+            "ProcedureDate": "20131007155853",
+            "EventId": "1000000091"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000092"
+      },
+      "dataType": 14
+    },
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "",
+            "EnteredBy": "MIDTIER, CGL TWO",
+            "ProcedureId": "2157580343",
+            "Procedure": "Pulmonary Function Tests Peak Expiratory Flow",
+            "EnteredByDate": "20131007155647",
+            "Code": "94150",
+            "ProcedureDate": "20131007153940",
+            "EventId": "1000000093"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000094"
+      },
+      "dataType": 14
+    },
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "BHIE, USERONE",
+            "ProcedureId": "2157580314",
+            "Procedure": "history of prior surgery   [For Hx of Tx, use H prefix]",
+            "EnteredByDate": "20131007154132",
+            "Code": "",
+            "ProcedureDate": "18991230050000",
+            "EventId": "1000000095"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000096"
+      },
+      "dataType": 14
+    },
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "BHIE, USERONE",
+            "ProcedureId": "2157580315",
+            "Procedure": "No late procedural complications",
+            "EnteredByDate": "20131007154132",
+            "Code": "",
+            "ProcedureDate": "18991230050000",
+            "EventId": "1000000097"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000098"
+      },
+      "dataType": 14
+    },
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "BHIE, USERONE",
+            "ProcedureId": "2157580316",
+            "Procedure": "reported skin test for tuberculosis",
+            "EnteredByDate": "20131007154132",
+            "Code": "",
+            "ProcedureDate": "18991230050000",
+            "EventId": "1000000099"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000100"
+      },
+      "dataType": 14
+    },
+    {
+      "dataRecord": {
+        "Procedures": [
+          {
+            "Status": "Active",
+            "Facility": "NH Great Lakes IL/0056",
+            "EnteredBy": "BHIE, USERONE",
+            "ProcedureId": "2157580317",
+            "Procedure": "No reported Pap smear",
+            "EnteredByDate": "20131007154132",
+            "Code": "",
+            "ProcedureDate": "18991230050000",
+            "EventId": "1000000101"
+          }
+        ],
+        "CustodianName": "ahlta",
+        "LoincCode": "47519-4",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EventId": "1000000102"
+      },
+      "dataType": 14
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "13",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "13",
+      "RetrievedCount": "13",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

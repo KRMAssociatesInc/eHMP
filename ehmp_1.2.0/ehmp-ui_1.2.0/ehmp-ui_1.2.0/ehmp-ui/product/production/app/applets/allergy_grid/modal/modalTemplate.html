@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-md-12"><h4 style="margin-top: 0px">{{summary}} </h4></div>
+</div>
+<div class="row">
+    <div class="col-md-9"><h5>Symptoms: {{reaction}}</h5> </div>
+    {{#if acuityName}}
+    {{#if severe}}
+    <div class="col-md-3 "><button type="button" class="btn btn-danger">{{acuityName}}</button></div>
+    {{else}}
+    {{#if moderate}}
+    <div class="col-md-3 "><button type="button" class="btn btn-warning">{{acuityName}}</button></div>
+    {{else}}
+    <div class="col-md-3 "><button type="button" class="btn btn-info">{{acuityName}}</button></div>
+    {{/if}}
+    {{/if}}
+    {{/if}}
+</div>
+&nbsp;
+<div class="row">
+    <div class="col-md-4 text-right text-muted">Drug Classes:</div>
+    <div id="modal-drugClasses" class="col-md-8 text-left">{{drugClassesNames}}</div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 text-right text-muted">Nature of Reaction:</div>
+    <div id="natureofreaction" class="col-md-8 text-left">{{#compare kind 'Allergy/Adverse Reaction'}}Adverse Reaction{{/compare}}</div>
+</div>
+<div class="row">
+    <div class="col-md-4 text-right text-muted">Entered By:</div>
+    <div id="originatorName" class="col-md-8 text-left">{{originatorName}}</div>
+</div>
+<div class="row">
+    <div class="col-md-4 text-right text-muted">Originated:</div>
+    <div id="modal-originatedFormatted" class="col-md-8 text-left">{{originatedFormatted}}</div>
+</div>
+<div class="row">
+    <div class="col-md-4 text-right text-muted">Verified:</div>
+    <div id="modal-verifierName" class="col-md-8 text-left"><!-- {{verifierName}} -->{{formatDate verified "MM/DD/YYYY - HH:mm"}}</div>
+</div>
+<div class="row">
+    <div class="col-md-4 text-right text-muted">Observed/Historical:</div>
+    <div id="modal-observedorhistorical" class="col-md-8 text-left">
+    {{#if historical}}Historical
+    {{else}}Observed
+    {{/if}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 text-right text-muted">Observed Date:</div>
+    <div id="modal-observedDate" class="col-md-8 text-left">{{observedDate}}</div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 text-right text-muted">Site:</div>
+    <div id="facilityName" class="col-md-8 text-left">{{facilityName}}</div>
+</div>
+&nbsp;
+<div class="row">
+  <div class="col-md-12"><hr/><h4>Comments:</h4></div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    {{#comments}}
+    <div class="row">
+      <div class="col-md-9 col-md-offset-2">{{comment}}<br/></div>
+    </div>
+    &nbsp;
+    {{/comments}}
+
+  </div>
+</div>

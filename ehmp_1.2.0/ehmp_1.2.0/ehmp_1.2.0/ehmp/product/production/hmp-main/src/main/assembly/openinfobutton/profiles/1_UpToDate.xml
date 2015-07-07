@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<knowledgeResourceProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../ResourceProfile-v2.0.xsd">
+	<header version="0" id="1">
+		<title>UpToDate</title>
+		<knowledgeResourcePurpose>Profile for UpTodate</knowledgeResourcePurpose>
+		<profileDescription>Provides definitions for infobutton links associated with problem list, medication list, and order entry</profileDescription>
+		<versionControl publicationDate="2010-08-30T15:13:00">
+			<modification>
+				<modificationDescription>First draft version</modificationDescription>
+				<modificationReason>
+					<code codeSystem="" displayName="" code=""/>
+				</modificationReason>
+			</modification>
+			<author>
+				<name firstName="Guilherme" lastName="Del Fiol"/>
+				<organization name="Duke University" id="1.3.6.1.4.1.4275">
+					<department>Community and Family Medicine</department>
+				</organization>
+				<jobTitle>Assistant Professor</jobTitle>
+				<contactInformation>
+					<eMail>guilherme.delfiol@duke.edu</eMail>
+				</contactInformation>
+			</author>
+		</versionControl>
+		<resourceContactInformation>
+			<sales>
+				<name firstName="Marianne" lastName="Boswell"/>
+				<contactInformation>
+					<eMail>mboswell@UpToDate.com</eMail>
+				</contactInformation>
+			</sales>
+			<technicalContact>
+				<name firstName="Howard" lastName="Strasberg"/>
+				<contactInformation>
+					<eMail>howard.strasberg@wolterskluwer.com</eMail>
+				</contactInformation>
+			</technicalContact>
+		</resourceContactInformation>
+		<resourceLink url="www.uptodate.com" linkName="UpToDate"/>
+	</header>
+	<profileDefinition>
+		<authorizedOrganizations>
+			<authorizedOrganization name="Veterans Administration" id="1.3.6.1.4.1.3768"/>
+			<authorizedOrganization name="University of Washington" id="1.3.6.1.4.1.150"/>
+		</authorizedOrganizations>
+		<relevantContexts>
+			<context name="Knowledge on conditions from problem list review and entry" id="1" hl7Compliant="true">
+				<contextDefinition>
+					<patientGender matching="false" searching="true"/>
+					<patientAgeGroup matching="false" searching="true"/>
+					<task matching="true" searching="true">
+						<matchingDomain>
+							<enumeratedDefinition>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.5.4" displayName="problem list review task" code="PROBLISTREV"/>
+								</enumerationItem>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.5.4" displayName="problem list entry task" code="PROBLISTE"/>
+								</enumerationItem>
+							</enumeratedDefinition>
+						</matchingDomain>
+					</task>
+					<encounterType matching="false" searching="true"/>
+					<performerKnowledgeUserType matching="true" searching="false">
+						<matchingDomain>
+							<enumeratedDefinition>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.5.110" displayName="Provider" code="PROV"/>
+								</enumerationItem>
+							</enumeratedDefinition>
+						</matchingDomain>
+					</performerKnowledgeUserType>
+					<subjectCoverage matching="false" searching="true"/>
+					<subTopicCoverage matching="false" searching="true">
+						<matchingDomain>
+							<enumeratedDefinition>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.6.177" displayName="Diagnosis" code="Q000175"/>
+								</enumerationItem>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.6.177" displayName="Treatment" code="Q000628"/>
+								</enumerationItem>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.6.177" displayName="Etiology" code="Q000209"/>
+								</enumerationItem>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.6.177" displayName="Prognosis" code="D011379"/>
+								</enumerationItem>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.6.177" displayName="Symptoms and Signs" code="Q000175"/>
+								</enumerationItem>
+							</enumeratedDefinition>
+						</matchingDomain>
+					</subTopicCoverage>
+				</contextDefinition>
+				<knowledgeRequestService>
+					<knowledgeRequestServiceLocation url="http://www.uptodate.com/online/content/search.do?searchType=HL7&amp;"/>
+				</knowledgeRequestService>
+			</context>
+
+			<context name="Knowledge on lab tests" id="2" hl7Compliant="true">
+				<contextDefinition>
+					<patientGender matching="false" searching="true"/>
+					<patientAgeGroup matching="false" searching="true"/>
+					<task matching="true" searching="true">
+						<matchingDomain>
+							<enumeratedDefinition>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.5.4" displayName="laboratory results review" code="LABRREV"/>
+								</enumerationItem>
+							</enumeratedDefinition>
+						</matchingDomain>
+					</task>
+					<encounterType matching="false" searching="true"/>
+					<performerKnowledgeUserType matching="true" searching="false">
+						<matchingDomain>
+							<enumeratedDefinition>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.5.110" displayName="Provider" code="PROV"/>
+								</enumerationItem>
+							</enumeratedDefinition>
+						</matchingDomain>
+					</performerKnowledgeUserType>
+					<subjectCoverage matching="false" searching="true"/>
+					<subTopicCoverage matching="false" searching="false">
+						<matchingDomain>
+							<enumeratedDefinition>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.6.177" displayName="Clinical significance" code="Clinical significance"/>
+								</enumerationItem>
+							</enumeratedDefinition>
+						</matchingDomain>
+					</subTopicCoverage>
+				</contextDefinition>
+				<knowledgeRequestService>
+					<knowledgeRequestServiceLocation url="http://www.uptodate.com/online/content/search.do?searchType=HL7&amp;"/>
+				</knowledgeRequestService>
+			</context>
+			<context name="Knowledge on meds" id="3" hl7Compliant="true">
+				<contextDefinition>
+					<patientGender matching="false" searching="true"/>
+					<patientAgeGroup matching="false" searching="true"/>
+					<task matching="true" searching="true">
+						<matchingDomain>
+							<enumeratedDefinition>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.5.4" displayName="medication order entry" code="MEDOE"/>
+								</enumerationItem>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.5.4" displayName="medication list review" code="MLREV"/>
+								</enumerationItem>
+							</enumeratedDefinition>
+						</matchingDomain>
+					</task>
+					<encounterType matching="false" searching="true"/>
+					<performerKnowledgeUserType matching="true" searching="false">
+						<matchingDomain>
+							<enumeratedDefinition>
+								<enumerationItem>
+									<code codeSystem="2.16.840.1.113883.5.110" displayName="Provider" code="PROV"/>
+								</enumerationItem>
+							</enumeratedDefinition>
+						</matchingDomain>
+					</performerKnowledgeUserType>
+					<subjectCoverage matching="false" searching="true"/>
+					<subTopicCoverage matching="false" searching="false">
+						<matchingDomain>
+							<enumeratedDefinition>
+								<enumerationItem>
+									<code displayName="Search UpToDate" codeSystem="" code=""/>
+								</enumerationItem>
+							</enumeratedDefinition>
+						</matchingDomain>
+					</subTopicCoverage>
+				</contextDefinition>
+				<knowledgeRequestService>
+					<knowledgeRequestServiceLocation url="http://www.uptodate.com/online/content/search.do?searchType=HL7&amp;"/>
+				</knowledgeRequestService>
+			</context>
+		</relevantContexts>
+	</profileDefinition>
+</knowledgeResourceProfile>

@@ -1,0 +1,81 @@
+require 'greenletters'
+require 'json'
+require File.dirname(__FILE__) + '/../../../infrastructure/vagrant/Servers.rb'
+
+DEFAULT_SERVER = 'vista-panorama'
+
+task default: [:export]
+
+desc 'Export HMP routines'
+task :export, [:server] => [:info, :ro_export, :unpack, :success] do |t, args|
+end
+
+task :info, :server do |t, args|
+  server = args[:server] || DEFAULT_SERVER
+  puts '=========================================================================='
+  puts "             Exporting HMP Routines from #{server}."
+  puts '           See _____________________________________________              '
+  puts '=========================================================================='
+end
+
+task :success, :server do |t, args|
+  server = args[:server] || DEFAULT_SERVER
+  puts '=========================================================================='
+  puts "                HMP Routines Exported from #{server}."
+  puts '=========================================================================='
+end
+
+task :unpack do
+  sh "python ~/projects/vistacore/ehmp/infrastructure/chef/cookbooks/cache/files/default/jds/unpackRO.py ~/projects/vistacore/ehmp/infrastructure/vagrant/virtualbox/vista-exchange/hmp.ro ~/projects/vistacore/ehmp/infrastructure/chef/cookbooks/cache/files/default/hmp/"
+  sh "rm ~/projects/vistacore/ehmp/infrastructure/vagrant/virtualbox/vista-exchange/hmp.ro"
+end
+
+desc 'create hmp.ro file in shared folder'
+task :ro_export, :server do |t, args|
+  server = args[:server] || DEFAULT_SERVER
+  IP = Servers.config[server]['ip']
+  NAMESPACE = "VISTA"
+  USER = "vagrant"
+
+  shell = Greenletters::Process.new("ssh #{USER}@#{IP} -i ~/projects/vistacore/.vagrant.d/insecure_private_key", :transcript => $stdout, :timeout => 15)
+  prompt = /#{NAMESPACE}>/
+
+  shell.on(:output, /already exists, do you want to overwrite it\? (Yes|No) =>/) do | process, match |
+    process.write("Yes\r")
+  end
+
+  # start the shell, and cache session
+  shell.start!
+  shell.wait_for(:output, /.*$/) do | process, match |
+    process.write("sudo csession cache -U #{NAMESPACE}\n")
+  end
+
+  shell.wait_for(:output, prompt) do | process, match |
+    process.write("D ^%RO\r")
+  end
+  shell.wait_for(:output, /Routine\(s\): /) do | process, match |
+    process.write("HMP*\r")
+  end
+  shell.wait_for(:output, /Routine\(s\):/) do | process, match |
+    process.write("\r")
+  end
+  shell.wait_for(:output, /Description:/) do | process, match |
+    process.write("HMP RO\r")
+  end
+  shell.wait_for(:output, /Device:/) do | process, match |
+    process.write("/vagrant/hmp.ro\r")
+  end
+  shell.wait_for(:output, /Parameters\? ".+" =>/) do | process, match |
+    process.write("\r")
+  end
+  shell.wait_for(:output, /Printer Format\? (Yes|No) => /) do | process, match |
+    process.write("No\r")
+  end
+  shell.wait_for(:output, prompt) do | process, match |
+    process.write("h\n")
+  end
+  shell.wait_for(:output, /.*$/) do | process, match |
+    process.write("exit\n")
+  end
+  puts
+end

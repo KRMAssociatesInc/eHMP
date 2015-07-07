@@ -1,0 +1,112 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALCOHOL",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "11681018",
+        "EnteredByDate": "20131025185511",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001145"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALCLOMETASONE DIPROPIONATE",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "2475",
+        "EnteredByDate": "20131025185511",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001146"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "ALCAFTADINE",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "MIDTIER, GLDTE ONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "1037330000",
+        "EnteredByDate": "20131025185511",
+        "Reaction": "Unknown",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000001147"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "",
+        "Allergen": "Not Assessed",
+        "Comments": "",
+        "Type": "",
+        "EnteredBy": "",
+        "CustodianId": "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "RepositoryId": "2.16.840.1.113883.3.42.10002.100001.8.22200",
+        "OtherIdentifier": "",
+        "EnteredByDate": "",
+        "Reaction": "",
+        "ReactionComment": "",
+        "Source": "",
+        "CustodianName": "va",
+        "LoincCode": "48765-2",
+        "Facility": "EL PASO VA HCS",
+        "EventId": "1000001148"
+      },
+      "dataType": 1
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "26",
+      "RetrievedCount": "26",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "va",
+      "SiteId": "2.16.840.1.113883.3.42.10002.100001.8.22200"
+    },
+    {
+      "ExpectedCount": "-1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "va",
+      "SiteId": "2.16.840.1.113883.3.42.10002.100001.8.22200"
+    }
+  ]
+}

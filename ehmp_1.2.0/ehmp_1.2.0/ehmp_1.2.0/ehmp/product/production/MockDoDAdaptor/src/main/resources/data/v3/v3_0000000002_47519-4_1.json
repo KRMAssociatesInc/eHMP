@@ -1,0 +1,520 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "11",
+      "RetrievedCount": "11",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010275"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "1005F",
+                "display": "Assessment & Intervention History Asthma Symptoms Evaluated"
+              }
+            ],
+            "date": "20131119165219",
+            "recordedId": {
+              "id": "2157581591"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010277"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "1038F",
+                "display": "ASTHMA MILD PERSISTENT"
+              }
+            ],
+            "date": "20131119165201",
+            "recordedId": {
+              "id": "2157581590"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010279"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "70450",
+                "display": "CT Scan Of The Head"
+              }
+            ],
+            "date": "20131118150705",
+            "recordedId": {
+              "id": "2157581482"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010281"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "99175",
+                "display": "Doctor's Orders: Emetic Administration / Observation"
+              }
+            ],
+            "date": "20131115193733",
+            "recordedId": {
+              "id": "2157581467"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010283"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Deleted due to an entry made in error"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90471",
+                "display": "Immunization Administration One Vaccine"
+              }
+            ],
+            "date": "20131115193115",
+            "recordedId": {
+              "id": "2157581468"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010285"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "90746",
+                "display": "Hepatitis B Vaccine (Active); 20 Years and Above"
+              }
+            ],
+            "date": "20131115193114",
+            "recordedId": {
+              "id": "2157581466"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010287"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "77300",
+                "display": "Radiation Therapy Basic Dosimetry Calculation"
+              }
+            ],
+            "date": "20131009180043",
+            "recordedId": {
+              "id": "2157580436"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010289"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "99144",
+                "display": "Conscious Sedation By Dr Performing Service 5 Yrs Or Older"
+              }
+            ],
+            "date": "20131009175314",
+            "recordedId": {
+              "id": "2157580422"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010291"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": "99509",
+                "display": "Home Care Visit For Assistance With ADLs / Personal Care"
+              }
+            ],
+            "date": "20131009174248",
+            "recordedId": {
+              "id": "2157580408"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010293"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": null,
+                "display": "ENT Surgical Result - Nose Headache Unchanged"
+              }
+            ],
+            "date": "18991230050000",
+            "recordedId": {
+              "id": "2157581598"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000010295"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "47519-4"
+          }
+        ],
+        "facility": null,
+        "procedure": [
+          {
+            "status": [
+              {
+                "display": "Active"
+              }
+            ],
+            "procedure": [
+              {
+                "code": null,
+                "display": "ENT - Upper Airway Services"
+              }
+            ],
+            "date": "18991230050000",
+            "recordedId": {
+              "id": "2157581599"
+            }
+          }
+        ]
+      },
+      "dataType": 6
+    }
+  ]
+}

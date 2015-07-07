@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<XMLTooling xmlns="http://www.opensaml.org/xmltooling-config"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust" 
+            xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+            xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+    
+    <!-- WSFED 1.X Protocol Object providers -->
+    <ObjectProviders>
+    
+        <ObjectProvider qualifiedName="wsa:Address">
+            <BuilderClass className="org.opensaml.ws.wsfed.impl.AddressBuilder" />
+            <MarshallingClass className="org.opensaml.ws.wsfed.impl.AddressMarshaller" />
+            <UnmarshallingClass className="org.opensaml.ws.wsfed.impl.AddressUnmarshaller" />
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="wsp:AppliesTo">
+            <BuilderClass className="org.opensaml.ws.wsfed.impl.AppliesToBuilder" />
+            <MarshallingClass className="org.opensaml.ws.wsfed.impl.AppliesToMarshaller" />
+            <UnmarshallingClass className="org.opensaml.ws.wsfed.impl.AppliesToUnmarshaller" />
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="wsa:EndPointReference">
+            <BuilderClass className="org.opensaml.ws.wsfed.impl.EndPointReferenceBuilder" />
+            <MarshallingClass className="org.opensaml.ws.wsfed.impl.EndPointReferenceMarshaller" />
+            <UnmarshallingClass className="org.opensaml.ws.wsfed.impl.EndPointReferenceUnmarshaller" />
+        </ObjectProvider>
+                
+        <ObjectProvider qualifiedName="wst:RequestedSecurityToken">
+            <BuilderClass className="org.opensaml.ws.wsfed.impl.RequestedSecurityTokenBuilder" />
+            <MarshallingClass className="org.opensaml.ws.wsfed.impl.RequestedSecurityTokenMarshaller" />
+            <UnmarshallingClass className="org.opensaml.ws.wsfed.impl.RequestedSecurityTokenUnmarshaller" />
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="wst:RequestSecurityTokenResponse">
+            <BuilderClass className="org.opensaml.ws.wsfed.impl.RequestSecurityTokenResponseBuilder" />
+            <MarshallingClass className="org.opensaml.ws.wsfed.impl.RequestSecurityTokenResponseMarshaller" />
+            <UnmarshallingClass className="org.opensaml.ws.wsfed.impl.RequestSecurityTokenResponseUnmarshaller" />
+        </ObjectProvider>
+
+    </ObjectProviders>
+    
+</XMLTooling> 

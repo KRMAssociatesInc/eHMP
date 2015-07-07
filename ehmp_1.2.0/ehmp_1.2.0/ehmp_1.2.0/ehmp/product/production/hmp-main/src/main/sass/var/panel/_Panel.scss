@@ -1,0 +1,51 @@
+/** @class Ext.panel.Panel */
+//
+$include-panel-default-ui: false;
+$include-panel-default-framed-ui: false;
+
+$panel-background-color: $panel-bg !default;
+$panel-border-width: 0px !default;
+$panel-border-color: $panel-bg !default;
+$panel-body-border-width: 0px !default;
+$panel-body-border-color: $panel-bg !default;
+$panel-body-color: $text-color !default;
+
+//$panel-header-color: $headings-color !default;
+$panel-header-font-size: $font-size-h4 !default;
+$panel-header-font-family: $headings-font-family !default;
+$panel-header-font-weight: bold !default;
+$panel-header-color: $panel-default-text !default;
+$panel-header-text-transform: none !default;
+$panel-header-line-height: 1.25 !default;
+$panel-header-padding: 4px 8px !default;
+$panel-header-background-color: $panel-bg !default;
+//$panel-header-border-width: 1px !default;
+//$panel-header-text-padding: 0 !default;
+
+//$panel-tool-spacing: 6px !default;
+
+$panel-frame-base-color: $panel-default-heading-bg !default;
+$panel-frame-border-color: $panel-default-border !default;
+$panel-frame-border-width: 1px !default;
+$panel-frame-border-radius: $panel-border-radius !default;
+$panel-frame-header-border-width: $panel-frame-border-width !default;
+$panel-frame-header-background-color: $panel-default-heading-bg !default;
+$panel-frame-header-inner-border-width: 0px !default;
+$panel-frame-padding: null;
+$panel-frame-body-border-color: $panel-frame-base-color !default;
+$panel-frame-body-border-width: $panel-body-border-width !default;
+//$panel-frame-header-padding: 5px !default;
+
+$panel-include-border-management-rules: true !default;
+
+// sidebar
+$panel-sidebar-background-color: #e1e6ec !default;
+$panel-sidebar-border-color: darken($panel-sidebar-background-color, 7%) !default;
+$panel-sidebar-header-color: #5d6a79 !default;
+
+// underlined-title
+$panel-underlined-title-header-font-weight: 500 !default;
+$panel-underlined-title-header-color:  $form-label-color !default;
+$panel-underlined-title-header-padding: 4px 1px 4px 1px !default;
+$panel-underlined-title-header-inner-border-color: $panel-underlined-title-header-color !default;
+$panel-underlined-title-header-inner-border-width: 0px 0px 1px 0px !default;

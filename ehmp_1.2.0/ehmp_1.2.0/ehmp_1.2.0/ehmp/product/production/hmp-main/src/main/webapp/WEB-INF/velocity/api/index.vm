@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>#springMessage("platform.name") &raquo Core Web Service APIs</title>
+    #parse("layouts/api.vm")
+    <script type="text/javascript">
+        Ext.require(['gov.va.hmp.Application', 'gov.va.hmp.Viewport']);
+        Ext.onReady(function () {
+            Ext.create('gov.va.hmp.Application', {
+                launch: function () {
+                    Ext.create('gov.va.hmp.Viewport', {
+                        items: [
+                            {
+                                xtype: 'component',
+                                region: 'center',
+                                contentEl: 'center',
+                                padding: '0 100 0 100',
+                                autoScroll: true
+                            }
+                        ]
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="center">
+    <h1>#springMessage("platform.name") Core Web Service APIs</h1>
+
+    <h2>Introduction</h2>
+
+    <p>A developer can use #springMessage("platform.name") core web service APIs to connect your own applications to the #springMessage("platform.name").</p>
+
+    <p>These resources are for software developers who which to use the #springMessage("platform.name") web service APIs, and assumes:</p>
+    <ul>
+        <li>Familiarity with HTTP/webserver technology.</li>
+        <li>Familiarity with the concepts of identity management, authentication and authorization.</li>
+        <li>Programming skills to write web service clients.</li>
+    </ul>
+
+    <p>#springMessage("platform.name") provides both REST and SOAP style web service APIs.</p>
+
+    <p>Because the REST APIs are based on open standards, you can use any web development language to access the APIs.</p>
+
+    <p>SOAP style web services also have bindings for almost every language, making them very portable as well.</p>
+
+    <p></p>
+
+    <h3>Which should I use?</h3>
+    <ul>
+        <li>REST is generally easier to use from browser-based desktop and mobile user interfaces (UI) built using <a
+                href="http://www.html5rocks.com/">HTML5</a> techniques.
+        </li>
+        <li>SOAP is generally more useful from a strongly typed language (like Java or C#) for traditional desktop or server-side applications and can require more setup.</li>
+    </ul>
+
+    <h2>REST APIs</h2>
+
+    <p>#springMessage("platform.name")'s REST APIs provide access to resources (data entities) via URI paths. To use a REST API, your application will make an HTTP request and parse the response. By default, the response format is JSON. If you wish, you can request XML instead of JSON, and in some cases, other formats (such as HTML or PDF) may also be requested.  Your methods will be the standard HTTP methods like GET, PUT, POST and DELETE (see API descriptions below for which methods are available for each resource).</p>
+
+    <h3>Getting Started</h3>
+
+    <p>If you would like to know more about REST in general, start with the Dare Obasanjo's blog post, <a
+            href="http://www.25hoursaday.com/weblog/2008/08/17/ExplainingRESTToDamienKatz.aspx">Explaining REST to Damien Katz.</a>
+    </p>
+
+    <h3>Authentication</h3>
+
+    <p>You can authenticate yourself for the REST APIs in three ways:</p>
+    <ol>
+        <li><b>Sign into the #springMessage("platform.name") manually</b> You will then be authenticated for the REST APIs for that same browser session.
+        </li>
+        <li><b>Use HTTP Basic Authentication</b> Use HTTP basic authentication (<code>Authentication</code> HTTP header) containing <code>Basic {vista-id};{station-number}:{access-code};{verify-code}</code>.
+        </li>
+        <li><b>Use OAuth Authentication</b> In the near future we plan to support <a
+                href="http://oauth.net">OAuth</a> authentication just like commercial web service APIs like <a
+                href="https://dev.twitter.com/docs">Twitter</a> and <a
+                href="http://www.flickr.com/services/api/auth.oauth.html">Flickr</a>.</li>
+    </ol>
+
+    <p>Refer to the <a href="#springUrl("/api/authentication")">details of authentication</a> for more information.</p>
+
+    <h3>REST Resources and URI Structure</h3>
+
+    <p>URIs for a REST API resource have the following structure:</p>
+    <pre class="brush:js">https:/{host}:{port}/{api-name}/{api-version}/{resource-path}?{query-params}</pre>
+
+    <p>Here is an explanation for each part of the URI:</p>
+    <ul>
+        <li><code>host</code> and <code>port</code> define the host and port where the #springMessage("platform.name") application lives.
+        </li>
+        <li><code>api-name</code> identifies a specific #springMessage("platform.name") API. For example, <code>rpc</code> is the API that allows interaction VistA Remote Procedure Calls.
+        </li>
+        <li><code>resource-path</code> identifies the required resource. In some cases, this may be a generic resource name such as <code>/foo</code>. In other cases, this may include a generic resource name and key. For example, <code>/foo</code> returns a list of the foo items and <code>/foo/{key}</code> returns the full content of the foo identified by the given key.
+            Refer to the details of the specific REST resources in each APIs REST resources reference guide.</li>
+    </ul>
+
+    <p>Often this documentation will use a 'relative' form of URI for convenience, leaving off the <code>host</code> and <code>port</code>, like:
+    </p>
+    <pre class="brush:js">/{api-name}/{api-version}/{resource-path}?{query-params}</pre>
+
+    <h3>Media Types</h3>
+
+    <p>All Core REST APIs support at least two response formats:</p>
+    <table>
+        <thead>
+        <tr>
+            <th>Response Format</th>
+            <th>Requested via...</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>JSON</td>
+            <td>Requested via one of the following:
+                <ul>
+                    <li><code>format</code> query parameter set to <code>json</code></li>
+                    <li><code>application/json</code> in the HTTP <code>Accept</code> header</li>
+                    <li><code>.json</code> extension</li>
+                </ul></td>
+        </tr>
+        <tr>
+            <td>XML</td>
+            <td>Requested via one of the following:
+                <ul>
+                    <li><code>format</code> query parameter set to <code>xml</code></li>
+                    <li><code>application/xml</code> in the HTTP <code>Accept</code> header</li>
+                    <li><code>.xml</code> extension</li>
+                </ul>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>Some APIs may support other response formats. See the resource guide for a specific REST API to discover exactly what they return.</p>
+
+    <h3 id="api-versions">API Versions</h3>
+
+    <p>The Rest APIs are version controlled. The version number of an API appears in its URI. For example, use this URI structure to request version of the <a>VistA RPC REST API</a>:
+    </p>
+    <pre class="brush:js">/rpc/1/</pre>
+
+    <p>To get the latest version of the API, you can also use the latest key-word. For example, if versions 1 and 2 of the '<code>roster</code>' API are available, the following two URIs will point to the same resources:
+    </p>
+    <pre class="brush:js">/roster/latest/</pre>
+    <pre class="brush:js">/roster/2/</pre>
+
+    <p>Notes:</p>
+    <ul>
+        <li>The API version number is an integer, such as 1 or 2.</li>
+        <li>The API version is independent of the #springMessage("platform.name") release number.</li>
+        <li>The API version may, or may not, change with a new #springMessage("platform.name") release. The API version number will change only when the updates to the API break the API contract, requiring changes in the code which uses the API. An addition to the API does not necessarily require a change to the API version number.
+        </li>
+        <li>In the future, when there are multiple API versions available, it is the intention that each version of an API will support at least two API versions i.e. the latest API version and the previous API version, facilitating time for clients to migrate off of deprecated APIs.
+        </li>
+    </ul>
+
+    <h3>HTTP Response Codes</h3>
+
+    <p>An error condition will return an HTTP error code as well as a response in the requested format describing the error.  Examples are TBD, but for now, see <a
+            href="http://code.google.com/apis/youtube/2.0/developers_guide_jsonc.html">JSON-C</a> for ideas.</p>
+
+    <h3>Methods</h3>
+
+    <p>You will use the standard HTTP methods (primarily <code>GET</code> and <code>POST</code>) to access the REST APIs. Please refer to the REST resources reference guide to see the HTTP methods available for each resource.
+    </p>
+
+    <h2>SOAP APIs</h2>
+
+    <p>The SOAP API exposes the same things as the REST API, except as methods with typed objects (as SOAP allows for).</p>
+
+    <p>To find out more about a SOAP API, simply point your SOAP 'stub generator' at the APIs WSDL file, which are listed below.</p>
+
+    <h3>Authentication</h3>
+
+    <p>TBD</p>
+
+    <h2>Overview</h2>
+    <a href="/api/swagger">REST API Docs</a>
+
+    <h3>Others</h3>
+
+    <p>There are other web service APIs that will be contributed to the #springMessage("platform.name") by other development teams, as well as other "core" APIs that will be discovered and developed with further analysis.</p>
+
+    <h3>More Info Here</h3>
+
+    <p>TBD</p>
+
+    <footer>
+        <p>This is an adaptation of <a
+                href="http://www.atlassian.com/">Atlassian</a>'s Confluence and JIRA web service API documentation, available under a <a
+                href="http://creativecommons.org/licenses/by/2.5/au/">Creative Commons Attribution 2.5 Australia</a> license.
+        </p>
+    </footer>
+
+</div>
+##<g:render template="/layouts/sh"/>
+</body>
+</html>

@@ -1,0 +1,11 @@
+// TODO: factor this type of toolbar into a custom panel ui so we can just the ui config on a panel to get this styling
+.hmp-tristate-panel > .x-panel-body {
+    background-color: $well-bg;
+}
+
+// TODO: factor this type of toolbar into a custom toolbar ui so we can just the ui config on a toolbar to get this styling
+.hmp-tristate-toolbar {
+  padding: 5px 0;
+  border: none;
+  background-color: $well-bg;
+}

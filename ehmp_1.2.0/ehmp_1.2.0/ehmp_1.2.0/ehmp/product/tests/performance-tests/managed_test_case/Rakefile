@@ -1,0 +1,121 @@
+# Purpose:
+# This rakefile executes the performance scenarios. This is the main entry point
+# for executing those tests.
+# It is assumed that the environment variable "ENVIRONMENT" has been set. See the
+# task "environment_setup" below.
+
+
+
+require 'rubygems'
+require 'cucumber'
+require 'cucumber/rake/task'
+
+
+
+# Check environment sanity and fail fast if not correct
+fail 'WORKSPACE environment variable not set. Did you "source infrastructure/set.env.sh"?' unless ENV.keys.include?('WORKSPACE')
+fail 'GEM_HOME environment variable not set. Did you "source infrastructure/set.env.sh"?' unless ENV.keys.include?('GEM_HOME')
+
+
+
+if ENV['ENVIRONMENT'] == nil then
+    raise "Environment variable 'ENVIORNMENT' must be set to one of { aws-perf, aws-managed-perf, local, local-managed, or ede }."
+end
+
+
+
+ENV['NOT_VAGRANT'] = "TRUE"   # needed to prevent VagrantfileUtil.rb from including the Berkshelfpatch.
+
+
+
+task default: [:endToEndTests]
+
+
+
+task :endToEndTests => [:environment_setup] do |t|
+    puts "Running all tests"
+
+    Cucumber::Rake::Task.new(:endToEndTests) do |t|
+        puts "Executing features"
+        t.cucumber_opts = 'features'
+    end
+
+end
+
+
+
+# Set env variables that are applicable in Virtualbox and AWS but not to EDE.
+def setInternetEnvs
+    ENV['GEM_SERVER_URL'] = "https://gem.vistacore.us"
+    ENV['VAGRANTFILE_DIR'] = "~/Projects/vistacore/ehmp/infrastructure/vagrant/managed/managed-vista-exchange"
+    ENV['PROJECT_REPO_URL'] = "https://git.vistacore.us/git/ehmp.git"
+    ENV['PROJECT_REPO_FQDN'] = "git.vistacore.us"
+    ENV['GIT_USERID'] = "build"
+    ENV['GIT_PASSWORD'] = "0ft3n"
+end
+
+
+
+task :get_managed_node_ips do
+    LocalProjectRoot = ENV["WORKSPACE"]
+    TargetEnvPath = LocalProjectRoot + "/infrastructure/vagrant/aws/vista-exchange"
+    require File.expand_path(TargetEnvPath + "/../VagrantfileUtil.rb")
+    ip1 = VagrantfileUtil::AWS.get_private_ip("../managed/create_perf_test_clients", "test_client_1")
+    ip2 = VagrantfileUtil::AWS.get_private_ip("../managed/create_perf_test_clients", "test_client_2")
+    puts "IP for test_client_1: " + ip1
+    puts "IP for test_client_2: " + ip2
+end
+
+
+
+task :environment_setup do
+
+    case ENV['ENVIRONMENT']
+    when 'aws-managed-perf'  # aws, managed
+        puts "Using AWS managed environment"
+        LocalProjectRoot = ENV["WORKSPACE"]
+        TargetEnvPath = LocalProjectRoot + "/infrastructure/vagrant/aws/vista-exchange"
+        require File.expand_path(TargetEnvPath + "/../../managed/ManagedServers.rb")
+        servers = get_managed_server_info_for_environment("aws-managed-perf")
+        setInternetEnvs
+        ENV['PROVIDER'] = "awsmconf"
+        ENV['PROVIDER_BOX_NAME'] = "aws-dummy"
+        ENV['PROVIDER_BOX_URL'] = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
+        ENV['SSH_USER_ID'] = servers.get_username(nil)
+        ENV['VAGRANTFILE_DIR'] = LocalProjectRoot + "/infrastructure/vagrant/managed/managed-vista-exchange"
+        
+        
+        # debug
+        puts "WORKSPACE=#{ENV['WORKSPACE']}"
+        puts "LocalProjectRoot=#{LocalProjectRoot}"
+        puts "VAGRANTFILE_DIR=#{ENV['VAGRANTFILE_DIR']}"
+        # end debug
+        
+        
+        require File.expand_path(TargetEnvPath + "/../../managed/ManagedServers.rb")
+        ENV['VAGRANTFILE_DIR'] = LocalProjectRoot + "/infrastructure/vagrant/managed/managed-vista-exchange"
+        ENV['EHMP_IP'] = servers.get_ip("ehmp")
+        ENV['VE_API_IP'] = servers.get_ip("ve-api")
+        ENV['JDS_IP'] = servers.get_ip("jds")
+    when 'local-managed'      # virtualbox, managed
+        puts "Using Virtualbox managed environment"
+        setInternetEnvs
+        ENV['WORKSPACE'] = '/Users/bergc/Projects/vistacore/ehmp'
+        ENV['PROVIDER'] = "vbmconf"
+        ENV['SSH_USER_ID'] = "vagrant"
+        ENV['PROVIDER_BOX_NAME'] = "rhel-6.5"
+        ENV['PROVIDER_BOX_URL'] = "https://nexus.vistacore.us/nexus/content/repositories/filerepo/com/vagrantup/basebox/rhel/rhel-6-5-trial/rhel-6-5-trial/6-5/rhel-6-5-trial-6-5.box"
+        LocalProjectRoot = ENV["WORKSPACE"]
+        TargetEnvPath = LocalProjectRoot + "/infrastructure/vagrant/aws/vista-exchange"
+        require File.expand_path(TargetEnvPath + "/../../managed/ManagedServers.rb")
+        servers = get_managed_server_info_for_environment("local-managed")
+        ENV['EHMP_IP'] = servers.get_ip("ehmp")
+        ENV['VE_API_IP'] = servers.get_ip("ve-api")
+        ENV['JDS_IP'] = servers.get_ip("jds")
+    when 'ede-managed-perf'
+        raise "ede not implemented yet"
+    else
+        raise "Unrecognized environment #{ENV['ENVIRONMENT']}"
+    end
+end
+

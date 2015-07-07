@@ -1,0 +1,14 @@
+<div title="Global Search Input">
+<h4 class="title">Nationwide Search</h4>
+<div class="text body instructions">
+    <p>Enter the patient's last name and at least one other field to display results.</p>
+</div>
+<div class="form-inline" id="globalSearchInputGroup">
+    <input type="text" autocomplete="off" class="form-control" id="globalSearchLastName" placeholder="Last Name (required)" title="Global Search last name field selected, fill out this field and at least one other field to perform search." value="{{globalSearchParameters.name-last}}" tabindex="0" aria-required="true" />
+    <input type="text" autocomplete="off" class="form-control" id="globalSearchFirstName" onfocus="this.value = this.value;" placeholder="First Name" title="First name field selected" value="{{globalSearchParameters.name-first}}" tabindex="0" />
+    <input type="text" autocomplete="off" class="form-control" id="globalSearchDob" placeholder="DOB: MM/DD/YYYY" value="{{globalSearchParameters.dob}}" tabindex="0" title="Date of birth field selected, enter in MMDDYYYY format." />
+    <input type="text" autocomplete="off" class="form-control" id="globalSearchSsn" placeholder="SSN: ###-##-####" value="{{globalSearchParameters.ssn}}" tabindex="0" title="Social security number field selected, enter a nine-digit SSN without dashes." />
+    <a id="globalSearchButton" class="btn btn-lg btn-primary disabled" disabled="disabled" tabindex="0"><span class="sr-only">Search button, press Enter to execute search.  There will be a delay between activation of the search button and return of results.</span>Search</a>
+</div>
+</div>
+

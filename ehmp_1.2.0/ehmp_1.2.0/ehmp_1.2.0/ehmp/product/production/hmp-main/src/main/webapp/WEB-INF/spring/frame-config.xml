@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jms="http://www.springframework.org/schema/jms" xmlns:drools="http://drools.org/schema/drools-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://drools.org/schema/drools-spring http://anonsvn.jboss.org/repos/labs/labs/jbossrules/trunk/drools-container/drools-spring/src/main/resources/org/drools/container/spring/drools-spring-1.0.0.xsd http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.1.xsd">
+
+	<!-- Drools Setup/Config 
+	<drools:kbase id="kbase1">
+		<drools:resources>
+			<drools:resource source="classpath:gov/va/cpe/vpr/frames/HelloWorldAlert.drl"/>
+		</drools:resources>
+
+		<drools:configuration>
+			<drools:mbeans enabled="true" />
+		</drools:configuration>
+	</drools:kbase>
+	-->
+	
+	<!-- termeng Config -->
+	<bean id="termEngSCTDB" class="gov.va.cpe.vpr.termeng.H2TermDataSource" c:jdbcurl="jdbc:h2:${hmp.data.dir}/termdb-${termdb.sctdb.version}-sctdb/termdb;ACCESS_MODE_DATA=r" destroy-method="close"/>
+   	<bean id="termEngLNCDB" class="gov.va.cpe.vpr.termeng.H2TermDataSource" c:jdbcurl="jdbc:h2:${hmp.data.dir}/termdb-${termdb.lncdb.version}-lncdb/termdb;ACCESS_MODE_DATA=r" destroy-method="close"/>
+	<bean id="termEngDrugDB" class="gov.va.cpe.vpr.termeng.H2TermDataSource" c:jdbcurl="jdbc:h2:${hmp.data.dir}/termdb-${termdb.drugdb.version}-drugdb/termdb;ACCESS_MODE_DATA=r" destroy-method="close"/>
+	<bean id="termEngICDDB" class="gov.va.cpe.vpr.termeng.H2TermDataSource" c:jdbcurl="jdbc:h2:${hmp.data.dir}/termdb-${termdb.icddb.version}-icddb/termdb;ACCESS_MODE_DATA=r" destroy-method="close"/>
+	<bean id="termEng" class="gov.va.cpe.vpr.termeng.TermEng" factory-method="createInstance">
+   		<constructor-arg index="0">
+            <array>
+            	<bean class="gov.va.cpe.vpr.termeng.LuceneSearchDataSource" c:autoBuild="false" c:src-ref="termEngLNCDB" c:luceneDir="${hmp.data.dir}/termdb-${termdb.lncdb.version}-lncdb/lucene" destroy-method="close"/>
+            	<bean class="gov.va.cpe.vpr.termeng.LuceneSearchDataSource" c:autoBuild="false" c:src-ref="termEngSCTDB" c:luceneDir="${hmp.data.dir}/termdb-${termdb.sctdb.version}-sctdb/lucene" destroy-method="close"/>
+            	<bean class="gov.va.cpe.vpr.termeng.LuceneSearchDataSource" c:autoBuild="false" c:src-ref="termEngDrugDB" c:luceneDir="${hmp.data.dir}/termdb-${termdb.drugdb.version}-drugdb/lucene" destroy-method="close"/>
+            	<bean class="gov.va.cpe.vpr.termeng.LuceneSearchDataSource" c:autoBuild="false" c:src-ref="termEngICDDB" c:luceneDir="${hmp.data.dir}/termdb-${termdb.icddb.version}-icddb/lucene" destroy-method="close"/>
+            </array>
+        </constructor-arg>
+   	</bean>
+    <bean id="jlvHddDao" class="gov.va.cpe.vpr.termeng.jlv.JLVHddDao" factory-method="createInstance">
+      <constructor-arg type="java.lang.String" value="jdbc:h2:${hmp.data.dir}/termdb-${termdb.jlvdb.version}-jlvdb/termdb" />
+    </bean>
+
+   	<!-- Frame Registry -->
+   	<bean id="vddLoader" class="gov.va.cpe.vpr.frameeng.FrameRegistry.ViewDefDefFrameLoader"/>
+
+   	<bean id="frameRegistry" class="gov.va.cpe.vpr.frameeng.FrameRegistry" init-method="load">
+   		<constructor-arg index="0">
+   			<array>
+	   			<bean class="gov.va.cpe.vpr.frameeng.FrameRegistry.SpringFrameLoader"/>
+	   			<ref bean="vddLoader"/>
+	   			<!-- Not ready yet:
+	   			<bean class="gov.va.cpe.vpr.frameeng.FrameRegistry.ViewDefDefFrameLoader"/>
+	   			<bean class="gov.va.cpe.vpr.frameeng.FrameRegistry.DroolsFrameLoader" c:kb-ref="kbase1"/>
+	   			<bean class="gov.va.cpe.vpr.frameeng.FrameRegistry.RemindersFrameLoader" c:tpl-ref="synchronizationRpcTemplate"/>
+	   			<bean class="gov.va.cpe.vpr.frameeng.FrameRegistry.ProtocolFileFrameLoader" c:dir="classpath:gov/va/cpe/vpr/frames/"/>
+	   			 -->
+   			</array>
+ 		</constructor-arg>
+   	</bean>
+
+	<!-- Frame engine that runs async (listens to events) and saves generated alerts -->   	
+	<bean id="frameEng" class="gov.va.cpe.vpr.frameeng.FrameEng"/>
+
+   	<!--  Sync frame runner that can be called by web services, viewdefs, etc. -->
+   	<bean id="jdsSaveActionRunner" class="gov.va.cpe.vpr.frameeng.FrameRunner.JDSSaveActionRunner" c:tpl-ref="jdsTemplate"/>
+	<bean id="frameRunner" class="gov.va.cpe.vpr.frameeng.FrameRunner">
+		<constructor-arg><ref bean="frameRegistry"/></constructor-arg>
+		<constructor-arg><null/></constructor-arg>
+	</bean>
+	   		
+	
+</beans>

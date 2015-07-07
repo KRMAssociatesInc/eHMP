@@ -1,0 +1,19 @@
+# Logs
+*.log
+
+# scratch files and directories
+xtmp/
+reports/
+tmp/
+logs/
+
+xx*.js
+test.js
+test-*.js
+
+*.sublime-project
+*.sublime-workspace
+.idea
+.ruby-version
+
+production/terminology

@@ -1,0 +1,47 @@
+defaultTasks 'acceptanceTest'
+
+task bundleInstall{
+  inputs.file new File(projectDir, 'Gemfile')
+  inputs.file new File(projectDir, 'Gemfile.lock')
+  outputs.file new File(projectDir, '.lastBundleInstallFlag')
+
+  doLast{
+    exec {
+      executable = "bundle"
+      args = ['install']
+    }
+
+    ant.touch(file: new File(projectDir, '.lastBundleInstallFlag'))
+  }
+}
+
+task acceptanceTest(dependsOn: bundleInstall){
+  group "Test"
+  description "Runs the acceptance tests for ADK with Default"
+  doLast{
+    exec {
+      executable = "bundle"
+      args = ['exec', 'rake']
+    }
+  }
+}
+task acceptanceTestPhantomJS(dependsOn: bundleInstall){
+  group "Test"
+  description "Runs the acceptance tests for ADK with PhantomJS"
+  doLast{
+    exec {
+      executable = "bundle"
+      args = ['exec', 'rake', 'BTYPE=PHANTOMJS']
+    }
+  }
+}
+task acceptanceTestFirefox(dependsOn: bundleInstall){
+  group "Test"
+  description "Runs the acceptance tests for ADK with Firefox"
+  doLast{
+    exec {
+      executable = "bundle"
+      args = ['exec', 'rake', 'BTYPE=FIREFOX']
+    }
+  }
+}

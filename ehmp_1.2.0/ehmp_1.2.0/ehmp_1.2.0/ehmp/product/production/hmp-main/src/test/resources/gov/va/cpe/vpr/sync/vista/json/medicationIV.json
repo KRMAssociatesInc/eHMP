@@ -1,0 +1,56 @@
+{
+    "dosages": [
+        {
+            "routeName": "IV",
+            "scheduleName": "NOW"
+        }
+    ],
+    "facilityCode": "500D",
+    "facilityName": "SLC-FO HMP DEV",
+    "imo": false,
+    "localId": "46V;I",
+    "medStatus": "urn:sct:392521001",
+    "medStatusName": "historical",
+    "medType": "urn:sct:105903003",
+    "name": "FUROSEMIDE INJ,SOLN",
+    "orders": [
+        {
+            "locationCode": "urn:va:location:500D:66",
+            "locationName": "5 WEST PSYCH",
+            "orderUid": "urn:va:order:F484:8:10090",
+            "ordered": "199906221019-0700",
+            "pharmacistUid": "urn:va:user:F484:11817",
+            "pharmacistName": "RADTECH,FORTYONE",
+            "providerCode": "urn:va:user:F484:11595",
+            "providerName": "PROVIDER,TWOHUNDREDFORTYNINE"
+        }
+    ],
+    "overallStart": "199906221100-0700",
+    "products": [
+        {
+            "drugClassCode": "urn:vadc:CV702",
+            "drugClassName": "LOOP DIURETICS",
+            "ingredientCode": "urn:vuid:4017830",
+            "ingredientName": "FUROSEMIDE",
+            "ingredientRole": "urn:sct:418804003",
+            "strength": "20 MG",
+            "suppliedCode": "urn:vuid:4002371",
+            "suppliedName": "FUROSEMIDE 10MG/ML INJ"
+        },
+        {
+            "drugClassCode": "urn:vadc:TN101",
+            "drugClassName": "IV SOLUTIONS WITHOUT ELECTROLYTES",
+            "ingredientCode": "urn:vuid:4017760",
+            "ingredientName": "DEXTROSE",
+            "ingredientRole": "urn:sct:418297009",
+            "suppliedCode": "urn:vuid:4014924",
+            "suppliedName": "DEXTROSE 5% INJ,BAG,1000ML",
+            "volume": "50 ML"
+        }
+    ],
+    "qualifiedName": "FUROSEMIDE in DEXTROSE",
+    "stopped": "199906221500-0700",
+    "uid": "urn:va:med:F484:229:10090",
+    "vaStatus": "EXPIRED",
+    "vaType": "V"
+}

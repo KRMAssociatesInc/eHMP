@@ -1,0 +1,140 @@
+require File.dirname(__FILE__) + '/../../../infrastructure/vagrant/aws/VagrantfileUtil.rb'
+require File.dirname(__FILE__) + '/../../../infrastructure/vagrant/Servers.rb'
+require 'deep_merge'
+
+task :default => [:inttest]
+
+task :inttest, [:env] => [:environment_setup]
+task :operational_data, [:env] => [:environment_setup]
+task :patient_sync, [:env] => [:environment_setup]
+
+task :environment_setup, :env do |task, args|
+  env = args[:env] || 'virtualbox'
+
+  environment_endpoints(env)
+  rewrite_worker_config(env)
+end
+
+def environment_endpoints(env)
+  case env
+  when "virtualbox"
+    p "Running with virtualbox environments"
+    ENV["VXSYNC_IP"] = Servers::VXSync.localIP
+    ENV["JDS_IP"] = Servers::JDS.localIP
+    ENV["SOLR_IP"] = Servers::Solr.localIP
+    ENV["KODAK_IP"] = Servers::VistaKodak.localIP
+    ENV["PANORAMA_IP"] = Servers::VistaPanorama.localIP
+    ENV["JMEADOWS_IP"] = Servers::Mocks.localIP
+    ENV["MVI_IP"] = Servers::Mocks.localIP
+    ENV["HDR_IP"] = Servers::Mocks.localIP
+    ENV["VLER_IP"] = Servers::Mocks.localIP
+    ENV["PGD_IP"] = Servers::Mocks.localIP
+  when "aws"
+    p "Running with aws environments"
+    ve_api_machine = ENV["VE_API_NAME"] || "ve-api-local"
+    ENV["VXSYNC_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "vx-sync")
+    ENV["JDS_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "jds")
+    ENV["SOLR_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "solr")
+    ENV["MOCKS_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "mocks")
+    puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    puts "vx-sync = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "vx-sync")}"
+    puts "panorama = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "vista-panorama")}"
+    puts "kodak = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "vista-kodak")}"
+    puts "jds = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "jds")}"
+    puts "solr = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "solr")}"
+    puts "mocks = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "mocks")}"
+    puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  when "ede"
+    p "Running with ede environments"
+    # TODO: Update these when we decide on a permanent location for EDE IP addresses
+    ENV["VXSYNC_IP"] = Servers::EHMP.localIP
+    ENV["JDS_IP"] = Servers::JDS.localIP
+    ENV["SOLR_IP"] = Servers::Solr.localIP
+  when "ede-lxc"
+    p "Running with ede-lxc environments"
+    ENV["VXSYNC_IP"] = Containers::EHMP.localIP
+    ENV["JDS_IP"] = Containers::JDS.localIP
+    ENV["SOLR_IP"] = Containers::Solr.localIP
+  else
+    fail "Unrecognized environment type: #{env}. Allowable types are: 'virtualbox', 'aws', and 'ede', and 'ede-lxc'"
+  end
+end
+
+def rewrite_worker_config(env)
+  case env
+  when "aws"
+    config = {
+        "vxsync" => {
+          "vistaSites" => {
+            "9E7A" => {
+              "name"=> "panorama",
+              "host"=> "#{VagrantfileUtil::AWS.get_private_ip('vista-exchange', "vista-panorama")}",
+              "mockHost"=> "127.0.0.1",
+              "port"=> 9210,
+              "mockPort"=> 10001,
+              "accessCode"=> "ep1234",
+              "verifyCode"=> "ep1234!!",
+              "localIP"=> "127.0.0.1",
+              "stationNumber"=> 500,
+              "localAddress"=> "localhost",
+              "connectTimeout"=> 3000,
+              "sendTimeout"=> 20000
+            },
+            "C877" => {
+              "name"=> "kodak",
+              "host"=> "#{VagrantfileUtil::AWS.get_private_ip('vista-exchange', "vista-kodak")}",
+              "mockHost"=> "127.0.0.1",
+              "port"=> 9210,
+              "mockPort"=> 10002,
+              "accessCode"=> "ep1234",
+              "verifyCode"=> "ep1234!!",
+              "localIP"=> "127.0.0.1",
+              "stationNumber"=> 500,
+              "localAddress"=> "localhost",
+              "connectTimeout"=> 3000,
+              "sendTimeout"=> 20000
+            }
+          },
+          "jds" => {
+            "host" => "#{VagrantfileUtil::AWS.get_private_ip('vista-exchange', "jds")}"
+          },
+          "solrClient" => {
+            "host" => "#{VagrantfileUtil::AWS.get_private_ip('vista-exchange', "solr")}"
+          }
+        }
+    }
+    config_file = File.dirname(__FILE__) + "/worker-config.json"
+    json_file = JSON.parse(IO.read(config_file))
+    json_file["vxsync"]["vistaSites"] = {} if config.has_key?("vistaSites")
+    json_file.deep_merge!(config)
+    FileUtils.rm_f(config_file)
+    File.open(config_file, 'w') { |file| file.write(JSON.pretty_generate(json_file)) }
+  end
+end
+
+task :inttest do
+  puts "start npm install"
+  sh "npm install"
+  puts "completed npm install"
+  puts "start integration tests"
+  sh "npm run-script int-test"
+  puts "completed integration tests"
+end
+
+task :operational_data do
+  puts "start npm install"
+  sh "npm install"
+  puts "completed npm install"
+  puts "start operational data check against #{ENV['JDS_IP']}"
+  sh "npm run-script operational-check"
+  puts "completed operational data check"
+end
+
+task :patient_sync do
+  puts "start npm install"
+  sh "npm install"
+  puts "completed npm install"
+  puts "start patient sync against #{ENV['VXSYNC_IP']}"
+  sh "npm run-script sync-patient"
+  puts "completed patient"
+end

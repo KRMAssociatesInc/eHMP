@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.1.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+    <alias name="vprConversionService" alias="conversion-service"/>
+
+    <bean class="org.springframework.web.context.support.ServletContextAttributeExporter">
+        <property name="attributes">
+            <map>
+                <entry key="com.codahale.metrics.servlet.InstrumentedFilter.registry" value-ref="metricsRegistry"/>
+                <entry key="com.codahale.metrics.servlets.HealthCheckServlet.registry" value-ref="healthCheckRegistry"/>
+                <entry key="org.osgi.framework.BundleContext" value-ref="osgiBundleContext"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="pathMatcher" class="org.springframework.util.AntPathMatcher"/>
+
+    <bean id="urlPathHelper" class="org.springframework.web.util.UrlPathHelper"
+          p:removeSemicolonContent="false"/>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"
+          p:order="0"
+          p:useSuffixPatternMatch="false"
+          p:pathMatcher-ref="pathMatcher"
+          p:urlPathHelper-ref="urlPathHelper"/>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="order" value="0"/>
+        <property name="webBindingInitializer">
+            <bean class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer"
+                  p:conversionService-ref="vprConversionService"/>
+        </property>
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter"
+                      p:writeAcceptCharset="false"/>
+                <ref bean="resourceHttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.xml.XmlAwareFormHttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"
+                      p:objectMapper-ref="wsJsonMapper"/>
+            </list>
+        </property>
+        <property name="customArgumentResolvers">
+            <list>
+                <bean class="gov.va.hmp.web.PageableArgumentResolver"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="resourceHttpMessageConverter" class="gov.va.hmp.web.converter.ResourceHttpMessageConverter"
+          p:fileTypeMap-ref="fileMimeTypes"/>
+
+    <bean id="ajaxHandlerExceptionResolver" class="gov.va.hmp.web.servlet.AjaxHandlerExceptionResolver"
+          p:contentNegotiationStrategy-ref="contentNegotiationManager"
+          p:exceptionHistorySize="250"
+          p:order="0"/>
+
+    <bean id="defaultHandlerExceptionResolver"
+          class="org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver"
+          p:order="1"/>
+
+    <!-- OSGi HTTP Service proxy is wired into Spring MVC via a RequestHandler -->
+    <bean id="osgiHttpServiceProxy" class="gov.va.hmp.web.servlet.mvc.OsgiHttpServiceProxyRequestHandler"
+          p:bundleContext-ref="osgiBundleContext"/>
+
+    <!-- packages to scan for @Controllers -->
+    <context:component-scan
+            base-package="gov.va.cpe.web,gov.va.hmp.addons.web,gov.va.hmp.auth,gov.va.cpe.vpr,gov.va.cpe.vpr.search,gov.va.cpe.vpr.web,gov.va.cpe.rpc,gov.va.cpe.team,gov.va.cpe.clio,gov.va.cpe.ctx"/>
+
+    <!-- Configures Handler Interceptors -->
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang"/>
+    </mvc:interceptors>
+
+    <!-- Saves a locale change using a cookie -->
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
+
+    <!-- extends default JAF mime types to include file extension mappings for image/x-png,image/svg+xml,application/font-woff,etc -->
+    <bean id="fileMimeTypes" class="org.springframework.mail.javamail.ConfigurableMimeFileTypeMap"
+          p:mappingLocation="classpath:gov/va/cpe/vpr/web/converter/mime.types"/>
+
+    <bean id="urlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"
+          p:order="1"
+          p:pathMatcher-ref="pathMatcher">
+        <property name="urlMap">
+            <map>
+                <!-- javascript libs (cache for 1 year) -->
+                <entry key="/lib/**/*" value-ref="cacheResourceForOneYearHttpRequestHandler"/>
+                <!-- all other resources -->
+                <entry key="/favicon.ico" value-ref="resourceHttpRequestHandler"/>
+                <entry key="/css/**/*" value-ref="resourceHttpRequestHandler"/>
+                <entry key="/images/**/*" value-ref="resourceHttpRequestHandler"/>
+                <entry key="/js/**/*" value-ref="resourceHttpRequestHandler"/>
+                <entry key="/fonts/**/*" value-ref="resourceHttpRequestHandler"/>
+                <entry key="/examples/**/*" value-ref="resourceHttpRequestHandler"/>
+
+                <entry key="/threads" value-ref="threadDumpServlet"/>
+
+                <entry key="/system/console" value-ref="osgiHttpServiceProxy"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="resourceHttpRequestHandler" class="gov.va.hmp.web.servlet.resource.ResourceHttpRequestHandler"
+          p:fileTypeMap-ref="fileMimeTypes"
+          p:alternateResourceHttpRequestHandler-ref="osgiHttpServiceProxy">
+        <property name="locations">
+            <list>
+                <value>/favicon.ico</value>
+                <value>/images/*</value>
+                <value>/css/*</value>
+                <value>/js/*</value>
+                <value>/fonts/*</value>
+                <value>/examples/*</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="cacheResourceForOneYearHttpRequestHandler"
+          class="gov.va.hmp.web.servlet.resource.ResourceHttpRequestHandler"
+          p:locations="/lib/*"
+          p:cacheSeconds="31556926"
+          p:fileTypeMap-ref="fileMimeTypes"/>
+
+    <mvc:view-controller path="/ccow" view-name="/auth/ccow"/>
+    <mvc:view-controller path="/supportedBrowsers" view-name="/supportedBrowsers"/>
+
+    <mvc:view-controller path="/api/index" view-name="/api/index"/>
+    <mvc:view-controller path="/api/swagger" view-name="/api/swagger"/>
+    <mvc:view-controller path="/api/authentication" view-name="/api/authentication"/>
+    <mvc:view-controller path="/api/dateRange" view-name="/api/dateRange"/>
+
+    <bean id="threadDumpServlet" class="org.springframework.web.servlet.mvc.ServletWrappingController"
+          p:servletClass="com.codahale.metrics.servlets.ThreadDumpServlet"/>
+
+    <!-- Configure the multipart resolver -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+          p:maxUploadSize="100000"/>
+
+    <bean id="viewNameTranslator" class="org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator"
+          p:stripLeadingSlash="false"/>
+
+	<bean id="vistaAccountDao" class="gov.va.hmp.hub.dao.json.JsonVistaAccountDao"/>
+
+    <!-- first resolve views based on requested content-type (via format request param) for specified viewNames -->
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean"
+          p:favorParameter="true"
+          p:favorPathExtension="false"
+          p:ignoreAcceptHeader="true"
+          p:defaultContentType="application/json">
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json"/>
+                <entry key="xml" value="application/xml"/>
+                <entry key="html" value="text/html"/>
+            </map>
+        </property>
+    </bean>
+    <bean class="gov.va.hmp.web.servlet.view.ContentNegotiatingViewResolver"
+          p:order="0"
+          p:contentNegotiationManager-ref="contentNegotiationManager">
+        <property name="viewNames">
+            <set>
+                <value>contentNegotiatingView</value>
+                <value>ajaxView</value>
+                <value>restView</value>
+            </set>
+        </property>
+        <property name="defaultViews">
+            <list>
+                <bean class="gov.va.hmp.web.servlet.view.MappingJacksonJsonView"
+                      p:updateContentLength="true"
+                      p:objectMapper-ref="wsJsonMapper"/>
+                <bean class="gov.va.hmp.web.servlet.view.MappingJacksonXmlView"
+                      p:objectMapper-ref="wsXmlMapper"/>
+            </list>
+        </property>
+    </bean>
+
+    <!-- JSON and XML mappers used to serialize content-negotiated views with those media types -->
+    <bean id="wsJsonMapper" class="gov.va.cpe.vpr.pom.POMObjectMapper"
+          c:serializationView="gov.va.cpe.vpr.pom.JSONViews.WSView"/>
+
+    <bean id="wsXmlMapper" class="gov.va.cpe.vpr.pom.POMXmlMapper"/>
+
+    <!-- next resolve views as beans declared in views.xml -->
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver"
+          p:order="1"
+          p:location="/WEB-INF/spring/views.xml"/>
+
+    <!--
+   This bean sets up the Velocity environment for us based on a root path for templates.
+   Optionally, a properties file can be specified for more control over the Velocity
+   environment, but the defaults are pretty sane for file based template loading.
+   -->
+    <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer"
+          p:resourceLoaderPath="/WEB-INF/velocity/"
+          p:velocityProperties-ref="velocityProperties"/>
+
+    <util:properties id="velocityProperties">
+        <prop key="input.encoding">UTF-8</prop>
+        <prop key="output.encoding">UTF-8</prop>
+        <prop key="velocimacro.library">_hmp.vm</prop>
+        <prop key="velocimacro.library.autoreload">true</prop>
+
+    </util:properties>
+
+    <!-- next resolve views as Velocity Templates -->
+    <bean id="velocityViewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver"
+          p:order="2"
+          p:cache="true"
+          p:suffix=".vm"
+          p:exposeSpringMacroHelpers="true"
+          p:attributesMap-ref="velocityTools"/>
+
+    <util:map id="velocityTools">
+        <entry key="hmp" value-ref="hmpVelocityTool"/>
+        <entry key="esc" value-ref="escapeVelocityTool"/>
+        <entry key="env" value-ref="springEnvironmentVelocityTool"/>
+    </util:map>
+
+    <bean id="hmpVelocityTool" class="gov.va.hmp.web.velocity.tools.HmpTool"/>
+    <bean id="escapeVelocityTool" class="gov.va.hmp.web.velocity.tools.EscapeTool"/>
+    <bean id="springEnvironmentVelocityTool" class="gov.va.hmp.web.velocity.tools.SpringEnvironmentTool"/>
+
+    <!-- finally resolve views in /WEB-INF/jsp, needs to be last in view resolver chain -->
+    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          lazy-init="true"
+          p:order="3"
+          p:viewClass="org.springframework.web.servlet.view.JstlView"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp"/>
+
+    <beans profile="production">
+        <util:list id="resourceLocations">
+            <value>/favicon.ico</value>
+            <value>/images/*</value>
+            <value>/css/*</value>
+            <value>/js/*</value>
+            <value>/fonts/*</value>
+            <value>/examples/*</value>
+        </util:list>
+    </beans>
+    <beans profile="dev">
+        <util:list id="resourceLocations">
+            <value>/favicon.ico</value>
+            <value>/images/*</value>
+            <value>file:///${user.dir}/target/css/*</value>
+            <value>file:///${user.dir}/src/main/js/*</value>
+            <value>/fonts/*</value>
+            <value>/examples/*</value>
+        </util:list>
+    </beans>
+</beans>

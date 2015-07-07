@@ -1,0 +1,37 @@
+#macro(pickDateTime $onset $entered)
+	#if($onset) 
+		(<span class="text-muted">Onset</span> $hmp.formatDate($onset))
+	#elseif($entered) 
+		(<span class="text-muted">Entered</span> $hmp.formatDate($entered))
+	#end
+#end
+
+## If multiple problems match, display the grouped ICD code/name, with a list of problems
+#set($doc = $docs[0])
+#if($docs.numFound > 1 && $doc.icd_group_name)
+	$doc.icd_group_name<br/>
+	#foreach($doc in $docs)
+		#set($txt = $doc.summary.replaceFirst("\(ICD-9-CM .*\)|\(SCT .*\)", ""))
+		<span style="padding-left: 10px; #if($doc.problem_status != 'Active') text-decoration: line-through;#end">
+			$doc.problem_status#if($doc.acuity_name) ($doc.acuity_name)#end: $txt #pickDateTime($doc.onset,$doc.entered)
+		</span>
+	#end
+#else
+	#set($txt = $doc.summary.replaceFirst("\(ICD-9-CM .*\)|\(SCT .*\)", ""))
+	<span #if($doc.problem_status != 'Active')class="text-muted"#end">
+		$doc.problem_status#if($doc.acuity_name) ($doc.acuity_name)#end: $txt
+	</span>
+#* Not displaying comments in the problem summary, only highlights
+  #if($item.objs && $item.objs.size() > 0)
+  	#if($item.objs[0].comments && !$item.highlights)
+	  	<blockquote>
+		  #foreach($p in $item.objs[0].comments)
+			  $p.comment
+			  <small>$hmp.formatDateTime($p.entered) by: $p.enteredByName</small>
+		  #end
+		  </blockquote>
+	  #end
+  #end
+*#
+#end
+	

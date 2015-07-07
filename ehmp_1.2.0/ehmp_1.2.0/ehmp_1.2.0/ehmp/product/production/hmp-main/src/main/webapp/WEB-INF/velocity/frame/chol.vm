@@ -1,0 +1,108 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="gov.va.cpe.vpr.*"%>
+<%@ page import="org.springframework.data.domain.Page"%>
+
+<html>
+<head>
+    <title>Cholesterol</title>
+    <g:render template="/layouts/detail"/>
+</head>
+
+<body>
+
+<div>
+	Total Cholesterol Goal: <input type="text" value="25" size="2"> <input type="submit" value="Save Patient Goal">
+</div>
+
+<div id="chartTargetID" style="float: left;"></div>
+<g:javascript>
+
+	Ext.onReady(function() {
+		var cfg = {
+			chart: {
+				height: 350,
+				width: 800,
+	            renderTo: 'chartTargetID',
+	            zoomType: 'x'
+	        },
+	        credits: {enabled: false},
+	        title: {text: 'Height/Weight/BMI Trend'},
+	        legend: { enabled: false },
+	        xAxis: {
+	            type: 'datetime',
+	            dateTimeLabelFormats: {
+	                second: '%m/%d/%Y',
+	                minute: '%m/%d/%Y',
+	                hour: '%m/%d/%Y',
+	                day: '%m/%d/%Y',
+	                week: '%m/%d/%Y',
+	                month: '%m/%d/%Y',
+	                year: '%m/%d/%Y'
+	            },
+	            labels: {rotation: 45, align: 'left'}
+            },
+	        yAxis: {
+	        	min: 100,
+	        	title: {
+	        		text: 'Cholesterol'
+        		},
+        		labels: {
+        			formatter: function() {
+        				return this.value;
+        			}
+        		}
+	        },
+	        plotOptions: {
+	        	area: {
+	        		stacking: 'normal'
+	        	}
+	        },
+	        series: []
+		};
+		
+		var chart = new Highcharts.Chart(cfg);
+		
+		Ext.Ajax.request({
+			url: '/vpr/view/render?view=gov.va.cpe.vpr.queryeng.LabTrendViewDef&range=2000..NOW&row.count=1000&pid=<%=pid%>&filter_kind=WEIGHT',
+			success: function(resp) {
+				var data = Ext.JSON.decode(resp.responseText).data;
+				
+				var newdata = [];
+				for (var i in data) {
+					var obs = gov.va.hmp.util.HL7DTMFormatter.UTC(data[i].observed);
+					var val = data[i].result;
+					newdata.push([obs,val]);
+				}
+				
+				newdata.sort(function(i1, i2) {
+		        	return i1[0] - i2[0];
+		        });				
+				
+				chart.addSeries({name: 'Weight', zIndex: 10, type: 'line', data: newdata});
+			}
+		});
+		
+		Ext.Ajax.request({
+			url: '/vpr/view/render?view=gov.va.cpe.vpr.queryeng.VitalsTrendViewDef&range=2000..NOW&row.count=1000&pid=<%=pid%>&filter_kind=HEIGHT',
+			success: function(resp) {
+				var data = Ext.JSON.decode(resp.responseText).data;
+				
+				var newdata = [];
+				for (var i in data) {
+					var obs = gov.va.hmp.util.HL7DTMFormatter.UTC(data[i].observed);
+					var val = data[i].result;
+					newdata.push([obs,val]);
+				}
+				
+				newdata.sort(function(i1, i2) {
+		        	return i1[0] - i2[0];
+		        });				
+				
+				chart.addSeries({yAxis: 1, name: 'Height', zIndex: 10, type: 'line', data: newdata});
+			}
+		});
+	});
+</g:javascript>
+
+</body>
+</html>

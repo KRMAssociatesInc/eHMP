@@ -1,0 +1,56 @@
+{{#if navHeader}} <p class="text-right"><button type="button" tabindex="0" class="btn btn-default immunizationsPrev"><i class="fa fa-arrow-up"></i>&nbsp;Previous</button> &nbsp; <button type="button" tabindex="0" class="btn btn-default immunizationsNext"><i class="fa fa-arrow-down"></i>&nbsp;Next</button></p>
+{{/if}} 
+<div class="table-responsive"><table class="table">
+    <thead>
+        <tr tabindex="0">
+            <th tabindex="0" id="name">Name</th>
+            <th tabindex="0" id="series">Reaction</th>
+            <th tabindex="0" id="result">Series</th>
+            <th tabindex="0" id="contraDisplay">Repeat Contraindicated</th>
+            <th tabindex="0" id="administeredDate">Date</th>
+            <th tabindex="0" id="facilityCode">Facility</th>
+            <th tabindex="0" id="siteCode">Site</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr tabindex="0"><td tabindex="0" id="name">{{name}}</td>
+        <td tabindex="0" id="flag">{{reactionName}}</td>
+        <td tabindex="0" id="series">{{seriesName}}</td>
+        <td tabindex="0" id="contraDisplay">{{contraindicatedDisplay}}</td>
+        <td tabindex="0" id="administeredDate">{{formatDate administeredDateTime}}</td>
+        <td tabindex="0" id="facilityCode"><span class="grayText">{{facilityName}}</span></td>
+        <td tabindex="0" id="siteCode">
+            {{facilityMoniker}}
+        </td>
+        </tr>
+    </tbody>
+</table></div>
+&nbsp;
+<form class="form-inline" role="form">
+    <div id="date-range-filter"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{name}}
+                        </h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <small>Immunizations: <span id="total-tests"></span></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="js-backgrid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="row">
+    <div class="col-md-12"><h4>Comment:</h4></div>
+</div>
+<div class="row">
+    <div class="col-md-12">{{comment}}</div>
+</div>

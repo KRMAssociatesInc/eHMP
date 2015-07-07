@@ -1,0 +1,82 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000721"
+        },
+        "enteredBy": {
+          "name": "DOCTOR, ALPHA"
+        },
+        "enteredDate": "20120910142607",
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "46240-8"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "date": "20120910142151",
+        "type": "OUTPATIENT",
+        "location": {
+          "name": "Orthopedic Clinic FHCC"
+        },
+        "diagnoses": [
+          {
+            "enteredBy": null,
+            "enteredDate": null,
+            "location": null,
+            "status": null,
+            "diagnosis": [
+              {
+                "code": "686.9",
+                "display": "Unspecified local infection of skin and subcutaneous tissue"
+              }
+            ]
+          }
+        ],
+        "procedure": [],
+        "emCode": [
+          {
+            "code": "99202"
+          }
+        ],
+        "encounterNumber": {
+          "id": "GTLK-10342"
+        },
+        "provider": {
+          "name": "DOCTOR, ALPHA"
+        },
+        "status": [
+          {
+            "display": "Complete"
+          }
+        ],
+        "reason": "Notes Entered by: DOCTOR,ALPHA 10 Sep 2012 1021\r\n------------------------------\r\nAcne"
+      },
+      "dataType": 5
+    }
+  ]
+}

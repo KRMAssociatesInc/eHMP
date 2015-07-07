@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>#springMessage("platform.name") &raquo; CCOW</title>
+    #parse("/layouts/main.vm")
+    <script type="text/javascript"> 
+		Ext.require(['gov.va.hmp.CcowContext']);
+		Ext.onReady(function () {
+            var token = gov.va.hmp.CcowContext.getToken();
+			var string = '';
+			var getParams = document.URL.split("?");
+			if (getParams.length > 1) {
+				var string = '?' + getParams[1];
+				if (token) string = string + "&H=" + token;
+			}
+			document.location.href = '/j_cprs_sso_spring_security_check' + string;
+        });
+    </script>
+</head>
+<body>
+    #parse("/splash.vm")
+</body>
+</html>

@@ -1,0 +1,112 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "AppointmentDateTime": "20121018080000",
+        "EnteredBy": "ZZZQQQTESTLESS, DOC B",
+        "EventId": "1000000717",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "Disposition": "",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20121017141754",
+        "CheckoutTime": "",
+        "AppointmentReason": "NONE",
+        "PatientFullName": "JIM SMITH",
+        "Status": "PENDING",
+        "DateOfBirth": "",
+        "CustodianName": "ahlta",
+        "CheckinTime": "",
+        "AppointmentClassification": "0",
+        "EventStartTime": "",
+        "LoincCode": "56446-8",
+        "Facility": "NH Great Lakes IL",
+        "AppointmentComment": "",
+        "AppointmentType": "ROUT",
+        "Provider": "ZZZQQQTESTLESS, DOC B",
+        "Clinic": "Dermatology Clinic FHCC"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "AppointmentDateTime": "20121017143000",
+        "EnteredBy": "ZZZQQQTESTLESS, DOC B",
+        "EventId": "1000000718",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "Disposition": "",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20121017142600",
+        "CheckoutTime": "",
+        "AppointmentReason": "PRE-SURGERY",
+        "PatientFullName": "JIM SMITH",
+        "Status": "KEPT",
+        "DateOfBirth": "",
+        "CustodianName": "ahlta",
+        "CheckinTime": "",
+        "AppointmentClassification": "0",
+        "EventStartTime": "",
+        "LoincCode": "56446-8",
+        "Facility": "NH Great Lakes IL",
+        "AppointmentComment": "",
+        "AppointmentType": "SPEC",
+        "Provider": "ZZZQQQTESTLESS, DOC B",
+        "Clinic": "General Surgery Clinic FHCC"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "AppointmentDateTime": "20120910102100",
+        "EnteredBy": "DOCTOR, ALPHA",
+        "EventId": "1000000719",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "Disposition": "3M Health Information Systems, Released w/o Limitations",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20120910102408",
+        "CheckoutTime": "",
+        "AppointmentReason": "Notes Entered by: DOCTOR,ALPHA 10 Sep 2012 1021\r\n------------------------------\r\nAcne",
+        "PatientFullName": "JIM SMITH",
+        "Status": "KEPT",
+        "DateOfBirth": "",
+        "CustodianName": "ahlta",
+        "CheckinTime": "20120910102152",
+        "AppointmentClassification": "0",
+        "EventStartTime": "",
+        "LoincCode": "56446-8",
+        "Facility": "NH Great Lakes IL",
+        "AppointmentComment": "",
+        "AppointmentType": "ACUT$",
+        "Provider": "DOCTOR, ALPHA",
+        "Clinic": "Orthopedic Clinic FHCC"
+      },
+      "dataType": 6
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

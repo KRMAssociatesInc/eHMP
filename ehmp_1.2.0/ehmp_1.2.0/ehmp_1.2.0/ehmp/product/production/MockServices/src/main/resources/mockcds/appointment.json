@@ -1,0 +1,40 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "CDS",
+    "systemId": "CDS"
+  },
+  "data": {
+    "updated": "20140409083906",
+    "totalItems": 1,
+    "items": [
+      {
+        "appointmentStatus": "SCHEDULED/KEPT",
+        "categoryCode": "urn:va:encounter-category:OV",
+        "categoryName": "Outpatient Visit",
+        "checkOut": 199406161415,
+        "dateTime": 199406161415,
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "localId": "A;2940616.1415;137",
+        "locationName": "COMP AND PEN",
+        "locationUid": "urn:va:location:ABCD:137",
+        "patientClassCode": "urn:va:patient-class:AMB",
+        "patientClassName": "Ambulatory",
+        "providers": [
+          {
+            "providerName": "PROVIDER,ONEHUNDREDNINETYONE",
+            "providerUid": "urn:va:user:ABCD:11531"
+          }
+        ],
+        "service": "MEDICINE",
+        "stopCodeName": "AUDIOLOGY",
+        "stopCodeUid": "urn:va:stop-code:203",
+        "summary": "${MEDICINE}:COMP AND PEN",
+        "typeCode": 1,
+        "typeName": "COMPENSATION \u0026 PENSION",
+        "uid": "urn:va:appointment:ABCD:159:A;2940616.1415;137"
+      }
+    ]
+  }
+}

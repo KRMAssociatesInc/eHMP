@@ -1,0 +1,86 @@
+# Encoding: utf-8
+
+require 'rubygems'
+require 'rubocop'
+require 'rubocop/rake_task'
+require 'cucumber/rake/task'
+
+require_relative './rake_helpers.rb'
+include RakeHelpers
+
+require_relative '../../../infrastructure/vagrant/Servers'
+require_relative '../../../infrastructure/vagrant/aws/VagrantfileUtil.rb'
+
+$LOAD_PATH.push(File.expand_path(File.dirname(__FILE__) + '/features/lib'))
+
+# Check environment sanity and fail fast if not correct
+FAIL_MSG = 'Please first source infrastructure/set.env.sh.'
+fail FAIL_MSG unless ENV.keys.include?('WORKSPACE') || ENV.keys.include?('GEM_HOME')
+
+task default: [:all_tests]
+
+RuboCop::RakeTask.new(:rubocop) do |rubocop|
+  puts '=========================================================================='
+  puts '#     Validating code quality.                                           #'
+  puts '#     For details, see https://github.com/bbatsov/ruby-style-guide       #'
+  puts '=========================================================================='
+  # Specify config file in non-standard location.
+  rubocop.options = ['-c.rubocop.yml']
+
+  # Specify Ruby file locations
+  rubocop.patterns = ['**/*.rb']
+
+  # Show emacs style output, and offense counts
+  # See https://github.com/bbatsov/rubocop#formatters for other output options
+  rubocop.formatters = ['emacs', 'o']
+
+  # Abort rake on failure
+  rubocop.fail_on_error = true
+end
+
+task :environment_setup, :env do |task, args|
+  env = args[:env] || 'virtualbox'
+  case env
+  when "virtualbox"
+    ip = Servers::EHMPUI.localIP
+    ENV["EHMPUI_IP"] = 'http://' + "#{ip}"
+  when "aws"
+    ip = VagrantfileUtil::AWS.get_private_ip("ehmp-ui", "ehmp-balancer")
+    ENV["EHMPUI_IP"] = 'https://' + "#{ip}"
+  else
+    fail "Unrecognized environment type: #{env}. Allowable types are: 'virtualbox' and 'aws'"
+  end
+end
+
+class Cucumber::Rake::Task
+  Rake::Task["rubocop"].invoke
+end
+
+Cucumber::Rake::Task.new(:smoke) do |task|
+  task.profile = 'custom_test'
+  task.cucumber_opts = '--tags @smoke'
+end
+
+Cucumber::Rake::Task.new(:reg_lite) do |task|
+  task.profile = 'custom_test'
+  task.cucumber_opts = '--tags @smoke'
+end
+
+Cucumber::Rake::Task.new(:end_to_end) do |task|
+  task.profile = 'custom_test'
+  task.cucumber_opts = '--tags ~@debug --tags ~@UI'
+end
+
+Cucumber::Rake::Task.new(:end_to_end_stable) do |task|
+  task.profile = 'custom_test'
+  task.cucumber_opts = '--tags ~@unstable --tags ~@debug --tags ~@UI'
+end
+
+Cucumber::Rake::Task.new(:end_to_end_unstable) do |task|
+  task.profile = 'custom_test'
+  task.cucumber_opts = '--tags ~@unstable --tags ~@debug'
+end
+
+Cucumber::Rake::Task.new(:all_tests) do |task|
+  task.profile = 'custom_test'
+end

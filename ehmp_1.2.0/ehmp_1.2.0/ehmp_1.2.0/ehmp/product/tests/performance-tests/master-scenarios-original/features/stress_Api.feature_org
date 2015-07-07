@@ -1,0 +1,49 @@
+@future
+Feature: Stress test
+
+Given the patient has data accross 4 VistA instances and the data has not been synched.
+
+@future
+Scenario: stress the system till it breaks
+Given 10,000 requests are posted to retrive a datatype 
+And given the patient has data accross 4 VistA instances 
+And the data has not been synched
+When the number of requests is increased by increments of 10,000
+Then the system is at maximum stress
+And capture the response time for each request to complete
+
+@future
+Scenario: Document data store almost full
+Given the data store is almost filled with requests
+And given the patient has data accross 4 VistA instances 
+And the data has not been synched
+And when additional requests are sent
+When requests are processed
+Then capture the response time for the data requests
+
+@Manual
+Scenario:CPU is at 90% usage
+
+@future
+Feature: Stress test
+
+Given the data has been synched.
+
+@future
+Scenario: stress the system till it breaks
+Given 10,000 requests are posted to retrive a datatype
+And the data has been synched
+When the number of requests is increased by increments of 10,000
+Then the system is at maximum stress
+And capture the response time for each request to complete
+
+@future
+Scenario: Document data store almost full
+Given the data store is almost filled with requests
+And the data has been synched
+And when additional requests are sent
+When requests are processed
+Then capture the response time for the data requests
+
+@Manual
+Scenario:CPU is at 90% usage

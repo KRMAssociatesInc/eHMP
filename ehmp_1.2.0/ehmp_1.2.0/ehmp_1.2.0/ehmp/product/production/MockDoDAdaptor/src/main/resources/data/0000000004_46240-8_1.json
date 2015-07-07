@@ -1,0 +1,163 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "EncounterId": "2157581604",
+        "EvalManagementCode": "99201",
+        "EncounterNumber": "GTLK-2604",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131119194901",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131119195611",
+        "Procedures": [
+
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Pain in joint, ankle and foot",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "719.47",
+            "EventId": "1000000676"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "Notes Entered by: GURSHTEYN,ATTENDING 25 May 2012 0613\r\n------------------------------\r\nSOH_Patient_Search Automated Test",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000000677"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157581617",
+        "EvalManagementCode": "99211",
+        "EncounterNumber": "GTLK-2605",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131119201730",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131119202018",
+        "Procedures": [
+
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Pain in joint, ankle and foot",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "719.47",
+            "EventId": "1000000678"
+          }
+        ],
+        "DischargeDisposition": "Released w/o Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "Notes Entered by: GURSHTEYN,ATTENDING 25 May 2012 0613\r\n------------------------------\r\nADM_WriteBack - Automated Test.",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000000679"
+      },
+      "dataType": 5
+    },
+    {
+      "dataRecord": {
+        "EncounterId": "2157581741",
+        "EvalManagementCode": "99213",
+        "EncounterNumber": "GTLK-2804",
+        "EnteredBy": "BHIE, USERONE",
+        "AppointmentDate": "20131121153434",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131121154409",
+        "Procedures": [
+
+        ],
+        "Status": "Complete",
+        "CustodianName": "ahlta",
+        "Diagnosis": [
+          {
+            "Status": "",
+            "Diagnosis": "Pain in joint, ankle and foot",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "719.47",
+            "EventId": "1000000680"
+          },
+          {
+            "Status": "",
+            "Diagnosis": "Toxic effect of venom",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "989.5",
+            "EventId": "1000000681"
+          },
+          {
+            "Status": "",
+            "Diagnosis": "Toxic effect of venom",
+            "EnteredBy": "",
+            "Facility": "",
+            "EnteredByDate": "",
+            "Code": "989.5",
+            "EventId": "1000000682"
+          }
+        ],
+        "DischargeDisposition": "Released with Work/Duty Limitations",
+        "FacilityNcid": "1138927",
+        "LoincCode": "46240-8",
+        "Facility": "NH Great Lakes IL",
+        "VisitReason": "",
+        "AppointmentType": "OUTPATIENT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic",
+        "EventId": "1000000683"
+      },
+      "dataType": 5
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

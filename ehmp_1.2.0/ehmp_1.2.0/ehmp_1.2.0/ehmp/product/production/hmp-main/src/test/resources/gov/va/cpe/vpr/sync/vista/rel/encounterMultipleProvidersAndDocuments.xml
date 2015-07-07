@@ -1,0 +1,42 @@
+<visit>
+    <arrivalDateTime value="3110809.161613"/>
+    <dateTime value="3110809.161613"/>
+    <departureDateTime value="3110810.14"/>
+    <documents>
+        <document id="4183"
+                  nationalTitle="RN CLINICAL NOTE"
+                  localTitle="NURSING NOTE"/>
+        <document id="4185"
+                  localTitle="C&amp;P ACROMEGALY"/>
+        <document id="4188"
+                  nationalTitle="ADVANCE DIRECTIVE"
+                  localTitle="ADVANCE DIRECTIVE COMPLETED"/>
+        <document id="4193"
+                  nationalTitle="PRIMARY CARE TELEPHONE ENCOUNTER NOTE"
+                  localTitle="PRIMARY CARE TELEPHONE"/>
+        <document id="4194"
+                  nationalTitle="GENERAL MEDICINE NOTE"
+                  localTitle="GENERAL MEDICINE NOTE"/>
+    </documents>
+    <facility name="SLC-FO AVIVA VDEV" code="960"/>
+    <id value="7182"/>
+    <location value="3 NORTH SURG"/>
+    <patientClass value="IMP"/>
+    <providers>
+        <provider name="AVIVAUSER,EIGHT"
+                  primary="1"
+                  role="P"
+                  code="1097"/>
+        <provider name="AVIVAUSER,TWELVE"
+                  role="A"
+                  code="1089"/>
+    </providers>
+    <reason narrative="TEST OF DIAGNOSIS"/>
+    <roomBed value="AS-1"/>
+    <service value="SURGERY"/>
+    <serviceCategory name="HOSPITALIZATION"
+                     code="H"/>
+    <specialty value="GENERAL SURGERY"/>
+    <type name="HOSPITALIZATION"/>
+    <visitString value="5;3110809.161613;H"/>
+</visit>

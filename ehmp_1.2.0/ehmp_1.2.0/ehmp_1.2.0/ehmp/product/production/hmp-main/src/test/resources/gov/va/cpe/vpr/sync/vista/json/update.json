@@ -1,0 +1,510 @@
+{
+    "apiVersion": 1.02,
+    "params": {
+        "domain": "DEV.HMPDEV.VAINNOVATIONS.US",
+        "systemId": " F484"
+    },
+    "data": {
+        "updated": "20140212131920",
+        "totalItems": 18,
+        "lastUpdate": "3140212- 21",
+        "items": [
+            {
+                "collection": "appointment",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object ": {
+                    "appointmentStatus": "SCHEDULED/KEPT",
+                    "categoryCode": "urn:va:encounter-catego ry:OV",
+                    "categoryName": "Outpatient Visit",
+                    "checkOut": 201402121313,
+                    "dateTime": 201305311030,
+                    "facilityCode": "500D",
+                    "facilityName": "SLC-FO HMP DEV",
+                    "localId": "A;3130 531.103;64",
+                    "locationName": "AUDIOLOGY",
+                    "locationUid": "urn:va:location:F484:64",
+                    " patientClassCode": "urn:va:patient-class:AMB",
+                    "patientClassName": "Ambulatory",
+                    "re asonName": "",
+                    "stopCodeName": "AUDIOLOGY",
+                    "stopCodeUid": "urn:va:stop-code:203",
+                    "ty peCode": 9,
+                    "typeName": "REGULAR",
+                    "uid": "urn:va:appointment:F484:231:A;3130531.103; 64"
+                }
+            },
+            {
+                "collection": "visit",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object": {
+                    "categoryC ode": "urn:va:encounter-category:OV",
+                    "categoryName": "Outpatient Visit",
+                    "dateTime": 201305311030,
+                    "facilityCode": 500,
+                    "facilityName": "CAMP MASTER",
+                    "localId": 7808,
+                    "lo cationName": "AUDIOLOGY",
+                    "locationUid": "urn:va:location:F484:64",
+                    "patientClassCod e": "urn:va:patient-class:IMP",
+                    "patientClassName": "Inpatient",
+                    "providers": [
+                        {
+                            "prim ary": true,
+                            "providerName": "AVIVAUSER,TWELVE",
+                            "providerUid": "urn:va:user:F484:1089 ",
+                            "role": "P"
+                        }
+                    ],
+                    "reasonName": "OTHER AND UNSPECIFIED HYPERLIPIDEMIA",
+                    "reasonUid": " urn:icd:272.4",
+                    "stopCodeName": "AUDIOLOGY",
+                    "stopCodeUid": "urn:va:stop-code:203",
+                    " typeName": "IN HOSPITAL",
+                    "uid": "urn:va:visit:F484:231:7808"
+                }
+            },
+            {
+                "collection": "visi t",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object": {
+                    "categoryCode": "urn:va:encounter-ca tegory:OV",
+                    "categoryName": "Outpatient Visit",
+                    "dateTime": 201305311030,
+                    "facilityCo de": 500,
+                    "facilityName": "CAMP MASTER",
+                    "localId": 7808,
+                    "locationName": "AUDIOLOGY",
+                    " locationUid": "urn:va:location:F484:64",
+                    "patientClassCode": "urn:va:patient-class: IMP",
+                    "patientClassName": "Inpatient",
+                    "providers": [
+                        {
+                            "primary": true,
+                            "providerName": "AVIVAUSER,TWELVE",
+                            "providerUid": "urn:va:user:F484:1089",
+                            "role": "P"
+                        }
+                    ],
+                    "reasonNam e": "OTHER AND UNSPECIFIED HYPERLIPIDEMIA",
+                    "reasonUid": "urn:icd:272.4",
+                    "stopCodeN ame": "AUDIOLOGY",
+                    "stopCodeUid": "urn:va:stop-code:203",
+                    "typeName": "IN HOSPITAL",
+                    " uid": "urn:va:visit:F484:231:7808"
+                }
+            },
+            {
+                "collection": "appointment",
+                "pid": "10105",
+                "s eq": 1,
+                "total": 1,
+                "object": {
+                    "appointmentStatus": "SCHEDULED/KEPT",
+                    "categoryCode": " urn:va:encounter-category:OV",
+                    "categoryName": "Outpatient Visit",
+                    "checkOut": 201402121313,
+                    "dateTime": 201305311030,
+                    "facilityCode": "500D",
+                    "facilityName": "SLC-FO HMP DEV",
+                    "localId": "A;3130531.103;64",
+                    "locationName": "AUDIOLOGY",
+                    "locationUid": "urn :va:location:F484:64",
+                    "patientClassCode": "urn:va:patient-class:AMB",
+                    "patientClas sName": "Ambulatory",
+                    "reasonName": "",
+                    "stopCodeName": "AUDIOLOGY",
+                    "stopCodeUid": "ur n:va:stop-code:203",
+                    "typeCode": 9,
+                    "typeName": "REGULAR",
+                    "uid": "urn:va:appointment: F484:231:A;3130531.103;64"
+                }
+            },
+            {
+                "collection": "visit",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object": {
+                    "categoryCode": "urn:va:encounter-category:OV",
+                    "categoryName": "Outpa tient Visit",
+                    "dateTime": 201305311030,
+                    "facilityCode": 500,
+                    "facilityName": "CAMP MAS TER",
+                    "localId": 7808,
+                    "locationName": "AUDIOLOGY",
+                    "locationUid": "urn:va:location:F4 84:64",
+                    "patientClassCode": "urn:va:patient-class:IMP",
+                    "patientClassName": "Inpatie nt",
+                    "providers": [
+                        {
+                            "primary": true,
+                            "providerName": "AVIVAUSER,TWELVE",
+                            "providerUid": "urn:va:user:F484:1089",
+                            "role": "P"
+                        }
+                    ],
+                    "reasonName": "OTHER AND UNSPECIFIED HYPERL IPIDEMIA",
+                    "reasonUid": "urn:icd:272.4",
+                    "stopCodeName": "AUDIOLOGY",
+                    "stopCodeUid": " urn:va:stop-code:203",
+                    "typeName": "IN HOSPITAL",
+                    "uid": "urn:va:visit:F484:231:7808 "
+                }
+            },
+            {
+                "collection": "pov",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object": {
+                    "encounterName ": "AUDIOLOGY May 31, 2013",
+                    "encounterUid": "urn:va:visit:F484:231:7808",
+                    "entered": 201305311030,
+                    "facilityCode": 500,
+                    "facilityName": "CAMP MASTER",
+                    "icdCode": "urn:icd :272.4",
+                    "localId": 863,
+                    "locationName": "AUDIOLOGY",
+                    "locationUid": "urn:va:location: F484:64",
+                    "name": "Hyperlipidemia (ICD-9-CM 272.4)",
+                    "type": "P",
+                    "uid": "urn:va:pov:F 484:231:863"
+                }
+            },
+            {
+                "collection": "appointment",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "obje ct": {
+                    "appointmentStatus": "SCHEDULED/KEPT",
+                    "categoryCode": "urn:va:encounter-cate gory:OV",
+                    "categoryName": "Outpatient Visit",
+                    "checkOut": 201402121313,
+                    "dateTime": 201305311030,
+                    "facilityCode": "500D",
+                    "facilityName": "SLC-FO HMP DEV",
+                    "localId": "A;31 30531.103;64",
+                    "locationName": "AUDIOLOGY",
+                    "locationUid": "urn:va:location:F484:64",
+                    "patientClassCode": "urn:va:patient-class:AMB",
+                    "patientClassName": "Ambulatory",
+                    " reasonName": "",
+                    "stopCodeName": "AUDIOLOGY",
+                    "stopCodeUid": "urn:va:stop-code:203",
+                    " typeCode": 9,
+                    "typeName": "REGULAR",
+                    "uid": "urn:va:appointment:F484:231:A;3130531.10 3;64"
+                }
+            },
+            {
+                "collection": "visit",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object": {
+                    "categor yCode": "urn:va:encounter-category:OV",
+                    "categoryName": "Outpatient Visit",
+                    "dateTim e": 201305311030,
+                    "facilityCode": 500,
+                    "facilityName": "CAMP MASTER",
+                    "localId": 7808,
+                    " locationName": "AUDIOLOGY",
+                    "locationUid": "urn:va:location:F484:64",
+                    "patientClassC ode": "urn:va:patient-class:IMP",
+                    "patientClassName": "Inpatient",
+                    "providers": [
+                        {
+                            "pr imary": true,
+                            "providerName": "AVIVAUSER,TWELVE",
+                            "providerUid": "urn:va:user:F484:10 89",
+                            "role": "P"
+                        }
+                    ],
+                    "reasonName": "OTHER AND UNSPECIFIED HYPERLIPIDEMIA",
+                    "reasonUid": "urn:icd:272.4",
+                    "stopCodeName": "AUDIOLOGY",
+                    "stopCodeUid": "urn:va:stop-code:203",
+                    "typeName": "IN HOSPITAL",
+                    "uid": "urn:va:visit:F484:231:7808"
+                }
+            },
+            {
+                "collection": "po v",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object": {
+                    "encounterName": "AUDIOLOGY May 31, 2013",
+                    "encounterUid": "urn:va:visit:F484:231:7808",
+                    "entered": 201305311030,
+                    "facili tyCode": 500,
+                    "facilityName": "CAMP MASTER",
+                    "icdCode": "urn:icd:272.4",
+                    "localId": 863,
+                    "locationName": "AUDIOLOGY",
+                    "locationUid": "urn:va:location:F484:64",
+                    "name": "Hype rlipidemia (ICD-9-CM 272.4)",
+                    "type": "P",
+                    "uid": "urn:va:pov:F484:231:863"
+                }
+            },
+            {
+                "coll ection": "appointment",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object": {
+                    "appointmentStat us": "SCHEDULED/KEPT",
+                    "categoryCode": "urn:va:encounter-category:OV",
+                    "categoryNam e": "Outpatient Visit",
+                    "checkOut": 201402121313,
+                    "dateTime": 201305311030,
+                    "facilityC ode": "500D",
+                    "facilityName": "SLC-FO HMP DEV",
+                    "localId": "A;3130531.103;64",
+                    "locati onName": "AUDIOLOGY",
+                    "locationUid": "urn:va:location:F484:64",
+                    "patientClassCode": " urn:va:patient-class:AMB",
+                    "patientClassName": "Ambulatory",
+                    "reasonName": "",
+                    "stopC odeName": "AUDIOLOGY",
+                    "stopCodeUid": "urn:va:stop-code:203",
+                    "typeCode": 9,
+                    "typeName ": "REGULAR",
+                    "uid": "urn:va:appointment:F484:231:A;3130531.103;64"
+                }
+            },
+            {
+                "collection": "visit",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object": {
+                    "categoryCode": "urn:va:encoun ter-category:OV",
+                    "categoryName": "Outpatient Visit",
+                    "dateTime": 201305311030,
+                    "faci lityCode": 500,
+                    "facilityName": "CAMP MASTER",
+                    "localId": 7808,
+                    "locationName": "AUDIOL OGY",
+                    "locationUid": "urn:va:location:F484:64",
+                    "patientClassCode": "urn:va:patient- class:IMP",
+                    "patientClassName": "Inpatient",
+                    "providers": [
+                        {
+                            "primary": true,
+                            "provider Name": "AVIVAUSER,TWELVE",
+                            "providerUid": "urn:va:user:F484:1089",
+                            "role": "P"
+                        }
+                    ],
+                    "rea sonName": "OTHER AND UNSPECIFIED HYPERLIPIDEMIA",
+                    "reasonUid": "urn:icd:272.4",
+                    "sto pCodeName": "AUDIOLOGY",
+                    "stopCodeUid": "urn:va:stop-code:203",
+                    "typeName": "IN HOSPI TAL",
+                    "uid": "urn:va:visit:F484:231:7808"
+                }
+            },
+            {
+                "collection": "pov",
+                "pid": "10105",
+                "seq ": 1,
+                "total": 1,
+                "object": {
+                    "encounterName": "AUDIOLOGY May 31, 2013",
+                    "encounterUid": "urn:va:visit:F484:231:7808",
+                    "entered": 201305311030,
+                    "facilityCode": 500,
+                    "facility Name": "CAMP MASTER",
+                    "icdCode": "urn:icd:272.4",
+                    "localId": 863,
+                    "locationName": "AUDI OLOGY",
+                    "locationUid": "urn:va:location:F484:64",
+                    "name": "Hyperlipidemia (ICD-9-CM 272.4)",
+                    "type": "P",
+                    "uid": "urn:va:pov:F484:231:863"
+                }
+            },
+            {
+                "collection": "appointment",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object": {
+                    "appointmentStatus": "SCHEDULED/KEPT",
+                    "categoryCode": "urn:va:encounter-category:OV",
+                    "categoryName": "Outpatient Visit",
+                    "checkOut": 201402121313,
+                    "dateTime": 201305311030,
+                    "facilityCode": "500D",
+                    "facility Name": "SLC-FO HMP DEV",
+                    "localId": "A;3130531.103;64",
+                    "locationName": "AUDIOLOGY",
+                    " locationUid": "urn:va:location:F484:64",
+                    "patientClassCode": "urn:va:patient-class: AMB",
+                    "patientClassName": "Ambulatory",
+                    "reasonName": "",
+                    "stopCodeName": "AUDIOLOGY",
+                    "stopCodeUid": "urn:va:stop-code:203",
+                    "typeCode": 9,
+                    "typeName": "REGULAR",
+                    "uid": "ur n:va:appointment:F484:231:A;3130531.103;64"
+                }
+            },
+            {
+                "collection": "visit",
+                "pid": "10105 ",
+                "seq": 1,
+                "total": 1,
+                "object": {
+                    "categoryCode": "urn:va:encounter-category:OV",
+                    "cat egoryName": "Outpatient Visit",
+                    "dateTime": 201305311030,
+                    "facilityCode": 500,
+                    "facili tyName": "CAMP MASTER",
+                    "localId": 7808,
+                    "locationName": "AUDIOLOGY",
+                    "locationUid": "u rn:va:location:F484:64",
+                    "patientClassCode": "urn:va:patient-class:IMP",
+                    "patientCl assName": "Inpatient",
+                    "providers": [
+                        {
+                            "primary": true,
+                            "providerName": "AVIVAUSER,TWEL VE",
+                            "providerUid": "urn:va:user:F484:1089",
+                            "role": "P"
+                        }
+                    ],
+                    "reasonName": "OTHER AND U NSPECIFIED HYPERLIPIDEMIA",
+                    "reasonUid": "urn:icd:272.4",
+                    "stopCodeName": "AUDIOLOGY ",
+                    "stopCodeUid": "urn:va:stop-code:203",
+                    "typeName": "IN HOSPITAL",
+                    "uid": "urn:va:vi sit:F484:231:7808"
+                }
+            },
+            {
+                "collection": "pov",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object ": {
+                    "encounterName": "AUDIOLOGY May 31, 2013",
+                    "encounterUid": "urn:va:visit:F484:23 1:7808",
+                    "entered": 201305311030,
+                    "facilityCode": 500,
+                    "facilityName": "CAMP MASTER",
+                    " icdCode": "urn:icd:272.4",
+                    "localId": 863,
+                    "locationName": "AUDIOLOGY",
+                    "locationUid": "urn:va:location:F484:64",
+                    "name": "Hyperlipidemia (ICD-9-CM 272.4)",
+                    "type": "P",
+                    "u id": "urn:va:pov:F484:231:863"
+                }
+            },
+            {
+                "collection": "appointment",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object": {
+                    "appointmentStatus": "SCHEDULED/KEPT",
+                    "categoryCode": "urn: va:encounter-category:OV",
+                    "categoryName": "Outpatient Visit",
+                    "checkOut": 201402121313,
+                    "dateTime": 201305311030,
+                    "facilityCode": "500D",
+                    "facilityName": "SLC-FO HMP DEV ",
+                    "localId": "A;3130531.103;64",
+                    "locationName": "AUDIOLOGY",
+                    "locationUid": "urn:va: location:F484:64",
+                    "patientClassCode": "urn:va:patient-class:AMB",
+                    "patientClassNam e": "Ambulatory",
+                    "reasonName": "",
+                    "stopCodeName": "AUDIOLOGY",
+                    "stopCodeUid": "urn:va :stop-code:203",
+                    "typeCode": 9,
+                    "typeName": "REGULAR",
+                    "uid": "urn:va:appointment:F484 :231:A;3130531.103;64"
+                }
+            },
+            {
+                "collection": "visit",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                " object": {
+                    "categoryCode": "urn:va:encounter-category:OV",
+                    "categoryName": "Outpatien t Visit",
+                    "dateTime": 201305311030,
+                    "facilityCode": 500,
+                    "facilityName": "CAMP MASTER",
+                    "localId": 7808,
+                    "locationName": "AUDIOLOGY",
+                    "locationUid": "urn:va:location:F484:6 4",
+                    "patientClassCode": "urn:va:patient-class:IMP",
+                    "patientClassName": "Inpatient",
+                    "providers": [
+                        {
+                            "primary": true,
+                            "providerName": "AVIVAUSER,TWELVE",
+                            "providerUid": "ur n:va:user:F484:1089",
+                            "role": "P"
+                        }
+                    ],
+                    "reasonName": "OTHER AND UNSPECIFIED HYPERLIPID EMIA",
+                    "reasonUid": "urn:icd:272.4",
+                    "stopCodeName": "AUDIOLOGY",
+                    "stopCodeUid": "urn: va:stop-code:203",
+                    "typeName": "IN HOSPITAL",
+                    "uid": "urn:va:visit:F484:231:7808"
+                }
+            },
+            {
+                "collection": "pov",
+                "pid": "10105",
+                "seq": 1,
+                "total": 1,
+                "object": {
+                    "encounterName": "A UDIOLOGY May 31, 2013",
+                    "encounterUid": "urn:va:visit:F484:231:7808",
+                    "entered": 201305311030,
+                    "facilityCode": 500,
+                    "facilityName": "CAMP MASTER",
+                    "icdCode": "urn:icd:272 .4",
+                    "localId": 863,
+                    "locationName": "AUDIOLOGY",
+                    "locationUid": "urn:va:location:F484 :64",
+                    "name": "Hyperlipidemia (ICD-9-CM 272.4)",
+                    "type": "P",
+                    "uid": "urn:va:pov:F484: 231:863"
+                }
+            },
+            {
+                "deletes": [
+                    {
+                        "uid": "urn:va:cpt:F484:231:5132"
+                    }
+                ]
+            },
+            {
+                "error": [
+                    {
+                        "error": {
+                            "message": "A mumps error occurred when extracting patient data. A total of 1 occ urred.\n\rAn error occurred on patient: 231\n\rA problem occurred converting a r ecord for VHF\n\r"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

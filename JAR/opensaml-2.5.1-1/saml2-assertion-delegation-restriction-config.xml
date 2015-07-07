@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:del="urn:oasis:names:tc:SAML:2.0:conditions:delegation" xmlns="http://www.opensaml.org/xmltooling-config" xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd">
+
+	<!-- SAML 2.0 Delegation Restriction Condition Object providers -->
+	<ObjectProviders>
+
+		<!-- Delegate provider -->
+		<ObjectProvider qualifiedName="del:Delegate">
+			<BuilderClass className="org.opensaml.samlext.saml2delrestrict.impl.DelegateBuilder"/>
+			<MarshallingClass className="org.opensaml.samlext.saml2delrestrict.impl.DelegateMarshaller"/>
+			<UnmarshallingClass className="org.opensaml.samlext.saml2delrestrict.impl.DelegateUnmarshaller"/>
+		</ObjectProvider>
+		
+		<!-- DelegationRestrictionType provider -->
+		<ObjectProvider qualifiedName="del:DelegationRestrictionType">
+			<BuilderClass className="org.opensaml.samlext.saml2delrestrict.impl.DelegationRestrictionTypeBuilder"/>
+			<MarshallingClass className="org.opensaml.samlext.saml2delrestrict.impl.DelegationRestrictionTypeMarshaller"/>
+			<UnmarshallingClass className="org.opensaml.samlext.saml2delrestrict.impl.DelegationRestrictionTypeUnmarshaller"/>
+		</ObjectProvider>
+		
+	</ObjectProviders>
+</XMLTooling>

@@ -1,0 +1,104 @@
+<med>
+	<currentProvider code='11285' name='WARDCLERK,SEVENTYTHREE' />
+	<daysSupply value='30' />
+	<expires value='2970302' />
+	<facility code='500' name='CAMP MASTER' />
+	<fillCost value='.27' />
+	<fillsAllowed value='5' />
+	<fillsRemaining value='5' />
+	<form value='TAB' />
+	<id value='401162R;O' />
+	<lastFilled value='2960301' />
+	<name value='DIGITOXIN TAB' />
+	<ordered value='2960301.095422' />
+	<orderingProvider code='11285' name='WARDCLERK,SEVENTYTHREE' />
+	<prescription value='100001410' />
+	<products>
+		<product code='165' name='DIGITOXIN 0.1MG S.T.' role='D' >
+			<class code='CV050' name='DIGITALIS GLYCOSIDES' vuid='4021564' />
+			<vaGeneric />
+			<vaProduct />
+		</product>
+	</products>
+	<quantity value='30' />
+	<routing value='W' />
+	<sig xml:space='preserve'>T 1 QD</sig>
+	<start value='2960301' />
+	<status value='not active' />
+	<stop value='2960520' />
+	<type value='Prescription' />
+	<vaStatus value='DISCONTINUED' />
+	<vaType value='O' />
+</med>
+
+<med>
+	<currentProvider code='11692' name='PROVIDER,TWOHUNDREDSEVENTYNINBE' />
+	<daysSupply value='30' />
+	<expires value='2970514' />
+	<facility code='500' name='CAMP MASTER' />
+	<fillCost value='1.68' />
+	<fillsAllowed value='5' />
+	<fillsRemaining value='5' />
+	<form value='TAB' />
+	<id value='401234R;O' />
+	<lastFilled value='2960513' />
+	<name value='PROBENECID TAB' />
+	<ordered value='2960513.095341' />
+	<orderingProvider code='11692' name='PROVIDER,TWOHUNDREDSEVENTYNINBE' />
+	<prescription value='100001447' />
+	<products>
+		<product code='685' name='PROBENECID 500MG TAB' role='D' >
+			<class code='MS400' name='ANTIGOUT AGENTS' vuid='4021769' />
+			<vaGeneric code='223' name='PROBENECID' vuid='4017872' />
+			<vaProduct code='2005' name='PROBENECID 500MG TAB' vuid='4002588' />
+		</product>
+	</products>
+	<quantity value='60' />
+	<routing value='W' />
+	<sig xml:space='preserve'>T 1 BID</sig>
+	<start value='2960513' />
+	<status value='not active' />
+	<stop value='2960513' />
+	<type value='Prescription' />
+	<vaStatus value='DISCONTINUED' />
+	<vaType value='O' />
+</med>
+
+<med>
+	<currentProvider code='983' name='PROVIDER,ONE' />
+	<daysSupply value='90' />
+	<doses>
+		<dose dose='40' units='MG' unitsPerDose='1' noun='TABLET' route='PO' schedule='QPM' doseStart='3100227' doseStop='3110228' />
+	</doses>
+	<expires value='3110228' />
+	<facility code='960' name='SLC-FO AVIVA VDEV' />
+	<fillCost value='45.378' />
+	<fillsAllowed value='3' />
+	<fillsRemaining value='3' />
+	<form value='TAB' />
+	<id value='404032R;O' />
+	<lastFilled value='3100227' />
+	<location code='23' name='GENERAL MEDICINE' />
+	<name value='SIMVASTATIN TAB' />
+	<orderID value='28038' />
+	<ordered value='3100227.090343' />
+	<orderingProvider code='983' name='PROVIDER,ONE' />
+	<pharmacist code='10000000056' name='PHARMACIST,ONE' />
+	<prescription value='500810' />
+	<products>
+		<product code='153' name='SIMVASTATIN 40MG TAB' role='D' >
+			<class code='CV350' name='ANTILIPEMIC AGENTS' vuid='4021569' />
+			<vaGeneric code='2708' name='SIMVASTATIN' vuid='4020400' />
+			<vaProduct code='9744' name='SIMVASTATIN 40MG TAB' vuid='4010153' />
+		</product>
+	</products>
+	<quantity value='90' />
+	<routing value='W' />
+	<sig xml:space='preserve'>TAKE ONE TABLET BY MOUTH EVERY EVENING</sig>
+	<start value='3100227' />
+	<status value='historical' />
+	<stop value='3110228' />
+	<type value='Prescription' />
+	<vaStatus value='EXPIRED' />
+	<vaType value='O' />
+</med>

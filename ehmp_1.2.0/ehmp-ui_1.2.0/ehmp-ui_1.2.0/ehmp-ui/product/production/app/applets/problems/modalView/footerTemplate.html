@@ -1,0 +1,17 @@
+<div class="pull-left">
+{{#hasPermission 'remove-patient-problem'}}
+  {{#if data}}
+    <button id="deleteBtn" type="button" class="btn btn-danger">Remove</button>
+  {{else}}
+    <label>Only data originating in your facility may be edited.</label>
+  {{/if}}
+{{/hasPermission}}
+{{#hasPermission 'edit-patient-problem'}}
+  {{#if data}}
+    <button id="editBtn" type="button" class="btn btn-primary">Edit</button>
+  {{/if}}
+{{/hasPermission}}
+</div>
+<div class="pull-right">
+	<button id="modal-close-button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>

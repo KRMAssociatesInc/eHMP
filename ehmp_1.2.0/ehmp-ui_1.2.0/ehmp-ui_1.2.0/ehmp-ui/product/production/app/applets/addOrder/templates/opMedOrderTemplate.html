@@ -1,0 +1,118 @@
+<div id="medication-form" class="container-fluid">
+    <form role="form">
+        <div class="form-group" id="top-row-table">
+            <div class="row row-buffer">
+                <div class="col-md-3 gutter">
+                    <label for="dosage" class="control-label">Dosage</label>
+                    <input class="form-control" id="dosage" name="dosage" type="text" list="dosages">
+                    <datalist id="dosages"></datalist>
+                </div>
+                <div class="col-md-4 gutter">
+                    <label for="route" class="control-label">Route</label>
+                    <input class="form-control" id="route" name="route" type="text" list="routes">
+                    <datalist id="routes"></datalist>
+                </div>
+                <div class="col-md-3 gutter">
+                    <label for="schedule" class="control-label">Schedule</label>
+                    <input class="form-control" id="schedule" name="schedule" type="text" list="schedules">
+                    <datalist id="schedules"></datalist>
+                </div>
+                <div class="col-md-2 gutter" style="padding-top: 26px">
+                    <div class="input-group input-group-sm">
+                      <span class="input-group-addon">
+                        <input type="checkbox" id="prn" name="prn">
+                      </span>
+                      <input type="text" value="PRN " disabled class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-buffer">
+                <div class="col-md-12">
+                    <label class="sr-only" for="comments">Comments</label>
+                    <textarea class="form-control resize-vertical" rows="3" id="comments" placeholder="Comments..."></textarea>
+                </div>
+            </div>
+
+            <div class="row row-buffer">
+                <div class="col-md-7">
+                    <div class="col-md-4 gutter">
+                        <label for="supply" class="control-label">Days Supply</label>
+                        <div class="col-md-10">
+                            <input class="form-control" id="supply" name="supply" type="text" value="0" />
+                        </div>
+                        <div class="col-md-2 btn-spacing">
+                            <div class="btn-vertical">
+                                <span class="btn btn-default updnbtn" id="supply-up-btn"><i class="fa fa-caret-up"></i></span>
+                                <span class="btn btn-default updnbtn" id="supply-dn-btn"><i class="fa fa-caret-down"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 gutter">
+                        <label for="quantity" class="control-label">Quantity</label>
+                        <div class="col-md-10">
+                            <input class="form-control" id="quantity" name="quantoty" type="text" value="0" />
+                        </div>
+                        <div class="col-md-2 btn-spacing">
+                            <div class="btn-vertical">
+                                <span class="btn btn-default updnbtn" id="quantity-up-btn"><i class="fa fa-caret-up"></i></span>
+                                <span class="btn btn-default updnbtn" id="quantity-dn-btn"><i class="fa fa-caret-down"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 gutter">
+                        <label for="refills" class="control-label">Refills</label>
+                        <div class="col-md-10">
+                            <input class="form-control" id="refills" name="refills" type="text" value="0" />
+                        </div>
+                        <div class="col-md-2 btn-spacing">
+                            <div class="btn-vertical">
+                                <span class="btn btn-default updnbtn" id="refills-up-btn"><i class="fa fa-caret-up"></i></span>
+                                <span class="btn btn-default updnbtn" id="refills-dn-btn"><i class="fa fa-caret-down"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 gutter">
+                    <fieldset class="scheduler-border">
+                        <!-- <legend class="scheduler-border">Pick Up</legend> -->
+                        <label class="control-label">Pick Up</label>
+                        <div class="control-group">
+                            <div>
+                                <input type="radio" id="pickupClinic" name="pickup" value="C">
+                                <label class="normal-font-weight" for="pickupClinic">Clinic</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="pickupMail" name="pickup" value="M">
+                                <label class="normal-font-weight" for="pickup">Mail</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="pickupWindow" name="pickup" checked value="W">
+                                <label class="normal-font-weight" for="pickupWindow">Window</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-md-3 gutter">
+                    <fieldset class="scheduler-border">
+                        <!-- <legend class="scheduler-border">Priority</legend> -->
+                        <label class="control-label">Priority</label>
+                        <select class="form-control" id="priority" name="priority">
+                            <option value="2">ASAP</option>
+                            <option value="99">DONE</option>
+                            <option selected value="9">ROUTINE</option>
+                            <option value="1">STAT</option>
+                        </select>
+                    </fieldset>
+                </div>
+            </div>
+
+        </div>
+        <div class="row horizontal_line"></div>
+        <div class="row row-buffer">
+            <div class="col-md-12">
+                <div id="previewOrder" name="previewOrder" class="break-word"></div>
+            </div>
+        </div>
+    </form>
+</div>

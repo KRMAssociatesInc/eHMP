@@ -1,0 +1,25 @@
+<feed>
+    <id>http://example.com/blog/1234</id>
+    <title type="text">Atom-Powered Robots Run Amok</title>
+    <updated>1975-07-23T10:13:34.000</updated>
+    <author>
+        <name>John Doe</name>
+        <email>JohnDoe@example.com</email>
+        <uri>http://example.com/~johndoe</uri>
+    </author>
+    <link rel="self" href="/feed"/>
+    <generator uri="/myblog.php" version="1.0">Example Toolkit</generator>
+    <subtitle type="text">all your examples are belong to us</subtitle>
+    <category term="sports"/>
+    <contributor>
+        <name>Jane Doe</name>
+    </contributor>
+    <icon>/icon.jpg</icon>
+    <logo>/logo.jpg</logo>
+    <rights type="html">&amp;amp;copy; 2005 John Doe</rights>
+    <entry>
+        <id>http://example.com/blog/1234/entries/5678</id>
+        <title type="text">Hello world</title>
+        <updated>1975-07-23T10:13:34.000</updated>
+    </entry>
+</feed>

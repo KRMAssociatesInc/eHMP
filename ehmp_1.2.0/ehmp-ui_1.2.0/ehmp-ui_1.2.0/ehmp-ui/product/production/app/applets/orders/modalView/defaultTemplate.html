@@ -1,0 +1,38 @@
+<div id="order-modal-content" class="dataValue">
+<table class="table table-bordered table-condensed table-striped table-hover">
+	<thead></thead>
+	<tbody>
+		<tr><th>Acitivity</th><td>&nbsp;</td></tr>
+		<tr><th>Nature of Order:</th><td>HARD: Electronically</td></tr>
+		<tr><th>Ordered by:</th><td>{{providerDisplayName}}</td></tr>
+        <tr><th>Signature:</th><td>
+        	{{signatureByName}}{{formatDate signatureOnDate "MM/DD/YYYY @ hh:mm"}}
+        </td></tr>
+        <tr><th>&nbsp;</th><td>&nbsp;</td></tr>
+
+        <tr><th>Current Data</th><td>&nbsp;</td></tr>
+		<tr><th>Attending Physician:</th><td>{{providerDisplayName}}</td></tr>
+		<tr><th>Ordering Location:</th><td>{{locationName}}</td></tr>
+        <tr><th>Start Date/Time:</th><td>{{formatDate start "MM/DD/YYYY"}}</td></tr>
+        <tr><th>Stop Date/Time:</th><td>{{formatDate stop "MM/DD/YYYY"}}</td></tr>
+		<tr><th>Current Status:</th><td>{{statusName}}</td></tr>
+        <tr><th>Order #:</th><td>{{oiPackageRef}}</td></tr>
+        <tr><th>&nbsp;</th><td>&nbsp;</td></tr>
+
+        <tr><th>Order</th><td>&nbsp;</td></tr>
+		<tr><th>{{kind}}:</th><td>{{name}}</td></tr>
+		<tr><th>Collected By:</th><td>HARD: Send Patient to Lab</td></tr>
+
+		<tr><th>Collection Sample:</th><td>{{content}}</td></tr>
+
+        <tr><th>Specimen:</th><td>{{summary}}</td></tr>
+        <tr><th>Collection Date/Time:</th><td>{{formatDate entered "MM/DD/YYYY"}}</td></tr>
+		<tr><th>Urgency:</th><td>HARD: Routine</td></tr>
+        <tr><th>How often:</th><td>HARD: Q15MIN</td></tr>
+        <tr><th>How long:</th><td>HARD: 3</td></tr>
+        <tr><th>&nbsp;</th><td>&nbsp;</td></tr>
+
+
+	</tbody>
+</table>
+</div>

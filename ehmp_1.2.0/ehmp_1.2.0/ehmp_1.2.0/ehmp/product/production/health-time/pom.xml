@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>gov.va.hmp</groupId>
+        <artifactId>hmp-parent</artifactId>
+        <version>0.7-S65</version>
+    </parent>
+	<groupId>gov.va.hmp</groupId>
+	<artifactId>health-time-parent</artifactId>
+	<version>2.1.3</version>
+	<packaging>pom</packaging>
+	<name>CPE Health-Time Modules</name>
+	<modules>
+		<module>health-time-core</module>
+		<module>health-time-hibernate</module>
+		<!--module>health-time-as</module-->
+		<module>health-time-solr</module>
+        <module>health-time-jackson</module>
+	</modules>
+	<organization>
+		<name>Department of Veterans Affairs</name>
+		<url>http://domain/</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>Public Domain</name>
+			<url>http://creativecommons.org/licenses/publicdomain/</url>
+		</license>
+	</licenses>
+<!--
+	<scm>
+            <connection>scm:git:https://github.com/OSEHRA-Sandbox/health-time.git</connection>
+            <developerConnection>scm:git:https://github.com/OSEHRA-Sandbox/health-time.git</developerConnection>
+            <url>https://github.com/OSEHRA-Sandbox/health-time</url>
+	  <tag>health-time-2.0.23</tag>
+  </scm>
+-->
+	<repositories>
+		<repository>
+                    <id>maven2-repository.dev.java.net</id>
+                    <name>Java.net Repository for Maven</name>
+                    <url>http://download.java.net/maven/2/</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+                    <id>maven2-repository.dev.java.net</id>
+                    <name>Java.net Repository for Maven</name>
+                    <url>http://download.java.net/maven/2/</url>
+		</pluginRepository>
+	</pluginRepositories>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.2</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>dependencies</report>
+							<!-- <report>project-team</report> -->
+							<!--report>mailing-list</report-->
+							<report>cim</report>
+							<report>issue-tracking</report>
+							<report>license</report>
+							<report>scm</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-changelog-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.6</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>2.5</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<inherited>true</inherited>
+				<version>2.6</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.5.1</version>
+			</plugin>
+		</plugins>
+	</reporting>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.4.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.1.2</version>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<configuration>
+								<attach>true</attach>
+							</configuration>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.3.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
+                         <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.10</version>
+				<configuration>
+					<includes>
+						<include>**/Test*.java</include>
+						<include>**/*Test.java</include>
+						<include>**/*TestCase.java</include>
+						<include>**/*Tests.java</include>
+					</includes>
+					<excludes>
+						<exclude>**/IT*.java</exclude>
+						<exclude>**/*IT.java</exclude>
+						<exclude>**/*ITCase.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+				<plugin>
+					<groupId>org.sonatype.flexmojos</groupId>
+					<artifactId>flexmojos-maven-plugin</artifactId>
+					<version>${flex.mojos.version}</version>
+					<extensions>true</extensions>
+					<configuration>
+						<configurationReport>true</configurationReport>
+						<targetPlayer>${flex.player.version}</targetPlayer>
+						<accessible>${flex.compiler.accessible}</accessible>
+						<headlessServer>
+                            ${flex.compiler.headless-server}
+                        </headlessServer>
+						<compiledLocales>
+							<locale>${flex.compiler.locale}</locale>
+						</compiledLocales>
+						<keepAs3Metadatas>
+							<param>Bindable</param>
+							<param>Event</param>
+							<param>Managed</param>
+							<param>ChangeEvent</param>
+							<param>NonCommittingChangeEvent</param>
+							<param>Transient</param>
+							<param>Inject</param>
+							<param>Autowire</param>
+							<param>Mediate</param>
+							<param>Dispatcher</param>
+							<param>PostConstruct</param>
+							<param>PreDestroy</param>
+						</keepAs3Metadatas>
+						<fonts>
+							<managers>
+								<manager-class>flash.fonts.AFEFontManager</manager-class>
+								<manager-class>flash.fonts.JREFontManager</manager-class>
+								<manager-class>flash.fonts.BatikFontManager</manager-class>
+							</managers>
+						</fonts>
+						<debug>${flex.compiler.debug}</debug>
+						<!-- <licenses>
+                                                                  <flexbuilder3>1377-4007-0173-5916-6864-6171</flexbuilder3>
+                                                              </licenses> -->
+						<skipTests>${java.awt.headless}</skipTests>
+						<warnings>
+							<!-- default to same warnings disabled as in SDK -->
+							<!-- Array.toString() format has changed. -->
+							<arrayTostringChanges>false</arrayTostringChanges>
+							<!-- Boolean() with no arguments returns false in ActionScript 3.0. Boolean() returned undefined in ActionScript 2.0. -->
+							<booleanConstructorWithNoArgs>false</booleanConstructorWithNoArgs>
+							<!-- __resolve is no longer supported. -->
+							<changesInResolve>false</changesInResolve>
+							<!-- Class is sealed. It cannot have members added to it dynamically. -->
+							<!-- Function used in new expression returns a value. Result will be what the -->
+							<!-- function returns, rather than a new instance of that function.           -->
+							<constructorReturnsValue>false</constructorReturnsValue>
+							<!-- EventHandler was not added as a listener. -->
+							<deprecatedEventHandlerError>false</deprecatedEventHandlerError>
+							<!-- ActionScript 3.0 iterates over an object's properties within a "for x in target" statement in random order. -->
+							<forVarInChanges>false</forVarInChanges>
+							<!-- Missing constructor. -->
+							<noConstructor>false</noConstructor>
+							<!-- The super() statement was not called within the constructor. -->
+							<noExplicitSuperCallInConstructor>false</noExplicitSuperCallInConstructor>
+							<!-- In ActionScript 3.0, white space is ignored and '' returns 0. Number() returns -->
+							<!-- NaN in ActionScript 2.0 when the parameter is '' or contains white space.      -->
+							<numberFromStringChanges>false</numberFromStringChanges>
+							<!-- Change in scoping for the this keyword. Class methods extracted from an  -->
+							<!-- instance of a class will always resolve this back to that instance. In   -->
+							<!-- ActionScript 2.0 this is looked up dynamically based on where the method -->
+							<!-- is invoked from.                                                         -->
+							<scopingChangeInThis>false</scopingChangeInThis>
+							<!-- Possible usage of the ActionScript 2.0 XML class. -->
+							<xmlClassHasChanged>false</xmlClassHasChanged>
+						</warnings>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>com.adobe.flex</groupId>
+							<artifactId>compiler</artifactId>
+							<version>${flex.version}</version>
+							<type>pom</type>
+						</dependency>
+						<!-- <dependency>
+                                                                  <groupId>com.adobe.flex</groupId>
+                                                                  <artifactId>license</artifactId>
+                                                                  <version>${flex.version}</version>
+                                                              </dependency> -->
+						<!-- <dependency>
+                                                                  <groupId>com.adobe.flex.compiler</groupId>
+                                                                  <artifactId>flex-fontkit</artifactId>
+                                                                  <version>${flex.version}</version>
+                                                              </dependency> -->
+						<dependency>
+							<groupId>com.adobe.flex.compiler</groupId>
+							<artifactId>asdoc</artifactId>
+							<version>${flex.version}</version>
+							<classifier>template</classifier>
+							<type>zip</type>
+						</dependency>
+					</dependencies>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <tagNameFormat>health-time-@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+		</plugins>
+	</build>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- java -->
+		<java.version>1.6</java.version>
+		<junit.version>4.8.1</junit.version>
+		<mockito.version>1.9.5</mockito.version>
+		<hibernate.core.version>3.3.1.GA</hibernate.core.version>
+		<slf4j.version>1.6.1</slf4j.version>
+		<grails.version>1.3.7</grails.version>
+                <joda-time.version>1.6.2</joda-time.version>
+                <solr.version>4.7.0</solr.version>
+                <jackson.version>2.0.6</jackson.version>
+		<!-- flex -->
+		<flexunit.version>0.90</flexunit.version>
+		<!-- flex compiler settings -->
+		<flex.player.version>10.0.0</flex.player.version>
+		<flex.version>4.1.0.16076</flex.version>
+		<flex.mojos.version>4.0-beta-7</flex.mojos.version>
+		<flex.compiler.accessible>true</flex.compiler.accessible>
+		<flex.compiler.headless-server>true</flex.compiler.headless-server>
+		<flex.compiler.debug>true</flex.compiler.debug>
+		<flex.compiler.locale>en_US</flex.compiler.locale>
+		<skipTests>${java.awt.headless}</skipTests>
+	</properties>
+	<profiles>
+		<profile>
+			<id>tools</id>
+			<activation>
+				<property>
+					<name>java.vendor</name>
+					<value>Sun Microsystems Inc.</value>
+				</property>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>com.sun</groupId>
+					<artifactId>tools</artifactId>
+					<version>${java.version}</version>
+					<scope>system</scope>
+					<systemPath>${java.home}/../lib/tools.jar</systemPath>
+				</dependency>
+			</dependencies>
+		</profile>
+		<!-- Jenkins by default defines a property BUILD_NUMBER which is used to enable the profile. -->
+		<profile>
+            <id>jenkins</id>
+            <activation>
+                <property>
+                    <name>env.BUILD_NUMBER</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>cobertura-maven-plugin</artifactId>
+                        <version>2.5.1</version>
+                        <configuration>
+                            <formats>
+                                <format>xml</format>
+                            </formats>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>cobertura</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+	</profiles>
+</project>

@@ -1,0 +1,71 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "DateReported": "20120722002808",
+        "EnteredBy": "SJF, FIVE",
+        "Type": "Social History",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "EnteredByDate": "20120722002808",
+        "Findings": [
+          {
+            "Category": "",
+            "Flag": "",
+            "Item": "under stress",
+            "Annotation": "",
+            "EventId": "1000001067"
+          }
+        ],
+        "UnverifiedFlag": "",
+        "EncComment": "",
+        "CustodianName": "ahlta",
+        "HistoryMedcinId": "116472",
+        "PeriodEndDate": "",
+        "Chronicity": "",
+        "DateOnset": "20110614040000",
+        "Sensitivity": "",
+        "Comments": [
+
+        ],
+        "PeriodStartDate": "20110614040000",
+        "CouplerType": "Social History",
+        "ReportingClinician": "SJF, FIVE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "+",
+        "RelationshipId": "",
+        "FormattedFindings": "AHLTA Work is Stressful",
+        "Source": "SJF, FIVE",
+        "Status": "Active",
+        "Facility": "4th Medical Group/0090",
+        "LoincCode": "29762-2",
+        "Relationship": "",
+        "EventId": "1000001068"
+      },
+      "dataType": 8
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

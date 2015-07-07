@@ -1,0 +1,112 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "AppointmentDateTime": "20131121103400",
+        "EnteredBy": "BHIE, USERONE",
+        "EventId": "1000000673",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "Disposition": "Released w/o Limitations, Released with Work/Duty Limitations",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131121103341",
+        "CheckoutTime": "",
+        "AppointmentReason": "",
+        "PatientFullName": "VICKI LATIA CHAPMAN",
+        "Status": "KEPT",
+        "DateOfBirth": "",
+        "CustodianName": "ahlta",
+        "CheckinTime": "20131121103438",
+        "AppointmentClassification": "0",
+        "EventStartTime": "",
+        "LoincCode": "56446-8",
+        "Facility": "NH Great Lakes IL",
+        "AppointmentComment": "Notes Entered by: BHIE,USERONE 21 Nov 2013 1034\r\n------------------------------\r\ntest visit",
+        "AppointmentType": "ACUT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "AppointmentDateTime": "20131119151700",
+        "EnteredBy": "BHIE, USERONE",
+        "EventId": "1000000674",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "Disposition": "Released w/o Limitations",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131119151638",
+        "CheckoutTime": "",
+        "AppointmentReason": "",
+        "PatientFullName": "VICKI LATIA CHAPMAN",
+        "Status": "KEPT",
+        "DateOfBirth": "",
+        "CustodianName": "ahlta",
+        "CheckinTime": "20131119151735",
+        "AppointmentClassification": "0",
+        "EventStartTime": "",
+        "LoincCode": "56446-8",
+        "Facility": "NH Great Lakes IL",
+        "AppointmentComment": "Notes Entered by: BHIE,USERONE 19 Nov 2013 1517\r\n------------------------------\r\ntest",
+        "AppointmentType": "ACUT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic"
+      },
+      "dataType": 6
+    },
+    {
+      "dataRecord": {
+        "AppointmentDateTime": "20131119144800",
+        "EnteredBy": "BHIE, USERONE",
+        "EventId": "1000000675",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "Disposition": "Released w/o Limitations",
+        "OtherIdentifier": "",
+        "EnteredByDate": "20131119144807",
+        "CheckoutTime": "",
+        "AppointmentReason": "",
+        "PatientFullName": "VICKI LATIA CHAPMAN",
+        "Status": "KEPT",
+        "DateOfBirth": "",
+        "CustodianName": "ahlta",
+        "CheckinTime": "20131119144902",
+        "AppointmentClassification": "0",
+        "EventStartTime": "",
+        "LoincCode": "56446-8",
+        "Facility": "NH Great Lakes IL",
+        "AppointmentComment": "Notes Entered by: BHIE,USERONE 19 Nov 2013 1448\r\n------------------------------\r\ntest today",
+        "AppointmentType": "ACUT",
+        "Provider": "BHIE, USERONE",
+        "Clinic": "Family Practice Clinic"
+      },
+      "dataType": 6
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

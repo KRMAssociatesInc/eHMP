@@ -1,0 +1,9 @@
+<div id="{{AppletID}}-observations-gist" gistviewtype="observations">
+	<div id="observationGistGrid" class="row header-bar noMargin">
+	    <span id="name-header" {{#if gistHeaders.header1.sortable}}tabindex="0"{{/if}} sortable="{{gistHeaders.header1.sortable}}" sortType="{{gistHeaders.header1.sortType}}" sortDirection="none" sortKey="{{gistHeaders.header1.key}}" class="col-sm-4 header descriptionClass {{#if gistHeaders.header1.sortable}}selectable{{/if}}" tooltip-data-key="{{gistHeaders.header1.hoverTip}}">{{gistHeaders.header1.title}}<span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span></span>
+	    <span id="results-header" {{#if gistHeaders.header2.sortable}}tabindex="0"{{/if}}  sortable="{{gistHeaders.header2.sortable}}" sortType="{{gistHeaders.header2.sortType}}" sortDirection="none" sortKey="{{gistHeaders.header2.key}}" class="col-sm-3 header resultClass {{#if gistHeaders.header2.sortable}}selectable{{/if}}" tooltip-data-key="{{gistHeaders.header2.hoverTip}}">{{gistHeaders.header2.title}}<span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span></span>
+	   	<span id="age-header" {{#if gistHeaders.header4.sortable}}tabindex="0"{{/if}}  sortable="{{gistHeaders.header4.sortable}}" sortType="{{gistHeaders.header4.sortType}}" sortDirection="none" sortKey="{{gistHeaders.header4.key}}" class="col-sm-2 header ageClass {{#if gistHeaders.header4.sortable}}selectable{{/if}}" tooltip-data-key="{{gistHeaders.header4.hoverTip}}">{{gistHeaders.header4.title}}<span sortArrow="headerDirectionalIndicator" class="sort-caret fa"></span></span>
+	    <span id="graph-header" class="col-sm-3 header">{{gistHeaders.header3.title}}</span>
+	</div>
+    <div id="{{AppletID}}-observations-gist-items" class="gistItemList"></div>
+</div>

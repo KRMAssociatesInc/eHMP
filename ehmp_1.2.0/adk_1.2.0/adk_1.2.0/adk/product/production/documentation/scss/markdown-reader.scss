@@ -1,0 +1,100 @@
+$toc_stripe_width: 3px;
+$toc_stripe_active_width: 7px;
+$toc_sub_indent: 30px;
+
+// bootstrap copy
+$nav-link-padding: 15px;
+
+.affix {
+  transform: none;
+}
+#toc > div {
+  font-size: 14px;
+  .nav a {
+    color: #000000;
+  }
+  border: 1px solid $toc_border_color;
+  border-top: 0;
+  max-height: 100%;
+
+  .nav > li > a:hover,
+  .nav > li > a:focus {
+    background-color: transparent;
+    color: $toc_color;
+    // font-weight: bold;
+  }
+  .nav .nav {
+    display: none;
+    font-weight: normal;
+    line-height: 1.3;
+  }
+  & > .nav > li > ul {
+    margin-top: -7px;
+  }
+  .nav .active .nav,
+  .nav .activechild .nav {
+    display: block;
+  }
+
+  & > .nav > li.active,
+  & > .nav > li.activechild {
+    border-left: $toc_stripe_width solid $toc_stripe_color;
+    margin-left: (-$toc_stripe_width - 1) / 2;
+    // margin-left: - ($toc_stripe_width - (($toc_stripe_width - 1) / 2);
+  }
+
+  & > .nav > li{
+    font-weight: bold;
+  }
+
+  .nav .active > a {
+    border-left: $toc_stripe_active_width solid $toc_stripe_color;
+    margin-left: -($toc_stripe_active_width + $toc_stripe_width) / 2;
+    color: $toc_color;
+  }
+
+  .nav .nav .active > a {
+    padding-left: ($toc_sub_indent - ($toc_stripe_active_width - $toc_stripe_width) / 2);
+  }
+
+  & > .nav > li.activechild > a {
+    padding-left: ($nav-link-padding - ($toc_stripe_width - 1) / 2);
+  }
+  & > .nav > li.active > a {
+    padding-left: ($nav-link-padding - ($toc_stripe_width - 1) / 2) - ($toc_stripe_active_width - $toc_stripe_width) / 2;
+  }
+
+
+  .nav .nav > li > a {
+    padding-left: $toc_sub_indent;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+
+  .nav > li > a {
+    padding: 5px 15px;
+  }
+
+  a.nav-page-title {
+    // color: $toc_color;
+    // display: block;
+    // padding: 5px 10px;
+    // margin-left: -($toc_stripe_active_width - $toc_stripe_width) / 2;
+    // border-left: $toc_stripe_width solid $toc_stripe_color;
+    // margin-bottom: 5px;
+    // text-decoration: underline;
+    color: $toc_color;
+    display: block;
+    padding: 5px 10px;
+    margin-left: -4px;
+    margin-right: -3px;
+    background-color: $toc_border_color;
+  }
+  &>ul.nav {
+  }
+  .back-to-top {
+    margin: 15px 10px 5px 10px;
+    color: #999!important;
+    display: block;
+  }
+}

@@ -1,0 +1,10 @@
+ZSTU ;OpenM calls this routine at boot time to perform all commands listed
+ ; in this file.  E.G. start taskman, start broker, etc.
+ S $ZT="ERR^ZSTU"
+ ;
+ ; Start HTTP listener, defaults to port 9080 if not other has been specfied
+ N NMSP S NMSP="VPR_P26"
+ ;I $L($T(GO^|NMSP|VPRJRCL)) J GO^VPRJRCL:NMSP
+ Q
+ERR ; avoid crashing
+ Q

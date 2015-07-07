@@ -1,0 +1,108 @@
+{
+    "apiVersion": "1.01",
+    "params": {
+        "domain": "HDR",
+        "systemId": "HDR"
+    },
+    "data": {
+        "updated": "20140409083814",
+        "totalItems": 1,
+        "items": [
+            {
+                "uid": "urn:va:document:ABCD:3:3853",
+                "summary": "ADVANCE DIRECTIVE COMPLETED",
+                "signer": "LABTECH,FIFTYNINE",
+                "signedDateTime": "05/16/07 09:50",
+                "entered": "20070516095030",
+                "kind": "Advance Directive",
+                "text": [
+                    {
+                        "uid": "urn:va:document:ABCD:3:3853",
+                        "summary": "DocumentText{uid='urn:va:document:ABCD:3:3853'}",
+                        "clinicians": [
+                            {
+                                "uid": "urn:va:user:ABCD:10000000049",
+                                "summary": "DocumentClinician{uid='urn:va:user:ABCD:10000000049'}",
+                                "name": "LABTECH,FIFTYNINE",
+                                "displayName": "Labtech,Fiftynine",
+                                "role": "AU"
+                            },
+                            {
+                                "uid": "urn:va:user:ABCD:10000000049",
+                                "summary": "DocumentClinician{uid='urn:va:user:ABCD:10000000049'}",
+                                "name": "LABTECH,FIFTYNINE",
+                                "displayName": "Labtech,Fiftynine",
+                                "role": "S",
+                                "signedDateTime": "20070516095030",
+                                "signature": "FIFTYNINE LABTECH "
+                            },
+                            {
+                                "uid": "urn:va:user:ABCD:10000000049",
+                                "summary": "DocumentClinician{uid='urn:va:user:ABCD:10000000049'}",
+                                "name": "LABTECH,FIFTYNINE",
+                                "displayName": "Labtech,Fiftynine",
+                                "role": "ES"
+                            },
+                            {
+                                "uid": "urn:va:user:ABCD:10000000049",
+                                "summary": "DocumentClinician{uid='urn:va:user:ABCD:10000000049'}",
+                                "name": "MG",
+                                "displayName": "Mg",
+                                "role": "E"
+                            }
+                        ],
+                        "content": "   VistA Imaging - Scanned Document\r\n",
+                        "dateTime": "200705160950",
+                        "status": "COMPLETED"
+                    }
+                ],
+                "codes": [],
+                "facilityCode": "561",
+                "facilityName": "New Jersey HCS",
+                "localId": "3853",
+                "encounterUid": "urn:va:visit:ABCD:3:5670",
+                "encounterName": "20 MINUTE May 16, 2007",
+                "referenceDateTime": "200705160950",
+                "documentTypeCode": "D",
+                "documentTypeName": "Advance Directive",
+                "documentClass": "PROGRESS NOTES",
+                "localTitle": "ADVANCE DIRECTIVE COMPLETED",
+                "status": "COMPLETED",
+                "clinicians": [
+                    {
+                        "uid": "urn:va:user:ABCD:10000000049",
+                        "summary": "DocumentClinician{uid='urn:va:user:ABCD:10000000049'}",
+                        "name": "LABTECH,FIFTYNINE",
+                        "displayName": "Labtech,Fiftynine",
+                        "role": "AU"
+                    },
+                    {
+                        "uid": "urn:va:user:ABCD:10000000049",
+                        "summary": "DocumentClinician{uid='urn:va:user:ABCD:10000000049'}",
+                        "name": "LABTECH,FIFTYNINE",
+                        "displayName": "Labtech,Fiftynine",
+                        "role": "S",
+                        "signedDateTime": "20070516095030",
+                        "signature": "FIFTYNINE LABTECH "
+                    },
+                    {
+                        "uid": "urn:va:user:ABCD:10000000049",
+                        "summary": "DocumentClinician{uid='urn:va:user:ABCD:10000000049'}",
+                        "name": "LABTECH,FIFTYNINE",
+                        "displayName": "Labtech,Fiftynine",
+                        "role": "ES"
+                    },
+                    {
+                        "uid": "urn:va:user:ABCD:10000000049",
+                        "summary": "DocumentClinician{uid='urn:va:user:ABCD:10000000049'}",
+                        "name": "MG",
+                        "displayName": "Mg",
+                        "role": "E"
+                    }
+                ],
+                "statusDisplayName": "Completed",
+                "documentDefUid": "urn:va:doc-def:ABCD:1632"
+            }
+        ]
+    }
+}

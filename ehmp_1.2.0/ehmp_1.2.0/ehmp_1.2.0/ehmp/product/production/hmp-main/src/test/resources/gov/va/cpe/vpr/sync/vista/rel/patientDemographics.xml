@@ -1,0 +1,66 @@
+<patient>
+    <address postalCode='84113' stateProvince='UTAH' streetLine1='123 Main St' city='Any Town'/>
+    <aliases>
+        <alias fullName='P4'/>
+    </aliases>
+    <bid value='F0004'/>
+    <dob value='2350407'/>
+	<ethnicities>
+		<ethnicity value="2186-5" />
+	</ethnicities>
+	<exposures>
+		<exposure value="AO" />
+	</exposures>
+	<facilities>
+        <facility latestDate='3010131' name='CAMP MASTER' code='500' domain='FOO.EXAMPLE.ORG'/>
+        <facility latestDate='3010101' name='ABILENE (CAA)' code='998'/>
+        <facility latestDate='3010101' name='CHARLESTON (CBB)' code='997'/>
+        <facility latestDate='3010101' name='CENTRAL CITY (CCC)' code='995'/>
+        <facility latestDate='3010101' name='LUBBOCK (CDD)' code='994'/>
+        <facility latestDate='3010101' name='BOCA RATON (CEE)' code='988'/>
+        <facility latestDate='3010101' name='CHAMPAIGN (CFF)' code='996'/>
+        <facility latestDate='3010101' name='YUMA  (CGG)' code='993'/>
+        <facility latestDate='3010101' name='LAREDO (CHH)' code='992'/>
+        <facility latestDate='3010101' name='PARK CITY  (CII)' code='989'/>
+        <facility latestDate='3010101' name='JAMESTOWN (CJJ)' code='991'/>
+        <facility latestDate='3010101' name='SOUTH BEND (CKK)' code='990'/>
+        <facility latestDate='3010101' name='LYNCHBURG (CLL)' code='999' homeSite='1'/>
+        <facility latestDate='3010101' name='ASPEN (CMM)' code='987'/>
+    </facilities>
+    <familyName value='FOUR'/>
+    <flags>
+        <flag text='shows signs of potential violence' name='BEHAVIORAL'/>
+    </flags>
+    <fullName value='FOUR,PATIENT'/>
+    <gender value='M'/>
+    <givenNames value='PATIENT'/>
+    <icn value='10104'/>
+    <id value='229'/>
+    <lrdfn value='177'/>
+    <maritalStatus value='D'/>
+    <religion value='4'/>
+    <sc value='1'/>
+    <scPercent value='10'/>
+    <sensitive value='0'/>
+    <ssn value='666000004'/>
+    <supports>
+        <support relationship='' name='FOUR,EDIS' contactType='ECON'>
+            <address postalCode='53402' stateProvince='WISCONSIN' streetLine1='135 Main St' city='Racine'/>
+            <telecomList>
+                <telecom value='(262)123-4567' usageType='H'/>
+            </telecomList>
+        </support>
+        <support relationship='' name='VETERAN,BROTHER' contactType='NOK'>
+            <address postalCode='84113' stateProvince='UTAH' streetLine1='456 State St' city='Any Town'/>
+            <telecomList>
+                <telecom value='(801)213-9999' usageType='H'/>
+            </telecomList>
+        </support>
+    </supports>
+    <telecomList>
+        <telecom value='(801)213-3654' usageType='H'/>
+        <telecom value='(512)962-6745' usageType='MC'/>
+        <telecom value='222-555-7720' usageType='WP'/>
+    </telecomList>
+    <veteran value='1'/>
+</patient>

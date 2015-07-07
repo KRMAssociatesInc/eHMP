@@ -1,0 +1,33 @@
+<div class="resultDoc" data-doc-uid="{{ uid }}">
+	{{!--<h5><a id="{{uid}}">{{localTitle}}</a></h5>--}}
+	{{!--<a name="{{uid}}">--}}
+	<div id="{{uid}}" class="resultsLabel labelStyleColor" tabindex="0">Local Title: </div>
+	    <div class="resultsInfo" tabindex="0">{{localTitle}}&nbsp;</div>
+	<br>
+	<div class="resultsLabel labelStyleColor" tabindex="0">Date Of Note: </div>
+	{{#if imagingBool}}
+	<div class="resultsInfo" tabindex="0">{{formatDate referenceDateTime "MM/DD/YYYY - HH:mm"}}&nbsp;</div>
+	{{else}}
+	<div class="resultsInfo" tabindex="0">{{formatDate entered "MM/DD/YYYY - HH:mm"}}&nbsp;</div>
+	{{/if}}
+	<br>
+	<div class="resultsLabel labelStyleColor" tabindex="0">Author: </div>
+	{{#if imagingBool}}
+	<div class="resultsInfo" data-toggle="tooltip" data-placement="right" title="Signed: {{formatDate signedDateTime 'MM/DD/YYYY - HH:mm'}}" tabindex="0">{{authorDisplayName}}&nbsp;<span class="glyphicon glyphicon-pencil"></span></div>
+	{{else}}
+	<div class="resultsInfo" tabindex="0">{{authorDisplayName}}&nbsp;</div>
+	{{/if}}
+	<br>
+	<div class="resultsLabel labelStyleColor" tabindex="0">Status: </div>
+	<div class="resultsInfo {{statusDisplayClass}}" tabindex="0">{{statusDisplayName}}&nbsp;</div>
+	<br><br>
+	{{#if dodComplexNoteContent}}
+	<iframe id="dodContent" class="dodContent" seamless sandbox="allow-same-origin" src="#"></iframe>
+	{{else}}
+	{{#each text}}
+	<pre tabindex="0">{{content}}</pre>
+	{{/each}}
+	{{/if}}
+	<br>
+	<br>
+</div>

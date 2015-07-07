@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLTooling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="http://www.opensaml.org/xmltooling-config" xsi:schemaLocation="http://www.opensaml.org/xmltooling-config ../../src/schema/xmltooling-config.xsd">
+ 
+    <!-- SAML 2.0 Protocol Object providers -->
+    <ObjectProviders>
+
+        <!-- Artifact provider -->
+        <ObjectProvider qualifiedName="saml2p:Artifact">
+            <BuilderClass className="org.opensaml.saml2.core.impl.ArtifactBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.ArtifactMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.ArtifactUnmarshaller"/>
+        </ObjectProvider>
+
+        <!-- ArtifactResolve provider -->
+        <ObjectProvider qualifiedName="saml2p:ArtifactResolve">
+            <BuilderClass className="org.opensaml.saml2.core.impl.ArtifactResolveBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.ArtifactResolveMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.ArtifactResolveUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:ArtifactResolveType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.ArtifactResolveBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.ArtifactResolveMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.ArtifactResolveUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- ArtifactResponse provider -->
+        <ObjectProvider qualifiedName="saml2p:ArtifactResponse">
+            <BuilderClass className="org.opensaml.saml2.core.impl.ArtifactResponseBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.ArtifactResponseMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.ArtifactResponseUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:ArtifactResponseType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.ArtifactResponseBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.ArtifactResponseMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.ArtifactResponseUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- AssertionIDRequest provider -->
+        <ObjectProvider qualifiedName="saml2p:AssertionIDRequest">
+            <BuilderClass className="org.opensaml.saml2.core.impl.AssertionIDRequestBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.AssertionIDRequestMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.AssertionIDRequestUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:AssertionIDRequestType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.AssertionIDRequestBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.AssertionIDRequestMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.AssertionIDRequestUnmarshaller"/>
+        </ObjectProvider>
+
+        <!-- AttributeQuery provider -->
+        <ObjectProvider qualifiedName="saml2p:AttributeQuery">
+            <BuilderClass className="org.opensaml.saml2.core.impl.AttributeQueryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.AttributeQueryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.AttributeQueryUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:AttributeQueryType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.AttributeQueryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.AttributeQueryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.AttributeQueryUnmarshaller"/>
+        </ObjectProvider>
+          
+        <!-- AuthnQuery provider -->
+        <ObjectProvider qualifiedName="saml2p:AuthnQuery">
+            <BuilderClass className="org.opensaml.saml2.core.impl.AuthnQueryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.AuthnQueryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.AuthnQueryUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:AuthnQueryType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.AuthnQueryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.AuthnQueryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.AuthnQueryUnmarshaller"/>
+        </ObjectProvider>
+                
+        <!-- AuthnRequest provider -->
+        <ObjectProvider qualifiedName="saml2p:AuthnRequest">
+            <BuilderClass className="org.opensaml.saml2.core.impl.AuthnRequestBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.AuthnRequestMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.AuthnRequestUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:AuthnRequestType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.AuthnRequestBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.AuthnRequestMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.AuthnRequestUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- AuthzDecisionQuery provider -->
+        <ObjectProvider qualifiedName="saml2p:AuthzDecisionQuery">
+            <BuilderClass className="org.opensaml.saml2.core.impl.AuthzDecisionQueryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.AuthzDecisionQueryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.AuthzDecisionQueryUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:AuthzDecisionQueryType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.AuthzDecisionQueryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.AuthzDecisionQueryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.AuthzDecisionQueryUnmarshaller"/>
+        </ObjectProvider>
+                 
+        <!--  Extensions provider -->
+        <ObjectProvider qualifiedName="saml2p:Extensions">
+            <BuilderClass className="org.opensaml.saml2.common.impl.ExtensionsBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.common.impl.ExtensionsMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.common.impl.ExtensionsUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:ExtensionsType">
+            <BuilderClass className="org.opensaml.saml2.common.impl.ExtensionsBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.common.impl.ExtensionsMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.common.impl.ExtensionsUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- GetComplete provider -->
+        <ObjectProvider qualifiedName="saml2p:GetComplete">
+            <BuilderClass className="org.opensaml.saml2.core.impl.GetCompleteBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.GetCompleteMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.GetCompleteUnmarshaller"/>
+        </ObjectProvider>
+                
+        <!-- IDPEntry provider -->
+        <ObjectProvider qualifiedName="saml2p:IDPEntry">
+            <BuilderClass className="org.opensaml.saml2.core.impl.IDPEntryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.IDPEntryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.IDPEntryUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:IDPEntryType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.IDPEntryBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.IDPEntryMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.IDPEntryUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- IDPList provider -->
+        <ObjectProvider qualifiedName="saml2p:IDPList">
+            <BuilderClass className="org.opensaml.saml2.core.impl.IDPListBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.IDPListMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.IDPListUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:IDPListType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.IDPListBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.IDPListMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.IDPListUnmarshaller"/>
+        </ObjectProvider>
+                       
+        <!-- LogoutRequest provider -->
+        <ObjectProvider qualifiedName="saml2p:LogoutRequest">
+            <BuilderClass className="org.opensaml.saml2.core.impl.LogoutRequestBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.LogoutRequestMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.LogoutRequestUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:LogoutRequestType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.LogoutRequestBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.LogoutRequestMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.LogoutRequestUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- LogoutResponse provider -->
+        <ObjectProvider qualifiedName="saml2p:LogoutResponse">
+            <BuilderClass className="org.opensaml.saml2.core.impl.LogoutResponseBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.LogoutResponseMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.LogoutResponseUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:LogoutResponseType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.LogoutResponseBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.LogoutResponseMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.LogoutResponseUnmarshaller"/>
+        </ObjectProvider>
+         
+        <!-- ManageNameIDRequest provider -->
+        <ObjectProvider qualifiedName="saml2p:ManageNameIDRequest">
+            <BuilderClass className="org.opensaml.saml2.core.impl.ManageNameIDRequestBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.ManageNameIDRequestMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.ManageNameIDRequestUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:ManageNameIDRequestType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.ManageNameIDRequestBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.ManageNameIDRequestMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.ManageNameIDRequestUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- ManageNameIDResponse provider -->
+        <ObjectProvider qualifiedName="saml2p:ManageNameIDResponse">
+            <BuilderClass className="org.opensaml.saml2.core.impl.ManageNameIDResponseBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.ManageNameIDResponseMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.ManageNameIDResponseUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:ManageNameIDResponseType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.ManageNameIDResponseBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.ManageNameIDResponseMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.ManageNameIDResponseUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- NameIDMappingRequest provider -->
+        <ObjectProvider qualifiedName="saml2p:NameIDMappingRequest">
+            <BuilderClass className="org.opensaml.saml2.core.impl.NameIDMappingRequestBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.NameIDMappingRequestMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.NameIDMappingRequestUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:NameIDMappingRequestType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.NameIDMappingRequestBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.NameIDMappingRequestMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.NameIDMappingRequestUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- NameIDMappingResponse provider -->
+        <ObjectProvider qualifiedName="saml2p:NameIDMappingResponse">
+            <BuilderClass className="org.opensaml.saml2.core.impl.NameIDMappingResponseBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.NameIDMappingResponseMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.NameIDMappingResponseUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:NameIDMappingResponseType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.NameIDMappingResponseBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.NameIDMappingResponseMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.NameIDMappingResponseUnmarshaller"/>
+        </ObjectProvider> 
+        
+        <!-- NameIDPolicy -->
+        <ObjectProvider qualifiedName="saml2p:NameIDPolicy">
+            <BuilderClass className="org.opensaml.saml2.core.impl.NameIDPolicyBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.NameIDPolicyMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.NameIDPolicyUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:NameIDPolicyType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.NameIDPolicyBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.NameIDPolicyMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.NameIDPolicyUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- NewEncryptedID -->
+        <ObjectProvider qualifiedName="saml2p:NewEncryptedID">
+            <BuilderClass className="org.opensaml.saml2.core.impl.NewEncryptedIDBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.NewEncryptedIDMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.NewEncryptedIDUnmarshaller"/>
+        </ObjectProvider>
+                
+        <!-- NewID provider -->
+        <ObjectProvider qualifiedName="saml2p:NewID">
+            <BuilderClass className="org.opensaml.saml2.core.impl.NewIDBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.NewIDMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.NewIDUnmarshaller"/>
+        </ObjectProvider>
+                
+        <!-- RequestedAuthnContext provider -->
+        <ObjectProvider qualifiedName="saml2p:RequestedAuthnContext">
+            <BuilderClass className="org.opensaml.saml2.core.impl.RequestedAuthnContextBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.RequestedAuthnContextMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.RequestedAuthnContextUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:RequestedAuthnContextType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.RequestedAuthnContextBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.RequestedAuthnContextMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.RequestedAuthnContextUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- RequesterID -->
+        <ObjectProvider qualifiedName="saml2p:RequesterID">
+            <BuilderClass className="org.opensaml.saml2.core.impl.RequesterIDBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.RequesterIDMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.RequesterIDUnmarshaller"/>
+        </ObjectProvider>
+                        
+        <!-- Response provider -->
+        <ObjectProvider qualifiedName="saml2p:Response">
+            <BuilderClass className="org.opensaml.saml2.core.impl.ResponseBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.ResponseMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.ResponseUnmarshaller"/>
+        </ObjectProvider> 
+        
+        <!-- Scoping provider -->
+        <ObjectProvider qualifiedName="saml2p:Scoping">
+            <BuilderClass className="org.opensaml.saml2.core.impl.ScopingBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.ScopingMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.ScopingUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:ScopingType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.ScopingBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.ScopingMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.ScopingUnmarshaller"/>
+        </ObjectProvider>
+                
+        <!-- SessionIndex provider -->
+        <ObjectProvider qualifiedName="saml2p:SessionIndex">
+            <BuilderClass className="org.opensaml.saml2.core.impl.SessionIndexBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.SessionIndexMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.SessionIndexUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- Status -->
+        <ObjectProvider qualifiedName="saml2p:Status">
+            <BuilderClass className="org.opensaml.saml2.core.impl.StatusBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.StatusMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.StatusUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:StatusType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.StatusBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.StatusMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.StatusUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- StatusCode -->
+        <ObjectProvider qualifiedName="saml2p:StatusCode">
+            <BuilderClass className="org.opensaml.saml2.core.impl.StatusCodeBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.StatusCodeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.StatusCodeUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:StatusCodeType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.StatusCodeBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.StatusCodeMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.StatusCodeUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- StatusDetail -->
+        <ObjectProvider qualifiedName="saml2p:StatusDetail">
+            <BuilderClass className="org.opensaml.saml2.core.impl.StatusDetailBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.StatusDetailMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.StatusDetailUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:StatusDetailType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.StatusDetailBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.StatusDetailMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.StatusDetailUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- StatusMessage -->
+        <ObjectProvider qualifiedName="saml2p:StatusMessage">
+            <BuilderClass className="org.opensaml.saml2.core.impl.StatusMessageBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.StatusMessageMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.StatusMessageUnmarshaller"/>
+        </ObjectProvider>
+        
+        <!-- Terminate provider -->
+        <ObjectProvider qualifiedName="saml2p:Terminate">
+            <BuilderClass className="org.opensaml.saml2.core.impl.TerminateBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.TerminateMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.TerminateUnmarshaller"/>
+        </ObjectProvider>
+        
+        <ObjectProvider qualifiedName="saml2p:TerminateType">
+            <BuilderClass className="org.opensaml.saml2.core.impl.TerminateBuilder"/>
+            <MarshallingClass className="org.opensaml.saml2.core.impl.TerminateMarshaller"/>
+            <UnmarshallingClass className="org.opensaml.saml2.core.impl.TerminateUnmarshaller"/>
+        </ObjectProvider>
+ 
+    </ObjectProviders>
+    
+ </XMLTooling>

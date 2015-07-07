@@ -1,0 +1,1749 @@
+<ns4:AdhocQueryResponse totalResultCount="7" startIndex="0" requestId="1234"
+                        status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success"
+                        xmlns:ns19="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+                        xmlns:ns18="urn:gov:hhs:fha:nhinc:common:subscription"
+                        xmlns:ns17="urn:gov:hhs:fha:nhinc:common:subscriptionb2overridefordocuments"
+                        xmlns:ns16="http://nhinc.services.com/schema/auditmessage"
+                        xmlns:ns15="urn:gov:hhs:fha:nhinc:common:subscriptionb2overrideforcdc"
+                        xmlns:ns14="http://www.hhs.gov/healthit/nhin/cdc"
+                        xmlns:ns13="http://docs.oasis-open.org/wsn/t-1"
+                        xmlns:ns12="http://docs.oasis-open.org/wsrf/bf-2"
+                        xmlns:ns11="http://www.w3.org/2005/08/addressing"
+                        xmlns:ns10="http://docs.oasis-open.org/wsn/b-2"
+                        xmlns:ns9="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"
+                        xmlns:ns8="urn:oasis:names:tc:emergency:EDXL:DE:1.0" xmlns:ns7="urn:ihe:iti:xds-b:2007"
+                        xmlns:ns6="urn:gov:hhs:fha:nhinc:common:nhinccommonentity"
+                        xmlns:ns5="urn:gov:hhs:fha:nhinc:common:nhinccommon"
+                        xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"
+                        xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+                        xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0">
+    <ns2:RegistryErrorList>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.42.10001.100001.12."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.42.10001.100001.12."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.596."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.1481.2.4.1."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.1181.2."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.1256.1.2.1."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.715."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.25.256133121442266547198931747355024016667.1.2.1."/>
+        <ns2:RegistryError severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Warning"
+                           errorCode="XDSRegistryError" codeContext="The request was rejected due to a policy."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.42.10001.100001.17."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 1.3.6.1.4.1.26580.20."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.190.6.100.1."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.1834.2."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.1125.1.2.1."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 1.3.6.1.4.1.31523."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.488.1."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.187."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.17.8.1."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 1.2.840.114350.1.13.60.3.7.3.688884.100."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 2.16.840.1.113883.3.42.10001.100001.13."/>
+        <ns2:RegistryError location="Entity Document Query"
+                           severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"
+                           errorCode="XDSRegistryError"
+                           codeContext="No endpoint available for HCID: 1.2.840.114350.1.13.105.3.7.3.688884.100."/>
+    </ns2:RegistryErrorList>
+    <ns3:RegistryObjectList>
+        <ns3:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="urn:ihe:iti:2010:StatusType:DeferredCreation"
+                             objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
+                             home="urn:oid:2.16.840.1.113883.3.42.10001.100001.18"
+                             id="urn:uuid:1666000001/34133-9/34cd96db-22d8-4647-a13f-36a01f66997a">
+            <ns3:Slot name="creationTime">
+                <ns3:ValueList>
+                    <ns3:Value>20140616213908</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="hash">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="languageCode">
+                <ns3:ValueList>
+                    <ns3:Value>en-us</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="serviceStopTime">
+                <ns3:ValueList>
+                    <ns3:Value>20140616</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="size">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="sourcePatientId">
+                <ns3:ValueList>
+                    <ns3:Value>1666000001^^^&amp;2.16.840.1.113883.3.42.10001.100001.18&amp;ISO</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="repositoryUniqueId">
+                <ns3:ValueList>
+                    <ns3:Value>2.16.840.1.113883.3.198</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Name>
+                <ns3:LocalizedString value="Summarization of episode note"/>
+            </ns3:Name>
+            <ns3:Classification nodeRepresentation="" classifiedObject="urn:uuid:2387da18-e03d-11e3-b02f-e9020732ecf0"
+                                classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:7f952266-b473-4124-98c5-2d4b00b0aff0">
+                <ns3:Slot name="authorPerson">
+                    <ns3:ValueList>
+                        <ns3:Value>7.9^Epic - Version 7.9^^^^^^^&amp;1.2.840.114350.1.1&amp;ISO</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Slot name="authorInstitution">
+                    <ns3:ValueList>
+                        <ns3:Value>HEALTHeLINK</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1666000001/34133-9/34cd96db-22d8-4647-a13f-36a01f66997a"
+                                classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>LOINC</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Summarization of episode note"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007"
+                                classifiedObject="urn:uuid:1666000001/34133-9/34cd96db-22d8-4647-a13f-36a01f66997a"
+                                classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>Format code</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="urn:ihe:pcc:xphr:2007"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1666000001/34133-9/34cd96db-22d8-4647-a13f-36a01f66997a"
+                                classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>Type code</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="34133-9"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:ExternalIdentifier value="5a31395c-b245-4333-b62f-e94fb0c7ae5d"
+                                    identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
+                                    registryObject="urn:uuid:1666000001/34133-9/34cd96db-22d8-4647-a13f-36a01f66997a">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.uniqueId"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+            <ns3:ExternalIdentifier value="1666000001^^^&amp;2.16.840.1.113883.3.42.10001.100001.18&amp;ISO"
+                                    identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
+                                    registryObject="urn:uuid:1666000001/34133-9/34cd96db-22d8-4647-a13f-36a01f66997a">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.patientId"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+        </ns3:ExtrinsicObject>
+        <ns3:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="urn:ihe:iti:2010:StatusType:DeferredCreation"
+                             objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
+                             lid="urn:uuid:1977b05f-8cc4-40e8-b60c-82be3e04fa4e" home="urn:oid:1.3.6.1.4.1.26580.10"
+                             id="urn:uuid:2387da18-e03d-11e3-b02f-e9020732ecf0">
+            <ns3:Slot name="creationTime">
+                <ns3:ValueList>
+                    <ns3:Value>20140617014043</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="hash">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="languageCode">
+                <ns3:ValueList>
+                    <ns3:Value>en-US</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="repositoryUniqueId">
+                <ns3:ValueList>
+                    <ns3:Value>1.2.840.114350.1.13.111.3.7.2.688879</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="size">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="sourcePatientId">
+                <ns3:ValueList>
+                    <ns3:Value>'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Name>
+                <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+            </ns3:Name>
+            <ns3:VersionInfo/>
+            <ns3:Classification nodeRepresentation="" classifiedObject="urn:uuid:2387da18-e03d-11e3-b02f-e9020732ecf0"
+                                classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:7f952266-b473-4124-98c5-2d4b00b0aff0">
+                <ns3:Slot name="authorPerson">
+                    <ns3:ValueList>
+                        <ns3:Value>7.9^Epic - Version 7.9^^^^^^^&amp;1.2.840.114350.1.1&amp;ISO</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Slot name="authorInstitution">
+                    <ns3:ValueList>
+                        <ns3:Value>Kaiser Permanente Mid-Atlantic STSTMA2</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:2387da18-e03d-11e3-b02f-e9020732ecf0"
+                                classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:df4f27c6-70c4-4ce9-964b-2305b74cb407">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="N" classifiedObject="urn:uuid:2387da18-e03d-11e3-b02f-e9020732ecf0"
+                                classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:b18e3a03-a36d-4fce-ad7e-10c9d766e4ed">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.5.25</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Normal" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007"
+                                classifiedObject="urn:uuid:2387da18-e03d-11e3-b02f-e9020732ecf0"
+                                classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:91ad8f9b-3a39-4e15-9b3f-e80113dce81f">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>1.3.6.1.4.1.19376.1.2.3</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394777002"
+                                classifiedObject="urn:uuid:2387da18-e03d-11e3-b02f-e9020732ecf0"
+                                classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:c077986c-494d-4ba3-8b94-e255a4b09f49">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Health Encounter Site" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394802001"
+                                classifiedObject="urn:uuid:2387da18-e03d-11e3-b02f-e9020732ecf0"
+                                classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:cfdf5968-ef36-4fb0-8c66-986a10a7dc95">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="General Medicine" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:2387da18-e03d-11e3-b02f-e9020732ecf0"
+                                classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:e2593df1-36b7-4c62-9755-2391fb01f9db">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:ExternalIdentifier value="'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'"
+                                    identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
+                                    registryObject="urn:uuid:2387da18-e03d-11e3-b02f-e9020732ecf0"
+                                    id="urn:uuid:68cd8b00-05d2-4dd8-a751-60c4c18f8647">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.patientId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+            <ns3:ExternalIdentifier value="54639790-a2ad-463c-8e7a-9b014eed917b"
+                                    identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
+                                    registryObject="urn:uuid:2387da18-e03d-11e3-b02f-e9020732ecf0"
+                                    id="urn:uuid:5f0503d6-4313-48c1-9b0e-839d0bbfe1e1">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.uniqueId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+        </ns3:ExtrinsicObject>
+        <ns3:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="urn:ihe:iti:2010:StatusType:DeferredCreation"
+                             objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
+                             lid="urn:uuid:7d687f48-3ab7-46a6-a63b-f6f54d952579" home="urn:oid:1.3.6.1.4.1.26580.10"
+                             id="urn:uuid:24e60f06-e03d-11e3-8375-de0282305414">
+            <ns3:Slot name="creationTime">
+                <ns3:ValueList>
+                    <ns3:Value>20140617014050</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="hash">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="languageCode">
+                <ns3:ValueList>
+                    <ns3:Value>en-US</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="repositoryUniqueId">
+                <ns3:ValueList>
+                    <ns3:Value>1.2.840.114350.1.13.112.3.7.2.688879</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="size">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="sourcePatientId">
+                <ns3:ValueList>
+                    <ns3:Value>'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Name>
+                <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+            </ns3:Name>
+            <ns3:VersionInfo/>
+            <ns3:Classification nodeRepresentation="" classifiedObject="urn:uuid:24e60f06-e03d-11e3-8375-de0282305414"
+                                classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:eee3adf8-284b-480a-99f2-e133c98e455f">
+                <ns3:Slot name="authorPerson">
+                    <ns3:ValueList>
+                        <ns3:Value>7.9^Epic - Version 7.9^^^^^^^&amp;1.2.840.114350.1.1&amp;ISO</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Slot name="authorInstitution">
+                    <ns3:ValueList>
+                        <ns3:Value>Inland Northwest Health Services</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:24e60f06-e03d-11e3-8375-de0282305414"
+                                classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:09cae398-fa30-40cd-a31b-5e467e285133">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="N" classifiedObject="urn:uuid:24e60f06-e03d-11e3-8375-de0282305414"
+                                classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:289ba9fb-827a-4464-add2-e2b9bd24c85c">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.5.25</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Normal" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007"
+                                classifiedObject="urn:uuid:24e60f06-e03d-11e3-8375-de0282305414"
+                                classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:51fb0ad1-c5d5-4c86-9f16-2876f339703c">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>1.3.6.1.4.1.19376.1.2.3</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394777002"
+                                classifiedObject="urn:uuid:24e60f06-e03d-11e3-8375-de0282305414"
+                                classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:3fc18ede-1dcd-4303-b804-88f9f06484a8">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Health Encounter Site" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394802001"
+                                classifiedObject="urn:uuid:24e60f06-e03d-11e3-8375-de0282305414"
+                                classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:13d239d8-e121-40d7-96d1-200f73c49c24">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="General Medicine" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:24e60f06-e03d-11e3-8375-de0282305414"
+                                classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:1cabe82a-67bc-458c-b483-28741b01a9de">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:ExternalIdentifier value="'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'"
+                                    identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
+                                    registryObject="urn:uuid:24e60f06-e03d-11e3-8375-de0282305414"
+                                    id="urn:uuid:a58daa79-bc24-4421-9878-8ecec9b2675b">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.patientId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+            <ns3:ExternalIdentifier value="c9e5685b-d5f9-41f3-bcfb-f341010a1b71"
+                                    identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
+                                    registryObject="urn:uuid:24e60f06-e03d-11e3-8375-de0282305414"
+                                    id="urn:uuid:60cc0e86-28ee-418a-ac9c-8f7fd3ccb9e6">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.uniqueId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+        </ns3:ExtrinsicObject>
+        <ns3:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="urn:ihe:iti:2010:StatusType:DeferredCreation"
+                             objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
+                             lid="urn:uuid:348aca11-5d17-4070-bedd-4e27288386ce" home="urn:oid:1.3.6.1.4.1.26580.10"
+                             id="urn:uuid:2659c8c8-e03d-11e3-a26b-f7022539f5c5">
+            <ns3:Slot name="creationTime">
+                <ns3:ValueList>
+                    <ns3:Value>20140617014056</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="hash">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="languageCode">
+                <ns3:ValueList>
+                    <ns3:Value>en-US</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="repositoryUniqueId">
+                <ns3:ValueList>
+                    <ns3:Value>1.2.840.114350.1.13.114.3.7.3.688884.100</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="size">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="sourcePatientId">
+                <ns3:ValueList>
+                    <ns3:Value>'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Name>
+                <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+            </ns3:Name>
+            <ns3:VersionInfo/>
+            <ns3:Classification nodeRepresentation="" classifiedObject="urn:uuid:2659c8c8-e03d-11e3-a26b-f7022539f5c5"
+                                classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:1b8ac484-2218-4149-acfe-b803a848248b">
+                <ns3:Slot name="authorPerson">
+                    <ns3:ValueList>
+                        <ns3:Value>7.9^Epic - Version 7.9^^^^^^^&amp;1.2.840.114350.1.1&amp;ISO</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Slot name="authorInstitution">
+                    <ns3:ValueList>
+                        <ns3:Value>Regenstrief Institute Clinic</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:2659c8c8-e03d-11e3-a26b-f7022539f5c5"
+                                classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:d48fcf90-ba50-4855-a13d-ebda9c95debe">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="N" classifiedObject="urn:uuid:2659c8c8-e03d-11e3-a26b-f7022539f5c5"
+                                classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:b68e03d5-9cbf-43ca-bc26-de7c066f8af3">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.5.25</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Normal" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007"
+                                classifiedObject="urn:uuid:2659c8c8-e03d-11e3-a26b-f7022539f5c5"
+                                classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:bf2e919a-1d57-45a1-984a-df802fbd85a8">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>1.3.6.1.4.1.19376.1.2.3</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394777002"
+                                classifiedObject="urn:uuid:2659c8c8-e03d-11e3-a26b-f7022539f5c5"
+                                classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:b5e5ff9a-b7ce-4e89-92ca-49f745987db9">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Health Encounter Site" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394802001"
+                                classifiedObject="urn:uuid:2659c8c8-e03d-11e3-a26b-f7022539f5c5"
+                                classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:381e4aa4-02e3-46f2-9b05-c31461cddb1b">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="General Medicine" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:2659c8c8-e03d-11e3-a26b-f7022539f5c5"
+                                classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:dfd5ddc6-a549-4c11-b198-8c4ac0cb4958">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:ExternalIdentifier value="'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'"
+                                    identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
+                                    registryObject="urn:uuid:2659c8c8-e03d-11e3-a26b-f7022539f5c5"
+                                    id="urn:uuid:8ead561f-ffd5-411f-9733-89b8c311001c">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.patientId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+            <ns3:ExternalIdentifier value="f0c8af6f-a988-49e7-a4c2-581ba7962b77"
+                                    identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
+                                    registryObject="urn:uuid:2659c8c8-e03d-11e3-a26b-f7022539f5c5"
+                                    id="urn:uuid:8512e03c-da80-46c7-a39f-91abfd062312">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.uniqueId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+        </ns3:ExtrinsicObject>
+        <ns3:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="urn:ihe:iti:2010:StatusType:DeferredCreation"
+                             objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
+                             lid="urn:uuid:49977259-ec3e-4905-a90f-ab3d4e117789" home="urn:oid:1.3.6.1.4.1.26580.10"
+                             id="urn:uuid:1795c8a4-e769-11e3-bd69-ec029123a23b">
+            <ns3:Slot name="creationTime">
+                <ns3:ValueList>
+                    <ns3:Value>20140617014103</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="hash">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="languageCode">
+                <ns3:ValueList>
+                    <ns3:Value>en-US</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="repositoryUniqueId">
+                <ns3:ValueList>
+                    <ns3:Value>1.2.840.114350.1.13.115.3.7.2.688879.121314</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="size">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="sourcePatientId">
+                <ns3:ValueList>
+                    <ns3:Value>'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Name>
+                <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+            </ns3:Name>
+            <ns3:VersionInfo/>
+            <ns3:Classification nodeRepresentation="" classifiedObject="urn:uuid:1795c8a4-e769-11e3-bd69-ec029123a23b"
+                                classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:6d9fa609-8ae0-46ee-9d5e-bb230ac148da">
+                <ns3:Slot name="authorPerson">
+                    <ns3:ValueList>
+                        <ns3:Value>7.9^Epic - Version 7.9^^^^^^^&amp;1.2.840.114350.1.1&amp;ISO</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Slot name="authorInstitution">
+                    <ns3:ValueList>
+                        <ns3:Value>HAWAII PACIFIC HEALTH SA</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1795c8a4-e769-11e3-bd69-ec029123a23b"
+                                classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:3b06f575-6cef-4a8f-b56a-95bb13f8ff10">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="N" classifiedObject="urn:uuid:1795c8a4-e769-11e3-bd69-ec029123a23b"
+                                classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:bb9283e5-ddf4-45f0-a780-8e321d05f26e">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.5.25</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Normal" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007"
+                                classifiedObject="urn:uuid:1795c8a4-e769-11e3-bd69-ec029123a23b"
+                                classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:f733d091-5436-417a-9248-e08d52590809">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>1.3.6.1.4.1.19376.1.2.3</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394777002"
+                                classifiedObject="urn:uuid:1795c8a4-e769-11e3-bd69-ec029123a23b"
+                                classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:623a3918-9af4-4979-9cf1-ec5d60ccb9bd">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Health Encounter Site" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394802001"
+                                classifiedObject="urn:uuid:1795c8a4-e769-11e3-bd69-ec029123a23b"
+                                classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:97347c17-9908-43cd-abd9-2751a8560a70">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="General Medicine" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1795c8a4-e769-11e3-bd69-ec029123a23b"
+                                classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:822a96d8-c7c9-4ad3-a02a-afd4754bc6dd">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:ExternalIdentifier value="'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'"
+                                    identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
+                                    registryObject="urn:uuid:1795c8a4-e769-11e3-bd69-ec029123a23b"
+                                    id="urn:uuid:e6651f33-e6cb-4b21-91bb-743fe4f19cd1">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.patientId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+            <ns3:ExternalIdentifier value="8315f76c-f58a-4eab-ab92-c77966c4ea21"
+                                    identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
+                                    registryObject="urn:uuid:1795c8a4-e769-11e3-bd69-ec029123a23b"
+                                    id="urn:uuid:7a0fb905-c0e9-408a-b08a-235f4981b040">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.uniqueId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+        </ns3:ExtrinsicObject>
+        <ns3:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="urn:ihe:iti:2010:StatusType:DeferredCreation"
+                             objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
+                             lid="urn:uuid:3703249f-834d-4e9d-94d2-ce518f474f27" home="urn:oid:1.3.6.1.4.1.26580.10"
+                             id="urn:uuid:863ec4a0-f357-11e3-a599-0203acdf41d5">
+            <ns3:Slot name="creationTime">
+                <ns3:ValueList>
+                    <ns3:Value>20140617014108</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="hash">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="languageCode">
+                <ns3:ValueList>
+                    <ns3:Value>en-US</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="repositoryUniqueId">
+                <ns3:ValueList>
+                    <ns3:Value>1.2.840.114350.1.13.122.3.7.2.688879.121218</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="size">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="sourcePatientId">
+                <ns3:ValueList>
+                    <ns3:Value>'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Name>
+                <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+            </ns3:Name>
+            <ns3:VersionInfo/>
+            <ns3:Classification nodeRepresentation="" classifiedObject="urn:uuid:863ec4a0-f357-11e3-a599-0203acdf41d5"
+                                classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:791498fd-25ef-42ba-b3d3-837e58cb0219">
+                <ns3:Slot name="authorPerson">
+                    <ns3:ValueList>
+                        <ns3:Value>7.9^Epic - Version 7.9^^^^^^^&amp;1.2.840.114350.1.1&amp;ISO</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Slot name="authorInstitution">
+                    <ns3:ValueList>
+                        <ns3:Value>Kaiser Permanente Southern California - RESC</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:863ec4a0-f357-11e3-a599-0203acdf41d5"
+                                classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:05b5ded3-338c-4efd-ab2b-fd32f9a50696">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="N" classifiedObject="urn:uuid:863ec4a0-f357-11e3-a599-0203acdf41d5"
+                                classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:54a72929-1f2f-40e1-85a4-280f8f01fdf4">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.5.25</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Normal" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007"
+                                classifiedObject="urn:uuid:863ec4a0-f357-11e3-a599-0203acdf41d5"
+                                classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:c0398f76-7f14-4102-a121-7044c4b893d5">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>1.3.6.1.4.1.19376.1.2.3</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394777002"
+                                classifiedObject="urn:uuid:863ec4a0-f357-11e3-a599-0203acdf41d5"
+                                classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:bad80ae4-8ff4-4d7c-be15-00d89d6c159d">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Health Encounter Site" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394802001"
+                                classifiedObject="urn:uuid:863ec4a0-f357-11e3-a599-0203acdf41d5"
+                                classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:7fdc162e-fed7-4dbb-aba0-707d54735efb">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="General Medicine" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:863ec4a0-f357-11e3-a599-0203acdf41d5"
+                                classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:ee6edf4f-d9b1-45c0-86db-638424e8a655">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:ExternalIdentifier value="'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'"
+                                    identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
+                                    registryObject="urn:uuid:863ec4a0-f357-11e3-a599-0203acdf41d5"
+                                    id="urn:uuid:5c4c6015-7507-4838-b281-2e16385a195c">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.patientId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+            <ns3:ExternalIdentifier value="e587bf82-bfae-4499-9ca8-6babf6eea630"
+                                    identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
+                                    registryObject="urn:uuid:863ec4a0-f357-11e3-a599-0203acdf41d5"
+                                    id="urn:uuid:e31c1ad9-2edb-4849-9cf6-e90a7d0129b9">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.uniqueId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+        </ns3:ExtrinsicObject>
+        <ns3:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="urn:ihe:iti:2010:StatusType:DeferredCreation"
+                             objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
+                             lid="urn:uuid:c2ffe92b-48e4-4924-81ce-882b34296661" home="urn:oid:1.3.6.1.4.1.26580.10"
+                             id="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a6362">
+            <ns3:Slot name="creationTime">
+                <ns3:ValueList>
+                    <ns3:Value>20140617014116</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="hash">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="languageCode">
+                <ns3:ValueList>
+                    <ns3:Value>en-US</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="repositoryUniqueId">
+                <ns3:ValueList>
+                    <ns3:Value>1.2.840.114350.1.13.48.3.7.2.688879</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="size">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="sourcePatientId">
+                <ns3:ValueList>
+                    <ns3:Value>'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Name>
+                <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+            </ns3:Name>
+            <ns3:VersionInfo/>
+            <ns3:Classification nodeRepresentation="" classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a6362"
+                                classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:1b64fd70-6395-4a7e-b2ad-b2faf8ed7545">
+                <ns3:Slot name="authorPerson">
+                    <ns3:ValueList>
+                        <ns3:Value>7.9^Epic - Version 7.9^^^^^^^&amp;1.2.840.114350.1.1&amp;ISO</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Slot name="authorInstitution">
+                    <ns3:ValueList>
+                        <ns3:Value>Conemaugh Health System</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a6362"
+                                classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:7fd0aa00-289f-4137-8c01-d4dc3b5b9664">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="N" classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a6362"
+                                classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8db1f633-7486-4aad-bbba-8708fe99707a">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.5.25</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Normal" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a6362"
+                                classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:b3fff65c-a836-41da-8d69-41ee6d623479">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>1.3.6.1.4.1.19376.1.2.3</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394777002"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a6362"
+                                classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8dbfb521-d4e2-4f66-9137-af110df32b2a">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Health Encounter Site" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394802001"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a6362"
+                                classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8030987b-c804-402c-9bd5-04248b5495ff">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="General Medicine" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a6362"
+                                classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:c0d82cad-1d5b-4086-84c8-4c4426e36083">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:ExternalIdentifier value="'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'"
+                                    identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
+                                    registryObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a6362"
+                                    id="urn:uuid:bef08031-ff3b-42f2-9539-f01fed9066f3">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.patientId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+            <ns3:ExternalIdentifier value="29deea5f-efa3-4d1c-a43d-d64ea4f4de30"
+                                    identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
+                                    registryObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a6362"
+                                    id="urn:uuid:d1cf4b62-24ca-4bc6-af57-42b8b783f5e1">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.uniqueId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+        </ns3:ExtrinsicObject>
+
+        <ns3:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="urn:ihe:iti:2010:StatusType:DeferredCreation"
+                             objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
+                             lid="urn:uuid:c2ffe92b-48e4-4924-81ce-882b3429" home="urn:oid:1.3.6.1.4.1.26580.10"
+                             id="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5af2f1">
+            <ns3:Slot name="creationTime">
+                <ns3:ValueList>
+                    <ns3:Value>20141116054218</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="hash">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="languageCode">
+                <ns3:ValueList>
+                    <ns3:Value>en-US</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="repositoryUniqueId">
+                <ns3:ValueList>
+                    <ns3:Value>1.2.840.114350.1.13.58.3.7.2.677780</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="size">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="sourcePatientId">
+                <ns3:ValueList>
+                    <ns3:Value>'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Name>
+                <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+            </ns3:Name>
+            <ns3:VersionInfo/>
+            <ns3:Classification nodeRepresentation="" classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5af2f1"
+                                classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:1b64fd70-6395-4a7e-b2ad-b2faf8ed75754">
+                <ns3:Slot name="authorPerson">
+                    <ns3:ValueList>
+                        <ns3:Value>7.9^Epic - Version 7.9^^^^^^^&amp;1.2.840.114350.1.1&amp;ISO</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Slot name="authorInstitution">
+                    <ns3:ValueList>
+                        <ns3:Value>Epic CCDA Example 1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5af2f1"
+                                classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:7fd0aa00-289f-4137-8c01-d4dc3b5b9774">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="N" classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5af2f1"
+                                classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8db1f633-7486-4aad-bbba-8708fe99808a">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.5.25</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Normal" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5af2f1"
+                                classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:b3fff65c-a836-41da-8d69-41ee6d623480">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>1.3.6.1.4.1.19376.1.2.3</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394777002"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5af2f1"
+                                classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8dbfb521-d4e2-4f66-9137-af110df32b3b">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Health Encounter Site" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394802001"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5af2f1"
+                                classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8030987b-c804-402c-9bd5-04248b5496cc">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="General Medicine" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5af2f1"
+                                classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:c0d82cad-1d5b-4086-84c8-4c4426e36094">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:ExternalIdentifier value="'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'"
+                                    identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
+                                    registryObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5af2f1"
+                                    id="urn:uuid:bef08031-ff3b-42f2-9539-f01fed9066c2">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.patientId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+            <ns3:ExternalIdentifier value="29deea5f-efa3-4d1c-c2de-f53fb2e2fa89"
+                                    identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
+                                    registryObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5af2f1"
+                                    id="urn:uuid:d1cf4b62-24ca-4bc6-af57-42b8b783f5b2">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.uniqueId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+        </ns3:ExtrinsicObject>
+
+        <ns3:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="urn:ihe:iti:2010:StatusType:DeferredCreation"
+                             objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
+                             lid="urn:uuid:c2ffe92b-48e4-4924-81ce-882b34297771" home="urn:oid:1.3.6.1.4.1.26580.10"
+                             id="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a3626">
+            <ns3:Slot name="creationTime">
+                <ns3:ValueList>
+                    <ns3:Value>20141230011212</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="hash">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="languageCode">
+                <ns3:ValueList>
+                    <ns3:Value>en-US</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="repositoryUniqueId">
+                <ns3:ValueList>
+                    <ns3:Value>1.2.840.114350.1.13.60.3.7.3.789921</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="size">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="sourcePatientId">
+                <ns3:ValueList>
+                    <ns3:Value>'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Name>
+                <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+            </ns3:Name>
+            <ns3:VersionInfo/>
+            <ns3:Classification nodeRepresentation="" classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a3626"
+                                classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:1b64fd70-6395-4a7e-b2ad-b2faf8ed12345">
+                <ns3:Slot name="authorPerson">
+                    <ns3:ValueList>
+                        <ns3:Value>7.9^Epic - Version 7.9^^^^^^^&amp;1.2.840.114350.1.1&amp;ISO</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Slot name="authorInstitution">
+                    <ns3:ValueList>
+                        <ns3:Value>Epic CCDA Example 2</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a3626"
+                                classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:7fd0aa00-289f-4137-8c01-d4dc3b5b8654">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="N" classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a3626"
+                                classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8db1f633-7486-4aad-ccca-2708fb99808a">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.5.25</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Normal" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a3626"
+                                classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:b3fff65c-a836-41da-8d20-21ff6d623420">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>1.3.6.1.4.1.19376.1.2.3</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394777002"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a3626"
+                                classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8dbfb521-d4e2-4f66-9137-af110df43c3c">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Health Encounter Site" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394802001"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a3626"
+                                classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8030987b-c804-402c-9bd5-04248b2406ff">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="General Medicine" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a3626"
+                                classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:c0d82cad-1d5b-4086-84c8-4c4426f25122">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:ExternalIdentifier value="'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'"
+                                    identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
+                                    registryObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028e5a3626"
+                                    id="urn:uuid:bef08031-ff3b-42f2-9539-f01fed8966c2">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.patientId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+            <ns3:ExternalIdentifier value="55ceeacf-dda2-4d1c-c2de-a53fbae2fa65"
+                                    identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
+                                    registryObject="urn:uuid:1f5dad86-e769-11e3-8e20-e1028eff3226"
+                                    id="urn:uuid:d1cf4b62-24ca-4bc6-af57-52c8b783f5b2">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.uniqueId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+        </ns3:ExtrinsicObject>
+
+        <ns3:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="urn:ihe:iti:2010:StatusType:DeferredCreation"
+                             objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
+                             lid="urn:uuid:c2ffe92b-48e4-4924-81ce-882b3429" home="urn:oid:1.3.6.1.4.1.26580.10"
+                             id="urn:uuid:1f5dad86-e769-11e3-8e20-fab34f7b2892">
+            <ns3:Slot name="creationTime">
+                <ns3:ValueList>
+                    <ns3:Value>20140311062218</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="hash">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="languageCode">
+                <ns3:ValueList>
+                    <ns3:Value>en-US</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="repositoryUniqueId">
+                <ns3:ValueList>
+                    <ns3:Value>1.2.840.114350.1.13.58.3.7.2.677780</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="size">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="sourcePatientId">
+                <ns3:ValueList>
+                    <ns3:Value>'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Name>
+                <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+            </ns3:Name>
+            <ns3:VersionInfo/>
+            <ns3:Classification nodeRepresentation="" classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-fab34f7b2892"
+                                classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:1b64fd70-6395-4a7e-b2ad-b2faf8ed75754">
+                <ns3:Slot name="authorPerson">
+                    <ns3:ValueList>
+                        <ns3:Value>7.9^Epic - Version 7.9^^^^^^^&amp;1.2.840.114350.1.1&amp;ISO</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Slot name="authorInstitution">
+                    <ns3:ValueList>
+                        <ns3:Value>Allscripts CCDA Example</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-fab34f7b2892"
+                                classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:7fd0aa00-289f-4137-8c01-d4dc3b5b9774">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="N" classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-fab34f7b2892"
+                                classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8db1f633-7486-4aad-bbba-8708fe99808a">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.5.25</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Normal" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-fab34f7b2892"
+                                classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:b3fff65c-a836-41da-8d69-41ee6d623480">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>1.3.6.1.4.1.19376.1.2.3</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394777002"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-fab34f7b2892"
+                                classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8dbfb521-d4e2-4f66-9137-af110df32b3b">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Health Encounter Site" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394802001"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-fab34f7b2892"
+                                classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8030987b-c804-402c-9bd5-04248b5496cc">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="General Medicine" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-fab34f7b2892"
+                                classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:c0d82cad-1d5b-4086-84c8-4c4426e36094">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:ExternalIdentifier value="'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'"
+                                    identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
+                                    registryObject="urn:uuid:1f5dad86-e769-11e3-8e20-fab34f7b2892"
+                                    id="urn:uuid:bef08031-ff3b-42f2-9539-f01fed9066c2">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.patientId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+            <ns3:ExternalIdentifier value="29deea5f-efa3-4d1c-c2de-c567f2d72b22"
+                                    identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
+                                    registryObject="urn:uuid:1f5dad86-e769-11e3-8e20-fab34f7b2892"
+                                    id="urn:uuid:d1cf4b62-24ca-4bc6-af57-42b8b783f5b2">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.uniqueId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+        </ns3:ExtrinsicObject>
+
+        <ns3:ExtrinsicObject isOpaque="false" mimeType="text/xml" status="urn:ihe:iti:2010:StatusType:DeferredCreation"
+                             objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
+                             lid="urn:uuid:c2ffe92b-48e4-4924-81ce-882b3429" home="urn:oid:1.3.6.1.4.1.26580.10"
+                             id="urn:uuid:1f5dad86-e769-11e3-8e20-eed5721f3323">
+            <ns3:Slot name="creationTime">
+                <ns3:ValueList>
+                    <ns3:Value>20140517022219</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="hash">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="languageCode">
+                <ns3:ValueList>
+                    <ns3:Value>en-US</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="repositoryUniqueId">
+                <ns3:ValueList>
+                    <ns3:Value>1.2.840.114350.1.13.58.3.7.2.677780</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="size">
+                <ns3:ValueList>
+                    <ns3:Value>-1</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Slot name="sourcePatientId">
+                <ns3:ValueList>
+                    <ns3:Value>'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'</ns3:Value>
+                </ns3:ValueList>
+            </ns3:Slot>
+            <ns3:Name>
+                <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+            </ns3:Name>
+            <ns3:VersionInfo/>
+            <ns3:Classification nodeRepresentation="" classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-eed5721f3323"
+                                classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:1b64fd70-6395-4a7e-b2ad-b2faf8ed75754">
+                <ns3:Slot name="authorPerson">
+                    <ns3:ValueList>
+                        <ns3:Value>7.9^Epic - Version 7.9^^^^^^^&amp;1.2.840.114350.1.1&amp;ISO</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Slot name="authorInstitution">
+                    <ns3:ValueList>
+                        <ns3:Value>Cerner CCDA Example</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-eed5721f3323"
+                                classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:7fd0aa00-289f-4137-8c01-d4dc3b5b9774">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="N" classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-eed5721f3323"
+                                classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8db1f633-7486-4aad-bbba-8708fe99808a">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.5.25</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Normal" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="urn:ihe:pcc:xphr:2007"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-eed5721f3323"
+                                classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:b3fff65c-a836-41da-8d69-41ee6d623480">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>1.3.6.1.4.1.19376.1.2.3</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394777002"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-eed5721f3323"
+                                classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8dbfb521-d4e2-4f66-9137-af110df32b3b">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Health Encounter Site" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="394802001"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-eed5721f3323"
+                                classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:8030987b-c804-402c-9bd5-04248b5496cc">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.96</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="General Medicine" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:Classification nodeRepresentation="34133-9"
+                                classifiedObject="urn:uuid:1f5dad86-e769-11e3-8e20-eed5721f3323"
+                                classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"
+                                objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification"
+                                id="urn:uuid:c0d82cad-1d5b-4086-84c8-4c4426e36094">
+                <ns3:Slot name="codingScheme">
+                    <ns3:ValueList>
+                        <ns3:Value>2.16.840.1.113883.6.1</ns3:Value>
+                    </ns3:ValueList>
+                </ns3:Slot>
+                <ns3:Name>
+                    <ns3:LocalizedString value="Continuity of Care Document" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:Classification>
+            <ns3:ExternalIdentifier value="'8394^^^&amp;1.3.6.1.4.1.26580.10.1.100&amp;ISO'"
+                                    identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
+                                    registryObject="urn:uuid:1f5dad86-e769-11e3-8e20-eed5721f3323"
+                                    id="urn:uuid:bef08031-ff3b-42f2-9539-f01fed9066c2">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.patientId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+            <ns3:ExternalIdentifier value="29deea5f-efa3-4d1c-c2de-f672de134c11"
+                                    identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
+                                    registryObject="urn:uuid:1f5dad86-e769-11e3-8e20-eed5721f3323"
+                                    id="urn:uuid:d1cf4b62-24ca-4bc6-af57-42b8b783f5b2">
+                <ns3:Name>
+                    <ns3:LocalizedString value="XDSDocumentEntry.uniqueId" charset="UTF-8" xml:lang="en-us"/>
+                </ns3:Name>
+            </ns3:ExternalIdentifier>
+        </ns3:ExtrinsicObject>
+
+    </ns3:RegistryObjectList>
+</ns4:AdhocQueryResponse>

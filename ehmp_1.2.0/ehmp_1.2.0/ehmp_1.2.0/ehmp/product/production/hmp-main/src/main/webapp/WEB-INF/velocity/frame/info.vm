@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frame Details</title>
+    #parse("/layouts/detail.vm")
+</head>
+<body>
+<table class="hmp-labeled-values">
+	<tr>
+		<td class="nav-header"><B>FRAME INFO</B></td>
+	</tr>
+    <tr>
+        <td>Frame ID (Name)</td>
+        <td>${frame.ID} #if($frame.name) (${frame.name})#end </td>
+    </tr>
+    <tr>
+    	<td>Implementation Class</td>
+    	<td>${frame.getClass()}</td>
+    </tr>
+    #if($frame.getResource())
+	    <tr>
+	    	<td>Resource</td>
+	    	<td>${frame.getResource()}</td>
+	    </tr>
+    #end
+    #if($frame.getMeta().size() > 0)
+	    <tr>
+	    	<td>Frame Meta</td>
+	    	<td>${frame.getMeta()}</td>
+	    </tr>
+	#end
+	
+	<tr>
+		<td>App Info</td>
+        <td>${frame.getAppInfo()}</td>
+	</tr>
+	
+    #if($frame.getReferences().size() > 0)
+    <tr>
+    	<td>Literature References</td>
+    	<td>
+    		#foreach($ref in $frame.getReferences())
+    			<li><b>${ref.authors}.</b>&nbsp;<i><a target="_blank" href="http://www.ncbi.nlm.nih.gov/pubmed/${ref.pmid}">${ref.title}.</a>&nbsp;</i>${ref.source}.</li>
+    		#end
+    	</td>
+    </tr>
+    #end
+    
+	<tr>
+		<td colspan="2"  class="nav-header"><b>TRIGGERS</b></td>
+	</tr>
+		#foreach($trig in $frame.getTriggers())
+			<tr>
+				<td>${trig.getClass().getSimpleName()}</td>
+				<td>${trig.toString()}
+					#if ($trig.getClass().getSimpleName() == "CallTrigger")
+						(<a href="https://localhost:8443/frame/event/push?eventClass=gov.va.cpe.vpr.frameeng.CallEvent&frameID=${frame.ID}" target="_blank">LAUNCH TESTER</a>)
+					#end
+				</td>
+    		#end
+    	</td>
+    </tr>
+	
+    #if($frame.getReferences().size() > 0)
+    <tr>
+        <td>Links/References</td>
+        <td>
+        	#foreach($ref in $frame.getReferences())
+        		<li><a target="_blank" href="${ref.value}">${ref}</a></li>
+        	#end
+        </td>
+    </tr>
+    #end
+	#if($frame.getParamDefs().size())
+    	<tr>
+    		<td colspan="2"  class="nav-header"><b>PARAMS</b></td>
+    	</tr>
+        <tr><td>Default Value(s):</td><td>${frame.getParamDefaultVals()}</td>	
+		#foreach($param in $frame.getParamDefs())
+		<tr>
+			<td>${param.getClass().getSimpleName()}</td>
+            <td>${param}</td>
+        </tr>
+		#end
+	#end
+	
+	#set($stats = $frame.getStats())
+	#set($snap = $stats.getSnapshot())
+	<tr>
+		<td colspan="2"  class="nav-header"><b>STATS</b></td>
+	</tr>
+    <tr>
+    	<td>Executions</td>
+    	<td>${stats.getCount()} (last: ${stats.getLastRuntimeAt()})</td>
+    </tr>
+	<tr>
+		<td>Errors:</td>
+		<td>${stats.getErrorCount()} (last: ${stats.getLastErrorAt()}; Msg: $!{stats.getLastError()})</td>
+	</tr>
+    <tr>
+    	<td>Runtime (micro secs) (min/max/avg/sum)</td>
+    	<td>${snap.getMin()}/${snap.getMax()}/${snap.getMean()}/${stats.getRuntimeSum()}</td>
+    </tr>
+	
+</table>
+</body>
+</html>

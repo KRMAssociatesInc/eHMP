@@ -1,0 +1,114 @@
+{
+    "apiVersion": "1.0",
+    "data": {
+        "updated": 20141204094224,
+        "totalItems": 1,
+        "currentItemCount": 1,
+        "items": [
+            {
+                "address": [
+                    {
+                        "city": "TROY",
+                        "state": "NY",
+                        "use": "H",
+                        "zip": "99998-0071"
+                    }
+                ],
+                "birthDate": "19350407",
+                "briefId": "Z3456",
+                "cwadf": "CWA",
+                "displayName": "Zzzretfivefiftyone,Patient",
+                "domainUpdated": "syncStatuss",
+                "exposure": [
+                    {
+                        "name": "No",
+                        "uid": "urn:va:agent-orange:N"
+                    },
+                    {
+                        "name": "No",
+                        "uid": "urn:va:combat-vet:N"
+                    },
+                    {
+                        "name": "Unknown",
+                        "uid": "urn:va:head-neck-cancer:U"
+                    },
+                    {
+                        "name": "No",
+                        "uid": "urn:va:ionizing-radiation:N"
+                    },
+                    {
+                        "name": "Unknown",
+                        "uid": "urn:va:mst:U"
+                    },
+                    {
+                        "name": "No",
+                        "uid": "urn:va:sw-asia:N"
+                    }
+                ],
+                "facility": [
+                    {
+                        "code": "500",
+                        "homeSite": false,
+                        "latestDate": "20000105",
+                        "localPatientId": "1",
+                        "name": "CAMP MASTER",
+                        "summary": "CAMP MASTER",
+                        "systemId": "9E7A"
+                    }
+                ],
+                "familyName": "ZZZRETFIVEFIFTYONE",
+                "fullName": "ZZZRETFIVEFIFTYONE,PATIENT",
+                "genderCode": "urn:va:pat-gender:M",
+                "genderName": "Male",
+                "givenNames": "PATIENT",
+                "last4": "3456",
+                "last5": "Z3456",
+                "lastUpdated": "20141118142633.167",
+                "localId": "1",
+                "lrdfn": "19",
+                "maritalStatusCode": "urn:va:pat-maritalStatus:M",
+                "maritalStatusName": "Married",
+                "meanStatus": "REQUIRED",
+                "pid": "9E7A;1",
+                "religionCode": "urn:va:pat-religion:21",
+                "religionName": "NAZARENE",
+                "sensitive": true,
+                "serviceConnected": false,
+                "ssn": "666223456",
+                "summary": "gov.va.cpe.vpr.PatientDemographics{pids=[500;1, 666223456, 9E7A;1]}",
+                "syncErrorCount": 0,
+                "teamInfo": {
+                    "associateProvider": {
+                        "name": "unassigned"
+                    },
+                    "attendingProvider": {
+                        "name": "unassigned"
+                    },
+                    "inpatientProvider": {
+                        "name": "unassigned"
+                    },
+                    "mhCoordinator": {
+                        "mhPosition": "unassigned",
+                        "mhTeam": "unassigned",
+                        "name": "unassigned"
+                    },
+                    "primaryProvider": {
+                        "name": "unassigned"
+                    },
+                    "team": {
+                        "name": "unassigned"
+                    },
+                    "text": "No Primary Care Team Assigned.\r\n \r\nNo Primary Care Provider Assigned.\r\n \r\nNo Associate Provider Assigned.\r\n \r\n"
+                },
+                "telecom": [
+                    {
+                        "use": "H",
+                        "value": "(222)555-8235"
+                    }
+                ],
+                "uid": "urn:va:patient:9E7A:1:1",
+                "veteran": true
+            }
+        ]
+    }
+}

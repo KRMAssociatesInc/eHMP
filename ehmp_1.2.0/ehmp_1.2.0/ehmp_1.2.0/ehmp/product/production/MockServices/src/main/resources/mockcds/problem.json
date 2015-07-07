@@ -1,0 +1,43 @@
+{
+  "apiVersion": "1.01",
+  "params": {
+    "domain": "CDS",
+    "systemId": "CDS"
+  },
+  "data": {
+    "updated": "20140409083540",
+    "totalItems": 1,
+    "items": [
+      {
+        "acuityCode": "urn:va:prob-acuity:a",
+        "acuityName": "acute",
+        "comments": [
+          {
+            "comment": "SHERIDAN PROBLEM",
+            "entered": 19960514,
+            "enteredByCode": "urn:va:user:ABCD:755",
+            "enteredByName": "PROGRAMMER,TWENTY"
+          }
+        ],
+        "entered": 19960514,
+        "facilityCode": 561,
+        "facilityName": "New Jersey HCS",
+        "icdCode": "urn:icd:411.1",
+        "icdName": "INTERMED CORONARY SYND",
+        "localId": 58,
+        "onset": 19960315,
+        "problemText": "Occasional, uncontrolled chest pain (ICD-9-CM 411.1)",
+        "providerName": "PROGRAMMER,TWENTY",
+        "providerUid": "urn:va:user:ABCD:755",
+        "removed": false,
+        "service": "MEDICINE",
+        "serviceConnected": false,
+        "statusCode": "urn:sct:55561003",
+        "statusName": "ACTIVE",
+        "uid": "urn:va:problem:ABCD:17:58",
+        "unverified": false,
+        "updated": 19960514
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+.#{$prefix}html-editor-container {
+  border: $html-editor-border-width solid;
+  border-color: $html-editor-border-color;
+  @include border-radius($html-editor-border-radius);
+}
+.#{$prefix}html-editor-tb {
+  .#{$prefix}btn {
+    padding: 3px;
+  }
+
+  .#{$prefix}btn-wrap {
+    width: $html-editor-toolbar-icon-size;
+    height: $html-editor-toolbar-icon-size;
+  }
+
+  .#{$prefix}btn:not(.#{$prefix}btn-over):not(.#{$prefix}btn-pressed) {
+    border-color: transparent;
+    background-image: none;
+  }
+
+  .#{$prefix}btn-icon-el {
+    width: $html-editor-toolbar-icon-size;
+    height: $html-editor-toolbar-icon-size;
+  }
+}

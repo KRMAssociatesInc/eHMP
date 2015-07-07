@@ -1,0 +1,89 @@
+{
+  "queryComplete": "true",
+  "statusList": [
+    {
+      "ExpectedCount": "1",
+      "RetrievedCount": "1",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ],
+  "dataList": [
+    {
+      "dataRecord": {
+        "repository": {
+          "name": "ahlta",
+          "id": [
+            {
+              "assigningAuthority": "2.16.840.1.113883.3.42.126.100001.13"
+            }
+          ]
+        },
+        "recordId": {
+          "id": "1000000034"
+        },
+        "enteredBy": null,
+        "enteredDate": null,
+        "dataDomain": [
+          {
+            "system": "2.16.840.1.113883.6.1",
+            "primary": true,
+            "display": null,
+            "code": "26436-6"
+          }
+        ],
+        "facility": {
+          "name": "NH Great Lakes IL"
+        },
+        "orderable": [
+          {
+            "display": "CBC PROFILE",
+            "code": "14674837",
+            "system": "2.16.840.1.113883.3.42.126.100001.16"
+          }
+        ],
+        "date": "20140402171400",
+        "orderNumber": {
+          "id": "140402-00001"
+        },
+        "orderingProvider": {
+          "name": "BHIE, USERONE"
+        },
+        "status": [
+          {
+            "display": "Ordered"
+          }
+        ],
+        "adminTimes": null,
+        "alternateSpecimenText": "BLOOD",
+        "collectionMethod": null,
+        "duration": "D1",
+        "endDate": "20150401171600",
+        "enteringLocation": {
+          "name": "Family Practice Clinic"
+        },
+        "frequency": null,
+        "groupNumber": null,
+        "signedDate": null,
+        "signedBy": null,
+        "intervalPattern": null,
+        "interval": null,
+        "comments": "Jane testing",
+        "priorOrderNumber": null,
+        "priority": "ROUTINE",
+        "processingPriority": "R",
+        "scheduleType": [
+          {
+            "display": "One Time"
+          }
+        ],
+        "specimenText": "PLASMA",
+        "startDate": "20140402171600",
+        "statusComments": null,
+        "verifiedBy": null
+      },
+      "dataType": 21
+    }
+  ]
+}

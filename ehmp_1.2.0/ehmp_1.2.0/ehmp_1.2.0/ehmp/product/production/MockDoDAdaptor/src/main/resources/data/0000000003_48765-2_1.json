@@ -1,0 +1,91 @@
+{
+  "queryComplete": "true",
+  "dataList": [
+    {
+      "dataRecord": {
+        "OnsetDate": "20140109050000",
+        "Allergen": "Penicillins",
+        "Comments": "This Patient is allergic to Pencillin",
+        "Type": "Drug Allergy",
+        "EnteredBy": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "1000",
+        "EnteredByDate": "20140109201659",
+        "Reaction": "Vomiting",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000010340"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20131202050000",
+        "Allergen": "Tetracyclines",
+        "Comments": "",
+        "Type": "Drug Allergy",
+        "EnteredBy": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "7000",
+        "EnteredByDate": "20131202213622",
+        "Reaction": "Rash",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000010341"
+      },
+      "dataType": 1
+    },
+    {
+      "dataRecord": {
+        "OnsetDate": "20131118050000",
+        "Allergen": "Iodine Containing Agents",
+        "Comments": "test",
+        "Type": "Drug Allergy",
+        "EnteredBy": "BHIE, USERONE",
+        "CustodianId": "2.16.840.1.113883.3.42.126.100001.13",
+        "RepositoryId": "2.16.840.1.113883.3.42.126.100001.13",
+        "OtherIdentifier": "29000",
+        "EnteredByDate": "20131118171119",
+        "Reaction": "Nausea",
+        "ReactionComment": "",
+        "Source": "Patient",
+        "CustodianName": "ahlta",
+        "LoincCode": "48765-2",
+        "Facility": "NH Great Lakes IL/0056",
+        "EventId": "1000010342"
+      },
+      "dataType": 1
+    }
+  ],
+  "statusList": [
+    {
+      "ExpectedCount": "",
+      "RetrievedCount": "",
+      "SiteStatus": "UNKNOWN",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "0",
+      "SiteStatus": "IN_PROGRESS",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    },
+    {
+      "ExpectedCount": "3",
+      "RetrievedCount": "3",
+      "SiteStatus": "COMPLETE",
+      "SiteName": "ahlta",
+      "SiteId": "2.16.840.1.113883.3.42.126.100001.13"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+    "bodySiteCode" : 4500642,
+    "bodySiteName" : "ORAL",
+    "entered" : 20120629161729,
+    "facilityCode" : "500D",
+    "facilityName" : "SLC-FO HMP DEV",
+    "interpretationCode" : "urn:hl7:observation-interpretation:H",
+    "interpretationName" : "High",
+    "localId" : "{D4953826-902D-4722-9520-BE1916BF739B}",
+    "locationName" : "5TH FLOOR",
+    "locationUid" : "urn:va:location:F484:56",
+    "observed" : 201206291614,
+    "qualifiers" : [ {
+        "code" : 4688634,
+        "name" : "ACTUAL",
+        "type" : "quality"
+    } ],
+    "result" : 102.5,
+    "statusCode" : "urn:va:observation-status:complete",
+    "statusName" : "complete",
+    "typeCode" : "urn:va:clioterminology:{0F33223E-DF2C-6B8B-5201-5E091C5F9065}",
+    "typeName" : "TEMPERATURE",
+    "typeVuid" : "urn:va:vuid:4500638",
+    "uid" : "urn:va:obs:F484:231:{D4953826-902D-4722-9520-BE1916BF739B}",
+    "units" : "F"
+}

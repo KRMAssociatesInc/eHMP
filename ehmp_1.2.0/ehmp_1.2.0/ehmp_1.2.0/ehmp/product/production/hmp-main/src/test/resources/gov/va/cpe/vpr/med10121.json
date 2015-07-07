@@ -1,0 +1,92 @@
+{
+	"uid": "urn:va:med:F484:8:10121",
+	"summary": "SODIUM CHLORIDE 0.9% INJ null (EXPIRED)\n20 ml/hr ",
+	"pid": "10110",
+	"facilityCode": "500D",
+	"facilityName": "SLC-FO HMP DEV",
+	"localId": "55V;I",
+	"overallStart": "199906281500",
+	"overallStop": "199907012359",
+	"stopped": "199907012359",
+	"medStatus": "urn:sct:392521001",
+	"medStatusName": "historical",
+	"medType": "urn:sct:105903003",
+	"vaType": "V",
+	"vaStatus": "EXPIRED",
+	"supply": false,
+	"products": [{
+		"summary": "gov.va.cpe.vpr.MedicationProduct@87233d",
+		"ingredientCode": "urn:va:vuid:4017444",
+		"ingredientCodeName": "SODIUM CHLORIDE",
+		"ingredientName": "SODIUM CHLORIDE 0.9% INJ",
+		"drugClassCode": "urn:vadc:TN102",
+		"drugClassName": "IV SOLUTIONS WITH ELECTROLYTES",
+		"suppliedCode": "urn:va:vuid:4001068",
+		"suppliedName": "SODIUM CHLORIDE 0.9% INJ 100 ML",
+		"ingredientRole": "urn:sct:418297009",
+		"volume": "100 ML"
+	}],
+	"dosages": [{
+		"summary": "gov.va.cpe.vpr.MedicationDose@1a9df7",
+		"ivRate": "20 ml/hr",
+		"routeName": "IV",
+		"scheduleName": "BID",
+		"scheduleType": "CONTINUOUS",
+		"scheduleFreq": 720,
+		"adminTimes": "0700-1900"
+	}],
+	"administrations":[
+	{
+		"dateTime": "200006281900",
+		"status": "NOT GIVEN",
+		"medication": [{
+			"amount": 1,
+			"name": "SODIUM CHLORIDE 0.9% INJ",
+			"units": "INJ"
+		}],
+		"administeredByUid": "urn:va:user:F484:20189",
+		"administeredByName": "NURSE,TWENTY-SIX"
+	},
+	{
+		"dateTime": "199906281900",
+		"status": "GIVEN",
+		"medication": [{
+			"amount": 1,
+			"name": "SODIUM CHLORIDE 0.9% INJ",
+			"units": "INJ"
+		}],
+		"administeredByUid": "urn:va:user:F484:20189",
+		"administeredByName": "NURSE,TWENTY-SIX"
+	},{
+		"dateTime": "199906290700",
+		"status": "GIVEN",
+		"medication": [{
+			"amount": 1,
+			"name": "SODIUM CHLORIDE 0.9% INJ",
+			"units": "INJ"
+		}],
+		"administeredByUid": "urn:va:user:F484:1115",
+		"administeredByName": "NURSE,SURGERY THREE"
+	}],
+	"orders": [{
+		"summary": "gov.va.cpe.vpr.MedicationOrder@178ed3d",
+		"orderUid": "urn:va:order:F484:8:10121",
+		"ordered": "199906281320",
+		"providerUid": "urn:va:user:F484:923",
+		"providerName": "PROGRAMMER,TWENTYEIGHT",
+		"pharmacistUid": "urn:va:user:F484:923",
+		"pharmacistName": "PROGRAMMER,TWENTYEIGHT",
+		"locationName": "ZZ5 WEST PSYCH",
+		"locationUid": "urn:va:location:F484:66"
+	}],
+	"fills": [],
+	"qualifiedName": "SODIUM CHLORIDE0.9% INJ",
+	"kind": "Infusion",
+	"rxncodes": [],
+	"outPatient": false,
+	"inPatient": true,
+	"nonVA": false,
+	"infusion": true,
+	"IMO": false,
+	"name": "0.9% SODIUM CHLORIDE INJ"
+}

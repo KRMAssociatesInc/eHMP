@@ -1,0 +1,110 @@
+<html>
+## uncomment to let this function standalone
+###parse("/layouts/main.vm")
+<head>
+	<script type="text/javascript">
+	
+//	        if(navigator.userAgent.toLowerCase().indexOf('webkit') >= 0)
+//                window.addEventListener('mousewheel', handleMouseWheel, false); // Chrome/Safari
+//        else
+                window.addEventListener('DOMMouseScroll', handleMouseWheel, false); // Others
+	
+function handleMouseWheel(evt) {
+        if(evt.preventDefault)
+                evt.preventDefault();
+        evt.returnValue = false;
+		
+        var svgDoc = evt.target.ownerDocument;
+		var g = evt.target.parentElement;
+		if (!g || g.tagName != 'svg') return;
+		console.log('svg', g);
+		
+		
+		var transform = g.transform.baseVal.getItem(0);
+		var currentScale = transform.matrix.a += 0.1;
+		console.log('currentScale', currentScale);
+		transform.setScale(currentScale, currentScale);
+		
+		
+		
+		return;
+		
+		
+        var delta;
+        if(evt.wheelDelta)
+                delta = evt.wheelDelta / 360; // Chrome/Safari
+        else
+                delta = evt.detail / -9; // Mozilla
+
+		var zoomScale = 0.2; // Zoom sensitivity
+        var z = Math.pow(1 + zoomScale, delta);
+        var p = getEventPoint(g, evt);
+
+        p = p.matrixTransform(g.getCTM().inverse());
+
+        // Compute new scale matrix in current mouse position
+        var k = root.createSVGMatrix().translate(p.x, p.y).scale(z).translate(-p.x, -p.y);
+
+        setCTM(g, g.getCTM().multiply(k));
+
+        if(typeof(stateTf) == "undefined")
+                stateTf = g.getCTM().inverse();
+
+        stateTf = stateTf.multiply(k.inverse());
+}
+
+function getEventPoint(svg, evt) {
+        var p = svg.createSVGPoint();
+
+        p.x = evt.clientX;
+        p.y = evt.clientY;
+
+        return p;
+}
+
+function setCTM(element, matrix) {
+        var s = "matrix(" + matrix.a + "," + matrix.b + "," + matrix.c + "," + matrix.d + "," + matrix.e + "," + matrix.f + ")";
+
+        element.setAttribute("transform", s);
+}
+	</script>
+</head>
+	
+<body>
+	
+	<form  method="GET" action="/vpr/view/gov.va.cpe.vpr.queryeng.MedHistViewDef">
+		<input type="hidden" name="mode" value="/patientDomain/svgview"/>
+		PID: <input type="text" name="pid" value="$!params.pid"/><br/>
+		Show OLD: <input type="checkbox" name="filter_current" value="false" #if ($params.filter_current == 'false') CHECKED#end><br/>
+		Filter Type: <select name="filter_type">
+			<option value="I" #if ($params.filter_type == 'I')SELECTED#end>inpatient</option>
+			<option value="O" #if ($params.filter_type == 'O')SELECTED#end>outpatient</option>
+			<option value="V" #if ($params.filter_type == 'V')SELECTED#end>iv</option>
+			<option value="N" #if ($params.filter_type == 'N')SELECTED#end>nonva</option>
+		</select><br/>
+		TO: <input type="text" name="to" value="$!params.to"><br/>
+		WIDTH: <input type="text" name="svg_width" value="$!params.svg_width"><br/>
+		<input type="submit">
+	</form>
+	
+	<table border="1">
+		<tr>
+			<td>SVG</td>
+			<td>type</td>
+			<td>Primary</td>
+		</tr>
+#foreach($row in $results.getRows())
+	<tr>
+		<td>$row.svg</td>
+		<td>$row.vaType</td>
+		<td>
+			#set($primary = $row.meds.first())
+			$primary.uid
+			<pre>$primary.summary</pre>
+			($hmp.formatDateTime($!row.therapyStart) - $hmp.formatDateTime($!row.therapyStop))
+		</td>
+	</tr>
+#end
+	</table>
+</body>
+</html>

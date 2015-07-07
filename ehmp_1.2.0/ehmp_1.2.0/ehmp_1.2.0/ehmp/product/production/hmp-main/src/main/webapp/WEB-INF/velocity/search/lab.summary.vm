@@ -1,0 +1,12 @@
+#set($doc=$docs[0])
+
+## make the interpretation code RED in the display results since the bold gets washed out
+#if ($doc.summary.indexOf('<em>'))
+    #set($doc.summary = $doc.summary.replaceAll("<em>(.*)</em>","<span class='label label-default'>$1</span>"))
+    #if ($doc.summary.indexOf('\\*') > 0)
+        #set($doc.summary = $doc.summary.replaceAll("default","danger"))
+    #else
+        #set($doc.summary = $doc.summary.replaceAll("default","warning"))
+    #end
+#end
+$doc.summary 
