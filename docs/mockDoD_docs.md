@@ -17,7 +17,7 @@ V3 and V2.
 For loinc codes checkout ClinicalDomainLoincCode.java
 
 v3
-==
+---
 Query:
 ```
 http://localhost:8080/MockDoDAdaptor-2.0.3/bda/api/v3/query/?patientid={patientid}&loinc={loinc}
