@@ -55,19 +55,17 @@ KIDS
 ```
 INS
 ```
-13) Once here you can type ?? and you should see a list of options going from 1 to 6.  The only 2
-that will be used will be 1 Load A Distribution And 6 Install Packages
-14) Select 1 Load A Distribution, this option will ask you to provide the path to the kids file, if
-directions were followed above, it’ll be /home/kids/<kids file name>.KID
+13) Once here you can type ?? and you should see a list of options going from 1 to 6.  The only 2 that will be used will be 1 Load A Distribution And 6 Install Packages
+
+14) Select 1 Load A Distribution, this option will ask you to provide the path to the kids file, if directions were followed above, it’ll be /home/kids/<kids file name>.KID
 WARNING: Follow the order in which to install kids builds, it’s located in the base EHMP
 directory, under a file called eHMP_build.pdf
 ```
 1
 /home/kids/<kids file name>.KID
 ```
-15) Note: if you receive errors when attempting to load the kids file, it could be due them being
-loaded in the incorrect format(Refer to step 4).  You can use dos2unix program to convert these
-files.
+15) Note: if you receive errors when attempting to load the kids file, it could be due them being loaded in the incorrect format(Refer to step 4). You can use dos2unix program to convert these files.
+
 16) Once loaded, go to 6 Install Packages, enter ??, this will show you the files that have been
 loaded.  Type enough of the loaded file for VistA to recognize the file to be selected.
 ```
@@ -75,4 +73,5 @@ loaded.  Type enough of the loaded file for VistA to recognize the file to be se
 ??
 ```
 17) Take all defaults, simply press Enter/Return until you get a message saying it’s been installed.
+
 18) Repeat steps 13 to 17 until all files are uploaded.
