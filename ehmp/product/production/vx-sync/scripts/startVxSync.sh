@@ -1,5 +1,5 @@
-pushd ~/Projects/vistacore/ehmp/product/production/vx-sync
-beanstalkd -p 5000 -V -z 2000000 > ./logs/beanstalkd.log &
+#pushd /vagrant/ehmp/product/production/vx-sync
+beanstalkd -p 5000 -z 2000000 > ./logs/beanstalkd.log &
 node pollerHost.js | node_modules/.bin/bunyan -o short > ./logs/vista-poller.log &
 node endpoints/writeback/writeback-endpoint.js --port 9090 | node_modules/.bin/bunyan -o short > ./logs/writeback.log &
 
@@ -12,4 +12,4 @@ node subscriberHost.js | node_modules/.bin/bunyan -o short > ./logs/subscriber-h
 node endpoints/sync-request/sync-request-endpoint.js --port 8080 | node_modules/.bin/bunyan -o short > ./logs/api.log &
 node endpoints/operational/operational-sync-endpoint.js --port 8088 | node_modules/.bin/bunyan -o short > ./logs/op-api.log &
 node endpoints/documents/document-retrieval-endpoint.js --port 8089 | node_modules/.bin/bunyan -o short > ./logs/doc-ret.log &
-popd
+#popd
