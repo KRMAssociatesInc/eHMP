@@ -59,16 +59,10 @@ function getVALoincConcept(conceptId, callback) {
         timeout: config.terminology.timeout
     };
 
+    // Open Source Release Note - Terminology retrieval has been removed.
     request(options, function(error, response, body) {
-            if(error || (response && response.statusCode !== 200 && response.statusCode !== 204)) {
-                callback('Received error response from terminology service');
-            } else {
-                if(body) {
-                    callback(null, JSON.parse(body));
-                } else {
-                    callback(null, null);
-                }
-            }
+            return callback(null, null);
+    }
         });
 }
 
@@ -102,17 +96,10 @@ function getVADrugConcept(conceptId, callback) {
         url: drugUrl,
         timeout: config.terminology.timeout
     };
-
+    
+    // Open Source Release Note - Terminology retrieval has been removed.
     request(options, function(error, response, body) {
-            if(error || (response && response.statusCode !== 200 && response.statusCode !== 204)) {
-                callback('Received error response from terminology service');
-            } else {
-                if(body) {
-                    callback(null, JSON.parse(body));
-                } else {
-                    callback(null, null);
-                }
-            }
+            return callback(null, null);
         });
 }
 
@@ -129,19 +116,8 @@ function getVADrugConcept(conceptId, callback) {
 //               concept: Is the attributes for the concept retrieved.
 //-------------------------------------------------------------------------------------------
 function getVAConceptMappingTo(concept, targetCodeSystem, callback) {
-    if ((concept) && (!_.isEmpty(concept.sameas))) {
-        var targetUrn = _.find(concept.sameas, function(urn) {
-            return (urn.indexOf('urn:' + targetCodeSystem) >= 0);
-        });
-
-        if (targetUrn) {
-            return getVADrugConcept(targetUrn, callback);
-        } else {
-            return callback(null, null);
-        }
-    } else {
-        return callback(null, null);
-    }
+    // Open Source Release Note - Terminology retrieval has been removed.
+    return callback(null, null);
 }
 
 //------------------------------------------------------------------------------------------
@@ -172,43 +148,8 @@ function getVAConceptMappingTo(concept, targetCodeSystem, callback) {
 //                              sourceCode maps to.
 //------------------------------------------------------------------------------------------
 function getJlvMappedCode(mappingType, sourceCode, callback) {
-    // Cannot translate if we have nothing to start with.
-    //---------------------------------------------------
-    if (!_.isString(sourceCode)) {
-        return callback(null, null);
-    }
-
-	if(!isMappingTypeValid(mappingType)) {
-        // log.warn('terminology-utils.getJlvMappedCode: Invalid mapping type requested.  mappingType: %s; sourceCode: %s', mappingType, sourceCode);
-        return callback(util.format('Invalid mapping type requested.  mappingType: %s; sourceCode: %s', mappingType, sourceCode));
-    }
-
-    var jlvUrl = util.format('%s://%s:%s%s?%s',
-            config.terminology.protocol,
-            config.terminology.host,
-            config.terminology.port,
-            config.terminology.jlvPath,
-            querystring.stringify({
-                type: mappingType,
-                code: sourceCode
-            }));
-
-    var options = {
-        url: jlvUrl,
-        timeout: config.terminology.timeout
-    };
-
-    request(options, function(error, response, body) {
-            if(error || (response && response.statusCode !== 200 && response.statusCode !== 204)) {
-                callback('Received error response from terminology service');
-            } else {
-                if(body) {
-                    callback(null, JSON.parse(body));
-                } else {
-                    callback(null, null);
-                }
-            }
-        });
+    // Open Source Release Note - Terminology retrieval has been removed.
+    return callback(null, null);
 }
 
 //------------------------------------------------------------------------------------------
@@ -259,16 +200,9 @@ function getJlvMappedCodeList(mappingType, sourceCode, callback) {
         timeout: config.terminology.timeout
     };
 
+    // Open Source Release Note - Terminology retrieval has been removed.
     request(options, function(error, response, body) {
-            if(error || (response && response.statusCode !== 200 && response.statusCode !== 204)) {
-                callback('Received error response from terminology service');
-            } else {
-                if(body) {
-                    callback(null, JSON.parse(body));
-                } else {
-                    callback(null, null);
-                }
-            }
+            return callback(null, null);
         });
 }
 
