@@ -1,5 +1,5 @@
-pushd ~/Projects/vistacore/ehmp/product/production/vx-sync
-beanstalkd -p 5000 -V -z 2000000 > ./logs/beanstalkd.log &
+pushd /vagrant/ehmp/product/production/vx-sync
+beanstalkd -p 5000 -z 2000000 > ./logs/beanstalkd.log &
 VXSYNC_LOG_SUFFIX=pollerHost node pollerHost.js &
 VXSYNC_LOG_SUFFIX=admin-endpoint node tools/beanstalk/admin-endpoint.js --port 9999 &
 VXSYNC_LOG_SUFFIX=writebackEndpoint node endpoints/writeback/writeback-endpoint.js --port 9090 &
