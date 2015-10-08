@@ -18,7 +18,23 @@
 3. Running an Operational Data Sync to verify JDS & Vista are talking to VxSync
    1. If you are using different private IP's you will have to modify lines 2 and 28 in `ehmp/product/production/vx-sync/worker-config.json`
    Lines 15-28 tell VxSync where Vista is and what credentials are needed. Lines 589-594 tell VxSync where JDS is. Ensure these lines all have the correct values. 
-   2. 
+   2. Next enter this command into VistA: `W $$SYS^HMPUTILS`
+   3. Using Postman, run a get query on: `http://192.168.33.12:8088/data/doLoad?sites=34C5` The IP shoudld be the IP on the ehmp VM. 
+   If all went well you should see a 201 response. 
+   4. To check if the operational data sync completed, run this in postman: `http://192.168.33.10:9080/statusod/34C5'
+   If the sync completed successfully you should see a long JSON response multiple `"syncCompleted": true` 
+   5. VxSync is now connected to JDS and VistA. 
+
+### Troubleshooting 
+The following endpoints can be helpful in troubleshooting the connection of VxSync, JDS, and VistA. 
+* Detailed stats of jobs in Beanstalk que: [http://192.168.33.12:9999/beanstalk/stats-tube/]
+* To view the Job's que inside VistA to see if any are running or have run: 
+  1. In the Vista prompt type `s DUZ=1 D ^XUP`
+  2. `hmpmgr`
+  3. `mon`
+  4. `hmp`
+  5. Press enter to refresh. 
+
 
 
 
