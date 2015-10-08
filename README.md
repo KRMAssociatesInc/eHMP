@@ -13,7 +13,12 @@
    6. Run `sudo su - jds` 
    7. Run `source etc/env`
    8. Run `mumps -dir` This will open a prompt
-   9. Type `FULLRSET^VPRJ` JDS should now be running
+   9. Type `FULLRSET^VPRJ`. JDS should now be running
+   10. To verify JDS is running, open the following URL: `http://192.168.33.10:9080/ping` If JDS is okay, you should see this JSON response `{"status":"running"}`
+3. Running an Operational Data Sync to verify JDS & Vista are talking to VxSync
+   1. If you are using different private IP's you will have to modify lines 2 and 28 in `ehmp/product/production/vx-sync/worker-config.json`
+   Lines 15-28 tell VxSync where Vista is and what credentials are needed. Lines 589-594 tell VxSync where JDS is. Ensure these lines all have the correct values. 
+   2. 
 
 
 
