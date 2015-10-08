@@ -1,5 +1,5 @@
 {
-    "VXSYNC_IP": "10.3.3.6",
+    "VXSYNC_IP": "192.168.33.12",
 
     "vxsync": {
         "configRefresh": 0,
@@ -13,26 +13,14 @@
             }
         },
         "vistaSites": {
-            "9E7A": {
-                "name": "panorama",
-                "host": "10.2.2.101",
-                "port": 9210,
-                "accessCode": "ep1234",
-                "verifyCode": "ep1234!!",
+            "34C5": {
+                "name": "krm",
+                "host": "192.168.33.10",
+                "port": 9430,
+                "accessCode": "SM1234",
+                "verifyCode": "SM1234!!!",
                 "localIP": "127.0.0.1",
-                "stationNumber": 500,
-                "localAddress": "localhost",
-                "connectTimeout": 3000,
-                "sendTimeout": 20000
-            },
-            "C877": {
-                "name": "kodak",
-                "host": "10.2.2.102",
-                "port": 9210,
-                "accessCode": "ep1234",
-                "verifyCode": "ep1234!!",
-                "localIP": "127.0.0.1",
-                "stationNumber": 500,
+                "stationNumber": 6100,
                 "localAddress": "localhost",
                 "connectTimeout": 3000,
                 "sendTimeout": 20000
@@ -600,7 +588,7 @@
 
         "jds": {
             "protocol": "http",
-            "host": "10.2.2.110",
+            "host": "192.168.33.10",
             "port": 9080,
             "timeout": 60000
         },
