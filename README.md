@@ -2,8 +2,8 @@
 
 ### Configuration
 1. Install VISTA and KIDS Builds. 
-..1. Directions are in: `docs/KIDS_builds.md'
-..2. In the Vista Vagrantfile comment out all the forwarded ports and create a private network by adding this line `config.vm.network :private_network, ip: "192.168.33.10"`
+   1. Directions are in: `docs/KIDS_builds.md'
+   2. In the Vista Vagrantfile comment out all the forwarded ports and create a private network by adding this line `config.vm.network :private_network, ip: "192.168.33.10"`
 2. Install and Configure JDS on same VM as VISTA
 	a. Copy the JDS Instance script `JDS/createJDSinstance.sh` into the mounted vagrant folder of the VISTA VM. 
 	b. Clone JDS into the mounted vagrant folder for VISTA. JDS is here [https://github.com/KRMAssociatesInc/JDS-GTM]
