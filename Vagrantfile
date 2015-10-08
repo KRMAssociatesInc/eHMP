@@ -21,17 +21,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network :forwarded_port, guest: 80, host: 8080
 
-  # vx-sync port forwards
-  config.vm.network :forwarded_port, guest: 8080, host: 8080
-
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   # config.vm.network :private_network, ip: "192.168.33.10"
+  config.vm.network :private_network, ip: "192.168.33.12"
+
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  
+
   #config.vm.network :public_network
 
   # If true, then any SSH connections made will enable agent forwarding.
@@ -105,7 +104,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # end
 
   config.vm.provision :chef_solo do |chef|
-     
+
      chef.add_recipe "nodejs"
      chef.add_recipe "beanstalkd"
      chef.add_recipe "libreoffice"
