@@ -29,8 +29,8 @@ var logger = require('bunyan').createLogger({
 var config = {
 	host: argv.host,
 	port: argv.port,
-	accessCode: argv.accessCode || 'pu1234',
-	verifyCode: argv.verifyCode || 'pu1234!!',
+	accessCode: argv.accessCode || 'SM1234',
+	verifyCode: argv.verifyCode || 'SM1234!!!',
 	localIP: argv.localIP || '127.0.0.1',
 	localAddress: argv.localAddress || 'localhost',
 	context: argv.context || 'HMP SYNCHRONIZATION CONTEXT',
