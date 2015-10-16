@@ -41,21 +41,22 @@
    9. After saving the config, to start RDK run `./run.sh --config config/config.js`
    10. There will be a lot of output, the key is the health metrics. All of them should come as success except for MVI and          Solr. 
 
-
 5. Configuring ADK and UI 
    1. Modify line 6 of ADK's app.json - This value should point towards the IP address where RDK is running.
    2. UI also has a app.json file that needs modified to point at RDK. 
-   3. Install Bower: `sudo npm install -g bower`
-   4. Install Bower-Installer `sudo npm install -g bower-installer`
-   5. Navigate to adk/product/ and run `gradle clean test grunt_deploy` 
+   3. Install Ruby `sudo apt-get install ruby-full` This installs 1.9.3
+   4. Install Compass Gem: Run `gem install compass -v 0.12.6`
+   5. Install Bower: `sudo npm install -g bower`
+   6. Install Bower-Installer `sudo npm install -g bower-installer`
+   7. Navigate to adk/product/ and run `gradle clean test grunt_deploy` 
       This will build adk to `adk/product/production/build/adk.tgz`
-   6. Navigate to ehmp-ui/product/ and run `gradle clean test zipEhmpuiApp`
+   8. Navigate to ehmp-ui/product/ and run `gradle clean test zipEhmpuiApp`
       This will build adk to `ehmp-ui/product/build/ehmp-ui-x.x.x.zip`
-   7. You will now need to setup a web server of your choice. We went for Nginx. 
-   8. In whichever folder will be web accessible, extract the contents of "adk.tgz"
-   9. In the same directory create an "app" folder and extract the contents of "ehmp-ui-x.x.x.zip" there. 
-   10. If your webserver is running, as well as the rest of the infrastructure (RDK, VxSync, JDS, VistA), you may open EHMP in       your browser and login. 
-   11. The user login must have ehmp-ui context access in VistA. {Add further docs regarding this} 
+   9. You will now need to setup a web server of your choice. We went for Nginx. 
+   10. In whichever folder will be web accessible, extract the contents of "adk.tgz"
+   11. In the same directory create an "app" folder and extract the contents of "ehmp-ui-x.x.x.zip" there. 
+   12. If your webserver is running, as well as the rest of the infrastructure (RDK, VxSync, JDS, VistA), you may open EHMP in       your browser and login. 
+   13. The user login must have ehmp-ui context access in VistA. {Add further docs regarding this} 
 
 ### Troubleshooting 
 The following endpoints can be helpful in troubleshooting the connection of VxSync, JDS, and VistA. 
