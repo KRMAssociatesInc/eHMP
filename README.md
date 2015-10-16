@@ -24,10 +24,24 @@
    4. To check if the operational data sync completed, run this in postman: `http://192.168.33.10:9080/statusod/34C5'
    If the sync completed successfully you should see a long JSON response multiple `"syncCompleted": true` 
    5. VxSync is now connected to JDS and VistA. 
+4. Configuring ADK and UI 
+   1. Modify line 6 of ADK's app.json - This value should point towards the IP address where RDK is running.
+   2. UI also has a app.json file that needs modified to point at RDK. 
+   3. Install Bower: `sudo npm install -g bower`
+   4. Install Bower-Installer `sudo npm install -g bower-installer`
+   5. Navigate to adk/product/ and run `gradle clean test grunt_deploy` 
+      This will build adk to `adk/product/production/build/adk.tgz`
+   6. Navigate to ehmp-ui/product/ and run `gradle clean test zipEhmpuiApp`
+      This will build adk to `ehmp-ui/product/build/ehmp-ui-x.x.x.zip`
+   7. You will now need to setup a web server of your choice. We went for Nginx. 
+   8. In whichever folder will be web accessible, extract the contents of "adk.tgz"
+   9. In the same directory create an "app" folder and extract the contents of "ehmp-ui-x.x.x.zip" there. 
+   10. If your webserver is running, as well as the rest of the infrastructure (RDK, VxSync, JDS, VistA), you may open EHMP in       your browser and login. 
+   11. The user login must have ehmp-ui context access in VistA. {Add further docs regarding this} 
 
 ### Troubleshooting 
 The following endpoints can be helpful in troubleshooting the connection of VxSync, JDS, and VistA. 
-* Detailed stats of jobs in Beanstalk que: [http://192.168.33.12:9999/beanstalk/stats-tube/]
+* Detailed stats of jobs in Beanstalk queue: [http://192.168.33.12:9999/beanstalk/stats-tube/]
 * To view the Job's que inside VistA to see if any are running or have run: 
   1. In the Vista prompt type `s DUZ=1 D ^XUP`
   2. `hmpmgr`
@@ -35,6 +49,7 @@ The following endpoints can be helpful in troubleshooting the connection of VxSy
   4. `hmp`
   5. Press enter to refresh. 
 
+* If either JDS or VistA are restarted you will not be able to perform an operation sync. To fix this navigate to Vx-Sync and run `node tools/rpc/rpc-unsubscribe-all --host 192.168.33.10 --port 9430` 
 
 
 
