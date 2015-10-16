@@ -35,29 +35,17 @@ module.exports = {
         context: 'HMP UI CONTEXT'
     },
     vistaSites: {
-        '9E7A': {
-            name: 'PANORAMA',
-            division: '500',
-            host: '10.2.2.101',
-            localIP: '10.2.2.1',
+        '34C5': {
+            name: 'krm',
+            division: '1',
+            host: '192.168.33.10',
+            localIP: '192.168.33.12',
             localAddress: 'localhost',
-            port: 9210,
+            port: 9430,
             production: false,
-            accessCode: 'ep1234',
-            verifyCode: 'ep1234!!',
+            accessCode: 'SM1234',
+            verifyCode: 'SM1234!!!',
             infoButtonOid: '1.3.6.1.4.1.3768'
-        },
-        'C877': {
-            name: 'KODAK',
-            division: '500',
-            host: '10.2.2.102',
-            localIP: '10.2.2.2',
-            localAddress: 'localhost',
-            port: 9210,
-            production: false,
-            accessCode: 'ep1234',
-            verifyCode: 'ep1234!!',
-            infoButtonOid: '1.3.6.1.4.1.2000'
         }
     },
     mvi: {
@@ -86,17 +74,17 @@ module.exports = {
     },
     responseTimeoutMillis: 420000,
     hmpServer: {
-        host: '10.3.3.4',
+        host: '192.168.33.10',
         port: 8443,
-        accessCode: '9E7A;500',
-        verifyCode: 'ep1234;ep1234!!'
+        accessCode: '34C5;1',
+        verifyCode: 'SM1234;SM1234!!!'
     },
     vxSyncServer: {
         //host: '192.168.200.30',
         //host: '192.168.200.31',
         //host: '192.168.43.198',
         //host: '192.168.2.8',
-        host: '10.3.3.6',
+        host: '192.168.33.12',
         port: 8080
     },
     solrServer: {
@@ -116,11 +104,11 @@ module.exports = {
         }
     },
     jdsServer: {
-        host: '10.2.2.110',
+        host: '192.168.33.10',
         port: 9080
     },
     generalPurposeJdsServer: {
-        host: '10.2.2.110',
+        host: '192.168.33.10',
         port: 9080
     },
     jdsSync: {
