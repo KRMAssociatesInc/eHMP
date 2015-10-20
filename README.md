@@ -8,22 +8,24 @@
    3. Modify XUSRB1.m to contain the correct hash. This is the version to replace it with:
           https://github.com/OSEHRA/VistA-M/raw/d0c8aac7ba36da048f69a2db8e453e06577480d5/Packages/Kernel/Routines/XUSRB1.m
    4. Configure Robert Alexander to have access to eHMP on the OSEHRA VistA VM:
-      `sudo su - osehra`
-      `mumps -dir`
-      `S DUZ=1 D Q^DI`
-      `ENTER`
-      `NEW PERSON`
-      `SECONDARY MENU OPTIONS`
-      `<ENTER>`
-      `<ENTER>`
-      `alex`
-      `hmp ui context`
-      `Yes`
-      `<ENTER>`
-      `<ENTER>`
-      `<ENTER>`
-      `<ENTER>`
-      `H`
+      ```
+      sudo su - osehra
+      mumps -dir
+      S DUZ=1 D Q^DI
+      ENTER
+      NEW PERSON
+      SECONDARY MENU OPTIONS
+      <ENTER>
+      <ENTER>
+      alex
+      hmp ui context
+      Yes
+      <ENTER>
+      <ENTER>
+      <ENTER>
+      <ENTER>
+      H
+      ```
 
 2. Install and Configure JDS on same VM as VISTA
    1. Copy the JDS Instance script `JDS/createJDSinstance.sh` into the mounted vagrant folder of the VISTA VM.
