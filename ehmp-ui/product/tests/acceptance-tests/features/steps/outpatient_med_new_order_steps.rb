@@ -50,7 +50,7 @@ Then(/^the user gets a warning window/) do
   expect(con.perform_verification("warningWindow", "This drug is not in the formulary! There are no formulary alternatives entered for this item.")).to be_true
 end
 
-Then(/^the user selects clinic appt first row "(.*?)"$/) do |arg1|
+Then(/^the user selects clinic appt first row "(.*?)"$/) do |_arg1|
   con = NewOutpatientMedOrder.instance
   expect(con.wait_until_action_element_visible("General Medicine", 60)).to be_true
   expect(con.perform_action("General Medicine")).to be_true
@@ -84,7 +84,7 @@ Then(/^the user clicks on "([^"]*)" link$/) do |element|
   expect(aa.perform_action(element, "")).to be_true
 end
 
-Then(/^the outpatient "(.*?)" button appears$/) do |selected_item|
+Then(/^the outpatient "(.*?)" button appears$/) do |_selected_item|
   con = NewOutpatientMedOrder.instance
   expect(con.wait_until_action_element_visible("Change Visit", 60)).to be_true
   #expect(con.perform_verification("Change Visit", selected_item)).to be_true
@@ -203,7 +203,7 @@ Then(/^the modal contains successful order number/) do
   expect(con.static_dom_element_exists?("Success")).to be_true
 end
 
-Then(/^the user selects hospital admissions first row "(.*?)"$/) do |arg1|
+Then(/^the user selects hospital admissions first row "(.*?)"$/) do |_arg1|
   con = NewOutpatientMedOrder.instance
   expect(con.wait_until_action_element_visible("7A Gen Med", 30)).to be_true
   expect(con.perform_action("7A Gen Med")).to be_true

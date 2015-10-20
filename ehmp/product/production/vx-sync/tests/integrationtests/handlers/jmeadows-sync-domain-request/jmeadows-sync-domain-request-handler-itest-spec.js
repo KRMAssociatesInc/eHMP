@@ -40,6 +40,7 @@ describe('jmeadows-sync-domain-request-handler.js', function() {
     var environment = {
         vistaClient: new VistaClientDummy(dummyLogger, config, null),
         jobStatusUpdater: jobStatusUpdaterDummy,
+        metrics: dummyLogger
     };
 
     var host = vx_sync_ip;

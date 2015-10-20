@@ -109,7 +109,7 @@ Then(/^the modal view contains the headers$/) do |table|
   driver = TestSupport.driver
   num_of_rows = driver.find_elements(:css, "#modal-header div")
   #Loop through rows in cucumber   
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     #Loop through UI rows
     for i in 1..num_of_rows.length
@@ -127,7 +127,7 @@ Then(/^the modal view contains the headers$/) do |table|
     p "could not match data: #{row_defined_in_cucumber}" unless matched  
     driver.save_screenshot("incorrect_rows.png") unless matched
     expect(matched).to be_true
-  end#do loop  
+  end #do loop  
 end
 
 #Validate the rows of the modal view 
@@ -135,7 +135,7 @@ Then(/^the modal body contains the rows$/) do |table|
   driver = TestSupport.driver
   num_of_rows = driver.find_elements(:css, "#modal-body div div")
   #Loop through rows in cucumber   
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     #Loop through UI rows
     for i in 1..num_of_rows.length
@@ -153,7 +153,7 @@ Then(/^the modal body contains the rows$/) do |table|
     p "could not match data: #{row_defined_in_cucumber}" unless matched  
     driver.save_screenshot("incorrect_rows.png") unless matched
     expect(matched).to be_true
-  end#do loop  
+  end #do loop  
 end
 
 #Enter Search Term

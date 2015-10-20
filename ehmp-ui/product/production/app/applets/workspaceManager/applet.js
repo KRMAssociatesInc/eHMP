@@ -8,7 +8,13 @@ define([
 
     var RootView = Backbone.Marionette.LayoutView.extend({
         showView: function(event, options) {
-            var view = ADK.showFullscreenOverlay(AppletLayoutView, {'callShow': true});
+            var view = new ADK.UI.FullScreenOverlay({
+                view: AppletLayoutView,
+                options: {
+                    'callShow': true
+                }
+            });
+            view.show();
             view.initGridster();
         }
     });
@@ -23,7 +29,13 @@ define([
     (function initMessaging() {
         var channel = ADK.Messaging.getChannel('workspaceManagerChannel');
         channel.on('workspaceManager', function() {
-            var view = ADK.showFullscreenOverlay(new AppletLayoutView(), {'callShow': true});
+            var view = new ADK.UI.FullScreenOverlay({
+                view: new AppletLayoutView(),
+                options: {
+                    'callShow': true
+                }
+            });
+            view.show();
         });
     })();
 

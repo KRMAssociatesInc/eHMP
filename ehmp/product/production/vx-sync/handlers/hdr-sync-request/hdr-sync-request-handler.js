@@ -41,7 +41,8 @@ function handle(log, config, environment, job, handlerCallback) {
     operationaldataSyncUtil.initialize(log, config, environment);
 
     log.debug('hdr-sync-request-handler.handle: Preparing domain jobs to be published.  requestStampTime: %s', requestStampTime);
-    var jobsToPublish = _.map(config.hdr.domains, function(domain) {
+    var filterDomains = _.filter(config.hdr.domains, function(domain) { return domain !== 'patient'; });
+    var jobsToPublish = _.map(filterDomains, function(domain) {
         var meta = {
             jpid: job.jpid,
             rootJobId: job.rootJobId,

@@ -1,0 +1,9 @@
+ORWDLR32 ALLSPEC
+INPUT:
+    FROM (PARTIAL SEARCH STRING)
+    DIR (1 = forward, the default in CPRS)
+
+Output: A list of specimens
+
+IEN^NAME  (SNOMED CODE)
+The SNOMED code will appear inside parentheses.

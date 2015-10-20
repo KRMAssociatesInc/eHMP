@@ -1,2 +1,2 @@
 #!/bin/sh
-node resource-server.js "$@" | node_modules/.bin/bunyan
+node bin/rdk-fetch-server.js "$@" | node_modules/.bin/bunyan

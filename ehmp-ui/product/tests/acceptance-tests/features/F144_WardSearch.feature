@@ -95,7 +95,7 @@ Scenario: User attempts invalid search  with wrong keyword
     Then no results are displayed in word
     Then the user verifies word "No results found."
 
-@invalidWardSearch_3 @US1976
+@invalidWardSearch_3 @US1976 @DE1590
 Scenario: User attempts search  with  filter which has no data
     And the User selects mysite and Ward
     And user attempt to filter by keyword "3"

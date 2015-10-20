@@ -1,0 +1,154 @@
+{
+    "apiVersion": "1.01",
+    "params": {
+        "domain": "HDR",
+        "systemId": "HDR"
+    },
+    "data": {
+        "updated": "20150304163211",
+        "totalItems": 1,
+        "items": [
+            {
+                "address": [
+                    {
+                        "city": "LOVELAND",
+                        "line1": "4114 ALDER COURT",
+                        "state": "CO",
+                        "use": "H",
+                        "zip": 80538
+                    }
+                ],
+                "birthDate": 19520724,
+                "briefId": "I3277",
+                "contact": [
+                    {
+                        "name": "AKRE,CARY",
+                        "telecom": [
+                            {
+                                "use": "H",
+                                "value": "(222)222-2222"
+                            }
+                        ],
+                        "typeCode": "urn:va:pat-contact:NOK",
+                        "typeName": "Next of Kin"
+                    },
+                    {
+                        "name": "AKRE,CARY",
+                        "telecom": [
+                            {
+                                "use": "H",
+                                "value": "(222)222-2222"
+                            }
+                        ],
+                        "typeCode": "urn:va:pat-contact:ECON",
+                        "typeName": "Emergency Contact"
+                    }
+                ],
+                "cwadf": "AD",
+                "ethnicity": [
+                    {
+                        "code": "2186-5"
+                    }
+                ],
+                "exposure": [
+                    {
+                        "name": "No",
+                        "uid": "urn:va:agent-orange:N"
+                    },
+                    {
+                        "name": "No",
+                        "uid": "urn:va:ionizing-radiation:N"
+                    },
+                    {
+                        "name": "No",
+                        "uid": "urn:va:sw-asia:N"
+                    },
+                    {
+                        "name": "No",
+                        "uid": "urn:va:head-neck-cancer:N"
+                    },
+                    {
+                        "name": "No",
+                        "uid": "urn:va:mst:N"
+                    },
+                    {
+                        "name": "No",
+                        "uid": "urn:va:combat-vet:N"
+                    }
+                ],
+                "facility": [
+                    {
+                        "code": "200PS",
+                        "name": "DEPT. OF DEFENSE"
+                    },
+                    {
+                        "code": "200DOD",
+                        "name": "DEPT. OF DEFENSE"
+                    },
+                    {
+                        "code": 451,
+                        "homeSite": true,
+                        "latestDate": 20150225,
+                        "localPatientId": 9106,
+                        "name": "IPOTEST 1",
+                        "systemId": 9016
+                    }
+                ],
+                "familyName": "IPOAKRE",
+                "fullName": "IPOAKRE,SON",
+                "genderCode": "urn:va:pat-gender:M",
+                "genderName": "Male",
+                "givenNames": "SON",
+                "localId": 9106,
+                "lrdfn": 469225,
+                "maritalStatusCode": "urn:va:pat-maritalStatus:M",
+                "maritalStatusName": "Married",
+                "meanStatus": "MT COPAY REQUIRED",
+                "pid": "9016;9106",
+                "race": [
+                    {
+                        "code": "2106-3"
+                    }
+                ],
+                "religionCode": "urn:va:pat-religion:29",
+                "religionName": "UNKNOWN/NO PREFERENCE",
+                "sensitive": false,
+                "serviceConnected": false,
+                "ssn": 101043277,
+                "teamInfo": {
+                    "associateProvider": {
+                        "name": "unassigned"
+                    },
+                    "attendingProvider": {
+                        "name": "unassigned"
+                    },
+                    "inpatientProvider": {
+                        "name": "unassigned"
+                    },
+                    "mhCoordinator": {
+                        "mhPosition": "unassigned",
+                        "mhTeam": "unassigned",
+                        "name": "unassigned"
+                    },
+                    "primaryProvider": {
+                        "name": "unassigned"
+                    },
+                    "team": {
+                        "name": "GREEN TEAM",
+                        "phone": "(307)778-7533",
+                        "uid": "urn:va:team:9016:5"
+                    },
+                    "text": " Primary Care Team: GREEN TEAM\r\n Phone: (307)778-7533\r\n \r\nNo Primary Care Provider Assigned.\r\n \r\nNo Associate Provider Assigned.\r\n \r\n"
+                },
+                "telecom": [
+                    {
+                        "use": "H",
+                        "value": "(222)222-2222"
+                    }
+                ],
+                "uid": "urn:va:patient:9016:9106:9106",
+                "veteran": true
+            }
+        ]
+    }
+}

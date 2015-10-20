@@ -1,0 +1,19 @@
+.gist-container {
+    &.tiles{
+        .header-bar{
+            > div{
+                &.chart-header{
+                    padding-right: 0;
+                    padding-top:0;
+                    > .high-chart{
+                        height:20px;
+                    }
+                }
+            }
+        }
+        .trend-increase,
+        .trend-decrease{
+            color: $primary-light;
+        }
+    }
+}

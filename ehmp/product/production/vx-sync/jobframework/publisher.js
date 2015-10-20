@@ -7,16 +7,18 @@ var BeanstalkClient = require('./beanstalk-client');
 
 var inspect = require(global.VX_UTILS + 'inspect');
 
-function Publisher(logger, beanstalkConfig, jobType) {
+function Publisher(logger, metrics, config, jobType) {
     if (!(this instanceof Publisher)) {
-        return new Publisher(logger, beanstalkConfig, jobType);
+        return new Publisher(logger, metrics, beanstalkConfig, jobType);
     }
 
     logger.debug('publisher.Publisher(%s)', jobType);
 
     this.logger = logger;
+    this.metrics = metrics;
     this.client = undefined;
     this.jobType = jobType;
+    var beanstalkConfig = config.beanstalk;
     this.beanstalkJobTypeConfig = beanstalkConfig.jobTypes[jobType] ||
         _.defaults({}, beanstalkConfig.repoUniversal, beanstalkConfig.repoDefaults, {
             usingDefaults: true
@@ -93,6 +95,8 @@ options = {
 */
 Publisher.prototype.publish = function(job, options, jobStatusUpdater, callback) {
     var self = this;
+    var tubename = self.beanstalkJobTypeConfig.tubename;
+    self.metrics.info('Queued Beanstalk Job', {'tubeName':tubename, 'jobType':job.type, 'jobId':job.jobId});
 
     // second parameter is optional
     if (arguments.length === 3) {
@@ -103,7 +107,7 @@ Publisher.prototype.publish = function(job, options, jobStatusUpdater, callback)
 
     options = _.defaults(options || {}, this.beanstalkJobTypeConfig);
 
-    this.logger.debug('publisher.publish() : %s %s', job.type, (job.dataDomain ? (job.dataDomain + ' ') : ''));
+    this.logger.debug('publisher.publish() : %s %s', job.type, (job.dataDomain ? job.dataDomain : ''));
 
 
     if (!self.isConnected) {
@@ -124,22 +128,21 @@ Publisher.prototype.publish = function(job, options, jobStatusUpdater, callback)
     self.logger.debug('already connected');
     doPublish(self.client, job, options, callbackWrapper);
 
-
-    function callbackWrapper(err, jobId) {
+    function callbackWrapper(err, beanstalkJobId) {
         if (err) {
-            self.logger.warn('publisher.publish():callbackWrapper() failed to publish job: %s %j', jobId, err);
-            return callback(err, jobId);
+            self.logger.warn('publisher.publish():callbackWrapper() failed to publish job: %s %j', beanstalkJobId, err);
+            return callback(err, beanstalkJobId);
         }
 
-        self.logger.debug('published job [jobId:%s]', jobId);
-        job.jobId = jobId;
+        self.logger.debug('published job [beanstalkJobId:%s]', beanstalkJobId);
+        // job.jobId = beanstalkJobId;
         self.logger.debug('creating job state report', inspect(job));
         jobStatusUpdater.createJobStatus(job, function(error) {
             if (error) {
                 return callback(error);
             }
 
-            callback(err, jobId);
+            callback(err, beanstalkJobId);
         });
     }
 };

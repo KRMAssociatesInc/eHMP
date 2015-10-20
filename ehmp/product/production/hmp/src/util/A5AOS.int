@@ -1,0 +1,13 @@
+A5AOS ; SLC/KCM -- set up accounts
+ ;
+SETUP ;
+ ; remove commercial packages
+ D PREVIEW^A5AOSRM
+ W !!,"Continue with removal of these? (Enter YES to continue)"
+ R X:30 Q:X'="YES"
+ ;
+ D DELETE^A5AOSRM
+ ;
+ ; change the encryption to non-Kernel
+ D MAIN^A5AOSIG
+ Q

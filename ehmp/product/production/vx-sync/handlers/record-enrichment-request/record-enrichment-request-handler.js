@@ -33,36 +33,47 @@ function handle(log, config, environment, job, handlerCallback) {
         return setTimeout(handlerCallback, 0, errorUtil.createFatal('Invalid format for job', job));
     }
 
+    transformRecord(log, config, environment, job.dataDomain, job.record, function(error, record){
+        if(error) {
+            return setTimeout(handlerCallback, 0, errorUtil.createFatal(util.format('Failed to run record enrichment transform.  Error: %s job: %j', error, job)));
+        } else {
+            createAndPublishStoreRecordJob(log, environment, job, record, handlerCallback);
+        }
+    });
+
+}
+
+function transformRecord(log, config, environment, domain, record, callback) {
     // Is this job one for a domain that we need to enrich?
     //-----------------------------------------------------
-    if ((config) && (config.recordEnrichment) && (config.recordEnrichment.domains) && (_.contains(config.recordEnrichment.domains, job.dataDomain))) {
+    if ((config) && (config.recordEnrichment) && (config.recordEnrichment.domains) && (_.contains(config.recordEnrichment.domains, domain))) {
         var xformer;
         try {
-            xformer = getXformer(job.dataDomain, environment);
+            xformer = getXformer(domain, environment);
         } catch (exception) {
             //Cannot find module for dataDomain
             //---------------------------------
-            log.error('record-enrichment-request-handler.handle: Xformer for Domain type: %s does not exist.  FileName: record-enrichment-%s-xformer.js', job.dataDomain, job.dataDomain);
-            return setTimeout(handlerCallback, 0, errorUtil.createFatal(util.format('Xformer for Domain type: %s does not exist.  FileName: record-enrichment-%s-xformer.js', job.dataDomain, job.dataDomain)));
+            log.error('record-enrichment-request-handler.transformRecord: Xformer for Domain type: %s does not exist.  FileName: record-enrichment-%s-xformer.js', domain, domain);
+            return setTimeout(callback, 0, errorUtil.createFatal(util.format('Xformer for Domain type: %s does not exist.  FileName: record-enrichment-%s-xformer.js', domain, domain)));
         }
 
-        xformer(log, config, environment, job, function(error, record) {
-            log.debug('record-enrichment-request-handler.handle: Returned from calling xformer.  error: %s, record: %j', error, record);
+        xformer(log, config, environment, record, function(error, record) {
+            log.debug('record-enrichment-request-handler.transformRecord: Returned from calling xformer.  error: %s, record: %j', error, record);
 
             if (error) {
-                log.error('record-enrichment-request-handler.handle: Failed to run record enrichment transform.  Error: %s job: %j', error, job);
-                return setTimeout(handlerCallback, 0, errorUtil.createFatal(util.format('Failed to run record enrichment transform.  Error: %s job: %j', error, job)));
+                log.error('record-enrichment-request-handler.transformRecord: Failed to run record enrichment transform.  Error: %s record: %j', error, record);
+                return setTimeout(callback, 0, errorUtil.createFatal(util.format('Failed to run record enrichment transform.  Error: %s record: %j', error, record)));
             }
 
             if (!record) {
-                log.error('record-enrichment-request-handler.handle: Failed to run record enrichment transform.  No record was received from transformer.');
-                return setTimeout(handlerCallback, 0, errorUtil.createFatal(util.format('Failed to run record enrichment transform.  No record was received from transformer.')));
+                log.error('record-enrichment-request-handler.transformRecord: Failed to run record enrichment transform.  No record was received from transformer.');
+                return setTimeout(callback, 0, errorUtil.createFatal(util.format('Failed to run record enrichment transform.  No record was received from transformer.')));
             }
 
-            return createAndPublishStoreRecordJob(log, environment, job, record, handlerCallback);
+            return callback(null, record);
         });
     } else {
-        return createAndPublishStoreRecordJob(log, environment, job, job.record, handlerCallback);
+        return callback(null, record);
     }
 }
 
@@ -106,3 +117,4 @@ function getXformer(dataDomain, environment) {
 }
 
 module.exports = handle;
+module.exports.transform = transformRecord;

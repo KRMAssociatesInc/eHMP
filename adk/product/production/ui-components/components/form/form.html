@@ -1,0 +1,1192 @@
+<h3>Form</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> Form elements allow the user to interact with the application. The form elements are:</p>
+    <ul>
+        <li>Text – Text fields allow the user to enter in alpha, numeric, and special characters in one line depending on the form instructions</li>
+        <li>Drop down – Drop down menus allow the user to select one or multiple options depending on the form instructions. Once a selection is made, the menu will close in a collapsed view</li>
+        <li>Checkboxes – Checkboxes allow the user to select multiple options. The options are usually present on the screen</li>
+        <li>Radio buttons – Radio buttons allow the user to select one option. The options are usually present on the screen</li>
+        <li>Text area – Text areas allow the user to enter in alpha, numeric, and special characters in multiple lines depending on the form instructions</li>
+    </ul>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> When a form is present, providing instructions for the user on how to complete the form should appear before the form. Every form element must:
+        <ul>
+            <li>begin with a &lt;form&gt; tag (if there is more than one form element, all of the form elements can be wrapped under one &lt;form&gt; tag,</li>
+            <li>have a label, regardless if it is visual on the screen or not,</li>
+            <li>have a label that contains the "for" attribute,</li>
+            <li>have an input that contains an "id" that matches the "for" attribute</li>
+            <li>and have a submit buttonl, regardless if it is visual on the screen or not.</li>
+        </ul>
+    </p>
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong>
+        <ul>
+            <li>When using the &lt;fieldset&gt; tag, it must be followed by the &lt;legend&gt; tag.</li>
+            <li>To display or hide the legend on the screen, add or remove the class of "sr-only" from the legend tag.</li>
+            <li>It is best practice to add the title attribute to form elements to provide additional information for the user (hover over the field to see what is placed in the title attribute.)</li>
+            <li>If there is use of form elements, such as an input field, but it is not actually a form, meaning there is nothing submitting, then using the attribute of "role" is needed in the form tag.</li>
+        </ul>
+    </p>
+</div>
+<form action="#" method="post" class="form-container">
+    <fieldset>
+        <legend>Text and Email Input</legend>
+        <div class="control form-group">
+            <label for="fName">First Name</label>
+            <input class="form-control" type="text" name="name" title="Please enter in your first name only" id="fName" />
+        </div>
+        <div class="control form-group">
+            <label for="email">Email Address</label>
+            <input class="form-control" type="email" name="email" title="Please enter in your email address" id="email" />
+        </div>
+        <div class="description">
+            <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> The type "email" is a HTML5 feature that will work on new browsers. This type of input will take care of the field validation, for instance, unless this field has "@host.domain" it will not pass validation upon submission.</p>
+        </div>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Drop Down Options</legend>
+        <div class="control form-group">
+            <label for="monitors">How many computer monitors do you have?</label>
+            <select class="form-control" name="monitors" title="Use up and down arrow keys to view options and press enter to select" id="monitors" required>
+                <option> </option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div class="description">
+            <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To make a field required, just add the attribute "required".</p>
+        </div>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Drop Down List Multi-Select</legend>
+        <div class="control form-group">
+            <label for="drop-multi-select">How many computer monitors do you have?</label>
+            <select multiple class="form-control" name="monitors" title="Please select from the list how many computer monitors you have" id="drop-multi-select" size="5">
+                <option> </option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div class="description">
+            <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To display multiple options from the drop down list, add the attribute of "size" to the select tag. To allow users to select more than one option, add "multiple" to the select tag.</p>
+        </div>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Select With Filter</legend>
+        <div class="form-group" role="application">
+            <label for="js-states">Please select a state</label>
+            <select class="form-control typeahead-select" id="js-states" title="Press enter to browse through select options">
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                    <option value="AK">Alaska</option>
+                    <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                    <option value="CA">California</option>
+                    <option value="NV">Nevada</option>
+                    <option value="OR">Oregon</option>
+                    <option value="WA">Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                    <option value="AZ">Arizona</option>
+                    <option value="CO">Colorado</option>
+                    <option value="ID">Idaho</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="UT">Utah</option>
+                    <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                    <option value="AL">Alabama</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TX">Texas</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="IN">Indiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="OH">Ohio</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WV">West Virginia</option>
+                </optgroup>
+            </select>
+        </div>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Selection List With Filter</legend>
+        <div class="form-group">
+            <label for="selection-list-with-filter">Please select a state</label>
+            <div class="demo-well typeahead-select-fixed-wrapper" role="application" >
+                <!-- this height is defined in-line so that you know that the height of the always-open typeahead select is defined by it's wrapping element -->
+                <select class="form-control typeahead-select-fixed" id="selection-list-with-filter">
+                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                        <option value="AK">Alaska</option>
+                        <option value="HI">Hawaii</option>
+                    </optgroup>
+                    <optgroup label="Pacific Time Zone">
+                        <option value="CA">California</option>
+                        <option value="NV">Nevada</option>
+                        <option value="OR">Oregon</option>
+                        <option value="WA">Washington</option>
+                    </optgroup>
+                    <optgroup label="Mountain Time Zone">
+                        <option value="AZ">Arizona</option>
+                        <option value="CO">Colorado</option>
+                        <option value="ID">Idaho</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="UT">Utah</option>
+                        <option value="WY">Wyoming</option>
+                    </optgroup>
+                    <optgroup label="Central Time Zone">
+                        <option value="AL">Alabama</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TX">Texas</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="WI">Wisconsin</option>
+                    </optgroup>
+                    <optgroup label="Eastern Time Zone">
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="IN">Indiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="OH">Ohio</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WV">West Virginia</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Select With Filter (Multiple Selection)</legend>
+        <div class="form-group">
+            <label for="msSelect1">State selection</label>
+            <div class="typeahead-select-ms-wrapper" role="application" >
+                <select class="form-control typeahead-select-ms" name="theNameOfYourInput" id="msSelect1" data-selections-name="theNameOfYourInput">
+                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                        <option value="AK">Alaska</option>
+                        <option value="HI">Hawaii</option>
+                    </optgroup>
+                    <optgroup label="Pacific Time Zone">
+                        <option value="CA">California</option>
+                        <option value="NV">Nevada</option>
+                        <option value="OR">Oregon</option>
+                        <option value="WA">Washington</option>
+                    </optgroup>
+                    <optgroup label="Mountain Time Zone">
+                        <option value="AZ">Arizona</option>
+                        <option value="CO">Colorado</option>
+                        <option value="ID">Idaho</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="UT">Utah</option>
+                        <option value="WY">Wyoming</option>
+                    </optgroup>
+                    <optgroup label="Central Time Zone">
+                        <option value="AL">Alabama</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TX">Texas</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="WI">Wisconsin</option>
+                    </optgroup>
+                    <optgroup label="Eastern Time Zone">
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="IN">Indiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="OH">Ohio</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WV">West Virginia</option>
+                    </optgroup>
+                </select>
+                <div class="typeahead-select-ms-selections">
+                    <span class="placeholder">Please select an item</span>
+                    <button type="button" class="typeahead-select-ms-toggle-button" title="Press enter to browse through select options. To browse through your selections press tab."><i class="fa fa-caret-down" aria-hidden="true"></i><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+                    <li class="typeahead-select-ms-selected media-list"></li>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Check Boxes and Radio Buttons</legend>
+        <div class="control form-group">
+            <div class="checkbox">
+                <label for="checkGreat">
+                    <input type="checkbox" checked value="option1" name="checkBox" title="This is the best option to select from" id="checkGreat" /> This one is a great option
+                </label>
+            </div>
+            <div class="checkbox">
+                <label for="checkNotSoGreat">
+                    <input type="checkbox" value="option2" name="checkBox" title="This is the worse option to select from" id="checkNotSoGreat" /> This one, meh, not so much
+                </label>
+            </div>
+            <div class="checkbox">
+                <label class="checkbox-inline" for="checkInline1">
+                    <input type="checkbox" value="option1" name="checkBox1" title="This is a checkbox that is inline" id="checkInline1" /> This checkbox is inline
+                </label>
+                <label class="checkbox-inline" for="checkInline2">
+                    <input type="checkbox" value="option2" name="checkBox2" title="This is a checkbox that is also inline" id="checkInline2" /> This checkbox is also inline
+                </label>
+            </div>
+        </div>
+        <div class="description">
+            <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To make checkbox fields inline with each other, add the class "form-inline" to the form tag and "checkbox-inline" to each label tag.</p>
+            <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To make make a checkbox auto selected, add the attribute of "checked".</p>
+        </div>
+        <hr />
+        <div class="control form-group">
+            <div class="radio">
+                <label for="radio1">
+                    <input type="radio" checked value="radio1" name="radioButtons" title="This is option 1" id="radio1" /> Pick me
+                </label>
+            </div>
+            <div class="radio">
+                <label for="radio2">
+                    <input type="radio" value="radio2" name="radioButtons" title="This is option 2" id="radio2" /> No, pick me!
+                </label>
+            </div>
+            <div class="radio">
+                <label class-"radio-inline" for="radioInline1">
+                    <input type="radio" value="radioInline1" name="radioButtons" title="This is inline radio option 1" id="radioInline1" /> This radio is inline
+                </label>
+                <label class-"radio-inline" for="radioInline2">
+                    <input type="radio" value="radioInline2" name="radioButtons" title="This is inline radio option 2" id="radioInline2" /> This radio is also inline
+                </label>
+            </div>
+        </div>
+        <div class="description">
+            <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To make radio fields inline with each other, add the class "form-inline" to the form tag and add "radio-inline" to each label tag.</p>
+            <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To make a radio fields auto selected, add the attribute of "checked".</p>
+        </div>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Textarea</legend>
+        <div class="control form-group">
+            <label for="moreInfo">More Information</label>
+            <textarea class="form-control" rows="3" name="moreInfo" title="Please enter in more information about yourself" id="moreInfo"></textarea>
+        </div>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Validation</legend>
+        <div class="control form-group form-group-validation">
+            <label for="firstNameValidation">First Name Validation Successful</label>
+            <div class="input-validation">
+                <input id="firstNameValidation" class="form-control validation-success" type="text" name="name" placeholder="First Name" value="Albert" title="Please enter in your first name only" />
+                <i class="fa fa-check-circle fa-2x text-success"></i>
+            </div>
+        </div>
+        <div class="control form-group form-group-validation">
+            <label for="firstNameValidationUnsuccessful">First Name Validation Unsuccessful</label>
+            <div class="input-validation">
+                <input class="form-control validation-warning" type="text" id="firstNameValidationUnsuccessful" name="nameValidationUnsuccessful" value="Rog3r" placeholder="First Name" />
+                <i class="fa fa-exclamation-triangle fa-2x text-danger"></i>
+                <p class="text-danger">Please enter in a valid first name.</p>
+            </div>
+        </div>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Input Slider</legend>
+        <!--  -->
+        <div class="control form-group form-group-slider">
+            <div id="range-slider" class="range-slider"></div>
+            <label for="pain-value-input" class="sr-only">Enter in a value from zero to ten.</label>
+            <input type="text" id="pain-value-input" class="range-value-input form-control input-sm" maxlength="2" />
+        </div>
+    </fieldset>
+    <hr />
+    <button type="submit" class="btn btn-default">Submit</button>
+    <hr />
+    <fieldset>
+        <legend>Loading Inputs</legend>
+        <div class="control form-group">
+            <label for="loading-input">Loading input</label>
+            <input class="form-control loading" type="text" name="loadingInput" title="Enter in something amazing" id="loading-input" />
+        </div>
+        <div class="control form-group">
+            <label for="loading-disabled-input">Loading on disabled input</label>
+            <input disabled class="form-control loading" type="text" name="loadingDisabledInput" title="Enter in something amazing when this is not disabled" id="loading-disabled-input" />
+        </div>
+        <div class="control form-group">
+            <label for="loading-drop-multi-select">Loading select</label>
+            <select multiple class="form-control loading" name="monitors" title="Select a number of your choosing" id="loading-drop-multi-select" size="5">
+                <option> </option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div class="control form-group">
+            <label for="loading-disabled-drop-multi-select">Loading on disabled select</label>
+            <select disabled multiple class="form-control loading" name="monitors" title="Select a number of your choosing when this is not disabled" id="loading-disabled-drop-multi-select" size="5">
+                <option> </option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </fieldset>
+</form>
+<hr />
+<div role="tabpanel" class="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#input" aria-controls="input" role="tab" data-toggle="tab">Text and Email Input</a></li>
+        <li><a href="#drop-downs" aria-controls="drop-downs" role="tab" data-toggle="tab">Drop Downs</a></li>
+        <li><a href="#drop-down-multiselect" aria-controls="drop-down-multiselect" role="tab" data-toggle="tab">Drop Down List Multi-Select</a></li>
+        <li><a href="#typeahead-select-markup" aria-controls="typeahead-select-markup" role="tab" data-toggle="tab">Select With Filter</a></li>
+        <li><a href="#type-ahead-select-js-ao" aria-controls="type-ahead-select-js-ao" role="tab" data-toggle="tab">Select With Filter (Always Open)</a></li>
+        <li><a href="#type-ahead-select-ms" aria-controls="type-ahead-select-ms" role="tab" data-toggle="tab">Select With Filter (Multiple Seleciton)</a></li>
+        <li><a href="#check-radio" aria-controls="check-radio" role="tab" data-toggle="tab">Checkboxes &amp; Radio Buttons</a></li>
+        <li><a href="#textarea" aria-controls="textarea" role="tab" data-toggle="tab">Textarea</a></li>
+        <li><a href="#validation" aria-controls="validation" role="tab" data-toggle="tab">Validation</a></li>
+        <li><a href="#input-slider" aria-controls="input-slider" role="tab" data-toggle="tab">Input Slider</a></li>
+        <li><a href="#loading" aria-controls="loading" role="tab" data-toggle="tab">Loading Inputs</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="input">
+            <pre>
+&lt;div class="control form-group"&gt;
+    &lt;label for="fName"&gt;First Name&lt;/label&gt;
+    &lt;input class="form-control" type="text" name="name" title="Please enter in your first name only" id="fName" /&gt;
+&lt;/div&gt;
+&lt;div class="control form-group"&gt;
+    &lt;label for="email"&gt;Email Address&lt;/label&gt;
+    &lt;input class="form-control" type="email" name="email" title="Please enter in your email address" id="email" /&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="drop-downs">
+            <pre>
+&lt;div class="control form-group"&gt;
+    &lt;label for="monitors"&gt;How many computer monitors do you have?&lt;/label&gt;
+    &lt;select class="form-control" name="monitors" title="Use up and down arrow keys to view options and press 
+    enter to select" id="monitors" required&gt;
+        &lt;option&gt; &lt;/option&gt;
+        &lt;option&gt;1&lt;/option&gt;
+        &lt;option&gt;2&lt;/option&gt;
+        &lt;option&gt;3&lt;/option&gt;
+        &lt;option&gt;4&lt;/option&gt;
+        &lt;option&gt;5&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="drop-down-multiselect">
+            <pre>
+&lt;div class="control form-group"&gt;
+    &lt;label for="drop-multi-select"&gt;How many computer monitors do you have?&lt;/label&gt;
+    &lt;select multiple class="form-control" name="monitors" title="Use up and down arrow keys to view 
+    options and press enter to select. To select multiple options hold down the shift key 
+    and use arrow keys." id="drop-multi-select" size="5"&gt;
+        &lt;option&gt; &lt;/option&gt;
+        &lt;option&gt;1&lt;/option&gt;
+        &lt;option&gt;2&lt;/option&gt;
+        &lt;option&gt;3&lt;/option&gt;
+        &lt;option&gt;4&lt;/option&gt;
+        &lt;option&gt;5&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="typeahead-select-markup">
+            <pre>
+&lt;div class=&quot;form-group&quot; role=&quot;application&quot;&gt;
+    &lt;label for=&quot;js-states&quot;&gt;Please select a state&lt;/label&gt;
+    &lt;select class=&quot;form-control typeahead-select&quot; id=&quot;js-states&quot; title=&quot;Press enter to browse through select options&quot;&gt;
+        &lt;optgroup label=&quot;Alaskan/Hawaiian Time Zone&quot;&gt;
+            &lt;option value=&quot;AK&quot;&gt;Alaska&lt;/option&gt;
+            &lt;option value=&quot;HI&quot;&gt;Hawaii&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label=&quot;Pacific Time Zone&quot;&gt;
+            &lt;option value=&quot;CA&quot;&gt;California&lt;/option&gt;
+            &lt;option value=&quot;NV&quot;&gt;Nevada&lt;/option&gt;
+            &lt;option value=&quot;OR&quot;&gt;Oregon&lt;/option&gt;
+            &lt;option value=&quot;WA&quot;&gt;Washington&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label=&quot;Mountain Time Zone&quot;&gt;
+            &lt;option value=&quot;AZ&quot;&gt;Arizona&lt;/option&gt;
+            &lt;option value=&quot;CO&quot;&gt;Colorado&lt;/option&gt;
+            &lt;option value=&quot;ID&quot;&gt;Idaho&lt;/option&gt;
+            &lt;option value=&quot;MT&quot;&gt;Montana&lt;/option&gt;
+            &lt;option value=&quot;NE&quot;&gt;Nebraska&lt;/option&gt;
+            &lt;option value=&quot;NM&quot;&gt;New Mexico&lt;/option&gt;
+            &lt;option value=&quot;ND&quot;&gt;North Dakota&lt;/option&gt;
+            &lt;option value=&quot;UT&quot;&gt;Utah&lt;/option&gt;
+            &lt;option value=&quot;WY&quot;&gt;Wyoming&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label=&quot;Central Time Zone&quot;&gt;
+            &lt;option value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;
+            &lt;option value=&quot;AR&quot;&gt;Arkansas&lt;/option&gt;
+            &lt;option value=&quot;IL&quot;&gt;Illinois&lt;/option&gt;
+            &lt;option value=&quot;IA&quot;&gt;Iowa&lt;/option&gt;
+            &lt;option value=&quot;KS&quot;&gt;Kansas&lt;/option&gt;
+            &lt;option value=&quot;KY&quot;&gt;Kentucky&lt;/option&gt;
+            &lt;option value=&quot;LA&quot;&gt;Louisiana&lt;/option&gt;
+            &lt;option value=&quot;MN&quot;&gt;Minnesota&lt;/option&gt;
+            &lt;option value=&quot;MS&quot;&gt;Mississippi&lt;/option&gt;
+            &lt;option value=&quot;MO&quot;&gt;Missouri&lt;/option&gt;
+            &lt;option value=&quot;OK&quot;&gt;Oklahoma&lt;/option&gt;
+            &lt;option value=&quot;SD&quot;&gt;South Dakota&lt;/option&gt;
+            &lt;option value=&quot;TX&quot;&gt;Texas&lt;/option&gt;
+            &lt;option value=&quot;TN&quot;&gt;Tennessee&lt;/option&gt;
+            &lt;option value=&quot;WI&quot;&gt;Wisconsin&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label=&quot;Eastern Time Zone&quot;&gt;
+            &lt;option value=&quot;CT&quot;&gt;Connecticut&lt;/option&gt;
+            &lt;option value=&quot;DE&quot;&gt;Delaware&lt;/option&gt;
+            &lt;option value=&quot;FL&quot;&gt;Florida&lt;/option&gt;
+            &lt;option value=&quot;GA&quot;&gt;Georgia&lt;/option&gt;
+            &lt;option value=&quot;IN&quot;&gt;Indiana&lt;/option&gt;
+            &lt;option value=&quot;ME&quot;&gt;Maine&lt;/option&gt;
+            &lt;option value=&quot;MD&quot;&gt;Maryland&lt;/option&gt;
+            &lt;option value=&quot;MA&quot;&gt;Massachusetts&lt;/option&gt;
+            &lt;option value=&quot;MI&quot;&gt;Michigan&lt;/option&gt;
+            &lt;option value=&quot;NH&quot;&gt;New Hampshire&lt;/option&gt;
+            &lt;option value=&quot;NJ&quot;&gt;New Jersey&lt;/option&gt;
+            &lt;option value=&quot;NY&quot;&gt;New York&lt;/option&gt;
+            &lt;option value=&quot;NC&quot;&gt;North Carolina&lt;/option&gt;
+            &lt;option value=&quot;OH&quot;&gt;Ohio&lt;/option&gt;
+            &lt;option value=&quot;PA&quot;&gt;Pennsylvania&lt;/option&gt;
+            &lt;option value=&quot;RI&quot;&gt;Rhode Island&lt;/option&gt;
+            &lt;option value=&quot;SC&quot;&gt;South Carolina&lt;/option&gt;
+            &lt;option value=&quot;VT&quot;&gt;Vermont&lt;/option&gt;
+            &lt;option value=&quot;VA&quot;&gt;Virginia&lt;/option&gt;
+            &lt;option value=&quot;WV&quot;&gt;West Virginia&lt;/option&gt;
+        &lt;/optgroup&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+&lt;script src=&quot;js/select2.full.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function() {
+    // we assign the width to 100% so that the parent element decides the width of the select such as in bootstrap
+    // otherwise the width of 100% is not assigned if the select is created when it&#39;s not visible
+    $(&quot;.typeahead-select&quot;).select2({width: &#39;100%&#39; });
+});
+&lt;/script&gt;
+            </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="type-ahead-select-js-ao">
+            <pre>
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;aoSelect1&quot;&gt;Please select a state&lt;/label&gt;
+    &lt;div class=&quot;demo-well typeahead-select-fixed-wrapper&quot; role=&quot;application&quot; &gt;
+        &lt;!-- this height is defined in-line so that you know that the height of the always-open typeahead select is defined by it&#39;s wrapping element --&gt;
+        &lt;select class=&quot;form-control typeahead-select-fixed&quot; id=&quot;aoSelect1&quot;&gt;
+            &lt;optgroup label=&quot;Alaskan/Hawaiian Time Zone&quot;&gt;
+                &lt;option value=&quot;AK&quot;&gt;Alaska&lt;/option&gt;
+                &lt;option value=&quot;HI&quot;&gt;Hawaii&lt;/option&gt;
+            &lt;/optgroup&gt;
+            &lt;optgroup label=&quot;Pacific Time Zone&quot;&gt;
+                &lt;option value=&quot;CA&quot;&gt;California&lt;/option&gt;
+                &lt;option value=&quot;NV&quot;&gt;Nevada&lt;/option&gt;
+                &lt;option value=&quot;OR&quot;&gt;Oregon&lt;/option&gt;
+                &lt;option value=&quot;WA&quot;&gt;Washington&lt;/option&gt;
+            &lt;/optgroup&gt;
+            &lt;optgroup label=&quot;Mountain Time Zone&quot;&gt;
+                &lt;option value=&quot;AZ&quot;&gt;Arizona&lt;/option&gt;
+                &lt;option value=&quot;CO&quot;&gt;Colorado&lt;/option&gt;
+                &lt;option value=&quot;ID&quot;&gt;Idaho&lt;/option&gt;
+                &lt;option value=&quot;MT&quot;&gt;Montana&lt;/option&gt;
+                &lt;option value=&quot;NE&quot;&gt;Nebraska&lt;/option&gt;
+                &lt;option value=&quot;NM&quot;&gt;New Mexico&lt;/option&gt;
+                &lt;option value=&quot;ND&quot;&gt;North Dakota&lt;/option&gt;
+                &lt;option value=&quot;UT&quot;&gt;Utah&lt;/option&gt;
+                &lt;option value=&quot;WY&quot;&gt;Wyoming&lt;/option&gt;
+            &lt;/optgroup&gt;
+            &lt;optgroup label=&quot;Central Time Zone&quot;&gt;
+                &lt;option value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;
+                &lt;option value=&quot;AR&quot;&gt;Arkansas&lt;/option&gt;
+                &lt;option value=&quot;IL&quot;&gt;Illinois&lt;/option&gt;
+                &lt;option value=&quot;IA&quot;&gt;Iowa&lt;/option&gt;
+                &lt;option value=&quot;KS&quot;&gt;Kansas&lt;/option&gt;
+                &lt;option value=&quot;KY&quot;&gt;Kentucky&lt;/option&gt;
+                &lt;option value=&quot;LA&quot;&gt;Louisiana&lt;/option&gt;
+                &lt;option value=&quot;MN&quot;&gt;Minnesota&lt;/option&gt;
+                &lt;option value=&quot;MS&quot;&gt;Mississippi&lt;/option&gt;
+                &lt;option value=&quot;MO&quot;&gt;Missouri&lt;/option&gt;
+                &lt;option value=&quot;OK&quot;&gt;Oklahoma&lt;/option&gt;
+                &lt;option value=&quot;SD&quot;&gt;South Dakota&lt;/option&gt;
+                &lt;option value=&quot;TX&quot;&gt;Texas&lt;/option&gt;
+                &lt;option value=&quot;TN&quot;&gt;Tennessee&lt;/option&gt;
+                &lt;option value=&quot;WI&quot;&gt;Wisconsin&lt;/option&gt;
+            &lt;/optgroup&gt;
+            &lt;optgroup label=&quot;Eastern Time Zone&quot;&gt;
+                &lt;option value=&quot;CT&quot;&gt;Connecticut&lt;/option&gt;
+                &lt;option value=&quot;DE&quot;&gt;Delaware&lt;/option&gt;
+                &lt;option value=&quot;FL&quot;&gt;Florida&lt;/option&gt;
+                &lt;option value=&quot;GA&quot;&gt;Georgia&lt;/option&gt;
+                &lt;option value=&quot;IN&quot;&gt;Indiana&lt;/option&gt;
+                &lt;option value=&quot;ME&quot;&gt;Maine&lt;/option&gt;
+                &lt;option value=&quot;MD&quot;&gt;Maryland&lt;/option&gt;
+                &lt;option value=&quot;MA&quot;&gt;Massachusetts&lt;/option&gt;
+                &lt;option value=&quot;MI&quot;&gt;Michigan&lt;/option&gt;
+                &lt;option value=&quot;NH&quot;&gt;New Hampshire&lt;/option&gt;
+                &lt;option value=&quot;NJ&quot;&gt;New Jersey&lt;/option&gt;
+                &lt;option value=&quot;NY&quot;&gt;New York&lt;/option&gt;
+                &lt;option value=&quot;NC&quot;&gt;North Carolina&lt;/option&gt;
+                &lt;option value=&quot;OH&quot;&gt;Ohio&lt;/option&gt;
+                &lt;option value=&quot;PA&quot;&gt;Pennsylvania&lt;/option&gt;
+                &lt;option value=&quot;RI&quot;&gt;Rhode Island&lt;/option&gt;
+                &lt;option value=&quot;SC&quot;&gt;South Carolina&lt;/option&gt;
+                &lt;option value=&quot;VT&quot;&gt;Vermont&lt;/option&gt;
+                &lt;option value=&quot;VA&quot;&gt;Virginia&lt;/option&gt;
+                &lt;option value=&quot;WV&quot;&gt;West Virginia&lt;/option&gt;
+            &lt;/optgroup&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script src=&quot;js/select2.full.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function() {
+    // always open
+    $(&quot;.typeahead-select-fixed&quot;).each(function(){
+        var t = $(this);
+        var targetDiv = t.parent();
+        t.select2({
+            width: &#39;100%&#39;,
+            dropdownParent: targetDiv,
+            closeOnSelect:false,
+            theme: &quot;always-open&quot;
+        }).on(&#39;select2:open&#39;,function(){
+            // prevents the auto focus of the always open listing
+            var t = $(this);
+            t.parent().find(&#39;.select2-search input&#39;).prop(&#39;focus&#39;,false).attr(&#39;title&#39;,&#39;Begin typing to search for results. The results are listed below. Press the up and down arrow keys to review the results. Press enter to select.&#39;);
+            $(document.body).off(&#39;mousedown.select2.select2-&#39; + t.attr(&#39;id&#39;));
+        }).on(&#39;select2:closing&#39;,function(){
+            // prevents the closure of the listing
+            return false;
+        }).on(&#39;change&#39;,function(){
+            // write the function you&#39;d like to use here.
+            alert(t.val());
+        }).select2(&quot;open&quot;); // opens the options automatically.
+    });
+});
+&lt;/script&gt;
+            </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="type-ahead-select-ms">
+            <pre>
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;msSelect1&quot;&gt;State selection&lt;/label&gt;
+    &lt;div class=&quot;typeahead-select-ms-wrapper&quot; role=&quot;application&quot; &gt;
+        &lt;select class=&quot;form-control typeahead-select-ms&quot; name=&quot;theNameOfYourInput&quot; id=&quot;msSelect1&quot; data-selections-name=&quot;theNameOfYourInput&quot;&gt;
+            &lt;optgroup label=&quot;Alaskan/Hawaiian Time Zone&quot;&gt;
+                &lt;option value=&quot;AK&quot;&gt;Alaska&lt;/option&gt;
+                &lt;option value=&quot;HI&quot;&gt;Hawaii&lt;/option&gt;
+            &lt;/optgroup&gt;
+            &lt;optgroup label=&quot;Pacific Time Zone&quot;&gt;
+                &lt;option value=&quot;CA&quot;&gt;California&lt;/option&gt;
+                &lt;option value=&quot;NV&quot;&gt;Nevada&lt;/option&gt;
+                &lt;option value=&quot;OR&quot;&gt;Oregon&lt;/option&gt;
+                &lt;option value=&quot;WA&quot;&gt;Washington&lt;/option&gt;
+            &lt;/optgroup&gt;
+            &lt;optgroup label=&quot;Mountain Time Zone&quot;&gt;
+                &lt;option value=&quot;AZ&quot;&gt;Arizona&lt;/option&gt;
+                &lt;option value=&quot;CO&quot;&gt;Colorado&lt;/option&gt;
+                &lt;option value=&quot;ID&quot;&gt;Idaho&lt;/option&gt;
+                &lt;option value=&quot;MT&quot;&gt;Montana&lt;/option&gt;
+                &lt;option value=&quot;NE&quot;&gt;Nebraska&lt;/option&gt;
+                &lt;option value=&quot;NM&quot;&gt;New Mexico&lt;/option&gt;
+                &lt;option value=&quot;ND&quot;&gt;North Dakota&lt;/option&gt;
+                &lt;option value=&quot;UT&quot;&gt;Utah&lt;/option&gt;
+                &lt;option value=&quot;WY&quot;&gt;Wyoming&lt;/option&gt;
+            &lt;/optgroup&gt;
+            &lt;optgroup label=&quot;Central Time Zone&quot;&gt;
+                &lt;option value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;
+                &lt;option value=&quot;AR&quot;&gt;Arkansas&lt;/option&gt;
+                &lt;option value=&quot;IL&quot;&gt;Illinois&lt;/option&gt;
+                &lt;option value=&quot;IA&quot;&gt;Iowa&lt;/option&gt;
+                &lt;option value=&quot;KS&quot;&gt;Kansas&lt;/option&gt;
+                &lt;option value=&quot;KY&quot;&gt;Kentucky&lt;/option&gt;
+                &lt;option value=&quot;LA&quot;&gt;Louisiana&lt;/option&gt;
+                &lt;option value=&quot;MN&quot;&gt;Minnesota&lt;/option&gt;
+                &lt;option value=&quot;MS&quot;&gt;Mississippi&lt;/option&gt;
+                &lt;option value=&quot;MO&quot;&gt;Missouri&lt;/option&gt;
+                &lt;option value=&quot;OK&quot;&gt;Oklahoma&lt;/option&gt;
+                &lt;option value=&quot;SD&quot;&gt;South Dakota&lt;/option&gt;
+                &lt;option value=&quot;TX&quot;&gt;Texas&lt;/option&gt;
+                &lt;option value=&quot;TN&quot;&gt;Tennessee&lt;/option&gt;
+                &lt;option value=&quot;WI&quot;&gt;Wisconsin&lt;/option&gt;
+            &lt;/optgroup&gt;
+            &lt;optgroup label=&quot;Eastern Time Zone&quot;&gt;
+                &lt;option value=&quot;CT&quot;&gt;Connecticut&lt;/option&gt;
+                &lt;option value=&quot;DE&quot;&gt;Delaware&lt;/option&gt;
+                &lt;option value=&quot;FL&quot;&gt;Florida&lt;/option&gt;
+                &lt;option value=&quot;GA&quot;&gt;Georgia&lt;/option&gt;
+                &lt;option value=&quot;IN&quot;&gt;Indiana&lt;/option&gt;
+                &lt;option value=&quot;ME&quot;&gt;Maine&lt;/option&gt;
+                &lt;option value=&quot;MD&quot;&gt;Maryland&lt;/option&gt;
+                &lt;option value=&quot;MA&quot;&gt;Massachusetts&lt;/option&gt;
+                &lt;option value=&quot;MI&quot;&gt;Michigan&lt;/option&gt;
+                &lt;option value=&quot;NH&quot;&gt;New Hampshire&lt;/option&gt;
+                &lt;option value=&quot;NJ&quot;&gt;New Jersey&lt;/option&gt;
+                &lt;option value=&quot;NY&quot;&gt;New York&lt;/option&gt;
+                &lt;option value=&quot;NC&quot;&gt;North Carolina&lt;/option&gt;
+                &lt;option value=&quot;OH&quot;&gt;Ohio&lt;/option&gt;
+                &lt;option value=&quot;PA&quot;&gt;Pennsylvania&lt;/option&gt;
+                &lt;option value=&quot;RI&quot;&gt;Rhode Island&lt;/option&gt;
+                &lt;option value=&quot;SC&quot;&gt;South Carolina&lt;/option&gt;
+                &lt;option value=&quot;VT&quot;&gt;Vermont&lt;/option&gt;
+                &lt;option value=&quot;VA&quot;&gt;Virginia&lt;/option&gt;
+                &lt;option value=&quot;WV&quot;&gt;West Virginia&lt;/option&gt;
+            &lt;/optgroup&gt;
+        &lt;/select&gt;
+        &lt;div class=&quot;typeahead-select-ms-selections&quot;&gt;
+            &lt;span class=&quot;placeholder&quot;&gt;Please select an item&lt;/span&gt;
+            &lt;button type=&quot;button&quot; class=&quot;typeahead-select-ms-toggle-button&quot; title=&quot;Press enter to browse through select options. To browse through your selections press tab.&quot;&gt;&lt;i class=&quot;fa fa-caret-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;i class=&quot;fa fa-caret-up&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;li class=&quot;typeahead-select-ms-selected media-list&quot;&gt;&lt;/li&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script src=&quot;js/select2.full.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+         // multiple selection
+        $(&quot;.typeahead-select-ms&quot;).each(function(){
+            var
+                t = $(this),
+                targetDiv = t.parent(),
+                selectionsDiv = targetDiv.find(&#39;.typeahead-select-ms-selections&#39;),
+                toggleButton = selectionsDiv.find(&#39;.typeahead-select-ms-toggle-button&#39;),
+                targetSelected = selectionsDiv.find(&#39;.typeahead-select-ms-selected&#39;),
+                selectionsName = t.data(&#39;selections-name&#39;),
+                messages = {
+                    filterTitle:&#39;Type to filter options, use the up and down arrow keys to brouse through them and press enter to choose an option.&#39;,
+                    removal:&#39;&lt;span class=&quot;sr-only&quot;&gt;Press enter to remove &lt;/span&gt;[v]&lt;span class=&quot;sr-only&quot;&gt; from the selected items&lt;/span&gt; &lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;&#39;,
+                },
+                createSelection = function(label, val){
+                    var li = $(document.createElement(&#39;li&#39;)). //create the selected items
+                            html(&#39;&lt;span class=&quot;sr-only&quot;&gt;&#39;+label+&#39;&lt;/span&gt;&#39;).
+                            append(&#39;&lt;input type=&quot;hidden&quot; name=&quot;&#39;+selectionsName+&#39;&quot; value=&quot;&#39;+val+&#39;&quot; /&gt;&#39;).
+                            append(
+                                $(document.createElement(&#39;button&#39;)).attr({
+                                    type:&#39;button&#39;
+                                }).
+                                attr({
+                                    &#39;data-selected-value&#39;:val,
+                                    &#39;class&#39;:&#39;btn btn-default btn-xs&#39;
+                                }).
+                                html(messages.removal.replace(&#39;[v]&#39;,label)).
+                                click(function(){
+                                    // here you define the click function for selection removal.
+                                    var
+                                        th = $(this),
+                                        list = th.parent().parent(),
+                                        sv = th.data(&#39;selected-value&#39;),
+                                        mainList = th.parent().parent().parent().parent(),
+                                        mainSelect = mainList.find(&#39;select&#39;)
+                                    ;
+                                    th.focus(function(){
+                                        selectionsDiv.addClass(&#39;active&#39;);
+                                    }).blur(function(){
+                                        selectionsDiv.removeClass(&#39;active&#39;);
+                                    });
+                                    selectionsDiv.find(&#39;button&#39;).not(th).focus();
+                                    th.parent().remove();
+                                    mainSelect.find(&#39;option[value=&#39;+sv+&#39;]&#39;).removeAttr(&#39;disabled&#39;);
+
+                                    mainSelect.select2(msArgs);
+                                    if(list.children().length===0){
+                                        list.parent().find(&#39;.placeholder&#39;).show();
+                                    }
+
+                                })
+                            )
+                    ;
+                    targetSelected.append(li);
+                },
+                toggleSelect = function(){
+                    if (!t.data(&#39;open&#39;)){
+                        t.select2(&#39;open&#39;);
+                        toggleButton.addClass(&#39;open&#39;);
+                        selectionsDiv.addClass(&#39;active&#39;);
+                    } else {
+                        t.select2(&#39;close&#39;);
+                        toggleButton.removeClass(&#39;open&#39;);
+                    }
+                },
+                msArgs = {
+                    width: &#39;100%&#39;,
+                    dropdownParent: targetDiv,
+                    theme: &quot;ms&quot;
+                };
+
+            // select it&#39;s closed, so let&#39;s set it&#39;s data flag to closed
+            t.data(&#39;open&#39;,false);
+
+            // function for the toggling of the options dropdown
+            // the actual button (needed for 508)
+            toggleButton.click(function(){
+                toggleSelect();
+            }).focus(function(){
+                selectionsDiv.addClass(&#39;active&#39;);
+            }).blur(function(){
+                selectionsDiv.removeClass(&#39;active&#39;);
+            });
+
+            // the whole box minus the buttons inside (toggle and selections)
+            selectionsDiv.click(function(e){
+                if (e.target.tagName!==&#39;BUTTON&#39;){
+                    toggleSelect();
+                }
+            });
+
+            // initialize select2
+            t.select2(msArgs).on(&#39;select2:open&#39;,function(){
+                var t = $(this);
+                // set the open flag
+                t.data(&#39;open&#39;,true);
+
+                t.parent().find(&#39;.select2-search input&#39;).attr(&#39;title&#39;,messages.filterTitle);
+
+                // remove mousedown event that closes select.
+                $(document.body).off(&#39;mousedown.select2.select2-&#39; + t.attr(&#39;id&#39;));
+            }).on(&#39;select2:close&#39;,function(){
+                toggleButton.focus().removeClass(&#39;open&#39;);
+                // set the flag
+                $(this).data(&#39;open&#39;,false);
+            }).on(&#39;select2:select&#39;,function(){
+                var
+                    t = $(this),
+                    p = t.parent(),
+                    val = t.val(),
+                    optionSelected = t.find(&#39;option[value=&quot;&#39;+val+&#39;&quot;]&#39;),
+                    label = optionSelected.text();
+
+                // fo create the selection button
+                createSelection(label,val);
+                //disable option within list
+                optionSelected.attr(&#39;disabled&#39;,&#39;disabled&#39;);
+                //reinitialize select2
+                t.select2(&#39;close&#39;).select2(msArgs);
+                //re-focus dropdown toggle button
+                p.find(&#39;.typeahead-select-ms-toggle-button&#39;).focus().removeClass(&#39;open&#39;);
+                // hide the placeholder (cause you&#39;ve selected something)
+                p.find(&#39;.placeholder&#39;).hide();
+            });
+        });
+    });
+&lt;/script&gt;
+            </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="check-radio">
+            <pre>
+&lt;div class="control form-group"&gt;
+    &lt;div class="checkbox"&gt;
+        &lt;label for="checkGreat"&gt;
+            &lt;input type="checkbox" checked value="option1" name="checkBox" title="Press spacebar to select" id="checkGreat" /&gt; This one is a great option
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="checkbox"&gt;
+        &lt;label for="checkNotSoGreat"&gt;
+            &lt;input type="checkbox" value="option2" name="checkBox" title="Press spacebar to select" id="checkNotSoGreat" /&gt; This one, meh, not so much
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="checkbox"&gt;
+        &lt;label class="checkbox-inline" for="checkInline1"&gt;
+            &lt;input type="checkbox" value="option1" name="checkBox1" title="Press spacebar to select" id="checkInline1" /&gt; This check is inline
+        &lt;/label&gt;
+        &lt;label class="checkbox-inline" for="checkInline2"&gt;
+            &lt;input type="checkbox" value="option2" name="checkBox2" title="Press spacebar to select" id="checkInline2" /&gt; This check is also inline
+        &lt;/label&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="control form-group"&gt;
+    &lt;div class="radio"&gt;
+        &lt;label for="radio1"&gt;
+            &lt;input type="radio" checked value="radio1" name="radioButtons" title="Press enter to select, to view next option use arrow keys" id="radio1" /&gt; Pick me
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="radio"&gt;
+        &lt;label for="radio2"&gt;
+            &lt;input type="radio" value="radio2" name="radioButtons" title="Press enter to select, to view next option use arrow keys" id="radio2" /&gt; No, pick me!
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="radio"&gt;
+        &lt;label class="radio-inline" for="radioInline1"&gt;
+            &lt;input type="radio" value="radioInline1" name="radioButtons" title="Press enter to select, to view next option use arrow keys" id="radioInline1" /&gt; This radio is inline
+        &lt;/label&gt;
+        &lt;label class="radio-inline" for="radioInline2"&gt;
+            &lt;input type="radio" value="radioInline2" name="radioButtons" title="Press enter to select, to view next option use arrow keys" id="radioInline2" /&gt; This radio is also inline
+        &lt;/label&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="textarea">
+            <pre>
+&lt;div class="control form-group"&gt;
+    &lt;label for="moreInfo"&gt;More Information&lt;/label&gt;
+    &lt;textarea class="form-control" rows="3" name="moreInfo" title="Please enter in more information" id="moreInfo"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="validation">
+            <pre>
+&lt;div class="control form-group form-group-validation"&gt;
+    &lt;label for="firstNameValidation"&gt;First Name Validation Successful&lt;/label&gt;
+    &lt;div class="input-validation"&gt;
+        &lt;input id="firstNameValidation" class="form-control validation-success" type="text" name="name"
+        placeholder="First Name" value="Albert" title="Please enter in your first name only" /&gt;
+        &lt;i class="fa fa-check-circle fa-2x text-success"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="control form-group form-group-validation"&gt;
+    &lt;label for="firstNameValidationUnsuccessful"&gt;First Name Validation Unsuccessful&lt;/label&gt;
+    &lt;div class="input-validation"&gt;
+        &lt;input class="form-control validation-warning" type="text" id="firstNameValidationUnsuccessful"
+        name="nameValidationUnsuccessful" value="Rog3r" placeholder="First Name" /&gt;
+        &lt;i class="fa fa-exclamation-triangle fa-2x text-danger"&gt;&lt;/i&gt;
+        &lt;p class="text-danger"&gt;Please enter in a valid first name.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="input-slider">
+            <pre>
+&lt;!-- Markup for Input Slider --&gt;
+&lt;div class=&quot;control form-group form-group-slider&quot;&gt;
+    &lt;div id=&quot;range-slider&quot; class=&quot;range-slider&quot;&gt;&lt;/div&gt;
+    &lt;label for=&quot;pain-value-input&quot; class=&quot;sr-only&quot;&gt;Enter in a value from zero to ten.&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;pain-value-input&quot; class=&quot;range-value-input form-control input-sm&quot; maxlength=&quot;2&quot; /&gt;
+&lt;/div&gt;
+&lt;!-- Javascript for Input Slider --&gt;
+$(function() {
+    $('.range-slider').noUiSlider({
+        start: 0,
+        step: 1,
+        range: {
+            min: 0,
+            max: 10
+        },
+        format: wNumb({
+            decimals: 0
+        })
+    });
+    $('.range-slider').noUiSlider_pips({
+        mode: 'values',
+        values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        density: 10
+    });
+    $('.range-slider').Link('lower').to($('#pain-value-input'));
+});
+            </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="loading">
+            <pre>
+&lt;div class=&quot;control form-group&quot;&gt;
+    &lt;label for=&quot;loading-input&quot;&gt;Loading input&lt;/label&gt;
+    &lt;input class=&quot;form-control loading&quot; type=&quot;text&quot; name=&quot;loadingInput&quot; title=&quot;Enter in something amazing&quot; id=&quot;loading-input&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;control form-group&quot;&gt;
+    &lt;label for=&quot;loading-disabled-input&quot;&gt;Loading on disabled input&lt;/label&gt;
+    &lt;input disabled class=&quot;form-control loading&quot; type=&quot;text&quot; name=&quot;loadingDisabledInput&quot; title=&quot;Enter in something amazing when this is not disabled&quot; id=&quot;loading-disabled-input&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;control form-group&quot;&gt;
+    &lt;label for=&quot;loading-drop-multi-select&quot;&gt;Loading select&lt;/label&gt;
+    &lt;select multiple class=&quot;form-control loading&quot; name=&quot;monitors&quot; title=&quot;Select a number of your choosing&quot; id=&quot;loading-drop-multi-select&quot; size=&quot;5&quot;&gt;
+        &lt;option&gt; &lt;/option&gt;
+        &lt;option&gt;1&lt;/option&gt;
+        &lt;option&gt;2&lt;/option&gt;
+        &lt;option&gt;3&lt;/option&gt;
+        &lt;option&gt;4&lt;/option&gt;
+        &lt;option&gt;5&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class=&quot;control form-group&quot;&gt;
+    &lt;label for=&quot;loading-disabled-drop-multi-select&quot;&gt;Loading on disabled select&lt;/label&gt;
+    &lt;select disabled multiple class=&quot;form-control loading&quot; name=&quot;monitors&quot; title=&quot;Select a number of your choosing when this is not disabled&quot; id=&quot;loading-disabled-drop-multi-select&quot; size=&quot;5&quot;&gt;
+        &lt;option&gt; &lt;/option&gt;
+        &lt;option&gt;1&lt;/option&gt;
+        &lt;option&gt;2&lt;/option&gt;
+        &lt;option&gt;3&lt;/option&gt;
+        &lt;option&gt;4&lt;/option&gt;
+        &lt;option&gt;5&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.nouislider.all.min.js"></script>
+<script>
+$(function() {
+    // Pain value slider 
+    // Documentation found @ http://refreshless.com/nouislider/
+    //
+    $('.range-slider').noUiSlider({
+        start: 0,
+        step: 1,
+        range: {
+            min: 0,
+            max: 10
+        },
+        format: wNumb({
+            decimals: 0
+        })
+    });
+    $('.range-slider').noUiSlider_pips({
+        mode: 'values',
+        values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        density: 10
+    });
+    $('.range-slider').Link('lower').to($('#pain-value-input'));
+});
+</script>
+
+<!-- select with filter code -->
+<script src="js/select2.full.js"></script>
+<script>
+
+    // the actual select code
+    $(document).ready(function() {
+        // we assign the width to 100% so that the parent element decides the width of the select such as in bootstrap
+        // otherwise the width of 100% is not assigned if the select is created when it's not visible
+
+        // regular select2
+        $(".typeahead-select").select2({width: '100%' });
+
+        // always open
+        $(".typeahead-select-fixed").each(function(){
+            var t = $(this);
+            var targetDiv = t.parent();
+            t.select2({
+                width: '100%',
+                dropdownParent: targetDiv,
+                closeOnSelect:false,
+                theme: "always-open"
+            }).on('select2:open',function(){
+                // prevents the auto focus of the always open listing
+                var t = $(this);
+                t.parent().find('.select2-search input').prop('focus',false).attr('title','Begin typing to search for results. The results are listed below. Press the up and down arrow keys to review the results. Press enter to select.');
+                $(document.body).off('mousedown.select2.select2-' + t.attr('id'));
+            }).on('select2:closing',function(){
+                // prevents the closure of the listing
+                return false;
+            }).on('change',function(){
+                // write the function you'd like to use here.
+                alert(t.val());
+            }).select2("open"); // opens the options automatically.
+        });
+
+        // multiple selection
+        $(".typeahead-select-ms").each(function(){
+            var
+                t = $(this),
+                targetDiv = t.parent(),
+                selectionsDiv = targetDiv.find('.typeahead-select-ms-selections'),
+                toggleButton = selectionsDiv.find('.typeahead-select-ms-toggle-button'),
+                targetSelected = selectionsDiv.find('.typeahead-select-ms-selected'),
+                selectionsName = t.data('selections-name'),
+                messages = {
+                    filterTitle:'Type to filter options, use the up and down arrow keys to brouse through them and press enter to choose an option.',
+                    removal:'<span class="sr-only">Press enter to remove </span>[v]<span class="sr-only"> from the selected items</span> <i class="fa fa-times"></i>',
+                },
+                createSelection = function(label, val){
+                    var li = $(document.createElement('li')). //create the selected items
+                            html('<span class="sr-only">'+label+'</span>').
+                            append('<input type="hidden" name="'+selectionsName+'" value="'+val+'" />').
+                            append(
+                                $(document.createElement('button')).attr({
+                                    type:'button'
+                                }).
+                                attr({
+                                    'data-selected-value':val,
+                                    'class':'btn btn-default btn-xs'
+                                }).
+                                html(messages.removal.replace('[v]',label)).
+                                click(function(){
+                                    // here you define the click function for selection removal.
+                                    var
+                                        th = $(this),
+                                        list = th.parent().parent(),
+                                        sv = th.data('selected-value'),
+                                        mainList = th.parent().parent().parent().parent(),
+                                        mainSelect = mainList.find('select')
+                                    ;
+                                    th.focus(function(){
+                                        selectionsDiv.addClass('active');
+                                    }).blur(function(){
+                                        selectionsDiv.removeClass('active');
+                                    });
+                                    selectionsDiv.find('button').not(th).focus();
+                                    th.parent().remove();
+                                    mainSelect.find('option[value='+sv+']').removeAttr('disabled');
+
+                                    mainSelect.select2(msArgs);
+                                    if(list.children().length===0){
+                                        list.parent().find('.placeholder').show();
+                                    }
+
+                                })
+                            )
+                    ;
+                    targetSelected.append(li);
+                },
+                toggleSelect = function(){
+                    if (!t.data('open')){
+                        t.select2('open');
+                        toggleButton.addClass('open');
+                        selectionsDiv.addClass('active');
+                    } else {
+                        t.select2('close');
+                        toggleButton.removeClass('open');
+                    }
+                },
+                msArgs = {
+                    width: '100%',
+                    dropdownParent: targetDiv,
+                    theme: "ms"
+                };
+
+            // select it's closed, so let's set it's data flag to closed
+            t.data('open',false);
+
+            // function for the toggling of the options dropdown
+            // the actual button (needed for 508)
+            toggleButton.click(function(){
+                toggleSelect();
+            }).focus(function(){
+                selectionsDiv.addClass('active');
+            }).blur(function(){
+                selectionsDiv.removeClass('active');
+            });
+
+            // the whole box minus the buttons inside (toggle and selections)
+            selectionsDiv.click(function(e){
+                if (e.target.tagName!=='BUTTON'){
+                    toggleSelect();
+                }
+            });
+
+            // initialize select2
+            t.select2(msArgs).on('select2:open',function(){
+                var t = $(this);
+                // set the open flag
+                t.data('open',true);
+
+                t.parent().find('.select2-search input').attr('title',messages.filterTitle);
+
+                // remove mousedown event that closes select.
+                $(document.body).off('mousedown.select2.select2-' + t.attr('id'));
+            }).on('select2:close',function(){
+                toggleButton.focus().removeClass('open');
+                // set the flag
+                $(this).data('open',false);
+            }).on('select2:select',function(){
+                var
+                    t = $(this),
+                    p = t.parent(),
+                    val = t.val(),
+                    optionSelected = t.find('option[value="'+val+'"]'),
+                    label = optionSelected.text();
+
+                // fo create the selection button
+                createSelection(label,val);
+                //disable option within list
+                optionSelected.attr('disabled','disabled');
+                //reinitialize select2
+                t.select2('close').select2(msArgs);
+                //re-focus dropdown toggle button
+                p.find('.typeahead-select-ms-toggle-button').focus().removeClass('open');
+                // hide the placeholder (cause you've selected something)
+                p.find('.placeholder').hide();
+            });
+        });
+    });
+</script>

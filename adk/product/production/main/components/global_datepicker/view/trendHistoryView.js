@@ -110,8 +110,8 @@ define([
                 });
 
                 rect.attr({
-                    width: rightHandle.attr('x') - leftHandle.attr('x') + handleHalfWidth,
-                    x: leftHandle.attr('x') + handleQuarterWidth
+                    width: allEventsChart.xAxis[0].toPixels(to) - allEventsChart.xAxis[0].toPixels(from),
+                    x: allEventsChart.xAxis[0].toPixels(from)
                 });
             }
         },
@@ -258,8 +258,13 @@ define([
                 //if we're reasonably close to today's date in the "to" field, set to date to today's date.  This is for usability purposes
                 // since each pixel of dragging represents nearly two weeks.  If users want finer control, they can explicitly specify from/to
                 // date in custom fields
-                var from = allEventsChart.xAxis[0].toValue(leftHandle.attr('x') + handleHalfWidth);
-                var to = allEventsChart.xAxis[0].toValue(rightHandle.attr('x') + handleHalfWidth);
+                // var from = allEventsChart.xAxis[0].toValue(leftHandle.attr('x') + handleHalfWidth);
+                // var to = allEventsChart.xAxis[0].toValue(rightHandle.attr('x') + handleHalfWidth);
+                
+
+                // CHANGE FROM AND TO DATES TO REFLECT RECTTANGLE LOCATION AND WIDTH INSTEAD OF LEFT HANDLE X AND RIGHT HANDLE X
+                var from = allEventsChart.xAxis[0].toValue(rect.attr('x'));
+                var to = allEventsChart.xAxis[0].toValue(rect.attr('x') + rect.attr('width'));
 
                 var timeDiffFromNow = moment.duration(moment(to).diff(moment().valueOf()));
                 var timeDiffInDays = timeDiffFromNow.asDays();

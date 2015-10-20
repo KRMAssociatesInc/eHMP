@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<command-request>
+	<deployment-id>{DeploymentId}</deployment-id>
+	<complete-task>
+    	<task-id>{TaskId}</task-id>
+    	<user-id>{User}</user-id>
+    	<data>
+    		{Parameters}
+    	</data>
+  	</complete-task>
+</command-request>

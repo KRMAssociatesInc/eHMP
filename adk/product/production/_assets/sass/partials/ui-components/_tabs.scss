@@ -1,0 +1,30 @@
+.tab-container {
+	ul.nav-tabs {
+		border-bottom: 1px solid $grey-light;
+		margin-top: 0px;
+		li {
+			border-bottom: 0px solid $grey-light;
+			margin-bottom: -4px;
+			&.active {
+				border-bottom: none;
+				a {
+					background-color: $primary;
+					border: 1px solid $primary;
+					color: $white;
+				}
+			}
+			a {
+				background-color: $grey-light;
+				color: $primary;
+				padding: 6.5px 15px;
+				&:focus, &:hover {
+					background-color: $secondary-light;
+					color: $black;
+				}
+			}
+		}
+	}
+	.tab-content {
+		padding: 20px 10px;
+	}
+}

@@ -51,7 +51,7 @@ describe('jmeadows-cda-document-conversion-handler', function() {
             handle(log, config, environment, job, function(err, result) {
                 done = true;
                 expect(err).toBeTruthy();
-                expect(err).toEqual('Job has no patient identifier');
+                expect(err.message).toEqual('Job has no patient identifier');
             });
         });
 
@@ -99,7 +99,7 @@ describe('jmeadows-cda-document-conversion-handler', function() {
             handle(log, config, environment, job, function(err, result) {
                 done = true;
                 expect(err).toBeTruthy();
-                expect(err).toEqual('Incorrect job type');
+                expect(err.message).toEqual('Incorrect job type');
             });
         });
 
@@ -143,7 +143,7 @@ describe('jmeadows-cda-document-conversion-handler', function() {
             handle(log, config, environment, job, function(err, result) {
                 done = true;
                 expect(err).toBeTruthy();
-                expect(err).toEqual('Job is missing record');
+                expect(err.message).toEqual('Job is missing record');
             });
         });
 
@@ -191,7 +191,7 @@ describe('jmeadows-cda-document-conversion-handler', function() {
             handle(log, config, environment, job, function(err, result) {
                 done = true;
                 expect(err).toBeTruthy();
-                expect(err).toEqual('Configuration missing document publish information');
+                expect(err.message).toEqual('Configuration missing document publish information');
             });
         });
 
@@ -239,7 +239,7 @@ describe('jmeadows-cda-document-conversion-handler', function() {
             handle(log, config, environment, job, function(err, result) {
                 done = true;
                 expect(err).toBeTruthy();
-                expect(err).toEqual('Configuration missing reference to LibreOffice');
+                expect(err.message).toEqual('Configuration missing reference to LibreOffice');
             });
         });
 
@@ -287,7 +287,7 @@ describe('jmeadows-cda-document-conversion-handler', function() {
             handle(log, config, environment, job, function(err, result) {
                 done = true;
                 expect(err).toBeTruthy();
-                expect(err).toEqual('Configuration missing document retrieval endpoint');
+                expect(err.message).toEqual('Configuration missing document retrieval endpoint');
             });
         });
 

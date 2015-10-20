@@ -48,7 +48,11 @@ define([
         },
         navToSearch: function(event) {
             event.preventDefault();
-            ADK.showWorkflowItem(AppletLayoutView, allergySearchModalOptions);
+            var modal = new ADK.UI.Modal({
+                view: AppletLayoutView,
+                options: allergySearchModalOptions
+            });
+            modal.show();
         },
     });
 
@@ -157,7 +161,13 @@ define([
         showModal: function(event, gridView) {
             event.preventDefault();
             GridView = gridView;
-            ADK.showWorkflowItem(this, allergySearchModalOptions);
+            var modal = new ADK.UI.Modal({
+                view: this,
+                options: allergySearchModalOptions
+            });
+            modal.show();
+
+
         },
         loadSearchResults: function(event) {
             var allergensView = new AllergenSearchResultsView({

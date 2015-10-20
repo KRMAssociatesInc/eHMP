@@ -31,13 +31,13 @@ class DefaultAllergyDoDDemoPatient
   end
 end
 
-Given(/^a patient with "(.*?)" in multiple VistAs and in DoD$/) do |arg1|
+Given(/^a patient with "(.*?)" in multiple VistAs and in DoD$/) do |_arg1|
   @test_patient = DefaultAllergyDoDPatient.new
-  p  @test_patient.pid
+  p @test_patient.pid
 end
 
 Given(/^a patient with allergies in multiple VistAs and in DoD$/) do
   @test_patient = DefaultAllergyDoDPatient.new
-  p  @test_patient.pid
+  p @test_patient.pid
 end
 

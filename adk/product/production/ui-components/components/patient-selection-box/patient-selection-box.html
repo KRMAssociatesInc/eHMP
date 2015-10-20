@@ -1,0 +1,220 @@
+<h3>Patient Selection Box</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> The patient selection box appears once a user selects a patient from the patient list. The purpose of the patient selection box is for the user to confirm if the patient that was selected is the correct patient.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> The patient image should include an alt attribute that says the name of the patient.</p>
+</div>
+
+<div class="patient-selection-container">
+	<div class="row">
+    	<div class="col-md-12">
+        	<h1 class="text-center">Eight, Patient</h1>
+            <div class="btn-xs helpIconLink helpIconInverted">
+                <a id="linkHelp-patient_search_confirm" class="helpIconLinkAnchor" href="#"> <i class="fa fa-question-circle fa-lg" title="Learn about accessing an unrestricted patient record"></i></a>
+            </div>
+        </div>
+    </div>
+	<div class="row patientInfo">
+        <div class="col-md-5">
+            <img src="img/sample-patient-img.jpg" class="center-block" alt="Eight, Patient" width="100" height="100" />
+        </div>
+        <div class="col-md-7">
+        <table>
+        <caption class="sr-only">This table contains the patient's selected date of birth, age, gender and social security number.</caption>
+            <tbody> 
+                <tr> 
+                    <th scope="row">DOB:</th>
+                    <td>04/07/1935</td>
+                </tr>
+                <tr> 
+                    <th scope="row">Age:</th>
+                    <td>80y</td>
+                </tr>
+                <tr> 
+                    <th scope="row">Gender:</th>
+                    <td>Male</td>
+                </tr>
+                <tr> 
+                    <th scope="row">SSN:</th>
+                    <td>666-00-0008</td>
+                </tr>
+            </tbody> 
+        </table>
+        </div>
+    </div>
+    <div class="row">
+    	<div class="col-md-12">
+        	<button type="button" class="btn btn-default btn-block" title="Please confirm this is the patient you want to select.">Confirm Selection</button>
+        </div>
+    </div>
+</div>
+<hr />
+
+<h4>Patient Selection Box with Warning</h4>
+<div class="patient-selection-container">
+	<div class="row">
+    	<div class="col-md-12">
+        	<h1 class="text-center">Eight, Patient</h1>
+            <div class="btn-xs helpIconLink helpIconInverted">
+                <a id="linkHelp-patient_search_confirm" class="helpIconLinkAnchor" href="#"> <i class="fa fa-question-circle fa-lg" title="Learn about accessing an unrestricted patient record"></i></a>
+            </div>
+        </div>
+    </div>
+	<div class="row patientInfo">
+        <div class="col-md-12 panel-danger">
+            <h2>Wanderer<span class="label label-warning pull-right">Category II (LOCAL)</span></h2>
+            <p><strong>This patient likes to wander around the hospital. Please notify the security office</strong></p>
+            <hr />
+            <table>
+            <caption class="sr-only">This table contains the patient's selected PII; the date of birth, age, gender and social security number.</caption>
+                <tbody> 
+                    <tr> 
+                        <th scope="row">Initial Assigned Date:</th>
+                        <td>12/23/2014 16:00</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">Approved by:</th>
+                        <td>PROGRAMMER,EIGHT</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">Assignment Status:</th>
+                        <td>ACTIVE</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">Owner Site:</th>
+                        <td>CAMP MASTER</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">Originating Site:</th>
+                        <td>CAMP MASTER</td>
+                    </tr>
+                </tbody> 
+            </table>
+        </div>
+    </div>
+    <div class="row">
+    	<div class="col-md-12">
+        	<button type="button" class="btn btn-default btn-block" title="Please confirm this is the patient you want to select.">Confirm</button>
+        </div>
+    </div>
+</div>
+<hr />
+
+<div role="tabpanel" class="markup">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active">
+			<a href="#patient-confirm-markup" aria-controls="patient-confirm-markup" role="tab" data-toggle="tab">Patient Selection Box</a>
+		</li>
+		<li>
+			<a href="#patient-warning-markup" aria-controls="patient-warning-markup" role="tab" data-toggle="tab">Patient Selection Box with Warning</a>
+		</li>
+	</ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="patient-confirm-markup">
+            <pre>
+&lt;div class="patient-selection-container"&gt;
+	&lt;div class="row"&gt;
+    	&lt;div class="col-md-12"&gt;
+        	&lt;h1 class="text-center"&gt;Eight, Patient&lt;/h1&gt;
+            &lt;div class="btn-xs helpIconLink helpIconInverted"&gt;
+                &lt;a id="linkHelp-patient_search_confirm" class="helpIconLinkAnchor" href="#"&gt; 
+                &lt;i class="fa fa-question-circle fa-lg" title="Learn about accessing an unrestricted patient record"&gt;
+                &lt;/i&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+	&lt;div class="row patientInfo"&gt;
+        &lt;div class="col-md-5"&gt;
+            &lt;img src="img/sample-patient-img.jpg" class="center-block" 
+            alt="Eight, Patient" width="100" height="100" /&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-7"&gt;
+        &lt;table&gt;
+        &lt;caption class="sr-only"&gt;This table contains the patient's selected PII; the date of birth, 
+        age, gender and social security number.&lt;/caption&gt;
+            &lt;tbody&gt; 
+                &lt;tr&gt; 
+                    &lt;th scope="row"&gt;DOB:&lt;/th&gt;
+                    &lt;td&gt;04/07/1935&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt; 
+                    &lt;th scope="row"&gt;Age:&lt;/th&gt;
+                    &lt;td&gt;80y&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt; 
+                    &lt;th scope="row"&gt;Gender:&lt;/th&gt;
+                    &lt;td&gt;Male&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt; 
+                    &lt;th scope="row"&gt;SSN:&lt;/th&gt;
+                    &lt;td&gt;666-00-0008&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt; 
+        &lt;/table&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+    	&lt;div class="col-md-12"&gt;
+        	&lt;button type="button" class="btn btn-default btn-block" 
+            title="Please confirm this is the patient you want to select."&gt;Confirm Selection&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="patient-warning-markup">
+            <pre>
+&lt;div class="patient-selection-container"&gt;
+	&lt;div class="row"&gt;
+    	&lt;div class="col-md-12"&gt;
+        	&lt;h1 class="text-center"&gt;Eight, Patient&lt;/h1&gt;
+            &lt;div class="btn-xs helpIconLink helpIconInverted"&gt;
+                &lt;a id="linkHelp-patient_search_confirm" class="helpIconLinkAnchor" href="#"&gt; &lt;i class="fa fa-question-circle fa-lg" 
+                title="Learn about accessing an unrestricted patient record"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+	&lt;div class="row patientInfo"&gt;
+        &lt;div class="col-md-12 panel-danger"&gt;
+            &lt;h2&gt;Wanderer&lt;span class="label label-warning pull-right"&gt;Category II (LOCAL)&lt;/span&gt;&lt;/h2&gt;
+            &lt;p&gt;&lt;strong&gt;This patient likes to wander around the hospital. Please notify the security office.&lt;/strong&gt;&lt;/p&gt;
+            &lt;hr /&gt;
+            &lt;table&gt;
+            &lt;caption class="sr-only"&gt;This table contains warning information about the selected patient.
+            &lt;/caption&gt;
+                &lt;tbody&gt; 
+                    &lt;tr&gt; 
+                        &lt;th scope="row"&gt;Initial Assigned Date:&lt;/th&gt;
+                        &lt;td&gt;12/23/2014 16:00&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt; 
+                        &lt;th scope="row"&gt;Approved by:&lt;/th&gt;
+                        &lt;td&gt;PROGRAMMER,EIGHT&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt; 
+                        &lt;th scope="row"&gt;Assignment Status:&lt;/th&gt;
+                        &lt;td&gt;ACTIVE&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt; 
+                        &lt;th scope="row"&gt;Owner Site:&lt;/th&gt;
+                        &lt;td&gt;CAMP MASTER&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt; 
+                        &lt;th scope="row"&gt;Originating Site:&lt;/th&gt;
+                        &lt;td&gt;CAMP MASTER&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt; 
+            &lt;/table&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+    	&lt;div class="col-md-12"&gt;
+        	&lt;button type="button" class="btn btn-default btn-block" title="Please confirm this is the patient you want to select."&gt;Confirm
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+	</div>
+</div>

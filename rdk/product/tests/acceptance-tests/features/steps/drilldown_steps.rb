@@ -3,7 +3,7 @@ require 'QueryRDK.rb'
 class QueryRDKSearchDetail < BuildQuery
   def initialize
     super
-    domain_path = RDClass.resourcedirectory.get_url("patient-record-search-detail")
+    domain_path = RDClass.resourcedirectory_fetch.get_url("patient-record-search-detail")
     @path.concat(domain_path)
   end
 end
@@ -11,7 +11,7 @@ end
 When(/^the client searches$/) do |table|
   build_query = QueryRDKSearchDetail.new
 
-  table.rows.each do | key, value |
+  table.rows.each do |key, value|
     build_query.add_parameter(key, value)
   end
   path = build_query.path

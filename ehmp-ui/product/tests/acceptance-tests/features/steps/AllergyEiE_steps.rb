@@ -31,7 +31,7 @@ class Comments< AccessBrowserV2
   end
 end # Reaction
 
-Given(/^two allergies have been recorded for patient "(.*?)"$/) do |pid|
+Given(/^two allergies have been recorded for patient "(.*?)"$/) do |_pid|
   add_simple_allergy("DUST")
   add_simple_allergy("BEE STINGS")
   p "Waiting for sync..."
@@ -215,7 +215,7 @@ def wait_for_element(xpath, timeout = 120)
   while i < timeout
     element = driver.find_elements(:xpath => xpath)
     if element.size == 0
-      i = i + 1
+      i += 1
       sleep 1
     else
       i = timeout
@@ -231,7 +231,7 @@ def wait_for_modal_done(timeout = 60)
   while i < timeout
     modal_element = driver.find_element(:id, 'modal-header')
     if modal_element.displayed?
-      i = i + 1
+      i += 1
       sleep 1
     else
       return

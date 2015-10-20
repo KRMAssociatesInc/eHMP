@@ -4,12 +4,13 @@ define([
     'jquery',
     'underscore',
     'api/Messaging',
+    'api/UIComponents',
     'main/AppletsManifest',
     'main/ScreensManifest',
     'main/NewUserScreen',
     'main/PreDefinedScreens',
     '_assets/js/browserDetector/browserDetector'
-], function(Backbone, Marionette, $, _, Messaging, AppletsManifest, ScreensManifest, NewUserScreen, PreDefinedScreens, BrowserDetector) {
+], function(Backbone, Marionette, $, _, Messaging, UIComponents, AppletsManifest, ScreensManifest, NewUserScreen, PreDefinedScreens, BrowserDetector) {
     'use strict';
 
     //necessary to stop rjs from following the require call to eHMP-UI
@@ -165,7 +166,7 @@ define([
                     console.log("AppConfig: ", appConfig);
                     var resourceDirectory = ResourceDirectory.instance();
                     resourceDirectory.fetch({
-                        url: appConfig.get('resourceDirectoryPath'),
+                        url: appConfig.get('resourceDirectoryPathFetch'),
                         success: function() {
                             resourceDirectoryLoaded.resolve();
                         },

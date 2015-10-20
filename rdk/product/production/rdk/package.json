@@ -2,13 +2,17 @@
   "name": "node-vistaexpress",
   "version": "0.0.1",
   "description": "Combination of the VistA Core resource server, resources, and RDK",
-  "main": "resourceserver.js",
+  "main": "bin/rdk-fetch-server.js",
   "scripts": {
     "check": "node_modules/jshint/bin/jshint . --verbose --config .jshintrc.gradle",
-    "test": "node_modules/jasmine-node/bin/jasmine-node jasmine-tests/ --color --verbose --forceexit --captureExceptions --junitreport --output build/junit-reports",
+    "test": "npm run test:unit",
+    "test:unit": "multi='spec=- xunit=xunit.xml' istanbul cover -x '**/*-spec.js' -x 'test-helpers/*' --report lcov --report cobertura _mocha -- --reporter mocha-multi --require ./test-helpers/mocha-helper.js ./test-helpers/sinon-helper.js $(find . -type f -name '*-spec.js' ! -name '*-itest-spec.js' ! -path '*/node_modules/*' ! -path '*/_example/*' ! -path './jasmine-tests/*')",
+    "test:unit:watch": "mocha --watch --require ./test-helpers/mocha-helper.js ./test-helpers/sinon-helper.js $(find . -type f -name '*-spec.js' ! -name '*-itest-spec.js' ! -path '*/node_modules/*' ! -path '*/_example/*' ! -path './jasmine-tests/*')",
+    "test:integration": "mocha --require ./test-helpers/mocha-helper.js ./test-helpers/sinon-helper.js $(find . -type f -name '*-itest-spec.js' ! -path '*/node_modules/*' ! -path '*/_example/*' ! -path './jasmine-tests/*')",
     "int-test": "node_modules/jasmine-node/bin/jasmine-node jasmine-integrationtests/ --color --verbose --matchall --forceexit --captureExceptions --junitreport --output build/junit-reports"
   },
   "dependencies": {
+    "agenda": "^0.6.28",
     "async": "~0.8.0",
     "body-parser": "^1.9.0",
     "bunyan": "~1.2.3",
@@ -17,17 +21,23 @@
     "cors": "^2.3.1",
     "express": "~4.9",
     "express-session": "~1.8.2",
+    "handlebars": "^3.0.3",
     "helmet": "0.6.1",
     "jison": "^0.4.15",
     "jshint": "2.5.10",
-    "lodash": "^2.4.1",
+    "json-mask": "^0.3.4",
+    "lodash": "^3.10.0",
+    "lzma": "^2.1.1",
     "mathjs": "~1.0.1",
     "memory-cache": "0.0.5",
     "moment": "^2.6.0",
+    "mongodb": "^1.4.38",
+    "mongoskin": "^1.4.13",
     "morgan": "~1.0.0",
     "nedb": "^1.1.2",
     "nock": "~0.42.2",
     "node-cache": "~1.0.2",
+    "node-dev": "2.6.2",
     "node-mocks-http": "~1.2.0",
     "node-rest-client": "~1.0.0",
     "node-rules": "^3.0.2",
@@ -45,9 +55,18 @@
     "yargs": "^1.2.6"
   },
   "devDependencies": {
-    "jasmine-node": "^1.14.5",
-    "request": "~2.37.0"
+    "drilldown": "0.1.0",
+    "istanbul": "^0.3.15",
+    "mocha": "^2.2.5",
+    "mocha-multi": "^0.7.1",
+    "must": ">=0.13.0-beta2",
+    "node-inspector": "0.10.1",
+    "request": "~2.37.0",
+    "sinon": "^1.15.3"
   },
+  "bundledDependencies": [
+    "jds-filter"
+  ],
   "author": "Steven.Reich",
   "contributors": [
     "Steven.Reich <Steven.Reich@agilex.com>",

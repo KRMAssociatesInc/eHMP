@@ -1,5 +1,7 @@
 package us.vistacore.vxsync.config;
 
+import us.vistacore.vxsync.mvi.MviCommonUtility;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MviConfiguration {
@@ -21,6 +23,9 @@ public class MviConfiguration {
 	
 	@JsonProperty
 	private String wsdl;
+	
+	@JsonProperty
+	private String senderCode;
 
 	public String getHost() {
 		return host;
@@ -68,6 +73,15 @@ public class MviConfiguration {
 
 	public void setWsdl(String wsdl) {
 		this.wsdl = wsdl;
+	}
+
+	public String getSenderCode() {
+		return senderCode;
+	}
+
+	public void setSenderCode(String senderCode) {
+		this.senderCode = senderCode;
+		MviCommonUtility.setSenderCode(senderCode);
 	}
 	
 	

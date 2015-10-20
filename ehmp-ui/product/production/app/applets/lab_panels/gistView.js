@@ -6,10 +6,6 @@ define([
         initialize: function(options) {
             var self = this;
             this._super = ADK.AppletViews.PanelsGistView.prototype;
-
-            GistConfig.fetchOptions.onSuccess = function() {
-                self.appletOptions.collection.reset(self.appletOptions.collection.models);
-            };
             this.appletOptions = {
                 filterFields: GistConfig.filterFields,
                 gistModel: GistConfig.gistModel,

@@ -1,0 +1,69 @@
+<div id='note-preview-header'>
+	<div class='row'>
+		<div class='col-sm-10'></div>
+		<div class='col-sm-2'>
+			<!-- <button id="preview-options-btn" type="button" role="button">
+				<span class="sr-only">Settings</span>
+				<i class="fa fa-gear"></i>
+			</button> -->
+			<button id="preview-close-btn" type="button" role="button" class="close">
+				<span class="sr-only">Close</span>
+				<i class="fa fa-close"></i>
+			</button>
+		</div>
+	</div>
+</div>
+
+<div id='note-preview-body'>
+	<div class='row'>
+		<div class='col-sm-12' id='note-preview-title'>
+			{{#if localTitle}}
+				{{localTitle}}
+			{{else}}
+				&lt;No Title&gt;
+			{{/if}}
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-sm-12' id='note-preview-datetime'>
+			{{#if referenceDateTime}}
+				{{formatDateTime referenceDateTime 'YYYYMMDDHHmmssSSS' 'datetime'}}
+			{{else}}
+				&lt;No Date&gt;
+			{{/if}}
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-sm-12' id='note-preview-encounter'>{{encounterDisplayName}}</div>
+	</div>
+	<div class='row'>
+		<div class='col-sm-9' id='note-preview-author'>{{author}}</div>
+		<div class='col-sm-3' id='note-preview-status'>{{statusDisplayName}}</div>
+	</div>
+
+	<hr>
+
+	{{#compare app "vista"}}
+	<div class='row'>
+		<div class='col-sm-12 label-danger'>This is an Unsigned note created in CPRS.  Please edit the note in CPRS.</div>
+	</div>
+	{{/compare}}
+
+	{{#if text}}
+	<div class='row'>
+		<pre class='col-sm-12 note-preview-content'>{{text.[0].content}}</pre>
+	</div>
+	{{/if}}
+
+	{{#if signedDateTime}}
+	<hr>
+	<div class='row'>
+		<div class='col-sm-12' id='note-preview-signature-date'>
+			Signed: {{formatDateTime signedDateTime 'YYYYMMDDHHmmssSSS' 'datetime'}}
+		</div>
+		<div class='col-sm-12' id='note-preview-signer'>
+			By: {{signerDisplayName}}
+		</div>
+	</div>
+	{{/if}}
+</div>

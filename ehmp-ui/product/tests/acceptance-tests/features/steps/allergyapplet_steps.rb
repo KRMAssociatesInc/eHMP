@@ -23,7 +23,7 @@ Then(/^the Allergies expanded headers are$/) do |table|
   expect(headers.length).to_not eq(0)
   expect(headers.length).to eq(table.rows.length)
   elements = AllergiesExpandedHeader.instance
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     does_exist = elements.static_dom_element_exists? header_text[0]
     p "#{header_text[0]} was not found" unless does_exist
     expect(does_exist).to be_true
@@ -35,7 +35,7 @@ Then(/^the first row of the expanded Allergies applet is$/) do |table|
   driver = TestSupport.driver
   num_of_rows = driver.find_elements(:css, "#data-grid-allergy_grid tbody tr")
   #Loop through rows in cucumber   
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     #Loop through UI rows
     for i in 1..num_of_rows.length
@@ -54,7 +54,7 @@ Then(/^the first row of the expanded Allergies applet is$/) do |table|
     p "could not match data: #{row_defined_in_cucumber}" unless matched  
     driver.save_screenshot("incorrect_rows.png") unless matched
     expect(matched).to be_true
-  end#do loop  
+  end #do loop  
 end #Allergies First Row
 
 #Validate the Allergies Expanded rows
@@ -62,7 +62,7 @@ Then(/^the Allergies expanded contains the rows$/) do |table|
   driver = TestSupport.driver
   num_of_rows = driver.find_elements(:css, "#data-grid-allergy_grid tbody tr")
   #Loop through rows in cucumber   
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     #Loop through UI rows
     for i in 1..num_of_rows.length
@@ -81,7 +81,7 @@ Then(/^the Allergies expanded contains the rows$/) do |table|
     p "could not match data: #{row_defined_in_cucumber}" unless matched  
     driver.save_screenshot("incorrect_rows.png") unless matched
     expect(matched).to be_true
-  end#do loop  
+  end #do loop  
 end #Allergies Expanded
 
 #Validate the Allergies pills in the coversheet view
@@ -89,7 +89,7 @@ Then(/^the Allergies Coversheet contains$/) do |table|
   driver = TestSupport.driver
   num_of_rows = driver.find_elements(:css, "#grid-panel-allergy_grid > div.grid-container > div > div > div.allergyBubbleView > div")
   #Loop through rows in cucumber   
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     #Loop through UI rows
     for i in 1..num_of_rows.length
@@ -108,7 +108,7 @@ Then(/^the Allergies Coversheet contains$/) do |table|
     p "could not match data: #{row_defined_in_cucumber}" unless matched  
     driver.save_screenshot("incorrect_rows.png") unless matched
     expect(matched).to be_true
-  end#do loop  
+  end #do loop  
 end #Allergies Pills
 
 Given(/^user selects patient "(.*?)" to view$/) do |search_value|

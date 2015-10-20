@@ -7,10 +7,11 @@ define([
     'hbs!app/applets/problems/list/commentTemplate',
     'app/applets/problems/util',
     'hbs!app/applets/problems/list/tooltip',
-    "app/applets/problems/gistView"
-], function(Backbone, ModalView, modalHeader, modalFooter, severityTemplate, commentTemplate, Util, tooltip, GistView) {
+    "app/applets/problems/gistView",
+    'app/applets/problems_add_edit/deleteModalView',
+], function(Backbone, ModalView, modalHeader, modalFooter, severityTemplate, commentTemplate, Util, tooltip, GistView,DeleteView) {
     'use strict';
-    var problemChannel = ADK.Messaging.getChannel('problem-add-edit');
+    var problemChannel = ADK.Messaging.getChannel('problems');
     var allEncounterDateArray = [];
     //Data Grid Columns
     var summaryColumns = [{
@@ -24,7 +25,12 @@ define([
         cell: 'handlebars',
         template: severityTemplate,
         hoverTip: 'conditions_acuity'
-    }];
+    }, {
+        name: 'statusName',
+        label: 'Status',
+        cell: 'string',
+        hoverTip: 'conditions_status'
+    }, ];
 
     var fullScreenColumns =
         summaryColumns.concat([{
@@ -82,6 +88,7 @@ define([
             response = Util.getCommentBubble(response);
             response = Util.getICDName(response);
             response = Util.getTimeSince(response);
+            response = Util.getStatusName(response);
 
             return response;
         }
@@ -118,16 +125,12 @@ define([
             var self = this;
             if (ADK.UserService.hasPermission('add-patient-problem') && ADK.PatientRecordService.isPatientInPrimaryVista()) {
                 dataGridOptions.onClickAdd = function() {
-                    problemChannel.command('openProblemSearch', 'problem_search');
+                    problemChannel.command('addProblem');
                 };
             }
             self.getExposure();
             this.dataGridOptions = dataGridOptions;
-            this.fetchOptions.onSuccess = function() {
-                self.dataGridOptions.collection.reset(dataGridOptions.collection.where({
-                    statusName: 'Active'
-                }));
-            };
+
             dataGridOptions.collection = ADK.PatientRecordService.fetchCollection(this.fetchOptions);
             dataGridOptions.onClickRow = function(model, event, gridView) {
                 model.attributes.exposure = self.exposure;
@@ -163,8 +166,25 @@ define([
                         }
                     }),
                 };
-                ADK.showModal(view, modalOptions);
+
+                var modal = new ADK.UI.Modal({
+                    view: view,
+                    options: modalOptions
+                });
+                modal.show();
             };
+
+            dataGridOptions.collection.on('sync', function() {
+                dataGridOptions.collection.comparator = function(a, b) {
+                    var statusNameA = a.get('statusName') || '';
+                    var statusNameB = b.get('statusName') || '';
+                    if (statusNameB.localeCompare(statusNameA) !== 0) {
+                        return -statusNameB.localeCompare(statusNameA);
+                    }
+                };
+                dataGridOptions.collection.sort();
+            });
+
             this._super.initialize.apply(this, arguments);
 
             // add model to list after writeback.
@@ -172,9 +192,6 @@ define([
         },
         handleAddProblemModel: function(appletKey, addedProblemModel) {
             //this.dataGridOptions.collection.push(addedProblemModel);
-        },
-        onRender: function() {
-            this._super.onRender.apply(this, arguments);
         },
         exposure: '',
         getExposure: function() {

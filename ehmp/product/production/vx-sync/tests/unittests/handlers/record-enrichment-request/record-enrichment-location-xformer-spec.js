@@ -53,7 +53,7 @@ describe('record-enrichment-location-xformer.js', function() {
             var vaLocationJob = JSON.parse(JSON.stringify(originalVaLocationJob));
 
             runs(function() {
-                xformer(log, config, environment, vaLocationJob, function(error, record) {
+                xformer(log, config, environment, vaLocationJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
 
@@ -83,7 +83,7 @@ describe('record-enrichment-location-xformer.js', function() {
             vaLocationJob.record.type = 'C';
 
             runs(function() {
-                xformer(log, config, environment, vaLocationJob, function(error, record) {
+                xformer(log, config, environment, vaLocationJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     expect(record.typeName).toBe('Clinic');
@@ -103,7 +103,7 @@ describe('record-enrichment-location-xformer.js', function() {
             vaLocationJob.record.type = 'M';
 
             runs(function() {
-                xformer(log, config, environment, vaLocationJob, function(error, record) {
+                xformer(log, config, environment, vaLocationJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     expect(record.typeName).toBe('Module');
@@ -123,7 +123,7 @@ describe('record-enrichment-location-xformer.js', function() {
             vaLocationJob.record.type = 'W';
 
             runs(function() {
-                xformer(log, config, environment, vaLocationJob, function(error, record) {
+                xformer(log, config, environment, vaLocationJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     expect(record.typeName).toBe('Ward');
@@ -143,7 +143,7 @@ describe('record-enrichment-location-xformer.js', function() {
             vaLocationJob.record.type = 'N';
 
             runs(function() {
-                xformer(log, config, environment, vaLocationJob, function(error, record) {
+                xformer(log, config, environment, vaLocationJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     expect(record.typeName).toBe('Non-Clinic Stop');
@@ -163,7 +163,7 @@ describe('record-enrichment-location-xformer.js', function() {
             vaLocationJob.record.type = 'F';
 
             runs(function() {
-                xformer(log, config, environment, vaLocationJob, function(error, record) {
+                xformer(log, config, environment, vaLocationJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     expect(record.typeName).toBe('File Area');
@@ -183,7 +183,7 @@ describe('record-enrichment-location-xformer.js', function() {
             vaLocationJob.record.type = 'I';
 
             runs(function() {
-                xformer(log, config, environment, vaLocationJob, function(error, record) {
+                xformer(log, config, environment, vaLocationJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     expect(record.typeName).toBe('Imaging');
@@ -203,7 +203,7 @@ describe('record-enrichment-location-xformer.js', function() {
             vaLocationJob.record.type = 'OR';
 
             runs(function() {
-                xformer(log, config, environment, vaLocationJob, function(error, record) {
+                xformer(log, config, environment, vaLocationJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     expect(record.typeName).toBe('Operating Room');
@@ -232,28 +232,12 @@ describe('record-enrichment-location-xformer.js', function() {
                 return finished;
             }, 'Call failed to return in time.', 500);
         });
-        it('Job.record was null', function() {
-            var finished = false;
-            var environment = {};
-
-            runs(function() {
-                xformer(log, config, environment, {}, function(error, record) {
-                    expect(error).toBeNull();
-                    expect(record).toBeNull();
-                    finished = true;
-                });
-            });
-
-            waitsFor(function() {
-                return finished;
-            }, 'Call failed to return in time.', 500);
-        });
         it('Job was removed', function() {
             var finished = false;
             var environment = {};
 
             runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:location:DOD:0000000003:1000010340');

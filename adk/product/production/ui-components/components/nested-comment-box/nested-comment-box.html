@@ -1,0 +1,1366 @@
+<h3>Nested Comment Box</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> The nested comment box is a view that allows users to view and add comments. This component is a new component for write backs.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> The nested comment box contains accordions, lists and faux table, which will follow the same 508 guidelines for those sections.</p>
+</div>
+
+<h4>Nested Comment Box</h4>
+<div id="nested-comment-boxCopy1">
+    <div class="nested-comment-box">
+        <div class="sr-only">This table represents Selected Diagnoses catagorized by Diagnosis, Comments, Add to CL, and Primary.</div>
+        <div class="header">
+            <div>
+                <span>Diagnosis</span>
+            </div>
+            <div>
+                <span>Comments</span>
+            </div>
+            <div>
+                <span>Add to CL</span>
+            </div>
+            <div>
+                <span>Primary</span>
+            </div>
+        </div>
+        <div class="accordion-container panel-group small faux-table-header" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <div class="panel-title">
+                        <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                        <div>
+                            <span>Hypertension (ICD-9-CM 401.9)</span>
+                        </div>
+                        <div>
+                            <a class="btn btn-xs icon-btn" title="Press enter to add comment" data-toggle="collapse" href="#diagnosesOne" aria-expanded="true" aria-controls="diagnosesOne">Add</a>
+                        </div>
+                        <div>
+                            <div class="control form-group">
+                                <div class="checkbox">
+                                    <label class="checkbox-inline" for="diagnoses1">
+                                        <input type="checkbox" value="option1" aria-label="To add this diagnoses to the CL, press the spacebar" id="diagnoses1">
+                                        <span class="sr-only" aria-hidden="true">Add diagnosis</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span><button type="button" class="btn btn-xs icon-btn icon-btn-mini" title="This diagnosis is set as primary">Primary</button></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="diagnosesOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <div class="comment-box">
+                            <div class="faux-table-container comments-container">
+                                <div class="faux-table">
+                                    <div class="body">
+                                        <div class="table-row">
+                                            <div>
+                                                <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to edit comment"><i class="fa fa-pencil"><span class="sr-only">Press enter to edit comment</span></i></button>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to delete comment"><i class="fa fa-trash"><span class="sr-only">Press enter to delete comment</span></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="table-row">
+                                            <div>
+                                                <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to edit comment"><i class="fa fa-pencil"><span class="sr-only">Press enter to edit comment</span></i></button>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to delete comment"><i class="fa fa-trash"><span class="sr-only">Press enter to delete comment</span></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="form-group col-xs-8">
+                                    <label for="comment1" class="sr-only">Comment</label>
+                                    <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="comment1" />
+                                    <span class="help-block">60 characters remaining&hellip;</span>
+
+                                    <label for="comment11" class="sr-only hidden">Comment</label>
+                                    <input class="form-control input-sm hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="comment11" />
+                                    <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div>
+                                        <div class="col-xs-6 hidden">
+                                            <button type="button" class="btn btn-default btn-sm" title="Press enter to cancel">Cancel</button>
+                                        </div>
+                                        <div class="col-xs-6 hidden">
+                                            <button type="button" class="btn btn-default btn-sm" title="Press enter to save comment">Save</button>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to add comment">Add Comment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <div class="panel-title">
+                        <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                        <div>
+                            <span>Hypertension (ICD-9-CM 401.9)</span>
+                        </div>
+                        <div>
+                            <a class="btn icon-btn" data-toggle="collapse" href="#diagnosesTwo" aria-expanded="true" aria-controls="diagnosesTwo" title="Press enter the view comments"><i class="fa fa-file-text"><span class="sr-only">Press enter the view comments</span></i></a>
+                        </div>
+                        <div>
+                            <div class="control form-group">
+                                <div class="checkbox">
+                                    <label class="checkbox-inline" for="diagnoses2">
+                                        <input type="checkbox" value="option1" aria-label="To add this diagnoses to the CL, press the spacebar" id="diagnoses2">
+                                        <span class="sr-only" aria-hidden="true">Add diagnosis</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span><button type="button" class="btn btn-xs icon-btn icon-btn-mini" title="Press enter to set as primary diagnosis">Set Primary</button></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="diagnosesTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        <div class="comment-box">
+                            <div class="faux-table-container comments-container">
+                                <div class="faux-table">
+                                    <div class="body">
+                                        <div class="table-row">
+                                            <div>
+                                                <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to edit comment"><i class="fa fa-pencil"><span class="sr-only">Press enter to edit comment</span></i></button>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to delete comment"><i class="fa fa-trash"><span class="sr-only">Press enter to delete comment</span></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="table-row">
+                                            <div>
+                                                <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to edit comment"><i class="fa fa-pencil"><span class="sr-only">Press enter to edit comment</span></i></button>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to delete comment"><i class="fa fa-trash"><span class="sr-only">Press enter to delete comment</span></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="form-group col-xs-8">
+                                    <label for="comment2" class="sr-only">Comment</label>
+                                    <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="comment2" />
+                                    <span class="help-block">60 characters remaining&hellip;</span>
+
+                                    <label for="comment22" class="sr-only hidden">Comment</label>
+                                    <input class="form-control hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="comment22" />
+                                    <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div>
+                                        <div class="col-xs-6">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to cancel">Cancel</button>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to save comment">Save</button>
+                                        </div>
+                                        <div class="col-xs-12 hidden">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to add comment">Add Comment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+<h4>Nested Comment Box with Form Elements</h4>
+<div id="nested-comment-boxCopy2">
+    <div class="nested-comment-box nested-comment-box-alt">
+        <div class="sr-only">This table represents Selected Diagnoses catagorized by Diagnosis, Comments, Add to CL, and Primary.</div>
+        <div class="header">
+            <div>
+                <div>Procedure</div>
+            </div>
+            <div>
+                <div>Comments</div>
+            </div>
+            <div>
+                <div>Quantity</div>
+            </div>
+            <div>
+                <div>Provider</div>
+            </div>
+            <div>
+                <div>Add Modifiers</div>
+            </div>
+        </div>
+        <div class="accordion-container panel-group small faux-table-header" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <div class="panel-title">
+                        <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                        <div>
+                            <span>Item 12345 - modifier name, another modifier name, another&hellip;</span>
+                        </div>
+                        <div>
+                            <a class="btn btn-xs icon-btn" title="Press enter to add comment" data-toggle="collapse" href="#proceduresOne" aria-expanded="true" aria-controls="proceduresOne">Add</a>
+                        </div>
+                        <div>
+                            <div class="control form-group">
+                                <label for="quantity1" class="sr-only">Quanity</label>
+                                <input class="form-control input-sm" type="text" title="Enter in numeric value" placeholder="1" id="quantity1" />
+                            </div>
+                        </div>
+                        <div>
+                            <div class="control form-group">
+                                <label for="procedure-provider1" class="sr-only">Select Provider</label>
+                                <select class="form-control input-sm" name="options" title="To view options, use the up and down arrow keys and press enter to select" id="procedure-provider1">
+                                    <option value="">Select a provider</option>
+                                    <option value="provider">Select Provider</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="control form-group">
+                                <a href="" data-toggle="modal" data-target="#procedureProvider1Modal" title="Press enter to add other diagnosis">Add Modifiers&hellip;</a>
+                                <div class="modal fade" id="procedureProvider1Modal" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-backdrop">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Press enter to close."><span aria-hidden="true">×</span></button>
+                                                <h4 class="modal-title" id="procedureProvider1Label">Add Modifiers</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="control form-group">
+                                                    <div class="form-group" role="application">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="panel panel-default panel-w-list-group">
+                                                                    <div class="panel-heading">
+                                                                        Available Modifiers
+                                                                    </div>
+                                                                    <ul class="list-group">
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Modifier name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Modifier name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Modifier name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Modifier name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Modifier name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="panel panel-default panel-w-list-group">
+                                                                    <div class="panel-heading">
+                                                                        Selected Modifiers
+                                                                    </div>
+                                                                    <ul class="list-group">
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Selected name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Selected name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Selected name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Selected name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Selected name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to cancel">Cancel</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to add">Add</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="proceduresOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                        <div class="comment-box">
+                            <div class="faux-table-container comments-container">
+                                <div class="faux-table">
+                                    <div class="body">
+                                        <div class="table-row">
+                                            <div>
+                                                <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to edit comment"><i class="fa fa-pencil"><span class="sr-only">Press enter to edit comment</span></i></button>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to delete comment"><i class="fa fa-trash"><span class="sr-only">Press enter to delete comment</span></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="table-row">
+                                            <div>
+                                                <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to edit comment"><i class="fa fa-pencil"><span class="sr-only">Press enter to edit comment</span></i></button>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to delete comment"><i class="fa fa-trash"><span class="sr-only">Press enter to delete comment</span></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="form-group col-xs-8">
+                                    <label for="procedure-comment1" class="sr-only">Comment</label>
+                                    <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="procedure-comment1" />
+                                    <span class="help-block">60 characters remaining&hellip;</span>
+
+                                    <label for="procedure-comment11" class="sr-only hidden">Comment</label>
+                                    <input class="form-control input-sm hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="procedure-comment11" />
+                                    <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div>
+                                        <div class="col-xs-6 hidden">
+                                            <button type="button" class="btn btn-default btn-sm" title="Press enter to cancel">Cancel</button>
+                                        </div>
+                                        <div class="col-xs-6 hidden">
+                                            <button type="button" class="btn btn-default btn-sm" title="Press enter to save comment">Save</button>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to add comment">Add Comment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-heading" role="tab" id="headingFour">
+                    <div class="panel-title">
+                        <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                        <div>
+                            <span>Item 67890 - modifier name, another modifier name, another&hellip;</span>
+                        </div>
+                        <div>
+                            <a class="btn icon-btn" data-toggle="collapse" href="#proceduresTwo" aria-expanded="true" aria-controls="proceduresTwo" title="Press enter tp view comments"><i class="fa fa-file-text"><span class="sr-only">Press enter tp view comments</span></i></a>
+                        </div>
+                        <div>
+                            <div class="control form-group">
+                                <label for="quantity2" class="sr-only">Quanity</label>
+                                <input class="form-control input-sm" type="text" title="Enter in numeric value" placeholder="1" id="quantity2" />
+                            </div>
+                        </div>
+                        <div>
+                            <div class="control form-group">
+                                <label for="procedure-provider2" class="sr-only">Select Provider</label>
+                                <select class="form-control input-sm" name="options" title="Use up and down arrow keys to view options and press enter to select" id="procedure-provider2">
+                                    <option value="">Select a provider</option>
+                                    <option value="provider">Select Provider</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="control form-group">
+                                <a href="" data-toggle="modal" data-target="#procedureProvider1Modal2" title="Press enter to add other diagnosis">Add Modifiers&hellip;</a>
+                                <div class="modal fade" id="procedureProvider1Modal2" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-backdrop">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Press enter to close."><span aria-hidden="true">×</span></button>
+                                                <h4 class="modal-title" id="procedureProvider1Label2">Add Modifiers</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="control form-group">
+                                                    <div class="form-group" role="application">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="panel panel-default panel-w-list-group">
+                                                                    <div class="panel-heading">
+                                                                        Available Modifiers
+                                                                    </div>
+                                                                    <ul class="list-group">
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Modifier name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Modifier name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Modifier name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Modifier name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Modifier name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="panel panel-default panel-w-list-group">
+                                                                    <div class="panel-heading">
+                                                                        Selected Modifiers
+                                                                    </div>
+                                                                    <ul class="list-group">
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Selected name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Selected name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Selected name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Selected name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="list-group-item">
+                                                                            <div class="row">
+                                                                                <div class="col-xs-10">
+                                                                                    Selected name
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to cancel">Cancel</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to add">Add</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="proceduresTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel-body">
+                        <div class="comment-box">
+                            <div class="faux-table-container comments-container">
+                                <div class="faux-table">
+                                    <div class="body">
+                                        <div class="table-row">
+                                            <div>
+                                                <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to edit comment"><i class="fa fa-pencil"><span class="sr-only">Press enter to edit comment</span></i></button>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to delete comment"><i class="fa fa-trash"><span class="sr-only">Press enter to delete comment</span></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="table-row">
+                                            <div>
+                                                <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to edit comment"><i class="fa fa-pencil"><span class="sr-only">Press enter to edit comment</span></i></button>
+                                                    <button type="button" class="btn icon-btn" title="Press enter to delete comment"><i class="fa fa-trash"><span class="sr-only">Press enter to delete comment</span></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="form-group col-xs-8">
+                                    <label for="procedure-comment2" class="sr-only">Comment</label>
+                                    <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="procedure-comment2" />
+                                    <span class="help-block hidden">60 characters remaining&hellip;</span>
+
+                                    <label for="procedure-comment22" class="sr-only hidden">Comment</label>
+                                    <input class="form-control hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="procedure-comment22" />
+                                    <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div>
+                                       <div class="col-xs-6">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to cancel">Cancel</button>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to save comment">Save</button>
+                                        </div>
+                                        <div class="col-xs-12 hidden">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to add comment">Add Comment</button>
+                                        </div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+<div role="tabpanel" class="tabpanel">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active"><a href="#markup-nest-comment-box" aria-controls="markup-nest-comment-box" role="tab" data-toggle="tab">Nested Comment Box</a></li>
+        <li><a href="#markup-nest-comment-box-input" aria-controls="markup-nest-comment-box-input" role="tab" data-toggle="tab">Nested Comment Box with Form Elements</a></li>
+	</ul>
+
+	<div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-nest-comment-box">
+            <pre>
+&lt;div class="nested-comment-box"&gt;
+    &lt;div class="sr-only"&gt;This table represents Selected Diagnoses catagorized by Diagnosis, Comments, Add to CL, and Primary.&lt;/div&gt;
+    &lt;div class="header"&gt;
+        &lt;div&gt;
+            &lt;span&gt;Diagnosis&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;span&gt;Comments&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;span&gt;Add to CL&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;span&gt;Primary&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="accordion-container panel-group small faux-table-header" id="accordion" role="tablist" aria-multiselectable="true"&gt;
+        &lt;div class="panel panel-default"&gt;
+            &lt;div class="panel-heading" role="tab" id="headingOne"&gt;
+                &lt;div class="panel-title"&gt;
+                    &lt;div class="sr-only"&gt;&lt;span&gt;You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.&lt;/span&gt;&lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;Hypertension (ICD-9-CM 401.9)&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;a class="btn btn-xs icon-btn" title="Press enter to add comment" data-toggle="collapse" href="#diagnosesOne" aria-expanded="true" aria-controls="diagnosesOne"&gt;Add&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;div class="control form-group"&gt;
+                            &lt;div class="checkbox"&gt;
+                                &lt;label class="checkbox-inline" for="diagnoses1"&gt;
+                                    &lt;input type="checkbox" value="option1" aria-label="To add this diagnoses to the CL, press the spacebar" id="diagnoses1"&gt;
+                                    &lt;span class="sr-only" aria-hidden="true"&gt;Add diagnosis&lt;/span&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;&lt;button type="button" class="btn btn-xs icon-btn icon-btn-mini" title="This diagnosis is set as primary"&gt;Primary&lt;/button&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div id="diagnosesOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"&gt;
+                &lt;div class="panel-body"&gt;
+                    &lt;div class="comment-box"&gt;
+                        &lt;div class="faux-table-container comments-container"&gt;
+                            &lt;div class="faux-table"&gt;
+                                &lt;div class="body"&gt;
+                                    &lt;div class="table-row"&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to edit comment"&gt;&lt;i class="fa fa-pencil"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to delete comment"&gt;&lt;i class="fa fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                                            &lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="table-row"&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to edit comment"&gt;&lt;i class="fa fa-pencil"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to delete comment"&gt;&lt;i class="fa fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                                            &lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="comment"&gt;
+                            &lt;div class="form-group col-xs-8"&gt;
+                                &lt;label for="comment1" class="sr-only"&gt;Comment&lt;/label&gt;
+                                &lt;input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="comment1" /&gt;
+                                &lt;span class="help-block"&gt;60 characters remaining&hellip;&lt;/span&gt;
+
+                                &lt;label for="comment11" class="sr-only hidden"&gt;Comment&lt;/label&gt;
+                                &lt;input class="form-control input-sm hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="comment11" /&gt;
+                                &lt;span class="help-block hidden"&gt;60 characters remaining&hellip;&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-xs-4"&gt;
+                                &lt;div&gt;
+                                    &lt;div class="col-xs-6 hidden"&gt;
+                                        &lt;button type="button" class="btn btn-default btn-sm" title="Press enter to cancel"&gt;Cancel&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="col-xs-6 hidden"&gt;
+                                        &lt;button type="button" class="btn btn-default btn-sm" title="Press enter to save comment"&gt;Save&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="col-xs-12"&gt;
+                                        &lt;button type="button" class="btn btn-default btn-block" title="Press enter to add comment"&gt;Add Comment&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="panel-heading" role="tab" id="headingTwo"&gt;
+                &lt;div class="panel-title"&gt;
+                    &lt;div class="sr-only"&gt;&lt;span&gt;You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.&lt;/span&gt;&lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;Hypertension (ICD-9-CM 401.9)&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;a class="btn icon-btn" data-toggle="collapse" href="#diagnosesTwo" aria-expanded="true" aria-controls="diagnosesTwo" title="Press enter tp view comments"&gt;&lt;i class="fa fa-file-text"&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;div class="control form-group"&gt;
+                            &lt;div class="checkbox"&gt;
+                                &lt;label class="checkbox-inline" for="diagnoses2"&gt;
+                                    &lt;input type="checkbox" value="option1" aria-label="To add this diagnoses to the CL, press the spacebar" id="diagnoses2"&gt;
+                                    &lt;span class="sr-only" aria-hidden="true"&gt;Add diagnosis&lt;/span&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;&lt;button type="button" class="btn btn-xs icon-btn icon-btn-mini" title="Press enter to set as primary diagnosis"&gt;Set Primary&lt;/button&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div id="diagnosesTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo"&gt;
+                &lt;div class="panel-body"&gt;
+                    &lt;div class="comment-box"&gt;
+                        &lt;div class="faux-table-container comments-container"&gt;
+                            &lt;div class="faux-table"&gt;
+                                &lt;div class="body"&gt;
+                                    &lt;div class="table-row"&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to edit comment"&gt;&lt;i class="fa fa-pencil"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to delete comment"&gt;&lt;i class="fa fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                                            &lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="table-row"&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;
+                                                 &lt;button type="button" class="btn icon-btn" title="Press enter to edit comment"&gt;&lt;i class="fa fa-pencil"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                 &lt;button type="button" class="btn icon-btn" title="Press enter to delete comment"&gt;&lt;i class="fa fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                                            &lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="comment"&gt;
+                            &lt;div class="form-group col-xs-8"&gt;
+                                &lt;label for="comment2" class="sr-only"&gt;Comment&lt;/label&gt;
+                                &lt;input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="comment2" /&gt;
+                                &lt;span class="help-block"&gt;60 characters remaining&hellip;&lt;/span&gt;
+
+                                &lt;label for="comment22" class="sr-only hidden"&gt;Comment&lt;/label&gt;
+                                &lt;input class="form-control hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="comment22" /&gt;
+                                &lt;span class="help-block hidden"&gt;60 characters remaining&hellip;&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-xs-4"&gt;
+                                &lt;div&gt;
+                                    &lt;div class="col-xs-6"&gt;
+                                        &lt;button type="button" class="btn btn-default btn-block" title="Press enter to cancel"&gt;Cancel&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="col-xs-6"&gt;
+                                        &lt;button type="button" class="btn btn-default btn-block" title="Press enter to save comment"&gt;Save&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="col-xs-12 hidden"&gt;
+                                        &lt;button type="button" class="btn btn-default btn-block" title="Press enter to add comment"&gt;Add Comment&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('nested-comment-boxCopy1')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="markup-nest-comment-box-input">
+            <pre>
+&lt;div class="nested-comment-box nested-comment-box-alt"&gt;
+    &lt;div class="sr-only"&gt;This table represents Selected Diagnoses catagorized by Diagnosis, Comments, Add to CL, and Primary.&lt;/div&gt;
+    &lt;div class="header"&gt;
+        &lt;div&gt;
+            &lt;div&gt;Procedure&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;div&gt;Comments&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;div&gt;Quantity&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;div&gt;Provider&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;div&gt;Add Modifiers&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="accordion-container panel-group small faux-table-header" id="accordion" role="tablist" aria-multiselectable="true"&gt;
+        &lt;div class="panel panel-default"&gt;
+            &lt;div class="panel-heading" role="tab" id="headingThree"&gt;
+                &lt;div class="panel-title"&gt;
+                    &lt;div class="sr-only"&gt;&lt;span&gt;You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.&lt;/span&gt;&lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;Item 12345 - modifier name, another modifier name, another&hellip;&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;a class="btn btn-xs icon-btn" title="Press enter to add comment" data-toggle="collapse" href="#proceduresOne" aria-expanded="true" aria-controls="proceduresOne"&gt;Add&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;div class="control form-group"&gt;
+                            &lt;label for="quantity1" class="sr-only"&gt;Quanity&lt;/label&gt;
+                            &lt;input class="form-control input-sm" type="text" title="Enter in numeric value" placeholder="1" id="quantity1" /&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;div class="control form-group"&gt;
+                            &lt;label for="procedure-provider1" class="sr-only"&gt;Select Provider&lt;/label&gt;
+                            &lt;select class="form-control input-sm" name="options" title="To view options, use the up and down arrow keys and press enter to select" id="procedure-provider1"&gt;
+                                &lt;option value=""&gt;Select a provider&lt;/option&gt;
+                                &lt;option value="provider"&gt;Select Provider&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;div class="control form-group"&gt;
+                            &lt;a href="" data-toggle="modal" data-target="#procedureProvider1Modal" title="Press enter to add other diagnosis"&gt;Add Modifiers&hellip;&lt;/a&gt;
+                            &lt;div class="modal fade" id="procedureProvider1Modal" aria-hidden="true"&gt;
+                                &lt;div class="modal-dialog modal-dialog-backdrop"&gt;
+                                    &lt;div class="modal-content"&gt;
+                                        &lt;div class="modal-header"&gt;
+                                            &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Press enter to close."&gt;&lt;span aria-hidden="true"&gt;×&lt;/span&gt;&lt;/button&gt;
+                                            &lt;h4 class="modal-title" id="procedureProvider1Label"&gt;Add Modifiers&lt;/h4&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="modal-body"&gt;
+                                            &lt;div class="control form-group"&gt;
+                                                &lt;div class="form-group" role="application"&gt;
+                                                    &lt;div class="row"&gt;
+                                                        &lt;div class="col-md-6"&gt;
+                                                            &lt;div class="panel panel-default panel-w-list-group"&gt;
+                                                                &lt;div class="panel-heading"&gt;
+                                                                    Available Modifiers
+                                                                &lt;/div&gt;
+                                                                &lt;ul class="list-group"&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Modifier name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Modifier name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Modifier name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Modifier name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Modifier name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                &lt;/ul&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                        &lt;div class="col-md-6"&gt;
+                                                            &lt;div class="panel panel-default panel-w-list-group"&gt;
+                                                                &lt;div class="panel-heading"&gt;
+                                                                    Selected Modifiers
+                                                                &lt;/div&gt;
+                                                                &lt;ul class="list-group"&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Selected name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-times-circle"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Selected name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-times-circle"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Selected name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-times-circle"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Selected name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-times-circle"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Selected name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-times-circle"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                &lt;/ul&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="modal-footer"&gt;
+                                            &lt;button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to cancel"&gt;Cancel&lt;/button&gt;
+                                            &lt;button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to add"&gt;Add&lt;/button&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div id="proceduresOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree"&gt;
+                &lt;div class="panel-body"&gt;
+                    &lt;div class="comment-box"&gt;
+                        &lt;div class="faux-table-container comments-container"&gt;
+                            &lt;div class="faux-table"&gt;
+                                &lt;div class="body"&gt;
+                                    &lt;div class="table-row"&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to edit comment"&gt;&lt;i class="fa fa-pencil"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to delete comment"&gt;&lt;i class="fa fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                                            &lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="table-row"&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to edit comment"&gt;&lt;i class="fa fa-pencil"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to delete comment"&gt;&lt;i class="fa fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                                            &lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="comment"&gt;
+                            &lt;div class="form-group col-xs-8"&gt;
+                                &lt;label for="procedure-comment1" class="sr-only"&gt;Comment&lt;/label&gt;
+                                &lt;input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="procedure-comment1" /&gt;
+                                &lt;span class="help-block"&gt;60 characters remaining&hellip;&lt;/span&gt;
+
+                                &lt;label for="procedure-comment11" class="sr-only hidden"&gt;Comment&lt;/label&gt;
+                                &lt;input class="form-control input-sm hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="procedure-comment11" /&gt;
+                                &lt;span class="help-block hidden"&gt;60 characters remaining&hellip;&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-xs-4"&gt;
+                                &lt;div&gt;
+                                    &lt;div class="col-xs-6 hidden"&gt;
+                                        &lt;button type="button" class="btn btn-default btn-sm" title="Press enter to cancel"&gt;Cancel&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="col-xs-6 hidden"&gt;
+                                        &lt;button type="button" class="btn btn-default btn-sm" title="Press enter to save comment"&gt;Save&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="col-xs-12"&gt;
+                                        &lt;button type="button" class="btn btn-default btn-block" title="Press enter to add comment"&gt;Add Comment&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="panel-heading" role="tab" id="headingFour"&gt;
+                &lt;div class="panel-title"&gt;
+                    &lt;div class="sr-only"&gt;&lt;span&gt;You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.&lt;/span&gt;&lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;span&gt;Item 67890 - modifier name, another modifier name, another&hellip;&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;a class="btn icon-btn" data-toggle="collapse" href="#proceduresTwo" aria-expanded="true" aria-controls="proceduresTwo" title="Press enter tp view comments"&gt;&lt;i class="fa fa-file-text"&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;div class="control form-group"&gt;
+                            &lt;label for="quantity2" class="sr-only"&gt;Quanity&lt;/label&gt;
+                            &lt;input class="form-control input-sm" type="text" title="Enter in numeric value" placeholder="1" id="quantity2" /&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;div class="control form-group"&gt;
+                            &lt;label for="procedure-provider2" class="sr-only"&gt;Select Provider&lt;/label&gt;
+                            &lt;select class="form-control input-sm" name="options" title="Use up and down arrow keys to view options and press enter to select" id="procedure-provider2"&gt;
+                                &lt;option value=""&gt;Select a provider&lt;/option&gt;
+                                &lt;option value="provider"&gt;Select Provider&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;div class="control form-group"&gt;
+                            &lt;a href="" data-toggle="modal" data-target="#procedureProvider1Modal2" title="Press enter to add other diagnosis"&gt;Add Modifiers&hellip;&lt;/a&gt;
+                            &lt;div class="modal fade" id="procedureProvider1Modal2" aria-hidden="true"&gt;
+                                &lt;div class="modal-dialog modal-dialog-backdrop"&gt;
+                                    &lt;div class="modal-content"&gt;
+                                        &lt;div class="modal-header"&gt;
+                                            &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Press enter to close."&gt;&lt;span aria-hidden="true"&gt;×&lt;/span&gt;&lt;/button&gt;
+                                            &lt;h4 class="modal-title" id="procedureProvider1Label2"&gt;Add Modifiers&lt;/h4&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="modal-body"&gt;
+                                            &lt;div class="control form-group"&gt;
+                                                &lt;div class="form-group" role="application"&gt;
+                                                    &lt;div class="row"&gt;
+                                                        &lt;div class="col-md-6"&gt;
+                                                            &lt;div class="panel panel-default panel-w-list-group"&gt;
+                                                                &lt;div class="panel-heading"&gt;
+                                                                    Available Modifiers
+                                                                &lt;/div&gt;
+                                                                &lt;ul class="list-group"&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Modifier name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Modifier name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Modifier name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Modifier name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Modifier name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                &lt;/ul&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                        &lt;div class="col-md-6"&gt;
+                                                            &lt;div class="panel panel-default panel-w-list-group"&gt;
+                                                                &lt;div class="panel-heading"&gt;
+                                                                    Selected Modifiers
+                                                                &lt;/div&gt;
+                                                                &lt;ul class="list-group"&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Selected name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-times-circle"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Selected name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-times-circle"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Selected name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-times-circle"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Selected name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-times-circle"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                    &lt;li class="list-group-item"&gt;
+                                                                        &lt;div class="row"&gt;
+                                                                            &lt;div class="col-xs-10"&gt;
+                                                                                Selected name
+                                                                            &lt;/div&gt;
+                                                                            &lt;div class="col-xs-2"&gt;
+                                                                                &lt;button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"&gt;&lt;i class="fa fa-times-circle"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                                            &lt;/div&gt;
+                                                                        &lt;/div&gt;
+                                                                    &lt;/li&gt;
+                                                                &lt;/ul&gt;
+                                                            &lt;/div&gt;
+                                                        &lt;/div&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="modal-footer"&gt;
+                                            &lt;button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to cancel"&gt;Cancel&lt;/button&gt;
+                                            &lt;button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to add"&gt;Add&lt;/button&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div id="proceduresTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour"&gt;
+                &lt;div class="panel-body"&gt;
+                    &lt;div class="comment-box"&gt;
+                        &lt;div class="faux-table-container comments-container"&gt;
+                            &lt;div class="faux-table"&gt;
+                                &lt;div class="body"&gt;
+                                    &lt;div class="table-row"&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to edit comment"&gt;&lt;i class="fa fa-pencil"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to delete comment"&gt;&lt;i class="fa fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                                            &lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="table-row"&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div&gt;
+                                            &lt;span&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to edit comment"&gt;&lt;i class="fa fa-pencil"&gt;&lt;/i&gt;&lt;/button&gt;
+                                                &lt;button type="button" class="btn icon-btn" title="Press enter to delete comment"&gt;&lt;i class="fa fa-trash"&gt;&lt;/i&gt;&lt;/button&gt;
+                                            &lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="comment"&gt;
+                            &lt;div class="form-group col-xs-8"&gt;
+                                &lt;label for="procedure-comment2" class="sr-only"&gt;Comment&lt;/label&gt;
+                                &lt;input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="procedure-comment2" /&gt;
+                                &lt;span class="help-block hidden"&gt;60 characters remaining&hellip;&lt;/span&gt;
+
+                                &lt;label for="procedure-comment22" class="sr-only hidden"&gt;Comment&lt;/label&gt;
+                                &lt;input class="form-control hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="procedure-comment22" /&gt;
+                                &lt;span class="help-block hidden"&gt;60 characters remaining&hellip;&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-xs-4"&gt;
+                                &lt;div&gt;
+                                   &lt;div class="col-xs-6"&gt;
+                                        &lt;button type="button" class="btn btn-default btn-block" title="Press enter to cancel"&gt;Cancel&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="col-xs-6"&gt;
+                                        &lt;button type="button" class="btn btn-default btn-block" title="Press enter to save comment"&gt;Save&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="col-xs-12 hidden"&gt;
+                                        &lt;button type="button" class="btn btn-default btn-block" title="Press enter to add comment"&gt;Add Comment&lt;/button&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                             &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('nested-comment-boxCopy2')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>

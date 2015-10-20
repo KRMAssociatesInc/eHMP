@@ -55,7 +55,7 @@ class DocumentsColumnHeader < ADKContainer
   include Singleton
   def initialize
     super
-    add_verify(CucumberLabel.new("Documents Page Title"), VerifyText.new, AccessHtmlElement.new(:css, "span.center-block.text-center.panel-title"))
+    add_verify(CucumberLabel.new("Documents Page Title"), VerifyText.new, AccessHtmlElement.new(:css, ".panel-title-label"))
     add_verify(CucumberLabel.new("Header2"), VerifyText.new, AccessHtmlElement.new(:id, "documents-localTitle"))
     add_verify(CucumberLabel.new("Header1"), VerifyText.new, AccessHtmlElement.new(:id, "documents-dateDisplay"))
     add_verify(CucumberLabel.new("Header3"), VerifyText.new, AccessHtmlElement.new(:id, "documents-kind"))
@@ -113,7 +113,7 @@ When(/^user navigates to Documents Applet$/) do
   navigate_in_ehmp '#documents-list'
 end
 
-Then(/^title of the Documents Applet says "(.*?)"$/) do | page_title |
+Then(/^title of the Documents Applet says "(.*?)"$/) do |page_title|
   aa = DocumentsColumnHeader.instance
   expect(aa.perform_verification("Documents Page Title", page_title)).to be_true
 end
@@ -123,14 +123,14 @@ When(/^user clicks on a "(.*?)" link$/)do |element|
   expect(aa.perform_action(element, "")).to be_true
 end
 
-Then(/^the Documents Applet table contains headers$/) do | table |
+Then(/^the Documents Applet table contains headers$/) do |table|
   aa = DocumentsColumnHeader.instance
   expect(aa.wait_until_action_element_visible("Header1", DefaultLogin.wait_time)).to be_true
   verify_documents_table_headers(aa, table)
 end
 
 def verify_documents_table_headers(access_browser_instance, table)
-  table.rows.each do | key, value |
+  table.rows.each do |key, value|
     expect(access_browser_instance.perform_verification(key, value)).to be_true
   end #verify_documents_table_headers
 end
@@ -150,32 +150,32 @@ Then(/^the Document Applet table contains rows$/) do |table|
   }
 end
 
-Then(/^the user selects the "(.*?)" row in Documents Applet$/) do |  kind |
+Then(/^the user selects the "(.*?)" row in Documents Applet$/) do |kind|
   driver = TestSupport.driver
   aa = Documents.instance
-  expect(aa.wait_until_xpath_count_greater_than("Number of Documents Applet Rows", 6)).to be_true, "Expected 6 but didn't find that in the application"
+  # expect(aa.wait_until_xpath_count_greater_than("Number of Documents Applet Rows", 6)).to be_true, "Expected 6 but didn't find that in the application"
   expect(aa.perform_action(kind, "")).to be_true
 end
 
-Then(/^the Documents Applet detail "(.*?)" page title says "(.*?)"$/) do |not_used, details_title|
+Then(/^the Documents Applet detail "(.*?)" page title says "(.*?)"$/) do |_not_used, details_title|
   aa = Documents.instance
   expect(aa.wait_until_action_element_visible("Details Title", DefaultLogin.wait_time)).to be_true
   expect(aa.perform_verification("Details Title", details_title)).to be_true
 end
 
-Then(/^the Documents Applet detail "(.*?)" view contains fields$/) do |type, table|
+Then(/^the Documents Applet detail "(.*?)" view contains fields$/) do |_type, table|
   aa = Documents.instance
   expect(aa.wait_until_action_element_visible("Is Detail Panel Text visible", DefaultLogin.wait_time)).to be_true
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification('Document Modal Details', row[0])).to be_true, "The value #{row[0]} is not present in the document modal details"
     expect(aa.perform_verification('Document Modal Details', row[1])).to be_true, "The value #{row[1]} is not present in the document modal details"
   end
 end
 
-Then(/^the Documents Applet detail "(.*?)" view content contains$/) do |type, table|
+Then(/^the Documents Applet detail "(.*?)" view content contains$/) do |_type, table|
   aa = Documents.instance
   expect(aa.wait_until_action_element_visible("Is Detail Panel Text visible", DefaultLogin.wait_time)).to be_true
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification('Document Modal Details', row[0])).to be_true, "The value #{row[0]} is not present in the document modal details"
   end
 end
@@ -204,7 +204,7 @@ Then(/^the user types "(.*?)" in search box of the Documents Applet$/) do |searc
   expect(aa.perform_action("Documents Filter input", search_field)).to be_true
 end
 
-Then(/^only (?:these|this) (\d+) (?:row|rows) (?:is|are) visible in Document Applet$/) do |expected_rows |
+Then(/^only (?:these|this) (\d+) (?:row|rows) (?:is|are) visible in Document Applet$/) do |expected_rows|
   driver = TestSupport.driver
   aa = Documents.instance
   displayed = false
@@ -221,7 +221,7 @@ Then(/^the search results say "(.*?)" in Documents Applet$/) do |search_result_t
   expect(aa.perform_verification("No Records Found", search_result_text, DefaultTiming.default_table_row_load_time)).to be_true, "No Records Found is not displayed"
 end
 
-When(/^user clicks on "(.*?)" column header in Documents Applet$/) do | groupBy |
+When(/^user clicks on "(.*?)" column header in Documents Applet$/) do |groupBy|
   aa = DocumentsColumnHeader.instance
   cc = Documents.instance
   expect(cc.wait_until_xpath_count_greater_than("Number of Documents Applet Rows", 6)).to be_true
@@ -232,7 +232,7 @@ Then(/^the user sees the following groups in Documents Applet$/) do |table|
   aa = DocumentsGroup.instance
   cc = Documents.instance
   expect(cc.wait_until_xpath_count_greater_than("Number of Documents Applet Rows", 6)).to be_true
-  table.rows.each do | key, value |
+  table.rows.each do |key, value|
     expect(aa.perform_verification(key, value)).to be_true
   end #table
 end
@@ -243,7 +243,7 @@ When(/^the user clicks on date\/time "(.*?)" in the Documents Applet$/) do |date
   expect(aa.perform_action(dateTime, "")).to be_true
 end
 
-Then(/^the date\/time collapses and shows "(.*?)" result for "(.*?)" in the Documents Applet$/) do |visit_count , visit_year|
+Then(/^the date\/time collapses and shows "(.*?)" result for "(.*?)" in the Documents Applet$/) do |visit_count, visit_year|
   aa = Documents.instance
   expect(aa.wait_until_xpath_count_greater_than("Number of Documents Applet Rows", 6)).to be_true
   count_text = visit_year + " Count"
@@ -272,19 +272,19 @@ Then(/^the sorting by Date\/Time is in ascending in Documents Applet$/) do
   expect(aa.perform_verification("date_group1", element_last.text)).to be_true
 end
 
-Then(/^the first row is as below when grouped by "(.*?)" in Documents Applet$/) do |groupBy, table|
+Then(/^the first row is as below when grouped by "(.*?)" in Documents Applet$/) do |_groupBy, table|
   aa = Documents.instance
   expect(aa.wait_until_xpath_count_greater_than("Number of Documents Applet Rows", 6)).to be_true
   verify_table_rows_documents(table)
 end
 
-Then(/^the last row is as below when grouped by "(.*?)" in Documents Applet$/) do |groupBy, table|
+Then(/^the last row is as below when grouped by "(.*?)" in Documents Applet$/) do |_groupBy, table|
   aa = Documents.instance
   expect(aa.wait_until_xpath_count_greater_than("Number of Documents Applet Rows", 6)).to be_true
   verify_table_rows_documents(table)
 end
 
-When(/^the "(.*?)" row is visible on the screen$/) do |arg1|
+When(/^the "(.*?)" row is visible on the screen$/) do |_arg1|
   aa = Documents.instance
   driver = TestSupport.driver
   expect(aa.wait_until_xpath_count_greater_than("Number of Documents Applet Rows", 10)).to be_true
@@ -297,7 +297,7 @@ Then(/^the Documents Applet detail DoD\* Content view content contains$/) do |ta
   driver = TestSupport.driver
   driver.switch_to.frame(0)
   expect(aa.wait_until_action_element_visible("DoD* Content Details", DefaultLogin.wait_time)).to be_true, "wait for element failed"
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification("DoD* Content Details", row[0])).to be_true, "The value #{row[0]} is not present in the DoD Content details"
   end
   driver.switch_to.default_content
@@ -309,9 +309,24 @@ def verify_table_rows_documents(table)
 end
 
 Then(/^take screenshot for comparison purposes with name "(.*?)"$/) do |screenshot_name|
-  screenshot_name = "#{ENV["SCREENSHOTS_FOLDER"]}/#{screenshot_name}" if ENV.keys.include?('SCREENSHOTS_FOLDER')
+  screenshot_name = "#{ENV['SCREENSHOTS_FOLDER']}/#{screenshot_name}" if ENV.keys.include?('SCREENSHOTS_FOLDER')
   screenshot_name_png = "#{screenshot_name}.png"
   p "saving screenshot with name #{screenshot_name_png}"
   TestSupport.driver.save_screenshot(screenshot_name_png)
+end
+
+class DocumentsSpecificRows < AccessBrowserV2
+  include Singleton
+  def initialize
+    super
+    add_verify(CucumberLabel.new('LR CYTOPATHOLOGY REPORT - TROY'), VerifyText.new, AccessHtmlElement.new(:id, 'urn-va-document-9E7A-17-SP-7049692-8548'))
+    add_verify(CucumberLabel.new('RADIOLOGIC EXAMINATION, CHEST; SINGLE VIEW, FRONTAL - CAMP MASTER'), VerifyText.new, AccessHtmlElement.new(:id, 'urn-va-image-9E7A-17-7028886-8889-1'))
+    add_verify(CucumberLabel.new('Administrative Note - DoD'), VerifyText.new, AccessHtmlElement.new(:id, 'urn-va-document-DOD-0000000014-1000004201'))
+  end
+end
+
+Then(/^the Document applet contains "([^"]*)" row "([^"]*)"$/) do |descriptor, row|
+  docs = DocumentsSpecificRows.instance
+  expect(docs.wait_until_element_present(row)).to be_true
 end
 

@@ -27,7 +27,11 @@ define([
             var modalOptions = {
                 title: 'CDS Advice'
             };
-            ADK.showModal(view, modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: view,
+                options: modalOptions
+            });
+            modal.show();
         }
     };
 });

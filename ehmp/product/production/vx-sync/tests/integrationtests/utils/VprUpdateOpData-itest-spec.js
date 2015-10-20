@@ -19,7 +19,7 @@ var lastUpdateTimeValue2 = '3150106-1624';
 var lastUpdateTimeValue3 = '3150106-1624';
 var vistaIdValue = 'GGGG';
 
-var jdsClient = new JdsClient(dummyLogger, config);
+var jdsClient = new JdsClient(dummyLogger, dummyLogger, config);
 
 // dummyLogger = require('bunyan').createLogger({
 //     name: 'test',

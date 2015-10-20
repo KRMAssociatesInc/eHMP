@@ -2,7 +2,7 @@
 
 Feature: F144-eHMP Viewer GUI - Timeline(NewsFeed)
 
-@f144_newsFeed_navigate_thro_dropdown @US2457
+@f144_newsFeed_navigate_thro_dropdown @US2457 @base
 Scenario: News feed applet is displayed when selecting Timeline from coversheet dropdown
   Given user is logged into eHMP-UI
   And user searches for and selects "Zzzretiredonenineteen,Patient"
@@ -11,7 +11,7 @@ Scenario: News feed applet is displayed when selecting Timeline from coversheet 
   Then "Timeline" is active
   Then the search results say "No Records Found" in NewsFeed Applet
 
-@f144_1_newsFeedDisplay @US1946  @base @US5422
+@f144_1_newsFeedDisplay @US1946  @US5422
 Scenario: News feed applet displays all of the Visits for a given patient in a grid form
   Given user is logged into eHMP-UI
   And user searches for and selects "Sixhundred,Patient"
@@ -427,17 +427,7 @@ Scenario: News feed applet displays Labs detail view correctly
   Then the user sees modal pop-up title "CHLORIDE - SERUM"
   When user clicks on the Close button
   Then the modal is closed
-
-@f144_21_newsFeedDisplay_DoDEncounters @US4183 
-Scenario: News feed applet displays all of the DoD Encounters for a given patient in a grid form
-  Given user is logged into eHMP-UI
-  And user searches for and selects "Onehundredsixteen, Patient"
-  And the user has selected All within the global date picker
-  When user navigates to Timeline Applet
-  Then the NewsFeed Applet table contains specific rows
-    |row index | Date & Time        | Activity    		  | Type          | Entered By | Facility    |
-	  | 22		   | 09/10/2012 - 14:21 | Visit OUTPATIENT	| DoD Encounter |			       | DOD         |
-
+  
 @f144_22_newsFeedDisplay_Encounter_Details @US4183
 Scenario: News feed applet displays Encounters detail view correctly
 

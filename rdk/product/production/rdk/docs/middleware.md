@@ -114,21 +114,24 @@ The **emulateJdsResponse** outerceptor can be used to add JDS-style pagination i
 
 A basic outerceptor which adds an "intercepted" field to the response body JSON:
 ```JavaScript
-function example(req, body, callback) {
+function example(req, res, body, callback) {
     body = JSON.parse(body);
     body.intercepted = true;
     body = JSON.stringify(body);
     var error = null;
-    callback(error, req, body);
+    callback(error, req, res, body);
 }
 ```
 
-The `callback` function must be given 3 arguments:
+The `callback` function must be given 4 arguments:
  * **error**: an error if there was an error, or null
  * **req**: the req object which was given to the outerceptor
+ * **res**: the res object which was given to the outerceptor
  * **body**: the response body as a string which may have been modified by the outerceptor
 
 Please note that `body` should always be a string, but write safe code which can handle `body` as an Object.
+
+Don't call `res.send()` or a similar method in an outerceptor. Instead rely on the `callback` function.
 
 To make your outerceptor a default outerceptor, add your outerceptor name to the `defaultOuterceptors` array in the `registerDefaultOuterceptors` function in `app-factory.js` and contact Team Mercury about the change.
 

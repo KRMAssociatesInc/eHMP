@@ -68,11 +68,12 @@ define([
             this.problemResultsColl = new Backbone.Collection();
         },
         addProblemAssociation: function(snomed) {
-            var problem = ProblemUtil.findProblemBySnomedCt(this.problemResultsColl, snomed);
+            var fullProblem = ProblemUtil.findProblemBySnomedCt(this.problemResultsColl, snomed);
+            var problem = ProblemUtil.getTrimmedProblem(fullProblem);
             var problems = _.clone(this.model.get('problems')) || [];
-            problems.push(problem.toJSON());
+            problems.push(problem);
             this.model.set('problems', problems);
-            ProblemUtil.addProblemAssociation(this.problemListColl, problem);
+            ProblemUtil.addProblemAssociation(this.problemListColl, new Backbone.Model(problem));
             this.disableProblemResult(snomed);
         },
         removeProblemAssociation: function(snomed) {

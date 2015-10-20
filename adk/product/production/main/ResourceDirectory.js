@@ -18,7 +18,7 @@ define([
     var ResourceDirectoryCollection = Backbone.Collection.extend({
         model: Resource,
         parse: function(response) {
-            return response.link;
+            return response.data.link;
         }
     });
 

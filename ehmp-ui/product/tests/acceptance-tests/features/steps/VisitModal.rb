@@ -23,14 +23,14 @@ class Visit < AccessBrowserV2
     add_action(CucumberLabel.new("Hospital Admissions"), ClickAction.new, AccessHtmlElement.new(:id, "visit-tab-admits"))
     add_action(CucumberLabel.new("New Visit"), ClickAction.new, AccessHtmlElement.new(:id, "visit-tab-new"))
     #add_action(CucumberLabel.new("DIABETIC"), ClickAction.new, AccessHtmlElement.new(:id, ""))
-    add_action(CucumberLabel.new("DIABETIC"), ClickAction.new, AccessHtmlElement.new(:css, '#location-typeahead-list li[data-name="DIABETIC"]'))#from the drop down list
+    add_action(CucumberLabel.new("DIABETIC"), ClickAction.new, AccessHtmlElement.new(:css, '#location-typeahead-list li[data-name="DIABETIC"]')) #from the drop down list
     #add_action(CucumberLabel.new("Hypertension (ICD-9-CM 401.9)"), ClickAction.new, AccessHtmlElement.new(:css, '#problem-typeahead-list li[data-name="Hypertension (ICD-9-CM 401.9)"]'))
     #add_verify(CucumberLabel.new("DIABETIC"), VerifyContainsText.new, AccessHtmlElement.new(:id, "location"))
     add_verify(CucumberLabel.new("HistoricalVisitText"), VerifyContainsText.new, AccessHtmlElement.new(:css, ".col-sm-10>p"))
     add_verify(CucumberLabel.new("DateText"), VerifyContainsText.new, AccessHtmlElement.new(:id, "dp-visit"))
     add_action(CucumberLabel.new("Visit Location"), SendKeysAndEnterAction.new, AccessHtmlElement.new(:id, "location"))
     #add_action(CucumberLabel.new("Visit Location"), ClickAction.new, AccessHtmlElement.new(:id, "location"))
-  #VisitInformation tab
+    #VisitInformation tab
     add_action(CucumberLabel.new("Visit Information"), ClickAction.new, AccessHtmlElement.new(:id, "setVisitContextBtn"))
     add_action(CucumberLabel.new("Care Team Information"), ClickAction.new, AccessHtmlElement.new(:xpath, "/html/body/div[2]/div/div[2]/div/div/div/div[4]/div[1]/div/div[1]"))
     add_verify(CucumberLabel.new("Change Visit"), VerifyContainsText.new, AccessHtmlElement.new(:id, "setVisitContextBtn"))
@@ -38,7 +38,7 @@ class Visit < AccessBrowserV2
     add_action(CucumberLabel.new("Change Visit"), ClickAction.new, AccessHtmlElement.new(:id, "setVisitContextBtn"))
     add_action(CucumberLabel.new("Confirm"), ClickAction.new, AccessHtmlElement.new(:id, "setVisitBtn"))
     add_action(CucumberLabel.new("Clinic Appointments"), ClickAction.new, AccessHtmlElement.new(:css, "#visitModal ul.nav-tabs a[href='#appts']"))
-  # Date and time
+    # Date and time
     add_verify(CucumberLabel.new("Datevalue"), VerifyContainsText.new, AccessHtmlElement.new(:id, "dp-visit"))
     add_verify(CucumberLabel.new("Timevalue"), VerifyContainsText.new, AccessHtmlElement.new(:id, "tp-visit"))
     #add_action(CucumberLabel.new("DatevalueClick"), ClickAction.new, AccessHtmlElement.new(:id, "dp-visit"))
@@ -68,7 +68,7 @@ def verify_patient_visit_table_headers(access_browser_instance, table)
   expect(headers.length).to_not eq(0)
   expect(headers.length).to eq(table.rows.length)
   elements = access_browser_instance
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     does_exist = elements.static_dom_element_exists? header_text[0]
     p "#{header_text[0]} was not found" unless does_exist
     expect(does_exist).to be_true
@@ -79,7 +79,7 @@ Then(/^the visit context  modal contains headers$/) do |table|
   verify_patient_visit_table_headers(Visit.instance, table)
 end
 
-Then(/^the modal contains buttons "(.*?)" and "(.*?)"$/) do |btn1, btn2|
+Then(/^the modal contains buttons "(.*?)" and "(.*?)"$/) do |btn1, _btn2|
   con = Visit.instance
   expect(con.perform_verification("Cancel_Visit", btn1)).to be_true
   #con.perform_verification("Confirm", btn2)
@@ -89,7 +89,7 @@ When(/^the user Clicks on "(.*?)"$/) do |arg1|
   Visit.instance.perform_action(arg1)
 end
 
-Then(/^the Visit Modal contains (\d+) rows$/) do |arg1|
+Then(/^the Visit Modal contains (\d+) rows$/) do |_arg1|
   pending # express the regexp above with the code you wish you had
 end
 
@@ -98,9 +98,9 @@ Then(/^the Clinic Appointments contain rows$/) do |table|
   driver = TestSupport.driver
   tablearr = driver.find_elements(:css, "#appts .list-group>li") 
   p tablearr.length
-  table.rows.each do | givenrow | 
+  table.rows.each do |givenrow| 
     bflag = false
-    tablearr.each do | field |
+    tablearr.each do |field|
       #p field  #added newly
       localcol1 =  field.find_elements(:xpath, "span")[0].text.strip
       localcol2 =  field.find_elements(:xpath, "span")[1].text.strip
@@ -111,20 +111,18 @@ Then(/^the Clinic Appointments contain rows$/) do |table|
       end
     end
     if bflag == false
-      p  "not matched: " + givenrow[0].strip + " - "  + givenrow[1].strip 
+      p "not matched: " + givenrow[0].strip + " - "  + givenrow[1].strip 
     end
 
     expect(bflag).to be_true
-
   end #table
 end
 
 #header1 =driver.find_elements(:css,"#appts .list-group>li")
- # puts header1.length
- # puts"table contents"
- # p "#{header1[0]}"
+# puts header1.length
+# puts"table contents"
+# p "#{header1[0]}"
 Then(/^Hospital admissions contain rows$/) do |table|
-
   con = Visit.instance
   driver = TestSupport.driver
   con.perform_action("Hospital Admissions")
@@ -133,9 +131,9 @@ Then(/^Hospital admissions contain rows$/) do |table|
   #tablearr1= driver.find_elements(:css, "#admits .list-group>li")
   #p tablearr1.length
   p "after the added test - tab2"
-  table.rows.each do | givenrow | 
+  table.rows.each do |givenrow| 
     bflag = false
-    admit_arr.each do | field |
+    admit_arr.each do |field|
       localcol1 =  field.find_elements(:xpath, "span")[0].text.strip
       localcol2 =  field.find_elements(:xpath, "span")[1].text.strip
       #p localCol1 + " - " + givenrow[0].strip + " - " + localCol2 + " : " + givenrow[1].strip
@@ -145,7 +143,7 @@ Then(/^Hospital admissions contain rows$/) do |table|
       end
     end
     if bflag == false 
-      p  "Not matched : " + givenrow[0].strip + " - "  + givenrow[1].strip
+      p "Not matched : " + givenrow[0].strip + " - "  + givenrow[1].strip
     end
     expect(bflag).to be_true
   end #table
@@ -192,7 +190,6 @@ When(/^the user selects "(.*?)" from the results$/) do |result_item|
   con.wait_until_action_element_visible(result_item, 20)
   expect(con.static_dom_element_exists?(result_item)).to be_true
   con.perform_action(result_item, "")
-
 end
 
 Then(/^"(.*?)" should be populated in Encounter Location field$/) do |selected_item|
@@ -244,7 +241,7 @@ Given(/^user is logged into eHMP\-UI with non\-provider user$/) do
   if login_elements.static_dom_element_exists?("Signout")
     perform_signout_steps login_elements
   end
-    #expect(login_elements.static_dom_element_exists?"Facility").to be_true
+  #expect(login_elements.static_dom_element_exists?"Facility").to be_true
   #login_elements.wait_until_action_element_visible("Facility", 30)
   expect(login_elements.static_dom_element_exists?("Facility")).to be_true
   expect(login_elements.perform_action("Facility", DefaultLogin.default_facility_name)).to be_true

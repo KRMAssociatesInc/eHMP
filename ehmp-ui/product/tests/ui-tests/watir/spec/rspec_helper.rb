@@ -29,12 +29,14 @@ RSpec.configure do |config|
       filename = File.basename(meta[:file_path])
       line_number = meta[:line_number]
       build_job_url = ENV['JOB_URL']
-      build_job_number = ENV['BUILD_NUMBER']
-      screenshot_name = "screenshot-#{filename}-#{line_number}.png"
-      screenshot_dir = 'screenshots' + (!build_job_number.nil? ? ('_' + build_job_number.to_s) : '')
+      # build_job_number = ENV['BUILD_NUMBER']
+      unique = Time.new.strftime('%H:%M:%S.%L')
+      screenshot_name = "screenshot-#{filename}-#{line_number}-#{unique}.png"
+      screenshot_dir = 'screenshots'
       screenshot_path = screenshot_dir + "/#{screenshot_name}"
 
       Dir.mkdir screenshot_dir unless Dir.exist? screenshot_dir
+
       @driver.screenshot.save screenshot_path
 
       puts '----Screenshot ------------------------------------------------------------------------'
@@ -44,5 +46,6 @@ RSpec.configure do |config|
   end
 end
 
-
-BASE_URL = 'http://10.1.1.150/'
+# BASE_URL = 'http://10.1.1.150/'
+BROWSER_NAME = ENV['BROWSER'] || 'firefox' # 'firefox'
+BASE_URL = ENV['BASE'] || 'https://10.1.1.150/' # 'https://ehmp.vistacore.us/'

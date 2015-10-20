@@ -1,0 +1,508 @@
+#patientDemographic-region {
+    padding: 0;
+    h5 {
+        text-transform: capitalize;
+        margin-bottom: 15px;
+    }
+    h6 {
+        margin: 3px 0px;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 700;
+        color: $primary;
+    }
+    .panel {
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        .panel-heading {
+            padding: 0;
+            min-height: 55px;
+            border: 0;
+            background-image: none;
+            border-radius: 0;
+        }
+    }
+    .paddingRight {
+        padding-right: 20px;
+    }
+    .paddingLeft {
+        padding-left: 5px
+    }
+    .borderRight {
+        border-width: 0 1px 0 0;
+        border-color: #D7d7d7;
+        border-style: solid;
+    }
+    // where do these belong?
+    #smokingStatusModal {
+        .radio {
+            padding-left: 20px;
+        }
+        
+        .error-container {
+            font-size: 1.25em;
+            padding: 0;
+            color: $red-dark;
+        }
+    }
+    .other-site-heading {
+        color: $grey-darkest;
+        padding: 5px 5px 5px 5px;
+        font-weight: 700;
+        border-bottom: 1px solid $grey-darkest;
+    }
+    .patient-address-table {
+        width: 400px;
+    }
+    .contact-table {
+        width: 600px;
+    }
+    .heightSmall {
+        nav {
+            margin-bottom: 0;
+            min-height: 24px;
+            border: none;
+            box-shadow: none;
+            background: $grey-light;
+            border-radius: 0;
+        }
+        a {
+            padding: 4px 10px;
+        }
+        .navbar-brand {
+            height: auto;
+        }
+    }
+    #WebLocator, #WebListener {
+        display: none;
+    }
+    // end - do these belong here?
+}
+
+#patientDemographic-patientInfo {
+    padding: 0;
+    color: #333333;
+    font-size: 11px;
+    padding: 0;
+    color: #333333;
+    font-size: 11px;
+    width: 25%;
+    padding: 0 10px 0 0;
+    background: $white;
+    // &.warning {
+    //     background-color: #990000;
+    //     .media, .media-body .media-heading, span.text-muted  {
+    //         color: #FFFFFF;
+    //     }
+    // }
+    &:hover {
+        background: none;
+    }
+    .media {
+        color: $grey-darkest;
+        font-size: 11px;
+        cursor: pointer;
+        .media-body {
+            &.warning {
+                background-color: #990000;
+                color: $red;
+            }
+            .fa-caret-down, .fa-caret-right {
+                padding: 0px 5px;
+                display: block;
+                font-size: 16px;
+                color: $secondary;
+            }         
+            .media-heading {
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 16px;
+                text-transform: none;
+            }
+        }
+    }
+    .demographics-container {
+        padding: 10px;
+        .col-md-3 {
+            padding: 5px;
+        }
+        .demographic-group {
+            padding: 0px;
+            border: 1px solid;
+            border-color: $primary-lighter;
+            margin: 10px 5px 10px 5px;
+            border-sizing: border-box;
+            text-transform: capitalize;
+            .demographic-group-header {
+                color: $primary;
+                background: $primary-lightest;
+                border-bottom: 2px solid $secondary-light;
+                border-radius: 0px;
+                padding: 5px 5px 5px 5px;
+                font-weight: 700; 
+            }
+            .demographic-group-content {
+                padding: 5px;
+                .demographic-group-scroll {
+                    height: 75px;
+                    overflow-y: auto;
+                }
+                .demographic-subgroup-icon {
+                    color: $primary;
+                }
+                .demographic-group-diff {
+                    padding: 0px;
+                    border: 1px solid;
+                    border-color: $primary-lighter;
+                    margin: 10px 5px 10px 5px;
+                    border-sizing: border-box;
+                    &:hover {
+                        background-color: $primary-lighter;
+                        cursor: pointer;
+                    }
+                }
+                .demographic-group-divider {
+                    border-top: 1px solid $primary-lighter;
+                    margin: 5px 0px 5px 0px;
+                }
+                .demographic-group-diff-text {
+                    color: $primary;
+                    font-weight: 600;
+                }
+            }
+        }
+        .popover {
+            max-width: 700px;
+            text-transform: capitalize;
+            padding: 0;
+        }
+        .popover-content {
+            padding: 0;
+            th {
+                color: #333;
+            }
+        }
+    }
+    .dropdown-menu.patient-info-dropdown {
+        cursor: default;
+        font-size: 11px;
+        font-weight: 400;
+        width: 700px;
+        padding: 0px 5px 15px 5px;
+        margin: 0;
+        background-color: #fff;
+        margin-left: 10px;
+    }
+}
+
+#patientDemographic-cwad {
+    padding: 3px 10px;
+    width: auto;
+    .label {
+        display: inline-block;
+        margin: 1px 0px;
+        padding: 6px 8px;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 12px;
+        color: $primary;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .label[data-cwadidentifier="disabled"] {
+        cursor: default;
+        background-color: $primary-lighter;
+        color: $white;
+    }
+    #cwad-details {
+        position: absolute;
+        background: white;
+        box-shadow: none;
+        padding: 0px 20px 15px 20px;
+        margin: 13px 0 0 0px;
+        z-index: 2;
+        width: 520px;
+        .textDetails {
+            text-transform: capitalize;
+        } 
+        .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+            padding: 0px 5px;
+        }
+        .cwad-detail {
+            margin-bottom: 20px;
+        }
+        .cwad-title {
+            padding-bottom: 10px;
+            strong {
+                padding-right: 10px;
+            }
+        }
+        button.close {
+            margin-top: -10px;
+        }
+        #cwad-detail-list {
+            max-height: 350px;
+            overflow-y: scroll;
+        }
+        .content {
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+            font-size: 11px;
+        }
+    }
+}
+
+#patientDemographic-visitInfo {
+    width: 15%;
+    cursor: pointer;
+    padding: 3px 10px;
+    background: $white;
+    &:hover {
+        background: none;
+    }
+    .fa-map-marker {
+        padding: 0px 5px;
+        display: block;
+        font-size: 16px;
+        color:$secondary;
+    }
+}
+
+#patientDemographic-providerInfo {
+    min-width: 555px;
+    cursor: pointer;
+    background: $white;
+    padding: 2px 10px;
+    &:hover {
+        background: none;
+    }
+    .patient-info-dropdown {
+        tr{
+            &.selectable {
+                border-left: 1px solid $secondary;
+                &:hover {
+                    background-color: $secondary-lighter;
+                }
+                &.toolbarActive {
+                    background-color: $secondary-lighter;
+                }
+            }
+        }
+    }
+    #primaryCarePhone {
+        padding: 0;
+    }
+    .fa-caret-down, .fa-caret-right {
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+        display: block;
+        font-size: 16px;
+        color: $secondary;
+    }
+    .dropdown-menu {
+        font-size: 11px;
+    }
+    .popover {
+        max-width: 700px;
+        width: 700px;
+        h1 {
+            text-transform: capitalize;
+            font-size: 1.5em;
+            margin-top: 0.5em;
+        }
+    }
+}
+
+#patientDemographic-newObservation {
+    float: right;
+    width: auto;
+    padding: 0;
+    background-color: #FFF;
+    .btn {
+        background: none;
+        height: 100%;
+        text-transform: uppercase;
+        color: $primary;
+        line-height: 40px;
+        font-size: 12px;
+        font-weight: bold;
+        border-left: 1px solid #D7d7d7;
+        border-radius: 0;
+        &:hover {
+            background: none;
+        }
+    }
+    &.open > .new-order-dropdown  {
+      -webkit-transform: translateX(0px);
+      transform: translateX(0px);
+    }
+    .new-order-dropdown {
+        height: 100vh;
+        position: fixed;
+        background: $primary-lighter;
+        left: inherit;
+        right: 0;
+        top: 81px;
+        width: 186px;
+        border-radius: 0;
+        overflow-x: hidden;
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-transform: translateX(0px);
+        transform: translateX(186px);
+        display: initial;
+        transition: all 0.2s ease-out;
+        -webkit-transition: all 0.2s ease-out;
+    }
+    &.dropup .new-order-dropdown {
+      -webkit-transform-origin: bottom;
+      transform-origin: bottom;
+    }
+}
+/*
+#patientDemographic-notes {
+    float: right;
+    width: auto;
+    padding: 0;
+    background-color: #FFF;
+    #notes-list-btn {
+        background: none;
+        height: 100%;
+        text-transform: uppercase;
+        color: $secondary;
+        line-height: 40px;
+        font-size: 12px;
+        font-weight: bold;
+        border-left: 1px solid #D7d7d7;
+        border-radius: 0;
+        &:hover {
+            background: none;
+        }
+    }
+    &.open > .notes-slider  {
+      -webkit-transform: translateX(0px);
+      transform: translateX(0px);
+    }
+    .notes-slider {
+        height: 85vh;
+        position: fixed;
+        background: #FFF;
+        left: inherit;
+        right: 0;
+        top: 81px;
+        width: 400px;
+        border-radius: 0;
+        overflow-x: hidden;
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-transform: translateX(0px);
+        transform: translateX(400px);
+        display: initial;
+        transition: all 0.2s ease-out;
+        -webkit-transition: all 0.2s ease-out;
+    }
+    .operations-tray {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .notes-form-header{
+        color: #555;
+        text-align: left;
+        font-weight: 700;
+        font-size: 16px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 0px;        
+    }
+    .show-notes-form{
+        z-index: 2000;
+    }
+    .hide-notes-form{
+        display: none;
+    }
+    .note-form-height {
+        height: 100%;
+    }
+}
+*/
+
+#sidebar-wrapper {
+    right: 0;
+    width: 186px;
+    margin-top: 0px;
+    overflow-y: scroll;
+    height: 80vh;
+    z-index: 10000;
+    .sidebar-nav {
+        width: auto;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 13px;
+        button {
+            color: #000;
+            background: none;
+            border: none;
+            text-decoration: none;
+            line-height: 18px;
+        }
+        .toggle {
+            padding: 10px;
+            line-height: 10px;
+            color: #666;
+            background: none;
+            font-size: 20px;
+            border: 0;
+            margin: 0;
+            i {
+                cursor: pointer;
+            }
+        }
+        .panel-close {
+            background: none;
+            text-align: right;
+            padding: 0;
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid #90A4AE;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        li {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            background: #FFF;
+            text-align: center;
+            padding: 0px;
+            border-radius: 1px;
+            box-shadow: 0px 1px 5px #999;
+            span{
+                font-size: 70px;
+                padding: 25px 0;
+                color: $primary-light;
+            }
+            .applet-add-button {
+                width: 100%;
+            }
+        }
+        .panel-title {
+            padding: 2px;
+            background-color: $primary-lightest;
+            border-bottom: 2px solid $secondary-light;
+        }
+        li.applet-add-button {
+            cursor: pointer;
+            line-height: 18px;
+        }
+        li.applet-add-button:hover {
+            background-color: #ECEFF1;
+        }
+    }
+}
+

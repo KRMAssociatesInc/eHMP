@@ -18,21 +18,27 @@
             </div>
         </div>
     </div>
-
-
     <div class="patientDetails hidden">
         <div class="patientInfo row">
-            <div class="col-md-6 infoLabelStyle">DOB:</div>
-            <div class="col-md-6 no-padding-left">{{formatDate birthDate "MM/DD/YYYY"}}</div>
+          <div class="col-md-4">
+            <img src='{{patientImage}}' alt="Patient Image" id="patientImage" width="100" height="100">
+             {{#if patientImage}}
+             {{else}}  <div lass="col-sm-3" id="imageSpinner" >   <i class="fa fa-spinner fa-spin"></i> Loading...</div> 
+             {{/if}}
+    </div>
+    <div class="col-md-8">
+            <div class="col-xs-4 col-md-4 infoLabelStyle">DOB:</div>
+            <div class="col-xs-4 col-md-6">{{formatDate birthDate "MM/DD/YYYY"}}</div>
             <br>
-            <div class="col-md-6 infoLabelStyle">Age:</div>
-            <div class="col-md-6 no-padding-left">{{getAge birthDate}}y</div>
+            <div class="col-xs-4 col-md-4 infoLabelStyle">Age:</div>
+            <div class="col-xs-4 col-md-6">{{getAge birthDate}}y</div>
             <br>
-            <div class="col-md-6 infoLabelStyle">Gender:</div>
-            <div class="col-md-6 no-padding-left">{{genderName}}</div>
+            <div class="col-xs-4 col-md-4 infoLabelStyle">Gender:</div>
+            <div class="col-xs-4 col-md-6">{{genderName}}</div>
             <br>
-            <div class="col-md-6 infoLabelStyle">SSN:</div>
-            <div class="col-md-6 no-padding-left">{{formatSSN ssn false}}</div>
+            <div class="ccol-xs-4 col-md-4 infoLabelStyle">SSN:</div>
+            <div class="col-xs-4 col-md-6">{{formatSSN ssn false}}</div>
+        </div>
         </div>
     </div>
 </div>

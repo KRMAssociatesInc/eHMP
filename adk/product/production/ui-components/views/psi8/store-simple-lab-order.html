@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>eHMP Bootstrap UI Library - Enter and Store Vital Tray</title>
+    <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../../css/main-styles.css" />
+</head>
+
+<body class="library">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../../views.html">Views</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="../../color-palette.html">Color Palette</a></li>
+                            <li><a href="#">Style Guide</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end navigation-->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+            <li><a href="../../views.html">Views</a></li>
+            <li class="active">F432 - Enter &amp; Store a Simple Lab Order Tray</li>
+        </ol>
+        <!--end breadcrumb-->
+        <h1>F432 - Enter &amp; Store a Simple Lab Order Tray</h1>
+        <div class="description">
+            <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This is the 508 compliant static HTML/CSS mock up of the Enter &amp; Store a Simple Lab Order Tray..</p>
+            <p><strong><i class="fa fa-lightbulb-o"></i> Documents:</strong> Please also view <a href="http://wakirc.axshare.com/#p=v2__enter___store_a_simple_lab_order">Enter &amp; Store a Simple Lab Order Tray Wireframe</a>, <a href="../../docs/workflow/psi8/workflow-enter-and-store-a-simple-lab-order.pdf">Workflow Diagram</a> <small>[PDF, 601KB]</small>, and <a href="../../docs/use-case/psi8/use-case-enter-and-store-a-simple-lab-order.pdf">Use Scenario Case Documentation</a> <small>[PDF, 165KB]</small> for full details on implementation.</p>
+        </div>
+    </div>
+    <!--end description-->
+    <div class="container">
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-10 col-xs-10">
+                                    <h4 class="modal-title">All Tasks</h4>
+                                </div>
+                                <div class="col-md-2 col-xs-2">
+                                    <div class="header-btns">
+                                        <button type="button" class="btn btn-primary btn-sm" title="Press enter to create a new task"><i class="fa fa-pencil"></i> Create New Task</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="row row-sort">
+                                            <div class="col-md-6 col-xs-6">
+                                                <label for="observation-arrange-by">Arrange by:</label>
+                                                <select id="observation-arrange-by" title="Arrange observations by selecting from the drop down list">
+                                                    <option value="status">Status</option>
+                                                    <option value="type">Type</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6 text-right">
+                                                <label for="observation-sort-by" class="sr-only">Sort by</label>
+                                                <select id="observation-sort-by" title="Sort observations by selecting from the drop down list">
+                                                    <option value="most-recent">Most recent</option>
+                                                    <option value="least-recent">Least recent</option>
+                                                    <option value="chronological">Chronological</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-container panel-group small" id="accordion" role="tablist">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-task-in-progress">
+                                                    <h4>
+                                            <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-task-in-progress" aria-expanded="true" aria-controls="collapse-task-in-progress">In Progress<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                            </h4>
+                                                </div>
+                                                <div id="collapse-task-in-progress" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-task-in-progress">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Title</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p>Date of origin: <span id="immunization-last-saved1">04/16/2015</span></p>
+                                                                        <p>Last Edited: <span id="immunization-date-created1">04/16/2015</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end in progress-->
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-task-unsigned">
+                                                    <h4>
+                                            <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-task-unsigned" aria-expanded="true" aria-controls="collapse-task-unsigned">Un-Signed<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                            </h4>
+                                                </div>
+                                                <div id="collapse-task-unsigned" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-task-unsigned">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Title</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p>Date of origin: <span id="nonvameds-last-saved1">04/16/2015</span></p>
+                                                                        <p>Last Edited: <span id="nonvameds-date-created1">04/16/2015</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end unsigned-->
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-task-signed">
+                                                    <h4>
+                                            <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-task-signed" aria-expanded="true" aria-controls="collapse-task-signed">Signed<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                            </h4>
+                                                </div>
+                                                <div id="collapse-task-signed" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-task-signed">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Title</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p>Date of origin: <span id="vitals-last-saved1">04/16/2015</span></p>
+                                                                        <p>Last Edited: <span id="vitals-date-created1">04/16/2015</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end Vitals-->
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#notesDeleteModal" title="Press enter to delete the note">Delete</button>
+                                                </div>
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#notesModal" title="Press enter to view the details of the note">View</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                    <div class="modal fade" id="notesModal" role="dialog" aria-labelledby="notesModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="tray-settings">
+                                                        <p class="sr-only">This is the note toolbar that allows you to perform actions associated with this note</p>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to edit note" aria-label="Edit"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to print note" aria-label="Print"><i class="fa fa-print"></i></button>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to close note" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                                                    </div>
+                                                    <h4 class="modal-title" id="notesModalLabel">Primary Care General Note<br />
+                                                <span class="small">04/11/2015 - 03:30</span><br />
+                                                <span class="small">Doe, John Q</span></h4>
+                                                    <h5>Signed</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus, est eget sodales vestibulum, lorem erat fringilla felis, vel vestibulum dolor turpis sed orci. Aenean lacinia quis risus eget laoreet. Pellentesque rhoncus justo ac urna sollicitudin egestas.</p>
+                                                    <p>Suspendisse malesuada ipsum nisi, sed sollicitudin arcu condimentum a. Nulla facilisi. Sed hendrerit enim lacus, id tempor arcu euismod dapibus.</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus, est eget sodales vestibulum, lorem erat fringilla felis, vel vestibulum dolor turpis sed orci. Aenean lacinia quis risus eget laoreet. Pellentesque rhoncus justo ac urna sollicitudin egestas.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="notesDeleteModal" role="dialog" aria-labelledby="notesDeleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="tray-settings">
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                                                    </div>
+                                                    <h4 class="modal-title" id="notesDeleteModalLabel">Mark as Entered in Error</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="well well-sm">
+                                                        <h4>Problem Name<br />
+                                                    <span class="small">06/13/2015  17:55</span></h4>
+                                                    </div>
+                                                    <div class="control form-group">
+                                                        <label for="entered-error" class="sr-only">Add Annotation</label>
+                                                        <input class="form-control" type="text" name="name" title="Please enter in annotation" placeholder="Add Annotation&hellip;" id="entered-error" />
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div class="control control-button trash visible-inline">
+                                                        <button type="button" class="btn icon-btn" title="Press enter to cancel">Cancel</button>
+                                                    </div>
+                                                    <div class="control control-button trash visible-inline">
+                                                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" title="Press enter to remove">Remove</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-10 col-xs-10">
+                                    <h4 class="modal-title">Add a New Task</h4>
+                                </div>
+                                <div class="col-md-2 col-xs-2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item">Meds, Inpatient<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item">Meds, Outpatient<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item">Lab Tests<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item">Imaging<i class="fa fa-chevron-right pull-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-default btn-sm" title="Press enter to go back to order summary">Back to Order Summary</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-10 col-xs-10">
+                                    <h4 class="modal-title">Order a Lab Test</h4>
+                                </div>
+                                <div class="col-md-2 col-xs-2">
+                                    <div class="header-btns">
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="dropdown">
+                                                <button class="btn icon-btn dropdown-toggle" type="button" id="vitals-settings" data-toggle="dropdown" aria-expanded="true">
+                                                    <i class="fa fa-gear"><span class="sr-only">Settings for vitals</span></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="vitals-settings">
+                                                    <li role="presentation"><a role="menuitem" href="#">Preview</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Print</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <button type="button" class="btn icon-btn" title="Press enter to open the popover view"><i class="fa fa-expand"><span class="sr-only">Press enter to open the popover view</span></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="scroll-enter-form">
+                                            <div class="row row-subheader">
+                                                <div class="col-xs-12">
+                                                    <div class="control form-group form-alert-banner alertBanner-control alertMessage">
+                                                        <div class="alert alert-info alert-dismissible alert-user" role="alert">
+                                                            <div class="alert-content">
+                                                                <p>Please note if specimen is Random, Trough or Peak, label both the tube and the order slip.</p>
+                                                            </div>
+                                                            <button title="To close this alert, press enter" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-highlight">
+                                                    <div class="col-md-12">
+                                                        <div class="control form-group" role="application">
+                                                            <label for="search-for-lab-tests-2">Available Lab Tests</label>
+                                                            <input class="form-control typeahead" type="text" name="name" title="Please enter in a name to search for available lab tests" placeholder="Search for Available Lab Tests" id="search-for-lab-tests-2" autocomplete="off" spellcheck="false" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-6">
+                                                        <div class="control form-group">
+                                                            <label for="urgency-2">Urgency</label>
+                                                            <select name="options" id="urgency-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                <option value=""></option>
+                                                                <option value="option 1">option 1</option>
+                                                                <option value="option 2">option 2</option>
+                                                                <option value="option 3">option 3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-6">
+                                                        <div class="control form-group">
+                                                            <label for="collection-date-2">Collection Date/Time</label>
+                                                            <select name="options" id="collection-date-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                <option value=""></option>
+                                                                <option value="option 1">option 1</option>
+                                                                <option value="option 2">option 2</option>
+                                                                <option value="option 3">option 3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-xs-6">
+                                                    <div class="control form-group">
+                                                        <label for="how-often-2">How Often?</label>
+                                                        <select name="options" id="how-often-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                            <option value=""></option>
+                                                            <option value="option 1">option 1</option>
+                                                            <option value="option 2">option 2</option>
+                                                            <option value="option 3">option 3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-xs-6">
+                                                    <div class="control form-group">
+                                                        <label for="how-long-2">How Long?</label>
+                                                        <select name="options" id="how-long-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                            <option value=""></option>
+                                                            <option value="option 1">option 1</option>
+                                                            <option value="option 2">option 2</option>
+                                                            <option value="option 3">option 3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-xs-6">
+                                                    <div class="control form-group">
+                                                        <label for="collection-sample-2">Collection Sample</label>
+                                                        <select name="options" id="collection-sample-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                            <option value=""></option>
+                                                            <option value="option 1">option 1</option>
+                                                            <option value="option 2">option 2</option>
+                                                            <option value="option 3">option 3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-xs-6">
+                                                    <div class="control form-group">
+                                                        <label for="collection-type-2">Collection Type</label>
+                                                        <select name="options" id="collection-type-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                            <option value=""></option>
+                                                            <option value="option 1">option 1</option>
+                                                            <option value="option 2">option 2</option>
+                                                            <option value="option 3">option 3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-xs-6">
+                                                    <div class="control form-group">
+                                                        <label for="specimen-2">Specimen</label>
+                                                        <select name="options" id="specimen-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                            <option value=""></option>
+                                                            <option value="option 1">option 1</option>
+                                                            <option value="option 2">option 2</option>
+                                                            <option value="option 3">option 3</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-xs-6">
+                                                    <fieldset>
+                                                        <legend>Sample Drawn At:<span class="sr-only">Select one of the following options</span></legend>
+                                                        <div class="col-md-6 col-xs-6">
+                                                            <div class="radio">
+                                                                <label for="radioOpt1" class="radio-inline">
+                                                                    <input type="radio" checked value="radio1" name="radioButtons" title="Peak" id="radioOpt1" /> Peak
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <label for="radioOpt3" class="radio-inline">
+                                                                    <input type="radio" value="radio3" name="radioButtons" title="Trough" id="radioOpt3" /> Trough
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-6">
+                                                            <div class="radio">
+                                                                <label for="radioOpt2" class="radio-inline">
+                                                                    <input type="radio" value="radio2" name="radioButtons" title="Mid" id="radioOpt2" /> Mid
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <label for="radioOpt4" class="radio-inline">
+                                                                    <input type="radio" value="radio4" name="radioButtons" title="Unknown" id="radioOpt4" /> Unknown
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="control form-group">
+                                                        <label for="moreInfo">Additional Comments</label>
+                                                        <textarea class="form-control" rows="3" name="moreInfo" title="Please enter in more information about yourself" id="moreInfo"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-preview">
+                                                <h5>Order Preview</h5>
+                                                <p>GENTAMICIN, ROUTINE, TODAY, HOURLY, 3 BLOOD GOLD-T, LAB BLOOD</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <p><span id="observation-saved-at3">Saved at 08:27</span></p>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn icon-btn btn-sm" data-dismiss="modal" title="Press enter to delete order"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                                <div class="control control-button cancel visible-inline">
+                                                    <button type="button" class="btn btn-default btn-sm" title="Press enter to save changes and leave the form">Close</button>
+                                                </div>
+                                                <div class="control control-button cancel visible-inline">
+                                                    <button type="submit" class="btn btn-primary btn-sm" title="Press enter to accept changes in the form">Accept</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-10 col-xs-10">
+                                    <h4 class="modal-title">Order a Lab Test</h4>
+                                </div>
+                                <div class="col-md-2 col-xs-2">
+                                    <div class="header-btns">
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="dropdown">
+                                                <button class="btn icon-btn dropdown-toggle" type="button" id="ex2-vitals-settings" data-toggle="dropdown" aria-expanded="true">
+                                                    <i class="fa fa-gear"><span class="sr-only">Settings for vitals</span></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="ex2-vitals-settings">
+                                                    <li role="presentation"><a role="menuitem" href="#">Preview</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Print</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <button type="button" class="btn icon-btn" title="Press enter to open the popover view"><i class="fa fa-expand"><span class="sr-only">Press enter to open the popover view</span></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <div class="workflow-controller">
+                    <div>
+                        <form action="#" method="post" class="form-container adk-form">
+                            <div class="modal-body">
+                                <div class="scroll-enter-form">
+                                    <div class="row">
+                                        <div class="form-highlight">
+                                            <div class="col-md-12">
+                                                <div class="form-group" role="application">
+                                                    <label for="ex2-search-for-lab-tests-2">Available Lab Tests</label>
+                                                    <input class="form-control typeahead" type="text" name="name" title="Please enter in a name to search for available lab tests" placeholder="Search for Available Lab Tests" id="ex2-search-for-lab-tests-2" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6">
+                                                <div class="control form-group">
+                                                    <label for="ex2-urgency-2">Urgency</label>
+                                                    <select name="options" id="ex2-urgency-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                        <option value=""></option>
+                                                        <option value="option 1">option 1</option>
+                                                        <option value="option 2">option 2</option>
+                                                        <option value="option 3">option 3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6">
+                                                <div class="control form-group">
+                                                    <label for="ex2-collection-date-2">Collection Date/Time</label>
+                                                    <select name="options" id="ex2-collection-date-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                        <option value=""></option>
+                                                        <option value="option 1">option 1</option>
+                                                        <option value="option 2">option 2</option>
+                                                        <option value="option 3">option 3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="control form-group">
+                                                <label for="ex2-how-often-2">How Often?</label>
+                                                <select name="options" id="ex2-how-often-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                    <option value=""></option>
+                                                    <option value="option 1">option 1</option>
+                                                    <option value="option 2">option 2</option>
+                                                    <option value="option 3">option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="control form-group">
+                                                <label for="ex2-how-long-2" class="disabled">How Long?</label>
+                                                <select name="options" id="ex2-how-long-2" class="form-control input-sm" disabled="disabled" title="This option is not available">
+                                                    <option value=""></option>
+                                                    <option value="option 1">option 1</option>
+                                                    <option value="option 2">option 2</option>
+                                                    <option value="option 3">option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="control form-group">
+                                                <label for="ex2-collection-sample-2">Collection Sample</label>
+                                                <select name="options" id="ex2-collection-sample-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                    <option value=""></option>
+                                                    <option value="option 1">option 1</option>
+                                                    <option value="option 2">option 2</option>
+                                                    <option value="option 3">option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="control form-group">
+                                                <label for="ex2-collection-type-2">Collection Type</label>
+                                                <select name="options" id="ex2-collection-type-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                    <option value=""></option>
+                                                    <option value="option 1">option 1</option>
+                                                    <option value="option 2">option 2</option>
+                                                    <option value="option 3">option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="control form-group">
+                                                <label for="ex2-specimen-2">Specimen</label>
+                                                <select name="options" id="ex2-specimen-2" class="form-control input-sm" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                    <option value=""></option>
+                                                    <option value="option 1">option 1</option>
+                                                    <option value="option 2">option 2</option>
+                                                    <option value="option 3">option 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <fieldset>
+                                                <legend>Immediate Collection Times</legend>
+                                                <div class="well">
+                                                    <p>No Collection on Holidays</p>
+                                                    <hr />
+                                                    <p>MON - FRI: Collection between 06:00 and 23:00</p>
+                                                    <p>Labratory Service requires at least 5 minutes to collect this order.</p>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-6">
+                                                            <div class="control form-group">
+                                                                <label for="date-taken">Date Taken</label>
+                                                                <div class="input-group date">
+                                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                    <input type="text" id="date-taken" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-6">
+                                                            <div class="control form-group">
+                                                                <label for="time-taken">Time Taken</label>
+                                                                <div class="input-group bootstrap-timepicker">
+                                                                    <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                                                                    <input type="text" id="time-taken" class="form-control timepicker" title="Please enter in a time in the following format, HH:MM." placeholder="HH:MM" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row text-right">
+                                                        <div class="control control-button trash visible-lg-inline">
+                                                            <button type="button" class="btn icon-btn btn-sm" title="Press enter to delete collection time"><i class="fa fa-trash"></i></button>
+                                                        </div>
+                                                        <div class="control control-button cancel visible-lg-inline">
+                                                            <button type="button" class="btn btn-primary btn-sm" title="Press enter to add collection time"> Add</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="order-preview">
+                                        <h5>Order Preview</h5>
+                                        <p>GENTAMICIN, ROUTINE, TODAY, HOURLY, 3 BLOOD GOLD-T, LAB BLOOD</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal body-->
+                            <div class="modal-footer">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <p><span id="ex2-observation-saved-at3">Saved at 08:27</span></p>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="control control-button trash visible-inline">
+                                            <button type="button" class="btn icon-btn btn-sm" data-dismiss="modal" title="Press enter to delete order"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                        <div class="control control-button cancel visible-inline">
+                                            <button type="button" class="btn btn-default btn-sm" title="Press enter to save changes and leave the form">Close</button>
+                                        </div>
+                                        <div class="control control-button cancel visible-inline">
+                                            <button type="submit" class="btn btn-primary btn-sm" title="Press enter to accept changes in the form">Accept</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end modal footer-->
+                        </form>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end container-->
+    <hr />
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script>
+    $(function() {
+        // Toggle selected items within accordion
+        $('.panel-body.multi-select-list').on('click', 'li', function() {
+            $(this).toggleClass('list-item-selected');
+        });
+    });
+    </script>
+</body>
+
+</html>

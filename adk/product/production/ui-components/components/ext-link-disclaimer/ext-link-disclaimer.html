@@ -1,0 +1,159 @@
+<h3>External Link Disclaimer</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> An external link disclaimer is provided to inform the user that the link the user is about to access will navigate outside of the application. The user has the choice to either continue to the external link or return back to the application.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> Whenever the user is being directed outside of the application, the user must be informed.</p>
+</div>
+<p>
+    <div id="external-link-copy">
+        <a href="http://google.com/" title="This links will take you to Ehmp Vistacore">Google</a>
+    </div>
+</p>
+<h3>Markup</h3>
+<div role="tabpanel" class="tabpanel">
+    <ul role="tablist" class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#eld-html" aria-controls="eld-html" role="tab" data-toggle="tab">External Link Disclaimer</a></li>
+        <li role="presentation"><a href="#eld-js" aria-controls="eld-js" role="tab" data-toggle="tab">JavaScript Code</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="eld-html">
+            <pre>
+&lt;a href=&quot;http://google.com/&quot; title=&quot;This links will take you to Google&quot;&gt;Google&lt;/a&gt;
+            </pre>
+            <a onclick="copyToClipboard('external-link-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="eld-js">
+            <pre>
+&lt;script&gt;
+    /*
+    the jQuery plugin that does the magic
+    */
+    (function ($) {
+        $.fn.parseExternalLinks = function(a){
+            var args = $.extend({
+                naMessage:'You are about to leave the application. Please select &quot;Cancel&quot; to return to the application, or &quot;Continue&quot; to proceed to the external link.',
+                naHeading:'Accessing External Link',
+                cancelTag:'Cancel',
+                confirmTag:'Confirm'
+            },a);
+            $.fn.parseExternalLinks.isExternal = function(url) {
+                var match = url.match(/^([^:\/?#]+:)?(?:\/\/([^\/?#]*))?([^?#]+)?(\?[^#]*)?(#.*)?/);
+                if (typeof match[1] === &quot;string&quot; &amp;&amp; match[1].length &gt; 0 &amp;&amp; match[1].toLowerCase() !== location.protocol) return true;
+                if (typeof match[2] === &quot;string&quot; &amp;&amp; match[2].length &gt; 0 &amp;&amp; match[2].replace(new RegExp(&quot;:(&quot;+{&quot;http:&quot;:80,&quot;https:&quot;:443}[location.protocol]+&quot;)?$&quot;), &quot;&quot;) !== location.host) return true;
+                return false;
+            };
+            this.each(function(){
+                var t = $(this);
+                var l = t.attr('href');
+
+                if($.fn.parseExternalLinks.isExternal(l)){
+                    t.data('el',l).attr('href','javascript:void(0);');
+                    t.append(' &lt;span class=&quot;fa fa-external-link&quot; title=&quot;External Link&quot;&gt;&lt;/span&gt;');
+                    t.click(function(e){
+                        $('#elModal').remove();
+                        var modalHtml = ''+
+                        '&lt;div class=&quot;modal fade&quot; id=&quot;elModal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-hidden=&quot;true&quot;&gt;'+
+                        '   &lt;div class=&quot;modal-dialog&quot;&gt;'+
+                        '       &lt;div class=&quot;modal-content&quot;&gt;'+
+                        '           &lt;div class=&quot;modal-header&quot;&gt;'+
+                        '               &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&times;&lt;/span&gt;&lt;/button&gt;'+
+                        '               &lt;h4 class=&quot;modal-title&quot; id=&quot;myModalLabel&quot;&gt;'+args.naHeading+'&lt;/h4&gt;'+
+                        '           &lt;/div&gt;'+
+                        '           &lt;div class=&quot;modal-body&quot;&gt;'+
+                        '               &lt;p&gt;'+args.naMessage+'&lt;/p&gt;'+
+                        '           &lt;/div&gt;'+
+                        '           &lt;div class=&quot;modal-footer&quot;&gt;'+
+                        '               &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;'+args.cancelTag+'&lt;/button&gt; &lt;button id=&quot;naButton&quot; type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-el=&quot;'+$(this).data('el')+'&quot;&gt;'+args.confirmTag+'&lt;/button&gt;'+
+                        '           &lt;/div&gt;'+
+                        '       &lt;/div&gt;'+
+                        '   &lt;/div&gt;'+
+                        '&lt;/div&gt;';
+                        $('body').append(modalHtml);
+                        $('#elModal').modal('show');
+                    });
+                }
+            });
+            $('body').on('click.naButtonInstance','#naButton',function(){
+                window.location.href=$(this).data('el');
+            });
+        };
+    })(jQuery);
+
+    /*
+    parse the links available (here it's done on document ready, but you should do it whenever there are new external links added)
+    */
+    $(document).ready(function(){
+        $('a[href]').parseExternalLinks();
+    });
+&lt;/script&gt;
+            </pre>
+            <a onclick="copyToClipboard('external-link-js-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>
+<div id="external-link-js-copy">
+    <script>
+    /*
+        the jQuery plugin that does the magic
+        */
+    (function($) {
+        $.fn.parseExternalLinks = function(a) {
+            var args = $.extend({
+                naMessage: 'You are about to leave the application. Please select "Cancel" to return to the application, or "Continue" to proceed to the external link.',
+                naHeading: 'Accessing External Link',
+                cancelTag: 'Cancel',
+                confirmTag: 'Confirm'
+            }, a);
+            $.fn.parseExternalLinks.isExternal = function(url) {
+                var match = url.match(/^([^:\/?#]+:)?(?:\/\/([^\/?#]*))?([^?#]+)?(\?[^#]*)?(#.*)?/);
+                if (typeof match[1] === "string" && match[1].length > 0 && match[1].toLowerCase() !== location.protocol) return true;
+                if (typeof match[2] === "string" && match[2].length > 0 && match[2].replace(new RegExp(":(" + {
+                        "http:": 80,
+                        "https:": 443
+                    }[location.protocol] + ")?$"), "") !== location.host) return true;
+                return false;
+            };
+            this.each(function() {
+                var t = $(this);
+                var l = t.attr('href');
+
+                if ($.fn.parseExternalLinks.isExternal(l)) {
+                    t.data('el', l).attr('href', 'javascript:void(0);');
+                    t.append(' <span class="fa fa-external-link" title="External Link"></span>');
+                    t.click(function(e) {
+                        $('#elModal').remove();
+                        var modalHtml = '' +
+                            '<div class="modal fade" id="elModal" tabindex="-1" role="dialog" aria-hidden="true">' +
+                            '   <div class="modal-dialog">' +
+                            '       <div class="modal-content">' +
+                            '           <div class="modal-header">' +
+                            '               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>' +
+                            '               <h4 class="modal-title" id="myModalLabel">' + args.naHeading + '</h4>' +
+                            '           </div>' +
+                            '           <div class="modal-body">' +
+                            '               <p>' + args.naMessage + '</p>' +
+                            '           </div>' +
+                            '           <div class="modal-footer">' +
+                            '               <button type="button" class="btn btn-default" data-dismiss="modal">' + args.cancelTag + '</button> <button id="naButton" type="button" class="btn btn-primary" data-el="' + $(this).data('el') + '">' + args.confirmTag + '</button>' +
+                            '           </div>' +
+                            '       </div>' +
+                            '   </div>' +
+                            '</div>';
+                        $('body').append(modalHtml);
+                        $('#elModal').modal('show');
+                    });
+                }
+            });
+            $('body').on('click.naButtonInstance', '#naButton', function() {
+                window.location.href = $(this).data('el');
+            });
+        };
+    })(jQuery);
+
+    /*
+    parse the links available (here it's done on document ready, but you should do it whenever there are new external links added)
+    */
+    $(document).ready(function() {
+        $('a[href]').parseExternalLinks();
+    });
+    </script>
+</div>

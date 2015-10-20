@@ -7,6 +7,7 @@ class ProblemsCoverHeader < AccessBrowserV2
     super 
     add_verify(CucumberLabel.new("Description"), VerifyText.new, AccessHtmlElement.new(:id, "data-grid-problems"))
     add_verify(CucumberLabel.new("Acuity"), VerifyText.new, AccessHtmlElement.new(:id, "problems-acuityName"))
+    add_verify(CucumberLabel.new("Status"), VerifyText.new, AccessHtmlElement.new(:id, "problems-statusName"))
   end
 end #ProblemsCoverHeader
 
@@ -17,6 +18,7 @@ class ProblemsSecondary < ADKContainer
     add_verify(CucumberLabel.new("Description"), VerifyText.new, AccessHtmlElement.new(:id, "problems-problemText"))
     add_verify(CucumberLabel.new("Standardized Description"), VerifyText.new, AccessHtmlElement.new(:id, "problems-standardizedDescription"))
     add_verify(CucumberLabel.new("Acuity"), VerifyText.new, AccessHtmlElement.new(:id, "problems-acuityName"))
+    add_verify(CucumberLabel.new("Status"), VerifyText.new, AccessHtmlElement.new(:id, "problems-statusName"))
     add_verify(CucumberLabel.new("Onset Date"), VerifyText.new, AccessHtmlElement.new(:id, "problems-onsetFormatted"))
     add_verify(CucumberLabel.new("Last Updated"), VerifyText.new, AccessHtmlElement.new(:id, "problems-updatedFormatted"))
     add_verify(CucumberLabel.new("Provider"), VerifyText.new, AccessHtmlElement.new(:id, "problems-providerDisplayName"))
@@ -32,7 +34,7 @@ Then(/^the Problems coversheet headers are$/) do |table|
   expect(headers.length).to_not eq(0)
   expect(headers.length).to eq(table.rows.length)
   elements = ProblemsCoverHeader.instance
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     does_exist = elements.static_dom_element_exists? header_text[0]
     p "#{header_text[0]} was not found" unless does_exist
     expect(does_exist).to be_true
@@ -52,7 +54,7 @@ def verify_problems_headers(access_browser_instance, table)
   expect(headers.length).to_not eq(0)
   expect(headers.length).to eq(table.rows.length)
   elements = access_browser_instance
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     does_exist = elements.static_dom_element_exists? header_text[0]
     p "#{header_text[0]} was not found" unless does_exist
     expect(does_exist).to be_true
@@ -64,7 +66,7 @@ Then(/^the Problems table contains the rows$/) do |table|
   driver = TestSupport.driver
   num_of_rows = driver.find_elements(:css, "#data-grid-problems tbody tr")
   #Loop through rows in cucumber   
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     #Loop through UI rows
     for i in 1..num_of_rows.length
@@ -82,7 +84,7 @@ Then(/^the Problems table contains the rows$/) do |table|
     p "could not match data: #{row_defined_in_cucumber}" unless matched  
     driver.save_screenshot("incorrect_rows.png") unless matched
     expect(matched).to be_true
-  end#do loop  
+  end #do loop  
 end #Problems Pills
 
 def first_row_function(row_defined_in_cucumber)
@@ -94,10 +96,10 @@ def first_row_function(row_defined_in_cucumber)
       matched = false
       p "The number of columns in the UI is #{row_data.length} but in cucumber it's #{row_defined_in_cucumber.length}"
     else
-    #wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
+      #wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
       matched = avoid_block_nesting_text(row_defined_in_cucumber, row_data)
       p "could not match data: #{row_defined_in_cucumber}" unless matched
-    #wait.until { matched = avoid_block_nesting(row_defined_in_cucumber, row_data) }
+      #wait.until { matched = avoid_block_nesting(row_defined_in_cucumber, row_data) }
     end
   rescue
     matched = false
@@ -110,7 +112,7 @@ Then(/^the Problems table contains the first row$/) do |table|
   num_of_rows = driver.find_elements(:css, "#data-grid-problems tbody tr")
   #Loop through rows in cucumber
   wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     #Loop through UI rows
     for i in 1..num_of_rows.length
@@ -121,7 +123,7 @@ Then(/^the Problems table contains the first row$/) do |table|
     p "could not match data: #{row_defined_in_cucumber}" unless matched  
     driver.save_screenshot("incorrect_rows.png") unless matched
     #expect(matched).to be_true
-  end#do loop  
+  end #do loop  
 end #Problems Pills
 
 #Check the number of pages in Problems 

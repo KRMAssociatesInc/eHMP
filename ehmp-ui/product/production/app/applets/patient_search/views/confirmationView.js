@@ -6,7 +6,7 @@ define([
     "hbs!app/applets/patient_search/templates/acknowledgeTemplate",
     "hbs!app/applets/patient_search/templates/patientFlagTemplate",
     "hbs!app/applets/patient_search/templates/common/blankTemplate"
-], function(Backbone, Marionette, _, confirmationTemplate, acknowledgeTemplate, patientFlagTemplate, blankTemplate) {
+], function (Backbone, Marionette, _, confirmationTemplate, acknowledgeTemplate, patientFlagTemplate, blankTemplate) {
 
     var ConfirmationView = Backbone.Marionette.ItemView.extend({
         template: blankTemplate,
@@ -18,7 +18,7 @@ define([
             'click button#confirmFlaggedPatinetButton': 'confirmPatient',
             'click button#confirmationButton': 'onClickOfConfirm'
         },
-        initialize: function(options) {
+        initialize: function (options) {
             this.searchApplet = options.searchApplet;
             this.patientSearchChannel = ADK.Messaging.getChannel('patient_search');
             var that = this;
@@ -26,16 +26,16 @@ define([
                 resourceTitle: 'authentication-list',
                 cache: false
             };
-            siteOptions.onError = function(resp) {};
-            siteOptions.onSuccess = function(collection, resp) {
+            siteOptions.onError = function (resp) {};
+            siteOptions.onSuccess = function (collection, resp) {
                 that.sites = collection;
             };
             ADK.ResourceService.fetchCollection(siteOptions);
         },
-        updateSelectedPatientModel: function(patient) {
+        updateSelectedPatientModel: function (patient) {
             this.currentPatient = patient.get('pid');
             this.showLoading();
-
+            patient.on('change:patientImage', this.currentPatientChanged, this);
             if (this.model && this.model.attributes.fullName) {
                 this.patientSearchChannel.stopComplying('confirm_' + this.model.get('pid'));
                 this.model.clear();
@@ -52,14 +52,22 @@ define([
             }
 
             var self = this;
-
-            searchOptions.onError = function(resp) {
+            var imageFetchOptions = {
+                pid: patient.get('icn') || patient.get('pid')
+            };
+            searchOptions.onError = function (resp) {
                 self.model.set(patient.attributes);
 
                 if ((resp.status == 307) || (resp.status == 308)) {
+                    var message;
+                    try {
+                        message = JSON.parse(resp.responseText).message;
+                    } catch (e) {
+                        message = resp.responseText;
+                    }
                     self.model.set({
                         'ackTitle': "Restricted Record",
-                        'ackMessage': resp.responseText.replace(/\s*(\*{3}.*?\*{3})|(?:[*\s]*([^*\s]+ ?)[*\s]*)/g, '$2')
+                        'ackMessage': message.replace(/\s*(\*{3}.*?\*{3})|(?:[*\s]*([^*\s]+ ?)[*\s]*)/g, '$2')
                     });
                     self.showConfirm(acknowledgeTemplate);
                 } else if (resp.status == 403) {
@@ -69,19 +77,24 @@ define([
                     self.render();
                 }
             };
-            searchOptions.onSuccess = function(resp) {
+            searchOptions.onSuccess = function (resp) {
                 self.model.set(patient.attributes);
+                self.searchApplet.getPatientPhoto(self.model, imageFetchOptions);
+                self.model.on('change:patientImage', self.nonSensitivePatientChanged, self);
                 self.showConfirm(confirmationTemplate);
             };
             ADK.PatientRecordService.fetchResponseStatus(searchOptions);
         },
-        getFullSSN: function(patientModel) {
+        nonSensitivePatientChanged: function (event) {
+            this.render();
+        },
+        getFullSSN: function (patientModel) {
             var searchOptions = {
                 resourceTitle: 'patient-search-pid',
                 patient: patientModel
             };
             var self = this;
-            searchOptions.onSuccess = function(resp) {
+            searchOptions.onSuccess = function (resp) {
                 if (resp.length > 0) {
                     self.model.set('ssn', resp.models[0].get('ssn'));
                     self.render();
@@ -92,23 +105,23 @@ define([
             };
             ADK.PatientRecordService.fetchCollection(searchOptions);
         },
-        maskSSN: function(patientModel) {
+        maskSSN: function (patientModel) {
             var maskedSSN = patientModel.get('ssn').toString().replace(/(?=\d{5})\d/gmi, '*');
             patientModel.set('ssn', maskedSSN);
         },
-        updateTemplateToBlank: function() {
+        updateTemplateToBlank: function () {
             this.template = blankTemplate;
             this.render();
             if (!this.$el.parent().hasClass("hidden")) {
                 this.$el.parent().addClass("hidden");
             }
         },
-        showUnAuthorized: function() {
+        showUnAuthorized: function () {
             this.template = _.template("<div class='unAuthorized well' tabindex='0'><h4 class='text-danger'>You are not authorized to view this record.</h4><h4>Please select another patient.</h4></div>");
             this.render();
             this.$el.find('.unAuthorized').focus();
         },
-        showConfirm: function(temp) {
+        showConfirm: function (temp) {
             this.template = temp;
             this.getFullSSN(this.model); //gets the full ssn for the patient's model
 
@@ -117,12 +130,12 @@ define([
             } else {
                 this.$el.find('#confirmationButton').focus();
             }
-            $("#confirmSection").on('affixed.bs.affix', function() {
+            $("#confirmSection").on('affixed.bs.affix', function () {
                 $(this).addClass("col-md-3");
                 $(this).parent().addClass("noPadding");
 
             });
-            $("#confirmSection").on('affix-top.bs.affix', function() {
+            $("#confirmSection").on('affix-top.bs.affix', function () {
                 if ($(this).hasClass('col-md-3')) {
                     $(this).removeClass('col-md-3');
                     $(this).parent().removeClass("noPadding");
@@ -134,14 +147,32 @@ define([
                 }
             });
         },
-        showLoading: function() {
+        showLoading: function () {
             if (this.$el.parent().hasClass("hidden")) {
                 this.$el.parent().removeClass("hidden");
             }
             this.template = _.template('<h5 class="loading"><i class="fa fa-spinner fa-spin"></i> Loading...</h5>');
             this.render();
         },
-        ackPatient: function(event) {
+        currentPatientChanged: function (event) {
+            $("#imageSpinner").hide();
+            this.render();
+            this.removeAcknowledgeBox();
+        },
+        ackPatient: function (event) {
+            var patient = this.model;
+            var imageFetchOptions = {
+                pid: patient.get('icn') || patient.get('pid'),
+                _ack: true
+            };
+            this.searchApplet.getPatientPhoto(patient, imageFetchOptions);
+            this.removeAcknowledgeBox();
+            this.model.set({
+                'acknowledged': true
+            });
+            patient.on('change:patientImage', this.currentPatientChanged, this);
+        },
+        removeAcknowledgeBox: function (event) {
             this.$el.find('#ackMessagePanel').removeClass('in');
             this.$el.find('#ackButton').addClass('hide');
             this.$el.find('.acknowledged').removeClass('hidden');
@@ -150,19 +181,16 @@ define([
             if (this.$el.find('#confirmationButton').is(':visible')) {
                 this.$el.find('#ackMsgTitleId').focus();
             }
-            this.model.set({
-                'acknowledged': true
-            });
         },
-        onClickOfConfirm: function(event) {
+        onClickOfConfirm: function (event) {
             this.maskSSN(this.model);
             var confirmationView = this;
             var syncOptions = {
                 resourceTitle: 'synchronization-status',
                 patient: this.model
             };
-            syncOptions.onSuccess = function(collection, resp) {};
-            syncOptions.onError = function(collection, resp) {
+            syncOptions.onSuccess = function (collection, resp) {};
+            syncOptions.onError = function (collection, resp) {
                 if (resp.status === 404) {
                     $(event.currentTarget).html("<i class='fa fa-spinner fa-spin'></i> <span> Syncing Patient Data...</span>");
                     $(event.currentTarget).addClass('disabled').attr('disabled');
@@ -172,8 +200,8 @@ define([
             ADK.PatientRecordService.fetchCollection(syncOptions);
 
             var patientImageModel = new Backbone.Model({
-                    image: this.model.get('patientImage')
-                });
+                image: this.model.get('patientImage')
+            });
             ADK.SessionStorage.set.sessionModel('patient-image', patientImageModel);
 
             $(event.currentTarget).button('loading');
@@ -188,11 +216,12 @@ define([
                 resourceTitle: 'patient-record-patient',
                 patient: this.model
             };
-            searchOptions.onError = function(collection, resp) {
+            searchOptions.onError = function (collection, resp) {
                 var message = '';
-                if (resp.message !== "") {
+                if (resp.message !== "" || resp.responseText !== "") {
                     try {
-                        message = JSON.parse(resp.responseText).error.message;
+                        var responseText = JSON.parse(resp.responseText);
+                        message = responseText.data.error.message;
                     } catch (error) {
                         message = ADK.ErrorMessaging.getMessage('default');
                     }
@@ -202,8 +231,11 @@ define([
                 confirmationView.template = _.template('<br /><p class="error-message padding" role="alert" tabindex="0">' + message + '</p>');
                 confirmationView.render();
             };
-            searchOptions.onSuccess = function(collection, resp) {
+            searchOptions.onSuccess = function (collection, resp) {
                 var modelIndex = _.indexOf(collection.pluck('pid'), confirmationView.currentPatient);
+                if (modelIndex === -1) {
+                    modelIndex = _.indexOf(collection.pluck('icn'), confirmationView.currentPatient);
+                }
                 var domainModel = new Backbone.Model({
                     data: collection,
                     sites: confirmationView.sites
@@ -239,14 +271,14 @@ define([
             this.searchApplet.closeButtonView.model.clear();
             this.searchApplet.closeButtonView.render();
 
-            this.patientSearchChannel.comply('confirm_' + this.model.get('pid'), function() {
+            this.patientSearchChannel.comply('confirm_' + this.model.get('pid'), function () {
                 confirmationView.confirmPatient(event);
             });
 
             var patientModel = ADK.PatientRecordService.fetchCollection(searchOptions);
         },
 
-        setPatientStatusClass: function(patient) {
+        setPatientStatusClass: function (patient) {
             var patientType = 'Outpatient';
             if (patient.get('admissionUid') && patient.get('admissionUid') !== null) {
                 patientType = 'Inpatient';
@@ -254,26 +286,44 @@ define([
             patient.set('patientStatusClass', patientType);
             return patient;
         },
-        confirmPatient: function(event) {
-            var patient = this.model;
-            console.log('confirmationView.confirmPatient');
-            console.log('   name: ' + patient.get('displayName'));
-            console.log('   pid: ' + patient.get('pid'));
-            console.log('   admissionUid: ' + patient.get('admissionUid'));
-            this.searchApplet.resetModels();
-            patient = this.setPatientStatusClass(patient);
-
-            // update CCOW session with newly selected patient context
+        ccowPatientContextChange: function (patient, callback) {
+            var self = this;
+            // update CCOW session with newly selected patient context if allowable
             if ("ActiveXObject" in window && ADK.CCOWService.getCcowStatus() === 'Connected') {
-                ADK.CCOWService.setContext(patient);
-                this.updateTemplateToBlank();
+                ADK.CCOWService.handleContextChange(patient, function (goBack) {
+                    if (goBack) {
+                        ADK.Navigation.navigate(ADK.ADKApp.userSelectedDefaultScreen, {
+                            trigger: true
+                        });
+                    } else {
+                        //Re-enforcing UI change if status is disconnected
+                        if (ADK.CCOWService.getCcowStatus() === 'Disconnected') {
+                            ADK.CCOWService.updateCcowStatus('Disconnected');
+                        }
+                        self.updateTemplateToBlank();
+                        callback();
+                    }
+                });
+            } else {
+                callback();
             }
 
-            ADK.UserDefinedScreens.screensConfigNullCheck();
-            ADK.Messaging.trigger("patient:selected", patient);
-            ADK.Navigation.navigate(ADK.ADKApp.userSelectedDefaultScreen, {
-                trigger: true
+        },
+        confirmPatient: function (event) {
+            var self = this;
+            var patient = this.model;
+            //check CCOW Context first if in Windows
+            self.ccowPatientContextChange(patient, function () {
+                self.searchApplet.resetModels();
+                patient = self.setPatientStatusClass(patient);
+
+                ADK.UserDefinedScreens.screensConfigNullCheck();
+                ADK.Messaging.trigger("patient:selected", patient);
+                ADK.Navigation.navigate(ADK.ADKApp.userSelectedDefaultScreen, {
+                    trigger: true
+                });
             });
+
         }
     });
 

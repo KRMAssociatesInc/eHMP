@@ -11,6 +11,7 @@ class UniversalContainer < AccessBrowserV2
     super
     add_verify(CucumberLabel.new("Coversheet"), VerifyContainsText.new, AccessHtmlElement.new(:css, ".cover-sheet"))
     add_action(CucumberLabel.new("Control - modal - Close"), ClickAction.new, AccessHtmlElement.new(:css, "#modal-close-button"))
+    add_action(CucumberLabel.new("Control - modal - Header_Close"), ClickAction.new, AccessHtmlElement.new(:css, "#modal-header button.close"))
     add_verify(CucumberLabel.new("Modal Title"), VerifyContainsText.new, AccessHtmlElement.new(:css, ".modal-title"))
     add_verify(CucumberLabel.new("Modal"), VerifyContainsText.new, AccessHtmlElement.new(:css, "#modal-body"))
 
@@ -26,10 +27,10 @@ module Constants
   # key - Gherkin applet actual title
   # value - appletid attribute found in html
   APPLET_IDS = {
-      "Orders" => "orders",
-      "Lab Results" => "lab_results_grid",
-      "Active Medications" => "activeMeds",
-      "Vitals" => "vitals"
+    "Orders" => "orders",
+    "Lab Results" => "lab_results_grid",
+    "Active Medications" => "activeMeds",
+    "Vitals" => "vitals"
   }
 end # Constants
 
@@ -142,8 +143,8 @@ rescue => e
     p "!! Error attempting input on - #{control_name} !!"
     raise e
   end # if/else
-#else # succesful begin
-#  p "Input - #{control_name}"
+  #else # succesful begin
+  #  p "Input - #{control_name}"
 end
 
 def wait_and_perform(container, map_key, sent_keys = :enter)
@@ -169,8 +170,8 @@ def wait_and_perform(container, map_key, sent_keys = :enter)
       p "!! Error attempting action on - #{control_key} !!"
       raise e
     end # if/else
-  #else # succesful begin
-  #  p "Action - #{map_key}"
+    #else # succesful begin
+    #  p "Action - #{map_key}"
   end # begin/rescue
 end
 
@@ -379,7 +380,7 @@ Then(/^the modal's title is "(.*?)"$/) do |expected_title|
   expect(@uc.perform_verification(modal_title_key, expected_title)).to be_true
 end
 
-Then(/^the "(.*?)" single page view is displayed$/) do |expected_single_page|
+Then(/^the "(.*?)" single page view is displayed$/) do |_expected_single_page|
   singe_page_key = "Single Page View"
   @uc.wait_until_element_present(singe_page_key, 15)
   is_single_page = @uc.static_dom_element_exists?(singe_page_key)

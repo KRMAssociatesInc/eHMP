@@ -15,15 +15,14 @@ require 'HMPCommands.rb'
 require 'HMPSetup.rb'
 require 'HMPAttributeParameters.rb'
 
-Given(/^a patient with "(.*?)" in multiple VistAs$/) do |arg1|
-#   there is no way to verify this step now.
+Given(/^a patient with "(.*?)" in multiple VistAs$/) do |_arg1|
+  #   there is no way to verify this step now.
 end
 
 Then(/^the patient list displays "(.*?)" results for CPRS Default$/) do |arg1|
-# sleep 10
+  # sleep 10
   p runtime_patient_list_size = HMPCommands.perform_verification('Patient List').size
   expect(runtime_patient_list_size.to_s).to eq arg1
-
 end
 
 When(/^user search for "(.*?)" in the "(.*?)"$/) do |value, field|

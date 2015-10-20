@@ -36,7 +36,7 @@ define([
             this.appletRegion.show(this.model.get('currentView'));
         },
         setView: function(viewType) {
-            var viewConfig = Utils.appletViewTypes.getViewTypeConfig(this.options, viewType);
+            var viewConfig = Utils.appletUtils.getViewTypeConfig(this.options, viewType);
             if (!_.isUndefined(viewConfig)){
                 this.model.set({
                     'currentViewType':viewType,

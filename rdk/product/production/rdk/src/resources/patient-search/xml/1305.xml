@@ -1,0 +1,45 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" >
+    <soapenv:Header/>
+    <soapenv:Body>
+        <vaww:PRPA_IN201305UV02 xmlns:vaww="http://vaww.oed.oit.domain">
+            <id extension="MCID-%(msgID)s" root="1.2.840.114350.1.13.0.1.7.1.1"/>
+            <creationTime value="20140625074250-0500"/>
+            <versionCode code="3.0"/>
+            <interactionId extension="PRPA_IN201305UV02" root="2.16.840.1.113883.1.6"/>
+            <processingCode code="T"/>
+            <processingModeCode code="T"/>
+            <acceptAckCode code="AL"/>
+            <receiver typeCode="RCV">
+                <device classCode="DEV" determinerCode="INSTANCE">
+                    <id root="1.2.840.114350.1.13.999.234"/>
+                </device>
+            </receiver>
+            <sender typeCode="SND">
+                <device classCode="DEV" determinerCode="INSTANCE">
+                    <id extension="%(sender)s" root="2.16.840.1.113883.4.349"/>
+                </device>
+            </sender>
+            <controlActProcess classCode="CACT" moodCode="EVN">
+                <code code="PRPA_TE201305UV02" codeSystem="2.16.840.1.113883.1.6"/>
+                <dataEnterer contextControlCode="AP" typeCode="ENT">
+                    <assignedPerson classCode="ASSIGNED">
+                        <id extension="%(sender)s" root="2.16.840.1.113883.4.349"/>
+                        <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                            <name>
+                                <given>%(firstname)s</given>
+                                <family>%(lastname)s</family>
+                            </name>
+                        </assignedPerson>
+                    </assignedPerson>
+                </dataEnterer>
+                <queryByParameter>
+                    <queryId extension="MCID-%(msgID)s" root="1.2.840.114350.1.13.28.1.18.5.999"/>
+                    <statusCode code="new"/>
+                    <modifyCode code="1"/>
+                    <initialQuantity value="10"/>
+                    <parameterList>%(query)s</parameterList>
+                </queryByParameter>
+            </controlActProcess>
+        </vaww:PRPA_IN201305UV02>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -371,7 +371,7 @@ describe('record-enrichment-patient-xformer.js', function() {
             var environment = {};
 
             runs(function() {
-                xformer(log, config, environment, originalVaPatientJob, function(error, record) {
+                xformer(log, config, environment, originalVaPatientJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 
@@ -539,7 +539,7 @@ describe('record-enrichment-patient-xformer.js', function() {
             var environment = {};
 
             runs(function() {
-                xformer(log, config, environment, originalDodPatientJob, function(error, record) {
+                xformer(log, config, environment, originalDodPatientJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     // Root level fields
@@ -717,28 +717,12 @@ describe('record-enrichment-patient-xformer.js', function() {
                 return finished;
             }, 'Call failed to return in time.', 500);
         });
-        it('Job.record was null', function() {
-            var finished = false;
-            var environment = {};
-
-            runs(function() {
-                xformer(log, config, environment, {}, function(error, record) {
-                    expect(error).toBeNull();
-                    expect(record).toBeNull();
-                    finished = true;
-                });
-            });
-
-            waitsFor(function() {
-                return finished;
-            }, 'Call failed to return in time.', 500);
-        });
         it('Job was removed', function() {
             var finished = false;
             var environment = {};
 
             runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:patient:DOD:0000000003:1000010340');

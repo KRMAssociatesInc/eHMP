@@ -1,18 +1,18 @@
 When(/^the client performs a fullName search through RDK API with search term "(.*?)"$/) do |name|
-  temp = SearchRDK.new
+  temp = RDKQuery.new('patient-search-full-name')
   temp.add_parameter("name.full", name)
   @response = HTTPartyWithBasicAuth.get_with_authorization(temp.path)
 end
 
 When(/^the client performs a fullName search through RDK API with search term "(.*?)" and the startIndex (\d+)$/) do |name, start_index|
-  temp = SearchRDK.new
+  temp = RDKQuery.new('patient-search-full-name')
   temp.add_parameter("name.full", name)
   temp.add_parameter("startIndex", start_index)
   @response = HTTPartyWithBasicAuth.get_with_authorization(temp.path)
 end
 
 When(/^the client performs a fullName search through RDK API with search term "(.*?)" and the limit (\d+)$/) do |name, limit|
-  temp = SearchRDK.new
+  temp = RDKQuery.new('patient-search-full-name')
   temp.add_parameter("name.full", name)
   temp.add_parameter("itemsPerPage", limit)
 
@@ -20,7 +20,7 @@ When(/^the client performs a fullName search through RDK API with search term "(
 end
 
 When(/^the client performs a fullName summary search through RDK API with search term "(.*?)" and the startIndex (\d+)$/) do |name, start_index|
-  temp = SearchRDK.new
+  temp = RDKQuery.new('patient-search-full-name')
   temp.add_parameter("name.full", name)
   temp.add_parameter("startIndex", start_index)
   temp.add_parameter("resultsRecordType", "summary")
@@ -28,7 +28,7 @@ When(/^the client performs a fullName summary search through RDK API with search
 end
 
 When(/^the client performs a fullName  summary search through RDK API with search term "(.*?)" and the limit (\d+)$/) do |name, limit|
-  temp = SearchRDK.new
+  temp = RDKQuery.new('patient-search-full-name')
   temp.add_parameter("name.full", name)
   temp.add_parameter("itemsPerPage", limit)
   temp.add_parameter("resultsRecordType", "summary")
@@ -37,7 +37,7 @@ When(/^the client performs a fullName  summary search through RDK API with searc
 end
 
 When(/^the client performs a fullName summary search through RDK API with search term "(.*?)"$/) do |name|
-  temp = SearchRDK.new
+  temp = RDKQuery.new('patient-search-full-name')
   temp.add_parameter("name.full", name)
   temp.add_parameter("resultsRecordType", "summary")
   @response = HTTPartyWithBasicAuth.get_with_authorization(temp.path)
@@ -65,7 +65,7 @@ Then(/^the RDK search results does not contain$/) do |table|
   json_verify = JsonVerifier.new
 
   result_array = @json_object["data"]["items"]
-  table.rows.each do | field |
+  table.rows.each do |field|
     expect(json_verify.not_defined?(field, result_array)).to be_true, "Expected field #{field} to not exist in this json"
   end #table
 end
@@ -94,7 +94,7 @@ Then(/^the RDK results contain the substring "(.*?)"$/) do |subst|
   pattern = /#{subst}/
 
   found_subst = false
-  source_allvalues.each do | name |
+  source_allvalues.each do |name|
     contains_pattern = pattern.match(name)
     found_subst = true unless contains_pattern.nil?
   end

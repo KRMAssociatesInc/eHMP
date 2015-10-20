@@ -15,26 +15,29 @@ define([
         },
         getTooltip: function(key) {
             if (helpMappings[key] === undefined) {
-                console.log('Help tooltip undefined: ' + key);
-                return;
+                return helpMappings.help_unavailable.tooltip;
             }
             return helpMappings[key].tooltip;
         },
+        getTooltipPlacement: function(key) {
+            if(helpMappings[key] === undefined) {
+                return null;
+            }
+            return helpMappings[key].tooltip_placement;
+        },
         getUrl: function(key) {
             if (helpMappings[key] === undefined) {
-                console.log('Help url undefined: ' + key);
-                return "";
+                return helpMappings.help_unavailable.url;
             }
             return helpMappings[key].url;
         },
-        UrlExists: function(url, title, w, h) {
+        UrlExists: function(url, title, w, h, pdfLinkBool) {
             var http = new XMLHttpRequest();
             http.open('HEAD', url);
             http.onreadystatechange = function() {
                 if (this.readyState == this.DONE) {
                     if (this.status == 200) {
-
-                        helpUtils.showHelpWindow(url, title, w, h, true);
+                        helpUtils.showHelpWindow(url, title, w, h, pdfLinkBool); //true
                     } else {
                         helpUtils.showHelpWindow(helpMappings.page_not_found.url, title, '715', '320', false);
                     }
@@ -79,8 +82,13 @@ define([
         },
         popupCenter: function(url, title, w, h) {
             //focus the window first
-            helpUtils.showHelpWindow(url, title, w, h);
-            helpUtils.UrlExists(url, title, w, h);
+            if (url === helpMappings.help_unavailable.url) {
+                helpUtils.showHelpWindow(url, title, w, h, false);
+                helpUtils.UrlExists(url, title, w, h, false);
+            } else {
+                helpUtils.showHelpWindow(url, title, w, h, true);
+                helpUtils.UrlExists(url, title, w, h, true);
+            }
         }
     };
 

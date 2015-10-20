@@ -1,11 +1,17 @@
 $break-xtraSmall: 768px;
 $sectionHeight: 450px;
 $borderRadius: 4px;
+.logon-screen #center-region {
+    overflow-x: hidden;
+}
 .logonSection {
     height: $sectionHeight;
     margin-top: 30px;
     h3 {
         text-transform: uppercase;
+        border: none;
+        font-size: 24px;
+        font-weight: normal;
     }
     .securityStatement {
         background: $primary-light;

@@ -37,7 +37,7 @@ end
 When(/^the client receives (\d+) FHIR "(.*?)" result\(s\)$/) do |number_of_results, site_name|
   runtime_json_object = JSON.parse(@response.body)
 
-  fieldsource = "entry.content.identifier.value"
+  fieldsource = "entry.resource.identifier.value"
   default_site = DefaultInitialize.new
   define_source_site = default_site.site_initialize
 
@@ -68,7 +68,7 @@ class CountValue
 
     if source_allvalues.class == Array
       @total_size = source_allvalues.size
-      source_allvalues.each do | value |
+      source_allvalues.each do |value|
         num_results = count_num_of_host(value)
       end
     else
@@ -79,16 +79,16 @@ class CountValue
   end
 
   def count_num_of_host(value)
-    if @source_panorama.match(value) != nil
-      @num_panorama_results = @num_panorama_results + 1
-    elsif @source_kodak.match(value) != nil
-      @num_kodak_results = @num_kodak_results + 1
-    elsif @source_dod.match(value) != nil
-      @num_dod_results = @num_dod_results + 1
+    if !@source_panorama.match(value).nil?
+      @num_panorama_results += 1
+    elsif !@source_kodak.match(value).nil?
+      @num_kodak_results += 1
+    elsif !@source_dod.match(value).nil?
+      @num_dod_results += 1
     else
       @not_define_value << value
     end
-    num_results = { 'TOTAL' => @total_size, 'VISTA' => @num_panorama_results + @num_kodak_results, 'PANORAMA' => @num_panorama_results, 'KODAK' => @num_kodak_results , 'DOD' => @num_dod_results }
+    num_results = { 'TOTAL' => @total_size, 'VISTA' => @num_panorama_results + @num_kodak_results, 'PANORAMA' => @num_panorama_results, 'KODAK' => @num_kodak_results, 'DOD' => @num_dod_results }
     return num_results
   end
 
@@ -115,6 +115,6 @@ end
 
 Then(/^corresponding matching FHIR records totaling "(.*?)" are displayed$/) do |total|
   @json_object = JSON.parse(@response.body)
-  result_array = @json_object["totalResults"]
+  result_array = @json_object["total"]
   expect(result_array.to_s).to eq(total), "response total items was #{total}: response body #{result_array}"
 end

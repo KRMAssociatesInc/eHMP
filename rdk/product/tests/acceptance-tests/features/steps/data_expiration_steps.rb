@@ -6,7 +6,9 @@ require 'VerifyJsonRuntimeValue.rb'
 
 When(/^the client requests manual expiration time "(.*?)" for patient with pid "(.*?)" and site "(.*?)"$/) do |time, pid, site_name|
   # http://10.4.4.105:8888/sync/expire?pid=11016V630869&vistaId=CDS&time=20140916170917.123
-  path = QueryRDKSync.new("expirepatientdata", pid)
+  # path = QueryRDKSync.new("expirepatientdata", pid)
+  path = RDKQuery.new('synchronization-expirepatientdata')
+  path.add_parameter("pid", pid)
   path.add_parameter("vistaId", site_name)
   path.add_parameter("time", time)
   p path.path

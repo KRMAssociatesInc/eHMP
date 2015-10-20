@@ -131,14 +131,16 @@ def perform_drag(applet_preview, right_by, down_by)
 end
 
 #Drags VistA Health Summaries" applet from carousel to user defined screen
-When(/^the user drags and drops the VistA Health Summaries right by "(.*?)" and down by "(.*?)"$/) do |arg1, arg2|
+When(/^user drags and drops the VistA Health Summaries right by "(.*?)" and down by "(.*?)"$/) do |arg1, arg2|
   driver = TestSupport.driver
+  wait = Selenium::WebDriver::Wait.new(:timeout => 50)
   #wait_until_loaded("VistA Health Summaries")
   #Peng Han -- adding the following code 
+  sleep(5)
   thumbnails = driver.find_elements(:xpath,  "//div[@class='item active']/div").size
   workspaces = driver.find_elements(:xpath, "//ol[@class='carousel-indicators pagination']/li").size
-  puts thumbnails
-  puts workspaces
+  #puts thumbnails
+  #puts workspaces
   j = 1
   h = 0
   outer = 0
@@ -146,28 +148,27 @@ When(/^the user drags and drops the VistA Health Summaries right by "(.*?)" and 
   while j <= workspaces 
     i = 1
     while i <= thumbnails 
-      sleep(3)
+      sleep(6)
       if HS == driver.find_element(:xpath, "//*[@id='applets-carousel']/div[1]/div[2]/div[#{j}]/div[#{i}]/p").text
         flag = true
         h = i
         break
       else
-        i = i+1
+        i += 1
       end
     end  
     if flag
       outer = j
       break
     end  
-    sleep(3)
+    sleep(5)
     driver.find_element(:xpath, "//*[@id='applets-carousel']/div[1]/div[3]/a/span").click
-    j = j + 1
+    j += 1
   end
-  
-  sleep(3)
+  sleep(6)
+  wait.until {  driver.find_element(:xpath, "//*[@id='applets-carousel']/div[1]/div[2]/div[#{outer}]/div[#{h}]/p").displayed?  }
   applet_preview = driver.find_element(:xpath, "//*[@id='applets-carousel']/div[1]/div[2]/div[#{outer}]/div[#{h}]/p")
   perform_drag(applet_preview, arg1, arg2)
-  #sleep(5)
 end
 
 When(/^drag and drop the Stacked Graph right by (\d+) and down by (\d+)$/) do |arg1, arg2|
@@ -188,13 +189,13 @@ When(/^drag and drop the Stacked Graph right by (\d+) and down by (\d+)$/) do |a
         flag = true
         break
       else
-        i = i+1
+        i += 1
       end
     end  
     break if flag
     sleep(3)
     driver.find_element(:xpath, "//*[@id='applets-carousel']/div[1]/div[3]/a/span").click
-    j = j + 1
+    j += 1
   end
   
   sleep(3)

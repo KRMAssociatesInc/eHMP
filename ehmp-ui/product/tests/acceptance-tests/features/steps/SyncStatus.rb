@@ -2,7 +2,7 @@ class SyncStatus < AccessBrowserV2
   include Singleton
   def initialize
     super
-  #  add_action(CucumberLabel.new("refresh"), ClickAction.new, AccessHtmlElement.new(:xpath, ".fa.fa-refresh"))
+    #  add_action(CucumberLabel.new("refresh"), ClickAction.new, AccessHtmlElement.new(:xpath, ".fa.fa-refresh"))
     add_verify(CucumberLabel.new("patientstatusicon"), VerifyContainsText.new, AccessHtmlElement.new(:xpath, "//*[@id='refresh-patient-data']/following-sibling::span"))
       
   end
@@ -22,7 +22,7 @@ class PatientFlag < AccessBrowserV2
   include Singleton
   def initialize
     super
-  #  add_verify(CucumberLabel.new("patientname"), VerifyText.new, AccessHtmlElement.new(:css, ".patientName"))
+    #  add_verify(CucumberLabel.new("patientname"), VerifyText.new, AccessHtmlElement.new(:css, ".patientName"))
     add_verify(CucumberLabel.new("patientflags"), VerifyText.new, AccessHtmlElement.new(:xpath, "//*[@class='fixedHeightZone']/following-sibling::span"))
     add_action(CucumberLabel.new("confirmButton"), ClickAction.new, AccessHtmlElement.new(:id, "confirmFlaggedPatinetButton"))
   end

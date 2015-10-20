@@ -24,6 +24,7 @@ define([
         },
         initialize: function() {
             $('ul.dropdown-menu #clearSearch').hide();
+            this.listenTo(ADK.Messaging, 'close:workspaceManager', this.updateWorkspaceList);
         },
         onRender: function() {
             var input = $('.dropdown-menu li #dropdown-search-element');
@@ -36,6 +37,13 @@ define([
             input.val('');
             input.focus();
             input.val(this.filterText);
+            $('.dropdownContainer').mousedown(function(e){
+                if($(e.target).hasClass('dropdownContainer')) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    return false;
+                }
+            });
         },
         modelEvents: {
             'change:currentScreen': 'currentScreenChanged',
@@ -80,8 +88,10 @@ define([
             } else if (screenId.indexOf("-full") > -1) {
                 this.$el.find("#screenName").text(this.model.get('currentScreen').applets[0].title);
             }
+            var isNonPatientCentricView = (!_.isUndefined(this.model.get("currentScreen").nonPatientCentricView) &&
+                this.model.get("currentScreen").nonPatientCentricView === true);
 
-            if (this.model.get('currentScreen').predefined === false) {
+            if (this.model.get('currentScreen').predefined === false || isNonPatientCentricView) {
                 this.$el.find('#plus-button').show();
             } else {
                 this.$el.find('#plus-button').hide();

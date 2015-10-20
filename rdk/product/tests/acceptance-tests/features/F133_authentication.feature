@@ -10,12 +10,12 @@ Feature: F133 - SDK VistA Write-Back Architecture
     When the client requests authentication with accessCode "<accesscode>" and verifyCode "<verifycode>" and site "<site>" and contentType "<contenttype>"
     Then a successful response is returned
     And the authentication result contains
-      | field       | value                       |
-      | firstname   | PANORAMA                    |
-      | lastname    | USER                        |
-      | facility    | PANORAMA                    |
-      | title       | Clinician                   |
-      | site        | 9E7A                        |
+      | field       | value                             |
+      | firstname   | PANORAMA                          |
+      | lastname    | USER                              |
+      | facility    | PANORAMA                          |
+      | title       | Clinician                         |
+      | site        | 9E7A                              |
       Examples:
       | accesscode    | verifycode   | site       | contenttype         |
       | pu1234        | pu1234!!     | 9E7A       | application/json    |

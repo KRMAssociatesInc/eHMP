@@ -76,4 +76,13 @@ class HTTPartyWithBasicAuth
     @@time_done = Time.new
     return directory
   end
+  
+  def self.post_write_back(path, param, time_out = @@default_time_out)
+    # check_host(path)
+    @@time_start = Time.new
+    directory = post(path, { :verify => false, :body => param , :headers => { 'Content-Type' => 'application/json' }, :timeout => time_out })
+    @@time_done = Time.new
+    return directory
+  end
+  
 end

@@ -2,8 +2,6 @@
 
 require('../../../../env-setup');
 
-var _ = require('underscore');
-
 var handle = require(global.VX_HANDLERS + 'record-enrichment-request/record-enrichment-request-handler');
 var jobUtil = require(global.VX_UTILS + 'job-utils');
 
@@ -13,7 +11,6 @@ var log = require(global.VX_UTILS + 'dummy-logger');
 //     name: 'record-enrichment-request-handler-spec',
 //     level: 'debug'
 // });
-var inspect = require(global.VX_UTILS + 'inspect');
 
 
 var config = {
@@ -105,7 +102,10 @@ var unknownDomainRecord = {
     'pid': '9E7A;3'
 };
 var unknownDomainJob = jobUtil.createRecordEnrichment(patientIdentifier, 'unknownDomain', unknownDomainRecord, rootJob);
-
+var CODE_SYSTEMS = {
+    CODE_SYSTEM_UMLS_CUI: 'urn:oid:2.16.840.1.113883.6.86',
+    SYSTEM_DOD_ALLERGY_IEN: 'DOD_ALLERGY_IEN'
+};
 //------------------------------------------------------------------
 // Dummy publish method
 //------------------------------------------------------------------
@@ -141,6 +141,10 @@ function createEnvironment() {
         publisherRouter: {
             publish: publish
         },
+        metrics: log,
+        terminologyUtils: {
+            CODE_SYSTEMS: CODE_SYSTEMS
+        }
     };
     return environment;
 }

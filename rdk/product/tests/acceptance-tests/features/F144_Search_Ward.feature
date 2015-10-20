@@ -9,7 +9,7 @@ Feature: F144 - eHMP Viewer GUI - Patient Search (Ward)
     When the client requests for the patient name "3" starting with "0" and limited to "5" using Word
     Then a successful response is returned
     And the client receives 5 VPR VistA result(s)
-    And the client receives 24 RDK result(s) with start index of 0 and results limit of 5 per page
+    And the client receives 26 RDK result(s) with start index of 0 and results limit of 5 per page
     And the RDK last5 search results contain
       | field       | value                                    |
       | localId     | 5                                        |
@@ -20,9 +20,9 @@ Feature: F144 - eHMP Viewer GUI - Patient Search (Ward)
       | typeName    | Ward                                     |
       | facilityCode| 998                                      |
       | facilityName| ABILENE (CAA)                            |
-      | displayName | 3 North Surg                            |
-      | uid         | urn:va:location:C877:5                   |
-      | summary     | Location{uid='urn:va:location:C877:5'}   |
+      | displayName | 3 North Surg                             |
+      | uid         | urn:va:location:C877:w5                  |
+      | summary     | Location{uid='urn:va:location:C877:w5'}  |
       | oos         | false                                    |
 
   @F114_SearchWard_2
@@ -30,7 +30,7 @@ Feature: F144 - eHMP Viewer GUI - Patient Search (Ward)
     When the client sends a request for the patient name "7A" starting with "0" using Word
     Then a successful response is returned
     #And the client receives 0 RDK result(s) with start index of 0
-    And the client receives 24 VPR VistA result(s)
+    And the client receives 26 VPR VistA result(s)
 
   @F114_SearchWard_3
   Scenario: User word searches for patient with patient limited to 1 and should not contain uidHref
@@ -44,13 +44,13 @@ Feature: F144 - eHMP Viewer GUI - Patient Search (Ward)
     Scenario: User word searches for patient using name and facilityCode
     When the client requests for the patient name "3" and facilityCode "998"
     Then a successful response is returned
-    And the client receives 4 VPR VistA result(s)
+    And the client receives 6 VPR VistA result(s)
 
     @F114_SearchWard_5
     Scenario: User word searches for patient using siteCode
     When the client requests for the siteCode "C877"
     Then a successful response is returned
-    And the client receives 12 VPR VistA result(s)
+    And the client receives 13 VPR VistA result(s)
 
     @F114_SearchWard_6 @vxsync @enrich
     Scenario: Word searches for patient using refId ,locationUid ,filter 

@@ -146,15 +146,15 @@ define([
             }
 
             if (fromDate !== undefined && fromDate !== null) {
-                this.fetchOptions.criteria['date-start'] = moment(fromDate).format('YYYYMMDD');
+                this.fetchOptions.criteria['date.start'] = moment(fromDate).format('YYYYMMDD');
             } else {
-                delete this.fetchOptions.criteria['date-start'];
+                delete this.fetchOptions.criteria['date.start'];
             }
 
             if (toDate !== undefined && toDate !== null) {
-                this.fetchOptions.criteria['date-end'] = moment(toDate).format('YYYYMMDD');
+                this.fetchOptions.criteria['date.end'] = moment(toDate).format('YYYYMMDD');
             } else {
-                delete this.fetchOptions.criteria['date-end'];
+                delete this.fetchOptions.criteria['date.end'];
             }
 
             this.model.set('fromDate', fromDate);

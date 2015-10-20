@@ -1,0 +1,41 @@
+
+defaultTasks 'clean', 'build'
+description = 'HMP'
+
+task packHmpRO (type:Exec) {
+    description = 'Builds the distribution (*.ro) file.'
+    group = 'build'
+    inputs.source fileTree('src/hmp') {
+        include '*.m'
+    }
+    buildDir.mkdirs()
+    outputs.file new File(buildDir, "hmp.ro")
+
+    // workingDir projectDir
+    executable 'python'
+    args 'packRO.py'
+    args inputs.sourceFiles
+    standardOutput = new ByteArrayOutputStream()
+
+    doLast {
+        outputs.files.singleFile.text = standardOutput.toString()
+    }
+}
+
+task zipHmp(type: Zip) {
+  extension = 'zip'
+  baseName = 'hmp'
+  version = getVersionByCommitCountForProject(":production:hmp")  
+  destinationDir buildDir
+  from packHmpRO.outputs.files.singleFile
+  from "./src/kids/"
+  from "./src/kids-manifest.json"
+}
+
+zipHmp.dependsOn packHmpRO
+build.dependsOn zipHmp
+uploadArchives.dependsOn zipHmp
+
+artifacts {
+  archives file: zipHmp.archivePath
+}

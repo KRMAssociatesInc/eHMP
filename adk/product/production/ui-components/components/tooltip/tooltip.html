@@ -1,0 +1,62 @@
+<h3>Tooltip</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> Tooltips allow the user to view additional visual information by hovering over an object. Tooltips can be displayed in four different directions: above, below, to the left, or the right of the current content.</p>
+    
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> Tooltips are meant to display visual additional information when the user uses a mouse to hover over the object. To make tooltips 508 compliant, adding the title attribute and helpful content will be sufficient enough to pass the 508-compliance test since the title attribute will be read by the screen reader.</p>
+</div>
+
+<div id="tooltipCopy">
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
+</div>
+
+<hr/>
+
+<div role="tabpanel" class="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#markup-tooltip" aria-controls="markup-tooltip" role="tab" data-toggle="tab">Tooltip</a></li>
+        <li><a href="#tooltip-js-copy" aria-controls="tooltip-js-copy" role="tab" data-toggle="tab">Javascript Code</a></li>       
+    </ul>
+
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-tooltip">
+            <pre>
+&lt;button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left"&gt;
+Tooltip on left&lt;/button&gt;
+
+&lt;button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on left"&gt;
+Tooltip on top&lt;/button&gt;
+
+&lt;button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on left"&gt;
+Tooltip on bottom&lt;/button&gt;
+
+&lt;button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on left"&gt;
+ooltip on right&lt;/button&gt;
+            </pre>
+            <a onclick="copyToClipboard('tooltipCopy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="tooltip-js-copy">
+            <pre>
+&lt;script&gt;
+$(function() {
+    $(&#39;[data-toggle=&quot;tooltip&quot;]&#39;).tooltip()
+})
+&lt;/script&gt;
+            </pre>
+            <a onclick="copyToClipboard('js-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>
+<div id="js-copy">
+<script>
+$(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+</div>

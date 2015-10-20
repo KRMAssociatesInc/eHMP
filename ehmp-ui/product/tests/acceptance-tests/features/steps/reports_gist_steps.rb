@@ -32,7 +32,7 @@ When(/^the Reports Gist Applet table contains headers$/) do |table|
   aa = ReportsGistContainer.instance 
   expect(aa.wait_until_action_element_visible("ReportsGridVisible", DefaultLogin.wait_time)).to be_true
     
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification('Date', row[0])).to be_true, "The header #{row[0]} is not present in the reports gist"
     expect(aa.perform_verification('Type', row[1])).to be_true, "The header #{row[1]} is not present in the reports gist"
     expect(aa.perform_verification('Entered By', row[2])).to be_true, "The header #{row[2]} is not present in the reports gist"
@@ -43,7 +43,7 @@ Then(/^the Reports Gist table contains specific rows$/) do |table|
   verify_table_rows_reports(table)
 end
 
-Then(/^title of the Reports Applet says "(.*?)"$/) do |arg1|
+Then(/^title of the Reports Applet says "(.*?)"$/) do |_arg1|
   aa = ReportsGistContainer.instance  
   expect(aa.wait_until_action_element_visible("Reports Title", DefaultLogin.wait_time)).to be_true
   expect(aa.perform_verification("Reports Title", "REPORTS")).to be_true

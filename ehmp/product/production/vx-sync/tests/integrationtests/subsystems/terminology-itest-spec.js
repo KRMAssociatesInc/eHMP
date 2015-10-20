@@ -5,8 +5,10 @@ require('../../../env-setup');
 var request = require('request');
 var querystring = require('querystring');
 var util = require('util');
+var logger = require(global.VX_UTILS + 'dummy-logger');
 var config = require(global.VX_ROOT + 'worker-config');
-var terminology = require(global.VX_SUBSYSTEMS + '/terminology/terminology-utils');
+var Terminology = require(global.VX_SUBSYSTEMS + '/terminology/terminology-utils');
+var terminology = new Terminology(logger, logger, config);
 var vx_sync_ip = require(global.VX_INTTESTS + 'test-config');
 var val = require(global.VX_UTILS + 'object-utils').getProperty;
 

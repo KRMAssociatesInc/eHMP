@@ -52,7 +52,7 @@ public class HdrConnection
 
     public static HttpURLConnection createConnection(URL url) throws IOException {
         if (hdrConfig.getProtocol().equals("https")) {
-            configure();
+            // configure();
             return (HttpsURLConnection) url.openConnection();
         }
         return (HttpURLConnection) url.openConnection();

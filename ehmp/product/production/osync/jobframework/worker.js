@@ -36,9 +36,6 @@ var Worker = function(logger, beanstalkJobTypeConfig, handlerRegistry, jobStatus
     this.pauseDelayMillis = 1000;
 
     this.delay = new Delay(this.beanstalkJobTypeConfig.delay);
-
-    this.logger.debug('worker.Worker()');
-    this.logger.trace('worker.Worker() %j', this.beanstalkJobTypeConfig);
 };
 
 Worker.prototype.start = function() {
@@ -60,18 +57,14 @@ Worker.prototype.updateRegistry = function(handlerRegistry) {
 };
 
 Worker.prototype.resume = function() {
-    this.logger.debug('worker.resume()');
     this.paused = false;
 };
 
 Worker.prototype.pause = function() {
-    this.logger.debug('worker.pause()');
     this.paused = true;
 };
 
 Worker.prototype.getStatus = function() {
-    this.logger.debug('worker.getStatus()');
-
     return {
         tube: this.beanstalkJobTypeConfig.host + ':' + this.beanstalkJobTypeConfig.port + '/' + this.beanstalkJobTypeConfig.tubename,
         status: this.paused ? 'paused' : 'running',
@@ -143,17 +136,6 @@ Worker.prototype._listen = function(callback) {
         self._receiveJob();
         callback();
 
-        // always ignore the 'default' tube
-        // return self.client.ignore('default', function(error) {
-        //     if (error) {
-        //         self.logger.warn('error trying to ignore default tube');
-        //         return callback(error);
-        //     }
-
-        //     self.logger.debug('Ignoring "default" tube');
-        //     self._receiveJob();
-        //     callback();
-        // });
     });
 };
 

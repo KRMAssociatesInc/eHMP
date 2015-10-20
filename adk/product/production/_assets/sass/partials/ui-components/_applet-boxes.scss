@@ -1,0 +1,245 @@
+.deprecated{/* EXAMPLE ONLY CLASSES */
+
+	#demoApplet{
+		top:100px;
+		position:fixed;
+		visibility:hidden;
+		z-index:1050;
+
+		&.inSight{
+			visibility:visible;
+		}
+	}
+
+/* VARIABLES */
+
+	$filter-height: 26px;
+	$headerBarHeight : 20px;
+
+/* CLASS TO AVOID SETTING THE FILTER HEIGHT ON FULL-SCREEN APPLETS */
+
+	body:not([class$="full"]) .panel-body.sticky > [id^="grid-filter"]{
+	    height:29px;
+	}
+
+/* CSS RULES */
+
+	.applet-boxes-container {
+		font-family: 'Open Sans', arial, helvetica;
+
+		.panel-primary {
+
+			.panel-heading {
+				background-color: $primary;
+			    background-image: none;
+			    border-radius: 0;
+			    cursor: move;
+			    font-size: 12px;
+			    line-height: 14px;
+			    padding: 3px 5px;
+			    position: relative;
+
+			    .panel-title {
+			        font-size: inherit;
+			        font-weight: 600;
+			        line-height: inherit;
+			        text-transform: uppercase;
+			        color: $white;
+			    }
+
+			    .toolset {
+			        position: absolute;
+			        right: 5px;
+			        top: 2px;
+			        button{
+			    	    border-radius: 2px;
+			    	    color: $white;
+			    	    font-size: inherit;
+			    	    height: 16px;
+			    	    line-height: inherit;
+			    	    margin: 0 0 0 1px;
+			    	    padding: 0;
+			    	    text-align: center;
+			    	    transition: all 200ms ease 0s;
+			    	    width: 16px;
+
+			    	    &:focus{
+				    		border:none;
+				    		outline:none;
+				    		background-color:inherit;
+				    	}
+			        	&[aria-expanded="true"] {
+				    	    background-color: $secondary;
+				    	    color: $primary;
+
+				    	    &:focus{
+					    		background-color: $white;
+					    	}
+				    	}
+			        }
+			    }
+			}
+			.panel-body {
+				background-color: $white;
+			    font-size: 11px;
+				height: 186px;
+				overflow-y: scroll;
+				padding: 0;
+
+				.grid-filter {
+				    border-bottom: 1px solid $grey-darkest;
+				    padding: 0;
+
+				    .backgrid-filter{
+				    	&.form-search {
+					    	height: $filter-height;
+					    	margin: 0;
+					    	width: 100%;
+					    }
+
+					    input[type="search"] {
+					    	border: 0 none;
+					        border-radius: 0;
+					        padding: 3px 3px 3px 25px;
+					        width: calc(100% - 28px);
+					    }
+
+					    .clear {
+						    right: 15px;
+						    top: 13px;
+						    left:auto;
+						}
+				    }
+				}
+
+				.grid-container {
+					height:auto;
+
+					.header-bar {
+						background: $primary-light;
+					}
+					.data-grid {
+						height:auto;
+						overflow-y:visible;
+					}
+				}
+
+				&.sticky{
+					> *:not(.grid-container){
+					    transition: height 150ms ease, min-height 150ms ease;
+					    overflow:hidden;
+					}
+					> .grid-toolbar:not(:empty){
+					    min-height:28px;
+					}
+					&.stuck > *:not(.grid-container) {
+					    height:0 !important;
+					    min-height:0 !important;
+					}
+				}
+			}
+		}
+		.margin-bottom{
+			margin-bottom:15px;
+		}
+		.row{
+			.noMargin {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+		.noPadding{
+			&[class^="col-"] {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		.text{
+			&[class^="col-"] {
+				border-left: 1px solid $grey-darkest;
+				height: 13px;
+				line-height: 12px;
+				margin: 5px 0;
+				overflow: hidden;
+			}
+			&.col-sm-2{
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	/* convert tables to blocks */
+	.tbtb-blockTable.backgrid.table{
+	    display: block;
+	    height: 100%;
+	    width: 100%;
+
+	    thead {
+	    	display: block;height: $headerBarHeight;width: 100%;
+
+	    	tr{background-color:$primary-light;}
+	    }
+	    tr {display: block;width: 100%;}
+	    th, td {display: none;max-width:100%;}
+	    th a{
+	        display: block;
+	        overflow: hidden;
+	        padding: 0;
+	        text-overflow: ellipsis;
+	        width: 100%;
+	    }
+	    th.renderable, td.renderable {display:inline-block;}
+	    tbody {display: block;}
+	}
+
+	.header-bar{
+		&.floating.col-sm-12 > div{
+		    padding:0 10px;
+		}
+		&.floating{
+		    box-shadow:none !important;
+		    padding:0 !important;
+
+			> div {
+			    padding-top:2px;
+			    background:#fff;
+			    background:linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 94%, rgba(0, 0, 0, 0.3) 94%, rgba(0, 0, 0, 0) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+			    color: $primary-light;
+			    font-size: 10px;
+			    font-weight: bold;
+			    height: 25px;
+			}
+		}
+	}
+
+
+	.header-bar.floating > div,
+	.backgrid.table .floating > tr {
+	    position:fixed;
+	    margin-top:0;
+	    z-index:101;
+	    transition:margin-top 2s ease;
+	}
+
+/* WEBKIT FORCED RE-DRAW CLASSES */
+
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		.stuck{
+			.header-bar.floating > div,
+			.backgrid.table .floating > tr {
+		        margin-top:0.01%;
+		    }
+		}
+		.filterToggle {
+			.header-bar.floating > div,
+				.backgrid.table .floating > tr{
+		        margin-top:0.02% !important;
+		    }
+		    &.stuck .header-bar.floating > div,
+		    &.stuck .backgrid.table .floating > tr{
+		        margin-top:0.03% !important;
+		    }
+		}
+	}
+}

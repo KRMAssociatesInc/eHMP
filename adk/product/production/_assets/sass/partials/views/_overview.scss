@@ -1,0 +1,20 @@
+.overview-container {
+	background-color: $primary-lightest;
+	margin-top: -20px;
+	#center-region {
+		min-height: 995px;
+		margin: 0 0 36px 0;
+		.contentPadding {
+			padding: 0 25px 0 25px;
+		}
+	}
+	#top-region {
+		padding: 0;
+		.navbar {
+			margin-bottom: 0;
+		}
+		#navigation-region {
+			padding: 15px 40px;
+		}
+	}
+}

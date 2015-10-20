@@ -1,6 +1,0 @@
-rootProject.name = 'hmp-parent'
-include ':jds', ':hmp-api', ':hmp'
-
-project(':jds').projectDir = "$rootDir/jds" as File
-project(':hmp-api').projectDir = "$rootDir/hmp-api" as File
-project(':hmp').projectDir = "$rootDir/hmp-main" as File

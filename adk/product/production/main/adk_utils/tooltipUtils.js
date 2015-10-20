@@ -35,21 +35,39 @@ define([
 			}
 		}
 
+		//tooltip placement
+		var tooltipPlacement = eventTarget.attr('tooltip-data-placement');
+		if (tooltipPlacement) {
+			eventTarget.removeAttr('tooltip-data-placement');
+		} else {
+			tooltipPlacement = 'auto top';
+		}
+
 		//delete tooltip marker
 		eventTarget.removeAttr('tooltip-data-key');
 
 		//inject/set attributes
 		eventTarget.attr({                            
 			'data-toggle': 'tooltip',
-			'data-placement': 'auto top',
+			'data-placement': tooltipPlacement,
 			'data-original-title': tooltipData,
 			'data-container': 'body'                                         
-		}).tooltip().mouseover();
+		}).tooltip({
+			'delay': {
+				'show': 500,
+				'hide': 100
+			}
+		}).mouseover();
 
 		return true;
 	};
 
 	$('body').on('mouseenter focus', '[tooltip-data-key]', tooltipUtils.initTooltip);
+
+	$('body').on('show.bs.tooltip', function() {
+		// Only one tooltip should ever be open at a time
+		$('.tooltip').not(this).hide();
+	});
 
 	return tooltipUtils;
 });

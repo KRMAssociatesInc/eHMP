@@ -1,0 +1,180 @@
+ZZKMETA ; SLC/KCM -- Test meta-data approaches
+ ;
+REBUILD ; build meta data for all indexes
+ K ^VPRMETA("index")
+ K ^VPRMETA("collection")
+ D BLDIDX("IDXLIST","list")
+ D BLDIDX("IDXTALLY","tally")
+ D BLDIDX("IDXTIME","time")
+ D BLDIDX("IDXATTR","attr")
+ D BLDIDX("IDXMATCH","match")
+ D MAPDOM
+ Q
+BLDIDX(TAG,IDXTYPE) ; build meta data for one type of index
+ N I,X,IDXNM,INDEX
+ S I=0 F  S I=I+1,X=$P($T(@TAG+I),";;",2,99) D  Q:X="zzzzz"
+ . N FIELDS
+ . I $E(X)]" " D  Q  ; handle the index name
+ . . I $D(INDEX) M ^VPRMETA("index")=INDEX  ; save off the old index
+ . . K INDEX                                ; begin a new index
+ . . Q:X="zzzzz"
+ . . S IDXNM=$P(X,",")
+ . . S INDEX(IDXNM)=IDXTYPE
+ . . D PARSFLDS($P(X,IDXNM,2,99),.FIELDS)
+ . . S X="" F  S X=$O(FIELDS(X)) Q:X=""  S INDEX(IDXNM,X)=FIELDS(X)
+ . . I IDXTYPE="time" S INDEX(IDXNM,"collation")="V,V" Q
+ . . I '$D(INDEX(IDXNM,"collation")) S INDEX(IDXNM,"collation")="S,S"
+ . ; handle the other fields
+ . D PARSFLDS(X,.FIELDS)
+ . S COLL=FIELDS("collection")
+ . S INDEX(IDXNM,"collection",COLL)=""
+ . S X="" F  S X=$O(FIELDS(X)) Q:X=""  I X'="collection" S INDEX(IDXNM,"collection",COLL,X)=FIELDS(X)
+ . S INDEX(IDXNM,"collection",COLL,"collation")=INDEX(IDXNM,"collation")
+ . S ^VPRMETA("collection",COLL,"index",IDXNM)=""
+ Q
+PARSFLDS(X,FIELDS) ; Parse fields into an array
+ N I,PAIR,NAME,VALUE
+ F I=1:1:$L(X,",") D
+ . S PAIR=$P(X,",",I)
+ . S NAME=$$TRIM^XLFSTR($P(PAIR,":"))
+ . S VALUE=$$TRIM^XLFSTR($P(PAIR,":",2))
+ . I $L(NAME) S FIELDS(NAME)=VALUE
+ Q
+MAPDOM ; map collections to domains
+ N I,X
+ S I=0 F  S I=I+1,X=$P($T(DOMAIN+I),";;",2,99) Q:X="zzzzz"  D
+ . S COLL=$P(X,":"),DOMAIN=$P(X,":",2)
+ . S ^VPRMETA("collection",COLL,"domain")=DOMAIN
+ Q
+IDXLIST ; list type indexes (sortType defaults to string)
+ ;;allergy
+ ;;    collection:art
+ ;;consult
+ ;;    collection:cons,  sort:dateTime
+ ;;document
+ ;;    collection:tiu,   sort:referenceDateTime
+ ;;encounter
+ ;;    collection:visit, sort:dateTime
+ ;;    collection:appt,  sort:dateTime
+ ;;factor
+ ;;    collection:hf,    sort: recorded
+ ;;imaging
+ ;;    collection:rad,   sort:dateTime
+ ;;immunization
+ ;;    collection:imm,   sort:administeredDateTime
+ ;;laboratory
+ ;;    collection:lab,   sort:observed, setif:$$RSLT^VPRJFPS
+ ;;accession
+ ;;    collection:lab,   sort:observed, setif:$$ACC^VPRJFPS
+ ;;medication
+ ;;    collection:med,   sort:overallStop
+ ;;microbiology
+ ;;    collection:lab,   sort:observed, setif:$$MICRO^VPRJFPS
+ ;;observation
+ ;;    collection:obs,   sort:observed
+ ;;order
+ ;;    collection:order, sort:entered
+ ;;pathology
+ ;;    collection:lab,   sort:observed, setif:$$PATH^VPRJFPS
+ ;;problem
+ ;;    collection:prob
+ ;;procedure
+ ;;    collection:proc,  sort:dateTime
+ ;;    collection:surgery, sort:dateTime
+ ;;    collection:rad,   sort:dateTime
+ ;;    collection:cons,  sort:dateTime
+ ;;vitalsign
+ ;;    collection: vs,   sort:observed
+ ;;notesview
+ ;;    collection:tiu,   sort:referenceDateTime
+ ;;    collection:proc,  sort:dateTime
+ ;;    collection:surgery, sort:dateTime
+ ;;    collection:rad,   sort:dateTime
+ ;;    collection:cons,  sort:dateTime
+ ;;med-active-inpt
+ ;;    collection:med,   sort:overallStop, setif:$$IACT^VPRJFPS
+ ;;med-active-outpt
+ ;;    collection:med,   sort:overallStop, setif:$$OACT^VPRJFPS
+ ;;zzzzz
+ ;
+IDXTALLY ; tally type indexes
+ ;;kind
+ ;;    collection:lab, field:kind
+ ;;    collection:vs,  field:kind
+ ;;    collection:med, field:kind
+ ;;lab-count-name
+ ;;    collection:lab, field:qualifiedName
+ ;;vs-count-name
+ ;;    collection:vs,  field:typeName
+ ;;zzzzz
+ ;
+IDXTIME ; time type indexes
+ ;;all-time
+ ;;    collection:lab, start:observed
+ ;;    collection:vs,  start:observed
+ ;;    collection:med, start:overallStart, stop:overallStop
+ ;;lab-time
+ ;;    collection:lab, start:observed
+ ;;med-time
+ ;;    collection:med, start:overallStart, stop:overallStop
+ ;;vs-time
+ ;;    collection:vs,  start:observed
+ ;;zzzzz
+ ;
+IDXATTR ; attribute type indexes (sortType defaults to string)
+ ;;lab-type
+ ;;    collection:lab, field:typeName,                  sort:observed
+ ;;vs-type
+ ;;    collection:vs,  field:typeName,                  sort:observed
+ ;;med-qualified-name
+ ;;    collection:med, field:qualifiedName,             sort:overallStop
+ ;;med-class-code
+ ;;    collection:med, field:products[].drugClassCode,  sort:overallStop
+ ;;med-ingredient-name
+ ;;    collection:med, field:products[].ingredientName, sort:overallStop
+ ;;provider
+ ;;    collection:med, field:orders[].provider.name,    sort:overallStop
+ ;;med-provider
+ ;;    collection:med, field:orders[].provider.name,    sort:overallStop
+ ;;zzzzz
+ ;
+IDXMATCH ; match type indexes (sortType defaults to string)
+ ;;match-ingredient-name
+ ;;    collection:med, field:products[].ingredientName
+ ;;match-drug-class
+ ;;    collection:med, field:products[].drugClassCode
+ ;;zzzzz
+ ;
+DOMAIN ; map collections to domains
+ ;;art:allergy
+ ;;tiu:document
+ ;;visit:encounter
+ ;;appt:encounter
+ ;;hf:factor
+ ;;imm:immunization
+ ;;med:medication
+ ;;obs:observation
+ ;;order:order
+ ;;cons:consult
+ ;;proc:procedure
+ ;;surgery:procedure
+ ;;rad:procedure
+ ;;cons:procedure
+ ;;prob:problem
+ ;;lab:laboratory
+ ;;vs:vitalsign
+ ;;zzzzz
+ ;
+ ;
+TJSON ; Try some JSON stuff
+ ;;{"name":"lab-type", "mechanism":"attribute", "collations":["s","V"], "collections":[{"collection":"lab", "field":"typeName", "sort":"observed"}]}
+ S JSON=$P($T(TJSON+1),";;",2,99)
+ D DECODE^VPRJSON("JSON","IDX")
+ S VPRMETA("index",IDX("name"))=IDX("mechanism")
+ M VPRMETA("index",IDX("name"),"collations")=IDX("collations")
+ S I=0 F  S I=$O(IDX("collections",I)) Q:'I  D
+ . S COLL=IDX("collections",I,"collection")
+ . K IDX("collections",I,"collection")
+ . M VPRMETA("index",IDX("name"),"collections",COLL)=IDX("collections",I)
+ ZW VPRMETA
+ Q

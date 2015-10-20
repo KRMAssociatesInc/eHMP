@@ -56,7 +56,7 @@ var removedJob = {
 
 describe('record-enrichment-cpt-xformer.js', function(){
     it('transform cpt record',function(){
-        xformer(log, null, null, {record: cptRecord}, function(error, record){
+        xformer(log, null, null, cptRecord, function(error, record){
             expect(error).toBeFalsy();
             expect(record).toBeTruthy();
             expect(record.cptCode).toBe(cptTransformedRecord.cptCode);
@@ -82,7 +82,7 @@ describe('record-enrichment-cpt-xformer.js', function(){
      it('Job was removed', function() {
             var finished = false;
             runs(function() {
-                xformer(log, null, null, removedJob, function(error, record) {
+                xformer(log, null, null, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:cpt:9E7A:3:1646');

@@ -1,10 +1,10 @@
 define([
-    "app/applets/immunizations_add_edit/views/addEditImmunizationView"
-], function(addEditImmunizationView){
+    "app/applets/immunizations_add_edit/views/immunizationAddView"
+], function(immunizationAddView){
     return {
         id: "immunizations_add_edit",
         getRootView: function() {
-            return addEditImmunizationView;
+            return immunizationAddView;
         }
     };
 });

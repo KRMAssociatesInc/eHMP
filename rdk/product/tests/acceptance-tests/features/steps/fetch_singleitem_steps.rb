@@ -10,7 +10,7 @@ def discover_item_id(domain, patient)
   @json_object = JSON.parse(@response.body)
   json_verify = JsonVerifier.new
 
-  @json_object["data"]["items"].each do | item |
+  @json_object["data"]["items"].each do |item|
     @discovered_item_uid = item["uid"]
     break if @discovered_item_uid.include? "9E7A" 
     break if @discovered_item_uid.include? "C877"
@@ -27,7 +27,10 @@ Given(/^test discovers allergy for patient "(.*?)"$/) do |patient|
 end
 
 When(/^the client requests that item for the patient "(.*?)" in RDK format$/) do |patient|
-  path = QuerySingleItem.new(patient, @discovered_item_uid).path
+  temp = RDKQuery.new('uid')
+  temp.add_parameter("pid", patient)
+  temp.add_parameter("uid", @discovered_item_uid)
+  path = temp.path
   @response = HTTPartyWithBasicAuth.get_with_authorization(path)
 end
 
@@ -39,7 +42,6 @@ Then(/^the VPR results contain the correct uid for that item$/) do
 
   found = json_verify.build_subarray("uid", @discovered_item_uid, result_array)
   p "#{found}: #{@discovered_item_uid}"
-
 end
 
 Given(/^test discovers vital for patient "(.*?)"$/) do |patient|
@@ -49,19 +51,21 @@ Given(/^test discovers vital for patient "(.*?)"$/) do |patient|
 end
 
 When(/^the client requests item "(.*?)" for the patient "(.*?)" in RDK format$/) do |uid, patient|
-  path = QuerySingleItem.new(patient, uid).path
+  temp = RDKQuery.new('uid')
+  temp.add_parameter("pid", patient)
+  temp.add_parameter("uid", uid)
+  path = temp.path
   @response = HTTPartyWithBasicAuth.get_with_authorization(path)
 end
 
 Then(/^the response contains error message$/) do |table|
   @json_object = JSON.parse(@response.body)
-  result_array = @json_object["error"]["errors"]
+  result_array = @json_object["data"]["error"]["errors"]
   search_json(result_array, table)
 end
 
 Then(/^the authentication response contains error message$/) do |table|
   @json_object = JSON.parse(@response.body)
-  result_array = @json_object["error"]["errors"]
   result_array = [@json_object]
   search_json(result_array, table)
 end

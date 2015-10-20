@@ -37,7 +37,7 @@ Scenario: Search results displays as a group
   |Vital Sign|
   
 
-@f144_3_text_search_filtered_by_time @US2227 @vimm_observed @DE841
+@f144_3_text_search_filtered_by_time @US2227 @DE841
 Scenario: User is able to filter the search based on time
   Given user is logged into eHMP-UI
   And user searches for and selects "Sixhundred,PATIENT"
@@ -171,7 +171,7 @@ Scenario: When user types text in search text box search suggestions are display
 
       
       
-@f144_10_lab_report_search_result_view_detail @US2242 @DE865 @triage @DE910
+@f144_10_lab_report_search_result_view_detail @US2242 @DE865 @DE910
 Scenario: User is able to view the detail of Lab result search results
   Given user is logged into eHMP-UI
   And user searches for and selects "Four,PATIENT"
@@ -286,7 +286,7 @@ Scenario: User is able to view the detail of radiology/Imaging orders search res
       | CAMPER02              |
    
 
- @f144_15_subgrouping_view_of_progress_notes @US2376
+ @f144_15_subgrouping_view_of_progress_notes @US2376 @debug @DE1575
  Scenario:Text Search: Document data drill down "Progress Notes(Documents)" in Text Search
   Given user is logged into eHMP-UI
   And user searches for and selects "Four,PATIENT"

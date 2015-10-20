@@ -39,7 +39,6 @@ Then(/^a internal server error response is returned$/) do
 end
 
 Then(/^the VPR results contain$/) do |table|
-
   @json_object = JSON.parse(@response.body)
   json_verify = JsonVerifier.new
   result_array = @json_object["data"]["items"]
@@ -75,13 +74,13 @@ Then(/^the client receives (\d+) VPR VistA result\(s\)$/) do |number_of_results|
   num_vista_results = 0
   source_panorama = /urn:va:.*:9E7A/
   source_kodak = /urn:va:.*:C877/
-  source_allvalues.each do | value |
+  source_allvalues.each do |value|
     #if value.start_with? "urn:va:allergy:B362" #PANORAMA
     unless source_panorama.match(value).nil?
-      num_vista_results = num_vista_results + 1
+      num_vista_results += 1
     end
     unless source_kodak.match(value).nil?
-      num_vista_results = num_vista_results + 1
+      num_vista_results += 1
     end
   end
   expect(num_vista_results).to eq(number_of_results.to_i)

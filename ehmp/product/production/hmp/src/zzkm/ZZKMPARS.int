@@ -1,0 +1,128 @@
+ZZKMPARS ; SLC/KCM -- Test Parsing approaches
+ ;
+ ;;eq(status,7) gt(observed,2011) in(code,[20,30,40]) or{eq(a,7) eq(b,8) lt(c,500)} and{eq(w,200) gt(x,7) eq(z,50)} eq(milk,"fresh") and{eq(h:1) eq(j,2)}
+ ;
+ ;parse clause
+ ;  parse operator from begin until (
+ ;  if operator is and, or, not
+ ;    push stack
+ ;    parse contents inside {}
+ ;  otherwise
+ ;    parse arguments from ( until ), making sure ) is not inside string
+ ;      if 1st char is ", parse as string
+ ;      otherwise parse until "," or ")"
+ ;
+TEST
+ ;;eq(status,7) gt(observed,2011) in(code,[20,30,40]) or{eq(a,7) eq(b,8) lt(c,500)} and{eq(w,200) gt(x,7) eq(z,50)} eq(milk,"fresh") and{eq(h:1) eq(j,2)}
+ ;;eq(status,7), gt(observed,2011), in(code,[20,30,40]), or{eq(a,7), eq(b,8), lt(c,500)}, and{eq(w,200), gt(x,7), eq(z,50)}, eq(milk,"fresh"), and{eq(h:1), eq(j,2)}
+ S X=$P($T(TEST+1),";;",2,99)
+ D PARSE(.X,.KCM)
+ W ! ZW KCM
+ Q
+ ;
+PARSE(IN,OUT) ;
+ N LEVEL,STACK,PTR
+ S LEVEL=1,PTR=1,STACK(LEVEL)=1,STACK(LEVEL,"mode")="O"
+ F  Q:PTR>$L(IN)  S TOKEN=$E(IN,PTR) D
+ . I TOKEN="(" D PUSH("A") Q
+ . I TOKEN=")" D POP Q
+ . I TOKEN="{" D PUSH("C") Q
+ . I TOKEN="}" D POP Q
+ . I TOKEN="[" D PUSH("L") Q
+ . I TOKEN="]" D POP Q
+ . I TOKEN="," S STACK(LEVEL)=STACK(LEVEL)+1,PTR=PTR+1 D LTRIM Q
+ . I TOKEN=" " S STACK(LEVEL)=STACK(LEVEL)+1,PTR=PTR+1 D LTRIM Q
+ . S ITEM=$S(TOKEN="""":$$NXTSTR,1:$$NXTVAL) ;these fn's increment PTR to next token
+ . I STACK(LEVEL,"mode")="O"!(STACK(LEVEL,"mode")="C") S @$$CURREF(LEVEL)=ITEM
+ . I STACK(LEVEL,"mode")="A" D
+ . . I STACK(LEVEL)=1 S @$$CURREF(LEVEL-1,"field")=ITEM Q
+ . . I STACK(LEVEL)=2 D
+ . . . I @$$CURREF(LEVEL-1)="between" S @$$CURREF(LEVEL-1,"low")=ITEM I 1
+ . . . E  S @$$CURREF(LEVEL-1,"value")=ITEM
+ . . I STACK(LEVEL)=3 S @$$CURREF(LEVEL-1,"high")=ITEM
+ . I STACK(LEVEL,"mode")="L" S @$$CURREF(LEVEL-2,"list",ITEM)=""
+ Q
+PUSH(MODE) ; new stack level
+ S LEVEL=LEVEL+1,STACK(LEVEL)=1,STACK(LEVEL,"mode")=MODE,PTR=PTR+1
+ Q
+POP ; remove stack level
+ K STACK(LEVEL) S LEVEL=LEVEL-1,PTR=PTR+1
+ Q
+CURREF(TO,PROP,ITEM) ; Set current global reference based on stack
+ N LEVEL,REF
+ S REF="",LEVEL=1
+ F  Q:LEVEL>TO  S REF=REF_$S(LEVEL=1:"",1:",")_STACK(LEVEL),LEVEL=LEVEL+1
+ I $L($G(PROP)) S REF=REF_","""_PROP_""""
+ I $L($G(ITEM)) S REF=REF_","""_ITEM_""""
+ Q "OUT("_REF_")"
+ ;
+NXTSTR() ; return next string
+ N TPTR,DONE,END,STR
+ S DONE=0,TPTR=PTR
+ F  D  Q:DONE
+ . S END=$F(IN,"""",TPTR) I END=0 Q  ; NEED TO SETERROR
+ . I $E(IN,END-2)'="\" S DONE=1 Q
+ . S TPTR=END
+ S STR=$E(IN,PTR+1,END-2)
+ S PTR=END
+ ; TODO: unescape the string
+ Q STR
+ ;
+NXTVAL() ; 
+ N END,VAL
+ D LTRIM
+ S END=PTR
+ F  Q:END>$L(IN)  Q:" ,(){}[]"[$E(IN,END)  S END=END+1
+ S VAL=$$TRIM^XLFSTR($E(IN,PTR,END-1))
+ S PTR=END
+ Q VAL
+ ;
+LTRIM ; trim whitespace from left
+ F  Q:PTR>$L(IN)  Q:$A(IN,PTR)>32  S PTR=PTR+1  ; trim left whitespace
+ Q
+PARSFLTR(IN,OUT) ; Parse the input into computable components
+ N PTR,ERROR,ARGS,OP
+ S PTR=1,ERROR=0,OUT=0
+ F  S OP=$$NXTOP Q:OP=""  D
+ . I OP="and"!(OP="or")!(OP="not") ;increment level and parse {}
+ . D NXTARGS(.ARGS)
+ . S OUT=OUT+1
+ . S OUT(OUT,"op")=OP
+ . S OUT(OUT,"field")=$G(ARGS(1))
+ . I OP="in" S OUT(OUT,"list")=$G(ARGS(2)) Q  ; handle list
+ . I OP="between" S OUT(OUT,"low")=$G(ARGS(2)),OUT(OUT,"high")=$G(ARGS(3)) Q
+ . S OUT(OUT,"value")=$G(ARGS(2))
+ Q
+NXTOP() ; based on PTR get the next operation
+ N END,OP
+ D LTRIM
+ S END=PTR F  Q:END>$L(IN)  Q:$E(IN,END)="("  Q:$E(IN,END)="{"  S END=END+1
+ I PTR>$L(IN)!((END-1)>$L(IN)) Q ""
+ S OP=$$LOW^XLFSTR($$TRIM^XLFSTR($E(IN,PTR,END-1)))
+ S PTR=END+1 D LTRIM ; advance past open param to 1st char of arguments
+ Q OP
+ ;
+NXTARGS(ARGS) ; return arguments sequentially in ARGS array
+ N DONE,VALUE,STYPE
+ S DONE=0,ARGS=0
+ F  D  Q:DONE  Q:ERROR
+ . I $E(IN,PTR)=")" S PTR=PTR+1 D LTRIM S DONE=1 Q
+ . I $E(IN,PTR)="," S PTR=PTR+1 D LTRIM I PTR>$L(IN) D ERR Q
+ . S STYPE=($E(IN,PTR)="""")
+ . S VALUE=$S(STYPE:$$NXTSTR(),1:$$NXTVAL())
+ . S ARGS=ARGS+1,ARGS(ARGS)=VALUE S:STYPE ARGS(ARGS,"\s")=""
+ Q
+ERR ;
+ S ERROR=1
+ W "ERROR "
+ Q
+TPAT ; Test patterns
+ N X F  R X:300 Q:X=""  D PAT(X)
+ Q
+PAT(FIELD)
+ I FIELD?1A.AN W !,"1" Q
+ I FIELD?1A.AN1"."1A.AN W !,"2" Q
+ I FIELD?1A.AN1"[]."1A.AN W !,"3" Q
+ I FIELD?1A.AN1"[]."1A.AN1"."1A.AN W !,"4" Q
+ W !,"no match"
+ Q

@@ -31,7 +31,8 @@ define([
             primary: true,
             innerSort: 'referenceDateTime',
             groupByFunction: function(collectionElement) {
-                return collectionElement.model.get("referenceDateTime").toString().substr(0, 6);
+                if(collectionElement.model!==undefined)
+                    return collectionElement.model.get("referenceDateTime").toString().substr(0, 6);
             },
             //this takes the item returned by the groupByFunction
             groupByRowFormatter: function(item) {
@@ -274,7 +275,12 @@ define([
                     'title': results.title || DocDetailsDisplayer.getTitle(newModel, docType),
                     'size': 'large' //,
                 };
-                ADK.showModal(results.view, modalOptions);
+
+                var modal = new ADK.UI.Modal({
+                    view: results.view,
+                    options: modalOptions
+                });
+                modal.show();
                 $('#mainModal').modal('show');
             });
 

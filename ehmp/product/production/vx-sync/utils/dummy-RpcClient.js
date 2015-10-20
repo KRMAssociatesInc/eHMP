@@ -1,21 +1,6 @@
 'use strict';
 
-/*
-config = {
-    host: ,
-    port: ,
-    accessCode: ,
-    verifyCode: ,
-    context: ,
-    localIP: ,
-    localAddress ,
-    connectTimeout ,
-    sendTimeout
-};
-*/
-function RpcClient(logger, config) {
-}
-
+function RpcClient() {}
 
 RpcClient.create = function create(logger, config) {
     return new RpcClient(logger, config);
@@ -33,23 +18,16 @@ RpcClient.prototype.connect = function connect(callback) {
 };
 
 
-RpcClient.prototype.createSender = function() {
-};
+RpcClient.prototype.createSender = function() {};
 
 
-/*
-variadic function:
-execute(rpcCall)
-execute(rpcName, [param]..., callback)
-execute([rpcName, [param]..., callback])
-*/
-RpcClient.prototype.execute = function execute(rpcCall, callback) {
+RpcClient.prototype.execute = function execute(rpcCall, params, callback) {
     callback(null, null);
 };
 
 
 RpcClient.prototype.close = function close(callback) {
-    callback(null,null);
+    callback(null, null);
 };
 
 
@@ -122,7 +100,7 @@ function authenticate(logger, config, callback) {
 }
 
 
-function isClient(obj) {
+function isClient() {
     return true;
 }
 

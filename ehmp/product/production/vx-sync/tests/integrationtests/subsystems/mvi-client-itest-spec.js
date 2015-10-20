@@ -16,7 +16,7 @@ var vx_sync_ip = require(global.VX_INTTESTS + 'test-config');
 var val = require(global.VX_UTILS + 'object-utils').getProperty;
 
 config.mvi.host = vx_sync_ip;
-var jdsCli = new JdsClient(logger, config);
+var jdsCli = new JdsClient(logger, logger, config);
 
 
 var ptSelect = [{
@@ -81,7 +81,7 @@ var clearPatientIdentifiers = function() {
 };
 
 describe('mvi-client.js', function() {
-    var mvi = new MVIClient(logger, config, jdsCli);
+    var mvi = new MVIClient(logger, logger, config, jdsCli);
 
     it('Vista Cache MVI lookup', function() {
         var finished = false;

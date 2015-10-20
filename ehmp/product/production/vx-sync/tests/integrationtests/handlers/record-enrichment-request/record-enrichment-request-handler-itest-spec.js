@@ -65,8 +65,7 @@ describe('record-enrichment-request-handler.js', function() {
     };
 
     var environment = {
-        // publisherRouter: {},
-        // jobStatusUpdater: {}
+        metrics: logger
     };
     // environment.jobStatusUpdater = new JobStatusUpdater(logger, config, environment.jds);
     // environment.publisherRouter = new PublisherRouter(logger, config, environment.jobStatusUpdater);

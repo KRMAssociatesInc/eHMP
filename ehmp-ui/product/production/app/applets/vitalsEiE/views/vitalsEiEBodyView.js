@@ -96,8 +96,11 @@ define([
                 'regionName': 'vitalsEiEDialog'
             };
 
-            ADK.showWorkflowItem(this, modalOptions);
-
+            var modal = new ADK.UI.Modal({
+                view: this,
+                options: modalOptions
+            });
+            modal.show();
 
             if (!_.isEmpty(options.checked)) {
                 //if ($('input#' + options.checked).attr('aria-disabled') === 'false'){

@@ -17,7 +17,7 @@ class TestSupport
   @@test_counter = 0
 
   def self.increment_counter
-    @@test_counter = @@test_counter + 1
+    @@test_counter += 1
   end
 
   def self.test_counter 
@@ -40,7 +40,7 @@ class TestSupport
   end
 =end
 
-  def self.wait_for_jquery_completed(time_wait = DefaultLogin.wait_time)
+  def self.wait_for_jquery_completed(_time_wait = DefaultLogin.wait_time)
     fail "wait_for_jquery_completed is no longer supported"
   end
 
@@ -93,7 +93,7 @@ class TestSupport
 
   def self.error_message_generator(error_message)
     text_error_message = "\n"+'    | Field Name         | Expected Value          | Runtime Value         |' + "\n"
-    error_message.each do | single_message |
+    error_message.each do |single_message|
       text_error_message = textErrorMessage + (i+1).to_s + " - "+ single_message+"\n\n"
     end
 
@@ -102,7 +102,7 @@ class TestSupport
 
   private
 
-  def self.open_browser(browser_type = "firefox")
+  def self.open_browser(_browser_type = "firefox")
     driver = SeleniumCommand.driver
     return driver
   end

@@ -1,0 +1,107 @@
+A5AGIT ;SLC/KCM -- Utilities for to assist git synchronization
+ ;;1.0;GIT Tools;;Feb 8, 2013
+ ;
+ ; Configuration
+ ; ^A5AGIT("default")=default config name
+ ; ^A5AGIT(config,"directory")=full directory path where git sees routines
+ ; ^A5AGIT(config,"wildcards")=comma delimited namespaces to manage
+ ; ^A5AGIT(config,"compareDir")=full directory path for saving compare files
+ ; ^A5AGIT(config,"compareApp")=command line for compares
+ ;                       (%1 is git version, %2 is account version)
+ ;
+MENU ; display a menu of git synchronization choices
+ Q
+SETDIR ; set the directory where routines are found by git
+ N DFLT,HELP,X
+ S DFLT=$G(^A5AGIT("directory"))
+ S HELP="Enter the full directory path to where git stores M routines."
+ S X=$$PROMPT^A5AGIT1("Directory",DFLT,"VALDIR^A5AGITC",HELP)
+ Q:'$L(X)  Q:$E(X)="^"  S ^A5AGIT("directory")=X
+ ;
+ S DFLT=$G(^A5AGIT("wildcards"))
+ S HELP="Enter namespaces (i.e., VPR*) delimited by commas."
+ S X=$$PROMPT^A5AGIT1("Routines",DFLT,"",HELP)
+ Q:'$L(X)  Q:$E(X)="^"  S ^A5AGIT("wildcards")=X
+ ;
+ S DFLT=$G(^A5AGIT("compareDir"))
+ S HELP="Enter the full directory path to store temporary files (outside git)."
+ S X=$$PROMPT^A5AGIT1("Compare directory",DFLT,"",HELP)
+ Q:'$L(X)  Q:$E(X)="^"  S ^A5AGIT("compareDir")=X
+ ;
+ S DFLT=$G(^A5AGIT("compareApp"))
+ S HELP="Enter the command to execute to compare files (%1 is git, %2 is uci)."
+ S X=$$PROMPT^A5AGIT1("Compare command",DFLT,"",HELP)
+ Q:'$L(X)  Q:$E(X)="^"  S ^A5AGIT("compareApp")=X
+ Q
+CHECK ; find routines where the git directory and this account differ
+ N FILES,CNT,X
+ D CHECK^A5AGIT1(.FILES)
+ ; display any differences
+ S CNT=0,X=""
+ F  S X=$O(FILES(X)) Q:X=""  D
+ . W !,X," ",$S(FILES(X)="M":"not in git directory",FILES(X)="G":"not in this M account",1:"differs")
+ . S CNT=CNT+1
+ W !,CNT," differences found",!
+ Q
+DIFF ; show diff between git directory version and this account
+ N X,FILES,MROOT,MLINE,MFILE,GROOT,GLINE,GFILE
+ I '$L($G(^A5AGIT("compareDir"))) W !,"Missing directory information." Q
+ D CHECK^A5AGIT1(.FILES) I $D(FILES)<10 W !,"No differences found." Q
+ ;
+ K ^TMP($J)
+ S MROOT=$NA(^TMP($J,"m")),MLINE=0
+ S GROOT=$NA(^TMP($J,"git")),GLINE=0
+ S X="" F  S X=$O(FILES(X)) Q:X=""  D
+ . I (FILES(X)="M")!(FILES(X)="D") D ADDRTN^A5AGIT1(X,MROOT,.MLINE) ; append routine
+ . I (FILES(X)="G")!(FILES(X)="D") D ADDFILE^A5AGIT1(X,GROOT,.GLINE) ; append file
+ S MFILE=$$FULLNAME^A5AGITC("uci-"_$TR($H,",","-")_".txt",^A5AGIT("compareDir"))
+ S GFILE=$$FULLNAME^A5AGITC("git-"_$TR($H,",","-")_".txt",^A5AGIT("compareDir"))
+ D SAVEFILE^A5AGITC(MFILE,MROOT)
+ D SAVEFILE^A5AGITC(GFILE,GROOT)
+ K ^TMP($J)
+ D COMPARE^A5AGITC(GFILE,MFILE)
+ ; delete the files that were created
+ Q
+IMPORT ; import routines from the git directory
+ ; prompt for routine names
+ N X,HELP,RTNS
+ S HELP="Enter the name of a routine to import from git directory."
+ F  D  Q:X=""  Q:X="^"
+ . S X=$$PROMPT^A5AGIT1("Routine","","VALRTN^A5AGITC",HELP)
+ . Q:X=""
+ . S RTNS(X)=""
+ Q:X="^"
+ ;
+ ; iterate through routines and call LOADFILE then SAVERTN for each routine
+ S X="" F  S X=$O(RTNS(X)) Q:X=""  D
+ . N BODY,FILE
+ . S FILE=$$FULLNAME^A5AGITC(X_".int")
+ . D LOADFILE^A5AGITC(FILE,.BODY)
+ . D SAVERTN^A5AGITC(X,.BODY)
+ . W !,X," loaded and saved"
+ Q
+EXPORT ; export routines to the git directory
+ ; call routine selection
+ D SLCTRTN^A5AGITC
+ ; iterate through routines and call LOADRTN then SAVEFILE for each routine
+ N RTN
+ S RTN=0 F  S RTN=$O(^UTILITY($J,RTN)) Q:RTN=""  D
+ . N BODY,FILE
+ . D LOADRTN^A5AGITC(RTN,.BODY)
+ . S FILE=$$FULLNAME^A5AGITC(RTN_".int")
+ . D SAVEFILE^A5AGITC(FILE,"BODY")
+ . W !,FILE," saved"
+ Q
+BUILD ; build a version of a package
+ ; prompt to update version (in VERSION^VPRJVER)
+ ; stuff date (in BLDTIME^VPRJVER)
+ ; save the updated VPRJVER
+ ; write out the updated VPRJVER for git
+ ; call check, bail if there are differences
+ ; add top lines for .ro
+ ; iterate through wildcards for this configuration
+ ;   iterate through the routines for each wildcard
+ ;     add routine to ^TMP($J
+ ; add empty lines
+ ; do save file as jds.ro
+ Q

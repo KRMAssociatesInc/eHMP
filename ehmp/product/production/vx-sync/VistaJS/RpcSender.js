@@ -20,6 +20,7 @@ var merrMsg = '"M  ERROR" returned by server';
 
 
 function RpcSender(logger, config) {
+    logger.debug('RpcSender.RpcSender(%s:%s)', config.host, config.port);
     if (!(this instanceof RpcSender)) {
         return new RpcSender(logger, config);
     }
@@ -35,6 +36,7 @@ This function is present for unit testing
 to allow overriding to return a mock socket
 */
 RpcSender.prototype.createSocket = function() {
+    this.logger.debug('RpcSender.createSocket() %s:%s', this.config.host, this.config.port);
     return new Socket();
 };
 
@@ -44,77 +46,90 @@ RpcSender.prototype.connect = function(callback) {
     var port = self.config.port;
     var host = self.config.host;
 
-    self.logger.debug('Sender.connect(%s:%s)', host, port);
+    self.logger.debug('RpcSender.connect(%s:%s)', host, port);
 
     self.close();
 
     self.socket = this.createSocket();
     self.setSocketTimeout(self.config.connectTimeout);
 
-
-    self.logger.debug('connect to %s:%s', host, port);
     self.socket.connect(port, host, function connectCallback() {
-        self.logger.debug('connected to %s:%s', host, port);
+        self.logger.debug('RpcSender -> connected to %s:%s', host, port);
         self.setSocketTimeout(0);
-        removeAllListeners(self.socket);
+        removeAllListeners(self.logger, self.config, self.socket);
         callback(null, 'connected');
     });
 
     self.socket.on('error', function errorCallback(error) {
-        self.logger.error('error: %j', error);
+        self.logger.error('RpcSender -> error on %s:%s: %j', self.config.host, self.config.port, error);
         self.setSocketTimeout(0);
-        removeAllListeners(self.socket);
+        removeAllListeners(self.logger, self.config, self.socket);
         self.close();
         callback(error);
     });
 
     self.socket.on('timeout', function timeoutCallback(error) {
-        self.logger.error('error: timeout');
+        self.logger.error('RpcSender -> error: timeout on %s:%s', self.config.host, self.config.port);
         self.setSocketTimeout(0);
-        removeAllListeners(self.socket);
+        removeAllListeners(self.logger, self.config, self.socket);
         self.close();
         callback(error);
+    });
+
+    self.socket.on('close', function closeCallback(error) {
+        self.logger.trace('RpcSender -> close: on %s:%s error? %s', self.config.host, self.config.port, error);
+    });
+
+    self.socket.on('end', function endCallback() {
+        self.logger.error('RpcSender -> end: on %s:%s', self.config.host, self.config.port);
+        self.setSocketTimeout(0);
+        removeAllListeners(self.logger, self.config, self.socket);
+        self.close();
+        callback('Socket closed by server');
     });
 };
 
 
 RpcSender.prototype.send = function(rpcString, callback) {
     var self = this;
+    self.logger.debug('RpcSender.send(%s:%s) => ', this.config.host, this.config.port, makeVisible(rpcString));
 
     if (!self.socket) {
         return setTimeout(callback, 0, 'no socket instance');
     }
 
-    self.logger.debug('Sender.send(%s:%s) => ', this.config.host, this.config.port, makeVisible(rpcString));
+    self.setSocketTimeout(self.config.sendTimeout);
+    self.socket.write(rpcString, function() {
+        self.logger.debug('RpcSender -> wrote command to socket %s:%s => %s', self.config.host, self.config.port, makeVisible(rpcString));
+    });
 
     self.socket.on('error', function errorCallback(error) {
-        self.logger.error('error (%s:%s): %j', self.config.host, self.config.port, error);
+        self.logger.error('RpcSender -> error on %s:%s: %j', self.config.host, self.config.port, error);
         if (self.socket) {
             self.setSocketTimeout(0);
-            removeAllListeners(self.socket);
+            removeAllListeners(self.logger, self.config, self.socket);
             self.close();
         }
         callback(error);
     });
 
     self.socket.on('timeout', function timeoutCallback(error) {
-        self.logger.error('error: timeout');
+        self.logger.error('RpcSender -> error: timeout on %s:%s', self.config.host, self.config.port);
         self.setSocketTimeout(0);
-        removeAllListeners(self.socket);
+        removeAllListeners(self.logger, self.config, self.socket);
         self.close();
         callback(error);
     });
 
     self.socket.on('data', function receive(data) {
-        self.logger.trace('Sender.receive(%s:%s)', self.config.host, self.config.port);
-        self.logger.trace('Sender.receive(\'%s\')', makeVisible(data.toString()));
+        self.logger.trace('RpcSender.receive(%s:%s) data: ', self.config.host, self.config.port, makeVisible(data.toString()));
 
         var result;
 
         self.buffer += data;
 
         // self.logger.trace('isFrameComplete? %s', isFrameComplete(self.buffer));
-        self.logger.trace(self.buffer);
+        // self.logger.trace(self.buffer);
 
         // check for security error, application error, or end of transmission (EOT)
         if (isFrameComplete(self.buffer)) {
@@ -122,34 +137,44 @@ RpcSender.prototype.send = function(rpcString, callback) {
             self.buffer = '';
 
             self.setSocketTimeout(0);
-            removeAllListeners(self.socket);
+            removeAllListeners(self.logger, self.config, self.socket);
             // self.logger.debug('frame complete, calling callback()');
             callback(result.error, result.response);
         }
     });
 
-    self.setSocketTimeout(self.config.sendTimeout);
-    self.socket.write(rpcString, function() {
-        self.logger.debug('wrote command => %s', makeVisible(rpcString));
+    self.socket.on('close', function closeCallback(error) {
+        self.logger.trace('RpcSender -> close: on %s:%s error? %s', self.config.host, self.config.port, error);
+    });
+
+    self.socket.on('end', function endCallback() {
+        self.logger.error('RpcSender -> end: on %s:%s', self.config.host, self.config.port);
+        self.setSocketTimeout(0);
+        removeAllListeners(self.logger, self.config, self.socket);
+        self.close();
+        callback('Socket closed by server');
     });
 };
 
 
-function removeAllListeners(socket) {
+function removeAllListeners(logger, config, socket) {
+    logger.debug('RpcSender.removeAllListeners(%s:%s)', config.host, config.port);
     if (socket) {
         socket.removeAllListeners('timeout');
         socket.removeAllListeners('connect');
         socket.removeAllListeners('error');
         socket.removeAllListeners('data');
+        socket.removeAllListeners('end');
+        socket.removeAllListeners('close');
     }
 }
 
 RpcSender.prototype.close = function() {
-    this.logger.debug('Sender.close(%s:%s)', this.config.host, this.config.port);
+    this.logger.debug('RpcSender.close(%s:%s)', this.config.host, this.config.port);
 
     if (this.socket) {
-        this.logger.debug('destroy current socket');
-        this.logger.debug('close() removeAllListeners()');
+        this.logger.debug('RpcSender -> destroy current socket on %s:%s', this.config.host, this.config.port);
+        this.logger.debug('RpcSender -> close() removeAllListeners() from %s:%s', this.config.host, this.config.port);
         this.socket.removeAllListeners();
         this.socket.destroy();
         this.socket = null;
@@ -157,6 +182,7 @@ RpcSender.prototype.close = function() {
 };
 
 RpcSender.prototype.setSocketTimeout = function(timeoutMillis) {
+    this.logger.debug('RpcSender.setSocketTimeout(%s) on %s:%s', timeoutMillis, this.config.host, this.config.port);
     if (this.socket) {
         this.socket.setTimeout(timeoutMillis);
     }

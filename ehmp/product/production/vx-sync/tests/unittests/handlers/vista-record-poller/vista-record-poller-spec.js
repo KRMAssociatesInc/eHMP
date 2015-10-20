@@ -47,6 +47,7 @@ var uidValue = 'urn:va:vprupdate:' + vistaIdValue;
 
 var environment = {
     jobStatusUpdater: {},
+    metrics: dummyLogger,
     publisherRouter: publisherRouterDummy,
     jds: jdsClientDummy
 };

@@ -1,4 +1,5 @@
 'use strict';
+/*global describe, it, before, beforeEach, after, afterEach, spyOn, expect, runs, waitsFor */
 
 require('../../../../env-setup');
 var log = require(global.OSYNC_UTILS + 'dummy-logger');

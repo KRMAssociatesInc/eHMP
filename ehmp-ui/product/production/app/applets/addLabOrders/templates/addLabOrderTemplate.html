@@ -1,0 +1,166 @@
+<div id="error-container" />
+<div id="add-lab-order-form" class="container-fluid">
+	<form role="form">
+		<div class="form-group" id="top-row-table">
+			<div class="col-sm-10">
+			    <div>{{visit.locationDisplayName}} {{visit.formattedDate}}</div>
+			</div>
+			<div></div>
+			<div class="col-md-12 grid-filter notification-box">
+				<span id="notification-box-message"></span>
+				<button id="notification-close-button" type="button" class="close" data-dismiss="pop-up"><span aria-hidden="true" aria-label="Close">×</span></button>
+			</div>
+			<div class="row row-buffer labTests">
+				<div class="col-md-6 grid-filter">
+					<div class="col-md-12 gutter">
+						<label for="onset-date-select">Available Lab Tests</label>
+						<div class="input-group">
+    						<label class="sr-only" for="orders-search-term">Search for available Lab Tests</label>
+						    <input class="typeahead form-control" id="lab-tests-form" autocomplete="off" id="orders-search-term" tabindex="0" placeholder="">
+						    <input type="hidden" id="lab-test-form-itemid" />
+						</div>
+					    <div id="labTestSearchSpinner" aria-hidden="true">
+					        <span><h5><i class="fa fa-spinner fa-spin"></i> Loading...</h5></span>
+					    </div>
+
+						<div id="orders-no-results" class="hidden" aria-hidden="true">
+						    <span><i>No results</i></span>
+						</div>
+						<!-- <h4 id="orders-loading"><i class="fa fa-spinner fa-spin"></i> Loading...</h4> -->
+						<h4 id="order-loading-error" aria-hidden="true" class="hidden">An unexpected error occurred, order data could not be loaded</h4>
+						<ul class="list-group" id="orders-search-list"></ul>
+					</div>
+					<div class="col-md-6 gutter">
+						<label for="onset-date-select">Urgency</label>
+						<select data-type='reading' id="urgency-select" class="form-control input-sm fill">
+							{{#each unit-1-options}}
+							<option>{{this}} </option>
+							{{/each}}
+						</select>
+					</div>
+					<div class="col-md-6 gutter">
+						<label for="onset-date-select">Collection Date/Time</label>
+						<!-- <div id="onset-date-select" class="input-group">
+							<input type="text" class="form-control datepicker" id="dp-problem" data-date-end-date="0d" data-date-format="mm/dd/yyyy" placeholder="MM/DD/YYYY" value="{{date}}" autocomplete="off">
+							<span id="date-picker-icon" max-length="10" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+						</div> -->
+						<select data-type='reading' id="collection-datetime-select" class="form-control input-sm fill">
+							{{#each unit-1-options}}
+							<option>{{this}} </option>
+							{{/each}}
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="col-md-12 gutter">
+						<label for="onset-date-select">How Often?</label>
+						<select data-type='reading' id="frequency-select" class="form-control input-sm fill">
+							{{#each unit-1-options}}
+							<option>{{this}} </option>
+							{{/each}}
+						</select>
+					</div>
+					<div class="col-md-12 gutter">
+						<label for="onset-date-select">How Long</label>
+						<input data-type='reading' id="frequency-length" class="form-control input-sm fill" />
+						<!-- <select data-type='reading' id="frequency-length-select" class="form-control input-sm fill">
+							{{#each unit-1-options}}
+							<option>{{this}} </option>
+							{{/each}}
+						</select> -->
+					</div>
+				</div>
+				<div class="col-md-3 hidden-div">
+				<!--Immediate Collection Div -->
+				<div class="col-md-12 gutter immediate-collection">
+						<label for="immediate-collection">Immediate Collection Times</label>
+						<div class ="col-md-12 grid-filter collection-notification">
+						<p>No Collection on Holidays<br/>
+							MON - FRI: Collection between 06:00 and 23:00<br/>
+							Labratory Service requires at least 5 minutes to collect this order.</p>
+						<div id="onset-date-select" class="input-group element-spacing">
+							<input type="text" class="form-control datepicker" id="dp-problem" data-date-end-date="0d" data-date-format="mm/dd/yyyy" placeholder="MM/DD/YYYY" value="{{date}}" autocomplete="off">
+							<span id="date-picker-icon" max-length="10" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+						</div>
+						<div class="input-append input-group bootstrap-timepicker element-spacing">
+				            <input id="vitals-obs-time" type="text" autocomplete="off" class="form-control input-sm" data-inputmask-regex="([0][1-9]|[1][0-2]):([0-5]\d) (a|p)" placeholder="HH:MM a/p" max-length="10">
+				            <span aria-hidden="true" class="input-group-addon">
+				                <span class="glyphicon glyphicon-time"></span>
+				            </span>
+				        </div>
+						<button type="button" class="btn btn-primary float-right element-spacing" id="btn-add-collection">Add</button>
+						</div>
+					</div>
+					<!--Show Anticoagulant Div -->
+					<div class="col-md-12 gutter show-anticoagulant">
+						<label for="onset-date-select">What kind of anticoagulant is the patient on?</label>
+						<input class="form-control input-sm fill">
+						</input>
+					</div>
+					<!--Show Herpes Simplex Div -->
+					<div class="col-md-12 gutter show-herpes-simplex-common-a">
+						<label for="onset-date-select">Herpes Simplex Common A</label>
+						<input class="form-control input-sm fill">
+						</input>
+					</div>
+					<!--Shoe Last Draw Div -->
+					<div class="col-md-12 gutter show-last-draw-time">
+						<label for="onset-date-select">Enter last done time:</label>
+						<div id="onset-date-select" class="input-group">
+							<input type="text" class="form-control datepicker" id="dp-problem" data-date-end-date="0d" data-date-format="mm/dd/yyyy" placeholder="MM/DD/YYYY" value="{{date}}" autocomplete="off">
+							<span id="date-picker-icon" max-length="10" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+						</div>
+						<label for="onset-date-select">Enter last draw time:</label>
+						<div id="onset-date-select" class="input-group">
+							<input type="text" class="form-control datepicker" id="dp-problem" data-date-end-date="0d" data-date-format="mm/dd/yyyy" placeholder="MM/DD/YYYY" value="{{date}}" autocomplete="off">
+							<span id="date-picker-icon" max-length="10" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+						</div>
+					</div>
+					<div class="col-md-12 gutter show-draw-time-options">
+						<label for="sample-last-drawn">Sample last drawn at:</label>
+						<button id="peak-btn" tabindex="0" data-disabled="toggle" data-type="peak" data-subtype="unavailable" type="button" class="btn btn-xs btn-default" aria-label="Peak"></button>
+						<label for="peak-btn">Peak</label>
+						<button id="mid-btn" tabindex="0" data-disabled="toggle" data-type="mid" data-subtype="unavailable" type="button" class="btn btn-xs btn-default" aria-label="Mid"></button>
+						<label for="mid-btn">Mid</label>
+						<button id="trough-btn" tabindex="0" data-disabled="toggle" data-type="trough" data-subtype="unavailable" type="button" class="btn btn-xs btn-default" aria-label="Trough"></button>
+						<label for="trough-btn">Trough</label>
+						<button id="unknown-btn" tabindex="0" data-disabled="toggle" data-type="unknown" data-subtype="unavailable" type="button" class="btn btn-xs btn-default" aria-label="Unknown"></button>
+						<label for="unknown-btn">Unknown</label>
+						<label>Comments:</label>
+						<input class="form-control grid-filter" id="comments-form" autocomplete="off" id="orders-comments" tabindex="0" placeholder="">
+					</div>
+					</div>
+				</div>
+				<!-- <div class="row row-buffer"> </div> -->
+				<div class="col-sm-9">
+					<div class="col-md-4 gutter"><label for="onset-date-select">Collection Sample</label>
+						<select data-type='reading' id="collection-sample-select" class="form-control input-sm fill">
+							{{#each unit-1-options}}
+							<option>{{this}} </option>
+							{{/each}}
+						</select>
+					</div>
+					<div class="col-sm-4 "><label for="onset-date-select">Collection Type</label>
+						<select data-type='reading' id="collection-type-select" class="form-control input-sm fill">
+							{{#each unit-1-options}}
+							<option>{{this}} </option>
+							{{/each}}
+						</select>
+					</div>
+					<div class="col-sm-4 "><label for="onset-date-select">Specimen</label>
+						<select data-type='reading' id="specimen-select" class="form-control input-sm fill">
+							{{#each unit-1-options}}
+							<option>{{this}} </option>
+							{{/each}}
+						</select>
+					</div>
+				</div>
+				<div class="row row-buffer">
+					<div class="col-md-12">
+						<label>Order Preview</label>
+						<div id="previewOrder" name="previewOrder" class="break-word"></div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>

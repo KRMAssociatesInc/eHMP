@@ -83,7 +83,7 @@ When /^the load is increased by "([^"]*)" requests per second after "([^"]*)" mi
         @provider.providerBoxURL= "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
         #@provider.providerName= :virtualbox
         #@provider.providerBoxName= "opscode-centos-6.3"
-        #@provider.providerBoxURL= "https://nexus.vistacore.us/repositories/filerepo/com/vagrantup/basebox/opscode-centos/6.3/opscode-centos-6.3.box"
+        #@provider.providerBoxURL= "https://dl.vistacore.us/repositories/filerepo/com/vagrantup/basebox/opscode-centos/6.3/opscode-centos-6.3.box"
 
 
     @tr = LoadGenerator.testRun :NormalTestRun
@@ -102,8 +102,8 @@ When /^the load is increased by "([^"]*)" requests per second after "([^"]*)" mi
         @tr.projectRepoName= "ehmp"
         @tr.projectRepoURL= "https://git.vistacore.us/git/ehmp.git"
         @tr.projectRepoFQDN= "git.vistacore.us"
-        @tr.gitUserid= "build"
-        @tr.gitPassword= "0ft3n"
+        @tr.gitUserid= ENV['GIT_USER']
+        @tr.gitPassword= ENV['GIT_PASSWORD']
 
         
         # The features directory is relative to the local project root.

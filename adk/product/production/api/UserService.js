@@ -46,7 +46,6 @@ define([
          * TODO: the nonLegacy if/else can be removed after a couple days once people have caught up in both repos
          */
         authenticate: function(userName, password, facility) {
-            this.clearUserSession();
             var resourceTitle = "authentication-authentication";
             var userSession = this.getUserSession();
             userSession.url = UrlBuilder.buildUrl(resourceTitle);
@@ -60,13 +59,17 @@ define([
                 type: 'POST',
                 contentType: 'application/json',
                 success: function(response, xhr) {
-                    userSession = new Backbone.Model(xhr);
+                    if (xhr.data) {
+                        userSession = new Backbone.Model(xhr.data);
+                    } else {
+                        userSession = new Backbone.Model(xhr);
+                    }
                     userSession.set('expires', moment.utc().add(logofftime, 'minutes'));
                     userSession.set('status', UserService.STATUS.LOGGEDIN);
                     //for demo purposes
-                    if(userSession.get('facility') === 'PANORAMA') {
+                    if (userSession.get('facility') === 'PANORAMA') {
                         userSession.set('infobutton-oid', '1.3.6.1.4.1.3768.86'); //Portland
-                    } else if(userSession.get('facility') === 'KODAK') {
+                    } else if (userSession.get('facility') === 'KODAK') {
                         userSession.set('infobutton-oid', '1.3.6.1.4.1.3768.97'); //Utah
                     } else {
                         userSession.set('infobutton-oid', '1.3.6.1.4.1.3768'); //default
@@ -104,7 +107,7 @@ define([
 
             if (status && status !== UserService.STATUS.LOGGEDOUT) {
 
-                userSession.fetch({
+                userSession.sync('delete', userSession, {
                     success: function(model, response, options) {
                         console.log('Successfully cleared user session on server.');
                     },
@@ -175,9 +178,16 @@ define([
 
             userSession.fetch({
                 success: function(model, response, options) {
+                    if (model.data) {
+                        model = model.data;
+                    }
                     userSession = model;
-                    userSession.set('expires', moment.utc().add(logofftime, 'minutes'), {silent:true});
-                    userSession.set('status', UserService.STATUS.LOGGEDIN, {silent:true});
+                    userSession.set('expires', moment.utc().add(logofftime, 'minutes'), {
+                        silent: true
+                    });
+                    userSession.set('status', UserService.STATUS.LOGGEDIN, {
+                        silent: true
+                    });
                     UserService.setUserSession(userSession);
                 },
                 error: function(model, response, options) {
@@ -218,6 +228,24 @@ define([
             var user = this.getUserSession();
             var permissions = user.get('permissions') || [];
             return _.contains(permissions, permission);
+        },
+
+        /**
+         * A method to check a user permission given a string of permissions
+         * @return {boolean}
+         */
+        hasPermissions: function(args) {
+            var permissions = args.split(/[|&]/);
+
+            if (args.match(/&/)) {
+                return _.all(permissions, function(permission) {
+                    return this.hasPermission(permission);
+                }, this);
+            } else {
+                return _.any(permissions, function(permission) {
+                    return this.hasPermission(permission);
+                }, this);
+            }
         }
     };
 

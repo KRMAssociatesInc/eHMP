@@ -7,7 +7,11 @@ end
 
 When(/^the client requests sync with immediate response within (\d+) second for the patient "(.*?)" in RDK format$/) do |time_out, pid|
   # "http://10.4.4.105:8888/sync/load?pid=11016V630869&immediate=true"
-  path = QueryRDKSync.new("load", pid).add_parameter("immediate", "true")
+  # path = QueryRDKSync.new("load", pid).add_parameter("immediate", "true")
+  temp = RDKQuery.new('synchronization-load')
+  temp.add_parameter("pid", pid)
+  temp.add_parameter("immediate", "true")
+  path = temp.path
   @response = nil
 
   begin

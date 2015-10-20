@@ -4,14 +4,14 @@ var _ = require('underscore');
 
 require('../../../env-setup');
 
-var RpcParameter = require(global.VX_VISTAJS + 'RpcParameter').RpcParameter;
-var RpcCall = require(global.VX_VISTAJS + 'RpcCall').RpcCall;
+var RpcParameter = require('vista-js').RpcParameter;
+var RpcCall = require('vista-js').RpcCall;
 
-var RpcSerializer = require(global.VX_VISTAJS + 'RpcSerializer').RpcSerializer;
-var _CIPHER_PAD = require(global.VX_VISTAJS + 'RpcSerializer')._CIPHER_PAD;
-var _strPack = require(global.VX_VISTAJS + 'RpcSerializer')._strPack;
-var _prependCount = require(global.VX_VISTAJS + 'RpcSerializer')._prependCount;
-var _adjustForSearch = require(global.VX_VISTAJS + 'RpcSerializer')._adjustForSearch;
+var RpcSerializer = require('vista-js').RpcSerializer;
+var _CIPHER_PAD = RpcSerializer._CIPHER_PAD;
+var _strPack = RpcSerializer._strPack;
+var _prependCount = RpcSerializer._prependCount;
+var _adjustForSearch = RpcSerializer._adjustForSearch;
 
 
 var ASCII_PAD = [

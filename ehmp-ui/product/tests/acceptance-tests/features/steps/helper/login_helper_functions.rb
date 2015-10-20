@@ -47,9 +47,9 @@ def perform_signout_steps(login_elements)
   expect(login_elements.perform_action('Signout')).to be_true, "Could not find the Signout button"
   login_elements.wait_until_element_present('SignIn')
 rescue Exception => e 
-    p "COULD NOT SIGN OUT: #{e}"
-    timestamp = Time.new
-    screenshot_name = "features/after_scenario_fail_#{timestamp}"
-    take_screenshot screenshot_name
-    # hope the next text can perform signout in its background step
+  p "COULD NOT SIGN OUT: #{e}"
+  timestamp = Time.new
+  screenshot_name = "features/after_scenario_fail_#{timestamp}"
+  take_screenshot screenshot_name
+  # hope the next text can perform signout in its background step
 end

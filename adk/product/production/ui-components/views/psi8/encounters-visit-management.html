@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>eHMP Bootstrap UI Library - Encounters Visit Management</title>
+    <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../../css/main-styles.css" />
+</head>
+
+<body class="library">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../../views.html">Views</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../../color-palette.html">Color Palette</a></li>
+                                <li><a href="#">Style Guide</a></li>
+                            </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end navigation-->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+            <li><a href="../../views.html">Views</a></li>
+            <li class="active">F513 - Visit Management</li>
+        </ol>
+        <h1>F513 - Visit Management</h1>
+        <div class="description">
+            <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This is the 508 compliant static HTML/CSS mock up of the Encounters Visit Management view.</p>
+            <p><strong><i class="fa fa-file-text-o"></i> Documents:</strong> Please also view <a href="http://wakirc.axshare.com/#p=v1_-_visit_management">Encounters Visit Management wireframe</a>, <a href="../../docs/workflow/psi8/workflow-visit-management.pdf">Workflow Diagram</a> <small>[PDF, 331KB]</small>, and <a href="../../docs/use-case/psi8/use-case-visit-management.pdf">Use Scenario Case Documentation</a> <small>[PDF, 140KB]</small> for full details on implementation.</p>
+        </div>
+    </div>
+    <div class="container">
+    	<div class="workflow-region">
+    		<div class="workflow-container">
+    			<div class="modal-dialog modal-lg">
+    				<div class="modal-content">
+    					<div class="modal-header">
+    						<div class="row">
+    							<div class="col-md-10 col-xs-10">
+		    						<h4 class="modal-title">Provider &amp; Location for Current Activities</h4>
+    							</div>
+    							<div class="col-md-2 col-xs-2">
+    								<button type="button" class="close" title="Press enter to close."><span aria-hidden="true">&times;</span></button>
+    							</div>
+    						</div>
+    					</div>
+    					<form action="#" method="post" class="form-container">
+    						<div class="modal-body">
+    							<div class="scroll-enter-form">
+    								<div class="row">
+    									<div class="col-md-12">
+    										<h5>Select Encounter Provider</h5>
+    									</div>
+    									<div class="col-md-6">
+    										<div class="control form-group">
+												<label for="search-for-provider">Select Encounter Provider</label>
+												<select class="form-control typeahead-select" title="Press enter to browse through select options" id="search-for-provider">
+												<optgroup label="Alaskan/Hawaiian Time Zone">
+													<option value="AK">Alaska</option>
+													<option value="HI">Hawaii</option>
+												</optgroup>
+												</select>
+    										</div>
+    									</div>
+    									<div class="col-md-6">
+    										<div class="well read-only-well">
+    											<div class="row">
+    												<div class="col-md-6">
+    													<h6>Encounter Provider<br /><span id="encounters-provider">Provider, Thirty</span></h6>
+    												</div>
+    												<div class="col-md-6">
+    													<h6>Encounter Location<br /><span id="encounters-location">9999 Street Name<br />City, State, Zip Code</span></h6>
+    													<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#viewEncounterModal" aria-label="Press enter to view encounters">View Encounters</button>
+    												</div>
+    											</div>
+    										</div>
+    									</div>
+    								</div>
+    								<div class="row">
+    									<div class="col-md-12">
+	    									<h5>Select Encounter Location</h5>
+	    									<div class="tab-container" role="tabpanel">
+	    										<ul class="nav nav-tabs" role="tablist">
+													<li role="presentation" class="active"><a href="#clinic-appointments" aria-controls="clinic-appointments" data-toggle="tab">Clinic Appointments<span class="sr-only">You are currently on a tab. There is content below. Continue to arrow down until it indicates that the content is being read.</span></a></li>
+													<li role="presentation"><a href="#hospital-admissions" aria-controls="hospital-admissions" data-toggle="tab">Hospital Admissions<span class="sr-only">You are currently on a tab. To select this tab, press enter. There is content below. Continue to arrow down until it indicates that the content is being read.</span></a></li>
+													<li role="presentation"><a href="#new-visit" aria-controls="new-visit"  data-toggle="tab">New Visit<span class="sr-only">You are currently on a tab. To select this tab, press enter. There is content below. Continue to arrow down until it indicates that the content is being read.</span></a></li>
+	    										</ul>
+	    										<div class="tab-content">
+	    											<div role="tabpanel" class="tab-pane active" id="clinic-appointments"><span class="sr-only">This is the content for Clinic Appointments.</span>
+	    												<div class="row">
+	    													<div class="col-md-12">
+	    														<h6>Clinic Appointments / Visits</h6>
+	    													</div>
+	    												</div>
+	    												<div class="row">
+	    													<div class="col-md-6">
+																<div class="control form-group">
+																	<label for="clinicAppointmentsFromDate">From</label>
+																	<div class="input-group date">
+																		<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+																		<input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="clinicAppointmentsFromDate"/>
+																	</div>
+																</div>
+	    													</div>
+															<div class="col-md-6">
+																<div class="control form-group">
+																	<label for="clinicAppointmentsThroughDate">Through</label>
+																	<div class="input-group date">
+																		<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+																		<input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="clinicAppointmentsThroughDate" />
+																	</div>
+																</div>
+															</div>
+	    												</div>
+	    												<div class="row">
+	    													<div class="col-md-12">
+	    														<div class="faux-table-container">
+	    															<div class="faux-table">
+	    																<div class="sr-only">This faux table represents data for clinic appoinments and visits categorized by date, details, and location.</div>
+																		<div class="header">
+																			<div class="table-row">
+																				<div>
+																					<div>Date</div>
+																				</div>
+																				<div>
+																					<div>Details</div>
+																				</div>
+																				<div>
+																					<div>Location</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="body">
+																			<a href="#" class="table-row">
+																				<div>
+																					<span>05/09/2015 - 12:00</span>
+																				</div>
+																				<div>
+																					<span>Lorem ipsum dolor sit amet</span>
+																				</div>
+																				<div>
+																					<span>Primary Care</span>
+																				</div>
+																			</a>
+																			<a href="#" class="table-row">
+																				<div>
+																					<span>05/05/2015 - 16:00</span>
+																				</div>
+																				<div>
+																					<div>
+																						<span>Lorem ipsum dolor sit amet</span>
+																					</div>
+																				</div>
+																				<div>
+																					<div>
+																						<span>General Medicine</span>
+																					</div>
+																				</div>
+																			</a>
+																			<a href="#" class="table-row active">
+																				<div>
+																					<div>
+																						<span>04/22/2015 - 08:00</span>
+																					</div>
+																				</div>
+																				<div>
+																					<div>
+																						<span>Lorem ipsum dolor sit amet</span>
+																					</div>
+																				</div>
+																				<div>
+																					<div>
+																						<span>Primary Care</span>
+																					</div>
+																				</div>
+																			</a>
+																			<a href="#" class="table-row">
+																				<div>
+																					<div>
+																						<span>03/08/2015 - 09:00</span>
+																					</div>
+																				</div>
+																				<div>
+																					<div>
+																						<span>Lorem ipsum dolor sit amet</span>
+																					</div>
+																				</div>
+																				<div>
+																					<div>
+																						<span>Primary Care</span>
+																					</div>
+																				</div>
+																			</a>
+																		</div>
+	    															</div>
+	    														</div>
+	    													</div>
+	    												</div>
+	    											</div>
+													<div role="tabpanel" class="tab-pane" id="hospital-admissions"><span class="sr-only">This is the content for Hospital Admissions.</span>
+														<div class="row">
+															<div class="col-md-12">
+																<h6>Hospital Admissions</h6>
+																<div class="faux-table-container">
+																	<div class="faux-table">
+																	<div class="sr-only">This faux table represents data on hospital admissions categorized by date, details, and location.</div>
+																		<div class="header">
+																			<div class="table-row">
+																				<div>
+																					<div>Date</div>
+																				</div>
+																				<div>
+																					<div>Details</div>
+																				</div>
+																				<div>
+																					<div>Location</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="body dual-cell-linking">
+																			<a href="#" class="table-row">
+																				<div>
+																					<span>05/09/2015 - 12:00</span>
+																				</div>
+																				<div>
+																					<span>Lorem ipsum dolor sit amet</span>
+																				</div>
+																				<div>
+																					<span>Primary Care</span>
+																				</div>
+																			</a>
+																			<a href="#" class="table-row">
+																				<div>
+																					<span>05/05/2015 - 16:00</span>
+																				</div>
+																				<div>
+																					<span>Lorem ipsum dolor sit amet</span>
+																				</div>
+																				<div>
+																					<span>General Medicine</span>
+																				</div>
+																			</a>
+																			<a href="#" class="table-row">
+																				<div>
+																					<span>04/22/2015 - 08:00</span>
+																				</div>
+																				<div>
+																					<span>Lorem ipsum dolor sit amet</span>
+																				</div>
+																				<div>
+																					<span>Primary Care</span>
+																				</div>
+																			</a>
+																			<a href="#" class="table-row">
+																				<div>
+																					<span>03/08/2015 - 09:00</span>
+																				</div>
+																				<div>
+																					<span>Lorem ipsum dolor sit amet</span>
+																				</div>
+																				<div>
+																					<span>Primary Care</span>
+																				</div>
+																			</a>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div role="tabpanel" class="tab-pane" id="new-visit"><span class="sr-only">This is the content for New Visit.</span>
+														<div class="row">
+															<div class="col-md-12">
+																<h6>New Visit</h6>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-md-6">
+																<label for="new-encounter-location">Select Encounter Provider</label>
+																<select class="form-control typeahead-select" title="Press enter to browse through select options" id="new-encounter-location">
+																<optgroup label="Alaskan/Hawaiian Time Zone">
+																	<option value="AK">Alaska</option>
+																	<option value="HI">Hawaii</option>
+																</optgroup>
+																</select>
+															</div>
+															<div class="col-md-6">
+																<div class="col-md-6">
+																	<div class="form-group new-visit-calendar">
+																		<label for="newVisitDate">From</label>
+																		<div class="input-group date">
+																			<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+																			<input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="newVisitDate" />
+																		</div>
+																	</div>
+																</div>
+																<div class="col-md-6">
+																	<div class="form-group new-visit-calendar">
+																		<label for="newVisitTime">Time of Visit</label>
+																		<div class="input-group">
+																			<span class="input-group-addon"><i class="fa fa-clock-o"></i></i></span>
+																			<input type="text" class="form-control timepicker" title="Please enter in a time in the following format, HH:MM." placeholder="HH:MM" id="newVisitTime"/>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-12">
+																		<div class="form-group">
+																			<div class="checkbox">
+																				<label for="checkGreat">
+																					<input type="checkbox" value="option1" name="checkBox" title="Please select if this visit has occurred at some time in the past or at some other location (possibly non-VA) but is not used for workload credit" id="checkGreat" /> Historical Visit: a visit that occurred at some time in the past or at some other location (possibly non-VA) but is not used for workload credit.
+																				</label>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+	    										</div>
+	    									</div>
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+							<div class="modal-footer">
+								<div class="row">
+									<div class="col-md-3">
+
+									</div>
+									<div class="col-md-9">
+										<div class="control visible-inline">
+											<button type="button" class="btn btn-primary btn-sm" title="To select the cancel button and return to the previous screen, press enter.">Cancel</button>
+										</div>
+										<div class="control visible-inline">
+											<button type="submit" class="btn btn-primary btn-sm" title="To select the ok button and return to the previous screen, press enter.">OK</button>
+										</div>
+									</div>
+								</div>
+							</div>
+    					</form>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/typeahead.js"></script>
+    <script src="../../js/bloodhound.js"></script>
+    <script src="../../js/bootstrap-datepicker.js"></script>
+    <script src="../../js/select2.full.js"></script>
+    <script>
+        var options = [
+            'option one',
+            'option two',
+            'option three',
+            'option four',
+            'option five',
+            'option six',
+            'option seven',
+            'option eight',
+            'option nine'
+        ];
+        $(document).ready(function() {
+            var my_Suggestion_class = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                limit: 4,
+                local: $.map(options, function(filtered_items) {
+                    return {
+                        value: filtered_items
+                    };
+                })
+            });
+            my_Suggestion_class.initialize();
+            $('.typeahead').typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 0
+            }, {
+                name: 'options',
+                displayKey: '',
+                source: my_Suggestion_class.ttAdapter()
+            });
+        });
+	</script>
+	<script>
+	$(function() {
+	    $('.input-group.date').datepicker({
+	        todayBtn: "linked",
+	        orientation: "top left",
+	        autoclose: true,
+	        todayHighlight: true
+	    });
+	});
+	</script>
+	<script>
+	$(document).ready(function() {
+	    // we assign the width to 100% so that the parent element decides the width of the select such as in bootstrap
+	    // otherwise the width of 100% is not assigned if the select is created when it's not visible
+	    $(".typeahead-select").select2({width: '100%' });
+	});
+	</script>
+</body>
+</html>

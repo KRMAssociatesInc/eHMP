@@ -18,6 +18,14 @@ define([
     var SCROLL_ADDITIONAL_ROWS = 100;
     var INITIAL_NUMBER_OF_ROWS = 30;
 
+    function markInfobuttonData(that) {
+        if (that.dataGridOptions.collection.length > 0 && !_.isUndefined(that.dataGridOptions.tblRowSelector)) {
+            $(that.dataGridOptions.tblRowSelector).each(function() {
+                $(this).attr("data-infobutton", $(this).find('td:first').text());
+            });
+        }
+    }
+
     return Backbone.Marionette.LayoutView.extend({
         initialize: function(options) {
             if (this.options.appletConfig && _.isUndefined(this.options.appletConfig.instanceId)) {
@@ -67,6 +75,22 @@ define([
             this.loadingView = LoadingView.create();
             this.listenTo(dataGridOptions.collection, 'sync', this.onSync);
             this.listenTo(dataGridOptions.collection, 'error', this.onError);
+
+            this.dataGridOptions.collection.markInfobutton = {
+                'that': this,
+                'func': markInfobuttonData
+            };
+            if (this.options.appletConfig.viewType === 'gist') {
+                //set up events to close quicklooks
+                this.listenTo(this, 'show', function() {
+                    this.$('.grid-applet-panel').on('scroll', function() {
+                        self.$('[data-toggle=popover]').popover('hide');
+                    });
+                });
+                this.listenTo(this, 'destroy', function() {
+                    this.$('.grid-applet-panel').off('scroll');
+                });
+            }
         },
         initFilterView: function() {
             //Create Filter and Filter Button View
@@ -138,15 +162,14 @@ define([
 
                 this.gridFilter.show(this.filterView);
                 var queryInputSelector = 'input[name=\'q-' + this.appletConfig.instanceId + '\']';
-
                 this.filterView.$el.find('input[type=search]').on('change', function() {
-                    SessionStorage.setAppletStorageModel(self.appletConfig.instanceId, 'filterText', $(this).val());
-                    SessionStorage.setAppletStorageModel(self.appletConfig.id, 'filterText', $(this).val());
+                    SessionStorage.setAppletStorageModel(self.appletConfig.instanceId, 'filterText', $(this).val(), false);
+                    SessionStorage.setAppletStorageModel(self.appletConfig.id, 'filterText', $(this).val(), false);
                 });
 
                 this.filterView.$el.find('a[data-backgrid-action=clear]').on('click', function() {
-                    SessionStorage.setAppletStorageModel(self.appletConfig.instanceId, 'filterText', $(this).val());
-                    SessionStorage.setAppletStorageModel(self.appletConfig.id, 'filterText', $(this).val());
+                    SessionStorage.setAppletStorageModel(self.appletConfig.instanceId, 'filterText', $(this).val(), false);
+                    SessionStorage.setAppletStorageModel(self.appletConfig.id, 'filterText', $(this).val(), false);
                 });
 
                 if (this.dataGridOptions.filterDateRangeEnabled && this.appletConfig.fullScreen) {
@@ -207,12 +230,17 @@ define([
             }
         },
         onSync: function() {
-            $("[data-instanceid='" + this.appletConfig.instanceId + "']").find('.fa-refresh').removeClass('fa-spin');
+            var applet = this.$("[data-instanceid='" + this.appletConfig.instanceId + "']");
+            if (applet.length === 0) {
+                applet = this.$el.closest("[data-instanceid='" + this.appletConfig.instanceId + "']");
+            }
+            applet.find('.fa-refresh').removeClass('fa-spin');
+
             this.toolbar();
 
             if (this.filterView) {
-                var searchText = SessionStorage.getAppletStorageModel(this.appletConfig.instanceId, 'filterText');
-                if (searchText !== undefined && searchText !== null && searchText.trim().length > 0) {
+                var searchText = SessionStorage.getAppletStorageModel(this.appletConfig.instanceId, 'filterText', false);
+                if (this.filterView.userDefinedFilters.length > 0 || (searchText !== undefined && searchText !== null && searchText.trim().length > 0)) {
                     this.filterView.search();
                 }
             }
@@ -228,23 +256,23 @@ define([
                         model.set(object.id, model.get(object.field));
                     });
                 });
-                this.dataGridView.collection.reset(this.dataGridOptions.collection.models);
-
-                this.gridContainer.show(this.dataGridView, {
-                    preventDestroy: true
-                });
+                if(this.dataGridView.collection !== this.dataGridOptions.collection){
+                    this.dataGridView.collection.reset(this.dataGridOptions.collection.models);
+                }
             } else {
                 //TODO: find a way to bind datagridview collection to the dataGridView's collection
                 if (this.dataGridView.collection) {
-                    this.dataGridView.collection.reset(this.dataGridOptions.collection.models);
+                    if(this.dataGridView.collection !== this.dataGridOptions.collection){
+                        this.dataGridView.collection.reset(this.dataGridOptions.collection.models);
+                    }
                 } else {
-                    this.dataGridView.gridView.collection.reset(this.dataGridOptions.collection.models);
-                }
+                    if(this.dataGridView.gridView.collection !== this.dataGridOptions.collection){
+                        this.dataGridView.gridView.collection.reset(this.dataGridOptions.collection.models);
+                    }
 
-                this.gridContainer.show(this.dataGridView, {
-                    preventDestroy: true
-                });
+                }
             }
+            this.showViewInGridContainer(this.dataGridView);
 
             if (this.dataGridOptions.collection instanceof Backbone.PageableCollection) {
                 if (this.appletConfig.fullScreen || this.appletConfig.fullScreen === true) {
@@ -263,12 +291,10 @@ define([
                     $(this).attr("data-infobutton", $(this).find('td:first').text());
                 });
             }
-
-            var applet = $("[data-instanceid='" + this.appletConfig.instanceId + "']");
             var i;
             _.each(this.dataGridOptions.columns, function(column, index) {
                 i = index + 1;
-                $(applet).find('thead th:nth-child('+i+') a').attr('tooltip-data-key', column.hoverTip);
+                $(applet).find('thead th:nth-child(' + i + ') a').attr('tooltip-data-key', column.hoverTip);
             });
         },
         onError: function(collection, resp) {
@@ -276,14 +302,15 @@ define([
             var errorView = ErrorView.create({
                 model: errorModel
             });
-            this.gridContainer.show(errorView, {
-                preventDestroy: true
-            });
+            this.showViewInGridContainer(errorView);
         },
         loading: function() {
-            this.gridContainer.show(this.loadingView, {
-                preventDestroy: true
-            });
+            this.showViewInGridContainer(this.loadingView);
+        },
+        showViewInGridContainer: function(viewToShow, options) {
+            options = options || {};
+            options.preventDestroy = (this.gridContainer.currentView == this.loadingView);
+            this.gridContainer.show(viewToShow, options);
         },
         refresh: function(event) {
             if (this.dataGridOptions.refresh !== undefined) {
@@ -404,9 +431,10 @@ define([
             }
         },
         showFilterView: function() {
-            var filterText = SessionStorage.getAppletStorageModel(this.appletConfig.instanceId, 'filterText');
+            var filterText = SessionStorage.getAppletStorageModel(this.appletConfig.instanceId, 'filterText',false);
+            var filterText2 = SessionStorage.getAppletStorageModel(this.appletConfig.id, 'filterText');
             if (_.isUndefined(filterText) || _.isNull(filterText)) {
-                filterText = SessionStorage.getAppletStorageModel(this.appletConfig.id, 'filterText');
+                filterText = SessionStorage.getAppletStorageModel(this.appletConfig.id, 'filterText', false);
             }
             if (this.dataGridOptions.filterEnabled === true && filterText !== undefined && filterText !== null && filterText.length > 0) {
                 this.$el.find('#grid-filter-' + this.appletConfig.instanceId).toggleClass('collapse in');
@@ -414,6 +442,25 @@ define([
                 this.filterView.showClearButtonMaybe();
             } else if (this.dataGridOptions.filterDateRangeEnabled && this.appletConfig.fullScreen) {
                 this.$el.find('#grid-filter-' + this.appletConfig.instanceId).toggleClass('collapse in');
+            }
+        },
+        onDestroy: function() {
+            try {
+                if (this.loadingView && !this.loadingView.isDestroyed) {
+                    this.loadingView.destroy();
+                    this.loadingView = null;
+                }
+            } catch (e) {
+                console.error('Error destroying loadingView in applet:', this.appletConfig.id, e);
+            }
+
+            try {
+                if (this.dataGridView && !this.dataGridView.isDestroyed) {
+                    this.dataGridView.destroy();
+                    this.dataGridView = null;
+                }
+            } catch (e) {
+                console.error('Error destroying dataGridView in applet:', this.appletConfig.id, e);
             }
         }
     });

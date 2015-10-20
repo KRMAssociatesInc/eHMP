@@ -15,7 +15,7 @@ class RecordTime
     duration = sprintf "%.2f sec", (@@complete - @@start)
     location = "#{location}".ljust(50)
     tags = ""
-    source_tag_names.each do | tag |
+    source_tag_names.each do |tag|
       tags.concat(" #{tag}")
     end
     tags = tags.ljust(60)
@@ -28,7 +28,7 @@ class RecordTime
   end
 end
 
-Before do |scenario|
+Before do |_scenario|
   RecordTime.record_start_time
 end
 
@@ -46,7 +46,7 @@ end
 
 at_exit do
   durations = RecordTime.durations
-  durations.each do | temp |
+  durations.each do |temp|
     p temp
   end
 end

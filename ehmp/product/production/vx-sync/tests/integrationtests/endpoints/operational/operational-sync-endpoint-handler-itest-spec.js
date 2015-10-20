@@ -96,7 +96,7 @@ describe('operational-sync-endpoint-handler integration test', function() {
         };
         beforeEach(function() {
             //Clear the metastamps for the sites used in these tests
-            var jdsClient = new JdsClient(log, config);
+            var jdsClient = new JdsClient(log, log, config);
             var done1 = false;
             var done2 = false;
             runs(function() {
@@ -114,13 +114,14 @@ describe('operational-sync-endpoint-handler integration test', function() {
         it('normal path: subscribe OPD for all sites', function() {
             var done = false;
             //var testConfig = _.clone(config);
-            var jdsClient = new JdsClient(log, config);
+            var jdsClient = new JdsClient(log, log, config);
             var environment = {
                 publisherRouter: {
                     publish: function(jobsToPublish, config, callback) {
                         callback(null, 'success');
                     }
                 },
+                metrics: log,
                 jds: jdsClient
             };
             //No metastamp in JDS
@@ -163,13 +164,14 @@ describe('operational-sync-endpoint-handler integration test', function() {
         it('normal path: subscribe OPD for only some sites', function() {
             var done1, done2, done3, done4 = false;
             //var testConfig = _.clone(config);
-            var jdsClient = new JdsClient(log, config);
+            var jdsClient = new JdsClient(log, log, config);
             var environment = {
                 publisherRouter: {
                     publish: function(jobsToPublish, config, callback) {
                         callback(null, 'success');
                     }
                 },
+                metrics: log,
                 jds: jdsClient
             };
             spyOn(environment.publisherRouter, 'publish').andCallThrough();
@@ -216,13 +218,14 @@ describe('operational-sync-endpoint-handler integration test', function() {
         it('normal path: OPD already complete', function() {
             var done1, done2, done3, done4, done5, done6 = false;
             //var testConfig = _.clone(config);
-            var jdsClient = new JdsClient(log, config);
+            var jdsClient = new JdsClient(log, log, config);
             var environment = {
                 publisherRouter: {
                     publish: function(jobsToPublish, config, callback) {
                         callback(null, 'success');
                     }
                 },
+                metrics: log,
                 jds: jdsClient
             };
             spyOn(environment.publisherRouter, 'publish').andCallThrough();
@@ -278,7 +281,7 @@ describe('operational-sync-endpoint-handler integration test', function() {
             })
         };
         //Clear the metastamps for the sites used in these tests
-        var jdsClient = new JdsClient(log, config);
+        var jdsClient = new JdsClient(log, log, config);
         var done1 = false;
         var done2 = false;
         runs(function() {

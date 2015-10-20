@@ -66,7 +66,11 @@ define([
                 'size': "large"
             };
 
-            ADK.showModal(new DetailsModalView(), modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: new DetailsModalView(),
+                options: modalOptions
+            });
+            modal.show();
         },
 
         sortColumn: sortFunc,

@@ -7,11 +7,11 @@ require "AccessHtmlElement.rb"
 
 # Attempt to force an interface on any verifications performed through AccessBrowserV2
 module HTMLVerification
-  def pull_value(html_element, value)
+  def pull_value(_html_element, _value)
     fail "You shouldn't reach this function"
   end
 
-  def verify(html_element, value)
+  def verify(_html_element, _value)
     fail "You shouldn't reach this function"
   end
 end
@@ -19,7 +19,7 @@ end
 #
 class VerifyText
   include HTMLVerification
-  def pull_value(html_element, value)
+  def pull_value(html_element, _value)
     return html_element.text
   end
 
@@ -31,7 +31,7 @@ end
 #
 class VerifyValue
   include HTMLVerification
-  def pull_value(html_element, value)
+  def pull_value(html_element, _value)
     html_element.attribute("value")
   end
 
@@ -43,7 +43,7 @@ end
 #
 class VerifyPlaceholder
   include HTMLVerification
-  def pull_value(html_element, value)
+  def pull_value(html_element, _value)
     html_element.attribute("placeholder")
   end
 
@@ -62,12 +62,12 @@ class InElementList
     @access_html_elements = how_to_access
   end
 
-  def verify(html_element, value)
+  def verify(_html_element, value)
     driver = TestSupport.driver
     element_list = driver.find_elements(@access_html_elements.how, @access_html_elements.locator)
     p element_list
 
-    element_list.each do | search_result|
+    element_list.each do |search_result|
       if search_result.text.casecmp(value) == 0
         return true
       end # if
@@ -91,12 +91,12 @@ class VerifyXpathCount
     return xpath_count == value.to_i
   end
 
-  def pull_value(html_element, value)
+  def pull_value(html_element, _value)
     xpath_count = perform_xpath_count(html_element)
     return "#{xpath_count}"
   end
 
-  def perform_xpath_count(field)
+  def perform_xpath_count(_field)
     count = 0
     begin
       driver = TestSupport.driver

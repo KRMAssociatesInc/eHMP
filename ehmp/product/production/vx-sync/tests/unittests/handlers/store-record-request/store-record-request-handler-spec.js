@@ -12,9 +12,13 @@ environment.publisherRouter = {
         callback(null, [1]);
     })
 };
+environment.metrics = logger;
 environment.jds = {
     'storePatientDataFromJob': jasmine.createSpy().andCallFake(function(job, callback) {
         callback(null, { 'statusCode': 201 });
+    }),
+    'storePatientData': jasmine.createSpy().andCallFake(function(record, callback){
+        callback(null, { 'statusCode': 201});
     })
 };
 environment.solr = {
@@ -74,7 +78,7 @@ describe('store-record-request-handler.js', function() {
                     expect(error).toBeNull();
                     expect(result).toEqual('success');
                     finished = true;
-                });
+                }, function() {});
             });
 
             waitsFor(function() {
@@ -92,7 +96,7 @@ describe('store-record-request-handler.js', function() {
                     expect(error.message).toEqual('Missing UID');
                     expect(result).toBeUndefined();
                     finished = true;
-                });
+                }, function() {});
             });
 
             waitsFor(function() {

@@ -1,0 +1,12 @@
+.popover {
+	min-width: 475px;
+    &.popover-sm {
+        min-width: 100px;
+        text-align: center;
+    }
+	.popover-title {
+		font-size: 14px;
+		padding-left: 10px;
+		margin-bottom: 5px;
+	}
+}

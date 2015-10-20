@@ -7,6 +7,11 @@ var log = require(global.VX_UTILS + 'dummy-logger');
 var OperationaldataSyncUtil = require(global.VX_UTILS + 'site-operational-data-status-util');
 var _ = require('underscore');
 
+// var log = require('bunyan').createLogger({
+//     name: 'shutdown-vxsync-util',
+//     level: 'trace'
+// });
+
 var mockConfig = {
     hdr: {
         domains: ['allergy']
@@ -416,13 +421,13 @@ describe('hdr-xform-domain-vpr-handler', function() {
             ODSyncedSites.push('C877');
         };
 
-        it('result includes sample VPR allergy', function() {
+        it('excludes 9E7A allergy when 9E7A\'s OPD is synced', function() {
             operationaldataSyncUtil.initialize(log, mockConfig, mockEnvironment, site9E7ASynced);
             var vprItems = handler._steps._xformItemCollection(log, mockConfig, sampleItemCollection, mockEdipi, mockRequestStampTime);
             expect(vprItems.length).toEqual(0);
         });
 
-        it('result includes sample VPR allergy', function() {
+        it('excludes 9E7A and C877 allergies when both sites\' OPD is synced', function() {
             var items = {
                 data:{
                     items:[sampleCDSAllergy9E7A, sampleCDSAllergyC877]
@@ -433,13 +438,13 @@ describe('hdr-xform-domain-vpr-handler', function() {
             expect(vprItems.length).toEqual(0);
         });
 
-        xit('result includes sample VPR allergy', function() {
+        it('includes sample C877 allergy when C877\'s OPD is NOT synced', function() {
             var items = {
                 data:{
                     items:[sampleCDSAllergy9E7A, sampleCDSAllergyC877]
                 }
             };
-            operationaldataSyncUtil.initialize(log, mockConfig, mockEnvironment, site9E7AAndC877Synced);
+            operationaldataSyncUtil.initialize(log, mockConfig, mockEnvironment, site9E7ASynced);
             var vprItems = handler._steps._xformItemCollection(log, mockConfig, items, mockEdipi, mockRequestStampTime);
             expect(vprItems.length).toEqual(1);
             expect(vprItems).toContain(sampleVPRAllergyC877);
@@ -650,6 +655,8 @@ describe('hdr-xform-domain-vpr-handler', function() {
                     }
                     ];
 
+                    expect(jobsPublished[0].jobId).toBeDefined();
+                    delete jobsPublished[0].jobId;
                     expect(jobsPublished).toEqual(expectedJobs);
 
                 });

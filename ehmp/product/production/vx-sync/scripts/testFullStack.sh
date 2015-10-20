@@ -34,21 +34,21 @@ if [[ ( $* != *--nodeploy* ) || ( -n "$ehmpUpdated" ) ]]; then
 		cd ./production/vx-sync
 		./scripts/vmKick.sh
 		popd
-		curl -s "http://10.3.3.6:8088/data/doLoad?sites=9E7A,C877"
+		curl -s "http://10.3.3.6:8080/data/doLoad?sites=9E7A,C877"
 		gradle deployvxsyncdev
 	fi
 else
 	pushd .
 	cd ./production/vx-sync
 	./scripts/vmKick.sh
-	curl -s "http://10.3.3.6:8088/data/doLoad?sites=9E7A,C877"
+	curl -s "http://10.3.3.6:8080/data/doLoad?sites=9E7A,C877"
 	popd
 fi
 mkdir ~/Projects/vistacore/ehmp/product/production/vx-sync/scripts/testLogs
+pushd ~/Projects/vistacore/ehmp/product/production/vx-sync
 date "+%T Running VX Sync Unit Tests"
-gradle test > ~/Projects/vistacore/ehmp/product/production/vx-sync/scripts/testLogs/vxSyncUnitTests.log
-date "+%T Running VX Sync Integration Tests"
-gradle vxsyncIntTests > ~/Projects/vistacore/ehmp/product/production/vx-sync/scripts/testLogs/vxSyncIntTests.log
+npm test > ~/Projects/vistacore/ehmp/product/production/vx-sync/scripts/testLogs/vxSyncUnitTests.log
+popd
 
 url="http://10.2.2.110:9080/statusod/9E7A"
 timeout=0
@@ -68,6 +68,8 @@ if [ $timeout -gt 600 ]; then
 fi
 rm -f ~/Projects/vistacore/ehmp/product/production/vx-sync/scripts/testLogs/source.html
 
+date "+%T Running VX Sync Integration Tests"
+gradle vxsyncIntTests > ~/Projects/vistacore/ehmp/product/production/vx-sync/scripts/testLogs/vxSyncIntTests.log
 date "+%T Running VX Sync Acceptance Tests"
 gradle acceptanceTest > ~/Projects/vistacore/ehmp/product/production/vx-sync/scripts/testLogs/vxSyncAcceptanceTests.log
 date "+%T Running Sync Cache"

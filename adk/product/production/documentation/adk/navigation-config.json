@@ -8,6 +8,9 @@
     }, {
         "name": "Using the ADK",
         "url": "./#/adk/using-adk"
+    }, {
+        "name": "ADK UI Library",
+        "url": "./#/adk/ui-library"
     }],
     "right_nav_items": [{
         "name": "Libraries",
@@ -15,8 +18,14 @@
     }, {
         "name": "Conventions",
         "url": "./#/adk/conventions"
+    }, {
+        "name": "Code review checklist",
+        "url": "./#/adk/code-review-checklist"
     }],
     "footer_nav_items": [{
+        "name": "What's new?",
+        "url": "./#/adk/changelog"
+    }, {
         "name": "Internal Developers Instructions",
         "url": "./#/adk/internal-developer-specific"
     }]

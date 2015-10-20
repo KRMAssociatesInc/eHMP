@@ -1,0 +1,46 @@
+$headingHeight: 30px;
+.side-by-side-container{
+	> [class^="col"]{
+		height:250px;
+		.side-by-side-heading{
+			background-color: $primary;
+			color:$white;
+			height:$headingHeight;
+			line-height:$headingHeight;
+			padding: 0 10px;
+		}
+		.side-by-side-options,.side-by-side-selected{
+			height: calc(100% - #{$headingHeight});
+			border:1px solid #ccc;
+			border-top:none;
+			.side-by-side-selector-wrapper{
+				height: 100%;
+				position: relative;
+			}
+		}
+		.side-by-side-selected{
+			overflow-y: auto;
+			li{
+				border-bottom:1px solid #ccc;
+				padding:5px;
+				&:nth-child(2n){
+					background-color: $primary-lightest;
+				}
+				> div:first-child{
+					padding-top:7px;
+				}
+				.remove-selection-button{
+					background: none;
+				    border: none;
+			    	color:$primary;
+				    height: 30px;
+				    padding: 0;
+				    width: 15px;
+				    &:focus,&:hover{
+				    	color: $secondary;
+				    }
+				}
+			}
+		}
+	}
+}

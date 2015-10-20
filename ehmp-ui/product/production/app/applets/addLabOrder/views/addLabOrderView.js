@@ -30,7 +30,11 @@ define([
                 'footerView': FooterView
             };
 
-            ADK.showModal(this, options);
+            var modal = new ADK.UI.Modal({
+                view: this,
+                options: options
+            });
+            modal.show();
         }
     });
 

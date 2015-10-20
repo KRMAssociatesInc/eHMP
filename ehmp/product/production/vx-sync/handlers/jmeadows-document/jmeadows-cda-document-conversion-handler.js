@@ -3,12 +3,12 @@
 var xslt = require('xslt4node');
 var office = require(global.VX_SUBSYSTEMS + '/libreoffice/libreOffice');
 var async = require('async');
-var format = require('util').format;
 var fsUtil = require(global.VX_UTILS + 'fs-utils');
 var mkdirp = require('mkdirp');
 var jobUtil = require(global.VX_UTILS + 'job-utils');
 var uidUtil = require(global.VX_UTILS + 'uid-utils');
-var crypto = require('crypto');
+var docUtil = require(global.VX_UTILS + 'doc-utils');
+var errorUtil = require(global.VX_UTILS + 'error');
 var path = require('path');
 //var errorUtil = requrie(global.VX_UTILS + 'error');
 
@@ -17,42 +17,41 @@ function handle(log, config, environment, job, handlerCallback) {
 
     if (!job || !job.patientIdentifier || !job.patientIdentifier.value) {
         log.error('jmeadows-cda-document-conversion-handler.handle for jobId %s : Job has no patient identifier', job.jobId);
-        return setTimeout(handlerCallback, 0, 'Job has no patient identifier');
+        return setTimeout(handlerCallback, 0, errorUtil.createFatal('Job has no patient identifier'));
     }
     if (job.type !== 'jmeadows-cda-document-conversion') {
         log.error('jmeadows-cda-document-conversion-handler.handle for jobId %s  : Incorrect job type', job.jobId);
-        return setTimeout(handlerCallback, 0, 'Incorrect job type');
+        return setTimeout(handlerCallback, 0, errorUtil.createFatal('Incorrect job type'));
     }
     if (!job.record) {
         log.error('jmeadows-cda-document-conversion-handler.handle for jobId %s  : Job is missing record', job.jobId);
-        return setTimeout(handlerCallback, 0, 'Job is missing record');
+        return setTimeout(handlerCallback, 0, errorUtil.createFatal('Job is missing record'));
     }
     if (!job.record.text || !job.record.text[0] || !job.record.text[0].content) {
         log.error('jmeadows-cda-document-conversion-handler.handle for jobId %s  : Job is missing XML string to convert', job.jobId);
-        return setTimeout(handlerCallback, 0, 'Job is missing XML string to convert');
+        return setTimeout(handlerCallback, 0, errorUtil.createFatal('Job is missing XML string to convert'));
     }
     if (!config || !config.documentStorage.publish || !config.documentStorage.publish.path) {
         log.error('jmeadows-cda-document-conversion-handler.handle for jobId %s  : Configuration missing document publish information', job.jobId);
-        return setTimeout(handlerCallback, 0, 'Configuration missing document publish information');
+        return setTimeout(handlerCallback, 0, errorUtil.createFatal('Configuration missing document publish information'));
     }
     if (!config.documentStorage.officeLocation) {
         log.error('jmeadows-cda-document-conversion-handler.handle for jobId %s  : Configuration missing reference to LibreOffice', job.jobId);
-        return setTimeout(handlerCallback, 0, 'Configuration missing reference to LibreOffice');
+        return setTimeout(handlerCallback, 0, errorUtil.createFatal('Configuration missing reference to LibreOffice'));
     }
     if (!config.documentStorage.uriRoot) {
         log.error('jmeadows-cda-document-conversion-handler.handle for jobId %s  : Configuration missing document retrieval endpoint', job.jobId);
-        return setTimeout(handlerCallback, 0, 'Configuration missing document retrieval endpoint');
+        return setTimeout(handlerCallback, 0, errorUtil.createFatal('Configuration missing document retrieval endpoint'));
     }
 
     var xmlText = job.record.text[0].content;
 
     //Generate name of html file to publish
-    var htmlFilename = getFilename(xmlText);
+    var htmlFilename = docUtil.getSha1Filename(xmlText, '.html');
     var txtFilename = htmlFilename.replace(/\.html/, '.txt');
     //Get path to directory where file will be published
-    var dir = getPatientDir(job);
-    var outPath = config.documentStorage.publish.path + '/' + dir;
-    outPath = path.resolve(outPath);
+    var dir = docUtil.getPatientDirByJob(job);
+    var outPath = docUtil.getDocOutPath(dir, config);
     var htmlFile;
     var htmlFileExists = false;
 
@@ -109,6 +108,7 @@ function handle(log, config, environment, job, handlerCallback) {
 
             log.debug('jmeadows-cda-document-conversion-handler.handle for jobId %s : Beginning conversion of HTML document to TXT...', job.jobId);
             office.convert(htmlFile, 'txt:Text', outPath, config, function() {
+                log.debug('jmeadows-cda-document-conversion-handler.handle for jobId %s : Verifying that TXT file was created...', job.jobId);
                 if (fsUtil.fileExistsSync(outPath + '/' + txtFilename)) {
                     log.debug('jmeadows-cda-document-conversion-handler.handle for jobId %s : Successfully converted HMTL document to TXT.', job.jobId);
                     callback();
@@ -116,7 +116,7 @@ function handle(log, config, environment, job, handlerCallback) {
                     log.error('jmeadows-cda-document-conversion-handler.handle for jobId %s : Could not convert HTML document to TXT.', job.jobId);
                     callback('TXT file not produced');
                 }
-            });
+            }, log);
         }
     ], function(err) { //At the end of the series...
         if (err) {
@@ -131,7 +131,7 @@ function handle(log, config, environment, job, handlerCallback) {
 
                 //***Update document metadata***
                 //Add complex document uri
-                job.record.dodComplexNoteUri = format(config.documentStorage.uriRoot + '?dir=%s&file=%s', dir, htmlFilename);
+                job.record.dodComplexNoteUri = docUtil.getDodComplexNoteUri(config.documentStorage.uriRoot, dir, htmlFilename);
                 //Insert placeholder text
                 job.record.text[0].content = '-Placeholder for a DOD Patient Document- Unfortunately this document is corrupted and cannot be displayed.  Please report it so the problem can be rectified.';
 
@@ -151,7 +151,7 @@ function handle(log, config, environment, job, handlerCallback) {
         //Normal pathway
         //***Update document metadata***
         //Add complex document uri
-        job.record.dodComplexNoteUri = format(config.documentStorage.uriRoot + '?dir=%s&file=%s', dir, htmlFilename);
+        job.record.dodComplexNoteUri = docUtil.getDodComplexNoteUri(config.documentStorage.uriRoot, dir, htmlFilename);
         //Insert document plaintext
         job.record.text[0].content = fsUtil.readFileSync(outPath + '/' + txtFilename).toString();
         //Delete txt file
@@ -169,17 +169,5 @@ function handle(log, config, environment, job, handlerCallback) {
     });
 }
 
-function getFilename(hashInput) {
-    var sha = crypto.createHash('sha1');
-    sha.update(hashInput, 'binary');
-    return sha.digest('hex') + '.html';
-}
-
-function getPatientDir(job) {
-    var eventid = uidUtil.extractLocalIdFromUID(job.record.uid);
-
-    var pidHex = new Buffer(job.patientIdentifier.value, 'utf8');
-    return pidHex.toString('hex') + '/' + eventid;
-}
 
 module.exports = handle;

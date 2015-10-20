@@ -76,7 +76,7 @@ def current_item_count_number_of_results
 end # count_number_of_results
 
 Then(/^VPR return (\d+) VistA result\(s\)$/) do |num_expected_results|
-#   num_expected_results = @test_patient.search_result_count
+  #   num_expected_results = @test_patient.search_result_count
   p num_of_actual_results = current_item_count_number_of_results
   p num_expected_results = num_expected_results.to_i
   expect(num_of_actual_results).to be(num_expected_results)
@@ -88,13 +88,13 @@ Then(/^hmp returns "(.*?)" results$/) do |number_of_results|
   expect(json['total']).to be(number_of_results.to_i)
 end
 
-Then(/^the results contain data group$/) do | table|
+Then(/^the results contain data group$/) do |table|
   @json_object = JSON.parse(@response.body)
   json_verify = JsonVerifier.new
 
   result_array = @json_object["data"]
 
-  table.rows.each do | fieldpath, fieldvaluestring |
+  table.rows.each do |fieldpath, fieldvaluestring|
     json_verify.reset_output
     found = json_verify.build_subarray(fieldpath, fieldvaluestring, result_array)
 
@@ -104,13 +104,25 @@ Then(/^the results contain data group$/) do | table|
   end # table.rows.each
 end
 
-Then(/^the results contain$/) do | table |
+Then(/^the results contain$/) do |table|
   dateformat = DefaultDateFormat.format
   @json_object = JSON.parse(@response.body)
+  if @json_object.key?('data')
+    needdata = false
+    table.rows.each do |fieldpath, _fieldValuestring|
+      if fieldpath.start_with? "data."
+        needdata = true
+        break
+      end
+    end
+    unless needdata
+      @json_object = @json_object['data']
+    end
+  end
   json_verify = JsonVerifier.new
 
   allfound = true
-  table.rows.each do | fieldpath, fieldvaluestring |
+  table.rows.each do |fieldpath, fieldvaluestring|
     json_verify.reset_output
 
     if fieldvaluestring.eql? "IS_FORMATTED_DATE"
@@ -132,17 +144,16 @@ Then(/^the results contain$/) do | table |
       fieldvalue = [fieldvaluestring]
       found = json_verify.object_contains_path_value_combo(fieldpath, fieldvalue, [@json_object])
     end # if
-    allfound = allfound && found
+    allfound &&= found
     if found == false
       output = json_verify.output
-      output.each do | msg|
+      output.each do |msg|
         p msg
       end # output.each
       puts json_verify.error_message
     end # if found == false
-
   end # table.rows.each
-  expect(allfound).to be_true
+  expect(allfound).to eq(true)
 end
 
 Then(/^hmp returns "(.*?)" procedure results$/) do |num_procedures|

@@ -21,14 +21,15 @@ define([
                 filter: ''
             }
         },
-
+        enableTileSorting: true,
+        tileSortingUniqueId : 'typeName',
         gistHeaders: {
             header1: {
                 title: 'Type',
                 sortable: true,
                 sortType: 'alphabetical',
                 key: 'descriptionColumn',
-                hoverTip: 'vitals_description'
+                hoverTip: 'vitals_type'
             },
             header2: {
                 title: 'Result',

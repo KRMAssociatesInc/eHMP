@@ -1,6 +1,6 @@
 @US2800 @regression 
 Feature:F144 - eHMP viewer GUI - Vitals
-#Team Neptune
+#Team Neptune, inherited by Team venus
 
 @base @US2800_coversheet_only @vimm_observed
 Scenario: User views vitals coversheet to view data
@@ -24,7 +24,7 @@ Scenario: User views vitals coversheet to view data
     |PO2  | 99 %  | 02/24/2015|
     |PN   |1  |02/24/2015 |
 
-@US2800a @DE299 @vimm_observed
+@US2800a @DE299 @vimm_observed @debug @DE1794
 Scenario: User views vitals coversheet to view data
   Given user is logged into eHMP-UI
   And user searches for and selects "EIGHT,Patient"
@@ -48,7 +48,7 @@ Scenario: User views vitals coversheet to view data
   When the user clicks the "Vitals Expand Button"
   And the "Expanded Vitals Rows" contain 9 items
 
-@US2800b @DE306 @DE416 @vimm_observed @triage
+@US2800b @DE306 @DE416 @DE1264
 Scenario: User uses the vitals expanded view to filter
   Given user is logged into eHMP-UI
   And user searches for and selects "Eight,Patient"
@@ -66,10 +66,10 @@ Scenario: User uses the vitals expanded view to filter
     | Date Entered |
     | Qualifiers |
     | Facility |
-  And the user enters "DOD" into the "Vitals Filter Field"
-  Then the "Expanded Vitals Rows" contain 7 items
+  And the user enters "BAY" into the "Vitals Filter Field"
+  Then the "Expanded Vitals Rows" contain 9 items
 
-@US2800c @DE241 @vimm_observed
+@US2800c @DE241 @vimm_observed @debug @DE1794
 Scenario: User uses the vitals expanded view to filter by date
   Given user is logged into eHMP-UI
   And user searches for and selects "Eight,Patient"
@@ -95,7 +95,7 @@ Scenario: User uses the vitals expanded view to filter by date
     |Date Observed	|Type	|Result    |	Date Entered                            |   Qualifiers  |Facility|
     | <!---->       |BP	    |No Record |	<!-- <span class='grayText'></span> -->	|        |   |
 
-@US2800d @DE169 @vimm_observed @vimm @triage
+@US2800d @DE169 @vimm_observed @vimm
 Scenario: User uses the vitals expanded view to filter
   Given user is logged into eHMP-UI
   And user searches for and selects "Eight,Patient"

@@ -14,7 +14,8 @@ class OrdersContainer < AccessBrowserV2
     add_verify(CucumberLabel.new("Complete Table"), VerifyContainsText.new, AccessHtmlElement.new(:css, "[data-appletid=orders] table"))
 
     add_verify(CucumberLabel.new("Modal Section Headers"), VerifyContainsText.new, AccessHtmlElement.new(:css, "#modal-body #order-modal-content .col-md-10"))
-    add_verify(CucumberLabel.new("Modal Fields"), VerifyContainsText.new, AccessHtmlElement.new(:css, "#modal-body #order-modal-content div"))
+    add_verify(CucumberLabel.new("Modal Fields"), VerifyContainsText.new, AccessHtmlElement.new(:css, "#modal-body #order-modal-content .orderAppletHeader"))
+    add_verify(CucumberLabel.new("Modal Fields Rows"), VerifyContainsText.new, AccessHtmlElement.new(:css, "#modal-body #order-modal-content .row"))
     # add_action(CucumberLabel.new("Control - modal - Next Button"), ClickAction.new, AccessHtmlElement.new(:css, "#modal-body #orders-next"))
     add_action(CucumberLabel.new("Control - modal - Next Button"), ClickAction.new, AccessHtmlElement.new(:id, "orders-next"))
     add_action(CucumberLabel.new("Control - modal - Previous Button"), ClickAction.new, AccessHtmlElement.new(:id, "orders-previous"))
@@ -52,7 +53,7 @@ Before do
 end
 
 def check_field_format(field_name, correct_format_regex)
-  modal_fields_key = "Modal Fields"
+  modal_fields_key = "Modal Fields Rows"
 
   @oc.wait_until_element_present(modal_fields_key, 15)
   actual_modal_rows = @oc.get_elements(modal_fields_key)
@@ -89,7 +90,7 @@ When(/^the user clicks the "(.*?)" button in the Orders applet$/) do |control_na
   wait_and_perform(@oc, control_name)
 end
 
-When(/^the user selects "(.*?)" in the Orders applet "(.*?)" dropdown$/) do |selection, control_name|
+When(/^the user selects "(.*?)" in the Orders applet "(.*?)" dropdown$/) do |selection, _control_name|
   @oc.wait_until_element_present("Table - Orders Applet", 15)
 
   wait = Selenium::WebDriver::Wait.new(:timeout => 15)
@@ -101,7 +102,7 @@ When(/^the user selects "(.*?)" in the Orders applet "(.*?)" dropdown$/) do |sel
 
   wait.until {
     (@oc.get_elements("applet - Order Type dropdowns").size > 1) &&
-    (@oc.get_elements("applet - Order Type dropdowns")[0].text.empty? == false)
+      (@oc.get_elements("applet - Order Type dropdowns")[0].text.empty? == false)
   }
 
   dropdown_elements = @oc.get_elements("applet - Order Type dropdowns")
@@ -138,31 +139,28 @@ end
 
 Then(/^under the "(.*?)" headers there are the following fields$/) do |section_name, expected_fields|
   modal_fields_key = "Modal Fields"
-
   @oc.wait_until_element_present(modal_fields_key, 15)
   actual_modal_rows = @oc.get_elements(modal_fields_key)
 
   expected_fields_enumerator = expected_fields.rows.enum_for
 
   in_correct_section = false
-
   actual_modal_rows.each do |actual_modal_row|
-    if actual_modal_row.attribute("class") == "col-md-10"
+    if actual_modal_row.attribute("class") == "col-md-10 col-md-offset-1 orderAppletHeader"
       if actual_modal_row.text.strip == section_name
         p "Section Found: #{section_name}"
         in_correct_section = true
       else
-        in_correct_section = false
+        in_correct_section = false 
       end # if section_name
 
     # don't evaluate empty rows
-    elsif !actual_modal_row.text.strip.empty?
+    elsif !actual_modal_row.text.strip.empty? and actual_modal_row.attribute("class").include? "col-md-4"
       if in_correct_section
         expected_field = expected_fields_enumerator.peek[0]
 
         # get rid of the field data; just want the field title
         actual_field = actual_modal_row.text.sub(/\n.*/, "")
-
         verify_elements_equal(expected_field, actual_field)
 
         # ruby throws an exception if you hit the end
@@ -184,7 +182,7 @@ Then(/^the "(.*?)" column contains "(.*?)"$/) do |column_name, expected_text|
     first_row_element.text.include? expected_text
   }
 
-  p "First Row: #{driver.find_element(:css, "[data-appletid=orders] table tbody tr").text}"
+  p "First Row: #{driver.find_element(:css, '[data-appletid=orders] table tbody tr').text}"
 
   table_key = "Complete Table"
   @oc.wait_until_element_present(table_key, 15)
@@ -244,7 +242,7 @@ Then(/^the "(.*?)" input should have the value "(.*?)" in the Orders applet$/) d
     wait = Selenium::WebDriver::Wait.new(:timeout => 15)
     wait.until { @oc.get_element("Control - applet - #{control_name}").attribute("value") == expected_value }
   rescue Exception => e
-    p "Actual value found: #{@oc.get_element("Control - applet - #{control_name}").attribute("value")}"
+    p "Actual value found: #{@oc.get_element("Control - applet - #{control_name}").attribute('value')}"
     raise e
   end
 end
@@ -281,7 +279,7 @@ Then(/^user scrolls the order applet down$/) do
   # sleep 10
 end
 
-When(/^user hovers over on the first record's "(.*?)"$/) do |arg1|
+When(/^user hovers over on the first record's "(.*?)"$/) do |_arg1|
   @oc = OrdersContainer.instance
   driver = TestSupport.driver
   wait = Selenium::WebDriver::Wait.new(:timeout => 60)
@@ -323,3 +321,35 @@ When(/^the user selects order "(.*?)"$/) do |arg1|
   expect(@oc.perform_action(arg1)).to be_true
 end
 
+def case_insensive_path(input_text)
+  upper = input_text.upcase
+  lower = input_text.downcase
+
+  path =  "//table[@id='data-grid-orders']/descendant::td[contains(translate(string(), '#{upper}', '#{lower}'), '#{lower}')]/ancestor::tr"
+end
+
+When(/^the user filters the Orders Applet by text "([^"]*)"$/) do |input_text|
+  path = case_insensive_path input_text
+  p path
+  row_count = TableContainer.instance.get_elements("Rows - Orders Applet").size 
+  rows_containing_filter_text = TestSupport.driver.find_elements(:xpath, path).size
+
+  p "row_count (#{row_count}) and rows_containing_filter_text (#{rows_containing_filter_text})"
+
+  control_name = 'Text Filter'
+  parent_name = 'Orders applet'
+  container_key = get_container_key(control_name, parent_name)
+  input_into_control(container_key.container, container_key.modal_or_applet, container_key.control_name, input_text)
+  wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
+  wait.until { rows_containing_filter_text == TableContainer.instance.get_elements("Rows - Orders Applet").size }
+  p "Row count is now: #{TableContainer.instance.get_elements("Rows - Orders Applet").size}"
+end
+
+Then(/^the Orders Applet is not filtered by text "([^"]*)"$/) do |input_text|
+  path = case_insensive_path input_text
+  
+  p path
+  row_count = TableContainer.instance.get_elements("Rows - Orders Applet").size 
+  rows_containing_filter_text = TestSupport.driver.find_elements(:xpath, path).size
+  expect(row_count).to_not eq rows_containing_filter_text
+end

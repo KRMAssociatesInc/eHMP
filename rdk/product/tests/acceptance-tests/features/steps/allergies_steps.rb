@@ -16,7 +16,7 @@ end
 
 Given(/^a patient with allergies in multiple VistAs$/) do
   @test_patient = DefaultAllergyPatient.new
-  p  @test_patient.pid
+  p @test_patient.pid
 end
 
 When(/^the client requests allergies for the patient "(.*?)"$/) do |pid|
@@ -30,7 +30,6 @@ Then(/^eHMP returns all allergies in the results$/) do
 end
 
 When(/^user requests allergies for that patient$/) do
-
   # cucumber step: When user types "Eight" in the "Search Field"
   search_term = @test_patient.search_term
   select_patient_from_list = @test_patient.patient_name
@@ -64,11 +63,11 @@ Then(/^the eHMP UI displays allergy "(.*?)" with details$/) do |allergy_name, ta
   wait.until { driver.find_element(:xpath=> header_xpath) } # wait until specific list element is shown
   header_id = driver.find_element(:xpath=> header_xpath).attribute("id")
 
-  errors = Array.new
+  errors = []
   error_thrown = false
 
-  table.rows.each do | row |
-    row.each do |column |
+  table.rows.each do |row|
+    row.each do |column|
       table_column_xpath = "//h3[@id='#{header_id}']/following-sibling::table[1]/descendant::td[contains(string(), '#{column}')]"
       begin
         driver.find_element(:xpath=>table_column_xpath)
@@ -83,17 +82,17 @@ Then(/^the eHMP UI displays allergy "(.*?)" with details$/) do |allergy_name, ta
   expect(error_thrown).to be_false
 end
 
-When(/^the client requests allergies for that patient "(.*?)"$/) do |pid|
-  temp = QueryRDKAll.new("AdverseReaction")
-  temp.add_parameter("subject.identifier", pid)
-  temp.add_acknowledge("true")
-  p temp.path
-  @response = HTTPartyWithBasicAuth.get_with_authorization(temp.path)
+# When(/^the client requests allergies for that patient "(.*?)"$/) do |pid|
+#   temp = QueryRDKAll.new("AdverseReaction")
+#   temp.add_parameter("subject.identifier", pid)
+#   temp.add_acknowledge("true")
+#   p temp.path
+#   @response = HTTPartyWithBasicAuth.get_with_authorization(temp.path)
 
-end
+# end
 
 When(/^the client requests allergies for the patient "(.*?)" in FHIR format$/) do |pid|
-  temp = QueryRDKAll.new("AdverseReaction")
+  temp = RDKQuery.new('adversereaction-adversereactions')
   temp.add_parameter("subject.identifier", pid)
   temp.add_acknowledge("true")
   p temp.path
@@ -101,7 +100,7 @@ When(/^the client requests allergies for the patient "(.*?)" in FHIR format$/) d
 end
 
 When(/^the client requests "(.*?)" allergies for the patient "(.*?)" in FHIR format$/) do |limit, pid|
-  temp = QueryRDKAll.new("AdverseReaction")
+  temp = RDKQuery.new('adversereaction-adversereactions')
   temp.add_parameter("subject.identifier", pid)
   temp.add_acknowledge("true")
   temp.add_parameter("limit", limit)
@@ -125,9 +124,9 @@ Then(/^the client receives (\d+) FHIR DoD result\(s\)$/) do |number_of_results|
 
   num_vista_results = 0
   source_dod = /urn:va:.*:DOD/
-  source_allvalues.each do | value |
+  source_allvalues.each do |value|
     unless source_dod.match(value).nil?
-      num_vista_results = num_vista_results + 1
+      num_vista_results += 1
     end
   end
   expect(num_vista_results).to eq(number_of_results.to_i)
@@ -150,13 +149,13 @@ Then(/^the client receives (\d+) FHIR VistA result\(s\)$/) do |number_of_results
   num_vista_results = 0
   source_panorama = /urn:va:.*:9E7A/
   source_kodak = /urn:va:.*:C877/
-  source_allvalues.each do | value |
+  source_allvalues.each do |value|
     #if value.start_with? "urn:va:allergy:B362" #PANORAMA
     unless source_panorama.match(value).nil?
-      num_vista_results = num_vista_results + 1
+      num_vista_results += 1
     end
     unless source_kodak.match(value).nil?
-      num_vista_results = num_vista_results + 1
+      num_vista_results += 1
     end
   end
   expect(num_vista_results).to eq(number_of_results.to_i)
@@ -203,11 +202,11 @@ class AllergyResponseParse
   end
 end
 
-Then(/^the FHIR results contain allergy$/) do | table |
+Then(/^the FHIR results contain allergy$/) do |table|
   @json_object = JSON.parse(@response.body)
 
   parser = AllergyResponseParse.new(@json_object)
-  table.rows.each do | fieldpath, fieldvaluestring |
+  table.rows.each do |fieldpath, fieldvaluestring|
     parser.parse(fieldpath, fieldvaluestring)
 
     expect(parser.found).to be_true
@@ -215,13 +214,13 @@ Then(/^the FHIR results contain allergy$/) do | table |
   end # table.rows.each
 end
 
-Then(/^the FHIR results contain$/) do | table |
+Then(/^the FHIR results contain$/) do |table|
   dateformat = DefaultDateFormat.format
   @json_object = JSON.parse(@response.body)
   json_verify = JsonVerifier.new
 
   allfound = true
-  table.rows.each do | fieldpath, fieldvaluestring |
+  table.rows.each do |fieldpath, fieldvaluestring|
     json_verify.reset_output
 
     if fieldvaluestring.eql? "IS_FORMATTED_DATE"
@@ -236,15 +235,14 @@ Then(/^the FHIR results contain$/) do | table |
       fieldvalue = [fieldvaluestring]
       found = json_verify.object_contains_path_value_combo(fieldpath, fieldvalue, [@json_object])
     end # if
-    allfound = allfound && found
+    allfound &&= found
     if found == false
       output = json_verify.output
-      output.each do | msg|
+      output.each do |msg|
         p msg
       end # output.each
       puts json_verify.error_message
     end # if found == false
-
   end # table.rows.each
   expect(allfound).to be_true
 end
@@ -264,9 +262,9 @@ Then(/^the client receives (\d+) VPR DoD result\(s\)$/) do |number_of_results|
   p source_allvalues
   num_vista_results = 0
   source_dod = /urn:va:.*:DOD/
-  source_allvalues.each do | value |
+  source_allvalues.each do |value|
     unless source_dod.match(value).nil?
-      num_vista_results = num_vista_results + 1
+      num_vista_results += 1
     end
   end
   expect(num_vista_results).to eq(number_of_results.to_i)
@@ -288,13 +286,13 @@ Then(/^VPR returns (\d+) VistA result\(s\)$/) do |number_of_results|
   num_vista_results = 0
   source_panorama = /urn:va:.*:9E7A/
   source_kodak = /urn:va:.*:C877/
-  source_allvalues.each do | value |
+  source_allvalues.each do |value|
     #if value.start_with? "urn:va:allergy:B362" #PANORAMA
     unless source_panorama.match(value).nil?
-      num_vista_results = num_vista_results + 1
+      num_vista_results += 1
     end
     unless source_kodak.match(value).nil?
-      num_vista_results = num_vista_results + 1
+      num_vista_results += 1
     end
   end
   expect(num_vista_results).to eq(number_of_results.to_i)
@@ -307,19 +305,19 @@ end
 
 def print_json_verify(json_verify)
   output = json_verify.output
-  output.each do | msg|
+  output.each do |msg|
     p msg
   end #output.each
 end
 
-Then(/^the VPR results contain allergy terminology from "(.*?)"$/) do |arg1, table|
+Then(/^the VPR results contain allergy terminology from "(.*?)"$/) do |_arg1, table|
   dateformat = DefaultDateFormat.format
 
   @json_object = JSON.parse(@response.body)
   json_verify = JsonVerifier.new
 
   result_array = @json_object["data"]["items"]
-  table.rows.each do | fieldpath, fieldvaluestring |
+  table.rows.each do |fieldpath, fieldvaluestring|
     json_verify.reset_output
     if fieldvaluestring.eql? "IS_FORMATTED_DATE"
       found = json_verify.matches_date_format(fieldpath, dateformat, result_array)
@@ -338,7 +336,7 @@ Then(/^the VPR results contain allergy terminology from "(.*?)"$/) do |arg1, tab
 
     if found == false
       output = json_verify.output
-      output.each do | msg|
+      output.each do |msg|
         p msg
       end #output.each
       puts "for field #{fieldpath}: #{json_verify.error_message}"
@@ -356,14 +354,14 @@ Then(/^expected fields match$/) do |table|
 
   result_array = @json_object["entry"]
   output_string = ""
-  table.rows.each do | fieldsource, fieldmatch |
+  table.rows.each do |fieldsource, fieldmatch|
     steps_source = fieldsource.split('.')
     steps_match = fieldmatch.split('.')
     source_allvalues = []
     match_allvalues = []
     json_verify.save_all_values_of_path(0, steps_source, result_array[0], output_string, source_allvalues)
     json_verify.save_all_values_of_path(0, steps_match, result_array[0], output_string, match_allvalues)
-    source_allvalues.each do | value |
+    source_allvalues.each do |value|
       value.sub! '#', ''
       do_they_match = match_allvalues.include?(value)
       p "looking for fieldsource #{value} in fieldmatch #{match_allvalues}" unless do_they_match
@@ -379,7 +377,6 @@ Then(/^response is a json object$/) do
 end
 
 When(/^the client saves an allergy for patient with content "(.*?)"$/) do |content|
-  path = String.new(DefaultLogin.rdk_url)
+  path = String.new(DefaultLogin.rdk_writeback_url)
   @response = HTTPartyWithBasicAuth.post_json_with_authorization(path+"/resource/writeback/allergy/save?", content, { "Content-Type"=>"application/json" })
 end
-

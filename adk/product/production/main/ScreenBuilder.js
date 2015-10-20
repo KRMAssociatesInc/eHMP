@@ -16,7 +16,7 @@ define([
     var NewUserScreen = Messaging.request('NewUserScreen');
     var ScreenBuilder = {};
 
-    ScreenBuilder.addNewScreen = function(screenConfig, app, screenIndex) {
+    ScreenBuilder.addNewScreen = function(screenConfig, app, screenIndex, callback) {
         screenConfig.fileName = "NewUserScreen";
 
         //initialize the screen
@@ -31,7 +31,7 @@ define([
             onLoadScreen(screenDescriptor);
         });
 
-        UserDefinedScreens.addNewScreen(screenConfig, screenIndex);
+        UserDefinedScreens.addNewScreen(screenConfig, screenIndex, callback);
 
         function onLoadScreen(screenConfig) {
             ScreenBuilder.build(app, screenConfig);
@@ -54,12 +54,15 @@ define([
             //update gridster config key to match the new id
             var gridsterConfig = UserDefinedScreens.getGridsterConfigFromSession(origId);
             gridsterConfig.id = newScreenConfig.id;
-            UserDefinedScreens.saveGridsterConfig(gridsterConfig, newScreenConfig.id);
-            UserDefinedScreens.saveGridsterConfig({}, origId);
-
+            UserDefinedScreens.saveGridsterConfig(gridsterConfig, newScreenConfig.id, function() {
+                UserDefinedScreens.updateScreenId(origId, newScreenConfig.id);
+            });
+            //UserDefinedScreens.saveGridsterConfig({}, origId);
+            
             //Replace original screen module with a new one one that has the correct route and name
             ADK.ADKApp[newScreenConfig.id] = ADK.ADKApp[origId];
             ADK.ADKApp[newScreenConfig.id].id = newScreenConfig.id;
+            ADK.ADKApp[newScreenConfig.id].config.id = newScreenConfig.id;
             ADK.ADKApp[newScreenConfig.id].moduleName = newScreenConfig.id;
             ADK.ADKApp[origId] = undefined;
         }
@@ -82,8 +85,12 @@ define([
             return screen.id === screenId;
         });
         screensConfig.screens = _.without(screensConfig.screens, screenToRemove);
-        UserDefinedScreens.saveScreensConfig(screensConfig);
-        UserDefinedScreens.saveGridsterConfig({}, screenToRemove.id);
+        UserDefinedScreens.saveScreensConfig(screensConfig, function() {
+            UserDefinedScreens.saveGridsterConfig({}, screenToRemove.id);
+        });
+        
+        UserDefinedScreens.removeOneScreenFromSession(screenId);
+
         if (screenToRemove.defaultScreen === true) {
             ScreenBuilder.resetUserSelectedDefaultScreen();
             console.log("deleting user default screen, setting defaultscreen from predefined default");
@@ -97,6 +104,7 @@ define([
         }
         ADK.ADKApp[screenToRemove.id] = undefined;
     };
+
 
     //Processes a new title and returns a different name if title already exists
     ScreenBuilder.titleExists = function(title) {
@@ -199,6 +207,9 @@ define([
             if (_.isUndefined(screenDescriptor.fileName) || screenDescriptor.fileName === 'NewUserScreen') {
                 var sc = _.clone(NewUserScreen);
                 sc.id = screenDescriptor.id;
+                if (screenDescriptor.screenId) {
+                    sc.screenId = screenDescriptor.screenId;
+                }
                 onLoadScreen(sc);
             } else {
                 require(['app/screens/' + screenDescriptor.fileName], onLoadScreen);
@@ -223,6 +234,9 @@ define([
         screenModule.id = screenConfig.id;
         screenModule.title = screenConfig.title;
         screenModule.applets = screenConfig.applets;
+        if (screenConfig.screenId) {
+            screenModule.screenId = screenConfig.screenId;
+        }
         if (screenConfig.patientRequired) {
             screenModule.patientRequired = screenConfig.patientRequired;
         } else screenModule.patientRequired = false;
@@ -234,8 +248,11 @@ define([
         //Layout to use in the top-region of index
         screenModule.topRegion_layoutPromise = $.Deferred();
         //If screen specifies true to the requiresPatient variable then use layout that shows patient related components.
+        var isNonPatientCentricView = (!_.isUndefined(screenConfig.nonPatientCentricView) && screenConfig.nonPatientCentricView === true);
         if (screenConfig.patientRequired === true) {
             screenConfig.topRegionLayout = "default_patientRequired";
+        } else if (isNonPatientCentricView) {
+            screenConfig.topRegionLayout = "default_nonPatientCentricViewTopRegion";
         } else {
             screenConfig.topRegionLayout = "default_noPatientRequired";
         }

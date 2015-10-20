@@ -59,7 +59,7 @@ define([
                 // Wait for sync to complete, then update applet
                 var medicationCollectionHandler = response.medicationCollectionHandler;
                 medicationCollectionHandler.fetchAllMeds();
-                ADK.closeWorkflow();
+                ADK.UI.Modal.hide();
             };
             _.delay(deferredResponse.done, 6000, afterSync);
         }

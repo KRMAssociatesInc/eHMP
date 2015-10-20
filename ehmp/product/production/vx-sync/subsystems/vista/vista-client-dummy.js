@@ -20,6 +20,10 @@ VistaClient.prototype.unsubscribe = function(pid, unsubscribeCallback) {
     unsubscribeCallback(null, 'success');
 };
 
+VistaClient.prototype.status = function(patientIdentifier, statusCallback) {
+    statusCallback(null, {});
+};
+
 VistaClient.prototype.fetchNextBatch = function(vistaId, batchCallback) {
     batchCallback(null, {});
 };

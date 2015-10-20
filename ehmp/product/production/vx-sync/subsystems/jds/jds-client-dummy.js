@@ -113,6 +113,9 @@ JdsClient.prototype.saveJobState = function(jobState, callback) {
 };
 
 JdsClient.prototype.getJobStatus = function(job, callback) {
+    var args = _.toArray(arguments);
+    callback = args.pop();
+
     if ((this.error.length >= this.responseIndex) && (this.response.length >= this.responseIndex) && (this.result.length >= this.responseIndex)) {
         this.responseIndex++;
         callback(this.error[this.responseIndex-1], this.response[this.responseIndex-1], this.result[this.responseIndex-1]);
@@ -279,6 +282,17 @@ JdsClient.prototype.storeOperationalDataMutable = function(siteId, callback) {
 };
 
 JdsClient.prototype.getOperationalDataMutable = function(siteId, callback){
+    if ((this.error.length >= this.responseIndex) && (this.response.length >= this.responseIndex) && (this.result.length >= this.responseIndex)) {
+        this.responseIndex++;
+        callback(this.error[this.responseIndex-1], this.response[this.responseIndex-1], this.result[this.responseIndex-1]);
+    }
+    else {
+        this.responseIndex++;
+        callback(this.error[0], this.response[0], this.result[0]);
+    }
+};
+
+JdsClient.prototype.getOperationalDataMutableByFilter = function(filter, callback) {
     if ((this.error.length >= this.responseIndex) && (this.response.length >= this.responseIndex) && (this.result.length >= this.responseIndex)) {
         this.responseIndex++;
         callback(this.error[this.responseIndex-1], this.response[this.responseIndex-1], this.result[this.responseIndex-1]);

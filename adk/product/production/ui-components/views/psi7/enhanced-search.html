@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>eHMP Bootstrap UI Library - Enhanced Search</title>
+    <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../../app/css/applets.css">
+    <link rel="stylesheet" href="../../css/main-styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700" />
+</head>
+
+<body class="library">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../../views.html">Views</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../../color-palette.html">Color Palette</a></li>
+                                <li><a href="#">Style Guide</a></li>
+                            </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="container-fluid">
+            <ol class="breadcrumb">
+                <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+                <li><a href="../../views.html">Views</a></li>
+                <li class="active">Enhanced Search</li>
+            </ol>
+            <h1>Enhanced Search</h1>
+            <div class="description">
+                <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This is the 508 compliant static HTML/CSS mock up of the Enhanced Search Bar.</p>
+                <p><strong><i class="fa fa-file-text-o"></i> Documents:</strong> Please also view <a href="http://l2kp4v.axshare.com/psi7_text_search_improvements.html">Enhanced Search Bar</a>, <a href="../../docs/workflow/psi7/workflow-enhanced-search.pdf">Workflow Diagram</a> <small>[PDF, 279KB]</small>, and <a href="../../docs/use-case/psi7/use-case-text-search-improvements.pdf">Use Scenario Case Documentation</a> <small>[PDF, 436KB]</small> for full details on implementation.</p>
+            </div>
+            <form class="form-container">
+                <div class="enhanced-search-container">
+                    <div class="search-input row">
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <label for="searchtext" class="sr-only">Search Record</label>
+                                    <input class="form-control typeahead" type="text" title="Please enter in text to search for a record." placeholder="Search Record" id="searchtext" />
+                                    <div class="input-group-btn vertical-top">
+                                        <button type="button" id="submit" class="text-search-accessible btn btn-default" title="Please select the button to submit your search">
+                                            <i class="fa fa-search" title="Submit Search"></i>
+                                            <span class="sr-only">Submit Search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 search-results">
+                            <div class="search-result-header row">
+                                <div class="col-xs-12 top-margin">
+                                    <div class="row">
+                                        <div class="col-xs-1">
+                                            <span class="label applet-badges label-panel top-margin" aria-label="Record results">4 Results</span>
+                                        </div>
+                                        <div class="col-xs-11">
+                                            <div class="row">
+                                                <div class="col-sm-5 col-md-5 daterange">
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs active daterange-btn" title="To select all dates, press enter."><span class="sr-only">To select all dates, press enter.</span>All</button>
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs daterange-btn" title="To select records from the past two years, press enter."><span class="sr-only">To select records from the past two years, press enter.</span>2yr</button>
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs  daterange-btn" title="To select records from the past year, press enter."><span class="sr-only">To select records from the past year, press enter.</span>1yr</button>
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs  daterange-btn" title="To select records from the past three months, press enter."><span class="sr-only">To select records from the past three months, press enter.</span>3mo</button>
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs  daterange-btn" title="To select records from the past month, press enter."><span class="sr-only">To select records from the past month, press enter.</span>1mo</button>
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs  daterange-btn" title="To select records from the past seven days, press enter."><span class="sr-only">To select records from the past seven days, press enter.</span>7d</button>
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs  daterange-btn" title="To select records from the past twenty-four hours, press enter."><span class="sr-only">To select records from the past twenty-four hours, press enter.</span>24hr</button>
+                                                </div>
+                                                <div class="col-sm-5 col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="calendarFrom" class="sr-only">From</label>
+                                                                <div class="input-group date">
+                                                                    <input type="text" id="calendarFrom" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" />
+                                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="calendarTo" class="date-label">to</label>
+                                                                <div class="input-group date">
+                                                                    <input type="text" id="calendarTo" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" />
+                                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2 col-md-1 noPadding">
+                                                    <button type="button" class="btn btn-primary disabled pull-right bottom-margin" aria-disabled="true" disabled="disabled" title="This button is disabled.">Apply</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="top-margin col-xs-12">
+                                    <div class="row">
+                                        <div class="col-xs-5">
+                                            <p>Showing 4 results for "Diabetes"; "Diabetic".</p>
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <p>Search includes related results. <a href="#">Do not include?</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row search-result-body">
+                                <div class="col-xs-12 noPadding">
+                                    <div class="accordion-container panel-group" id="enhanced-search-Accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="discharge-summary-heading">
+                                                <h4>
+                                            <a class="panel-title collapsed accordion-toggle" data-toggle="collapse" data-parent="#" href="#discharge-summary" aria-expanded="true" aria-controls="discharge-summary">Discharge Summary<span class="sr-only">You are on an accordion heading. To expand and view the content inside of the accordion press enter on the accordion heading. To collapse the accordion press enter again on the accordion heading.</span>
+                                            <span class="label applet-badges label-panel" aria-label="Record results" title="Record Results"><span class="sr-only">There are 1 record results</span>1</span></a>
+                                            
+                                        </h4>
+                                            </div>
+                                            <div id="discharge-summary" class="panel-collapse collapse" role="tabpanel" aria-labelledby="discharge-summary-heading">
+                                                <div class="panel-body">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#" data-toggle="modal" data-target="#myModal"><span class="sr-only">Press enter to view additional details such as the facility name, author, and status.</span>
+                                                         <div class="clickable-row row">
+                                                            <div class="col-xs-3">
+                                                                <p>01/31/2015</p>
+                                                                <p>8:00</p>
+                                                            </div>
+                                                            <div class="col-xs-8">
+                                                                <h6>Labtech,Special</h6>
+                                                                <p class="top-margin">Patient is in good health. <span class="highlight">Diabetes</span> has been controlled through diet and exercise.</p>
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <p>Ft. Logan</p>
+                                                            </div>
+                                                         </div>
+                                                        </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Second Row of Accordion-->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="health-factor-heading">
+                                                <h4>
+                                                <a class="panel-title collapsed accordion-toggle" data-toggle="collapse" data-parent="#health-factor" href="#health-factor" aria-expanded="false" aria-controls="health-factor">Health Factor<span class="sr-only">You are on an accordion heading. To expand and view the content inside of the accordion press enter on the accordion heading. To collapse the accordion press enter again on the accordion heading.</span>
+                                                <span class="label applet-badges label-panel" aria-label="Record results" title="Record results"><span class="sr-only">There are 1 record results</span>
+                                                1</span></a>
+                                        </h4>
+                                            </div>
+                                            <div id="health-factor" class="panel-collapse collapse" role="tabpanel" aria-labelledby="health-factor-heading">
+                                                <div class="panel-body">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#" data-toggle="modal" data-target="#myModal"><span class="sr-only">Press enter to view additional details such as the facility name, author, and status.</span>
+                                                         <div class="clickable-row row">
+                                                            <div class="col-xs-3">
+                                                                <p>01/31/2015</p>
+                                                                <p>8:00</p>
+                                                            </div>
+                                                            <div class="col-xs-8">
+                                                                <h6>Labtech,Special</h6>
+                                                                <p class="top-margin">Patient is in good health. <span class="highlight">Diabetes</span> has been controlled through diet and exercise.</p>
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <p>Ft. Logan</p>
+                                                            </div>
+                                                         </div>
+                                                        </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Third Row of Accordion-->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="problem-heading">
+                                                <h4>
+                                                <a class="panel-title collapsed accordion-toggle" data-toggle="collapse" data-parent="#problem" href="#problem" aria-expanded="false" aria-controls="problem">Problem<span class="sr-only"> You are on an accordion heading. To expand and view the content inside of the accordion press enter on the accordion heading. To collapse the accordion press enter again on the accordion heading.</span>
+                                                <span class="label applet-badges label-panel" aria-label="Record results"><span class="sr-only">There are 1 record results</span>1</span></a>
+                                                
+                                        </h4>
+                                            </div>
+                                            <div id="problem" class="panel-collapse collapse" role="tabpanel" aria-labelledby="problem-heading">
+                                                <div class="panel-body">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#" data-toggle="modal" data-target="#myModal"><span class="sr-only">Press enter to view additional details such as the facility name, author, and status.</span>
+                                                         <div class="clickable-row row">
+                                                            <div class="col-xs-3">
+                                                                <p>01/31/2015</p>
+                                                                <p>8:00</p>
+                                                            </div>
+                                                            <div class="col-xs-8">
+                                                                <h6>Labtech,Special</h6>
+                                                                <p class="top-margin">Patient is in good health. <span class="highlight">Diabetes</span> has been controlled through diet and exercise.</p>
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <p>Ft. Logan</p>
+                                                            </div>
+                                                         </div>
+                                                        </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Fourth Row of Accordion-->
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="progress-note-heading">
+                                                <h4>
+                                                    <a class="panel-title collapsed accordion-toggle" data-toggle="collapse" data-parent="#progress-note" href="#progress-note" aria-expanded="false" aria-controls="progress-note">Progress Note<span class="sr-only">You are on an accordion heading. To expand and view the content inside of the accordion press enter on the accordion heading. To collapse the accordion press enter again on the accordion heading.</span>
+                                                    <span class="label applet-badges label-panel" aria-label="Record results"><span class="sr-only">There are 1 record results.</span>1</span></a>
+                                                
+                                                </h4>
+                                            </div>
+                                            <div id="progress-note" class="panel-collapse collapse" role="tabpanel" aria-labelledby="progress-note-heading">
+                                                <div class="panel-body">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#" data-toggle="modal" data-target="#myModal"><span class="sr-only">Press enter to view additional details such as the facility name, author, and status.</span>
+                                                         <div class="clickable-row row">
+                                                            <div class="col-xs-3">
+                                                                <p>01/31/2015</p>
+                                                                <p>8:00</p>
+                                                            </div>
+                                                            <div class="col-xs-8">
+                                                                <h6>Labtech,Special</h6>
+                                                                <p class="top-margin">Patient is in good health. <span class="highlight">Diabetes</span> has been controlled through diet and exercise.</p>
+                                                            </div>
+                                                            <div class="col-xs-1">
+                                                                <p>Ft. Logan</p>
+                                                            </div>
+                                                         </div>
+                                                        </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Code for modal -->
+                        <div class="modal fade" id="myModal" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-backdrop">
+                                <div class="modal-content">
+                                    <div class="modal-header enhanced-search-modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" title="To close the modal, select the close button."><span aria-hidden="true">×</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">General Medicine Note Details</h4>
+                                    </div>
+                                    <div class="modal-body top-margin">
+                                        <p>Facility: <span id="facility">Camp Bee</span></p>
+                                        <p>Author: <span id="author">Labtech,Special </span></p>
+                                        <p>Status: <span id="status">Completed </span></p>
+                                        <p>Date/Time: <span id="date-time">03/31/2004 - 15:21 </span></p>
+                                        <div class="well well-sm">
+                                            <h6><span id="comment-modal">Patient is in good health. <span class="highlight">Diabetes</span> has been controlled through diet and excercise.</span></h6>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal" title="To select the close button and return to the previous screen, press enter.">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <!--Enhanced Search with no results-->
+                <div class="enhanced-search-container">
+                    <div class="search-input row">
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <label for="searchtext2" class="sr-only">Search Record</label>
+                                    <input class="form-control typeahead" type="text" title="Please enter in text to search for a record." placeholder="Search Record" id="searchtext2" />
+                                    <div class="input-group-btn vertical-top">
+                                        <button type="button" id="submit2" class="text-search-accessible btn btn-default" title="Please select the button to submit your search">
+                                            <i class="fa fa-search" title="Submit Search"></i>
+                                            <span class="sr-only">Submit Search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 search-results">
+                            <div class="search-result-header row">
+                                <div class="col-xs-12 top-margin">
+                                    <div class="row">
+                                        <div class="col-xs-1">
+                                            <span class="label applet-badges label-panel top-margin" aria-label="Record results">0 Results</span>
+                                        </div>
+                                        <div class="col-xs-11">
+                                            <div class="row">
+                                                <div class="col-sm-5 col-md-5 daterange">
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs active daterange-btn" title="To select all dates, press enter."><span class="sr-only">To select all dates, press enter.</span>All</button>
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs daterange-btn" title="To select records from the past two years, press enter."><span class="sr-only">To select records from the past two years, press enter.</span>2yr</button>
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs  daterange-btn" title="To select records from the past year, press enter."><span class="sr-only">To select records from the past year, press enter.</span>1yr</button>
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs  daterange-btn" title="To select records from the past three months, press enter."><span class="sr-only">To select records from the past three months, press enter.</span>3mo</button>
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs  daterange-btn" title="To select records from the past month, press enter."><span class="sr-only">To select records from the past month, press enter.</span>1mo</button>
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs  daterange-btn" title="To select records from the past seven days, press enter."><span class="sr-only">To select records from the past seven days, press enter.</span>7d</button>
+                                                    <button type="button" class="btn icon-btn btn-primary btn-xs  daterange-btn" title="To select records from the past twenty-four hours, press enter."><span class="sr-only">To select records from the past twenty-four hours, press enter.</span>24hr</button>
+                                                </div>
+                                                <div class="col-sm-5 col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="calendarFrom2" class="sr-only">From</label>
+                                                                <div class="input-group date">
+                                                                    <input type="text" id="calendarFrom2" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" />
+                                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="calendarTo2" class="date-label">to</label>
+                                                                <div class="input-group date">
+                                                                    <input type="text" id="calendarTo2" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" />
+                                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2 col-md-1 noPadding">
+                                                    <button type="button" class="btn btn-primary disabled pull-right bottom-margin" aria-disabled="true" disabled="disabled" title="This button is disabled.">Apply</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="top-margin col-xs-12">
+                                    <div class="row">
+                                        <div class="col-xs-5 noPadding">
+                                            <p><strong>No search results for "Met"</strong></p>
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <p>Search includes related results. <a href="#">Do not include?</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row search-result-body">
+                                <div class="col-xs-12 search-suggestions">
+                                    <span><strong>Suggestions:</strong></span>
+                                    <span class="sr-only">The following list is suggestions that may be related to your search. Press enter to choose a suggestion to search from the list.</span>
+                                    <ul>
+                                        <li>
+                                            <a href="#"><span class="sr-only">Press enter to choose this suggestion.</span>
+                                            <div class="clickable-row row">
+                                                <div class="col-xs-6">
+                                                    <span class="sr-only">Suggestion Name</span>
+                                                    <p>Bronchodilators,sympathomimetic,oral</p>
+                                                </div>
+                                                <div class="col-xs-6 text-right">
+                                                    <span class="label applet-badges label-panel" aria-label="Record results">Therapeutic Drug Class</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="sr-only">Press enter to choose this suggestion.</span>
+                                            <div class="clickable-row row">
+                                                <div class="col-xs-6">
+                                                    <span class="sr-only">Suggestion Name</span>
+                                                    <p>Metformin</p>
+                                                </div>
+                                                <div class="col-xs-6 text-right">
+                                                    <span class="label applet-badges label-panel" aria-label="Record results">Suggestion</span>
+                                                </div>
+                                           </div> 
+                                        </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="sr-only">Press enter to choose this suggestion.</span>
+                                            <div class="clickable-row row">
+                                                <div class="col-xs-6">
+                                                    <span class="sr-only">Suggestion Name</span>
+                                                    <p>Metoprolol</p>
+                                                </div>
+                                                <div class="col-xs-6 text-right">
+                                                    <span class="label applet-badges label-panel" aria-label="Record results">Suggestion</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--Typeahead-->
+    <script src="../../js/handlebars.js"></script>
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/typeahead.js"></script>
+    <script src="../../js/bootstrap-datepicker.js"></script>
+    <script>
+    $(function() {
+        $('.input-group.date').datepicker({
+            todayBtn: "linked",
+            orientation: "top left",
+            autoclose: true,
+            todayHighlight: true
+        });
+    });
+    $(window).load(function() {
+        // Instantiate the Bloodhound suggestion engine
+        var movies = new Bloodhound({
+            datumTokenizer: function(datum) {
+                return Bloodhound.tokenizers.whitespace(datum.value);
+            },
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            local: [{
+                "suggestionType": "Suggestion",
+                "value": "diabetes",
+                "tokens": [
+                    "diabetes"
+                ]
+            }, {
+                "suggestionType": "Suggestion",
+                "value": "metformin",
+                "tokens": [
+                    "metformin"
+                ]
+            }, {
+                "suggestionType": "Ionic Search",
+                "value": "Sugars/ sugar metabolism",
+                "tokens": [
+                    "Sugars/",
+                    "sugar",
+                    "metabolism"
+                ]
+            }, {
+                "suggestionType": "Lab Panel",
+                "value": "Basic metabolic panel",
+                "tokens": [
+                    "Basic",
+                    "metabolic",
+                    "panel"
+                ]
+            }]
+        });
+
+        // Initialize the Bloodhound suggestion engine
+        movies.initialize();
+        // Instantiate the Typeahead UI
+        $('.typeahead').typeahead({
+            highlight: true,
+            hint: true
+        }, {
+            displayKey: 'value',
+            source: movies.ttAdapter(),
+            templates: {
+                suggestion: Handlebars.compile('<div>{{value}} <span class="label applet-badges label-panel pull-right">{{suggestionType}}</span></div>'),
+                header: '<div class="search-header">search results for: <span class="header-keyword" id="search-header-keyword"></span></div>'
+            }
+        });
+        $('#searchtext').keyup(function() {
+            $('#search-header-keyword').text($(this).val());
+        });
+    });
+    </script>
+</body>
+
+</html>

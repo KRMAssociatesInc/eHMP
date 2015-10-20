@@ -3,9 +3,11 @@
 //requires
 var _ = require('underscore');
 var async = require('async');
+var uuid = require('node-uuid');
 
 function SyncRulesEngine(log, config, environment) {
     this.log = log;
+    this.metrics = environment.metrics;
     this.config = config;
     this.environment = environment;
     this.rules = this._getRulesFromConfig();
@@ -13,6 +15,9 @@ function SyncRulesEngine(log, config, environment) {
 
 SyncRulesEngine.prototype.getSyncPatientIdentifiers = function(patientIdentifiers, exceptions, mainCallback) {
     var self = this;
+    var metricObj = {'subsystem':'RulesEngine','pid':patientIdentifiers[0].value, 'process':uuid.v4(), 'timer':'start'};
+    self.metrics.trace('Sync Rules', metricObj);
+    metricObj.timer = 'stop';
     async.eachSeries(self.rules, function(rule, ruleCallback){
         if (patientIdentifiers.length === 0 || _.isEmpty(patientIdentifiers[0].value)) {
             return ruleCallback();
@@ -23,6 +28,10 @@ SyncRulesEngine.prototype.getSyncPatientIdentifiers = function(patientIdentifier
              });
         }
     }, function(err) {
+        self.metrics.trace('Sync Rules', metricObj);
+        if(patientIdentifiers.length === 0) {
+            self.metrics.warn('Patient Sync Aborted', metricObj);
+        }
         mainCallback(err, patientIdentifiers);
     });
 };

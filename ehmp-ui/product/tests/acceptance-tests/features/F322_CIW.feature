@@ -1,4 +1,4 @@
-@F322_CIW 
+@F322_CIW @debug
 Feature: F322 - Concept Invoked Workspaces
 
 # Team: Jupiter
@@ -14,7 +14,9 @@ Background:
     Then the patient search screen is displayed  
   	And user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
   	
-@F322_1.1_to_1.10_1.12_to_1.13_Associate_snomed_code_with_udf @US4631 @US6145 @debug
+@F322-1.1 @F322-1.3 @F322-1.4 @F322-1.5 @F322-1.6 @F322-1.7 @F322-1.8 @F322-1.9 @F322-1.10 @F322-1.12 @F322-1.13 @F322-1.15
+@F322-2.1 @F322-2.3
+@F322_Associate_snomed_code_with_udf @US4631 @US6145 @debug
 Scenario: Search and associate snomed-code to user defined workspace and delete code.
 
   Given user navigates to User Defined Workspace manager
@@ -68,7 +70,8 @@ Scenario: Search and associate snomed-code to user defined workspace and delete 
   And user closes the user defined work space manager
 	
 # this works only in chrome	
-@F322_1.1_to_1.10_1.12_to_1.13_2.1_to_3.2_Associate_snomed_code_with_udf @US4631 @debug
+@F322-3.1 @F322-3.2 @F322-3.6 @F322-3.7
+@F322_Associate_conditions_with_CIW @US4631 @debug
 Scenario: Search and associate snomed-code to user defined workspace and access CIW from conditions applet.
 
   Given user navigates to User Defined Workspace manager

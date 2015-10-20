@@ -88,7 +88,7 @@ define([
                     filterString = 'ilike(kind,"%Warning%")';
                     this.childViewOptions.template = DirectiveDetails;
                 } else if (options.cwadIdentifier === 'allergies') {
-                    filterString = 'ilike(kind,"%Allergy%")';
+                    filterString = 'ilike(kind,"%Allergy%"),not(exists(removed),eq(removed,"false"))';
                     this.childViewOptions.template = AllergiesDetailsTemplate;
                 } else if (options.cwadIdentifier === 'directives') {
                     filterString = 'ilike(kind,"%Directive%")';

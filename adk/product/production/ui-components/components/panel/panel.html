@@ -1,0 +1,81 @@
+<h3>Panel with List Groups in Accordion</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> Panel with list groups in accordion allows users to view list items grouped by categories and allows users to control the view by expanding or collapsing the accordions.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> The instructions here are static, the instructions should change dynamically depending whether the accordion is exxpanded or collapsed.</p>
+</div>
+
+<h4>Panel with List Groups in Accordion</h4>
+<div id="panel-list-group-accordionCopy">
+    <div class="accordion-container panel-group" role="tablist">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading">
+                <h4>
+                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-heading" aria-expanded="true" aria-controls="collapse-heading">Panel Heading<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                </h4>
+            </div>
+            <div id="collapse-heading" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading">
+                <div class="panel-body">
+                    <ul class="list-group list-group-accordion">
+                        <li class="list-group-item"><a href="#">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <p>Example</p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <p>Split Column</p>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li class="list-group-item"><a href="#">Item Two</a></li>
+                        <li class="list-group-item"><a href="#">Item Three</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+<div role="tabpanel" class="tabpanel">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active"><a href="#markup-panel-list-group" aria-controls="markup-panel-list-group" role="tab" data-toggle="tab">Panel with List Groups in Accordion Mark Up</a></li>
+	</ul>
+
+	<div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-panel-list-group">
+            <pre>
+&lt;div class="accordion-container panel-group" role="tablist"&gt;
+    &lt;div class="panel panel-default"&gt;
+        &lt;div class="panel-heading" role="tab" id="heading"&gt;
+            &lt;h4&gt;
+            &lt;a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-heading" aria-expanded="true" 
+            aria-controls="collapse-heading"&gt;Panel Heading&lt;span class="sr-only"&gt;You are on an accordion heading. The accordion is expanded. 
+            To collapse the accordion press enter on the accordion heading.&lt;/span&gt;&lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/div&gt;
+        &lt;div id="collapse-heading" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading"&gt;
+            &lt;div class="panel-body"&gt;
+                &lt;ul class="list-group list-group-accordion"&gt;
+                    &lt;li class="list-group-item"&gt;&lt;a href="#"&gt;
+                        &lt;div class="row"&gt;
+                            &lt;div class="col-xs-6"&gt;
+                                &lt;p&gt;Example&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;div class="col-xs-6"&gt;
+                                &lt;p&gt;Split Column&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;&lt;/li&gt;
+                    &lt;li class="list-group-item"&gt;&lt;a href="#"&gt;Item Two&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class="list-group-item"&gt;&lt;a href="#"&gt;Item Three&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('panel-list-group-accordionCopy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+	</div>
+</div>

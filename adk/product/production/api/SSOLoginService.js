@@ -52,7 +52,11 @@ define([
                     site: SessionStorage.getModel('SSO').get('CPRSHostIP')
                 }),
                 success: function (response, xhr) {
-                    userSession = new Backbone.Model(xhr);
+                    if (xhr.data) {
+                        userSession = new Backbone.Model(xhr.data);
+                    } else {
+                        userSession = new Backbone.Model(xhr);
+                    }
                     userSession.set('expires', moment.utc().add(logofftime, 'minutes'));
                     userSession.set('status', SSOLoginService.STATUS.LOGGEDIN);
                     SSOLoginService.setUserSession(userSession);

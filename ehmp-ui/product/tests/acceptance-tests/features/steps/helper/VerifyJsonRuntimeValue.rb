@@ -49,9 +49,9 @@ class VerifyJsonRuntimeValue
     fields = field_name.split('.')
 
     fields.each do |field|
-    # p 'in loop'
-    # p field
-    # p json_array.class
+      # p 'in loop'
+      # p field
+      # p json_array.class
       if json_array.class == Array
         # p 'array'
         json_array = find_sub_json_value_for_array(json_array, field)
@@ -60,7 +60,6 @@ class VerifyJsonRuntimeValue
       else
         json_array = json_array[field]
       end
-
     end
     json_array_value = json_array
     return json_array_value
@@ -70,7 +69,7 @@ class VerifyJsonRuntimeValue
     # p "sub array"
     sub_json_array_value = []
     json_array.each do |sub_array|
-    # p sub_array
+      # p sub_array
       unless sub_array.nil?
         if sub_array.class == Array && sub_array.size == 1
           sub_array = sub_array[0]
@@ -143,7 +142,7 @@ class VerifyJsonRuntimeValue
   def check_runtime_value_with_expected_is_set(values)
     runtime_value_match = false
     if values.class == Array
-      unless (values.all? { |x| x.nil? }) || (values.all? { |x| x.empty? })
+      unless (values.all?(&:nil?)) || (values.all?(&:empty?))
         runtime_value_match = true
       end
     else
@@ -176,8 +175,8 @@ class VerifyJsonRuntimeValue
       #            p 'Array flaot--'
       value_nil_match = true
       runtime_value_match = true
-    elsif (expected_value != nil) && ((expected_value.upcase == "TRUE") || (expected_value.upcase == "FALSE"))
-        #            p 'trueclass--'
+    elsif (!expected_value.nil?) && ((expected_value.upcase == "TRUE") || (expected_value.upcase == "FALSE"))
+      #            p 'trueclass--'
       if expected_value.upcase == "TRUE"
         expected_value = true
       else
@@ -231,7 +230,7 @@ class VerifyJsonRuntimeValue
       index = 0
       @not_exist_or_match_field.each do |not_exist_or_match_field|
         create_not_exist_or_match_error(not_exist_or_match_field, @not_exist_or_match_expected[index], @not_exist_or_match_values[index])
-        index = index + 1
+        index += 1
       end
       error_exception_message @error_message
     end
@@ -257,11 +256,11 @@ class VerifyJsonRuntimeValue
   def check_values_has_nil(values)
     string_count_index=0
 
-    values.map do |value|
+    values.map do |_value|
       string_value =  "'" + values.to_s + "'"
 
       if (string_value.include? 'nil') || (string_value.include? '[]') || (string_value.include? "''")
-        string_count_index = string_count_index + 1
+        string_count_index += 1
       end
     end
     if string_count_index == values.size

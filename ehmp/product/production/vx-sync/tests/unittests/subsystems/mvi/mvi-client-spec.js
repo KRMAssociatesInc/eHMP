@@ -51,11 +51,11 @@ var url = format('%s://%s:%s', config.mvi.protocol, config.mvi.host, config.mvi.
 //mvi(log, config.mvi, patientId, callback)
 
 describe('mvi-client.js', function() {
-    var mviClient = new MviClient(log, config, jds);
+    var mviClient = new MviClient(log, log, config, jds);
 
     it('construct results', function() {
         var idList = '3^PI^9E7A^USVHA^P\r\n2^PI^C877^USVHA\r\n00003^NI^200DOD^USDOD^H\r\n32435V23462^NI^200M^USVHA';
-        mviClient._parseVistaMVIResponse(patientFullId, idList, function(err, result) {
+        mviClient._parseVistaMVIResponse(patientFullId, idList, 1, function(err, result) {
             expect(err).toBeFalsy();
             expect(_.isArray(result.ids)).toBeTruthy();
             expect(result.ids.length).toEqual(4);
@@ -63,7 +63,7 @@ describe('mvi-client.js', function() {
     });
     it('parsing error response', function() {
         var idList = '-1^Unknown Authority';
-        mviClient._parseVistaMVIResponse(patientFullId, idList, function(err) {
+        mviClient._parseVistaMVIResponse(patientFullId, idList, 1, function(err) {
             expect(err).toBeTruthy();
         });
     });
@@ -94,7 +94,7 @@ describe('mvi-client.js', function() {
                 }]
             }
         };
-        mviClient._parseRealMVIResponse(patientFullId, mviResponse, function(err, result) {
+        mviClient._parseRealMVIResponse(patientFullId, mviResponse, 1, function(err, result) {
             expect(err).toBeFalsy();
             expect(_.isArray(result.ids)).toBeTruthy();
             expect(result.ids.length).toEqual(4);
@@ -111,7 +111,7 @@ describe('mvi-client.js', function() {
                 }
             }
         };
-        mviClient._parseRealMVIResponse(patientFullId, mviResponse, function(err) {
+        mviClient._parseRealMVIResponse(patientFullId, mviResponse, 1, function(err) {
             expect(err).toBeTruthy();
         });
     });
@@ -126,14 +126,14 @@ describe('mvi-client.js', function() {
                 }
             }
         };
-        mviClient._parseRealMVIResponse(patientFullId, mviResponse, function(err) {
+        mviClient._parseRealMVIResponse(patientFullId, mviResponse, 1, function(err) {
             expect(err).toBeTruthy();
         });
     });
 
     xit('parsing mvi soap response incorrect response', function() {
         var mviResponse = {};
-        mviClient._parseRealMVIResponse(patientFullId, mviResponse, function(err) {
+        mviClient._parseRealMVIResponse(patientFullId, mviResponse, 1, function(err) {
             expect(err).toBeTruthy();
         });
     });
@@ -145,7 +145,7 @@ describe('mvi-client.js', function() {
             okFile = JSON.parse(okFile);
         }
 
-        mviClient._parseRealMVIResponse(patientFullId, okFile, function(err, result) {
+        mviClient._parseRealMVIResponse(patientFullId, okFile, 1, function(err, result) {
             expect(err).toBeFalsy();
             expect(_.isArray(result.ids)).toBeTruthy();
             expect(result.ids.length).toEqual(3);
@@ -159,7 +159,7 @@ describe('mvi-client.js', function() {
             errFile = JSON.parse(errFile);
         }
 
-        mviClient._parseRealMVIResponse(patientFullId, errFile, function(err) {
+        mviClient._parseRealMVIResponse(patientFullId, errFile, 1, function(err) {
             expect(err).toBeTruthy();
         });
     });

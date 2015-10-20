@@ -14,17 +14,38 @@ define([
 
     var generateScreenId = function(screenTitle) {
         var newId =  screenTitle.replace(/[^a-zA-Z0-9 ]/g, '').toLowerCase().replace(/\s+/g, '-');
+        var newScreenId = _.random(1048576);
         var screensConfig = ADK.UserDefinedScreens.getScreensConfigFromSession();
+        var screenIdNotUnique = true;
+        while(screenIdNotUnique){
+            if(generateRandomScreenId(newScreenId, screensConfig)){
+                newScreenId = _.random(1048576);
+            }else{
+                screenIdNotUnique = false;
+            }
+        }
+        var newScreen = {
+            newId: newId, 
+            newScreenId: newScreenId
+        };
+
         var idExists = _.filter(screensConfig.screens, function(screen){
             return screen.id === newId;
         });
 
         if(idExists.length === 0){
-            return newId;
+            return newScreen;
         } else {
             console.error('Cannot create a screen ID that already exists: ' + newId);
         }
     };
+
+    var generateRandomScreenId = function(screenId, screensConfig){
+        _.filter(screensConfig.screens, function(screen){
+            return screen.screenId === screenId;
+        });
+    };
+
 
     var toggleDefaultHtml = function(e, defaultButtonHTML) {
         var E;
@@ -66,7 +87,6 @@ define([
             }
         },
         events: {
-            'click .fa-ellipsis-v': 'showManageOptions',
             'click .rearrange-worksheet': 'rearrangeWorksheet',
             'click i.showDefault': 'makeDefault',
             'click .launch-screen': 'launchWorksheet',
@@ -74,7 +94,8 @@ define([
             'click .delete-worksheet': 'deleteScreen',
             'click .duplicate-worksheet': 'clone',
             'blur .editor-input-element': 'saveInlineChange',
-            'keyup .editor-input-element': 'inlineChangeEvent'
+            'keyup .editor-input-element': 'inlineChangeEvent',
+            'focus .editor-title-element' : 'applyInputMasking'
         },
         regions: {
             associationCounterRegion: '.associations-counter-region'
@@ -82,19 +103,23 @@ define([
         initialize: function() {
             this.screenOptions = {
                 id: this.model.get('id'),
+                screenId: this.model.get('screenId'),
                 routeName: this.model.get('routeName'),
                 title: this.model.get('title'),
                 description: this.model.get('description'),
                 predefined: this.model.get('predefined'),
                 defaultScreen: this.model.get('defaultScreen'),
+                hasCustomize: this.model.get('hasCustomize'),
                 problems: _.clone(this.model.get('problems')) || []
             };
             if(!_.isUndefined(this.model.get('author'))){
                 this.screenOptions.author = this.model.get('author');
             }
 
-            var screenId = this.model.get('id');
-            var module = ADK.ADKApp[screenId];
+            this.model.set('hasCustomize', this.screenOptions.hasCustomize);
+            var id = this.model.get('id');
+            var screenId = this.model.get('screenId');  
+            var module = ADK.ADKApp[id];
             var config = ADK.UserDefinedScreens.getGridsterConfigFromSession(this.model.get("id"));
             var predefined = this.model.get('predefined');
             if(predefined === true && module.applets && module.applets.length > 0) {
@@ -111,7 +136,8 @@ define([
 
             // init association counter
             var self = this;
-            this.model.on('change', function(model) {
+
+            this.listenTo(this.model, "change", function(model) {
                 if (model.changed.problems) {
                     self.associationCounterRegion.show(new AssociationCounterView({ model: self.model }));
                     self.saveAssociationChange();
@@ -119,16 +145,12 @@ define([
             });
         },
         onRender: function() {
-            $('body').on('click', {
-                self: this
-            }, this.closeManageOptions);
             var self = this;
             if (this.screenOptions.defaultScreen) {
                 var defaultButtonHTML = this.$el.find('.showDefault');
                 toggleDefaultHtml(undefined, defaultButtonHTML);
             }
-
-            this.applyInputMasking();
+            // this.applyInputMasking();
 
             this.associationCounterRegion.show(new AssociationCounterView({ model: this.model }));
 
@@ -143,12 +165,8 @@ define([
                     }
                 }
             };
-
-            var globalResizeHandler = _.debounce(_.bind(this.positionPopover, this), 300);
-
             var popoverKeyupHandler = function(e) {
                 if (e.keyCode === 27) {
-                    console.log("escape keyup on popover");
                     e.stopPropagation();
                     popoverTrigger.popover('hide');
                     popoverTrigger.focus();
@@ -169,20 +187,15 @@ define([
                     return self.associationManagerView.$el;
                 },
                 template: '<div class="popover association-manager-popover" aria-label="Popup dialog used to search for problems and associate them with this workspace"><div class="popover-content"></div></div>',
-                // trigger: 'focus'
-                // viewport: '#item-list'
             });
             popoverTrigger.on('shown.bs.popover', function(e) {
                 self.associationManagerView.trigger('show');
 
                 // hide the popover on the next click outside the popover
-                $('html').on('click', globalClickHandler);
-
-                // reposition the popover when the window is resized
-                $(window).on('resize', globalResizeHandler);
+                $('html').on('click.workspaceCollectionViewPopover', globalClickHandler);
 
                 // close the popover when escape is pressed
-                $('.association-manager-popover').on('keyup', popoverKeyupHandler);
+                $('.association-manager-popover').on('keyup.workspaceCollectionViewPopover', popoverKeyupHandler);
 
                 popoverTrigger.addClass('active');
             });
@@ -190,14 +203,13 @@ define([
                 if (self.associationManagerView) {
                     self.associationManagerView.destroy();
                 }
-                $('html').off('click', globalClickHandler);
-                $(window).off('resize', globalResizeHandler);
-                $('.association-manager-popover').off('keyup', popoverKeyupHandler);
+                $('html').off('click.workspaceCollectionViewPopover');
+                $('.association-manager-popover').off('keyup.workspaceCollectionViewPopover');
                 popoverTrigger.removeClass('active');
             });
+
         },
         positionPopover: function() {
-            console.log("positioning popover");
             var popoverTrigger = popoverTrigger || this.$('[data-toggle="popover"]');
             var popover = $('.association-manager-popover');
             var placement = this.getPopoverPlacement(popoverTrigger);
@@ -225,52 +237,15 @@ define([
             }
             return placement;
         },
-        applyInputMasking: function() {
-            this.$el.find('.editor-title-element').inputmask("Regex", {
+
+        applyInputMasking: function(e) {
+
+            $(e.target).inputmask("Regex", {
                 regex: "^[a-zA-Z0-9\\s]*$"
             });
         },
-        showManageOptions: function(e) {
-            if ($('#list-group').find('.manager-open').length !== 0) {
-                $('body').click();
-            }
-            var manageOptionsContainer = this.$el.find('.manager-close');
-            this.$el.find('.editor-row').css('border', '2px solid #00cccc');
-            var parent = manageOptionsContainer.parent();
-            manageOptionsContainer.css({
-                position: 'fixed',
-                top: parent.offset().top + 'px',
-                left: parent.offset().left + parent.width() - 20 + 'px'
-            });
-            $('#list-group').scroll(function() {
-                manageOptionsContainer.css({
-                    top: parent.offset().top + 'px'
-                });
-            });
-            manageOptionsContainer.addClass('manager-open');
-            manageOptionsContainer.removeClass('manager-close');
-            $('.manager-open').show();
-            //set up flyout animation 
-            //fly from left to right
-            manageOptionsContainer.css({
-                left: parent.offset().left + parent.width() + 20 + 'px'
-            });
-        },
-        closeManageOptions: function(e) {
-            var self = e.data.self;
-            if (self.$el.find('.manager-open').length !== 0) {
-                if (!$(e.target).hasClass('fa-ellipsis-v') && $(e.target).closest('.manageOptions').length === 0) {
-                    var manageOptionsContainer = self.$el.find('.manager-open');
-                    manageOptionsContainer.addClass('manager-close');
-                    manageOptionsContainer.removeClass('manager-open');
-                    manageOptionsContainer.removeAttr('style');
-                    self.$el.find('.editor-row').css('border', '1px solid grey');
-                }
-            }
-            $('.manager-close').hide();
-        },
+
         rearrangeWorksheet: function(e) {
-            $('body').click();
             $('.rearrange-row').removeClass('rearrange-row');
             $('[id="' + this.model.get('id') + '"]').addClass('rearrange-row');
         },
@@ -279,7 +254,7 @@ define([
             $('.fa-star').addClass('fa-star-o');
             $('.fa-star').removeClass('fa-star');
             //var defaultStarContainer = this.$el.find('.showDefault');
-           // defaultStarContainer.show();
+            // defaultStarContainer.show();
             toggleDefaultHtml(e);
             ADK.ADKApp.ScreenPassthrough.setNewDefaultScreen(this.screenOptions.id);
             this.screenOptions.defaultScreen = true;
@@ -289,7 +264,6 @@ define([
             var input = $(e.currentTarget);
             input.focus();
             var gridsterConfig = ADK.UserDefinedScreens.getGridsterConfigFromSession(this.model.get('id'));
-            var appletsArray = gridsterConfig.applets;
             ADK.Navigation.navigate(this.screenOptions.routeName);
         },
         customizeWorksheet: function(e){
@@ -314,15 +288,19 @@ define([
                     if (value.trim().toLowerCase() === origValue.toLowerCase()){
                         value = value.trim();
                     }
+                    value = $.trim(value);
                     var newTitle = value;
                     if (value.toLowerCase() !== origValue.toLowerCase()){
                         newTitle = this.processTitleChange(value);
                     }
                     input.val(newTitle);
-                    var newId = generateScreenId(newTitle);
-                    this.screenOptions.id = newId;
+                    var newScreen = generateScreenId(newTitle);
+                    this.screenOptions.id = newScreen.newId;
+                    if(this.screenOptions.screenId === undefined || this.screenOptions.screenId === null) {
+                        this.screenOptions.screenId = newScreen.newScreenId;
+                    }
                     this.screenOptions.title = newTitle;
-                    this.screenOptions.routeName = newId;
+                    this.screenOptions.routeName = newScreen.newId;
                     this.model.set('id', this.screenOptions.id);
                     this.model.set('title', this.screenOptions.title);
                     this.model.set('routeName', this.screenOptions.routeName);
@@ -330,8 +308,8 @@ define([
                     input.attr('origValue', newTitle);
                     this.saveIndicator(input);
                     $('#' + origId).attr({
-                        id: newId,
-                        'data-screen-id': newId
+                        id: newScreen.newId,
+                        'data-screen-id': newScreen.newId
                     });
                 }
             }
@@ -401,10 +379,23 @@ define([
             return newTitle;
         },
         onBeforeDestroy: function() {
+            this.cleanupPopover();
+            this.cleanupAssociationManager();
+        },
+
+        cleanupAssociationManager: function(){
             if (this.associationManagerView) {
                 this.associationManagerView.destroy();
+                $('html').off('click.workspaceCollectionViewPopover');
+                $('.association-manager-popover').off('keyup.workspaceCollectionViewPopover');
             }
-            this.$('[data-toggle="popover"]').popover('destroy');
+        },
+
+        cleanupPopover: function(){
+            var $popover = this.$('[data-toggle="popover"]');
+            $popover.off('shown.bs.popover');
+            $popover.off('hidden.bs.popover');
+            $popover.popover('destroy');
         }
     });
 
@@ -416,10 +407,8 @@ define([
             self.collection = new Backbone.Collection();
             promise.done(function(screensConfig) {
                 self.collection.reset(screensConfig.screens);
-                self.collectionOrig = self.collection.clone();
             });
             screenManagerChannel.comply('addNewScreen', this.addNewScreen, self);
-
         },
         events: {
             "clone_screen": "cloneScreen"
@@ -431,9 +420,8 @@ define([
             var self = this;
             self.setUpDrag();
             //508 functions
-
-            $('html').keydown(function(e) {
-                var player = $('.rearrange-row');
+            $(document).bind('keydown.workspaceCollectionView',(function(e) {
+                var player = self.$el.find('.rearrange-row');
                 if (player.length === 0) return;
                 var prev = player.prev();
                 var next = player.next();
@@ -442,11 +430,17 @@ define([
                 } else if (e.which === 40 && next.length > 0) { //down key
                     self.moveWorkspaceDown(player, next);
                 } else if (e.which !== 38 && e.which !== 40) {
-                    $('.rearrange-row').removeClass('rearrange-row');
+                    self.$el.find('.rearrange-row').removeClass('rearrange-row');
                 }
-            });
+            }));
 
         },
+
+        onBeforeDestroy: function(){
+            $(document).unbind('keydown.workspaceCollectionView');
+            screenManagerChannel.reset();
+        },
+
         setUpDrag: function() {
             var self = this;
             var $el = this.$el;
@@ -507,7 +501,7 @@ define([
         },
         filterScreens: function(filterText) {
             this.initialize();
-            this.collection.reset(_.filter(this.collectionOrig.models, function(model) {
+            this.collection.reset(_.filter(this.collection.models, function(model) {
                 if (!_.isUndefined(model.get('description'))) {
                     return model.get('title').toLowerCase().indexOf(filterText.toLowerCase()) >= 0 || model.get('description').toLowerCase().indexOf(filterText.toLowerCase()) >= 0;
                 } else {
@@ -533,7 +527,6 @@ define([
                 next.show();
                 self.saveScreensOrders();
             });
-
         },
         saveScreensOrders: function() {
             var ids = [];
@@ -549,19 +542,25 @@ define([
             var screenOptions;
             var screensConfig = ADK.UserDefinedScreens.getScreensConfigFromSession();
             var newTitle = self.generateTitle(screensConfig);
-            var newScreenId = generateScreenId(newTitle);
+            var newScreen = generateScreenId(newTitle);
+            var newId = newScreen.newId;
+            var newScreenId = newScreen.newScreenId;
+
+            var hasCustomize = false;
 
             var authorString = ADK.UserService.getUserSession().get('firstname');
             authorString = authorString + ' ' + ADK.UserService.getUserSession().get('lastname');
 
             screenOptions = {
-                id: newScreenId,
-                routeName: newScreenId,
+                id: newId,
+                screenId : newScreenId,
+                routeName: newId,
                 title: newTitle,
                 description: undefined,
                 predefined: false,
                 defaultScreen: false,
                 author: authorString,
+                hasCustomize: hasCustomize
             };
 
             ADK.ADKApp.ScreenPassthrough.addNewScreen(screenOptions, ADK.ADKApp);
@@ -597,7 +596,11 @@ define([
             var origTitle = $(e.target).find('input')[0];
             origTitle = ($(origTitle).val() === undefined ? $(e.target).find('.predefined-title').text() : $(origTitle).val());
             var cloneTitle = this.generateCloneTitle(origTitle);
-            var newId = generateScreenId(cloneTitle);
+            var newScreen = generateScreenId(cloneTitle);
+            var newId = newScreen.newId;
+            var newScreenId = newScreen.newScreenId;
+
+            var hasCustomize = true;
 
             var screenIndex;
             //this is to make sure we have the latest collection from session/jds
@@ -613,36 +616,55 @@ define([
 
             var clonedScreenOptions = {
                 id: newId,
+                screenId: newScreenId,
                 routeName: newId,
                 title: cloneTitle,
                 description: origModel.get('description'),
                 predefined: false,
                 defaultScreen: false,
                 author: authorString,
+                hasCustomize: hasCustomize,
                 problems: origModel.get('problems')
             };
 
-            ADK.ADKApp.ScreenPassthrough.addNewScreen(clonedScreenOptions, ADK.ADKApp, screenIndex + 1);
-            if (origModel.get('predefined') === true) {
-                var _applets = ADK.ADKApp[origModel.get('id')].applets;
-                var predefinedAppletConfig = {
-                    applets: _applets
-                };
-                ADK.UserDefinedScreens.saveGridsterConfig(predefinedAppletConfig, clonedScreenOptions.id);
-                ADK.UserDefinedScreens.cloneScreen(origModel.get('id'), clonedScreenOptions.id, true);
-            } else {
-                // UserDefinedScreens.cloneGridsterConfig(origModel.get('id'), clonedScreenOptions.id);
-                // UserDefinedScreens.cloneScreenFilters(origModel.get('id'), clonedScreenOptions.id);
-                ADK.UserDefinedScreens.cloneScreen(origModel.get('id'), clonedScreenOptions.id, false);
-            }
-            this.resetCollection();
+            var callBack = function(model, response, options) {
+                if (origModel.get('predefined') === true) {
+                    var _applets = ADK.ADKApp[origModel.get('id')].applets;
+                    var predefinedAppletConfig = {
+                        applets: _applets,
+                        id: clonedScreenOptions.id,
+                        contentRegionLayout: 'gridster',
+                        userDefinedScreen: true
+                    };
+                    ADK.UserDefinedScreens.saveGridsterConfig(predefinedAppletConfig, clonedScreenOptions.id, 
+                        function(){
+                            ADK.UserDefinedScreens.cloneScreen(origModel.get('id'), clonedScreenOptions.id, true);    
+                    });
+                } else {
+                    ADK.UserDefinedScreens.cloneScreen(origModel.get('id'), clonedScreenOptions.id, false);
+                    ADK.UserDefinedScreens.cloneUDScreenToSession(origModel.get('id'), clonedScreenOptions.id);
+                }
+                //clone filters to session
+                ADK.UserDefinedScreens.cloneScreenFiltersToSession(origModel.get('id'), clonedScreenOptions.id);
 
-            //set focus to cloned screen title input
-            self.setFocusToScreenInput(newId);
+                //clone stacked graphs to session
+                ADK.UserDefinedScreens.cloneScreenGraphsToSession(origModel.get('id'), clonedScreenOptions.id);
+
+                self.resetCollection();
+
+                //set focus to cloned screen title input
+                self.setFocusToScreenInput(newId);
+            };
+
+
+
+            ADK.ADKApp.ScreenPassthrough.addNewScreen(clonedScreenOptions, ADK.ADKApp, screenIndex + 1, callBack);
+
         },
         generateCloneTitle: function(origTitle) {
             var cloneTitle;
             var promise = ADK.UserDefinedScreens.getScreensConfig();
+            origTitle = origTitle.slice(0, 23);
             promise.done(function(screensConfig) {
                 var previouslyCloned = _.filter(screensConfig.screens, function(screen) {
                     if (screen.title.indexOf(origTitle + ' Copy') !== -1 && screen.title.indexOf(origTitle + ' Copy Copy') === -1) {

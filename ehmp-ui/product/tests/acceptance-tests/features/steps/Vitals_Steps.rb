@@ -23,7 +23,7 @@ Then(/^the Vitals expanded headers are$/) do |table|
   headers = driver.find_elements(:css, "#data-grid-vitals th") 
   expect(headers.length).to_not eq(0)
   expect(headers.length).to eq(table.rows.length)
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     does_exist = elements.static_dom_element_exists? header_text[0]
     p "#{header_text[0]} was not found" unless does_exist
     expect(does_exist).to be_true
@@ -36,7 +36,7 @@ Then(/^the first coloumn of the Vitals table contains the rows$/) do |table|
   TestSupport.wait_for_page_loaded
   num_of_rows = driver.find_elements(:css, "#grid-panel-vitals > div.grid-container > div > div > div.a-table > div > table > tbody > tr")
   #Loop through rows in cucumber   
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     p "Checking new row"
     #Loop through UI rows
@@ -55,7 +55,7 @@ Then(/^the first coloumn of the Vitals table contains the rows$/) do |table|
     end # for loop  
     p "could not match data: #{row_defined_in_cucumber}" unless matched  
     expect(matched).to be_true
-  end#do loop  
+  end #do loop  
 end #Vitals Coversheet rows
   
 #Verify the second coloumn of the Vitals Coversheet view
@@ -64,7 +64,7 @@ Then(/^the second coloumn of the Vitals table contains the rows$/) do |table|
   TestSupport.wait_for_page_loaded
   num_of_rows = driver.find_elements(:css, "#grid-panel-vitals > div.grid-container > div > div > div.b-table > div > table > tbody > tr")
   #Loop through rows in cucumber   
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     p "Checking new row"
     #Loop through UI rows
@@ -83,7 +83,7 @@ Then(/^the second coloumn of the Vitals table contains the rows$/) do |table|
     p "#{matched}"
     p "could not match data: #{row_defined_in_cucumber}" unless matched  
     expect(matched).to be_true
-  end#do loop  
+  end #do loop  
 end #Vitals Coversheet rows
 
 #Validate the Problems rows in the coversheet view
@@ -91,7 +91,7 @@ Then(/^the Vitals table contains the rows$/) do |table|
   driver = TestSupport.driver
   num_of_rows = driver.find_elements(:css, "#data-grid-vitals tbody tr")
   #Loop through rows in cucumber   
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     #Loop through UI rows
     for i in 1..num_of_rows.length
@@ -109,5 +109,5 @@ Then(/^the Vitals table contains the rows$/) do |table|
     p "could not match data: #{row_defined_in_cucumber}" unless matched  
     driver.save_screenshot("incorrect_rows.png") unless matched
     expect(matched).to be_true
-  end#do loop  
+  end #do loop  
 end #Problems Pills

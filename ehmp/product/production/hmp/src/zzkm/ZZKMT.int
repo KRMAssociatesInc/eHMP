@@ -1,0 +1,87 @@
+ZZKMT ;SLC/KCM -- General Development Tools
+ ;;1.0;JSON DATA STORE;;Sep 01, 2012
+ ;
+FL ; List first lines of routines
+ D GETRTN
+ N RTN S RTN=0
+ F  S RTN=$O(^UTILITY($J,RTN)) Q:RTN=""  W !,RTN,?10,$P($T(@("^"_RTN)),";",2,999)
+ Q
+RSUM ; List CRC's for a set of routine
+ D GETRTN
+ N LOAD,X,I,BODY,DIF,XCNP,RTNSTR,LINE,SUMS
+ S LOAD=$P($T(LOAD+1),";;",2,99),SUMS=""
+ S X=0 F  S X=$O(^UTILITY($J,X)) Q:X=""  D
+ . K BODY,RTNSTR
+ . S DIF="BODY(",XCNP=0 X LOAD ; loads routine named in X into BODY
+ . S RTNSTR=""
+ . F I=1:1 Q:'$D(BODY(I,0))  S LINE=$TR(BODY(I,0),$C(9)," "),RTNSTR=RTNSTR_LINE
+ . S SUM=$$CRC32(RTNSTR),SUMS=SUMS_SUM
+ . W !,X,?10,SUM
+ W !!,"Overall:",?10,$$CRC32(SUMS)
+ Q
+GETRTN ; Get list of routines and put them into ^UTILITY($J,"routine name")
+ N RSEL S RSEL=$P($T(RSEL+1),";;",2,99)
+ X RSEL
+ Q
+ ;
+DSUM ; List both CRC's (database and file system) for a set of routines
+ D GETRTN
+ N RTN,DSUM,DSUMS,FSUM,FSUMS
+ W !,"Routine",?14,"Database",?32,"File System"
+ S DSUMS="",FSUMS=""
+ S RTN=0 F  S RTN=$O(^UTILITY($J,RTN)) Q:RTN=""  D
+ . S DSUM=$$DBSUM(RTN),FSUM=$$FILESUM(RTN)
+ . W !
+ . I DSUM'=FSUM W "*"
+ . W ?2,RTN,?14,DSUM,?32,FSUM
+ . S DSUMS=DSUMS_DSUM,FSUMS=FSUMS_FSUM
+ W !!,"Overall",?14,$$CRC32(DSUMS),?32,$$CRC32(FSUMS)
+ Q
+DBSUM(X) ; Returns the CRC32 for a routine in the database
+ N LOAD,BODY,DIF,XCNP
+ S LOAD=$P($T(LOAD+1),";;",2,99),DIF="BODY(",XCNP=0
+ X LOAD ; loads routine named in X into BODY
+ Q $$ARYCRC(.BODY)
+ ;
+FILESUM(X) ; Returns the CRC32 for a routine in the file system
+ N BODY
+ D FTG("/Users/kevin/work/git/cpe/hmp/hmp-main/src/main/mumps/dbj/"_X_".int","BODY")
+ Q $$ARYCRC(.BODY)
+ ;
+ARYCRC(BODY) ; Returns the CRC32 for concat of lines in an array
+ N STR,LINE,I
+ S STR=""
+ F I=1:1 Q:'$D(BODY(I,0))  S LINE=$TR(BODY(I,0),$C(9)," "),STR=STR_LINE 
+ Q $$CRC32(STR)
+ ;
+ ; OS specific -----
+ ;
+TEST ;
+ N KCM
+ D FTG("/Users/kevin/work/git/cpe/hmp/hmp-main/src/main/mumps/dbj/VPRJ.int","KCM")
+ ZW KCM
+ Q
+READLN(LINE) ; Read file into array
+ N $ES,$ET
+ S $ET="D CHKEOF^ZZKMT Q"
+ U FILE R LINE:5
+ Q
+ ;
+CHKEOF ; Check for EOF
+ I $ZE["ENDOFFILE" S EOF=1,$EC=""
+ Q
+FTG(FILE,GBL) ; Read from file & put each node into @GBL@(line,0)
+ N I,LINE,EOF
+ O FILE
+ S EOF=0,I=0
+ F  D READLN(.LINE) Q:EOF  S I=I+1 S @GBL@(I,0)=LINE
+ C FILE
+ Q
+CRC32(X) ; Returns a 32-bit CRC for string in X
+ Q $ZCRC(X,7)
+ ;
+RSEL ;; User selection of routines returned in ^UTILITY($J,"routine name")
+ ;;K ^UTILITY($J) D KERNEL^%RSET K %ST ;Special entry point for VA
+LOAD ;; Load routine specified in X into @(DIF_XCNP_",0)"
+ ;;N %,%N S %N=0 X "ZL @X F XCNP=XCNP+1:1 S %N=%N+1,%=$T(+%N) Q:$L(%)=0  S @(DIF_XCNP_"",0)"")=%"
+ ;

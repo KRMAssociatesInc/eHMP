@@ -30,7 +30,7 @@ describe('validation unit test', function() {
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-                    expect(error).toBe("sync.validate: Could not find job type");
+                    expect(error).toBe("ERROR: sync.validate: Could not find job type");
                     mockHandlerCallback.callback();
                 });
             });
@@ -55,7 +55,7 @@ describe('validation unit test', function() {
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-                    expect(error).toBe("sync.validate: job type was not sync");
+                    expect(error).toBe("ERROR: sync.validate: job type was not sync");
                     mockHandlerCallback.callback();
                 });
             });
@@ -80,7 +80,7 @@ describe('validation unit test', function() {
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-                    expect(error).toBe("sync.validate: Could not find job source");
+                    expect(error).toBe("ERROR: sync.validate: Could not find job source");
                     mockHandlerCallback.callback();
                 });
             });
@@ -106,7 +106,7 @@ describe('validation unit test', function() {
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-                    expect(error).toBe("sync.validate: job source was not \"appointments\" , \"admissions\" or \"patient lists\"");
+                    expect(error).toBe("ERROR: sync.validate: job source was not \"appointments\" , \"admissions\" or \"patient lists\"");
                     mockHandlerCallback.callback();
                 });
             });
@@ -132,7 +132,7 @@ describe('validation unit test', function() {
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-                    expect(error).toBe("sync.validate: Could not find job patients");
+                    expect(error).toBe("ERROR: sync.validate: Could not find job patients");
                     mockHandlerCallback.callback();
                 });
             });
@@ -163,7 +163,7 @@ describe('validation unit test', function() {
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-                    expect(error).toBe("sync.validate: Missing dfn and ien for patient");
+                    expect(error).toBe("ERROR: sync.validate: Missing dfn and ien for patient");
                     mockHandlerCallback.callback();
                 });
             });
@@ -207,7 +207,7 @@ describe('validation unit test', function() {
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-                    expect(error).toBe("sync.validateConfig: Configuration cannot be null");
+                    expect(error).toBe("ERROR: sync.validateConfig: Configuration cannot be null");
                     mockHandlerCallback.callback();
                 });
             });
@@ -236,7 +236,7 @@ describe('validation unit test', function() {
                 job.patients = patients;
 
                 var mockConfig = {
-                    osyncsync: {
+                    osync: {
                         numToSyncSimultaneously: 3,
                         waitBetween: 5000
                     }
@@ -244,7 +244,7 @@ describe('validation unit test', function() {
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-                    expect(error).toBe("sync.validateConfig: osync.syncUrl cannot be null");
+                    expect(error).toBe("ERROR: sync.validateConfig: osync.syncUrl cannot be null");
                     mockHandlerCallback.callback();
                 });
             });
@@ -281,7 +281,7 @@ describe('validation unit test', function() {
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-                    expect(error).toBe("sync.validateConfig: osync.numToSyncSimultaneously cannot be null");
+                    expect(error).toBe("ERROR: sync.validateConfig: osync.numToSyncSimultaneously cannot be null");
                     mockHandlerCallback.callback();
                 });
             });
@@ -319,7 +319,7 @@ describe('validation unit test', function() {
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-                    expect(error).toBe("sync.validateConfig: osync.numToSyncSimultaneously cannot be less than 2");
+                    expect(error).toBe("ERROR: sync.validateConfig: osync.numToSyncSimultaneously cannot be less than 2");
                     mockHandlerCallback.callback();
                 });
             });
@@ -356,7 +356,7 @@ describe('validation unit test', function() {
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-                    expect(error).toBe("sync.validateConfig: osync.waitBetween cannot be null");
+                    expect(error).toBe("ERROR: sync.validateConfig: osync.waitBetween cannot be null");
                     mockHandlerCallback.callback();
                 });
             });
@@ -394,7 +394,7 @@ describe('validation unit test', function() {
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-                    expect(error).toBe("sync.validateConfig: osync.waitBetween cannot be less than 1000");
+                    expect(error).toBe("ERROR: sync.validateConfig: osync.waitBetween cannot be less than 1000");
                     mockHandlerCallback.callback();
                 });
             });

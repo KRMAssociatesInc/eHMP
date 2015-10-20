@@ -1,0 +1,52 @@
+ZZKMBT ; Tools for changing branches
+ ;
+LOAD ; Load routines from a directory
+ N DNAME,X,I
+ S DNAME="/Users/kevin/work/git/cpe/hmp/hmp-main/src/main/mumps/dbj/"
+ F I=1:1 S X=$T(RTN+I),X=$P(X,";;",2,99) Q:X="zzzzz"  D
+ . W !,"Importing: ",X,?25,##class(SyncTool.RoutineExportImport).Import(DNAME_X)
+ Q
+RTN
+ ;;VPRJ.int
+ ;;VPRJAQ.int
+ ;;VPRJD.int
+ ;;VPRJDQ.int
+ ;;VPRJDQA.int
+ ;;VPRJDX.int
+ ;;VPRJFPS.int
+ ;;VPRJM.int
+ ;;VPRJMDT.int
+ ;;VPRJMDX.int
+ ;;VPRJP.int
+ ;;VPRJPM.int
+ ;;VPRJPQ.int
+ ;;VPRJPQA.int
+ ;;VPRJPQF.int
+ ;;VPRJPQU.int
+ ;;VPRJPR.int
+ ;;VPRJPX.int
+ ;;VPRJRCL.int
+ ;;VPRJREQ.int
+ ;;VPRJRSP.int
+ ;;VPRJRUT.int
+ ;;VPRJSON.int
+ ;;VPRJSOND.int
+ ;;VPRJSONE.int
+ ;;VPRJT.int
+ ;;VPRJTJD.int
+ ;;VPRJTJDD.int
+ ;;VPRJTJE.int
+ ;;VPRJTJED.int
+ ;;VPRJTPD.int
+ ;;VPRJTQF.int
+ ;;VPRJTQU.int
+ ;;VPRJTQX.int
+ ;;VPRJTR.int
+ ;;VPRJTRP.int
+ ;;VPRJTS.int
+ ;;VPRJTU.int
+ ;;XLFCRC.int
+ ;;XLFDT.int
+ ;;XLFDT1.int
+ ;;XLFSTR.int
+ ;;zzzzz

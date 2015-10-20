@@ -37,6 +37,7 @@ define([
         initialized: false,
         fetchAllMeds: function(useGlobalDateFilter, callback) {
             var self = this;
+            this.useGlobalDateFilter = useGlobalDateFilter;
             var fetchOptions = {
                 resourceTitle: 'patient-record-med',
                 cache: false,
@@ -45,7 +46,7 @@ define([
                 collectionConfig: {
                     groupCollectionModels: self.groupCollectionModels,
                     parent: self,
-                    useGlobalDateFilter: useGlobalDateFilter,
+                    useGlobalDateFilter: self.useGlobalDateFilter,
                     collectionParse: self.resetCollections
                 },
                 patient: ADK.PatientRecordService.getCurrentPatient()
@@ -60,11 +61,10 @@ define([
             return ADK.PatientRecordService.fetchCollection(fetchOptions);
         },
         resetCollections: function(collection) {
-            //var test = medicationCollectionFormatHelper.getGroupedMedsForStackedGraphs(collection);
-            //console.log(test);
             _.each(collection.models, function(model) {
                 model.attributes = appletHelper.parseMedResponse(model.attributes);
             });
+            var self = this;
             var filteredModels = _.filter(collection.models, function(model) {
 
                 var dateModel = ADK.SessionStorage.getModel('globalDate');
@@ -74,8 +74,7 @@ define([
                 var lastFilled = moment(model.get('lastFilled'), "YYYYMMDDHHmm").valueOf();
                 var lastAdmin = moment(model.get('lastAdmin'), "YYYYMMDDHHmm").valueOf();
                 var name = model.get('qualifiedName');
-
-                if(dateModel.get('selectedId') === 'all-range-global' || !this.useGlobalDateFilter){
+                if(dateModel.get('selectedId') === 'all-range-global' || !self.useGlobalDateFilter){
                     return true;
                 }else if (dateModel.get('fromDate') && (dateModel.get('fromDate') !== 'null')) {
                     var filter1 = (overallStart >= GDFStart || lastFilled >= GDFStart || lastAdmin >= GDFStart || overallStop >= GDFStart);
@@ -96,7 +95,7 @@ define([
 
             var startTime,
                 endTime, stoppedDate;
-            if (dateModel.get('selectedId') === 'all-range-global' || !this.useGlobalDateFilter) {
+            if (dateModel.get('selectedId') === 'all-range-global') {
                 var sortDate = function(a, b) {
                     var c = new Date(a);
                     var d = new Date(b);
@@ -189,7 +188,6 @@ define([
             _.each(medicationGroups, function(model) {
                 var patientType = model.get('type');
                 var groupedMeds = medicationCollectionFormatHelper.groupByMedicationNameThenByFacility(model.get("meds"), useGlobalDateFilter);
-                //console.log(groupedMeds.groupNames);
                 model.set("groupNames", groupedMeds.groupNames);
                 model.get("meds").reset(groupedMeds.medicationSubGroups);
             });

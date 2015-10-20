@@ -1,4 +1,4 @@
-@F302 @CareTeamDetails
+@F302-5.1_PatientCareTeamDetailHeadersInpatientQuicklook@F302 @CareTeamDetails @regression
 
 Feature: F302 - Enhance Care Team Header
 
@@ -46,7 +46,7 @@ Feature: F302 - Enhance Care Team Header
     | MH Treatment Team               | Mh Team  			    |  not specified    | not specified     | (555) 555-4324   |
     | MH Treatment Coordinator        | Vehu, One   		    |  (555) 555-5654   | (555) 555-3242    | (555) 555-5453   |
 
-@F302-3.2_PatientCareTeamDetailsKodak @US5256
+@F302-3.2_PatientCareTeamDetailsKodak @US5256 @DE1309
     Scenario: Patient Information: Demographic verification (Kodak)
     Given user is logged into eHMP-UI as kodak user
     And Resize browser
@@ -66,7 +66,7 @@ Feature: F302 - Enhance Care Team Header
     | MH Treatment Team               | Mh Team  				|  not specified    | not specified     | (555) 888-9832   |
     | MH Treatment Coordinator        | Vehu, Two   			|  (555) 888-7771   | (555) 888-7434    | (555) 888-7777   |
 
-@F302-3.1_PatientCareTeamDetailsKodak @US5256
+@F302-3.1_PatientCareTeamDetailsKodak @US5256 @DE1309
     Scenario: Patient Information: Demographic verification (Kodak)
     Given user is logged into eHMP-UI as kodak user
     And Resize browser
@@ -89,7 +89,7 @@ Feature: F302 - Enhance Care Team Header
     | MH Treatment Coordinator        | Vehu, Two   			    |  (555) 888-7771   | (555) 888-7434    | (555) 888-7777   |
 
 #Quicklook Tests
-@F302-5.1_PatientCareTeamDetailHeadersInpatientQuicklook @US5260
+@F302-5.1_PatientCareTeamDetailHeadersInpatientQuicklook @US5260 @DE1205
     Scenario: Patient Information: Quicklook Inpatient Care Team verification
     Given user is logged into eHMP-UI
     And Resize browser
@@ -121,7 +121,7 @@ Feature: F302 - Enhance Care Team Header
     | HDR      | Provider, One |  (555) 555-7677   | (555) 555-7688    | (555) 555-7678   |
     | VLER     | Provider, One |  (555) 555-7677   | (555) 555-7688    | (555) 555-7678   |
 
-@F302-5.3_PatientCareTeamDetailHeadersOutpatientQuicklook @US5260
+@F302-5.3_PatientCareTeamDetailHeadersOutpatientQuicklook @US5260 @DE1205
     Scenario: Patient Information: Quicklook Outpatient Care Team verification
     Given user is logged into eHMP-UI
     And Resize browser

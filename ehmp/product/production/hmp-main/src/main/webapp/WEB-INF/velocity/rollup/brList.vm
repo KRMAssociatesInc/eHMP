@@ -1,8 +1,0 @@
-<!DOCTYPE html>
-<html>
-<body>
-	#foreach($rslt in $results)
-		$rslt
-	#end
-</body>
-</html>

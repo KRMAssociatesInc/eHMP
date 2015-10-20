@@ -99,12 +99,12 @@ define([
             var criteria;
             if (this.locationType === 'clinics') {
                 criteria = {
-                    "locationUid": locationModel.attributes.uid
+                    "uid": locationModel.attributes.uid
                 };
             } else {
                 criteria = {
-                    "refId": locationModel.attributes.refId,
-                    "locationUid": locationModel.attributes.uid
+                    "ref.id": locationModel.attributes.refId,
+                    "uid": locationModel.attributes.uid
                 };
             }
             this.searchApplet.confirmationView.updateTemplateToBlank();
@@ -124,8 +124,8 @@ define([
             this.patientSearchResults.show(patientsView);
 
             if (this.locationType === 'clinics') {
-                criteria.startDate = this.locationsListFilterView.locationDateRangeView.model.get('fromDate');
-                criteria.stopDate = this.locationsListFilterView.locationDateRangeView.model.get('toDate');
+                criteria['date.start'] = this.locationsListFilterView.locationDateRangeView.model.get('fromDate');
+                criteria['date.end'] = this.locationsListFilterView.locationDateRangeView.model.get('toDate');
             }
 
             var searchOptions = {

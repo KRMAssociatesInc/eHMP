@@ -129,10 +129,14 @@ define([
             if (!deferredResponse) {
                 return;
             }
-            ADK.showModal(ADK.Views.Loading.create(), {
-                size: "large",
-                title: "Loading..."
+            var modal = new ADK.UI.Modal({
+                view: ADK.Views.Loading.create(),
+                options: {
+                    size: "large",
+                    title: "Loading..."
+                }
             });
+            modal.show();
 
             // request detail view from whatever applet is listening for this domain
             deferredResponse.done(function(response) {
@@ -147,26 +151,38 @@ define([
                 if (response.footerView) {
                     modalOptions.footerView = response.footerView;
                 }
-                ADK.showModal(response.view, modalOptions);
+                var modal = new ADK.UI.Modal({
+                    view: response.view,
+                    options: modalOptions
+                });
+                modal.show();
                 highlightHtmlElement(response.view.$el, keywords);
             });
             deferredResponse.fail(function(response) {
                 var errorMsg = _.isString(response) ? response : response && _.isString(response.statusText) ? response.statusText : "An error occurred";
-                ADK.showModal(new ErrorView({
-                    model: new Backbone.Model({
-                        error: errorMsg
-                    })
-                }), {
-                    size: "large",
-                    title: "An Error Occurred"
+                var modal = new ADK.UI.Modal({
+                    view: new ErrorView({
+                        model: new Backbone.Model({
+                            error: errorMsg
+                        })
+                    }),
+                    options: {
+                        size: "large",
+                        title: "An Error Occurred"
+                    }
                 });
+                modal.show();
             });
         } else {
             // no detail view available; use the default placeholder view
-            ADK.showModal(new DefaultDetailView(), {
-                size: "large",
-                title: "Detail - Placeholder"
+            var modalView = new ADK.UI.Modal({
+                view: new DefaultDetailView(),
+                options: {
+                    size: "large",
+                    title: "Detail - Placeholder"
+                }
             });
+            modalView.show();
         }
     }
 

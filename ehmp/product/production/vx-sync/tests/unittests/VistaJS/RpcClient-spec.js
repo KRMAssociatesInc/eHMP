@@ -4,10 +4,9 @@ require('../../../env-setup');
 
 var _ = require('underscore');
 
-var RpcClient = require(global.VX_VISTAJS + 'RpcClient').RpcClient;
-var RpcSerializer = require(global.VX_VISTAJS + 'RpcSerializer').RpcSerializer;
+var RpcClient = require('vista-js').RpcClient;
 
-var parseMessage = require(global.VX_VISTAJS + 'RpcSender').parseMessage;
+var parseMessage = require('vista-js').RpcSender.parseMessage;
 
 var logger = {
     trace: _.noop,
@@ -21,14 +20,25 @@ var logger = {
 var config = {
     host: '10.2.2.102',
     port: 9210,
-    accessCode: 'pu1234',
-    verifyCode: 'pu1234!!',
-    context: 'VPR UI CONTEXT',
+    accessCode: 'ep1234',
+    verifyCode: 'ep1234!!',
+    context: 'HMP UI CONTEXT',
     localIP: '127.0.0.1',
     localAddress: 'localhost',
     connectTimeout: 3000,
     sendTimeout: 10000
 };
+
+function defaultFunction(callback) {
+    setTimeout(callback);
+}
+
+function createSender() {
+    return {
+        close: _.noop,
+        connect: defaultFunction
+    };
+}
 
 function testCommand(command, sentError, sentResult, expectedError, expectedResult) {
     var testError;
@@ -241,6 +251,7 @@ describe('RpcClient.js', function() {
             expect(client instanceof RpcClient).toBe(true);
             expect(client.logger).toBe(logger);
             expect(client.config).toBe(config);
+            expect(client.queue).not.toBeUndefined();
         });
     });
 
@@ -256,40 +267,12 @@ describe('RpcClient.js', function() {
             testResult = undefined;
             called = false;
 
-            client = {
-                logger: logger,
-                config: config,
-                sender: {
-                    send: function(rpcString, callback) {
-                        callback(null, rpcString);
-                    }
-                }
+            client = RpcClient.create(logger, config);
+            client._execute = function(rpcCall, callback) {
+                setTimeout(callback, 0, null, 'response');
             };
 
-            execute = RpcClient.prototype.execute.bind(client);
-        });
-
-        it('test no arguments throws exception', function() {
-            expect(execute).toThrow();
-        });
-
-        it('test not connected', function() {
-            delete client.sender;
-
-            execute('XUS SIGNON SETUP', function(error, result) {
-                called = true;
-                testError = error;
-                testResult = result;
-            });
-
-            waitsFor(function() {
-                return called;
-            }, 'should be called', 1000);
-
-            runs(function() {
-                expect(testError).toEqual('RpcClient is not connected to the Vista server');
-                expect(testResult).toBeUndefined();
-            });
+            execute = client.execute.bind(client);
         });
 
         it('test insufficient arguments', function() {
@@ -341,7 +324,7 @@ describe('RpcClient.js', function() {
 
             runs(function() {
                 expect(testError).toBeNull();
-                expect(testResult).toEqual(RpcSerializer.buildRpcString(rpcCmd));
+                expect(testResult).not.toBeUndefined();
             });
         });
     });
@@ -358,30 +341,15 @@ describe('RpcClient.js', function() {
             testResult = undefined;
             called = false;
 
-            client = {
-                logger: logger,
-                config: config,
-                sender: {
-                    send: function(rpcString, callback) {
-                        callback(null, rpcString);
-                    },
-                    close: _.noop
-                },
-                signoffCommand: function(callback) {
-                    callback(null, 'SIGNOFF SUCCESSFUL');
-                }
+            client = RpcClient.create(logger, config);
+            client._close = function(callback) {
+                setTimeout(callback);
             };
 
             close = RpcClient.prototype.close.bind(client);
         });
 
-        xit('test no arguments throws exception', function() {
-            expect(close).toThrow();
-        });
-
         it('test not connected', function() {
-            client.sender = null;
-
             close(function(error, result) {
                 called = true;
                 testError = error;
@@ -399,13 +367,15 @@ describe('RpcClient.js', function() {
         });
 
         it('test valid signoff', function() {
+            client._close = function(callback) {
+                setTimeout(callback, 0, null, 'SIGNOFF SUCCESSFUL');
+            };
+
             close(function(error, result) {
                 called = true;
                 testError = error;
                 testResult = result;
             });
-
-            expect(client.sender).toBeNull();
 
             waitsFor(function() {
                 return called;
@@ -421,8 +391,8 @@ describe('RpcClient.js', function() {
     describe('RpcClient.connect()', function() {
         it('verify connection', function() {
             var user = {
-                accessCode: 'pu1234',
-                verifyCode: 'pu1234!!',
+                accessCode: 'ep1234',
+                verifyCode: 'ep1234!!',
                 duz: '10000000226'
             };
 
@@ -431,8 +401,8 @@ describe('RpcClient.js', function() {
             dummySender.count = 0;
 
             var client = new RpcClient(logger, config);
-            client.createSender = function() {
-                this.sender = dummySender;
+            client._connect = function(callback) {
+                setTimeout(callback, 0, null, user);
             };
 
             var testError;
@@ -458,11 +428,219 @@ describe('RpcClient.js', function() {
         });
     });
 
+    describe('_enqueue', function() {
+        var instance = {
+            config: {
+                host: '0.0.0.0',
+                port: 0
+            },
+            logger: logger,
+            queue: {
+                q: [],
+                _highWaterMark: 0,
+                _maxLength: 0,
+                length: function() {
+                    return this.q.length;
+                },
+                push: function(item) {
+                    this.q.push(item);
+                },
+                pop: function() {
+                    return this.q.pop();
+                }
+            },
+            _enqueue: RpcClient.prototype._enqueue
+        };
+
+        it('test push onto queue', function() {
+            instance._enqueue('task1');
+            expect(_.contains(instance.queue.q, 'task1')).toBe(true);
+        });
+
+        it('test highWater', function() {
+            instance._enqueue('task2');
+            instance._enqueue('task3');
+            instance.queue.pop();
+            instance.queue.pop();
+            expect(instance.queue._highWaterMark).toEqual(3);
+        });
+    });
+
+    describe('_connect', function() {
+        var instance;
+        var testError;
+        var testResult;
+        var called;
+
+        function testCallback(error, result) {
+            called = true;
+            testError = error;
+            testResult = result;
+        }
+
+        beforeEach(function() {
+            testError = undefined;
+            testResult = undefined;
+            called = false;
+
+            instance = {
+                logger: logger,
+                config: {
+                    host: '0.0.0.0',
+                    port: 9999
+                },
+                sender: null,
+                _createSender: function() {
+                    this.sender = createSender();
+                },
+                connect: function(callback) {
+                    if (this.sender) {
+                        this.sender(callback);
+                    }
+                },
+                greetingCommand: defaultFunction,
+                signonCommand: defaultFunction,
+                verifyCommand: defaultFunction,
+                contextCommand: defaultFunction
+            };
+
+            spyOn(instance, '_createSender').andCallThrough();
+            spyOn(instance, 'greetingCommand').andCallThrough();
+            spyOn(instance, 'signonCommand').andCallThrough();
+            spyOn(instance, 'verifyCommand').andCallThrough();
+            spyOn(instance, 'contextCommand').andCallThrough();
+        });
+
+        it('sender', function() {
+            var sender = createSender();
+            instance.sender = sender;
+            spyOn(sender, 'close').andCallThrough();
+
+            RpcClient.prototype._connect.call(instance, testCallback);
+
+            waitsFor(function() {
+                return called;
+            }, 'should be called', 500);
+
+            runs(function() {
+                expect(called).toBe(true);
+                expect(sender.close).toHaveBeenCalled();
+                expect(instance._createSender).toHaveBeenCalled();
+                expect(instance.greetingCommand).toHaveBeenCalled();
+                expect(instance.signonCommand).toHaveBeenCalled();
+                expect(instance.verifyCommand).toHaveBeenCalled();
+                expect(instance.contextCommand).toHaveBeenCalled();
+            });
+        });
+
+        it('no sender', function() {
+            var sender = createSender();
+            instance.sender = sender;
+            spyOn(sender, 'close').andCallThrough();
+
+            RpcClient.prototype._connect.call(instance, testCallback);
+
+            waitsFor(function() {
+                return called;
+            }, 'should be called', 500);
+
+            runs(function() {
+                expect(called).toBe(true);
+                expect(instance._createSender).toHaveBeenCalled();
+                expect(instance.greetingCommand).toHaveBeenCalled();
+                expect(instance.signonCommand).toHaveBeenCalled();
+                expect(instance.verifyCommand).toHaveBeenCalled();
+                expect(instance.contextCommand).toHaveBeenCalled();
+            });
+        });
+    });
+
+    describe('_close', function() {
+        var instance;
+        var testError;
+        var testResult;
+        var called;
+
+        function testCallback(error, result) {
+            called = true;
+            testError = error;
+            testResult = result;
+        }
+
+        beforeEach(function() {
+            testError = undefined;
+            testResult = undefined;
+            called = false;
+
+            instance = {
+                logger: logger,
+                config: {
+                    host: '0.0.0.0',
+                    port: 9999
+                },
+                sender: null,
+                _createSender: function() {
+                    this.sender = createSender();
+                },
+
+                signoffCommand: defaultFunction
+            };
+        });
+
+        it('no sender instance', function() {
+            // callback
+            RpcClient.prototype._close.call(instance, testCallback);
+
+            waitsFor(function() {
+                return called;
+            }, 'should be called', 500);
+
+            runs(function() {
+                expect(called).toBe(true);
+            });
+        });
+
+        it('sender instance', function() {
+            // signoffCommand called
+            // sender.close
+
+            var sender = createSender();
+            instance.sender = sender;
+            spyOn(sender, 'close').andCallThrough();
+
+            RpcClient.prototype._close.call(instance, testCallback);
+
+            waitsFor(function() {
+                return called;
+            }, 'should be called', 500);
+
+            runs(function() {
+                expect(called).toBe(true);
+                expect(sender.close).toHaveBeenCalled();
+            });
+        });
+    });
+
+    describe('_createSender', function() {
+        it('verify sender instantiated', function() {
+            var instance = {
+                logger: logger,
+                config: config
+            };
+
+
+            RpcClient.prototype._createSender.call(instance);
+            expect(instance.sender).not.toBeUndefined();
+            expect(instance.logger).toBe(logger);
+            expect(instance.config).toBe(config);
+        });
+    });
+
     describe('authenticate()', function() {
         it('verify authenticate() calls connect() and close()', function() {
             var user = {
-                accessCode: 'pu1234',
-                verifyCode: 'pu1234!!',
+                accessCode: 'ep1234',
+                verifyCode: 'ep1234!!',
                 duz: '10000000226'
             };
 
@@ -511,8 +689,8 @@ describe('RpcClient.js', function() {
     describe('callRpc()', function() {
         it('verify callRpc() calls connect(), execute(), and close()', function() {
             var user = {
-                accessCode: 'pu1234',
-                verifyCode: 'pu1234!!',
+                accessCode: 'ep1234',
+                verifyCode: 'ep1234!!',
                 duz: '10000000226'
             };
             var response = '10000000226^USER,PANORAMA^3^1^1^3^0^4000^20^1^1^20^KODAK.VISTACORE.US^0^180^^^^0^0^^1^0^500^^0';
@@ -526,14 +704,17 @@ describe('RpcClient.js', function() {
                     connectCalled = true;
                     callback(null, user);
                 },
+                _connect: function() {},
                 execute: function(rpcCall, parameters, callback) {
                     callback(null, response);
                 },
+                _execute: function() {},
                 close: function(callback) {
                     callback = callback || function() {};
                     closeCalled = true;
                     callback();
-                }
+                },
+                _close: function() {}
             };
 
             var testError;

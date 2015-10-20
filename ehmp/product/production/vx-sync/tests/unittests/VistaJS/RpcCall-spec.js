@@ -2,10 +2,10 @@
 
 require('../../../env-setup');
 
-var RpcParameter = require(global.VX_VISTAJS + 'RpcParameter').RpcParameter;
-var RpcCall = require(global.VX_VISTAJS + 'RpcCall').RpcCall;
-var _flattenAndRemoveNullishValues = require(global.VX_VISTAJS + 'RpcCall')._flattenAndRemoveNullishValues;
-var _processParamList = require(global.VX_VISTAJS + 'RpcCall')._processParamList;
+var RpcParameter = require('vista-js').RpcParameter;
+var RpcCall = require('vista-js').RpcCall;
+var _flattenAndRemoveNullishValues = require('vista-js').RpcCall._flattenAndRemoveNullishValues;
+var _processParamList = require('vista-js').RpcCall._processParamList;
 
 describe('RpcCall.js', function() {
     describe('RpcCall()', function() {

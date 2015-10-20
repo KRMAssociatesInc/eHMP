@@ -33,7 +33,7 @@ define([
                     prevButtonDisable = false,
                     detailGroupName = $("#" + detailModel.get('uid')).prevAll('tr.groupByHeader:first').find('td.groupByHeader b').text();
 
-                if  (next >= dataCollection.length) {
+                if (next >= dataCollection.length) {
                     nextButtonDisable = true;
                 } else {
                     var nextDetailModel = dataCollection.at(next),
@@ -44,7 +44,7 @@ define([
                     }
                 }
 
-                if  (prev < 0 ) {
+                if (prev < 0) {
                     prevButtonDisable = true;
                 } else {
                     var prevDetailModel = dataCollection.at(prev),
@@ -61,21 +61,31 @@ define([
                     theView: detailView,
                     dataCollection: dataCollection,
                     navHeader: navHeader,
-                    nextButtonDisable : nextButtonDisable,
-                    prevButtonDisable : prevButtonDisable
+                    nextButtonDisable: nextButtonDisable,
+                    prevButtonDisable: prevButtonDisable
                 });
             }
 
-            ADK.showModal(detailView, modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: detailView,
+                options: modalOptions
+            });
+            modal.show();
         },
         showErrorModal: function(errorMsg) {
             var modalOptions = {
                 'title': "An Error Occurred",
                 'size': 'large'
             };
-            ADK.showModal(new ErrorView({
-                model: new Backbone.Model({ error: errorMsg })
-            }), modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: new ErrorView({
+                    model: new Backbone.Model({
+                        error: errorMsg
+                    })
+                }),
+                options: modalOptions
+            });
+            modal.show();
         }
     };
 

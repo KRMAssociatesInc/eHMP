@@ -1,0 +1,85 @@
+<div class="status-legend row">
+    <span class="status-legend-item col-xs-4"><div class="handOff-status bg-success" title="Team Hand-off Status"></div> Completed</span>
+    <span class="status-legend-item col-xs-4"><div class="handOff-status bg-warning" title="Team Hand-off Status"></div> In-Progress</span>
+    <span class="status-legend-item col-xs-4"><div class="handOff-status bg-danger" title="Team Hand-off Status"></div> In-Development</span>
+</div>
+<h2>Writeback Features</h2>
+<div class="ftar-container">
+    <div class="sr-only">This table represents Selected Diagnoses catagorized by Diagnosis, Comments, Add to CL, and Primary.</div>
+    <div class="main-header">
+        <div class="pixel-width-5"></div>
+        <div class="pixel-width-50 text-center">
+            <div>Status</div>
+        </div>
+        <div class="percent-width-40">
+            <div>Sample Form</div>
+        </div>
+        <div class="percent-width-10">
+            <div>Wireframe</div>
+        </div>
+        <div class="percent-width-15">
+            <div>Workflow Diagram(s)</div>
+        </div>
+        <div class="percent-width-20">
+            <div>Use Case Scenario(s)</div>
+        </div>
+        <div class="pull-right pixel-width-1">
+        </div>
+    </div>
+    <div class="" id="writeback-features-container"></div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Form Controls</h2>
+    </div>
+    <div class="col-md-6 top-margin-sm bottom-margin-none">
+        <h3 class="bottom-margin-none top-margin-none">Live Demo (for 508/Manual Testing)</h3>
+        <div class="row">
+            <div class="col-xs-12" id="form-controls-container"></div>
+        </div>
+    </div>
+    <div class="col-md-6 top-margin-sm bottom-margin-none">
+        <h3 class="bottom-margin-none top-margin-none">No Demo (Extra Form Controls/Add-Ons)</h3>
+        <div class="row">
+            <div class="col-xs-12" id="extra-form-controls-container"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2>UI Components</h2>
+    </div>
+    <div class="col-md-6 bottom-margin-sm">
+        <h3 class="bottom-margin-sm top-margin-none">Button</h3> {{ui-button "Active" title="This is an active button"}} {{ui-button "Selected" title="This is an active button" state="selected"}} {{ui-button "Hover" title="This is an active button" state="hover"}} {{ui-button "Disabled" title="This is an active button" state="disabled"}}
+        <!-- or disabled=true -->
+        <br />
+        <br /><span>Buttons with Icons</span>
+        <br /> {{ui-button "Coversheet" title="View Coversheet" icon="fa-th"}} {{ui-button "Timeline" title="View Timeline" icon="fa-bar-chart"}} {{ui-button "Meds Review" title="View Meds Review" icon="fa-clipboard"}} {{ui-button "Documents" title="View Documents" icon="fa-file-text-o"}}
+        <br />
+        <br /><span>Size</span>
+        <br /> {{ui-button "Large Button" title="This is a large button" size="lg"}} {{ui-button "Default Button" title="This is the default size button"}} {{ui-button "Small Button" title="This is a small button" size="sm"}} {{ui-button "Extra Small Button" title="This is a very small button" size="xs"}}
+    </div>
+    <div class="col-md-6 bottom-margin-sm">
+        <h3 class="bottom-margin-sm top-margin-none">Tabs</h3>
+        <div id="tab-region"></div>
+    </div>
+    <div class="col-md-6 bottom-margin-sm">
+        <h3 class="bottom-margin-sm top-margin-none">Collapsible Container</h3>
+        <div id="collapsible-container-region"></div>
+    </div>
+    <div class="col-md-6 bottom-margin-sm">
+        <h3 class="bottom-margin-sm top-margin-none">Alert</h3>
+        <button class="btn btn-sm all-margin-sm btn-default" data-type="basic" id="growlBasic"><i class="fa fa-plus"></i> Basic Growl Alert</button>
+        <button class="btn btn-sm all-margin-sm btn-default" data-icon="fa-check" data-type="basic" id="growlBasicIcon"><i class="fa fa-plus"></i> Basic Icon Growl Alert</button>
+        <button class="btn btn-sm all-margin-sm btn-info" data-type="info" id="growlInfo"><i class="fa fa-plus"></i> Info Growl Alert</button>
+        <button class="btn btn-sm all-margin-sm btn-warning" data-type="warning" id="growlWarning"><i class="fa fa-plus"></i> Warning Growl Alert</button>
+        <button class="btn btn-sm all-margin-sm btn-success" data-type="success" id="growlSuccess"><i class="fa fa-plus"></i> Success Growl Alert</button>
+        <button class="btn btn-sm all-margin-sm btn-danger" data-type="danger" id="growlDanger"><i class="fa fa-plus"></i> Danger Growl Alert</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Extra UI Components/Functionality</h2>
+    </div>
+    <div class="col-md-6" id="extra-ui-components-container"></div>
+</div>

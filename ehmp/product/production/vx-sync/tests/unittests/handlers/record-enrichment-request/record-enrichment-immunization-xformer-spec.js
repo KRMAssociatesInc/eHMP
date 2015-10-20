@@ -115,7 +115,7 @@ describe('record-enrichment-immunizaation-xformer.js', function() {
             };
 
             runs(function() {
-                xformer(log, config, environment, originalVaImmunizationJob, function(error, record) {
+                xformer(log, config, environment, originalVaImmunizationJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.summary).toEqual(record.name);
@@ -151,7 +151,7 @@ describe('record-enrichment-immunizaation-xformer.js', function() {
             };
 
             runs(function() {
-                xformer(log, config, environment, originalDodImmunizationJob, function(error, record) {
+                xformer(log, config, environment, originalDodImmunizationJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.summary).toEqual(record.name);
@@ -186,28 +186,12 @@ describe('record-enrichment-immunizaation-xformer.js', function() {
                 return finished;
             }, 'Call failed to return in time.', 500);
         });
-        it('Job.record was null', function() {
-            var finished = false;
-            var environment = {};
-
-            runs(function() {
-                xformer(log, config, environment, {}, function(error, record) {
-                    expect(error).toBeNull();
-                    expect(record).toBeNull();
-                    finished = true;
-                });
-            });
-
-            waitsFor(function() {
-                return finished;
-            }, 'Call failed to return in time.', 500);
-        });
         it('Job was removed', function() {
             var finished = false;
             var environment = {};
 
             runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:immunization:DOD:0000000003:1000010340');

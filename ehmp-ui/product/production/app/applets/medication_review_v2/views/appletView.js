@@ -26,7 +26,7 @@ define([
             var self = this;
             this._super = ADK.Applets.BaseDisplayApplet.prototype;
             this.appletOptions = {
-                collection: CollectionHandler.fetchAllMeds(true),
+                collection: CollectionHandler.fetchAllMeds(false),
                 AppletView: AppletLayoutView,
                 filterFields: ['name', 'sig', 'standardizedVaStatus', 'drugClassName']
             };
@@ -85,7 +85,6 @@ define([
 
         onClearCustomFilter: function() {
             var originalCollection = new Backbone.Collection();
-            console.log(CollectionHandler.shadowCollection);
             originalCollection.reset(CollectionHandler.shadowCollection.models);
             var originalGrouped = CollectionHandler.groupCollectionModels(originalCollection);
             this.appletOptions.collection.reset(originalGrouped);

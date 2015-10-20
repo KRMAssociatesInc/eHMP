@@ -9,7 +9,7 @@ define([
 
         allEventsChartStyles: {
             chart: {
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#001924',
                 height: 125,
                 width: 682,
                 marginTop: 35,
@@ -29,12 +29,19 @@ define([
                 reversed: true,
                 floating: true,
                 width: 0,
-                y: -12
+                y: -12,
+                color: '#FFFFFF'
             },
             series: [{
-                color: '#3C64FF'
+                color: '#9acf09'
             }, {
-                color: '#000000'
+                color: '#8ADDFF'
+
+                /**{
+                    pattern: '_assets/img//outpatient-diag-pat.svg',
+                    width: 5,
+                    height: 5
+                }**/
             }],
             title: {
                 text: null
@@ -42,7 +49,7 @@ define([
             xAxis: {
                 labels: {
                     style: {
-                        color: '#000000'
+                        color: '#FFFFFF'
                     }
                 },
                 lineWidth: 2,
@@ -70,8 +77,8 @@ define([
                     selection: $.noop
                 },
                 margin: [0, 0, 0, 0],
-                backgroundColor: '#FFFFFF',
-                height: 34,
+                backgroundColor: '#001924',
+                height: 32,
                 width: 400
             },
             legend: {
@@ -87,9 +94,15 @@ define([
             },
 
             series: [{
-                color: '#3C64FF'
+                color: '#9acf09'
             }, {
-                color: '#000000'
+                color: '#8ADDFF'
+
+                /**{
+                    pattern: '_assets/img//outpatient-diag-pat.svg',
+                    width: 5,
+                    height: 5
+                }**/
             }],
             xAxis: {
                 labels: {

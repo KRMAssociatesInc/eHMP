@@ -79,7 +79,7 @@ describe('record-enrichment-image-xformer.js', function() {
             var vaImageJob = JSON.parse(JSON.stringify(originalVaImageJob));
 
             runs(function() {
-                xformer(log, config, environment, vaImageJob, function(error, record) {
+                xformer(log, config, environment, vaImageJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 
@@ -114,28 +114,12 @@ describe('record-enrichment-image-xformer.js', function() {
                 return finished;
             }, 'Call failed to return in time.', 500);
         });
-        it('Job.record was null', function() {
-            var finished = false;
-            var environment = {};
-
-            runs(function() {
-                xformer(log, config, environment, {}, function(error, record) {
-                    expect(error).toBeNull();
-                    expect(record).toBeNull();
-                    finished = true;
-                });
-            });
-
-            waitsFor(function() {
-                return finished;
-            }, 'Call failed to return in time.', 500);
-        });
         it('Job was removed', function() {
             var finished = false;
             var environment = {};
 
             runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:image:ABCD:379:7029773.8699-1');

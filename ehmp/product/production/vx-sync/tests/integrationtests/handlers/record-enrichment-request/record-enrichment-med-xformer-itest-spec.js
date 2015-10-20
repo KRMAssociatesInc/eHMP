@@ -9,15 +9,19 @@ require('../../../../env-setup');
 
 var _ = require('underscore');
 
+var vx_sync_ip = require(global.VX_INTTESTS + 'test-config');
 var val = require(global.VX_UTILS + 'object-utils').getProperty;
 var xformer = require(global.VX_HANDLERS + 'record-enrichment-request/record-enrichment-med-xformer');
 var log = require(global.VX_UTILS + '/dummy-logger');
+var config = require(global.VX_ROOT + 'worker-config');
+config.terminology.host = vx_sync_ip;
 // NOTE: be sure next line is commented out before pushing
 // log = require('bunyan').createLogger({
 //     name: 'record-enrichment-allergy-xformer-spec',
 //     level: 'debug'
 // });
-var terminologyUtils = require(global.VX_SUBSYSTEMS + 'terminology/terminology-utils');
+var TerminologyUtils = require(global.VX_SUBSYSTEMS + 'terminology/terminology-utils');
+var terminologyUtils = new TerminologyUtils(log, log, config);
 
 var originalVaMedRecord = {
     'dosages': [{
@@ -211,16 +215,30 @@ function getVADrugConcept_ReturnNoCode(conceptId, callback) {
 function getVAConceptMappingTo_ReturnNoCode(concept, targetCodeSystem, callback) {
     return callback(null, null);
 }
+function TerminologyUtil(){
+    this.metrics = log;
+}
+TerminologyUtil.prototype.config = config;
+TerminologyUtil.prototype.CODE_SYSTEMS = terminologyUtils.CODE_SYSTEMS;
+TerminologyUtil.prototype.getJlvMappedCode = terminologyUtils.getJlvMappedCode;
+TerminologyUtil.prototype.getJlvMappedCodeList = terminologyUtils.getJlvMappedCodeList;
+TerminologyUtil.prototype.getVADrugConcept = getVADrugConcept_ReturnNoCode;
+TerminologyUtil.prototype.getVAConceptMappingTo = getVAConceptMappingTo_ReturnNoCode;
+TerminologyUtil.prototype.isMappingTypeValid = terminologyUtils.isMappingTypeValid;
+var goodTerminology = new TerminologyUtil();
+
 
 describe('record-enrichment-med-xformer.js', function() {
     describe('transformAndEnrichRecord()', function() {
         it('Happy Path with VA Med', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: goodTerminology
+            };
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalVaMedJob, function(error, record) {
+                xformer(log, config, environment, originalVaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     // Verify that the code was inserted.
@@ -240,18 +258,12 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Med - Force translation through JLV database.', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: terminologyUtils.CODE_SYSTEMS,
-                    getJlvMappedCode: terminologyUtils.getJlvMappedCode,
-                    getJlvMappedCodeList: terminologyUtils.getJlvMappedCodeList,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: goodTerminology
             };
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalVaMedJob, function(error, record) {
+                xformer(log, config, environment, originalVaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     // Verify that the code was inserted.
@@ -270,11 +282,13 @@ describe('record-enrichment-med-xformer.js', function() {
 
         it('Happy Path with Dod Allergy', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: goodTerminology
+            };
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalDodMedJob, function(error, record) {
+                xformer(log, config, environment, originalDodMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     // Verify that the code was inserted.

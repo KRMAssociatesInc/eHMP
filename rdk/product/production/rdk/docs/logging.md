@@ -55,3 +55,7 @@ This example log message is redundant for the sake of demonstration. Avoid unnec
 
 ## RDK Logging Enhancements
 The RDK adds a logId to each log message which corresponds to the logId response header that a client receives.
+
+<br />
+---
+Next: [Testing](testing.md)

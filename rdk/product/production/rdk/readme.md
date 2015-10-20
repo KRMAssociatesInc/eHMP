@@ -5,6 +5,7 @@ Resource Development Kit (RDK)
 ==============================
 The Resource Development Kit (RDK) is created to support the development of the eHMP UI as part of VistA Core / VistA Evolution effort.  Specifically, the RDK provides a mechanism to create resources / web services.
 
+The RDK, along with the Application Development Kit (ADK), make of the eHMP Software Development Kit.  An explanation of the overall intention of the SDK can be found as part of the [eHMP SDK Overview](https://wiki.vistacore.us/x/aJgZ).
 
 This document
 =============
@@ -29,6 +30,7 @@ This git repository contains several items:
 
 Perhaps these should be split into separate repositories.  For now and the foreseeable future, they are all in this one repo.
 
+The git repository is hosted at: https://git.vistacore.us/git/rdk.git
 
 *TODO* link to support for SDK
 
@@ -124,6 +126,12 @@ We have standardized on [Sublime Text 3](http://www.sublimetext.com/3), along wi
 If you are developing the ADK, it super highly recommended to use this standard IDE.
 If you are developing your own resources, it is only a standard recommendation.
 
+The instructions for setting up Sublime with its plug-in's can be found here: [https://wiki.vistacore.us/x/RZsZ].
+
+Source Code
+-----------
+You will need source code, located at [https://git.vistacore.us/git/rdk.git].  Currently, just clone this directory.  Likely in the future you will need to run a devops provided script to initialize your development environment.  *make sure that you modify the next branch, not master*
+
 Setup Node / NPM
 ----------------
 If you installed via devops setup scripts, node and npm are already installed.
@@ -149,6 +157,7 @@ Use git to commit changes and push to central repo.  *make sure that you modify 
 
 Track the build process
 -----------------------
+The RDK build process is located here: [https://build.vistacore.us/view/rdk/view/Next%20Branch/]
 
 Coding Conventions
 ------------------
@@ -342,5 +351,7 @@ function(req,res) {
 
 References
 ==========
+SDK Overview: [https://wiki.vistacore.us/x/aJgZ]
 Markdown Syntax: [https://daringfireball.net/projects/markdown/]
+JavaScript resources: [https://wiki.vistacore.us/x/6QQm]
 JSDocs: [http://usejsdoc.org/]

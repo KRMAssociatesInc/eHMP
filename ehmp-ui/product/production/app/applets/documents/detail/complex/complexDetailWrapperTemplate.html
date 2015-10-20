@@ -3,8 +3,13 @@
 	<div class="topDetailLabel labelStyleColor" tabindex="0">Facility</div>
 	<div class="topDetailInfo" tabindex="0">{{facilityName}}&nbsp;</div>
 	<br>
+	{{#if interdisciplinaryBool}}
+	<div class="topDetailLabel labelStyleColor" tabindex="0">Author</div>
+	<div class="topDetailInfo" tabindex="0"> {{authorDisplayName}}&nbsp;</div>
+	{{else}}
 	<div class="topDetailLabel labelStyleColor" tabindex="0">Type</div>
 	<div class="topDetailInfo" tabindex="0">{{kind}}&nbsp;</div>
+	{{/if}}
 	<br>
 	<div class="topDetailLabel labelStyleColor" tabindex="0">Status</div>
 	<div class="topDetailInfo {{statusClass}}" tabindex="0">{{statusName}}&nbsp;</div>
@@ -54,7 +59,15 @@
 	<br>
 	{{/if}}
 
+	{{#if content}}
+	<pre tabindex="0">{{content}}</pre>
+	{{/if}}
+
+	<div class="document-detail-addenda-region"></div>
+
 	<div id="results-region"></div>
+
+	<div id="children-region"></div>
 
 	{{#if activity}}<h5 tabindex="0">Activity</h5>{{/if}}
 	{{#each activity}}

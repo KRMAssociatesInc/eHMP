@@ -1,0 +1,301 @@
+<h3>Buttons</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> Buttons allow the user to interact with the application. There are five states a button can be in, which will indicate to the user when or how to use the button. The five states are:</p>
+    <ul>
+        <li>Active &ndash; Indicating that a user can select the button to perform an action</li>
+        <li>Selected &ndash; Indicating that a user already selected the button</li>
+        <li>Focus &ndash; Indicating that the user used the keyboard to navigate to the button</li>
+        <li>Hover &ndash; Indicating that the user used the mouse to hover over the button</li>
+        <li>Disabled &ndash; Indicating that the user cannot select the button to perform and action</li>
+    </ul>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> Adding the title attribute to the button with helpful content will allow the screen reader to inform the user details about the button that requires user interaction.</p>
+</div>
+<div class="description">
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> The default and hover button state will appear the same for the eHMP application.</p>
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To disable a button, add the attribute "disabled".</p>
+</div>
+<div id="buttons-states-copy">
+    <button type="button" class="btn btn-default" title="Press enter to select">Active</button>
+    <button type="button" class="btn btn-default active" title="Press enter to select">Selected</button>
+    <button type="button" class="btn btn-default hover" title="Press enter to select">Hover</button>
+    <button type="button" class="btn btn-default disabled" aria-disabled="true" title="Press enter to select">Disabled</button>
+</div>
+<hr />
+<h4>Buttons with icons</h4>
+<div class="description">
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To add icons to button, view the <a href="docs/font-awesome-icons.pdf">Selected Fontawesome Icons</a> <span class="small">[PDF, 881KB]</span> and place the class inside the &lt;i&gt; tag.</p>
+</div>
+<div id="buttons-icons-copy">
+    <button type="button" class="btn btn-default" title="Press enter to view coversheet"><i class="fa fa-th"></i> Coversheet</button>
+    <button type="button" class="btn btn-default" title="Press enter to view timeline"><i class="fa fa-bar-chart"></i> Timeline</button>
+    <button type="button" class="btn btn-default" title="Press enter to view meds review"><i class="fa fa-clipboard"></i> Meds Review</button>
+    <button type="button" class="btn btn-default" title="Press enter to view documents"><i class="fa fa-file-text-o"></i> Documents</button>
+</div>
+<hr />
+<h4>Size</h4>
+<div class="description">
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To change the size of a button, add .btn-lg, .btn-sm, or .btn-xs</p>
+</div>
+<div id="buttons-size-copy">
+    <button type="button" class="btn btn-default btn-lg" title="Press enter to select">Large button</button>
+    <button type="button" class="btn btn-default" title="Press enter to select">Default button</button>
+    <button type="button" class="btn btn-default btn-sm" title="Press enter to select">Small button</button>
+    <button type="button" class="btn btn-default btn-xs" title="Press enter to select">Extra small button</button>
+</div>
+<hr />
+<h4>Icons as Buttons</h4>
+<h5>Icon that has the button padding</h5>
+<button type="button" class="btn icon-btn" title="Press enter to select"><i class="fa fa-eye"><span class="sr-only">summary view button</span></i></button>
+<hr />
+<h5>Icon that has no padding</h5>
+<button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to select"><i class="fa fa-eye"><span class="sr-only">summary view button</span></i></button>
+<hr />
+<h4>Buttons in Postings</h4>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> These buttons are meant specifically for the patient care information box.</p>
+</div>
+<div id="buttons-postings-copy">
+    <div data-toggle="tooltip" class="posting">
+        <button type="button" class="label label-danger" title="Press enter to view crisis notes">C</button>
+        <button type="button" class="label disabled" title="Press enter to view warnings">W</button>
+        <button type="button" class="label label-danger" title="Press enter to view allergies">A</button>
+        <button type="button" class="label label-danger" title="Press enter to view directives">D</button>
+        <button type="button" class="label label-danger" title="Press enter to view patient flags">F</button>
+    </div>
+</div>
+<hr />
+<h4>Buttons in Applet Toolbar</h4>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> These buttons are meant specifically for the applet toolbar for pills and tiles</p>
+</div>
+<div id="buttons-toolbar-copy">
+    <button type="button" class="btn btn-toolbar" title="This is the information button. To view more information press enter to open a new window within the application"><i class="fa fa-info"></i><span class="sr-only">This is the information button. To view more information press enter to open a new window within the application</span></button>
+    <button type="button" class="btn btn-toolbar" title="This is the details view button. To view more information press enter to open a new window within the application"><i class="fa fa-file-text-o"></i><span class="sr-only">This is the details view button. To view more information press enter to open a new window within the application</span></button>
+    <button type="button" class="btn btn-toolbar" title="This is the summary view button. To view more information press enter to open a data table below"><i class="fa fa-eye"></i><span class="sr-only">This is the summary view button. To view more information press enter to open a data table below</span></button>
+</div>
+<hr />
+<h4>Button with dropdown</h4>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> Split buttons have dual functionality. The text side allows users to type in content and the button triggers a drop down menu with options that users can select.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> A text field uses the input field and the button uses a drop down menu, which will both follow the same guidelines as in the form elements section.</p>
+</div>
+<h4>Single button dropdown</h4>
+<div id="single-buttons-copy">
+<div class="btn-group">
+    <button type="button" class="btn btn-primary btm-sm btn-caret dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Accept <span class="caret"></span>
+        <span class="sr-only">Press enter to toggle dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="#" title="Please enter to accept">Accept</a></li>
+        <li><a href="#" title="Please enter to accept and add another">Accept & Add Another</a></li>
+        <li><a href="#" title="Please enter to accept and sign">Accept & Sign</a></li>
+    </ul>
+</div>
+</div>
+<hr />
+<h4>Split buttons with dropdown</h4>
+<div id="split-buttons-copy">
+<div class="btn-group">
+    <button type="button" class="btn btn-primary btn-sm btn-divider" title="Please enter to accept">Accept</button>
+    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Press enter to toggle dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="#" title="Please enter to accept">Accept</a></li>
+        <li><a href="#" title="Please enter to accept and add another">Accept & Add Another</a></li>
+        <li><a href="#" title="Please enter to accept and sign">Accept & Sign</a></li>
+    </ul>
+</div>
+</div>
+<hr />
+<h4>Dropup variation</h4>
+<div id="split-dropup-copy">
+<div class="btn-group dropup">
+    <button type="button" class="btn btn-primary btn-sm btn-divider" title="Please enter to accept">Accept</button>
+    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="caret"></span>
+        <span class="sr-only">Press enter to toggle dropup</span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="#" title="Please enter to accept">Accept</a></li>
+        <li><a href="#" title="Please enter to accept and add another">Accept & Add Another</a></li>
+        <li><a href="#" title="Please enter to accept and sign">Accept & Sign</a></li>
+    </ul>
+</div>
+</div>
+<hr />
+<div id="text-dropdowns-copy">
+<div class="col-xs-2">
+    <div class="control form-group">
+        <div class="input-group">
+            <label for="dosage-unit">Dosage/Unit</label>
+            <input class="form-control" type="text" title="Please enter in dsage/unit" id="dosage-unit" />
+            <div class="input-group-btn">
+                <label for="dosage-unit-select" class="sr-only">Dosage Unit</label>
+                <select class="form-control btn-form-control" name="dosageUnit" title="Please select from the list" id="dosage-unit-select" required>
+                    <option> </option>
+                    <option>cc</option>
+                    <option>mL</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<hr />
+<h4>Buttons Block</h4>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> A button block spans the entire width of its parent.</p>
+</div>
+<div id="buttons-block-copy">
+<button type="button" class="btn btn-default btn-block" title="Press enter to select">Button Block</button>
+</div>
+<hr />
+<div role="tabpanel" class="tabpanel">
+    <ul role="tablist" class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" role="tab" aria-controls="buttons-states" href="#buttons-states">Button States</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="buttons-icons" href="#buttons-icons">Buttons with icons</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="buttons-size" href="#buttons-size">Different Size Buttons</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="icon-button" href="#icon-button">Icon as Button</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="buttons-postings" href="#buttons-postings">Buttons in Postings</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="buttons-applet-toolbar" href="#buttons-toolbar">Buttons in Applet Toolbar</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="single-buttons" href="#single-buttons">Single button with dropdown</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="split-buttons" href="#split-buttons">Split buttons with dropdown</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="split-dropup" href="#split-dropup">Dropup variation</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="text-dropdowns" href="#text-dropdowns">Text field with dropdown</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="buttons-block" href="#buttons-block">Block Level Button</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="buttons-states">
+            <pre>
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; title=&quot;Press enter to select&quot;&gt;Active&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default active&quot; title=&quot;Press enter to select&quot;&gt;Selected&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default hover&quot; title=&quot;Press enter to select&quot;&gt;Hover&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default disabled&quot; aria-disabled=&quot;true&quot; title=&quot;Press enter to select&quot;&gt;Disabled&lt;/button&gt;
+            </pre>
+            <a onclick="copyToClipboard('buttons-states-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="buttons-icons">
+            <pre>
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; title=&quot;Press enter to view coversheet&quot;&gt;&lt;i class=&quot;fa fa-th&quot;&gt;&lt;/i&gt; Coversheet&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; title=&quot;Press enter to view timeline&quot;&gt;&lt;i class=&quot;fa fa-bar-chart&quot;&gt;&lt;/i&gt; Timeline&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; title=&quot;Press enter to view meds review&quot;&gt;&lt;i class=&quot;fa fa-clipboard&quot;&gt;&lt;/i&gt; Meds Review&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; title=&quot;Press enter to view documents&quot;&gt;&lt;i class=&quot;fa fa-file-text-o&quot;&gt;&lt;/i&gt; Documents&lt;/button&gt;
+            </pre>
+            <a onclick="copyToClipboard('buttons-icons-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="buttons-size">
+            <pre>
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot; title=&quot;Press enter to select&quot;&gt;Large button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; title=&quot;Press enter to select&quot;&gt;Default button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm&quot; title=&quot;Press enter to select&quot;&gt;Small button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs&quot; title=&quot;Press enter to select&quot;&gt;Extra small button&lt;/button&gt;
+            </pre>
+            <a onclick="copyToClipboard('buttons-size-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="icon-button">
+            <pre>
+&lt;button type=&quot;button&quot; class=&quot;btn icon-btn&quot; title=&quot;Press enter to select&quot;&gt;&lt;i class=&quot;fa fa-eye&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;summary view button&lt;/span&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn icon-btn icon-btn-mini&quot; title=&quot;Press enter to select&quot;&gt;&lt;i class=&quot;fa fa-eye&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;summary view button&lt;/span&gt;&lt;/i&gt;&lt;/button&gt;
+            </pre>
+            <a onclick="copyToClipboard('icon-button-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="buttons-postings">
+            <pre>
+&lt;div data-toggle=&quot;tooltip&quot; class=&quot;posting&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;label label-danger&quot; title=&quot;Press enter to view crisis notes&quot;&gt;C&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;label disabled&quot; title=&quot;Press enter to view warnings&quot;&gt;W&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;label label-danger&quot; title=&quot;Press enter to view allergies&quot;&gt;A&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;label label-danger&quot; title=&quot;Press enter to view directives&quot;&gt;D&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;label label-danger&quot; title=&quot;Press enter to view patient flags&quot;&gt;F&lt;/button&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('buttons-postings-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="buttons-toolbar">
+            <pre>
+&lt;button type=&quot;button&quot; class=&quot;btn btn-toolbar&quot; title=&quot;This is the information button. To view more information press enter to open a new window within the application&quot;&gt;&lt;i class=&quot;fa fa-info&quot;&gt;&lt;/i&gt;&lt;span class=&quot;sr-only&quot;&gt;This is the information button. To view more information press enter to open a new window within the application&lt;/span&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-toolbar&quot; title=&quot;This is the details view button. To view more information press enter to open a new window within the application&quot;&gt;&lt;i class=&quot;fa fa-file-text-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;sr-only&quot;&gt;This is the details view button. To view more information press enter to open a new window within the application&lt;/span&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-toolbar&quot; title=&quot;This is the summary view button. To view more information press enter to open a data table below&quot;&gt;&lt;i class=&quot;fa fa-eye&quot;&gt;&lt;/i&gt;&lt;span class=&quot;sr-only&quot;&gt;This is the summary view button. To view more information press enter to open a data table below&lt;/span&gt;&lt;/button&gt;
+            </pre>
+            <a onclick="copyToClipboard('buttons-toolbar-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="single-buttons">
+            <pre>
+&lt;div class="btn-group"&gt;
+    &lt;button type="button" class="btn btn-primary btm-sm btn-caret dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+        Accept &lt;span class="caret"&gt;&lt;/span&gt;
+        &lt;span class="sr-only"&gt;Press enter to toggle dropdown&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="dropdown-menu"&gt;
+        &lt;li&gt;&lt;a href="#" title="Please enter to accept"&gt;Accept&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" title="Please enter to accept and add another"&gt;Accept & Add Another&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" title="Please enter to accept and sign"&gt;Accept & Sign&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('single-buttons-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="split-buttons">
+            <pre>
+&lt;div class="btn-group"&gt;
+    &lt;button type="button" class="btn btn-primary btn-sm" title="Please enter to accept"&gt;Accept&lt;/button&gt;
+    &lt;button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+        &lt;span class="caret"&gt;&lt;/span&gt;
+        &lt;span class="sr-only"&gt;Press enter to toggle dropdown&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="dropdown-menu"&gt;
+        &lt;li&gt;&lt;a href="#" title="Please enter to accept"&gt;Accept&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" title="Please enter to accept and add another"&gt;Accept & Add Another&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" title="Please enter to accept and sign"&gt;Accept & Sign&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('split-buttons-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="split-dropup">
+            <pre>
+&lt;div class="btn-group dropup"&gt;
+    &lt;button type="button" class="btn btn-primary btn-sm" title="Please enter to accept"&gt;Accept&lt;/button&gt;
+    &lt;button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+        &lt;span class="caret"&gt;&lt;/span&gt;
+        &lt;span class="sr-only"&gt;Press enter to toggle dropup&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="dropdown-menu"&gt;
+        &lt;li&gt;&lt;a href="#" title="Please enter to accept"&gt;Accept&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" title="Please enter to accept and add another"&gt;Accept & Add Another&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" title="Please enter to accept and sign"&gt;Accept & Sign&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+            </pre>
+             <a onclick="copyToClipboard('split-dropup-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="text-dropdowns">
+            <pre>
+&lt;div class=&quot;control form-group&quot;&gt;
+    &lt;div class=&quot;input-group&quot;&gt;
+        &lt;label for=&quot;dosage-unit&quot;&gt;Dosage/Unit&lt;/label&gt;
+        &lt;input class=&quot;form-control&quot; type=&quot;text&quot; title=&quot;Please enter in dsage/unit&quot; id=&quot;dosage-unit&quot; /&gt;
+        &lt;div class=&quot;input-group-btn&quot;&gt;
+            &lt;label for=&quot;dosage-unit-select&quot; class=&quot;sr-only&quot;&gt;Dosage Unit&lt;/label&gt;
+            &lt;select class=&quot;form-control btn-form-control&quot; name=&quot;dosageUnit&quot; title=&quot;Please select from the list&quot; id=&quot;dosage-unit-select&quot; required&gt;
+                &lt;option&gt; &lt;/option&gt;
+                &lt;option&gt;cc&lt;/option&gt;
+                &lt;option&gt;mL&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('text-dropdowns-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="buttons-block">
+            <pre>
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-block&quot; title=&quot;Press enter to select&quot;&gt;Button Block&lt;/button&gt;
+            </pre>
+            <a onclick="copyToClipboard('buttons-block-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>

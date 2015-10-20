@@ -21,7 +21,11 @@ define([
                     gridCollection: dataCollection,
                     isFromNonPanel: true
                 });
-                onSuccess(view, model, dataCollection, navHeader);
+                var detailData = {
+                    view: view,
+                    title: model.get('typeName') + ' - ' + model.get('specimen')
+                };
+                onSuccess(detailData, model, dataCollection, navHeader);
 
             } else {
                 var resultDocs = model.get('results');
@@ -36,46 +40,68 @@ define([
                             icn: currentPatient.attributes.icn,
                             pid: currentPatient.attributes.pid
                         },
-                        suppressModal: false
+                        suppressModal: true
                     });
 
                     deferredDetailResponse.done(function(detailData) {
-                        onSuccess(detailData.view, model, dataCollection, navHeader);
+                        onSuccess(detailData, model, dataCollection, navHeader);
                     });
                     deferredDetailResponse.fail(function(error) {
-                        onFail(error);
+                        onFail(error, model, dataCollection);
                     });
                 } else {
-                    onFail("Lab has no link to a result document");
+                    onFail("Lab has no link to a result document", model, dataCollection);
                 }
             }
         },
-        showModal: function(detailView, detailModel, dataCollection, navHeader) {
+        showModal: function(detailData, detailModel, dataCollection, navHeader) {
             var modalOptions = {
-                'title': detailModel.get('typeName') + ' - ' + detailModel.get('specimen'),
+                'title': detailData.title,
                 'size': 'large'
             };
+
+            detailModel.set('lab_detail_title', detailData.title);
 
             if (navHeader) {
                 var ModalHeaderView = require('app/applets/lab_results_grid/modal/modalHeaderView');
                 modalOptions.headerView = ModalHeaderView.extend({
                     model: detailModel,
-                    theView: detailView,
+                    theView: detailData.view,
                     dataCollection: dataCollection,
                     navHeader: navHeader
                 });
             }
 
-            ADK.showModal(detailView, modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: detailData.view,
+                options: modalOptions
+            });
+            modal.show();
         },
-        showErrorModal: function(errorMsg) {
+        showErrorModal: function(error, itemModel, dataCollection) {
             var modalOptions = {
                 'title': "An Error Occurred",
                 'size': 'large'
             };
-            ADK.showModal(new ErrorView({
+
+            var errorMsg = _.isString(error) ? error : error && _.isString(error.statusText) ? error.statusText : "An error occurred";
+            var errorView = new ErrorView({
                 model: new Backbone.Model({ error: errorMsg })
-            }), modalOptions);
+            });
+
+            var ModalHeaderView = require('app/applets/lab_results_grid/modal/modalHeaderView');
+            modalOptions.headerView = ModalHeaderView.extend({
+                model: itemModel,
+                theView: errorView,
+                dataCollection: dataCollection,
+                navHeader: true
+            });
+
+            var modal = new ADK.UI.Modal({
+                view: errorView,
+                options: modalOptions
+            });
+            modal.show();
         }
     };
     return appletUiHelpers;

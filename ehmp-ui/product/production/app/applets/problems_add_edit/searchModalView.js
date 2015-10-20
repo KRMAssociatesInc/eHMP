@@ -33,7 +33,11 @@ define([
 
     function showSearchView(){
         modalView = new ModalView();
-        ADK.showModal(modalView, modalOptions);
+        var modal = new ADK.UI.Modal({
+            view: modalView,
+            options: modalOptions
+        });
+        modal.show();
         $('#modal-lg-region').empty();
     }
 
@@ -150,7 +154,7 @@ define([
                 viewModel: problemParseModel,
                 resourceTitle: "problems-getProblems",
                 criteria: {
-                    "siteCode": siteCode
+                    "site.code": siteCode
                 }
             };
 
@@ -173,7 +177,11 @@ define([
         },
         showModal: function(event) {
             event.preventDefault();
-            ADK.showModal(this, problemSearchModalOptions);
+            var modal = new ADK.UI.Modal({
+                view: this,
+                options: problemSearchModalOptions
+            });
+            modal.show();
         },
         onRender: function(){
 
@@ -192,7 +200,7 @@ define([
                 var selectedProblem = new Backbone.Model({
                     problem: item.value, 
                     problemNumber: item.problemNumber,
-                    icd9: item.icd9,
+                    icd: item.icd,
                     lexiconCode: item.lexiconCode,
                     snomed: item.snomed,
                     problemText: item.problemText
@@ -200,7 +208,7 @@ define([
                 showAddModal(selectedProblem);
             });
 
-            this.problem.show(this.problemView);
+            //this.problem.show(this.problemView);
         },
         enableFreeTextButton: function(){
             var searchTerm = $('#bs-problem').val();

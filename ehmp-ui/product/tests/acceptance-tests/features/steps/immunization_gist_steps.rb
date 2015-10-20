@@ -26,7 +26,7 @@ end
 Then(/^the immunization gist view has the following information$/) do |table|
   aa = ImmunizationGist.instance
   expect(aa.wait_until_action_element_visible("ImmunizationGridVisible", DefaultLogin.wait_time)).to be_true    
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification('Immunization Details', row[0])).to be_true, "The value #{row[0]} is not present in the immunization details"
     expect(aa.perform_verification('Immunization Details', row[1])).to be_true, "The value #{row[1]} is not present in the immunization details"
   end
@@ -46,12 +46,12 @@ Then(/^the immunization gist applet title is "(.*?)"$/)  do |title|
   expect(aa.perform_verification("Immunization Gist Applet Title", title)).to be_true
 end
 
-When(/^user hover over "(.*?)" pill$/) do |arg1|
+When(/^user hover over "(.*?)" pill$/) do |_arg1|
   aa = ImmunizationGist.instance
   driver = TestSupport.driver
   expect(aa.wait_until_action_element_visible("ImmunizationGridVisible", DefaultLogin.wait_time)).to be_true
   wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
-#  hover = wait.until { driver.find_element(:xpath, "//span[contains(string(),'PNEUMOCOCCAL')]") }
+  #  hover = wait.until { driver.find_element(:xpath, "//span[contains(string(),'PNEUMOCOCCAL')]") }
   hover = wait.until { driver.find_element(:id, "pill-gist-popover-urn:va:immunization:ABCD:229:44") }
   driver.action.move_to(hover).perform
 end

@@ -35,37 +35,47 @@ function inspect(obj) {
 
 function printResult(error, result) {
     console.log(clc.red(inspect(error)));
-    console.log(clc.cyan(inspect(result)));
+    console.log(clc.red(inspect(result)));
 }
 
-function printJsonResult(error, result) {
-    console.log(clc.red(inspect(error)));
-
-    var output = result;
-    try {
-        output = JSON.parse(result);
-    } catch (err) {
-        // use default
+function printNamedResult(name, error, result) {
+    console.log(clc.red('NAME: %s'), name);
+    if (error) {
+        return console.log('error: ' + clc.red(inspect(error)));
     }
 
-    console.log(clc.cyan(inspect(output)));
+    console.log('result: ' + clc.cyan(inspect(result)));
 }
+
+// function printJsonResult(error, result) {
+//     console.log(clc.red(inspect(error)));
+
+//     var output = result;
+//     try {
+//         output = JSON.parse(result);
+//     } catch (err) {
+//         // use default
+//     }
+
+//     console.log(clc.red(inspect(output)));
+// }
 
 var context = 'OR CPRS GUI CHART';
 
 var configuration = {
-    context: 'VPR UI CONTEXT',
+    context: 'HMP SYNCHRONIZATION CONTEXT',
     host: '10.2.2.101',
     port: 9210,
     accessCode: 'pu1234',
     verifyCode: 'pu1234!!',
     localIP: '10.2.2.1',
-    localAddress: 'localhost'
+    localAddress: 'localhost',
+    noReconnect: false
 };
 
-VistaJS.callRpc(logger, configuration, 'HMP LOCAL GETCORRESPONDINGIDS', '3^PI^USVHA^500', printResult);
+// VistaJS.callRpc(logger, configuration, 'HMP LOCAL GETCORRESPONDINGIDS', '3^PI^USVHA^500', printResult);
 
- //VistaJS.callRpc(logger, configuration, 'ORWDAL32 ALLERGY MATCH', 'AMP', printResult);
+//VistaJS.callRpc(logger, configuration, 'ORWDAL32 ALLERGY MATCH', 'AMP', printResult);
 // VistaJS.callRpc(logger, configuration, 'ORWDAL32 ALLERGY MATCH', 'AMP', printResult);
 
 // VistaJS.callRpc(logger, configuration, 'VPRCRPC RPC', { '"command"': 'logPatientAccess', '"patientId"': '167' }, printResult);
@@ -122,3 +132,25 @@ VistaJS.callRpc(logger, configuration, 'HMP LOCAL GETCORRESPONDINGIDS', '3^PI^US
 
 
 //VistaJS.callRpc(logger, configuration, 'ORWDAL32 ALLERGY MATCH', ['test'], [1, 2], { test: 'value' }, printResult);
+
+
+var client = VistaJS.create(logger, configuration);
+client.connect(printNamedResult.bind(null, 'CONNECT'));
+// client.execute('ORWU USERINFO', printNamedResult.bind(null, 1));
+// client.execute('VPR GET PATIENT DATA JSON', { '"patientId"': '8', '"domain"': 'allergy' }, printNamedResult.bind(null, 'BAD 1'));
+// client.execute('HMP LOCAL GETCORRESPONDINGIDS', '3^PI^USVHA^500', printNamedResult.bind(null, 2));
+// client.execute('ORWU USERINFO', printNamedResult.bind(null, 3));
+// client.execute('HMP LOCAL GETCORRESPONDINGIDS', '3^PI^USVHA^500', printNamedResult.bind(null, 4));
+// client.execute('VPR GET PATIENT DATA JSON', { '"patientId"': '8', '"domain"': 'allergy' }, printNamedResult.bind(null, 'BAD 2'));
+// client.execute('ORWU USERINFO', printNamedResult.bind(null, 5));
+// client.execute('ORWU USERINFO', printNamedResult.bind(null, 6));
+// client.execute('HMP LOCAL GETCORRESPONDINGIDS', '3^PI^USVHA^500', printNamedResult.bind(null, 7));
+// client.execute('VPR GET PATIENT DATA JSON', { '"patientId"': '8', '"domain"': 'allergy' }, printNamedResult.bind(null, 'BAD 3'));
+// client.execute('VPR GET PATIENT DATA JSON', { '"patientId"': '8', '"domain"': 'allergy' }, printNamedResult.bind(null, 'BAD 4'));
+// client.execute('HMP LOCAL GETCORRESPONDINGIDS', '3^PI^USVHA^500', printNamedResult.bind(null, 8));
+// client.execute('HMP LOCAL GETCORRESPONDINGIDS', '3^PI^USVHA^500', printNamedResult.bind(null, 9));
+// client.execute('ORWU USERINFO', printNamedResult.bind(null, 10));
+client.close();
+
+// console.log('highwater mark: %s', client.queue._highWaterMark);
+

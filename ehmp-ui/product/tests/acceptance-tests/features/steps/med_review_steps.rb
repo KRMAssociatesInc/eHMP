@@ -37,7 +37,7 @@ class MedReviewApplet < ADKContainer
     #add_action(CucumberLabel.new("METFORMIN TAB,SA"), FocusInAction.new(metformin_tab_id), AccessHtmlElement.new(:css, "[data-appletid='medication_review_v2'] ##{metformin_tab_id}"))
     add_action(CucumberLabel.new("METFORMIN TAB,SA"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid='medication_review_v2'] ##{metformin_tab_id}"))
     
-    add_action(CucumberLabel.new("METFORMIN TAB,SA detail icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "//*[@id='medication_Item_urn_va_med_9E7A_271_27860']/descendant::a[@id='detailView-button-toolbar']"))
+    add_action(CucumberLabel.new("METFORMIN TAB,SA detail icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "//*[@id='medication_Item_urn_va_med_9E7A_271_27860']/descendant::a[@button-type='detailView-button-toolbar']"))
     add_verify(CucumberLabel.new("Order Hx Date Range 1"), VerifyText.new, AccessHtmlElement.new(:css, "[data-appletid='medication_review_v2'] #order-urn_va_med_9E7A_271_27860"))
     add_verify(CucumberLabel.new("Order Hx Date Range 2"), VerifyText.new, AccessHtmlElement.new(:css, "[data-appletid='medication_review_v2'] #order-urn_va_med_C877_271_27860"))
     add_action(CucumberLabel.new("Meds Review Filter input"), SendKeysAndEnterAction.new, AccessHtmlElement.new(:css, "input[name='q-8afd050c9965']"))
@@ -182,13 +182,13 @@ Then(/^user sees "(.*?)" and "(.*?)" in Meds Review Applet$/) do |outpatient_gro
   expect(aa.perform_verification(inpatient_group, "INPATIENT MEDS")).to be_true, "Inpatient group does not exist"
 end
 
-When(/^user expands "(.*?)" in Meds Review Applet$/) do | med_group_name |
+When(/^user expands "(.*?)" in Meds Review Applet$/) do |med_group_name|
   aa = MedReviewApplet.instance  
   expect(aa.wait_until_action_element_visible(med_group_name, DefaultLogin.wait_time)).to be_true
   expect(aa.perform_action(med_group_name, "")).to be_true, "Could not expand #{med_group_name}"
 end
 
-Then(/^"(.*?)" summary view contains headers in Meds Review Applet$/) do | med_group_name, table |
+Then(/^"(.*?)" summary view contains headers in Meds Review Applet$/) do |med_group_name, table|
   ma = MedReviewApplet.instance  
   aa = MedReviewAppletSummaryDetailsHeader.instance
   expect(ma.wait_until_action_element_visible(med_group_name, 30)).to be_true
@@ -204,7 +204,7 @@ Then(/^"(.*?)" summary view contains medications in Meds Review Applet$/) do |me
   ma = MedReviewApplet.instance 
   aa = MedReviewAppletSummaryDetails.instance
   expect(ma.wait_until_action_element_visible(med_group_name, DefaultLogin.wait_time)).to be_true    
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification(row[0] +" Name", row[0])).to be_true, "The value #{row[0]} is not present in the Medication Name column"
     expect(aa.perform_verification(row[0] + " Sig", row[1])).to be_true, "The value #{row[1]} is not present in the Sig column"
     expect(aa.perform_verification(row[0] + " Last", row[2])).to be_true, "The value #{row[2]} is not present in the Last column"
@@ -212,13 +212,13 @@ Then(/^"(.*?)" summary view contains medications in Meds Review Applet$/) do |me
   end
 end
 
-Then(/^user selects medication "(.*?)" in Meds Review Applet$/) do | med_name |
+Then(/^user selects medication "(.*?)" in Meds Review Applet$/) do |med_name|
   aa = MedReviewApplet.instance
   expect(aa.wait_until_action_element_visible(med_name, DefaultLogin.wait_time)).to be_true 
   expect(aa.perform_action(med_name, "")).to be_true, "Could not expand #{med_name}"
 end
 
-Then(/^user selects from the menu medication review detail icon for "(.*?)" in Meds Review Applet$/) do | med_name |
+Then(/^user selects from the menu medication review detail icon for "(.*?)" in Meds Review Applet$/) do |med_name|
   aa = MedReviewApplet.instance
   expect(aa.wait_until_action_element_visible(med_name + " detail icon", DefaultLogin.wait_time)).to be_true
   expect(aa.perform_action(med_name + " detail icon", "")).to be_true, "for #{med_name}, medication review detail icon can't be clicked"
@@ -226,14 +226,14 @@ end
 
 Then(/^the medication detail header section in Meds Review Applet contains$/) do |table|
   aa = MedReviewAppletDetailsView.instance
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification(row[0], row[1])).to be_true, "The value #{row[1]} is not present in the Medication Detail View"
   end
 end
 
 Then(/^medication detail description section in Meds Review Applet contains$/) do |table|
   aa = MedReviewAppletDetailsView.instance
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification(row[0] + " Label", row[0])).to be_true, "The Label #{row[0]} is not present in the Medication Detail View"
     expect(aa.perform_verification("Med Review Details Values", row[1])).to be_true, "The Value #{row[1]} is not present in the Medication Detail View"
   end
@@ -271,12 +271,12 @@ Then(/^"(.*?)" column is sorted in ascending order in Med Review Applet$/) do |c
     fail "**** No function found! Check your script ****"
   end
 
-  element_column_values.each do | row |
-#    print "selenium data ----"
-#    p row.text
+  element_column_values.each do |row|
+    #    print "selenium data ----"
+    #    p row.text
     column_values_array << row.text.downcase
     # sorted_array_empty_string_removed
-    column_values_array = column_values_array - [""]
+    column_values_array -= [""]
   end
 
   (column_values_array == column_values_array.sort { |x, y| x <=> y }).should == true  
@@ -299,17 +299,17 @@ Then(/^"(.*?)" column is sorted in descending order in Med Review Applet$/) do |
     fail "**** No function found! Check your script ****"
   end
 
-  element_column_values.each do | row |
-#    print "selenium data ----"
-#    p row.text
+  element_column_values.each do |row|
+    #    print "selenium data ----"
+    #    p row.text
     column_values_array << row.text.downcase
-    column_values_array = column_values_array - [""]
+    column_values_array -= [""]
   end
   
   (column_values_array == column_values_array.sort { |x, y| y <=> x }).should == true
 end
 
-Then(/^"(.*?)" column is sorted in "(.*?)" order in Med Review Applet$/) do |column_name, sort_type, table|
+Then(/^"(.*?)" column is sorted in "(.*?)" order in Med Review Applet$/) do |column_name, _sort_type, table|
   driver = TestSupport.driver
   aa = MedReviewAppletSummaryDetailsHeader.instance
   expect(aa.wait_until_action_element_visible("Outpatient " + column_name + " Header", DefaultLogin.wait_time)).to be_true
@@ -317,9 +317,9 @@ Then(/^"(.*?)" column is sorted in "(.*?)" order in Med Review Applet$/) do |col
   element_column_values = driver.find_elements(css: '#medication_review_v2-medication-list-items .col-sm-1.outpatientMedItemTime')
   column_values_array = []
   
-  element_column_values.each do | row |
-#    print "selenium data ----"
-#    p row.text
+  element_column_values.each do |row|
+    #    print "selenium data ----"
+    #    p row.text
     column_values_array << row.text.downcase
   end
   
@@ -330,9 +330,9 @@ end
 Then(/^OrderHx date range shows$/) do |table|
   aa = MedReviewApplet.instance
   i = 1
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification("Order Hx Date Range #{i}", row[0])).to be_true, "The orderHx #{row[0]} is not present in the Medication Detail View"
-    i = i + 1
+    i += 1
   end
 end
 
@@ -354,7 +354,7 @@ Then(/^user selects the "(.*?)" detail icon in Meds Review Applet$/) do |arg1|
   expect(aa.perform_action(label)).to be_true
 end
 
-Then(/^"(.*?)" column is sorted in default sorting order in Med Review Applet$/) do | column_name, table|
+Then(/^"(.*?)" column is sorted in default sorting order in Med Review Applet$/) do |column_name, table|
   driver = TestSupport.driver
   aa = MedReviewAppletSummaryDetailsHeader.instance
   expect(aa.wait_until_action_element_visible("Outpatient " + column_name + " Header", DefaultLogin.wait_time)).to be_true
@@ -362,15 +362,15 @@ Then(/^"(.*?)" column is sorted in default sorting order in Med Review Applet$/)
   element_column_values = driver.find_elements(css: '#medication_review_v2-medication-list-items .col-sm-5.outpatientMedItemName')
   column_values_array = []
   
-  element_column_values.each do | row |
+  element_column_values.each do |row|
     print "selenium data ----"
     p row.text
     column_values_array << row.text.downcase
-    column_values_array = column_values_array - [""]
+    column_values_array -= [""]
   end
   
   cucumber_array = []
-  table.rows.each do | row |
+  table.rows.each do |row|
     cucumber_array << row[0]
   end
  

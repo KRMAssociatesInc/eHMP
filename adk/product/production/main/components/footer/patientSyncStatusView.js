@@ -16,7 +16,6 @@ define([
     return Backbone.Marionette.ItemView.extend({
         template: PatientSyncStatusTemplate,
         ui: {
-            'syncAllButton': '#sync-patient-data',
             'refreshButton': '#refresh-patient-data',
             'syncDetailsButton': '#open-sync-modal',
             'syncIcons': '.patient-status-icon'
@@ -68,7 +67,6 @@ define([
             'change:syncStatus': 'render',
         },
         events: {
-            'click @ui.syncAllButton': 'syncAllData',
             'click @ui.refreshButton': 'refreshStatus',
             'keypress @ui.refreshButton': 'refreshStatus',
             'click @ui.syncDetailsButton': 'showSyncModal'
@@ -84,48 +82,51 @@ define([
                 parentView: self
             });
             var modalOptions = {
-                'title': 'VX Sync',
+                'title': 'eHMP Data Sources',
                 'size': 'large',
                 'footerView': SyncModalFooterView.getFooterView(view, self)
             };
-            ADK.showModal(view, modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: view,
+                options: modalOptions
+            });
+            modal.show();
         },
-        syncAllData: function() {
+        syncAllData: function(refresh) {
             // console.log('syncAllData is called!');
             var self = this;
             var fetchOptions = {
                 resourceTitle: 'synchronization-loadForced',
                 criteria: {
-                    forcedSite: ['DOD', 'HDR', 'VLER'].join(',')
+                    forcedSite: true
                 },
                 cache: false,
                 onSuccess: function(collection, resp) {
-                    self.updatePatientSyncStatus();
+                    self.updatePatientSyncStatus(refresh);
                     return;
                 },
                 onError: function(collection, resp) {
-                    self.updatePatientSyncStatus();
+                    self.updatePatientSyncStatus(refresh);
                     return;
                 }
             };
             ADK.PatientRecordService.fetchCollection(fetchOptions);
         },
-        updatePatientSyncStatus: function() {
+        updatePatientSyncStatus: function(refresh) {
             if (SessionStorage.get.sessionModel('patient') && ADK.ADKApp.currentScreen.patientRequired === true) {
                 var curPatient = SessionStorage.get.sessionModel('patient').get('icn');
                 if (curPatient != this.curPatient) {
                     this.curPatient = curPatient;
                     this.clearCache();
                 }
-                this.fetchDataStatus();
+                this.fetchDataStatus(refresh);
             } else {
                 this.model.unset('syncStatus');
             }
         },
         refreshStatus: function() {
             this.refreshPage();
-            this.fetchDataStatus(true);
-            //this.fetchSyncStatusDetail();
+            this.syncAllData(true);
         },
         refreshPage: function() {
             ResourceService.clearAllCache();
@@ -153,7 +154,7 @@ define([
                 'title': 'DoD',
                 'hoverTip': tooltipMappings.patientSync_DoD
             }, {
-                'title': 'Community',
+                'title': 'Communities',
                 'hoverTip': tooltipMappings.patientSync_community
             }]);
             var fetchOptions = {
@@ -175,7 +176,7 @@ define([
                     'completed': 'error',
                     'hoverTip': tooltipMappings.patientSync_DoD
                 }, {
-                    'title': 'Community',
+                    'title': 'Communities',
                     'completed': 'error',
                     'hoverTip': tooltipMappings.patientSync_community
                 }];
@@ -185,7 +186,7 @@ define([
             fetchOptions.onSuccess = function(collection, resp) {
                 // console.log('fetchOptions::onSucess is called!');
                 var currentSiteCode = SessionStorage.get.sessionModel('user').get('site');
-                var statusObject = resp;
+                var statusObject = resp.data;
                 var stats = [];
                 if (statusObject.VISTA) {
                     if (statusObject.VISTA[currentSiteCode]) {
@@ -247,7 +248,7 @@ define([
                     var vlerTimeStamp = vlerStat.completedStamp ? ADK.utils.getTimeSince(vlerStat.completedStamp.toString()).timeSince :
                         moment().format('MM/DD/YYYY HH:mm');
                     stats.push({
-                        title: 'Community',
+                        title: 'Communities',
                         completed: isVlerComplete,
                         timeStamp: vlerTimeStamp,
                         hoverTip: tooltipMappings.patientSync_community
@@ -301,7 +302,7 @@ define([
                     'completed': 'error',
                     'hoverTip': tooltipMappings.patientSync_DoD
                 }, {
-                    'title': 'Community',
+                    'title': 'Communities',
                     'completed': 'error',
                     'hoverTip': tooltipMappings.patientSync_community
                 }];
@@ -309,7 +310,7 @@ define([
             };
             fetchOptions.onSuccess = function(collection, resp) {
                 // console.log('fetchSyncStatusDetail: Success!');
-                var newSyncStatus = resp;
+                var newSyncStatus = resp.data;
                 if (_.isUndefined(self.syncStatusDetail)) {
                     self.syncStatusDetail = newSyncStatus;
                 } else {

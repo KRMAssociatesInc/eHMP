@@ -16,3 +16,17 @@ LineLength:
 Style/FileName:
   Description: 'Added because of Cucumbers unqiue name style'
   Enabled: false
+
+Metrics/AbcSize:
+  Enabled: true
+  Max: 38 
+
+RSpec/DescribeClass:
+  Enabled: false
+
+ClassLength:
+  Description: 'Limit the length of a class.'
+  Max: 1000
+
+RSpec/InstanceVariable:
+  Enabled: false

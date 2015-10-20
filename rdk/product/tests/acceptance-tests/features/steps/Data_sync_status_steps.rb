@@ -6,7 +6,9 @@ class SiteInitialize
 end
 
 When(/^the client requests sync status for the patient "(.*?)" in RDK format$/) do |pid|
-  p path = QueryRDKSync.new("status", pid).path
+  temp = RDKQuery.new('synchronization-status')
+  temp.add_parameter("pid", pid)
+  path = temp.path
 
   begin
     @response = HTTPartyWithBasicAuth.get_with_authorization(path)
@@ -18,7 +20,9 @@ When(/^the client requests sync status for the patient "(.*?)" in RDK format$/) 
 end
 
 When(/^the client requests sync data status for the patient "(.*?)" in RDK format$/) do |pid|
-  p path = QueryRDKSync.new("datastatus", pid).path
+  temp = RDKQuery.new('synchronization-status')
+  temp.add_parameter("pid", pid)
+  path = temp.path
 
   @response = nil
   begin
@@ -49,7 +53,7 @@ Then(/^the data status attribute should be true$/) do
   fail "Expected result: True \n got: false \n Body: #{rdk_json_object} "  if result_status_value.include? false 
 end
 
-Then(/^the data status attribute for "(.*?)" should be true if all other attributes are true$/) do |arg1|
+Then(/^the data status attribute for "(.*?)" should be true if all other attributes are true$/) do |_arg1|
   rdk_json_object = JSON.parse(@response.body)
   all_sites = rdk_json_object["allSites"]
   data_status_attribute = rdk_json_object.values
@@ -89,13 +93,17 @@ Then(/^the data stored attribute should be true when the expected domain for RDK
 end
 
 When(/^the client requests load parioitized for the patient "(.*?)" base on priority site list in RDK format$/) do |pid, table|
-  p path = QueryRDKSync.new("loadPrioritized", pid).add_parameter("prioritySelect", "userSelect")
+  # p path = QueryRDKSync.new("loadPrioritized", pid).add_parameter("prioritySelect", "userSelect")
+  temp = RDKQuery.new('synchronization-loadPrioritized')
+  temp.add_parameter("pid", pid)
+  temp.add_parameter("prioritySelect", "userSelect")
+  path = temp.path
   define_source = SiteInitialize.new
   @define_source_site = define_source.site_initialize
 
-  table.rows.each do |site_name, k|
+  table.rows.each do |site_name, _k|
     site_name = site_name.upcase
-    p path = path + "&prioritySite=#{@define_source_site[site_name]}"
+    p path += "&prioritySite=#{@define_source_site[site_name]}"
   end
   
   @response = nil
@@ -156,7 +164,7 @@ end
 def check_expected_domain_match(sites_name, rdk_json_object, jds_json_object)
   not_matach_domain = []
   table = sites_name[0]
-  table.each do |site_name, i|
+  table.each do |site_name, _i|
     rdk_expected_domain = rdk_json_object[site_name]["domainExpectedTotals"].size
     jds_expected_domain = jds_json_object[site_name]["domainExpectedTotals"].size
     unless jds_expected_domain == rdk_expected_domain
@@ -184,7 +192,7 @@ def check_site_match(table, json_sync_status)
   site_name_expected = []
   site_array = json_sync_status.keys
   # site_array = @json_object["data"]["items"][0]["syncStatusByVistaSystemId"].keys
-  table.rows.each do |site_name, expected_domain|
+  table.rows.each do |site_name, _expected_domain|
     site_name = site_name.upcase
     site_name_expected << @define_source_site[site_name]
   end

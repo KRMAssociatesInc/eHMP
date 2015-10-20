@@ -1,0 +1,26 @@
+#center-region {
+    #info-button-template {
+        .toolbarPopover {
+            position: relative;
+        }
+    }
+
+    #patient-search-main .col-md-3 {
+        margin: 10px 0 0 0;
+    }
+    #content-region-wrapper {
+        padding: 0;
+    }
+    .contentPadding {
+        padding: 5px 25px 0 25px;
+    }
+    .contentPadding.ready {
+        padding: 0 15px;
+    }
+}
+.provider-centric-view{
+    #content-region-wrapper {
+        background-color: #837790;
+        padding: 0;
+    }
+}

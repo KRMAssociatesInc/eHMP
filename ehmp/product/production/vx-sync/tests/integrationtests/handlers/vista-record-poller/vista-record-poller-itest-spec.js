@@ -134,34 +134,34 @@ var config = {
 };
 
 var environment = {
-    vistaClient: new VistaClient(dummyLogger, config),
+    vistaClient: new VistaClient(dummyLogger, dummyLogger, config),
     jobStatusUpdater: {},
     publisherRouter: {},
-    jds: new JdsClient(dummyLogger, config)
+    metrics: dummyLogger,
+    jds: new JdsClient(dummyLogger, dummyLogger, config)
 };
 environment.jobStatusUpdater = new JobStatusUpdater(dummyLogger, config, environment.jds);
-environment.publisherRouter = new PublisherRouter(dummyLogger, config, environment.jobStatusUpdater);
+environment.publisherRouter = new PublisherRouter(dummyLogger, config, dummyLogger, environment.jobStatusUpdater);
 
-config.beanstalk = {
-    jobRepo: {
+config.beanstalk.jobRepo =  {
         host: host,
         port: port,
         tubename: tubename
-    },
-    options: {
-        priority: 5,
-        delay: 0,
-        ttr: 0
-    },
-    worker: {
-        ignoreDefaultTube: true,
-        timeout: 10
-    },
-    delay: {
-        initMillis: 1000,
-        maxMillis: 5000,
-        incMillis: 1000
-    }
+    // },
+    // options: {
+    //     priority: 5,
+    //     delay: 0,
+    //     ttr: 0
+    // },
+    // worker: {
+    //     ignoreDefaultTube: true,
+    //     timeout: 10
+    // },
+    // delay: {
+    //     initMillis: 1000,
+    //     maxMillis: 5000,
+    //     incMillis: 1000
+    // }
 };
 
 var vistaIdValue = 'CCCC';
@@ -634,13 +634,13 @@ describe('vista-record-poller.js', function() {
                     completed = true;
                     return;
                 }
-
                 // console.log('it(poller processed correctly): Grabbing jobs from tube.');
                 grabJobs(dummyLogger, host, port, tubename, 0, function(error, jobs) {
                     actualResponse = jobs;
                     if (error) {
                         actualError = error;
                         dummyLogger.debug('it(poller processed correctly): error from grabJobs.  error: %s; response: %j;', actualError, actualResponse);
+                        completed=true;
                         return;
                     }
                     dummyLogger.debug('it(poller processed correctly): Success Grabbing jobs from tube.');

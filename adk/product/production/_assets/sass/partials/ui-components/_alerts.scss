@@ -1,0 +1,25 @@
+.alert.alert-user {
+    display: block;
+    float: left;
+    width: 100%;
+    .alert-content {
+        float: left;
+        width: calc(100% - 25px);
+    }
+    button.close {
+    	float: left;
+    	width: 20px;
+    }
+}
+.alert.growl-alert-user {
+	display: block;
+    float: left;
+    .alert-content {
+        float: left;
+        width: calc(100% - 25px);
+    }
+    button.close {
+    	float: left;
+    	width: 20px;
+    }
+}

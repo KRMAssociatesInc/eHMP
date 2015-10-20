@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Workspace Manager</title>
+        <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+        <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+        <link rel="stylesheet" href="../../css/main-styles.css" />
+        <script src="../../js/jquery-1.11.2.min.js"></script>
+    </head>
+    <body class="library">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../../views.html">Views</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../../color-palette.html">Color Palette</a></li>
+                               <li><a href="#">Style Guide</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+                <li><a href="../../views.html">Views</a></li>
+                <li class="active">Workspace Manager</li>
+            </ol>
+            <h1>Workspace Manager</h1>
+            <div class="description">
+                <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This is the 508 compliant static HTML/CSS mock up of the Workspace Manager view.</p>
+                <p><strong><i class="fa fa-file-text-o"></i> Documentation:</strong> Please also view <a href="http://l2kp4v.axshare.com/ciw_add_association_f322.html">Workspace Manager wireframe</a>, <a href="../../docs/workflow/psi7/workflow-workspace-manager.pdf">Workflow Diagram</a> <small>[PDF, 357KB]</small>, and <a href="../../docs/use-case/psi7/use-case-workspace-manager.pdf">Use Scenario Case Documentation</a> <small>[PDF, 145KB]</small> for full details on implementation.</p>
+            </div>
+            <div class="faux-table-container workspace-manager-container">
+                <div class="toolbar">
+                    <div class="col-xs-9">
+                        <h2>Workspace Manager</h2>
+                    </div>
+                    <div class="col-xs-3">
+                        <button type="button" class="btn" title="This button adds a new workspace.">
+                            <span class="sr-only">Press enter to add a new workspace.</span>
+                            <i class="fa fa-plus"></i>
+                        </button>
+                        <button type="button" class="btn" title="This buttons displays a filter text box.">
+                            <span class="sr-only">Press enter to open the filter text box. To close the filter text box, press enter again.</span>
+                            <i class="fa fa-filter"></i>
+                        </button>
+                    </div>
+                </div>
+                <form action="#" method="post" class="form-container">
+                    <div class="faux-table visible-overflow no-margin">
+                        <div class="header">
+                            <div class="table-row">
+                                <div>
+                                    <span class="sr-only">Default Selector.</span>
+                                </div>
+                                <div class="">
+                                    <div>Title</div>
+                                </div>
+                                <div>
+                                    <span class="sr-only">Association Conditions Manager.</span>
+                                </div>
+                                <div>
+                                    <div>Description</div>
+                                </div>
+                                <div>
+                                    <div>Author</div>
+                                </div>
+                                <div>
+                                    <span class="sr-only">Duplicate Workspace.</span>
+                                </div>
+                                <div>
+                                    <span class="sr-only">Rearrange Workspace.</span>
+                                </div>
+                                <div>
+                                    <span class="sr-only">Delete Workspace.</span>
+                                </div>
+                                <div>
+                                    <span class="sr-only">Preview.</span>
+                                </div>
+                                <div>
+                                    <span class="sr-only">Launch or Customize.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <div class="table-row locked">
+                                <div class="pixel-width-32">
+                                    <button type="button" class="btn icon" title="This button sets the default workspace.">
+                                        <span class="sr-only">Press enter to set this workspace as the default.</span>
+                                        <i class="fa fa-star"></i>
+                                    </button>
+                                </div>
+                                <div class="bold-font">
+                                    <span>
+                                        <i class="fa fa-lock"></i>&nbsp;Overview
+                                    </span>
+                                </div>
+                                <div class="pixel-width-32">
+                                    <a href="#" id="no-association-conditions" class="btn icon close-popover" data-toggle="popover" data-placement="bottom">
+                                        <span class="sr-only">Press enter to open the association conditions menu, then press tab to enter the menu.</span>
+                                        <i class="fa fa-share-alt"></i>&nbsp;0
+                                    </a>
+                                </div>
+                                <div>
+                                    <span class="sr-only">A premade workspace does not have a description.</span>
+                                </div>
+                                <div>
+                                    <span>Panorama User</span>
+                                </div>
+                                <div class="pixel-width-32">
+                                    <button type="button" class="btn icon" title="This button duplicates the workspace.">
+                                        <span class="sr-only">Press enter to duplicate the workspace.</span>
+                                        <i class="fa fa-files-o"></i>
+                                    </button>
+                                </div>
+                                <div class="pixel-width-32">
+                                    <button type="button" class="btn icon" title="This button rearranges the workspace.">
+                                        <span class="sr-only">Hold enter and press the up or down arrow key to rearrange the workspace.</span>
+                                        <i class="fa fa-arrows-v"></i>
+                                    </button>
+                                </div>
+                                <div class="pixel-width-32">
+                                    <button type="button" class="btn icon" title="This button opens a dialog to delete the workspace." disabled>
+                                        <span class="sr-only">This is a premade workspace and cannot be deleted.</span>
+                                        <i class="fa fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div>
+                                    <a href="#" title="This button is used to preview the workspace.">Preview
+                                        <span class="sr-only">Press enter to preview the workspace at this time.</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#" title="This button launches the workspace.">Launch
+                                        <span class="sr-only">Press enter to launch the workspace.</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="table-row">
+                                <div>
+                                    <button type="button" class="btn icon" title="This button sets the default workspace.">
+                                        <span class="sr-only">Press enter to set this workspace as the default.</span>
+                                        <i class="fa fa-star-o"></i>
+                                    </button>
+                                </div>
+                                <div>
+                                    <div><!-- required bc the form-group margin setting -->
+                                        <div class="form-group">
+                                            <label for="overviewTitleCopy" class="sr-only">Workspace title. Type to</label>
+                                            <input id="overviewTitleCopy" type="text" name="overviewTitleCopy" class="form-control" value="Overview Copy" maxlength="30" title="This input field is used to change the title of the workspace.">
+                                            <span class="sr-only">Begin typing to change the title of this workspace</span>
+                                        </div>
+                                        <button type="submit" class="sr-only" disabled="disabled">Submit</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#" id="association-conditions" class="btn icon close-popover" data-toggle="popover" data-placement="bottom">
+                                        <span class="sr-only">Press enter to open the association conditions menu, then press tab to enter the menu.</span>
+                                        <i class="fa fa-share-alt"></i>&nbsp;3
+                                    </a>
+                                </div>
+                                <div>
+                                    <div><!-- required bc the form-group margin setting -->
+                                        <div class="form-group">
+                                            <label for="overviewDescriptionCopy" class="sr-only">Workspace description. Type to</label>
+                                            <input id="overviewDescriptionCopy" type="text" name="overviewDescriptionCopy" class="form-control" value="Description of the overview copy workspace" maxlength="140" title="This input field is used to change the description of the workspace.">
+                                            <span class="sr-only">Begin typing to change the description of the workspace.</span>
+                                        </div>
+                                        <button type="submit" class="sr-only" disabled="disabled">Submit</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span>Panorama User</span>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn icon" title="This button duplicates the workspace.">
+                                        <span class="sr-only">Press enter to duplicate the workspace.</span>
+                                        <i class="fa fa-files-o"></i>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn icon" title="This button rearranges the workspace.">
+                                        <span class="sr-only">Hold enter and press the up or down arrow key to rearrange the workspace.</span>
+                                        <i class="fa fa-arrows-v"></i>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn icon" title="This button opens a dialog to delete the workspace.">
+                                        <span class="sr-only">Press enter to open the dialog to delete the workspace.</span>
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </div>
+                                <div>
+                                    <a href="#" class="locked" title="This button to preview the workspace is disabled.">Preview
+                                        <span class="sr-only">Unable to preview the workspace at this time.</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#" title="This button launches the workspace.">Customize
+                                        <span class="sr-only">Press enter to customize the workspace.</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            $(function (){
+                $(document).on('click', '.close-popover', function(event){
+                    event.preventDefault();
+                    var clickId = $(this).attr('id');
+                    $('.close-popover').each(function(){
+                        if($(this).attr('id')!=clickId){
+                            if ($(this).next().hasClass('popover') && $(this).next().hasClass('in'))
+                                $(this).popover('toggle');
+                        }
+                    });
+                });
+            });
+            $(function(){
+                $("#association-conditions").popover({
+                    html : true,
+                    template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><div class="popover-content"><p></p></div></div></div>',
+                    content: '<div class="association-conditions-wrapper"><div><div><div class="form-group"><label for="associationConditions" class="sr-only">Begin typing to search for association conditions. Conditions already added are listed below. Press enter to add the association condition below.</label><input id="associationConditions" type="text" name="associationConditions" class="form-control" placeholder="" title="This is an input field used to search for association conditions"><span class="sr-only">Enter text to search for association conditions</span></div><button type="submit" class="sr-only" disabled="disabled">Submit</button></div></div><div><div><div class="association-condition">Diabetes<button type="button" class="btn" title="This button removes the association condition, diabetes."><i class="fa fa-times"></i></button></div><div class="association-condition">Blood Pressure<button class="btn" type="button" title="This button removes the association condition, blood pressure."><i class="fa fa-times"></i></button></div><div class="association-condition">Hypertension<button type="button" class="btn" title="This button removes the association condition, hypertension."><i class="fa fa-times"></i></button></div></div></div></div>'
+                });
+            });
+            $(function(){
+                $("#no-association-conditions").popover({
+                    html : true,
+                    template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><div class="popover-content"><p></p></div></div></div>',
+                    content: '<div class="association-conditions-wrapper"><div><div><div class="form-group"><label for="noAssociationConditions" class="sr-only">Begin typing to search for association conditions. Conditions already added are listed below. Press enter to add the association condition below.</label><input id="noAssociationConditions" type="text" name="noAssociationConditions" class="form-control" placeholder="" title="This is an input field used to search for association conditions"><span class="sr-only">Enter text to search for association conditions</span></div><button type="submit" class="sr-only" disabled="disabled">Submit</button></div></div><div><div><div class="no-associations"><h3>No Associations Added</h3></div></div></div></div>'
+                });
+            });
+            $(document).keyup(function (event) {
+                if (event.which === 27) {
+                    $('#no-association-conditions').popover('hide');
+                    $('#association-conditions').popover('hide');
+                }
+            });
+        </script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.js"></script>
+    </body>
+</html>

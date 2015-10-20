@@ -99,6 +99,10 @@ define([
             }
 
         },
+        onBeforeDestroy: function() {
+            $(window).off("resize");
+        }
+
     });
 
     return PreviewWorkspaceView;

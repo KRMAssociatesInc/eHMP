@@ -1,0 +1,347 @@
+.provider-centric-header {
+      background-color: #e7ebf0
+}
+.navigation-tab{
+  background-color: #003e4f;
+  color: #fff;
+  cursor: pointer;
+  &:hover{
+    background-color: #e7ebf0;
+    color: #003e4f;
+  };
+  &:focus{
+    background-color: #e7ebf0;
+    color: #003e4f;
+  };
+}
+#navigation-region {
+    min-height: 60px;
+    padding: 0 15px;
+    #navigationPanel {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        .panel-heading {
+            padding: 0px 0px 0px 6px;
+        }
+        #navigation-date {
+            background: $primary;
+            #globalDatePicker-compact {
+                display: inline;
+                position: absolute;
+                margin: 0;
+                padding: 14px 0 0 0;
+                width: 680px;
+                height: 100%;
+                z-index: 1;
+                .globalDatePickerButton {
+                    background: $primary;
+                    color: white;
+                    border-style: solid;
+                    text-align: left;
+                    border-radius: 3px 0px 0px 3px;
+                    box-shadow: none;
+                    padding: 6px 15px;
+                    &.btn-link:hover, &.btn-link:focus {
+                        background: $primary-dark;
+                    }
+                }
+            }
+            .globalDatePicker-popupRegion {
+                position: absolute;
+                height: 100%;
+                z-index: 2;
+                padding: 15px 0 0px 0;
+                background: transparent;
+                border: none;
+                margin: 0;
+                #globalDate-region {
+                    overflow: hidden;
+                    margin-top: -1px;
+                    .global-grid-filter-daterange > .container-fluid {
+                        margin-left: -13px;
+                        margin-right: -13px;
+                        &.scroll-no-padding {
+                            padding: 0 5px 8px 5px;
+                            margin-bottom: -7px;
+                            overflow: hidden;
+                            border-top: 1px solid #bfbfbf;
+                        }
+                        .timeline-summary-scrollable {
+                            width: 100%;
+                            margin-bottom: 0px;
+                        }
+                        #timeline-summary .panel {
+                            margin-bottom: 0px;
+                        }
+                    }
+                    .col-md-12 {
+                        &.center-block {
+                            padding: 0;
+                        }
+                    }
+                }
+                .highcharts-legend-item text {
+                    color: #fff !important;
+                    fill: #fff !important;
+                    font-weight: normal !important;
+                }
+                .panel-body {
+                    height: 305px;
+                    overflow: hidden;
+                    overflow-y: scroll;
+                }
+                .panel-heading {
+                    min-width: inherit;
+                }
+                #custom-range-apply-global {
+                    background: $secondary;
+                    color: $white;
+                    border: none;
+                    text-shadow: none;
+                    margin-left: 6px;
+                    margin-right: 4px;
+                    height: 25px;
+                    &:hover {
+                        background: $secondary-dark;
+                    }
+                }
+                #cancel-global {
+                    box-shadow: none;
+                    color: $white;
+                    background: none;
+                    text-shadow: none;
+                    border: none;
+                    margin-left: 15px;
+                    height: 25px;
+                }
+                .inputHelperText {
+                    padding: 0;
+                    width: 16px;
+                    display: inline-block;
+                    font-size: 13px;
+                    color: #bdc0bf;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+                .input-group-addon {
+                    padding: 0px 6px
+                }
+                .tooltip {
+                    position: fixed;
+                }
+                .tooltip-inner {
+                    background-color: white;
+                    color: black;
+                    font-size: 11px;
+                    font-weight: bold;
+                    margin: 0 5px;
+                }
+                .tooltip-arrow {
+                    border-color: transparent;
+                    border-style: solid;
+                    border-top-color: red;
+                }
+            }
+
+            #navigation-dateButton {
+                margin-left: 5px;
+            }
+            #navigation-dateButton:hover,
+            #navigation-dateButton:active,
+            #navigation-dateButton:focus,
+            #navigation-dateButton.active {
+                color: $white;
+            }
+            .global-grid-filter-daterange {
+                background: $primary;
+                border-radius: 3px;
+                margin-bottom: 7px;
+                .default-range {
+                    background-color: $primary;
+                    padding: 1px 2px;
+                    font-size: 11px;
+                    margin: 6px 4px;
+                    color: white;
+                }
+                .active-range {
+                    background-color: $white;
+                    color: $primary;
+                }
+                .daterange:not(.active-range):hover,
+                .daterange:not(.active-range):focus {
+                    background-color: $primary-light;
+                    color: white;
+                }
+            }
+        }
+        #navigation-navbar {
+            margin-top: 12px;
+            padding-right: 10px;
+            position: relative;
+            z-index: 1;
+            .btn-group {
+                .btn-default {
+                    background-image: none;
+                    border: 1px solid $primary;
+                    border-radius: 0;
+                    box-shadow: none;
+                    color: white;
+                }
+                #workspace-manager-button {
+                    background-color: $primary;
+                    border-radius: 3px;
+                    margin-right: 5px;
+                    padding: 7px 15px;
+                    border: none;
+                    text-shadow: none;
+                }
+                #plus-button {
+                    background-color: $primary;
+                    border-top-right-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                    padding: 6px 15px;
+                    margin-left: -5px;
+                }
+                #plus-button:hover,
+                #plus-button:focus,
+                #workspace-manager-button:hover,
+                #workspace-manager-button:focus {
+                    background-color: $primary-dark;
+                    border-color: $primary-dark;
+                }
+                .dropdown-toggle {
+                    background-color: $primary;
+                    border: none;
+                    border-radius: 3px;
+                    padding: 7px 12px;
+                    text-shadow: none;
+                    width: 280px;
+                }
+                .dropdown-toggle:hover,
+                .dropdown-toggle:focus {
+                    background-color: $primary-dark;
+                }
+               .dropdownContainer {
+                    max-height: 20em;
+                    overflow-y: auto;
+                }
+                .dropdown-menu {
+                    text-align: center;
+                    .active a, li a:hover, li a:focus {
+                        background-color: $secondary-light;
+                        color: black;
+                        text-decoration: none;
+                    }
+                    li {
+                        a {
+                            text-shadow: none;
+                            display: block;
+                            padding: 3px 20px;
+                            clear: both;
+                            font-weight: 400;
+                            line-height: 1.42857143;
+                            color: #333;
+                            white-space: nowrap;
+                            &:focus {
+                                background: none;
+                            }
+                            &:hover {
+                                background-image: none;
+                                background-color: $secondary-light;
+                            }
+                        }
+                    }
+                    .divider {
+                        margin: 1px 0;
+                    }
+                }
+                .fa-plus-square {
+                    font-size: 18px;
+                }
+                #suggestPanel {
+                    .dropdown-menu {
+                        li {
+                            cursor: pointer;
+                            border-bottom: 1px solid #f2f2f2;
+                            padding: 3px;
+                            a {
+                                color: $primary-light;
+                                background: none;
+                                text-decoration: none;
+                                &:hover {
+                                color: $primary;
+                                }
+                            }
+                            &:hover {
+                                color: $primary;
+                            }
+                        }
+                    }
+                    #search-text-group {
+                        .input-group-btn {
+                            width: auto;
+                        }
+                        .btn-primary {
+                            background-image: none;
+                            background-color: $primary;
+                            border: none;
+                            border-radius: 0 3px 3px 0;
+                            box-shadow: none;
+                            color: white;
+                            padding: 7px 12px;
+                        }
+                        .btn-primary:hover {
+                            background-color: $primary-dark;
+                        }
+                    }
+                    #suggestListDiv {
+                        border-left: 1px solid #B7B9BA;
+                        box-shadow: none;
+                        margin-top: 5px;
+                        max-height: 300px;
+                        overflow: auto;
+                        width: 650px;
+                        #suggestSpinner {
+                            display: none;
+                            padding: 0 10px;
+                        }
+                        #suggestList {
+                            list-style: none;
+                            padding: 3px 7px;
+                            text-align: left;
+                            li:hover, li:active, li:focus {
+                                background-color: #f5f5f5;
+                                #SuggestItem0 {
+                                    &:hover {
+                                        background-color: transparent;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .suggest-label {
+                        font-size: 90%;
+                        margin-top: 2px;
+                    }
+                }
+            }
+            #nav-workspaceSelect {
+                vertical-align: top;
+            }
+            #text-search-input {
+                display: inline-block;
+                #search-text-group {
+                    z-index: 1;
+                    margin-left: 5px;
+                    #searchtext {
+                        border-radius: 3px 0 0 3px;
+                        border: 1px solid $primary;
+                        font-size: 13px;
+                        height: 34px;
+                    }
+                }
+            }
+        }
+    }
+}

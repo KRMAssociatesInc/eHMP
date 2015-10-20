@@ -2,164 +2,177 @@ define([
     "backbone",
     "jquery",
     "api/ResourceService",
-    "api/Messaging",
-    "api/Navigation",
     "api/SessionStorage",
     "api/UserService",
+    "api/Messaging",
     "main/components/views/ccowModalView",
-    'main/ScreenBuilder',
-    'api/UserDefinedScreens'
-], function(Backbone, $, ResourceService, Messaging, Navigation, SessionStorage, UserService, ccowModalView, ScreenBuilder, UserDefinedScreens) {
+    "api/UserDefinedScreens"
+], function (Backbone, $, ResourceService, SessionStorage, UserService, Messaging, ccowModalView, UserDefinedScreens) {
     'use strict';
 
-    var ScreensManifest = Messaging.request('ScreensManifest');
-
     var CCOWService = {
-        navigateToPatient: function (contextLocalId) {
-            var self = this;
-            if (contextLocalId) {
-                var currentPatient = SessionStorage.getModel('patient');
-                var currentPatientId = currentPatient.get('icn') ? currentPatient.get('icn') : currentPatient.get('pid');
-                console.log(currentPatientId);
-                if (currentPatientId !== contextLocalId) {
-                    var searchOptions = {
-                        resourceTitle: 'patient-record-patient',
-                        criteria: {
-                            pid: contextLocalId
-                        }
-                    };
+        contextorControl: null,
 
-                    searchOptions.onError = function (collection, resp) {};
-
-                    searchOptions.onSuccess = function (collection, resp) {
-                        var siteOptions = {
-                            resourceTitle: 'authentication-list',
-                            cache: false
-                        };
-                        siteOptions.onError = function(resp) {};
-                        siteOptions.onSuccess = function(collection2, resp) {
-                            var domainModel = new Backbone.Model({
-                                data: collection,
-                                sites: collection2
-                            });
-                            SessionStorage.set.sessionModel('patient-domain', domainModel);
-                            var patient = collection.models[0];
-                            Messaging.getChannel('patient_search').command('confirm_' + patient.get("pid"));
-                            SessionStorage.set.sessionModel('patient', patient);
-                            var patientType = 'Outpatient';
-                            if (patient.get('admissionUid') && patient.get('admissionUid') !== null) {
-                                patientType = 'Inpatient';
-                            }
-                            // this needs to be set for the case of changing a patient in CPRS and reloading it in eHMP
-                            if (patient.get("pid") === null) {
-                                patient.set("pid", currentPatientId);
-                            }
-                            patient.set('patientStatusClass', patientType);
-                            UserDefinedScreens.screensConfigNullCheck();
-                            var promise = UserDefinedScreens.getDefaultScreenIdFromScreenConfig();
-                            promise.done(function(screenName) {
-                                Messaging.trigger("patient:selected", patient);
-                                Navigation.navigate(screenName, {
-                                    trigger: true
-                                });
-                            });
-                        };
-                        ResourceService.fetchCollection(siteOptions);
-                    };
-                    ResourceService.fetchCollection(searchOptions);
+        getTokenFromContextItems: function () {
+            var contextItems = this.contextorControl.CurrentContext;
+            var token = "~~TOK~~";
+            var coll = new Enumerator(contextItems);
+            if (!coll.atEnd()) {
+                for (; !coll.atEnd(); coll.moveNext()) {
+                    var itemName = coll.item().name;
+                    var itemValue = coll.item().value;
+                    if (itemName.indexOf("vistatoken") > 0) token += itemValue;
                 }
             }
+            return token;
         },
-        loadPatientOnCoverSheet: function (patient) {
-            Messaging.trigger("patient:selected", patient);
-            Navigation.navigate(ADK.ADKApp.userSelectedDefaultScreen);
-        },
-        handleContextChange: function () {
-            var ccowModel = SessionStorage.getModel('ccow');
-            var self = this;
-            if (ccowModel.get('blob') && this.getCcowStatus() === 'Connected') {
-                $.ajax({
-                    url: ResourceService.buildUrl('vergencevaultproxy-getNewContext'),
-                    type: "POST",
-                    contentType: 'application/json',
-                    dataType: 'json',
-                    processData: false,
-                    data: JSON.stringify({
-                        blob: ccowModel.get('blob'),
-                        site: UserService.getUserSession().get('site')
-                    }),
-                    success: function (response) {
-                        ccowModel.set('contextItems', response.contextItems);
-                        ccowModel.set('pid', response.pid);
-                        ccowModel.set('blob', response.blob);
-                        SessionStorage.clear('ccow');
-                        SessionStorage.addModel('ccow', ccowModel);
-                        self.navigateToPatient(response.pid);
-                    },
-                    error: function (response) {
-                        self.updateCcowStatus('Disconnected', response.blob);
-                    }
-                });
+        getDfnFromContextItems: function () {
+            var contextItems = this.contextorControl.CurrentContext;
+            var dfn;
+            var coll = new Enumerator(contextItems);
+            if (!coll.atEnd()) {
+                for (; !coll.atEnd(); coll.moveNext()) {
+                    var itemName = coll.item().name;
+                    var itemValue = coll.item().value;
+                    if (itemName.indexOf("dfn") > 0) dfn = itemValue;
+                }
             }
+            return dfn;
         },
-        setContext: function (patient) {
+        loadSessionObject: function (ccowObject) {
             var ccowModel = SessionStorage.getModel('ccow');
-            var self = this;
-            var patientDfn = patient.get('localId');
-            var formattedPatientName = self.formatPatientNameForContext(patient.get('displayName'));
-            var pid = patient.get('icn') ? patient.get('icn') : patient.get('pid');
+            ccowModel.set('pid', ccowObject.pid);
+            ccowModel.set('state', 'listening');
+            ccowModel.set('status', 'Connected');
+            this.persistCcowSession(ccowModel);
+            //this.navigateToPatient(ccowObject.pid);
 
-            if (ccowModel.get('blob') && ccowModel.get('status') === 'Connected') {
-                $.ajax({
-                    url: ResourceService.buildUrl('vergencevaultproxy-addNewPatient'),
-                    type: "POST",
-                    contentType: 'application/json',
-                    dataType: 'json',
-                    processData: false,
-                    data: JSON.stringify({
-                        blob: ccowModel.get('blob'),
-                        name: formattedPatientName,
-                        dfn: patientDfn,
-                        site: UserService.getUserSession().get('site')
-                    }),
-                    success: function (response) {
-                        self.updateCcowStatus('Connected', response.blob);
-
-                        if (response.contextCoupon) {
-                            ccowModalView.activateModal(self, patient, response.msg[0]);
-                        } else {
-                            self.updateContextItems(pid, patientDfn, formattedPatientName);
-                            self.loadPatientOnCoverSheet(patient);
-                        }
-                    },
-                    error: function (response) {
-                        self.updateCcowStatus('Disconnected', response.blob);
-                        self.loadPatientOnCoverSheet(patient);
-                    }
-                });
-            }
         },
-        connectToContext: function (blob, participantUrl, contextUrl, successCallback) {
-            var blobValue = blob || '';
+        persistCcowSession: function (ccowModel) {
+            SessionStorage.clear('ccow');
+            SessionStorage.addModel('ccow', ccowModel);
+        },
+
+        //Ensure ICN for patient
+        ensureICNforPatient: function (dfn, callback) {
             var self = this;
 
             $.ajax({
-                url: ResourceService.buildUrl('vergencevaultproxy-setContext'),
+                url: ResourceService.buildUrl('vergencevaultproxy-geticnforccow'),
                 type: "POST",
                 contentType: 'application/json',
                 dataType: 'json',
                 processData: false,
                 data: JSON.stringify({
-                    participantUrl: participantUrl,
-                    mContextManagerUrl: contextUrl,
-                    blob: blobValue,
+                    dfn: dfn,
                     site: UserService.getUserSession().get('site')
                 }),
                 success: function (response) {
-                    successCallback(response);
+                    self.loadSessionObject(response);
+                    if (callback && typeof callback == 'function') {
+                        callback(response);
+                    }
                 },
                 error: function (response) {
-                    self.updateCcowStatus('Disconnected', response.blob);
+                    self.updateCcowStatus('Disconnected');
+                }
+            });
+        },
+
+        handleContextChange: function (patient, callback) {
+            var self = this;
+            //console.log(self.contextorControl, self.contextorControl.State);
+            if (self.contextorControl && self.contextorControl.State === 2) {
+                try {
+                    var nameItem = new ActiveXObject("Sentillion.ContextItem.1");
+                    var localIdItem = new ActiveXObject("Sentillion.ContextItem.1");
+                    var nationalIdItem = new ActiveXObject("Sentillion.ContextItem.1");
+                    var contextCollection = new ActiveXObject("Sentillion.ContextItemCollection.1");
+                
+                    //patient name
+                    nameItem.name = 'Patient.co.PatientName';
+                    nameItem.value = patient.get('displayName') + '^^^^';
+                    contextCollection.Add(nameItem);
+                    self.getSiteInfo(function (response) {
+                        //console.log('Site Info Response', response);
+                        if (response.error) {
+                            self.updateCcowStatus('Disconnected', '');
+                        } else {
+                            self.updateCcowStatus('Connected');
+                        }
+                        
+                        //Check if vault is down
+                        var tempContextControl = new ActiveXObject("Sentillion.Contextor.1");
+                        try
+                        {
+                            tempContextControl.Run("eHMP#", "", true);
+                            tempContextControl.Suspend();
+                        }
+                        catch (ex) {
+                            self.updateCcowStatus('Disconnected');  
+                            return callback();   
+                        }
+                        //Vault is up...continue
+                        
+                        self.contextorControl.StartContextChange();
+
+                        //dfn
+                        localIdItem.name = 'Patient.id.MRN.DFN_' + response.Site.division;
+                        if (!response.Site.production) localIdItem.name = localIdItem.name + '_TEST';
+                        localIdItem.value = patient.get('pid');
+                        contextCollection.Add(localIdItem);
+                        //icn
+                        if (patient.get('icn') !== null) {
+                            nationalIdItem.name = 'Patient.id.MRN.NationalIDNumber';
+                            if (!response.Site.production) nationalIdItem.name = nationalIdItem.name + '_TEST';
+                            nationalIdItem.value = patient.get('icn');
+                            contextCollection.Add(nationalIdItem);
+                        }
+                        var coll = new Enumerator(contextCollection);
+                        for (; !coll.atEnd(); coll.moveNext()) {
+                            var itemName = coll.item().name;
+                            var itemValue = coll.item().value;
+                            //console.log("in ccowChangePatient " + itemName + ": " + itemValue);
+                        }
+                        try{
+                            var contextResponse = self.contextorControl.EndContextChange(true, contextCollection);
+                            if (contextResponse === 1) {
+                                callback();
+                            } else if (contextResponse === 2) {
+                                //TODO: Go back to previous patient default screen
+                                callback(true);
+                            } else {
+                                self.updateCcowStatus('Suspended');
+                                callback();
+                            }
+                        }
+                        catch (e1) {  
+                            self.updateCcowStatus('Disconnected');  
+                            callback();                      
+                        }
+
+                    });
+                } catch (e) {
+                    self.updateCcowStatus('Disconnected');
+                    callback();
+                }
+            }
+        },
+
+        getSiteInfo: function (callback) {
+            $.ajax({
+                url: ResourceService.buildUrl('vergencevaultproxy-getSiteInfo'),
+                contentType: 'application/json',
+                data: {
+                    site: UserService.getUserSession().get('site')
+                },
+                success: function (response) {
+                    callback(response);
+                },
+                error: function (response) {
+                    callback({
+                        error: 'Site Info cannot be obtained'
+                    });
                 }
             });
         },
@@ -185,119 +198,41 @@ define([
             SessionStorage.clear('ccow');
             SessionStorage.addModel('ccow', ccowModel);
         },
-        cancelContextChange: function (successCallback, errorCallback) {
-            var self = this;
-
-            $.ajax({
-                url: ResourceService.buildUrl('vergencevaultproxy-cancelContextChange'),
-                type: "POST",
-                contentType: 'application/json',
-                dataType: 'json',
-                processData: false,
-                data: JSON.stringify({
-                    blob: SessionStorage.getModel('ccow').get('blob')
-                }),
-                success: function (response) {
-                    self.updateCcowStatus('Connected', response.blob);
-                    successCallback();
-                },
-                error: function (response) {
-                    self.updateCcowStatus('Disconnected', response.blob);
-                    errorCallback();
-                }
-            });
-        },
         suspendContext: function (successCallback) {
-            var self = this;
-            $.ajax({
-                url: ResourceService.buildUrl('vergencevaultproxy-suspend'),
-                type: "POST",
-                contentType: 'application/json',
-                dataType: 'json',
-                processData: false,
-                data: JSON.stringify({
-                    blob: SessionStorage.getModel('ccow').get('blob')
-                }),
-                success: function (response) {
-                    self.updateCcowStatus('Suspended', response.blob);
-                    successCallback();
-                },
-                error: function (response) {
-                    self.updateCcowStatus('Disconnected', response.blob);
-                }
-            });
-        },
-        breakContextLink: function (successCallback, errorCallback) {
-            var self = this;
-            $.ajax({
-                url: ResourceService.buildUrl('vergencevaultproxy-breakContext'),
-                type: "POST",
-                contentType: 'application/json',
-                dataType: 'json',
-                processData: false,
-                data: JSON.stringify({
-                    blob: SessionStorage.getModel('ccow').get('blob')
-                }),
-                success: function (response) {
-                    self.updateCcowStatus('Suspended', response.blob);
-                    successCallback();
-                },
-                error: function (response) {
-                    self.updateCcowStatus('Disconnected', response.blob);
-                    errorCallback();
-                }
-            });
-        },
-        resumeContext: function (successCallback) {
-            var self = this;
-            $.ajax({
-                url: ResourceService.buildUrl('vergencevaultproxy-resume'),
-                type: "POST",
-                contentType: 'application/json',
-                dataType: 'json',
-                processData: false,
-                data: JSON.stringify({
-                    blob: SessionStorage.getModel('ccow').get('blob')
-                }),
-                success: function (response) {
-                    self.updateCcowStatus('Connected', response.blob);
-                    successCallback();
-                },
-                error: function (response) {
-                    self.updateCcowStatus('Disconnected', response.blob);
-                }
-            });
-        },
-        forceContextChange: function (successCallback, errorCallback) {
-            var self = this;
-
-            $.ajax({
-                url: ResourceService.buildUrl('vergencevaultproxy-commitContextChange'),
-                type: "POST",
-                contentType: 'application/json',
-                dataType: 'json',
-                processData: false,
-                data: JSON.stringify({
-                    blob: SessionStorage.getModel('ccow').get('blob')
-                }),
-                success: function (response) {
-                    self.updateCcowStatus('Connected', response.blob);
-                    successCallback();
-                },
-                error: function (response) {
-                    self.updateCcowStatus('Disconnected', response.blob);
-                    errorCallback();
-                }
-            });
-        },
-        updateCcowStatus: function (status, blob) {
-            var ccowModel = SessionStorage.getModel('ccow');
-            ccowModel.set('status', status);
-
-            if (blob) {
-                ccowModel.set('blob', blob);
+            try {
+                this.contextorControl.Suspend();
+                this.updateCcowStatus('Suspended');
+                successCallback && successCallback();
+            } catch (e) {
+                this.updateCcowStatus('Disconnected');
             }
 
+        },
+        breakContextLink: function (successCallback, errorCallback) {
+            this.contextorControl.Suspend();
+            try {
+                this.updateCcowStatus('Suspended');
+                successCallback && successCallback();
+            } catch (e) {
+                this.updateCcowStatus('Disconnected');
+                errorCallback();
+            }
+
+        },
+        resumeContext: function (successCallback) {
+            this.contextorControl.Resume();
+            try {
+                this.updateCcowStatus('Connected');
+                successCallback && successCallback();
+            } catch (e) {
+                this.updateCcowStatus('Disconnected');
+            }
+
+        },
+        updateCcowStatus: function (status) {
+            //console.log('updateCcowStatus');
+            var ccowModel = SessionStorage.getModel('ccow');
+            ccowModel.set('status', status);
             SessionStorage.clear('ccow');
             SessionStorage.addModel('ccow', ccowModel);
             Messaging.trigger('ccow:updatedStatus', status);
@@ -306,37 +241,32 @@ define([
             return SessionStorage.getModel('ccow').get('status');
         },
         quit: function () {
-            var self = this;
-            var blob = SessionStorage.getModel('ccow').get('blob');
-
-            if (blob) {
-                $.ajax({
-                    url: ResourceService.buildUrl('vergencevaultproxy-stopContext'),
-                    type: "POST",
-                    contentType: 'application/json',
-                    dataType: 'json',
-                    processData: false,
-                    async: false,
-                    data: JSON.stringify({
-                        blob: blob
-                    }),
-                    success: function (response) {
-                        SessionStorage.clear('ccow');
-                        SessionStorage.clear('SSO');
-                    },
-                    error: function (response) {}
-                });
+            if (this.contextorControl && this.contextorControl.State === 2) {
+                this.contextorControl.Suspend();
             }
         }
     };
 
     if ("ActiveXObject" in window) {
-        // This function gets called when you refresh the page - we need to destroy the CCOW session but this may cause some issues if they try to refresh the cover sheet
         window.onbeforeunload = function () {
+            var ccowModel = SessionStorage.getModel('ccow');
+            ccowModel.set('state', 'initial');
+            SessionStorage.clear('ccow');
+            SessionStorage.addModel('ccow', ccowModel);
             CCOWService.quit();
         };
 
-        Messaging.on('user:beginSessionEnd', CCOWService.quit);
+        Messaging.on('user:beginSessionEnd', function () {
+            try
+            {    
+                if (CCOWService.contextorControl && CCOWService.contextorControl.State === 2) {
+                    CCOWService.contextorControl.Suspend();
+                }
+            } catch (e) {
+                //Do nothing as vault server may be down
+            }
+            
+        });
     }
 
     return CCOWService;

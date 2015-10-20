@@ -126,20 +126,22 @@ var jdsCodedValue = {
 function getJlvMappedCode_ReturnValidCode(mappingType, sourceCode, callback) {
     return callback(null, jlvMappedCodeValue);
 }
+function TerminologyUtil(){}
+TerminologyUtil.prototype.CODE_SYSTEMS = CODE_SYSTEMS;
+TerminologyUtil.prototype.getJlvMappedCode = getJlvMappedCode_ReturnValidCode;
+
+var terminologyUtil = new TerminologyUtil();
 
 describe('record-enrichment-vital-xformer.js', function() {
     describe('transformAndEnrichRecord()', function() {
         it('Happy Path with VA vital', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode
-                }
+                terminologyUtils: terminologyUtil
             };
 
             runs(function() {
-                xformer(log, config, environment, originalVaVitalJob, function(error, record) {
+                xformer(log, config, environment, originalVaVitalJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 
@@ -201,16 +203,13 @@ describe('record-enrichment-vital-xformer.js', function() {
         it('Happy Path with VA vital - Alternate path checking patientGeneratedFlag of true', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode
-                }
+                terminologyUtils: terminologyUtil
             };
             var vaVitalJob = JSON.parse(JSON.stringify(originalVaVitalJob));
             vaVitalJob.record.locationCode = 'PGD';
 
             runs(function() {
-                xformer(log, config, environment, vaVitalJob, function(error, record) {
+                xformer(log, config, environment, vaVitalJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.patientGeneratedDataFlag).toBe(true);
@@ -226,14 +225,11 @@ describe('record-enrichment-vital-xformer.js', function() {
         it('Happy Path with Dod Vital', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode
-                }
+                terminologyUtils: terminologyUtil
             };
 
             runs(function() {
-                xformer(log, config, environment, originalDodVitalJob, function(error, record) {
+                xformer(log, config, environment, originalDodVitalJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     // Verify root level fields
@@ -275,28 +271,14 @@ describe('record-enrichment-vital-xformer.js', function() {
                 return finished;
             }, 'Call failed to return in time.', 500);
         });
-        it('Job.record was null', function() {
+        it('Job was removed', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: terminologyUtil
+            };
 
             runs(function() {
-                xformer(log, config, environment, {}, function(error, record) {
-                    expect(error).toBeNull();
-                    expect(record).toBeNull();
-                    finished = true;
-                });
-            });
-
-            waitsFor(function() {
-                return finished;
-            }, 'Call failed to return in time.', 500);
-        });
-                it('Job was removed', function() {
-            var finished = false;
-            var environment = {};
-
-            runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:vital:DOD:0000000003:1000010340');

@@ -8,7 +8,10 @@ define(function() {
     };
 
     var screens = [];
-
+    screens.push({
+        routeName: 'ui-components-demo',
+        fileName: 'UIComponentsDemo'
+    });
     screens.push({
         routeName: 'logon-screen',
         fileName: 'LogonScreen'
@@ -112,6 +115,14 @@ define(function() {
     screens.push({
         routeName: 'pre-procedure-cbw',
         fileName: 'PreProcedureCBW'
+    });
+    screens.push({
+        routeName: 'access-control-coordinator',
+        fileName: 'AccessControlCoordinator'
+    });
+    screens.push({
+        routeName: 'provider-centric-view',
+        fileName: 'ProviderCentricView'
     });
 
     screensManifest.screens = screens;

@@ -2,7 +2,7 @@
 
 Feature: F352 - Tile Sorting
 
-@F352_save_tile_sort @US4384
+@F352_save_tile_sort @US4384 @debug
 Scenario: Save information for the index of items in an applet 
 When the client requests to delete an applet in workspace "TEST1" with instanceId "1234" and content "{"instanceId":1234,"keyField":"Key3","orderAfter":"v1","fieldValue":"v2"}"
 And the response is "{}"

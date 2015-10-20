@@ -1,0 +1,708 @@
+<h3>Side By Side Selector</h3>
+<div class="description">
+    <p id="side-by-side-selector-description"><strong><i class="fa fa-leanpub"></i> Description:</strong> The side by side selector enables the user to filter, fetch and browse data from a list and make selections from it by passing those to an adjacent list.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> Tab to the component to activate it and use keyboard to filter and browse through the selections. Press enter to select items and then tab to selections.</p>
+</div>
+<form action="javascript:;" method="get" class="form-container">
+    <div id="side-by-side-selectorCopy">
+        <div class="row side-by-side-container">
+            <div class="col-md-6">
+                <div class="side-by-side-heading">Allergens</div>
+                <div class="form-group side-by-side-options">
+                    <label for="aoSelect1" class="sr-only">Please select an allergen</label>
+                    <div class="side-by-side-selector-wrapper" role="application">
+                        <select class="form-control side-by-side-selector" data-selections-name="theNameOfYourInput" data-selections="#sideBySideSelected" id="aoSelect1" title="Press enter to browse through select options"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="side-by-side-heading">Selected allergens</div>
+                <ul class="side-by-side-selected media-list" id="sideBySideSelected"></ul>
+            </div>
+        </div>
+    </div>
+</form>
+<hr />
+<div role="tabpanel" class="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#side-by-side-selector-markup" aria-controls="side-by-side-selector-markup" role="tab" data-toggle="tab">HTML Code</a></li>
+        <li><a href="#side-by-side-selector-js" aria-controls="side-by-side-selector-js" role="tab" data-toggle="tab">Javascript Code</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="side-by-side-selector-markup">
+            <pre>
+&lt;div class=&quot;row side-by-side-container&quot;&gt;
+    &lt;div class=&quot;col-md-6&quot;&gt;
+        &lt;div class=&quot;side-by-side-heading&quot;&gt;Available allergens&lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;aoSelect1s&quot; class=&quot;sr-only&quot;&gt;Please select an allergen&lt;/label&gt;
+            &lt;div class=&quot;side-by-side-selector-wrapper&quot; role=&quot;application&quot;&gt;
+                &lt;select class=&quot;form-control side-by-side-selector&quot; data-selections-name=&quot;theNameOfYourInput&quot; data-selections=&quot;#sideBySideSelected&quot; id=&quot;aoSelect1&quot; title=&quot;Press enter to browse through select options&quot;&gt;&lt;/select&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-md-6&quot;&gt;
+        &lt;div class=&quot;side-by-side-heading&quot;&gt;Selected allergens&lt;/div&gt;
+        &lt;ul class=&quot;side-by-side-selected media-list&quot; id=&quot;sideBySideSelected&quot;&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('side-by-side-selectorCopy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="side-by-side-selector-js">
+            <pre>
+&lt;script src=&quot;js/select2.full.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+// the actual select code
+$(document).ready(function() {
+    // we assign the width to 100% so that the parent element decides the width of the select such as in bootstrap
+    // otherwise the width of 100% is not assigned if the select is created when it&#39;s not visible
+    $(&quot;.side-by-side-selector&quot;).each(function() {
+        var
+            messages = {
+                resultsFor:&#39;Results for&#39;,
+                fetchMore:&#39;Fetch more &quot;[v]&quot; results...&#39;,
+                removal:&#39;&lt;span class=&quot;sr-only&quot;&gt;Press enter to remove &lt;/span&gt;[v]&lt;span class=&quot;sr-only&quot;&gt; from the selected items&lt;/span&gt;&#39;,
+                filterPlaceholder:&#39;Filter available options&#39;,
+                filterTitle:&#39;Type a query to filter available options and use your arrow keys to browse through them. Press enter to make a selection. To navigate to your selections hit tab again.&#39;
+            },
+            t = $(this),
+            tId = t.attr(&#39;id&#39;),
+            targetSelected = t.data(&#39;selections&#39;),
+            selectionsName = t.data(&#39;selections-name&#39;),
+            targetDiv = t.parent(),
+            baseDataOptions = [{ // you need these two for the fetching and unselected option
+                id: &#39;&#39;,
+                text: &#39;&#39;
+            }, {
+                id: &#39;FETCH&#39;,
+                text: &#39;search more&#39;
+            }],
+            firstData = [ // set your default options here (or fetch them via ajax)
+                {
+                    text: &#39;Ten most common allergies&#39;,
+                    children: [{
+                        _resultId:&#39;select2-&#39;+tId+&#39;-result-1&#39;,
+                        id: &#39;1&#39;,
+                        text: &#39;Seafood&#39;
+                    }, {
+                        _resultId:&#39;select2-&#39;+tId+&#39;-result-2&#39;,
+                        id: &#39;2&#39;,
+                        text: &#39;Nuts&#39;
+                    },{
+                        _resultId:&#39;select2-&#39;+tId+&#39;-result-3&#39;,
+                        id: &#39;3&#39;,
+                        text: &#39;Ivy&#39;
+                    }, {
+                        _resultId:&#39;select2-&#39;+tId+&#39;-result-4&#39;,
+                        id: &#39;4&#39;,
+                        text: &#39;Pollen&#39;
+                    }, {
+                        _resultId:&#39;select2-&#39;+tId+&#39;-result-5&#39;,
+                        id: &#39;5&#39;,
+                        text: &#39;Acetaminophen&#39;
+                    }, {
+                        _resultId:&#39;select2-&#39;+tId+&#39;-result-6&#39;,
+                        id: &#39;6&#39;,
+                        text: &#39;Dust&#39;
+                    },{
+                        _resultId:&#39;select2-&#39;+tId+&#39;-result-7&#39;,
+                        id: &#39;7&#39;,
+                        text: &#39;Dogs&#39;
+                    }, {
+                        _resultId:&#39;select2-&#39;+tId+&#39;-result-8&#39;,
+                        id: &#39;8&#39;,
+                        text: &#39;Cats&#39;
+                    }, {
+                        _resultId:&#39;select2-&#39;+tId+&#39;-result-9&#39;,
+                        id: &#39;9&#39;,
+                        text: &#39;Bees&#39;
+                    }, {
+                        _resultId:&#39;select2-&#39;+tId+&#39;-result-10&#39;,
+                        id: &#39;10&#39;,
+                        text: &#39;Cheese&#39;
+                    }]
+                }
+            ],
+            optionEnabler = function(optionId,itObj,de){
+                for (var i=0;i&lt;itObj.length;i++){
+                    var obj = itObj[i];
+                    if(typeof(obj.id)!=&#39;undefined&#39;){
+                        if(obj.id==optionId){
+                            if (de==&#39;disabled&#39;){
+                                obj.disabled = true;
+                            } else {
+                                delete obj.disabled;
+                            }
+                            delete obj.selected;
+                            return;
+                        }
+                    } else {
+                        optionEnabler(optionId,obj.children,de);
+                    }
+                }
+            },
+            customMatcher = function(params, data) {
+                // use the option with value FETCH to create the fetch more option
+                if ((data.id == &quot;FETCH&quot;)) {
+                    if ((typeof(params.term) != &#39;undefined&#39;) &amp;&amp; (params.term !== &#39;&#39;) &amp;&amp; (!isOldQuery(params.term))) {
+                        var modifiedData = $.extend(data, {
+                            text: messages.fetchMore.replace(&#39;[v]&#39;,params.term),
+                        }, true);
+                        return modifiedData;
+                    } else {
+                        return null;
+                    }
+                }
+                // if there is no query, then return the element
+                if ($.trim(params.term) === &#39;&#39;) return data;
+                // Do a recursive check for options with children
+                if (data.children &amp;&amp; data.children.length &gt; 0) {
+                    // Clone the data object if there are children
+                    // This is required as we modify the object to remove any non-matches
+                    var match = $.extend(true, {}, data);
+                    // Check each child of the option
+                    for (var c = data.children.length - 1; c &gt;= 0; c--) {
+                        var child = data.children[c];
+                        var matches = customMatcher(params, child);
+                        // If there wasn&#39;t a match, remove the object in the array
+                        if (matches === null) {
+                            match.children.splice(c, 1);
+                        }
+                    }
+                    // If any children matched, return the new object
+                    if (match.children.length &gt; 0) {
+                        return match;
+                    }
+                    // If there were no matching children, check just the plain object
+                    return customMatcher(params, match);
+                }
+                // if there is a query, then match the results.
+                if (data.text.toLowerCase().indexOf(params.term.toLowerCase()) &gt; -1){
+                    if ((typeof(data.disabled)==&#39;undefined&#39;) &amp;&amp; (!data.disbled)) {
+                        return data;
+                    }
+                }
+                return null;
+            },
+            focusNextAvailable = function(option,list){
+                var allItems = option.siblings().not(&#39;[aria-disabled]&#39;).add(option);
+                var myIndex = allItems.index(option);
+                var higher = allItems.slice(myIndex+1);
+                if(higher.length&gt;0){
+                    // try forward
+                    $(higher[0]).addClass(&#39;select2-results__option--highlighted&#39;);
+                } else {
+                    // try backwards
+                    var lower = option.siblings(&#39;:lt(&#39;+myIndex+&#39;)&#39;).not(&#39;[aria-disabled]&#39;);
+                    $(lower[lower.length-1]).addClass(&#39;select2-results__option--highlighted&#39;);
+                }
+            },
+            formatItems = function(item) {
+                // add a span arounf the text result so that we can style it properly
+                if (typeof(item.id)==&#39;undefined&#39;) { return item.text; }
+                var $item = $(&#39;&lt;span class=&quot;sel-&#39; + item.id + &#39;&quot; data-value=&quot;&#39;+item.id+&#39;&quot;&gt;&#39; + item.text + &#39;&lt;/span&gt;&#39;);
+                return $item;
+            },
+            isOldQuery = function(query){
+                for (var i=0;i&lt;a.savedQueries.length;i++){
+                    if (query==a.savedQueries[i]) return true;
+                }
+                return false;
+            },
+            setNewData = function(query){
+                // the new hardcoded data, you might want to fetch it via ajax
+                a.savedQueries.push(query);
+                var newData = [{
+                    text: messages.resultsFor + &#39; &quot;&#39;+query+&#39;&quot;&#39;,
+                    children: [{
+                        id: query+&quot;_1&quot;,
+                        text: query+&quot; Lorem&quot;
+                    }, {
+                        id: query+&quot;_2&quot;,
+                        text: query+&quot; Ipsum&quot;
+                    }, {
+                        id: query+&quot;_3&quot;,
+                        text: query+&quot; Dolor&quot;
+                    }, {
+                        id: query+&quot;_4&quot;,
+                        text: query+&quot; Sit&quot;
+                    }, {
+                        id: query+&quot;_5&quot;,
+                        text: query+&quot; Amet&quot;
+                    }, {
+                        id: query+&quot;_6&quot;,
+                        text: query+&quot; Finibus&quot;
+                    }, {
+                        id: query+&quot;_7&quot;,
+                        text: query+&quot; Bonorum&quot;
+                    }, {
+                        id: query+&quot;_8&quot;,
+                        text: query+&quot; Et&quot;
+                    }, {
+                        id: query+&quot;_9&quot;,
+                        text: query+&quot; Malorum&quot;
+                    }, {
+                        id: query+&quot;_10&quot;,
+                        text: query+&quot; Everything&quot;
+                    }]
+                }];
+                // add new data to the arguments
+
+                // remove 2 initial (which we use to fetch) from already parsed data (so that we insert them back into position 0)
+                a.data.splice(0,2);
+                // merge data into new Array
+                a.data = [].concat(baseDataOptions,newData,a.data);
+                // reinitialize select
+                t.empty().select2(a).select2(&#39;open&#39;);
+            },
+            customClicker = function(span){
+                // write the function you&#39;d like to use here.
+                var
+                    val = span.data(&#39;value&#39;),
+                    dropdown = span.closest(&#39;.select2-dropdown&#39;),
+                    searchField = dropdown.find(&#39;.select2-search__field&#39;),
+                    searchValue = searchField.val(),
+                    optionsList = dropdown.find(&#39;.select2-results &gt; ul&#39;),
+                    optionSelected = span.parent(),
+                    label = span.text();
+                if (val == &quot;FETCH&quot;) {
+                    setNewData(searchValue);
+                } else {
+                    var
+                        li = $(document.createElement(&#39;li&#39;)). //create the selected items
+                            html(&#39;&lt;span class=&quot;sr-only&quot;&gt;&#39;+label+&#39;&lt;/span&gt;&#39;).
+                            append(&#39;&lt;input type=&quot;hidden&quot; name=&quot;&#39;+selectionsName+&#39;&quot; value=&quot;&#39;+val+&#39;&quot; /&gt;&#39;).
+                            append(
+                                $(document.createElement(&#39;button&#39;)).attr({
+                                    type:&#39;button&#39;
+                                }).
+                                attr(&#39;data-selected-value&#39;,val).
+                                html(messages.removal.replace(&#39;[v]&#39;,label)).
+                                click(function(){
+                                    // here you define the click function for selection removal.
+                                    var
+                                        th = $(this),
+                                        list = th.parent().parent(),
+                                        sv = th.data(&#39;selected-value&#39;),
+                                        mainList = th.parent().parent().parent().parent(),
+                                        mainSelect = mainList.find(&#39;select&#39;)
+                                    ;
+                                    // avoid the focus being set to select2 if list wont be empty after removal
+                                    if(th.parent().siblings().length&gt;0) a.focusFlag = false;
+
+                                    // enable data item
+                                    optionEnabler(sv,a.data,&#39;enabled&#39;);
+
+                                    // remove button
+                                    th.parent().remove();
+
+                                    //rebuild select
+                                    mainSelect.empty().select2(a).select2(&#39;open&#39;);
+
+                                    // focus an available selection if there is any
+                                    var fb = list.find(&#39;button&#39;);
+                                    if (fb.length&gt;0) fb[0].focus();
+
+                                })
+                            )
+                    ;
+                    $(targetSelected).append(li);
+
+                    // move list position elsewhere
+                    focusNextAvailable(optionSelected,optionsList);
+                    // disable list item
+                    optionSelected.attr({
+                        &#39;aria-disabled&#39;:&#39;true&#39;,
+                        &#39;aria-selected&#39;:&#39;false&#39;,
+                        &#39;class&#39;:&#39;select2-results__option&#39;
+                    }).remove();
+                    // disable list item in main object for if we search after selection
+                    optionEnabler(val,a.data,&#39;disabled&#39;);
+
+                }
+            },
+            a = { // the base arguments for select2
+                width: &#39;100%&#39;,
+                dropdownParent: targetDiv,
+                closeOnSelect: false,
+                theme: &quot;side-by-side&quot;,
+                placeholder: &#39;Select a Symptom&#39;,
+                focusFlag:false,
+                data:[].concat(baseDataOptions,firstData),
+                matcher: customMatcher,
+                templateResult: formatItems,
+                savedQueries:[]
+            }
+        ;
+
+        // initialize the select2
+        t.select2(a).on(&#39;select2:open&#39;, function() {
+            var
+                t = $(this),
+                p = t.parent(),
+                field = p.find(&#39;.select2-search__field&#39;)
+            ;
+            field.attr(&#39;placeholder&#39;, messages.filterPlaceholder).attr(&#39;title&#39;,messages.filterTitle).removeAttr(&#39;tabindex&#39;);
+            if (!a.focusFlag) field.prop(&#39;focus&#39;, false);
+            a.focusFlag = true;
+            // remove document clicking closing action
+            $(document.body).off(&#39;mousedown.select2.select2-&#39; + t.attr(&#39;id&#39;));
+            return false;
+        }).on(&#39;select2:closing&#39;, function() {
+            // prevents the closure of the listing
+            return false;
+        }).on(&#39;select2:close&#39;,function(){
+            $(this).select2(&#39;open&#39;);
+        }).on(&#39;select2:select&#39;,function(){
+            var selectValue = $(this).val();
+            var zeSpan = $(this).parent().find(&#39;span[data-value=&quot;&#39;+selectValue+&#39;&quot;]&#39;);
+            //var zeSpan = $(this).parent().find(&#39;.select2-results__option--highlighted span&#39;);
+            customClicker(zeSpan);
+            $(this).select2(&#39;val&#39;,&#39;&#39;);
+        }).select2(&#39;open&#39;); // opens the options automatically.
+    });
+});
+&lt;/script&gt;
+            </pre>
+            <a onclick="copyToClipboard('side-by-side-selectorCopyJS')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>
+<div id="side-by-side-selectorCopyJS">
+    <script src="js/select2.full.js"></script>
+    <script>
+    // the actual select code
+    $(document).ready(function() {
+        // we assign the width to 100% so that the parent element decides the width of the select such as in bootstrap
+        // otherwise the width of 100% is not assigned if the select is created when it's not visible
+        $(".side-by-side-selector").each(function() {
+            var
+                messages = {
+                    resultsFor: 'Results for',
+                    fetchMore: 'Fetch more "[v]" results...',
+                    removal: '<span class="sr-only">Press enter to remove </span>[v]<span class="sr-only"> from the selected items</span>',
+                    filterPlaceholder: 'Filter allergens',
+                    filterTitle: 'Type a query to filter available options and use your arrow keys to browse through them. Press enter to make a selection. To navigate to your selections hit tab again.',
+                    selectionHtml : '<div class="col-xs-5">{label}<input type="hidden" name="{inputName}" value="{val}" /></div><div class="col-xs-3 datePicker"><div class="control form-group no-margin"><label for="date_{inputName}" class="sr-only">Calendar</label><div class="input-group date input-group-sm"><span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="date_{inputName}" name="date_{inputName}" /></div></div></div><div class="col-xs-3 timePicker"><div class="control form-group no-margin"><label for="time_{inputName}" class="sr-only">Time Picker</label><div class="input-group bootstrap-timepicker input-group-sm"><span class="input-group-addon"><i class="fa fa-clock-o"></i></span><input type="text" class="form-control timepicker" title="Please enter in a time in the following format, HH:MM." placeholder="HH:MM" id="time_{inputName}" name="time_{inputName}" /></div></div></div><div class="col-xs-1"><button type="button" class="remove-selection-button" data-selected-value="{val}"><i class="fa fa-times-circle"></i><span class="sr-only">Press enter to remove {label} from the selected items</span></button></div><div class="clearfix"></div>'
+                },
+                t = $(this),
+                tId = t.attr('id'),
+                targetSelected = t.data('selections'),
+                selectionsName = t.data('selections-name'),
+                targetDiv = t.parent(),
+                baseDataOptions = [{ // you need these two for the fetching and unselected option
+                    id: '',
+                    text: ''
+                }, {
+                    id: 'FETCH',
+                    text: 'search more'
+                }],
+                firstData = [ // set your default options here (or fetch them via ajax)
+                    {
+                        text: 'Ten most common allergies',
+                        children: [{
+                            _resultId: 'select2-' + tId + '-result-1',
+                            id: '1',
+                            text: 'Seafood'
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-2',
+                            id: '2',
+                            text: 'Nuts'
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-3',
+                            id: '3',
+                            text: 'Ivy'
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-4',
+                            id: '4',
+                            text: 'Pollen'
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-5',
+                            id: '5',
+                            text: 'Acetaminophen'
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-6',
+                            id: '6',
+                            text: 'Dust'
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-7',
+                            id: '7',
+                            text: 'Dogs'
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-8',
+                            id: '8',
+                            text: 'Cats'
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-9',
+                            id: '9',
+                            text: 'Bees'
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-10',
+                            id: '10',
+                            text: 'Cheese'
+                        }]
+                    }
+                ],
+                selectionAddCallback = function(li){
+                    li.find('.remove-selection-button').click(function(){
+                            // here you define the click function for selection removal.
+                            var
+                                th = $(this),
+                                list = th.closest('.side-by-side-selected'),
+                                sv = th.data('selected-value'),
+                                mainList = th.closest('.side-by-side-container'),
+                                mainSelect = mainList.find('select.side-by-side-selector');
+                            // avoid the focus being set to select2 if list wont be empty after removal
+                            if (list.children().length > 0) a.focusFlag = false;
+
+                            // enable data item
+                            optionEnabler(sv, a.data, 'enabled');
+
+                            // remove button
+                            th.closest('li.side-by-side-selection').remove();
+
+                            //rebuild select
+                            mainSelect.empty().select2(a).select2('open');
+
+                            // focus an available selection if there is any
+                            var fb = list.find('button');
+                            if (fb.length > 0) fb[0].focus();
+                        });
+                        // ze timepicker
+                        li.find('.timepicker').timepicker({
+                            minuteStep: 1,
+                            appendWidgetTo: '.bootstrap-timepicker',
+                            showSeconds: false,
+                            showMeridian: false,
+                            defaultTime: "current"
+                        });
+                        // ze datePicker
+                        li.find('.input-group.date').datepicker({
+                            todayBtn: "linked",
+                            orientation: "top left",
+                            autoclose: true,
+                            todayHighlight: true
+                        });
+                },
+                optionEnabler = function(optionId, itObj, de) {
+                    for (var i = 0; i < itObj.length; i++) {
+                        var obj = itObj[i];
+                        if (typeof(obj.id) != 'undefined') {
+                            if (obj.id === optionId) {
+                                if (de === 'disabled') {
+                                    obj.disabled = true;
+                                } else {
+                                    delete obj.disabled;
+                                }
+                                delete obj.selected;
+                                return;
+                            }
+                        } else {
+                            optionEnabler(optionId, obj.children, de);
+                        }
+                    }
+                },
+                customMatcher = function(params, data) {
+                    // use the option with value FETCH to create the fetch more option
+                    if ((data.id === "FETCH")) {
+                        if ((typeof(params.term) != 'undefined') && (params.term !== '') && (!isOldQuery(params.term))) {
+                            var modifiedData = $.extend(data, {
+                                text: messages.fetchMore.replace('[v]', params.term),
+                            }, true);
+                            return modifiedData;
+                        } else {
+                            return null;
+                        }
+                    }
+                    // if there is no query, then return the element
+                    if ($.trim(params.term) === '') return data;
+                    // Do a recursive check for options with children
+                    if (data.children && data.children.length > 0) {
+                        // Clone the data object if there are children
+                        // This is required as we modify the object to remove any non-matches
+                        var match = $.extend(true, {}, data);
+                        // Check each child of the option
+                        for (var c = data.children.length - 1; c >= 0; c--) {
+                            var child = data.children[c];
+                            var matches = customMatcher(params, child);
+                            // If there wasn't a match, remove the object in the array
+                            if (matches === null) {
+                                match.children.splice(c, 1);
+                            }
+                        }
+                        // If any children matched, return the new object
+                        if (match.children.length > 0) {
+                            return match;
+                        }
+                        // If there were no matching children, check just the plain object
+                        return customMatcher(params, match);
+                    }
+                    // if there is a query, then match the results.
+                    if (data.text.toLowerCase().indexOf(params.term.toLowerCase()) > -1) {
+                        if ((typeof(data.disabled) === 'undefined') && (!data.disbled)) {
+                            return data;
+                        }
+                    }
+                    return null;
+                },
+                focusNextAvailable = function(option, list) {
+                    var allItems = option.siblings().not('[aria-disabled]').add(option);
+                    var myIndex = allItems.index(option);
+                    var higher = allItems.slice(myIndex + 1);
+                    if (higher.length > 0) {
+                        // try forward
+                        $(higher[0]).addClass('select2-results__option--highlighted');
+                    } else {
+                        // try backwards
+                        var lower = option.siblings(':lt(' + myIndex + ')').not('[aria-disabled]');
+                        $(lower[lower.length - 1]).addClass('select2-results__option--highlighted');
+                    }
+                },
+                formatItems = function(item) {
+                    // add a span arounf the text result so that we can style it properly
+                    if (typeof(item.id) === 'undefined') {
+                        return item.text;
+                    }
+                    var $item = $('<span class="sel-' + item.id + '" data-value="' + item.id + '">' + item.text + '</span>');
+                    return $item;
+                },
+                isOldQuery = function(query) {
+                    for (var i = 0; i < a.savedQueries.length; i++) {
+                        if (query === a.savedQueries[i]) return true;
+                    }
+                    return false;
+                },
+                setNewData = function(query) {
+                    // the new hardcoded data, you might want to fetch it via ajax
+                    a.savedQueries.push(query);
+                    var newData = [{
+                        text: messages.resultsFor + ' "' + query + '"',
+                        children: [{
+                            _resultId: 'select2-' + tId + '-result-' + query + '_1',
+                            id: query + "_1",
+                            text: query + " Lorem"
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-' + query + '_2',
+                            id: query + "_2",
+                            text: query + " Ipsum"
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-' + query + '_3',
+                            id: query + "_3",
+                            text: query + " Dolor"
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-' + query + '_4',
+                            id: query + "_4",
+                            text: query + " Sit"
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-' + query + '_5',
+                            id: query + "_5",
+                            text: query + " Amet"
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-' + query + '_6',
+                            id: query + "_6",
+                            text: query + " Finibus"
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-' + query + '_7',
+                            id: query + "_7",
+                            text: query + " Bonorum"
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-' + query + '_8',
+                            id: query + "_8",
+                            text: query + " Et"
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-' + query + '_9',
+                            id: query + "_9",
+                            text: query + " Malorum"
+                        }, {
+                            _resultId: 'select2-' + tId + '-result-' + query + '_10',
+                            id: query + "_10",
+                            text: query + " Everything"
+                        }]
+                    }];
+                    // add new data to the arguments
+
+                    // remove 2 initial (which we use to fetch) from already parsed data (so that we insert them back into position 0)
+                    a.data.splice(0, 2);
+                    // merge data into new Array
+                    a.data = [].concat(baseDataOptions, newData, a.data);
+                    // reinitialize select
+                    t.empty().select2(a).select2('open');
+                },
+                customClicker = function(span) {
+                    // write the function you'd like to use here.
+                    var
+                        val = span.data('value'),
+                        dropdown = span.closest('.select2-dropdown'),
+                        searchField = dropdown.find('.select2-search__field'),
+                        searchValue = searchField.val(),
+                        optionsList = dropdown.find('.select2-results > ul'),
+                        optionSelected = span.parent(),
+                        label = span.text();
+                    if (val === "FETCH") {
+                        setNewData(searchValue);
+                    } else {
+                        //'<button type="button" data-selected-value="{val}"></button>'
+                        var
+                            li = $(document.createElement('li')). //create the selected items
+                            addClass('side-by-side-selection all-pad-xs').
+                            html(messages.selectionHtml.replace(/{label}/g,label).replace(/{val}/g,val).replace(/{inputName}/g,selectionsName));
+                        $(targetSelected).append(li);
+
+                        // enables you to parse stuff that has been added
+                        selectionAddCallback(li);
+
+                        // move list position elsewhere
+                        focusNextAvailable(optionSelected, optionsList);
+                        // disable list item
+                        optionSelected.attr({
+                            'aria-disabled': 'true',
+                            'aria-selected': 'false',
+                            'class': 'select2-results__option'
+                        }).remove();
+                        // disable list item in main object for if we search after selection
+                        optionEnabler(val, a.data, 'disabled');
+
+                    }
+                },
+                a = { // the base arguments for select2
+                    width: '100%',
+                    dropdownParent: targetDiv,
+                    closeOnSelect: false,
+                    theme: "side-by-side",
+                    placeholder: 'Select a Symptom',
+                    focusFlag: false,
+                    data: [].concat(baseDataOptions, firstData),
+                    matcher: customMatcher,
+                    templateResult: formatItems,
+                    savedQueries: []
+                };
+
+            // initialize the select2
+            t.select2(a).on('select2:open', function() {
+                var
+                    t = $(this),
+                    p = t.parent(),
+                    field = p.find('.select2-search__field');
+                field.attr('placeholder', messages.filterPlaceholder).attr('title', messages.filterTitle).removeAttr('tabindex');
+                if (!a.focusFlag) field.prop('focus', false);
+                a.focusFlag = true;
+                // remove document clicking closing action
+                $(document.body).off('mousedown.select2.select2-' + t.attr('id'));
+                return false;
+            }).on('select2:closing', function() {
+                // prevents the closure of the listing
+                return false;
+            }).on('select2:close', function() {
+                $(this).select2('open');
+            }).on('select2:select', function() {
+                var selectValue = $(this).val();
+                var zeSpan = $(this).parent().find('span[data-value="' + selectValue + '"]');
+                //var zeSpan = $(this).parent().find('.select2-results__option--highlighted span');
+                customClicker(zeSpan);
+                $(this).select2('val', '');
+            }).select2('open'); // opens the options automatically.
+        });
+    });
+    </script>
+</div>

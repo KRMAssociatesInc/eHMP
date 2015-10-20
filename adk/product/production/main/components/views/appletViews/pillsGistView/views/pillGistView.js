@@ -9,7 +9,7 @@ define([
     "api/Messaging"
 
 
-], function($, _, Backbone, pillGistLayoutTemplate, pillGistChildTemplate, PopoverTemplate, ResourceService, Messaging) {
+], function($, _, Backbone, pillGistLayoutTemplate, pillGistChildTemplate, popoverTemplate, ResourceService, Messaging) {
     'use strict';
     var PillGistItem = Backbone.Marionette.ItemView.extend({
         template: pillGistChildTemplate,
@@ -18,26 +18,24 @@ define([
             'click button#closeGist': function(event) {
                 event.preventDefault();
                 event.stopImmediatePropagation();
-                $(this.el).find('.sub-elements').hide();
+                this.$('.sub-elements').hide();
             },
             'click button.groupItem': function(event) {
                 event.preventDefault();
                 event.stopImmediatePropagation();
             },
             'hover div.gistItem': function(event) {
-                var gistID = $(event.target).attr('id');
-                $('#' + gistID).blur();
+                this.$(event.target).blur();
             },
             'focus div.gistItem': function(event) {
-                var gistItem = $(document.activeElement);
-                gistItem.keypress(function(e) {
+                this.$('[data-toggle=popover]').keypress(function(e) {
                     if (e.which === 13 || e.which === 32) {
                         gistItem.trigger('click');
                     }
                 });
             },
             'click div.gistItem': function(event) {
-                $('[data-toggle=popover]').popover('hide');
+                this.$('[data-toggle=popover]').popover('hide');
 
                 ADK.utils.infoButtonUtils.onClickFunc(this, event, baseClickGistItem);
 
@@ -64,24 +62,19 @@ define([
             this.AppletID = options.AppletID;
         },
         setPopover: function() {
-            var PopoverView = Backbone.Marionette.ItemView.extend({
-                template: PopoverTemplate
-            });
-            this.$el.find('[data-toggle=popover]').popover({
+            this.$('[data-toggle=popover]').popover({
                 trigger: 'hover',
                 html: 'true',
                 container: 'body',
-                template: (new PopoverView().template()),
+                template: popoverTemplate(this.model),
                 placement: 'bottom',
-            }).hover(function() {
-                $('[data-toggle=popover]').not(this).popover('hide');
             });
         },
         onRender: function() {
             this.setPopover();
         },
-        onBeforeDestroy: function(){
-            $('[data-toggle=popover]').popover('hide');
+        onDestroy: function(){
+            this.$('[data-toggle=popover]').popover('destroy');
         }
     });
     var PillGist = Backbone.Marionette.CompositeView.extend({
@@ -91,7 +84,6 @@ define([
             template: _.template('<div class="emptyGistList">No Records Found</div>')
         }),
         initialize: function(options) {
-            this._super = Backbone.Marionette.CompositeView.prototype;
             var appletID = getAppletId(options);
             this.childViewOptions = {
                 AppletID: appletID,
@@ -108,7 +100,6 @@ define([
             this.model = new Backbone.Model();
             this.model.set('appletID', appletID);
             this.childViewContainer = "#" + appletID + "-pill" + "-gist-items";
-            this._super = Backbone.Marionette.CompositeView.prototype;
         },
         onBeforeRender: function() {
             this.collection.reset(this.collectionParser(this.collection).models);
@@ -119,12 +110,6 @@ define([
                     item.set(object.id, item.get(object.field));
                 });
             }, this);
-        },
-        render: function() {
-            this._super.render.apply(this, arguments);
-        },
-        onStop: function() {
-            $('.pillPopover').popover('hide');
         }
     });
 

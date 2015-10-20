@@ -17,7 +17,7 @@
 
 var async = require('async');
 var _ = require('underscore');
-
+var uuid = require('node-uuid');
 var logUtil = require(global.VX_UTILS + 'log');
 var VistaClient = require(global.VX_SUBSYSTEMS + 'vista/vista-client');
 var jobUtil = require(global.VX_UTILS + 'job-utils');
@@ -39,12 +39,15 @@ var Poller = function(log, vistaId, config, environment, start) {
     this.vistaId = vistaId;
     this.environment = environment;
     this.config = config;
+    this.metrics = environment.metrics;
     this.log = logUtil.getAsChild('vistaRecordPoller-' + vistaId, log);
     this.paused = !start;
+    this.readyToShutdown = !start;
     this.pollDelayMillis = 1000;
     this.lastUpdateTime = '0';
     this.vprUpdateOpData = new VprUpdateOpData(this.log, vistaId, environment.jds);
-    this.vistaProxy = new VistaClient(log, config);
+    this.vistaProxy = new VistaClient(log, this.metrics, config);
+    this.errorPublisher = environment.errorPublisher;
 };
 
 //-----------------------------------------------------------------------------------
@@ -59,6 +62,7 @@ Poller.prototype.start = function(callback) {
         //-----------------------------------------------------------------------------
         if (error) {
             self.log.error('vista-record-poller.start: Failed to retrieve last update time from JDS.  error: %s; response: %s', error, response);
+            self.errorPublisher.publishPollerError(self.vistaId, error, function(){});
             return callback('vista-record-poller.start: Failed to retrieve last update time from JDS.  error: ' + error, response);
         }
 
@@ -96,6 +100,11 @@ Poller.prototype.resume = function() {
     this.paused = false;
 };
 
+Poller.prototype.isReadyToShutdown = function(){
+    this.log.debug('vista-record-poller.isReadyToShutdown(): ' + this.readyToShutdown);
+    return this.readyToShutdown;
+};
+
 //--------------------------------------------------------------------------------------
 // This method resets the lastUpdatedTime to '0'.
 //--------------------------------------------------------------------------------------
@@ -115,6 +124,9 @@ Poller.prototype.getStatus = function() {
     };
 };
 
+Poller.prototype.getVistaId = function(){
+    return this.vistaId;
+};
 
 //--------------------------------------------------------------------------------------
 // This method is run every time the 'next' event is fired.
@@ -122,8 +134,11 @@ Poller.prototype.getStatus = function() {
 Poller.prototype.doNext = function() {
     if (this.paused) {
         this.log.debug('vista-record-poller.doNext: paused == true, SKIPPING Polling for new batch of data from vista [%s]', this.vistaId);
+        this.readyToShutdown = true;
         return poll(this, this.pollDelayMillis);
         // return waitAndThenPoll(this);
+    } else {
+        this.readyToShutdown = false;
     }
 
     this.log.debug('vista-record-poller.doNext: Polling for new batch of data from vista [%s]', this.vistaId);
@@ -142,11 +157,12 @@ Poller.prototype._processResponse = function(error, data) {
 
     if (error) {
         self.log.warn('vista-record-poller.processResponse: Failed to invoke vista [%s]', error);
+        self.errorPublisher.publishPollerError(self.vistaId, error, function(){});
         return poll(this, self.pollDelayMillis);
         // waitAndThenPoll(self);
     }
 
-    self.log.debug('vista-record-poller.processResponse: Received batch of data.  Length: [%s];  data: [%j]', data.totalItems, data);
+    self.log.debug('vista-record-poller.processResponse: Received batch of data. data: [%j]',  data);
     if (data && data.items && data.items.length > 0) {
         self._processBatch(data, function(error, result) {
             self.log.debug('vista-record-poller.processResponse: Returned from calling _processBatch.  Error: %s; result: %s', error, result);
@@ -157,7 +173,7 @@ Poller.prototype._processResponse = function(error, data) {
 
             if (error) {
                 self.log.warn('vista-record-poller.processResponse: Failed to process records [%s]', error);
-
+                self.errorPublisher.publishPollerError(self.vistaId, error, function(){});
                 // hmmm, what should we do...?
                 poll(self, this.pollDelayMillis);
             } else {
@@ -219,20 +235,30 @@ Poller.prototype._processBatch = function(data, callback) {
     if (vistaDataJobs) {
         self.log.debug('vista-record-poller._processBatch: Have %d vistaDataJobs.', vistaDataJobs.length);
     }
+    var processId = uuid.v4();
 
     var tasks = [
+        self._logMetrics.bind(self, processId, 'start'),
         self._processSyncStartJobs.bind(self, syncStartJobs),
         self._processOPDSyncStartJobs.bind(self, OPDsyncStartJobs),
         self._processVistaDataJobs.bind(self, vistaDataJobs),
-        self._storeLastUpdateTime.bind(self, data)
+        self._storeLastUpdateTime.bind(self, data),
+        self._logMetrics.bind(self, processId, 'stop')
     ];
-
     // Process all the jobs that we have received
     //--------------------------------------------
     async.series(tasks, function(error, response) {
         self.log.debug('vista-record-poller._processBatch: Completed processing all the jobs.  error: %s; response: %j', error, response);
+        if (error) {
+            self.errorPublisher.publishPollerError(self.vistaId, error, function(){});
+        }
         return callback(error, response);
     });
+};
+
+Poller.prototype._logMetrics = function(processId, timerValue, callback) {
+    this.metrics.debug('Poller process data',{'timer':timerValue, 'process':processId, 'handler':'vista-poller'});
+    callback();
 };
 
 //-------------------------------------------------------------------------------------------------
@@ -245,6 +271,14 @@ Poller.prototype._processSyncStartJobs = function(syncStartJobs, callback) {
     var self = this;
 
     if (syncStartJobs) {
+        var job1 = syncStartJobs[0];
+        var metricObj = {'handler':'vista-poller','process':uuid.v4(),'timer':'start'};
+        if(job1) {
+            metricObj.pid = job1.pid;
+            metricObj.jobId = job1.jobId;
+            metricObj.rootJobId = job1.rootJobId;
+        }
+        self.metrics.trace('Poller process sync start',metricObj);
         self.log.debug('vista-record-poller._processSyncStartJobs: Processing %d syncStartJobs.', syncStartJobs.length);
 
         var tasks = _.map(syncStartJobs, function(syncStartJob) {
@@ -252,6 +286,8 @@ Poller.prototype._processSyncStartJobs = function(syncStartJobs, callback) {
         }, [null, undefined]);
 
         async.series(tasks, function(error, response) {
+            metricObj.timer = 'stop';
+            self.metrics.trace('Poller process sync start',metricObj);
             self.log.debug('vista-record-poller._processSyncStartJobs: Completed processing all the syncStart jobs.  error: %s; response: %j', error, response);
             return callback(error, response);
         });
@@ -272,6 +308,10 @@ Poller.prototype._processOPDSyncStartJobs = function(OPDsyncStartJobs, callback)
     var self = this;
 
     if (OPDsyncStartJobs) {
+        var metricObj = {'handler':'vista-poller','process':uuid.v4(),'timer':'start'};
+
+        self.metrics.trace('Poller process opd sync start',metricObj);
+        metricObj.timer = 'stop';
         self.log.debug('vista-record-poller._processOPDSyncStartJobs: Processing %d OPDsyncStartJobs.', OPDsyncStartJobs.length);
 
         var tasks = _.map(OPDsyncStartJobs, function(OPDsyncStartJob) {
@@ -279,6 +319,7 @@ Poller.prototype._processOPDSyncStartJobs = function(OPDsyncStartJobs, callback)
         }, [null, undefined]);
 
         async.series(tasks, function(error, response) {
+            self.metrics.trace('Poller process opd sync start',metricObj);
             self.log.debug('vista-record-poller._processOPDSyncStartJobs: Completed processing all the OPDsyncStart jobs.  error: %s; response: %j', error, response);
             return callback(error, response);
         });
@@ -394,6 +435,9 @@ Poller.prototype._processOPDSyncStartJob = function(OPDsyncStartJob, callback) {
 //------------------------------------------------------------------------------------------
 Poller.prototype._storeMetaStamp = function(metaStamp, patientIdentifier, callback) {
     var self = this;
+    var metricObj = {'site':self.vistaId,'pid':patientIdentifier.value,'timer':'start','process':uuid.v4()};
+    self.metrics.trace('Poller Store Metastamp',metricObj);
+    metricObj.timer='stop';
     self.log.debug('vista-record-poller._storeMetaStamp: Storing metaStamp: %s; patientIdentifier: %j', metaStamp, patientIdentifier);
 
     // Store the metaStamp to JDS
@@ -407,6 +451,7 @@ Poller.prototype._storeMetaStamp = function(metaStamp, patientIdentifier, callba
             //--------------------------------------------------------------------------------------------------------------------------
             //return callback(util.format('Received error while attempting to store metaStamp for pid: %s.  Error: %s;  Response: %j; metaStamp:[%j]', syncStartJob.pid, error, response, syncStartJob.metaStamp), null);
 
+            self.metrics.trace('Poller Store Metastamp in Error',metricObj);
             return callback(null, 'FailedJdsError');
         }
 
@@ -417,6 +462,7 @@ Poller.prototype._storeMetaStamp = function(metaStamp, patientIdentifier, callba
             //--------------------------------------------------------------------------------------------------------------------------
             // return callback(util.format('Failed to store metaStamp for pid: %s - no response returned.  Error: %s;  Response: %j; metaStamp:[%j]', syncStartJob.pid, error, response, syncStartJob.metaStamp), null);
 
+            self.metrics.trace('Poller Store Metastamp in Error',metricObj);
             return callback(null, 'FailedJdsNoResponse');
         }
 
@@ -427,9 +473,11 @@ Poller.prototype._storeMetaStamp = function(metaStamp, patientIdentifier, callba
             //--------------------------------------------------------------------------------------------------------------------------
             // return callback(util.format('Failed to store metaStamp for pid: %s - incorrect status code returned.  Error: %s;  Response: %j; metaStamp:[%j]', syncStartJob.pid, error, response, syncStartJob.metaStamp), null);
 
+            self.metrics.trace('Poller Store Metastamp in Error',metricObj);
             return callback(null, 'FailedJdsWrongStatusCode');
         }
 
+        self.metrics.trace('Poller Store Metastamp',metricObj);
         return callback(null, 'success');
     });
 };
@@ -443,6 +491,9 @@ Poller.prototype._storeMetaStamp = function(metaStamp, patientIdentifier, callba
 //------------------------------------------------------------------------------------------
 Poller.prototype._storeOperationalMetaStamp = function(metaStamp, siteId, callback) {
     var self = this;
+    var metricObj = {'site':siteId,'timer':'start','process':uuid.v4()};
+    self.metrics.trace('Poller Store Operational Metastamp',metricObj);
+    metricObj.timer='stop';
     self.log.debug('vista-record-poller._storeOperationalMetaStamp: Storing metaStamp: %s; siteId: %j', metaStamp, siteId);
 
     // Store the metaStamp to JDS
@@ -456,6 +507,7 @@ Poller.prototype._storeOperationalMetaStamp = function(metaStamp, siteId, callba
             //--------------------------------------------------------------------------------------------------------------------------
             //return callback(util.format('Received error while attempting to store metaStamp for pid: %s.  Error: %s;  Response: %j; metaStamp:[%j]', syncStartJob.pid, error, response, syncStartJob.metaStamp), null);
 
+            self.metrics.trace('Poller Store Operational Metastamp in Error',metricObj);
             return callback(null, 'FailedJdsError');
         }
 
@@ -466,6 +518,7 @@ Poller.prototype._storeOperationalMetaStamp = function(metaStamp, siteId, callba
             //--------------------------------------------------------------------------------------------------------------------------
             // return callback(util.format('Failed to store metaStamp for pid: %s - no response returned.  Error: %s;  Response: %j; metaStamp:[%j]', syncStartJob.pid, error, response, syncStartJob.metaStamp), null);
 
+            self.metrics.trace('Poller Store Operational Metastamp in Error',metricObj);
             return callback(null, 'FailedJdsNoResponse');
         }
 
@@ -476,9 +529,11 @@ Poller.prototype._storeOperationalMetaStamp = function(metaStamp, siteId, callba
             //--------------------------------------------------------------------------------------------------------------------------
             // return callback(util.format('Failed to store metaStamp for pid: %s - incorrect status code returned.  Error: %s;  Response: %j; metaStamp:[%j]', syncStartJob.pid, error, response, syncStartJob.metaStamp), null);
 
+            self.metrics.trace('Poller Store Operational Metastamp in Error',metricObj);
             return callback(null, 'FailedJdsWrongStatusCode');
         }
 
+        self.metrics.trace('Poller Store Operational Metastamp',metricObj);
         return callback(null, 'success');
     });
 };
@@ -493,6 +548,9 @@ Poller.prototype._storeOperationalMetaStamp = function(metaStamp, siteId, callba
 //------------------------------------------------------------------------------------------
 Poller.prototype._storeCompletedJob = function(rootJobId, jobId, patientIdentifier, callback) {
     var self = this;
+    var metricObj = {'site':self.vistaId,'pid':patientIdentifier.value,'rootJobId':rootJobId,'jobId':jobId,'timer':'start','process':uuid.v4()};
+    self.metrics.trace('Poller Store Completed Data jobs',metricObj);
+    metricObj.timer='stop';
     self.log.debug('vista-record-poller._storeCompletedJob: Storing completed job.  rootJobId: %s; jobId: %s, patientIdentifier: %j', rootJobId, jobId, patientIdentifier);
 
     // First thing we need to do is to retrieve the JPID for this patient.  It is a requirement for the Job.
@@ -506,6 +564,7 @@ Poller.prototype._storeCompletedJob = function(rootJobId, jobId, patientIdentifi
             //--------------------------------------------------------------------------------------------------------------------------
             //return callback(util.format('Received error while attempting to store metaStamp for pid: %s.  Error: %s;  Response: %j; metaStamp:[%j]', syncStartJob.pid, error, response, syncStartJob.metaStamp), null);
 
+            self.metrics.trace('Poller Store Completed Data jobs in Error',metricObj);
             return callback(null, 'FailedJdsError');
         }
 
@@ -516,6 +575,7 @@ Poller.prototype._storeCompletedJob = function(rootJobId, jobId, patientIdentifi
             //--------------------------------------------------------------------------------------------------------------------------
             // return callback(util.format('Failed to store metaStamp for pid: %s - no response returned.  Error: %s;  Response: %j; metaStamp:[%j]', syncStartJob.pid, error, response, syncStartJob.metaStamp), null);
 
+            self.metrics.trace('Poller Store Completed Data jobs in Error',metricObj);
             return callback(null, 'FailedJdsNoResponse');
         }
 
@@ -526,11 +586,13 @@ Poller.prototype._storeCompletedJob = function(rootJobId, jobId, patientIdentifi
             //--------------------------------------------------------------------------------------------------------------------------
             // return callback(util.format('Failed to store metaStamp for pid: %s - incorrect status code returned.  Error: %s;  Response: %j; metaStamp:[%j]', syncStartJob.pid, error, response, syncStartJob.metaStamp), null);
 
+            self.metrics.trace('Poller Store Completed Data jobs in Error',metricObj);
             return callback(null, 'FailedJdsWrongStatusCode');
         }
 
         if ((!result) || (!result.jpid)) {
             self.log.error('vista-record-poller._storeCompletedJob:  Result for pid: %s did not contain jpid.  Result: %j', patientIdentifier.value, error, result);
+            self.metrics.trace('Poller Store Completed Data jobs in Error',metricObj);
             return callback(null, 'FailedNoJpidInResult');
         }
 
@@ -543,7 +605,7 @@ Poller.prototype._storeCompletedJob = function(rootJobId, jobId, patientIdentifi
             jpid: result.jpid,
             jobId: jobId
         };
-
+        metricObj.jpid=result.jpid;
         self.log.debug('vista-record-poller._storeCompletedJob: before creating job.  meta: %j', meta);
         var pollerJob = jobUtil.createVistaPollerRequest(self.vistaId, patientIdentifier, record, eventUid, meta);
         self.log.debug('vista-record-poller._storeCompletedJob: preparing to write job: %j', pollerJob);
@@ -559,6 +621,7 @@ Poller.prototype._storeCompletedJob = function(rootJobId, jobId, patientIdentifi
                 //--------------------------------------------------------------------------------------------------------------------------
                 //return callback(util.format('Received error while storing job: %j pid: %s; error: %s; response: %j; result: %j', pollerJob, patientIdentifier.value, error, response, result), null);
 
+                self.metrics.trace('Poller Store Completed Data jobs in Error',metricObj);
                 return callback(null, 'FailedJdsError');
             }
 
@@ -569,6 +632,7 @@ Poller.prototype._storeCompletedJob = function(rootJobId, jobId, patientIdentifi
                 //--------------------------------------------------------------------------------------------------------------------------
                 // return callback(util.format('Failed to store job: %j pid: %s; error: %s; response: %j; result: %j', pollerJob, patientIdentifier.value, error, response, result), null);
 
+                self.metrics.trace('Poller Store Completed Data jobs in Error',metricObj);
                 return callback(null, 'FailedJdsNoResponse');
             }
 
@@ -579,9 +643,11 @@ Poller.prototype._storeCompletedJob = function(rootJobId, jobId, patientIdentifi
                 //--------------------------------------------------------------------------------------------------------------------------
                 // return callback(util.format('Failed to store job - incorrect status code.  job: %j pid: %s; error: %s; response: %j; result: %j', pollerJob, patientIdentifier.value, error, response, result), null);
 
+                self.metrics.trace('Poller Store Completed Data jobs in Error',metricObj);
                 return callback(null, 'FailedJdsWrongStatusCode');
             }
 
+            self.metrics.trace('Poller Store Completed Data jobs',metricObj);
             return callback(null, 'success');
         });
     });
@@ -598,6 +664,13 @@ Poller.prototype._processVistaDataJobs = function(vistaDataJobs, callback) {
 
     if (vistaDataJobs) {
         self.log.debug('vista-record-poller._processVistaDataJobs: Processing %d vistaDataJobs.', vistaDataJobs.length);
+        var job1 = vistaDataJobs[0];
+        var metricObj = {'handler':'vista-poller','process':uuid.v4(), 'timer':'start'};
+        if(job1){
+            metricObj.pid=job1.pid;
+        }
+        self.metrics.trace('Poller process vista data',metricObj);
+        metricObj.timer = 'stop';
 
         var jobsToPublish = mapUtil.filteredMap(vistaDataJobs, function(vistaDataJob) {
             return self._buildVistaDataJob.bind(self, vistaDataJob).call();
@@ -613,6 +686,7 @@ Poller.prototype._processVistaDataJobs = function(vistaDataJobs, callback) {
             }
 
             self.log.trace('vista-record-poller._processVistaDataJobs: published %s child jobs for processing.', jobsToPublish.length);
+            self.metrics.trace('Poller process vista data',metricObj);
             return callback(null, 'success');
         });
     } else {
@@ -629,10 +703,14 @@ Poller.prototype._processVistaDataJobs = function(vistaDataJobs, callback) {
 //---------------------------------------------------------------------------------------------
 Poller.prototype._buildVistaDataJob = function(vistaDataJob) {
     var self = this;
+    var metricObj = {'site':self.vistaId,'pid':vistaDataJob.pid, 'timer':'start','process':uuid.v4()};
+    self.metrics.trace('Poller Build Vista Data',metricObj);
+    metricObj.timer='stop';
     self.log.debug('vista-record-poller._buildVistaDataJob: Processing vistaDataJob [%j].', vistaDataJob);
 
     if (!vistaDataJob.object) {
-        self.log.warn('vista-record-poller._buildVistaDataJob:  The object node did not exist.');
+        self.log.debug('vista-record-poller._buildVistaDataJob:  The object node did not exist.');
+        self.metrics.trace('Poller build Vista Data in Error',metricObj);
         return null;
     }
 
@@ -652,6 +730,7 @@ Poller.prototype._buildVistaDataJob = function(vistaDataJob) {
 
     if (vistaDataJob.error) {
         self.log.error('vista-record-poller._buildVistaDataJob: Error in VPR update data: ' + vistaDataJob.error);
+        self.metrics.trace('Poller build Vista Data in Error',metricObj);
         return null;
     }
 
@@ -660,6 +739,7 @@ Poller.prototype._buildVistaDataJob = function(vistaDataJob) {
 
     if (!vistaDataJob.deletes) {
         self.log.debug('vista-record-poller._buildVistaDataJob: Job is operational data.');
+        self.metrics.info('Poller build Vista Data',metricObj);
         return jobUtil.createOperationalDataStore(vistaDataJob.object);
     }
 };

@@ -1,3 +1,4 @@
+
 allprojects {
   apply plugin: 'maven'
 
@@ -20,7 +21,7 @@ allprojects {
   version = "${->repoVersion + '.' + repoCommitCount}"
 
   repositories {
-    mavenCentral()
+    maven {url "https://dl.vistacore.us/nexus/content/groups/public"}
   }
 
   task bundleInstall{
@@ -32,126 +33,66 @@ allprojects {
       }
     }
   }
+
+  uploadArchives {
+    repositories.mavenDeployer {
+      pom.groupId = "${->groupId}"
+      pom.version = "${->version}"
+      repository(url: "https://dl.vistacore.us/nexus/content/repositories/${->repo}/") {
+        authentication(userName: System.getenv()['NEXUS_USER_NAME'], password: System.getenv()['NEXUS_PASSWORD'])
+      }
+    }
+  }
 }
 
+task rebuildMetadata(type: Exec) {
+  commandLine "bash", "-c", "curl -s -u ${System.getenv()['NEXUS_USER_NAME']}:${System.getenv()['NEXUS_PASSWORD']} -X DELETE https://dl.vistacore.us/nexus/service/local/metadata/repositories/${->repo}/content/${->groupId.replaceAll('\\.','/')}/${->artifactId}/"
+}
+
+uploadArchives.finalizedBy rebuildMetadata
+
 def getRepoVersion() {
-    def v
-    v = "1.2.0" 
-    if (v.endsWith('.'))
-        v = v.substring(0, v.length()-1)
-    return v
+  def v
+  v = "1.3.M1"
+  if (v.endsWith('.'))
+    v = v.substring(0, v.length()-1)
+  return v
 }
 
 def getCurrentBranchName() {
-    def branchName
-    if (System.properties['os.name'].toLowerCase().contains('windows')) {
-        branchName = repoVersion + '.' + 'cmd /C git rev-parse --abbrev-ref HEAD'.execute().text.trim()
-    } else {
-        branchName = ['sh', '-c', 'git rev-parse --abbrev-ref HEAD'].execute().text.trim()
-    }
-    return branchName
+  def branchName
+  if (System.properties['os.name'].toLowerCase().contains('windows')) {
+    branchName = repoVersion + '.' + 'cmd /C git rev-parse --abbrev-ref HEAD'.execute().text.trim()
+  } else {
+    branchName = ['sh', '-c', 'git rev-parse --abbrev-ref HEAD'].execute().text.trim()
+  }
+  return branchName
 }
 
 def getCurrentCommitHash() {
-    def commitHash
-    if (System.properties['os.name'].toLowerCase().contains('windows')) {
-        commitHash = repoVersion + '.' + 'cmd /C git rev-parse HEAD'.execute().text.trim()
-    } else {
-        commitHash = ['sh', '-c', 'git rev-parse HEAD'].execute().text.trim()
-    }
-    return commitHash
-}
-
-def createAppletStructure() {
-  def stagedFiles = ['sh', '-c', 'git diff --name-only --cached'].execute().text
-
-  if(!stagedFiles) {
-    def console = System.console()
-
-    if(console) {
-      appletName = console.readLine('> \n\nPlease enter the name of the Applet. (No dashes allowed.): ')
-
-      if(appletName.contains("-"))
-        println "\nError: Invalid character found."
-      else {
-        if(appletName) {
-          exec {
-            executable = "/opt/chef/embedded/bin/ruby"
-            args = ['appletRepo.rb', appletName]
-            workingDir = "${rootDir}/../infrastructure/applet-template"
-          }
-        } else {
-          println "\nError: no applet name given."
-        }
-      }
-    } else {
-      println "\nCannot get console."
-    } 
+  def commitHash
+  if (System.properties['os.name'].toLowerCase().contains('windows')) {
+    commitHash = repoVersion + '.' + 'cmd /C git rev-parse HEAD'.execute().text.trim()
   } else {
-    println "\nStaged files found. Please commit them before creating an applet infrastructure."
+    commitHash = ['sh', '-c', 'git rev-parse HEAD'].execute().text.trim()
   }
-}
-
-def deleteAppletStructure() {
-  def stagedFiles = ['sh', '-c', 'git diff --name-only --cached'].execute().text
-
-  if(!stagedFiles) {
-    def console = System.console()
-
-    if(console) {
-      appletName = console.readLine('> \n\nPlease enter the name of the Applet. (No dashes allowed.): ')
-
-      if(appletName.contains("-"))
-        println "\nError: Invalid character found."
-      else {
-        if(appletName) {
-          exec {
-            executable = "/opt/chef/embedded/bin/ruby"
-            args = ['appletModify.rb', appletName]
-            workingDir = "${rootDir}/../infrastructure/applet-template"
-          }
-        } else {
-          println "\nError: no applet name given."
-        }
-      }
-    } else {
-      println "\nCannot get console."
-    } 
-  } else {
-    println "\nStaged files found. Please commit or unstage them before creating an applet infrastructure."
-  }
+  return commitHash
 }
 
 task generateVersionPropertiesFile() {
   doLast {
-      def ehmpuiVersion = version
-      def commitHash = getCurrentCommitHash()
+    def ehmpuiVersion = version
+    def commitHash = getCurrentCommitHash()
 
-      println "EHMPUI_VERSION='${ehmpuiVersion}'"
-      println "COMMIT_HASH='${commitHash}'"
+    println "EHMPUI_VERSION='${ehmpuiVersion}'"
+    println "COMMIT_HASH='${commitHash}'"
 
-      project.buildDir.mkdirs()
-      delete{
-          delete "${project.buildDir}/version.properties"
-      }
-      new File("${project.buildDir}/version.properties") << """EHMPUI_VERSION=${ehmpuiVersion}
+    project.buildDir.mkdirs()
+    delete{
+        delete "${project.buildDir}/version.properties"
+    }
+    new File("${project.buildDir}/version.properties") << """EHMPUI_VERSION=${ehmpuiVersion}
 COMMIT_HASH=${commitHash}"""
-  }
-}
-
-task createApplet() {
-  group "Applet"
-  description "Creates the applet directory structure and stages it."
-  doLast {
-    createAppletStructure()
-  }
-}
-
-task deleteApplet() {
-  group "Applet"
-  description "Delete the applet directory structure."
-  doLast {
-    deleteAppletStructure()
   }
 }
 
@@ -159,7 +100,7 @@ task zipEhmpuiApp(type: Zip) {
   from('production/min/applets')
     {
       into 'applets'
-      excludes = ["*/**/node_modules","*/**/test","*/**/build.gradle","*/**/Gruntfile.js"]
+      excludes = ["*/**/node_modules","*/**/test","*/**/build.gradle","*/**/Gruntfile.js", "ui_components_demo"]
     }
   from('production/min/screens')
     {
@@ -176,7 +117,27 @@ task zipEhmpuiApp(type: Zip) {
   destinationDir buildDir
 }
 
-task acceptanceTest{
+task bundleInstallAcceptance{
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/acceptance-tests"
+      executable = "bundle"
+      args = ['install']
+    }
+  }
+}
+
+task bundleInstallWatir{
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/ui-tests/watir"
+      executable = "bundle"
+      args = ['install']
+    }
+  }
+}
+
+task acceptanceTest(dependsOn: bundleInstallAcceptance){
   group "test"
   doLast{
     exec {
@@ -187,7 +148,105 @@ task acceptanceTest{
   }
 }
 
-task smokeTest{
+task "ui-acceptance"(dependsOn: bundleInstallWatir){
+  description 'Runs the rspec acceptance tests.'
+  group "UI-tests"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/ui-tests/watir"
+      executable = "bundle"
+      args = ['exec', 'rake', 'ui:acceptance','[virtualbox]']
+    }
+  }
+}
+
+task "ui-broken"(dependsOn: bundleInstallWatir){
+  description 'Runs the rspec broken tests.'
+  group "UI-tests"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/ui-tests/watir"
+      executable = "bundle"
+      args = ['exec', 'rake', 'ui:broken[virtualbox]']
+    }
+  }
+}
+
+task "ui-regression"(dependsOn: bundleInstallWatir){
+  description 'Runs the rspec regression tests.'
+  group "UI-tests"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/ui-tests/watir"
+      executable = "bundle"
+      args = ['exec', 'rake', 'ui:regression','[virtualbox]']
+    }
+  }
+}
+
+task "ui-rubocop"(dependsOn: bundleInstallWatir){
+  description 'Runs the rspec rubocop tests.'
+  group "UI-tests"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/ui-tests/watir"
+      executable = "bundle"
+      args = ['exec', 'rake', 'ui:rubocop']
+    }
+  }
+}
+
+//Duplicate ui-smoke, not sure if any dependencies on ui-smoke exist
+//Named base for clarity and consistency with Jenkins
+task "ui-base"(dependsOn: bundleInstallWatir){
+    description 'Runs the rspec smoke tests.'
+    group "UI-tests"
+    doLast{
+        exec {
+            workingDir = "${rootDir}/tests/ui-tests/watir"
+            executable = "bundle"
+            args = ['exec', 'rake', 'ui:smoke[virtualbox]']
+        }
+    }
+}
+
+task "ui-smoke"(dependsOn: bundleInstallWatir){
+  description 'Runs the rspec smoke tests.'
+  group "UI-tests"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/ui-tests/watir"
+      executable = "bundle"
+      args = ['exec', 'rake', 'ui:smoke[virtualbox]']
+    }
+  }
+}
+
+task "ui-smokeplusacceptance"(dependsOn: bundleInstallWatir){
+  description 'Runs the rspec smokeplusacceptance tests.'
+  group "UI-tests"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/ui-tests/watir"
+      executable = "bundle"
+      args = ['exec', 'rake', 'ui:smokeplusacceptance[virtualbox]']
+    }
+  }
+}
+
+task "ui-spec"(dependsOn: bundleInstallWatir){
+  description 'Runs the rspec spec task.'
+  group "UI-tests"
+  doLast{
+    exec {
+      workingDir = "${rootDir}/tests/ui-tests/watir"
+      executable = "bundle"
+      args = ['exec', 'rake', 'ui:spec[virtualbox]']
+    }
+  }
+}
+
+task smokeTest(dependsOn: bundleInstallAcceptance){
   group "test"
   doLast{
     exec {
@@ -198,7 +257,7 @@ task smokeTest{
   }
 }
 
-task baseTest{
+task baseTest(dependsOn: bundleInstallAcceptance){
   group "test"
   doLast{
     exec {
@@ -209,7 +268,7 @@ task baseTest{
   }
 }
 
-task recentTest{
+task recentTest(dependsOn: bundleInstallAcceptance){
   group "test"
   doLast{
     exec {
@@ -220,7 +279,7 @@ task recentTest{
   }
 }
 
-task triageTest{
+task triageTest(dependsOn: bundleInstallAcceptance){
   group "test"
   doLast{
     exec {
@@ -231,7 +290,7 @@ task triageTest{
   }
 }
 
-task regressionTest{
+task regressionTest(dependsOn: bundleInstallAcceptance){
   group "test"
   doLast{
     exec {
@@ -242,7 +301,7 @@ task regressionTest{
   }
 }
 
-task appAcceptanceTestIE{
+task appAcceptanceTestIE(dependsOn: bundleInstallAcceptance){
   group "App"
   doLast{
     exec {
@@ -253,7 +312,51 @@ task appAcceptanceTestIE{
   }
 }
 
-
 artifacts {
   archives zipEhmpuiApp
+}
+
+// Fortify stuff
+// Add a new configuration
+configurations {
+ fortify { }
+}
+ 
+// pull in the fortify libs for the new configuration
+dependencies {
+ fortify 'com.fortify:sourceanalyzer:4.1'
+}
+ 
+task fortifySetup << {
+ ant.properties['build.compiler']='com.fortify.dev.ant.SCACompiler'
+ ant.typedef(name: 'sca', classname: 'com.fortify.dev.ant.SourceanalyzerTask',
+ classpath: configurations.fortify.asPath)
+}
+ 
+task fortifyReport << {
+
+  Map<String, String> fortifyProjects = [
+    'ehmp-ui': '**/*.js'
+  ]
+
+  for (e in fortifyProjects) {
+    println "Scanning: ${e.key} => ${e.value}"
+    ant.sca(jdk:"1.7",
+      debug:true ,
+      verbose:true ,
+      failonerror:true ,
+      scan:true ,
+      maxHeap:"4096M" ,
+      logFile:file("$buildDir/reports/fortify/Fortify-${e.key}.log"),
+      resultsFile:file("$buildDir/reports/fortify/${e.key}.fpr")
+    ){
+    fileset(dir:'production') {
+      include(name:"${e.value}")
+      exclude(name:'**/lib/**')
+      exclude(name:'**/test/**')
+      exclude(name:'**/*Test*')
+      exclude(name:'**/build/**')
+      }
+    }
+  }
 }

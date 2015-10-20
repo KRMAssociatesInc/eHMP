@@ -27,11 +27,11 @@ h3 small{
     margin: 6px 4px;
 }
 #date-range-filter .active-range {
-    background: #357ebd;
+    background: $primary;
     color: white;
 }
 #date-range-filter .daterange:not(.active-range):hover {
-    background: #357ebd;
+    background: $primary;
     color: white;
 }
 
@@ -109,4 +109,7 @@ h3 small{
 .noMargin {
     margin-left: 0 !important;
     margin-right: 0 !important;
+}
+.border-vertical {
+    border-right: 1px solid #e5e5e5;
 }

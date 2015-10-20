@@ -6,7 +6,7 @@ class VerifyTableValue
     table.rows.each do |rows_value|
       unless check_for_match_row_table(rows_value, runtime_table_elements, tableIdentifier)
         rows_not_matched << "'#{rows_value}' did not find a match!"
-      # fail "'#{rows_value}' does not found!"
+        # fail "'#{rows_value}' does not found!"
       end
     end
     if !rows_not_matched.empty?
@@ -52,7 +52,7 @@ class VerifyTableValue
       rescue Exception => e
         p "exception while getting text field of column element: #{e}"
         break
-       # retry
+        # retry
       end
       #p "comparing #{row_string} to #{col_string}"
       if row_string.upcase.start_with? 'CONTAINS'
@@ -101,14 +101,14 @@ class VerifyTableValue
         
     matched = false
      
-    table.rows.each do | key, value |
+    table.rows.each do |_key, value|
       browser_labels_list.each do |label_in_browser| 
-       # p label_in_browser.text.strip     
+        # p label_in_browser.text.strip     
         if label_in_browser.text.strip == value
           matched = true
           break
         else
-         # p "Expected : #{value} but could not find in the row #{label_in_browser.text}"
+          # p "Expected : #{value} but could not find in the row #{label_in_browser.text}"
           matched = false
         end # end if...else
       end # end browserLabelsList
@@ -117,14 +117,14 @@ class VerifyTableValue
         break
       end # end if      
     end # end table 
-  #  p matched 
+    #  p matched 
     return matched
   end
 
   def verify_partial_text(browser_labels_list, table)
       
     matched = false
-    table.rows.each do | key, value |
+    table.rows.each do |key, _value|
       browser_labels_list.each do |label_in_browser| 
         if label_in_browser.text.strip.include? key
           matched = true
@@ -146,7 +146,7 @@ class VerifyTableValue
   def self.compare_specific_row(table, table_id)
     driver = TestSupport.driver
 
-    table.rows.each do | row_defined_in_cucumber |
+    table.rows.each do |row_defined_in_cucumber|
       matched = false
       # the first column should contain the row index
       i = row_defined_in_cucumber[0]
@@ -174,9 +174,9 @@ class VerifyTableValue
     css_string = "##{table_id} tbody td:nth-child(#{column_index})"
     columns = driver.find_elements(:css, css_string)
     higher = columns[0].text.downcase
-    (1..columns.length-1).each do |i |
+    (1..columns.length-1).each do |i|
       lower = columns[i].text.downcase
-      check_alpha = a_z ? (( higher <=> lower) <= 0) : (( higher <=> lower) >= 0)
+      check_alpha = a_z ? ((higher <=> lower) <= 0) : ((higher <=> lower) >= 0)
       p "#{higher} #{for_error_message} #{lower}" unless check_alpha
       return false unless check_alpha
       higher = lower

@@ -4,7 +4,7 @@ class RenameApplet < AccessBrowserV2
     super
     add_action(CucumberLabel.new("Applet Option button"), ClickAction.new, AccessHtmlElement.new(:css, "#grid-options-button- > span"))
     # add_action(CucumberLabel.new("Header Rename"), SendKeysAndTabAction.new, AccessHtmlElement.new(:css, "#applet-1 > div > div > div.panel-heading.grid-applet-heading > span.panel-title.center-block.text-center > input"))
-    add_action(CucumberLabel.new("Header Rename"), SendKeysAndEnterAction.new, AccessHtmlElement.new(:css, "#applet-1 > div > div > div.panel-heading.grid-applet-heading > span.panel-title.center-block.text-center > input"))
+    add_action(CucumberLabel.new("Header Rename"), SendKeysAction.new, AccessHtmlElement.new(:css, "#applet-1 > div > div > div.panel-heading.grid-applet-heading > span.panel-title.center-block.text-center > input"))
     add_verify(CucumberLabel.new("Header Title"), VerifyContainsText.new, AccessHtmlElement.new(:css, ".panel-title-label"))
     add_verify(CucumberLabel.new("Tooltip Message"), VerifyContainsText.new, AccessHtmlElement.new(:css, ".tooltip"))
     add_action(CucumberLabel.new("Confirm Deleting Workspace"), ClickAction.new, AccessHtmlElement.new(:xpath, ".//*[@id='workspace-delete']"))
@@ -23,8 +23,12 @@ When(/^enters "(.*?)" to the header text$/) do |new_text|
   screen = RenameApplet.instance
   screen.wait_until_action_element_visible("Header Rename", DefaultLogin.wait_time)
   input_element = screen.get_element("Header Rename")
+
+  for i in 0...input_element.attribute("value").size
+    input_element.send_keys(:backspace)
+  end
   expect(screen.perform_action("Header Rename", new_text)).to be_true
-  # input_element.send_keys:return
+  input_element.send_keys [:tab]
 end
 
 Then(/^applet with title "(.*?)" is displayed$/) do |title_text|

@@ -1,0 +1,66 @@
+.multi-select-list {
+    ul.list-borders {
+        padding: 0;
+        li {
+            border: 1px solid $grey-light;
+            cursor: pointer;
+            list-style: none;
+            margin-top: 5px;
+            padding: 10px 0;
+            overflow: hidden;
+            a {
+                color: inherit;
+                width: 100%;
+            }
+            &:hover {
+                background-color: $secondary-lighter;
+            }
+            &.list-item-selected {
+                background-color: $primary-light;
+                color: $white;
+                &:hover {
+                    background-color: $primary;
+                    color: $white;
+                }
+                h5 {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+// Multi-select component for Workflow-writebacks
+.panel-body.multi-select-list {
+    font-size: 11px;
+    p {
+        margin: 0;
+    }
+    ul li {
+        cursor: pointer;
+        list-style: none;
+        padding: 10px 0;
+        overflow: hidden;
+        a {
+            color: inherit;
+            width: 100%;
+        }
+        &:hover {
+            background-color: $secondary-lighter;
+        }
+        &.list-item-selected {
+            background-color: $primary-light;
+            border-top: 1px solid $black;
+            color: $white;
+            &:hover {
+                background-color: $primary;
+                color: $white;
+            }
+            h5 {
+                color: $white;
+            }
+            &:first-child {
+                border-top: none;
+            }
+        }
+    }
+}

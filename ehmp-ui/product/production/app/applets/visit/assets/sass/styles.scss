@@ -56,13 +56,14 @@
 }
 
 #visitModal #selDate {
-	color: #C0C0C0;
+	color: $grey-darkest;
 	padding-left: 5px;
 }
 
 #visitModal .list-group-item:first-child {
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
+	border-top: 0;
 }
 
 #visitModal li {
@@ -70,7 +71,8 @@
 }
 
 #visitModal li:hover, #visitModal li:focus, #visitModal li.focused {
-	background-color: #ddd;
+	background-color: $primary;
+	color: $white;
 	outline: 0;
 }
 
@@ -83,6 +85,7 @@
 #visitModal .tab-pane {
 	height: 275px;
 	overflow-y: auto;
+	background-color: $white;
 }
 
 #visitModal .nav > li > a:hover, .nav > li > a:focus {
@@ -90,29 +93,44 @@
 }
 
 #visitModal .nav-tabs > li {
+	background-color: $white;
+	color: $primary;
 	width: 33.3%;
 	text-align: center;
-	border: 1px solid #ddd;
+	border-right: 1px solid $grey-light;
+	border-top: 1px solid $grey-light;
+	border-bottom: 1px solid $grey-light;
+	&:last-child {
+		border-right: none;
+	}
 }
 
 #visitModal .nav-tabs > li > a {
 	font-size: 1.25em;
-	color: #aaa;
+	color: $grey-darkest;
+	border: none;
+	&:hover {
+		background-color: $secondary-lighter;
+		color: $primary;
+	}
 }
 
 #visitModal .nav-tabs > li.active > a {
 	border: 0;
-	background-color: #3D5157;
+	background-color: $primary-light;
 	color: #fff;
 }
 
 #visitModal .nav-tabs > li.active {
-	margin-top: 1px;
 }
 
 #visitModal .nav-tabs > li > a {
 	margin-right: 0;
 	border-radius: 0;
+}
+#visitModal li:hover, #visitModal li:focus, #visitModal li.focused {
+	background-color: $secondary-light;
+	color: $primary;
 }
 
 #provider-select {

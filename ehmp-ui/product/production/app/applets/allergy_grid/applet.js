@@ -8,9 +8,10 @@ define([
     'hbs!app/applets/allergy_grid/list/summaryItemViewTemplate',
     'hbs!app/applets/allergy_grid/list/summaryViewTemplate',
     'hbs!app/applets/allergy_grid/list/siteTemplate',
-    'hbs!app/applets/allergy_grid/list/commentTemplate'
+    'hbs!app/applets/allergy_grid/list/commentTemplate',
+    'app/applets/allergy_grid/modal/modalHeaderView'
 ], function(EnteredInError, detailsFooterTemplate, expirationCellTemplate,
-    ModalView, Util, severityTemplate, summaryItemViewTemplate, summaryViewTemplate, siteTemplate, commentTemplate) {
+    ModalView, Util, severityTemplate, summaryItemViewTemplate, summaryViewTemplate, siteTemplate, commentTemplate, modalHeader) {
     'use strict';
     //Data Grid Columns
     var summaryColumns = [{
@@ -131,7 +132,8 @@ define([
     var showModal = function(model, event) {
         //event.preventDefault();
         var view = new ModalView({
-            model: model
+            model: model,
+            collection: ADK.PatientRecordService.fetchCollection(fetchOptions)
         });
 
         // ORIGINAL REMOVED: Will McVay, Team Saturn
@@ -148,6 +150,10 @@ define([
 
         modalOptions[1] = {
             title: Util.getModalTitle(model),
+            headerView: modalHeader.extend({
+                model: model,
+                theView: view
+            }),
             footerView: Backbone.Marionette.ItemView.extend({
                 template: detailsFooterTemplate,
                 onRender: function() {},
@@ -173,7 +179,11 @@ define([
             callShow: true
         };
 
-        ADK.showModal(view, modalOptions[1]);
+        var modal = new ADK.UI.Modal({
+            view: view,
+            options: modalOptions[1]
+        });
+        modal.show();
     };
 
     var AllergySummaryItemView = Backbone.Marionette.ItemView.extend({
@@ -225,11 +235,10 @@ define([
             _super = GridApplet.prototype;
             var dataGridOptions = {};
             dataGridOptions.enableModal = true;
-            dataGridOptions.filterEnabled = true;
+            dataGridOptions.filterEnabled = false;
             dataGridOptions.tblRowSelector = '#data-grid-allergy_grid tbody tr';
             if (this.columnsViewType === "summary") {
                 dataGridOptions.columns = summaryColumns;
-                dataGridOptions.filterFields = ["summary"];
                 dataGridOptions.gistView = false;
                 dataGridOptions.appletConfiguration = defaultConfiguration;
             } else {
@@ -238,9 +247,6 @@ define([
                 dataGridOptions.gistView = false;
                 dataGridOptions.appletConfiguration = defaultConfiguration;
             }
-            fetchOptions.onSuccess = function() {
-                dataGridOptions.collection.reset(dataGridOptions.collection.models);
-            };
 
             dataGridOptions.collection = ADK.PatientRecordService.fetchCollection(fetchOptions);
 
@@ -308,7 +314,8 @@ define([
                 pidSiteCode = detailModel.get('pid') ? detailModel.get('pid').split(';')[0] : '';
             response.resolve({
                 view: new ModalView({
-                    model: detailModel
+                    model: detailModel,
+                    collection: data
                 }),
                 title: Util.getModalTitle(detailModel),
                 modalSize: "medium",
@@ -345,11 +352,7 @@ define([
         initialize: function(options) {
             var self = this;
             this._super = ADK.AppletViews.PillsGistView.prototype;
-            fetchOptions.onSuccess = function() {
-                self.appletOptions.collection.reset(self.appletOptions.collection.models);
-            };
             this.appletOptions = {
-                filterFields: ["summary"],
                 gistModel: gistModel,
                 collection: ADK.PatientRecordService.fetchCollection(fetchOptions)
             };

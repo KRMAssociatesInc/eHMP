@@ -205,7 +205,11 @@ define([
                         'callShow': true
                     };
 
-                    ADK.showModal(that, modalOptions);
+                    var modal = new ADK.UI.Modal({
+                        view: that,
+                        options: modalOptions
+                    });
+                    modal.show();
                 }
             });
         },
@@ -239,7 +243,7 @@ define([
                             // Wait for sync to complete, then update applet
                             var medicationCollectionHandler = response.medicationCollectionHandler;
                             medicationCollectionHandler.fetchAllMeds();
-                            ADK.hideModal();
+                            ADK.UI.Modal.hide();
                         };
                         _.delay(deferredResponse.done, 6000, afterSync);
                     },

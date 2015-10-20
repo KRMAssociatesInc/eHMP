@@ -15,7 +15,7 @@ Scenario: Users will be able to see dropdown option in coversheet for screen sel
 		| CONDITIONS	 			|
 		| LAB RESULTS				|
 		| VITALS 					|
-		| MEDICATIONS				|
+		| ACTIVE MEDICATIONS		|
 		| ALLERGIES					|
 		| IMMUNIZATIONS				|
 		| ORDERS					|

@@ -52,12 +52,14 @@ define([
                 from = moment(chart.xAxis[0].getExtremes().dataMin).valueOf();
             }
             this.updateBarWidth(from, to);
-            chart.xAxis[0].setExtremes(from, to);
+            // chart.xAxis[0].setExtremes(from, to);
+            this.drawAndZoom();
         },
         displayCharts: function(mockCollection) {
 
             spikeLineChartOptions.series[1].data = this.buildOutpatientArray(mockCollection);
             spikeLineChartOptions.series[0].data = this.buildInpatientArray(mockCollection);
+
 
             var self = this;
 
@@ -88,10 +90,9 @@ define([
                 var dateTime = key + '';
                 var num = value.length;
 
-                if(dateTime.length > 6){
+                if (dateTime.length > 6) {
                     outpatientArray.push([moment(dateTime, 'YYYYMMDD').valueOf(), num]);
-                }
-                else{
+                } else {
                     outpatientArray.push([moment(dateTime, 'YYYYMM').valueOf(), num]);
                 }
             });
@@ -109,14 +110,13 @@ define([
                 var dateTime = key + '';
                 var num = value.length;
 
-                if(dateTime.length > 6){
-                    inpatientArray.push([moment(dateTime,'YYYYMMDD').valueOf(), num]);
-                }
-                else{
-                    inpatientArray.push([moment(dateTime,'YYYYMM').valueOf(), num]);
+                if (dateTime.length > 6) {
+                    inpatientArray.push([moment(dateTime, 'YYYYMMDD').valueOf(), num]);
+                } else {
+                    inpatientArray.push([moment(dateTime, 'YYYYMM').valueOf(), num]);
                 }
             });
-                return inpatientArray;
+            return inpatientArray;
 
         },
         groupPatientsByTimeSlice: function(patients) {
@@ -126,22 +126,19 @@ define([
                 var year = parseInt(time.slice(0, 4), 10);
                 var month = parseInt(time.slice(4, 6), 10);
                 var day = parseInt(time.slice(6, 8), 10);
-                if (moment([year, month-1, day]).diff(moment(), 'days') >= 0){
+                if (moment([year, month - 1, day]).diff(moment(), 'days') >= 0) {
                     // 1-7: (month) 7
                     // 8-14: (month) 14
                     // 15-21: (month) 21
                     // 22-31: (month+1) 1
 
-                    if (day < 8){
+                    if (day < 8) {
                         day = '07';
-                    }
-                    else if(day < 15){
+                    } else if (day < 15) {
                         day = '14';
-                    }
-                    else if (day < 22){
+                    } else if (day < 22) {
                         day = '21';
-                    }
-                    else{
+                    } else {
                         day = '01';
                         month = month + 1;
                     }
@@ -153,8 +150,7 @@ define([
                     }
 
                     return (year + '' + month + '' + day);
-                }
-                else{
+                } else {
                     var quarterlyBinning = (Math.floor((month + 2) / 3) * 3) - 2;
                     if ((quarterlyBinning) < 10) {
                         quarterlyBinning = '0' + quarterlyBinning;
@@ -193,8 +189,25 @@ define([
                 fromDate = '01/01/1900';
             }
 
-            this.updateBarWidth(fromDate, toDate);
-            chart.xAxis[0].setExtremes(moment(fromDate).valueOf(), moment(toDate).valueOf());
+            // this.updateBarWidth(fromDate, toDate);
+            var In = [];
+            var Out = [];
+
+            $.each(spikeLineChartOptions.series[0].data, function(i, point) {
+                if (moment(fromDate).valueOf() < point[0] && point[0] < moment(toDate).valueOf()) {
+                    In.push([point[0], point[1]]);
+                }
+            });
+
+            $.each(spikeLineChartOptions.series[1].data, function(i, point) {
+                if (moment(fromDate).valueOf() < point[0] && point[0] < moment(toDate).valueOf()) {
+                    Out.push([point[0], point[1]]);
+                }
+            });
+
+            chart.series[0].setData(In);
+            chart.series[1].setData(Out);
+            // chart.xAxis[0].setExtremes(moment(fromDate).valueOf(), moment(toDate).valueOf());
         },
         onBeforeDestroy: function() {
             this.destroySpikeChart();

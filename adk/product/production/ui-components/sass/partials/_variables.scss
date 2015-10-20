@@ -1,0 +1,36 @@
+/*--- Color Palette 6/2/2015
+
+refer to http://10.1.1.150/ui-components/color-palette.html \
+to see what these colors look like
+---*/
+
+$primary: 				#003E4F;
+$primary-light:			#406E7B;
+$primary-lighter:		#B8C2CC;
+$primary-lightest:		#E7EBF0;
+$primary-lightester:	#F3F5F7;
+$primary-dark: 			#00303F; /*--- Dark Blue Hover for Buttons with Primary color ---*/
+
+$secondary: 			#328563;
+$secondary-light: 		#CBE0D7;
+$secondary-lighter: 	#DBE6E4;
+$secondary-dark:		#2C7B5B; /*--- Dark Green for Button Active, Hover and Focus States with Secondary Color  ---*/
+
+$tertiary: 				#FFC234;
+$tertiary-hover:		#E6B131;
+$quaternary:			#FDC145;
+
+/*--- supporting colors  ---*/
+$black:					#000000;
+$white:                 #FFFFFF;
+$grey: 					#CCCCCC;
+$grey-light:			#DDDDDD;
+$grey-lighter:			#F2F2F2;
+$grey-lightest:			#F9F9F9;
+$grey-dark: 			#BBBBBB;
+$grey-darker: 			#6E6E6E;
+$grey-darkest:          #555555;
+$red:					#C4262E;
+$red-dark: 				#AE2229; /*--- Currently used for text in error and high urgency warning messages --*/
+$blue: 					#37779E; /*--- Dark, saturated blue, currently used in info growl alerts --*/
+

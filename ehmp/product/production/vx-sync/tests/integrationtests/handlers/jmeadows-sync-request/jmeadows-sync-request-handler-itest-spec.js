@@ -22,7 +22,9 @@ describe('jmeadows-sync-request-handler.js', function() {
         }
     };
 
-    var environment = {};
+    var environment = {
+        metrics: logger
+    };
 
     var host = vx_sync_ip;
     var port = 5000;

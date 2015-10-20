@@ -1,0 +1,47 @@
+html, body {
+  overflow: hidden !important;
+}
+
+.subsection {
+  border: 1px solid lightgray;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-top-style: hidden;
+  padding: 5px;
+  margin: 5px;
+}
+
+.swagger-section {
+
+  .swagger-ui-wrap {
+    max-width: 90%;
+
+    #sidebar {
+      padding: 20px;
+      margin-bottom: 5px;
+      border: 1px solid lightgray;
+      border-top-style: hidden;
+      border-bottom-style: hidden;
+      border-left-style: hidden;
+
+//      .nav {
+//        border: 2px solid black;
+//      }
+      .documentation {
+        height: 70vh;
+        overflow-y: auto;
+        padding: 5px;
+        pre code {
+          line-height: 0.0em;
+        }
+      }
+    }
+
+    #resources_container {
+      overflow-y: auto;
+      height: 80vh;
+      padding-right: 40px;
+    }
+  }
+
+}

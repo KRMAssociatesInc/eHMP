@@ -26,13 +26,18 @@ RDK core concepts:
 Currently there is one main resource server, the *VistA Exchange API Resource Server*.
 
 ## Running the Resource Server
-Use one of these commands:
- * `./run.sh --config ./config/config.js`  
- * `node resource-server.js --config ./config/config.js`
+Proper deployment of RDK will generate a JSON configuration file at `config/rdk-fetch-server-config.json`.  
+Once a configuration file has been generated, one of these commands may be used to start the resource server:
+ * `./run.sh`  
+ * `./resource-server.js`
+
+The resource server process accepts a --config command-line argument to specify a path to a JSON configuration file.
 
 ## Development and Implementation details
- * [Development Environment](development.md)
+ * [Contributing](contributing.md)
  * [Style Guide](style-guide.md)
+ * [Code Organization](code-organization.md)
+ * [Contributing](contributing.md)
  * [Resources](resources.md)
  * [Subsystems](subsystems.md)
  * [Middleware (Interceptors and Outerceptors)](middleware.md)

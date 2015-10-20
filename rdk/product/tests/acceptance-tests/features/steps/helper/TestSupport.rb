@@ -53,7 +53,7 @@ class TestSupport
 
   def self.error_message_generator(error_message)
     text_error_message = "\n"+'    | Field Name         | Expected Value          | Runtime Value         |' + "\n"
-    error_message.each do | single_message |
+    error_message.each do |single_message|
       text_error_message = textErrorMessage + (i+1).to_s + " - "+ single_message+"\n\n"
     end
 
@@ -62,7 +62,7 @@ class TestSupport
 
   private
 
-  def self.open_browser(browser_type = "firefox")
+  def self.open_browser(_browser_type = "firefox")
     driver = SeleniumCommand.driver
     return driver
   end

@@ -23,6 +23,9 @@ import static us.vistacore.vxsync.vler.VlerConnectUtil.toVlerDocResponse;
 public class VlerSoapHandler {
 
     private static final Logger LOG = LoggerFactory.getLogger(VlerSoapHandler.class);
+    private static final String VLER_DOC_TYPE_C32 = "C32 Document";
+    private static final String VLER_DOC_TYPE_CCDA = "CCDA Document";
+    private static final double MAX_SIZE_HTML = 1887436.8; //1.8 * 1024 * 1024;
 
     private final String template;
     private final String defaultName;
@@ -106,10 +109,20 @@ public class VlerSoapHandler {
             }
 
             Document xmlDoc = VlerDocumentUtil.parseXMLDocument(response.getDocumentResponse().get(0).getDocument());
+            String htmlDoc;
 
-            List<Section> narrativeSections = VlerDocumentUtil.extractSectionNarrativesFromCCD(xmlDoc);
-
-            vlerRetrieveResponse.getVlerDocSections().addAll(narrativeSections);
+            if (VlerDocumentUtil.isCcdaDoc(xmlDoc)) {
+                htmlDoc = VlerDocumentUtil.xsltCcdaDocument(new String(response.getDocumentResponse().get(0).getDocument()));
+                vlerRetrieveResponse.setVlerDocType(VLER_DOC_TYPE_CCDA);
+            }else {
+                htmlDoc = VlerDocumentUtil.xsltC32Document(new String(response.getDocumentResponse().get(0).getDocument()));
+                vlerRetrieveResponse.setVlerDocType(VLER_DOC_TYPE_C32);
+            }
+            htmlDoc = htmlDoc.replaceAll("(\\r|\\n|\\t)", "");
+	        if (MAX_SIZE_HTML < htmlDoc.getBytes().length) {
+                vlerRetrieveResponse.setCompressRequired(true);
+            }
+            vlerRetrieveResponse.setVlerDocHtml(htmlDoc.replaceAll("\"","\'"));
 
             return (DataConverter.convertObjectToJSON(vlerRetrieveResponse));
         }

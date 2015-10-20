@@ -1,0 +1,6692 @@
+KIDS Distribution saved on Jun 12, 2015@15:26:30
+VERSION 6.1 minibuild
+**KIDS**:HMP 2.0^
+
+**INSTALL NAME**
+HMP 2.0
+"BLD",9078,0)
+HMP 2.0^HEALTH MANAGEMENT PLATFORM^0^3150612^y
+"BLD",9078,1,0)
+^^416^416^3150212^
+"BLD",9078,1,1,0)
+The eHMP project within the Veterans Health Information Systems and
+"BLD",9078,1,2,0)
+Technology (VistA) Evolution program will introduce expanded
+"BLD",9078,1,3,0)
+capabilities and modernize existing features of the VA VistA Electronic
+"BLD",9078,1,4,0)
+Health Record (EHR) system. The eHMP project is a multi-year effort to
+"BLD",9078,1,5,0)
+evolve a modern, service-oriented Enterprise Health Application
+"BLD",9078,1,6,0)
+Platform. This platform includes VistA Exchange, the eHMP Clinical
+"BLD",9078,1,7,0)
+Practice Environment (CPE), as well as clinical knowledge enrichment and
+"BLD",9078,1,8,0)
+decision support services. VistA Exchange is the clinical data services
+"BLD",9078,1,9,0)
+engine, federating clinical data from a variety of VA and DoD sources
+"BLD",9078,1,10,0)
+into an Enterprise Virtual Patient Record (eVPR). The eHMP CPE framework
+"BLD",9078,1,11,0)
+will incorporate capabilities currently provided by JLV and hi2 HMP.
+"BLD",9078,1,12,0)
+eHMP CPE will eventually replace the Computerized Patient Record System
+"BLD",9078,1,13,0)
+(CPRS) as VA?s primary point of care application. eHMP version 1.1
+"BLD",9078,1,14,0)
+Viewer Edition is the initial product supporting a user interface.
+"BLD",9078,1,15,0)
+This project is being deployed in phases with each new iteration 
+"BLD",9078,1,16,0)
+adding new features.
+"BLD",9078,1,17,0)
+ 
+"BLD",9078,1,18,0)
+ 
+"BLD",9078,1,19,0)
+ 
+"BLD",9078,1,20,0)
+ 
+"BLD",9078,1,21,0)
+Patch Components
+"BLD",9078,1,22,0)
+================
+"BLD",9078,1,23,0)
+ 
+"BLD",9078,1,24,0)
+This is a multi-patch build and consists of the following patches:
+"BLD",9078,1,25,0)
+ 
+"BLD",9078,1,26,0)
+MD*1.0*38
+"BLD",9078,1,27,0)
+OR*3.0*390
+"BLD",9078,1,28,0)
+PSB*3.0*79
+"BLD",9078,1,29,0)
+TIU*1.0*106
+"BLD",9078,1,30,0)
+GMRC*3.0*80
+"BLD",9078,1,31,0)
+HMP*2.0*1
+"BLD",9078,1,32,0)
+ 
+"BLD",9078,1,33,0)
+The following information is specific to the HMP 2.0 patch which is
+"BLD",9078,1,34,0)
+the primary patch for eHMP. The other
+"BLD",9078,1,35,0)
+patches contain methods for extracting domain specific data to the eHMP
+"BLD",9078,1,36,0)
+and JSON Data Store.
+"BLD",9078,1,37,0)
+ 
+"BLD",9078,1,38,0)
+Files & Fields Associated:
+"BLD",9078,1,39,0)
+ 
+"BLD",9078,1,40,0)
+File Name (#) Field Name (#) New/Modified/Deleted
+"BLD",9078,1,41,0)
+------------- -------------- --------------------
+"BLD",9078,1,42,0)
+HMP SUBSCRIPTION #800000
+"BLD",9078,1,43,0)
+HMP PATIENT OBJECT #800000.1
+"BLD",9078,1,44,0)
+HMP OBJECT #800000.11
+"BLD",9078,1,45,0)
+HMP LIST #800000.2
+"BLD",9078,1,46,0)
+HMP LIST DOMAIN #800000.21
+"BLD",9078,1,47,0)
+HMP LIST ATTRIBUTE #800000.22
+"BLD",9078,1,48,0)
+HMP PANEL #800001
+"BLD",9078,1,49,0)
+HMP ROSTER #800001.2
+"BLD",9078,1,50,0)
+HMP ACTIVITY #800001.5
+"BLD",9078,1,51,0)
+ 
+"BLD",9078,1,52,0)
+ 
+"BLD",9078,1,53,0)
+Additional Information:
+"BLD",9078,1,54,0)
+ 
+"BLD",9078,1,55,0)
+Patches necessary for This patch to be installed:
+"BLD",9078,1,56,0)
+ 
+"BLD",9078,1,57,0)
+ 
+"BLD",9078,1,58,0)
+  1 MD*1.0*38                                        
+"BLD",9078,1,59,0)
+  2 OR*3.0*390                                       
+"BLD",9078,1,60,0)
+  3 PSB*3.0*79                     
+"BLD",9078,1,61,0)
+  4 TIU*1.0*106                                      
+"BLD",9078,1,62,0)
+  5 GMRC*3.0*80                                      
+"BLD",9078,1,63,0)
+  6 HMP 2.0                                        
+"BLD",9078,1,64,0)
+ 
+"BLD",9078,1,65,0)
+ 
+"BLD",9078,1,66,0)
+HMP 2.0
+"BLD",9078,1,67,0)
+ 
+"BLD",9078,1,68,0)
+HEALTH MANAGEMENT PLATFORM
+"BLD",9078,1,69,0)
+HMPACT    value = 1310173
+"BLD",9078,1,70,0)
+HMPAP1    value = 154648962
+"BLD",9078,1,71,0)
+HMPATRG   value = 13049868
+"BLD",9078,1,72,0)
+HMPCAC    value = 96818205
+"BLD",9078,1,73,0)
+HMPCORD   value = 7434772
+"BLD",9078,1,74,0)
+HMPCORD1  value = 194228721
+"BLD",9078,1,75,0)
+HMPCORD2  value = 67567632
+"BLD",9078,1,76,0)
+HMPCORD3  value = 150904126
+"BLD",9078,1,77,0)
+HMPCORD4  value = 139723723
+"BLD",9078,1,78,0)
+HMPCORD5  value = 86484445
+"BLD",9078,1,79,0)
+HMPCPAT   value = 1066536
+"BLD",9078,1,80,0)
+HMPCPAT1  value = 7016891
+"BLD",9078,1,81,0)
+HMPCPRS   value = 4924700
+"BLD",9078,1,82,0)
+HMPCRPC   value = 12934677
+"BLD",9078,1,83,0)
+HMPCRPC1  value = 106973387
+"BLD",9078,1,84,0)
+HMPD      value = 28800925
+"BLD",9078,1,85,0)
+HMPDCRC   value = 46664807
+"BLD",9078,1,86,0)
+HMPDERRH  value = 1975041
+"BLD",9078,1,87,0)
+HMPDGMPL  value = 27694389
+"BLD",9078,1,88,0)
+HMPDGMRA  value = 22292681
+"BLD",9078,1,89,0)
+HMPDGMRC  value = 10807786
+"BLD",9078,1,90,0)
+HMPDGMV   value = 41514540
+"BLD",9078,1,91,0)
+HMPDGPF   value = 5516892
+"BLD",9078,1,92,0)
+HMPDIB    value = 12628696
+"BLD",9078,1,93,0)
+HMPDJ     value = 33824834
+"BLD",9078,1,94,0)
+HMPDJ0    value = 88010816
+"BLD",9078,1,95,0)
+HMPDJ00   value = 133513920
+"BLD",9078,1,96,0)
+HMPDJ00A  value = 113564667
+"BLD",9078,1,97,0)
+HMPDJ01   value = 41085471
+"BLD",9078,1,98,0)
+HMPDJ02   value = 139246483
+"BLD",9078,1,99,0)
+HMPDJ03   value = 85806963
+"BLD",9078,1,100,0)
+HMPDJ04   value = 64765097
+"BLD",9078,1,101,0)
+HMPDJ04A  value = 36508889
+"BLD",9078,1,102,0)
+HMPDJ04E  value = 10143878
+"BLD",9078,1,103,0)
+HMPDJ05   value = 79595880
+"BLD",9078,1,104,0)
+HMPDJ05V  value = 64852450
+"BLD",9078,1,105,0)
+HMPDJ06   value = 54257858
+"BLD",9078,1,106,0)
+HMPDJ07   value = 22322346
+"BLD",9078,1,107,0)
+HMPDJ08   value = 68673644
+"BLD",9078,1,108,0)
+HMPDJ08A  value = 46989359
+"BLD",9078,1,109,0)
+HMPDJ09   value = 39057508
+"BLD",9078,1,110,0)
+HMPDJ09M  value = 10164643
+"BLD",9078,1,111,0)
+HMPDJ1    value = 18536339
+"BLD",9078,1,112,0)
+HMPDJ2    value = 21438887
+"BLD",9078,1,113,0)
+HMPDJFS   value = 69787003
+"BLD",9078,1,114,0)
+HMPDJFSD  value = 6500303
+"BLD",9078,1,115,0)
+HMPDJFSG  value = 122582104
+"BLD",9078,1,116,0)
+HMPDJFSM  value = 89659473
+"BLD",9078,1,117,0)
+HMPDJFSP  value = 149324597
+"BLD",9078,1,118,0)
+HMPDJFST  value = 46894611
+"BLD",9078,1,119,0)
+HMPDJT    value = 9992032
+"BLD",9078,1,120,0)
+HMPDJX    value = 35974883
+"BLD",9078,1,121,0)
+HMPDLR    value = 24583034
+"BLD",9078,1,122,0)
+HMPDLRA   value = 75872905
+"BLD",9078,1,123,0)
+HMPDLRO   value = 27146176
+"BLD",9078,1,124,0)
+HMPDMC    value = 57964365
+"BLD",9078,1,125,0)
+HMPDMDC   value = 44173396
+"BLD",9078,1,126,0)
+HMPDOR    value = 13171182
+"BLD",9078,1,127,0)
+HMPDPROC  value = 10503927
+"BLD",9078,1,128,0)
+HMPDPS    value = 18754698
+"BLD",9078,1,129,0)
+HMPDPSI   value = 41148802
+"BLD",9078,1,130,0)
+HMPDPSO   value = 15565576
+"BLD",9078,1,131,0)
+HMPDPSOR  value = 39015653
+"BLD",9078,1,132,0)
+HMPDPT    value = 70429024
+"BLD",9078,1,133,0)
+HMPDPXAM  value = 9554968
+"BLD",9078,1,134,0)
+HMPDPXED  value = 9765099
+"BLD",9078,1,135,0)
+HMPDPXHF  value = 10000962
+"BLD",9078,1,136,0)
+HMPDPXIM  value = 15776836
+"BLD",9078,1,137,0)
+HMPDPXSK  value = 9640619
+"BLD",9078,1,138,0)
+HMPDRA    value = 41653266
+"BLD",9078,1,139,0)
+HMPDSDAM  value = 20015480
+"BLD",9078,1,140,0)
+HMPDSR    value = 30238500
+"BLD",9078,1,141,0)
+HMPDTIU   value = 80060367
+"BLD",9078,1,142,0)
+HMPDTIUX  value = 21288550
+"BLD",9078,1,143,0)
+HMPDVSIT  value = 89189669
+"BLD",9078,1,144,0)
+HMPEASU   value = 28117986
+"BLD",9078,1,145,0)
+HMPEF     value = 210968569
+"BLD",9078,1,146,0)
+HMPEFSG   value = 7146892
+"BLD",9078,1,147,0)
+HMPEFSP   value = 44616195
+"BLD",9078,1,148,0)
+HMPEFST   value = 5355448
+"BLD",9078,1,149,0)
+HMPEFX    value = 8497176
+"BLD",9078,1,150,0)
+HMPEHL7   value = 3357275
+"BLD",9078,1,151,0)
+HMPELAB   value = 5621776
+"BLD",9078,1,152,0)
+HMPENSZ   value = 68569424
+"BLD",9078,1,153,0)
+HMPENSZ1  value = 10674596
+"BLD",9078,1,154,0)
+HMPEQ     value = 26873326
+"BLD",9078,1,155,0)
+HMPEQLM   value = 111474303
+"BLD",9078,1,156,0)
+HMPEQLM1  value = 6971880
+"BLD",9078,1,157,0)
+HMPEQLM2  value = 3216732
+"BLD",9078,1,158,0)
+HMPEVNT   value = 112664650
+"BLD",9078,1,159,0)
+HMPFPTC   value = 14517957
+"BLD",9078,1,160,0)
+HMPHTTP   value = 14238772
+"BLD",9078,1,161,0)
+HMPIDX    value = 14171209
+"BLD",9078,1,162,0)
+HMPJSON   value = 11232902
+"BLD",9078,1,163,0)
+HMPJSOND  value = 70219619
+"BLD",9078,1,164,0)
+HMPJSONE  value = 24346328
+"BLD",9078,1,165,0)
+HMPLIST   value = 60978957
+"BLD",9078,1,166,0)
+HMPMDUTL  value = 50918469
+"BLD",9078,1,167,0)
+HMPP2I    value = 233946
+"BLD",9078,1,168,0)
+HMPP3I    value = 73661363
+"BLD",9078,1,169,0)
+HMPPANEL  value = 9226601
+"BLD",9078,1,170,0)
+HMPPARAM  value = 15385831
+"BLD",9078,1,171,0)
+HMPPATS   value = 44774120
+"BLD",9078,1,172,0)
+HMPPI     value = 298411
+"BLD",9078,1,173,0)
+HMPPRODC  value = 2553263
+"BLD",9078,1,174,0)
+HMPPTDEM  value = 12301900
+"BLD",9078,1,175,0)
+HMPPXPR1  value = 845616
+"BLD",9078,1,176,0)
+HMPPXRM   value = 12212288
+"BLD",9078,1,177,0)
+HMPROS2   value = 104804972
+"BLD",9078,1,178,0)
+HMPROS3   value = 85901883
+"BLD",9078,1,179,0)
+HMPROS4   value = 90329378
+"BLD",9078,1,180,0)
+HMPROS5   value = 9592522
+"BLD",9078,1,181,0)
+HMPROS6   value = 26014820
+"BLD",9078,1,182,0)
+HMPROS7   value = 23792527
+"BLD",9078,1,183,0)
+HMPROS8   value = 78575599
+"BLD",9078,1,184,0)
+HMPSR     value = 404968
+"BLD",9078,1,185,0)
+HMPTRPC   value = 3719901
+"BLD",9078,1,186,0)
+HMPTRPC1  value = 41566182
+"BLD",9078,1,187,0)
+HMPUPD    value = 22706701
+"BLD",9078,1,188,0)
+HMPUTILS  value = 18637094
+"BLD",9078,1,189,0)
+HMPYCSI   value = 16398514
+"BLD",9078,1,190,0)
+HMPYFRP   value = 92726383
+"BLD",9078,1,191,0)
+HMPYFRP1  value = 46640576
+"BLD",9078,1,192,0)
+HMPYFRP2  value = 43272246
+"BLD",9078,1,193,0)
+HMPYPAR   value = 3965687
+"BLD",9078,1,194,0)
+done 
+"BLD",9078,1,195,0)
+ 
+"BLD",9078,1,196,0)
+Select BUILD NAME: MD*1.0*38       CLINICAL PROCEDURES
+"BLD",9078,1,197,0)
+MDCPROTD  value = 6599959
+"BLD",9078,1,198,0)
+MDPOST38  value = 2283064
+"BLD",9078,1,199,0)
+done
+"BLD",9078,1,200,0)
+ 
+"BLD",9078,1,201,0)
+Select BUILD NAME: OR*3.0*390       ORDER ENTRY/RESULTS REPORTING
+"BLD",9078,1,202,0)
+ORCACT1   value = 49643037
+"BLD",9078,1,203,0)
+ORCSEND   value = 65938879
+"BLD",9078,1,204,0)
+ORMBLDOR  value = 5650360
+"BLD",9078,1,205,0)
+ORWDXA    value = 83177974
+"BLD",9078,1,206,0)
+done
+"BLD",9078,1,207,0)
+ 
+"BLD",9078,1,208,0)
+Select BUILD NAME: PSB*3.0*79       BAR CODE MED ADMIN
+"BLD",9078,1,209,0)
+PSBML     value = 125339367
+"BLD",9078,1,210,0)
+PSBVPR    value = 2149221
+"BLD",9078,1,211,0)
+done
+"BLD",9078,1,212,0)
+ 
+"BLD",9078,1,213,0)
+Select BUILD NAME: TIU*1.0*106       TEXT INTEGRATION UTILITIES
+"BLD",9078,1,214,0)
+TIUDDX    value = 222239
+"BLD",9078,1,215,0)
+TIUPS106  value = 3190064
+"BLD",9078,1,216,0)
+TIUVPR    value = 10950606
+"BLD",9078,1,217,0)
+done
+"BLD",9078,1,218,0)
+ 
+"BLD",9078,1,219,0)
+Select BUILD NAME: GMRC*3.0*80       CONSULT/REQUEST TRACKING
+"BLD",9078,1,220,0)
+GMRCAPI   value = 8248863
+"BLD",9078,1,221,0)
+done
+"BLD",9078,1,222,0)
+ 
+"BLD",9078,1,223,0)
+ 
+"BLD",9078,1,224,0)
+ 
+"BLD",9078,1,225,0)
+Forms Associated:
+"BLD",9078,1,226,0)
+ 
+"BLD",9078,1,227,0)
+Form Name File # New/Modified/Deleted
+"BLD",9078,1,228,0)
+--------- ------ --------------------
+"BLD",9078,1,229,0)
+N/A
+"BLD",9078,1,230,0)
+ 
+"BLD",9078,1,231,0)
+ 
+"BLD",9078,1,232,0)
+Mail Groups Associated:
+"BLD",9078,1,233,0)
+ 
+"BLD",9078,1,234,0)
+Mail Group Name New/Modified/Deleted
+"BLD",9078,1,235,0)
+--------------- --------------------
+"BLD",9078,1,236,0)
+N/A
+"BLD",9078,1,237,0)
+ 
+"BLD",9078,1,238,0)
+ 
+"BLD",9078,1,239,0)
+Options Associated:
+"BLD",9078,1,240,0)
+ 
+"BLD",9078,1,241,0)
+Option Name Type New/Modified/Deleted
+"BLD",9078,1,242,0)
+----------- ---- --------------------
+"BLD",9078,1,243,0)
+HMP APPLICATION PROXY
+"BLD",9078,1,244,0)
+HMP APPOINTMENTS
+"BLD",9078,1,245,0)
+HMP PATIENT ACTIVITY
+"BLD",9078,1,246,0)
+HMP PATIENT DATA MONITOR
+"BLD",9078,1,247,0)
+HMP SYNCHRONIZATION CONTEXT
+"BLD",9078,1,248,0)
+HMP UI CONTEXT
+"BLD",9078,1,249,0)
+HMP WB PTDEM
+"BLD",9078,1,250,0)
+HMP WB PTDEM
+"BLD",9078,1,251,0)
+HMP XU EVENTS
+"BLD",9078,1,252,0)
+HMPM ADD HMP PATIENT
+"BLD",9078,1,253,0)
+HMPM ADD HMP USER
+"BLD",9078,1,254,0)
+HMPM EMERGENCY STOP
+"BLD",9078,1,255,0)
+HMPM EXTRACT MONITOR
+"BLD",9078,1,256,0)
+HMPM RESTART FRESHNESS
+"BLD",9078,1,257,0)
+HMPMGR
+"BLD",9078,1,258,0)
+ 
+"BLD",9078,1,259,0)
+ 
+"BLD",9078,1,260,0)
+Protocols Associated:
+"BLD",9078,1,261,0)
+ 
+"BLD",9078,1,262,0)
+Protocol Name New/Modified/Deleted
+"BLD",9078,1,263,0)
+------------- --------------------
+"BLD",9078,1,264,0)
+HMP ADT-A04 CLIENT  
+"BLD",9078,1,265,0)
+HMP ADT-A08 CLIENT  
+"BLD",9078,1,266,0)
+HMP APPT EVENTS  
+"BLD",9078,1,267,0)
+HMP DG UPDATES  
+"BLD",9078,1,268,0)
+HMP GMPL EVENT 
+"BLD",9078,1,269,0)
+HMP GMRA EVENTS 
+"BLD",9078,1,270,0)
+HMP INPT EVENTS  
+"BLD",9078,1,271,0)
+HMP MDC EVENT  
+"BLD",9078,1,272,0)
+HMP NA EVENTS    
+"BLD",9078,1,273,0)
+HMP PATIENT APPT TRIGGER    
+"BLD",9078,1,274,0)
+HMP PCE EVENTS    
+"BLD",9078,1,275,0)
+HMP PCMM TEAM   
+"BLD",9078,1,276,0)
+HMP PCMM TEAM POSITION  
+"BLD",9078,1,277,0)
+HMP PSB EVENTS   
+"BLD",9078,1,278,0)
+HMP XQOR EVENTS    
+"BLD",9078,1,279,0)
+HMPM EVT QUE CHANGE DOMAIN    
+"BLD",9078,1,280,0)
+HMPM EVT QUE CHANGE MAX LISTED  
+"BLD",9078,1,281,0)
+HMPM EVT QUE CHANGE SERVER     
+"BLD",9078,1,282,0)
+HMPM EVT QUE DISPLAY DETAILS 
+"BLD",9078,1,283,0)
+HMPM EVT QUE FILTER 
+"BLD",9078,1,284,0)
+HMPM EVT QUE FRESHNESS REPORT 
+"BLD",9078,1,285,0)
+HMPM EVT QUE MGR MENU 
+"BLD",9078,1,286,0)
+HMPM EVT QUE REFRESH 
+"BLD",9078,1,287,0)
+HMPM EVT QUE SELECT PATIENT  
+"BLD",9078,1,288,0)
+HMPM EVT QUE SHOW TEMP GLOBALS     
+"BLD",9078,1,289,0)
+ 
+"BLD",9078,1,290,0)
+Security Keys Associated:
+"BLD",9078,1,291,0)
+ 
+"BLD",9078,1,292,0)
+Security Key Name
+"BLD",9078,1,293,0)
+-----------------
+"BLD",9078,1,294,0)
+HMP ADMIN
+"BLD",9078,1,295,0)
+HMP EXPERIMENTAL
+"BLD",9078,1,296,0)
+ 
+"BLD",9078,1,297,0)
+ 
+"BLD",9078,1,298,0)
+Templates Associated:
+"BLD",9078,1,299,0)
+ 
+"BLD",9078,1,300,0)
+Template Name Type File Name (#) New/Modified/Deleted
+"BLD",9078,1,301,0)
+------------- ---- ------------- --------------------
+"BLD",9078,1,302,0)
+N/A
+"BLD",9078,1,303,0)
+ 
+"BLD",9078,1,304,0)
+ 
+"BLD",9078,1,305,0)
+New Service Requests (NSRs):
+"BLD",9078,1,306,0)
+-----------------------------
+"BLD",9078,1,307,0)
+NSR #20070902
+"BLD",9078,1,308,0)
+ 
+"BLD",9078,1,309,0)
+ 
+"BLD",9078,1,310,0)
+Patient Safety Issues (PSIs):
+"BLD",9078,1,311,0)
+------------------------------
+"BLD",9078,1,312,0)
+N/A
+"BLD",9078,1,313,0)
+ 
+"BLD",9078,1,314,0)
+ 
+"BLD",9078,1,315,0)
+Remedy Ticket(s) & Overviews:
+"BLD",9078,1,316,0)
+-----------------------------
+"BLD",9078,1,317,0)
+N/A
+"BLD",9078,1,318,0)
+ 
+"BLD",9078,1,319,0)
+ 
+"BLD",9078,1,320,0)
+Test Sites:
+"BLD",9078,1,321,0)
+-----------
+"BLD",9078,1,322,0)
+Hampton
+"BLD",9078,1,323,0)
+Portland
+"BLD",9078,1,324,0)
+San Diego
+"BLD",9078,1,325,0)
+Loma Linda
+"BLD",9078,1,326,0)
+San Antonio
+"BLD",9078,1,327,0)
+Indianapolis
+"BLD",9078,1,328,0)
+ 
+"BLD",9078,1,329,0)
+ 
+"BLD",9078,1,330,0)
+ 
+"BLD",9078,1,331,0)
+Documentation Retrieval Instructions:
+"BLD",9078,1,332,0)
+-------------------------------------
+"BLD",9078,1,333,0)
+Updated documentation describing the new functionality introduced by this
+"BLD",9078,1,334,0)
+patch is available.
+"BLD",9078,1,335,0)
+ 
+"BLD",9078,1,336,0)
+The preferred method is to FTP the files from
+"BLD",9078,1,337,0)
+ftp://ftp.ftpsrv.domain.ext/. Directory [EHMP]
+"BLD",9078,1,338,0)
+Username: EHMP Password: EHMP$STORE
+"BLD",9078,1,339,0)
+ 
+"BLD",9078,1,340,0)
+ 
+"BLD",9078,1,341,0)
+The software distribution includes:
+"BLD",9078,1,342,0)
+ 
+"BLD",9078,1,343,0)
+FILE NAME DESCRIPTION BLOCK SIZE
+"BLD",9078,1,344,0)
+HMP_2-0_V5-4.KID KIDS BUILD BLOCKS
+"BLD",9078,1,345,0)
+ 
+"BLD",9078,1,346,0)
+The documentation will be in the form of Adobe Acrobat files.
+"BLD",9078,1,347,0)
+ 
+"BLD",9078,1,348,0)
+ 
+"BLD",9078,1,349,0)
+File Name Description Retrieval Format
+"BLD",9078,1,350,0)
+-------------- -------------------------------- 
+"BLD",9078,1,351,0)
+----------------------------
+"BLD",9078,1,352,0)
+HMP_2-0_V5-4.KID eHMP Project initial deploymnet ASCII
+"BLD",9078,1,353,0)
+ 
+"BLD",9078,1,354,0)
+Patch Installation:
+"BLD",9078,1,355,0)
+ 
+"BLD",9078,1,356,0)
+ 
+"BLD",9078,1,357,0)
+Pre/Post Installation Overview
+"BLD",9078,1,358,0)
+------------------------------
+"BLD",9078,1,359,0)
+N/A
+"BLD",9078,1,360,0)
+ 
+"BLD",9078,1,361,0)
+ 
+"BLD",9078,1,362,0)
+Installation Instructions
+"BLD",9078,1,363,0)
+-------------------------
+"BLD",9078,1,364,0)
+This patch may be installed with users on the system although it is
+"BLD",9078,1,365,0)
+recommended that it be installed during non-peak hours to minimize
+"BLD",9078,1,366,0)
+potential disruption to users. This patch should take less than 5 minutes
+"BLD",9078,1,367,0)
+to install.
+"BLD",9078,1,368,0)
+ 
+"BLD",9078,1,369,0)
+ 
+"BLD",9078,1,370,0)
+1. From the Kernel Installation and Distribution System Menu, select
+"BLD",9078,1,371,0)
+the Installation Menu. From this menu, you may elect to use the
+"BLD",9078,1,372,0)
+following option. When prompted for the INSTALL enter the patch #
+"BLD",9078,1,373,0)
+(HMP 2.0):
+"BLD",9078,1,374,0)
+ 
+"BLD",9078,1,375,0)
+a. Backup a Transport Global - This option will create a backup
+"BLD",9078,1,376,0)
+message of any routines exported with this patch. It will not
+"BLD",9078,1,377,0)
+backup any other changes such as DD's or templates.
+"BLD",9078,1,378,0)
+b. Compare Transport Global to Current System - This option will
+"BLD",9078,1,379,0)
+allow you to view all changes that will be made when this patch
+"BLD",9078,1,380,0)
+is installed. It compares all components of this patch
+"BLD",9078,1,381,0)
+(routines, DD's, templates, etc.).
+"BLD",9078,1,382,0)
+backup any other changes such as DD's or templates.
+"BLD",9078,1,383,0)
+c. Compare Transport Global to Current System - This option will
+"BLD",9078,1,384,0)
+allow you to view all changes that will be made when this patch
+"BLD",9078,1,385,0)
+is installed. It compares all components of this patch
+"BLD",9078,1,386,0)
+(routines, DD's, templates, etc.).
+"BLD",9078,1,387,0)
+d. Verify Checksums in Transport Global - This option will allow
+"BLD",9078,1,388,0)
+you to ensure the integrity of the routines that are in the
+"BLD",9078,1,389,0)
+backup any other changes such as DD's or templates.
+"BLD",9078,1,390,0)
+e. Compare Transport Global to Current System - This option will
+"BLD",9078,1,391,0)
+allow you to view all changes that will be made when this patch
+"BLD",9078,1,392,0)
+is installed. It compares all components of this patch
+"BLD",9078,1,393,0)
+(routines, DD's, templates, etc.).
+"BLD",9078,1,394,0)
+f. Verify Checksums in Transport Global - This option will allow
+"BLD",9078,1,395,0)
+you to ensure the integrity of the routines that are in the
+"BLD",9078,1,396,0)
+transport global.
+"BLD",9078,1,397,0)
+ 
+"BLD",9078,1,398,0)
+2. From the Installation Menu select Load a Distribution. Enter the Host
+"BLD",9078,1,399,0)
+file
+"BLD",9078,1,400,0)
+location, then HMP_2-0_V5-4.KID
+"BLD",9078,1,401,0)
+ 
+"BLD",9078,1,402,0)
+3. From the Installation Menu, select the Install Package(s) option and
+"BLD",9078,1,403,0)
+choose the patch to install. Enter HMPM 2.0  (Which is the name of the 
+"BLD",9078,1,404,0)
+multipatch containing the patches listed above.
+"BLD",9078,1,405,0)
+ 
+"BLD",9078,1,406,0)
+4. When prompted 'Want KIDS to INHIBIT LOGONs during the install? NO//',
+"BLD",9078,1,407,0)
+respond NO.
+"BLD",9078,1,408,0)
+ 
+"BLD",9078,1,409,0)
+5. When prompted to Rebuild Menu Options YES//' respond YES.
+"BLD",9078,1,410,0)
+ 
+"BLD",9078,1,411,0)
+6. When prompted 'Want to DISABLE Scheduled Options, Menu Options, and
+"BLD",9078,1,412,0)
+Protocols? NO//', respond NO.
+"BLD",9078,1,413,0)
+ 
+"BLD",9078,1,414,0)
+7. If prompted 'Delay Install (Minutes): (0 - 60): 0//', respond 0.
+"BLD",9078,1,415,0)
+ 
+"BLD",9078,1,416,0)
+[End of file]
+"BLD",9078,4,0)
+^9.64PA^800001.2^9
+"BLD",9078,4,800000,0)
+800000
+"BLD",9078,4,800000,222)
+y^y^f^^y^^y^o^n
+"BLD",9078,4,800000.1,0)
+800000.1
+"BLD",9078,4,800000.1,222)
+y^y^f^^y^^y^o^n
+"BLD",9078,4,800000.11,0)
+800000.11
+"BLD",9078,4,800000.11,222)
+y^y^f^^y^^y^o^n
+"BLD",9078,4,800000.2,0)
+800000.2
+"BLD",9078,4,800000.2,222)
+y^y^f^^^^n^^
+"BLD",9078,4,800000.2,224)
+
+"BLD",9078,4,800000.21,0)
+800000.21
+"BLD",9078,4,800000.21,222)
+y^y^f^^n^^y^o^n
+"BLD",9078,4,800000.22,0)
+800000.22
+"BLD",9078,4,800000.22,222)
+y^y^f^^y^^y^o^n
+"BLD",9078,4,800001,0)
+800001
+"BLD",9078,4,800001,222)
+y^y^f^^y^^y^o^n
+"BLD",9078,4,800001.2,0)
+800001.2
+"BLD",9078,4,800001.2,222)
+y^y^f^^n^^y^o^n
+"BLD",9078,4,800001.5,0)
+800001.5
+"BLD",9078,4,800001.5,222)
+y^y^f^^y^^y^o^n
+"BLD",9078,4,"B",800000,800000)
+
+"BLD",9078,4,"B",800000.1,800000.1)
+
+"BLD",9078,4,"B",800000.11,800000.11)
+
+"BLD",9078,4,"B",800000.2,800000.2)
+
+"BLD",9078,4,"B",800000.21,800000.21)
+
+"BLD",9078,4,"B",800000.22,800000.22)
+
+"BLD",9078,4,"B",800001,800001)
+
+"BLD",9078,4,"B",800001.2,800001.2)
+
+"BLD",9078,4,"B",800001.5,800001.5)
+
+"BLD",9078,6.3)
+53
+"BLD",9078,"ABPKG")
+n
+"BLD",9078,"INI")
+PRE^HMPP3I
+"BLD",9078,"INIT")
+POST^HMPP3I
+"BLD",9078,"KRN",0)
+^9.67PA^779.2^20
+"BLD",9078,"KRN",.4,0)
+.4
+"BLD",9078,"KRN",.4,"NM",0)
+^9.68A^^
+"BLD",9078,"KRN",.401,0)
+.401
+"BLD",9078,"KRN",.401,"NM",0)
+^9.68A^^
+"BLD",9078,"KRN",.402,0)
+.402
+"BLD",9078,"KRN",.402,"NM",0)
+^9.68A^^
+"BLD",9078,"KRN",.403,0)
+.403
+"BLD",9078,"KRN",.403,"NM",0)
+^9.68A^^
+"BLD",9078,"KRN",.5,0)
+.5
+"BLD",9078,"KRN",.5,"NM",0)
+^9.68A^^
+"BLD",9078,"KRN",.84,0)
+.84
+"BLD",9078,"KRN",.84,"NM",0)
+^9.68A^^
+"BLD",9078,"KRN",3.6,0)
+3.6
+"BLD",9078,"KRN",3.6,"NM",0)
+^9.68A^^
+"BLD",9078,"KRN",3.8,0)
+3.8
+"BLD",9078,"KRN",3.8,"NM",0)
+^9.68A^^
+"BLD",9078,"KRN",9.2,0)
+9.2
+"BLD",9078,"KRN",9.2,"NM",0)
+^9.68A^^
+"BLD",9078,"KRN",9.8,0)
+9.8
+"BLD",9078,"KRN",9.8,"NM",0)
+^9.68A^^0
+"BLD",9078,"KRN",19,0)
+19
+"BLD",9078,"KRN",19,"NM",0)
+^9.68A^16^16
+"BLD",9078,"KRN",19,"NM",1,0)
+HMP APPLICATION PROXY^^0
+"BLD",9078,"KRN",19,"NM",2,0)
+HMP APPOINTMENTS^^0
+"BLD",9078,"KRN",19,"NM",3,0)
+HMP PATIENT ACTIVITY^^0
+"BLD",9078,"KRN",19,"NM",4,0)
+HMP PATIENT DATA MONITOR^^0
+"BLD",9078,"KRN",19,"NM",5,0)
+HMP SYNCHRONIZATION CONTEXT^^0
+"BLD",9078,"KRN",19,"NM",6,0)
+HMP UI CONTEXT^^0
+"BLD",9078,"KRN",19,"NM",7,0)
+HMP WB PTDEM^^0
+"BLD",9078,"KRN",19,"NM",8,0)
+HMP XU EVENTS^^0
+"BLD",9078,"KRN",19,"NM",9,0)
+HMPM ADD HMP PATIENT^^0
+"BLD",9078,"KRN",19,"NM",10,0)
+HMPM ADD HMP USER^^0
+"BLD",9078,"KRN",19,"NM",11,0)
+HMPM EMERGENCY STOP^^0
+"BLD",9078,"KRN",19,"NM",12,0)
+HMPM EXTRACT MONITOR^^0
+"BLD",9078,"KRN",19,"NM",13,0)
+HMPM RESTART FRESHNESS^^0
+"BLD",9078,"KRN",19,"NM",14,0)
+HMPMGR^^0
+"BLD",9078,"KRN",19,"NM",15,0)
+XU USER ADD^^0
+"BLD",9078,"KRN",19,"NM",16,0)
+HMP WB DOMAINS^^0
+"BLD",9078,"KRN",19,"NM","B","HMP APPLICATION PROXY",1)
+
+"BLD",9078,"KRN",19,"NM","B","HMP APPOINTMENTS",2)
+
+"BLD",9078,"KRN",19,"NM","B","HMP PATIENT ACTIVITY",3)
+
+"BLD",9078,"KRN",19,"NM","B","HMP PATIENT DATA MONITOR",4)
+
+"BLD",9078,"KRN",19,"NM","B","HMP SYNCHRONIZATION CONTEXT",5)
+
+"BLD",9078,"KRN",19,"NM","B","HMP UI CONTEXT",6)
+
+"BLD",9078,"KRN",19,"NM","B","HMP WB DOMAINS",16)
+
+"BLD",9078,"KRN",19,"NM","B","HMP WB PTDEM",7)
+
+"BLD",9078,"KRN",19,"NM","B","HMP XU EVENTS",8)
+
+"BLD",9078,"KRN",19,"NM","B","HMPM ADD HMP PATIENT",9)
+
+"BLD",9078,"KRN",19,"NM","B","HMPM ADD HMP USER",10)
+
+"BLD",9078,"KRN",19,"NM","B","HMPM EMERGENCY STOP",11)
+
+"BLD",9078,"KRN",19,"NM","B","HMPM EXTRACT MONITOR",12)
+
+"BLD",9078,"KRN",19,"NM","B","HMPM RESTART FRESHNESS",13)
+
+"BLD",9078,"KRN",19,"NM","B","HMPMGR",14)
+
+"BLD",9078,"KRN",19,"NM","B","XU USER ADD",15)
+
+"BLD",9078,"KRN",19.1,0)
+19.1
+"BLD",9078,"KRN",19.1,"NM",0)
+^9.68A^2^2
+"BLD",9078,"KRN",19.1,"NM",1,0)
+HMP ADMIN^^0
+"BLD",9078,"KRN",19.1,"NM",2,0)
+HMP EXPERIMENTAL^^0
+"BLD",9078,"KRN",19.1,"NM","B","HMP ADMIN",1)
+
+"BLD",9078,"KRN",19.1,"NM","B","HMP EXPERIMENTAL",2)
+
+"BLD",9078,"KRN",101,0)
+101
+"BLD",9078,"KRN",101,"NM",0)
+^9.68A^49^48
+"BLD",9078,"KRN",101,"NM",1,0)
+HMP ADT-A04 CLIENT^^0
+"BLD",9078,"KRN",101,"NM",2,0)
+HMP ADT-A08 CLIENT^^0
+"BLD",9078,"KRN",101,"NM",3,0)
+HMP APPT EVENTS^^0
+"BLD",9078,"KRN",101,"NM",4,0)
+HMP DG UPDATES^^0
+"BLD",9078,"KRN",101,"NM",5,0)
+HMP GMPL EVENT^^0
+"BLD",9078,"KRN",101,"NM",6,0)
+HMP GMRA EVENTS^^0
+"BLD",9078,"KRN",101,"NM",7,0)
+HMP INPT EVENTS^^0
+"BLD",9078,"KRN",101,"NM",8,0)
+HMP MDC EVENT^^0
+"BLD",9078,"KRN",101,"NM",9,0)
+HMP NA EVENTS^^0
+"BLD",9078,"KRN",101,"NM",11,0)
+HMP PCE EVENTS^^0
+"BLD",9078,"KRN",101,"NM",12,0)
+HMP PCMM TEAM^^0
+"BLD",9078,"KRN",101,"NM",13,0)
+HMP PCMM TEAM POSITION^^0
+"BLD",9078,"KRN",101,"NM",14,0)
+HMP PSB EVENTS^^0
+"BLD",9078,"KRN",101,"NM",15,0)
+HMP XQOR EVENTS^^0
+"BLD",9078,"KRN",101,"NM",16,0)
+HMPM EVT QUE CHANGE DOMAIN^^0
+"BLD",9078,"KRN",101,"NM",17,0)
+HMPM EVT QUE MGR MENU^^0
+"BLD",9078,"KRN",101,"NM",18,0)
+HMPM EVT QUE CHANGE MAX LISTED^^0
+"BLD",9078,"KRN",101,"NM",19,0)
+HMPM EVT QUE SELECT PATIENT^^0
+"BLD",9078,"KRN",101,"NM",20,0)
+HMPM EVT QUE SHOW TEMP GLOBALS^^0
+"BLD",9078,"KRN",101,"NM",21,0)
+HMPM EVT QUE FILTER^^0
+"BLD",9078,"KRN",101,"NM",22,0)
+HMPM EVT QUE FRESHNESS REPORT^^0
+"BLD",9078,"KRN",101,"NM",23,0)
+HMPM EVT QUE DISPLAY DETAILS^^0
+"BLD",9078,"KRN",101,"NM",24,0)
+HMPM EVT QUE REFRESH^^0
+"BLD",9078,"KRN",101,"NM",25,0)
+HMPM EVT QUE CHANGE SERVER^^0
+"BLD",9078,"KRN",101,"NM",26,0)
+HMP DGPF ASSIGN FLAG^^0
+"BLD",9078,"KRN",101,"NM",27,0)
+GMPL EVENT^^2
+"BLD",9078,"KRN",101,"NM",28,0)
+OR EVSEND VPR^^2
+"BLD",9078,"KRN",101,"NM",29,0)
+MDC OBSERVATION UPDATE^^2
+"BLD",9078,"KRN",101,"NM",30,0)
+PSB EVSEND VPR^^2
+"BLD",9078,"KRN",101,"NM",31,0)
+GMRC EVSEND OR^^2
+"BLD",9078,"KRN",101,"NM",32,0)
+OR EVSEND LRCH^^2
+"BLD",9078,"KRN",101,"NM",33,0)
+DGPM MOVEMENT EVENTS^^2
+"BLD",9078,"KRN",101,"NM",34,0)
+SDAM APPOINTMENT EVENTS^^2
+"BLD",9078,"KRN",101,"NM",35,0)
+RA EVSEND OR^^2
+"BLD",9078,"KRN",101,"NM",36,0)
+PXK VISIT DATA EVENT^^2
+"BLD",9078,"KRN",101,"NM",37,0)
+GMRA SIGN-OFF ON DATA^^2
+"BLD",9078,"KRN",101,"NM",38,0)
+GMRA ENTERED IN ERROR^^2
+"BLD",9078,"KRN",101,"NM",39,0)
+SCMC PATIENT TEAM CHANGES^^2
+"BLD",9078,"KRN",101,"NM",40,0)
+SCMC PATIENT TEAM POSITION CHANGES^^2
+"BLD",9078,"KRN",101,"NM",41,0)
+LR7O CH EVSEND OR^^2
+"BLD",9078,"KRN",101,"NM",42,0)
+PS EVSEND OR^^2
+"BLD",9078,"KRN",101,"NM",43,0)
+FH EVSEND OR^^2
+"BLD",9078,"KRN",101,"NM",44,0)
+OR EVSEND RA^^2
+"BLD",9078,"KRN",101,"NM",45,0)
+OR EVSEND FH^^2
+"BLD",9078,"KRN",101,"NM",46,0)
+OR EVSEND ORG^^2
+"BLD",9078,"KRN",101,"NM",47,0)
+OR EVSEND PS^^2
+"BLD",9078,"KRN",101,"NM",48,0)
+OR EVSEND GMRC^^2
+"BLD",9078,"KRN",101,"NM",49,0)
+DG FIELD MONITOR^^2
+"BLD",9078,"KRN",101,"NM","B","DG FIELD MONITOR",49)
+
+"BLD",9078,"KRN",101,"NM","B","DGPM MOVEMENT EVENTS",33)
+
+"BLD",9078,"KRN",101,"NM","B","FH EVSEND OR",43)
+
+"BLD",9078,"KRN",101,"NM","B","GMPL EVENT",27)
+
+"BLD",9078,"KRN",101,"NM","B","GMRA ENTERED IN ERROR",38)
+
+"BLD",9078,"KRN",101,"NM","B","GMRA SIGN-OFF ON DATA",37)
+
+"BLD",9078,"KRN",101,"NM","B","GMRC EVSEND OR",31)
+
+"BLD",9078,"KRN",101,"NM","B","HMP ADT-A04 CLIENT",1)
+
+"BLD",9078,"KRN",101,"NM","B","HMP ADT-A08 CLIENT",2)
+
+"BLD",9078,"KRN",101,"NM","B","HMP APPT EVENTS",3)
+
+"BLD",9078,"KRN",101,"NM","B","HMP DG UPDATES",4)
+
+"BLD",9078,"KRN",101,"NM","B","HMP DGPF ASSIGN FLAG",26)
+
+"BLD",9078,"KRN",101,"NM","B","HMP GMPL EVENT",5)
+
+"BLD",9078,"KRN",101,"NM","B","HMP GMRA EVENTS",6)
+
+"BLD",9078,"KRN",101,"NM","B","HMP INPT EVENTS",7)
+
+"BLD",9078,"KRN",101,"NM","B","HMP MDC EVENT",8)
+
+"BLD",9078,"KRN",101,"NM","B","HMP NA EVENTS",9)
+
+"BLD",9078,"KRN",101,"NM","B","HMP PCE EVENTS",11)
+
+"BLD",9078,"KRN",101,"NM","B","HMP PCMM TEAM",12)
+
+"BLD",9078,"KRN",101,"NM","B","HMP PCMM TEAM POSITION",13)
+
+"BLD",9078,"KRN",101,"NM","B","HMP PSB EVENTS",14)
+
+"BLD",9078,"KRN",101,"NM","B","HMP XQOR EVENTS",15)
+
+"BLD",9078,"KRN",101,"NM","B","HMPM EVT QUE CHANGE DOMAIN",16)
+
+"BLD",9078,"KRN",101,"NM","B","HMPM EVT QUE CHANGE MAX LISTED",18)
+
+"BLD",9078,"KRN",101,"NM","B","HMPM EVT QUE CHANGE SERVER",25)
+
+"BLD",9078,"KRN",101,"NM","B","HMPM EVT QUE DISPLAY DETAILS",23)
+
+"BLD",9078,"KRN",101,"NM","B","HMPM EVT QUE FILTER",21)
+
+"BLD",9078,"KRN",101,"NM","B","HMPM EVT QUE FRESHNESS REPORT",22)
+
+"BLD",9078,"KRN",101,"NM","B","HMPM EVT QUE MGR MENU",17)
+
+"BLD",9078,"KRN",101,"NM","B","HMPM EVT QUE REFRESH",24)
+
+"BLD",9078,"KRN",101,"NM","B","HMPM EVT QUE SELECT PATIENT",19)
+
+"BLD",9078,"KRN",101,"NM","B","HMPM EVT QUE SHOW TEMP GLOBALS",20)
+
+"BLD",9078,"KRN",101,"NM","B","LR7O CH EVSEND OR",41)
+
+"BLD",9078,"KRN",101,"NM","B","MDC OBSERVATION UPDATE",29)
+
+"BLD",9078,"KRN",101,"NM","B","OR EVSEND FH",45)
+
+"BLD",9078,"KRN",101,"NM","B","OR EVSEND GMRC",48)
+
+"BLD",9078,"KRN",101,"NM","B","OR EVSEND LRCH",32)
+
+"BLD",9078,"KRN",101,"NM","B","OR EVSEND ORG",46)
+
+"BLD",9078,"KRN",101,"NM","B","OR EVSEND PS",47)
+
+"BLD",9078,"KRN",101,"NM","B","OR EVSEND RA",44)
+
+"BLD",9078,"KRN",101,"NM","B","OR EVSEND VPR",28)
+
+"BLD",9078,"KRN",101,"NM","B","PS EVSEND OR",42)
+
+"BLD",9078,"KRN",101,"NM","B","PSB EVSEND VPR",30)
+
+"BLD",9078,"KRN",101,"NM","B","PXK VISIT DATA EVENT",36)
+
+"BLD",9078,"KRN",101,"NM","B","RA EVSEND OR",35)
+
+"BLD",9078,"KRN",101,"NM","B","SCMC PATIENT TEAM CHANGES",39)
+
+"BLD",9078,"KRN",101,"NM","B","SCMC PATIENT TEAM POSITION CHANGES",40)
+
+"BLD",9078,"KRN",101,"NM","B","SDAM APPOINTMENT EVENTS",34)
+
+"BLD",9078,"KRN",409.61,0)
+409.61
+"BLD",9078,"KRN",409.61,"NM",0)
+^9.68A^^
+"BLD",9078,"KRN",771,0)
+771
+"BLD",9078,"KRN",771,"NM",0)
+^9.68A^1^1
+"BLD",9078,"KRN",771,"NM",1,0)
+HMP HL7^^0
+"BLD",9078,"KRN",771,"NM","B","HMP HL7",1)
+
+"BLD",9078,"KRN",779.2,0)
+779.2
+"BLD",9078,"KRN",870,0)
+870
+"BLD",9078,"KRN",870,"NM",0)
+^9.68A^^
+"BLD",9078,"KRN",8989.51,0)
+8989.51
+"BLD",9078,"KRN",8989.51,"NM",0)
+^9.68A^9^9
+"BLD",9078,"KRN",8989.51,"NM",1,0)
+HMP CPRS PATH^^0
+"BLD",9078,"KRN",8989.51,"NM",2,0)
+HMP JSON SCHEMA^^0
+"BLD",9078,"KRN",8989.51,"NM",3,0)
+HMP LOCATIONS^^0
+"BLD",9078,"KRN",8989.51,"NM",4,0)
+HMP PARAMETERS^^0
+"BLD",9078,"KRN",8989.51,"NM",5,0)
+HMP SYSTEM NAME^^0
+"BLD",9078,"KRN",8989.51,"NM",6,0)
+HMP SYSTEM NAME^^0
+"BLD",9078,"KRN",8989.51,"NM",7,0)
+HMP SYSTEM NAME^^0
+"BLD",9078,"KRN",8989.51,"NM",8,0)
+HMP TASK WAIT TIME^^0
+"BLD",9078,"KRN",8989.51,"NM",9,0)
+HMP VERSION^^0
+"BLD",9078,"KRN",8989.51,"NM","B","HMP CPRS PATH",1)
+
+"BLD",9078,"KRN",8989.51,"NM","B","HMP JSON SCHEMA",2)
+
+"BLD",9078,"KRN",8989.51,"NM","B","HMP LOCATIONS",3)
+
+"BLD",9078,"KRN",8989.51,"NM","B","HMP PARAMETERS",4)
+
+"BLD",9078,"KRN",8989.51,"NM","B","HMP SYSTEM NAME",5)
+
+"BLD",9078,"KRN",8989.51,"NM","B","HMP SYSTEM NAME",6)
+
+"BLD",9078,"KRN",8989.51,"NM","B","HMP SYSTEM NAME",7)
+
+"BLD",9078,"KRN",8989.51,"NM","B","HMP TASK WAIT TIME",8)
+
+"BLD",9078,"KRN",8989.51,"NM","B","HMP VERSION",9)
+
+"BLD",9078,"KRN",8989.52,0)
+8989.52
+"BLD",9078,"KRN",8989.52,"NM",0)
+^9.68A^^
+"BLD",9078,"KRN",8994,0)
+8994
+"BLD",9078,"KRN",8994,"NM",0)
+^9.68A^36^36
+"BLD",9078,"KRN",8994,"NM",1,0)
+HMP APPOINTMENTS^^0
+"BLD",9078,"KRN",8994,"NM",2,0)
+HMP DATA VERSION^^0
+"BLD",9078,"KRN",8994,"NM",3,0)
+HMP DELETE OBJECT^^0
+"BLD",9078,"KRN",8994,"NM",4,0)
+HMP DELETE ROSTER^^0
+"BLD",9078,"KRN",8994,"NM",5,0)
+HMP GET CHECKSUM^^0
+"BLD",9078,"KRN",8994,"NM",6,0)
+HMP GET OBJECT^^0
+"BLD",9078,"KRN",8994,"NM",7,0)
+HMP GET OPERATIONAL DATA^^0
+"BLD",9078,"KRN",8994,"NM",8,0)
+HMP GET PATIENT DATA^^0
+"BLD",9078,"KRN",8994,"NM",9,0)
+HMP GET PATIENT DATA JSON^^0
+"BLD",9078,"KRN",8994,"NM",10,0)
+HMP GET REFERENCE DATA^^0
+"BLD",9078,"KRN",8994,"NM",11,0)
+HMP GET ROSTER LIST^^0
+"BLD",9078,"KRN",8994,"NM",12,0)
+HMP GET SOURCE^^0
+"BLD",9078,"KRN",8994,"NM",13,0)
+HMP INPATIENTS^^0
+"BLD",9078,"KRN",8994,"NM",14,0)
+HMP PATIENT ACTIVITY^^0
+"BLD",9078,"KRN",8994,"NM",15,0)
+HMP PREVIEW ROSTER^^0
+"BLD",9078,"KRN",8994,"NM",16,0)
+HMP PUT DEMOGRAPHICS^^0
+"BLD",9078,"KRN",8994,"NM",17,0)
+HMP PUT OBJECT^^0
+"BLD",9078,"KRN",8994,"NM",18,0)
+HMP PUT PATIENT DATA^^0
+"BLD",9078,"KRN",8994,"NM",19,0)
+HMP ROSTER PATIENTS^^0
+"BLD",9078,"KRN",8994,"NM",20,0)
+HMP ROSTERS^^0
+"BLD",9078,"KRN",8994,"NM",21,0)
+HMP SUBSCRIBE^^0
+"BLD",9078,"KRN",8994,"NM",22,0)
+HMP SUBSCRIBE ROSTERS^^0
+"BLD",9078,"KRN",8994,"NM",23,0)
+HMP UPDATE ROSTER^^0
+"BLD",9078,"KRN",8994,"NM",24,0)
+HMP WRITEBACK PT DEM^^0
+"BLD",9078,"KRN",8994,"NM",25,0)
+HMPCORD RPC^^0
+"BLD",9078,"KRN",8994,"NM",26,0)
+HMPCPAT RPC^^0
+"BLD",9078,"KRN",8994,"NM",27,0)
+HMPCPRS RPC^^0
+"BLD",9078,"KRN",8994,"NM",28,0)
+HMPCRPC RPC^^0
+"BLD",9078,"KRN",8994,"NM",29,0)
+HMPCRPC RPCCHAIN^^0
+"BLD",9078,"KRN",8994,"NM",30,0)
+HMPDJFS API^^0
+"BLD",9078,"KRN",8994,"NM",31,0)
+HMPDJFS DELSUB^^0
+"BLD",9078,"KRN",8994,"NM",32,0)
+HMPFPTC CHKS^^0
+"BLD",9078,"KRN",8994,"NM",33,0)
+HMPFPTC LOG^^0
+"BLD",9078,"KRN",8994,"NM",34,0)
+HMP LOCAL CORRESPONDINGIDS^^0
+"BLD",9078,"KRN",8994,"NM",35,0)
+HMP LOCAL GETCORRESPONDINGIDS^^0
+"BLD",9078,"KRN",8994,"NM",36,0)
+HMP PUT OPERATIONAL DATA^^0
+"BLD",9078,"KRN",8994,"NM","B","HMP APPOINTMENTS",1)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP DATA VERSION",2)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP DELETE OBJECT",3)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP DELETE ROSTER",4)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP GET CHECKSUM",5)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP GET OBJECT",6)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP GET OPERATIONAL DATA",7)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP GET PATIENT DATA",8)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP GET PATIENT DATA JSON",9)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP GET REFERENCE DATA",10)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP GET ROSTER LIST",11)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP GET SOURCE",12)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP INPATIENTS",13)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP LOCAL CORRESPONDINGIDS",34)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP LOCAL GETCORRESPONDINGIDS",35)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP PATIENT ACTIVITY",14)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP PREVIEW ROSTER",15)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP PUT DEMOGRAPHICS",16)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP PUT OBJECT",17)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP PUT OPERATIONAL DATA",36)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP PUT PATIENT DATA",18)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP ROSTER PATIENTS",19)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP ROSTERS",20)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP SUBSCRIBE",21)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP SUBSCRIBE ROSTERS",22)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP UPDATE ROSTER",23)
+
+"BLD",9078,"KRN",8994,"NM","B","HMP WRITEBACK PT DEM",24)
+
+"BLD",9078,"KRN",8994,"NM","B","HMPCORD RPC",25)
+
+"BLD",9078,"KRN",8994,"NM","B","HMPCPAT RPC",26)
+
+"BLD",9078,"KRN",8994,"NM","B","HMPCPRS RPC",27)
+
+"BLD",9078,"KRN",8994,"NM","B","HMPCRPC RPC",28)
+
+"BLD",9078,"KRN",8994,"NM","B","HMPCRPC RPCCHAIN",29)
+
+"BLD",9078,"KRN",8994,"NM","B","HMPDJFS API",30)
+
+"BLD",9078,"KRN",8994,"NM","B","HMPDJFS DELSUB",31)
+
+"BLD",9078,"KRN",8994,"NM","B","HMPFPTC CHKS",32)
+
+"BLD",9078,"KRN",8994,"NM","B","HMPFPTC LOG",33)
+
+"BLD",9078,"KRN","B",.4,.4)
+
+"BLD",9078,"KRN","B",.401,.401)
+
+"BLD",9078,"KRN","B",.402,.402)
+
+"BLD",9078,"KRN","B",.403,.403)
+
+"BLD",9078,"KRN","B",.5,.5)
+
+"BLD",9078,"KRN","B",.84,.84)
+
+"BLD",9078,"KRN","B",3.6,3.6)
+
+"BLD",9078,"KRN","B",3.8,3.8)
+
+"BLD",9078,"KRN","B",9.2,9.2)
+
+"BLD",9078,"KRN","B",9.8,9.8)
+
+"BLD",9078,"KRN","B",19,19)
+
+"BLD",9078,"KRN","B",19.1,19.1)
+
+"BLD",9078,"KRN","B",101,101)
+
+"BLD",9078,"KRN","B",409.61,409.61)
+
+"BLD",9078,"KRN","B",771,771)
+
+"BLD",9078,"KRN","B",779.2,779.2)
+
+"BLD",9078,"KRN","B",870,870)
+
+"BLD",9078,"KRN","B",8989.51,8989.51)
+
+"BLD",9078,"KRN","B",8989.52,8989.52)
+
+"BLD",9078,"KRN","B",8994,8994)
+
+"BLD",9078,"QDEF")
+^^^^NO^^^^YES^^NO
+"BLD",9078,"QUES",0)
+^9.62^^
+"BLD",9078,"REQB",0)
+^9.611^5^5
+"BLD",9078,"REQB",1,0)
+MD*1.0*38^2
+"BLD",9078,"REQB",2,0)
+OR*3.0*390^2
+"BLD",9078,"REQB",3,0)
+PSB*3.0*79^2
+"BLD",9078,"REQB",4,0)
+TIU*1.0*106^2
+"BLD",9078,"REQB",5,0)
+GMRC*3.0*80^2
+"BLD",9078,"REQB","B","GMRC*3.0*80",5)
+
+"BLD",9078,"REQB","B","MD*1.0*38",1)
+
+"BLD",9078,"REQB","B","OR*3.0*390",2)
+
+"BLD",9078,"REQB","B","PSB*3.0*79",3)
+
+"BLD",9078,"REQB","B","TIU*1.0*106",4)
+
+"DATA",800000,1,0)
+hmp-development-box^3150414-45749^^85
+"DATA",800000,2,0)
+2-hmp-2
+"DATA",800000,3,0)
+0
+"DATA",800000.21,1,0)
+ACUITY CODE^ac^acuityCode
+"DATA",800000.21,2,0)
+STATUS CODE^sc^statusCode
+"DATA",800000.21,3,0)
+INTERPRETATION^int^interpretation
+"DATA",800000.21,4,0)
+RESULT STATUS^rs^resultStatus
+"DATA",800000.21,5,0)
+INTERPRETATION CODE^ic^interpretationCode
+"DATA",800000.21,6,0)
+PATIENT CLASS CODE^pcc^patientClassCode
+"DATA",800000.21,7,0)
+CATEGORY CODE^cc^categoryCode
+"DATA",800000.21,8,0)
+MEDICATION STATUS^ms^medStatus
+"DATA",800000.21,9,0)
+MEDICATION TYPE^mt^medType
+"DATA",800000.21,10,0)
+INGREDIENT ROLE^ir^ingredientRole
+"DATA",800000.22,1,0)
+ACUITY CODE^ac^acuityCode
+"DATA",800000.22,2,0)
+STATUS CODE^sc^statusCode
+"DATA",800000.22,3,0)
+INTERPRETATION^int^interpretation
+"DATA",800000.22,4,0)
+RESULT STATUS^rs^resultStatus
+"DATA",800000.22,5,0)
+INTERPRETATION CODE^ic^interpretationCode
+"DATA",800000.22,6,0)
+PATIENT CLASS CODE^pcc^patientClassCode
+"DATA",800000.22,7,0)
+CATEGORY CODE^cc^categoryCode
+"DATA",800000.22,8,0)
+MEDICATION STATUS^ms^medStatus
+"DATA",800000.22,9,0)
+MEDICATION TYPE^mt^medType
+"DATA",800000.22,10,0)
+INGREDIENT ROLE^ir^ingredientRole
+"DATA",800001.5,1,0)
+100816^3141008.09^^3141003.080304^3150414.093204^1
+"DATA",800001.5,1,"JSON")
+{ "dfn": ";100816",  "icn": "5000000317", "site": "600"},
+"DATA",800001.5,2,0)
+3^3141009.09^^3141008.144919^3150414.093204^1
+"DATA",800001.5,2,"JSON")
+{ "dfn": ";3",  "icn": "10108", "site": "600"},
+"DATA",800001.5,3,0)
+0^3141116.080202^^3141116.080316^3150414.093204^1
+"DATA",800001.5,3,"JSON")
+{ "dfn": "B362;0", "site": "600"},
+"FIA",800000)
+HMP SUBSCRIPTION
+"FIA",800000,0)
+^HMP(800000,
+"FIA",800000,0,0)
+800000
+"FIA",800000,0,1)
+y^y^f^^y^^y^o^n
+"FIA",800000,0,10)
+
+"FIA",800000,0,11)
+
+"FIA",800000,0,"RLRO")
+
+"FIA",800000,0,"VR")
+2.0^HMP
+"FIA",800000,800000)
+0
+"FIA",800000,800000.01)
+0
+"FIA",800000,800000.02)
+0
+"FIA",800000.1)
+HMP PATIENT OBJECT
+"FIA",800000.1,0)
+^HMP(800000.1,
+"FIA",800000.1,0,0)
+800000.1
+"FIA",800000.1,0,1)
+y^y^f^^y^^y^o^n
+"FIA",800000.1,0,10)
+
+"FIA",800000.1,0,11)
+
+"FIA",800000.1,0,"RLRO")
+
+"FIA",800000.1,0,"VR")
+2.0^HMP
+"FIA",800000.1,800000.1)
+0
+"FIA",800000.1,800000.101)
+0
+"FIA",800000.11)
+HMP OBJECT
+"FIA",800000.11,0)
+^HMP(800000.11,
+"FIA",800000.11,0,0)
+800000.11
+"FIA",800000.11,0,1)
+y^y^f^^y^^y^o^n
+"FIA",800000.11,0,10)
+
+"FIA",800000.11,0,11)
+
+"FIA",800000.11,0,"RLRO")
+
+"FIA",800000.11,0,"VR")
+2.0^HMP
+"FIA",800000.11,800000.11)
+0
+"FIA",800000.11,800000.111)
+0
+"FIA",800000.2)
+HMP LIST
+"FIA",800000.2,0)
+^HMPD(800000.2,
+"FIA",800000.2,0,0)
+800000.2
+"FIA",800000.2,0,1)
+y^y^f^^^^n^^
+"FIA",800000.2,0,10)
+
+"FIA",800000.2,0,11)
+
+"FIA",800000.2,0,"RLRO")
+
+"FIA",800000.2,0,"VR")
+2.0^HMP
+"FIA",800000.2,800000.2)
+0
+"FIA",800000.2,800000.202)
+0
+"FIA",800000.2,800000.203)
+0
+"FIA",800000.2,800000.209)
+0
+"FIA",800000.21)
+HMP LIST DOMAIN
+"FIA",800000.21,0)
+^HMPD(800000.21,
+"FIA",800000.21,0,0)
+800000.21
+"FIA",800000.21,0,1)
+y^y^f^^n^^y^o^n
+"FIA",800000.21,0,10)
+
+"FIA",800000.21,0,11)
+
+"FIA",800000.21,0,"RLRO")
+
+"FIA",800000.21,0,"VR")
+2.0^HMP
+"FIA",800000.21,800000.21)
+0
+"FIA",800000.22)
+HMP LIST ATTRIBUTE
+"FIA",800000.22,0)
+^HMPD(800000.22,
+"FIA",800000.22,0,0)
+800000.22
+"FIA",800000.22,0,1)
+y^y^f^^y^^y^o^n
+"FIA",800000.22,0,10)
+
+"FIA",800000.22,0,11)
+
+"FIA",800000.22,0,"RLRO")
+
+"FIA",800000.22,0,"VR")
+2.0^HMP
+"FIA",800000.22,800000.22)
+0
+"FIA",800001)
+HMP PANEL
+"FIA",800001,0)
+^HMPPANEL(
+"FIA",800001,0,0)
+800001P
+"FIA",800001,0,1)
+y^y^f^^y^^y^o^n
+"FIA",800001,0,10)
+
+"FIA",800001,0,11)
+
+"FIA",800001,0,"RLRO")
+
+"FIA",800001,0,"VR")
+2.0^HMP
+"FIA",800001,800001)
+0
+"FIA",800001,800001.05)
+0
+"FIA",800001.2)
+HMP ROSTER
+"FIA",800001.2,0)
+^HMPROSTR(800001.2,
+"FIA",800001.2,0,0)
+800001.2
+"FIA",800001.2,0,1)
+y^y^f^^n^^y^o^n
+"FIA",800001.2,0,10)
+
+"FIA",800001.2,0,11)
+
+"FIA",800001.2,0,"RLRO")
+
+"FIA",800001.2,0,"VR")
+2.0^HMP
+"FIA",800001.2,800001.2)
+0
+"FIA",800001.2,800001.21)
+0
+"FIA",800001.2,800001.23)
+0
+"FIA",800001.5)
+HMP ACTIVITY
+"FIA",800001.5,0)
+^HMP(800001.5,"PTAPPT",
+"FIA",800001.5,0,0)
+800001.5P
+"FIA",800001.5,0,1)
+y^y^f^^y^^y^o^n
+"FIA",800001.5,0,10)
+
+"FIA",800001.5,0,11)
+
+"FIA",800001.5,0,"RLRO")
+
+"FIA",800001.5,0,"VR")
+2.0^HMP
+"FIA",800001.5,800001.5)
+0
+"INI")
+PRE^HMPP3I
+"INIT")
+POST^HMPP3I
+"IX",800000,800000,"ADFN",0)
+800000^ADFN^Patients to track in the Data Monitor^MU^^R^IR^W^800000.01^^^^^S
+"IX",800000,800000,"ADFN",1)
+D HMPSET^HMPDJFS(.DA,.X)
+"IX",800000,800000,"ADFN",1.4)
+S X=0 I +X(1)>0 S X=1
+"IX",800000,800000,"ADFN",2)
+D HMPKILL^HMPDJFS(.DA,.X)
+"IX",800000,800000,"ADFN",2.4)
+S X=0 I X(1)'="" S X=1
+"IX",800000,800000,"ADFN",2.5)
+K ^HMP(800000,"AITEM")
+"IX",800000,800000,"ADFN",11.1,0)
+^.114IA^2^2
+"IX",800000,800000,"ADFN",11.1,1,0)
+1^F^800000.01^.01^^1^F
+"IX",800000,800000,"ADFN",11.1,2,0)
+2^F^800000.01^2^^^F
+"IX",800000,800000,"AITEM",0)
+800000^AITEM^AITEM TEST^MU^^F^IR^I^800000^^^^^A
+"IX",800000,800000,"AITEM",1)
+D HMPOSET^HMPDJFS(DA,X)
+"IX",800000,800000,"AITEM",1.4)
+I X(1)'=""
+"IX",800000,800000,"AITEM",2)
+D HMPOKILL^HMPDJFS(DA)
+"IX",800000,800000,"AITEM",2.4)
+I X(1)'=""
+"IX",800000,800000,"AITEM",2.5)
+K ^HMP(800000,"AITEM")
+"IX",800000,800000,"AITEM",11.1,0)
+^.114IA^1^1
+"IX",800000,800000,"AITEM",11.1,1,0)
+1^F^800000^.03^^^F
+"IX",800000,800000,"AITEM",11.1,1,3)
+
+"IX",800000,800000,"AROS",0)
+800000^AROS^Rosters to track in the Data Monitor^MU^^R^IR^W^800000.02^^^^^S
+"IX",800000,800000,"AROS",1)
+S:X2(2) ^HMP(800000,"AROS",X,DA(1))=""
+"IX",800000,800000,"AROS",2)
+K:X1(2) ^HMP(800000,"AROS",X,DA(1))
+"IX",800000,800000,"AROS",2.5)
+K ^HMP(800000,"AROS")
+"IX",800000,800000,"AROS",11.1,0)
+^.114IA^2^2
+"IX",800000,800000,"AROS",11.1,1,0)
+1^F^800000.02^.01^^1^F
+"IX",800000,800000,"AROS",11.1,1,3)
+
+"IX",800000,800000,"AROS",11.1,2,0)
+2^F^800000.02^2^^2^
+"IX",800000,800000,"AROS",11.1,2,3)
+
+"IX",800000,800000.01,"AP",0)
+800000.01^AP^Subscribed patients by server not yet initialized.^R^^R^IR^I^800000.01^^^^^S
+"IX",800000,800000.01,"AP",.1,0)
+^^6^6^3140521^
+"IX",800000,800000.01,"AP",.1,1,0)
+This index lists the patients who are not yet initialized:
+"IX",800000,800000.01,"AP",.1,2,0)
+ 
+"IX",800000,800000.01,"AP",.1,3,0)
+  SERVER_IEN, "AP", STATUS, STATUS TIME, DFN
+"IX",800000,800000.01,"AP",.1,4,0)
+ 
+"IX",800000,800000.01,"AP",.1,5,0)
+Patients with an initialized status (STATUS = 2) do not appear in this 
+"IX",800000,800000.01,"AP",.1,6,0)
+index.
+"IX",800000,800000.01,"AP",1)
+S ^HMP(800000,DA(1),1,"AP",X(1),X(2),DA)=""
+"IX",800000,800000.01,"AP",1.4)
+S X=(+X2(1)<2)
+"IX",800000,800000.01,"AP",2)
+K ^HMP(800000,DA(1),1,"AP",X(1),X(2),DA)
+"IX",800000,800000.01,"AP",2.5)
+K ^HMP(800000,DA(1),1,"AP")
+"IX",800000,800000.01,"AP",11.1,0)
+^.114IA^2^2
+"IX",800000,800000.01,"AP",11.1,1,0)
+1^F^800000.01^2^^1^F
+"IX",800000,800000.01,"AP",11.1,2,0)
+2^F^800000.01^3^^2^F
+"IX",800000.1,800000.1,"C",0)
+800000.1^C^Index by patient, collection^R^^R^IR^I^800000.1^^^^^LS
+"IX",800000.1,800000.1,"C",1)
+S ^HMP(800000.1,"C",X(1),X(2),DA)=""
+"IX",800000.1,800000.1,"C",2)
+K ^HMP(800000.1,"C",X(1),X(2),DA)
+"IX",800000.1,800000.1,"C",2.5)
+K ^HMP(800000.1,"C")
+"IX",800000.1,800000.1,"C",11.1,0)
+^.114IA^2^2
+"IX",800000.1,800000.1,"C",11.1,1,0)
+1^F^800000.1^.02^^1^F
+"IX",800000.1,800000.1,"C",11.1,1,3)
+
+"IX",800000.1,800000.1,"C",11.1,2,0)
+2^F^800000.1^.03^^2^F
+"IX",800000.1,800000.1,"C",11.1,2,3)
+
+"IX",800001.2,800001.21,"AC",0)
+800001.21^AC^SORT BY SEQUENCE^R^^F^IR^I^800001.21^^^^^S
+"IX",800001.2,800001.21,"AC",1)
+Q
+"IX",800001.2,800001.21,"AC",2)
+Q
+"KRN",19,12365,-1)
+0^15
+"KRN",19,12365,0)
+XU USER ADD^New User Event^^X^^^^^^^^KERNEL^y^1
+"KRN",19,12365,1,0)
+^^10^10^3030320^
+"KRN",19,12365,1,1,0)
+This is a protocol to link other packages that want to know about a USER
+"KRN",19,12365,1,2,0)
+ADD event. Other pachages can attach to this protocol option and they will
+"KRN",19,12365,1,3,0)
+be called when a new USER is Added.  At the end of editing the user data
+"KRN",19,12365,1,4,0)
+the protocol XU USER CHANGE will be called.
+"KRN",19,12365,1,5,0)
+DUZ will be the person that is running the adding the user option.  
+"KRN",19,12365,1,6,0)
+XUIFN will point to the NEW PERSON file entry that has been added. 
+"KRN",19,12365,1,7,0)
+Returns selected file 200 data to XUSR(field name) array for New Person
+"KRN",19,12365,1,8,0)
+components
+"KRN",19,12365,1,9,0)
+ 
+"KRN",19,12365,1,10,0)
+Called from XUSERNEW by XUSERP.
+"KRN",19,12365,10,0)
+^19.01IP^3^1
+"KRN",19,12365,10,3,0)
+14338
+"KRN",19,12365,10,3,"^")
+HMP XU EVENTS
+"KRN",19,12365,20)
+D GET^XUSERP(XUIEN,.XUSR)
+"KRN",19,12365,99)
+63713,64746
+"KRN",19,12365,"U")
+NEW USER EVENT
+"KRN",19,14332,-1)
+0^3
+"KRN",19,14332,0)
+HMP PATIENT ACTIVITY^PATIENT APPOINTMENTS^^B^^^^^^^^
+"KRN",19,14332,25)
+ACT^HMPACT
+"KRN",19,14332,"RPC",0)
+^19.05P^1^1
+"KRN",19,14332,"RPC",1,0)
+HMP PATIENT ACTIVITY
+"KRN",19,14332,"U")
+PATIENT APPOINTMENTS
+"KRN",19,14333,-1)
+0^1
+"KRN",19,14333,0)
+HMP APPLICATION PROXY^HMP Application Proxy^^B^^^^^^^^
+"KRN",19,14333,1,0)
+^19.06^1^1^3110602^^^^
+"KRN",19,14333,1,1,0)
+This option allows the HMP connector proxy access to the VistA system.
+"KRN",19,14333,99.1)
+62971,33865
+"KRN",19,14333,"RPC",0)
+^19.05P^4^4
+"KRN",19,14333,"RPC",2,0)
+HMP GET PATIENT DATA
+"KRN",19,14333,"RPC",3,0)
+HMP DATA VERSION
+"KRN",19,14333,"RPC",4,0)
+HMP SUBSCRIBE
+"KRN",19,14333,"U")
+HMP APPLICATION PROXY
+"KRN",19,14334,-1)
+0^2
+"KRN",19,14334,0)
+HMP APPOINTMENTS^Return list of tomorrow's patients^^A^^^^^^^^^^1
+"KRN",19,14334,1,0)
+^^3^3^3110406^
+"KRN",19,14334,1,1,0)
+This option is intended to be scheduled to run nightly, to notify the
+"KRN",19,14334,1,2,0)
+AViVA Enterprise Health Management Platform (HMP) of patients that are expected to be
+"KRN",19,14334,1,3,0)
+seen tomorrow.
+"KRN",19,14334,20)
+D APPT^HMPPATS
+"KRN",19,14334,200.9)
+y
+"KRN",19,14334,"U")
+RETURN LIST OF TOMORROW'S PATI
+"KRN",19,14335,-1)
+0^4
+"KRN",19,14335,0)
+HMP PATIENT DATA MONITOR^HMP Patient Data Monitor^^A^^^^^^^^^^1
+"KRN",19,14335,1,0)
+^^4^4^3110406^
+"KRN",19,14335,1,1,0)
+This option manages the HMP Patient Data Monitor background job.  It 
+"KRN",19,14335,1,2,0)
+first checks to see if the job is already running, and will prompt to
+"KRN",19,14335,1,3,0)
+start it if not.  It may also stop the job if running, but the AViVA
+"KRN",19,14335,1,4,0)
+client may not display up-to-date data until it is started up again.
+"KRN",19,14335,20)
+D EN^HMPHTTP
+"KRN",19,14335,"U")
+HMP PATIENT DATA MONITOR
+"KRN",19,14336,-1)
+0^5
+"KRN",19,14336,0)
+HMP SYNCHRONIZATION CONTEXT^Synchronize the HMP^^B^^^^^^^^
+"KRN",19,14336,99.1)
+63613,33836
+"KRN",19,14336,"RPC",0)
+^19.05P^24^24
+"KRN",19,14336,"RPC",2,0)
+HMP DATA VERSION
+"KRN",19,14336,"RPC",4,0)
+HMP SUBSCRIBE
+"KRN",19,14336,"RPC",5,0)
+HMP GET PATIENT DATA JSON
+"KRN",19,14336,"RPC",7,0)
+HMP GET OBJECT
+"KRN",19,14336,"RPC",8,0)
+HMP GET OPERATIONAL DATA
+"KRN",19,14336,"RPC",10,0)
+HMP PUT OBJECT
+"KRN",19,14336,"RPC",19,0)
+HMPDJFS API
+"KRN",19,14336,"RPC",20,0)
+HMPDJFS DELSUB
+"KRN",19,14336,"RPC",21,0)
+HMP GET CHECKSUM
+"KRN",19,14336,"RPC",22,0)
+HMP PATIENT ACTIVITY
+"KRN",19,14336,"RPC",23,0)
+HMP LOCAL GETCORRESPONDINGIDS
+"KRN",19,14336,"RPC",24,0)
+ORWU USERINFO
+"KRN",19,14336,"U")
+SYNCHRONIZE THE HMP
+"KRN",19,14337,-1)
+0^6
+"KRN",19,14337,0)
+HMP UI CONTEXT^HMP UI CONTEXT version 0.7-S62^^B^^^^^^^^
+"KRN",19,14337,1,0)
+^19.06^1^1^3140618^^
+"KRN",19,14337,1,1,0)
+This option allows the HMP UI access to the VistA system.
+"KRN",19,14337,99.1)
+62990,29647
+"KRN",19,14337,"RPC",0)
+^19.05P^52^52
+"KRN",19,14337,"RPC",1,0)
+HMPCORD RPC
+"KRN",19,14337,"RPC",2,0)
+HMPCPAT RPC
+"KRN",19,14337,"RPC",3,0)
+HMPFPTC CHKS
+"KRN",19,14337,"RPC",4,0)
+HMPFPTC LOG
+"KRN",19,14337,"RPC",5,0)
+HMP APPOINTMENTS
+"KRN",19,14337,"RPC",6,0)
+HMP DATA VERSION
+"KRN",19,14337,"RPC",7,0)
+HMP DELETE ROSTER
+"KRN",19,14337,"RPC",8,0)
+HMP GET PATIENT DATA
+"KRN",19,14337,"RPC",9,0)
+HMP GET SOURCE
+"KRN",19,14337,"RPC",10,0)
+HMP INPATIENTS
+"KRN",19,14337,"RPC",11,0)
+HMP PREVIEW ROSTER
+"KRN",19,14337,"RPC",12,0)
+HMP ROSTER PATIENTS
+"KRN",19,14337,"RPC",13,0)
+HMP ROSTERS
+"KRN",19,14337,"RPC",14,0)
+HMP SUBSCRIBE
+"KRN",19,14337,"RPC",15,0)
+HMP UPDATE ROSTER
+"KRN",19,14337,"RPC",16,0)
+HMPCRPC RPC
+"KRN",19,14337,"RPC",19,0)
+XHD GET PARAMETER DEF LIST
+"KRN",19,14337,"RPC",20,0)
+HMP PUT PATIENT DATA
+"KRN",19,14337,"RPC",21,0)
+HMP PUT OBJECT
+"KRN",19,14337,"RPC",22,0)
+HMP DELETE OBJECT
+"KRN",19,14337,"RPC",23,0)
+HMP GET OBJECT
+"KRN",19,14337,"RPC",24,0)
+HMP GET ROSTER LIST
+"KRN",19,14337,"RPC",25,0)
+HMPCPRS RPC
+"KRN",19,14337,"RPC",26,0)
+ORQPT WARDS
+"KRN",19,14337,"RPC",27,0)
+ORQPT WARD PATIENTS
+"KRN",19,14337,"RPC",28,0)
+ORQPT SPECIALTIES
+"KRN",19,14337,"RPC",29,0)
+ORQPT SPECIALTY PATIENTS
+"KRN",19,14337,"RPC",30,0)
+ORWU CLINLOC
+"KRN",19,14337,"RPC",31,0)
+ORQPT CLINIC PATIENTS
+"KRN",19,14337,"RPC",32,0)
+ORWU NEWPERS
+"KRN",19,14337,"RPC",33,0)
+ORQPT PROVIDER PATIENTS
+"KRN",19,14337,"RPC",34,0)
+ORWRP COLUMN HEADERS
+"KRN",19,14337,"RPC",35,0)
+ORWLR CUMULATIVE REPORT
+"KRN",19,14337,"RPC",36,0)
+ORWLRR INTERIM
+"KRN",19,14337,"RPC",37,0)
+ORWRP REPORT TEXT
+"KRN",19,14337,"RPC",38,0)
+ORWRP3 EXPAND COLUMNS
+"KRN",19,14337,"RPC",39,0)
+HMP PUT DEMOGRAPHICS
+"KRN",19,14337,"RPC",40,0)
+HMPCRPC RPCCHAIN
+"KRN",19,14337,"RPC",41,0)
+ORQPT DEFAULT PATIENT LIST
+"KRN",19,14337,"RPC",42,0)
+ORWU USERINFO
+"KRN",19,14337,"RPC",43,0)
+YTQ ALLKEYS
+"KRN",19,14337,"RPC",44,0)
+ORWPT BYWARD
+"KRN",19,14337,"RPC",45,0)
+ORQQPX REMINDERS LIST
+"KRN",19,14337,"RPC",46,0)
+ORQQPX REMINDER DETAIL
+"KRN",19,14337,"RPC",47,0)
+ORQQPL4 LEX
+"KRN",19,14337,"RPC",48,0)
+ORWRP REPORT LISTS
+"KRN",19,14337,"RPC",49,0)
+HMP PATIENT ADMIT SYNC
+"KRN",19,14337,"RPC",50,0)
+HMP PATIENT SCHED SYNC
+"KRN",19,14337,"RPC",51,0)
+ORWPT LIST ALL
+"KRN",19,14337,"RPC",52,0)
+ORWPT APPTLST
+"KRN",19,14337,"U")
+HMP UI CONTEXT VERSION 0.7-S62
+"KRN",19,14338,-1)
+0^8
+"KRN",19,14338,0)
+HMP XU EVENTS^New Person events for HMP^^A^^^^^^^^^^1
+"KRN",19,14338,1,0)
+^^1^1^3130116^
+"KRN",19,14338,1,1,0)
+This protocol will track New Person updates for HMP.
+"KRN",19,14338,20)
+D XU^HMPEVNT(XUIEN,"")
+"KRN",19,14338,"U")
+NEW PERSON EVENTS FOR HMP
+"KRN",19,14339,-1)
+0^10
+"KRN",19,14339,0)
+HMPM ADD HMP USER^Add Health Management Platform User^^A^^^^^^^^^^1
+"KRN",19,14339,1,0)
+^^4^4^3140326^
+"KRN",19,14339,1,1,0)
+This option allows a user to be given access to use the Health Management
+"KRN",19,14339,1,2,0)
+Platform.  The selected user will be given the HMP UI CONTEXT option.
+"KRN",19,14339,1,3,0)
+Additionally, their default patient list my be set up for automatic
+"KRN",19,14339,1,4,0)
+synchronization with the Health Management Platform (HMP).
+"KRN",19,14339,20)
+D OPTASGN^HMPCAC
+"KRN",19,14339,"U")
+ADD HEALTH MANAGEMENT PLATFORM
+"KRN",19,14340,-1)
+0^12
+"KRN",19,14340,0)
+HMPM EXTRACT MONITOR^Monitor HMP Server Synchronization^^A^^^^^^^^^^1
+"KRN",19,14340,1,0)
+^^2^2^3140402^
+"KRN",19,14340,1,1,0)
+This option allow one to monitor the polls from an HMP server and any 
+"KRN",19,14340,1,2,0)
+currently executing HMP extracts.
+"KRN",19,14340,20)
+D EN^HMPDJFSM
+"KRN",19,14340,"U")
+MONITOR HMP SERVER SYNCHRONIZA
+"KRN",19,14341,-1)
+0^11
+"KRN",19,14341,0)
+HMPM EMERGENCY STOP^Emergency Stop HMP Freshness Updates^^A^^^^^^^^^^1
+"KRN",19,14341,1,0)
+^^5^5^3140403^
+"KRN",19,14341,1,1,0)
+This option should be used with caution.  It will stop the freshness 
+"KRN",19,14341,1,2,0)
+events for the ENTERPRISE HEALTH MANAGEMENT PLATFORM (HMP) from being called.  Once the 
+"KRN",19,14341,1,3,0)
+freshness events are stopped, patient data must be re-synchronized with
+"KRN",19,14341,1,4,0)
+the HMP to ensure completeness.  Only stop freshness updates if there is a
+"KRN",19,14341,1,5,0)
+problem with system operation.
+"KRN",19,14341,20)
+D EMERSTOP^HMPDJFSM
+"KRN",19,14341,"U")
+EMERGENCY STOP HMP FRESHNESS U
+"KRN",19,14342,-1)
+0^9
+"KRN",19,14342,0)
+HMPM ADD HMP PATIENT^Manually Add Patient to HMP^^A^^^^^^^^^^1
+"KRN",19,14342,1,0)
+^^2^2^3150210^
+"KRN",19,14342,1,1,0)
+Use this menu to manually add a patient for synchronization with the 
+"KRN",19,14342,1,2,0)
+Enterprise Health Management Platform (HMP).
+"KRN",19,14342,20)
+D ADDPT^HMPDJFSM
+"KRN",19,14342,"U")
+MANUALLY ADD PATIENT TO HMP
+"KRN",19,14343,-1)
+0^14
+"KRN",19,14343,0)
+HMPMGR^HMP Technical Management^^M^^^^^^^^
+"KRN",19,14343,1,0)
+^19.06^1^1^3141022^^
+"KRN",19,14343,1,1,0)
+This menu contains various options to help with the management of HMP.
+"KRN",19,14343,10,0)
+^19.01IP^3^3
+"KRN",19,14343,10,1,0)
+14339
+"KRN",19,14343,10,1,"^")
+HMPM ADD HMP USER
+"KRN",19,14343,10,2,0)
+14342
+"KRN",19,14343,10,2,"^")
+HMPM ADD HMP PATIENT
+"KRN",19,14343,10,3,0)
+14340
+"KRN",19,14343,10,3,"^")
+HMPM EXTRACT MONITOR
+"KRN",19,14343,99)
+63713,64746
+"KRN",19,14343,"U")
+HMP TECHNICAL MANAGEMENT
+"KRN",19,14344,-1)
+0^13
+"KRN",19,14344,0)
+HMPM RESTART FRESHNESS^Resume Freshness Updates that have been stopped^^A^^^^^^^^^^1
+"KRN",19,14344,1,0)
+^^4^4^3140604^
+"KRN",19,14344,1,1,0)
+This option will remove the flags that cause freshness updates to be 
+"KRN",19,14344,1,2,0)
+stopped.  It will likely be necessary to re-synchronized patients after 
+"KRN",19,14344,1,3,0)
+freshness has been stopped, since updates will be missing from the time 
+"KRN",19,14344,1,4,0)
+that freshness updates were not being recieved.
+"KRN",19,14344,20)
+D RSTRTFR^HMPDJFSM
+"KRN",19,14344,"U")
+RESUME FRESHNESS UPDATES THAT 
+"KRN",19,14345,-1)
+0^7
+"KRN",19,14345,0)
+HMP WB PTDEM^HMP WB PTDEM^^B^^^^^^^^
+"KRN",19,14345,25)
+FILE^HMPPTDEM
+"KRN",19,14345,"RPC",0)
+^19.05P^1^1
+"KRN",19,14345,"RPC",1,0)
+HMP WRITEBACK PT DEM
+"KRN",19,14345,"U")
+HMP WB PTDEM
+"KRN",19,14346,-1)
+0^16
+"KRN",19,14346,0)
+HMP WB DOMAINS^WRITEBACK OF DOMAIN DATA TO VISTA^^B^^^^^^^^
+"KRN",19,14346,25)
+HMPWB
+"KRN",19,14346,"RPC",0)
+^19.05P^1^1
+"KRN",19,14346,"RPC",1,0)
+HMP PUT OPERATIONAL DATA
+"KRN",19,14346,"U")
+WRITEBACK OF DOMAIN DATA TO VI
+"KRN",19.1,695,-1)
+0^2
+"KRN",19.1,695,0)
+HMP EXPERIMENTAL
+"KRN",19.1,696,-1)
+0^1
+"KRN",19.1,696,0)
+HMP ADMIN
+"KRN",101,1240,-1)
+2^33
+"KRN",101,1240,0)
+DGPM MOVEMENT EVENTS^MOVEMENT EVENTS v 5.0^^X^1^^^^^^^114
+"KRN",101,1240,10,0)
+^101.01PA^39^39
+"KRN",101,1240,10,39,0)
+6108^^^
+"KRN",101,1240,10,39,"^")
+HMP INPT EVENTS
+"KRN",101,1302,-1)
+2^34
+"KRN",101,1302,0)
+SDAM APPOINTMENT EVENTS^Appointment Event Driver^^X^1^^^^^^^16
+"KRN",101,1302,10,0)
+^101.01PA^21^21
+"KRN",101,1302,10,21,0)
+6105^^^
+"KRN",101,1302,10,21,"^")
+HMP APPT EVENTS
+"KRN",101,2690,-1)
+2^35
+"KRN",101,2690,0)
+RA EVSEND OR^Radiology event sent to OE/RR^^X^1^^^^^^^31
+"KRN",101,2690,10,0)
+^101.01PA^5^5
+"KRN",101,2690,10,5,0)
+6110^^^
+"KRN",101,2690,10,5,"^")
+HMP XQOR EVENTS
+"KRN",101,2700,-1)
+2^36
+"KRN",101,2700,0)
+PXK VISIT DATA EVENT^VISIT RELATED DATA^^X^1^^^^^^^
+"KRN",101,2700,10,0)
+^101.01PA^7^7
+"KRN",101,2700,10,7,0)
+6109^^^
+"KRN",101,2700,10,7,"^")
+HMP PCE EVENTS
+"KRN",101,2894,-1)
+2^37
+"KRN",101,2894,0)
+GMRA SIGN-OFF ON DATA^Sign-off on Reaction Data^^X^1^^^^^^^247
+"KRN",101,2894,10,0)
+^101.01PA^3^3
+"KRN",101,2894,10,3,0)
+6111^^^
+"KRN",101,2894,10,3,"^")
+HMP GMRA EVENTS
+"KRN",101,2896,-1)
+2^38
+"KRN",101,2896,0)
+GMRA ENTERED IN ERROR^Reaction Data Entered in Error^^X^1^^^^^^^247
+"KRN",101,2896,10,0)
+^101.01PA^3^3
+"KRN",101,2896,10,3,0)
+6111^^^
+"KRN",101,2896,10,3,"^")
+HMP GMRA EVENTS
+"KRN",101,2905,-1)
+2^39
+"KRN",101,2905,0)
+SCMC PATIENT TEAM CHANGES^PCMM Patient Team Update Event Driver^^X^11289^^^^^^^16
+"KRN",101,2905,10,0)
+^101.01PA^2^2
+"KRN",101,2905,10,2,0)
+6115^^^
+"KRN",101,2905,10,2,"^")
+HMP PCMM TEAM
+"KRN",101,2906,-1)
+2^40
+"KRN",101,2906,0)
+SCMC PATIENT TEAM POSITION CHANGES^PCMM Patient Team Position Update Event Driver^^X^11289^^^^^^^
+"KRN",101,2906,10,0)
+^101.01PA^2^2
+"KRN",101,2906,10,2,0)
+6116^^^
+"KRN",101,2906,10,2,"^")
+HMP PCMM TEAM POSITION
+"KRN",101,3336,-1)
+2^41
+"KRN",101,3336,0)
+LR7O CH EVSEND OR^LAB => OE/RR ORDER MESSAGE EVENT^^X^1^^^^^^^
+"KRN",101,3336,10,0)
+^101.01PA^5^5
+"KRN",101,3336,10,5,0)
+6110^^^
+"KRN",101,3336,10,5,"^")
+HMP XQOR EVENTS
+"KRN",101,3373,-1)
+2^42
+"KRN",101,3373,0)
+PS EVSEND OR^Send Pharmacy orders to CPRS.^^X^1^^^^^^^18
+"KRN",101,3373,10,0)
+^101.01PA^7^7
+"KRN",101,3373,10,7,0)
+6110^^^
+"KRN",101,3373,10,7,"^")
+HMP XQOR EVENTS
+"KRN",101,3392,-1)
+2^31
+"KRN",101,3392,0)
+GMRC EVSEND OR^Consults event sent to OE/RR^^X^1^^^^^^^294
+"KRN",101,3392,10,0)
+^101.01PA^7^7
+"KRN",101,3392,10,7,0)
+6110^^^
+"KRN",101,3392,10,7,"^")
+HMP XQOR EVENTS
+"KRN",101,3411,-1)
+2^43
+"KRN",101,3411,0)
+FH EVSEND OR^FH --> OR event messages^^X^1^^^^^^^
+"KRN",101,3411,10,0)
+^101.01PA^5^5
+"KRN",101,3411,10,5,0)
+6110^^^
+"KRN",101,3411,10,5,"^")
+HMP XQOR EVENTS
+"KRN",101,3529,-1)
+2^44
+"KRN",101,3529,0)
+OR EVSEND RA^OE/RR => RAD/NM MESSAGE EVENT^^X^1^^^^^^^
+"KRN",101,3529,10,0)
+^101.01PA^5^5
+"KRN",101,3529,10,5,0)
+6112^^^
+"KRN",101,3529,10,5,"^")
+HMP NA EVENTS
+"KRN",101,3530,-1)
+2^32
+"KRN",101,3530,0)
+OR EVSEND LRCH^OE/RR => LAB MESSAGE EVENT^^X^1^^^^^^^
+"KRN",101,3530,10,0)
+^101.01PA^5^5
+"KRN",101,3530,10,5,0)
+6112^^^
+"KRN",101,3530,10,5,"^")
+HMP NA EVENTS
+"KRN",101,3535,-1)
+2^45
+"KRN",101,3535,0)
+OR EVSEND FH^OE/RR => DIET MESSAGE EVENT^^X^1^^^^^^^
+"KRN",101,3535,10,0)
+^101.01PA^5^5
+"KRN",101,3535,10,5,0)
+6112^^^
+"KRN",101,3535,10,5,"^")
+HMP NA EVENTS
+"KRN",101,3536,-1)
+2^46
+"KRN",101,3536,0)
+OR EVSEND ORG^OE/RR => GENERIC MESSAGE EVENT^^X^1^^^^^^^
+"KRN",101,3536,10,0)
+^101.01PA^5^5
+"KRN",101,3536,10,5,0)
+6110^^^
+"KRN",101,3536,10,5,"^")
+HMP XQOR EVENTS
+"KRN",101,3537,-1)
+2^47
+"KRN",101,3537,0)
+OR EVSEND PS^OE/RR => PHARMACY MESSAGE EVENT^^X^1^^^^^^^
+"KRN",101,3537,10,0)
+^101.01PA^5^5
+"KRN",101,3537,10,5,0)
+6112^^^
+"KRN",101,3537,10,5,"^")
+HMP NA EVENTS
+"KRN",101,3539,-1)
+2^48
+"KRN",101,3539,0)
+OR EVSEND GMRC^OE/RR => CONSULTS MESSAGE EVENT^^X^1^^^^^^^
+"KRN",101,3539,10,0)
+^101.01PA^7^7
+"KRN",101,3539,10,7,0)
+6112^^^
+"KRN",101,3539,10,7,"^")
+HMP NA EVENTS
+"KRN",101,4717,-1)
+2^49
+"KRN",101,4717,0)
+DG FIELD MONITOR^DG Field Monitor^^X^1^^^^^^^114
+"KRN",101,4717,10,0)
+^101.01PA^6^6
+"KRN",101,4717,10,6,0)
+6106^^^
+"KRN",101,4717,10,6,"^")
+HMP DG UPDATES
+"KRN",101,6022,-1)
+2^27
+"KRN",101,6022,0)
+GMPL EVENT^Problem List Update Event^^X^1^^^^^^^402
+"KRN",101,6022,10,0)
+^101.01PA^2^2
+"KRN",101,6022,10,2,0)
+6107^^^
+"KRN",101,6022,10,2,"^")
+HMP GMPL EVENT
+"KRN",101,6088,-1)
+2^29
+"KRN",101,6088,0)
+MDC OBSERVATION UPDATE^Observation update notification^^X^1^^^^^^^557
+"KRN",101,6088,10,0)
+^101.01PA^13^4
+"KRN",101,6088,10,13,0)
+6113^^^
+"KRN",101,6088,10,13,"^")
+HMP MDC EVENT
+"KRN",101,6088,775,0)
+^101.0775PA^^
+"KRN",101,6089,-1)
+2^28
+"KRN",101,6089,0)
+OR EVSEND VPR^OE/RR => VPR MESSAGE EVENT^^X^1^^^^^^^
+"KRN",101,6089,10,0)
+^101.01PA^12^2
+"KRN",101,6089,10,12,0)
+6110^^^
+"KRN",101,6089,10,12,"^")
+HMP XQOR EVENTS
+"KRN",101,6090,-1)
+2^30
+"KRN",101,6090,0)
+PSB EVSEND VPR^MEDICATION ADMINISTRATION EVENTS^^X^1^^^^^^^
+"KRN",101,6090,10,0)
+^101.01PA^10^4
+"KRN",101,6090,10,10,0)
+6114^^^
+"KRN",101,6090,10,10,"^")
+HMP PSB EVENTS
+"KRN",101,6103,-1)
+0^1
+"KRN",101,6103,0)
+HMP ADT-A04 CLIENT^HMP HL7 ADT-A04 Client^^S^^^^^^^^
+"KRN",101,6103,1,0)
+^101.06^10^10^3141022^^^
+"KRN",101,6103,1,1,0)
+This client protocol is used to process HL7 ADT/A04 messages published by 
+"KRN",101,6103,1,2,0)
+the VAFC ADT-A04 SERVER protocol.
+"KRN",101,6103,1,3,0)
+ 
+"KRN",101,6103,1,4,0)
+The client causes a HMP 'freshness' event for each new patient 
+"KRN",101,6103,1,5,0)
+registration that occurs. This is especially important for new patients, 
+"KRN",101,6103,1,6,0)
+as it is the only MAS event mechanism available that can be used to 
+"KRN",101,6103,1,7,0)
+discover new patient entries.
+"KRN",101,6103,1,8,0)
+ 
+"KRN",101,6103,1,9,0)
+Note: The ROUTING LOGIC does not send any HL7 messages. As mentioned 
+"KRN",101,6103,1,10,0)
+above, It adds a HMP (Health Management Platform) 'freshness' event.
+"KRN",101,6103,4)
+^^^HMP ADT-A04 CLIENT
+"KRN",101,6103,99)
+63713,64746
+"KRN",101,6103,770)
+^HMP HL7^^^^^^^^^ADT
+"KRN",101,6103,774)
+D ADT^HMPEHL7
+"KRN",101,6104,-1)
+0^2
+"KRN",101,6104,0)
+HMP ADT-A08 CLIENT^HMP HL7 ADT-A08 Client^^S^^^^^^^^
+"KRN",101,6104,1,0)
+^101.06^10^10^3141022^^
+"KRN",101,6104,1,1,0)
+This client protocol is used to process HL7 ADT/A08 messages published by 
+"KRN",101,6104,1,2,0)
+the VAFC ADT-A08 SERVER protocol.
+"KRN",101,6104,1,3,0)
+ 
+"KRN",101,6104,1,4,0)
+The client filters A08 events. It adds to the HMP 'freshness' queue only
+"KRN",101,6104,1,5,0)
+if the A08 was the result of the patient's sensitivity being modified via
+"KRN",101,6104,1,6,0)
+the DG SECURITY EDIT/EDIT option. All other A08 events are ignored and
+"KRN",101,6104,1,7,0)
+should not add to the 'freshness' queue.
+"KRN",101,6104,1,8,0)
+ 
+"KRN",101,6104,1,9,0)
+Note: The ROUTING LOGIC does not send any HL7 messages. As mentioned 
+"KRN",101,6104,1,10,0)
+above, It adds a HMP (Health Management Platform) 'freshness' event.
+"KRN",101,6104,4)
+^^^
+"KRN",101,6104,99)
+63713,64746
+"KRN",101,6104,770)
+^HMP HL7^^^^^^^^^ADT
+"KRN",101,6104,774)
+D ADT^HMPEHL7
+"KRN",101,6105,-1)
+0^3
+"KRN",101,6105,0)
+HMP APPT EVENTS^Appointment events for HMP^^A^^^^^^^^
+"KRN",101,6105,1,0)
+^101.06^1^1^3101129^^^^
+"KRN",101,6105,1,1,0)
+This protocol will track appointments for HMP.
+"KRN",101,6105,4)
+^^^HMP APPT EVENTS
+"KRN",101,6105,20)
+D SDAM^HMPEVNT
+"KRN",101,6105,99)
+63713,64746
+"KRN",101,6106,-1)
+0^4
+"KRN",101,6106,0)
+HMP DG UPDATES^DG updates for HMP^^A^^^^^^^^
+"KRN",101,6106,1,0)
+^101.06^1^1^3101129^^^^
+"KRN",101,6106,1,1,0)
+This protocol will track Patient file changes for HMP.
+"KRN",101,6106,4)
+^^^HMP APPT EVENTS
+"KRN",101,6106,20)
+D DG^HMPEVNT
+"KRN",101,6106,99)
+63713,64746
+"KRN",101,6107,-1)
+0^5
+"KRN",101,6107,0)
+HMP GMPL EVENT^Problem List events for HMP^^A^^^^^^^^
+"KRN",101,6107,1,0)
+^101.06^1^1^3110823^^^^
+"KRN",101,6107,1,1,0)
+This protocol will track new and updated problems for HMP.
+"KRN",101,6107,4)
+^^^HMP GMPL EVENT
+"KRN",101,6107,20)
+D GMPL^HMPEVNT(DFN,GMPIFN)
+"KRN",101,6107,99)
+63713,64746
+"KRN",101,6108,-1)
+0^7
+"KRN",101,6108,0)
+HMP INPT EVENTS^Inpatient Movement events for HMP^^A^^^^^^^^
+"KRN",101,6108,1,0)
+^101.06^1^1^3101202^^^^
+"KRN",101,6108,1,1,0)
+This protocol will track patient admissions and discharges for HMP.
+"KRN",101,6108,20)
+D DGPM^HMPEVNT
+"KRN",101,6108,99)
+63713,64746
+"KRN",101,6109,-1)
+0^11
+"KRN",101,6109,0)
+HMP PCE EVENTS^PCE events for HMP^^A^^^^^^^^
+"KRN",101,6109,1,0)
+^101.06^1^1^3101129^^^
+"KRN",101,6109,1,1,0)
+This protocol will track PCE visit data for HMP.
+"KRN",101,6109,20)
+D PCE^HMPEVNT
+"KRN",101,6109,99)
+63713,64746
+"KRN",101,6110,-1)
+0^15
+"KRN",101,6110,0)
+HMP XQOR EVENTS^XQOR HL7 events for HMP^^A^^^^^^^^
+"KRN",101,6110,1,0)
+^101.06^3^3^3101129^^
+"KRN",101,6110,1,1,0)
+This protocol monitors order events for HMP.  It is placed on the 
+"KRN",101,6110,1,2,0)
+* EVSEND OR protocols to check for updates being sent from ancillary
+"KRN",101,6110,1,3,0)
+packages to Order Entry; it monitors when orders are completed.
+"KRN",101,6110,20)
+D XQOR^HMPEVNT(.XQORMSG)
+"KRN",101,6110,99)
+63713,64746
+"KRN",101,6111,-1)
+0^6
+"KRN",101,6111,0)
+HMP GMRA EVENTS^Allergy Events for HMP^^A^^^^^^^^
+"KRN",101,6111,1,0)
+^101.06^1^1^3120822^^
+"KRN",101,6111,1,1,0)
+This protocol will track Allergy data updates for HMP.
+"KRN",101,6111,20)
+D GMRA^HMPEVNT("")
+"KRN",101,6111,99)
+63713,64746
+"KRN",101,6112,-1)
+0^9
+"KRN",101,6112,0)
+HMP NA EVENTS^XQOR HL7 events for HMP^^A^^^^^^^^
+"KRN",101,6112,1,0)
+^101.06^3^3^3110818^^^
+"KRN",101,6112,1,1,0)
+This protocol monitors order events for HMP.  It is placed on the 
+"KRN",101,6112,1,2,0)
+OR EVSEND * protocols to check for order numbers assigned to new orders
+"KRN",101,6112,1,3,0)
+placed from the ancillary packages.
+"KRN",101,6112,20)
+D NA^HMPEVNT(.XQORMSG)
+"KRN",101,6112,99)
+63713,64746
+"KRN",101,6113,-1)
+0^8
+"KRN",101,6113,0)
+HMP MDC EVENT^CLiO events for HMP^^A^^^^^^^^
+"KRN",101,6113,1,0)
+^101.06^1^1^3120830^^^^
+"KRN",101,6113,1,1,0)
+This protocol will track new and updated observations for HMP.
+"KRN",101,6113,20)
+D MDC^HMPEVNT(.MDCOBS)
+"KRN",101,6113,99)
+63713,64746
+"KRN",101,6114,-1)
+0^14
+"KRN",101,6114,0)
+HMP PSB EVENTS^BCMA events for HMP^^A^^^^^^^^
+"KRN",101,6114,1,0)
+^101.06^1^1^3140415^^^^
+"KRN",101,6114,1,1,0)
+This protocol will track medication administrations for HMP.
+"KRN",101,6114,20)
+D PSB^HMPEVNT
+"KRN",101,6114,99)
+63713,64746
+"KRN",101,6115,-1)
+0^12
+"KRN",101,6115,0)
+HMP PCMM TEAM^PCMM Team events for HMP^^A^^^^^^^^
+"KRN",101,6115,20)
+D PCMMT^HMPEVNT
+"KRN",101,6115,99)
+63713,64746
+"KRN",101,6116,-1)
+0^13
+"KRN",101,6116,0)
+HMP PCMM TEAM POSITION^PCMM Team Position events for HMP^^A^^^^^^^^
+"KRN",101,6116,20)
+D PCMMTP^HMPEVNT
+"KRN",101,6116,99)
+63713,64746
+"KRN",101,6117,-1)
+0^17
+"KRN",101,6117,0)
+HMPM EVT QUE MGR MENU^VPR Freshness Queue Viewer^^M^^^^^^^^
+"KRN",101,6117,1,0)
+^101.06^1^1^3150128^^
+"KRN",101,6117,1,1,0)
+Main protocol menu used by the VPRM EVT QUE MGR ListMan template.
+"KRN",101,6117,4)
+26^4
+"KRN",101,6117,10,0)
+^101.01PA^20^20
+"KRN",101,6117,10,1,0)
+6119^^^
+"KRN",101,6117,10,1,"^")
+HMPM EVT QUE FRESHNESS REPORT
+"KRN",101,6117,10,2,0)
+6120^^^
+"KRN",101,6117,10,2,"^")
+HMPM EVT QUE CHANGE DOMAIN
+"KRN",101,6117,10,3,0)
+6121^^^
+"KRN",101,6117,10,3,"^")
+HMPM EVT QUE REFRESH
+"KRN",101,6117,10,4,0)
+6122^^^
+"KRN",101,6117,10,4,"^")
+HMPM EVT QUE DISPLAY DETAILS
+"KRN",101,6117,10,5,0)
+6123^^^
+"KRN",101,6117,10,5,"^")
+HMPM EVT QUE FILTER
+"KRN",101,6117,10,6,0)
+6124^^^
+"KRN",101,6117,10,6,"^")
+HMPM EVT QUE SHOW TEMP GLOBALS
+"KRN",101,6117,10,7,0)
+6125^^^
+"KRN",101,6117,10,7,"^")
+HMPM EVT QUE SELECT PATIENT
+"KRN",101,6117,10,8,0)
+6126^^^
+"KRN",101,6117,10,8,"^")
+HMPM EVT QUE CHANGE MAX LISTED
+"KRN",101,6117,10,12,0)
+6126^^^
+"KRN",101,6117,10,12,"^")
+HMPM EVT QUE CHANGE MAX LISTED
+"KRN",101,6117,10,13,0)
+6118^^^
+"KRN",101,6117,10,13,"^")
+HMPM EVT QUE CHANGE SERVER
+"KRN",101,6117,10,14,0)
+6119^^^
+"KRN",101,6117,10,14,"^")
+HMPM EVT QUE FRESHNESS REPORT
+"KRN",101,6117,10,15,0)
+6120^^^
+"KRN",101,6117,10,15,"^")
+HMPM EVT QUE CHANGE DOMAIN
+"KRN",101,6117,10,16,0)
+6121^^^
+"KRN",101,6117,10,16,"^")
+HMPM EVT QUE REFRESH
+"KRN",101,6117,10,17,0)
+6122^^^
+"KRN",101,6117,10,17,"^")
+HMPM EVT QUE DISPLAY DETAILS
+"KRN",101,6117,10,18,0)
+6123^^^
+"KRN",101,6117,10,18,"^")
+HMPM EVT QUE FILTER
+"KRN",101,6117,10,19,0)
+6124^^^
+"KRN",101,6117,10,19,"^")
+HMPM EVT QUE SHOW TEMP GLOBALS
+"KRN",101,6117,10,20,0)
+6125^^^
+"KRN",101,6117,10,20,"^")
+HMPM EVT QUE SELECT PATIENT
+"KRN",101,6117,20)
+S XQORM("B")="Update"
+"KRN",101,6117,24)
+I 1 X:$D(^ORD(101,+$P(^ORD(101,DA(1),10,DA,0),"^",1),24)) ^(24)
+"KRN",101,6117,26)
+D SHOW^VALM
+"KRN",101,6117,28)
+Select Action:
+"KRN",101,6117,99)
+63713,64750
+"KRN",101,6118,-1)
+0^25
+"KRN",101,6118,0)
+HMPM EVT QUE CHANGE SERVER^Change Server^^A^^^^^^^^
+"KRN",101,6118,1,0)
+^^2^2^3140716^
+"KRN",101,6118,1,1,0)
+Allows user to change which server's freshness queue events to display in 
+"KRN",101,6118,1,2,0)
+the viewer.
+"KRN",101,6118,10,0)
+^101.01PA^1^1
+"KRN",101,6118,10,1,0)
+6119^^^
+"KRN",101,6118,10,1,"^")
+HMPM EVT QUE FRESHNESS REPORT
+"KRN",101,6118,20)
+D CS^HMPEQLM
+"KRN",101,6118,99)
+63713,64750
+"KRN",101,6119,-1)
+0^22
+"KRN",101,6119,0)
+HMPM EVT QUE FRESHNESS REPORT^Freshness Report^^A^^^^^^^^
+"KRN",101,6119,1,0)
+^^1^1^3140716^
+"KRN",101,6119,1,1,0)
+View overview freshness queue information for all HMP servers.
+"KRN",101,6119,20)
+D FSHRPT^HMPEQLM
+"KRN",101,6119,99)
+63713,64750
+"KRN",101,6120,-1)
+0^16
+"KRN",101,6120,0)
+HMPM EVT QUE CHANGE DOMAIN^Change Domain^^A^^^^^^^^
+"KRN",101,6120,1,0)
+^^3^3^3140716^
+"KRN",101,6120,1,1,0)
+Allows user to indicate only freshness events for a particular domain, 
+"KRN",101,6120,1,2,0)
+like med, task, visit, etc., or all domains should be listed in 
+"KRN",101,6120,1,3,0)
+freshness viewer.
+"KRN",101,6120,20)
+D CD^HMPEQLM
+"KRN",101,6120,99)
+63713,64750
+"KRN",101,6121,-1)
+0^24
+"KRN",101,6121,0)
+HMPM EVT QUE REFRESH^Update^^A^^^^^^^^
+"KRN",101,6121,1,0)
+^101.06^2^2^3140716^^
+"KRN",101,6121,1,1,0)
+Refresh/update the current list of freshness queue events using the 
+"KRN",101,6121,1,2,0)
+current criteria/filters specified.
+"KRN",101,6121,20)
+D REFRESH^HMPEQLM
+"KRN",101,6121,99)
+63713,64750
+"KRN",101,6122,-1)
+0^23
+"KRN",101,6122,0)
+HMPM EVT QUE DISPLAY DETAILS^Display Details^^A^^^^^^^^
+"KRN",101,6122,1,0)
+^^1^1^3140716^
+"KRN",101,6122,1,1,0)
+Display details related to an event listed in the freshness queue viewer.
+"KRN",101,6122,20)
+D DETAIL^HMPEQLM
+"KRN",101,6122,99)
+63713,64750
+"KRN",101,6123,-1)
+0^21
+"KRN",101,6123,0)
+HMPM EVT QUE FILTER^Filter Events^^A^^^^^^^^
+"KRN",101,6123,1,0)
+^^3^3^3140716^
+"KRN",101,6123,1,1,0)
+Allows user to indicate only freshness events with a state of 
+"KRN",101,6123,1,2,0)
+'processed' or 'waiting to be processed' or all events should be listed in
+"KRN",101,6123,1,3,0)
+freshness viewer.
+"KRN",101,6123,20)
+D FILTER^HMPEQLM
+"KRN",101,6123,99)
+63713,64750
+"KRN",101,6124,-1)
+0^20
+"KRN",101,6124,0)
+HMPM EVT QUE SHOW TEMP GLOBALS^Temp Global Usage^^A^^^^^^^^
+"KRN",101,6124,1,0)
+^101.06^4^4^3140716^^
+"KRN",101,6124,1,1,0)
+Show VPR temporary global usage report. 
+"KRN",101,6124,1,2,0)
+ 
+"KRN",101,6124,1,3,0)
+The report displays summary information related to VPR processing use of 
+"KRN",101,6124,1,4,0)
+^XTMP and ^TMP globals.
+"KRN",101,6124,20)
+D SHOWHMPN^HMPEQLM
+"KRN",101,6124,99)
+63713,64750
+"KRN",101,6125,-1)
+0^19
+"KRN",101,6125,0)
+HMPM EVT QUE SELECT PATIENT^Select Patient^^A^^^^^^^^
+"KRN",101,6125,1,0)
+^^2^2^3140716^
+"KRN",101,6125,1,1,0)
+Allows user to specify that only the freshness events for the selected 
+"KRN",101,6125,1,2,0)
+patient should be used in the freshness queue event viewer.
+"KRN",101,6125,20)
+D SELPT^HMPEQLM
+"KRN",101,6125,99)
+63713,64750
+"KRN",101,6126,-1)
+0^18
+"KRN",101,6126,0)
+HMPM EVT QUE CHANGE MAX LISTED^Change Max Limit^^A^^^^^^^^
+"KRN",101,6126,1,0)
+^^2^2^3140716^
+"KRN",101,6126,1,1,0)
+Allows user to select the maximum events to display in the freshness 
+"KRN",101,6126,1,2,0)
+queue viewer. (10 - 1000)
+"KRN",101,6126,20)
+D CM^HMPEQLM
+"KRN",101,6126,99)
+63713,64750
+"KRN",101,6127,-1)
+0^26
+"KRN",101,6127,0)
+HMP DGPF ASSIGN FLAG^^^A^^^^^^^^HEALTH MANAGEMENT PLATFORM
+"KRN",101,6127,1,0)
+^101.06^2^2^3150422^^
+"KRN",101,6127,1,1,0)
+Used to trigger a JDS update when the DGPF ASSIGN FLAG action protocol is used.
+"KRN",101,6127,1,2,0)
+A patient must have been selected and the DFN value is in DGDFN.
+"KRN",101,6127,20)
+I $G(DGDFN),$L($T(POST^HMPEVNT)) D POST^HMPEVNT(DGDFN,"patient",DGDFN)
+"KRN",771,236,-1)
+0^1
+"KRN",771,236,0)
+HMP HL7^a^^^^^USA
+"KRN",8989.5,15363,0)
+578;DIC(9.4,^HMP VERSION^1
+"KRN",8989.5,15363,1)
+2.00
+"KRN",8989.5,15364,0)
+578;DIC(9.4,^HMP JSON SCHEMA^1
+"KRN",8989.5,15364,1)
+3.001
+"KRN",8989.51,848,-1)
+0^9
+"KRN",8989.51,848,0)
+HMP VERSION^HMP Version^^^Version:
+"KRN",8989.51,848,1)
+N^1:99:2^Enter the current version number of the HMP data extracts.
+"KRN",8989.51,848,6)
+F
+"KRN",8989.51,848,20,0)
+^8989.512^3^3^3141016^^
+"KRN",8989.51,848,20,1,0)
+This parameter holds the current version number of the eHMP Patient
+"KRN",8989.51,848,20,2,0)
+Record (HMP) data extract RPC's, in the form V.PP where V is the
+"KRN",8989.51,848,20,3,0)
+package version number and PP is the latest patch number.
+"KRN",8989.51,848,30,0)
+^8989.513I^1^1
+"KRN",8989.51,848,30,1,0)
+1^9.4
+"KRN",8989.51,848,30,2,0)
+1^200
+"KRN",8989.51,849,-1)
+0^7
+"KRN",8989.51,849,0)
+HMP SYSTEM NAME^Hashed System Name
+"KRN",8989.51,849,1)
+F^1:10^Enter the CRC hashed name for this system.
+"KRN",8989.51,849,20,0)
+^^3^3^3130905^
+"KRN",8989.51,849,20,1,0)
+This parameter holds the name of this VistA system, as a hashed base 16
+"KRN",8989.51,849,20,2,0)
+value.  It is calculated by a HMP patch post-init and stuffed into the
+"KRN",8989.51,849,20,3,0)
+SYStem level value, and should NOT be modified.
+"KRN",8989.51,849,30,0)
+^8989.513I^1^1
+"KRN",8989.51,849,30,1,0)
+1^4.2
+"KRN",8989.51,850,-1)
+0^4
+"KRN",8989.51,850,0)
+HMP PARAMETERS^HMP SYSTEM PARAMETERS^1^System Parameters^System Parameters Name
+"KRN",8989.51,850,1)
+W
+"KRN",8989.51,850,6)
+F
+"KRN",8989.51,850,20,0)
+^8989.512^2^2^3120125^^^
+"KRN",8989.51,850,20,1,0)
+This parameter stores a list of parameters used by the HMP middle teir 
+"KRN",8989.51,850,20,2,0)
+and the HMP UI.
+"KRN",8989.51,850,20,3,0)
+whenever the schema changes in a way that requires a conversion or 
+"KRN",8989.51,850,20,4,0)
+re-extraction of objects.  The fractional piece increments whenever the 
+"KRN",8989.51,850,20,5,0)
+schema is extended.
+"KRN",8989.51,850,30,0)
+^8989.513I^2^2
+"KRN",8989.51,850,30,1,0)
+6^4.2
+"KRN",8989.51,850,30,2,0)
+1^200
+"KRN",8989.51,851,-1)
+0^1
+"KRN",8989.51,851,0)
+HMP CPRS PATH^CPRS Location^0^FREE TEXT^PIV Link Message after success
+"KRN",8989.51,851,1)
+W
+"KRN",8989.51,851,6)
+F
+"KRN",8989.51,851,30,0)
+^8989.513I^2^2
+"KRN",8989.51,851,30,1,0)
+1^200
+"KRN",8989.51,851,30,2,0)
+4^4.2
+"KRN",8989.51,852,-1)
+0^2
+"KRN",8989.51,852,0)
+HMP JSON SCHEMA^HMP JSON Extract Schema^^^JSON Schema Version
+"KRN",8989.51,852,1)
+N^1:999:4^Enter the version / build number for the HMP Schema
+"KRN",8989.51,852,20,0)
+^^5^5^3141022^
+"KRN",8989.51,852,20,1,0)
+This contains the version number of the HMP schema which describes the
+"KRN",8989.51,852,20,2,0)
+JSON objects produced by the HMP extracts.  The whole number increments
+"KRN",8989.51,852,20,3,0)
+whenever the schema changes in a way that requires a conversion or
+"KRN",8989.51,852,20,4,0)
+re-extraction of objects.  The fractional piece increments whenever the
+"KRN",8989.51,852,20,5,0)
+schema is extended.
+"KRN",8989.51,852,30,0)
+^8989.513I^1^1
+"KRN",8989.51,852,30,1,0)
+1^9.4
+"KRN",8989.51,853,-1)
+0^3
+"KRN",8989.51,853,0)
+HMP LOCATIONS^HMP Locations^1^Clinic^Synchronized
+"KRN",8989.51,853,1)
+Y
+"KRN",8989.51,853,6)
+P^44^Enter clinic to synch with HMP
+"KRN",8989.51,853,30,0)
+^8989.513I^1^1
+"KRN",8989.51,853,30,1,0)
+5^4
+"KRN",8989.51,854,-1)
+0^8
+"KRN",8989.51,854,0)
+HMP TASK WAIT TIME^HMP TASK WAIT TIME^^^#SECONDS
+"KRN",8989.51,854,1)
+N^1:9999^Enter the number of seconds to wait before the HMP Data Monitor re-queues
+"KRN",8989.51,854,4,0)
+^8989.514^1^1
+"KRN",8989.51,854,4,1,0)
+HMP
+"KRN",8989.51,854,4,"B","HMP",1)
+
+"KRN",8989.51,854,6)
+F
+"KRN",8989.51,854,20,0)
+^^2^2^3141022^
+"KRN",8989.51,854,20,1,0)
+This is the number of seconds that the system will wait before re-queuing
+"KRN",8989.51,854,20,2,0)
+the HMP Data Monitor background job.
+"KRN",8989.51,854,30,0)
+^8989.513I^2^2
+"KRN",8989.51,854,30,1,0)
+1^9.4
+"KRN",8989.51,854,30,2,0)
+2^4.2
+"KRN",8994,3461,-1)
+0^14
+"KRN",8994,3461,0)
+HMP PATIENT ACTIVITY^ACT^HMPACT^2
+"KRN",8994,3461,1,0)
+^8994.01^2^2^3140903^^^
+"KRN",8994,3461,1,1,0)
+This remote procedure returns all JSON messages for entries that exist in
+"KRN",8994,3461,1,2,0)
+ the cross reference ^HMP(800001.5,"PTAPPT,"HMP"
+"KRN",8994,3462,-1)
+0^1
+"KRN",8994,3462,0)
+HMP APPOINTMENTS^OUT^HMPPATS^4^S^^^1^^^1
+"KRN",8994,3462,1,0)
+^8994.01^2^2^3141016^^^^
+"KRN",8994,3462,1,1,0)
+This RPC finds a list of patients that have scheduled appointments during
+"KRN",8994,3462,1,2,0)
+the requested timeframe, as XML in ^TMP($J,"HMP",n).
+"KRN",8994,3462,2,0)
+^8994.02A^2^2
+"KRN",8994,3462,2,1,0)
+START^1^20^0^1
+"KRN",8994,3462,2,1,1,0)
+^8994.021^2^2^3101129^^^
+"KRN",8994,3462,2,1,1,1,0)
+The date/time from which to begin searching for appointments; optional,
+"KRN",8994,3462,2,1,1,2,0)
+will default to tomorrow if not defined.
+"KRN",8994,3462,2,2,0)
+STOP^1^20^0^2
+"KRN",8994,3462,2,2,1,0)
+^8994.021^2^2^3141016^^^
+"KRN",8994,3462,2,2,1,1,0)
+The date/time at which to end searching for appointments; optional,
+"KRN",8994,3462,2,2,1,2,0)
+will default to tomorrow if not defined.
+"KRN",8994,3462,2,"B","START",1)
+
+"KRN",8994,3462,2,"B","STOP",2)
+
+"KRN",8994,3462,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3462,2,"PARAMSEQ",2,2)
+
+"KRN",8994,3462,3,0)
+^8994.03^1^1^3141016^^^
+"KRN",8994,3462,3,1,0)
+Text array formatted XML
+"KRN",8994,3463,-1)
+0^2
+"KRN",8994,3463,0)
+HMP DATA VERSION^VERSION^HMPD^1^S^^^^^^1
+"KRN",8994,3463,1,0)
+^^2^2^3110613^
+"KRN",8994,3463,1,1,0)
+This RPC returns the current version of the XML returned by the RPC
+"KRN",8994,3463,1,2,0)
+'HMP GET PATIENT DATA.'
+"KRN",8994,3463,3,0)
+^^2^2^3110613^
+"KRN",8994,3463,3,1,0)
+A string identifying the version of the HMP data extracts and the
+"KRN",8994,3463,3,2,0)
+resulting XML.
+"KRN",8994,3464,-1)
+0^3
+"KRN",8994,3464,0)
+HMP DELETE OBJECT^DEL^HMPDJ2^1^S^^^1^1^^1
+"KRN",8994,3464,1,0)
+^8994.01^2^2^3130103^^^^
+"KRN",8994,3464,1,1,0)
+This RPC receives a Uid from the client and deletes the object from the
+"KRN",8994,3464,1,2,0)
+HMP Object file #800000.11.
+"KRN",8994,3464,2,0)
+^8994.02A^2^1
+"KRN",8994,3464,2,2,0)
+UID^1^100^1^1
+"KRN",8994,3464,2,2,1,0)
+^8994.021^1^1^3130103^^^^
+"KRN",8994,3464,2,2,1,1,0)
+The Uid of the object being deleted.
+"KRN",8994,3464,2,"B","UID",2)
+
+"KRN",8994,3464,2,"PARAMSEQ",1,2)
+
+"KRN",8994,3464,3,0)
+^8994.03^1^1^3130103^^^^
+"KRN",8994,3464,3,1,0)
+Text array formatted as JSON
+"KRN",8994,3465,-1)
+0^4
+"KRN",8994,3465,0)
+HMP DELETE ROSTER^DELROS^HMPROS3^1^^^^^1.2
+"KRN",8994,3465,2,0)
+^8994.02A^1^1
+"KRN",8994,3465,2,1,0)
+HMPIEN^1^100^1^1
+"KRN",8994,3465,2,1,1,0)
+^8994.021^1^1^3131210^^
+"KRN",8994,3465,2,1,1,1,0)
+Roster IEN.
+"KRN",8994,3465,2,"B","HMPIEN",1)
+
+"KRN",8994,3465,2,"B","VPRIEN",1)
+
+"KRN",8994,3465,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3466,-1)
+0^5
+"KRN",8994,3466,0)
+HMP GET CHECKSUM^CHECK^HMPDCRC^4^S^^^0^1^^1
+"KRN",8994,3466,1,0)
+^^1^1^3141016^
+"KRN",8994,3466,1,1,0)
+This RPC retrieves the requested data from VistA and returns its checksum.
+"KRN",8994,3466,2,0)
+^8994.02A^1^1
+"KRN",8994,3466,2,1,0)
+FILTER^2^^0^1
+"KRN",8994,3466,2,1,1,0)
+^^1^1^3141016^
+"KRN",8994,3466,2,1,1,1,0)
+List of name-value pairs defining the search.
+"KRN",8994,3466,2,"B","FILTER",1)
+
+"KRN",8994,3466,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3466,3,0)
+^^1^1^3141016^
+"KRN",8994,3466,3,1,0)
+The CRC32 checksum value of the data.
+"KRN",8994,3467,-1)
+0^6
+"KRN",8994,3467,0)
+HMP GET OBJECT^GET^HMPDJ2^4^S^^^0^1^^1
+"KRN",8994,3467,1,0)
+^8994.01^2^2^3121219^^^^
+"KRN",8994,3467,1,1,0)
+This RPC retrieves the requested data from VistA, and returns it in
+"KRN",8994,3467,1,2,0)
+^TMP("HMP",$J,n) as JSON.
+"KRN",8994,3467,2,0)
+^8994.02A^1^1
+"KRN",8994,3467,2,1,0)
+FILTER^2^^0^1
+"KRN",8994,3467,2,1,1,0)
+^8994.021^1^1^3121219^^^^
+"KRN",8994,3467,2,1,1,1,0)
+List of name-value pairs defining the search.
+"KRN",8994,3467,2,"B","FILTER",1)
+
+"KRN",8994,3467,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3467,3,0)
+^8994.03^1^1^3121219^^^^
+"KRN",8994,3467,3,1,0)
+Text array formatted as JSON
+"KRN",8994,3468,-1)
+0^7
+"KRN",8994,3468,0)
+HMP GET OPERATIONAL DATA^GET^HMPEF^4^S^^^0^1^^1
+"KRN",8994,3468,1,0)
+^8994.01^2^2^3140929^^^^
+"KRN",8994,3468,1,1,0)
+This RPC retrieves the requested data from VistA, and returns it in
+"KRN",8994,3468,1,2,0)
+^TMP("HMP",$J,n) as JSON.
+"KRN",8994,3468,2,0)
+^8994.02A^1^1
+"KRN",8994,3468,2,1,0)
+FILTER^2^^0^1
+"KRN",8994,3468,2,1,1,0)
+^8994.021^1^1^3140929^^^^
+"KRN",8994,3468,2,1,1,1,0)
+List of name-value pairs defining the search.
+"KRN",8994,3468,2,"B","FILTER",1)
+
+"KRN",8994,3468,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3468,3,0)
+^8994.03^1^1^3140929^^^^
+"KRN",8994,3468,3,1,0)
+Text array formatted as JSON
+"KRN",8994,3469,-1)
+0^8
+"KRN",8994,3469,0)
+HMP GET PATIENT DATA^GET^HMPD^4^S^^^1^1^^1
+"KRN",8994,3469,1,0)
+^8994.01^2^2^3110606^^^^
+"KRN",8994,3469,1,1,0)
+This RPC retrieves the requested data from VistA, and returns it in
+"KRN",8994,3469,1,2,0)
+^TMP("HMP",$J,n) as XML.
+"KRN",8994,3469,2,0)
+^8994.02A^7^7
+"KRN",8994,3469,2,1,0)
+DFN^1^20^1^1
+"KRN",8994,3469,2,1,1,0)
+^8994.021^2^2^3100203^^
+"KRN",8994,3469,2,1,1,1,0)
+Internal entry number from Patient file #2
+"KRN",8994,3469,2,1,1,2,0)
+[optionally DFN;ICN for remote calls]
+"KRN",8994,3469,2,2,0)
+TYPE^1^100^0^2
+"KRN",8994,3469,2,2,1,0)
+^8994.021^4^4^3110606^^^
+"KRN",8994,3469,2,2,1,1,0)
+The kind(s) of data to return, which may include:
+"KRN",8994,3469,2,2,1,2,0)
+  demographics;reactions;problems;vitals;labs;meds;
+"KRN",8994,3469,2,2,1,3,0)
+  immunizations;visits;appointments;documents;
+"KRN",8994,3469,2,2,1,4,0)
+  procedures;consults
+"KRN",8994,3469,2,3,0)
+START^1^20^0^3
+"KRN",8994,3469,2,3,1,0)
+^8994.021^1^1^3100203^^
+"KRN",8994,3469,2,3,1,1,0)
+The date/time from which to begin searching for data [optional].
+"KRN",8994,3469,2,4,0)
+STOP^1^20^0^4
+"KRN",8994,3469,2,4,1,0)
+^8994.021^1^1^3100203^^
+"KRN",8994,3469,2,4,1,1,0)
+The date/time at which to end searching for data [optional].
+"KRN",8994,3469,2,5,0)
+MAX^1^7^0^5
+"KRN",8994,3469,2,5,1,0)
+^8994.021^1^1^3100203^^
+"KRN",8994,3469,2,5,1,1,0)
+The maximum number of items to return per data type [optional].
+"KRN",8994,3469,2,6,0)
+ITEM^1^30^0^6
+"KRN",8994,3469,2,6,1,0)
+^8994.021^2^2^3100329^^^
+"KRN",8994,3469,2,6,1,1,0)
+The identifier of a single item to return [optional, but TYPE must
+"KRN",8994,3469,2,6,1,2,0)
+also be defined when used].
+"KRN",8994,3469,2,7,0)
+FILTER^2^^0^7
+"KRN",8994,3469,2,7,1,0)
+^8994.021^1^1^3110606^^^^
+"KRN",8994,3469,2,7,1,1,0)
+List of name-value pairs, further refining the search.
+"KRN",8994,3469,2,"B","DFN",1)
+
+"KRN",8994,3469,2,"B","FILTER",7)
+
+"KRN",8994,3469,2,"B","ITEM",6)
+
+"KRN",8994,3469,2,"B","MAX",5)
+
+"KRN",8994,3469,2,"B","START",3)
+
+"KRN",8994,3469,2,"B","STOP",4)
+
+"KRN",8994,3469,2,"B","TYPE",2)
+
+"KRN",8994,3469,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3469,2,"PARAMSEQ",2,2)
+
+"KRN",8994,3469,2,"PARAMSEQ",3,3)
+
+"KRN",8994,3469,2,"PARAMSEQ",4,4)
+
+"KRN",8994,3469,2,"PARAMSEQ",5,5)
+
+"KRN",8994,3469,2,"PARAMSEQ",6,6)
+
+"KRN",8994,3469,2,"PARAMSEQ",7,7)
+
+"KRN",8994,3469,3,0)
+^8994.03^1^1^3110606^^^^
+"KRN",8994,3469,3,1,0)
+Text array formatted as XML
+"KRN",8994,3470,-1)
+0^9
+"KRN",8994,3470,0)
+HMP GET PATIENT DATA JSON^GET^HMPDJ^4^S^^^0^1^^1
+"KRN",8994,3470,1,0)
+^8994.01^2^2^3131209^^^^
+"KRN",8994,3470,1,1,0)
+This RPC retrieves the requested data from VistA, and returns it in
+"KRN",8994,3470,1,2,0)
+^TMP("HMP",$J,n) as JSON.
+"KRN",8994,3470,2,0)
+^8994.02A^1^1
+"KRN",8994,3470,2,1,0)
+FILTER^2^^0^1
+"KRN",8994,3470,2,1,1,0)
+^8994.021^1^1^3131209^^^^
+"KRN",8994,3470,2,1,1,1,0)
+List of name-value pairs defining the search.
+"KRN",8994,3470,2,"B","FILTER",1)
+
+"KRN",8994,3470,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3470,3,0)
+^8994.03^1^1^3131209^^^^
+"KRN",8994,3470,3,1,0)
+Text array formatted as JSON
+"KRN",8994,3471,-1)
+0^10
+"KRN",8994,3471,0)
+HMP GET REFERENCE DATA^GET^HMPEF^4^S^^^0^1^^1
+"KRN",8994,3471,1,0)
+^^2^2^3131105
+"KRN",8994,3471,1,1,0)
+This RPC retrieves the requested data from VistA, and returns it in
+"KRN",8994,3471,1,2,0)
+^TMP("HMP",$J,n) as JSON.
+"KRN",8994,3471,2,0)
+^8994.02A^1^1
+"KRN",8994,3471,2,1,0)
+FILTER^2^^0^1
+"KRN",8994,3471,2,1,1,0)
+^^1^1^3131105
+"KRN",8994,3471,2,1,1,1,0)
+List of name-value pairs defining the search.
+"KRN",8994,3471,2,"B","FILTER",1)
+
+"KRN",8994,3471,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3471,3,0)
+^^1^1^3131105
+"KRN",8994,3471,3,1,0)
+Text array formatted as JSON
+"KRN",8994,3472,-1)
+0^11
+"KRN",8994,3472,0)
+HMP GET ROSTER LIST^GET^HMPROS7^4^S^^^^1^^1
+"KRN",8994,3472,1,0)
+^8994.01^2^2^3130221^^
+"KRN",8994,3472,1,1,0)
+Patient identification data passed in and roster identification returned.
+"KRN",8994,3472,1,2,0)
+List will contain all rosters associated with patient.
+"KRN",8994,3472,2,0)
+^8994.02A^2^2
+"KRN",8994,3472,2,1,0)
+HMP^2^3200^1^1
+"KRN",8994,3472,2,2,0)
+HMPARRAY^2^3200^1^1
+"KRN",8994,3472,2,"B","HMP",1)
+
+"KRN",8994,3472,2,"B","HMPARRAY",2)
+
+"KRN",8994,3472,2,"B","VPR",1)
+
+"KRN",8994,3472,2,"B","VPRARRAY",2)
+
+"KRN",8994,3472,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3472,2,"PARAMSEQ",1,2)
+
+"KRN",8994,3473,-1)
+0^12
+"KRN",8994,3473,0)
+HMP GET SOURCE^GETSRC^HMPROS4^4^P^^^1^1^^1
+"KRN",8994,3473,1,0)
+^8994.01^2^2^3111101^^
+"KRN",8994,3473,1,1,0)
+Get all source information for requested source.  For example, Request is for Clinics.  Transmit all active clinics
+"KRN",8994,3473,1,2,0)
+include name and ien.
+"KRN",8994,3473,2,0)
+^8994.02A^2^2
+"KRN",8994,3473,2,1,0)
+HMPSRC^1^30^1^1
+"KRN",8994,3473,2,1,1,0)
+^^1^1^3111031^
+"KRN",8994,3473,2,1,1,1,0)
+Identifies which source information to send to the GUI.
+"KRN",8994,3473,2,2,0)
+HMPFILT^1^30^0^2
+"KRN",8994,3473,2,2,1,0)
+^8994.021^1^1^3111103^^
+"KRN",8994,3473,2,2,1,1,0)
+Text identifying what you are looking for.  Will be used when matching for details.
+"KRN",8994,3473,2,"B","HMPFILT",2)
+
+"KRN",8994,3473,2,"B","HMPSRC",1)
+
+"KRN",8994,3473,2,"B","VPRFILT",2)
+
+"KRN",8994,3473,2,"B","VPRSRC",1)
+
+"KRN",8994,3473,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3473,2,"PARAMSEQ",2,2)
+
+"KRN",8994,3473,3,0)
+^8994.03^1^1^3111101^^
+"KRN",8994,3473,3,1,0)
+An array containing names and ien's of source data.
+"KRN",8994,3474,-1)
+0^13
+"KRN",8994,3474,0)
+HMP INPATIENTS^IN^HMPPATS^4^S^^^1^^^1
+"KRN",8994,3474,1,0)
+^8994.01^2^2^3101129^^^
+"KRN",8994,3474,1,1,0)
+This RPC finds a list of patients that are currently admitted,
+"KRN",8994,3474,1,2,0)
+as XML in ^TMP($J,"HMP",n).
+"KRN",8994,3474,3,0)
+^8994.03^1^1^3101129^^^
+"KRN",8994,3474,3,1,0)
+Text array formatted XML
+"KRN",8994,3475,-1)
+0^15
+"KRN",8994,3475,0)
+HMP PREVIEW ROSTER^PREVIEW^HMPROS3^4^P^^^1^1^^1
+"KRN",8994,3475,1,0)
+^8994.01^1^1^3120131^^^^
+"KRN",8994,3475,1,1,0)
+Compiles Roster based on data passed from GUI Interface.
+"KRN",8994,3475,2,0)
+^8994.02A^1^1
+"KRN",8994,3475,2,1,0)
+HMPARRAY^2^32000^1^1
+"KRN",8994,3475,2,1,1,0)
+^8994.021^1^1^3111022^^^^
+"KRN",8994,3475,2,1,1,1,0)
+Roster data from GUI.
+"KRN",8994,3475,2,"B","HMPARRAY",1)
+
+"KRN",8994,3475,2,"B","VPRARRAY",1)
+
+"KRN",8994,3475,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3475,3,0)
+^8994.03^1^1^3111022^^^^
+"KRN",8994,3475,3,1,0)
+XML formatted Roster.
+"KRN",8994,3476,-1)
+0^16
+"KRN",8994,3476,0)
+HMP PUT DEMOGRAPHICS^PUT^HMPUPD^4^S^^^0^1^^1
+"KRN",8994,3476,1,0)
+^8994.01^2^2^3131119^^
+"KRN",8994,3476,1,1,0)
+This RPC receives updated phone numbers from the client and calls
+"KRN",8994,3476,1,2,0)
+VAFCPTED to save them in the Patient file #2.
+"KRN",8994,3476,2,0)
+^8994.02A^3^3
+"KRN",8994,3476,2,1,0)
+OBJECT^3^^^3
+"KRN",8994,3476,2,1,1,0)
+^8994.021^1^1^3131120^^^
+"KRN",8994,3476,2,1,1,1,0)
+The data, as a JSON object
+"KRN",8994,3476,2,2,0)
+COMMAND^1^^^2
+"KRN",8994,3476,2,2,1,0)
+^8994.021^1^1^3131120^^
+"KRN",8994,3476,2,2,1,1,0)
+The action to take on the object in VistA
+"KRN",8994,3476,2,3,0)
+PATIENT^1^^^1
+"KRN",8994,3476,2,3,1,0)
+^^1^1^3131120^
+"KRN",8994,3476,2,3,1,1,0)
+Patient file #2 ien
+"KRN",8994,3476,2,"B","COMMAND",2)
+
+"KRN",8994,3476,2,"B","OBJECT",1)
+
+"KRN",8994,3476,2,"B","PATIENT",3)
+
+"KRN",8994,3476,2,"PARAMSEQ",1,3)
+
+"KRN",8994,3476,2,"PARAMSEQ",2,2)
+
+"KRN",8994,3476,2,"PARAMSEQ",3,1)
+
+"KRN",8994,3476,3,0)
+^8994.03^1^1^3131120^^^^
+"KRN",8994,3476,3,1,0)
+Text array formatted as JSON
+"KRN",8994,3477,-1)
+0^17
+"KRN",8994,3477,0)
+HMP PUT OBJECT^PUT^HMPDJ2^1^S^^^1^1^^1
+"KRN",8994,3477,1,0)
+^8994.01^2^2^3131216^^^^
+"KRN",8994,3477,1,1,0)
+This RPC receives data from the client and saves it in the HMP Object
+"KRN",8994,3477,1,2,0)
+file #800000.11 as JSON.
+"KRN",8994,3477,2,0)
+^8994.02A^3^2
+"KRN",8994,3477,2,2,0)
+TYPE^1^100^0^1
+"KRN",8994,3477,2,2,1,0)
+^8994.021^1^1^3121129^^^^
+"KRN",8994,3477,2,2,1,1,0)
+The kind of data being stored.
+"KRN",8994,3477,2,3,0)
+OBJECT^3^^0^2
+"KRN",8994,3477,2,3,1,0)
+^8994.021^1^1^3121129^^^^
+"KRN",8994,3477,2,3,1,1,0)
+The content of the object, as JSON
+"KRN",8994,3477,2,"B","OBJECT",3)
+
+"KRN",8994,3477,2,"B","TYPE",2)
+
+"KRN",8994,3477,2,"PARAMSEQ",1,2)
+
+"KRN",8994,3477,2,"PARAMSEQ",2,3)
+
+"KRN",8994,3477,3,0)
+^8994.03^1^1^3121129^^^^
+"KRN",8994,3477,3,1,0)
+Text array formatted as JSON
+"KRN",8994,3478,-1)
+0^18
+"KRN",8994,3478,0)
+HMP PUT PATIENT DATA^PUT^HMPDJ1^1^S^^^1^1^^1
+"KRN",8994,3478,1,0)
+^8994.01^2^2^3121129^^^^
+"KRN",8994,3478,1,1,0)
+This RPC receives data from the client and saves it in the HMP Patient
+"KRN",8994,3478,1,2,0)
+Object file #800000.1 as JSON.
+"KRN",8994,3478,2,0)
+^8994.02A^3^3
+"KRN",8994,3478,2,1,0)
+DFN^1^20^1^1
+"KRN",8994,3478,2,1,1,0)
+^8994.021^2^2^3121010^^^
+"KRN",8994,3478,2,1,1,1,0)
+Internal entry number from Patient file #2
+"KRN",8994,3478,2,1,1,2,0)
+[optionally DFN;ICN for remote calls]
+"KRN",8994,3478,2,2,0)
+TYPE^1^100^0^2
+"KRN",8994,3478,2,2,1,0)
+^8994.021^1^1^3121010^^^^
+"KRN",8994,3478,2,2,1,1,0)
+The kind of data being stored.
+"KRN",8994,3478,2,3,0)
+OBJECT^3^^0^3
+"KRN",8994,3478,2,3,1,0)
+^8994.021^1^1^3121129^^^^
+"KRN",8994,3478,2,3,1,1,0)
+The content of the object, as JSON
+"KRN",8994,3478,2,"B","DFN",1)
+
+"KRN",8994,3478,2,"B","OBJECT",3)
+
+"KRN",8994,3478,2,"B","TYPE",2)
+
+"KRN",8994,3478,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3478,2,"PARAMSEQ",2,2)
+
+"KRN",8994,3478,2,"PARAMSEQ",3,3)
+
+"KRN",8994,3478,3,0)
+^8994.03^1^1^3121129^^^^
+"KRN",8994,3478,3,1,0)
+Text array formatted as JSON
+"KRN",8994,3479,-1)
+0^19
+"KRN",8994,3479,0)
+HMP ROSTER PATIENTS^COMPILE^HMPROS2^4^P^^^1^1^^1
+"KRN",8994,3479,1,0)
+^8994.01^1^1^3141009^^^^
+"KRN",8994,3479,1,1,0)
+Provides patients associated with requested Roster.
+"KRN",8994,3479,2,0)
+^8994.02A^2^2
+"KRN",8994,3479,2,1,0)
+ROSTER^1^15^0^1
+"KRN",8994,3479,2,1,1,0)
+^8994.021^1^1^3120105^^^^
+"KRN",8994,3479,2,1,1,1,0)
+IEN of Roster you are requesting patients for.
+"KRN",8994,3479,2,2,0)
+OWNER^1^15^0^2
+"KRN",8994,3479,2,2,1,0)
+^^1^1^3120105^
+"KRN",8994,3479,2,2,1,1,0)
+Compile all rosters for this owner.
+"KRN",8994,3479,2,"B","OWNER",2)
+
+"KRN",8994,3479,2,"B","ROSTER",1)
+
+"KRN",8994,3479,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3479,2,"PARAMSEQ",2,2)
+
+"KRN",8994,3479,3,0)
+^8994.03^1^1^3141009^^^^
+"KRN",8994,3479,3,1,0)
+Text array formated XML.
+"KRN",8994,3480,-1)
+0^20
+"KRN",8994,3480,0)
+HMP ROSTERS^GETROS^HMPROS2^4^P^^^1^1^^1
+"KRN",8994,3480,1,0)
+^8994.01^1^1^3111110^^^^
+"KRN",8994,3480,1,1,0)
+Creates XML list of all Rosters.
+"KRN",8994,3480,2,0)
+^8994.02A^1^1
+"KRN",8994,3480,2,1,0)
+HMPFILT^1^30^0^1
+"KRN",8994,3480,2,1,1,0)
+^8994.021^1^1^3111110^^
+"KRN",8994,3480,2,1,1,1,0)
+Filter rosters if filter not null.
+"KRN",8994,3480,2,"B","HMPFILT",1)
+
+"KRN",8994,3480,2,"B","VPRFILT",1)
+
+"KRN",8994,3480,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3480,3,0)
+^8994.03^1^1^3111110^^^^
+"KRN",8994,3480,3,1,0)
+Text array formatted in XML.
+"KRN",8994,3481,-1)
+0^21
+"KRN",8994,3481,0)
+HMP SUBSCRIBE^SUBS^HMPPATS^4^S^^^1^^^1
+"KRN",8994,3481,1,0)
+^8994.01^3^3^3141006^^^^
+"KRN",8994,3481,1,1,0)
+This RPC will maintain a list of patients & events to monitor for new data.
+"KRN",8994,3481,1,2,0)
+The LIST of patients passed into this RPC is returned in ^TMP($J,"HMP",n)
+"KRN",8994,3481,1,3,0)
+as XML, with a subscription status of 'on', 'off', or 'error'.
+"KRN",8994,3481,2,0)
+^8994.02A^3^3
+"KRN",8994,3481,2,1,0)
+SYS^1^^0^1
+"KRN",8994,3481,2,1,1,0)
+^8994.021^3^3^3130417^^^^
+"KRN",8994,3481,2,1,1,1,0)
+This is the name of the system calling the RPC; it is used to create
+"KRN",8994,3481,2,1,1,2,0)
+an entry in the HMP SUBSCRIPTION file, and link a system to a list of
+"KRN",8994,3481,2,1,1,3,0)
+patients and/or events.
+"KRN",8994,3481,2,2,0)
+LIST^2^^0^3
+"KRN",8994,3481,2,2,1,0)
+^8994.021^2^2^3110310^^^
+"KRN",8994,3481,2,2,1,1,0)
+This is the list of patient identifiers, in the form 'dfn;icn', that
+"KRN",8994,3481,2,2,1,2,0)
+are to be either added to or removed from the monitor.
+"KRN",8994,3481,2,3,0)
+STS^1^^0^2
+"KRN",8994,3481,2,3,1,0)
+^^2^2^3110310^
+"KRN",8994,3481,2,3,1,1,0)
+This is a boolean value, 1 or 0, indicating if the patient should be
+"KRN",8994,3481,2,3,1,2,0)
+added to or removed from the data monitor.
+"KRN",8994,3481,2,"B","LIST",2)
+
+"KRN",8994,3481,2,"B","STS",3)
+
+"KRN",8994,3481,2,"B","SYS",1)
+
+"KRN",8994,3481,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3481,2,"PARAMSEQ",2,3)
+
+"KRN",8994,3481,2,"PARAMSEQ",3,2)
+
+"KRN",8994,3481,3,0)
+^8994.03^1^1^3141006^^^^
+"KRN",8994,3481,3,1,0)
+Text array formatted as XML.
+"KRN",8994,3482,-1)
+0^22
+"KRN",8994,3482,0)
+HMP SUBSCRIBE ROSTERS^SUBS^HMPROS7^4^S^^^1^^^1
+"KRN",8994,3482,1,0)
+^8994.01^3^3^3130417^^^^
+"KRN",8994,3482,1,1,0)
+This RPC will maintain a list of rosters to monitor for new patients.
+"KRN",8994,3482,1,2,0)
+The LIST of rosters passed into this RPC is returned in ^TMP($J,"HMP",n)
+"KRN",8994,3482,1,3,0)
+as XML, with a subscription status of 'on', 'off', or 'error'.
+"KRN",8994,3482,2,0)
+^8994.02A^3^3
+"KRN",8994,3482,2,1,0)
+SYS^1^^0^1
+"KRN",8994,3482,2,1,1,0)
+^8994.021^3^3^3130417^^^^
+"KRN",8994,3482,2,1,1,1,0)
+This is the name of the system calling the RPC; it is used to create
+"KRN",8994,3482,2,1,1,2,0)
+an entry in the HMP SUBSCRIPTION file, and link a system to a list of
+"KRN",8994,3482,2,1,1,3,0)
+rosters.
+"KRN",8994,3482,2,2,0)
+LIST^2^^0^3
+"KRN",8994,3482,2,2,1,0)
+^8994.021^2^2^3130417^^^^
+"KRN",8994,3482,2,2,1,1,0)
+This is the list of roster identifiers that are to be either added to or
+"KRN",8994,3482,2,2,1,2,0)
+removed from the monitor.
+"KRN",8994,3482,2,3,0)
+STS^1^^0^2
+"KRN",8994,3482,2,3,1,0)
+^8994.021^2^2^3130417^^
+"KRN",8994,3482,2,3,1,1,0)
+This is a boolean value, 1 or 0, indicating if the roster should be
+"KRN",8994,3482,2,3,1,2,0)
+added to or removed from the data monitor.
+"KRN",8994,3482,2,"B","LIST",2)
+
+"KRN",8994,3482,2,"B","STS",3)
+
+"KRN",8994,3482,2,"B","SYS",1)
+
+"KRN",8994,3482,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3482,2,"PARAMSEQ",2,3)
+
+"KRN",8994,3482,2,"PARAMSEQ",3,2)
+
+"KRN",8994,3482,3,0)
+^8994.03^1^1^3130417^^^^
+"KRN",8994,3482,3,1,0)
+Text array formatted as XML.
+"KRN",8994,3483,-1)
+0^23
+"KRN",8994,3483,0)
+HMP UPDATE ROSTER^UPDATE^HMPROS3^4^P^^^1^1^^1
+"KRN",8994,3483,1,0)
+^8994.01^1^1^3141006^^^
+"KRN",8994,3483,1,1,0)
+Udates roster data editted by GUI into VistA.
+"KRN",8994,3483,2,0)
+^8994.02A^1^1
+"KRN",8994,3483,2,1,0)
+HMPARRAY^2^32000^1^1
+"KRN",8994,3483,2,"B","HMPARRAY",1)
+
+"KRN",8994,3483,2,"B","VPRARRAY",1)
+
+"KRN",8994,3483,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3484,-1)
+0^24
+"KRN",8994,3484,0)
+HMP WRITEBACK PT DEM^FILE^HMPPTDEM^2^S^^^0^1^^1
+"KRN",8994,3484,1,0)
+^8994.01^1^1^3141015^^
+"KRN",8994,3484,1,1,0)
+This RPC takes demographic data from an outside system and files it in to the Patient File (#2)
+"KRN",8994,3484,2,0)
+^8994.02A^1^1
+"KRN",8994,3484,2,1,0)
+FIL^1^32000^1^1
+"KRN",8994,3484,2,1,1,0)
+^8994.021^1^1^3141015^^
+"KRN",8994,3484,2,1,1,1,0)
+"^" delimited set of data to be filed in to the Patient File 
+"KRN",8994,3484,2,"B","FIL",1)
+
+"KRN",8994,3484,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3484,3,0)
+^8994.03^1^1^3141015^^
+"KRN",8994,3484,3,1,0)
+Error or Success message
+"KRN",8994,3485,-1)
+0^25
+"KRN",8994,3485,0)
+HMPCORD RPC^RPC^HMPCORD^3^^^^0
+"KRN",8994,3485,2,0)
+^8994.02A^1^1
+"KRN",8994,3485,2,1,0)
+PARAMS^2^^1^1
+"KRN",8994,3485,2,"B","PARAMS",1)
+
+"KRN",8994,3485,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3486,-1)
+0^26
+"KRN",8994,3486,0)
+HMPCPAT RPC^RPC^HMPCPAT^4
+"KRN",8994,3486,2,0)
+^8994.02A^1^1
+"KRN",8994,3486,2,1,0)
+PARAMS^2^^1^1
+"KRN",8994,3486,2,"B","PARAMS",1)
+
+"KRN",8994,3486,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3487,-1)
+0^27
+"KRN",8994,3487,0)
+HMPCPRS RPC^RPC^HMPCPRS^3^^^^0
+"KRN",8994,3487,2,0)
+^8994.02A^1^1
+"KRN",8994,3487,2,1,0)
+PARAMS^2^^1^1
+"KRN",8994,3487,2,"B","PARAMS",1)
+
+"KRN",8994,3487,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3488,-1)
+0^28
+"KRN",8994,3488,0)
+HMPCRPC RPC^RPC^HMPCRPC^3^^^^0
+"KRN",8994,3488,1,0)
+^8994.01^2^2^3120515^^
+"KRN",8994,3488,1,1,0)
+This RPC is used to save and get data to/from the HMP PARAMETERS in the 
+"KRN",8994,3488,1,2,0)
+parameter file.
+"KRN",8994,3488,2,0)
+^8994.02A^1^1
+"KRN",8994,3488,2,1,0)
+PARAMS^2^^1^1
+"KRN",8994,3488,2,"B","PARAMS",1)
+
+"KRN",8994,3488,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3489,-1)
+0^29
+"KRN",8994,3489,0)
+HMPCRPC RPCCHAIN^CHAINRPC^HMPCRPC^3^P^0^^0^1^^1
+"KRN",8994,3489,2,0)
+^8994.02A^1^1
+"KRN",8994,3489,2,1,0)
+PARAMS^2^32000^1^1
+"KRN",8994,3489,2,"B","PARAMS",1)
+
+"KRN",8994,3489,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3490,-1)
+0^30
+"KRN",8994,3490,0)
+HMPDJFS API^API^HMPDJFS^4^^^^0
+"KRN",8994,3490,2,0)
+^8994.02A^1^1
+"KRN",8994,3490,2,1,0)
+RESPONSE^1^^^1
+"KRN",8994,3490,2,"B","RESPONSE",1)
+
+"KRN",8994,3490,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3491,-1)
+0^31
+"KRN",8994,3491,0)
+HMPDJFS DELSUB^DELSUB^HMPDJFS^1^P^0
+"KRN",8994,3492,-1)
+0^32
+"KRN",8994,3492,0)
+HMPFPTC CHKS^CHKS^HMPFPTC^3^^^^0
+"KRN",8994,3492,1,0)
+^8994.01^2^2^3120629^^^
+"KRN",8994,3492,1,1,0)
+This RPC returns the patient selection checks for a sensitive patient, 
+"KRN",8994,3492,1,2,0)
+deceased, and PRF.
+"KRN",8994,3492,2,0)
+^8994.02A^1^1
+"KRN",8994,3492,2,1,0)
+ICN^1^^1^1
+"KRN",8994,3492,2,1,1,0)
+^8994.021^1^1^3120629^^
+"KRN",8994,3492,2,1,1,1,0)
+This is the patient ICN
+"KRN",8994,3492,2,"B","ICN",1)
+
+"KRN",8994,3492,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3493,-1)
+0^33
+"KRN",8994,3493,0)
+HMPFPTC LOG^LOG^HMPFPTC^3^^^^0
+"KRN",8994,3493,1,0)
+^8994.01^2^2^3120124^
+"KRN",8994,3493,1,1,0)
+This RPC is used to log a patient when a provider is accessing a 
+"KRN",8994,3493,1,2,0)
+sensitive record.
+"KRN",8994,3493,2,0)
+^8994.02A^1^1
+"KRN",8994,3493,2,1,0)
+ICN^1^^1^1
+"KRN",8994,3493,2,"B","ICN",1)
+
+"KRN",8994,3493,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3494,-1)
+0^35
+"KRN",8994,3494,0)
+HMP LOCAL GETCORRESPONDINGIDS^TFL^HMPTFU2^3^P^^^1^1
+"KRN",8994,3494,1,0)
+^8994.01^2^2^3150205^^^^
+"KRN",8994,3494,1,1,0)
+Given a patient DFN, ICN, or EDIPI, this Remote Procedure Call returns a list of Treating Facilities, including SOURCE   
+"KRN",8994,3494,1,2,0)
+     ID,  station number, and  IDENTIFIER STATUS. INPUT PARAMETER: Patient Identifier      
+"KRN",8994,3494,2,0)
+^8994.02A^1^1
+"KRN",8994,3494,2,1,0)
+Patient Identifier^3^255^1^1
+"KRN",8994,3494,2,1,1,0)
+^8994.021^11^11^3150205^^^^
+"KRN",8994,3494,2,1,1,1,0)
+ The patient identifier will either be the PATIENT file (#2) IEN (aka 
+"KRN",8994,3494,2,1,1,2,0)
+ DFN), Integration Control Number (aka ICN) or the DOD Identifier (aka 
+"KRN",8994,3494,2,1,1,3,0)
+ EDIPI).  Following this format:
+"KRN",8994,3494,2,1,1,4,0)
+  
+"KRN",8994,3494,2,1,1,5,0)
+ Id^IdType^AssigningAuthority^AssigningFacility
+"KRN",8994,3494,2,1,1,6,0)
+  
+"KRN",8994,3494,2,1,1,7,0)
+ Examples:
+"KRN",8994,3494,2,1,1,8,0)
+  
+"KRN",8994,3494,2,1,1,9,0)
+ ICN example:   1008520438V882204^NI^USVHA^200M
+"KRN",8994,3494,2,1,1,10,0)
+DFN example:   100000511^PI^USVHA^500
+"KRN",8994,3494,2,1,1,11,0)
+ EDIPI example: 852043888^NI^USDOD^200DOD
+"KRN",8994,3494,2,"B","Patient Identifier",1)
+
+"KRN",8994,3494,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3494,3,0)
+^8994.03^14^14^3150205^^^^
+"KRN",8994,3494,3,1,0)
+ This will return a list of treating facilities in the following format:
+"KRN",8994,3494,3,2,0)
+ 
+"KRN",8994,3494,3,3,0)
+ ID^IDTYPE^AssigningFacility^AssigningAuthority^IDStatus
+"KRN",8994,3494,3,4,0)
+ 
+"KRN",8994,3494,3,5,0)
+AssigningFacility is a hashed value based on facility domain,
+"KRN",8994,3494,3,6,0)
+using $$BASE^XLFUTL($$CRC16^XLFCRC("DOMAIN.DOMAIN.EXT"),10,16)
+"KRN",8994,3494,3,7,0)
+ 
+"KRN",8994,3494,3,8,0)
+ Examples:
+"KRN",8994,3494,3,9,0)
+ 
+"KRN",8994,3494,3,10,0)
+ RETURN(1)="27^PI^D17^USVHA^H"
+"KRN",8994,3494,3,11,0)
+ RETURN(2)="7169806^PI^D17^USVHA^A"
+"KRN",8994,3494,3,12,0)
+ RETURN(3)="^PI^200PS^USVHA"
+"KRN",8994,3494,3,13,0)
+ RETURN(4)="1^NI^200DOD^USDOD^A"
+"KRN",8994,3494,3,14,0)
+ RETURN(5)="2^NI^200DOD^USDOD^H"
+"KRN",8994,3495,-1)
+0^34
+"KRN",8994,3495,0)
+HMP LOCAL CORRESPONDINGIDS^TFL^HMPTFU2^3^P^^^1^1
+"KRN",8994,3495,1,0)
+^8994.01^1^1^3150219^^^^
+"KRN",8994,3495,1,1,0)
+Give a patient DFN, ICN, or EDIPI, this Remote Procedure Call returns a list of Treating Facilities, including SOURCE ID, SITE HASH, and IDENTIFIER STATUS.
+"KRN",8994,3495,2,0)
+^8994.02A^1^1
+"KRN",8994,3495,2,1,0)
+Patient Identifier^3^255^1^1
+"KRN",8994,3495,2,1,1,0)
+^8994.021^7^7^3150219^^^^
+"KRN",8994,3495,2,1,1,1,0)
+The patient identifier will either be the PATIENT (#2) IEN (aka DFN), Integration Control Number (aka ICN), or the DOD Identifier (aka EDIPI). Following this format:
+"KRN",8994,3495,2,1,1,2,0)
+Id^IdType^AssigningAuthority^AssigningFacility
+"KRN",8994,3495,2,1,1,3,0)
+ 
+"KRN",8994,3495,2,1,1,4,0)
+Examples:
+"KRN",8994,3495,2,1,1,5,0)
+ ICN example:  1008520438V882204^NI^USVHA^200M
+"KRN",8994,3495,2,1,1,6,0)
+ DFN example:  100000511^PI^USHVA^500
+"KRN",8994,3495,2,1,1,7,0)
+EDIPI example: 852043888^NI^USDOD^200DOD
+"KRN",8994,3495,2,"B","Patient Identifier",1)
+
+"KRN",8994,3495,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3495,3,0)
+^8994.03^8^8^3150219^^^
+"KRN",8994,3495,3,1,0)
+This will return a list of treating facilities in the following format:
+"KRN",8994,3495,3,2,0)
+ 
+"KRN",8994,3495,3,3,0)
+ ID^IDTYPE^SiteHash^AssigningAuthority^IDSTatus
+"KRN",8994,3495,3,4,0)
+ 
+"KRN",8994,3495,3,5,0)
+Examples:
+"KRN",8994,3495,3,6,0)
+ RETURN(1)=27^PI^D17^USVHA^H"
+"KRN",8994,3495,3,7,0)
+ RETURN(2)=7169806^PI^D17^USHVA^A"
+"KRN",8994,3495,3,8,0)
+ RETURN(3)=1^NI^200DOD^USDOD^A"
+"KRN",8994,3496,-1)
+0^36
+"KRN",8994,3496,0)
+HMP PUT OPERATIONAL DATA^API^HMPWB^1^S^^^^^^1
+"KRN",8994,3496,1,0)
+^8994.01^1^1^3141222^^
+"KRN",8994,3496,1,1,0)
+This RPC accepts writeback data from JDS and returns a JSON formatted acknowledgement message. 
+"KRN",8994,3496,2,0)
+^8994.02A^3^3
+"KRN",8994,3496,2,1,0)
+IEN^1^^1^1
+"KRN",8994,3496,2,2,0)
+DFN^1^^1^2
+"KRN",8994,3496,2,3,0)
+DATA^2^^1^3
+"KRN",8994,3496,2,"B","DATA",3)
+
+"KRN",8994,3496,2,"B","DFN",2)
+
+"KRN",8994,3496,2,"B","IEN",1)
+
+"KRN",8994,3496,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3496,2,"PARAMSEQ",2,2)
+
+"KRN",8994,3496,2,"PARAMSEQ",3,3)
+
+"MBREQ")
+0
+"ORD",3,19.1)
+19.1;3;;;KEY^XPDTA1;KEYF1^XPDIA1;KEYE1^XPDIA1;KEYF2^XPDIA1;;KEYDEL^XPDIA1
+"ORD",3,19.1,0)
+SECURITY KEY
+"ORD",14,771)
+771;14;;;HLAP^XPDTA1;HLAPF1^XPDIA1;HLAPE1^XPDIA1;HLAPF2^XPDIA1;;HLAPDEL^XPDIA1(%)
+"ORD",14,771,0)
+HL7 APPLICATION PARAMETER
+"ORD",15,101)
+101;15;;;PRO^XPDTA;PROF1^XPDIA;PROE1^XPDIA;PROF2^XPDIA;;PRODEL^XPDIA
+"ORD",15,101,0)
+PROTOCOL
+"ORD",16,8994)
+8994;16;1;;;;;;;RPCDEL^XPDIA1
+"ORD",16,8994,0)
+REMOTE PROCEDURE
+"ORD",18,19)
+19;18;;;OPT^XPDTA;OPTF1^XPDIA;OPTE1^XPDIA;OPTF2^XPDIA;;OPTDEL^XPDIA
+"ORD",18,19,0)
+OPTION
+"ORD",20,8989.51)
+8989.51;20;;;PAR1E1^XPDTA2;PAR1F1^XPDIA3;PAR1E1^XPDIA3;PAR1F2^XPDIA3;;PAR1DEL^XPDIA3(%)
+"ORD",20,8989.51,0)
+PARAMETER DEFINITION
+"PGL",800000.1,0,2,.02)
+PATIENT^RP2'^DPT(^0;2^Q
+"PKG",578,-1)
+1^1
+"PKG",578,0)
+HEALTH MANAGEMENT PLATFORM^HMP^Access patient medical records from all VistA's
+"PKG",578,20,0)
+^9.402P^^
+"PKG",578,22,0)
+^9.49I^1^1
+"PKG",578,22,1,0)
+2.0^3150612^3150610^1
+"PKG",578,22,1,1,0)
+^^416^416^3150612
+"PKG",578,22,1,1,1,0)
+The eHMP project within the Veterans Health Information Systems and
+"PKG",578,22,1,1,2,0)
+Technology (VistA) Evolution program will introduce expanded
+"PKG",578,22,1,1,3,0)
+capabilities and modernize existing features of the VA VistA Electronic
+"PKG",578,22,1,1,4,0)
+Health Record (EHR) system. The eHMP project is a multi-year effort to
+"PKG",578,22,1,1,5,0)
+evolve a modern, service-oriented Enterprise Health Application
+"PKG",578,22,1,1,6,0)
+Platform. This platform includes VistA Exchange, the eHMP Clinical
+"PKG",578,22,1,1,7,0)
+Practice Environment (CPE), as well as clinical knowledge enrichment and
+"PKG",578,22,1,1,8,0)
+decision support services. VistA Exchange is the clinical data services
+"PKG",578,22,1,1,9,0)
+engine, federating clinical data from a variety of VA and DoD sources
+"PKG",578,22,1,1,10,0)
+into an Enterprise Virtual Patient Record (eVPR). The eHMP CPE framework
+"PKG",578,22,1,1,11,0)
+will incorporate capabilities currently provided by JLV and hi2 HMP.
+"PKG",578,22,1,1,12,0)
+eHMP CPE will eventually replace the Computerized Patient Record System
+"PKG",578,22,1,1,13,0)
+(CPRS) as VA?s primary point of care application. eHMP version 1.1
+"PKG",578,22,1,1,14,0)
+Viewer Edition is the initial product supporting a user interface.
+"PKG",578,22,1,1,15,0)
+This project is being deployed in phases with each new iteration 
+"PKG",578,22,1,1,16,0)
+adding new features.
+"PKG",578,22,1,1,17,0)
+ 
+"PKG",578,22,1,1,18,0)
+ 
+"PKG",578,22,1,1,19,0)
+ 
+"PKG",578,22,1,1,20,0)
+ 
+"PKG",578,22,1,1,21,0)
+Patch Components
+"PKG",578,22,1,1,22,0)
+================
+"PKG",578,22,1,1,23,0)
+ 
+"PKG",578,22,1,1,24,0)
+This is a multi-patch build and consists of the following patches:
+"PKG",578,22,1,1,25,0)
+ 
+"PKG",578,22,1,1,26,0)
+MD*1.0*38
+"PKG",578,22,1,1,27,0)
+OR*3.0*390
+"PKG",578,22,1,1,28,0)
+PSB*3.0*79
+"PKG",578,22,1,1,29,0)
+TIU*1.0*106
+"PKG",578,22,1,1,30,0)
+GMRC*3.0*80
+"PKG",578,22,1,1,31,0)
+HMP*2.0*1
+"PKG",578,22,1,1,32,0)
+ 
+"PKG",578,22,1,1,33,0)
+The following information is specific to the HMP 2.0 patch which is
+"PKG",578,22,1,1,34,0)
+the primary patch for eHMP. The other
+"PKG",578,22,1,1,35,0)
+patches contain methods for extracting domain specific data to the eHMP
+"PKG",578,22,1,1,36,0)
+and JSON Data Store.
+"PKG",578,22,1,1,37,0)
+ 
+"PKG",578,22,1,1,38,0)
+Files & Fields Associated:
+"PKG",578,22,1,1,39,0)
+ 
+"PKG",578,22,1,1,40,0)
+File Name (#) Field Name (#) New/Modified/Deleted
+"PKG",578,22,1,1,41,0)
+------------- -------------- --------------------
+"PKG",578,22,1,1,42,0)
+HMP SUBSCRIPTION #800000
+"PKG",578,22,1,1,43,0)
+HMP PATIENT OBJECT #800000.1
+"PKG",578,22,1,1,44,0)
+HMP OBJECT #800000.11
+"PKG",578,22,1,1,45,0)
+HMP LIST #800000.2
+"PKG",578,22,1,1,46,0)
+HMP LIST DOMAIN #800000.21
+"PKG",578,22,1,1,47,0)
+HMP LIST ATTRIBUTE #800000.22
+"PKG",578,22,1,1,48,0)
+HMP PANEL #800001
+"PKG",578,22,1,1,49,0)
+HMP ROSTER #800001.2
+"PKG",578,22,1,1,50,0)
+HMP ACTIVITY #800001.5
+"PKG",578,22,1,1,51,0)
+ 
+"PKG",578,22,1,1,52,0)
+ 
+"PKG",578,22,1,1,53,0)
+Additional Information:
+"PKG",578,22,1,1,54,0)
+ 
+"PKG",578,22,1,1,55,0)
+Patches necessary for This patch to be installed:
+"PKG",578,22,1,1,56,0)
+ 
+"PKG",578,22,1,1,57,0)
+ 
+"PKG",578,22,1,1,58,0)
+  1 MD*1.0*38                                        
+"PKG",578,22,1,1,59,0)
+  2 OR*3.0*390                                       
+"PKG",578,22,1,1,60,0)
+  3 PSB*3.0*79                     
+"PKG",578,22,1,1,61,0)
+  4 TIU*1.0*106                                      
+"PKG",578,22,1,1,62,0)
+  5 GMRC*3.0*80                                      
+"PKG",578,22,1,1,63,0)
+  6 HMP 2.0                                        
+"PKG",578,22,1,1,64,0)
+ 
+"PKG",578,22,1,1,65,0)
+ 
+"PKG",578,22,1,1,66,0)
+HMP 2.0
+"PKG",578,22,1,1,67,0)
+ 
+"PKG",578,22,1,1,68,0)
+HEALTH MANAGEMENT PLATFORM
+"PKG",578,22,1,1,69,0)
+HMPACT    value = 1310173
+"PKG",578,22,1,1,70,0)
+HMPAP1    value = 154648962
+"PKG",578,22,1,1,71,0)
+HMPATRG   value = 13049868
+"PKG",578,22,1,1,72,0)
+HMPCAC    value = 96818205
+"PKG",578,22,1,1,73,0)
+HMPCORD   value = 7434772
+"PKG",578,22,1,1,74,0)
+HMPCORD1  value = 194228721
+"PKG",578,22,1,1,75,0)
+HMPCORD2  value = 67567632
+"PKG",578,22,1,1,76,0)
+HMPCORD3  value = 150904126
+"PKG",578,22,1,1,77,0)
+HMPCORD4  value = 139723723
+"PKG",578,22,1,1,78,0)
+HMPCORD5  value = 86484445
+"PKG",578,22,1,1,79,0)
+HMPCPAT   value = 1066536
+"PKG",578,22,1,1,80,0)
+HMPCPAT1  value = 7016891
+"PKG",578,22,1,1,81,0)
+HMPCPRS   value = 4924700
+"PKG",578,22,1,1,82,0)
+HMPCRPC   value = 12934677
+"PKG",578,22,1,1,83,0)
+HMPCRPC1  value = 106973387
+"PKG",578,22,1,1,84,0)
+HMPD      value = 28800925
+"PKG",578,22,1,1,85,0)
+HMPDCRC   value = 46664807
+"PKG",578,22,1,1,86,0)
+HMPDERRH  value = 1975041
+"PKG",578,22,1,1,87,0)
+HMPDGMPL  value = 27694389
+"PKG",578,22,1,1,88,0)
+HMPDGMRA  value = 22292681
+"PKG",578,22,1,1,89,0)
+HMPDGMRC  value = 10807786
+"PKG",578,22,1,1,90,0)
+HMPDGMV   value = 41514540
+"PKG",578,22,1,1,91,0)
+HMPDGPF   value = 5516892
+"PKG",578,22,1,1,92,0)
+HMPDIB    value = 12628696
+"PKG",578,22,1,1,93,0)
+HMPDJ     value = 33824834
+"PKG",578,22,1,1,94,0)
+HMPDJ0    value = 88010816
+"PKG",578,22,1,1,95,0)
+HMPDJ00   value = 133513920
+"PKG",578,22,1,1,96,0)
+HMPDJ00A  value = 113564667
+"PKG",578,22,1,1,97,0)
+HMPDJ01   value = 41085471
+"PKG",578,22,1,1,98,0)
+HMPDJ02   value = 139246483
+"PKG",578,22,1,1,99,0)
+HMPDJ03   value = 85806963
+"PKG",578,22,1,1,100,0)
+HMPDJ04   value = 64765097
+"PKG",578,22,1,1,101,0)
+HMPDJ04A  value = 36508889
+"PKG",578,22,1,1,102,0)
+HMPDJ04E  value = 10143878
+"PKG",578,22,1,1,103,0)
+HMPDJ05   value = 79595880
+"PKG",578,22,1,1,104,0)
+HMPDJ05V  value = 64852450
+"PKG",578,22,1,1,105,0)
+HMPDJ06   value = 54257858
+"PKG",578,22,1,1,106,0)
+HMPDJ07   value = 22322346
+"PKG",578,22,1,1,107,0)
+HMPDJ08   value = 68673644
+"PKG",578,22,1,1,108,0)
+HMPDJ08A  value = 46989359
+"PKG",578,22,1,1,109,0)
+HMPDJ09   value = 39057508
+"PKG",578,22,1,1,110,0)
+HMPDJ09M  value = 10164643
+"PKG",578,22,1,1,111,0)
+HMPDJ1    value = 18536339
+"PKG",578,22,1,1,112,0)
+HMPDJ2    value = 21438887
+"PKG",578,22,1,1,113,0)
+HMPDJFS   value = 69787003
+"PKG",578,22,1,1,114,0)
+HMPDJFSD  value = 6500303
+"PKG",578,22,1,1,115,0)
+HMPDJFSG  value = 122582104
+"PKG",578,22,1,1,116,0)
+HMPDJFSM  value = 89659473
+"PKG",578,22,1,1,117,0)
+HMPDJFSP  value = 149324597
+"PKG",578,22,1,1,118,0)
+HMPDJFST  value = 46894611
+"PKG",578,22,1,1,119,0)
+HMPDJT    value = 9992032
+"PKG",578,22,1,1,120,0)
+HMPDJX    value = 35974883
+"PKG",578,22,1,1,121,0)
+HMPDLR    value = 24583034
+"PKG",578,22,1,1,122,0)
+HMPDLRA   value = 75872905
+"PKG",578,22,1,1,123,0)
+HMPDLRO   value = 27146176
+"PKG",578,22,1,1,124,0)
+HMPDMC    value = 57964365
+"PKG",578,22,1,1,125,0)
+HMPDMDC   value = 44173396
+"PKG",578,22,1,1,126,0)
+HMPDOR    value = 13171182
+"PKG",578,22,1,1,127,0)
+HMPDPROC  value = 10503927
+"PKG",578,22,1,1,128,0)
+HMPDPS    value = 18754698
+"PKG",578,22,1,1,129,0)
+HMPDPSI   value = 41148802
+"PKG",578,22,1,1,130,0)
+HMPDPSO   value = 15565576
+"PKG",578,22,1,1,131,0)
+HMPDPSOR  value = 39015653
+"PKG",578,22,1,1,132,0)
+HMPDPT    value = 70429024
+"PKG",578,22,1,1,133,0)
+HMPDPXAM  value = 9554968
+"PKG",578,22,1,1,134,0)
+HMPDPXED  value = 9765099
+"PKG",578,22,1,1,135,0)
+HMPDPXHF  value = 10000962
+"PKG",578,22,1,1,136,0)
+HMPDPXIM  value = 15776836
+"PKG",578,22,1,1,137,0)
+HMPDPXSK  value = 9640619
+"PKG",578,22,1,1,138,0)
+HMPDRA    value = 41653266
+"PKG",578,22,1,1,139,0)
+HMPDSDAM  value = 20015480
+"PKG",578,22,1,1,140,0)
+HMPDSR    value = 30238500
+"PKG",578,22,1,1,141,0)
+HMPDTIU   value = 80060367
+"PKG",578,22,1,1,142,0)
+HMPDTIUX  value = 21288550
+"PKG",578,22,1,1,143,0)
+HMPDVSIT  value = 89189669
+"PKG",578,22,1,1,144,0)
+HMPEASU   value = 28117986
+"PKG",578,22,1,1,145,0)
+HMPEF     value = 210968569
+"PKG",578,22,1,1,146,0)
+HMPEFSG   value = 7146892
+"PKG",578,22,1,1,147,0)
+HMPEFSP   value = 44616195
+"PKG",578,22,1,1,148,0)
+HMPEFST   value = 5355448
+"PKG",578,22,1,1,149,0)
+HMPEFX    value = 8497176
+"PKG",578,22,1,1,150,0)
+HMPEHL7   value = 3357275
+"PKG",578,22,1,1,151,0)
+HMPELAB   value = 5621776
+"PKG",578,22,1,1,152,0)
+HMPENSZ   value = 68569424
+"PKG",578,22,1,1,153,0)
+HMPENSZ1  value = 10674596
+"PKG",578,22,1,1,154,0)
+HMPEQ     value = 26873326
+"PKG",578,22,1,1,155,0)
+HMPEQLM   value = 111474303
+"PKG",578,22,1,1,156,0)
+HMPEQLM1  value = 6971880
+"PKG",578,22,1,1,157,0)
+HMPEQLM2  value = 3216732
+"PKG",578,22,1,1,158,0)
+HMPEVNT   value = 112664650
+"PKG",578,22,1,1,159,0)
+HMPFPTC   value = 14517957
+"PKG",578,22,1,1,160,0)
+HMPHTTP   value = 14238772
+"PKG",578,22,1,1,161,0)
+HMPIDX    value = 14171209
+"PKG",578,22,1,1,162,0)
+HMPJSON   value = 11232902
+"PKG",578,22,1,1,163,0)
+HMPJSOND  value = 70219619
+"PKG",578,22,1,1,164,0)
+HMPJSONE  value = 24346328
+"PKG",578,22,1,1,165,0)
+HMPLIST   value = 60978957
+"PKG",578,22,1,1,166,0)
+HMPMDUTL  value = 50918469
+"PKG",578,22,1,1,167,0)
+HMPP2I    value = 233946
+"PKG",578,22,1,1,168,0)
+HMPP3I    value = 73661363
+"PKG",578,22,1,1,169,0)
+HMPPANEL  value = 9226601
+"PKG",578,22,1,1,170,0)
+HMPPARAM  value = 15385831
+"PKG",578,22,1,1,171,0)
+HMPPATS   value = 44774120
+"PKG",578,22,1,1,172,0)
+HMPPI     value = 298411
+"PKG",578,22,1,1,173,0)
+HMPPRODC  value = 2553263
+"PKG",578,22,1,1,174,0)
+HMPPTDEM  value = 12301900
+"PKG",578,22,1,1,175,0)
+HMPPXPR1  value = 845616
+"PKG",578,22,1,1,176,0)
+HMPPXRM   value = 12212288
+"PKG",578,22,1,1,177,0)
+HMPROS2   value = 104804972
+"PKG",578,22,1,1,178,0)
+HMPROS3   value = 85901883
+"PKG",578,22,1,1,179,0)
+HMPROS4   value = 90329378
+"PKG",578,22,1,1,180,0)
+HMPROS5   value = 9592522
+"PKG",578,22,1,1,181,0)
+HMPROS6   value = 26014820
+"PKG",578,22,1,1,182,0)
+HMPROS7   value = 23792527
+"PKG",578,22,1,1,183,0)
+HMPROS8   value = 78575599
+"PKG",578,22,1,1,184,0)
+HMPSR     value = 404968
+"PKG",578,22,1,1,185,0)
+HMPTRPC   value = 3719901
+"PKG",578,22,1,1,186,0)
+HMPTRPC1  value = 41566182
+"PKG",578,22,1,1,187,0)
+HMPUPD    value = 22706701
+"PKG",578,22,1,1,188,0)
+HMPUTILS  value = 18637094
+"PKG",578,22,1,1,189,0)
+HMPYCSI   value = 16398514
+"PKG",578,22,1,1,190,0)
+HMPYFRP   value = 92726383
+"PKG",578,22,1,1,191,0)
+HMPYFRP1  value = 46640576
+"PKG",578,22,1,1,192,0)
+HMPYFRP2  value = 43272246
+"PKG",578,22,1,1,193,0)
+HMPYPAR   value = 3965687
+"PKG",578,22,1,1,194,0)
+done 
+"PKG",578,22,1,1,195,0)
+ 
+"PKG",578,22,1,1,196,0)
+Select BUILD NAME: MD*1.0*38       CLINICAL PROCEDURES
+"PKG",578,22,1,1,197,0)
+MDCPROTD  value = 6599959
+"PKG",578,22,1,1,198,0)
+MDPOST38  value = 2283064
+"PKG",578,22,1,1,199,0)
+done
+"PKG",578,22,1,1,200,0)
+ 
+"PKG",578,22,1,1,201,0)
+Select BUILD NAME: OR*3.0*390       ORDER ENTRY/RESULTS REPORTING
+"PKG",578,22,1,1,202,0)
+ORCACT1   value = 49643037
+"PKG",578,22,1,1,203,0)
+ORCSEND   value = 65938879
+"PKG",578,22,1,1,204,0)
+ORMBLDOR  value = 5650360
+"PKG",578,22,1,1,205,0)
+ORWDXA    value = 83177974
+"PKG",578,22,1,1,206,0)
+done
+"PKG",578,22,1,1,207,0)
+ 
+"PKG",578,22,1,1,208,0)
+Select BUILD NAME: PSB*3.0*79       BAR CODE MED ADMIN
+"PKG",578,22,1,1,209,0)
+PSBML     value = 125339367
+"PKG",578,22,1,1,210,0)
+PSBVPR    value = 2149221
+"PKG",578,22,1,1,211,0)
+done
+"PKG",578,22,1,1,212,0)
+ 
+"PKG",578,22,1,1,213,0)
+Select BUILD NAME: TIU*1.0*106       TEXT INTEGRATION UTILITIES
+"PKG",578,22,1,1,214,0)
+TIUDDX    value = 222239
+"PKG",578,22,1,1,215,0)
+TIUPS106  value = 3190064
+"PKG",578,22,1,1,216,0)
+TIUVPR    value = 10950606
+"PKG",578,22,1,1,217,0)
+done
+"PKG",578,22,1,1,218,0)
+ 
+"PKG",578,22,1,1,219,0)
+Select BUILD NAME: GMRC*3.0*80       CONSULT/REQUEST TRACKING
+"PKG",578,22,1,1,220,0)
+GMRCAPI   value = 8248863
+"PKG",578,22,1,1,221,0)
+done
+"PKG",578,22,1,1,222,0)
+ 
+"PKG",578,22,1,1,223,0)
+ 
+"PKG",578,22,1,1,224,0)
+ 
+"PKG",578,22,1,1,225,0)
+Forms Associated:
+"PKG",578,22,1,1,226,0)
+ 
+"PKG",578,22,1,1,227,0)
+Form Name File # New/Modified/Deleted
+"PKG",578,22,1,1,228,0)
+--------- ------ --------------------
+"PKG",578,22,1,1,229,0)
+N/A
+"PKG",578,22,1,1,230,0)
+ 
+"PKG",578,22,1,1,231,0)
+ 
+"PKG",578,22,1,1,232,0)
+Mail Groups Associated:
+"PKG",578,22,1,1,233,0)
+ 
+"PKG",578,22,1,1,234,0)
+Mail Group Name New/Modified/Deleted
+"PKG",578,22,1,1,235,0)
+--------------- --------------------
+"PKG",578,22,1,1,236,0)
+N/A
+"PKG",578,22,1,1,237,0)
+ 
+"PKG",578,22,1,1,238,0)
+ 
+"PKG",578,22,1,1,239,0)
+Options Associated:
+"PKG",578,22,1,1,240,0)
+ 
+"PKG",578,22,1,1,241,0)
+Option Name Type New/Modified/Deleted
+"PKG",578,22,1,1,242,0)
+----------- ---- --------------------
+"PKG",578,22,1,1,243,0)
+HMP APPLICATION PROXY
+"PKG",578,22,1,1,244,0)
+HMP APPOINTMENTS
+"PKG",578,22,1,1,245,0)
+HMP PATIENT ACTIVITY
+"PKG",578,22,1,1,246,0)
+HMP PATIENT DATA MONITOR
+"PKG",578,22,1,1,247,0)
+HMP SYNCHRONIZATION CONTEXT
+"PKG",578,22,1,1,248,0)
+HMP UI CONTEXT
+"PKG",578,22,1,1,249,0)
+HMP WB PTDEM
+"PKG",578,22,1,1,250,0)
+HMP WB PTDEM
+"PKG",578,22,1,1,251,0)
+HMP XU EVENTS
+"PKG",578,22,1,1,252,0)
+HMPM ADD HMP PATIENT
+"PKG",578,22,1,1,253,0)
+HMPM ADD HMP USER
+"PKG",578,22,1,1,254,0)
+HMPM EMERGENCY STOP
+"PKG",578,22,1,1,255,0)
+HMPM EXTRACT MONITOR
+"PKG",578,22,1,1,256,0)
+HMPM RESTART FRESHNESS
+"PKG",578,22,1,1,257,0)
+HMPMGR
+"PKG",578,22,1,1,258,0)
+ 
+"PKG",578,22,1,1,259,0)
+ 
+"PKG",578,22,1,1,260,0)
+Protocols Associated:
+"PKG",578,22,1,1,261,0)
+ 
+"PKG",578,22,1,1,262,0)
+Protocol Name New/Modified/Deleted
+"PKG",578,22,1,1,263,0)
+------------- --------------------
+"PKG",578,22,1,1,264,0)
+HMP ADT-A04 CLIENT  
+"PKG",578,22,1,1,265,0)
+HMP ADT-A08 CLIENT  
+"PKG",578,22,1,1,266,0)
+HMP APPT EVENTS  
+"PKG",578,22,1,1,267,0)
+HMP DG UPDATES  
+"PKG",578,22,1,1,268,0)
+HMP GMPL EVENT 
+"PKG",578,22,1,1,269,0)
+HMP GMRA EVENTS 
+"PKG",578,22,1,1,270,0)
+HMP INPT EVENTS  
+"PKG",578,22,1,1,271,0)
+HMP MDC EVENT  
+"PKG",578,22,1,1,272,0)
+HMP NA EVENTS    
+"PKG",578,22,1,1,273,0)
+HMP PATIENT APPT TRIGGER    
+"PKG",578,22,1,1,274,0)
+HMP PCE EVENTS    
+"PKG",578,22,1,1,275,0)
+HMP PCMM TEAM   
+"PKG",578,22,1,1,276,0)
+HMP PCMM TEAM POSITION  
+"PKG",578,22,1,1,277,0)
+HMP PSB EVENTS   
+"PKG",578,22,1,1,278,0)
+HMP XQOR EVENTS    
+"PKG",578,22,1,1,279,0)
+HMPM EVT QUE CHANGE DOMAIN    
+"PKG",578,22,1,1,280,0)
+HMPM EVT QUE CHANGE MAX LISTED  
+"PKG",578,22,1,1,281,0)
+HMPM EVT QUE CHANGE SERVER     
+"PKG",578,22,1,1,282,0)
+HMPM EVT QUE DISPLAY DETAILS 
+"PKG",578,22,1,1,283,0)
+HMPM EVT QUE FILTER 
+"PKG",578,22,1,1,284,0)
+HMPM EVT QUE FRESHNESS REPORT 
+"PKG",578,22,1,1,285,0)
+HMPM EVT QUE MGR MENU 
+"PKG",578,22,1,1,286,0)
+HMPM EVT QUE REFRESH 
+"PKG",578,22,1,1,287,0)
+HMPM EVT QUE SELECT PATIENT  
+"PKG",578,22,1,1,288,0)
+HMPM EVT QUE SHOW TEMP GLOBALS     
+"PKG",578,22,1,1,289,0)
+ 
+"PKG",578,22,1,1,290,0)
+Security Keys Associated:
+"PKG",578,22,1,1,291,0)
+ 
+"PKG",578,22,1,1,292,0)
+Security Key Name
+"PKG",578,22,1,1,293,0)
+-----------------
+"PKG",578,22,1,1,294,0)
+HMP ADMIN
+"PKG",578,22,1,1,295,0)
+HMP EXPERIMENTAL
+"PKG",578,22,1,1,296,0)
+ 
+"PKG",578,22,1,1,297,0)
+ 
+"PKG",578,22,1,1,298,0)
+Templates Associated:
+"PKG",578,22,1,1,299,0)
+ 
+"PKG",578,22,1,1,300,0)
+Template Name Type File Name (#) New/Modified/Deleted
+"PKG",578,22,1,1,301,0)
+------------- ---- ------------- --------------------
+"PKG",578,22,1,1,302,0)
+N/A
+"PKG",578,22,1,1,303,0)
+ 
+"PKG",578,22,1,1,304,0)
+ 
+"PKG",578,22,1,1,305,0)
+New Service Requests (NSRs):
+"PKG",578,22,1,1,306,0)
+-----------------------------
+"PKG",578,22,1,1,307,0)
+NSR #20070902
+"PKG",578,22,1,1,308,0)
+ 
+"PKG",578,22,1,1,309,0)
+ 
+"PKG",578,22,1,1,310,0)
+Patient Safety Issues (PSIs):
+"PKG",578,22,1,1,311,0)
+------------------------------
+"PKG",578,22,1,1,312,0)
+N/A
+"PKG",578,22,1,1,313,0)
+ 
+"PKG",578,22,1,1,314,0)
+ 
+"PKG",578,22,1,1,315,0)
+Remedy Ticket(s) & Overviews:
+"PKG",578,22,1,1,316,0)
+-----------------------------
+"PKG",578,22,1,1,317,0)
+N/A
+"PKG",578,22,1,1,318,0)
+ 
+"PKG",578,22,1,1,319,0)
+ 
+"PKG",578,22,1,1,320,0)
+Test Sites:
+"PKG",578,22,1,1,321,0)
+-----------
+"PKG",578,22,1,1,322,0)
+Hampton
+"PKG",578,22,1,1,323,0)
+Portland
+"PKG",578,22,1,1,324,0)
+San Diego
+"PKG",578,22,1,1,325,0)
+Loma Linda
+"PKG",578,22,1,1,326,0)
+San Antonio
+"PKG",578,22,1,1,327,0)
+Indianapolis
+"PKG",578,22,1,1,328,0)
+ 
+"PKG",578,22,1,1,329,0)
+ 
+"PKG",578,22,1,1,330,0)
+ 
+"PKG",578,22,1,1,331,0)
+Documentation Retrieval Instructions:
+"PKG",578,22,1,1,332,0)
+-------------------------------------
+"PKG",578,22,1,1,333,0)
+Updated documentation describing the new functionality introduced by this
+"PKG",578,22,1,1,334,0)
+patch is available.
+"PKG",578,22,1,1,335,0)
+ 
+"PKG",578,22,1,1,336,0)
+The preferred method is to FTP the files from
+"PKG",578,22,1,1,337,0)
+ftp://ftp.ftpsrv.domain.ext/. Directory [EHMP]
+"PKG",578,22,1,1,338,0)
+Username: EHMP Password: EHMP$STORE
+"PKG",578,22,1,1,339,0)
+ 
+"PKG",578,22,1,1,340,0)
+ 
+"PKG",578,22,1,1,341,0)
+The software distribution includes:
+"PKG",578,22,1,1,342,0)
+ 
+"PKG",578,22,1,1,343,0)
+FILE NAME DESCRIPTION BLOCK SIZE
+"PKG",578,22,1,1,344,0)
+HMP_2-0_V5-4.KID KIDS BUILD BLOCKS
+"PKG",578,22,1,1,345,0)
+ 
+"PKG",578,22,1,1,346,0)
+The documentation will be in the form of Adobe Acrobat files.
+"PKG",578,22,1,1,347,0)
+ 
+"PKG",578,22,1,1,348,0)
+ 
+"PKG",578,22,1,1,349,0)
+File Name Description Retrieval Format
+"PKG",578,22,1,1,350,0)
+-------------- -------------------------------- 
+"PKG",578,22,1,1,351,0)
+----------------------------
+"PKG",578,22,1,1,352,0)
+HMP_2-0_V5-4.KID eHMP Project initial deploymnet ASCII
+"PKG",578,22,1,1,353,0)
+ 
+"PKG",578,22,1,1,354,0)
+Patch Installation:
+"PKG",578,22,1,1,355,0)
+ 
+"PKG",578,22,1,1,356,0)
+ 
+"PKG",578,22,1,1,357,0)
+Pre/Post Installation Overview
+"PKG",578,22,1,1,358,0)
+------------------------------
+"PKG",578,22,1,1,359,0)
+N/A
+"PKG",578,22,1,1,360,0)
+ 
+"PKG",578,22,1,1,361,0)
+ 
+"PKG",578,22,1,1,362,0)
+Installation Instructions
+"PKG",578,22,1,1,363,0)
+-------------------------
+"PKG",578,22,1,1,364,0)
+This patch may be installed with users on the system although it is
+"PKG",578,22,1,1,365,0)
+recommended that it be installed during non-peak hours to minimize
+"PKG",578,22,1,1,366,0)
+potential disruption to users. This patch should take less than 5 minutes
+"PKG",578,22,1,1,367,0)
+to install.
+"PKG",578,22,1,1,368,0)
+ 
+"PKG",578,22,1,1,369,0)
+ 
+"PKG",578,22,1,1,370,0)
+1. From the Kernel Installation and Distribution System Menu, select
+"PKG",578,22,1,1,371,0)
+the Installation Menu. From this menu, you may elect to use the
+"PKG",578,22,1,1,372,0)
+following option. When prompted for the INSTALL enter the patch #
+"PKG",578,22,1,1,373,0)
+(HMP 2.0):
+"PKG",578,22,1,1,374,0)
+ 
+"PKG",578,22,1,1,375,0)
+a. Backup a Transport Global - This option will create a backup
+"PKG",578,22,1,1,376,0)
+message of any routines exported with this patch. It will not
+"PKG",578,22,1,1,377,0)
+backup any other changes such as DD's or templates.
+"PKG",578,22,1,1,378,0)
+b. Compare Transport Global to Current System - This option will
+"PKG",578,22,1,1,379,0)
+allow you to view all changes that will be made when this patch
+"PKG",578,22,1,1,380,0)
+is installed. It compares all components of this patch
+"PKG",578,22,1,1,381,0)
+(routines, DD's, templates, etc.).
+"PKG",578,22,1,1,382,0)
+backup any other changes such as DD's or templates.
+"PKG",578,22,1,1,383,0)
+c. Compare Transport Global to Current System - This option will
+"PKG",578,22,1,1,384,0)
+allow you to view all changes that will be made when this patch
+"PKG",578,22,1,1,385,0)
+is installed. It compares all components of this patch
+"PKG",578,22,1,1,386,0)
+(routines, DD's, templates, etc.).
+"PKG",578,22,1,1,387,0)
+d. Verify Checksums in Transport Global - This option will allow
+"PKG",578,22,1,1,388,0)
+you to ensure the integrity of the routines that are in the
+"PKG",578,22,1,1,389,0)
+backup any other changes such as DD's or templates.
+"PKG",578,22,1,1,390,0)
+e. Compare Transport Global to Current System - This option will
+"PKG",578,22,1,1,391,0)
+allow you to view all changes that will be made when this patch
+"PKG",578,22,1,1,392,0)
+is installed. It compares all components of this patch
+"PKG",578,22,1,1,393,0)
+(routines, DD's, templates, etc.).
+"PKG",578,22,1,1,394,0)
+f. Verify Checksums in Transport Global - This option will allow
+"PKG",578,22,1,1,395,0)
+you to ensure the integrity of the routines that are in the
+"PKG",578,22,1,1,396,0)
+transport global.
+"PKG",578,22,1,1,397,0)
+ 
+"PKG",578,22,1,1,398,0)
+2. From the Installation Menu select Load a Distribution. Enter the Host
+"PKG",578,22,1,1,399,0)
+file
+"PKG",578,22,1,1,400,0)
+location, then HMP_2-0_V5-4.KID
+"PKG",578,22,1,1,401,0)
+ 
+"PKG",578,22,1,1,402,0)
+3. From the Installation Menu, select the Install Package(s) option and
+"PKG",578,22,1,1,403,0)
+choose the patch to install. Enter HMPM 2.0  (Which is the name of the 
+"PKG",578,22,1,1,404,0)
+multipatch containing the patches listed above.
+"PKG",578,22,1,1,405,0)
+ 
+"PKG",578,22,1,1,406,0)
+4. When prompted 'Want KIDS to INHIBIT LOGONs during the install? NO//',
+"PKG",578,22,1,1,407,0)
+respond NO.
+"PKG",578,22,1,1,408,0)
+ 
+"PKG",578,22,1,1,409,0)
+5. When prompted to Rebuild Menu Options YES//' respond YES.
+"PKG",578,22,1,1,410,0)
+ 
+"PKG",578,22,1,1,411,0)
+6. When prompted 'Want to DISABLE Scheduled Options, Menu Options, and
+"PKG",578,22,1,1,412,0)
+Protocols? NO//', respond NO.
+"PKG",578,22,1,1,413,0)
+ 
+"PKG",578,22,1,1,414,0)
+7. If prompted 'Delay Install (Minutes): (0 - 60): 0//', respond 0.
+"PKG",578,22,1,1,415,0)
+ 
+"PKG",578,22,1,1,416,0)
+[End of file]
+"PKG",578,22,1,"PAH",0)
+^9.4901^3^3
+"PKG",578,22,1,"PAH",1,0)
+650223^3150414.062711^1
+"PKG",578,22,1,"PAH",1,1,0)
+^^1^1^3150414
+"PKG",578,22,1,"PAH",1,1,1,0)
+Add proxy user for eHMP
+"PKG",578,22,1,"PAH",2,0)
+650218^3150414.062712^1
+"PKG",578,22,1,"PAH",2,1,0)
+^^1^1^3150414
+"PKG",578,22,1,"PAH",2,1,1,0)
+Routine HMPTFU2, converted from VAFCTFU2.
+"PKG",578,22,1,"PAH",3,0)
+150417^3150610.17591^1
+"PKG",578,22,1,"PAH",3,1,0)
+^^1^1^3150610
+"PKG",578,22,1,"PAH",3,1,1,0)
+Merge S68 changes into eHMP.
+"PKG",578,22,1,"PAH","B",150417,3)
+
+"PKG",578,22,1,"PAH","B",650218,2)
+
+"PKG",578,22,1,"PAH","B",650223,1)
+
+"PKG",578,"VERSION")
+2.0
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+YES
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"RTN")
+1
+"RTN","HMPP3I")
+0^^B74432110
+"RTN","HMPP3I",1,0)
+HMPP3I ;SLC/AGP -- HMP patch 3 post install ; 2/18/15 5:43pm
+"RTN","HMPP3I",2,0)
+ ;;2.0;HEALTH MANAGEMENT PLATFORM;**1**;Oct 10, 2014;Build 53
+"RTN","HMPP3I",3,0)
+ ;
+"RTN","HMPP3I",4,0)
+ENV ; -- environment check to prevent production installation
+"RTN","HMPP3I",5,0)
+ I $$PROD^XUPROD D
+"RTN","HMPP3I",6,0)
+ .W !,"You are attempting to install this software into your production account.",!,"At this time, this software is not ready for a production install."
+"RTN","HMPP3I",7,0)
+ .W !!,"Please verify the account you're attempting to install into and",!,"if you believe you're correct, contact Ron Massey or Tana Defa.",!!,"INSTALLATION ABORTED!"
+"RTN","HMPP3I",8,0)
+ .S XPDABORT=1
+"RTN","HMPP3I",9,0)
+ Q
+"RTN","HMPP3I",10,0)
+ ;
+"RTN","HMPP3I",11,0)
+PRE ; -- clean out HMP SUBSCRIPTION and ^XTMP("HMP") entries for testing
+"RTN","HMPP3I",12,0)
+ N HMPDT S HMPDT="HMP-1111111"
+"RTN","HMPP3I",13,0)
+ F  S HMPDT=$O(^XTMP(HMPDT)) Q:HMPDT'?1"HMP-"7N  K ^XTMP(HMPDT)
+"RTN","HMPP3I",14,0)
+ S HMPDT="HMPEF-1111111"
+"RTN","HMPP3I",15,0)
+ F  S HMPDT=$O(^XTMP(HMPDT)) Q:HMPDT'?1"HMPEF-"7N  K ^XTMP(HMPDT)
+"RTN","HMPP3I",16,0)
+ K ^XTMP("HMP"),^TMP("HMPX")
+"RTN","HMPP3I",17,0)
+ I $$VERCMP($$VERSRV(),"0.7-S54")>0 D  ; if current < S54
+"RTN","HMPP3I",18,0)
+ . K ^HMP(800000)
+"RTN","HMPP3I",19,0)
+ . S ^HMP(800000,0)="HMP SUBSCRIPTION^800000^^"
+"RTN","HMPP3I",20,0)
+ ;D CLEARPAR
+"RTN","HMPP3I",21,0)
+ I $D(^DD(800000.04)) D  ;remove old Subscription sub-files
+"RTN","HMPP3I",22,0)
+ . N DIU S DIU(0)="S"
+"RTN","HMPP3I",23,0)
+ . S DIU=800000.04 D EN^DIU2
+"RTN","HMPP3I",24,0)
+ . S DIU=800000.03 D EN^DIU2
+"RTN","HMPP3I",25,0)
+ I $D(^DD(800000.01,.03)) D  ; remote old PID field
+"RTN","HMPP3I",26,0)
+ . S DIK="^DD(800000.01,",DA=.03,DA(1)=800000.01
+"RTN","HMPP3I",27,0)
+ . D ^DIK
+"RTN","HMPP3I",28,0)
+ ;D TASKCONV
+"RTN","HMPP3I",29,0)
+ D ADDRSRC ; add resource for throttling extract tasks
+"RTN","HMPP3I",30,0)
+ S ^XTMP("HMP-LAST-SCHEMA",0)=$$HTFM^XLFDT(+$H+7)_U_$$HTFM^XLFDT(+$H)_U_"JSON schema before install"
+"RTN","HMPP3I",31,0)
+ S ^XTMP("HMP-LAST-SCHEMA",1)=+$P($$GET^XPAR("PKG","HMP JSON SCHEMA"),".")
+"RTN","HMPP3I",32,0)
+ Q
+"RTN","HMPP3I",33,0)
+ ;
+"RTN","HMPP3I",34,0)
+CLEARPAR ;
+"RTN","HMPP3I",35,0)
+ N ENT,ERROR,INST,LIST,PAR,TYPE,X,UID
+"RTN","HMPP3I",36,0)
+ ;S PAR="" F  S PAR=$O(^XTV(8989.51,"B","HMP PARAMETERS","")) I PAR>0 Q
+"RTN","HMPP3I",37,0)
+ S PAR=$O(^XTV(8989.51,"B","HMP PARAMETERS","")) Q:PAR'>0
+"RTN","HMPP3I",38,0)
+ S X="" F  S X=$O(^XTV(8989.5,"AC",PAR,X)) Q:X=""  D
+"RTN","HMPP3I",39,0)
+ .S TYPE=$S(X["VA":"USR",X["DIC":"SYS",1:"") I TYPE="" Q
+"RTN","HMPP3I",40,0)
+ .S ENT=TYPE_".`"_+X
+"RTN","HMPP3I",41,0)
+ .S UID="" F  S UID=$O(^XTV(8989.5,"AC",PAR,X,UID)) Q:UID=""  D
+"RTN","HMPP3I",42,0)
+ ..D DEL^XPAR(ENT,"HMP PARAMETERS",UID,.ERROR)
+"RTN","HMPP3I",43,0)
+ Q
+"RTN","HMPP3I",44,0)
+ ;
+"RTN","HMPP3I",45,0)
+ ; VERSRV and VERCMP are also in HMPUTILS, but not until after the install
+"RTN","HMPP3I",46,0)
+ ; of this patch (HMP*2*3), so they are reproduced here.
+"RTN","HMPP3I",47,0)
+ ;
+"RTN","HMPP3I",48,0)
+VERSRV()   ; Return server version of option name
+"RTN","HMPP3I",49,0)
+ N HMPLST,VAL
+"RTN","HMPP3I",50,0)
+ D FIND^DIC(19,"",1,"X","HMP UI CONTEXT",1,,,,"HMPLST")
+"RTN","HMPP3I",51,0)
+ S VAL=$G(HMPLST("DILIST","ID",1,1))
+"RTN","HMPP3I",52,0)
+ Q $$UP^XLFSTR($P(VAL,"version ",2))
+"RTN","HMPP3I",53,0)
+ ;
+"RTN","HMPP3I",54,0)
+VERCMP(CUR,VAL) ; Returns 1 if CUR<VAL, -1 if CUR>VAL, 0 if equal
+"RTN","HMPP3I",55,0)
+ N CURMAJOR,CURMINOR,CURSNAP,VALMAJOR,VALMINOR,VALSNAP
+"RTN","HMPP3I",56,0)
+ S CURMAJOR=$P(CUR,"-"),CURMINOR=$P(CUR,"-",2),CURSNAP=$E($P(CUR,"-",3),1,4)="SNAP"
+"RTN","HMPP3I",57,0)
+ S VALMAJOR=$P(VAL,"-"),VALMINOR=$P(VAL,"-",2),VALSNAP=$E($P(VAL,"-",3),1,4)="SNAP"
+"RTN","HMPP3I",58,0)
+ I $E(VALMINOR)="P" S VALMINOR=$E(VALMINOR,2,99)     ; "P"ilot versions (old)
+"RTN","HMPP3I",59,0)
+ I $E(CURMINOR)="P" S CURMINOR=$E(VALMINOR,2,99)
+"RTN","HMPP3I",60,0)
+ I $E(VALMINOR)="S" S VALMINOR=$E(VALMINOR,2,99)*10  ; "S"print versions
+"RTN","HMPP3I",61,0)
+ I $E(CURMINOR)="S" S CURMINOR=$E(CURMINOR,2,99)*10
+"RTN","HMPP3I",62,0)
+ Q:VALMAJOR>CURMAJOR 1   Q:VALMAJOR<CURMAJOR -1  ; compare major versions
+"RTN","HMPP3I",63,0)
+ Q:VALMINOR>CURMINOR 1   Q:VALMINOR<CURMINOR -1  ; compare minor versions
+"RTN","HMPP3I",64,0)
+ Q:(CURSNAP&'VALSNAP) 1  Q:(VALSNAP&'CURSNAP) -1 ; "SNAPSHOT" < released
+"RTN","HMPP3I",65,0)
+ Q 0
+"RTN","HMPP3I",66,0)
+ ;
+"RTN","HMPP3I",67,0)
+ ;
+"RTN","HMPP3I",68,0)
+POST ; -- set up new Tx data
+"RTN","HMPP3I",69,0)
+ ;D CREATEUS
+"RTN","HMPP3I",70,0)
+ N HMPLVER
+"RTN","HMPP3I",71,0)
+ S HMPLVER=$$VERSRV()
+"RTN","HMPP3I",72,0)
+ D VERSION
+"RTN","HMPP3I",73,0)
+ D EN^HMPIDX
+"RTN","HMPP3I",74,0)
+ D OBJCNT
+"RTN","HMPP3I",75,0)
+ I $$VERCMP(HMPLVER,"0.7-S58")>0 D PARPID            ; if current < S58
+"RTN","HMPP3I",76,0)
+ I $G(^XTMP("HMP-LAST-SCHEMA",1))<2 D CVTPAT,CVTSEL  ; if existing schema < 2.0
+"RTN","HMPP3I",77,0)
+ K ^XTMP("HMP-LAST-SCHEMA")
+"RTN","HMPP3I",78,0)
+ ;D CREATE^HMPAP1  ;BL;V5-6 Protocols now attached via KIDs build not post routine
+"RTN","HMPP3I",79,0)
+ D POST^HMPPRXY2
+"RTN","HMPP3I",80,0)
+ D DISABLE^HMPZ0218
+"RTN","HMPP3I",81,0)
+ Q
+"RTN","HMPP3I",82,0)
+ ;
+"RTN","HMPP3I",83,0)
+VERSION ; -- update V# parameter
+"RTN","HMPP3I",84,0)
+ D PUT^XPAR("PKG","HMP VERSION",1,"2.00")
+"RTN","HMPP3I",85,0)
+ D PUT^XPAR("SYS","HMP SYSTEM NAME",1,$$SYS^HMPUTILS)
+"RTN","HMPP3I",86,0)
+ Q
+"RTN","HMPP3I",87,0)
+ ;
+"RTN","HMPP3I",88,0)
+OBJCNT ; -- create count index for HMP OBJECT file
+"RTN","HMPP3I",89,0)
+ Q:$D(^HMP(800000.11,"ACNT"))
+"RTN","HMPP3I",90,0)
+ N DIK,DA
+"RTN","HMPP3I",91,0)
+ S DIK="^HMP(800000.11,"
+"RTN","HMPP3I",92,0)
+ S DIK(1)=".03^ACNT"
+"RTN","HMPP3I",93,0)
+ D ENALL^DIK
+"RTN","HMPP3I",94,0)
+ Q
+"RTN","HMPP3I",95,0)
+CREATEUS ;
+"RTN","HMPP3I",96,0)
+ N DIV,FDA,IC,IEN,IENS,NAME,SER,HMPERR
+"RTN","HMPP3I",97,0)
+ ;do not create the user if the patch is already installed or if the user is already created
+"RTN","HMPP3I",98,0)
+ I $$PATCH^XPDUTL("HMP*1.0*3") Q
+"RTN","HMPP3I",99,0)
+ D EN^DDIOL("Creating HMP Sync User")
+"RTN","HMPP3I",100,0)
+ ;
+"RTN","HMPP3I",101,0)
+ S NAME="HMP,USER SYNC"
+"RTN","HMPP3I",102,0)
+ S IEN=$$CREATE^XUSAP(NAME,"","HMP SYNCHRONIZATION CONTEXT")
+"RTN","HMPP3I",103,0)
+ I IEN=0 D EN^DDIOL("User already exists") Q
+"RTN","HMPP3I",104,0)
+ I IEN<0 D EN^DDIOL("Cannot create user") Q
+"RTN","HMPP3I",105,0)
+ S IENS="?"_IEN_","
+"RTN","HMPP3I",106,0)
+ S DIV=$$ASK(4) I DIV'>0 D EN^DDIOL("A division needs to be selected.") Q
+"RTN","HMPP3I",107,0)
+ S SER=$$ASK(49) I SER'>0 D EN^DDIOL("A service needs to be selected.") Q
+"RTN","HMPP3I",108,0)
+ S FDA(200,IENS,.01)=NAME
+"RTN","HMPP3I",109,0)
+ S FDA(200,IENS,7.2)=1
+"RTN","HMPP3I",110,0)
+ S FDA(200,IENS,29)=$P(SER,U)
+"RTN","HMPP3I",111,0)
+ S FDA(200,IENS,200.04)=1
+"RTN","HMPP3I",112,0)
+ S FDA(200,IENS,200.1)=99999
+"RTN","HMPP3I",113,0)
+ ;S FDA(200.03,"?+2,"_IENS,.01)="HMP SYNCHRONIZATION CONTEXT"
+"RTN","HMPP3I",114,0)
+ ;S FDA(200.03,"?+3,"_IENS,.01)="HMP UI CONTEXT"
+"RTN","HMPP3I",115,0)
+ S FDA(200.02,"?+4,"_IENS,.01)=$P(DIV,U)
+"RTN","HMPP3I",116,0)
+ S FDA(200.02,"?+4,"_IENS,1)=1
+"RTN","HMPP3I",117,0)
+ D UPDATE^DIE("","FDA","","HMPERR")
+"RTN","HMPP3I",118,0)
+ I $D(HMPERR) D  Q
+"RTN","HMPP3I",119,0)
+ .D EN^DDIOL("Update failed, UPDATE^DIE returned the following error message.")
+"RTN","HMPP3I",120,0)
+ .S IC="HMPERR"
+"RTN","HMPP3I",121,0)
+ .F  S IC=$Q(@IC) Q:IC=""  W !,IC,"=",@IC
+"RTN","HMPP3I",122,0)
+ .D EN^DDIOL("Examine the above error message for the reason.")
+"RTN","HMPP3I",123,0)
+ .H 2
+"RTN","HMPP3I",124,0)
+ D EN^DDIOL("Add ACCESS/VERIFY codes to the "_NAME)
+"RTN","HMPP3I",125,0)
+ Q
+"RTN","HMPP3I",126,0)
+ ;
+"RTN","HMPP3I",127,0)
+ASK(FILENUM) ;
+"RTN","HMPP3I",128,0)
+ N DIC,Y
+"RTN","HMPP3I",129,0)
+ S DIC=FILENUM,DIC(0)="AEQMZ",DIC("A")="Select "_$S(FILENUM=4:"division: ",1:"service/section: ")
+"RTN","HMPP3I",130,0)
+ I FILENUM=4 S DIC("S")="S DINUM=X K:$S($D(^XUSEC(""XUMGR"",DUZ)):0,'$$TF^XUAF4(X):1,1:0) X,DINUM"
+"RTN","HMPP3I",131,0)
+ D ^DIC
+"RTN","HMPP3I",132,0)
+ Q Y
+"RTN","HMPP3I",133,0)
+ ;
+"RTN","HMPP3I",134,0)
+TASKCONV ;
+"RTN","HMPP3I",135,0)
+ N COLL,I,IEN,NODE,PAT,TEMP,UID,UPDATE,HMPY
+"RTN","HMPP3I",136,0)
+ K ^TMP($J,"HMPY"),^TMP($J,"HMPTEMP")
+"RTN","HMPP3I",137,0)
+ S HMPY=$NA(^TMP($J,"HMPY")),TEMP=$NA(^TMP($J,"HMPTEMP"))
+"RTN","HMPP3I",138,0)
+ S PAT=0 F  S PAT=$O(^HMP(800000.1,"C",PAT)) Q:PAT'>0  D
+"RTN","HMPP3I",139,0)
+ .S IEN=0 F  S IEN=$O(^HMP(800000.1,"C",PAT,"task",IEN)) Q:IEN'>0  D
+"RTN","HMPP3I",140,0)
+ ..S NODE=$G(^HMP(800000.1,IEN,0))
+"RTN","HMPP3I",141,0)
+ ..S UID=$P(NODE,U) I UID="" Q
+"RTN","HMPP3I",142,0)
+ ..S UPDATE=0
+"RTN","HMPP3I",143,0)
+ ..S I=0 F  S I=$O(^HMP(800000.1,IEN,1,I)) Q:I<1  S X=$G(^(I,0)),HMPY(I)=X
+"RTN","HMPP3I",144,0)
+ ..D DECODE^HMPJSON("HMPY","TEMP","ERROR")
+"RTN","HMPP3I",145,0)
+ ..I $D(ERROR) D EN^DDIOL("Error in decoding JSON Object") Q
+"RTN","HMPP3I",146,0)
+ ..K HMPY,^TMP($J,"HMPY")
+"RTN","HMPP3I",147,0)
+ ..I $G(@TEMP@("assignToCode"))'="" S @TEMP@("createdByCode")=@TEMP@("assignToCode"),UPDATE=1 K @TEMP@("assignToCode")
+"RTN","HMPP3I",148,0)
+ ..I $G(@TEMP@("assignToName"))'="" S @TEMP@("createdByName")=@TEMP@("assignToName"),UPDATE=1 K @TEMP@("assignToName")
+"RTN","HMPP3I",149,0)
+ ..I $G(@TEMP@("ownerName"))'="" S UPDATE=1 K @TEMP@("ownerName")
+"RTN","HMPP3I",150,0)
+ ..I $G(@TEMP@("ownerCode"))'="" S UPDATE=1 K @TEMP@("ownerCode")
+"RTN","HMPP3I",151,0)
+ ..I UPDATE=0 Q
+"RTN","HMPP3I",152,0)
+ ..;
+"RTN","HMPP3I",153,0)
+ ..S HMPY=$NA(^TMP($J,"HMPY"))
+"RTN","HMPP3I",154,0)
+ ..D ENCODE^HMPJSON("TEMP","HMPY","ERROR")
+"RTN","HMPP3I",155,0)
+ ..I $D(ERROR) D EN^DDIOL("Error in encoding JSON Object") Q
+"RTN","HMPP3I",156,0)
+ ..D EN^DDIOL("Updating task uid: "_UID)
+"RTN","HMPP3I",157,0)
+ ..D PUT^HMPDJ1(.HMP,PAT,"task",.HMPY)
+"RTN","HMPP3I",158,0)
+ K ^TMP($J,"HMPY"),^TMP($J,"HMPTEMP")
+"RTN","HMPP3I",159,0)
+ Q
+"RTN","HMPP3I",160,0)
+ADDRSRC ; Add resource device
+"RTN","HMPP3I",161,0)
+ N RNAME,RDESC,RSLOT,RTYPE,RIEN
+"RTN","HMPP3I",162,0)
+ S RNAME="HMP EXTRACT RESOURCE"
+"RTN","HMPP3I",163,0)
+ S RDESC="Controls the number of HMP extract jobs that run simultaneously."
+"RTN","HMPP3I",164,0)
+ S RSLOT=10
+"RTN","HMPP3I",165,0)
+ S RTYPE="P-OTHER"
+"RTN","HMPP3I",166,0)
+ S RIEN=$$RES^XUDHSET(RNAME,RNAME,RSLOT,RDESC,RTYPE)
+"RTN","HMPP3I",167,0)
+ Q
+"RTN","HMPP3I",168,0)
+CVTPAT ; resend all the patient objects
+"RTN","HMPP3I",169,0)
+ D BMES^XPDUTL("Updating HMP patient objects")
+"RTN","HMPP3I",170,0)
+ N HMPIEN,DFN,CNT
+"RTN","HMPP3I",171,0)
+ K ^TMP("HMPCVT",$J)
+"RTN","HMPP3I",172,0)
+ S CNT=0
+"RTN","HMPP3I",173,0)
+ S HMPIEN=0 F  S HMPIEN=$O(^HMP(800000,HMPIEN)) Q:'HMPIEN  D
+"RTN","HMPP3I",174,0)
+ . S DFN=0 F  S DFN=$O(^HMP(800000,HMPIEN,1,DFN)) Q:'DFN  D
+"RTN","HMPP3I",175,0)
+ . . Q:$D(^TMP("HMPCVT",$J,DFN))
+"RTN","HMPP3I",176,0)
+ . . D POST^HMPDJFS(DFN,"patient",DFN,"","")
+"RTN","HMPP3I",177,0)
+ . . S ^TMP("HMPCVT",$J,DFN)=""
+"RTN","HMPP3I",178,0)
+ . . S CNT=CNT+1 I '(CNT#1000) D MES^XPDUTL("  "_CNT_" patient objects converted")
+"RTN","HMPP3I",179,0)
+ K ^TMP("HMPCVT",$J)
+"RTN","HMPP3I",180,0)
+ Q
+"RTN","HMPP3I",181,0)
+CVTSEL ; resend all patient selection objects
+"RTN","HMPP3I",182,0)
+ N HMPIEN
+"RTN","HMPP3I",183,0)
+ D BMES^XPDUTL("Updating patient select objects")
+"RTN","HMPP3I",184,0)
+ S HMPIEN=0 F  S HMPIEN=$O(^HMP(800000,HMPIEN)) Q:'HMPIEN  D
+"RTN","HMPP3I",185,0)
+ . Q:$P(^HMP(800000,HMPIEN,0),U,3)'=2  ; operational sync not completed
+"RTN","HMPP3I",186,0)
+ . N HMPSRV,BATCH,DOMAINS,HMPFERR
+"RTN","HMPP3I",187,0)
+ . S HMPSRV=$P(^HMP(800000,HMPIEN,0),U)
+"RTN","HMPP3I",188,0)
+ . S BATCH="HMPFX~"_HMPSRV_"~OPD"
+"RTN","HMPP3I",189,0)
+ . S DOMAINS(1)="pt-select"
+"RTN","HMPP3I",190,0)
+ . D QUINIT^HMPDJFSP(BATCH,"OPD",.DOMAINS)
+"RTN","HMPP3I",191,0)
+ . I $D(HMPFERR) D MES^XPDUTL("Error tasking pt-select objects for server "_HMPSRV)
+"RTN","HMPP3I",192,0)
+ Q
+"RTN","HMPP3I",193,0)
+PARPID ; Loop thru HMP PARAMETERS and switch ICN to qualified DFN
+"RTN","HMPP3I",194,0)
+ N PAR,ENT,UID,HMPWP,HMPERR,I,HMPSYS
+"RTN","HMPP3I",195,0)
+ S HMPSYS=$$GET^XPAR("SYS","HMP SYSTEM NAME")
+"RTN","HMPP3I",196,0)
+ S PAR=$O(^XTV(8989.51,"B","HMP PARAMETERS","")) Q:PAR'>0
+"RTN","HMPP3I",197,0)
+ S ENT="" F  S ENT=$O(^XTV(8989.5,"AC",PAR,ENT)) Q:ENT=""  D
+"RTN","HMPP3I",198,0)
+ . S UID="" F  S UID=$O(^XTV(8989.5,"AC",PAR,ENT,UID)) Q:UID=""  D  ;INST=UID
+"RTN","HMPP3I",199,0)
+ . . I $P(UID,":",6,7)'="HMP USER PREF:0" Q
+"RTN","HMPP3I",200,0)
+ . . N HMPWP,HMPERR,JSON,OBJ,ERR,DFN,RSLT
+"RTN","HMPP3I",201,0)
+ . . D GETWP^XPAR(.HMPWP,ENT,PAR,UID,.HMPERR)
+"RTN","HMPP3I",202,0)
+ . . I +HMPERR D WRERR(UID,$P(HMPERR,U,2,99)) Q
+"RTN","HMPP3I",203,0)
+ . . I $D(HMPWP)<10 Q                         ; no JSON found
+"RTN","HMPP3I",204,0)
+ . . S I=0 F  S I=$O(HMPWP(I)) Q:'I  S JSON(I)=HMPWP(I,0)
+"RTN","HMPP3I",205,0)
+ . . D DECODE^HMPJSON("JSON","OBJ","ERR")
+"RTN","HMPP3I",206,0)
+ . . I $D(ERR) D WRERR(UID,"Error decoding JSON") Q
+"RTN","HMPP3I",207,0)
+ . . I '$L($G(OBJ("cpe.context.patient"))) Q  ; nothing there
+"RTN","HMPP3I",208,0)
+ . . I OBJ("cpe.context.patient")[";" Q       ; already DFN
+"RTN","HMPP3I",209,0)
+ . . S DFN=$$GETDFN^MPIF001(OBJ("cpe.context.patient"))
+"RTN","HMPP3I",210,0)
+ . . I DFN<1 D WRERR(UID,"Error converting ICN: "_$P(DFN,U,2)) Q
+"RTN","HMPP3I",211,0)
+ . . S OBJ("cpe.context.patient")=HMPSYS_";"_DFN
+"RTN","HMPP3I",212,0)
+ . . K JSON
+"RTN","HMPP3I",213,0)
+ . . D ENCODE^HMPJSON("OBJ","JSON","ERR")
+"RTN","HMPP3I",214,0)
+ . . I $D(ERR) D WRERR(UID,"Error encoding JSON") Q
+"RTN","HMPP3I",215,0)
+ . . D PUTBYUID^HMPPARAM(.RSLT,UID,.JSON)
+"RTN","HMPP3I",216,0)
+ Q
+"RTN","HMPP3I",217,0)
+WRERR(UID,MSG) ; Write out error (from post-init in KIDS build)
+"RTN","HMPP3I",218,0)
+ D MES^XPDUTL("Error: "_MSG_" for UID "_UID)
+"RTN","HMPP3I",219,0)
+ Q
+"SEC","^DIC",800000,800000,0,"AUDIT")
+@
+"SEC","^DIC",800000,800000,0,"DD")
+@
+"SEC","^DIC",800000,800000,0,"DEL")
+@
+"SEC","^DIC",800000,800000,0,"LAYGO")
+@
+"SEC","^DIC",800000,800000,0,"RD")
+@
+"SEC","^DIC",800000,800000,0,"WR")
+@
+"SEC","^DIC",800000.1,800000.1,0,"AUDIT")
+@
+"SEC","^DIC",800000.1,800000.1,0,"DD")
+@
+"SEC","^DIC",800000.1,800000.1,0,"DEL")
+@
+"SEC","^DIC",800000.1,800000.1,0,"LAYGO")
+@
+"SEC","^DIC",800000.1,800000.1,0,"RD")
+@
+"SEC","^DIC",800000.1,800000.1,0,"WR")
+@
+"SEC","^DIC",800000.11,800000.11,0,"AUDIT")
+@
+"SEC","^DIC",800000.11,800000.11,0,"DD")
+@
+"SEC","^DIC",800000.11,800000.11,0,"DEL")
+@
+"SEC","^DIC",800000.11,800000.11,0,"LAYGO")
+@
+"SEC","^DIC",800000.11,800000.11,0,"RD")
+@
+"SEC","^DIC",800000.11,800000.11,0,"WR")
+@
+"SEC","^DIC",800000.2,800000.2,0,"AUDIT")
+@
+"SEC","^DIC",800000.2,800000.2,0,"DD")
+@
+"SEC","^DIC",800000.2,800000.2,0,"DEL")
+@
+"SEC","^DIC",800000.2,800000.2,0,"LAYGO")
+@
+"SEC","^DIC",800000.2,800000.2,0,"RD")
+@
+"SEC","^DIC",800000.2,800000.2,0,"WR")
+@
+"SEC","^DIC",800000.21,800000.21,0,"AUDIT")
+@
+"SEC","^DIC",800000.21,800000.21,0,"DD")
+@
+"SEC","^DIC",800000.21,800000.21,0,"DEL")
+@
+"SEC","^DIC",800000.21,800000.21,0,"LAYGO")
+@
+"SEC","^DIC",800000.21,800000.21,0,"RD")
+@
+"SEC","^DIC",800000.21,800000.21,0,"WR")
+@
+"SEC","^DIC",800000.22,800000.22,0,"AUDIT")
+@
+"SEC","^DIC",800000.22,800000.22,0,"DD")
+@
+"SEC","^DIC",800000.22,800000.22,0,"DEL")
+@
+"SEC","^DIC",800000.22,800000.22,0,"LAYGO")
+@
+"SEC","^DIC",800000.22,800000.22,0,"RD")
+@
+"SEC","^DIC",800000.22,800000.22,0,"WR")
+@
+"SEC","^DIC",800001,800001,0,"AUDIT")
+@
+"SEC","^DIC",800001,800001,0,"DD")
+@
+"SEC","^DIC",800001,800001,0,"DEL")
+@
+"SEC","^DIC",800001,800001,0,"LAYGO")
+@
+"SEC","^DIC",800001,800001,0,"RD")
+@
+"SEC","^DIC",800001,800001,0,"WR")
+@
+"SEC","^DIC",800001.2,800001.2,0,"AUDIT")
+@
+"SEC","^DIC",800001.2,800001.2,0,"DD")
+@
+"SEC","^DIC",800001.2,800001.2,0,"DEL")
+@
+"SEC","^DIC",800001.2,800001.2,0,"LAYGO")
+@
+"SEC","^DIC",800001.2,800001.2,0,"RD")
+@
+"SEC","^DIC",800001.2,800001.2,0,"WR")
+@
+"SEC","^DIC",800001.5,800001.5,0,"AUDIT")
+@
+"SEC","^DIC",800001.5,800001.5,0,"DD")
+@
+"SEC","^DIC",800001.5,800001.5,0,"DEL")
+@
+"SEC","^DIC",800001.5,800001.5,0,"LAYGO")
+@
+"SEC","^DIC",800001.5,800001.5,0,"RD")
+@
+"SEC","^DIC",800001.5,800001.5,0,"WR")
+@
+"VER")
+8.0^22.0
+"^DD",800000,800000,0)
+FIELD^^.04^7
+"^DD",800000,800000,0,"IX","B",800000,.01)
+
+"^DD",800000,800000,0,"NM","HMP SUBSCRIPTION")
+
+"^DD",800000,800000,0,"VRPK")
+HMP
+"^DD",800000,800000,.01,0)
+SERVER^RF^^0;1^K:$L(X)>64!($L(X)<1)!'(X'?1P.E) X
+"^DD",800000,800000,.01,1,0)
+^.1^^-1
+"^DD",800000,800000,.01,1,1,0)
+800000^B
+"^DD",800000,800000,.01,1,1,1)
+S ^HMP(800000,"B",$E(X,1,64),DA)=""
+"^DD",800000,800000,.01,1,1,2)
+K ^HMP(800000,"B",$E(X,1,64),DA)
+"^DD",800000,800000,.01,3)
+Answer must be 1-64 characters in length.
+"^DD",800000,800000,.01,21,0)
+^.001^1^1^3140212^^^^
+"^DD",800000,800000,.01,21,1,0)
+This is the name of the client system that is subscribing to data updates.
+"^DD",800000,800000,.01,"DT")
+3141028
+"^DD",800000,800000,.02,0)
+LASTUPDATE^F^^0;2^K:$L(X)>100!($L(X)<3) X
+"^DD",800000,800000,.02,3)
+Answer must be 3-100 characters in length. (Do not modified)
+"^DD",800000,800000,.02,21,0)
+^^3^3^3110908^
+"^DD",800000,800000,.02,21,1,0)
+This field holds a flag, indicating if this URL should be notified via the
+"^DD",800000,800000,.02,21,2,0)
+nightly scheduled option HMP APPOINTMENTS of the list of patients expected
+"^DD",800000,800000,.02,21,3,0)
+to be seen tomorrow.
+"^DD",800000,800000,.02,"DT")
+3141028
+"^DD",800000,800000,.03,0)
+OPERATION DATA^S^0:UNSUBCRIBED;1:SUBSCRIBED;2:INITIALIZED;^0;3^Q
+"^DD",800000,800000,.03,3)
+Enter YES if the hmp server has received a sync of operational data (Do Not Modified)
+"^DD",800000,800000,.03,21,0)
+^^2^2^3110908^
+"^DD",800000,800000,.03,21,1,0)
+This field holds a flag, indicating if this URL should be notified via http
+"^DD",800000,800000,.03,21,2,0)
+when a patient is admitted.
+"^DD",800000,800000,.03,"DT")
+3141028
+"^DD",800000,800000,.04,0)
+REPEAT POLLS^NJ8,0^^0;4^K:+X'=X!(X>99999999)!(X<0)!(X?.E1"."1N.N) X
+"^DD",800000,800000,.04,3)
+Type a number between 0 and 99999999, 0 decimal digits.
+"^DD",800000,800000,.04,21,0)
+^^2^2^3140404^
+"^DD",800000,800000,.04,21,1,0)
+This tracks the number of times the same "last update" value has been
+"^DD",800000,800000,.04,21,2,0)
+repeated.  A high repeat may be normal if data are not changing.
+"^DD",800000,800000,.04,"DT")
+3141028
+"^DD",800000,800000,.1,0)
+URL^F^^.1;1^K:$L(X)>250!($L(X)<1) X
+"^DD",800000,800000,.1,3)
+Answer must be 1-250 characters in length.
+"^DD",800000,800000,.1,21,0)
+^^1^1^3110706^
+"^DD",800000,800000,.1,21,1,0)
+This is the fully specified URL to call when updates are available.
+"^DD",800000,800000,.1,"DT")
+3141028
+"^DD",800000,800000,1,0)
+PATIENT^800000.01P^^1;0
+"^DD",800000,800000,1,21,0)
+^.001^1^1^3140212^^^^
+"^DD",800000,800000,1,21,1,0)
+This is a patient that will be monitored for new data and updates.
+"^DD",800000,800000,2,0)
+ROSTER^800000.02P^^2;0
+"^DD",800000,800000,2,21,0)
+^.001^1^1^3130417^^^^
+"^DD",800000,800000,2,21,1,0)
+This is a roster that will be monitored for new patients and updates.
+"^DD",800000,800000,2,"DT")
+3130417
+"^DD",800000,800000.01,0)
+PATIENT SUB-FIELD^^3^3
+"^DD",800000,800000.01,0,"NM","PATIENT")
+
+"^DD",800000,800000.01,0,"UP")
+800000
+"^DD",800000,800000.01,.01,0)
+PATIENT NAME^MP2'X^DPT(^0;1^S DINUM=X
+"^DD",800000,800000.01,.01,1,0)
+^.1^^0
+"^DD",800000,800000.01,.01,3)
+Enter the name of a patient to be tracked.
+"^DD",800000,800000.01,.01,21,0)
+^.001^1^1^3140212^^
+"^DD",800000,800000.01,.01,21,1,0)
+This is the name of the patient being monitored for new data.
+"^DD",800000,800000.01,.01,"DT")
+3140226
+"^DD",800000,800000.01,2,0)
+STATUS^S^0:UNINITIALIZED;1:INITIALIZING;2:INITIALIZED;^0;2^Q
+"^DD",800000,800000.01,2,3)
+Tracks the status of a patient sync. (Do Not Modify)
+"^DD",800000,800000.01,2,21,0)
+^^4^4^3140521^
+"^DD",800000,800000.01,2,21,1,0)
+This field tracks the initialization progress of the patient.  When a 
+"^DD",800000,800000.01,2,21,2,0)
+patient is initially subscribed, they are added to this multiple.  The 
+"^DD",800000,800000.01,2,21,3,0)
+statis is "1" when the extracts start and "2" when they finish.  At that 
+"^DD",800000,800000.01,2,21,4,0)
+point, freshness updates are moved into the stream.
+"^DD",800000,800000.01,2,"DT")
+3140521
+"^DD",800000,800000.01,3,0)
+STATUS TIME^D^^0;3^S %DT="ESTXR" D ^%DT S X=Y K:Y<1 X
+"^DD",800000,800000.01,3,3)
+Enter the time the status changed.
+"^DD",800000,800000.01,3,21,0)
+^^1^1^3140521^
+"^DD",800000,800000.01,3,21,1,0)
+This is the time of the last change in extract status.
+"^DD",800000,800000.01,3,"DT")
+3140521
+"^DD",800000,800000.02,0)
+ROSTER SUB-FIELD^^2^2
+"^DD",800000,800000.02,0,"NM","ROSTER")
+
+"^DD",800000,800000.02,0,"UP")
+800000
+"^DD",800000,800000.02,.01,0)
+NAME^MP800001.2'X^HMPROSTR(800001.2,^0;1^S DINUM=X
+"^DD",800000,800000.02,.01,1,0)
+^.1^^0
+"^DD",800000,800000.02,.01,3)
+Enter the name of a roster to be tracked.
+"^DD",800000,800000.02,.01,21,0)
+^.001^1^1^3130417^^
+"^DD",800000,800000.02,.01,21,1,0)
+This is the name of the roster being monitored for new patients.
+"^DD",800000,800000.02,.01,"DT")
+3130417
+"^DD",800000,800000.02,2,0)
+ON^S^1:YES;0:NO;^0;2^Q
+"^DD",800000,800000.02,2,3)
+Enter YES to turn on data tracking for this roster.
+"^DD",800000,800000.02,2,21,0)
+^.001^3^3^3130417^^
+"^DD",800000,800000.02,2,21,1,0)
+This field turns on the Data Monitor for this roster and client system.
+"^DD",800000,800000.02,2,21,2,0)
+If ON=true, a new snapshot of this roster will be sent to the client
+"^DD",800000,800000.02,2,21,3,0)
+when new data updates are requested.
+"^DD",800000,800000.02,2,"DT")
+3130417
+"^DD",800000.1,800000.1,0)
+FIELD^^1^4
+"^DD",800000.1,800000.1,0,"IX","B",800000.1,.01)
+
+"^DD",800000.1,800000.1,0,"NM","HMP PATIENT OBJECT")
+
+"^DD",800000.1,800000.1,0,"VRPK")
+HMP
+"^DD",800000.1,800000.1,.01,0)
+UID^RF^^0;1^K:$L(X)>63!($L(X)<3)!'(X'?1P.E) X
+"^DD",800000.1,800000.1,.01,1,0)
+^.1
+"^DD",800000.1,800000.1,.01,1,1,0)
+800000.1^B
+"^DD",800000.1,800000.1,.01,1,1,1)
+S ^HMP(800000.1,"B",$E(X,1,63),DA)=""
+"^DD",800000.1,800000.1,.01,1,1,2)
+K ^HMP(800000.1,"B",$E(X,1,63),DA)
+"^DD",800000.1,800000.1,.01,3)
+Answer must be 3-63 characters in length.
+"^DD",800000.1,800000.1,.01,21,0)
+^^1^1^3121129^
+"^DD",800000.1,800000.1,.01,21,1,0)
+The fully specified Universal ID string for this object.
+"^DD",800000.1,800000.1,.01,23,0)
+^^1^1^3121129^
+"^DD",800000.1,800000.1,.01,23,1,0)
+urn:va:{systemId}:{DFN}:{collection}:{ien}
+"^DD",800000.1,800000.1,.01,"DT")
+3121129
+"^DD",800000.1,800000.1,.02,0)
+PATIENT^RP2'^DPT(^0;2^Q
+"^DD",800000.1,800000.1,.02,3)
+Enter the patient that owns this object.
+"^DD",800000.1,800000.1,.02,21,0)
+^^1^1^3121129^
+"^DD",800000.1,800000.1,.02,21,1,0)
+Patient file #2 ien
+"^DD",800000.1,800000.1,.02,"DT")
+3121129
+"^DD",800000.1,800000.1,.03,0)
+COLLECTION^F^^0;3^K:$L(X)>30!($L(X)<3) X
+"^DD",800000.1,800000.1,.03,3)
+Answer must be 3-30 characters in length.
+"^DD",800000.1,800000.1,.03,21,0)
+^^1^1^3121129^
+"^DD",800000.1,800000.1,.03,21,1,0)
+The name of the type or kind of data this object belongs to.
+"^DD",800000.1,800000.1,.03,"DT")
+3121129
+"^DD",800000.1,800000.1,1,0)
+DATA^800000.101^^1;0
+"^DD",800000.1,800000.101,0)
+DATA SUB-FIELD^^.01^1
+"^DD",800000.1,800000.101,0,"NM","DATA")
+
+"^DD",800000.1,800000.101,0,"UP")
+800000.1
+"^DD",800000.1,800000.101,.01,0)
+DATA^Wx^^0;1^Q
+"^DD",800000.1,800000.101,.01,21,0)
+^^1^1^3121129^
+"^DD",800000.1,800000.101,.01,21,1,0)
+JSON data object
+"^DD",800000.1,800000.101,.01,"DT")
+3121129
+"^DD",800000.11,800000.11,0)
+FIELD^^1^3
+"^DD",800000.11,800000.11,0,"IX","ACNT",800000.11,.03)
+
+"^DD",800000.11,800000.11,0,"IX","B",800000.11,.01)
+
+"^DD",800000.11,800000.11,0,"IX","C",800000.11,.03)
+
+"^DD",800000.11,800000.11,0,"NM","HMP OBJECT")
+
+"^DD",800000.11,800000.11,0,"VRPK")
+HMP
+"^DD",800000.11,800000.11,.01,0)
+UID^RF^^0;1^K:$L(X)>63!($L(X)<3)!'(X'?1P.E) X
+"^DD",800000.11,800000.11,.01,1,0)
+^.1
+"^DD",800000.11,800000.11,.01,1,1,0)
+800000.11^B
+"^DD",800000.11,800000.11,.01,1,1,1)
+S ^HMP(800000.11,"B",$E(X,1,63),DA)=""
+"^DD",800000.11,800000.11,.01,1,1,2)
+K ^HMP(800000.11,"B",$E(X,1,63),DA)
+"^DD",800000.11,800000.11,.01,3)
+Answer must be 3-63 characters in length.
+"^DD",800000.11,800000.11,.01,21,0)
+^^1^1^3121129^
+"^DD",800000.11,800000.11,.01,21,1,0)
+The fully specified Universal ID string for this object.
+"^DD",800000.11,800000.11,.01,23,0)
+^^1^1^3121129^
+"^DD",800000.11,800000.11,.01,23,1,0)
+urn:va:{collection}:{systemId}:{ien}
+"^DD",800000.11,800000.11,.01,"DT")
+3121129
+"^DD",800000.11,800000.11,.03,0)
+COLLECTION^F^^0;3^K:$L(X)>30!($L(X)<3) X
+"^DD",800000.11,800000.11,.03,1,0)
+^.1
+"^DD",800000.11,800000.11,.03,1,1,0)
+800000.11^C
+"^DD",800000.11,800000.11,.03,1,1,1)
+S ^HMP(800000.11,"C",$E(X,1,30),DA)=""
+"^DD",800000.11,800000.11,.03,1,1,2)
+K ^HMP(800000.11,"C",$E(X,1,30),DA)
+"^DD",800000.11,800000.11,.03,1,1,"DT")
+3121129
+"^DD",800000.11,800000.11,.03,1,2,0)
+800000.11^ACNT^MUMPS
+"^DD",800000.11,800000.11,.03,1,2,1)
+S ^HMP(800000.11,"ACNT",$E(X,1,30))=$G(^HMP(800000.11,"ACNT",$E(X,1,30)))+1
+"^DD",800000.11,800000.11,.03,1,2,2)
+S ^HMP(800000.11,"ACNT",$E(X,1,30))=$G(^HMP(800000.11,"ACNT",$E(X,1,30)))-1
+"^DD",800000.11,800000.11,.03,1,2,"%D",0)
+^^1^1^3140503^
+"^DD",800000.11,800000.11,.03,1,2,"%D",1,0)
+Maintain a count of the number of items in each collection.
+"^DD",800000.11,800000.11,.03,1,2,"DT")
+3140503
+"^DD",800000.11,800000.11,.03,3)
+Answer must be 3-30 characters in length.
+"^DD",800000.11,800000.11,.03,21,0)
+^^1^1^3121129^
+"^DD",800000.11,800000.11,.03,21,1,0)
+The name of the type or kind of data this object belongs to.
+"^DD",800000.11,800000.11,.03,"DT")
+3140503
+"^DD",800000.11,800000.11,1,0)
+DATA^800000.111^^1;0
+"^DD",800000.11,800000.111,0)
+DATA SUB-FIELD^^.01^1
+"^DD",800000.11,800000.111,0,"NM","DATA")
+
+"^DD",800000.11,800000.111,0,"UP")
+800000.11
+"^DD",800000.11,800000.111,.01,0)
+DATA^Wx^^0;1^Q
+"^DD",800000.11,800000.111,.01,21,0)
+^^1^1^3121129^
+"^DD",800000.11,800000.111,.01,21,1,0)
+JSON data object
+"^DD",800000.11,800000.111,.01,"DT")
+3121129
+"^DD",800000.2,800000.2,0)
+FIELD^^.3^11
+"^DD",800000.2,800000.2,0,"IX","ADD",800000.2,.03)
+
+"^DD",800000.2,800000.2,0,"IX","AREFRESH",800000.2,.08)
+
+"^DD",800000.2,800000.2,0,"IX","B",800000.2,.01)
+
+"^DD",800000.2,800000.2,0,"NM","HMP LIST")
+
+"^DD",800000.2,800000.2,0,"VRPK")
+HMP
+"^DD",800000.2,800000.2,.01,0)
+NAME^RF^^0;1^K:$L(X)>30!(X?.N)!($L(X)<3)!'(X'?1P.E) X
+"^DD",800000.2,800000.2,.01,1,0)
+^.1
+"^DD",800000.2,800000.2,.01,1,1,0)
+800000.2^B
+"^DD",800000.2,800000.2,.01,1,1,1)
+S ^HMPD(800000.2,"B",$E(X,1,30),DA)=""
+"^DD",800000.2,800000.2,.01,1,1,2)
+K ^HMPD(800000.2,"B",$E(X,1,30),DA)
+"^DD",800000.2,800000.2,.01,3)
+NAME MUST BE 3-30 CHARACTERS, NOT NUMERIC OR STARTING WITH PUNCTUATION
+"^DD",800000.2,800000.2,.02,0)
+TYPE^S^0:STATIC;1:DYNAMIC;^0;2^Q
+"^DD",800000.2,800000.2,.02,"DT")
+3121011
+"^DD",800000.2,800000.2,.03,0)
+DD NUMBER^NJ14,5^^0;3^K:+X'=X!(X>99999999)!(X<1)!(X?.E1"."6N.N) X
+"^DD",800000.2,800000.2,.03,1,0)
+^.1
+"^DD",800000.2,800000.2,.03,1,1,0)
+800000.2^ADD
+"^DD",800000.2,800000.2,.03,1,1,1)
+S ^HMPD(800000.2,"ADD",$E(X,1,30),DA)=""
+"^DD",800000.2,800000.2,.03,1,1,2)
+K ^HMPD(800000.2,"ADD",$E(X,1,30),DA)
+"^DD",800000.2,800000.2,.03,1,1,"DT")
+3121022
+"^DD",800000.2,800000.2,.03,3)
+Type a number between 1 and 99999999, 5 decimal digits.
+"^DD",800000.2,800000.2,.03,"DT")
+3121022
+"^DD",800000.2,800000.2,.04,0)
+DOMAIN^RP800000.21'^HMPD(800000.21,^0;4^Q
+"^DD",800000.2,800000.2,.04,3)
+
+"^DD",800000.2,800000.2,.04,"DT")
+3121031
+"^DD",800000.2,800000.2,.05,0)
+ATTRIBUTE^RP800000.22'^HMPD(800000.22,^0;5^Q
+"^DD",800000.2,800000.2,.05,3)
+
+"^DD",800000.2,800000.2,.05,"DT")
+3121107
+"^DD",800000.2,800000.2,.08,0)
+REFRESH THRESHOLD^NJ4,0^^0;8^K:+X'=X!(X>1440)!(X<0)!(X?.E1"."1N.N) X
+"^DD",800000.2,800000.2,.08,1,0)
+^.1
+"^DD",800000.2,800000.2,.08,1,1,0)
+800000.2^AREFRESH
+"^DD",800000.2,800000.2,.08,1,1,1)
+S ^HMPD(800000.2,"AREFRESH",$E(X,1,30),DA)=""
+"^DD",800000.2,800000.2,.08,1,1,2)
+K ^HMPD(800000.2,"AREFRESH",$E(X,1,30),DA)
+"^DD",800000.2,800000.2,.08,1,1,"DT")
+3121031
+"^DD",800000.2,800000.2,.08,3)
+Type a number between 0 and 1440, 0 decimal digits.
+"^DD",800000.2,800000.2,.08,"DT")
+3121031
+"^DD",800000.2,800000.2,.09,0)
+NEXT REFRESH^D^^0;9^S %DT="ETXR" D ^%DT S X=Y K:Y<1 X
+"^DD",800000.2,800000.2,.09,"DT")
+3121101
+"^DD",800000.2,800000.2,.11,0)
+GENERATION CODE^K^^.11;E1,245^K:$L(X)>245 X D:$D(X) ^DIM
+"^DD",800000.2,800000.2,.11,3)
+This is Standard MUMPS code.
+"^DD",800000.2,800000.2,.11,9)
+@
+"^DD",800000.2,800000.2,.11,"DT")
+3121011
+"^DD",800000.2,800000.2,.2,0)
+COLUMNS^800000.202^^2;0
+"^DD",800000.2,800000.2,.3,0)
+DESCRIPTION^800000.203^^3;0
+"^DD",800000.2,800000.2,.9,0)
+DATA^800000.209^^9;0
+"^DD",800000.2,800000.202,0)
+COLUMNS SUB-FIELD^^.02^2
+"^DD",800000.2,800000.202,0,"IX","AORD",800000.202,.02)
+
+"^DD",800000.2,800000.202,0,"IX","B",800000.202,.01)
+
+"^DD",800000.2,800000.202,0,"NM","COLUMNS")
+
+"^DD",800000.2,800000.202,0,"UP")
+800000.2
+"^DD",800000.2,800000.202,.01,0)
+COLUMN NAME^MF^^0;1^K:$L(X)>30!($L(X)<3)!'(X?1UL.29ULN) X
+"^DD",800000.2,800000.202,.01,1,0)
+^.1
+"^DD",800000.2,800000.202,.01,1,1,0)
+800000.202^B
+"^DD",800000.2,800000.202,.01,1,1,1)
+S ^HMPD(800000.2,DA(1),2,"B",$E(X,1,30),DA)=""
+"^DD",800000.2,800000.202,.01,1,1,2)
+K ^HMPD(800000.2,DA(1),2,"B",$E(X,1,30),DA)
+"^DD",800000.2,800000.202,.01,3)
+Answer must be 3-30 characters in length.
+"^DD",800000.2,800000.202,.01,"DT")
+3141015
+"^DD",800000.2,800000.202,.02,0)
+ORDER^RNJ2,0^^0;2^K:+X'=X!(X>99)!(X<3)!(X?.E1"."1N.N) X
+"^DD",800000.2,800000.202,.02,1,0)
+^.1
+"^DD",800000.2,800000.202,.02,1,1,0)
+800000.202^AORD
+"^DD",800000.2,800000.202,.02,1,1,1)
+S ^HMPD(800000.2,DA(1),2,"AORD",$E(X,1,30),DA)=""
+"^DD",800000.2,800000.202,.02,1,1,2)
+K ^HMPD(800000.2,DA(1),2,"AORD",$E(X,1,30),DA)
+"^DD",800000.2,800000.202,.02,1,1,"DT")
+3121031
+"^DD",800000.2,800000.202,.02,3)
+Type a number between 3 and 99, 0 decimal digits.
+"^DD",800000.2,800000.202,.02,"DT")
+3121031
+"^DD",800000.2,800000.203,0)
+DESCRIPTION SUB-FIELD^^.01^1
+"^DD",800000.2,800000.203,0,"NM","DESCRIPTION")
+
+"^DD",800000.2,800000.203,0,"UP")
+800000.2
+"^DD",800000.2,800000.203,.01,0)
+DESCRIPTION^WLx^^0;1^Q
+"^DD",800000.2,800000.203,.01,"DT")
+3121031
+"^DD",800000.2,800000.209,0)
+DATA SUB-FIELD^^.01^1
+"^DD",800000.2,800000.209,0,"NM","DATA")
+
+"^DD",800000.2,800000.209,0,"UP")
+800000.2
+"^DD",800000.2,800000.209,.01,0)
+DATA^WLx^^0;1^Q
+"^DD",800000.2,800000.209,.01,"DT")
+3121030
+"^DD",800000.21,800000.21,0)
+FIELD^^.01^3
+"^DD",800000.21,800000.21,0,"IX","B",800000.21,.01)
+
+"^DD",800000.21,800000.21,0,"NM","HMP LIST DOMAIN")
+
+"^DD",800000.21,800000.21,0,"PT",800000.2,.04)
+
+"^DD",800000.21,800000.21,0,"VRPK")
+HMP
+"^DD",800000.21,800000.21,.01,0)
+NAME^RF^^0;1^K:$L(X)>30!(X?.N)!($L(X)<3)!'(X'?1P.E) X
+"^DD",800000.21,800000.21,.01,1,0)
+^.1
+"^DD",800000.21,800000.21,.01,1,1,0)
+800000.21^B
+"^DD",800000.21,800000.21,.01,1,1,1)
+S ^HMPD(800000.21,"B",$E(X,1,30),DA)=""
+"^DD",800000.21,800000.21,.01,1,1,2)
+K ^HMPD(800000.21,"B",$E(X,1,30),DA)
+"^DD",800000.21,800000.21,.01,3)
+NAME MUST BE 3-30 CHARACTERS, NOT NUMERIC OR STARTING WITH PUNCTUATION
+"^DD",800000.21,800000.21,.02,0)
+ABBREVIATION^F^^0;2^K:$L(X)>10!($L(X)<1) X
+"^DD",800000.21,800000.21,.02,3)
+Answer must be 1-10 characters in length.
+"^DD",800000.21,800000.21,.02,"DT")
+3121031
+"^DD",800000.21,800000.21,.03,0)
+DISPLAY NAME^F^^0;3^K:$L(X)>50!($L(X)<1) X
+"^DD",800000.21,800000.21,.03,3)
+Answer must be 1-50 characters in length.
+"^DD",800000.21,800000.21,.03,"DT")
+3121031
+"^DD",800000.22,800000.22,0)
+FIELD^^.01^3
+"^DD",800000.22,800000.22,0,"IX","B",800000.22,.01)
+
+"^DD",800000.22,800000.22,0,"NM","HMP LIST ATTRIBUTE")
+
+"^DD",800000.22,800000.22,0,"PT",800000.2,.05)
+
+"^DD",800000.22,800000.22,0,"VRPK")
+HMP
+"^DD",800000.22,800000.22,.01,0)
+NAME^RF^^0;1^K:$L(X)>30!(X?.N)!($L(X)<3)!'(X'?1P.E) X
+"^DD",800000.22,800000.22,.01,1,0)
+^.1
+"^DD",800000.22,800000.22,.01,1,1,0)
+800000.22^B
+"^DD",800000.22,800000.22,.01,1,1,1)
+S ^HMPD(800000.22,"B",$E(X,1,30),DA)=""
+"^DD",800000.22,800000.22,.01,1,1,2)
+K ^HMPD(800000.22,"B",$E(X,1,30),DA)
+"^DD",800000.22,800000.22,.01,3)
+NAME MUST BE 3-30 CHARACTERS, NOT NUMERIC OR STARTING WITH PUNCTUATION
+"^DD",800000.22,800000.22,.02,0)
+ABBREVIATION^F^^0;2^K:$L(X)>10!($L(X)<1) X
+"^DD",800000.22,800000.22,.02,3)
+Answer must be 1-10 characters in length.
+"^DD",800000.22,800000.22,.02,"DT")
+3121031
+"^DD",800000.22,800000.22,.03,0)
+DISPLAY NAME^F^^0;3^K:$L(X)>50!($L(X)<1) X
+"^DD",800000.22,800000.22,.03,3)
+Answer must be 1-50 characters in length.
+"^DD",800000.22,800000.22,.03,"DT")
+3121031
+"^DD",800001,800001,0)
+FIELD^^.03^4
+"^DD",800001,800001,0,"DDA")
+N
+"^DD",800001,800001,0,"IX","B",800001,.01)
+
+"^DD",800001,800001,0,"IX","C",800001,.03)
+
+"^DD",800001,800001,0,"NM","HMP PANEL")
+
+"^DD",800001,800001,0,"PT",800001.21,.02)
+
+"^DD",800001,800001,0,"VRPK")
+HMP
+"^DD",800001,800001,.01,0)
+NAME^R*P810.4'^PXRM(810.4,^0;1^S DIC("S")="I $P(^(0),U,3)=3" D ^DIC K DIC S DIC=DIE,X=+Y K:Y<0 X
+"^DD",800001,800001,.01,1,0)
+^.1
+"^DD",800001,800001,.01,1,1,0)
+800001^B
+"^DD",800001,800001,.01,1,1,1)
+S ^HMPPANEL("B",$E(X,1,30),DA)=""
+"^DD",800001,800001,.01,1,1,2)
+K ^HMPPANEL("B",$E(X,1,30),DA)
+"^DD",800001,800001,.01,3)
+
+"^DD",800001,800001,.01,12)
+Only select RULE SET types
+"^DD",800001,800001,.01,12.1)
+S DIC("S")="I $P(^(0),U,3)=3"
+"^DD",800001,800001,.01,"DT")
+3110629
+"^DD",800001,800001,.02,0)
+DISPLAY NAME^RF^^0;2^K:$L(X)>50!($L(X)<3) X
+"^DD",800001,800001,.02,3)
+Answer must be 3-50 characters in length.
+"^DD",800001,800001,.02,"DT")
+3110630
+"^DD",800001,800001,.03,0)
+PATIENT LIST NAME^F^^0;3^K:$L(X)>40!($L(X)<3) X
+"^DD",800001,800001,.03,1,0)
+^.1
+"^DD",800001,800001,.03,1,1,0)
+800001^C
+"^DD",800001,800001,.03,1,1,1)
+S ^HMPPANEL("C",$E(X,1,30),DA)=""
+"^DD",800001,800001,.03,1,1,2)
+K ^HMPPANEL("C",$E(X,1,30),DA)
+"^DD",800001,800001,.03,1,1,"DT")
+3111006
+"^DD",800001,800001,.03,3)
+Answer must be 3-40 characters in length.
+"^DD",800001,800001,.03,"DT")
+3111006
+"^DD",800001,800001,5,0)
+ORDER DIALOGS^800001.05P^^ORDER DIALOGS;0
+"^DD",800001,800001.05,0)
+ORDER DIALOGS SUB-FIELD^^.01^1
+"^DD",800001,800001.05,0,"IX","B",800001.05,.01)
+
+"^DD",800001,800001.05,0,"NM","ORDER DIALOGS")
+
+"^DD",800001,800001.05,0,"UP")
+800001
+"^DD",800001,800001.05,.01,0)
+ORDER DIALOGS^MP101.41'^ORD(101.41,^0;1^Q
+"^DD",800001,800001.05,.01,1,0)
+^.1
+"^DD",800001,800001.05,.01,1,1,0)
+800001.05^B
+"^DD",800001,800001.05,.01,1,1,1)
+S ^HMPPANEL(DA(1),"ORDER DIALOGS","B",$E(X,1,30),DA)=""
+"^DD",800001,800001.05,.01,1,1,2)
+K ^HMPPANEL(DA(1),"ORDER DIALOGS","B",$E(X,1,30),DA)
+"^DD",800001,800001.05,.01,"DT")
+3110629
+"^DD",800001.2,800001.2,0)
+FIELD^^3^10
+"^DD",800001.2,800001.2,0,"IX","AB",800001.23,.01)
+
+"^DD",800001.2,800001.2,0,"IX","AC",800001.2,.04)
+
+"^DD",800001.2,800001.2,0,"IX","AD",800001.21,.02)
+
+"^DD",800001.2,800001.2,0,"IX","ATS",800001.2,99)
+
+"^DD",800001.2,800001.2,0,"IX","B",800001.2,.01)
+
+"^DD",800001.2,800001.2,0,"NM","HMP ROSTER")
+
+"^DD",800001.2,800001.2,0,"PT",800000.02,.01)
+
+"^DD",800001.2,800001.2,0,"PT",800001.21,.02)
+
+"^DD",800001.2,800001.2,0,"VRPK")
+HMP
+"^DD",800001.2,800001.2,.01,0)
+NAME^RF^^0;1^K:$L(X)>104!($L(X)<3)!'(X'?1P.E) X
+"^DD",800001.2,800001.2,.01,1,0)
+^.1
+"^DD",800001.2,800001.2,.01,1,1,0)
+800001.2^B
+"^DD",800001.2,800001.2,.01,1,1,1)
+S ^HMPROSTR(800001.2,"B",$E(X,1,30),DA)=""
+"^DD",800001.2,800001.2,.01,1,1,2)
+K ^HMPROSTR(800001.2,"B",$E(X,1,30),DA)
+"^DD",800001.2,800001.2,.01,3)
+Answer must be 3-104 characters in length.
+"^DD",800001.2,800001.2,.01,"DT")
+3130220
+"^DD",800001.2,800001.2,.02,0)
+DISPLAY NAME^F^^0;2^K:$L(X)>45!($L(X)<3) X
+"^DD",800001.2,800001.2,.02,3)
+Answer must be 3-45 characters in length.
+"^DD",800001.2,800001.2,.02,"DT")
+3110830
+"^DD",800001.2,800001.2,.03,0)
+DISABLE^S^1:YES;^0;3^Q
+"^DD",800001.2,800001.2,.03,3)
+ENTER A 1 OR YES TO DISABLE THIS ROSTER.
+"^DD",800001.2,800001.2,.03,"DT")
+3110830
+"^DD",800001.2,800001.2,.04,0)
+OWNER^P200'^VA(200,^0;4^Q
+"^DD",800001.2,800001.2,.04,1,0)
+^.1
+"^DD",800001.2,800001.2,.04,1,1,0)
+800001.2^AC
+"^DD",800001.2,800001.2,.04,1,1,1)
+S ^HMPROSTR(800001.2,"AC",$E(X,1,30),DA)=""
+"^DD",800001.2,800001.2,.04,1,1,2)
+K ^HMPROSTR(800001.2,"AC",$E(X,1,30),DA)
+"^DD",800001.2,800001.2,.04,1,1,"%D",0)
+^^1^1^3120105^
+"^DD",800001.2,800001.2,.04,1,1,"%D",1,0)
+Index all rosters by owner.
+"^DD",800001.2,800001.2,.04,1,1,"DT")
+3120105
+"^DD",800001.2,800001.2,.04,3)
+ENTER THE OWNER OF THIS ROSTER
+"^DD",800001.2,800001.2,.04,"DT")
+3120105
+"^DD",800001.2,800001.2,.05,0)
+TYPE^RS^PU:PUBLIC;PR:PRIVATE;^0;5^Q
+"^DD",800001.2,800001.2,.05,"DT")
+3111115
+"^DD",800001.2,800001.2,.06,0)
+PATIENT LIST NAME^F^^0;6^K:$L(X)>40!($L(X)<3) X
+"^DD",800001.2,800001.2,.06,3)
+Answer must be 3-40 characters in length.
+"^DD",800001.2,800001.2,.06,"DT")
+3120120
+"^DD",800001.2,800001.2,1,0)
+SOURCES^800001.21^^1;0
+"^DD",800001.2,800001.2,2,0)
+SPECIAL HANDLING^K^^3;E1,245^K:$L(X)>245 X D:$D(X) ^DIM
+"^DD",800001.2,800001.2,2,3)
+This is Standard MUMPS code.
+"^DD",800001.2,800001.2,2,9)
+@
+"^DD",800001.2,800001.2,2,"DT")
+3120103
+"^DD",800001.2,800001.2,3,0)
+PATIENT^800001.23P^^4;0
+"^DD",800001.2,800001.2,99,0)
+TIMESTAMP^D^^2;1^S %DT="ESTXR" D ^%DT S X=Y K:3110830.0839>X X
+"^DD",800001.2,800001.2,99,1,0)
+^.1
+"^DD",800001.2,800001.2,99,1,1,0)
+800001.2^ATS
+"^DD",800001.2,800001.2,99,1,1,1)
+S ^HMPROSTR(800001.2,"ATS",$E(X,1,30),DA)=""
+"^DD",800001.2,800001.2,99,1,1,2)
+K ^HMPROSTR(800001.2,"ATS",$E(X,1,30),DA)
+"^DD",800001.2,800001.2,99,1,1,"DT")
+3110831
+"^DD",800001.2,800001.2,99,3)
+Type a date not earlier than AUG 30, 2011@08:39.
+"^DD",800001.2,800001.2,99,"DT")
+3110831
+"^DD",800001.2,800001.21,0)
+SOURCES SUB-FIELD^^.05^5
+"^DD",800001.2,800001.21,0,"IX","AS",800001.21,.01)
+
+"^DD",800001.2,800001.21,0,"IX","B",800001.21,.01)
+
+"^DD",800001.2,800001.21,0,"NM","SOURCES")
+
+"^DD",800001.2,800001.21,0,"UP")
+800001.2
+"^DD",800001.2,800001.21,.01,0)
+SEQUENCE^MNJ8,0^^0;1^K:+X'=X!(X>99999999)!(X<1)!(X?.E1"."1.N) X
+"^DD",800001.2,800001.21,.01,1,0)
+^.1
+"^DD",800001.2,800001.21,.01,1,1,0)
+800001.21^B
+"^DD",800001.2,800001.21,.01,1,1,1)
+S ^HMPROSTR(800001.2,DA(1),1,"B",$E(X,1,30),DA)=""
+"^DD",800001.2,800001.21,.01,1,1,2)
+K ^HMPROSTR(800001.2,DA(1),1,"B",$E(X,1,30),DA)
+"^DD",800001.2,800001.21,.01,1,2,0)
+800001.21^AS
+"^DD",800001.2,800001.21,.01,1,2,1)
+S ^HMPROSTR(800001.2,DA(1),1,"AS",$E(X,1,30),DA)=""
+"^DD",800001.2,800001.21,.01,1,2,2)
+K ^HMPROSTR(800001.2,DA(1),1,"AS",$E(X,1,30),DA)
+"^DD",800001.2,800001.21,.01,1,2,"DT")
+3110901
+"^DD",800001.2,800001.21,.01,3)
+Type a number between 1 and 99999999, 0 decimal digits.
+"^DD",800001.2,800001.21,.01,"DT")
+3110901
+"^DD",800001.2,800001.21,.02,0)
+SOURCE^RV^^0;2^Q
+"^DD",800001.2,800001.21,.02,1,0)
+^.1
+"^DD",800001.2,800001.21,.02,1,1,0)
+800001.2^AD
+"^DD",800001.2,800001.21,.02,1,1,1)
+S ^HMPROSTR(800001.2,"AD",$E(X,1,30),DA(1),DA)=""
+"^DD",800001.2,800001.21,.02,1,1,2)
+K ^HMPROSTR(800001.2,"AD",$E(X,1,30),DA(1),DA)
+"^DD",800001.2,800001.21,.02,1,1,"DT")
+3131126
+"^DD",800001.2,800001.21,.02,3)
+ENTER FILE WHICH WILL BE THE SOURCE FOR THIS ROSTER
+"^DD",800001.2,800001.21,.02,"DT")
+3131126
+"^DD",800001.2,800001.21,.02,"V",0)
+^.12P^12^10
+"^DD",800001.2,800001.21,.02,"V",1,0)
+2^PATIENT^1^PAT^n^n
+"^DD",800001.2,800001.21,.02,"V",1,1)
+
+"^DD",800001.2,800001.21,.02,"V",1,2)
+
+"^DD",800001.2,800001.21,.02,"V",2,0)
+42^WARD LOCATION^2^WARD^n^n
+"^DD",800001.2,800001.21,.02,"V",2,1)
+
+"^DD",800001.2,800001.21,.02,"V",2,2)
+
+"^DD",800001.2,800001.21,.02,"V",3,0)
+44^CLINIC^3^CL^n^n
+"^DD",800001.2,800001.21,.02,"V",3,1)
+
+"^DD",800001.2,800001.21,.02,"V",3,2)
+
+"^DD",800001.2,800001.21,.02,"V",5,0)
+200^PROVIDER^5^PROV^n^n
+"^DD",800001.2,800001.21,.02,"V",5,1)
+
+"^DD",800001.2,800001.21,.02,"V",5,2)
+
+"^DD",800001.2,800001.21,.02,"V",6,0)
+100.21^CPRS^6^CPRS^n^n
+"^DD",800001.2,800001.21,.02,"V",6,1)
+
+"^DD",800001.2,800001.21,.02,"V",6,2)
+
+"^DD",800001.2,800001.21,.02,"V",7,0)
+404.51^PCMM TEAM^7^PCMM^n^n
+"^DD",800001.2,800001.21,.02,"V",7,1)
+
+"^DD",800001.2,800001.21,.02,"V",7,2)
+
+"^DD",800001.2,800001.21,.02,"V",8,0)
+810.4^REMINDER'S LIST RULE FILE^22^PXRM^y^n
+"^DD",800001.2,800001.21,.02,"V",8,1)
+S DIC("S")="I $P(^(0),U,3)=3"
+"^DD",800001.2,800001.21,.02,"V",8,2)
+Only select Rule Set types
+"^DD",800001.2,800001.21,.02,"V",9,0)
+800001.2^HMP ROSTER FILE^9^ROST^^n
+"^DD",800001.2,800001.21,.02,"V",11,0)
+45.7^SPECIALTY^70^SPEC^n^n
+"^DD",800001.2,800001.21,.02,"V",12,0)
+800001^Select HMP Panel List Rule^80^HMPPAN^n^n
+"^DD",800001.2,800001.21,.03,0)
+OPERATION^S^0:UNION;1:INTERSECTION;2:DIFFERENCE;^0;3^Q
+"^DD",800001.2,800001.21,.03,"DT")
+3110830
+"^DD",800001.2,800001.21,.04,0)
+FILTER^S^T:TODAY;^0;4^Q
+"^DD",800001.2,800001.21,.04,3)
+
+"^DD",800001.2,800001.21,.04,"DT")
+3110901
+"^DD",800001.2,800001.21,.05,0)
+REFRESH FREQUENCY^S^D:DAILY;H:HOURLY;^0;5^Q
+"^DD",800001.2,800001.21,.05,3)
+
+"^DD",800001.2,800001.21,.05,"DT")
+3120119
+"^DD",800001.2,800001.23,0)
+PATIENT SUB-FIELD^^.02^2
+"^DD",800001.2,800001.23,0,"IX","B",800001.23,.01)
+
+"^DD",800001.2,800001.23,0,"NM","PATIENT")
+
+"^DD",800001.2,800001.23,0,"UP")
+800001.2
+"^DD",800001.2,800001.23,.01,0)
+PATIENT^MP2'^DPT(^0;1^Q
+"^DD",800001.2,800001.23,.01,1,0)
+^.1
+"^DD",800001.2,800001.23,.01,1,1,0)
+800001.23^B
+"^DD",800001.2,800001.23,.01,1,1,1)
+S ^HMPROSTR(800001.2,DA(1),4,"B",$E(X,1,30),DA)=""
+"^DD",800001.2,800001.23,.01,1,1,2)
+K ^HMPROSTR(800001.2,DA(1),4,"B",$E(X,1,30),DA)
+"^DD",800001.2,800001.23,.01,1,2,0)
+800001.2^AB
+"^DD",800001.2,800001.23,.01,1,2,1)
+S ^HMPROSTR(800001.2,"AB",$E(X,1,30),DA(1),DA)=""
+"^DD",800001.2,800001.23,.01,1,2,2)
+K ^HMPROSTR(800001.2,"AB",$E(X,1,30),DA(1),DA)
+"^DD",800001.2,800001.23,.01,1,2,"%D",0)
+^^1^1^3121220^
+"^DD",800001.2,800001.23,.01,1,2,"%D",1,0)
+Index of all rosters patient is in.
+"^DD",800001.2,800001.23,.01,1,2,"DT")
+3121220
+"^DD",800001.2,800001.23,.01,"DT")
+3121220
+"^DD",800001.2,800001.23,.02,0)
+SRCSEQ^NJ6,0^^0;2^K:+X'=X!(X>999999)!(X<1)!(X?.E1"."1N.N) X
+"^DD",800001.2,800001.23,.02,3)
+Type a number between 1 and 999999, 0 decimal digits.
+"^DD",800001.2,800001.23,.02,"DT")
+3130717
+"^DD",800001.5,800001.5,0)
+FIELD^^7^7
+"^DD",800001.5,800001.5,0,"IX","B",800001.5,.01)
+
+"^DD",800001.5,800001.5,0,"IX","HMP",800001.5,6)
+
+"^DD",800001.5,800001.5,0,"NM","HMP ACTIVITY")
+
+"^DD",800001.5,800001.5,0,"VRPK")
+HMP
+"^DD",800001.5,800001.5,.01,0)
+PATIENT NAME^RP2'^DPT(^0;1^Q
+"^DD",800001.5,800001.5,.01,1,0)
+^.1
+"^DD",800001.5,800001.5,.01,1,1,0)
+800001.5^B
+"^DD",800001.5,800001.5,.01,1,1,1)
+S ^HMP(800001.5,"PTAPPT","B",$E(X,1,30),DA)=""
+"^DD",800001.5,800001.5,.01,1,1,2)
+K ^HMP(800001.5,"PTAPPT","B",$E(X,1,30),DA)
+"^DD",800001.5,800001.5,.01,3)
+
+"^DD",800001.5,800001.5,.01,"DT")
+3140731
+"^DD",800001.5,800001.5,2,0)
+APPOINTMENT DATE^D^^0;2^S %DT="EST" D ^%DT S X=Y K:Y<1 X
+"^DD",800001.5,800001.5,2,"DT")
+3140804
+"^DD",800001.5,800001.5,3,0)
+APPOINTMENT STATUS^F^^0;3^K:$L(X)>5!($L(X)<1) X
+"^DD",800001.5,800001.5,3,3)
+Answer must be 1-5 characters in length.
+"^DD",800001.5,800001.5,3,"DT")
+3140804
+"^DD",800001.5,800001.5,4,0)
+DATE RECORD CREATED^D^^0;4^S %DT="EST" D ^%DT S X=Y K:Y<1 X
+"^DD",800001.5,800001.5,4,"DT")
+3140804
+"^DD",800001.5,800001.5,5,0)
+DATE RECORD RETREIVED^D^^0;5^S %DT="EST" D ^%DT S X=Y K:Y<1 X
+"^DD",800001.5,800001.5,5,5,1,0)
+800001.5^6^2
+"^DD",800001.5,800001.5,5,"DT")
+3140804
+"^DD",800001.5,800001.5,6,0)
+HMP PROCESS FLAG^NJ1,0^^0;6^K:+X'=X!(X>1)!(X<0)!(X?.E1"."1N.N) X
+"^DD",800001.5,800001.5,6,1,0)
+^.1
+"^DD",800001.5,800001.5,6,1,1,0)
+800001.5^HMP^MUMPS
+"^DD",800001.5,800001.5,6,1,1,1)
+I +X=0 S ^HMP(800001.5,"PTAPPT","HMP",+DA)=""
+"^DD",800001.5,800001.5,6,1,1,2)
+K ^HMP(800001.5,"PTAPPT","HMP",+DA)
+"^DD",800001.5,800001.5,6,1,1,"DT")
+3140901
+"^DD",800001.5,800001.5,6,1,2,0)
+^^TRIGGER^800001.5^5
+"^DD",800001.5,800001.5,6,1,2,1)
+Q
+"^DD",800001.5,800001.5,6,1,2,2)
+K DIV S DIV=X,D0=DA,DIV(0)=D0 S Y(1)=$S($D(^HMP(800001.5,"PTAPPT",D0,0)):^(0),1:"") S X=$P(Y(1),U,5),X=X S DIU=X K Y S X=DIV N %I,%H,% D NOW^%DTC S X=% X ^DD(800001.5,6,1,2,2.4)
+"^DD",800001.5,800001.5,6,1,2,2.4)
+S DIH=$G(^HMP(800001.5,"PTAPPT",DIV(0),0)),DIV=X S $P(^(0),U,5)=DIV,DIH=800001.5,DIG=5 D ^DICR
+"^DD",800001.5,800001.5,6,1,2,"CREATE VALUE")
+NO EFFECT
+"^DD",800001.5,800001.5,6,1,2,"DELETE VALUE")
+NOW
+"^DD",800001.5,800001.5,6,1,2,"DT")
+3140804
+"^DD",800001.5,800001.5,6,1,2,"FIELD")
+DATE RECORD RETREIVED
+"^DD",800001.5,800001.5,6,3)
+Type a number between 0 and 1, 0 decimal digits.
+"^DD",800001.5,800001.5,6,"DT")
+3140804
+"^DD",800001.5,800001.5,7,0)
+JSON MESSAGE^F^^JSON;1^K:$L(X)>200!($L(X)<1) X
+"^DD",800001.5,800001.5,7,3)
+Answer must be 1-200 characters in length.
+"^DD",800001.5,800001.5,7,"DT")
+3140805
+"^DIC",800000,800000,0)
+HMP SUBSCRIPTION^800000
+"^DIC",800000,800000,0,"GL")
+^HMP(800000,
+"^DIC",800000,"B","HMP SUBSCRIPTION",800000)
+
+"^DIC",800000.1,800000.1,0)
+HMP PATIENT OBJECT^800000.1
+"^DIC",800000.1,800000.1,0,"GL")
+^HMP(800000.1,
+"^DIC",800000.1,"B","HMP PATIENT OBJECT",800000.1)
+
+"^DIC",800000.11,800000.11,0)
+HMP OBJECT^800000.11
+"^DIC",800000.11,800000.11,0,"GL")
+^HMP(800000.11,
+"^DIC",800000.11,"B","HMP OBJECT",800000.11)
+
+"^DIC",800000.2,800000.2,0)
+HMP LIST^800000.2
+"^DIC",800000.2,800000.2,0,"GL")
+^HMPD(800000.2,
+"^DIC",800000.2,"B","HMP LIST",800000.2)
+
+"^DIC",800000.21,800000.21,0)
+HMP LIST DOMAIN^800000.21
+"^DIC",800000.21,800000.21,0,"GL")
+^HMPD(800000.21,
+"^DIC",800000.21,"B","HMP LIST DOMAIN",800000.21)
+
+"^DIC",800000.22,800000.22,0)
+HMP LIST ATTRIBUTE^800000.22
+"^DIC",800000.22,800000.22,0,"GL")
+^HMPD(800000.22,
+"^DIC",800000.22,"B","HMP LIST ATTRIBUTE",800000.22)
+
+"^DIC",800001,800001,0)
+HMP PANEL^800001
+"^DIC",800001,800001,0,"GL")
+^HMPPANEL(
+"^DIC",800001,800001,"%D",0)
+^1.001^4^4^3110701^^^
+"^DIC",800001,800001,"%D",1,0)
+Contains the Rule Sets that contain the cohorts for creating patient panels.
+"^DIC",800001,800001,"%D",2,0)
+For example, panel which includes Diabetic patients will be created
+"^DIC",800001,800001,"%D",3,0)
+nightly to update the list of patients.  All panels in this file will be
+"^DIC",800001,800001,"%D",4,0)
+updated nightly.
+"^DIC",800001,"B","HMP PANEL",800001)
+
+"^DIC",800001.2,800001.2,0)
+HMP ROSTER^800001.2
+"^DIC",800001.2,800001.2,0,"GL")
+^HMPROSTR(800001.2,
+"^DIC",800001.2,"B","HMP ROSTER",800001.2)
+
+"^DIC",800001.5,800001.5,0)
+HMP ACTIVITY^800001.5
+"^DIC",800001.5,800001.5,0,"GL")
+^HMP(800001.5,"PTAPPT",
+"^DIC",800001.5,"B","HMP ACTIVITY",800001.5)
+
+**END**
+**END**

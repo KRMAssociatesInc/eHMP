@@ -5,36 +5,36 @@ Feature: F295 - Encounters Applet
 
 @F295_encounters_initial_view @base
 Scenario: User views the encounters gist view
-  Given user is logged into eHMP-UI
-  And user searches for and selects "Sixhundred,Patient"
-    Then Overview is active
-    And user sees Encounters Gist
-    And the Encounters Gist Applet details view has headers
-    | Header Id   | Headers Text  |
-    | Description | Encounter   |
-    | Event     | Hx Occurrence |
-    | Age     | Last        |
+	Given user is logged into eHMP-UI
+	And user searches for and selects "Sixhundred,Patient"
+  	Then Overview is active
+  	And user sees Encounters Gist
+  	And the Encounters Gist Applet details view has headers
+  	| Header Id 	| Headers Text	|
+  	| Description	| Encounter 	|
+  	| Event			| Hx Occurrence	|
+  	| Age			| Last 		  	|
 
 @F295_encounters_initial_view @F295-1.1 @F295-1.2 @F295-1.3 @F295_4 @F295-1.5 @F295-1.7 @US3706 @US4001 @US4154 @US5126
 Scenario: User views the encounters gist view
-  Given user is logged into eHMP-UI
-  And user searches for and selects "Sixhundred,Patient"
-    Then Overview is active
-    And user sees Encounters Gist
-  And the user has selected All within the global date picker
-    And the Encounters Gist Applet details view has headers
-    | Header Id   | Headers Text  |
-    | Description | Encounter   |
-    | Event     | Hx Occurrence |
-    | Age     | Last        |
-  And the Encounters Gist Applet detail view contains
-  | Description | Occurrence| Last  |
-  | Visits    | 4     | 9y  |
-  | Appointments  | 10    | 11y |
-  | Admissions  | 0     | None  |
-  | Procedures  | 2     | 10y |
+	Given user is logged into eHMP-UI
+	And user searches for and selects "Sixhundred,Patient"
+  	Then Overview is active
+  	And user sees Encounters Gist
+	And the user has selected All within the global date picker
+  	And the Encounters Gist Applet details view has headers
+  	| Header Id 	| Headers Text	|
+  	| Description	| Encounter 	|
+  	| Event			| Hx Occurrence	|
+  	| Age			| Last 		  	|
+	And the Encounters Gist Applet detail view contains
+	| Description	| Occurrence| 
+	| Visits		| 4			|
+	| Appointments	| 10		| 
+	| Admissions	| 0			| 
+	| Procedures	| 2			| 
 
-@F295_1.9_10.1_to_10.10_encounters_visit_view  @US3706 @US4001 @US4154 @US5126
+@F295_encounters_visit_view @F295-1.9 @295-10.1 @295-10.2 @295-10.3 @295-10.4 @295-10.5 @295-10.6 @295-10.7 @295-10.8 @295-10.9 @295-10.10 @US3706 @US4001 @US4154 @US5126
 Scenario: Presence of dynamic arrow for Visits group and Visits expansion
 	Given user is logged into eHMP-UI
 	And user searches for and selects "Sixhundred,Patient"
@@ -46,11 +46,11 @@ Scenario: Presence of dynamic arrow for Visits group and Visits expansion
   	Then Encounters Gist Applet "Visits" grouping expanded view contains headers
  	| Visit Type	| Hx Occurrence	| Last	|
   	And the Encounters Gist Applet "Visits" grouping expanded view contains
-	| Visit Type					| Hx Occurrence	| Last 	| 	
-	| GENERAL INTERNAL MEDICINE		| 2			    | 9y	| 
-	| CARDIOLOGY					| 2				| 10y	|
+	| Visit Type					| Hx Occurrence	| 	
+	| GENERAL INTERNAL MEDICINE		| 2			    | 
+	| CARDIOLOGY					| 2				| 
   	
-@F295_2.1_to_2.5_12.1_to_12.2_encounterGist_expanded_view @US4154 @US5126
+@F295_encounterGist_expanded_view @F295-2.1 @F295-2.2 @F295-2.3 @F295-2.4 @F295-2.5 @F295-12.1 @F295-12.2 @US4154 @US5126
 Scenario: View Encounters Applet Gist - Single Page by clicking on Expand View
   	Given user is logged into eHMP-UI
   	And user searches for and selects "Sixhundred,PATIENT"
@@ -60,8 +60,9 @@ Scenario: View Encounters Applet Gist - Single Page by clicking on Expand View
   	Then "Timeline" is active   	
   	When user exits the Timeline Applet
   	Then user sees Encounters Gist
-  	
-@F295_3.1_to_3.4_11.1_to_11.3_encounterGist_filtering @US4154 @US5126 @US4001
+
+#test converted to new framework. Added debug tag to this  	
+@F295_encounterGist_filtering @F295-3.1 @F295-3.2 @F295-3.3 @F295-3.4 @F295-11.1 @F295-11.2 @F295-11.3 @US4154 @US5126 @US4001 @DE1268 @debug
 Scenario: Encounters Applet Gist - filter encounters
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -69,29 +70,29 @@ Scenario: Encounters Applet Gist - filter encounters
   	And user sees Encounters Gist
   	And the user has selected All within the global date picker
     And the Encounters Gist Applet detail view contains
-  | Description | Occurrence| Last  |
-  | Visits    | 4     | 9y  |
+  | Description | Occurrence |
+  | Visits      | 4  |
   	When the user clicks the control "Filter Toggle" in the "Encounters Gist applet"
   	And the user inputs "Cardiology" in the "Text Filter" control in the "Encounters Gist applet"
   	And the Encounters Gist Applet detail view contains
-	| Description	| Occurrence| Last 	|
-	| Visits		| 2			| 10y	|
+  | Description | Occurrence |
+	| Visits    | 2	|
 	And the user inputs "Agilex" in the "Text Filter" control in the "Encounters Gist applet"
 	And the Encounters Gist Applet detail view contains
-	| Description	| Occurrence| Last 	|
-	| Visits		| 0			| None	|
-	| Appointments	| 0			| None	|
-	| Admissions	| 0			| None	|
-	| Procedures	| 0			| None	|
+  | Description | Occurrence |
+	| Visits		| 0	|
+	| Appointments	| 0	|
+	| Admissions	| 0	|
+	| Procedures	| 0	|
 	When the user closes the search filter in Encounters Gist Applet
 	And the Encounters Gist Applet detail view contains
-	| Description	| Occurrence| Last 	|
-	| Visits		| 4			| 9y	|
-	| Appointments	| 10		| 11y	|
-	| Admissions	| 0			| None	|
-	| Procedures	| 2			| 10y	|
+  | Description     | Occurrence |
+	| Visits	    | 4			 |
+	| Appointments	| 10		 |
+	| Admissions	| 0			 |
+	| Procedures	| 2			 |
 
-@F295_4.1_to_4.6_encounterGist_quick_view_visits @US4154 @US5126
+@F295_encounterGist_quick_view_visits @F295-4.1 @F295-4.2 @F295-4.3 @F295-4.4 @F295-4.5 @F295-4.6 @US4154 @US5126
 Scenario: Encounters Applet Gist - quick view of Visits
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -112,7 +113,7 @@ Scenario: Encounters Applet Gist - quick view of Visits
 	When user hovers over and selects the right side of the "Visits" tile
 	Then Quick View draw box for "Visits" closes
   	
-@F295_4.7_to_4.8_encounterGist_multioption_menu_visits @US4154 @US5126 @traige
+@F295_encounterGist_multioption_menu_visits @F295-4.7 @F295-4.8 @US4154 @US5126 @DE1388
 Scenario: Encounters Applet Gist - Multi option menu display
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -125,7 +126,7 @@ Scenario: Encounters Applet Gist - Multi option menu display
   	When user clicks on the "Right" hand side of the "Visit Type" "GENERAL INTERNAL MEDICINE"
   	Then a Menu appears on the Encounters Gist 
   	
-@F295_4.7_to_4.8_14.1_to_14.8_encounterGist_multioption_menu_quick_view @US4154 @US5126 @future
+@F295_encounterGist_multioption_menu_quick_view @F295-4.7 @F295-4.8 @F295-14.1 @F295-14.2 @F295-14.3 @F295-14.4 @F295-14.5 @F295-14.5 @F295-14.6 @F295-14.7 @F295-14.8 @US4154 @US5126 @future
 Scenario: Encounters Applet Gist - quick view of Visit Type thro' multi option menu
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -133,7 +134,7 @@ Scenario: Encounters Applet Gist - quick view of Visit Type thro' multi option m
   	And user sees Encounters Gist
   	And the user has selected All within the global date picker 
   	When the user expands "Visits" in Encounters Gist Applet
- 	When user clicks on the "Right" hand side of the "Visit Type" "GENERAL INTERNAL MEDICINE"
+ 	When user clicks on the "Left" hand side of the "Visit Type" "GENERAL INTERNAL MEDICINE"
   	Then a Menu appears on the Encounters Gist 
   	When user select the menu "Quick View Icon" in Encounters Gist
   	Then the "Encounters Gist Quick View - Visit Type" table contains headers
@@ -145,7 +146,7 @@ Scenario: Encounters Applet Gist - quick view of Visit Type thro' multi option m
 	When user select the menu "Quick View Icon" in Encounters Gist
 	Then Quick View draw box for "Visit Type" closes
 
-@F295_14.1_to_14.8_visit_quick_view @US4154 @US5126
+@F295_visit_quick_view @F295-14.1 @F295-14.2 @F295-14.3 @F295-14.4 @F295-14.5 @F295-14.6 @F295-14.7 @F295-14.8 @US4154 @US5126 @DE1388
 Scenario: Encounters Applet Gist - quick view of Visit Type by right clicking
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -162,8 +163,9 @@ Scenario: Encounters Applet Gist - quick view of Visit Type by right clicking
 	| 11/02/2006 | Unknown 		| 20 Minute | Unknown  | 888		|
 	When user clicks on the "Right" hand side of the "Visit Type" "GENERAL INTERNAL MEDICINE"
 	Then Quick View draw box for "Visit Type" closes
-  	
-@F295_4.7_to_4.8_12.4_to_12.5_14.1_to_14.8_multioption_menu_visit_detail_view @US4154 @US5126 @traige
+
+#test converted to new framework. Adding debug tag to this test.  	
+@F295_multioption_menu_visit_detail_view @F295-4.7 @F295-4.8 @F295-12.4 @F295-12.5 @F295-14.1 @F295-14.2 @F295-14.3 @F295-14.4 @F295-14.5 @F295-14.6 @F295-14.7 @F295-14.8 @US4154 @US5126 @debug
 Scenario: Encounters Applet Gist - detail view of Visit Type thro' multi option menu
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -188,7 +190,7 @@ Scenario: Encounters Applet Gist - detail view of Visit Type thro' multi option 
 	| Facility 			| FT. LOGAN			|
 	And the user closes modal by clicking the "Close" control	
 
-@F295_13.1_to_13.2_encounterGist_Column_Sorting_Visit_Type @US4684 @US4154 @US5126 @triage
+@F295_encounterGist_Column_Sorting_Visit_Type @F295-13.1 @F295-13.2 @US4684 @US4154 @US5126
 Scenario: Encounter Gist Applet is sorted by the column header Visit Type under Visit.
   Given user is logged into eHMP-UI
   Given user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
@@ -201,7 +203,7 @@ Scenario: Encounter Gist Applet is sorted by the column header Visit Type under 
   When user clicks on the column header "Visit Type" in Encounters Gist
   Then "Visit Type" column is sorted in descending order in Encounters Gist
   
-@F295_13.1_to_13.2_encounterGist_Column_Sorting_Hx_Occurrence @US4684 @US4154 @US5126 @triage
+@F295_encounterGist_Column_Sorting_Hx_Occurrence @F295-13.1 @F295-13.2 @US4684 @US4154 @US5126
 Scenario: Encounters Gist Applet is sorted by the column header Hx Occrrence
   Given user is logged into eHMP-UI
   And user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
@@ -214,7 +216,9 @@ Scenario: Encounters Gist Applet is sorted by the column header Hx Occrrence
   When user clicks on the column header "Hx Occurrence" in Encounters Gist
   Then "Hx Occurrence" column is sorted in descending order in Encounters Gist
 
-@F295_13.1_to_13.2_encounterGist_Column_Sorting_last @US4684 @US4154 @US5126 @triage
+#Following test has a tendency to fail since the data is not constant.  Due to calculation of dates, data is prone to chagne.
+# so the test needs to be tested manually
+@F295_encounterGist_Column_Sorting_last @F295-13.1 @F295-13.2 @US4684 @US4154 @US5126 @debug
 Scenario: Encounters Gist Applet is sorted by the column header Last
   Given user is logged into eHMP-UI
   And user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
@@ -224,12 +228,12 @@ Scenario: Encounters Gist Applet is sorted by the column header Last
   When the user expands "Visits" in Encounters Gist Applet
   When user clicks on the column header "Last" in Encounters Gist
   Then Last column is sorted in "ascending" order in Encounters Gist
-  | 16y | 16y | 16y | 16y | 15y | 15y | 15y | 15y | 15y | 15y |
+  | 16y | 16y | 16y | 16y | 16y | 15y | 15y | 15y | 15y | 15y |
   When user clicks on the column header "Last" in Encounters Gist
   Then Last column is sorted in "descending" order in Encounters Gist
-  | 15y | 15y | 15y | 15y | 15y | 15y | 16y | 16y | 16y | 16y |
+  | 15y | 15y | 15y | 15y | 15y | 16y | 16y | 16y | 16y | 16y |
 
-@F295_9.2_encounters_global_datefilter @US4001 @vimm_observed
+@F295_encounters_global_datefilter @F295-9.2 @US4001
 Scenario: Encounters gist applet is able to filter data based date filter search
   Given user is logged into eHMP-UI
   And user searches for and selects "Sixhundred,Patient"
@@ -242,24 +246,24 @@ Scenario: Encounters gist applet is able to filter data based date filter search
   And the user clicks the date control "1yr" on the "Overview"
   And the user clicks the control "Apply" on the "Overview"
   And the Encounters Gist Applet detail view contains
-	| Description	| Occurrence| Last 	|
-	| Visits		| 0			| None	|
-	| Appointments	| 0 		| None	|
-	| Admissions	| 0			| None	|
-	| Procedures	| 0			| None	|
+	| Description	| Occurrence|
+	| Visits		| 0			| 
+	| Appointments	| 0 		| 
+	| Admissions	| 0			| 
+	| Procedures	| 0			| 
 
   And the user clicks the control "Date Filter" on the "Overview"
   And the user inputs "01/01/2006" in the "From Date" control on the "Overview"
   And the user clicks the control "Apply" on the "Overview"
   And the Encounters Gist Applet detail view contains
-	| Description	| Occurrence| Last 	|
-	| Visits		| 2			| 9y	|
-	| Appointments	| 0 		| None	|
-	| Admissions	| 0			| None	|
-	| Procedures	| 0			| None	|
+	| Description	| Occurrence| 
+	| Visits		| 2			| 
+	| Appointments	| 0 		| 
+	| Admissions	| 0			| 
+	| Procedures	| 0			| 
 
 
-  @F295_27.1_to_27.8_encounters_procedures_view_b  @US3706 @US4001 @US4154 @US5126
+  @F295_encounters_procedures_view_b @F295-27.1 @F295-27.2 @F295-27.3 @F295-27.4 @F295-27.5 @F295-27.6 @F295-27.7 @F295-27.8 @US3706 @US4001 @US4154 @US5126
 Scenario: Expansion of procedures object
   Given user is logged into eHMP-UI
   And user searches for and selects "Sixhundred,Patient"
@@ -270,11 +274,11 @@ Scenario: Expansion of procedures object
     Then Encounters Gist Applet "Procedures" grouping expanded view contains headers
   | Procedure name  | Hx Occurrence | Last  |
     And the Encounters Gist Applet "Procedures" grouping expanded view contains
-  | Procedure name        | Hx Occurrence | Last  |   
-  | PULMONARY FUNCTION INTERPRET  | 1         | 10y | 
-  | PULMONARY FUNCTION TEST     | 1       | 10y |
+  | Procedure name        | Hx Occurrence |  
+  | PULMONARY FUNCTION INTERPRET  | 1     |
+  | PULMONARY FUNCTION TEST     | 1       | 
 		
-@F295_27.1_to_27.8_encounterGist_quick_view_procedures @US4154 @US5126
+@F295_encounterGist_quick_view_procedures @F295-27.1 @F295-27.2 @F295-27.3 @F295-27.4 @F295-27.5 @F295-27.6 @F295-27.7 @F295-27.8 @US4154 @US5126
 Scenario: Encounters Applet Gist - quick view of Procedures
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -293,7 +297,7 @@ Scenario: Encounters Applet Gist - quick view of Procedures
 	When user hovers over and selects the right side of the "Procedures" tile
 	Then Quick View draw box for "Procedures" closes
  	
-@F295_27.1_to_27.8_procedures_quick_view @US4154 @US5126
+@F295_procedures_quick_view @F295-27.1 @F295-27.2 @F295-27.3 @F295-27.4 @F295-27.5 @F295-27.6 @F295-27.7 @F295-27.8 @US4154 @US5126 @DE1388
 Scenario: Encounters Applet Gist - quick view of a particular Procedure 
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -310,7 +314,7 @@ Scenario: Encounters Applet Gist - quick view of a particular Procedure
 	When user clicks on the "Right" hand side of the "Procedure Name" "PULMONARY FUNCTION INTERPRET" 	
 	Then Quick View draw box for "Procedure Name" closes
 
-@F295_27.1_to_27.8_multioption_menu_procedure_quick_view @US4154 @US5126 @future
+@F295_multioption_menu_procedure_quick_view @F295-27.1 @F295-27.2 @F295-27.3 @F295-27.4 @F295-27.5 @F295-27.6 @F295-27.7 @F295-27.8 @US4154 @US5126 @future
 Scenario: Encounters Applet Gist - quick view of a particular procedure thro' multi option menu
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -318,7 +322,7 @@ Scenario: Encounters Applet Gist - quick view of a particular procedure thro' mu
   	And user sees Encounters Gist
   	And the user has selected All within the global date picker 
   	When the user expands "Procedures" in Encounters Gist Applet
- 	When user clicks on the "Right" hand side of the "Procedure Name" "PULMONARY FUNCTION INTERPRET"
+ 	When user clicks on the "Left" hand side of the "Procedure Name" "PULMONARY FUNCTION INTERPRET"
   	Then a Menu appears on the Encounters Gist 
   	When user select the menu "Quick View Icon" in Encounters Gist
   	Then the "Encounters Gist Quick View - Procedure Name" table contains headers
@@ -329,7 +333,7 @@ Scenario: Encounters Applet Gist - quick view of a particular procedure thro' mu
 	When user select the menu "Quick View Icon" in Encounters Gist
 	Then Quick View draw box for "Procedure Name" closes
 	  	
-@F295_27.1_to_27.8_multioption_menu_procedure_detail_view @US4154 @US5126 @traige
+@F295_multioption_menu_procedure_detail_view @F295-27.1 @F295-27.2 @F295-27.3 @F295-27.4 @F295-27.5 @F295-27.6 @F295-27.7 @F295-27.8 @US4154 @US5126
 Scenario: Encounters Applet Gist - detail view of Procedure thro' multi option menu
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -349,7 +353,7 @@ Scenario: Encounters Applet Gist - detail view of Procedure thro' multi option m
 	| Type			| Procedure		| 
 	| Status 		| COMPLETE		| 
 	| Date/Time		| 02/04/2005 - 10:51|
-	And the user closes modal by clicking the "Close" control
+	And the user closes modal by clicking the "Header_Close" control
 	
 @F295_encounters_Appointments_view  @US3706 @US4001 @US4154 @US5126
 Scenario: Expansion of Appointments object
@@ -362,10 +366,10 @@ Scenario: Expansion of Appointments object
   	Then Encounters Gist Applet "Appointments" grouping expanded view contains headers
  	| Appointment Type 	| Hx Occurrence	| Last	|
   	And the Encounters Gist Applet "Appointments" grouping expanded view contains
-	| Appointment Type				| Hx Occurrence	| Last 	| 	
-	| GENERAL INTERNAL MEDICINE 	| 10		    | 11y	| 
+	| Appointment Type				| Hx Occurrence	| 	
+	| GENERAL INTERNAL MEDICINE 	| 10		    | 
 	
-@F295_34.1_to_34.7_encounterGist_quick_view_appointments @US4154 @US5126
+@F295_encounterGist_quick_view_appointments @F295-34.1 @F295-34.2 @F295-34.3 @F295-34.4 @F295-34.5 @F295-34.6 @F295-34.7 @US4154 @US5126
 Scenario: Encounters Applet Gist - quick view of Appointments
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -387,7 +391,7 @@ Scenario: Encounters Applet Gist - quick view of Appointments
 	When user hovers over and selects the right side of the "Appointments" tile
 	Then Quick View draw box for "Appointments" closes
   	
-@F295_34.1_to_34.7_appointment_type_quick_view @US4154 @US5126
+@F295_appointment_type_quick_view @F295-34.1 @F295-34.2 @F295-34.3 @F295-34.4 @F295-34.5 @F295-34.6 @F295-34.7 @US4154 @US5126 @DE1388
 Scenario: Encounters Applet Gist - quick view of a particular Appointment 
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -408,7 +412,7 @@ Scenario: Encounters Applet Gist - quick view of a particular Appointment
 	When user clicks on the "Right" hand side of the "Appointment Type" "GENERAL INTERNAL MEDICINE"	
 	Then Quick View draw box for "Appointment Type" closes
 
-@F295_34.2_multioption_menu_appointment_quick_view @US5386 @future
+@F295_multioption_menu_appointment_quick_view @F295-34.2 @US5386 @future
 Scenario: Encounters Applet Gist - quick view of a particular appointment thro' multi option menu
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -416,7 +420,7 @@ Scenario: Encounters Applet Gist - quick view of a particular appointment thro' 
   	And user sees Encounters Gist
   	And the user has selected All within the global date picker 
   	When the user expands "Appointments" in Encounters Gist Applet
- 	When user clicks on the "Right" hand side of the "Appointment Type" "GENERAL INTERNAL MEDICINE"
+ 	When user clicks on the "Left" hand side of the "Appointment Type" "GENERAL INTERNAL MEDICINE"
   	Then a Menu appears on the Encounters Gist 
   	When user select the menu "Quick View Icon" in Encounters Gist
   	Then the "Encounters Gist Quick View - Appointment Type" table contains headers
@@ -431,7 +435,7 @@ Scenario: Encounters Applet Gist - quick view of a particular appointment thro' 
 	When user select the menu "Quick View Icon" in Encounters Gist
 	Then Quick View draw box for "Appointment Type" closes
 	  	
-@F295_32.5_multioption_menu_appointment_detail_view @US4154 @US5126 @traige
+@F295_multioption_menu_appointment_detail_view @F295-32.5 @US4154 @US5126 @DE1388
 Scenario: Encounters Applet Gist - detail view of Appointment thro' multi option menu
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "Sixhundred,Patient"
@@ -469,11 +473,11 @@ Scenario: Expansion of Admission object
   	Then Encounters Gist Applet "Admissions" grouping expanded view contains headers
  	| Diagnosis 	| Hx Occurrence	| Last	|
   	And the Encounters Gist Applet "Admissions" grouping expanded view contains
-	| Diagnosis		| Hx Occurrence	| Last 	| 	
-	| SLKJFLKSDJF 	| 1			    | 20y	| 
-	| OBSERVATION	| 1				| 22y	|
+	| Diagnosis		| Hx Occurrence	|  	
+	| SLKJFLKSDJF 	| 1			    | 
+	| OBSERVATION	| 1				| 
 		
-@F295_5.6_encounterGist_quick_view_admissions @US4154 @US5126
+@F295_encounterGist_quick_view_admissions @F295-5.6 @US4154 @US5126 @DE1388
 Scenario: Encounters Applet Gist - quick view of admissions
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "zzzretiredonenineteen,Patient"
@@ -492,7 +496,7 @@ Scenario: Encounters Applet Gist - quick view of admissions
 	When user hovers over and selects the right side of the "Admissions" tile
 	Then Quick View draw box for "Admissions" closes
 
-@F295_5.8_20a1_to_20a6_diagnosis_quick_view @US4154 @US5126
+@F295_diagnosis_quick_view @F295-5.8 @F295-20a1 @F295-20a2 @F295-20a3 @F295-20a4 @F295-20a5 @F295-20a6 @US4154 @US5126 @DE1388
 Scenario: Encounters Applet Gist - quick view of a particular Diagnosis 
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "zzzretiredonenineteen,Patient"
@@ -509,7 +513,7 @@ Scenario: Encounters Applet Gist - quick view of a particular Diagnosis
 	When user clicks on the "Right" hand side of the "Diagnosis" "OBSERVATION"	
 	Then Quick View draw box for "Diagnosis" closes
 
-@F295_5.7_to_5.8_multioption_menu_admission_quick_view @US4154 @US5126 @future
+@F295_multioption_menu_admission_quick_view @F295-5.7 @F295-5.8 @US4154 @US5126 @future
 Scenario: Encounters Applet Gist - quick view of a particular admission thro' multi option menu
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "zzzretiredonenineteen,Patient"
@@ -517,7 +521,7 @@ Scenario: Encounters Applet Gist - quick view of a particular admission thro' mu
   	And user sees Encounters Gist
   	And the user has selected All within the global date picker 
   	When the user expands "Admissions" in Encounters Gist Applet
- 	When user clicks on the "Right" hand side of the "Diagnosis" "OBSERVATION"
+ 	When user clicks on the "Left" hand side of the "Diagnosis" "OBSERVATION"
   	Then a Menu appears on the Encounters Gist 
   	When user select the menu "Quick View Icon" in Encounters Gist
   	Then the "Encounters Gist Quick View - Diagnosis" table contains headers
@@ -528,7 +532,7 @@ Scenario: Encounters Applet Gist - quick view of a particular admission thro' mu
 	When user select the menu "Quick View Icon" in Encounters Gist
 	Then Quick View draw box for "Diagnosis" closes
 	  	
-@F295_35.4_multioption_menu_admission_detail_view @US4154 @US5126 @US4805 @traige
+@F295_multioption_menu_admission_detail_view @F295-35.4 @US4154 @US5126 @US4805 @DE1388
 Scenario: Encounters Applet Gist - detail view of admission thro' multi option menu
   	Given user is logged into eHMP-UI
   	Given user searches for and selects "zzzretiredonenineteen,Patient"
@@ -553,3 +557,19 @@ Scenario: Encounters Applet Gist - detail view of admission thro' multi option m
 	| Stop Code			| Blank					|
 	| Facility			| CAMP MASTER			|
 	And the user closes modal by clicking the "Close" control
+
+@DE1375
+Scenario: Encounters Applet Gist - Verify expected buttons are present, visible and accessable
+  Given user is logged into eHMP-UI
+  Given user searches for and selects "Sixhundred,Patient"
+  Then Overview is active
+  And user sees Encounters Gist
+  And the user has selected All within the global date picker 
+  When the user expands "Procedures" in Encounters Gist Applet
+  When user clicks on the "Left" hand side of the "Procedure Name" "PULMONARY FUNCTION INTERPRET" 
+  Then a Menu appears on the Encounters Gist for the item "PULMONARY FUNCTION INTERPRET"
+  #When user select the menu "Detail View Icon" in Encounters Gist
+  Then user selects the "PULMONARY FUNCTION INTERPRET" detail icon in Encounters Gist
+  Then it should show the detail modal of the most recent encounter
+  And the modal's title is "pulmonary function interpret Details" 
+  And the user can view and interact with the "Close" control

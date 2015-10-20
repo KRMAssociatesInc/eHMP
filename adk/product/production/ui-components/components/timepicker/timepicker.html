@@ -1,0 +1,68 @@
+
+<h3>Timepicker</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> The time picker allows the user to quickly enter or select a time. The user can enter in a time through the text field by using the keyboard, or the user can select a time by using the time picker triggered by the time icon.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> A time pickers uses the input field, which will follow the same guidelines as in the form elements section. To pass 508 compliance, the input field is considered the alternative view, which will allow a keyboard user to type in a time. The title attribute explains what time format must be used, for example, HH:MM.</p>
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To change the default settings, such as time format, edit the time picker.defaults in the js file, by changing to "true" or false", for example, to change from military time to AM or PM, edit showMeridian: false, to showMeridian: true</p>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div id="timepickerCopy">
+            <div class="form-group">
+                <label for="timepicker">Time Picker</label>
+                <div class="input-group bootstrap-timepicker">
+                    <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                    <input type="text" id="timepicker" class="form-control timepicker" title="Please enter in a time in the following format, HH:MM." placeholder="HH:MM" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div role="tabpanel" class="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#markup-tooltip" aria-controls="markup-tooltip" role="tab" data-toggle="tab">Tooltip</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="tooltip-js" href="#tooltip-js">Javascript Code</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-tooltip">
+            <pre>
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label for=&quot;timepicker&quot;&gt;Time Picker&lt;/label&gt;
+    &lt;div class=&quot;input-group bootstrap-timepicker&quot;&gt;
+        &lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;input type=&quot;text&quot; id=&quot;timepicker&quot; class=&quot;form-control timepicker&quot; title=&quot;Please enter in a time in the following format, HH:MM.&quot; placeholder=&quot;HH:MM&quot; /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('timepickerCopy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="tooltip-js">
+            <pre>
+$('.timepicker').timepicker({
+    minuteStep: 1,
+    appendWidgetTo: '.bootstrap-timepicker',
+    showSeconds: false,
+    showMeridian: false,
+    defaultTime: &quot;current&quot;
+});
+            </pre>
+            <a onclick="copyToClipboard('timepickerCopyJS')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>
+<div id="timepickerCopyJS">
+    <script src="js/timepicker.js"></script>
+    <script>
+    $(function() {
+        $('.timepicker').timepicker({
+            minuteStep: 1,
+            appendWidgetTo: '.bootstrap-timepicker',
+            showSeconds: false,
+            showMeridian: false,
+            showInputs: false,
+            defaultTime: "HH:mm"
+        });
+    });
+    </script>
+</div>

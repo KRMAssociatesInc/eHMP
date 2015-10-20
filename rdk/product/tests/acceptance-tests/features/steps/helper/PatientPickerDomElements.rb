@@ -65,7 +65,7 @@ class ClickUntilPressed
     @access_html_elements = how_to_access
   end
 
-  def perform_action(html_element, value)
+  def perform_action(html_element, _value)
     driver = TestSupport.driver
     html_element.click
     check_class = driver.find_element(@access_html_elements.how, @access_html_elements.locator)

@@ -14,6 +14,7 @@ var config = require(global.VX_ROOT + 'worker-config');
 config.terminology.host = vx_sync_ip;
 var val = require(global.VX_UTILS + 'object-utils').getProperty;
 
+var TerminologyUtil = require(global.VX_SUBSYSTEMS + 'terminology/terminology-utils');
 var xformer = require(global.VX_HANDLERS + 'record-enrichment-request/record-enrichment-allergy-xformer');
 var log = require(global.VX_UTILS + '/dummy-logger');
 // NOTE: be sure next line is commented out before pushing
@@ -94,6 +95,9 @@ var originalDodAllergyRecord = {
 var originalDodAllergyJob = {
     record: originalDodAllergyRecord
 };
+
+var terminologyUtil = new TerminologyUtil(log, log, config);
+
 // What it should be when the terminology translations are real...
 //-----------------------------------------------------------------
 // var jdsCodedDodValue = {
@@ -103,21 +107,19 @@ var originalDodAllergyJob = {
 // };
 // What it is with the mock terminology translations.
 //-----------------------------------------------------------------
-var jdsCodedDodValue = {
-    code: 'C0220892',
-    display: 'Penicillin',
-    system: 'urn:oid:2.16.840.1.113883.6.86'
-};
+var jdsCodedDodValue = { system : 'urn:oid:2.16.840.1.113883.6.86', code : 'C0030842', display : 'Penicillins' };
 
 describe('record-enrichment-allergy-xformer.js', function() {
     describe('transformAndEnrichRecord()', function() {
         it('Happy Path with VA Allergy', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: terminologyUtil
+            };
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalVaAllergyJob, function(error, record) {
+                xformer(log, config, environment, originalVaAllergyJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     expect(_.isArray(val(record, 'products'))).toBe(true);
@@ -151,11 +153,13 @@ describe('record-enrichment-allergy-xformer.js', function() {
         });
         it('Happy Path with Dod Allergy', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: terminologyUtil
+            };
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalDodAllergyJob, function(error, record) {
+                xformer(log, config, environment, originalDodAllergyJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     expect(_.isArray(val(record, 'products'))).toBe(true);

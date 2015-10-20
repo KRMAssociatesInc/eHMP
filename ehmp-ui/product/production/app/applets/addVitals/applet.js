@@ -1,5 +1,5 @@
 define([
-    'app/applets/addVitals/addVitalsView'
+    'app/applets/addVitals/views/addVitalsView'
 ], function(addVitalsView) {
     // Channel constants
     var ADD_VITALS_REQUEST_CHANNEL = 'addVitalsRequestChannel';
@@ -18,7 +18,7 @@ define([
             var view = applet.getRootView();
             var response = $.Deferred();
             response.resolve({
-                view: new view(),
+                view: view
             });
 
             return response.promise();

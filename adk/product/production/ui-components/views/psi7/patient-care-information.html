@@ -1,0 +1,530 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Care Information | eHMP Bootstrap UI Library</title>
+    <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../../app/css/applets.css">
+    <link rel="stylesheet" href="../../css/main-styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700" />
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+</head>
+
+<body class="library">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../../views.html">Views</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../../color-palette.html">Color Palette</a></li>
+                                <li><a href="#">Style Guide</a></li>
+                            </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end navigation-->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+            <li><a href="../../views.html">Views</a></li>
+            <li class="active">Patient Care Information</li>
+        </ol>
+        <!--end breadcrumb-->
+        <h1>Patient Care Information</h1>
+        <div class="description">
+            <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This is the 508 compliant static HTML/CSS mock up of the Patient Care Information.</p>
+            <p><strong><i class="fa fa-lightbulb-o"></i> DOCUMENT:</strong> Please also view <a href="">Patient Care Information wireframe</a> and <a href="">Workflow Diagram</a> <small>[PDF, XXXKB]</small>, and <a href="">Use Scenario Case Documentation</a> <small>[PDF, XXXKB]</small> for full details on implementation.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="patient-info-container">
+                <a href="#" class="patient-info" role="button">
+                    <div>
+                        <img src="../../img/sample-patient-img.jpg" class="pull-left" width="55" height="55" alt="Eight, Patient">
+                        <h4 class="status">(Inpatient)</h4>
+                        <div class="info">
+                            <h4>Eight, Patient</h4>
+                            <p>DOB: 04/07/1935 (79y)</p>
+                            <p>SSN: 666-00-0008</p>
+                            <p>Gender: Male</p>
+                        </div>
+                    </div>
+                    <button class="icons btn-transparent" title="Press enter to view patient information details. Press enter again to dismiss patient details.">
+                        <i class="fa fa-chain"></i>
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-caret-up"></i>
+                    </button>
+                </a>
+                <div class="popup patient-info-content row" aria-hidden="true">
+                    <div class="col-md-3">
+                        <table class="table ehmp-table-default">
+                            <caption class="sr-only">This table represents data for Service and Social History</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Contact Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Home Address
+                                        <br /> Any Street
+                                        <br /> Any Town, WV 99998
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Temporary Address
+                                        <br /> Unavailable
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Home Phone
+                                        <br /> (222)555-6666
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Cell Phone
+                                        <br /> Unavailable
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Work Phone
+                                        <br /> (222)555-7777
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Email
+                                        <br /> Unavailable
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-3">
+                        <table class="table ehmp-table-default">
+                            <caption class="sr-only">This table represents data for other contact</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Other Contact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Emergency Contact
+                                        <br /> Unavailable
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Next of Kin
+                                        <br /> Veteran, Brother
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Next of Kin Phone
+                                        <br /> Unavailable
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Next of Kin Address
+                                        <br /> Unavailable
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-3">
+                        <table class="table ehmp-table-default">
+                            <caption class="sr-only">This table represents data for VA health benefits</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">VA Health Benefits</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Insurance 
+                                        <br /> Unavailable
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Service Connected
+                                        <br /> Yes
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Service Connected Conditions Unavailable
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-3">
+                        <table class="table ehmp-table-default">
+                            <caption class="sr-only">This table represents data for Service and Social History</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Service and Social History</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span>Veteran</span><br />
+                                        <span>Yes</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Marital Status</span><br />
+                                        <span>Married</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Religion</span><br />
+                                        <span>Roman Catholic Church</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="postings">
+                    <h4>Postings</h4>
+                    <div data-toggle="tooltip" class="posting">
+                        <button class="label label-danger" data-toggle="tooltip" title="Crisis Notes, to view press enter" role="button">C</button>
+                        <button class="label label-danger disabled" data-toggle="tooltip" title="Warnings, to view press enter" role="button">W</button>
+                        <button class="label label-danger" data-toggle="tooltip" title="Allergies, to view press enter" role="button">A</button>
+                        <button class="label label-danger" data-toggle="tooltip" title="Directives, to view press enter" role="button">D</button>
+                        <button class="label label-danger" data-toggle="tooltip" title="Patient Flags, to view press enter" role="button">F</button>
+                    </div>
+                </div>
+                <div class="visit-info" role="button" data-toggle="modal" data-target="#visit-modal">
+                    <button type="button" class="btn icon-btn pull-right" data-toggle="modal" data-target="#visitModal" title="Press enter to view visit information."><i class="fa fa-map-marker"></i></button>
+                    <h4>Visit Information</h4>
+                    <p>Location: Inactive(2 Nhcu)</p>
+                    <p>Provider: unassigned</p>
+                </div>
+                <div class="modal fade" id="visitModal" aria-labelledby="visitModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-backdrop">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">Visit Information</h4>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to close"><span aria-hidden="true">×</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Body Text</p>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to close">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="primary-care-info" role="button">
+                    <div>
+                        <div>
+                            <p>Primary Care: RED</p>
+                            <p>Unassigned / Unassigned 1</p>
+                        </div>
+                        <div>
+                            <p>Inpatient Attending/Provider:</p>
+                            <p>Provider, Thirty / Provider, Twenty</p>
+                        </div>
+                        <div>
+                            <p>(555) 555-5551</p>
+                        </div>
+                    </div>
+                    <button class="icons btn-transparent" title="Press enter to view primary care information.">
+                        <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-caret-up"></i>
+                    </button>
+                </a>
+                <div class="popup primary-care-info-content row" aria-hidden="true">
+                    <div class="patient-info-revealed ftar-container">
+                        <div class="main-header">
+                            <div><span>Provider Title</span></div>
+                            <div><span>Name</span></div>
+                            <div><span>Analog Pager</span></div>
+                            <div><span>Digital Pager</span></div>
+                            <div><span>Office Phone</span></div>
+                        </div>
+                        <div class="accordion-container panel-group small ftar" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <div class="panel-title">
+                                            <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                                                <div><span>Inpatient Provider</span></div>
+                                                <div><span>Last, First</span></div>
+                                                <div><span>Not specified</span></div>
+                                                <div><span>Not specified</span></div>
+                                                <div><span>Not specified</span></div>
+                                            </a>
+                                        </div>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        <div class="faux-table-container">
+                                            <div class="main-header">
+                                                <div>Other Site Care Providers</div>
+                                            </div>
+                                            <div class="faux-table no-margin">
+                                                <div class="header">
+                                                    <div class="table-row">
+                                                        <div>
+                                                            <div>Facility</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Name</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Analog Pager</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Digital Pager</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Office Phone</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="body">
+                                                    <div class="table-row">
+                                                        <div>
+                                                            <span>TST1</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>John Doe</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>(123) 456-7890</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>(123) 456-7890</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>(123) 456-7890</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <div class="panel-title">
+                                        <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                                                <div><span>Inpatient Provider</span></div>
+                                                <div><span>Last, First</span></div>
+                                                <div><span>Not specified</span></div>
+                                                <div><span>Not specified</span></div>
+                                                <div><span>Not specified</span></div>
+                                            </a>
+                                    </div>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        <div class="faux-table-container">
+                                            <div class="main-header">
+                                                <div>Other Site Care Providers</div>
+                                            </div>
+                                            <div class="faux-table no-margin">
+                                                <div class="header">
+                                                    <div class="table-row">
+                                                        <div>
+                                                            <div>Facility</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Name</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Analog Pager</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Digital Pager</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Office Phone</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="body">
+                                                    <div class="table-row">
+                                                        <div>
+                                                            <span>TST1</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>John Doe</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>(123) 456-7890</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>(123) 456-7890</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>(123) 456-7890</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <div class="panel-title">
+                                        <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                                            <div><span>Inpatient Provider</span></div>
+                                            <div><span>Last, First</span></div>
+                                            <div><span>Not specified</span></div>
+                                            <div><span>Not specified</span></div>
+                                            <div><span>Not specified</span></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <div class="faux-table-container">
+                                            <div class="main-header">
+                                                <div>Other Site Care Providers</div>
+                                            </div>
+                                            <div class="faux-table no-margin">
+                                                <div class="header">
+                                                    <div class="table-row">
+                                                        <div>
+                                                            <div>Facility</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Name</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Analog Pager</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Digital Pager</div>
+                                                        </div>
+                                                        <div>
+                                                            <div>Office Phone</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="body">
+                                                    <div class="table-row">
+                                                        <div>
+                                                            <span>TST1</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>John Doe</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>(123) 456-7890</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>(123) 456-7890</span>
+                                                        </div>
+                                                        <div>
+                                                            <span>(123) 456-7890</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="new-observation" title="Press enter to add a New Observation">
+                    <div>Observations</div>
+                </a>
+                <a href="#" class="tasks" title="Press enter to add a Task.">
+                    <div>Tasks</div>
+                </a>
+                <a href="#" class="new-note" title="Press enter to add a Note.">
+                    <div>Notes</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+    $(function() {
+
+        // cache variables
+        var buttons = $('.patient-info-container').children('a');
+        var container = $('.popup');
+
+        buttons.on('click', function(e) {
+            e.stopPropagation();
+            var $this = $(this);
+            var revealable = $this.next('.popup');
+            if(revealable.length === 0) {
+                return;
+            }
+
+            // opened class handling on buttons
+            if ($this.hasClass('opened')) {
+                $this.removeClass('opened');
+            } else {
+                buttons.removeClass('opened');
+                $this.addClass('opened');
+            }
+
+            // reveal popup divs, set aria-hidden
+            if (!revealable.hasClass('opened')) {
+                revealable.addClass('opened').attr('aria-hidden', false);
+            } else {
+                revealable.removeClass('opened').attr('aria-hidden', true);
+            }
+
+        });
+        // clicking outside of the revealed content
+        // close popup, remove class on buttons, make aria-hidden=true
+        $(document).mouseup(function(e) {
+            if (!container.is(e.target) && container.has(e.target).length === 0 && !buttons.is(e.target) && buttons.has(e.target).length === 0) {
+                container.attr('aria-hidden', true).removeClass('opened');
+                buttons.removeClass('opened');
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

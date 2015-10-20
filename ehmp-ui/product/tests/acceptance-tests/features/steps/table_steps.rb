@@ -33,7 +33,7 @@ def verify_table_headers(access_browser_instance, table)
 
   elements = access_browser_instance
 
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     does_exist = elements.static_dom_element_exists? header_text[0]
     p "#{header_text[0]} was not found" unless does_exist
     expect(does_exist).to be_true
@@ -48,7 +48,7 @@ def verify_modal_headers(access_browser_instance, table)
 
   elements = access_browser_instance
 
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     does_exist = elements.static_dom_element_exists? header_text[0]
     p "#{header_text[0]} was not found" unless does_exist
     expect(does_exist).to be_true
@@ -71,7 +71,7 @@ end
 def avoid_block_nesting_text(row_defined_in_cucumber, cols_displayed_in_browser)
   error_message = []
   for col_index in 0..row_defined_in_cucumber.length - 1
-#    p "comparing #{row_defined_in_cucumber[col_index]} to #{cols_displayed_in_browser[col_index].text}"
+    #    p "comparing #{row_defined_in_cucumber[col_index]} to #{cols_displayed_in_browser[col_index].text}"
     error_message.push("comparing #{row_defined_in_cucumber[col_index]} to #{cols_displayed_in_browser[col_index].text}")
     cols_displayed_in_browser[col_index].location_once_scrolled_into_view
     if row_defined_in_cucumber[col_index] == cols_displayed_in_browser[col_index].text
@@ -93,7 +93,7 @@ Then(/^the table contains rows$/) do |table|
   rows_displayed_in_browser = driver.find_elements(:css, "#data-grid-lab_results_grid tr")
   p "rows displayed: #{rows_displayed_in_browser.length}"
 
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     for i in 1..rows_displayed_in_browser.length - 1
       #p "row: #{i}"
@@ -128,7 +128,7 @@ Then(/^the modal contains rows$/) do |table|
   #  p "row found"
   #end
   p "rows displayed #{rows_displayed_in_browser.length}"
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     for i in 1..rows_displayed_in_browser.length - 1
       cols_displayed_in_browser = driver.find_elements(:xpath, "//div[@id='modal-region']/descendant::tr[#{i}]/descendant::td")

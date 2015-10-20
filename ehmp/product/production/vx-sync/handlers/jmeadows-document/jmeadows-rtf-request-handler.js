@@ -6,8 +6,7 @@ var _ = require('underscore');
 var format = require('util').format;
 var fsUtil = require(global.VX_UTILS + 'fs-utils');
 var mkdirp = require('mkdirp');
-var path = require('path');
-var crypto = require('crypto');
+var docUtil = require(global.VX_UTILS + 'doc-utils');
 var Buffer = require('buffer').Buffer;
 var inspect = require('util').inspect;
 
@@ -24,9 +23,9 @@ function handle(log, config, environment, job, handlerCallback) {
     request(domainConfig, function(error, response, body) {
         log.debug('jmeadows-rtf-request-handler.handle : received document response');
         if (!error && response.statusCode === 200) {
-            var staging = config.documentStorage.staging;
-            var tmpFilePath = staging.path + '/' + job.jobId;
-            createTmpFile(log, path.resolve(tmpFilePath /*staging.path*/ ), staging.permissions, body, function(err, filename) {
+            var stagingPermissoins = docUtil.getStagingPermissons(config);
+            var tmpFilePath = docUtil.getTempStagingFilePath(config, job);
+            createTmpFile(log, tmpFilePath, stagingPermissoins, body, function(err, filename) {
                 if (!err) {
                     //update record
                     job.record.fileId = filename;
@@ -61,7 +60,7 @@ function createTmpFile(log, path, permissions, file, callback) {
         } else {
             //file contents will allow us to support document versioning
             //while UID would remain the same even if the file were updated.
-            var filename = getFilename(file);
+            var filename = docUtil.getSha1Filename(file, '.rtf');
             if (!Buffer.isBuffer(file)) {
                 file = new Buffer(file, 'binary');
             }
@@ -74,12 +73,6 @@ function createTmpFile(log, path, permissions, file, callback) {
     });
 }
 
-function getFilename(hashInput) {
-    // return uuid.v1() + '.rtf';
-    var sha = crypto.createHash('sha1');
-    sha.update(hashInput, 'binary');
-    return sha.digest('hex') + '.rtf';
-}
 
 function writeTmpFile(log, path, filename, permissions, file, tryAgainCallback, callback) {
     fsUtil.writeFile(log, path, filename, permissions, file, tryAgainCallback, callback);

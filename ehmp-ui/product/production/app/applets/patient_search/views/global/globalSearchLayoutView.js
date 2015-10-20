@@ -7,11 +7,14 @@ define([
 
 ], function(Backbone, Marionette, SearchResultsCollectionView, BlankView, globalSearchResultsTemplate) {
 
+    // constants
+    var NATIONWIDE = 'global';
+
     var GlobalLayoutView = Backbone.Marionette.LayoutView.extend({
         searchApplet: undefined,
         template: globalSearchResultsTemplate,
         regions: {
-            globalSearchResultsRegion: "#global-search-results"
+            globalSearchResultsRegion: '#global-search-results'
         },
         initialize: function(options) {
             this.searchApplet = options.searchApplet;
@@ -22,16 +25,15 @@ define([
         displayErrorMessage: function(message) {
             var patientsView = new SearchResultsCollectionView({
                 searchApplet: this.searchApplet,
-                source: 'global'
+                source: NATIONWIDE
             });
             patientsView.setEmptyMessage(message);
             this.globalSearchResultsRegion.show(patientsView);
         },
         executeSearch: function(globalSearchParameters) {
-
             var patientsView = new SearchResultsCollectionView({
                 searchApplet: this.searchApplet,
-                source: 'global'
+                source: NATIONWIDE
             });
             this.globalSearchResultsRegion.show(patientsView);
 
@@ -55,7 +57,15 @@ define([
 
             searchOptions.onError = function(collection, resp) {
                 if (resp.msg !== "") {
-                    patientsView.setEmptyMessage("Error: " + resp.responseText);
+                    var message;
+                    try {
+                        message = JSON.parse(resp.responseText);
+                        if (message.message)
+                            message = message.message;
+                    } catch (e) {
+                        message = resp.responseText;
+                    }
+                    patientsView.setEmptyMessage("Error: " + message);
                 } else {
                     patientsView.setEmptyMessage("Unknown error.");
                 }
@@ -74,17 +84,23 @@ define([
         },
         removeEmptyGlobalSearchCriteria: function(criteria) {
             var newCriteria = criteria;
+            if (newCriteria !== undefined) {
 
-            if (newCriteria['name-first'] === '') {
-                delete newCriteria['name-first'];
+                if (newCriteria['name.first'] === '') {
+                    delete newCriteria['name.first'];
+                }
+                if (newCriteria['date.birth'] === '') {
+                    delete newCriteria['date.birth'];
+                }
+                if (newCriteria.ssn === '') {
+                    delete newCriteria.ssn;
+                }
+                if (newCriteria['name.first'] !== '' && newCriteria['date.birth'] !== '' && newCriteria.ssn !== '') {
+                    newCriteria.triggerSearch = true;
+                }
+
+                return newCriteria;
             }
-            if (newCriteria.dob === '') {
-                delete newCriteria.dob;
-            }
-            if (newCriteria.ssn === '') {
-                delete newCriteria.ssn;
-            }
-            return newCriteria;
         }
     });
 

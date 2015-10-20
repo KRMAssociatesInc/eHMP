@@ -10,6 +10,10 @@ Resources are the bread-and-butter of building out the server-side functionality
 
 Functionality of resources which may be useful to other resources should be extracted into subsystems.
 
+## Writeback Resources
+Writeback resources, or resources which save patient data, are currently developed separately from fetch resources.
+See the [writeback](writeback.md) page for detail.
+
 ## Developing a Resource
 
 Annotated example resources which complement this guide are provided in the rdk repository at  
@@ -27,10 +31,10 @@ _(Note that this directory name only has a leading underscore because it is for 
     * Closely-related resources which use the same subsystems and which have similar scaling profiles should be placed next to each other
 
 The convention of creating a resource file is:  
-`/resources/(functionality)/(functionality)Resource.js`  
-where the functionality is a camelCase identifier.  
+`/resources/(functionality)/(functionality)-resource.js`  
+where the functionality is a dash-separated identifier.  
 For example, given a resource to expose a list of allergens known to the VA, the following file would be created:  
-`/resources/allergens/allergensResource.js`
+`/resources/allergens/allergens-resource.js`
 
 ### Create the resource configuration
 The resource server will register the configuration of the resource with the system. The resource configuration will specify information about the resource:
@@ -86,15 +90,51 @@ Examples:
 
 :::
 
+::: definition
+#### Resource Query Parameter Criteria
+ * All lowercase words, separated by `.`
+ * Ideally, the words are ordered from most to least significant
+ * Words must be fully spelled out unless acronym/shorthand is very common ('pid', 'ssn')
+ * Avoid redundancy
+ * The query parameter name should make the query parameter's purpose obvious
+ * Avoid leaking backend interfaces directly to the client
+ * If dfn is needed, use `pid` as the query parameter name and the convertPid interceptor to retrieve the dfn
+ * Use `query` to indicate text to search by
+ * Use `date.start` and `date.end` for date ranges
+ * Use `uid` for uids
+    * For apiDocs, use `rdk.docs.commonParams.uid(uidType, required)`  
+      For example, `rdk.docs.commonParams.uid('location', true)`
+ * Use `id` if there is only one 'id' and this id can be inferred from the resource
+    * For apiDocs, use `rdk.docs.commonParams.id(paramType, idType, required)`  
+      For example, `rdk.docs.commonParams.id('query', 'location', true)`
+    * Otherwise, use `type.id`.  
+      Using an allergy resource as an example:
+        * `id` - allergy id (implied because this is an allergy resource)
+        * `symptom.id` - symptom id (explicit because this is a non-allergy id for an allergy resource)
+
+Examples:
+ * **BAD**: searchForName (camelCase and that you are searching is obvious)  
+   **OK**: name
+ * **BAD**: start-date (uses dashes, most significant word not first)  
+   **OK**: date.start
+ * **BAD**: group_value (snake_case and leaks solr's interface)
+   **OK**: group.value
+ * **BAD**: `pid` and `dfn` (redundant parameters)
+   **OK**: `pid` (use the convertPid interceptor to get dfn)
+ * **BAD**: `allergyId`, `symptomId` (camelCase, and in an allergy resource, allergyId is obvious)
+   **OK**: `id`, `symptom.id`
+ * **BAD**: `param` (the purpose is not obvious)
+:::
+
 #### Interceptors
 ::: side-note
-Most resources should have the following interceptors enabled, in order:
+Most resources should have the following interceptors enabled:
  * audit (enabled by default)
  * metrics (enabled by default)
  * authentication (enabled by default)
  * pep (enabled by default)
+ * synchronize (enabled by default)
  * operationalDataCheck
- * synchronize
 
 Some of these interceptors are vital to security. See descriptions of these interceptors in the [middleware](middleware.md#Available-interceptors) document.
 :::
@@ -116,33 +156,64 @@ The response object provides the ability to send a response back to the client. 
 `res.send()` will trigger the RDK to run [outerceptors](middleware.md#Outerceptors) and finally send a response.
 
 ### Handle the request
- * **Do not block IO**; always use asynchronous functions instead.
+ * **Do not block on IO**; always use asynchronous functions instead.
  * [Log](logging.md) each business decision made (significant `if` branches, etc.), each unexpected state, and each error.
  * Use subsystems, if available, to fetch any data required to form the response.
-    * Most patient data you will need from JDS is accessible through the JDS subsystem's `getPatientDomainData` function. See its JSDoc for more details and see `patientrecordResource.js` for example usage.
- * Use the VistaJS library at `/product/production/rdk/VistaJS/VistaJS.js` to perform VistA RPCs. See `examples.js` in the same folder for some example usage of the library, and see `rdk/resources/_example/exampleVistaResource.js` for a complete resource example.
+    * Most patient data you will need from JDS is accessible through the JDS subsystem's `getPatientDomainData` function. See its JSDoc for more details and see `patient-record-resource.js` for example usage.
+ * Use the VistaJS library at `/product/production/rdk/VistaJS/VistaJS.js` to perform VistA RPCs. See `examples.js` in the same folder for some example usage of the library, and see `rdk/resources/_example/example-vista-resource.js` for a complete resource example.
     * A nice list of available [VistA RPCs](http://code.osehra.org/vivian/files/Order%20Entry%20Results%20Reporting-RPC.html) is available from OSEHRA
 
 ::: callout
 While developing the resource, watch for errors and warnings in the log caused by improper usage of libraries in your resource.
 :::
 
+The JDS REST interface has a [filter](jds-filter.md) query parameter, which is similar to `WHERE` in SQL, or the query operators in mongodb. When performing JDS fetches, try to limit the response size to what is needed by RDK.
+
+
 ### Send the response
  * Use `res.send()` to send the response payload.
     * This can be chained with `res.status()` to customize the status code. For example:  
-    `res.status(403).send({error: 'Forbidden'});`.
+    `res.status(403).send({error: 'Forbidden'});`
+    * Never use the deprecated two-parameter form of `res.send(statuscode, data)`; instead chain a call to `status` with a call to `send`.
  * Use `res.json()` to send a response with the correct Content-Type header easily.
  * Be familiar with the [W3C http status codes](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) and choose the appropriate status code for your responses.
-    * [`200`/OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) indicates that the request was successfully processed
-    * [`202`/ACCEPTED](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.3) indicates that the request was received but not yet processed
-    * [`404`/NOT FOUND](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) indicates that the id of a request by a specific id is not found or invalid
+    * [`rdk.httpstatus.ok` or `200`](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) indicates that the request was successfully processed
+    * [`rdk.httpstatus.accepted` or `202`](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.3) indicates that the request was received but not yet processed
+    * [`rdk.httpstatus.not_found` or `404`](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) indicates that the id of a request by a specific id is not found or invalid
        * **Do not** return a `404` when requesting a collection that exists and that happens to have 0 results. Instead, return an empty array (or other empty convention)
 
-Creation of a method of providing uniform response formats from the RDK is planned.
+#### Use the standard response format
+ * Always return JSON objects.
+
+    * Since some client frameworks don't return status information to the client code, add an integer "status" field to your response payload that echoes the response's statusCode:
+
+            res.send({status: 200});
+
+    * For simple string responses, put a single "message" field in the response payload:
+
+            res.status(500).send({message: "Oh no!", status: 500});
+
+    * If you are returning an object or an array, put it into a "data" field of your response payload:
+
+            res.send({data: myObject, status: 200});
+
+* You can use `rdkSend` to follow the above rules for you automatically:
+
+        res.rdkSend("Hello world");
+        res.status(500).rdkSend("Oh no!");
+        res.rdkSend(myObject);
+        res.rdkSend(myArray);
+
+    * Since `rdkSend` handles strings differently than objects, don't pass JSON-encoded strings to `rdkSend` unless you first set the `Content-Type` header to `'application/json'`:
+
+            res.type('json').rdkSend(JSON.stringify(myObject));
+
+* Don't send an empty response. Send the status by itself instead.
+* If you plan to break these rules, set `permitResponseFormat` to `true` in your resource config or on the request to avoid validation errors.
 
 ### Document the resource
  * Ensure that [JSDoc](style-guide.md#JSDoc-Guidelines) is written where applicable
- * Write Swagger documentation for your resource. See `rdk/resources/_example/exampleBasicResource.js` for detail.
+ * Write Swagger documentation for your resource. See `rdk/resources/_example/example-basic-resource.js` for detail.
 
 ### Test the resource
  * Write [unit tests and integration tests](testing.md) where applicable.

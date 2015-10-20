@@ -55,6 +55,7 @@ end
 task :info do
   puts '=========================================================================='
   puts '#     Running codequality checks.                                        #'
+  puts '#     For details, see https://wiki.vistacore.us/display/VACORE/Ruby     #'
   puts '=========================================================================='
 end
 

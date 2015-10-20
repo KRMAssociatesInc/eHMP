@@ -655,6 +655,9 @@ any data added to them will be ignored outright.  -->
         <field name="is_interdisciplinary" type="string" indexed="false" stored="true"/>
         <field name="interdisciplinary_type" type="string" indexed="false" stored="true"/>
 
+        <!-- vlerdocument -->
+        <field name="section" type="text_clinical" indexed="true" stored="true" multiValued="true"/>
+
         <!-- common between lab results and vitals -->
         <field name="result_type" type="string" indexed="true" stored="true" termVectors="true"/>
         <field name="display_name" type="string" indexed="true" stored="true" multiValued="false"/>

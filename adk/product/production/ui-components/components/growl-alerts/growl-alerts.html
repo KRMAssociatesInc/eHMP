@@ -1,0 +1,265 @@
+<h3>Growl Alerts</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> Growl Alerts are notifications that inform users of some event. Notifications do not interrupt the user, and they can be dismissed manually.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> When alerts appear on the screen, the focus of the screen reader should be shifted to the alert.</p>
+</div>
+<hr />
+<h4>Banner Notification</h4>
+<p><strong><i class="fa fa-leanpub"></i> Description:</strong> Banner notifications notifies users when a task is successful and go away after 10 seconds.</p>
+<div id="banner-copy">
+    <button class="btn btn-success" id="growlBanner" title="Press enter to view Banner Notification."><i class="fa fa-plus"></i> Banner Notification</button>
+</div>
+<hr />
+<h4>Error Notification</h4>
+<p><strong><i class="fa fa-leanpub"></i> Description:</strong> Error notifications notifies users when an error has occured.</p>
+<div id="error-copy">
+    <button class="btn btn-danger" id="growlError" title="Press enter to view Error Notification."><i class="fa fa-plus"></i> Error Notification</button>
+</div>
+<hr />
+<h4>Warning Notification</h4>
+<p><strong><i class="fa fa-leanpub"></i> Description:</strong> Warning notifications notifies users when a warning has occured.</p>
+<div id="warning-copy">
+    <button class="btn btn-warning" id="growlWarning" title="Press enter to view Warning Notification."><i class="fa fa-plus"></i> Warning Notification</button>
+</div>
+<hr />
+<h4>Alert Notification</h4>
+<p><strong><i class="fa fa-leanpub"></i> Description:</strong> Alert notifications notifies users of some important event.</p>
+<div id="alert-copy">
+    <button class="btn btn-danger" id="growlAlert" title="Press enter to view Alert Notification."><i class="fa fa-plus"></i> Alert Notification</button>
+</div>
+<hr />
+<div role="tabpanel" class="tabpanel">
+    <ul role="tablist" class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#banner-alerts" aria-controls="banner-alerts" role="tab" data-toggle="tab">Banner Notifications</a></li>
+        <li role="presentation"><a href="#error-alerts" aria-controls="error-alerts" role="tab" data-toggle="tab">Error Notifications</a></li>
+        <li role="presentation"><a href="#warning-alerts" aria-controls="warning-alerts" role="tab" data-toggle="tab">Warning Notifications</a></li>
+        <li role="presentation"><a href="#alerts" aria-controls="alerts" role="tab" data-toggle="tab">Alert Notifications</a></li>
+        <li role="presentation"><a href="#growl-alerts-js" aria-controls="growl-alerts-js" role="tab" data-toggle="tab">JavaScript Code</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="banner-alerts">
+            <pre>
+&lt;button class="btn btn-success" id="growlBanner" title="Press enter to view Banner Notification."&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt; Banner Notification&lt;/button&gt;
+            </pre>
+            <a onclick="copyToClipboard('banner-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="error-alerts">
+            <pre>
+&lt;button class="btn btn-danger" id="growlError" title="Press enter to view Error Notification."&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt; Error Notification&lt;/button&gt;
+            </pre>
+            <a onclick="copyToClipboard('error-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="warning-alerts">
+            <pre>
+&lt;button class="btn btn-warning" id="growlWarning" title="Press enter to view Warning Notification."&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt; Warning Notification&lt;/button&gt;
+            </pre>
+            <a onclick="copyToClipboard('warning-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="alerts">
+            <pre>
+&lt;button class="btn btn-danger" id="growlAlert" title="Press enter to view Alert Notification."&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt; Alert Notification&lt;/button&gt;
+            </pre>
+            <a onclick="copyToClipboard('alert-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="growl-alerts-js">
+            <pre>
+$(function() {
+    // Alert growl-alerts
+    // Documentation can be found at
+    // http://bootstrap-growl.remabledesigns.com/
+    var growlDefaults = {
+        // settings go here
+        delay: &#39;10000&#39;,
+        type: &#39;custom basic&#39;, // ie custom basic (no icon), custom warning, custom success, custom info, custom danger || you can use bootstraps default alert classes such as warning, success, info or danger
+        placement: { // notification placement settings
+            from: &#39;top&#39;, // ie, top, bottom
+            align: &#39;right&#39; // ie, left, center, right
+        },
+        animate: { // optional - animate notification
+            // Using Animate.css
+            // Documentation can be found at:
+            // https://daneden.github.io/animate.css/
+            enter: &#39;animated bounceIn&#39;,
+            exit: &#39;animated bounceOut&#39;
+        },
+        template:
+            &#39;&lt;div data-notify=&quot;container&quot; class=&quot;growl-alert growl-alert-user col-xs-11 col-sm-3 alert alert-{0}&quot; role=&quot;alert&quot;&gt;&#39; +
+            &#39;   &lt;div class=&quot;alert-content&quot;&gt;&#39; +
+            &#39;       &lt;span data-notify=&quot;icon&quot;&gt;&lt;/span&gt;&#39; +
+            &#39;       &lt;span class=&quot;notify-message&quot;&gt;&#39;+
+            &#39;           &lt;span data-notify=&quot;title&quot;&gt;{1}&lt;/span&gt;&#39; +
+            &#39;           &lt;span data-notify=&quot;message&quot;&gt;{2}&lt;/span&gt;&#39;+
+            &#39;       &lt;/span&gt;&#39; +
+            &#39;       &lt;button type=&quot;button&quot; class=&quot;close&quot; data-notify=&quot;dismiss&quot; title=&quot;Press enter to close the alert, or wait ten seconds for autodismissal&quot;&gt;&lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;&lt;/button&gt;&#39; +
+            &#39;       &lt;div class=&quot;progress&quot; data-notify=&quot;progressbar&quot;&gt;&#39; +
+            &#39;           &lt;div class=&quot;progress-bar progress-bar-{0}&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;0&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 0%;&quot;&gt;&lt;/div&gt;&#39; +
+            &#39;       &lt;/div&gt;&#39; +
+            &#39;       &lt;a href=&quot;{3}&quot; target=&quot;{4}&quot; data-notify=&quot;url&quot;&gt;&lt;/a&gt;&#39; +
+            &#39;   &lt;/div&gt;&#39; +
+            &#39;&lt;/div&gt;&#39;,
+        onShown: function(){
+            // focus growl alert so screen reader reads it.
+            $(this).focus();
+        },
+        onClosed : function(){
+            // focus wherever you&#39;d like to focus within this function
+        }
+    };
+
+    $(&#39;#growlBanner&#39;).click(function() {
+        var opener = $(this);
+        var args = $.extend({}, growlDefaults, {type:&#39;custom success&#39;,onClosed:function(){opener.focus();}});
+        $.notify({
+            // options go here
+            title: &#39;Notification title goes here...&#39;, // optional title
+            message: &quot;Notification message goes here lorem ipsum dolor sit amet&quot; // required message
+        }, args);
+    });
+
+    $(&#39;#growlError&#39;).click(function() {
+        var opener = $(this);
+        var args = $.extend({}, growlDefaults, {delay:'0', type:&#39;custom danger&#39;,onClosed:function(){opener.focus();}});
+        $.notify({
+            // options go here
+            icon: &#39;fa fa-birthday-cake&#39;, // optional font-icon
+            title: &#39;Notification title goes here...&#39;, // optional title
+            message: &quot;Notification message goes here lorem ipsum dolor sit amet&quot; // required message
+        }, args);
+    });
+
+    $(&#39;#growlWarning&#39;).click(function() {
+        var opener = $(this);
+        var args = $.extend({}, growlDefaults, {delay:'0', type:&#39;custom warning&#39;,onClosed:function(){opener.focus();}});
+        $.notify({
+            // options go here
+            title: &#39;Notification title goes here...&#39;, // optional title
+            message: &quot;Notification message goes here lorem ipsum dolor sit amet&quot; // required message
+        }, args);
+    });
+
+    $(&#39;#growlAlert&#39;).click(function() {
+        var opener = $(this);
+        var args = $.extend({}, growlDefaults, {delay:'0', type:&#39;custom info&#39;,onClosed:function(){opener.focus();}});
+        $.notify({
+            // options go here
+            title: &#39;Notification title goes here...&#39;, // optional title
+            message: &quot;Notification message goes here lorem ipsum dolor sit amet&quot; // required message
+        }, args);
+    });
+});
+            </pre>
+            <a onclick="copyToClipboard('growl-alert-js-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>
+<script src="js/bootstrap-notify.js"></script>
+<script src="js/bootstrap-growl-v2.0.0.js"></script>
+<div id="growl-alert-js-copy">
+    <script type="text/javascript">
+    $(function() {
+        // Alert growl-alerts
+        // Documentation can be found at
+        // http://bootstrap-growl.remabledesigns.com/
+        var growlDefaults = {
+            // settings go here
+            delay: '10000',
+            type: 'custom basic', // ie custom basic (no icon), custom warning, custom success, custom info, custom danger || you can use bootstraps default alert classes such as warning, success, info or danger
+            placement: { // notification placement settings
+                from: 'top', // ie, top, bottom
+                align: 'right' // ie, left, center, right
+            },
+            animate: { // optional - animate notification
+                // Using Animate.css
+                // Documentation can be found at:
+                // https://daneden.github.io/animate.css/
+                enter: 'animated bounceIn',
+                exit: 'animated bounceOut'
+            },
+            template: '<div data-notify="container" class="growl-alert growl-alert-user col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+                '   <div class="alert-content">' +
+                '       <span data-notify="icon"></span>' +
+                '       <span class="notify-message">' +
+                '           <span data-notify="title">{1}</span>' +
+                '           <span data-notify="message">{2}</span>' +
+                '       </span>' +
+                '       <button type="button" class="close" data-notify="dismiss" title="Press enter to close the alert, or wait ten seconds for autodismissal"><i class="fa fa-times"></i></button>' +
+                '       <div class="progress" data-notify="progressbar">' +
+                '           <div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+                '       </div>' +
+                '       <a href="{3}" target="{4}" data-notify="url"></a>' +
+                '   </div>' +
+                '</div>',
+            onShown: function() {
+                // focus growl alert so screen reader reads it.
+                $(this).focus();
+            },
+            onClosed: function() {
+                // focus wherever you'd like to focus within this function
+            }
+        };
+
+        $('#growlBanner').click(function() {
+            var opener = $(this);
+            var args = $.extend({}, growlDefaults, {
+                type: 'custom success',
+                onClosed: function() {
+                    opener.focus();
+                }
+            });
+            $.notify({
+                // options go here
+                title: 'Notification title goes here...', // optional title
+                message: "Notification message goes here lorem ipsum dolor sit amet" // required message
+            }, args);
+        });
+
+        $('#growlError').click(function() {
+            var opener = $(this);
+            var args = $.extend({}, growlDefaults, {
+                delay: '0',
+                type: 'custom danger',
+                onClosed: function() {
+                    opener.focus();
+                }
+            });
+            $.notify({
+                // options go here
+                title: 'Notification title goes here...', // optional title
+                message: "Notification message goes here lorem ipsum dolor sit amet" // required message
+            }, args);
+        });
+
+        $('#growlWarning').click(function() {
+            var opener = $(this);
+            var args = $.extend({}, growlDefaults, {
+                delay: '0',
+                type: 'custom warning',
+                onClosed: function() {
+                    opener.focus();
+                }
+            });
+            $.notify({
+                // options go here
+                title: 'Notification title goes here...', // optional title
+                message: "Notification message goes here lorem ipsum dolor sit amet" // required message
+            }, args);
+        });
+
+        $('#growlAlert').click(function() {
+            var opener = $(this);
+            var args = $.extend({}, growlDefaults, {
+                delay: '0',
+                type: 'custom info',
+                onClosed: function() {
+                    opener.focus();
+                }
+            });
+            $.notify({
+                // options go here
+                title: 'Notification title goes here...', // optional title
+                message: "Notification message goes here lorem ipsum dolor sit amet" // required message
+            }, args);
+        });
+    });
+    </script>
+</div>

@@ -16,7 +16,7 @@ class QueryFhir
     else
       @path.concat("&")
     end
-    @number_parameters = @number_parameters + 1
+    @number_parameters += 1
     @path.concat(param)
     @path.concat("=")
     @path.concat(value)

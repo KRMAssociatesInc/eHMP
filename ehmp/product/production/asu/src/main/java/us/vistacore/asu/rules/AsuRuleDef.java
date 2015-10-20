@@ -22,7 +22,7 @@ public class AsuRuleDef extends AbstractPOMObject {
     private String actionUid;
     private String docDefName;
     private String docDefUid;
-    private Boolean isAnd = Boolean.FALSE;
+    private String isAnd;
     private String localId;
     private String statusName;
     private String statusUid;
@@ -85,7 +85,7 @@ public class AsuRuleDef extends AbstractPOMObject {
     }
 
     @JsonProperty("isAnd")
-    public Boolean isAnd() {
+    public String isAnd() {
         return isAnd;
     }
 

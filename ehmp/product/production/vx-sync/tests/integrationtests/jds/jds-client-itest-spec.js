@@ -15,7 +15,7 @@ var config = require(global.VX_ROOT + 'worker-config');
 var val = require(global.VX_UTILS + 'object-utils').getProperty;
 
 var JdsClient = require(global.VX_SUBSYSTEMS + 'jds/jds-client');
-var jdsClient = new JdsClient(logger, config);
+var jdsClient = new JdsClient(logger, logger, config);
 
 var identifiers = ['9E7A;33333'];
 var identifiers2 = ['888V123887', 'ASDF;123'];
@@ -500,8 +500,8 @@ describe('jds-client.js', function() {
                         expect(val(results, 'items')).not.toBeUndefined();
                         expect(val(results, 'items', 'length')).not.toBeUndefined();
                         expect(val(results, 'items', 'length')).toBe(2);
-                        expect(val(results, 'items', 0)).toEqual(startedEnterpriseSyncRequestState);
-                        expect(val(results, 'items', 1)).toEqual(vista9E7AsubscribeRequestCompleteState);
+                        expect(val(results, 'items')).toContain(startedEnterpriseSyncRequestState);
+                        expect(val(results, 'items')).toContain(vista9E7AsubscribeRequestCompleteState);
                     });
                 });
 
@@ -536,7 +536,7 @@ describe('jds-client.js', function() {
             runs(function() {
                 finished = false;
                 jdsClient.saveSyncStatus(metastamps.initial9E7AStatus, patientIdentifier, function(error, response) {
-                    expect(error).toBeNull();
+                    expect(error).toBeFalsy();
                     expect(val(response, 'statusCode')).toBe(200);
                     finished = true;
                 });
@@ -612,7 +612,7 @@ describe('jds-client.js', function() {
                 var finished;
                 runs(function() {
                     jdsClient.saveSyncStatus(metastamps.initialDODLabStatus, patientIdentifier, function(error, response) {
-                        expect(error).toBeNull();
+                        expect(error).toBeFalsy();
                         expect(val(response, 'statusCode')).toBe(200);
                         finished = true;
                     });
@@ -649,7 +649,7 @@ describe('jds-client.js', function() {
             beforeEach(function() {
                 var finished = 0;
                 var handleSyncSaveResponse = function(error, response) {
-                    expect(error).toBeNull();
+                    expect(error).toBeFalsy();
                     expect(val(response, 'statusCode')).toBe(200);
                     finished++;
                 };
@@ -1199,7 +1199,7 @@ describe('jds-client.js', function() {
         // };
 
 
-        describe('storeOperationalDataMutable(), getOperationalDataMutable(), deleteOperationalDataMutable()', function() {
+        describe('storeOperationalDataMutable(), getOperationalDataMutable(), getOperationalDataMutableByFilter(), deleteOperationalDataMutable()', function() {
             var clearOperationalData = function() {
                 var finished;
                 runs(function() {
@@ -1251,6 +1251,27 @@ describe('jds-client.js', function() {
                 }, 10000);
             };
 
+            var retrieveOperationalDataMutableByFliter = function(){
+                var finished = false;
+
+                runs(function() {
+                    jdsClient.getOperationalDataMutableByFilter('?filter=eq(\"uid\",' + testUid1 + ')', function(error, response, result) {
+                        expect(error).toBeNull();
+                        expect(val(response, 'statusCode')).toBe(200);
+                        expect(result).toEqual({items :[{
+                            _id: 'HHHH',
+                            lastUpdate: '3141231-14011',
+                            uid: testUid1
+                        }]});
+                        finished = true;
+                    });
+                });
+
+                waitsFor(function() {
+                    return finished;
+                }, 10000);
+            };
+
             var deleteOperationalData = function() {
                 var finished = false;
 
@@ -1286,6 +1307,7 @@ describe('jds-client.js', function() {
                 clearOperationalData();
                 storeOperationalData();
                 retrieveOperationalData();
+                retrieveOperationalDataMutableByFliter();
                 deleteOperationalData();
                 clearOperationalData();
             });

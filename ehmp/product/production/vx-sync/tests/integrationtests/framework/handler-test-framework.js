@@ -24,7 +24,8 @@ logger: the bunyan logger to use. Note that the dummy-logger will also work.
 
 config: a config object which should be pre-loaded with any properties necessary
 for your handler. Note that you should NOT include the beanstalk publisher
-properties.
+properties, but may include a beanstalkConfig object for the queue-config factory,
+or if none is provided the default will be used.
 
 host: the server where beanstalk is running. This will usually be '10.3.3.6' or '127.0.0.1'.
 
@@ -42,7 +43,7 @@ of jobs.
 waitTimeout: the tiemout in millis to wait for the response from the handler. Defaults
 to 10000 (10 seconds).
 */
-function testHandler(handler, logger, config, environment, host, port, tubePrefix, job, jobTypes, waitTimeout) {
+function testHandler(handler, logger, config, environment, host, port, tubePrefix, job, jobTypes, waitTimeout, handlerCallback) {
     waitTimeout = _.isNumber(waitTimeout) ? waitTimeout : 10000;
     var tubename = tubePrefix + '-' + job.type + '-' + counter;
     counter++;
@@ -52,128 +53,138 @@ function testHandler(handler, logger, config, environment, host, port, tubePrefi
     itText = _.reduce(jobTypes, function(memo, jobType) {
         return memo + '\n\t\t"' + jobType + '"';
     }, itText);
+    var beanstalkConfig;
 
     jobTypes = _.isArray(jobTypes) ? jobTypes : [jobTypes];
-    var beanstalkConfig = queueConfig.createFullBeanstalkConfig({
-        repoUniversal: {
-            priority: 10,
-            delay: 0,
-            ttr: 60,
-            timeout: 10,
-            initMillis: 1000,
-            maxMillis: 15000,
-            incMillis: 1000
-        },
-        repoDefaults: {
-            host: host,
-            port: port,
-            tubename: tubename,
-            tubePrefix: 'vxs-',
-            jobTypeForTube: false
-        },
-        jobTypes: {
-            'enterprise-sync-request': {},
-            'vista-operational-subscribe-request': {},
+    if (!_.isUndefined(config.beanstalkConfig)) {
+        // console.log('using handler integration test config');
+        // the handler framework is responsible for configuring the beanstalk tubes, but the queueConfig module's
+        // factory method for the beanstalk config can be called on a customized outline or use the default
+        config.beanstalkConfig.repoDefaults.tubename = tubename;
+        beanstalkConfig = queueConfig.createFullBeanstalkConfig(config.beanstalkConfig);
+    } else {
+        // console.log('using default test config');
+        beanstalkConfig = queueConfig.createFullBeanstalkConfig({
+            repoUniversal: {
+                priority: 10,
+                delay: 0,
+                ttr: 60,
+                timeout: 10,
+                initMillis: 1000,
+                maxMillis: 15000,
+                incMillis: 1000
+            },
+            repoDefaults: {
+                host: host,
+                port: port,
+                tubename: tubename,
+                tubePrefix: 'vxs-',
+                jobTypeForTube: false
+            },
+            jobTypes: {
+                'enterprise-sync-request': {},
+                'vista-operational-subscribe-request': {},
 
-            'vista-9E7A-subscribe-request': {},
-            'vista-C877-subscribe-request': {},
+                'vista-9E7A-subscribe-request': {},
+                'vista-C877-subscribe-request': {},
 
-            'vler-sync-request': {},
-            'pgd-sync-request': {},
-            'hdr-sync-request': {},
-            'jmeadows-sync-request': {},
+                'vler-sync-request': {},
+                'pgd-sync-request': {},
+                'hdr-sync-request': {},
+                'jmeadows-sync-request': {},
 
-            'hdr-xform-vpr': {},
-            'vler-xform-vpr': {},
-            'pgd-xform-vpr': {},
+                'hdr-xform-vpr': {},
+                'vler-xform-vpr': {},
+                'pgd-xform-vpr': {},
 
-            'jmeadows-sync-allergy-request': {},
-            'jmeadows-sync-appointment-request': {},
-            'jmeadows-sync-consult-request': {},
-            'jmeadows-sync-demographics-request': {},
-            'jmeadows-sync-dischargeSummary-request': {},
-            'jmeadows-sync-encounter-request': {},
-            'jmeadows-sync-immunization-request': {},
-            'jmeadows-sync-lab-request': {},
-            'jmeadows-sync-medication-request': {},
-            'jmeadows-sync-note-request': {},
-            'jmeadows-sync-order-request': {},
-            'jmeadows-sync-problem-request': {},
-            'jmeadows-sync-progressNote-request': {},
-            'jmeadows-sync-radiology-request': {},
-            'jmeadows-sync-vital-request': {},
+                'jmeadows-sync-allergy-request': {},
+                'jmeadows-sync-appointment-request': {},
+                'jmeadows-sync-consult-request': {},
+                'jmeadows-sync-demographics-request': {},
+                'jmeadows-sync-dischargeSummary-request': {},
+                'jmeadows-sync-encounter-request': {},
+                'jmeadows-sync-immunization-request': {},
+                'jmeadows-sync-lab-request': {},
+                'jmeadows-sync-medication-request': {},
+                'jmeadows-sync-note-request': {},
+                'jmeadows-sync-order-request': {},
+                'jmeadows-sync-problem-request': {},
+                'jmeadows-sync-progressNote-request': {},
+                'jmeadows-sync-radiology-request': {},
+                'jmeadows-sync-vital-request': {},
 
-            'hdr-sync-allergy-request': {},
-            'hdr-sync-appointment-request': {},
-            'hdr-sync-consult-request': {},
-            'hdr-sync-cpt-request': {},
-            'hdr-sync-document-request': {},
-            'hdr-sync-education-request': {},
-            'hdr-sync-exam-request': {},
-            'hdr-sync-factor-request': {},
-            'hdr-sync-image-request': {},
-            'hdr-sync-immunization-request': {},
-            'hdr-sync-lab-request': {},
-            'hdr-sync-mh-request': {},
-            'hdr-sync-order-request': {},
-            'hdr-sync-pov-request': {},
-            'hdr-sync-problem-request': {},
-            'hdr-sync-procedure-request': {},
-            'hdr-sync-skin-request': {},
-            'hdr-sync-surgery-request': {},
-            'hdr-sync-visit-request': {},
-            'hdr-sync-vital-request': {},
+                'hdr-sync-allergy-request': {},
+                'hdr-sync-appointment-request': {},
+                'hdr-sync-consult-request': {},
+                'hdr-sync-cpt-request': {},
+                'hdr-sync-document-request': {},
+                'hdr-sync-education-request': {},
+                'hdr-sync-exam-request': {},
+                'hdr-sync-factor-request': {},
+                'hdr-sync-image-request': {},
+                'hdr-sync-immunization-request': {},
+                'hdr-sync-lab-request': {},
+                'hdr-sync-mh-request': {},
+                'hdr-sync-order-request': {},
+                'hdr-sync-pov-request': {},
+                'hdr-sync-problem-request': {},
+                'hdr-sync-procedure-request': {},
+                'hdr-sync-skin-request': {},
+                'hdr-sync-surgery-request': {},
+                'hdr-sync-visit-request': {},
+                'hdr-sync-vital-request': {},
 
 
-            'jmeadows-xform-allergy-vpr': {},
-            'jmeadows-xform-appointment-vpr': {},
-            'jmeadows-xform-consult-vpr': {},
-            'jmeadows-xform-demographics-vpr': {},
-            'jmeadows-xform-dischargeSummary-vpr': {},
-            'jmeadows-xform-encounter-vpr': {},
-            'jmeadows-xform-immunization-vpr': {},
-            'jmeadows-xform-lab-vpr': {},
-            'jmeadows-xform-medication-vpr': {},
-            'jmeadows-xform-note-vpr': {},
-            'jmeadows-xform-order-vpr': {},
-            'jmeadows-xform-problem-vpr': {},
-            'jmeadows-xform-progressNote-vpr': {},
-            'jmeadows-xform-radiology-vpr': {},
-            'jmeadows-xform-vital-vpr': {},
+                'jmeadows-xform-allergy-vpr': {},
+                'jmeadows-xform-appointment-vpr': {},
+                'jmeadows-xform-consult-vpr': {},
+                'jmeadows-xform-demographics-vpr': {},
+                'jmeadows-xform-dischargeSummary-vpr': {},
+                'jmeadows-xform-encounter-vpr': {},
+                'jmeadows-xform-immunization-vpr': {},
+                'jmeadows-xform-lab-vpr': {},
+                'jmeadows-xform-medication-vpr': {},
+                'jmeadows-xform-note-vpr': {},
+                'jmeadows-xform-order-vpr': {},
+                'jmeadows-xform-problem-vpr': {},
+                'jmeadows-xform-progressNote-vpr': {},
+                'jmeadows-xform-radiology-vpr': {},
+                'jmeadows-xform-vital-vpr': {},
 
-            'hdr-xform-allergy-vpr': {},
-            'hdr-xform-appointment-vpr': {},
-            'hdr-xform-consult-vpr': {},
-            'hdr-xform-cpt-vpr': {},
-            'hdr-xform-document-vpr': {},
-            'hdr-xform-education-vpr': {},
-            'hdr-xform-exam-vpr': {},
-            'hdr-xform-factor-vpr': {},
-            'hdr-xform-image-vpr': {},
-            'hdr-xform-immunization-vpr': {},
-            'hdr-xform-lab-vpr': {},
-            'hdr-xform-mh-vpr': {},
-            'hdr-xform-order-vpr': {},
-            'hdr-xform-pov-vpr': {},
-            'hdr-xform-problem-vpr': {},
-            'hdr-xform-procedure-vpr': {},
-            'hdr-xform-skin-vpr': {},
-            'hdr-xform-surgery-vpr': {},
-            'hdr-xform-visit-vpr': {},
-            'hdr-xform-vital-vpr': {},
+                'hdr-xform-allergy-vpr': {},
+                'hdr-xform-appointment-vpr': {},
+                'hdr-xform-consult-vpr': {},
+                'hdr-xform-cpt-vpr': {},
+                'hdr-xform-document-vpr': {},
+                'hdr-xform-education-vpr': {},
+                'hdr-xform-exam-vpr': {},
+                'hdr-xform-factor-vpr': {},
+                'hdr-xform-image-vpr': {},
+                'hdr-xform-immunization-vpr': {},
+                'hdr-xform-lab-vpr': {},
+                'hdr-xform-mh-vpr': {},
+                'hdr-xform-order-vpr': {},
+                'hdr-xform-pov-vpr': {},
+                'hdr-xform-problem-vpr': {},
+                'hdr-xform-procedure-vpr': {},
+                'hdr-xform-skin-vpr': {},
+                'hdr-xform-surgery-vpr': {},
+                'hdr-xform-visit-vpr': {},
+                'hdr-xform-vital-vpr': {},
 
-            'jmeadows-rtf-document-transform': {},
-            'jmeadows-cda-document-conversion': {},
-            'jmeadows-document-retrieval': {},
+                'jmeadows-rtf-document-transform': {},
+                'jmeadows-cda-document-conversion': {},
+                'jmeadows-document-retrieval': {},
 
-            'record-enrichment': {},
-            'store-record': {},
-            'vista-prioritization-request': {},
-            'operational-store-record': {},
-            'publish-data-change-event': {},
-            'patient-data-state-checker': {}
-        }
-    });
+                'record-enrichment': {},
+                'store-record': {},
+                'vista-prioritization-request': {},
+                'operational-store-record': {},
+                'publish-data-change-event': {},
+                'patient-data-state-checker': {}
+            }
+        });
+    }
 
     logger.debug(beanstalkConfig);
 
@@ -200,14 +211,15 @@ function testHandler(handler, logger, config, environment, host, port, tubePrefi
 
             if (!environment) {
                 environment = {
-                    publisherRouter: new PublisherRouter(logger, config, jobStatusUpdater)
+                    publisherRouter: new PublisherRouter(logger, config, logger, jobStatusUpdater),
+                    metrics: logger
                 };
             } else if (!environment.publisherRouter) {
                 if (!environment.jobStatusUpdater) {
                     environment.jobStatusUpdater = jobStatusUpdater;
                 }
 
-                environment.publisherRouter = new PublisherRouter(logger, config, environment.jobStatusUpdater);
+                environment.publisherRouter = new PublisherRouter(logger, config, logger, environment.jobStatusUpdater);
             // } else {
             //     var oldPublisherRouter = environment.publisherRouter;
             //     environment.publisherRouter = new PublisherRouter(oldPublisherRouter.logger, config, environment.jobStatusUpdater);
@@ -235,7 +247,7 @@ function testHandler(handler, logger, config, environment, host, port, tubePrefi
                     calledResult = jobs;
                     called = true;
                 });
-            });
+            }, function() {});
 
             waitsFor(function() {
                 return called;
@@ -249,6 +261,10 @@ function testHandler(handler, logger, config, environment, host, port, tubePrefi
                 _.each(jobTypes, function(match) {
                     expect(resultJobTypes).toContain(match);
                 });
+                // handler post-publish callback
+                if (_.isFunction(handlerCallback)) {
+                    handlerCallback(calledResult);
+                }
             });
         });
 

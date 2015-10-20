@@ -15,6 +15,8 @@
 //              1. Use sessionStorage to persist active menu selection
 //----------------------------------------
 define([
+    'main/ADK',
+    'underscore',
     'backbone',
     'marionette',
     'moment',
@@ -28,9 +30,11 @@ define([
     'hbs!app/applets/orders/list/orderSummaryTemplate',
     'app/applets/orders/toolBar/toolBarView',
     'hbs!app/applets/orders/toolBar/ordersFilterTemplate',
+    'app/applets/orders/detailCommunicator',
     'app/applets/orders/util',
-    'app/applets/orders/detailCommunicator'
-], function(Backbone, Marionette, moment, ModalView, ModalHeaderView, orderDateTemplate, orderStatusTemplate, siteTemplate, startDateTemplate, stopDateTemplate, orderSummaryTemplate, ToolBarView, ordersFilterTemplate, Util, DetailCommunicator) {
+    'app/applets/orders/writeback/addOrders',
+    'app/applets/visit_new/writeback/addselectVisit'
+], function(ADK, _, Backbone, Marionette, moment, ModalView, ModalHeaderView, orderDateTemplate, orderStatusTemplate, siteTemplate, startDateTemplate, stopDateTemplate, orderSummaryTemplate, ToolBarView, ordersFilterTemplate, DetailCommunicator, Util, addOrders, addselectVisit) {
     'use strict';
 
     var summaryColumns, shortSummaryColumn, fullScreenColumns, fetchOptions, _super, GridApplet, AppletLayoutView, applet, statusColumn, nameColumn,
@@ -143,7 +147,7 @@ define([
         pageable: true
     };
 
-    GridApplet = ADK.Applets.BaseGridApplet;
+    GridApplet = ADK.AppletViews.GridView;
 
     var MenuItem = Backbone.Model.extend({
         defaults: {
@@ -214,6 +218,8 @@ define([
     var fetchFilter;
     var exclude;
     var service;
+    var gridView;
+    var ordersChannel = ADK.Messaging.getChannel('orders');
     //the following model is shared between the applet and the toolbar view
     var SharedModel = Backbone.Model.extend({
         defaults: {
@@ -225,10 +231,10 @@ define([
     AppletLayoutView = GridApplet.extend({
         className: 'app-size-2',
         initialize: function(options) {
-            var toolBarView, onClickRow, sharedModel;
+            var toolBarView, onClickRow, sharedModel, onClickAdd, enableOrDisableBtn;
             var dataGridOptions = {};
 
-            service = ADK.SessionStorage.getAppletStorageModel('orders', 'activeMenuItem') || 'ALL';
+            service = ADK.SessionStorage.getAppletStorageModel('orders', 'activeMenuItem', false) || 'ALL';
             if (this.sharedModel === undefined) {
                 this.sharedModel = new SharedModel({
                     service: service
@@ -242,16 +248,16 @@ define([
 
             //filter out items that are set not to show in the menu [show: false]
             //this is used in the fetchOptions.criteria and the date filter
-            if (ADK.SessionStorage.getAppletStorageModel('orders', 'excludeMenuItems') === undefined) {
+            if (ADK.SessionStorage.getAppletStorageModel('orders', 'excludeMenuItems', false) === undefined) {
                 exclude = [];
                 for (var i = 0; i < menuItems.models.length; i++) {
                     if (!menuItems.models[i].get('show')) {
                         exclude.push(menuItems.models[i].get('service'));
                     }
                 }
-                ADK.SessionStorage.setAppletStorageModel('orders', 'excludeMenuItems', exclude);
+                ADK.SessionStorage.setAppletStorageModel('orders', 'excludeMenuItems', exclude, false);
             } else {
-                exclude = ADK.SessionStorage.getAppletStorageModel('orders', 'excludeMenuItems');
+                exclude = ADK.SessionStorage.getAppletStorageModel('orders', 'excludeMenuItems', false);
             }
 
             dateFilter = 'nin("service",[' + exclude.toString() + '])';
@@ -285,7 +291,6 @@ define([
                     ADK.utils.filterCollectionByValue(collection, 'service', service);
                 }
             };
-
             collection = ADK.PatientRecordService.fetchCollection(fetchOptions);
 
             toolBarView = new ToolBarView({
@@ -294,10 +299,58 @@ define([
                 sharedModel: this.sharedModel
             });
 
+            gridView = this;
+            onClickAdd = function(e){
+                 // var addOrdersChannel = ADK.Messaging.getChannel('addALabOrdersRequestChannel');
+                 // //addOrdersChannel.trigger('addLabOrdersModal', event, gridView);
+                 // addOrdersChannel.command('openOrdersSearch');
+                 //** New Writeback code added from ADK documentation **//
+                       e.preventDefault();
+                    var writebackView = ADK.utils.appletUtils.getAppletView('orders', 'writeback');
+                    var formModel = new Backbone.Model();
+                    var vm_formModel = new Backbone.Model({
+                        encounterProvider: 'Not Specified',
+                        encounterLocation: 'Not Specified',
+                        visit: {}
+                    });
+                    var workflowOptions = {
+                        size: "large",
+                        title: "Order a Lab Test",
+                        showProgress: false,
+                        keyboard: true,
+                        steps: []
+                    };
+
+                    //check if visit context is already set
+                    var visit = ADK.PatientRecordService.getCurrentPatient().get('visit');
+                    //console.log(visit);
+                    if (!visit) {
+                        workflowOptions.steps.push({
+                            view: addselectVisit,
+                            viewModel: vm_formModel
+                        });
+                    }
+                    workflowOptions.steps.push({
+                        view: addOrders,
+                        viewModel: formModel
+                    });
+                    var workflowView = new ADK.UI.Workflow(workflowOptions);
+                    workflowView.show();
+                },
+
+            enableOrDisableBtn = function(statusName){
+                var status = _.contains(['UNRELEASED', 'UNSIGNED'], statusName) ? '' : 'disabled';
+                return status;
+            };
+
             //Row click event handler - display the Modal window
             onClickRow = function(model, event) {
                 var ModalModel = Backbone.Model.extend({});
+
+                model.attributes.enableOrDisableClass = enableOrDisableBtn(model.attributes.statusName);
+
                 var modalModel = new ModalModel(model.attributes);
+
                 var modelIndex = this.collection.indexOf(model);
                 var view = new ModalView({
                     model: modalModel,
@@ -319,9 +372,14 @@ define([
                     pageable: !options.appletConfig.fullScreen
                 });
 
-                ADK.showModal(view, modalOptions);
+                var modal = new ADK.UI.Modal({
+                    view: view,
+                    options: modalOptions
+                });
+                modal.show();
+
                 this.model = model;
-            };
+            },
 
             dataGridOptions = {
                 summaryColumns: summaryColumns,
@@ -330,6 +388,7 @@ define([
                 toolbarView: toolBarView,
                 collection: collection,
                 onClickRow: onClickRow,
+                onClickAdd: onClickAdd,
                 filterFields: ['statusName', 'summary', 'entered', 'kind', 'start', 'stop', 'providerDisplayName', 'facilityMoniker'],
                 filterDateRangeEnabled: true,
                 filterDateRangeField: {
@@ -337,6 +396,7 @@ define([
                     label: "Date",
                     format: "YYYYMMDD"
                 },
+
                 formattedFilterFields: {
                     'entered': function(model, key) {
                         var val = model.get(key);
@@ -351,7 +411,7 @@ define([
                 dataGridOptions.columns = fullScreenColumns;
             }
 
-            this.dataGridOptions = dataGridOptions;
+            this.appletOptions = dataGridOptions;
 
             _super.initialize.apply(this, arguments);
 
@@ -391,7 +451,7 @@ define([
             } else {
                 ADK.utils.resetCollection(collection);
             }
-
+            this.refresh();
         },
     });
 
@@ -409,7 +469,13 @@ define([
                 columnsViewType: "expanded"
             }),
             chromeEnabled: true
-        }],
+        }, {
+            //new writeback code added from ADK documentation
+            type: 'writeback',
+            view: addOrders,
+            chromeEnabled: false
+        }
+        ],
         defaultViewType: 'summary'
     };
 

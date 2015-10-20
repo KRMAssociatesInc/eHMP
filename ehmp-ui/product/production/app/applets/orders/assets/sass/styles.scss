@@ -27,7 +27,7 @@
     }
 
     .rowHeader {
-    	border-bottom: 1px solid #e4e4e4;
+    	border-bottom: 1px solid $grey-light;
     	font-weight: bold;
         font-size: medium;
     }
@@ -110,5 +110,8 @@
     #data-grid-orders td {
         padding: 0.3em 0.5em;
     }
+}
+i.change-order{
+    font-size:18px;
 }
 

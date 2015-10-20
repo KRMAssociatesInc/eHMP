@@ -1,7 +1,7 @@
 #addEditProblemForm #error-container, #deleteProblemModal #error-container, #searchProblemModal #error-container {
 	font-size: 1.25em;
 	padding: 0;
-	color: #a94442;
+	color: $red-dark;
 }
 #addEditProblemForm {
 	.toggle-btn:focus {
@@ -10,13 +10,13 @@
 	.btn-default {
 		color: #333333;
 		background-color: #ffffff;
-		border-color: #cccccc;
+		border-color: $grey;
 		text-shadow: none;
 		background-image: none;
 		&.active {
 			text-shadow: none;
 			color: #ffffff;
-			background-color: #688790;
+			background-color: $primary-light;
 			border-color: #ccc;
 		}
 	}
@@ -93,7 +93,7 @@
         vertical-align: middle;
     }
     .save-comment b {
-        color: #688790;
+        color: $primary-light;
         vertical-align: middle;
     }
     .cancel-comment b, .remove-comment b {

@@ -1,4 +1,4 @@
-@F302 @CareTeamInfoHeaders 
+@F302 @CareTeamInfoHeaders @regression
 
 Feature: F302 - Enhance Patient Header - Include Non-Local Care Team by Site
 

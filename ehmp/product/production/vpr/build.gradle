@@ -12,7 +12,7 @@ configurations {
 }
 
 dependencies {
-//    solrWebApp group: 'org.apache.solr', name: 'solr', version: versions.solrLuceneVersion, ext: 'war'
+    solrWebApp group: 'org.apache.solr', name: 'solr', version: versions.solrLuceneVersion, ext: 'war'
 
     solrWebAppLogging group: 'org.slf4j', name: 'slf4j-api', version: versions.slf4jVersion
     solrWebAppLogging group: 'ch.qos.logback', name: 'logback-classic', version: versions.logbackVersion
@@ -33,16 +33,16 @@ artifacts {
 
 
 
-//task runSolr(type: JettyRunWar) {
-//    webApp = configurations.solrWebApp.singleFile
-//    additionalRuntimeJars = configurations.solrWebAppLogging
+task runSolr(type: JettyRunWar) {
+    webApp = configurations.solrWebApp.singleFile
+    additionalRuntimeJars = configurations.solrWebAppLogging
 
     // jetty configuration
-//    httpPort = solrHttpPort
-//    contextPath = 'solr'
-//}
+    httpPort = solrHttpPort
+    contextPath = 'solr'
+}
 
 // executed before jetty starts
-//runSolr.doFirst {
-//    System.setProperty("solr.solr.home", "./solrhome")
-//}
+runSolr.doFirst {
+    System.setProperty("solr.solr.home", "./solrhome")
+}

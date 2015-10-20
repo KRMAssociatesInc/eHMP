@@ -5,11 +5,12 @@ define([
     'main/backgrid/filter',
     'api/ResourceService',
     'api/SessionStorage',
+    'main/components/views/appletViews/TileSortManager',
     'main/components/views/loadingView',
     'main/components/views/errorView',
     'main/components/applets/baseDisplayApplet/views/filterDateRangeView',
     'hbs!main/components/applets/baseDisplayApplet/templates/containerTemplate'
-], function($, _, utils, CollectionFilter, ResourceService, SessionStorage, LoadingView, ErrorView, FilterDateRangeView, containerTemplate) {
+], function($, _, utils, CollectionFilter, ResourceService, SessionStorage, TileSortManager, LoadingView, ErrorView, FilterDateRangeView, containerTemplate) {
     'use strict';
 
     // this.
@@ -30,7 +31,6 @@ define([
 
     // this.model
     //      instanceId
-
     var AppletLayoutView = Backbone.Marionette.LayoutView.extend({
         initialize: function(options) {
             if ((!this.appletConfig) || _.isUndefined(this.appletConfig.instanceId)) {
@@ -110,6 +110,18 @@ define([
 
             //Create Loading View
             this.loadingView = LoadingView.create();
+
+            if (this.options.appletConfig.viewType === 'gist') {
+                //set up events to close quicklooks
+                this.listenTo(this, 'show', function() {
+                    this.$('.grid-applet-panel').on('scroll', function() {
+                        self.$('[data-toggle=popover]').popover('hide');
+                    });
+                });
+                this.listenTo(this, 'destroy', function() {
+                    this.$('.grid-applet-panel').off('scroll');
+                });
+            }
         },
         setAppletView: function() {
             this.displayAppletView = new this.appletOptions.AppletView(this.appletOptions);
@@ -129,12 +141,12 @@ define([
                 var self = this;
 
                 this.filterView.$el.find('input[type=search]').on('change', function() {
-                    SessionStorage.setAppletStorageModel(self.appletConfig.instanceId, 'filterText', $(this).val());
-                    SessionStorage.setAppletStorageModel(self.appletConfig.id, 'filterText', $(this).val());
+                    SessionStorage.setAppletStorageModel(self.appletConfig.instanceId, 'filterText', $(this).val(), false);
+                    SessionStorage.setAppletStorageModel(self.appletConfig.id, 'filterText', $(this).val(), false);
                 });
                 this.filterView.$el.find('a[data-backgrid-action=clear]').on('click', function() {
-                    SessionStorage.setAppletStorageModel(self.appletConfig.instanceId, 'filterText', $(this).val());
-                    SessionStorage.setAppletStorageModel(self.appletConfig.id, 'filterText', $(this).val());
+                    SessionStorage.setAppletStorageModel(self.appletConfig.instanceId, 'filterText', $(this).val(), false);
+                    SessionStorage.setAppletStorageModel(self.appletConfig.id, 'filterText', $(this).val(), false);
                 });
 
                 if (this.filterDateRangeView) {
@@ -156,13 +168,17 @@ define([
             'add': 'onClickAdd'
         },
         onSync: function(collection) {
-            $("[data-instanceid='" + this.appletConfig.instanceId + "']").find('.fa-refresh').removeClass('fa-spin');
+            var applet = this.$("[data-instanceid='" + this.appletConfig.instanceId + "']");
+            if (applet.length === 0) {
+                applet = this.$el.closest("[data-instanceid='" + this.appletConfig.instanceId + "']");
+            }
+            applet.find('.fa-refresh').removeClass('fa-spin');
             if (this.toolbarView) {
                 this.appletToolbar.show(this.toolbarView);
             }
 
             if (this.filterView) {
-                var searchText = SessionStorage.getAppletStorageModel(this.appletConfig.instanceId, 'filterText');
+                var searchText = SessionStorage.getAppletStorageModel(this.appletConfig.instanceId, 'filterText', false);
                 if (searchText !== undefined && searchText !== null && searchText.trim().length > 0) {
                     this.filterView.search();
                 }
@@ -175,7 +191,6 @@ define([
                 });
             }
 
-            var applet = $("[data-instanceid='" + this.appletConfig.instanceId + "']");
             var el, i;
 
             _.each(this.appletOptions.columns, function(column, index) {
@@ -191,19 +206,18 @@ define([
             var errorView = ErrorView.create({
                 model: errorModel
             });
-            this.appletContainer.show(errorView, {
-                preventDestroy: true
-            });
+            this.showViewInAppletContainer(errorView);
         },
         loading: function() {
-            this.appletContainer.show(this.loadingView, {
-                preventDestroy: true
-            });
+            this.showViewInAppletContainer(this.loadingView);
         },
         showStandardAppletView: function() {
-            this.appletContainer.show(this.displayAppletView, {
-                preventDestroy: true
-            });
+            this.showViewInAppletContainer(this.displayAppletView);
+        },
+        showViewInAppletContainer: function(viewToShow, options) {
+            options = options || {};
+            options.preventDestroy = (this.appletContainer.currentView == this.loadingView);
+            this.appletContainer.show(viewToShow, options);
         },
         refresh: function(event) {
             if (this.appletOptions.refresh !== undefined) {
@@ -295,9 +309,9 @@ define([
             ResourceService.fetchCollection(collection.fetchOptions, collection);
         },
         showFilterView: function() {
-            var filterText = SessionStorage.getAppletStorageModel(this.appletConfig.instanceId, 'filterText');
+            var filterText = SessionStorage.getAppletStorageModel(this.appletConfig.instanceId, 'filterText', false);
             if (_.isUndefined(filterText) || _.isNull(filterText)) {
-                filterText = SessionStorage.getAppletStorageModel(this.appletConfig.id, 'filterText');
+                filterText = SessionStorage.getAppletStorageModel(this.appletConfig.id, 'filterText', false);
             }
             if (this.appletOptions.filterFields && filterText !== undefined && filterText !== null && filterText.length > 0) {
                 this.$el.find('#grid-filter-' + this.appletConfig.instanceId).toggleClass('collapse in');
@@ -310,10 +324,32 @@ define([
         onShow: function() {
             this.showFilterView();
         },
-        onBeforeDestroy: function() {
-            if (this.toolbarView) {
-                this.toolbarView.destroy();
-                this.toolbarView = null;
+        onDestroy: function() {
+            try {
+                if (this.toolbarView && !this.toolbarView.isDestroyed) {
+                    this.toolbarView.destroy();
+                    this.toolbarView = null;
+                }
+            } catch (e) {
+                console.error('Error destroying toolbarView in applet:', this.appletConfig.id, e);
+            }
+
+            try {
+                if (this.loadingView && !this.loadingView.isDestroyed) {
+                    this.loadingView.destroy();
+                    this.loadingView = null;
+                }
+            } catch (e) {
+                console.error('Error destroying loadingView in applet:', this.appletConfig.id, e);
+            }
+
+            try {
+                if (this.displayAppletView && !this.displayAppletView.isDestroyed) {
+                    this.displayAppletView.destroy();
+                    this.displayAppletView = null;
+                }
+            } catch (e) {
+                console.error('Error destroying displayAppletView in applet:', this.appletConfig.id, e);
             }
         }
     });

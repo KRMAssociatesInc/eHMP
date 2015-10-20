@@ -32,8 +32,8 @@
         // ===============================
 
         view.$('.alert').attr('role', 'alert');
-        view.$('.close').removeAttr('aria-hidden').wrapInner('<span aria-hidden="true"></span>').append('<span class="sr-only">Close</span>');
-
+        if (!view.$('.close [aria-hidden=true]').length)
+            view.$('close').removeAttr('aria-hidden').wrapInner('<span aria-hidden="true"></span>').append('<span class="sr-only">Close</span>');
 
         // Modal Extension
         // ===============================
@@ -78,18 +78,6 @@
             toggle.attr('aria-expanded', 'false');
         });
 
-        view.$el
-            .on('focusout.dropdown.data-api', '.dropdown-menu', function(e) {
-                var This = $(this),
-                    that = this;
-                setTimeout(function() {
-                    if (!$.contains(that, document.activeElement)) {
-                        This.parent().removeClass('open');
-                        This.parent().find('[data-toggle=dropdown]').attr('aria-expanded', 'false');
-                    }
-                }, 150);
-            })
-            .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]', $.fn.dropdown.Constructor.prototype.keydown);
         // Tab Extension
         // ===============================
 
@@ -134,8 +122,6 @@
                 });
             }
         });
-
-        view.$el.on('keydown.tab.data-api', '[data-toggle="tab"], [data-toggle="pill"]', $.fn.tab.Constructor.prototype.keydown);
 
         var tabactivate = $.fn.tab.Constructor.prototype.activate;
 
@@ -190,8 +176,6 @@
 
         var collToggle = $.fn.collapse.Constructor.prototype.toggle;
 
-        view.$el.on('keydown.collapse.data-api', '[data-toggle="collapse"]', $.fn.collapse.Constructor.prototype.keydown);
-
         // Carousel Extension
         // ===============================
 
@@ -239,18 +223,6 @@
             });
         });
 
-        view.$el.on('keydown.carousel.data-api', 'div[role=option]', $.fn.carousel.Constructor.prototype.keydown);
-
-        //Custom handler so that space and enter will trigger custom popup component
-        /*
-        view.$('[data-toggle=popup]').on('keydown', function(e) {
-            var k = e.which || e.keydode;
-            if(!/(13|32)/.test(k)) return;
-            $(this).trigger('click');
-            e.preventDefault(); e.stopPropagation();
-        });
-        */
-
     };
 
     var Original = Backbone.Marionette.View,
@@ -259,7 +231,7 @@
             constructor: function() {
                 var args = Array.prototype.slice.call(arguments);
                 Original.apply(this, args);
-                this.on('attach', function() {
+                this.listenTo(this, 'before:attach', function() {
                     initAT(this._parentLayoutView && this._parentLayoutView() ? this._parentLayoutView() : this, $);
                 });
             }

@@ -1,0 +1,105 @@
+/*This section are styles for the color pallete page*/
+
+.swatch {
+	color: black;
+    display: table-cell;
+    height: 100px;
+    width: 100px;
+    &.grey {
+    	background-color: $grey;
+    }
+    &.grey-lightest {
+    	background-color: $grey-lightest;
+    }
+    &.grey-lighter {
+    	background-color: $grey-lighter;
+    }
+    &.grey-light {
+    	background-color: $grey-light;
+    }
+    &.grey-dark {
+    	background-color: $grey-dark;
+    }
+    &.grey-darker {
+    	background-color: $grey-darker;
+    }
+    &.grey-darkest {
+    	background-color: $grey-darkest;
+    }
+}
+
+.square {
+    height: 100px;
+    margin-bottom: 10px;
+    width: 100px;
+    &.primary {
+        background-color: $primary;
+    }
+    &.primary-light {
+        background-color: $primary-light;
+    }
+    &.primary-lighter {
+        background-color: $primary-lighter;
+    }
+    &.primary-lightest {
+        background-color: $primary-lightest;
+    }
+    &.primary-lightester {
+        background-color: $primary-lightester;
+    }
+    &.primary-dark {
+        background-color: $primary-dark;
+    }
+    &.secondary {
+        background-color: $secondary;
+    }
+    &.secondary-light {
+        background-color: $secondary-light;
+    }
+    &.secondary-lighter {
+        background-color: $secondary-lighter;
+    }
+    &.secondary-dark {
+        background-color: $secondary-dark;
+    }
+    &.tertiary {
+        background-color: $tertiary;
+    }
+    &.tertiary-hover {
+        background-color: $tertiary-hover;
+    }
+    &.quaternary {
+        background-color: $quaternary;
+    }
+    &.black {
+        background-color: $black;
+    }
+    &.white {
+        background-color: $white;
+        border: 1px solid black;
+        margin: 10px 0px;
+    }
+    &.red-dark {
+        background-color: $red-dark;
+    }
+    &.red {
+        background-color: $red;
+    }
+    &.blue {
+        background-color: $blue;
+    }
+    &.text {
+        background-color: $grey-darkest;
+    }
+    & p {
+        color: white;
+        font-size: 1.2em;
+        line-height: 1.5em;
+        padding-top: 30px;
+        text-align: center;
+        &.dark {
+            color: $grey-darkest;
+        }
+    }
+}
+/*This section ends the styles for the color pallete page*/

@@ -1,12 +1,12 @@
 @F144_Lab_Results_Modal @Lab_Results @regression
 Feature: F144 - eHMP Viewer GUI - Lab Results in expanded view
 
-# Team: Andromeda
+# Team: Andromeda, inherited by Team Venus
 
 Background:
   Given user is logged into eHMP-UI
 
-@f144_lab_results_graph @US2213 @TA6055 @modal_test
+@f144_lab_results_graph @US2213 @TA6055 @modal_test @debug @DE1142
 Scenario: Lab History modal graph.
   Given user searches for and selects "Seven,Patient"
   And Cover Sheet is active
@@ -34,7 +34,7 @@ Scenario: Lab Results Modal - no Lab History graph is displayed for non-numerica
   And the modal's title is "pathology report Details"
   And the "Lab Graph" should be "Hidden" in the "Lab Results modal"
 
-@f144_lab_results_modal_graph_date_axis_years @US2562 @TA7868a @modal_test
+@f144_lab_results_modal_graph_date_axis_years @US2562 @TA7868a @modal_test @debug @DE1142
 Scenario: Lab Results Modal - ensure data ranges are appropriate for number of tests.
   Given user searches for and selects "Seven,Patient"
   And Cover Sheet is active

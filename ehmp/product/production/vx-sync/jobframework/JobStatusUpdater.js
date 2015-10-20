@@ -27,13 +27,15 @@ JobStatusUpdater.prototype.writeStatus = function(jobState, callback) {
     if (_.isUndefined(jobState.rootJobId) && jobState.type === 'enterprise-sync-request') {
         jobState.rootJobId = jobState.jobId;
     }
-    if (_.isUndefined(jobState.jpid) || _.isUndefined(jobState.rootJobId)) {
-        self.log.debug('JobStatusUpdater.writeStatus: No jpid or rootJobId');
-        return callback(null, 'no job state for jobs not started by a user');
-    }
-    if (!_.isUndefined(jobState.record) || !_.isUndefined(jobState['event-uid'])) {
-        self.log.debug('JobStatusUpdater.writeStatus: Job has a record, covered by metastamp, don\'t record job state');
-        return callback(null, 'record job');
+    if (jobState.status !== 'error') {
+        if (_.isUndefined(jobState.jpid) || _.isUndefined(jobState.rootJobId)) {
+            self.log.debug('JobStatusUpdater.writeStatus: No jpid or rootJobId');
+            return callback(null, 'no job state for jobs not started by a user');
+        }
+        if (!_.isUndefined(jobState.record) || !_.isUndefined(jobState['event-uid'])) {
+            self.log.debug('JobStatusUpdater.writeStatus: Job has a record, covered by metastamp, don\'t record job state');
+            return callback(null, 'record job');
+        }
     }
     self.jdsClient.saveJobState(jobState, function(error, response, result) {
         self.log.debug('JobStatusUpdater.writeStatus: Response from saveJobState: error: %s, response: %j, result: %j', error, response, result);

@@ -1,9 +1,20 @@
-@F281_immunization_gist @DE618 @regression
+@F281_immunization_gist @DE618 @regression @DE1267 @debug
+
 Feature: F281 : Intervention Gist View
 	
 #POC: Team Jupiter
+# Test tagged as debug so doesn't run in Jenkins.  Entire test converted to new page object framework
 
-@F281_1_immunizationGistDisplay @US3382 @base  @DE861
+@F281_1_immunizationGistDisplay @base
+Scenario: User views the immunization gist view
+	Given user is logged into eHMP-UI
+	And user searches for and selects "FORTYSIX,PATIENT"	
+  	Then Overview is active
+  	And user sees Immunizations Gist
+	And the immunization gist view has the following information
+	| vaccine name			| age 	| 
+	
+@F281_2_immunizationGistDisplay @US3382  @DE861
 Scenario: User views the immunization gist view
 	Given user is logged into eHMP-UI
 	And user searches for and selects "FORTYSIX,PATIENT"	
@@ -17,7 +28,7 @@ Scenario: User views the immunization gist view
   | PNEUMOCOCCAL, UNSPECIFIED FORMULATION | 21y |
   | PNEUMOCOCCAL      | 15y |
 	
-@F281_2_immunizationGistDisplay @US3382
+@F281_3_immunizationGistDisplay @US3382
 Scenario: User views the immunization gist modal pop-up
 	Given user is logged into eHMP-UI
 	And user searches for and selects "FORTYSIX,PATIENT"	
@@ -27,7 +38,7 @@ Scenario: User views the immunization gist modal pop-up
     Then the modal is displayed
     And the modal's title is "Vaccine - PNEUMOCOCCAL"
 
-@F281_3_immunizationGistDisplay @US3382
+@F281_4_immunizationGistDisplay @US3382
 Scenario: View Immunization Applet Single Page by clicking on Expand View
   Given user is logged into eHMP-UI
   And user searches for and selects "FORTYSIX,PATIENT"
@@ -50,7 +61,7 @@ Scenario: View Immunization Applet Single Page by clicking on Expand View
     | PNEUMOCOCCAL, UNSPECIFIED FORMULATION | pneumococcal polysaccharide vaccine, 23 valent    | NONE     | COMPLETE | No                     | 01/31/1994 | TST2     |
 
 
-@F281_4_immunizationGist_filter_capability @US3669 @future
+@F281_5_immunizationGist_filter_capability @US3669 @future
 Scenario: Immunization Applet Gist - filter immunization
   Given user is logged into eHMP-UI
   Given user searches for and selects "FORTYSIX,PATIENT"
@@ -69,7 +80,7 @@ Scenario: Immunization Applet Gist - filter immunization
 	| vaccine name			| age 	| 
 	| PNEUMOCOCCAL			| 15y	|
 	
-@F281_5_immunizationGistDisplay @US3382 @DE861 @triage
+@F281_6_immunizationGistDisplay @US3382 @DE861 @DE1267
 Scenario: User views the immunization gist pill detail view
 	Given user is logged into eHMP-UI
 	And user searches for and selects "FORTYSIX,PATIENT"	

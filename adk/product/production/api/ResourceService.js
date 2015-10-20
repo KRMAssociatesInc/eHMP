@@ -62,7 +62,11 @@ define([
     Backbone.Collection.prototype.parse = function(response) {
         var parsedResponse;
         if (response.data) {
-            parsedResponse = response.data.items;
+            if (response.data.items) {
+                parsedResponse = response.data.items;
+            } else {
+                parsedResponse = response.data;
+            }
         } else {
             parsedResponse = response;
         }
@@ -85,7 +89,11 @@ define([
     Backbone.PageableCollection.prototype.parse = function(response) {
         var parsedResponse;
         if (response.data) {
-            parsedResponse = response.data.items;
+            if (response.data.items) {
+                parsedResponse = response.data.items;
+            } else {
+                parsedResponse = response.data;
+            }
         } else {
             parsedResponse = response;
         }
@@ -230,7 +238,11 @@ define([
             DomainModel = Backbone.Model.extend({
                 parse: function(response) {
                     if (response.data) {
-                        return response.data.items[0];
+                        if (response.data.items) {
+                            return response.data.items[0];
+                        } else {
+                            return response.data;
+                        }
                     } else {
                         return response;
                     }

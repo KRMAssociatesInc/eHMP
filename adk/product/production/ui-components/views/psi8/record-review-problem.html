@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eHMP Bootstrap UI Library - Record and Review Problem</title>
+    <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../../css/main-styles.css" />
+</head>
+
+<body class="library">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../../views.html">Views</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../../color-palette.html">Color Palette</a></li>
+                                <li><a href="#">Style Guide</a></li>
+                            </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end navigation-->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+            <li><a href="../../views.html">Views</a></li>
+            <li class="active">F414 - Record and Review Problem</li>
+        </ol>
+        <h1>F414 - Record and Review Problem</h1>
+        <div class="description">
+            <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This is the 508 compliant static HTML/CSS mock up of Record and Review Problem.</p>
+            <p><strong><i class="fa fa-lightbulb-o"></i> Documentation:</strong> Please also view <a href="http://wakirc.axshare.com/#p=v4_-_record_and_review_problem_list">Record and Review Problem wireframe</a>, <a href="../../docs/workflow/psi8/workflow-immunization.pdf">Workflow Diagram</a> <small>[PDF, XX]</small>, and <a href="../../docs/use-case/psi8/use-case-immunization.pdf">Use Scenario Case Documentation</a> <small>[PDF, XX]</small> for full details on implementation.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6">
+                                    <h4 class="modal-title">All Observations</h4>
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <div class="header-btns">
+                                        <div class="control form-group">
+                                            <button type="button" class="btn btn-primary btn-sm" title="Press enter to create a new observation"><i class="fa fa-pencil"></i> Create New Observation</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workflow-controler">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="row row-sort">
+                                            <div class="col-md-6 col-xs-6">
+                                                <label for="observation-arrange-by">Arrange by:</label>
+                                                <select id="observation-arrange-by" title="Arrange observations by selecting from the drop down list">
+                                                    <option value="status">Status</option>
+                                                    <option value="type">Type</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6 text-right">
+                                                <label for="observation-sort-by" class="sr-only">Sort by</label>
+                                                <select id="observation-sort-by" title="Sort observations by selecting from the drop down list">
+                                                    <option value="most-recent">Most recent</option>
+                                                    <option value="least-recent">Least recent</option>
+                                                    <option value="chronological">Chronological</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-container panel-group small" id="accordion" role="tablist">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-observation-immunization">
+                                                    <h4>
+                                                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-observation-immunization" aria-expanded="true" aria-controls="collapse-observation-immunization">Immunization<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                                </h4>
+                                                </div>
+                                                <div id="collapse-observation-immunization" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-observation-immunization">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Administered</strong></p>
+                                                                        <p>Last Saved: <span id="immunization-last-saved1">09/09/2015 03:35</span></p>
+                                                                        <p>Date Created: <span id="immunization-date-created1">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Historical</strong></p>
+                                                                        <p>Date signed: <span id="immunization-date-signed1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="immunization-date-created2">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Administered</strong></p>
+                                                                        <p>Date accepted: <span id="immunization-date-accepted1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="immunization-date-created3">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end immunization-->
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-observation-nonvameds">
+                                                    <h4>
+                                                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-observation-nonvameds" aria-expanded="true" aria-controls="collapse-observation-nonvameds">Non-VA Meds<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                                </h4>
+                                                </div>
+                                                <div id="collapse-observation-nonvameds" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-observation-nonvameds">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Last Saved: <span id="nonvameds-last-saved1">09/09/2015 03:35</span></p>
+                                                                        <p>Date Created: <span id="nonvameds-date-created1">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Date signed: <span id="nonvameds-date-signed1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="nonvameds-date-created2">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Date accepted: <span id="nonvameds-date-accepted1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="nonvameds-date-created3">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end Non-VA Meds-->
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-observation-vitals">
+                                                    <h4>
+                                                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-observation-vitals" aria-expanded="true" aria-controls="collapse-observation-vitals">Vitals<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                                </h4>
+                                                </div>
+                                                <div id="collapse-observation-vitals" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-observation-vitals">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Last Saved: <span id="vitals-last-saved1">09/09/2015 03:35</span></p>
+                                                                        <p>Date Created: <span id="vitals-date-created1">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Date signed: <span id="vitals-date-signed1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="vitals-date-created2">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Date accepted: <span id="vitals-date-accepted1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="vitals-date-created3">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end Vitals-->
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#notesDeleteModal" title="Press enter to delete the note">Delete</button>
+                                                </div>
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#notesModal" title="Press enter to view the details of the note">View</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                    <div class="modal fade" id="notesModal" role="dialog" aria-labelledby="notesModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="tray-settings">
+                                                        <p class="sr-only">This is the toolbar that allows you to perform actions</p>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to edit note" aria-label="Edit"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to print note" aria-label="Print"><i class="fa fa-print"></i></button>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to close note" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                                                    </div>
+                                                    <h4 class="modal-title" id="notesModalLabel">Primary Care General Note<br />
+                                                <span class="small">04/11/2015 - 03:30</span><br />
+                                                <span class="small">Doe, John Q</span></h4>
+                                                    <h5>Signed</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus, est eget sodales vestibulum, lorem erat fringilla felis, vel vestibulum dolor turpis sed orci. Aenean lacinia quis risus eget laoreet. Pellentesque rhoncus justo ac urna sollicitudin egestas.</p>
+                                                    <p>Suspendisse malesuada ipsum nisi, sed sollicitudin arcu condimentum a. Nulla facilisi. Sed hendrerit enim lacus, id tempor arcu euismod dapibus.</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus, est eget sodales vestibulum, lorem erat fringilla felis, vel vestibulum dolor turpis sed orci. Aenean lacinia quis risus eget laoreet. Pellentesque rhoncus justo ac urna sollicitudin egestas.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="notesDeleteModal" role="dialog" aria-labelledby="notesDeleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="tray-settings">
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                                                    </div>
+                                                    <h4 class="modal-title" id="notesDeleteModalLabel">Mark as Entered in Error</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="well well-sm">
+                                                        <h4>Problem Name<br />
+                                                    <span class="small">06/13/2015  17:55</span></h4>
+                                                    </div>
+                                                    <div class="control form-group">
+                                                        <label for="entered-error" class="sr-only">Add Annotation</label>
+                                                        <input class="form-control" type="text" name="name" title="Please enter in annotation" placeholder="Add Annotation&hellip;" id="entered-error" />
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div class="control control-button trash visible-inline">
+                                                        <button type="button" class="btn icon-btn" data-dismiss="modal" title="Press enter to cancel">Cancel</button>
+                                                    </div>
+                                                    <div class="control control-button trash visible-inline">
+                                                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" title="Press enter to remove">Remove</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6">
+                                    <h4 class="modal-title">Add New Observation</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item">Allergies<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item">Immunization<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item">Meds, Non-VA<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item"><i class="fa fa-ellipsis-v"></i> Problems<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item">Vitals<i class="fa fa-chevron-right pull-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to go back to observations summary">Back to Observations Summary</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-10 col-xs-10">
+                                    <h4 class="modal-title">Enter Problem</h4>
+                                </div>
+                                <div class="col-md-2 col-xs-2">
+                                    <div class="header-btns">
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="dropdown">
+                                                <button class="btn icon-btn dropdown-toggle" type="button" id="immunization-settings" data-toggle="dropdown" aria-expanded="true">
+                                                    <i class="fa fa-gear"><span class="sr-only">Settings for vitals</span></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="immunization-settings">
+                                                    <li role="presentation"><a role="menuitem" href="#">Preview</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Print</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <button type="button" class="btn icon-btn" title="Press enter to open the popover view"><i class="fa fa-expand"><span class="sr-only">Press enter to open the popover view</span></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <ul class="progress-indicator">
+                                <li><div class="completed"><span class="bubble"></span>Select a Problem<span class="sr-only">You are currently on step step 1 of 2</span></div></li>
+                                <li><div><span class="bubble"></span>Enter Problem Info</div></li>
+                            </ul>
+                        </div><!--end progress bar-->
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="scroll-enter-form">
+                                            <div class="row row-subheader">
+                                                <div class="col-md-12">
+                                                    <div class="control form-group form-alert-banner alertBanner-control alertMessage">
+                                                        <div class="alert alert-warning alert-dismissible alert-user" role="alert">
+                                                            <div class="alert-content">
+                                                                <p><strong><i class="fa fa-warning"></i> Warning</strong></p>
+                                                                <p>If you proceed with this nonspecific term, an ICD code of "799.9 - OTHER UNKNOWN AND UNSPECIFIED CAUSE OF MORBIDITY OR MORTALITY" will be filed.</p>
+                                                            </div>
+                                                            <button title="To close this alert, press enter" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="control form-group">
+                                                        <div class="checkbox">
+                                                            <label for="request-new-term">
+                                                                <input type="checkbox" title="To select this checkbox, press the spacebar" id="request-new-term" /> <strong>Request New Term</strong>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row section-divider">
+                                                <div class="col-md-12">
+                                                    <p>* indicates a required field.</p>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="control form-group" role="application">
+                                                        <label for="example1-select-problem">Select a Problem *</label>
+                                                        <input class="form-control typeahead" type="text" name="name" title="The type ahead feature will begin searching for content as you type. The results are listed below, use the up and down arrow keys to review the results." placeholder="Search for available problems…" autocomplete="off" spellcheck="false" id="example1-select-problem" required />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn icon-btn btn-sm" data-dismiss="modal" title="Press enter to delete order"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                                <div class="control control-button cancel visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to proceed to the next step">Next</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="tray-region">
+            <div class="workflow-container encounters-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-10 col-xs-10">
+                                    <h4 class="modal-title">Enter Problem</h4>
+                                </div>
+                                <div class="col-md-2 col-xs-2">
+                                    <div class="header-btns">
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="dropdown">
+                                                <button class="btn icon-btn dropdown-toggle" type="button" id="immunization-settings2" data-toggle="dropdown" aria-expanded="true">
+                                                    <i class="fa fa-gear"><span class="sr-only">Settings for vitals</span></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="immunization-settings2">
+                                                    <li role="presentation"><a role="menuitem" href="#">Preview</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Print</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <button type="button" class="btn icon-btn" title="Press enter to open the popover view"><i class="fa fa-expand"><span class="sr-only">Press enter to open the popover view</span></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <ul class="progress-indicator">
+                                <li><div class="completed"><span class="bubble"></span>Select a Problem</div></li>
+                                <li><div class="completed"><span class="bubble"></span>Enter Problem Info<span class="sr-only">You are currently on step step 2 of 2</span></div></li>
+                            </ul>
+                        </div><!--end progress bar-->
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="scroll-enter-form">
+                                            <div class="row">
+                                                <div class="col-md-8 col-xs-8">
+                                                    <h5>Allergic headache</h5>
+                                                </div>
+                                                <div class="col-md-3 col-xs-3">
+                                                    <div class="control form-group visible-inline">
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to change problem">Change problem &hellip;</button>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>* indicates as a required field.</p>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="control form-group">
+                                                        <p class="faux-label">Status *</p>
+                                                        <div class="radio">
+                                                            <label for="status-active" class="radio-inline">
+                                                                <input type="radio" name="status" value="Active" id="status-active" /> Active
+                                                            </label>
+                                                            <label for="status-inactive" class="radio-inline">
+                                                                <input type="radio" name="status" value="Inactive" id="status-inactive" /> Inactive
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="control form-group">
+                                                        <p class="faux-label">Immediacy *</p>
+                                                        <div class="radio">
+                                                            <label for="immediacy-acute" class="radio-inline">
+                                                                <input type="radio" name="immediacy" value="Acute" id="immediacy-acute" /> Acute
+                                                            </label>
+                                                            <label for="immediacy-chronic" class="radio-inline">
+                                                                <input type="radio" name="immediacy" value="Chronic" id="immediacy-chronic" /> Chronic
+                                                            </label>
+                                                            <label for="immediacy-unknown" class="radio-inline">
+                                                                <input type="radio" name="immediacy" value="Unknown" id="immediacy-unknown" /> Unknown
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="onset-date">Onset Date</label>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                            <input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="onset-date" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="clinic">Clinic</label>
+                                                        <input class="form-control" type="text" title="Please enter in clinic" id="clinic" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="control form-group">
+                                                        <label for="res-provider">Res Provider *</label>
+                                                        <input class="form-control" type="text" title="Please enter in res provider" required id="res-provider" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="well read-only-well">
+                                                        <fieldset class="control form-group yesNoChecklist-control yesNoChecklist class1 class2">
+                                                            <legend>Treatment Factors</legend>
+                                                            <div class="childView-container well-scroll">
+                                                                <div class="row">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <p class="faux-label">Service Connected</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <div class="control form-group">
+                                                                            <label class="radio-inline">
+                                                                              <input type="radio" name="serviceConnected" id="service-connected-undefined" value="Undefined"> N/A
+                                                                            </label>
+                                                                            <label class="radio-inline">
+                                                                              <input type="radio" name="serviceConnected" id="service-connected-yes" value="Yes"> Yes
+                                                                            </label>
+                                                                            <label class="radio-inline">
+                                                                              <input type="radio" name="serviceConnected" id="service-connected-no" value="No"> No
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                               <div class="row">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <p class="faux-label">Agent Orange</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <div class="control form-group">
+                                                                            <label class="radio-inline">
+                                                                              <input type="radio" name="agentOrange" id="agent-orange-undefined" value="Undefined"> N/A
+                                                                            </label>
+                                                                            <label class="radio-inline">
+                                                                              <input type="radio" name="agentOrange" id="agent-orange-yes" value="Yes"> Yes
+                                                                            </label>
+                                                                            <label class="radio-inline">
+                                                                              <input type="radio" name="agentOrange" id="agent-orange-no" value="No"> No
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <p class="faux-label">Radiation</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <div class="control form-group">
+                                                                            <label class="radio-inline">
+                                                                              <input type="radio" name="radiation" id="radiation-undefined" value="Undefined"> N/A
+                                                                            </label>
+                                                                            <label class="radio-inline">
+                                                                              <input type="radio" name="radiation" id="radiation-yes" value="Yes"> Yes
+                                                                            </label>
+                                                                            <label class="radio-inline">
+                                                                              <input type="radio" name="radiation" id="radiation-no" value="No"> No
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                             </div>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <h6>Annotate</h6>
+                                                    <div class="comment-box">
+                                                        <div class="faux-table-container comments-container">
+                                                            <div class="faux-table no-margin">
+                                                                <div class="body">
+                                                                    <div class="table-row">
+                                                                        <div>
+                                                                            <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                                                        </div>
+                                                                        <div class="pixel-width-67 text-right">
+                                                                            <span>
+                                                                                <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                                                <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="table-row">
+                                                                        <div>
+                                                                            <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                                                        </div>
+                                                                        <div class="pixel-width-67 text-right">
+                                                                            <span>
+                                                                                <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                                                <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="comment">
+                                                            <div class="form-group col-xs-8">
+                                                                <label for="comment1" class="sr-only">Comment</label>
+                                                                <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="comment1" />
+                                                                <span class="help-block">60 characters remaining&hellip;</span>
+
+                                                                <label for="comment11" class="sr-only hidden">Comment</label>
+                                                                <input class="form-control input-sm hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="comment11" />
+                                                                <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                                            </div>
+                                                            <div class="col-xs-4">
+                                                                <div class="col-xs-6 hidden">
+                                                                    <button type="button" class="btn btn-default btn-sm" title="Press enter to cancel">Cancel</button>
+                                                                </div>
+                                                                <div class="col-xs-6 hidden">
+                                                                    <button type="button" class="btn btn-default btn-sm" title="Press enter to save comment">Save</button>
+                                                                </div>
+                                                                <div class="col-xs-12">
+                                                                    <button type="button" class="btn btn-default btn-block" title="Press enter to add comment">Add Comment</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <p><span id="immunization-administered-saved-at">Saved at 08:27</span></p>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn icon-btn btn-sm" title="Press enter to delete immunization"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to close immunization">Close</button>
+                                                </div>
+                                                <div class="control control-button cancel visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to go back to the previous step">Back</button>
+                                                </div>
+                                                <div class="control control-button cancel visible-inline">
+                                                    <button type="submit" class="btn btn-primary btn-sm" title="Press enter to add immunization">Add</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </div>
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/typeahead.js"></script>
+    <script>
+    $(function() {
+        // Toggle selected items within accordion
+        $('.panel-body.multi-select-list').on('click', 'li', function() {
+            $(this).toggleClass('list-item-selected');
+        });
+    });
+    </script>
+</body>
+
+</html>

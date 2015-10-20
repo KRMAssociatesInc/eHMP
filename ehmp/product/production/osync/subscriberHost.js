@@ -57,7 +57,6 @@ if (cluster.isMaster) {
         });
     });
 } else {
-    console.log('process: %s  profile "%s"', process.pid, process.env.osyncprofile);
     startup = startSubscriberHost.bind(null, logger, config, options.port, process.env.osyncprofile);
     startup();
 }
@@ -92,14 +91,13 @@ function registerHandlers(logger, config, environment) {
     var handlerRegistry = new HandlerRegistry(environment);
 
     handlerRegistry.register(logger, config, environment, jobUtil.opportunisticSyncRequestType(), require(global.OSYNC_HANDLERS + 'opportunistic-sync-request/opportunistic-sync-request'));
-    //handlerRegistry.register(logger, config, environment, jobUtil.activeUserRequestType(), require(global.OSYNC_HANDLERS + 'active-user/active-user'));
-
-
+    handlerRegistry.register(logger, config, environment, jobUtil.activeUserRequestType(), require(global.OSYNC_HANDLERS + 'active-user/active-user'));
     handlerRegistry.register(logger, config, environment, jobUtil.admissionRequestType(), require(global.OSYNC_HANDLERS + 'admission-request/admission-request'));
     handlerRegistry.register(logger, config, environment, jobUtil.appointmentRequestType(), require(global.OSYNC_HANDLERS + 'appointment-request/appointment-request'));
     handlerRegistry.register(logger, config, environment, jobUtil.storeJobStatusRequestType(), require(global.OSYNC_HANDLERS + 'store-job-status/store-job-status'));
     handlerRegistry.register(logger, config, environment, jobUtil.syncRequestType(), require(global.OSYNC_HANDLERS + 'sync/sync'));
-    handlerRegistry.register(logger, config, environment, jobUtil.validationRequestType(), require(global.OSYNC_HANDLERS + 'validation/validation'));
+    handlerRegistry.register(logger, config, environment, jobUtil.validationRequestType(), require(global.OSYNC_HANDLERS + 'validation-request/validation-request'));
+    handlerRegistry.register(logger, config, environment, jobUtil.patientListRequestType(), require(global.OSYNC_HANDLERS + 'patientlist-request/patientlist-request'));
 
     return handlerRegistry;
 }

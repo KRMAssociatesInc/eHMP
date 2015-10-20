@@ -15,8 +15,10 @@ define([
     "hbs!app/applets/lab_results_grid/list/flagTemplate",
     "hbs!app/applets/lab_results_grid/list/referenceRangeTemplate",
     "hbs!app/applets/lab_results_grid/templates/tooltip",
-    'app/applets/lab_results_grid/modal/stackedGraph'
-], function(Backbone, Marionette, _, AppletHelper, AppletUiHelper, GridView, DetailsView, ModalView, dateTemplate, labTestCSTemplate, labTestSPTemplate, resultTemplate, siteTemplate, flagTemplate, referenceRangeTemplate, tooltip, StackedGraph) {
+    'app/applets/lab_results_grid/modal/stackedGraph',
+    'app/applets/orders/writeback/addOrders',
+    'app/applets/visit_new/writeback/addselectVisit'
+], function(Backbone, Marionette, _, AppletHelper, AppletUiHelper, GridView, DetailsView, ModalView, dateTemplate, labTestCSTemplate, labTestSPTemplate, resultTemplate, siteTemplate, flagTemplate, referenceRangeTemplate, tooltip, StackedGraph, addOrders, addselectVisit) {
 
     var fetchOptions = {
         resourceTitle: 'patient-record-lab',
@@ -170,6 +172,7 @@ define([
         parse: fetchOptions.viewModel.parse
     });
 
+    var gridView;
     var GistView = ADK.Applets.BaseGridApplet.extend({
         initialize: function(options) {
             this._super = ADK.Applets.BaseGridApplet.prototype;
@@ -215,13 +218,47 @@ define([
                         AppletUiHelper.getDetailView(model, event.currentTarget, dataGridOptions.collection, true, AppletUiHelper.showModal, AppletUiHelper.showErrorModal);
                     }
                 },
-                filterDateRangeEnabled: true,
-                filterDateRangeField: {
-                    name: "observed",
-                    label: "Date",
-                    format: "YYYYMMDD"
-                }
-            };
+
+                onClickAdd: function(e) {
+                    e.preventDefault();
+                    var writebackView = ADK.utils.appletUtils.getAppletView('orders', 'writeback');
+                    var formModel = new Backbone.Model();
+                    var vm_formModel = new Backbone.Model({
+                        encounterProvider: 'Not Specified',
+                        encounterLocation: 'Not Specified',
+                        visit: {}
+                    });
+                    var workflowOptions = {
+                        size: "large",
+                        title: "Order a Lab Test",
+                        showProgress: false,
+                        keyboard: true,
+                        steps: []
+                    };
+
+                    //check if visit context is already set
+                    var visit = ADK.PatientRecordService.getCurrentPatient().get('visit');
+                    //console.log(visit);
+                    if (!visit) {
+                        workflowOptions.steps.push({
+                            view: addselectVisit,
+                            viewModel: vm_formModel
+                        });
+                    }
+                    workflowOptions.steps.push({
+                        view: addOrders,
+                        viewModel: formModel
+                    });
+                    var workflowView = new ADK.UI.Workflow(workflowOptions);
+                    workflowView.show();
+                    },
+                    filterDateRangeEnabled: true,
+                    filterDateRangeField: {
+                        name: "observed",
+                        label: "Date",
+                        format: "YYYYMMDD"
+                    }
+                };
 
             var self = this;
             //date change handling
@@ -317,6 +354,7 @@ define([
                     modifiedCollection = self.addTooltips(modifiedCollection, 4);
                     fullCollection.reset(modifiedCollection.models);
                 }
+                dataGridOptions.collection.setPageSize(fullCollection.length);
             };
             fetchOptions.criteria = {
                 filter: this.buildJdsDateFilter('observed')
@@ -333,17 +371,27 @@ define([
                 if (dataGridOptions.gistView === true) {
                     this.dataGridOptions.SummaryView = ADK.Views.LabresultsGist.getView();
                     this.dataGridOptions.SummaryViewOptions = {
-                        gistHeaders: gistConfiguration.gistHeaders
+                        gistHeaders: gistConfiguration.gistHeaders,
+                        enableTileSorting: true
                     };
                 }
             }
             this._super.initialize.apply(this, arguments);
+
+            ADK.Messaging.getChannel('lab_results_grid').on('addItem', function(e) {
+                var addOrdersChannel = ADK.Messaging.getChannel('addALabOrdersRequestChannel');
+                addOrdersChannel.trigger('addLabOrdersModal', event, gridView);
+            });
+            ADK.Applets.BaseGridApplet.prototype.initialize.apply(this, arguments);
 
             var message = ADK.Messaging.getChannel('lab_results');
             message.reply('gridCollection', function() {
                 return self.gridCollection;
             });
 
+        },
+        onDestroy: function() {
+            ADK.Messaging.getChannel('lab_results_grid').off('addItem');
         },
         onRender: function() {
             var self = this;
@@ -359,7 +407,7 @@ define([
             for (var i = 0; i < collectionItems.models.length; i++) {
                 var attr = collectionItems.models[i].attributes;
                 if (attr.oldValues) {
-                    attr.limitedoldValues = attr.oldValues.splice(0, limit-1);
+                    attr.limitedoldValues = attr.oldValues.splice(0, limit - 1);
                     if ((attr.oldValues.length - attr.limitedoldValues.length) > 0) {
                         attr.moreresultsCount = attr.oldValues.length - attr.limitedoldValues.length;
                     }
@@ -371,8 +419,6 @@ define([
         modifyModel: function(collectionItems) {
             var modifiedCollection = {};
             var appletid = this.dataGridOptions.appletId;
-            var screenId = ADK.Messaging.request('get:current:screen').config.id;
-            var isWorkspaceScreen = screenId.indexOf('workspace') > -1;
 
             //Create deep clone for collection
             _.extend(modifiedCollection, collectionItems);
@@ -382,7 +428,6 @@ define([
             for (var i = 0; i < collectionItems.models.length; i++) {
                 //Only laboratory results should be visible
                 if (collectionItems.models[i].attributes.kind !== undefined && collectionItems.models[i].attributes.kind === 'Laboratory') {
-                    collectionItems.models[i].attributes.userWorkspace = isWorkspaceScreen;
                     //Add applet_id to model (used in toolbarview to trigger detailview)
                     collectionItems.models[i].attributes.applet_id = appletid;
                     //Add fields necessary to the gist mmodel
@@ -448,7 +493,13 @@ define([
                 columnsViewType: "gist"
             }),
             chromeEnabled: true
-        }],
+        }, {
+            //new writeback code added from ADK documentation
+            type: 'writeback',
+            view: addOrders,
+            chromeEnabled: false
+        }
+        ],
         defaultViewType: 'summary'
     };
 
@@ -457,14 +508,17 @@ define([
     var channel = ADK.Messaging.getChannel(applet.id);
 
     channel.on('detailView', function(params) {
-        ADK.showModal(
-            new ModalView({
+        var modal = new ADK.UI.Modal({
+            view: new ModalView({
                 model: params.model,
                 navHeader: false
-            }), {
+            }),
+            options: {
                 size: "large",
                 title: params.model.get('typeName')
-            });
+            }
+        });
+        modal.show();
     });
     ADK.Messaging.getChannel('labresults_timeline_detailview').reply('detailView', function(params) {
 
@@ -476,8 +530,10 @@ define([
                 icn: params.patient.icn,
                 pid: params.patient.pid
             }),
-            resourceTitle: 'patient-record-lab',
-            viewModel: fetchOptions.viewModel.parse
+            resourceTitle: 'uid',
+            viewModel: {
+                parse: fetchOptions.viewModel.parse
+            }
         };
 
         var response = $.Deferred();
@@ -485,13 +541,12 @@ define([
         var data = ADK.PatientRecordService.fetchCollection(fetchOpt);
         data.on('sync', function() {
             var detailModel = data.first();
-            response.resolve({
-                view: new ModalView({
-                    model: detailModel,
-                    navHeader: false
-                }),
-                title: detailModel.get('typeName') + ' - ' + detailModel.get('specimen')
-            });
+            var onSuccess = function(detailData) {
+                response.resolve(detailData);
+            };
+            var onError = response.reject;
+
+            AppletUiHelper.getDetailView(detailModel, null, data, false, onSuccess, onError);
         }, this);
 
         return response.promise();

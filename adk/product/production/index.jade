@@ -28,6 +28,8 @@ html(data-placeholder-focus='false', lang='en', class='no-js ui-mobile-rendering
         script(src='_assets/libs/custom/webtoolkit-base64/webtoolkit.base64.js')
         script(src='_assets/libs/custom/webtoolkit-base64/ie-btoa-fix.js')
         script(src='_assets/js/drilldown.js')
+           if(owa)
+            script(src='_assets/js/owa.js')
         script.
             var require = {
                 waitSeconds: 60
@@ -40,10 +42,6 @@ html(data-placeholder-focus='false', lang='en', class='no-js ui-mobile-rendering
         div.container-fluid.no-side-padding
             div#center-region.row
         div#bottom-region
+        div#workflow-region.workflow-region
         div#modal-region
-        script(for='WebListener', event='Refresh()').
-            require(['api/CCOWService'], function(CCOWService) {
-                if(document.getElementById('WebListener') !== null){
-                    CCOWService.handleContextChange();
-                }
-            });
+        div#alert-region

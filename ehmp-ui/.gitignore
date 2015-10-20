@@ -48,6 +48,9 @@ Thumbs.db
 
 *.scssc
 *.css
+#exclude VLER stylesheets
+!/product/production/app/applets/ccd_grid/assets/vler_resource/ccdaStyles/*.css
+!/product/production/app/applets/ccd_grid/assets/vler_resource/c32Styles/*.css
 
 # page object test screenshots ignored
 /product/tests/page-object-tests/screenshots

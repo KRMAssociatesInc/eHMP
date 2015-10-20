@@ -18,7 +18,11 @@ define([
                 footerView: self.getFooterView()
             };
 
-            ADK.showModal(self.getModalView(), modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: self.getModalView(),
+                options:  modalOptions
+            });
+            modal.show();
             $('#mainModal').show();
         },
         getModalView: function(){
@@ -53,7 +57,7 @@ define([
                     model.set('text', statusText);
                     model.save(null, {
                         success:function() {
-                            ADK.hideModal();
+                            ADK.UI.Modal.hide();
                             smokingStatusChannel.command('smokingstatus:updated', statusText);
                         },
                         error: function() {

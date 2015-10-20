@@ -1,0 +1,42 @@
+<h3>Alerts</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> Alerts inform users with important information.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> When alerts appear on the screen, the focus of the screen reader should be shifted to the alert.</p>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div id="alert-copy">
+            <div class="control form-group form-alert-banner alertBanner-control alertMessage">
+                <div class="alert alert-warning alert-dismissible alert-user" role="alert">
+                    <div class="alert-content">
+                        <p><strong><i class="fa fa-warning"></i> Warning</strong></p>
+                        <p>Warning message.</p>
+                    </div>
+                    <button title="To close this alert, press enter" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div role="tabpanel" class="tabpanel">
+    <ul role="tablist" class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#markup-alerts" aria-controls="markup-alerts" role="tab" data-toggle="tab">Alert</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="markup-alerts">
+            <pre>
+        &lt;div class="control form-group form-alert-banner alertBanner-control alertMessage"&gt;
+            &lt;div class="alert alert-warning alert-dismissible alert-user" role="alert"&gt;
+                &lt;div class="alert-content"&gt;
+                    &lt;p&gt;&lt;strong&gt;&lt;i class="fa fa-warning"&gt;&lt;/i&gt; Warning&lt;/strong&gt;&lt;/p&gt;
+                    &lt;p&gt;Warning message.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;button title="To close this alert, press enter" data-dismiss="alert" class="close" type="button"&gt;&lt;span aria-hidden="true"&gt;×&lt;/span&gt;&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('alert-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>

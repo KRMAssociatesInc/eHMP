@@ -1,4 +1,4 @@
-@F365 @PatientDemoHeaders 
+@F365 @PatientDemoHeaders @regression
 
 Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 
@@ -50,7 +50,7 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	Then the Patient Information header displays: "Marital Status"
 	Then the Patient Information header displays: "Religion"
 
-@F365-2.1_DetailDialogInpatient @US5116 @US4456
+@F365-2.1_DetailDialogInpatient @US5116 @US4456 @DE1309
 	Scenario: Patient Information: Demographic drop down "HEADERS" in Kodak for Inpatient
 	Given user is logged into eHMP-UI as kodak user
 	And user searches for and selects "twentythree,inpatient"

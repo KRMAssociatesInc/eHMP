@@ -1,8 +1,0 @@
-<con:reportTemplate xmlns:con="http://eviware.com/soapui/config">
-  <con:name xmlns:con="http://eviware.com/soapui/config">TestCaseResultsOverviewReport</con:name>
-  <con:reportType xmlns:con="http://eviware.com/soapui/config">COMMON</con:reportType>
-  <con:reportLevel xmlns:con="http://eviware.com/soapui/config">SUBREPORT</con:reportLevel>
-  <con:nameInReport xmlns:con="http://eviware.com/soapui/config">TestCaseResultsOverviewReport</con:nameInReport>
-  <con:data xsi:nil="true" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-  <con:description xmlns:con="http://eviware.com/soapui/config">Overview of TestCase results within a TestSuite</con:description>
-</con:reportTemplate>

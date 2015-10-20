@@ -17,7 +17,7 @@
                         <div id="{{medicationClass}}-time-header" class="col-sm-1 selectable header aligncol1" sortable="true" sortType="date" sortDirection="none" sortKey="lastAction" aria-label="{{medicationClass}} Medication Last Change Column Header" tabindex="0" tooltip-data-key="medications_last"> Last &#916
                             <span sortArrow="headerDirectionalIndicator" class="sort-caret fa "></span>
                         </div>
-                        <div id="{{medicationClass}}-{{#if inpatient}}next{{else}}fillable{{/if}}-header" class="col-sm-2 selectable header aligncol1" sortable="true" sortType="custom" sortDirection="none" sortKey="" aria-label="{{medicationClass}} Medication {{#if inpatient}} Next {{else}} Fillable {{/if}} Column Header" tabindex="0" tooltip-data-key="medications_next">{{#if inpatient}} Status/Next {{else}} Status/Fillable {{/if}}
+                        <div id="{{medicationClass}}-{{#if inpatient}}next{{else}}fillable{{/if}}-header" class="col-sm-2 selectable header aligncol1" sortable="true" sortType="custom" sortDirection="none" sortKey="" aria-label="{{medicationClass}} Medication {{#if inpatient}} Next {{else}} Fillable {{/if}} Column Header" tabindex="0" tooltip-data-key="{{#if inpatient}}medications_next{{else}}medications_fillable{{/if}}">{{#if inpatient}} Status/Next {{else}} Status/Fillable {{/if}}
                             <span sortArrow="headerDirectionalIndicator" class="sort-caret fa "></span>
                         </div>
                     </div>

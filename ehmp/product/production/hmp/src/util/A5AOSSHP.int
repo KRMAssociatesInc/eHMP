@@ -1,0 +1,21 @@
+XUSHSHP ;SF/STAFF - HASHING ROUTINE FOR SIG BLOCK IN FILE 200 ;4/24/89  15:26 ; 
+ ;;8.0;KERNEL;;Jul 10, 1995
+HASH G EN1 Q  ; Primary entry point
+ ;;
+EN G EN2 Q  ; CALLED BY XUS3
+ ;;
+DE G EN3 Q  ; Called from XUAPURGE
+EN1 ;
+ N %HASH,%HEX,%I
+ S %HASH=$SYSTEM.Encryption.SHA1Hash(X),%HEX=""
+ F %I=1:1:20 S %HEX=%HEX_$TR($J($ZHEX($A(%HASH,%I)),2)," ",0)
+ S X=%HEX
+ Q
+EN2 ;
+ S X=$SYSTEM.Encryption.AESCBCEncrypt(X,$G(X1)_$G(X2))
+ S X=$SYSTEM.Encryption.Base64Encode(X)
+ Q
+EN3 ;
+ S X=$SYSTEM.Encryption.Base64Decode(X)
+ S X=$SYSTEM.Encryption.AESCBCDecrypt(X,$G(X1)_$G(X2))
+ Q

@@ -242,6 +242,10 @@ function operationalDataStoreType() {
     return 'operational-store-record';
 }
 
+function errorRequestType() {
+    return 'error-request';
+}
+
 // TODO: requestStampTime
 function create(type, patientIdentifier, domain, record, requestStampTime, eventUid, meta) {
     var job = {
@@ -282,9 +286,11 @@ function create(type, patientIdentifier, domain, record, requestStampTime, event
         job['event-uid'] = eventUid;
     }
 
-    if (!_.isUndefined(meta.jobId)) {
-        job.jobId = meta.jobId;
-    }
+    // if (!_.isUndefined(meta.jobId)) {
+    //     job.jobId = meta.jobId;
+    // }
+
+    job.jobId = _.isUndefined(meta.jobId) || _.isNull(meta.jobId) ? uuid.v4() : meta.jobId;
 
     return job;
 }
@@ -353,6 +359,17 @@ function isSyncJobType(job) {
     var vistaTypeRegEx = /vista-[0-9,A-F]{4}-subscribe/;
     if (vistaTypeRegEx.test(job.type) || job.type === jmeadowsSyncRequestType() ||
         job.type === hdrSyncRequestType() || job.type === vlerSyncRequestType()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isSecondaryDomainSyncRequestType(job){
+    var jmeaodwsSyncDomainTypeRegEx = /jmeadows-sync-[a-z]+-request/;
+    var hdrSyncDomainTypeRegEx = /hdr-sync-[a-z]+-request/;
+
+    if(jmeaodwsSyncDomainTypeRegEx.test(job.type) || hdrSyncDomainTypeRegEx.test(job.type)){
         return true;
     } else {
         return false;
@@ -463,3 +480,6 @@ jobUtil.jmeadowsCdaDocumentConversionType = jmeadowsCdaDocumentConversionType;
 jobUtil.createJmeadowsCdaDocumentConversion = createJmeadowsCdaDocumentConversion;
 jobUtil.createHdrDomainXformVpr = createHdrDomainXformVpr;
 jobUtil.createJmeadowsDomainXformVpr = createJmeadowsDomainXformVpr;
+jobUtil.isSecondaryDomainSyncRequestType = isSecondaryDomainSyncRequestType;
+
+jobUtil.errorRequestType = errorRequestType;

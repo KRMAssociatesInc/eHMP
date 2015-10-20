@@ -1,8 +1,0 @@
-#if(${rows.size()})
-<i class="fa fa-warning-sign hmp-alert-icon"></i>
-<div>
-${rows.get(0).get("alert_data").size()}
-</div>
-#else
-&nbsp;
-#end

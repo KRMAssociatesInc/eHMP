@@ -7,8 +7,10 @@ define([
     "app/applets/lab_results_grid/details/detailsView",
     "app/applets/lab_results_grid/modal/modalView",
     "app/applets/lab_results_grid/meta/columns",
-    "hbs!app/applets/lab_results_grid/templates/tooltip"
-], function(Backbone, Marionette, _, AppletHelper, AppletUiHelper, DetailsView, ModalView, columns, tooltip) {
+    "hbs!app/applets/lab_results_grid/templates/tooltip",
+    'app/applets/orders/writeback/addOrders',
+    'app/applets/visit_new/writeback/addselectVisit'
+], function(Backbone, Marionette, _, AppletHelper, AppletUiHelper, DetailsView, ModalView, columns, tooltip, addOrders, addselectVisit) {
 
 
     var fetchOptions = {
@@ -96,7 +98,7 @@ define([
             type: 'panel'
         }
     });
-
+    var gridView;
     return ADK.AppletViews.GridView.extend({
         initialize: function(options) {
             this._super = ADK.AppletViews.GridView.prototype;
@@ -124,6 +126,43 @@ define([
                     name: "observed",
                     label: "Date",
                     format: "YYYYMMDD"
+                },
+
+                 onClickAdd: function(e) {
+                    // var addOrdersChannel = ADK.Messaging.getChannel('addALabOrdersRequestChannel');
+                    //  //addOrdersChannel.trigger('addLabOrdersModal', event, gridView);
+                    //  addOrdersChannel.command('openOrdersSearch');
+                    e.preventDefault();
+                    var writebackView = ADK.utils.appletUtils.getAppletView('orders', 'writeback');
+                    var formModel = new Backbone.Model();
+                    var vm_formModel = new Backbone.Model({
+                        encounterProvider: 'Not Specified',
+                        encounterLocation: 'Not Specified',
+                        visit: {}
+                    });
+                    var workflowOptions = {
+                        size: "large",
+                        title: "Order a Lab Test",
+                        showProgress: false,
+                        keyboard: true,
+                        steps: []
+                    };
+
+                    //check if visit context is already set
+                    var visit = ADK.PatientRecordService.getCurrentPatient().get('visit');
+                    //console.log(visit);
+                    if (!visit) {
+                        workflowOptions.steps.push({
+                            view: addselectVisit,
+                            viewModel: vm_formModel
+                        });
+                    }
+                    workflowOptions.steps.push({
+                        view: addOrders,
+                        viewModel: formModel
+                    });
+                    var workflowView = new ADK.UI.Workflow(workflowOptions);
+                    workflowView.show();
                 },
                 onClickRow: function(model, event, gridView) {
                     event.preventDefault();
@@ -236,6 +275,9 @@ define([
                 });
 
                 fullCollection.reset(sortedModels);
+                if (appletOptions.appletConfig.viewType === "expanded") {
+                    appletOptions.collection.setPageSize(fullCollection.length);
+                }
 
             };
             fetchOptions.criteria = {

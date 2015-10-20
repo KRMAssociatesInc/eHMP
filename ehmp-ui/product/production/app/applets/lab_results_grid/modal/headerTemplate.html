@@ -1,6 +1,6 @@
 <div class="labs-modal-header">
    <div class="row"> <div class="labs-modal-title col-md-8">
-         <h4 class="modal-title" id="mainModalLabel">{{typeName}} - {{specimen}}</h4>
+         <h4 class="modal-title" id="mainModalLabel">{{#if lab_detail_title}} {{lab_detail_title}} {{else}} {{typeName}} - {{specimen}} {{/if}}</h4>
        </div>
        <div class="labs-modal-nav-buttons col-md-4 text-right">
          <button type="button" tabindex="0" class="btn btn-default" id="labss-previous">

@@ -10,8 +10,8 @@ define([
     Util.getProblemText = function(response) {
         if (response.problem) {
             response.problemText = response.problem;
-            if (response.icd9) {
-                response.problemText += " (ICD-9-CM " + response.icd9 + ")";
+            if (response.icd) {
+                response.problemText += " (ICD-10-CM " + response.icd + ")";
             }
 
         }

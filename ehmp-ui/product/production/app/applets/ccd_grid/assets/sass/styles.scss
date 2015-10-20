@@ -1,6 +1,4 @@
 $green: #549947;
-$red: red;
-$labelGrey: #a2a2a2;
 
 .ccdModal {
     .c32Text
@@ -53,7 +51,7 @@ $labelGrey: #a2a2a2;
         color: $red;
     }
     .labelStyleColor {
-        color: $labelGrey;
+        color: $grey-darker;
     }
     .contentText {
         white-space: pre-line;
@@ -84,4 +82,9 @@ $labelGrey: #a2a2a2;
 .demographics {
     font-size: 120%;
     font-weight: bold;
+}
+.ccdContent {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 450px;
 }

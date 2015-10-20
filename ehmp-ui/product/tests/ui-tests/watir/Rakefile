@@ -12,10 +12,15 @@ require_relative '../../../../infrastructure/vagrant/aws/VagrantfileUtil.rb'
 FAIL_MSG = 'Please first source infrastructure/set.env.sh.'
 fail FAIL_MSG unless ENV.keys.include?('WORKSPACE') || ENV.keys.include?('GEM_HOME')
 fileLocation = "#{File.expand_path(File.dirname(__FILE__))}"
-
-namespace :ui_tests do
+BASE = nil
+namespace :ui do
   task default: [:acceptance]
-
+  task :acceptance, [:env] => [:environment_setup]
+  task :broken, [:env] => [:environment_setup]
+  task :regression, [:env] => [:environment_setup]
+  task :smoke, [:env] => [:environment_setup]
+  task :smokeplusacceptance, [:env] => [:environment_setup]
+  task :spec, [:env] => [:environment_setup]
   RuboCop::RakeTask.new(:rubocop) do |rubocop|
     puts '=========================================================================='
     puts '#     Validating code quality.                                           #'
@@ -42,28 +47,31 @@ namespace :ui_tests do
     case env
     when 'virtualbox'
       ip = Servers::EHMPUI.localIP
-      ENV['EHMPUI_IP'] = 'http://' + "#{ip}"
+      ENV['EHMPUI_IP'] = 'https://' + "#{ip}"
     when 'aws'
-      ip = VagrantfileUtil::AWS.get_private_ip('ehmp-ui', 'ehmp-balancer')
+      ip = knife_search_for_ip('ehmp-balancer')
       ENV['EHMPUI_IP'] = 'https://' + "#{ip}"
     else
       fail "Unrecognized environment type: #{env}. Allowable types are: 'virtualbox' and 'aws'"
     end
+    ENV['BASE'] = ENV['EHMPUI_IP']
+    puts "\n The local url of the EHMPUI_IP is => #{ENV['BASE']} \n \n"
+    puts "\n The BROWSER is set to => #{ENV['BROWSER']} \n \n"
   end
 
   class RSpec::Core::RakeTaskCustom < RSpec::Core::RakeTask
     def run_task(verbose)
-      Rake::Task['ui_tests:rubocop'].invoke
+      Rake::Task['ui:rubocop'].invoke
       super
     end
   end
-  
-  common = "--color #{fileLocation}/spec/. --format documentation --format html --out #{fileLocation}/results.html"
+
+  common = "--color #{fileLocation}/spec/. --require rspec/legacy_formatters -r ./junit.rb -f JUnit -o #{fileLocation}/results.xml --format documentation --format html --out #{fileLocation}/results.html"
   # Rake tasks for spec under here:
 
   desc 'Custom test for ui-team development'
   RSpec::Core::RakeTaskCustom.new(:spec) do |task|
-    task.pattern = "#{fileLocation}/spec/Pilot_Patient_Search_spec.rb"
+    task.pattern = "#{fileLocation}/spec/ehmpui_patient_search_spec.rb"
     task.rspec_opts = "--tag acceptance #{common}"
   end
 
@@ -92,15 +100,28 @@ namespace :ui_tests do
     task.rspec_opts = "--tag smoketest #{common}"
   end
 
-  desc 'requires a file and tag, ui_tests:rspec["filename","tag"]'
+  desc 'requires a file and tag, ui:rspec["filename","tag"]'
   RSpec::Core::RakeTaskCustom.new(:rspec, :file, :tag) do |task, args|
     fail "File does not exists: #{fileLocation}/spec/#{args[:file]}" unless File.exist? "#{fileLocation}/spec/#{args[:file]}"
     task.pattern = "#{fileLocation}/spec/#{args[:file]}"
     task.rspec_opts = "--tag #{args[:tag]}"
   end
 
-  desc 'requires a tag, ui_tests:rspecTag["tag"]'
+  desc 'requires a tag, ui:rspecTag["tag"]'
   RSpec::Core::RakeTaskCustom.new(:rspecTag, :tag) do |task, args|
     task.rspec_opts = "--tag #{args[:tag]}"
   end
+end
+
+def knife_search_for_ip(machine_name)
+  stack = ENV['JOB_NAME'] || ENV['USER']
+  if ENV.key?('BUNDLE_BIN_PATH')
+    raw_search = Bundler.with_clean_env { `knife search node \'name:#{machine_name}-#{stack}\' -Fj --config ~/Projects/vistacore/.chef/knife.rb` }
+  else
+    raw_search = `knife search node \'name:#{machine_name}-#{stack}\' -Fj --config ~/Projects/vistacore/.chef/knife.rb`
+  end
+  parsed_search = JSON.parse(raw_search)
+  fail 'More than one node with that name found' if parsed_search['results'] > 1
+  fail 'No node with that name found' if parsed_search['results'] == 0
+  ip = parsed_search['rows'][0]['automatic']['ipaddress']
 end

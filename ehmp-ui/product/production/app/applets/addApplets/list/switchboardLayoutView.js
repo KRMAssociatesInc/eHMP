@@ -8,6 +8,22 @@ define([
     var BeforeSwitchView = Backbone.Marionette.ItemView;
     var TitleView = Backbone.Marionette.ItemView;
 
+    var addFocus = function() {
+        if ($('.selected-view').attr('data-viewtype') === 'summary') {
+            $('.selected-view').addClass('options-box-focus-summary');
+        } else if ($('.selected-view').attr('data-viewtype') === 'expanded') {
+            $('.selected-view').addClass('options-box-focus-expanded');
+        } else {
+            if ($('#view-option').attr('data-viewtype') === 'summary') {
+                $('#view-option').addClass('options-box-focus-summary');
+            } else if ($('#view-option').attr('data-viewtype') === 'expanded') {
+                $('#view-option').addClass('options-box-focus-expanded');
+            } else {
+                $('#view-option').addClass('options-box-focus');
+            }
+        }
+    };
+
     var SwitchboardLayoutView = Backbone.Marionette.LayoutView.extend({
         template: switchboardTemplate,
         className: 'view-switchboard',
@@ -34,9 +50,20 @@ define([
         },
         onShow: function() {
             $('.options-list ul li:first div:first').focus();
+            addFocus();
         },
         events: {
-            'click .applet-exit-options-button': 'closeSwitchboard'
+            'click .applet-exit-options-button': 'closeSwitchboard',
+            "mouseover .options-box": 'removeFocus',
+            "mouseout .options-box": 'addFocus'
+        },
+        removeFocus: function() {
+            $('.options-box-focus').toggleClass('options-box-focus');
+            $('.options-box-focus-summary').toggleClass('options-box-focus-summary');
+            $('.options-box-focus-expanded').toggleClass('options-box-focus-expanded');
+        },
+        addFocus: function() {
+            addFocus();
         },
         closeSwitchboard: function(e) {
             if (this.currentView) {

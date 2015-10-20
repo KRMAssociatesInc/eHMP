@@ -79,7 +79,25 @@
         {{/each}}
     </div>
     {{/if}}
-
+    
+    {{#if dischDiagn}}
+    <div class="row">
+        <div tabindex="0" class="sectionHeader" id="diagnosisSection">Discharge Diagnosis</div>
+        {{#each dischDiagn}}
+            <div class="row">
+                <div class="col-xs-offset-4">
+                    <div class="col-xs-6 dataValue" tabindex="0" id="diagnosisIcdName">
+                        {{#if icdName}}
+                            {{icdName}}
+                        {{else}}
+                            Unknown
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        {{/each}}        
+    </div>      
+    {{/if}}
 
     {{#if movements}}
     <br/>

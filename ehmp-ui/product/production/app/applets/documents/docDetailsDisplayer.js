@@ -7,8 +7,9 @@ define([
     'app/applets/documents/detail/simple/docDetailView',
     'app/applets/documents/detail/complex/complexDetailView',
     'app/applets/documents/detail/dodComplexNoteUtil',
-    'app/applets/documents/debugFlag'
-], function(Backbone, Marionette, Async, docUtils, UnknownDocumentModalView, DocDetailView, ComplexDetailView, DodComplexNoteUtil, DebugFlag) {
+    'app/applets/documents/debugFlag',
+    'app/applets/documents/appletHelper'
+], function(Backbone, Marionette, Async, docUtils, UnknownDocumentModalView, DocDetailView, ComplexDetailView, DodComplexNoteUtil, DebugFlag, AppletHelper) {
     'use strict';
 
     var DEBUG = DebugFlag.flag;
@@ -53,7 +54,7 @@ define([
         });
     }
 
-    function doGetView(model, docType, resultDocCollection, callback) {
+    function doGetView(model, docType, resultDocCollection, childDocCollection, callback) {
 
         var dt = docType.toLowerCase();
 
@@ -70,7 +71,13 @@ define([
         } else {
             // build internal view (syncronous)
             var view;
-            if (docType.toLowerCase() === 'advance directive') {
+            if (AppletHelper.hasChildDocs(model)) {
+                view = new ComplexDetailView({
+                    resultDocCollection: resultDocCollection,
+                    childDocCollection: childDocCollection,
+                    model: model
+                });
+            } else if (docType.toLowerCase() === 'advance directive') {
                 view = new DocDetailView({
                     model: model
                 });
@@ -187,8 +194,7 @@ define([
             return deferredResponse;
         },
 
-        getView: function(model, docType, resultDocCollection) {
-            // console.log("Doc Tab App(docDetailsDisplay) -----> getView");
+        getView: function(model, docType, resultDocCollection, childDocCollection) {
 
             var deferredResponse = $.Deferred(),
                 complexNoteModels = [];
@@ -205,7 +211,7 @@ define([
                 getDodComplexNotes.bind(null, complexNoteModels),
 
                 // Get the detail view
-                doGetView.bind(null, model, docType, resultDocCollection)
+                doGetView.bind(null, model, docType, resultDocCollection, childDocCollection)
 
             ], function onComplete(error, results) {
                 if (error) {
@@ -219,21 +225,4 @@ define([
         }
     };
     return DocDetailsDisplayer;
-
-    // function getModelCallback(collection) {
-    //     showModal(collection.models[0]);
-    // }
-
-    // var DocDetailsDisplayer = {};
-    // DocDetailsDisplayer.showModalDialogUsingModel = function(model) {
-    //     if(model)
-    //         showModal(model);
-    // };
-
-    // DocDetailsDisplayer.showModalDialogFromDocId = function(docId) {
-    //     if(docId)
-    //         docUtils.getDocModelFromUid(docId, getModelCallback);
-    // };
-
-    // return DocDetailsDisplayer;
 });

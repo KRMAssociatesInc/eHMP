@@ -30,7 +30,7 @@ define([
                 pageable: false,
                 resourceTitle: 'problems-getProblems',
                 criteria: {
-                    searchfor: queryString
+                    query: queryString
                 },
                 collectionConfig: {
                     collectionParse: function(collection) {
@@ -51,6 +51,12 @@ define([
                 onSuccess: onSuccess,
                 onError: onError
             });
+        },
+        getTrimmedProblem: function(problemModel) {
+            return {
+                problem: problemModel.get('problem'),
+                snomed: problemModel.get('snomed')
+            };
         }
     };
 

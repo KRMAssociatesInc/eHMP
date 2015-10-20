@@ -42,6 +42,12 @@ var jmeadowsJob = {
     'rootJobId': '1',
     'jobId': '4'
 };
+var jmeadowsDomainSyncJob = {
+    'type': 'jmeadows-sync-allergy-request',
+    'patientIdentifier': patientIdentifiers[2],
+    'rootJobId': '1',
+    'jobId': '5'
+};
 
 var log = require(global.VX_UTILS + 'dummy-logger');
 var config = {
@@ -61,7 +67,8 @@ var config = {
     }
 };
 var environment = {
-    'jds': new JdsClient(log, config)
+    'jds': new JdsClient(log, log, config),
+    'metrics': log
 };
 
 var engine = new SyncRulesEngine(log, config, environment);
@@ -208,6 +215,33 @@ describe('expiration-rule-itest', function() {
                         finished = true;
                     });
                 });
+            });
+        });
+
+        waitsFor(function() {
+            return finished;
+        });
+    });
+
+    it('lets identifiers through for secondary sites with error jobs', function() {
+        var finished = false;
+
+        var completedEnterpriseJob = _.clone(enterpriseSyncJob);
+        completedEnterpriseJob.status = 'completed';
+        completedEnterpriseJob.timestamp = (Date.now() - 10000).toString();
+
+        var completedDodJob = _.clone(jmeadowsJob);
+        completedDodJob.status = 'completed';
+        completedDodJob.timestamp = (Date.now() - 9000).toString();
+
+        var errorDodJob = _.clone(jmeadowsDomainSyncJob);
+        errorDodJob.status = 'error';
+        completedDodJob.timestamp = (Date.now() - 9000).toString();
+
+        runs(function() {
+            engine.getSyncPatientIdentifiers(patientIdentifiers, [], function(error, ids) {
+                expect(val(ids, 'length')).toBe(3);
+                finished = true;
             });
         });
 

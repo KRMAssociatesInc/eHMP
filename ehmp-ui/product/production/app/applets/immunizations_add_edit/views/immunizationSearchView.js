@@ -32,7 +32,11 @@ define([
 
         modalView = new ModalView();
 
-        ADK.showModal(modalView, modalOptions);
+        var modal = new ADK.UI.Modal({
+            view: modalView,
+            options: modalOptions
+        });
+        modal.show();
     }
     
     var SearchFooterView = Backbone.Marionette.ItemView.extend({

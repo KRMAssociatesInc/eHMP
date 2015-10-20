@@ -5,7 +5,7 @@ define([
     "app/applets/patient_search/views/common/blankView"
 ], function(Backbone, Marionette, SingleSearchResultView, BlankView) {
 
-    var SCROLL_TRIGGERPOINT = 40;
+    var SCROLL_TRIGGERPOINT = 50;
     var SCROLL_ADDITIONAL_ROWS = 100;
     var INITIAL_NUMBER_OF_ROWS = 30;
 
@@ -31,7 +31,7 @@ define([
             var searchOptions = {
                 resourceTitle: 'locations-' + this.locationType,
                 criteria: {
-                    "siteCode": siteCode,
+                    "site.code": siteCode,
                     itemsPerPage: 20
                 },
                 cache: false,

@@ -333,7 +333,7 @@ Then(/^the client side validation date error displays "([^"]*)"$/) do |element|
   end
 end
 
-Then(/^the client side validation time error is hidden$/) do |element|
+Then(/^the client side validation time error is hidden$/) do |_element|
   con = ChangeDateTest.instance
   driver = TestSupport.driver
   expect(con.verify_element_hidden?("VitalsTimeError")).to be_true

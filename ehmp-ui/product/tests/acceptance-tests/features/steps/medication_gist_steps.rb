@@ -7,7 +7,8 @@ class MedicationGistContainer <  AccessBrowserV2
     add_verify(CucumberLabel.new("Medication Details"), VerifyContainsText.new, AccessHtmlElement.new(:id, 'activeMeds-interventions-gist-items'))
     add_action(CucumberLabel.new("Control - applet - Filter Toggle"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=activeMeds] #grid-filter-button-activeMeds"))
     add_action(CucumberLabel.new("Control - applet - Text Filter"), SendKeysAction.new, AccessHtmlElement.new(:css, "[data-appletid=activeMeds] .form-search input"))
-    add_action(CucumberLabel.new("Amoxapine Tablet"), ClickAction.new, AccessHtmlElement.new(:id, "name"))
+    #  add_action(CucumberLabel.new("Amoxapine Tablet"), ClickAction.new, AccessHtmlElement.new(:id, "name"))
+    add_action(CucumberLabel.new("Amoxapine Tablet"), ClickAction.new, AccessHtmlElement.new(:xpath, "//*[text() = 'Amoxapine 150 MG Oral Tablet']"))
     add_action(CucumberLabel.new("Medication Header"), ClickAction.new, AccessHtmlElement.new(:id, "Name-header"))
     add_action(CucumberLabel.new("Last Header"), ClickAction.new, AccessHtmlElement.new(:xpath, "//*[@data-appletid='activeMeds']/descendant::*[@id='Age-header']"))
     add_action(CucumberLabel.new("Refills Header"), ClickAction.new, AccessHtmlElement.new(:id, "Severity-header"))
@@ -24,7 +25,11 @@ class MedicationGistContainer <  AccessBrowserV2
       
     gist_view_count = AccessHtmlElement.new(:xpath, "//*[@id='activeMeds-interventions-gist-items']/descendant::div[contains(@name, 'name')]")
     add_verify(CucumberLabel.new('medication gist view count'), VerifyXpathCount.new(gist_view_count), gist_view_count)
-    add_action(CucumberLabel.new("Amoxapine Tablet Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "//*[@id='activeMeds-interventions-gist-items']/descendant::a[@id='detailView-button-toolbar']"))
+    #  add_action(CucumberLabel.new("Amoxapine Tablet Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "//*[@id='activeMeds-interventions-gist-items']/descendant::a[@button-type='detailView-button-toolbar']"))
+    
+    amoxapine_xpath = "//b[contains(string(), 'Amoxapine 150 MG Oral Tablet')]"
+    applet_toolbar_xpath = "ancestor::div[contains(@class, 'toolbarActive')]"
+    add_action(CucumberLabel.new("Amoxapine Tablet Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{amoxapine_xpath}/#{applet_toolbar_xpath}/descendant::a[@button-type='detailView-button-toolbar']"))
   end
 end 
 
@@ -42,23 +47,22 @@ Then(/^the Medication Gist overview table contains headers$/) do |table|
 end
 
 Then(/^the medication gist view has the following information$/) do |table|
-
   expect(@mg.wait_until_action_element_visible("MedicationGistVisible", DefaultLogin.wait_time)).to be_true
     
-#  table.rows.each do | row |
-#    expect(@mg.perform_verification('Name', row[0])).to be_true, "The value #{row[0]} is not present in the medication details"
-#    expect(@mg.perform_verification('Description', row[1])).to be_true, "The value #{row[1]} is not present in the medication details"
-#    expect(@mg.perform_verification('Count', row[2])).to be_true, "The value #{row[2]} is not present in the medication details"
-#    expect(@mg.perform_verification('Graphic', row[3])).to be_true, "The value #{row[3]} is not present in the medication details"
-#    expect(@mg.perform_verification('Age', row[4])).to be_true, "The value #{row[4]} is not present in the medication details"
-#  end
+  #  table.rows.each do | row |
+  #    expect(@mg.perform_verification('Name', row[0])).to be_true, "The value #{row[0]} is not present in the medication details"
+  #    expect(@mg.perform_verification('Description', row[1])).to be_true, "The value #{row[1]} is not present in the medication details"
+  #    expect(@mg.perform_verification('Count', row[2])).to be_true, "The value #{row[2]} is not present in the medication details"
+  #    expect(@mg.perform_verification('Graphic', row[3])).to be_true, "The value #{row[3]} is not present in the medication details"
+  #    expect(@mg.perform_verification('Age', row[4])).to be_true, "The value #{row[4]} is not present in the medication details"
+  #  end
   
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(@mg.perform_verification('Medication Gist Items', row[0])).to be_true, "The value #{row[0]} is not present in the medication details"
     expect(@mg.perform_verification('Medication Gist Items', row[1])).to be_true, "The value #{row[1]} is not present in the medication details"
-    expect(@mg.perform_verification('Medication Gist Items', row[2])).to be_true, "The value #{row[2]} is not present in the medication details"
-    expect(@mg.perform_verification('Medication Gist Items', row[3])).to be_true, "The value #{row[3]} is not present in the medication details"
-#    expect(@mg.perform_verification('Medication Gist Items', row[4])).to be_true, "The value #{row[4]} is not present in the medication details"
+#    expect(@mg.perform_verification('Medication Gist Items', row[2])).to be_true, "The value #{row[2]} is not present in the medication details"
+#    expect(@mg.perform_verification('Medication Gist Items', row[3])).to be_true, "The value #{row[3]} is not present in the medication details"
+    #    expect(@mg.perform_verification('Medication Gist Items', row[4])).to be_true, "The value #{row[4]} is not present in the medication details"
   end
 end
 
@@ -71,7 +75,7 @@ When(/^user clicks on "(.*?)" medication name$/) do |medication_name|
   expect(@mg.perform_action(medication_name, "")).to be_true
 end
 
-When(/^user clicks on the column header "(.*?)"$/) do | name_column_header |
+When(/^user clicks on the column header "(.*?)"$/) do |name_column_header|
   expect(@mg.wait_until_action_element_visible("MedicationGistVisible", DefaultLogin.wait_time)).to be_true
   expect(@mg.perform_action(name_column_header + " Header", "")).to be_true
 end
@@ -90,13 +94,12 @@ Then(/^"(.*?)" column is sorted in ascending order$/) do |column_name|
     fail "**** No function found! Check your script ****"
   end
         
-  element_column_values.each do | row |
+  element_column_values.each do |row|
     p row.text
     column_values_array << row.text.downcase
   end
 
   (column_values_array == column_values_array.sort).should == true
-
 end
 
 Then(/^"(.*?)" column is sorted in descending order$/) do |column_name|
@@ -113,7 +116,7 @@ Then(/^"(.*?)" column is sorted in descending order$/) do |column_name|
     fail "**** No function found! Check your script ****"
   end
      
-  element_column_values.each do | row |
+  element_column_values.each do |row|
     column_values_array << row.text.downcase
   end
   

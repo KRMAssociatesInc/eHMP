@@ -107,7 +107,7 @@ describe('record-enrichment-appointment-xformer.js', function() {
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalVaAppointmentJob, function(error, record) {
+                xformer(log, config, environment, originalVaAppointmentJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.current).toBe(false);
@@ -154,7 +154,7 @@ describe('record-enrichment-appointment-xformer.js', function() {
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalDodAppointmentJob, function(error, record) {
+                xformer(log, config, environment, originalDodAppointmentJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.current).toBe(false);
@@ -213,7 +213,7 @@ describe('record-enrichment-appointment-xformer.js', function() {
             };
 
             runs(function() {
-                xformer(log, config, environment, appointmentJob, function(error, record) {
+                xformer(log, config, environment, appointmentJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.current).toBe(false);
@@ -250,28 +250,12 @@ describe('record-enrichment-appointment-xformer.js', function() {
                 return finished;
             }, 'Call failed to return in time.', 500);
         });
-        it('Job.record was null', function() {
-            var finished = false;
-            var environment = {};
-
-            runs(function() {
-                xformer(log, config, environment, {}, function(error, record) {
-                    expect(error).toBeNull();
-                    expect(record).toBeNull();
-                    finished = true;
-                });
-            });
-
-            waitsFor(function() {
-                return finished;
-            }, 'Call failed to return in time.', 500);
-        });
         it('Job was removed', function() {
             var finished = false;
             var environment = {};
 
             runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:appointment:DOD:0000000003:1000010340');

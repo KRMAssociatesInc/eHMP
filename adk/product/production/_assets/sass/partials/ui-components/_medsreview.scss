@@ -1,0 +1,166 @@
+.medsreview-container {
+    .modal-content {
+        width: 800px;
+        .modal-header {
+            background-color: $grey-lightest;
+            h4 {
+                padding: 0;
+            }
+        }
+        .modal-body {
+            padding: 0;
+            .panel {
+                border: none;
+                margin-bottom: 0;
+                .panel-body {
+                    &.no-padding {
+                        padding: 0;
+                    }
+                    .tabbable {
+                        h6 {
+                            font-weight: bold;
+                        }
+                        .nav {
+                            padding: 0 0 10px 0;
+                        }
+                    }
+                    .tabs-left {
+                        .nav-tabs {
+                            border-right: 1px solid $grey-light;
+                            border-bottom: 0;
+                            float: left;
+                            width: 25%;
+                            li {
+                                width: 100%;
+                                a {
+                                    color: $primary;
+                                    border-radius: 0;
+                                    display: block;
+                                    margin-right: -1px;
+                                    min-width: 74px;
+                                    padding: 6px 15px;
+                                    -moz-border-radius: 0;
+                                    &:hover, &:focus {
+                                        background-color: $primary;
+                                        color: $white;
+                                    }
+                                }
+                                li.active a {
+                                    background-color: $primary;
+                                    color: $white;
+                                }
+                            }
+                            h4 {
+                                font-size: 12px;
+                                font-weight: bold;
+                                margin: 15px 15px 10px 15px;
+                                padding: 0;
+                            }
+                            h6 {
+                                margin-left: 15px;
+                            }
+                            & + * {
+                                float: left;
+                                width: 74%;
+                                width: calc(75% - 1px);
+                            }
+                        }
+                        .tab-content {
+                            border-left: 1px solid $grey-light;
+                            margin-left: -1px;
+                            padding: 15px;
+                            .tab-pane {
+                                h5 {
+                                    margin-bottom: 0;
+                                }
+                                h6:first-child {
+                                    color: $primary;
+                                    font-size: 11px;
+                                    margin-top: 10px;
+                                    padding-top: 0;
+                                }
+                                .table {
+                                    thead {
+                                        background-color: $primary;
+                                        color: $white;
+                                    }
+                                    tbody {
+                                        tr {
+                                            background-color: $white;
+                                        }
+                                        tr:nth-child(even) {
+                                            background-color: transparentize($primary, .90);
+                                        }
+                                        tr:hover {
+                                            background-color: transparentize($secondary, .75);
+                                        }
+                                    }
+                                }
+                            }
+                            .tab-content-labs {
+                                .tab-content {
+                                    border-left: 0;
+                                    padding: 0;
+                                }
+                                .btn {
+                                    border: 1px solid $grey-light;
+                                    border-radius: 4px;
+                                    margin-bottom: 4px;
+                                    width: 26px;
+                                    height: 26px;
+                                }
+                            }
+                            &.scroll {
+                                height: 512px;
+                                overflow-y: scroll;
+                            }
+                            .label-status {
+                                font-size: 12px;
+                                padding: 5px;
+                            }
+                            .description {
+                                font-size: 13px;
+                            }
+                            hr {
+                                margin-top: 0;
+                            }
+                            h4 {
+                                font-size: 18px;
+                                margin-top: 0;
+                                padding: 0;
+                            }
+                            h5 {
+                                border: none;
+                                font-size: 12px;
+                                font-weight: bold;
+                                margin-top: 0;
+                                margin-bottom: 0;
+                            }
+                            h6 {
+                                color: $primary;
+                                font-size: 12px;
+                            }
+                        }
+                        ul {
+                            margin: 0;
+                            padding: 0;
+                            list-style-type: none;
+                            width: 100%;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        .modal-footer {
+            padding: 0;
+            .panel-footer {
+                padding: 10px 15px;
+                background-color: $grey-lightest;
+                border-bottom-right-radius: 3px;
+                border-bottom-left-radius: 3px;
+                border-top: 0;
+            }
+        }
+    }
+}

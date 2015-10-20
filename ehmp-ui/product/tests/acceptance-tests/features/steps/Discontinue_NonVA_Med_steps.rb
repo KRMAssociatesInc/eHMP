@@ -24,7 +24,7 @@ Then(/^wait$/) do
   sleep 15
 end
 
-Given(/^the user selects the discontinue reason "(.*?)"$/) do |reason|
+Given(/^the user selects the discontinue reason "(.*?)"$/) do |_reason|
   con = DiscontinueNonVaMedTest.instance
   con.wait_until_action_element_visible("Per Policy", DefaultLogin.wait_time)
   expect(con.static_dom_element_exists?("Per Policy")).to be_true

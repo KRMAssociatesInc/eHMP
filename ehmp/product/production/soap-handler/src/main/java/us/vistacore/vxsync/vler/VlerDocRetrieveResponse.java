@@ -5,17 +5,34 @@ import java.util.List;
 
 public class VlerDocRetrieveResponse {
 
-    private List<Section> vlerDocSections;
+    private String vlerDocHtml;
+    private boolean compressRequired;
+    private String vlerDocType;
     private boolean isError;
     private String errorMsg;
 
-    public List<Section> getVlerDocSections() {
+    public String getVlerDocHtml() {
+        return vlerDocHtml;
+    }
 
-        if (vlerDocSections == null) {
-            vlerDocSections = new ArrayList<>();
-        }
+    public void setVlerDocHtml(String html) {
+        vlerDocHtml = html;
+    }
 
-        return vlerDocSections;
+    public boolean isCompressRequired() {
+        return compressRequired;
+    }
+
+    public void setCompressRequired(boolean required) {
+        this.compressRequired = required;
+    }
+
+    public String getVlerDocType() {
+        return vlerDocType;
+    }
+
+    public void setVlerDocType(String docType) {
+        this.vlerDocType = docType;
     }
 
     public boolean isError() {

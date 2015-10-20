@@ -8,7 +8,7 @@
 }
 
 .notLatestVital {
-    color: #707070;
+    color: $grey-darker;
     font-style: italic;
 }
 
@@ -55,13 +55,9 @@ border-right: 1px solid #B9B9B9;
 }
 .b-table table{
     float:left; width: 48%; margin-top: 2px;
-    // border-left: 1px solid #BCBCBC;
 }
 .a-table td, .b-table td {
     padding: 2px 5px
-}
-tr:nth-child(even) {
-    background-color: #f2f8fe;
 }
 tr.clickable{
     cursor:pointer;
@@ -74,7 +70,7 @@ td.right-aligned{
 }
 .emptyTextVital {
     font-style: italic;
-    color: #707070;
+    color: $grey-darker;
     min-height: 40px;
     padding: 10px;
 }
@@ -123,7 +119,7 @@ td.right-aligned{
         padding: 10px;
     }
     .changecolor + .tooltip > .tooltip-inner {
-    border: 1px solid #CCCCCC;
+    border: 1px solid $grey;
     text-align:left;
     max-width: 320px;
         .row{
@@ -132,7 +128,7 @@ td.right-aligned{
         }
     }
     .changeArrow{
-    color: #37779e;
+    color: $blue;
     font-size: 15px;
     }
     .header-bar {
@@ -149,18 +145,10 @@ td.right-aligned{
     padding-right: 5px;
     }
     .quickDraw:hover {
-        background-color: #F2F8FE;
         .quickviewOverlay{
             display: block;
             }
     }
-    // .quickDraw:focus {
-    //     background-color: #F2F8FE;
-    //     outline:0;
-    //     .quickviewOverlay{
-    //         display: block;
-    //      }
-    // }
     .quickDraw{
          height: 100%;
     }

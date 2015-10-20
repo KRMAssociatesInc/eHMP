@@ -1,4 +1,5 @@
 'use strict';
+/*global describe, it, before, beforeEach, after, afterEach, spyOn, expect, runs, waitsFor */
 
 require('../../../../env-setup');
 var log = require(global.OSYNC_UTILS + 'dummy-logger');
@@ -31,6 +32,9 @@ describe('store-job-status integration test', function() {
         it('save 2 patients to JDS', function () {
             var done = false;
 
+            var testData = null;
+            var testError = null;
+
             runs(function () {
                 var job = {};
                 job.type = 'store-job-status';
@@ -38,13 +42,10 @@ describe('store-job-status integration test', function() {
                 job.patients = ["9E7A;1", "9E7A;3"];
 
                 var mockEnvironment = null;
-                handler(log, mockConfig, mockEnvironment, job, function (data) {
+                handler(log, mockConfig, mockEnvironment, job, function (error, data) {
                     done = true;
-
-                    expect(data).not.toBe(null);
-                    expect(data).not.toBe(undefined);
-                    expect(data).not.toBe(false);
-
+                    testData = data;
+                    testError = error;
                     mockHandlerCallback.callback();
                 });
             });
@@ -55,6 +56,11 @@ describe('store-job-status integration test', function() {
 
             runs(function () {
                 expect(mockHandlerCallback.callback).toHaveBeenCalled();
+
+                expect(testError).toBe(null);
+                expect(testData).not.toBe(null);
+                expect(testData).not.toBe(undefined);
+                expect(testData).not.toBe(false);
             });
         });
     });

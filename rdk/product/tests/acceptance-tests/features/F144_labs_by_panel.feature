@@ -38,3 +38,55 @@ Scenario: Limiting the number of results with the 'start', 'limit', 'observedFro
     | 10108V420871     | true     | 2007         | 2008       | 10    | 14    |
     Then a successful response is returned
     And the client receives "445" total items but only "14" current items with a start index of "10"
+
+@US2034 @DE377 @labsByPanel_anatomic_pathology
+Scenario: Show the anatomic pathology results from labs applet
+  Given a patient with pid "11010V543403" has been synced through the RDK API
+  When the client requests a response in VPR format from RDK API with the labsbypanel parameters
+    | pid              | _ack     | observedFrom | observedTo | start | limit |
+    | 11010V543403     | true     |              |            |       |       |
+  Then a successful response is returned
+  And the VPR results contain
+      | field           | value              |
+      | pid             | 9E7A;239           |
+      | observed        | 19951205           |
+      | kind            | Surgical Pathology |
+      | specimen        | LYMPH NODES        |
+      | facilityMoniker | TST1               |
+  And the VPR results contain
+      | field           | value              |
+      | pid             | C877;239           |
+      | observed        | 19951205           |
+      | kind            | Surgical Pathology |
+      | specimen        | LYMPH NODES        |
+      | facilityMoniker | TST2               |
+  And the VPR results contain
+      | field           | value              |
+      | pid             | 9E7A;239           |
+      | observed        | 19951116           |
+      | kind            | Surgical Pathology |
+      | specimen        | BONE MARROW BIOPSY |
+      | facilityMoniker | TST1               |
+  And the VPR results contain
+      | field           | value              |
+      | pid             | C877;239           |
+      | observed        | 19951116           |
+      | kind            | Surgical Pathology |
+      | specimen        | BONE MARROW BIOPSY |
+      | facilityMoniker | TST2               |
+
+@US2034 @DE377 @labsByPanel_microbiology
+Scenario: Show the microbiology results from labs applet
+  Given a patient with pid "9E7A;9" has been synced through the RDK API
+   When the client requests a response in VPR format from RDK API with the labsbypanel parameters
+    | pid              | _ack     | observedFrom | observedTo | start | limit |
+    | 9E7A;9           | true     |              |            |       |       |
+  Then a successful response is returned
+  And the VPR results contain
+      | field           | value        |
+      | pid             | 9E7A;9       |
+      | observed        | 199309112315 |
+      | kind            | Microbiology |
+      | sample          | URINE        |
+      | specimen        | URINE        |
+      | facilityMoniker | TST1         |

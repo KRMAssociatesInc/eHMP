@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>eHMP Bootstrap UI Library - Patient Search</title>
+        <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+        <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+        <link rel="stylesheet" href="../../../app/css/applets.css">
+        <link rel="stylesheet" href="../../css/main-styles.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700" />
+        <script src="../../js/jquery-1.11.2.min.js"></script>
+    </head>
+
+    <body>
+        <div class="patient-search-container">
+          <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">            
+              <div class="container-fluid">
+                   <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                   
+                      <div class="nav-search">
+                          <span class="sr-only">Press enter to return to patient search screen</span>
+                          <span class="fa fa-search"></span>
+                          <span class="search-icon-text">Patient Search</span>
+                      </div>
+                   </div>
+              
+                   <div class="collapse navbar-collapse" id="navbar-collapse">
+                      <ul class="nav navbar-nav navbar-right">
+                         <li class="dropdown">
+                            <a href="#" tabindex="0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="fa-user"> User, Panorama</span> <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                               <li class="text-muted">Panorma</li>
+                                  <li class="text-info">Clinician</li>
+                                  <li class="divider"></li>
+                                  <li>
+                                  <a href="#" tabindex="0" id="logoutButton">
+                                  <span class="sr-only">, Sign out button, Press enter, to sign out and return to logon screen,</span>
+                                  <span class="fa fa-power-off"></span>
+                                  Sign Out
+                                  </a>
+                               </li>
+                            </ul>
+                         </li>
+                      </ul>
+                   </div>
+              </div>
+          </nav><!--end navigation-->
+          
+          <div class="container">
+        <div role="tabpanel" class="tabpanel">
+          <ul class="nav nav-tabs nav-tabs-sign-in" role="tablist">
+            <li role="presentation" class="active"><a href="#mySite" aria-controls="mySite" role="tab" data-toggle="tab">My Site</a></li>
+                    <li role="presentation"><a href="#myCrps" aria-controls="myCrps" role="tab" data-toggle="tab">My CRPS List</a></li>
+                    <li role="presentation"><a href="#allPatients" aria-controls="allPatients" role="tab" data-toggle="tab">All Patients</a></li>
+                  </ul><!-- end nav tabs -->
+
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="mySite">
+                      <div class="row">
+                          <div class="col-lg-12">
+                              <form action="#" method="post">
+                              <div class="form-group input-group-search">
+                                <label for="search-patient" class="sr-only">Search for Patient</label>
+                                <input type="text" class="form-control search-bar-big" title="Please enter in patient name" name="search-patient" id="search-patient" placeholder="Search for Patient" required />
+                                  <div class="pull-right">
+                                    <button type="submit" class="patient-search-btn"><i class="fa fa-arrow-circle-right right-aarow-patient-search"></i></button>
+                                  </div>
+                                  
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <div class="row">
+                          <div class="col-lg-12">
+                          
+                          
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default active" data-toggle="tab">All</button>
+      
+      <div class="btn-group" data-toggle="tab">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          Clinics <span class="caret"></span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+          test
+          </div>
+      </div>
+      
+      <button type="button" class="btn btn-default" data-toggle="tab">Wards</button>    
+  </div>                        
+                          
+                          
+                          
+                          
+
+                    </div>
+                      </div>    
+                  </div><!--end my site panel-->
+                  
+                  <div role="tabpanel" class="tab-pane" id="myCrps">
+                    <p>Place Holder</p>
+                  </div><!--end myCrps panel-->
+                  
+                  <div role="tabpanel" class="tab-pane" id="allPatients">
+                    <p>Place Holder</p>
+                  </div><!--end allPatients panel-->
+                </div><!--end tab conent-->
+        </div><!--end tab--> 
+              
+          </div><!--end container-->
+          
+          <div class="container" style="background-color: #d4dcde; margin-top:15px;">
+              <div class="row">
+                  <div class="col-md-6">
+                      <table class="table ehmp-table-defaulttable-striped table-bordered table-hover">
+                         <caption class="sr-only">This table displays patient data such as patient name, social security number, date of birth, and gender, based on the entered search criteria.</caption>
+                           <thead>
+                              <tr>
+                                <th scope="col">Patient Name</th>
+                                <th scope="col">SSN</th>
+                                <th scope="col">DOB</th>
+                                <th scope="col">Gender</th>
+                              </tr>
+                           </thead>
+                                          
+                           <tbody>
+                              <tr>
+                                <td>Eight, Imagepatient</td>
+                                <td>***-**-1008</td>
+                                <td>04/15/1953 (61y)</td>
+                                <td>Male</td>
+                              </tr>
+                              <tr>
+                                <td>Eight, Inpatient</td>
+                                <td>***-**-0808</td>
+                                <td>03/09/1945 (69y)</td>
+                                <td>Male</td>
+                              </tr>
+                              <tr>
+                                <td>Eight, Outpatient</td>
+                                <td>***-**-0608</td>
+                                <td>03/09/1945 (69y)</td>
+                                <td>Female</td>
+                              </tr>
+                              <tr>
+                                <td>Eight, Imagepatient</td>
+                                <td>***-**-1008</td>
+                                <td>04/15/1953 (61y)</td>
+                                <td>Male</td>
+                              </tr>
+                              <tr>
+                                <td>Eight, Inpatient</td>
+                                <td>***-**-0808</td>
+                                <td>03/09/1945 (69y)</td>
+                                <td>Male</td>
+                              </tr>
+                              <tr>
+                                <td>Eight, Outpatient</td>
+                                <td>***-**-0608</td>
+                                <td>03/09/1945 (69y)</td>
+                                <td>Female</td>
+                              </tr>
+                           </tbody>
+                      </table>
+                  </div>
+                  
+                  <div class="col-md-6">
+                  
+                  </div>
+              </div>
+      </div><!--end container-->
+
+          <footer class="navbar-fixed-bottom" id="bottom-region">
+              <div class="col-md-12">
+                  <div class="well well-sm">
+                      <div id="patientSyncStatusRegion" class="pull-right">
+                      </div>
+                      <span id="appVersion">
+                          <strong>eHMP</strong> version 1.2.0 | Build XX
+                      </span>
+                  </div>
+            </div>
+          </footer><!--end footer-->
+        </div>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

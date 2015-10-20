@@ -1,0 +1,26 @@
+<!-- <div class="feature-box">
+    <h3 data-toggle="tooltip" data-placement="top" title="US{{storyNumber}}">
+        <span class="pull-right{{#if isCompleted}} text-success">Completed{{/if}}{{#if isPrototypeReady}} text-warning">Prototype Ready{{/if}}{{#if isInDevelopment}} text-danger">In Development / Planned{{/if}}</span>{{label}}
+    </h3>
+</div> -->
+
+    <div class="pixel-width-15">
+        {{#if developmentStatus}}{{#if cometStatus}}
+        <div class="handOff-status no-margin left-margin-md bg-success"></div>{{else}}
+        <div class="handOff-status no-margin left-margin-md bg-warning"></div>{{/if}}{{else}}
+        <div class="handOff-status no-margin left-margin-md bg-danger"></div>{{/if}}
+    </div>
+    <div>
+    {{#if exampleForm}}
+        <a href="#" class="control-label">{{label}}</a>
+    {{else}}
+    	<span>{{label}}</span>
+    {{/if}}
+    </div>
+    <div>
+        <span>US{{storyNumber}}</span>
+    </div>
+    <div>
+        {{#if documentationURL}}<a href="{{documentationURL}}" class="documentation-link" target="_blank">(click here)</a>{{/if}}
+    </div>
+

@@ -1,0 +1,41 @@
+<h3>Progress Bar</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> A progress bar is a visual indicator to indicate to the user where they are in the process of completing an action.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> A progress bar uses a list, which will follow the same guidelines as in the list section.</p>
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To add step numbers to the progress bar, change the content in the css, for example change content: ""; to content: "1";.</p>
+</div>
+
+<h4>Progress Bar</h4>
+<div id="progress-barCopy">
+    <ul class="progress-indicator">
+        <li><div class="completed"><span class="bubble"></span> Select an Immunization Type</div></li>
+        <li><div class="completed"><span class="bubble"></span> Enter Immunization Info <span class="sr-only">You are currently on step 2 of 5</span></div></li>
+        <li><div><span class="bubble"></span> Step 3</div></li>
+        <li><div><span class="bubble"></span> Step 4</div></li>
+        <li><div><span class="bubble"></span> Step 5</div></li>
+    </ul>
+</div>
+<hr />
+
+<div role="tabpanel" class="tabpanel">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active"><a href="#markup-progress-bar-start" aria-controls="markup-progress-bar-start" role="tab" data-toggle="tab">Progress Bar Mark Up</a></li>
+	</ul>
+
+	<div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-progress-bar-start">
+            <pre>
+&lt;ul class="progress-indicator"&gt;
+    &lt;li&gt;&lt;div class="completed"&gt;&lt;span class="bubble"&gt;&lt;/span&gt; Select an Immunization Type&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div class="completed"&gt;&lt;span class="bubble"&gt;&lt;/span&gt; Enter Immunization Info &lt;span class="sr-only"&gt;You are currently on step 2 of 5&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div&gt;&lt;span class="bubble"&gt;&lt;/span&gt; Step 3&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div&gt;&lt;span class="bubble"&gt;&lt;/span&gt; Step 4&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div&gt;&lt;span class="bubble"&gt;&lt;/span&gt; Step 5&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+            <a onclick="copyToClipboard('progress-barCopy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+
+    </div>
+</div>

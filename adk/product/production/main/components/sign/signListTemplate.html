@@ -1,0 +1,210 @@
+<div style="margin-top:-15px;"></div>
+<div class="container-fluid sign-container">
+{{#each groups}}
+	{{#ifExp ../totalGroups '>' 1}}
+		<div class="sign-view-group">{{@key}}</div>
+	{{/ifExp}}
+	{{#ifExp @key '===' 'Medication, Outpatient'}}
+		<div class="inside-title">Please indicate if the order is related to the following treatment factors. All Orders Except Controlled Substance Orders<i id="help-tooltip" class="question-mark fa fa-question-circle" data-toggle="tooltip" data-placement="auto top" data-original-title="<table class='tooltip-table-format'><tr><td>SC</td><td>Service Connected Condition</td></tr><tr><td>CV</td><td>Combat Veteran</td></tr><tr><td>AO</td><td>Agent Orange Exposure</td></tr><tr><td>IR</td><td>Ionizing Radiation Exposure</td></tr><tr><td>SWAC</td><td>Southwest Asia Conditions</td></tr><tr><td>SHD</td><td>Shipboard Hazard and Defense</td></tr><tr><td>MST</td><td>Military Sexual Trauma</td></tr><tr><td>HNC</td><td>Head and/or Neck Cancer</td></tr></table>" data-container="body"></i></div>
+		<div class="sign-inside">
+		<div class="t-row">
+			<div class="cell"></div>
+			<div class="cell"></div>
+			{{#if ../../patientInfo/outpatient_med_related_to.SC}}
+				<div class="orders_category">
+					<div tooltip-data-key='sign_outpatientMeds_relatedTo_SC' class="checkbox-title" data-category="SC">SC</div>
+				</div><div class="empty-cell"></div>
+			{{/if}}
+			{{#if ../../patientInfo/outpatient_med_related_to.CV}}
+				<div class="orders_category">
+					<div tooltip-data-key='sign_outpatientMeds_relatedTo_CV' class="checkbox-title" data-category="CV">CV</div>
+				</div><div class="empty-cell"></div>
+			{{/if}}
+			{{#if ../../patientInfo/outpatient_med_related_to.AO}}
+				<div class="orders_category">
+					<div tooltip-data-key='sign_outpatientMeds_relatedTo_AO' class="checkbox-title" data-category="AO">AO</div>
+				</div><div class="empty-cell"></div>
+			{{/if}}
+			{{#if ../../patientInfo/outpatient_med_related_to.IR}}
+				<div class="orders_category">
+					<div tooltip-data-key='sign_outpatientMeds_relatedTo_IR' class="checkbox-title" data-category="IR">IR</div>
+				</div><div class="empty-cell"></div>
+			{{/if}}
+			{{#if ../../patientInfo/outpatient_med_related_to.SWAC}}
+				<div class="orders_category">
+					<div tooltip-data-key='sign_outpatientMeds_relatedTo_SWAC' class="checkbox-title" data-category="SWAC">SWAC</div>
+				</div><div class="empty-cell"></div>
+			{{/if}}
+			{{#if ../../patientInfo/outpatient_med_related_to.SHD}}
+				<div class="orders_category">
+					<div tooltip-data-key='sign_outpatientMeds_relatedTo_SHD' class="checkbox-title" data-category="SHD">SHD</div>
+				</div><div class="empty-cell"></div>
+			{{/if}}
+			{{#if ../../patientInfo/outpatient_med_related_to.MST}}
+				<div class="orders_category">
+					<div tooltip-data-key='sign_outpatientMeds_relatedTo_MST' class="checkbox-title" data-category="MST">MST</div>
+				</div><div class="empty-cell"></div>
+			{{/if}}
+			{{#if ../../patientInfo/outpatient_med_related_to.HNC}}
+				<div class="orders_category">
+					<div tooltip-data-key='sign_outpatientMeds_relatedTo_HNC' class="checkbox-title" data-category="HNC">HNC</div>
+				</div><div class="empty-cell"></div>
+			{{/if}}
+		</div>
+		{{#each this}}
+			<div class="each-row" data-uid="{{uid}}">
+					{{#ifExp ../../../totalItems '>' 1}}
+					<div class="selected">
+						<input type="checkbox" id="esig-med-item-{{@index}}" class="item-selected" {{#if selected}}checked{{/if}}>
+					</div>
+					{{else}}
+					<div class="replace-checkbox"></div>
+					{{/ifExp}}
+					<div class="description">{{description}}</div>
+				{{#if ../../../patientInfo/outpatient_med_related_to.SC}}
+				<div class="inside-row">
+					<div>
+					<input type="radio" name="SC_check-{{@index}}" data-category="SC" id="esig-med-SC-yes-{{@index}}" data-status='yes'{{#ifExp SC '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-SC-yes-{{@index}}">Yes</label></div>
+					<div>
+					<input type="radio" name="SC_check-{{@index}}" data-category="SC" id="esig-med-SC-no-{{@index}}" data-status='no'{{#ifExp SC '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-SC-no-{{@index}}">No</label></div>
+				</div><div class="empty-cell"></div>
+				{{/if}}
+				{{#if ../../../patientInfo/outpatient_med_related_to.CV}}
+				<div class="inside-row">
+					<div>
+					<input type="radio" name="CV_check-{{@index}}" data-category="CV" id="esig-med-CV-yes-{{@index}}" data-status='yes'{{#ifExp CV '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-CV-yes-{{@index}}">Yes</label></div>
+					<div>
+					<input type="radio" name="CV_check-{{@index}}" data-category="CV" id="esig-med-CV-no-{{@index}}" data-status='no'{{#ifExp CV '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-CV-no-{{@index}}">No</label></div>
+				</div><div class="empty-cell"></div>
+				{{/if}}
+				{{#if ../../../patientInfo/outpatient_med_related_to.AO}}
+				<div class="inside-row">
+					<div>
+					<input type="radio" name="AO_check-{{@index}}" data-category="AO" id="esig-med-AO-yes-{{@index}}" data-status='yes'{{#ifExp AO '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-AO-yes-{{@index}}">Yes</label></div>
+					<div>
+					<input type="radio" name="AO_check-{{@index}}" data-category="AO" id="esig-med-AO-no-{{@index}}" data-status='no'{{#ifExp AO '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-AO-no-{{@index}}">No</label></div>
+				</div><div class="empty-cell"></div>
+				{{/if}}
+				{{#if ../../../patientInfo/outpatient_med_related_to.IR}}
+				<div class="inside-row">
+					<div>
+					<input type="radio" name="IR_check-{{@index}}" data-category="IR" id="esig-med-IR-yes-{{@index}}" data-status='yes'{{#ifExp IR '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-IR-yes-{{@index}}">Yes</label></div>
+					<div>
+					<input type="radio" name="IR_check-{{@index}}" data-category="IR" id="esig-med-IR-no-{{@index}}" data-status='no'{{#ifExp IR '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-IR-no-{{@index}}">No</label></div>
+				</div><div class="empty-cell"></div>
+				{{/if}}
+				{{#if ../../../patientInfo/outpatient_med_related_to.SWAC}}
+				<div class="inside-row">
+					<div>
+					<input type="radio" name="SWAC_check-{{@index}}" data-category="SWAC" id="esig-med-SWAC-yes-{{@index}}" data-status='yes'{{#ifExp SWAC '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-SWAC-yes-{{@index}}">Yes</label></div>
+					<div>
+					<input type="radio" name="SWAC_check-{{@index}}" data-category="SWAC" id="esig-med-SWAC-no-{{@index}}"  data-status='no'{{#ifExp SWAC '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-SWAC-no-{{@index}}">No</label></div>
+				</div><div class="empty-cell"></div>
+				{{/if}}
+				{{#if ../../../patientInfo/outpatient_med_related_to.SHD}}
+				<div class="inside-row">
+					<div>
+					<input type="radio" name="SHD_check-{{@index}}" data-category="SHD" id="esig-med-SHD-yes-{{@index}}" data-status='yes'{{#ifExp SHD '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-SHD-yes-{{@index}}">Yes</label></div>
+					<div>
+					<input type="radio" name="SHD_check-{{@index}}" data-category="SHD" id="esig-med-SHD-no-{{@index}}" data-status='no'{{#ifExp SHD '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-SHD-no-{{@index}}">No</label></div>
+				</div><div class="empty-cell"></div>
+				{{/if}}
+				{{#if ../../../patientInfo/outpatient_med_related_to.MST}}
+				<div class="inside-row">
+					<div>
+					<input type="radio" name="MST_check-{{@index}}" data-category="MST" id="esig-med-MST-yes-{{@index}}" data-status='yes'{{#ifExp MST '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-MST-yes-{{@index}}">Yes</label></div>
+					<div>
+					<input type="radio" name="MST_check-{{@index}}" data-category="MST" id="esig-med-MST-no-{{@index}}" data-status='no'{{#ifExp MST '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-MST-no-{{@index}}">No</label></div>
+				</div><div class="empty-cell"></div>
+				{{/if}}
+				{{#if ../../../patientInfo/outpatient_med_related_to.HNC}}
+				<div class="inside-row">
+					<div>
+					<input type="radio" name="HNC_check-{{@index}}" data-category="HNC" id="esig-med-HNC-yes-{{@index}}" data-status='yes'{{#ifExp HNC '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-HNC-yes-{{@index}}">Yes</label></div>
+					<div>
+					<input type="radio" name="HNC_check-{{@index}}" data-category="HNC" id="esig-med-HNC-no-{{@index}}" data-status='no'{{#ifExp HNC '===' true}}checked{{/ifExp}}>
+					<label class="label_format" for="esig-med-HNC-no-{{@index}}">No</label></div>
+				</div><div class="empty-cell"></div>
+				{{/if}}
+			</div>
+			<div  class="empty-row"></div>
+		{{/each}}
+		</div>
+	{{else}}
+		{{#ifExp @key '===' 'Documents'}}
+			<div class="sign-inside">
+			{{#each this}}
+				<div class="each-row" data-uid="{{uid}}">
+					{{#ifExp ../../../../totalItems '>' 1}}
+						<div class="selected">
+							<input type="checkbox" id="esig-doc-item-{{@index}}" class="item-selected" {{#if selected}}checked{{/if}}>
+						</div>
+					{{else}}
+						<div class="replace-checkbox"></div>
+					{{/ifExp}}
+					<div class="description border-right"><span style="font-weight:bold;">{{description}}</span> - {{date}}</div>
+					<div class="empty-cell"></div>
+				</div>
+				<div class="empty-row"></div>
+			{{/each}}
+			</div>
+		{{else}}
+			<div class="sign-inside">
+			{{#each this}}
+				<div class="each-row" data-uid="{{uid}}">
+					{{#ifExp ../../../../totalItems '>' 1}}
+						<div class="selected">
+							<input type="checkbox" id="esig-lab-item-{{@index}}" class="item-selected" {{#if selected}}checked{{/if}}>
+						</div>
+					{{else}}
+						<div class="replace-checkbox"></div>
+					{{/ifExp}}
+					<div class="description border-right">{{description}}</div>
+					<div class="empty-cell"></div>
+				</div>
+				<div class="empty-row"></div>
+			{{/each}}
+			</div>
+		{{/ifExp}}
+	{{/ifExp}}
+{{/each}}
+{{#each groups}}
+	{{#ifExp @key '===' 'Medication, Outpatient'}}
+		<div class="service-title">Service Connection & Rated Disabilities</div>
+		<div class="border-smoke">
+			<div class="serv-conn">
+				<div>Service Connected: {{#ifExp ../../patientInfo/scPercent '!==' undefined}} {{../../../patientInfo/scPercent}} %{{else}}None Stated{{/ifExp}}
+				</div>
+				<div>Rated Disabilities: {{#if ../../patientInfo/disabilities}}
+					<ul class="style-none">
+						{{#each ../../../patientInfo/disabilities}}
+						<li>{{name}} ({{#ifExp scPercent '!==' undefined}}{{scPercent}}%{{/ifExp}}{{#if serviceConnected}} - SC{{/if}})</li>
+						{{/each}}
+					</ul>{{else}}None Stated{{/if}}
+				</div>
+			</div>
+		</div>
+	{{/ifExp}}
+{{/each}}
+<div class="signature-title">Enter Electronic Signature Code</div>
+<div class="padding-lt">
+	<input id="SignatureCode" type="password" class="form-control signature-code" autocomplete="off" id="signatureCode" value="">
+</div>
+
+</div>
+<div style='margin-bottom:-15px'></div>

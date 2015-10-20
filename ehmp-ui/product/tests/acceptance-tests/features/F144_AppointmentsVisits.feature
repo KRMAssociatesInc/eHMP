@@ -5,10 +5,11 @@ Feature:F144-eHMP Viewer GUI - Appointments & Visits
 Background:
 	Given user is logged into eHMP-UI  
 
-@base @appointment_base
+@base @appointment_base @triage @DE1600
 Scenario: User views appointments and visits on coversheet
  Given user searches for and selects "Eight,Patient"
   Then Cover Sheet is active 
+  And the user has selected All within the global date picker
   Then the Appointments coversheet table contains headers
        | Headers     |
        | Date        | 
@@ -36,10 +37,11 @@ Scenario: Users will be able to filter data on the Appointments Applet
        | Location    | 
        | Facility    |
 
-@appointment_modal @modal_test @DE433 
+@appointment_modal @modal_test @DE433 @debug @DE1600
 Scenario: Users will be able to view modal popup for appointments
   Given user searches for and selects "Eight,Patient"
   Then Cover Sheet is active
+  And the user has selected All within the global date picker
   Then the user clicks the "Appointments Expand Button"
   When the user click on Appointments ScrollDown Button
   When the user clicks the "Dod Encounter"   
@@ -51,10 +53,11 @@ Scenario: Users will be able to view modal popup for appointments
     When the user clicks the "Modal Close Button"
     #Then the modal closes
 
-@appointment_expand @triage
+@appointment_expand @debug @DE1600
 Scenario: Users will be able to expand Appointments applet
   Given user searches for and selects "Eight,Patient"
   Then Cover Sheet is active
+  And the user has selected All within the global date picker
   Then the user clicks the "Appointments Expand Button"
   When the user click on Appointments ScrollDown Button
 

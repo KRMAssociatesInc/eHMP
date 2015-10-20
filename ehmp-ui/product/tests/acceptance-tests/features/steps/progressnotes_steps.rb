@@ -23,7 +23,7 @@ end # ProgressNotesDetails
 
 Then(/^the Progress Notes table contains headers$/) do |table|
   progress_notes = ProgressNotes.instance
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     expect(progress_notes.perform_verification(header_text[0], header_text[0])).to be_true
   end #table
 end
@@ -51,7 +51,7 @@ def check_progress_notes_tables(xpath_to_table, expected_row_count, table)
   rows_displayed_in_browser = driver.find_elements(:xpath, xpath_to_table_rows)
   p "rows displayed: #{rows_displayed_in_browser.length}"
   
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     for i in 1..rows_displayed_in_browser.length - 1
       cols_displayed_in_browser = driver.find_elements(:xpath, "#{xpath_to_table}/descendant::tr[#{i}]/descendant::td")
@@ -70,7 +70,6 @@ def check_progress_notes_tables(xpath_to_table, expected_row_count, table)
 end
 
 Then(/^the Progress Notes table contains (\d+) rows with the data$/) do |expected_row_count, table|
-
   xpath_to_table = "//*[@data-appletid='progress_notes']/descendant::table"
   check_progress_notes_tables(xpath_to_table, expected_row_count, table)
   

@@ -21,28 +21,33 @@
     "lodash": "1.3.1",
     "jquery": "1.9.1",
     "backbone.paginator": "2.0.0",
-    "jasmine": "1.3.1",
+    "jasmine-jquery": "2.1.0",
     "async": "0.2.9",
     "moment": "2.7.0",
     "fastclick": "0.6.11",
     "placeholders": "3.0.2",
     "backgrid": "0.3.5",
-    "gridster": "git://github.com/Hokua/gridster.js.git#v0.5.8",
+    "gridster": "git://github.com/Hokua/gridster.js.git#v0.5.9",
     "backgrid-filter": "~0.3.5",
     "backgrid-moment-cell": "~0.3.5",
     "bootstrap": "3.2.0",
-    "bootstrap-timepicker": "~0.2.6",
-    "bootstrap-datepicker": "~1.3.1",
-    "font-awesome": "~4.2.0",
+    "bootstrap-timepicker": "git://github.com/rendom/bootstrap-3-timepicker.git#v0.2.5",
+    "bootstrap-datepicker": "~1.4.0",
+    "font-awesome": "~4.3.0",
     "backbone": "1.1.2",
     "backbone-sorted-collection": "0.3.8",
     "backbone.radio": "0.6.0",
     "crossfilter": "~1.3.11",
     "highstock-release": "~2.0.4",
     "pattern-fill": "git://github.com/highslide-software/pattern-fill.git",
-    "bowser" : "0.7.2",
+    "bowser": "0.7.2",
     "grouped_categories": "https://github.com/blacklabel/grouped_categories.git",
-    "libphonenumberjs": "*"
+    "libphonenumberjs": "*",
+    "backbone_component": "0.2.3",
+    "jds-filter": "./_assets/js/jds-filter",
+    "query-string": "1.0.0",
+    "nouislider": "~7.0.10",
+    "remarkable-bootstrap-notify": "~3.1.3"
   },
   "resolutions": {
     "backbone": "1.1.2",
@@ -61,7 +66,8 @@
       "rb": "{key}",
       "map": "{key}",
       "/[c|sc|le]ss$/": "{key}",
-      "/(eot|svg|ttf|woff|otf])$/": "{key}/fonts"
+      "/(eot|svg|ttf|woff|otf])$/": "{key}/fonts",
+      "/(gif|png)$/": "{key}"
     },
     "sources": {
       "async": "bower_components/async/lib/async.js",
@@ -90,8 +96,12 @@
         "bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"
       ],
       "bootstrap-datepicker": [
-        "bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js",
-        "bower_components/bootstrap-datepicker/css/datepicker3.css"
+        "bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js",
+        "bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css"
+      ],
+      "bootstrap-timepicker": [
+        "bower_components/bootstrap-timepicker/js/bootstrap-timepicker.js",
+        "bower_components/bootstrap-timepicker/css/bootstrap-timepicker.css"
       ],
       "crossfilter": "bower_components/crossfilter/crossfilter.min.js",
       "font-awesome": [
@@ -116,6 +126,9 @@
       "jquery": [
         "bower_components/jquery/jquery.min.js"
       ],
+      "jds-filter": [
+        "bower_components/jds-filter/dist/jds-filter.min.js"
+      ],
       "libphonenumberjs": "bower_components/libphonenumberjs/libphonenumber.js",
       "lodash": "bower_components/lodash/dist/lodash.underscore.min.js",
       "moment": "bower_components/moment/min/moment.min.js",
@@ -123,7 +136,8 @@
       "placeholders": "bower_components/placeholders/lib/utils.js",
       "typeahead.js": "bower_components/typeahead.js/dist/typeahead.bundle.min.js",
       "underscore": "bower_components/underscore/underscore-min.js",
-      "bowser": "bower_components/bowser/bowser.min.js"
+      "bowser": "bower_components/bowser/bowser.min.js",
+      "backbone_component": "bower_components/backbone_component/backbone-component.min.js"
     }
   }
 }

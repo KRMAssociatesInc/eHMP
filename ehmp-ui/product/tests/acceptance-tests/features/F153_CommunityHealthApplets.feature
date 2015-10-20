@@ -15,7 +15,7 @@ Scenario: User can view community health summaires on the coversheet
     |Date                     | Authoring Institution                       |        
     |06/17/2014               | Kaiser Permanente Southern California - RESC|
 
-@non_base
+@non_base @debug @DE1270
 Scenario: Users will be able to navigate coversheet, maximized and modal view 
     Given user is logged into eHMP-UI 
 	And user searches for and selects "Eight,Patient"

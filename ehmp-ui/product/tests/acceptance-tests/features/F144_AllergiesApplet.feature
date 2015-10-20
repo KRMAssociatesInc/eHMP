@@ -2,7 +2,17 @@
 Feature: F144 - eHMP viewer GUI - Allergies
 #Team Jupiter - refactored
 
-@US2801 @F144_1_allergy_applet_display @base
+@US2801 @F144_allergy_applet_display @base @reworked_in_firefox
+Scenario: User views the Allergy applet on the coversheet page
+	Given user is logged into eHMP-UI
+	And user searches for and selects "BCMA,Eight"
+	Then Cover Sheet is active
+	Then the "patient identifying traits" is displayed with information
+	| field			| value 				|
+	| patient name	| Bcma,Eight 			|
+	And user sees the allergy applet on the coversheet page
+	
+@US2801 @F144_1_allergy_applet_display
 Scenario: User views the Allergy applet on the coversheet page
 	Given user is logged into eHMP-UI
 	And user searches for and selects "BCMA,Eight"
@@ -19,7 +29,7 @@ Scenario: User views the Allergy applet on the coversheet page
 	| BACON				|
 	| STRAWBERRIES		|
 
-@US2801 @F144_2_allergy_applet_modal_display @modal_test
+@US2801 @F144_2_allergy_applet_modal_display @modal_test @triage @reworked_in_firefox
 Scenario: User views the modal when a particular allergy pill is chosen
 	Given user is logged into eHMP-UI
 	And user searches for and selects "BCMA,Eight"
@@ -34,7 +44,7 @@ Scenario: User views the modal when a particular allergy pill is chosen
   	And the user clicks the modal "Close Button"
   	And the modal is closed
 
-@US2801 @F144_3_allergy_applet_modal_detail_display @modal_test @DE549
+@US2801 @F144_3_allergy_applet_modal_detail_display @modal_test @DE549 @triage @reworked_in_firefox
 Scenario: User views the modal details when a particular allergy pill is chosen
 	Given user is logged into eHMP-UI
 	And user searches for and selects "BCMA,Eight"
@@ -88,41 +98,19 @@ Scenario: View Allergies Applet Single Page by clicking on Expand View
     | BACON			| Bacon				 	| 										|  | 	| DOCWITH,POWER		| CAMP BEE	|	|
     | STRAWBERRIES	| Strawberries			| ITCHING,WATERING EYES					|  | 	| RADTECH,SEVENTEEN | CAMP MASTER	|	|
 
-@US2801 @F144_5_allergy_applet_filter @vimm
-Scenario: Filter Allergies Applet
-	Given user is logged into eHMP-UI
-	And user searches for and selects "BCMA,Eight"
-	Then Cover Sheet is active
-	Then the "patient identifying traits" is displayed with information
-		| field			| value 				|
-		| patient name	| Bcma,Eight 			|
-	And user sees the allergy applet on the coversheet page
-	When the user clicks the control "Expand View" in the "Allergies Applet"
-  	When the user clicks the control "Filter Toggle" in the "Allergies Applet"
-  	And the user inputs "ERYTHROMYCIN" in the "Text Filter" control in the "Allergies Applet"
-   	#And the "Allergy Applet" table contains 1 rows
-  	And the "Allergy Applet" table contains rows
-    | Allergen Name | Standardized Allergen | Reaction 								| Severity | Drug Class 																										| Entered By | Facility 	| 	|
-    | ERYTHROMYCIN	| Erythromycin			| ANOREXIA; DIARRHEA; DROWSINESS; HIVES	| Moderate | ERYTHROMYCINS/MACROLIDES, PHARMACEUTICAL AIDS/REAGENTS, ANTIBACTERIALS,TOPICAL OPHTHALMIC, ANTIACNE AGENTS,TOPICAL	| DOCWITH,POWER | CAMP MASTER	|	|
-
-@US2801 @F144_6_allergy_applet_sort
+@US2801 @F144_6_allergy_applet_sort @reworked_in_firefox @triage
 Scenario: Sort allergies applet by standardized name
 	Given user is logged into eHMP-UI
 	And user searches for and selects "BCMA,Eight"
 	Then Cover Sheet is active
-	Then the "patient identifying traits" is displayed with information
-	| field			| value 				|
-	| patient name	| Bcma,Eight 			|
 	And user sees the allergy applet on the coversheet page
-	When the user clicks the control "Expand View" in the "Allergies Applet"
-  	Then the Allergies Applet title is "ALLERGIES"
-  	And Allergy Applet table first row is
-  	|row index	| Allergen Name | Standardized Allergen | Reaction 								| Severity | Drug Class 																										| Entered By | Facility 	| 	|
-    | 1			| ERYTHROMYCIN	| Erythromycin			| ANOREXIA; DIARRHEA; DROWSINESS; HIVES	| Moderate | ERYTHROMYCINS/MACROLIDES, PHARMACEUTICAL AIDS/REAGENTS, ANTIBACTERIALS,TOPICAL OPHTHALMIC, ANTIACNE AGENTS,TOPICAL	| DOCWITH,POWER| CAMP MASTER	|	|
+	When the user expands the Allergies Applet
     When user sorts by the Standardized Allergen
     Then the Allergies Applet is sorted in alphabetic order based on Standardized Allergen
+    When user sorts by the Allergen Name
+    Then the Allergies Applet is sorted in alphabetic order based on Allergen Name
 
-@US2801 @F144_7_allergy_applet_DoD_site @DE549
+@US2801 @F144_7_allergy_applet_DoD_site @DE549 @reworked_in_firefox
 Scenario: Allergy applet displays data from multiple site.  User can view DoD data details
 	Given user is logged into eHMP-UI
 	And user searches for and selects "Eight,Patient"

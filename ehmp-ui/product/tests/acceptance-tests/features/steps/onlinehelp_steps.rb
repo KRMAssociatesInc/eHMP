@@ -21,7 +21,6 @@ Given(/^the On-line Help icon on login page of eHMP\-UI$/) do
   end
   driver = TestSupport.driver
   expect(driver.find_element(:id, "linkHelp-logon")).to be_true
-
 end
 
 Then(/^the On-line Help icon is present on Patient Search page$/) do
@@ -44,10 +43,14 @@ Given(/^user searches for patient "(.*?)"$/) do |search_value|
   patient_search.wait_until_element_present("mySite", DefaultLogin.wait_time)
   expect(patient_search.perform_action("mySite")).to be_true
 
-  patient_search.wait_until_element_present("mySiteAll", DefaultLogin.wait_time)
-  expect(patient_search.perform_action("mySiteAll")).to be_true
-  expect(patient_search.perform_action("patientSearchInput", search_value)).to be_true
+  element = nil
+  Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time).until {
+    element = driver.find_element(:id, "patientSearchInput")
+    element.displayed?
+    element.click
+  }
 
+  expect(patient_search.perform_action("patientSearchInput", search_value)).to be_true
   expect(patient_search.wait_until_xpath_count_greater_than("Patient Search Results", 0)).to be_true
 
   results = TestSupport.driver.find_elements(:xpath, "//span[contains(@class, 'patientDisplayName')]")
@@ -148,7 +151,7 @@ Then(/^the tooltip is present on "(.*?)"$/) do |tooltip_type|
     driver.find_element(:id, "vitals_problem_name_BPS").click
     tlbr_icon_tltip = driver.find_elements(:xpath, "//div[@id='vitals-observations-gist-items']//a[@tooltip-data-key]")
     #p tlbr_icon_tltip
-    expect(tlbr_icon_tltip.length).to eq(30)
+    expect(tlbr_icon_tltip.length).to eq(29)
 
   when "Timeline"
     timeln_tltip = driver.find_elements(:xpath, "//div[@id='globalDatePicker-compact']//*[@tooltip-data-key]")

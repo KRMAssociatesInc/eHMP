@@ -47,8 +47,11 @@ def setInternetEnvs
     ENV['VAGRANTFILE_DIR'] = "~/Projects/vistacore/ehmp/infrastructure/vagrant/managed/managed-vista-exchange"
     ENV['PROJECT_REPO_URL'] = "https://git.vistacore.us/git/ehmp.git"
     ENV['PROJECT_REPO_FQDN'] = "git.vistacore.us"
-    ENV['GIT_USERID'] = "build"
-    ENV['GIT_PASSWORD'] = "0ft3n"
+    raise %/
+    You need to set your git credentials like this:
+    export GIT_USERID = 'git_username'
+    export GIT_PASSWORD = 'git_password'
+    / if ENV['GIT_USERID'].nil? || ENV['GIT_PASSWORD'].nil?
 end
 
 task :environment_setup do
@@ -73,7 +76,7 @@ task :environment_setup do
         ENV['PROVIDER'] = "vbconf"
         ENV['SSH_USER_ID'] = "vagrant"
         ENV['PROVIDER_BOX_NAME'] = "rhel-6.5"
-        ENV['PROVIDER_BOX_URL'] = "https://nexus.vistacore.us/nexus/content/repositories/filerepo/com/vagrantup/basebox/rhel/rhel-6-5-trial/rhel-6-5-trial/6-5/rhel-6-5-trial-6-5.box"
+        ENV['PROVIDER_BOX_URL'] = "https://dl.vistacore.us/nexus/content/repositories/filerepo/com/vagrantup/basebox/rhel/rhel-6-5-trial/rhel-6-5-trial/6-5/rhel-6-5-trial-6-5.box"
         LocalProjectRoot = ENV["WORKSPACE"]
         TargetEnvPath = LocalProjectRoot + "/infrastructure/vagrant/aws/vista-exchange"
         #require File.expand_path(TargetEnvPath + '/../../Servers.rb')

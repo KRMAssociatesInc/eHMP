@@ -60,13 +60,13 @@ class SearchElements < AccessBrowserV2
   def summary_displayed?(text)
     driver = TestSupport.driver
     search_result_elements =  driver.find_elements(@access_result_summaries.how, @access_result_summaries.locator)
-    search_result_elements.each do | element |
+    search_result_elements.each do |element|
       if element.text.start_with?(text)
         return true
       end #end if
     end # loop
     return false
-  end# summary_displayed?
+  end # summary_displayed?
 end
 
 #
@@ -76,7 +76,7 @@ class OpenTitle
     @access_result_titles = AccessHtmlElement.new(:class, "x-grid-group-title")
   end
 
-  def perform_action(html_element, title_text)
+  def perform_action(_html_element, title_text)
     p "OpenTitle perform_action"
     title_row = build_results_title_row_xpath(title_text)
     classes = title_row.attribute("class")
@@ -97,9 +97,8 @@ class OpenTitle
     rescue Exception=> e
       p "there was an error #{e}"
       search_result_elements =  driver.find_elements(@access_result_titles.how, @access_result_titles.locator)
-      search_result_elements.each do | element |
+      search_result_elements.each do |element|
         p element.text
-
       end # each do
     end # rescue
     return nil
@@ -108,7 +107,7 @@ class OpenTitle
   def get_title_element(text)
     driver = TestSupport.driver
     search_result_elements =  driver.find_elements(@access_result_titles.how, @access_result_titles.locator)
-    search_result_elements.each do | element |
+    search_result_elements.each do |element|
       if element.text.start_with?(text)
         return element
       end

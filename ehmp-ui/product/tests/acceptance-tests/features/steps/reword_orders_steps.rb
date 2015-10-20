@@ -43,7 +43,7 @@ When(/^the user selects "(.*?)" in the Orders applet Order Type dropdown$/) do |
   }
 end
 
-Then(/^the Type column contains "(.*?)"$/) do |arg1|
+Then(/^the Type column contains "(.*?)"$/) do |_arg1|
   pending # express the regexp above with the code you wish you had
 end
 

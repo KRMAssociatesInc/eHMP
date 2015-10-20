@@ -69,7 +69,7 @@ define([
                 var appletId = params.appletId;
                 var appletTitle = params.appletTitle;
                 var regionId = self.getNextAppletId();
-                var appletHtml = '<li class="new" data-appletid="' + appletId + '" data-instanceid="' + regionId + '" id="' + regionId + '" data-view-type="summary" data-min-sizex="4" data-min-sizey="3" data-max-sizex="8" data-max-sizey="12"><div class="edit-applet fa fa-cog"></div><br>' + appletTitle + '</li>';
+                var appletHtml = '<li class="new" data-appletid="' + appletId + '" data-instanceid="' + regionId + '" id="' + regionId + '" data-view-type="default" data-min-sizex="4" data-min-sizey="3" data-max-sizex="8" data-max-sizey="12"><div class="edit-applet fa fa-cog"></div><br>' + appletTitle + '</li>';
                 if (!isSwitchboardDisplayed()) {
                     setTimeout(function() {
                         var x = params.xPos;
@@ -232,6 +232,13 @@ define([
         },
         events: {
             'keyup #searchApplets': 'filterApplets',
+            'keydown #searchApplets': function(evt) {
+                if (evt.which == 13) {
+                    evt.preventDefault();
+                    this.filterApplets();
+                }
+            },
+            'click .editorTop .clear': 'clearFilterText',
             'click #exitEditing': 'hideOverlay',
             'click .edit-applet': 'editClicked',
             'click .applet-exit-options-button': 'closeSwitchboard',
@@ -250,7 +257,7 @@ define([
                     });
                 }
             }
-        },                                                                                      
+        },
         handleSpacebarOrEnter: function(e) {
             if (e.which === 13 || e.which === 32) {
                 e.preventDefault();
@@ -261,7 +268,7 @@ define([
         },
         hideOverlay: function() {
             this.saveGridsterAppletsConfig(true);
-            ADK.hideFullscreenOverlay();
+            ADK.UI.FullScreenOverlay.hide();
             ADK.Navigation.navigate(Backbone.history.fragment);
         },
         onRender: function() {
@@ -316,6 +323,20 @@ define([
                 this.appletRegion.show(Switchboard);
                 this.fixSwitchboardPosition();
                 $('.view-switchboard').find('.applet-exit-options-button').removeClass('hide');
+
+                if (currentView === 'expanded') {
+                    $('.view-switchboard').find("div[data-viewtype='expanded']").addClass('options-box-focus-expanded selected-view');
+                    $('.view-switchboard').find("div[data-viewtype='summary']").removeClass('options-box-focus-summary');
+                    $('.view-switchboard').find("div[data-viewtype='gist']").removeClass('options-box-focus');
+                } else if (currentView === 'summary') {
+                    $('.view-switchboard').find("div[data-viewtype='summary']").addClass('options-box-focus-summary selected-view');
+                    $('.view-switchboard').find("div[data-viewtype='gist']").removeClass('options-box-focus');
+                    $('.view-switchboard').find("div[data-viewtype='expanded']").removeClass('options-box-focus-expanded');
+                } else {
+                    $('.view-switchboard').find("div[data-viewtype='expanded']").removeClass('options-box-focus-expanded');
+                    $('.view-switchboard').find("div[data-viewtype='summary']").removeClass('options-box-focus-summary');
+                    $('.view-switchboard').find("div[data-viewtype='gist']").addClass('options-box-focus');
+                }
             }
         },
         displaySwitchboard: function(newAppletId, newRegionId, newAppletTitle, onChangeView) {
@@ -324,7 +345,6 @@ define([
             });
 
             Switchboard = this.getSwitchboard(newAppletId, this.appletRegion, newAppletTitle, onChangeView);
-
             this.appletRegion.show(Switchboard);
             $('#' + newRegionId).addClass("bringToFront");
 
@@ -359,6 +379,11 @@ define([
                 // console.log("  notthing changed, not saved, resetting moveCount");
                 this.lastSave.numMoves = 0;
                 return;
+            }
+
+            //Removes Customize for copied UDS if the applets are changed
+            if (this.screenConfig.hasCustomize) {
+                ADK.UserDefinedScreens.setHasCustomize(this.screenConfig.id);
             }
 
             // save to the session
@@ -452,6 +477,11 @@ define([
             var filterText = this.$el.find('#searchApplets').val();
             this.appletSlider.currentView.filterApplets(filterText);
         },
+        clearFilterText: function() {
+            this.$el.find('#searchApplets').val("");
+            this.filterApplets();
+        },
+
         lastSave: {
             time: 0,
             numMoves: 0

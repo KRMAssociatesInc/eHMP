@@ -35,7 +35,7 @@ Then(/^the "(.*?)" button appears$/) do |selected_item|
   expect(con.perform_verification("Change Visit", selected_item)).to be_true 
 end
 
-Then(/^the user selects first row "(.*?)"$/) do |arg1|
+Then(/^the user selects first row "(.*?)"$/) do |_arg1|
   con = VisitInformation.instance
   expect(con.wait_until_action_element_visible("General Medicine", 30)).to be_true
   expect(con.perform_action("General Medicine")).to be_true

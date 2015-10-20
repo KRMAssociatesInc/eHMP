@@ -1,6 +1,6 @@
 'use strict';
 //------------------------------------------------------------------------------------------
-// This is just a little utility script that will unscubscribe a patient and resubscribe them 
+// This is just a little utility script that will unscubscribe a patient and resubscribe them
 // for a specific site.
 //-------------------------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ var config = require(global.VX_ROOT + 'worker-config');
 var logUtil = require(global.VX_UTILS + 'log');
 logUtil.initialize(config.loggers);
 var log = logUtil.get('subscriberHost', 'host');
-var rpcClient = require(global.VX_VISTAJS + 'RpcClient').RpcClient;
+var rpcClient = require('vista-js').RpcClient;
 var idUtil = require(global.VX_UTILS + 'patient-identifier-utils');
 
 

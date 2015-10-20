@@ -1,0 +1,282 @@
+KIDS Distribution saved on Jul 08, 2015@11:54:27
+US7997 - New HMP SUBSCRIPTION STATUS - RPC
+**KIDS**:HMP*2.0*150707^
+
+**INSTALL NAME**
+HMP*2.0*150707
+"BLD",9335,0)
+HMP*2.0*150707^^0^3150708^n
+"BLD",9335,4,0)
+^9.64PA^^
+"BLD",9335,6.3)
+6
+"BLD",9335,"KRN",0)
+^9.67PA^779.2^20
+"BLD",9335,"KRN",.4,0)
+.4
+"BLD",9335,"KRN",.401,0)
+.401
+"BLD",9335,"KRN",.402,0)
+.402
+"BLD",9335,"KRN",.403,0)
+.403
+"BLD",9335,"KRN",.5,0)
+.5
+"BLD",9335,"KRN",.84,0)
+.84
+"BLD",9335,"KRN",3.6,0)
+3.6
+"BLD",9335,"KRN",3.8,0)
+3.8
+"BLD",9335,"KRN",9.2,0)
+9.2
+"BLD",9335,"KRN",9.8,0)
+9.8
+"BLD",9335,"KRN",9.8,"NM",0)
+^9.68A^^0
+"BLD",9335,"KRN",19,0)
+19
+"BLD",9335,"KRN",19,"NM",0)
+^9.68A^1^1
+"BLD",9335,"KRN",19,"NM",1,0)
+HMP SYNCHRONIZATION CONTEXT^^0
+"BLD",9335,"KRN",19,"NM","B","HMP SYNCHRONIZATION CONTEXT",1)
+
+"BLD",9335,"KRN",19.1,0)
+19.1
+"BLD",9335,"KRN",101,0)
+101
+"BLD",9335,"KRN",409.61,0)
+409.61
+"BLD",9335,"KRN",771,0)
+771
+"BLD",9335,"KRN",779.2,0)
+779.2
+"BLD",9335,"KRN",870,0)
+870
+"BLD",9335,"KRN",8989.51,0)
+8989.51
+"BLD",9335,"KRN",8989.52,0)
+8989.52
+"BLD",9335,"KRN",8994,0)
+8994
+"BLD",9335,"KRN",8994,"NM",0)
+^9.68A^1^1
+"BLD",9335,"KRN",8994,"NM",1,0)
+HMP SUBSCRIPTION STATUS^^0
+"BLD",9335,"KRN",8994,"NM","B","HMP SUBSCRIPTION STATUS",1)
+
+"BLD",9335,"KRN","B",.4,.4)
+
+"BLD",9335,"KRN","B",.401,.401)
+
+"BLD",9335,"KRN","B",.402,.402)
+
+"BLD",9335,"KRN","B",.403,.403)
+
+"BLD",9335,"KRN","B",.5,.5)
+
+"BLD",9335,"KRN","B",.84,.84)
+
+"BLD",9335,"KRN","B",3.6,3.6)
+
+"BLD",9335,"KRN","B",3.8,3.8)
+
+"BLD",9335,"KRN","B",9.2,9.2)
+
+"BLD",9335,"KRN","B",9.8,9.8)
+
+"BLD",9335,"KRN","B",19,19)
+
+"BLD",9335,"KRN","B",19.1,19.1)
+
+"BLD",9335,"KRN","B",101,101)
+
+"BLD",9335,"KRN","B",409.61,409.61)
+
+"BLD",9335,"KRN","B",771,771)
+
+"BLD",9335,"KRN","B",779.2,779.2)
+
+"BLD",9335,"KRN","B",870,870)
+
+"BLD",9335,"KRN","B",8989.51,8989.51)
+
+"BLD",9335,"KRN","B",8989.52,8989.52)
+
+"BLD",9335,"KRN","B",8994,8994)
+
+"KRN",19,14376,-1)
+0^1
+"KRN",19,14376,0)
+HMP SYNCHRONIZATION CONTEXT^Synchronize the HMP^^B^^^^^^^^
+"KRN",19,14376,99.1)
+63613,33836
+"KRN",19,14376,"RPC",0)
+^19.05P^25^25
+"KRN",19,14376,"RPC",2,0)
+HMP DATA VERSION
+"KRN",19,14376,"RPC",4,0)
+HMP SUBSCRIBE
+"KRN",19,14376,"RPC",5,0)
+HMP GET PATIENT DATA JSON
+"KRN",19,14376,"RPC",7,0)
+HMP GET OBJECT
+"KRN",19,14376,"RPC",8,0)
+HMP GET OPERATIONAL DATA
+"KRN",19,14376,"RPC",10,0)
+HMP PUT OBJECT
+"KRN",19,14376,"RPC",19,0)
+HMPDJFS API
+"KRN",19,14376,"RPC",20,0)
+HMPDJFS DELSUB
+"KRN",19,14376,"RPC",21,0)
+HMP GET CHECKSUM
+"KRN",19,14376,"RPC",22,0)
+HMP PATIENT ACTIVITY
+"KRN",19,14376,"RPC",23,0)
+HMP LOCAL GETCORRESPONDINGIDS
+"KRN",19,14376,"RPC",24,0)
+ORWU USERINFO
+"KRN",19,14376,"RPC",25,0)
+HMP SUBSCRIPTION STATUS
+"KRN",19,14376,"U")
+SYNCHRONIZE THE HMP
+"KRN",8994,3531,-1)
+0^1
+"KRN",8994,3531,0)
+HMP SUBSCRIPTION STATUS^SUBSTA^HMPTOOLS^2^S^^^1^1^^1
+"KRN",8994,3531,1,0)
+^8994.01^2^2^3150708^^^^
+"KRN",8994,3531,1,1,0)
+This RPC checks the subscription status for a single patient and returns.
+"KRN",8994,3531,1,2,0)
+the result as a JSON containing code and text values.
+"KRN",8994,3531,2,0)
+^8994.02A^1^1
+"KRN",8994,3531,2,1,0)
+ARGS^1^^1^1
+"KRN",8994,3531,2,1,1,0)
+^8994.021^3^3^3150708^^^^
+"KRN",8994,3531,2,1,1,1,0)
+The input array should contain:
+"KRN",8994,3531,2,1,1,2,0)
+   'localId' = Patient identifier (Patient IEN)
+"KRN",8994,3531,2,1,1,3,0)
+   'server' = Server name (e.g. hmp-development-sever)
+"KRN",8994,3531,2,"B","ARGS",1)
+
+"KRN",8994,3531,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3531,3,0)
+^8994.03^13^13^3150708^^^^
+"KRN",8994,3531,3,1,0)
+Text formatted as JSON including 'code' and 'text'
+"KRN",8994,3531,3,2,0)
+ 
+"KRN",8994,3531,3,3,0)
+    0 = 'Subscription not found'
+"KRN",8994,3531,3,4,0)
+    1 = 'Subscription received - staging not started'
+"KRN",8994,3531,3,5,0)
+    2 = 'Subscription received - staging in progress'
+"KRN",8994,3531,3,6,0)
+    3 = 'Subscription received - staging in progress - paused by throttle for XXX seconds'
+"KRN",8994,3531,3,7,0)
+    4 = 'Subscription complete - staged data not completely sent'
+"KRN",8994,3531,3,8,0)
+    5 = 'Subscription complete - staged data already sent'
+"KRN",8994,3531,3,9,0)
+ 
+"KRN",8994,3531,3,10,0)
+    90 = 'Error: server not specified'
+"KRN",8994,3531,3,11,0)
+    91 = 'Error: server '_HMPFRSP_" not found"
+"KRN",8994,3531,3,12,0)
+    92 = 'Error: patient ien not specified'
+"KRN",8994,3531,3,13,0)
+    93 = 'Error: patient ien not present on this system'
+"MBREQ")
+0
+"ORD",16,8994)
+8994;16;1;;;;;;;RPCDEL^XPDIA1
+"ORD",16,8994,0)
+REMOTE PROCEDURE
+"ORD",18,19)
+19;18;;;OPT^XPDTA;OPTF1^XPDIA;OPTE1^XPDIA;OPTF2^XPDIA;;OPTDEL^XPDIA
+"ORD",18,19,0)
+OPTION
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"VER")
+8.0^22.0
+**END**
+**END**

@@ -10,7 +10,7 @@ var config = require(global.VX_ROOT + 'worker-config');
 var logUtil = require(global.VX_UTILS + 'log');
 logUtil.initialize(config.loggers);
 var log = logUtil.get('subscriberHost', 'host');
-var rpcClient = require(global.VX_VISTAJS + 'RpcClient').RpcClient;
+var rpcClient = require('vista-js').RpcClient;
 
 //-----------------------------------------------------------------------------------
 // Unsubscribe the operational data.

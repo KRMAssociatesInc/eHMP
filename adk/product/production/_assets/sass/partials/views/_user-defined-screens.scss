@@ -1,0 +1,78 @@
+// Variable Colors
+$header-color: #003e4f;
+.select2-search__field {
+    border-radius: 3px;
+}
+
+.udws {
+    border-radius: 10px;
+    border: 1px solid $primary;
+    padding: 5px;
+    width: 100%;
+    .udws-header {
+        // float: right;
+        height: 50px;
+        padding: 10px 0px;
+        width: 100%;
+        .workspace-color {
+            background-color: $header-color;
+            border: 1px solid $header-color;
+            color: $white;
+            &:hover {
+                background-color: $header-color;
+                color: $white;
+            }
+        }
+        .workspace-select,
+        .record-search {
+            padding-left: 5px;
+            width: 50%;
+        }
+        .workspace-select {
+            .select2-container--default .select2-selection--single {
+                border-radius: 3px;
+                border: 0;
+            }
+            .select2-container--default,
+            .select2-selection__rendered {
+                background-color: $header-color;
+                border-radius: 3px;
+                color: $white;
+                &:hover {
+                    background-color: $header-color;
+                    color: $white;
+                }
+            }
+        }
+        .col-xs-11 {
+            display: flex;
+        }
+        [class^="col-"],
+        [class*=" col-"] {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+    .udws-content {
+    	height: 680px;
+        overflow: hidden;
+        overflow-x: auto;
+        width: 100%;
+        .udws-body {
+            min-width: 1710px;
+            padding: 10px 0px;
+            .well-udws {
+                display: inline-block;
+                height: 200px;
+                margin: 10px;
+                width: 400px;
+            }
+        }
+    }
+    .udws-page {
+        // background-color: $grey-light;
+        height: 50px;
+        padding: 10px 0px;
+        width: 100%;
+    }
+}

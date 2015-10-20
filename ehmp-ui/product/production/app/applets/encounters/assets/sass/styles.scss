@@ -9,6 +9,9 @@ $rowBackgroundColor: #fff;
 $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
 
 [data-appletid="encounters"] {
+    div#graph-header:hover {
+      background: none;
+    }
     /* min width for col-2-sm, with 3 characters (it bumps out) */
 
     .row.equalHeights .col-sm-2.text {
@@ -26,7 +29,7 @@ $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
         z-index: 100;
     }
     .has-popover:hover {
-        color: #206473;
+        color: $primary-light;
     }
     .popover-custom {
         max-width: 100%;
@@ -38,11 +41,8 @@ $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
         padding: 5px, 5px;
         font-size: 12px;
     }
-    /*
-    style available in ehmp-theme.scss
     div.encGistItem {
-        /*
-        border-bottom: 2px solid #f3f3f3;
+        border-bottom: 2px solid $grey-lighter;
         border-top: 1px solid #e5e5e5;
         *//*
         border-radius: 0;
@@ -53,7 +53,6 @@ $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
         position: relative !important;
         width: 100%;
     }
-    */
     .encPanel {
         margin-bottom: auto;
     }
@@ -61,7 +60,7 @@ $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
         border-top: medium none;
     }
     .encGistList .encGistItem:nth-child(even) {
-        background-color: #f2f8fe;
+        background-color: $primary-lightester;
     }
     .encGistList .encGistItem:hover {
         color: #000000;
@@ -83,7 +82,7 @@ $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
         }
     }
     .gistItem .gistSubItem:nth-child(even) {
-        background-color: #f2f8fe;
+        background-color: $primary-lightester;
     }
     .gistItem .gistSubItem:hover {
         /*color: #000000;
@@ -166,12 +165,12 @@ $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
 
     /* item listing in gist.  think of as clickable row? */
     div.gistItem {
-        border-bottom: 2px solid #f3f3f3;
+        border-bottom: 2px solid $grey-lighter;
         border-top: 1px solid #e5e5e5;
 
         /* blue outline of toolbar on selected item */
         &.toolbarActive {
-            border: 2px solid #1593E0;
+            border: 2px solid $white;
         }
         /* subpanel */
         & .panel {
@@ -192,7 +191,7 @@ $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
         padding: 10px;
     }
     .changecolor + .tooltip > .tooltip-inner {
-        border: 2px solid #CCCCCC;
+        border: 2px solid $grey;
         text-align: left;
         max-width: 650px;
         .row {
@@ -206,7 +205,7 @@ $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
     .subheader-bar {
         background-color: #fff;
         border-bottom: 1px solid #e5e5e5;
-        color: #206473;
+        color: $primary-light;
         font-size: 10px;
         font-weight: 700;
         height: 20px;
@@ -243,7 +242,7 @@ $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
     }
 
     .gsubChartMine {
-        background-color: #f3f3f3;
+        background-color: $grey-lighter;
         height: $defaultRowHeight + 10px;
         overflow: hidden;
         width: 125px;
@@ -256,14 +255,8 @@ $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-
-
-    .panel-heading {
-        border-bottom: 1px solid #e5e5e5;
-        padding: 0;
-    }
     .changecolor:hover {
-        background-color: #f2f8fe;
+        background-color: $primary-lightest;
     }
 
     div.gistSubItem .chart, div.gistSubItem .text {
@@ -318,6 +311,9 @@ $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
 
     .gistSubList > div > div {
         background-color: #fff;
+        box-shadow: 0 -0px 3px 0 rgba(0,0,0,.4);
+        -webkit-box-shadow: 0 -0px 3px 0 rgba(0,0,0,.4);
+        -moz-box-shadow: 0 -0px 3px 0 rgba(0,0,0,.4);
     }
 
     .border-vertical {
@@ -353,5 +349,15 @@ $rowEmptyRowColor: gray; /* Why the named color.  should be hex */
     }
     .breakwords {
         word-break: break-word;
+    }
+}
+.modal-body {
+    .no-padding {
+        padding: 0px;
+    }
+    .control {
+        .visible-inline{
+            display: inline;
+        }
     }
 }

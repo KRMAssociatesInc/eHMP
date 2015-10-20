@@ -110,7 +110,7 @@ Scenario: search with first name, full last name and date of birth
         | field         | value                      |
         | patient name  | Eight,Patient              |
 
-@f140_5_firstLastNameDOBSSNSearch @US1977
+@f140_5_firstLastNameDOBSSNSearch @US1977 @DE1807
 Scenario: search with first name, full last name, date of birth and SSN
     Given user is logged into eHMP-UI
     And the patient search screen is displayed

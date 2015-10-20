@@ -67,12 +67,16 @@ define([
             var afterSync = function(response) {
                 var medicationCollectionHandler = response.medicationCollectionHandler;
                 medicationCollectionHandler.fetchAllMeds();
-                ADK.hideModal();
+                ADK.UI.Modal.hide();
             };
             //Wait for sync to complete, then update applet
             _.delay(deferredResponse.done, 6000, afterSync);
 
-            ADK.showModal(messageBox, modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: messageBox,
+                options: modalOptions
+            });
+            modal.show();
         }
     };
 

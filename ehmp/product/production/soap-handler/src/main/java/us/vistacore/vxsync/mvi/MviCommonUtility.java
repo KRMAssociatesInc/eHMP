@@ -25,9 +25,13 @@ public final class MviCommonUtility {
 	public static final String ROOT_CODE_4 = "1.2.840.114350.1.13.99997.2.7788";
 	public static final String ROOT_CODE_5 = "1.2.840.114350.1.13.99999.4567.34";
 	
-	private static final String senderCode = "200EHMP"; 
+	private static String senderCode = "200EHMP"; 
 	
 	private static final DateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
+	
+	public static void setSenderCode(String code) {
+		senderCode = code;
+	}
 	
 	public static PRPAMT201307UV02PatientIdentifier getPatientIdentifierElement(MviId pid) {
 		PRPAMT201307UV02PatientIdentifier patientID = new PRPAMT201307UV02PatientIdentifier();

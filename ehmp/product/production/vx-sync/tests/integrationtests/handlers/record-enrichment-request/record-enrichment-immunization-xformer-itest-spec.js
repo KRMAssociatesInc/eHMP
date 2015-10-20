@@ -11,6 +11,7 @@ var _ = require('underscore');
 
 var ncUtil = require(global.VX_UTILS + 'namecase-utils');
 
+var TerminologyUtil = require(global.VX_SUBSYSTEMS + 'terminology/terminology-utils');
 var val = require(global.VX_UTILS + 'object-utils').getProperty;
 var xformer = require(global.VX_HANDLERS + 'record-enrichment-request/record-enrichment-immunization-xformer');
 var log = require(global.VX_UTILS + '/dummy-logger');
@@ -63,24 +64,23 @@ var originalVaImmunizationJob = {
 // };
 // What it is with the mock terminology translations.
 //-----------------------------------------------------------------
-var jdsCodedVaValue = {
-    system: 'urn:oid:2.16.840.1.113883.12.292',
-    code: '3',
-    display: 'measles, mumps and rubella virus vaccine'
-};
+var jdsCodedVaValue = { system : 'urn:oid:2.16.840.1.113883.12.292', code : '03', display : 'measles, mumps and rubella virus vaccine' };
 
 // NOTE:  There are no DOD transformations for Immunization... - No test needed for DOD
 //-------------------------------------------------------------------------------------
 
+var terminologyUtil = new TerminologyUtil(log, log, config);
 describe('record-enrichment-immunization-xformer.js', function() {
     describe('transformAndEnrichRecord()', function() {
         it('Happy Path with VA Immunization', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: terminologyUtil
+            };
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalVaImmunizationJob, function(error, record) {
+                xformer(log, config, environment, originalVaImmunizationJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(_.isObject(record)).toBe(true);

@@ -1,11 +1,11 @@
 Given(/^an authorized client "(.*?)" has requested patient search for patient "(.*?)"$/) do |username, name|
-  temp = SearchRDK.new
+  temp = RDKQuery.new('patient-search-full-name')
   temp.add_parameter("name.full", name)
   @response = HTTPartyWithBasicAuth.get_with_authorization_for_user(temp.path, username, TestClients.password_for(username))
 end
 
 Given(/^an authorized client "(.*?)" has requested resource directory$/) do |username|
-  path = RDClass.resourcedirectory.get_url("resource-directory")
+  path = RDClass.resourcedirectory_fetch.get_url("resource-directory")
   @response = HTTPartyWithBasicAuth.get_with_authorization_for_user(path, username, TestClients.password_for(username))
 end
 
@@ -50,7 +50,10 @@ Given(/^an authorized client "(.*?)" has requested vitals for patient "(.*?)"$/)
 end
 
 When(/^audit logs for patient "(.*?)" are requested$/) do |pid|
-  path = QueryRDKAudit.new("pid", pid).path
+  # path = QueryRDKAudit.new("pid", pid).path
+  query = RDKQuery.new('audit-record-search')
+  query.add_parameter("pid", pid)
+  path = query.path
   @response = HTTPartyWithBasicAuth.get_with_authorization_for_user(path, "AuditLogUser", TestClients.password_for("AuditLogUser"))
 end
 
@@ -60,7 +63,7 @@ Then(/^the audit log entry contains$/) do |table|
 
   @json_object = JSON.parse(@response.body)
 
-  audit_array = @json_object
+  audit_array = @json_object["data"]
   expect(audit_array.length).to be > 0
   result_array = []
   result_array.push(audit_array[audit_array.length-1])
@@ -68,12 +71,15 @@ Then(/^the audit log entry contains$/) do |table|
 end
 
 When(/^audit logs for user "(.*?)" are requested$/) do |username|
-  path = QueryRDKAudit.new("user", username).path
+  # path = QueryRDKAudit.new("user", username).path
+  query = RDKQuery.new('audit-record-search')
+  query.add_parameter("user", username)
+  path = query.path
   @response = HTTPartyWithBasicAuth.get_with_authorization_for_user(path, "AuditLogUser", TestClients.password_for("AuditLogUser"))
 end
 
 Given(/^the rdk audit logs are cleared$/) do
-  path = RDClass.resourcedirectory.get_url("audit-record-clear")
+  path = RDClass.resourcedirectory_fetch.get_url("audit-record-clear")
   @response = HTTPartyWithBasicAuth.get_with_authorization_for_user(path, "AuditLogUser", TestClients.password_for("AuditLogUser"))
   expect(@response.code).to eq(200), "response code was #{@response.code}: response body #{@response.body}"
 end

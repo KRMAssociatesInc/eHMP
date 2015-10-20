@@ -23,16 +23,16 @@ class TestSupport
     return @@operational_data_run
   end
   
-  def self.pid_site_list_not_sync
-    return @@pid_site_list_not_sync
+  def self.pid_site_list_not_sync(arg = @@pid_site_list_not_sync)
+    return @@pid_site_list_not_sync = arg
   end
   
-  def self.operational_sync_been_checked
-    return @@operational_sync_been_checked
+  def self.operational_sync_been_checked(arg = @@operational_sync_been_checked)
+    return @@operational_sync_been_checked = arg
   end
   
-  def self.operational_data_synced
-    return @@operational_data_synced
+  def self.operational_data_synced(arg = @@operational_data_synced)
+    return @@operational_data_synced = arg
   end
 
   def self.wait_for_page_loaded

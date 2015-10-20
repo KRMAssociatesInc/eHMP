@@ -1,0 +1,17 @@
+{{#if addendaText}}
+<div tabindex="0"><strong>Addenda</strong><br>{{textDateTime}} &nbsp; Added by {{textAuthor}}</div>
+<br>
+
+{{#each addendaText}}
+<div class="addendaLabel labelStyleColor" tabindex="0">Date of Addendum: </div>
+<div class="addendaInfo" tabindex="0">{{addendaDateTime}}&nbsp;</div>
+<br>
+<div class="addendaLabel labelStyleColor" tabindex="0">Author: </div>
+<div class="addendaInfo" tabindex="0">{{authorDisplayName}}&nbsp;</div>
+<br>
+<div class="addendaLabel labelStyleColor" tabindex="0">Status: </div>
+<div class="addendaInfo {{status}}" tabindex="0">{{status}}&nbsp;</div>
+<br>
+<pre tabindex="0">{{content}}</pre> <br>
+{{/each}}
+{{/if}}

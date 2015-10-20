@@ -1,0 +1,83 @@
+.progress-indicator {
+	border-bottom: 1px solid $secondary-lighter;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    font-size: 11px;
+    margin: 10px 0px 0px 0px;
+    padding: 0px 0px 15px;
+    .stacked {
+    	display: block;
+    }
+    > li {
+	    -ms-flex: 1;
+	    -webkit-flex: 1;
+	    -moz-flex: 1;
+	    color: $grey;
+	    display: block;
+	    flex: 1;
+	    position: relative;
+	    text-align: center;
+	    &:hover {
+	    	color: $grey-darker;
+	    	.bubble {
+			    background-color: $secondary-lighter;
+			    color: $grey-darker;
+			    border-color: $secondary-lighter;
+			    &:before, &:after {
+				    background-color: $secondary-lighter;
+				    border-color: $secondary-lighter;
+			    }
+	    	}
+	    }
+	    .bubble {
+	    	background-color: $secondary-lighter;
+		    border-radius: 1000px;
+		    display: block;
+		    height: 20px;
+		    margin: 0 auto 0.5em auto;
+		    width: 20px;
+		    &:before {
+		    	background-color: $secondary-lighter;
+		    	content: '';
+			    height: 3px;
+			    left: 0;
+			    position: absolute;
+			    top: 9px;
+		    }
+		    &:after {
+		    	background-color: $secondary-lighter;
+		    	content: '';
+			    height: 3px;
+			    position: absolute;
+			    right: 0;
+			    top: 9px;
+			    width: 100%;
+		    }
+	    }
+	    .completed {
+	    	color: $secondary;
+	    	.bubble {
+			    background-color: $secondary;
+	    		&:before, &:after {
+				    background-color: $secondary;
+	    		}
+	    	}
+	    }
+	    &:last-child .bubble:before, &:first-child .bubble:after {
+	    	width: 50%;
+	    }
+	    &:last-child .bubble:after, &:first-child .bubble:before {
+	    	width: 0%;
+	    }
+    }
+}
+
+@media handheld,
+screen and (max-width: 400px) {
+    .progress-indicator {
+        font-size: 60%;
+    }
+}

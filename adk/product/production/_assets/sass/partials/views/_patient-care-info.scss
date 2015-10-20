@@ -1,0 +1,261 @@
+.patient-info-container {
+	background: $white;
+	display: flex;
+	align-self: flex-start;
+	justify-content: center;
+	float:left;
+	width: 100%;
+	position:relative;
+	:focus, a:focus, .btn:focus {
+	  outline: dotted 1px;
+	}
+	> a {
+		color: $grey-darkest;
+	}
+	h4 {
+		color: $primary-light;
+		padding: 0;
+		margin: 0;
+		text-transform: uppercase;
+		font-size: 11px;
+		font-weight: bold;
+		padding: 0 0 4px;
+	} 
+	p {
+		line-height: 1.5;
+		padding: 0;
+		margin: 0;
+	}
+	.fa {
+		color: $secondary;
+		font-size: 16px;
+	}
+	.dropdown-menu {
+		padding: 0;
+		&.row {
+			padding:10px;
+			margin: 0;
+		}
+		.table {
+			font-size: 12px;
+			thead th {
+				text-transform: uppercase;
+			}
+		}
+	}
+	.patient-info, .postings, .visit-info, .new-observation, .new-note, .tasks {
+		flex: 1;
+		-ms-flex: 1;
+		align-self: auto;
+	}
+	.patient-info, .visit-info, .primary-care-info, .new-observation, .new-note, .tasks {
+		background: none;
+		border: none;
+		position: relative;
+		padding: 10px;
+		margin: 0;
+		display: block;
+		width:100%;
+		cursor: pointer;
+		overflow: hidden;
+		&:hover {
+			background: $grey-lighter;
+		}
+	}
+	.icons {
+		position: absolute;
+		bottom: 9px;
+		right: 10px;
+		.fa-caret-down {
+			display: inline-block;
+		}
+		.fa-caret-up {
+			display: none;
+		}
+	}
+	.opened .icons {
+		.fa-caret-down {
+			display: none;
+		}
+		.fa-caret-up {
+			display: inline-block;
+		}
+	}
+	.patient-info {
+		text-align: left;
+		max-width: 300px;
+		min-width: 270px;
+		position: relative;
+		width: 74%;
+		min-height: 80px;
+		> div:first-child {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			width: 97%;
+		}
+		h4.status {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 12px;
+		}
+		.info {
+			float: left;
+			text-align: left;
+			margin-left: 10px;
+		}
+		.icons {
+			position: absolute;
+			bottom: 9px;
+			right: 10px;
+			.fa-caret-down {
+				display: inline-block;
+			}
+			.fa-caret-up {
+				display: none;
+			}
+		}
+		&.opened .icons {
+			.fa-caret-down {
+				display: none;
+			}
+			.fa-caret-up {
+				display: inline-block;
+			}
+		}
+	}
+	.postings {
+		border-left: 1px solid $grey-lighter;
+		border-right: 1px solid $grey-lighter;
+		max-width: 165px;
+		min-width: 180px;
+		padding: 10px;
+		.label {
+			border: none;
+			border-radius: 4px;
+			box-shadow: none;
+			color: $white;
+			cursor: pointer;
+			display: inline-block;
+			font-weight: 400;
+			font-size: 14px;
+			margin: 1px 0px;
+			padding: 4px 6px;
+			width: 25px;
+		}
+	}
+	.visit-info {
+		flex: .7;
+		-ms-flex: .7;
+		max-width: 235px;
+		min-width: 160px;
+		> div:first-child {
+			text-align: left;
+		}
+	}
+	.primary-care-info {
+		flex: 2;
+		-ms-flex: 2;
+		align-self: stretch;
+		border-left: 1px solid $grey-lighter;
+		border-right: 1px solid $grey-lighter;
+		position: relative;
+		min-width: 280px;
+		text-align: left;
+		min-height: 64px;
+		> div > div {
+			width: 33%;
+			padding-right: 3%;
+			float:left;
+		}
+	}
+	.new-observation, .new-note, .tasks {
+		min-width: 110px;
+		max-width: 112px;
+		min-height: 64px;
+		color: #328563;
+		font-weight: bold;
+		padding-top: 25px;
+		padding-left: 18px;
+		flex: 0.2;
+		div {
+			display: table-cell;
+			height: 30px;
+			vertical-align: middle;
+		}
+	}
+	.new-note {
+		min-width: 70px;
+		max-width: 72px;
+		flex: 0.14;
+		border-left: 1px solid $grey-lighter;
+	}
+	.tasks {
+		min-width: 70px;
+		max-width: 72px;
+		flex: 0.14;
+		border-left: 1px solid $grey-lighter;
+	}
+	.popup {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 1000;
+		display: none;
+		float: left;
+		min-width: 160px;
+		padding: 5px 0;
+		margin: 2px 0 0;
+		font-size: 11px;
+		text-align: left;
+		list-style: none;
+		background-color: #fff;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		width: 800px;
+		padding: 10px;
+		.col-md-3 {
+			padding-right: 0;
+			&:first-child {
+				padding-left: 0;
+			}
+			th {
+				border: none;
+				padding: 10px;
+				font-weight: normal;
+				font-size: 13px;
+			}
+			td {
+				padding: 5px 10px;
+			}  
+		}
+		&.primary-care-info-content {
+			right: 200px;
+			left: initial;
+			padding: 0;
+		}
+		&.opened {
+			display:block;
+		}
+	}
+	@media (max-width: 1150px) {
+	    .primary-care-info > div:first-child {
+	    	> div {
+		        width: 100%;
+		        p:first-child {
+		        	margin-top: 8px;
+		        	padding-bottom: 1px;
+		        }
+		        &:first-child {
+		        	p {
+		        		margin: 0;
+		        		padding: 0;
+		        	}
+		        }
+		    }
+	    }
+	}
+}

@@ -1,0 +1,321 @@
+<h3>Search Bar</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> The search bar is a text field attached with a search button icon that allows the user to enter in alpha, numeric, and or special characters to filter through the data depending on where the user is located in the application. The search bar can appear in different sizes or appear just as a search icon button. The user can select the search icon button to trigger a search bar, which holds the same functionality.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> A search bar uses the input field, which will follow the same guidelines as in the form elements section.</p>
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> The placeholder attribute is not supported in &#8804; IE10; therefore, it is vital to follow the form elements code to assure it will pass 508 compliance.</p>
+</div>
+
+<h4>Responsive Search Bar</h4>
+
+<div id="search-barCopy1">
+    <form action="#" method="post">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="input-group">
+                    <label for="searchRecord-responsive" class="sr-only">Search Record</label>
+                    <input type="text" class="form-control" placeholder="Search Record" title="Please enter in text to search for a patient record." id="searchRecord-responsive"  />
+                    <span class="input-group-btn">
+                        <button type="button" class="text-search-accessible btn btn-default" title="Please select the button to submit your search">
+                            <i class="fa fa-search" title="Submit Search"></i><span class="sr-only">Submit Search</span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<hr />
+
+<h4>Different Sizes Search Bar</h4>
+<h5>Large</h5>
+<div id="search-barCopy2">
+    <form action="#" method="post">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="input-group">
+                    <label for="searchRecord-large" class="sr-only">Search Record</label>
+                    <input type="text" class="form-control" placeholder="Search Record" title="Please enter in text to search for a patient record." id="searchRecord-large" />
+                    <span class="input-group-btn">
+                        <button class="text-search-accessible btn btn-default" type="button" title="Submit Search">
+                        <i class="fa fa-search" title="Submit Search"></i><span class="sr-only">Submit Search</span>
+                    </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <h5>Medium</h5>
+    <form action="#" method="post">
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="input-group">
+                    <label for="searchRecord-medium" class="sr-only">Search Record</label>
+                    <input type="text" class="form-control" placeholder="Search Record" title="Please enter in text to search for a patient record." id="searchRecord-medium" />
+                    <span class="input-group-btn">
+                        <button class="text-search-accessible btn btn-default" type="button" title="Submit Search">
+                            <i class="fa fa-search" title="Submit Search"></i><span class="sr-only">Submit Search</span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <h5>Small</h5>
+
+    <form action="#" method="post">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <label for="searchRecord-small" class="sr-only">Search Record</label>
+                    <input type="text" class="form-control" placeholder="Search Record" title="Please enter in text to search for a patient record." id="searchRecord-small" />
+                    <span class="input-group-btn">
+                        <button class="text-search-accessible btn btn-default" type="button" title="Submit Search">
+                            <i class="fa fa-search" title="Submit Search"></i><span class="sr-only">Submit Search</span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<hr />
+
+<h4>Dropdown Search Bar</h4>
+<h5>Dropdown Search Bar: Right</h5>
+<div id="search-barCopy3">
+    <div class="dropdown-search-bar-container">
+        <div class="dropdown-search-bar-right">
+            <div class="row">
+                <div class="col-xs-4">
+                    <button id="search-toggle-right" class="text-search-accessible btn btn-default" title="Submit Search">
+                        <i class="fa fa-search" title="Submit Search"></i><span class="sr-only">Toggle Search Bar</span>
+                    </button>
+                    <div class="search-bar-right">
+                        <form action="#" method="post">
+    						<label for="searchRecord-dropdown-right" class="sr-only">Search Record</label>
+    						<input id="searchRecord-dropdown-right" type="text" class="form-control" placeholder="Search Record" autofocus />
+    						<button type="button" class="close dropdown-search-bar-right-close" aria-label="Clear Search">
+    							<span aria-hidden="true">&times;</span>
+    						</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <h5>Dropdown Search Bar: Left</h5>
+    <div class="dropdown-search-bar-container">
+        <div class="dropdown-search-bar-left">
+            <div class="row">
+                <div class="col-xs-4">
+                    <button id="search-toggle-left" class="text-search-accessible btn btn-default pull-right" title="Submit Search">
+                        <i class="fa fa-search" title="Submit Search"></i><span class="sr-only">Toggle Search Bar</span>
+                    </button>
+                    <div class="search-bar-left">
+                        <form action="#" method="post">
+    						<label for="searchRecord-dropdown-left" class="sr-only">Search Record</label>
+    						<input id="searchRecord-dropdown-left" type="text" class="form-control" placeholder="Search Record" autofocus />
+    						<button type="button" class="close dropdown-search-bar-left-close" aria-label="Clear Search">
+    							<span aria-hidden="true">&times;</span>
+    						</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div role="tabpanel" class="tabpanel">
+    <ul role="tablist" class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" role="tab" aria-controls="searchbox-responsive" href="#searchbox-responsive">Responsive Search Bar</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="searchbox-different-size" href="#searchbox-different-size">Different Sizes Search Bar</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="searchbox-dropdown" href="#searchbox-dropdown">Dropdown Search Bar</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="searchbox-js" href="#searchbox-js">Javascript Code</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="searchbox-responsive">
+        	<pre>
+&lt;form action="#" method="post"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-lg-12"&gt;
+            &lt;div class="input-group"&gt;
+                &lt;label for="searchRecord-responsive" class="sr-only"&gt;Search Record&lt;/label&gt;
+                &lt;input type="text" class="form-control" placeholder="Search Record" 
+                title="Please enter in text to search for a patient record." id="searchRecord-responsive"  /&gt;
+                &lt;span class="input-group-btn"&gt;
+                    &lt;button type="button" class="text-search-accessible btn btn-default" 
+                    title="Please select the button to submit your search"&gt;
+                        &lt;i class="fa fa-search" title="Submit Search"&gt;&lt;/i&gt;&lt;span class="sr-only"&gt;Submit Search&lt;/span&gt;
+                    &lt;/button&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+        	</pre>
+            <a onclick="copyToClipboard('search-barCopy1')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        
+        <div role="tabpanel" class="tab-pane fade in" id="searchbox-different-size">
+        	<pre>
+&lt;!--Large--&gt; 
+&lt;form action="#" method="post"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-lg-12"&gt;
+            &lt;div class="input-group"&gt;
+                &lt;label for="searchRecord-large" class="sr-only"&gt;Search Record&lt;/label&gt;
+                &lt;input type="text" class="form-control" placeholder="Search Record" 
+                title="Please enter in text to search for a patient record." id="searchRecord-large" /&gt;
+                &lt;span class="input-group-btn"&gt;
+                    &lt;button class="text-search-accessible btn btn-default" type="button" title="Submit Search"&gt;
+                    &lt;i class="fa fa-search" title="Submit Search"&gt;&lt;/i&gt;&lt;span class="sr-only"&gt;Submit Search&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;!--Medium--&gt; 
+&lt;form action="#" method="post"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-xs-8"&gt;
+            &lt;div class="input-group"&gt;
+                &lt;label for="searchRecord-medium" class="sr-only"&gt;Search Record&lt;/label&gt;
+                &lt;input type="text" class="form-control" placeholder="Search Record" 
+                title="Please enter in text to search for a patient record." id="searchRecord-medium" /&gt;
+                &lt;span class="input-group-btn"&gt;
+                    &lt;button class="text-search-accessible btn btn-default" type="button" title="Submit Search"&gt;
+                        &lt;i class="fa fa-search" title="Submit Search"&gt;&lt;/i&gt;&lt;span class="sr-only"&gt;Submit Search&lt;/span&gt;
+                    &lt;/button&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;!--Small--&gt; 
+&lt;form action="#" method="post"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-xs-4"&gt;
+            &lt;div class="input-group"&gt;
+                &lt;label for="searchRecord-small" class="sr-only"&gt;Search Record&lt;/label&gt;
+                &lt;input type="text" class="form-control" placeholder="Search Record" 
+                title="Please enter in text to search for a patient record." id="searchRecord-small" /&gt;
+                &lt;span class="input-group-btn"&gt;
+                    &lt;button class="text-search-accessible btn btn-default" type="button" title="Submit Search"&gt;
+                        &lt;i class="fa fa-search" title="Submit Search"&gt;&lt;/i&gt;&lt;span class="sr-only"&gt;Submit Search&lt;/span&gt;
+                    &lt;/button&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+        	</pre>
+            <a onclick="copyToClipboard('search-barCopy2')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        
+        <div role="tabpanel" class="tab-pane fade in" id="searchbox-dropdown">
+        	<pre>
+&lt;!--Right--&gt; 
+&lt;div class="dropdown-search-bar-container"&gt;
+    &lt;div class="dropdown-search-bar-right"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-xs-4"&gt;
+                &lt;button id="search-toggle-right" class="text-search-accessible btn btn-default" title="Submit Search"&gt;
+                    &lt;i class="fa fa-search" title="Submit Search"&gt;&lt;/i&gt;&lt;span class="sr-only"&gt;Toggle Search Bar&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;div class="search-bar-right"&gt;
+                    &lt;form action="#" method="post"&gt;
+                    	&lt;label for="searchRecord-dropdown-right" class="sr-only"&gt;Search Record&lt;/label&gt;
+                    	&lt;input id="searchRecord-dropdown-right" type="text" id="searchtext" class="form-control" 
+                        placeholder="Search Record" autofocus /&gt;
+                    	&lt;button type="button" class="close dropdown-search-bar-right-close" aria-label="Clear Search"&gt;
+                    		&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+                    	&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--Left--&gt; 
+&lt;div class="dropdown-search-bar-container"&gt;
+    &lt;div class="dropdown-search-bar-left"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-xs-4"&gt;
+                &lt;button id="search-toggle-left" class="text-search-accessible btn btn-default pull-right" title="Submit Search"&gt;
+                    &lt;i class="fa fa-search" title="Submit Search"&gt;&lt;/i&gt;&lt;span class="sr-only"&gt;Toggle Search Bar&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;div class="search-bar-left"&gt;
+                    &lt;form action="#" method="post"&gt;
+                    	&lt;label for="searchRecord-dropdown-left" class="sr-only"&gt;Search Record&lt;/label&gt;
+                    	&lt;input id="searchRecord-dropdown-left" type="text" id="searchtext" class="form-control" 
+                        placeholder="Search Record" autofocus /&gt;
+                    	&lt;button type="button" class="close dropdown-search-bar-left-close" aria-label="Clear Search"&gt;
+                    		&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+                    	&lt;/button&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        	</pre>
+            <a onclick="copyToClipboard('search-barCopy3')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        
+        <div role="tabpanel" class="tab-pane fade in" id="searchbox-js">
+        	<pre>
+&lt;script&gt;
+	$(document).ready(function () {
+		$("#search-toggle-right").click(function(){
+			$(".search-bar-right").slideToggle("slow");
+		});
+		$(".dropdown-search-bar-right-close").click(function(){
+			$(".search-bar-right").slideToggle("slow");
+		});
+		$("#search-toggle-left").click(function(){
+			$(".search-bar-left").slideToggle("slow");
+		});
+		$(".dropdown-search-bar-left-close").click(function(){
+			$(".search-bar-left").slideToggle("slow");
+		});
+	});
+&lt;/script&gt;
+        	</pre>
+            <a onclick="copyToClipboard('search-barCopyJS')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>
+
+<div id="search-barCopyJS">
+<script>
+	$(document).ready(function () {
+		$("#search-toggle-right").click(function(){
+			$(".search-bar-right").slideToggle("slow");
+		});
+		$(".dropdown-search-bar-right-close").click(function(){
+			$(".search-bar-right").slideToggle("slow");
+		});
+		$("#search-toggle-left").click(function(){
+			$(".search-bar-left").slideToggle("slow");
+		});
+		$(".dropdown-search-bar-left-close").click(function(){
+			$(".search-bar-left").slideToggle("slow");
+		});
+	});
+</script>
+</div>

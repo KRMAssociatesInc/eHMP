@@ -57,7 +57,7 @@ class OverviewApplets < AccessBrowserV2
     add_verify(CucumberLabel.new("CONDITIONS"), VerifyContainsText.new, applet_panel_title("problems"))
     add_verify(CucumberLabel.new("ALLERGIES"), VerifyContainsText.new, applet_panel_title("allergy_grid"))
     add_verify(CucumberLabel.new("CLINICAL REMINDERS"), VerifyContainsText.new, applet_panel_title("cds_advice"))
-    add_verify(CucumberLabel.new("MEDICATIONS"), VerifyContainsText.new, applet_panel_title("activeMeds"))
+    add_verify(CucumberLabel.new("ACTIVE MEDICATIONS"), VerifyContainsText.new, applet_panel_title("activeMeds"))
    
 
     # count the number of applets on the screen

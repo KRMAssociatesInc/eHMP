@@ -1,16 +1,16 @@
-Given(/^a sensitive patient "(.*?)"$/) do |arg1|
+Given(/^a sensitive patient "(.*?)"$/) do |_arg1|
   # this step does nothing but convey info to the feature file reader
 end
 
-Given(/^a non-sensitive patient "(.*?)"$/) do |arg1|
+Given(/^a non-sensitive patient "(.*?)"$/) do |_arg1|
   # this step does nothing but convey info to the feature file reader
 end
 
-Given(/^an "(.*?)" client "(.*?)"$/) do |arg1, arg2|
+Given(/^an "(.*?)" client "(.*?)"$/) do |_arg1, _arg2|
   # this step does nothing but convey info to the feature file reader
 end
 
-Given(/^an "(.*?)"  unauthorized client "(.*?)"$/) do |arg1, arg2|
+Given(/^an "(.*?)"  unauthorized client "(.*?)"$/) do |_arg1, _arg2|
   # this step does nothing but convey info to the feature file reader
 end
 

@@ -31,20 +31,20 @@ task :endToEndOncTests, [:env] => [:environment_setup]
 
 ## Attempting to run a sample acceptance test in the features directory
 Cucumber::Rake::Task.new(:endToEndTests) do |t|
-  t.cucumber_opts = "--format Cucumber::Formatter::JsonExpanded --out results.json features --color --format pretty --tags ~@future --tags ~@UI --tags ~@debug --tags ~@manual -f json_pretty -o cucumber.json -f html -o cucumber.html"
+  t.cucumber_opts = "features --color --format pretty --tags ~@future --tags ~@UI --tags ~@debug --tags ~@manual -f json_pretty -o cucumber.json -f html -o cucumber.html"
 end
 
 ## Attempting to run a sample acceptance test in the features directory
 Cucumber::Rake::Task.new(:endToEndStableTests) do |t|
-  t.cucumber_opts = "--format Cucumber::Formatter::JsonExpanded --out results.json features --color --format pretty --tags ~@unstable --tags ~@onc --tags ~@future --tags ~@UI --tags ~@debug --tags ~@manual -f json_pretty -o cucumber.json -f html -o cucumber.html"
+  t.cucumber_opts = "features --color --format pretty --tags ~@unstable --tags ~@onc --tags ~@future --tags ~@UI --tags ~@debug --tags ~@manual -f json_pretty -o cucumber.json -f html -o cucumber.html"
 end
 
 Cucumber::Rake::Task.new(:endToEndUnstableTests) do |t|
-  t.cucumber_opts = "--format Cucumber::Formatter::JsonExpanded --out results.json features --color --format pretty --tags @unstable -f json_pretty -o cucumber.json -f html -o cucumber.html"
+  t.cucumber_opts = "features --color --format pretty --tags @unstable -f json_pretty -o cucumber.json -f html -o cucumber.html"
 end
 
 Cucumber::Rake::Task.new(:endToEndOncTests) do |t|
-  t.cucumber_opts = "--format Cucumber::Formatter::JsonExpanded --out results.json features --color --format pretty --tags ~@unstable --tags @onc --tags ~@future --tags ~@UI --tags ~@debug --tags ~@manual -f json_pretty -o cucumber.json -f html -o cucumber.html"
+  t.cucumber_opts = "features --color --format pretty --tags ~@unstable --tags @onc --tags ~@future --tags ~@UI --tags ~@debug --tags ~@manual -f json_pretty -o cucumber.json -f html -o cucumber.html"
 end
 
 ## Placeholder task for executing all Acceptance Tests for all Mobile Applications
@@ -76,7 +76,7 @@ Rubocop::RakeTask.new(:rubocop) do |rubocop|
   rubocop.fail_on_error = true
 end
 
-task :environment_setup, :env do |task, args|
+task :environment_setup, :env do |_task, args|
   env = args[:env] || 'virtualbox'
 
   environment_endpoints(env)
@@ -85,16 +85,32 @@ end
 def environment_endpoints(env)
   case env
   when "virtualbox"
-    ENV["RDK_IP"] = Servers::RDK.localIP
+    ENV["RDK_IP"] = knife_search_for_ip("rdk")
     ENV["RDK_PORT"] = "8888"
+    ENV["RDK_WRITEBACK_PORT"]="9999"
+    ENV["RDK_PICKLIST_PORT"]="7777"
   when "aws"
-    ENV["RDK_IP"] = VagrantfileUtil::AWS.get_private_ip("rdk")
+    ENV["RDK_IP"] = knife_search_for_ip("rdk") 
     ENV["RDK_PORT"] = "8888"
+    ENV["RDK_WRITEBACK_PORT"]="9999"
+    ENV["RDK_WRITEBACK_HOST"] = knife_search_for_ip("rdk") 
+    ENV["RDK_PICKLIST_PORT"]="7777"
+    ENV["RDK_PICKLIST_HOST"] = knife_search_for_ip("rdk") 
     ENV["Perf_Monitor_IP"] = '10.150.78.227'
-    puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    puts "vx-sync = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "vx-sync")}"
-    puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   else
     fail "Unrecognized environment type: #{env}. Allowable types are: 'virtualbox' and 'aws'"
   end
+end
+
+def knife_search_for_ip(machine_name)
+  stack = ENV['JOB_NAME'] || ENV['USER']
+  if ENV.key?('BUNDLE_BIN_PATH')
+    raw_search = Bundler.with_clean_env { `/opt/chefdk/bin/knife search node \'name:#{machine_name}-#{stack}\' -Fj --config ~/Projects/vistacore/.chef/knife.rb` }
+  else
+    raw_search = `/opt/chefdk/bin/knife search node \'name:#{machine_name}-#{stack}\' -Fj --config ~/Projects/vistacore/.chef/knife.rb`
+  end
+  parsed_search = JSON.parse(raw_search)
+  fail "More than one node with that name found" if parsed_search["results"] > 1
+  fail "No node with that name found" if parsed_search["results"] == 0
+  ip = parsed_search["rows"][0]['automatic']['ipaddress']
 end

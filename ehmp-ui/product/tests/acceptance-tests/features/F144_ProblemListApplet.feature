@@ -1,7 +1,7 @@
 #Team Neptune
 @US1787 @US1509  @regression
 Feature:F144-eHMP Viewer GUI - Problem List
-	
+
 @base @US1787_base
 Scenario: User will be able view conditions
     Given user is logged into eHMP-UI
@@ -9,13 +9,14 @@ Scenario: User will be able view conditions
     Then Cover Sheet is active
     Then the Active Problems coversheet table contains headers
        | Headers     |
-       | Description | 
-       | Acuity      |  
+       | Description |
+       | Acuity      |
+       | Status      |
     Then user sees Active Problems table display
-        |Description                                | Acuity  |
-        |Diabetes Mellitus Type II or unspecified   | Chronic |
+        |Description                                | Acuity  | Status |
+        |Diabetes Mellitus Type II or unspecified   | Chronic | Active |
 
-@US1787 @US1509 @vimm_observed
+@US1787 @US1509
 Scenario: Users will be able to navigate coversheet, maximized and modal view 
 	Given user is logged into eHMP-UI
 	And user searches for and selects "Eight,Patient"
@@ -29,17 +30,18 @@ Scenario: Users will be able to navigate coversheet, maximized and modal view
 
      Then the Active Problems coversheet table contains headers
        | Headers     |
-       | Description | 
-       | Acuity      |  
-   
+       | Description |
+       | Acuity      |
+       | Status      |
+
     Then the user clicks the "Problems Expand Button"
 
     Then user sees Active Problems table display
-	|Description      | Standardized Description         | Acuity                            |Onset Date | Last Updated    | Provider        |Facility | |                                       
-	|Diabetes Mellitus Type II or unspecified|           | Chronic                           |05/02/1998 |03/30/2004      |Vehu,Eight       | TST2     | |  
-	                       
+	|Description      | Standardized Description         | Acuity  | Status                           |Onset Date | Last Updated    | Provider        |Facility | |
+	|Diabetes Mellitus Type II or unspecified|           | Chronic | Active                           |05/02/1998 |03/30/2004      |Vehu,Eight       | TST1     | |
+
     When the user clicks the "Occasional, uncontrolled chest pain"
-    And the user clicks the "Info button"   
+    And the user clicks the "Info button"
     And the modal's title is "Occasional, uncontrolled chest pain (ICD-9-CM 411.1)"
     Then user sees Active Problems Modal table display
      | header 1         | header 2              |
@@ -50,5 +52,5 @@ Scenario: Users will be able to navigate coversheet, maximized and modal view
     Then the modal closes
     And the user clicks the "Problems Filter Button"
     When the user enters "Hyperlipidemia" into the "Problems Filter Field"
-		
-		
+
+

@@ -69,9 +69,8 @@ describe('record-enrichment-pov-xformer', function() {
         var done = false;
         var environment = {};
         it('Normal path (VA record)', function() {
-            xformer(log, config, environment, {
-                record: unenrichedPovRecord
-            }, function(error, record) {
+            xformer(log, config, environment, unenrichedPovRecord,
+            function(error, record) {
                 //console.log(record);
                 expect(error).toBeFalsy();
                 expect(record.summary).toBeTruthy();
@@ -87,9 +86,8 @@ describe('record-enrichment-pov-xformer', function() {
             return done;
         });
         it('Normal path (HDR record)', function() {
-            xformer(log, config, environment, {
-                record: unenrichedHdrPovRecord
-            }, function(error, record) {
+            xformer(log, config, environment, unenrichedHdrPovRecord,
+            function(error, record) {
                 //console.log(record);
                 expect(error).toBeFalsy();
                 expect(record.summary).toBeTruthy();
@@ -119,7 +117,7 @@ describe('record-enrichment-pov-xformer', function() {
             var environment = {};
 
             runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:pov:DOD:0000000003:1000010340');
@@ -133,14 +131,6 @@ describe('record-enrichment-pov-xformer', function() {
             waitsFor(function() {
                 return finished;
             }, 'Call failed to return in time.', 500);
-        });
-
-        it('Error path (No record)', function() {
-            xformer(log, config, environment, {}, function(error, record) {
-                expect(error).toBeFalsy();
-                expect(record).toBeFalsy();
-                done = true;
-            });
         });
         waitsFor(function() {
             return done;

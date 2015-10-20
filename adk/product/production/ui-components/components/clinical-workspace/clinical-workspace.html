@@ -1,0 +1,165 @@
+<h3>Clinical Workspace</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> placeholder</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> placeholder</p>
+</div>
+
+<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel">
+    <div class="panel-body">
+        <div id="patientDemographic-btn" class="col-md-2">
+            <button id="new-observation" type="button" class="btn" aria-label="Add a New Observation">
+            + New Observation
+            </button>
+            <div class="new-order-slideout" tabindex="0" aria-label="View list to add a new observation to the patient" >
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                        <li class="panel-close">
+                            <button title="Close Panel" id="slideout-close" tabindex="0">
+                            <i class="fa fa-remove">
+                                <span class="sr-only">Close</span>
+                            </i>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="applet-add-button" title="Add Active Problem" tabindex="0">
+                            <span class="center-block text-center panel-title">Active Problem</span>
+                            <span class="fa fa-frown-o"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="applet-add-button" title="Add Allergy" tabindex="0">
+                            <span class="center-block text-center panel-title">Allergy</span>
+                            <span class="fa fa-pagelines"></span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="applet-add-button" title="Add Vitals" tabindex="0">
+                            <span class="center-block text-center panel-title">Vitals</span>
+                            <span class="fa fa-heartbeat"></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('#slideout-close').click(function(){
+            $(this).closest('.new-order-slideout').animate({
+                    'right':'-186px'
+                },function(){
+                    $(this).hide();
+                });
+        });
+        $('#new-observation').click(function(){
+            var slideOut = $(this).siblings('.new-order-slideout');
+            if (slideOut.is(':hidden')){
+                slideOut.show();
+                slideOut.animate({
+                    'right':'0'
+                });
+                slideOut.focus();
+            } else {
+                slideOut.animate({
+                    'right':'-186px'
+                },function(){
+                    $(this).hide();
+                });
+            }
+        });
+    })
+</script>
+<br>
+<div role="tabpanel" class="markup">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active">
+            <a href="#cw-markup" aria-controls="cw-markup" role="tab" data-toggle="tab">Mark Up</a>
+        </li>
+        <li>
+            <a href="#cw-js" aria-controls="cw-js" role="tab" data-toggle="tab">Javascript Code Needed</a>
+        </li>
+	</ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="cw-markup">
+            <pre>
+&lt;div id=&quot;collapseOne&quot; class=&quot;panel-collapse collapse in&quot; role=&quot;tabpanel&quot;&gt;
+    &lt;div class=&quot;panel-body&quot;&gt;
+        &lt;div id=&quot;patientDemographic-btn&quot; class=&quot;col-md-2&quot;&gt;
+            &lt;button id=&quot;new-observation&quot; type=&quot;button&quot; class=&quot;btn&quot; aria-label=&quot;Add a New Observation&quot;&gt;
+            + New Observation
+            &lt;/button&gt;
+            &lt;div class=&quot;new-order-slideout&quot; tabindex=&quot;0&quot; aria-label=&quot;View list to add a new observation to the patient&quot; &gt;
+                &lt;div id=&quot;sidebar-wrapper&quot;&gt;
+                    &lt;ul class=&quot;sidebar-nav&quot;&gt;
+                        &lt;li class=&quot;panel-close&quot;&gt;
+                            &lt;button title=&quot;Close Panel&quot; id=&quot;slideout-close&quot; tabindex=&quot;0&quot;&gt;
+                            &lt;div class=&quot;toggle&quot;&gt;
+                            &lt;i class=&quot;fa fa-remove&quot;&gt;
+                                &lt;span class=&quot;sr-only&quot;&gt;Close&lt;/span&gt;
+                            &lt;/i&gt;
+                            &lt;/div&gt;
+                            &lt;/button&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;button class=&quot;applet-add-button&quot; title=&quot;Add Item&quot; tabindex=&quot;0&quot;&gt;
+                            &lt;div class=&quot;center-block text-center panel-title&quot; aria-label=&quot;Add Active Problem&quot;&gt;Active Problem&lt;/div&gt;
+                            &lt;span class=&quot;fa fa-frown-o&quot;&gt;&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;button class=&quot;applet-add-button&quot; title=&quot;Add Item&quot; tabindex=&quot;0&quot;&gt;
+                            &lt;div class=&quot;center-block text-center panel-title&quot; aria-label=&quot;Add Allergy&quot;&gt;Allergy&lt;/div&gt;
+                            &lt;span class=&quot;fa fa-pagelines&quot;&gt;&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;button class=&quot;applet-add-button&quot; title=&quot;Add Item&quot; tabindex=&quot;0&quot;&gt;
+                            &lt;div class=&quot;center-block text-center panel-title&quot; aria-label=&quot;Add Vitals&quot;&gt;Vitals&lt;/div&gt;
+                            &lt;span class=&quot;fa fa-heartbeat&quot;&gt;&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+        <div id="cw-js" class="tab-pane" role="tabpanel">
+            <pre>
+&lt;script&gt;
+    $(document).ready(function(){
+        $(&#39;#slideout-close&#39;).click(function(){
+            $(this).closest(&#39;.new-order-slideout&#39;).animate({
+                    &#39;right&#39;:&#39;-186px&#39;
+                },function(){
+                    $(this).hide();
+                });
+        });
+        $(&#39;#new-observation&#39;).click(function(){
+            var slideOut = $(this).siblings(&#39;.new-order-slideout&#39;);
+            if (slideOut.is(&#39;:hidden&#39;)){
+                slideOut.show();
+                slideOut.animate({
+                    &#39;right&#39;:&#39;0&#39;
+                });
+                slideOut.focus();
+            } else {
+                slideOut.animate({
+                    &#39;right&#39;:&#39;-186px&#39;
+                },function(){
+                    $(this).hide();
+                });
+            }
+        });
+    })
+&lt;/script&gt;
+            </pre>
+        </div>
+	</div>
+</div>
+

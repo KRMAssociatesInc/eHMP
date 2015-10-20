@@ -31,11 +31,10 @@ describe('job.js', function() {
 
         it('verify unforced enterprise-type job is correct', function() {
             var job = jobUtil.create(testType, testId, null, null, null, null, dummyRequest);
-            expect(job).toEqual({
-                type: testType,
-                patientIdentifier: testId,
-                jpid: 'jpid'
-            });
+            expect(job.type).toEqual(testType);
+            expect(job.patientIdentifier).toEqual(testId);
+            expect(job.jpid).toEqual('jpid');
+            expect(job.jobId).toBeDefined();
         });
 
         it('verify job without domain is correct', function() {

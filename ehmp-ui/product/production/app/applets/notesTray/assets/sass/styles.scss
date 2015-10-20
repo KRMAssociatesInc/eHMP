@@ -1,0 +1,291 @@
+#patientDemographic-notes {
+    float: right;
+    width: auto;
+    padding: 0;
+    background-color: #FFF;
+    #notes-list-btn {
+        background: none;
+        height: 100%;
+        text-transform: uppercase;
+        color: $secondary;
+        line-height: 40px;
+        font-size: 12px;
+        font-weight: bold;
+        border-left: 1px solid #D7d7d7;
+        border-radius: 0;
+        &:hover {
+            background: none;
+        }
+    }
+    &.open > .notes-slider  {
+      -webkit-transform: translateX(0px);
+      transform: translateX(0px);
+    }
+    .notes-slider {
+        height: 85vh;
+        position: fixed;
+        background: #FFF;
+        left: inherit;
+        right: 0;
+        top: 81px;
+        width: 500px;
+        border-radius: 0;
+        overflow-x: hidden;
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-transform: translateX(0px);
+        transform: translateX(500px);
+        display: initial;
+        transition: all 0.2s ease-out;
+        -webkit-transition: all 0.2s ease-out;
+    }
+     .operations-tray {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .notes-form-header{
+        color: #555;
+        text-align: left;
+        font-weight: 700;
+        font-size: 16px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 0px;
+        .icon-btn {
+            display: inline-block;
+        }
+        .icon-btn:hover {
+            cursor: pointer;
+        }
+        .dropdown .dropdown-menu {
+            right: 0;
+            left: initial;
+        }
+    }
+    .show-notes-form{
+        z-index: 2000;
+    }
+    .hide-notes-form{
+        z-index: 20;
+    }
+    .derivReferenceTime .bootstrap-timepicker-widget {
+        left: initial;
+        right: 0;
+    }
+}
+
+.notes-sidebar-wrapper {
+    right: 0;
+    width: 498px;
+    margin-top: 0px;
+    height: 80vh;
+    z-index: 10000;
+    overflow: hidden;
+    button {
+        font-size: 12px;
+        padding: 3px;
+    }
+    .notes-sidebar-nav {
+        width: auto;
+        list-style: none;
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 13px;
+        .edit-note-btn {
+            color: #000;
+            background: none;
+            border: none;
+            text-decoration: none;
+            line-height: 18px;
+            padding: 0px;
+            margin: 0px;
+        }
+        #add-note-btn {
+            float: right;
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+        .toggle {
+            padding: 10px;
+            line-height: 10px;
+            color: #666;
+            background: none;
+            font-size: 20px;
+            border: 0;
+            margin: 0;
+            i {
+                cursor: pointer;
+            }
+        }
+        .notes-tray-contents {
+            position: relative;
+        }
+        #notes-tray-header {
+            border-bottom: 1px solid #90A4AE;
+            border-radius: 0;
+            box-shadow: none;
+            height: 50px;
+            padding-right: 20px;
+            font-weight: 700;
+            color: #3D5157;
+            font-size: 16px;
+        }
+        #notes-list-container {
+            position:absolute;
+            overflow-y:scroll;
+            width:100%;
+            bottom: 50px;
+            top: 60px;
+            margin:0;
+        }
+        #notes-tray-footer {
+            position:absolute;
+            bottom:0;
+            height: 50px;
+            padding: 15px;
+            text-align: right;
+            width: 100%;
+            border-top: 1px solid #e5e5e5;
+        }
+        .no-notes-indicator {
+            padding-left: 5px;
+            color: $grey-light;
+        }
+        .no-notes-indicator .hide{
+            display: none;
+        }
+        .notes-loading-indicator {
+            padding-left: 10px;
+        }
+        .panel-close {
+            text-align: right;
+        }
+        #notes-accordion h5 {
+            margin-bottom: 0px;
+            text-transform: capitalize;
+        }
+        #notes-accordion .panel-heading {
+            min-width: 0px;
+            min-height: 0px;
+            padding: 0 0 0 10px;
+            border-color: #ddd;
+            color: #333;
+            border-radius: 0;
+        }
+        .edit-btn {
+            background: none;
+            border: none;
+            text-decoration: none;
+            line-height: 18px;
+            padding: 0px;
+            margin: 0px;
+
+            color: gray;
+            text-align: right;
+            padding-right: 5px;
+            margin: 0px;
+            &:hover {
+                color: #000;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.notes-form-bottom {
+    float: right;
+}
+
+.operations-tray {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.notes-form-header{
+    color: #555;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 696px;
+}
+
+.no-gutter > [class*='col-xs'] {
+    padding-right:0;
+    padding-left:0;
+    width: 37px;
+}
+
+.note-form-height {
+    height: 100%;
+    overflow: hidden;
+}
+
+.documentDefUidUnique .title-loading-indicator {
+    padding: 0 15px;
+}
+
+#note-preview-header {
+    margin-bottom: 10px;
+}
+#note-preview-body {
+    height: 400px;
+    #note-preview-title {
+        font-weight: 400;
+        font-size: 16px;
+    }
+    #note-preview-status {
+        text-transform: uppercase;
+        text-align: right;
+        font-weight: 700;
+        font-size: 16px;
+        color: #999999;
+    }
+    pre {
+        border: none;
+        background-color: inherit;
+        font-size: 11px;
+        word-wrap: normal;
+    }
+}
+
+.note-preview-popover {
+    max-width: 600px;
+    border-radius: 0;
+    width: 600px;
+    hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #note-preview-header {
+        margin-bottom: 10px;
+    }
+    #note-preview-body {
+        overflow-y: scroll;
+        height: 400px;
+        #note-preview-title {
+            font-weight: 400;
+            font-size: 16px;
+        }
+        #note-preview-status {
+            text-transform: uppercase;
+            text-align: right;
+            font-weight: 700;
+            font-size: 16px;
+            color: #999999;
+        }
+        pre {
+            border: none;
+            background-color: inherit;
+            font-size: 11px;
+            word-wrap: normal;
+        }
+    }
+}

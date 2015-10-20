@@ -1,7 +1,8 @@
 define([
 	"backbone",
-	"jquery"
-], function(Backbone, $) {
+	"jquery",
+    "api/Messaging"
+], function(Backbone, $, Messaging) {
 	'use strict';
 
 	var infoButtonUtils = {};
@@ -177,7 +178,7 @@ define([
 	};
 
 	//!!!!!!
-	var infoButtonTemplate = '<div class="appletToolbar" id="info-button-template"><div class="toolbarPopover"><div class="btn-toolbar" role="toolbar" ><div class="btn-group" role="group"><a tooltip-data-key="toolbar_infobutton" class="btn" id="info-button"><i class="fa fa-info"></i></a><a tooltip-data-key="toolbar_detailview" class="btn" id="info-button-sidekick-detailView"><i class="fa fa-file-text-o"></i></a></div></div></div></div>';
+	var infoButtonTemplate = '<div class="appletToolbar" id="info-button-template"><div class="toolbarPopover"><div class="btn-toolbar" role="toolbar" ><div class="btn-group" role="group"><a tooltip-data-key="toolbar_infobutton" class="btn" id="info-button"><i class="fa fa-info"></i></a><a tooltip-data-key="toolbar_detailview" class="btn" id="info-button-sidekick-detailView"><i class="fa fa-file-text-o"></i></a><a tooltip-data-key="toolbar_addimmunizations" class="btn" id="info-button-sidekick-add"><i class="fa fa-plus"></i></a></div></div></div></div>';
 
 	function getInfoButtonUIUnit() {
 		var uiEl = $('body').find('#info-button-template');
@@ -192,14 +193,31 @@ define([
 
 		var uiEl = $(infoButtonTemplate);
 
-		$('body').append(uiEl);
+		$('#center-region').append(uiEl);    
 
 		$('body').on('click', '#info-button', processInfoButton);
 		$('body').on('click', '#info-button-sidekick-detailView', processDetailView);
+        $('body').on('click', '#info-button-sidekick-add', processAddView);
 
 		return uiEl;
 	}
 
+	function processAddView(event) {
+
+		var uiEl = getInfoButtonUIUnit();
+
+        var appletId = gridClickInfo.that.AppletID;
+        if(_.isUndefined(appletId))
+            appletId = gridClickInfo.that.appletConfig.id;        
+        
+        Messaging.getChannel(appletId).trigger('addView');
+        
+		clearInterval(observeScroll.timer);
+		uiEl.hide();
+
+		return false;
+	}    
+    
 	function processDetailView(event) {
 
 		var uiEl = getInfoButtonUIUnit();
@@ -292,6 +310,19 @@ define([
 		if (eventTarget.parents('#mainModalDialog').length !== 0) {
 			myCss.zIndex = 5000;
 		}
+        
+        var appletId = gridClickInfo.that.AppletID;
+        if(_.isUndefined(appletId) && !_.isUndefined(gridClickInfo.that.appletConfig)){
+            appletId = gridClickInfo.that.appletConfig.id;
+        }
+        
+        if(_.isUndefined(appletId) || (!_.isUndefined(appletId) && appletId.toLowerCase() != 'immunizations') || 
+            !ADK.PatientRecordService.isPatientInPrimaryVista() || !ADK.UserService.hasPermission('add-patient-immunization')){
+            uiEl.find('#info-button-sidekick-add').hide();
+        }else{
+                uiEl.find('#info-button-sidekick-add').show();
+        }
+        
 		uiEl.show().css(myCss);
 
 		observeScroll.top = iParent.offset().top;

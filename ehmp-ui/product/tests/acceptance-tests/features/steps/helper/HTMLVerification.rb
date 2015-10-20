@@ -7,11 +7,11 @@ require "AccessHtmlElement.rb"
 
 # Attempt to force an interface on any verifications performed through AccessBrowserV2
 module HTMLVerification
-  def pull_value(html_element, value)
+  def pull_value(_html_element, _value)
     fail "You shouldn't reach this function"
   end
 
-  def verify(html_element, value)
+  def verify(_html_element, _value)
     fail "You shouldn't reach this function"
   end
 
@@ -26,7 +26,7 @@ class VerifyContainsText
     @error_message = 'no error message'
   end
 
-  def pull_value(html_element, value)
+  def pull_value(html_element, _value)
     return html_element.text
   end
   
@@ -48,7 +48,7 @@ class VerifyText
     @error_message = 'no error message'
   end
 
-  def pull_value(html_element, value)
+  def pull_value(html_element, _value)
     return html_element.text
   end
 
@@ -70,12 +70,12 @@ class VerifyValue
     @error_message = 'no error message'
   end
 
-  def pull_value(html_element, value)
+  def pull_value(html_element, _value)
     html_element.attribute("value")
   end
 
   def verify(html_element, value)
-    @error_message = "Does element value match: #{html_element.attribute("value")} == #{value}?"
+    @error_message = "Does element value match: #{html_element.attribute('value')} == #{value}?"
     return html_element.attribute("value").casecmp(value) == 0
   end
 
@@ -91,12 +91,12 @@ class VerifyPlaceholder
     @error_message = 'no error message'
   end
 
-  def pull_value(html_element, value)
+  def pull_value(html_element, _value)
     html_element.attribute("placeholder")
   end
 
   def verify(html_element, value)
-    @error_message = "Does element placeholder match: #{html_element.attribute("placeholder")} == #{value}?"
+    @error_message = "Does element placeholder match: #{html_element.attribute('placeholder')} == #{value}?"
     return html_element.attribute("placeholder").casecmp(value) == 0
   end
 
@@ -117,13 +117,13 @@ class InElementList
     @error_message = 'no error message'
   end
 
-  def verify(html_element, value)
+  def verify(_html_element, value)
     driver = TestSupport.driver
     element_list = driver.find_elements(@access_html_elements.how, @access_html_elements.locator)
     element_list_text = []
     p element_list
 
-    element_list.each do | search_result|
+    element_list.each do |search_result|
       element_list_text.push(search_result)
       if search_result.text.casecmp(value) == 0
         return true
@@ -144,7 +144,7 @@ class VerifyContainsClass
     @error_message = 'no error message'
   end
 
-  def pull_value(html_element, value)
+  def pull_value(html_element, _value)
     html_element.attribute("class")
   end
 
@@ -181,12 +181,12 @@ class VerifyXpathCount
     return are_equal
   end
 
-  def pull_value(html_element, value)
+  def pull_value(html_element, _value)
     xpath_count = perform_xpath_count(html_element)
     return "#{xpath_count}"
   end
 
-  def perform_xpath_count(field)
+  def perform_xpath_count(_field)
     count = 0
     begin
       driver = TestSupport.driver

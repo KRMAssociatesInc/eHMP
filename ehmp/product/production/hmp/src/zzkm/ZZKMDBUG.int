@@ -1,0 +1,22 @@
+ZZKMDBUG ;; Debug errors
+ ;
+EN ;
+ N I,X,JIN
+ S I=0 F  S I=I+1 S X=$P($T(TKNERR+I),";;",2,999) Q:X="zzzzz"  S JIN(I-1)=X
+ D DECODE^VPRJSON("JIN","MOUT","ERR")
+ Q
+TKNERR ;; token error
+ ;;{"uid":"urn:va:viewdefdef:F484:89","summary":"gov.va.cpe.vpr.queryeng.dynamic.ViewDefDef@4608264","name":"test","primaryViewDefClassName":"gov.va.cpe.vpr.queryeng.dynamic.PatientPanelViewDef","bjw":"{\"3\":{\"description\":\"All lab orders that 
+ ;;have a start time of today and fall into lab-type display groups (\\\"LAB\\\",\\\"CH\\\",\\\"HEMA\\\",\\\"MI\\\")\",\"type\":\"GSP\",\"viewdefCode\":\"gov.va.cpe.vpr.queryeng.OrdersViewDef\",\"viewdefFilters\":{\"filter_group\":[\"LAB\",\"CH\",\
+ ;;"HEMA\",\"MI\"]},\"configProperties\":{},\"summaryType\":\"GSP\",\"fieldName\":\"Lab Draws\",\"fieldDataIndex\":\"/rollup/brList\",\"sequence\":3,\"name\":\"Lab Draws\",\"appInfo\":{\"name\":\"Lab Draws\",\"code\":\"gov.va.cpe.vpr.queryeng.dynam
+ ;;ic.columns.LabDraws\",\"type\":\"gov.va.cpe.vpr.queryeng.dynamic.columns.ViewDefDefColDef\"},\"@class\":\"gov.va.cpe.vpr.queryeng.dynamic.columns.LabDraws\"},\"2\":{\"description\":\"All lab orders that have a start time of today and fall into l
+ ;;ab-type display groups (\\\"LAB\\\",\\\"CH\\\",\\\"HEMA\\\",\\\"MI\\\")\",\"type\":\"GSP\",\"viewdefCode\":\"gov.va.cpe.vpr.queryeng.OrdersViewDef\",\"viewdefFilters\":{\"filter_group\":[\"LAB\",\"CH\",\"HEMA\",\"MI\"]},\"configProperties\":{},\
+ ;;"summaryType\":\"GSP\",\"fieldName\":\"Lab Draws\",\"fieldDataIndex\":\"/rollup/brList\",\"sequence\":2,\"name\":\"Lab Draws\",\"appInfo\":{\"name\":\"Lab Draws\",\"code\":\"gov.va.cpe.vpr.queryeng.dynamic.columns.LabDraws\",\"type\":\"gov.va.cp
+ ;;e.vpr.queryeng.dynamic.columns.ViewDefDefColDef\"},\"@class\":\"gov.va.cpe.vpr.queryeng.dynamic.columns.LabDraws\"},\"1\":{\"description\":\"All lab orders that have a start time of today and fall into lab-type display groups (\\\"LAB\\\",\\\"CH
+ ;;\\\",\\\"HEMA\\\",\\\"MI\\\")\",\"type\":\"GSP\",\"viewdefCode\":\"gov.va.cpe.vpr.queryeng.OrdersViewDef\",\"viewdefFilters\":{\"filter_group\":[\"LAB\",\"CH\",\"HEMA\",\"MI\"]},\"configProperties\":{},\"summaryType\":\"GSP\",\"fieldName\":\"Lab
+ ;; Draws\",\"fieldDataIndex\":\"/rollup/brList\",\"sequence\":1,\"name\":\"Lab Draws\",\"appInfo\":{\"name\":\"Lab Draws\",\"code\":\"gov.va.cpe.vpr.queryeng.dynamic.columns.LabDraws\",\"type\":\"gov.va.cpe.vpr.queryeng.dynamic.columns.ViewDefDefC
+ ;;olDef\"},\"@class\":\"gov.va.cpe.vpr.queryeng.dynamic.columns.LabDraws\"},\"4\":{\"description\":\"All lab orders that have a start time of today and fall into lab-type display groups (\\\"LAB\\\",\\\"CH\\\",\\\"HEMA\\\",\\\"MI\\\")\",\"type\":\
+ ;;"GSP\",\"viewdefCode\":\"gov.va.cpe.vpr.queryeng.OrdersViewDef\",\"viewdefFilters\":{\"filter_group\":[\"LAB\",\"CH\",\"HEMA\",\"MI\"]},\"configProperties\":{},\"summaryType\":\"GSP\",\"fieldName\":\"Lab Draws\",\"fieldDataIndex\":\"/rollup/brLi
+ ;;st\",\"sequence\":4,\"name\":\"Lab Draws\",\"appInfo\":{\"name\":\"Lab Draws\",\"code\":\"gov.va.cpe.vpr.queryeng.dynamic.columns.LabDraws\",\"type\":\"gov.va.cpe.vpr.queryeng.dynamic.columns.ViewDefDefColDef\"},\"@class\":\"gov.va.cpe.vpr.query
+ ;;eng.dynamic.columns.LabDraws\"}}","updated":"20130118152747"}
+ ;;zzzzz

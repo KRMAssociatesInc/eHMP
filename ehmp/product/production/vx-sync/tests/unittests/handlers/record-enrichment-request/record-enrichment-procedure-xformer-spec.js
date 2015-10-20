@@ -86,7 +86,7 @@ describe('record-enrichment-procedure-xformer.js', function() {
             var vaProcedureJob = JSON.parse(JSON.stringify(originalVaProcedureJob));
 
             runs(function() {
-                xformer(log, config, environment, vaProcedureJob, function(error, record) {
+                xformer(log, config, environment, vaProcedureJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 
@@ -152,7 +152,7 @@ describe('record-enrichment-procedure-xformer.js', function() {
             vaProcedureJob.record.typeName = 'SomeTypeName';
 
             runs(function() {
-                xformer(log, config, environment, vaProcedureJob, function(error, record) {
+                xformer(log, config, environment, vaProcedureJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.kind).toBe('Consult');
@@ -173,7 +173,7 @@ describe('record-enrichment-procedure-xformer.js', function() {
             vaProcedureJob.record.category = 'RA';
 
             runs(function() {
-                xformer(log, config, environment, vaProcedureJob, function(error, record) {
+                xformer(log, config, environment, vaProcedureJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.kind).toBe('Imaging');
@@ -193,7 +193,7 @@ describe('record-enrichment-procedure-xformer.js', function() {
             vaProcedureJob.record.category = 'SomethingElse';
 
             runs(function() {
-                xformer(log, config, environment, vaProcedureJob, function(error, record) {
+                xformer(log, config, environment, vaProcedureJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.kind).toBe('Procedure');
@@ -221,28 +221,12 @@ describe('record-enrichment-procedure-xformer.js', function() {
                 return finished;
             }, 'Call failed to return in time.', 500);
         });
-        it('Job.record was null', function() {
-            var finished = false;
-            var environment = {};
-
-            runs(function() {
-                xformer(log, config, environment, {}, function(error, record) {
-                    expect(error).toBeNull();
-                    expect(record).toBeNull();
-                    finished = true;
-                });
-            });
-
-            waitsFor(function() {
-                return finished;
-            }, 'Call failed to return in time.', 500);
-        });
         it('Job was removed', function() {
             var finished = false;
             var environment = {};
 
             runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:procedure:9E7A:8:1;MCAR(691.6,');

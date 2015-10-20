@@ -1,0 +1,140 @@
+<h3>Popover</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> Popovers display additional visual content for the user that overlays the current content. Popovers can be displayed in four different directions: above, below, to the left, or the right of the current content. There are also various ways to trigger a popover. One way is by selecting the object, and the other is by simply hovering over the object.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> Popovers are meant to display visual additional information when the user uses a mouse to hover over the object or select the object. To make popovers 508 compliant, adding the title attribute and helpful content will be sufficient enough to pass the 508-compliance test since the title attribute will be read by the screen reader.</p>
+</div>
+<h4>Toggle Popover</h4>
+<div class="description">
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong>
+        <ul>
+            <li>To display the popover, select and unselect the button.</li>
+            <li>To set the direction of the popovers, change the data-placement to "top", "right", "bottom", or "left".</li>
+        </ul>
+</div>
+<div id="popoverCopy1">
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="left">left</button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="top">top</button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="bottom">bottom</button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="right">right</button>
+</div>
+<hr />
+<h4>Dismissive Popover</h4>
+<div class="description">
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To display the popover, select the button; to dismiss the popover, click outside of the popover.</p>
+</div>
+<div id="popoverCopy2">
+    <a tabindex="0" class="btn btn-default" role="button" data-toggle="popover" data-trigger="focus" title="Dismissive popover" data-content="Here's some amazing content.">Dismissible popover</a>
+</div>
+<hr />
+<h4>Hover Popover</h4>
+<div id="popoverCopy3">
+    <button type="button" class="btn btn-default" data-toggle="popover" data-trigger="hover" title="Hover Popover" data-content="The amazing content continues.">Hover Popover</button>
+</div>
+<hr />
+<h4>Popover with HTLM inside 'data-content'</h4>
+<div class="control form-group">
+    <div id="popoverCopy4">
+        <button type="button" class="btn btn-default btn-sm" data-toggle="popover" title="Add Other Procedure" data-content="
+	<div class='form-container'>
+	    <div class='control form-group'>
+	        <label for='add-procedure'>Add Other Procedure</label>
+	        <select class='form-control typeahead-select' title='Press enter to browse through select options' id='add-procedure'>
+	            <optgroup label='Alaskan/Hawaiian Time Zone'>
+	            <option value='AK'>Alaska</option>
+	            <option value='HI'>Hawaii</option>
+	            </optgroup>
+	        </select>
+	    </div>
+	    <div class='control form-group'>
+	        <div class='text-right'>
+	            <button type='button' class='btn btn-primary btn-sm' title='Press enter to cancel'>Cancel</button>
+	            <button type='button' class='btn btn-primary btn-sm' title='Press enter to add'>Add</button>
+	        </div>
+	    </div>
+	</div>">Add Other Procedure&hellip;</button>
+    </div>
+</div>
+<div role="tabpanel" class="tabpanel">
+    <ul role="tablist" class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" role="tab" aria-controls="popover-directions" href="#toggle-popover-markup">Toggle Popover</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="popover-dismissive" href="#dismissive-popover">Dismissive Popover</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="popover-hover" href="#hover-popover">Hover Popover</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="data-content" href="#data-content">'Data-Content'</a></li>
+        <li><a data-toggle="tab" role="tab" aria-controls="popover-js" href="#popover-js">Javascript Code</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="toggle-popover-markup">
+            <pre>
+&lt;button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left"
+data-content="left"&gtleft&lt;/button&gt
+&lt;button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top"
+data-content="top"&gttop&lt;/button&gt
+&lt;button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom"
+data-content="bottom"&gtbottom&lt;/button&gt
+&lt;button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right"
+data-content="right"&gtright&lt;/button&gt
+			</pre>
+            <a onclick="copyToClipboard('popoverCopy1')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="dismissive-popover">
+            <pre>
+&lt;a tabindex="0" class="btn btn-default" role="button" data-toggle="popover" data-trigger="focus" title="Dismissive popover" 
+data-content="Here's some amazing content.">Dismissible popover&lt;/a&gt;
+			</pre>
+            <a onclick="copyToClipboard('popoverCopy2')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="hover-popover">
+            <pre>
+&lt;button type="button" class="btn btn-default" data-toggle="popover" data-trigger="hover" title="Hover Popover"
+data-content="The amazing content continues."&gt;Hover Popover&lt;/button&gt;
+	        </pre>
+            <a onclick="copyToClipboard('popoverCopy3')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="data-content">
+            <pre>
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm&quot; data-toggle=&quot;popover&quot; title=&quot;Add Other Procedure&quot; data-content=&quot;
+&lt;div class='form-container'&gt;
+    &lt;div class='control form-group'&gt;
+        &lt;label for='add-procedure'&gt;Add Other Procedure&lt;/label&gt;
+        &lt;select class='form-control typeahead-select' title='Press enter to browse through select options' id='add-procedure'&gt;
+            &lt;optgroup label='Alaskan/Hawaiian Time Zone'&gt;
+            &lt;option value='AK'&gt;Alaska&lt;/option&gt;
+            &lt;option value='HI'&gt;Hawaii&lt;/option&gt;
+            &lt;/optgroup&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class='control form-group'&gt;
+        &lt;div class='text-right'&gt;
+            &lt;button type='button' class='btn btn-primary btn-sm' title='Press enter to cancel'&gt;Cancel&lt;/button&gt;
+            &lt;button type='button' class='btn btn-primary btn-sm' title='Press enter to add'&gt;Add&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&quot;&gt;Add Other Procedure&amp;hellip;&lt;/button&gt;
+	        </pre>
+            <a onclick="copyToClipboard('popoverCopy4')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="popover-js">
+            <pre>
+&lt;script&gt;
+	$(function () {
+		$('[data-toggle=&quot;popover&quot;]').popover({html: true});
+		$('#popover').popover({ trigger: &quot;hover&quot; });
+	});
+&lt;/script&gt;
+            </pre>
+            <a onclick="copyToClipboard('popoverCopyJS')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>
+<div id="popoverCopyJS">
+    <script>
+    $(function() {
+        $('[data-toggle="popover"]').popover({
+            html: true
+        });
+        $('#popover').popover({
+            trigger: "hover"
+        });
+    });
+    </script>
+</div>

@@ -1,0 +1,40 @@
+.modal-lg {
+	width: 1000px;
+}
+.modal-dialog {
+	.modal-header {
+		padding: 7px 14px;
+		margin-bottom: 5px;
+		.close {
+			color: inherit;
+			margin-top: 0px;
+		    opacity: 1;
+		    padding-top: 3px;
+		    &:hover {
+		        color: $primary;
+		        outline: none;
+		    }
+		}
+	}
+	.modal-title {
+		padding: 0px;
+	}
+	.modal-body {
+		margin-bottom: 20px;
+		overflow-y: auto;
+	}
+	.modal-content {
+		border-radius: 3px;
+	}
+	.modal-footer {
+		padding: 7px 14px;
+		p {
+			text-align: left;
+			margin: 0px;
+		}
+		.visible-inline {
+			display: inline-flex;
+			margin-top: 7px;
+		}
+	}
+}

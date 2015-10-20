@@ -9,13 +9,10 @@
 require('../../env-setup');
 
 var _ = require('underscore');
-var config = require(global.VX_ROOT + 'worker-config');
-// var logUtil = require(global.VX_UTILS + 'log');
-// logUtil.initialize(config.loggers);
-// var log = logUtil.get('terminology-utils', 'host');
 var util = require('util');
 var request = require('request');
 var querystring = require('querystring');
+var uuid = require('node-uuid');
 
 var CODE_SYSTEMS = {
 	CODE_SYSTEM_UMLS_CUI: 'urn:oid:2.16.840.1.113883.6.86',
@@ -28,6 +25,12 @@ var CODE_SYSTEMS = {
     SYSTEM_DOD_NCID: 'DOD_NCID'
 };
 
+function TerminologyUtil(log, metricsLog, config) {
+    this.log = log;
+    this.config = config;
+    this.metrics = metricsLog;
+}
+
 //------------------------------------------------------------------------------------------
 // This will use the given conceptId to retrieve the JSON concept from the VA LOINC
 // H2 database through the appropriate REST service endpoint.
@@ -38,7 +41,10 @@ var CODE_SYSTEMS = {
 //               error: Is the error if one occurs
 //               concept: Is the attributes for this concept.
 //------------------------------------------------------------------------------------------
-function getVALoincConcept(conceptId, callback) {
+TerminologyUtil.prototype.getVALoincConcept = function(conceptId, callback) {
+    var self = this;
+    var metricsObj = {'subsystem':'Terminology', 'action':'getVALoincConcept', 'process':uuid.v4(),'timer': 'start'};
+    self.metrics.debug('Terminology Loinc Concept', metricsObj);
     // Cannot translate if we have nothing to start with.
     //---------------------------------------------------
     if (!_.isString(conceptId)) {
@@ -46,25 +52,34 @@ function getVALoincConcept(conceptId, callback) {
     }
 
     var loincUrl = util.format('%s://%s:%s%s?%s',
-            config.terminology.protocol,
-            config.terminology.host,
-            config.terminology.port,
-            config.terminology.lncPath,
+            self.config.terminology.protocol,
+            self.config.terminology.host,
+            self.config.terminology.port,
+            self.config.terminology.lncPath,
             querystring.stringify({
                 concept: conceptId
             }));
 
     var options = {
         url: loincUrl,
-        timeout: config.terminology.timeout
+        timeout: self.config.terminology.timeout
     };
 
-    // Open Source Release Note - Terminology retrieval has been removed.
     request(options, function(error, response, body) {
-            return callback(null, null);
-    }
-        });
-}
+        metricsObj.timer = 'stop';
+        if(error || (response && response.statusCode !== 200 && response.statusCode !== 204)) {
+            self.metrics.debug('Terminology Loinc Concept in Error', metricsObj);
+            callback('Received error response from terminology service');
+        } else {
+            self.metrics.debug('Terminology Loinc Concept', metricsObj);
+            if(body) {
+                callback(null, JSON.parse(body));
+            } else {
+                callback(null, null);
+            }
+        }
+    });
+};
 
 //------------------------------------------------------------------------------------------
 // This will use the given conceptId to retrieve the JSON concept from the VA DRUG
@@ -76,7 +91,10 @@ function getVALoincConcept(conceptId, callback) {
 //               error: Is the error if one occurs
 //               concept: Is the attributes for this concept.
 //------------------------------------------------------------------------------------------
-function getVADrugConcept(conceptId, callback) {
+TerminologyUtil.prototype.getVADrugConcept = function(conceptId, callback) {
+    var self = this;
+    var metricsObj = {'subsystem':'Terminology', 'action':'getVADrugConcept', 'process':uuid.v4(),'timer': 'start'};
+    self.metrics.debug('Terminology Drug Concept', metricsObj);
     // Cannot translate if we have nothing to start with.
     //---------------------------------------------------
     if (!_.isString(conceptId)) {
@@ -84,24 +102,34 @@ function getVADrugConcept(conceptId, callback) {
     }
 
     var drugUrl = util.format('%s://%s:%s%s?%s',
-            config.terminology.protocol,
-            config.terminology.host,
-            config.terminology.port,
-            config.terminology.drugPath,
+            self.config.terminology.protocol,
+            self.config.terminology.host,
+            self.config.terminology.port,
+            self.config.terminology.drugPath,
             querystring.stringify({
                 concept: conceptId
             }));
 
     var options = {
         url: drugUrl,
-        timeout: config.terminology.timeout
+        timeout: self.config.terminology.timeout
     };
-    
-    // Open Source Release Note - Terminology retrieval has been removed.
+
     request(options, function(error, response, body) {
-            return callback(null, null);
-        });
-}
+        metricsObj.timer = 'stop';
+        if(error || (response && response.statusCode !== 200 && response.statusCode !== 204)) {
+            self.metrics.debug('Terminology Drug Concept in Error', metricsObj);
+            callback('Received error response from terminology service');
+        } else {
+            self.metrics.debug('Terminology Drug Concept', metricsObj);
+            if(body) {
+                callback(null, JSON.parse(body));
+            } else {
+                callback(null, null);
+            }
+        }
+    });
+};
 
 //-------------------------------------------------------------------------------------------
 // This function takes a VA concept and uses finds the first concept in the sameas attribute
@@ -115,10 +143,21 @@ function getVADrugConcept(conceptId, callback) {
 //               error: Is the error if one occurs
 //               concept: Is the attributes for the concept retrieved.
 //-------------------------------------------------------------------------------------------
-function getVAConceptMappingTo(concept, targetCodeSystem, callback) {
-    // Open Source Release Note - Terminology retrieval has been removed.
-    return callback(null, null);
-}
+TerminologyUtil.prototype.getVAConceptMappingTo = function(concept, targetCodeSystem, callback) {
+    if ((concept) && (!_.isEmpty(concept.sameas))) {
+        var targetUrn = _.find(concept.sameas, function(urn) {
+            return (urn.indexOf('urn:' + targetCodeSystem) >= 0);
+        });
+
+        if (targetUrn) {
+            return this.getVADrugConcept(targetUrn, callback);
+        } else {
+            return callback(null, null);
+        }
+    } else {
+        return callback(null, null);
+    }
+};
 
 //------------------------------------------------------------------------------------------
 // This will use the given mappingType and souceCode to retrieve the terminology code
@@ -147,10 +186,51 @@ function getVAConceptMappingTo(concept, targetCodeSystem, callback) {
 //               jlvMappedCode: Is the information about the terminology code that the
 //                              sourceCode maps to.
 //------------------------------------------------------------------------------------------
-function getJlvMappedCode(mappingType, sourceCode, callback) {
-    // Open Source Release Note - Terminology retrieval has been removed.
-    return callback(null, null);
-}
+TerminologyUtil.prototype.getJlvMappedCode = function(mappingType, sourceCode, callback) {
+    var self = this;
+    var metricsObj = {'subsystem':'Terminology', 'action':'getJlvMappedCode', 'process':uuid.v4(),'timer': 'start'};
+    self.metrics.debug('Terminology JLV Mapped Code', metricsObj);
+    // Cannot translate if we have nothing to start with.
+    //---------------------------------------------------
+    if (!_.isString(sourceCode)) {
+        return callback(null, null);
+    }
+
+	if(!this.isMappingTypeValid(mappingType)) {
+        // log.warn('terminology-utils.getJlvMappedCode: Invalid mapping type requested.  mappingType: %s; sourceCode: %s', mappingType, sourceCode);
+        return callback(util.format('Invalid mapping type requested.  mappingType: %s; sourceCode: %s', mappingType, sourceCode));
+    }
+
+    var jlvUrl = util.format('%s://%s:%s%s?%s',
+            self.config.terminology.protocol,
+            self.config.terminology.host,
+            self.config.terminology.port,
+            self.config.terminology.jlvPath,
+            querystring.stringify({
+                type: mappingType,
+                code: sourceCode
+            }));
+
+    var options = {
+        url: jlvUrl,
+        timeout: self.config.terminology.timeout
+    };
+
+    request(options, function(error, response, body) {
+        metricsObj.timer = 'stop';
+        if(error || (response && response.statusCode !== 200 && response.statusCode !== 204)) {
+            self.metrics.debug('Terminology JLV Mapped Code in Error', metricsObj);
+            callback('Received error response from terminology service');
+        } else {
+            self.metrics.debug('Terminology JLV Mapped Code', metricsObj);
+            if(body) {
+                callback(null, JSON.parse(body));
+            } else {
+                callback(null, null);
+            }
+        }
+    });
+};
 
 //------------------------------------------------------------------------------------------
 // This will use the given mappingType and souceCode to retrieve the terminology code array
@@ -179,17 +259,22 @@ function getJlvMappedCode(mappingType, sourceCode, callback) {
 //               jlvMappedCodeList: Is the array of terminology codes that the
 //                              sourceCode maps to.
 //------------------------------------------------------------------------------------------
-function getJlvMappedCodeList(mappingType, sourceCode, callback) {
-    if(!isMappingTypeValid(mappingType)) {
+TerminologyUtil.prototype.getJlvMappedCodeList = function(mappingType, sourceCode, callback) {
+    var self = this;
+    var metricsObj = {'subsystem':'Terminology', 'action':'getJlvMappedCodeList', 'process':uuid.v4(),'timer': 'start'};
+    self.metrics.debug('Terminology JLV Mapped Code', metricsObj);
+    metricsObj.timer = 'stop';
+    if(!this.isMappingTypeValid(mappingType)) {
         // log.warn('terminology-utils.getJlvMappedCode: Invalid mapping type requested.  mappingType: %s; sourceCode: %s', mappingType, sourceCode);
+        self.metrics.debug('Terminology JLV Mapped Code in Error', metricsObj);
         return callback(util.format('Invalid mapping type requested.  mappingType: %s; sourceCode: %s', mappingType, sourceCode));
     }
 
     var jlvUrl = util.format('%s://%s:%s%s?%s',
-            config.terminology.protocol,
-            config.terminology.host,
-            config.terminology.port,
-            config.terminology.jlvListPath,
+            self.config.terminology.protocol,
+            self.config.terminology.host,
+            self.config.terminology.port,
+            self.config.terminology.jlvListPath,
             querystring.stringify({
                 type: mappingType,
                 code: sourceCode
@@ -197,21 +282,30 @@ function getJlvMappedCodeList(mappingType, sourceCode, callback) {
 
     var options = {
         url: jlvUrl,
-        timeout: config.terminology.timeout
+        timeout: self.config.terminology.timeout
     };
 
-    // Open Source Release Note - Terminology retrieval has been removed.
     request(options, function(error, response, body) {
-            return callback(null, null);
-        });
-}
+        if(error || (response && response.statusCode !== 200 && response.statusCode !== 204)) {
+            self.metrics.debug('Terminology JLV Mapped Code in Error', metricsObj);
+            callback('Received error response from terminology service');
+        } else {
+            self.metrics.debug('Terminology JLV Mapped Code', metricsObj);
+            if(body) {
+                callback(null, JSON.parse(body));
+            } else {
+                callback(null, null);
+            }
+        }
+    });
+};
 
-function isMappingTypeValid(mappingType) {
+TerminologyUtil.prototype.isMappingTypeValid = function(mappingType) {
     if  (!_.contains(validMappingTypes, mappingType)) {
         return false;
     }
     return true;
-}
+};
 var validMappingTypes = [
              'AllergyVUIDtoUMLSCui',
              'AllergyCHCSIenToUMLSCui',
@@ -228,12 +322,8 @@ var validMappingTypes = [
              'NotesDodNcidToLoinc',
              'ImmunizationCptToCvx'
     ];
+TerminologyUtil.prototype.CODE_SYSTEMS = CODE_SYSTEMS;
 
-module.exports.getVALoincConcept = getVALoincConcept;
-module.exports.getVADrugConcept = getVADrugConcept;
-module.exports.getVAConceptMappingTo = getVAConceptMappingTo;
-module.exports.getJlvMappedCode = getJlvMappedCode;
-module.exports.getJlvMappedCodeList = getJlvMappedCodeList;
+module.exports = TerminologyUtil;
 module.exports.CODE_SYSTEMS = CODE_SYSTEMS;
-module.exports._isMappingTypeValid = isMappingTypeValid;
-module.exports._isMappingTypeValid.validTypes = validMappingTypes;
+module.exports.validTypes = validMappingTypes;

@@ -36,7 +36,8 @@ define([
                     if (detailModel) {
                         var docType = detailModel.get('kind');
                         var resultDocCollection = AppletHelper.getResultsFromUid(detailModel);
-                        var deferredViewResponse = DocDetailsDisplayer.getView(detailModel, docType, resultDocCollection);
+                        var childDocCollection = AppletHelper.getChildDocs(detailModel);
+                        var deferredViewResponse = DocDetailsDisplayer.getView(detailModel, docType, resultDocCollection, childDocCollection);
 
                         deferredViewResponse.done(function(results) {
                             results.title = results.title || DocDetailsDisplayer.getTitle(detailModel, docType);
@@ -69,7 +70,8 @@ define([
                             // console.log("got uid model: " + JSON.stringify(uidDetailModel.attributes));
                             var docType = uidDetailModel.get('kind');
                             var resultDocCollection = AppletHelper.getResultsFromUid(uidDetailModel);
-                            var deferredViewResponse = DocDetailsDisplayer.getView(uidDetailModel, docType, resultDocCollection);
+                            var childDocCollection = AppletHelper.getChildDocs(uidDetailModel);
+                            var deferredViewResponse = DocDetailsDisplayer.getView(uidDetailModel, docType, resultDocCollection, childDocCollection);
 
                             deferredViewResponse.done(function(results) {
                                 results.title = results.title || DocDetailsDisplayer.getTitle(uidDetailModel, docType);

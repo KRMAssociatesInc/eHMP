@@ -17,9 +17,9 @@ var jobUtil = require(global.OSYNC_UTILS + 'job-utils');
  * @param handlerCallback The callback method you want invoked passing in errorMsg as the first argument.
  */
 function logError(log, errorMsg, handlerCallback) {
-    console.log("ERROR: " + errorMsg); //Since logger won't print to console, do it here
-    //log.error("ERROR: " + errorMsg);
-    //handlerCallback("ERROR: " + errorMsg);
+    //console.log("ERROR: " + errorMsg); //Since logger won't print to console, do it here
+    log.error("ERROR: " + errorMsg);
+    handlerCallback("ERROR: " + errorMsg);
 }
 
 /**
@@ -94,7 +94,7 @@ function validate(log, job, handlerCallback) {
     //log.debug('Job Type exists');
 
     //Make sure the job sent to us is an admission-request
-    console.log("job type " + job.type);
+    //console.log("job type " + job.type);
     if (job.type !== 'admission-request') {
         logError(log, 'admission-request.validate: job type was not admission-request', handlerCallback);
         return false;
@@ -116,39 +116,50 @@ function validate(log, job, handlerCallback) {
  * @returns {*}
  */
 function handle(log, config, environment, job, handlerCallback) {
-   log.debug('admission-request.handle : received request to save %s', JSON.stringify(job));
+    log.debug('admission-request.handle : received request to save %s', JSON.stringify(job));
 
     if (validate(log, job, handlerCallback) === false)
         return;
     if (validateConfig(log, config, handlerCallback) === false)
         return;
 
-    RpcClient.callRpc(log, config.admissionRequest, 'HMP PATIENT ADMIT SYNC', '', function(error, data) {
-        if (error) {
-            logError(log, 'An error occurred retrieving appointments: ' + error + ", data contained: " + data, handlerCallback);
-        }
+    var configVistaSites = config.vistaSites;
+    var sites = _.keys(configVistaSites);
+    log.debug("sites " + JSON.stringify(sites));
+    if(_.isArray(sites) && sites.length > 0) {
+        _.each(sites, function (site) {
+            var admissionRequest = config.admissionRequest;
+            admissionRequest.host = configVistaSites[site].host;
+            admissionRequest.port = configVistaSites[site].port;
 
-        var patients = [];
+            RpcClient.callRpc(log, admissionRequest, 'HMP PATIENT ADMIT SYNC', '', function (error, data) {
+                if (error) {
+                    logError(log, 'An error occurred retrieving appointments: ' + error + ", data contained: " + data, handlerCallback);
+                }
 
-        if (nullUtils.isNullish(data) === false && _.isEmpty(data) === false) {
-            patients = parseRpcResponseAdmissions(data);
-        }
+                var patients = [];
 
-        var result = {
-            source: 'admissions',
-            patients: patients
-        };
+                if (config.inttest === true) {
+                    handlerCallback(null, job);
+                    return;
+                }
 
+                if (nullUtils.isNullish(data) === false && _.isEmpty(data) === false) {
+                    patients = parseRpcResponseAdmissions(data);
 
-        if (config.inttest === true) {
-            handlerCallback(null, result);
-        }
-        else {
-            var jobToPublish = jobUtil.createValidationRequest(log, config, environment, handlerCallback, job, result);
-
-            environment.publisherRouter.publish(jobToPublish, handlerCallback);
-        }
-    });
+                    job.source = 'admissions';
+                    job.patients = patients;
+                    job.siteId = site;
+                    var jobToPublish = jobUtil.createValidationRequest(log, config, environment, handlerCallback, job);
+                    environment.publisherRouter.publish(jobToPublish, handlerCallback);
+                } else {
+                    log.debug("There are no admissions to process");
+                    handlerCallback(null, job);
+                    return;
+                }
+            });
+        });
+    }
 }
 
 module.exports = handle;

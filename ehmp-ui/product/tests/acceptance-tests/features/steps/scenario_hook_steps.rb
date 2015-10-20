@@ -16,7 +16,7 @@ class RecordTime
     duration = sprintf "%.2f sec", (@@complete - @@start)
     location = "#{location}".ljust(50)
     tags = ""
-    source_tag_names.each do | tag |
+    source_tag_names.each do |tag|
       tags.concat(" #{tag}")
     end
     tags = tags.ljust(60)
@@ -30,13 +30,13 @@ class RecordTime
   end
 end
 
-Before do |scenario|
+Before do |_scenario|
   RecordTime.record_start_time
   TestSupport.increment_counter
 end
 
 def take_screenshot(screenshot_name)
-  screenshot_name = "#{screenshot_name}".gsub! "features/", "#{ENV["SCREENSHOTS_FOLDER"]}/" if ENV.keys.include?('SCREENSHOTS_FOLDER') 
+  screenshot_name = "#{screenshot_name}".gsub! "features/", "#{ENV['SCREENSHOTS_FOLDER']}/" if ENV.keys.include?('SCREENSHOTS_FOLDER') 
   screenshot_name_png = "#{screenshot_name}.png"
   p "saving screenshot with name #{screenshot_name_png}"
   TestSupport.driver.save_screenshot(screenshot_name_png)  
@@ -45,7 +45,6 @@ rescue Timeout::Error
 end
 
 After do |scenario|
-
   RecordTime.record_end_time
 
   temp_location = nil
@@ -95,7 +94,7 @@ end
 at_exit do
   TestSupport.close_browser
   durations = RecordTime.durations
-  durations.each do | temp |
+  durations.each do |temp|
     p temp
   end
 end

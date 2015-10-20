@@ -1,0 +1,652 @@
+/*--- Applet Graph Style ---*/
+.time-chart-container-header {
+    background-color: white;
+}
+.time_range_title {
+    margin: 10px;
+}
+#time-line-main {
+    margin-bottom: 15px;
+}
+/*--- Misc ---*/
+#event-nav {
+    padding: 0px 12px 0px 0px;
+}
+.toggle {
+    margin: 5px 5px 0 0;
+}
+input.form-control.alert-danger::-webkit-input-placeholder {
+    color: #000;
+}
+input.form-control.alert-danger:-moz-placeholder {
+    /* Firefox 18- */
+    
+    color: #000;
+}
+input.form-control.alert-danger::-moz-placeholder {
+    /* Firefox 19+ */
+    
+    color: #000;
+}
+input.form-control.alert-danger:-ms-input-placeholder {
+    color: #000;
+}
+#patient-search-input #input-view-region .input-group.hasFocus {
+    border-radius: 20px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
+.record-search #center-region {
+    overflow-y: hidden;
+}
+/*--For Documents View --*/
+.documents-list {
+    #center-region > div,
+    #content-region-wrapper,
+    #content-region,
+    #content-region .contentPadding,
+    #content-region .contentPadding > div,
+    #center,
+    #center > div,
+    #content-region .gridContainer,
+    #center-region .docApp  {
+        height: 100%;
+    }
+    #center-region .panel-body {
+        height: 100%;
+        overflow-y: scroll;
+    }
+}
+/*--- For Auto-Sizing Applets on Coversheet ---*/
+.cover-sheet #center-region {
+    overflow: hidden;
+}
+/*--- For Auto-Sizing Applets on Coversheet ---*/
+.overview #center-region {
+    overflow: hidden;
+}
+.overview #content-region .panel-body {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.documents-list #center-region {
+    overflow: hidden;
+}
+.documents-list .data-grid {
+    height: 69vh;
+    overflow-y: scroll;
+    margin-bottom: 5px;
+}
+.documents-list #doc-detail-wrapper {
+    height: 69vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.cover-sheet #content-region .panel {
+    margin-bottom: 15px;
+}
+/*---Timeline Scrolling ---*/
+.news-feed #center-region {
+    overflow: hidden;
+}
+.overview #content-region .panel {
+    margin-bottom: 15px;
+}
+.grid-footer {
+    height: 5px;
+    background: $white;
+}
+/*--- gridster ---*/
+.gridster {
+    [data-appletid] {
+        height: 100%;
+    }
+    .panel-primary {
+        height: inherit;
+    }
+    .grid-applet-panel {
+        height: inherit;
+        overflow-y: auto;
+    }
+    span.center-block.text-center.panel-title {
+        cursor: move;
+        .panel-title-textbox {
+            text-align: center;
+            height: 23px;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+.editable-title {
+    /*-- applet regular display i.e. not in settings mode --*/
+    .panel-heading {
+        .panel-title-label {
+            padding: 2px 4px 2px 4px;
+            cursor: pointer;
+        }
+        .panel-title-label:hover {
+            border: 1px solid #B9D0D5;
+            padding: 1px 3px 1px 3px;
+        }
+    }
+}
+#modal-body {
+    height: 100%;
+    max-height: 68vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: $primary-lightester;
+    .warning-icon {
+        color: $tertiary;
+    }
+    hr {
+        border-top: 1px solid $grey;
+    }
+    table {
+        &.table {
+            background-color: $white;
+        }
+    }
+    .form-inline {
+        background-color: $white;
+    }
+    #dateRangeHeader {
+        margin: 20px 0 10px 0;
+        padding-top: 7px;
+        border-bottom: 2px solid $secondary-light;
+        .row {
+            margin: 0px;
+        }
+    }
+}
+.modal-header {
+    background-color: $white;
+    border-bottom: 2px solid $secondary-light;
+    border-radius: 3px 3px 0 0;
+    .modal-title {
+        color: $primary-light;
+    }
+}
+.panel-primary {
+    height: 100%;
+    overflow: hidden;
+}
+.cover-sheet-gridster #content-region .panel-body {
+    height: 100%;
+    overflow-y: scroll;
+}
+.cover-sheet-gridster #center-region {
+    overflow-x: scroll !important;
+    overflow-y: hidden;
+    width: auto;
+}
+.cover-sheet-gridster .gridster {
+    width: 3000px !important;
+}
+.gridster [data-appletid] {
+    height: 100%;
+}
+.gridster .app-size,
+.app-size-2 {
+    height: 100%
+}
+.gridster span.center-block.text-center.panel-title {
+    cursor: move;
+}
+.freeze-applets span.center-block.text-center.panel-title {
+    cursor: default !important;
+}
+.freeze-applets .grid-footer span {
+    cursor: default !important;
+}
+.freeze-applets .gs-resize-handle {
+    display: none !important;
+}
+.gridster .gridContainer {
+    height: 100%;
+}
+.gridster .gridContainer > div:first-child {
+    height: 100%;
+}
+.gridster .panel-primary {
+    height: 110%;
+}
+.formatButtonText {
+    text-transform: capitalize;
+    text-align: center;
+}
+.switchboard-container {
+    height: 100%;
+    background-color: white;
+}
+ul.options-panel {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+    li {
+        list-style: none;
+        padding: 5px;
+        height: 100%;
+        max-height: 8em;
+        a {
+            text-decoration: none;
+            color: $grey-darker;
+            :hover {
+                text-decoration: none;
+            }
+        }
+    }
+    .options-box {
+        background-color: #90a4ae;
+        width: 100%;
+        height: 50%;
+        border: 0.9em solid #f7f7f7;
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0px 0px 0px 0.55em #f7f7f7;
+        -moz-box-shadow: inset 0px 0px 0px 0.55em #f7f7f7;
+        box-shadow: inset 0px 0px 0px 0.55em #f7f7f7;
+    }
+    .options-box:hover {
+        background-color: $primary;
+        cursor: pointer;
+    }
+    .options-box.summary {
+        background-color: #f7f7f7;
+        -webkit-box-shadow: inset 0px 0px 0px 0.5em #90a4ae;
+        -moz-box-shadow: inset 0px 0px 0px 0.5em #90a4ae;
+        box-shadow: inset 0px 0px 0px 0.5em #90a4ae;
+    }
+    .options-box.summary:hover {
+        -webkit-box-shadow: inset 0px 0px 0px 0.5em $primary;
+        -moz-box-shadow: inset 0px 0px 0px 0.5em $primary;
+        box-shadow: inset 0px 0px 0px 0.5em $primary;
+    }
+    .options-box.expanded {
+        background-color: #f7f7f7;
+        border-color: #90a4ae;
+        -webkit-box-shadow: inset 0px 0px 0px 0.5em #f7f7f7;
+        -moz-box-shadow: inset 0px 0px 0px 0.5em #f7f7f7;
+        box-shadow: inset 0px 0px 0px 0.5em #f7f7f7;
+    }
+    .options-box.expanded:hover {
+        border-color: $primary;
+    }
+    .options-box.remove-applet-option {
+        background-color: transparent;
+        border: 1px dashed #90a4ae;
+        border-radius: 5px;
+        font-size: 22px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        text-align: center;
+    }
+    .options-box.remove-applet-option:hover {
+        color: $primary;
+    }
+    .options-box.rename-applet-option {
+        background-color: transparent;
+        border: 1px dashed #90a4ae;
+        border-radius: 5px;
+        font-size: 22px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        text-align: center;
+    }
+    .options-box.rename-applet-option:hover {
+        color: $primary;
+    }
+    i {
+        position: relative;
+        top: 50%;
+        transform: translateY(-75%);
+    }
+}
+/*--- gridster ---*/
+.gridster {
+    [data-appletid] {
+        height: 100%;
+    }
+    .panel-primary {
+        height: 100%;
+    }
+    .grid-applet-panel {
+        height: inherit;
+        overflow-y: auto;
+    }
+    span.center-block.text-center.panel-title {
+        cursor: move;
+    }
+}
+/*--- Panel for choosing applet size ---*/
+.optionsPanelStyle {
+    color: red;
+    background-color: white;
+}
+#modal-region {
+    .overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1050;
+    }
+}
+body.overlay-open {
+    #top-region, #center-region, #bottom-region {
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -o-filter: blur(2px);
+        -ms-filter: blur(2px);
+        filter: blur(2px);
+    }
+}
+/*--- Bootstrap ---*/
+.table {
+    margin-bottom: 0px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    padding: 2px 8px;
+    border-top: 1px solid #fff;
+}
+.panel-heading {
+    padding: 2px 15px;
+}
+
+/*--- test nav, not sure it's needed. ---*/
+.heightSmall {
+    nav {
+        margin-bottom: 0;
+        min-height: 24px;
+        border: none;
+        box-shadow: none;
+        background: $grey-light;
+        border-radius: 0;
+    }
+    a {
+        padding: 4px 10px;
+    }
+    .navbar-brand {
+        height: auto;
+    }
+}
+
+.gistPopover {
+    min-width: 326px;
+    background-color: white;
+    border-radius: 2px;
+    border-color: rgb(66, 139, 202);
+    padding: 0px;
+    margin-top: 0px!important;
+    z-index: 1040;
+    .popover-title-container {
+        display: table;
+        background-color: #dde3e8;
+        color: rgb(49, 103, 118);
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 1px;
+        border-bottom: 1px solid #ebebeb;
+        .popover-title {
+            display: table-cell;
+            padding-left: 0px;
+            font-weight: bold;
+            border-radius: 0;
+            background-color: #dde3e8;
+            border-bottom: none;
+        }
+        .popover-close-button {
+            display: table-cell;
+            background-color: #dde3e8;
+            padding-top: 4px;
+            button {
+                float: right;
+                font-size: 14px;
+            }
+        }
+    }
+    .popover-content {
+        padding: 0;
+        th {
+            color: rgb(49, 103, 118);
+            font-weight: bold;
+        }
+    }
+}
+
+
+/*--- GDT CSS ---*/
+.op-color {
+    background-color: #000000;
+}
+.ip-color {
+    background-color: #3C64FF;
+}
+#allActivitiesTitle {
+    background-color: $white;
+    height: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-top-style: thin;
+    border-bottom: 1px solid #000000;
+    padding: auto auto;
+    color: $primary;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: text-bottom;
+}
+#selectedActivities,
+#timelineSummaryTitle {
+    background-color: #E0E0E0;
+    height: 24px;
+    padding-top: 3px;
+    color: #616161;
+    border-bottom: 1px solid #bfbfbf;
+    border-bottom-width: thin;
+}
+#timelineSummaryTitle {
+    text-align: center;
+}
+.selectedActivitiesTitle,
+.timelineSummaryTitle {
+    font-size: 14px;
+    font-weight: bold;
+}
+.gdt-padding {
+    height: 45px;
+    padding: 8px 2px 0 2px;
+}
+#gdr-spikeline {
+    position: relative;
+    float: left;
+}
+#gdr-spikeline .highcharts-container {
+    overflow: visible !important;
+}
+#spikeLineChartContainer {
+    cursor: pointer;
+    border: 1px solid $primary;
+    border-radius: 0 3px 3px 0;
+}
+.gdt-chart-padding {
+    margin-left: -23px;
+    margin-right: -23px;
+}
+.gdt-custom-date-input {
+    height: 25px;
+    text-align: center;
+}
+.helpIconLink {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    cursor: pointer;
+    .helpIconLinkAnchor {
+        color: $white;
+    }
+}
+.helpIconLinkRight {
+    position: relative;
+    float:right;
+    top: 2px;
+    left: 0;
+}
+.helpIconLinkRightDown{
+    position: relative;
+    float:right;
+    top: 0px;
+    left: 2px;
+}
+.helpIconInverted{
+    .helpIconLinkAnchor {
+        color: $primary-light;
+    }
+}
+.helpIconInverted:hover .helpIconLinkAnchor, .helpIconLinkAnchor:hover {
+    color: #fff;
+}
+#navigationPanel .helpIconLink {
+    .helpIconLinkAnchor {
+        color: $primary;
+    }
+    &:hover {
+        background: $primary;
+        .helpIconLinkAnchor {
+            color: $white;
+            background: none;
+        }
+    }
+}
+.applet-nav-bar {
+    .helpIconLinkAnchor{
+        text-shadow: none;
+    }
+    .helpIconLinkAnchor:hover{
+        box-shadow: none;
+        background-color: transparent;
+        text-shadow: none;
+    }
+}
+.gistTrendGraph {
+    background-color: transparent;
+    overflow: visible;
+    display: inline;
+    margin-left: -2px;
+    height: 23px;
+    +span+.gistTrendGraph {
+        margin-left: 1px;
+    }
+    .outterBorder {
+        stroke: $grey-dark;
+        fill: transparent;
+    }
+    .criticalRange {
+        stroke: $grey-light;
+        fill: $grey-light;
+    }
+    .abnormalRange {
+        stroke: #f2f2f2;
+        fill: #f2f2f2;
+    }
+    .normalRange {
+        stroke: #ffffff;
+        fill: #ffffff;
+    }
+    .trendLine {
+        stroke: #000000;
+    }
+    .previousValue {
+        stroke: #000000;
+        fill: #000000;
+    }
+    .criticalValue {
+        stroke: #cc0000;
+        fill: #cc0000;
+    }
+    .abnormalValue {
+        stroke: #ff9900;
+        fill: #ff9900;
+    }
+    .normalValue {
+        stroke: #0099ff;
+        fill: #0099ff;
+    }
+    .textureHashed {
+        path {
+            stroke: $grey-dark;
+            stroke-width: 1;
+            fill: none;
+        }
+        rect {
+            @extend .abnormalRange;
+        }
+    }
+    .hashedRange {
+        fill: url(#textureHashed);
+    }
+    .valueMarker {
+        overflow: visible !important;
+    }
+}
+#navigation-region #navigationPanel #navigation-navbar .btn-group .dropdown-menu{
+    width:280px;
+ #dropdown-search-element{
+    border-radius: 10px;
+    line-height: 1.5em;
+    width:220px;
+    }
+    #clearSearch{
+        display:none;
+        font-size: 1.3em;
+        color:$primary;
+        border: none;
+        background: none;
+    }
+}
+#dropdown-search-element::-ms-clear {
+    display: none;
+}
+.panel-heading.grid-applet-heading {
+    color: $primary-light;
+    background: $primary-lightest;
+    height: 25px;
+    padding: 1px 5px;
+    .panel-title {
+        height:100%;
+        overflow: hidden;
+        padding: 0 7px;
+        .panel-title-label {
+            display: inline;
+            height: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    .btn-xs {
+        &:hover, &:focus, &:active {
+            color: $primary;
+            background: none;
+            box-shadow: none;
+        }
+    }
+}
+.appletDiv_ChromeContainer {
+    height: 80%;
+    height: calc(100% - 25px - 3px);
+    height: -webkit-calc(100% - 25px - 3px);
+}
+.appletDiv_ChromeContainer > div {
+    height: 100%;
+}

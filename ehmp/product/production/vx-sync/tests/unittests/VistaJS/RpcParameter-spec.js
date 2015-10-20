@@ -2,7 +2,7 @@
 
 require('../../../env-setup');
 
-var RpcParameter = require(global.VX_VISTAJS + 'RpcParameter').RpcParameter;
+var RpcParameter = require('vista-js').RpcParameter;
 
 describe('RpcParameter.js', function() {
     describe('RpcParameter constructor', function() {

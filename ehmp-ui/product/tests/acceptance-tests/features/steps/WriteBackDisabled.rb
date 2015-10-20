@@ -18,7 +18,7 @@ class WriteBackDisable < AccessBrowserV2
     add_action(CucumberLabel.new("ConditionPlusButton"), ClickAction.new, AccessHtmlElement.new(:css, '[title="Conditions"] button.applet-add-button'))
     add_action(CucumberLabel.new("AllergyPlusButton"), ClickAction.new, AccessHtmlElement.new(:css, '[title="Allergies"] button.applet-add-button'))
     add_action(CucumberLabel.new("Add Non-VA-Med button"), ClickAction.new, AccessHtmlElement.new(:css, "#add-non-va-med-btn"))
-   #expandApplets
+    #expandApplets
     add_action(CucumberLabel.new("Condition"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=problems] .applet-maximize-button"))
     add_action(CucumberLabel.new("Allergy"), ClickAction.new, AccessHtmlElement.new(:css, "div[data-appletid='allergy_grid'] .grid-resize button"))
     add_action(CucumberLabel.new("Vitals"), ClickAction.new, AccessHtmlElement.new(:css, "div[data-appletid='vitals'] .applet-maximize-button"))

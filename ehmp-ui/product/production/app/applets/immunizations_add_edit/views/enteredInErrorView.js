@@ -37,7 +37,11 @@ define([
             model: currentModel
         });
 
-        ADK.showModal(modalView, modalOptions);
+        var modal = new ADK.UI.Modal({
+            view: modalView,
+            options: modalOptions
+        });
+        modal.show();
     }    
 
     var ModalView = Backbone.Marionette.ItemView.extend({

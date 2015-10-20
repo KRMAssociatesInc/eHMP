@@ -1,21 +1,10 @@
 {
-     "globals": {
-        "jasmine": false,
-        "beforeEach": false,
-        "afterEach": false,
-        "spyOn": false,
-        "it": false,
+    "globals": {
         "console": false,
-        "describe": false,
         "expect": false,
-        "beforeEach": false,
-        "waits": false,
-        "waitsFor": false,
-        "runs": false,
-        "xit": false,
-        "xdescribe": false
+        "sinon": false
     },
-
+    "mocha": true,
     "nonew": true,
     "curly": true,
     "noarg": true,

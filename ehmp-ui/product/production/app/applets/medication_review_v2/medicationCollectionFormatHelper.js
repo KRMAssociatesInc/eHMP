@@ -1,7 +1,6 @@
 define([
-    "app/applets/medication_review_v2/appletHelper",
-    "app/applets/medication_review_v2/charts/chartBuilder"
-], function(appletHelper, chartBuilder) {
+    "app/applets/medication_review_v2/appletHelper"
+], function(appletHelper) {
     var hasOverLappingMeds = function(medArray) {
         if (medArray.length === 1) {
             return false;
@@ -111,7 +110,7 @@ define([
             var unfilteredModelsForGraph = medSubGroupModel.get('submeds').models;
             var AllDateModel = ADK.SessionStorage.getModel('globalDate');
             var filteredModels = medSubGroupModel.get('submeds').models;
-
+          
             if (AllDateModel.get('selectedId') !== 'all-range-global' && useGlobalDateFilter) {
 
                 filteredModels = _.filter(medSubGroupModel.get('submeds').models, function(model) {
@@ -224,8 +223,7 @@ define([
         return facilityGroupModels;
     };
     var groupByMedicationNameThenByFacility = function(collection, useGlobalDateFilter) {
-
-        var medicationSubGroups = groupByMedication(collection, true);
+        var medicationSubGroups = groupByMedication(collection, useGlobalDateFilter);
         var groupNames = [];
         _.each(medicationSubGroups, function(subGroupModel) {
             groupNames.push(subGroupModel.get("displayName"));
@@ -283,11 +281,12 @@ define([
     });
     var getMedicationGroup = function(collection, groupName) {
         var mainGroup = {};
+
         _.each(collection.models, function(model) {
             var group = null;
             for (var medsIndex = 0; medsIndex < model.get('meds').models.length; medsIndex++) {
                 if (model.get('meds').models[medsIndex].get('displayName') === groupName) {
-                    group = model.get('meds').models[medsIndex].get('subMedsInternalGroupModels');
+                    group = model.get('meds').models[medsIndex];
                     break;
                 }
             }

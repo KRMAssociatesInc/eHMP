@@ -1,7 +1,7 @@
 require "httparty"
 
 When(/^the client requests patient photo with user "(.*?)" and ICN "(.*?)"$/) do |user, icn|
-  resource_query = PatientPhotoSearch.new
+  resource_query = RDKQuery.new('patientphoto-getPatientPhoto')
   resource_query.add_parameter("pid", icn)
   path = resource_query.path
   puts "Requesting photo for ICN" + " " + icn

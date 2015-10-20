@@ -2,9 +2,32 @@
 
 var _ = require('lodash');
 var RpcClient = require(global.OSYNC_VISTAJS + 'RpcClient').RpcClient;
-//var jobUtil = require(global.OSYNC_UTILS + 'job-utils');
+var jobUtil = require(global.OSYNC_UTILS + 'job-utils');
 var nullUtils = require(global.OSYNC_UTILS + 'null-utils');
 var parseRpcResponsePatientList = require(global.OSYNC_UTILS + 'patient-sync-utils').parseRpcResponsePatientList;
+
+
+/**
+ * logs a debug statement
+ *
+ * @param log The logger to call log.debug with.
+ * @param msg The message you want to have logged.
+ */
+function logDebug(log, msg) {
+    console.log(msg); //Since logger won't print to console, do it here
+    log.debug(msg);
+}
+
+/**
+ * logs a info statement
+ *
+ * @param log The logger to call log.info with.
+ * @param msg The message you want to have logged.
+ */
+function logInfo(log, msg) {
+    console.log(msg); //Since logger won't print to console, do it here
+    log.info(msg);
+}
 
 /**
  * logs an error using the specified logger and then invokes the callback function.<br/>
@@ -15,7 +38,6 @@ var parseRpcResponsePatientList = require(global.OSYNC_UTILS + 'patient-sync-uti
  * @param handlerCallback The callback method you want invoked passing in errorMsg as the first argument.
  */
 function logError(log, errorMsg, handlerCallback) {
-    console.log("ERROR: " + errorMsg); //Since logger won't print to console, do it here
     log.error("ERROR: " + errorMsg);
     handlerCallback("ERROR: " + errorMsg);
 }
@@ -32,17 +54,34 @@ function logError(log, errorMsg, handlerCallback) {
 function validate(log, job, handlerCallback) {
     // make sure we have the correct jobtype
     if (nullUtils.isNullish(job.type)) {
-        logError(log, 'patientlist.validate: Could not find job type', handlerCallback);
+        logError(log, 'patientlist-request.validate: Could not find job type', handlerCallback);
         return false;
     }
     //log.debug('Job Type exists');
 
     //Make sure the job sent to us is an patientlist
-    if (job.type !== 'patientlist') {
-        logError(log, 'patientlist.validate: job type was not patientlist', handlerCallback);
+    if (job.type !== 'patientlist-request') {
+        logError(log, 'patientlist-request.validate: job type was not patientlist-request', handlerCallback);
         return false;
     }
     //log.debug('Job type is patientlist');
+
+    _.forEach(job.users, function(u) {
+        if (nullUtils.isNullish(u)) {
+            logError(log, 'patientlist-request.validate: a user was null', handlerCallback);
+            return false;
+        }
+
+        if (nullUtils.isNullish(u.accessCode) || _.isEmpty(u.accessCode)) {
+            logError(log, 'patientlist-request.validate: a user.accessCode was null or empty', handlerCallback);
+            return false;
+        }
+
+        if (nullUtils.isNullish(u.verifyCode) || _.isEmpty(u.verifyCode)) {
+            logError(log, 'patientlist-request.validate: a user.verifyCode was null or empty', handlerCallback);
+            return false;
+        }
+    });
 
     return true;
 }
@@ -100,42 +139,57 @@ function validateConfig(log, config, handlerCallback) {
     return true;
 }
 
-function getPatientList(log, startName, result, config, job, handlerCallback) {
+function getPatientList(log, startName, config, environment, job, handlerCallback) {
+    RpcClient.callRpc(log, config.patientListRequest, 'ORWPT LIST ALL', startName, '1', function (error, data) {
+        if (error) {
+            logError(log, 'An error occurred retrieving patientlist: ' + error + ", data contained: " + data, handlerCallback);
+            return;
+        }
+
+        if (nullUtils.isNullish(data) === true || _.isEmpty(data) === true) {
+            logInfo(log, 'patientlist: the data returned was empty', handlerCallback);
+            return;
+        }
+
+        var patients = parseRpcResponsePatientList(data);
+        logDebug(log, patients[0].name); //Use to see that it's still processing (when 2000+ records are being returned).
+
+        job.patients = patients;
+
+        if (config.inttest === true) {
+            handlerCallback(null, job);
+
+            //For an inttest we don't need to continually retrieve all of the records, just make sure we got some.
+            //If you need to validate in your testing that you are getting more records, then comment out this next line.
+            return;
+        }
+        else {
+            var jobToPublish = jobUtil.createValidationRequest(log, config, environment, handlerCallback, job);
+
+            environment.publisherRouter.publish(jobToPublish, handlerCallback);
+        }
+
+        if (patients.length === 44) {
+            var localStartName = patients[43].name;
+            job.patients = [];
+            getPatientList(log, localStartName, config, environment, job, handlerCallback);
+        }
+    });
+}
+
+function handle(log, config, environment, job, handlerCallback) {
+    log.debug('patientlist.handle : received request to sync for active users: %s', JSON.stringify(job));
     if (validate(log, job, handlerCallback) === false)
         return;
     if (validateConfig(log, config, handlerCallback) === false)
         return;
 
-    RpcClient.callRpc(log, config.patientListRequest, 'ORWPT LIST ALL', startName, '1', function(error, data) {
-        if (error) {
-            logError(log, 'An error occurred retrieving appointments: ' + error + ", data contained: " + data, handlerCallback);
-        }
+    _.forEach(job.users, function(u) {
+        config.patientListRequest.accessCode = u.accessCode;
+        config.patientListRequest.verifyCode = u.verifyCode;
 
-        if (nullUtils.isNullish(data) === false && _.isEmpty(data) === false) {
-            var patients = parseRpcResponsePatientList(data);
-console.log(patients[0].name);
-            result.patients = result.patients.concat(patients);
-            if (patients.length === 44) {
-                var localStartName = patients[43].name;
-                getPatientList(log, localStartName, result, config, job, handlerCallback);
-                return;
-            }
-        }
-
-        //TODO - Add any publishing to a tube
-        handlerCallback(null, result);
+        getPatientList(log, '', config, environment, job, handlerCallback);
     });
-
-}
-
-function handle(log, config, environment, job, handlerCallback) {
-    log.debug('patientlist.handle : received request to sync for active users: %s', job);
-
-    var result = {};
-    result.type = "validation";
-    result.source = "patientlist";
-    result.patients = [];
-    getPatientList(log, '', result, config, job, handlerCallback);
 }
 
 module.exports = handle;

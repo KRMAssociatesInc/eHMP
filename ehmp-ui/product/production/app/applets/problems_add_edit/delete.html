@@ -31,6 +31,10 @@
 	  <div class="col-md-4 text-right text-muted">Location:</div>
 	  <div class="col-md-8 text-left"><strong>{{locationDisplayName}}</strong></div>
 	</div>
+	<div class="row">
+  		<div class="col-md-4 text-right text-muted">Status:</div>
+  		<div class="col-md-8 text-left">{{statusName}}</div>
+	</div>
 	&nbsp;
 	<!-- Leave this comment in. Trying to keep this template consistent with detail view.
 	<div class="row">
@@ -38,12 +42,16 @@
 	  <div class="col-md-8 text-left"><strong>&lt;Data not available&gt; by &lt;Data not available&gt;</strong></div>
 	</div>-->
 	<div class="row">
+	  <div class="col-md-4 text-right text-muted">provider uid:</div>
+	  <div class="col-md-8 text-left"><strong>{{providerUid}}</strong></div>
+	</div>
+	<div class="row">
 	  <div class="col-md-4 text-right text-muted">Entered:</div>
-	  <div class="col-md-8 text-left"><strong>{{enteredFormatted}}</strong></div>
+	  <div class="col-md-8 text-left"><strong>{{formatDate entered}}</strong></div>
 	</div>
 	<div class="row">
 	  <div class="col-md-4 text-right text-muted">Updated:</div>
-	  <div class="col-md-8 text-left"><strong>{{updatedFormatted}}</strong></div>
+	  <div class="col-md-8 text-left"><strong>{{formatDate updated}}</strong></div>
 	</div>
 	&nbsp;
 	<hr/>

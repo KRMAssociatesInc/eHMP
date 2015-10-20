@@ -1,0 +1,87 @@
+.select2-container--side-by-side {
+    @import "single";
+    &.select2-container--open.select2-container--above {
+        .select2-selection--single, .select2-selection--multiple {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+    &.select2-container--open.select2-container--below {
+        .select2-selection--single, .select2-selection--multiple {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+    .select2-search--dropdown {
+        height: 35px;
+        border-bottom: 1px solid #ccc;
+        .select2-search__field {
+            border: 1px solid #ccc;
+            &:focus{
+                border: 1px solid #66afe9;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #66afe9;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #66afe9;
+          }
+        }
+    }
+    .select2-search--inline {
+        .select2-search__field {
+            background: transparent;
+            border: none;
+            outline: 0;
+        }
+    }
+    .select2-results {
+        height: calc(100% - 35px);
+        & > .select2-results__options {
+            height:100%;
+            overflow-y: auto;
+        }
+        .select2-query-button{
+            display:none;
+        }
+    }
+    .select2-results__option {
+        padding:0;
+        span{
+            display:block;
+        }
+        &[role=group] {
+            span{
+                padding: 0;
+            }
+        }
+        &[aria-disabled=true] {
+            display:none;
+        }
+        &[aria-selected=true] {
+            span{
+                background-color: #ddd;
+            }
+        }
+        strong{
+            display:block;
+            background-color: #eee;
+            border-top: 1px solid #ccc;
+            cursor: default;
+            display: block;
+            padding: 4px;
+        }
+        .select2-results__option {
+            span{
+                padding-left: 1em;
+            }
+        }
+    }
+    .select2-results__option--highlighted[aria-selected] {
+        span{
+            background-color: #CBE0D7;
+            color:#003e4f;
+        }
+    }
+    .select2-results__group {
+        cursor: default;
+        display: block;
+        padding: 6px;
+    }
+}

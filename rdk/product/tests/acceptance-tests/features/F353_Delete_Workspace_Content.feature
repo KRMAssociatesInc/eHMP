@@ -1,4 +1,4 @@
-@DeleteWorkspaceContent @F353
+@debug @DeleteWorkspaceContent @F353
 
 Feature: F353 - Delete Workspace Content
 

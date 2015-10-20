@@ -244,9 +244,8 @@ var fakeRecord1 = {
                 'sample': 'BLOOD  '
     };
 
-var environment = {
-    terminologyUtils: {
-        getVALoincConcept: function(code, callback) {
+function TerminologyUtils(){}
+TerminologyUtils.prototype.getVALoincConcept = function(code, callback) {
             callback(null, {
                 ancestors: [
                     'urn:va:vuid:4665449',
@@ -265,9 +264,13 @@ var environment = {
                     'urn:lnc:LP32744-2',
                     'urn:lnc:LP40474-6'
                     ]
-            });
-        }
-    }
+            });};
+TerminologyUtils.prototype.getJlvMappedCode = function(type, source, callback) {
+    callback();
+};
+
+var environment = {
+    terminologyUtils: new TerminologyUtils()
 };
 
 var removedRecord = {
@@ -285,10 +288,9 @@ describe('record-enrichment-lab-xformer.js', function(){
 
     it('Job was removed', function() {
             var finished = false;
-            var environment = {};
 
             runs(function() {
-                xformer(log, null, environment, removedJob, function(error, record) {
+                xformer(log, null, environment, removedJob.record, function(error, record) {
                     expect(error).toBeFalsy();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:lab:ABCD:15:CH;7089596.8377;2');
@@ -306,7 +308,7 @@ describe('record-enrichment-lab-xformer.js', function(){
 
 
     it('Cover all conditional paths', function(){
-        xformer(log, null, environment, {record: fakeRecord1}, function(error, record){
+        xformer(log, null, environment, fakeRecord1, function(error, record){
             expect(error).toBeFalsy();
             expect(record).toBeTruthy();
             expect(record.resultNumber).toBeUndefined();
@@ -347,7 +349,7 @@ describe('record-enrichment-lab-xformer.js', function(){
                         'displayText': 'Glucose [Mass/volume] in Body fluid'
                     });
         };
-        xformer(log, null, environment, {record: labRecord1}, function(error, record){
+        xformer(log, null, environment, labRecord1, function(error, record){
             expect(error).toBeFalsy();
             expect(record).toBeTruthy();
             expect(record.facilityCode).toBe(labTransformedRecord1.facilityCode);
@@ -392,7 +394,7 @@ describe('record-enrichment-lab-xformer.js', function(){
             expect(record.sample).toBe(labTransformedRecord1.sample);
         });
     });
-    
+
 
     it('transform DOD lab record',function(){
         environment.terminologyUtils.getJlvMappedCode = function(type, code, callback) {
@@ -402,7 +404,7 @@ describe('record-enrichment-lab-xformer.js', function(){
                         'displayText': 'Ammonia [Mass/volume] in Plasma'
                     });
         };
-        xformer(log, null, environment, {record: dodLabRecord1}, function(error, record){
+        xformer(log, null, environment, dodLabRecord1, function(error, record){
             expect(error).toBeFalsy();
             expect(record).toBeTruthy();
             expect(record.facilityCode).toBe(dodLabRecordTransformed1.facilityCode);

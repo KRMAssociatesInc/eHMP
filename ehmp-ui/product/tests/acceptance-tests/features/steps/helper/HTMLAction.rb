@@ -7,7 +7,7 @@ require "AccessHtmlElement.rb"
 
 # Attempt to force an interface on any actions performed through AccessBrowserV2
 module HTMLAction
-  def perform_action(html_element, value)
+  def perform_action(_html_element, _value)
     fail "You shouldn't reach this function"
   end
 end
@@ -15,7 +15,7 @@ end
 #
 class ClickAction
   include HTMLAction
-  def perform_action(html_element, value)
+  def perform_action(html_element, _value)
     html_element.click
   end
 end
@@ -53,7 +53,7 @@ end
 
 class SendEnterAction
   include HTMLAction
-  def perform_action(html_element, value)
+  def perform_action(html_element, _value)
     html_element.send_keys [:enter]
   end
 end
@@ -119,7 +119,7 @@ class FocusInAction
     @id = html_id
   end
   
-  def perform_action(html_element, value)
+  def perform_action(_html_element, _value)
     driver = TestSupport.driver
     driver.execute_script("$('##{@id}').focusin();")
   end

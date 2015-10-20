@@ -1,3 +1,4 @@
+@debug
 @F138_Immunization_FCIR @vxsync @patient
 Feature: F138 - Return of immunization in FHIR format
 
@@ -354,6 +355,7 @@ Scenario: Client can request immunization results in FHIR format
       And a patient with pid "5000000116V912836" has been synced through the RDK API
       When the client requests "10" immunization for the patient "5000000116V912836" in FHIR format
       Then a successful response is returned
+      And total returned resources are "10"
       And the results contain
       | name         | value |
-      | totalResults | 10    |
+      | totalResults | 16    |

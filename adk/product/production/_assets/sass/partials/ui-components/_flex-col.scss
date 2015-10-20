@@ -1,0 +1,10 @@
+.row-eq-height { /* Flex columns allows the columns to extend to the height of the content, an example of this is in encounters, line 357 */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  [class*="col-"] {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}

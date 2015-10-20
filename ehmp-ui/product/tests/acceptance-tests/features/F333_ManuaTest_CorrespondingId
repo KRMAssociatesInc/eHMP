@@ -15,7 +15,7 @@ And Password: vagrant
 And Once you're in the RDK terminal execute the command: tail -f /tmp/rdk_output.log
 Then Log into eHMP-UI
 Then Click the "All Patients" tab at the search patient screen
-Then Search for a MockMVI patient. A MockMVI patient can be found in the spreadsheet attach here:  
+Then Search for a MockMVI patient. A MockMVI patient can be found in the spreadsheet attach here: https://wiki.vistacore.us/display/VACORE/MVI. 
 And Note that DoDOnly,Patient and ICNOnly,Patient will not load to coversheet until US5070 is complete
 Then Click confirm selection and look for something like below in the logs. 
 Then The DFN and ICN in the log should match the values in the spreadsheet.

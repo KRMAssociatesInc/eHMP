@@ -18,7 +18,8 @@ config = {
     localIP: ,
     localAddress ,
     connectTimeout ,
-    sendTimeout
+    sendTimeout ,
+    noReconnect
 };
 */
 function RpcClient(logger, config) {
@@ -26,6 +27,11 @@ function RpcClient(logger, config) {
     if (!(this instanceof RpcClient)) {
         return new RpcClient(logger, config);
     }
+
+    this.queue = async.queue(this._worker.bind(this), 1);
+
+    this.queue._noReconnect = config.noReconnect;
+    this.queue._highWaterMark = 0;
 
     this.logger = logger;
     this.config = config;
@@ -39,6 +45,53 @@ RpcClient.create = function create(logger, config) {
 };
 
 
+RpcClient.prototype._worker = function _worker(task, queueCallback) {
+    this.logger.debug('RpcClient._worker(%s:%s)', this.config.host, this.config.port);
+
+    function executeCallbacks(error, result) {
+        // task.callback(error, result);
+        // queueCallback();
+        setTimeout(task.callback, 0, error, result);
+        setTimeout(queueCallback);
+    }
+
+    if (task.isConnector) {
+        return task(function(error, result) {
+            executeCallbacks(error, result);
+        });
+    }
+
+    var self = this;
+    task(function(error, result) {
+        if (error) {
+            if (self.queue._noReconnect) {
+                return executeCallbacks(error, result);
+            }
+
+            return self._connect(function(error) {
+                if (error) {
+                    return executeCallbacks(error);
+                }
+
+                task(function(error, result) {
+                    return executeCallbacks(error, result);
+                });
+            });
+        }
+
+        executeCallbacks(error, result);
+    });
+};
+
+
+RpcClient.prototype._enqueue = function _enqueue(task) {
+    this.logger.debug('RpcClient._enqueue(%s:%s)', this.config.host, this.config.port);
+
+    this.queue.push(task);
+    this.queue._highWaterMark = this.queue.length() > this.queue._highWaterMark ? this.queue.length() : this.queue._highWaterMark;
+};
+
+
 // Send the greeting, signonSetup, verifyLogin and setContext commands.
 //
 // The callback will be called with the parameters:
@@ -46,11 +99,24 @@ RpcClient.create = function create(logger, config) {
 RpcClient.prototype.connect = function connect(callback) {
     this.logger.debug('RpcClient.connect(%s:%s)', this.config.host, this.config.port);
 
+    var task = this._connect.bind(this);
+    task.callback = callback;
+    task.command = 'connect';
+    task.isConnector = true;
+
+    this._enqueue(task);
+};
+
+
+RpcClient.prototype._connect = function _connect(callback) {
+    this.logger.debug('RpcClient._connect(%s:%s)', this.config.host, this.config.port);
+
     if (!_.isUndefined(this.sender) && !_.isNull(this.sender)) {
         this.sender.close();
     }
 
-    this.createSender();
+    this._createSender();
+    this.logger.trace('RpcClient._connect(%s:%s) sender created', this.config.host, this.config.port);
 
     async.series({
         connect: this.sender.connect.bind(this.sender),
@@ -67,33 +133,31 @@ RpcClient.prototype.connect = function connect(callback) {
     });
 };
 
-
-RpcClient.prototype.createSender = function() {
-    this.logger.debug('RpcClient.createSender(%s:%s)', this.config.host, this.config.port);
+RpcClient.prototype._createSender = function _createSender() {
+    this.logger.debug('RpcClient._createSender(%s:%s)', this.config.host, this.config.port);
     this.sender = new RpcSender(this.logger, this.config);
 };
 
 
 /*
 variadic function:
-execute(rpcCall)
+execute(rpcCall, callback)
 execute(rpcName, [param]..., callback)
-execute([rpcName, [param]..., callback])
 */
 RpcClient.prototype.execute = function execute(rpcCall, callback) {
     this.logger.debug('RpcClient.execute(%s:%s)', this.config.host, this.config.port);
-    this.logger.debug(rpcCall);
+    this.logger.debug('%s:%s -> %s', this.config.host, this.config.port, rpcCall);
 
     if (arguments.length < 2) {
         // no arguments won't even get this far
         callback = arguments[0];
-        return callback('Insufficient number of arguments');
+        return setTimeout(callback, 0, 'Insufficient number of arguments');
     }
 
-    if (_.isUndefined(this.sender) || _.isNull(this.sender)) {
-        // TODO: attempt to connect automatically if this condition is met?
-        return callback('RpcClient is not connected to the Vista server');
-    }
+    // if (_.isUndefined(this.sender) || _.isNull(this.sender)) {
+    //     // TODO: attempt to connect automatically if this condition is met?
+    //     return setTimeout(callback, 0, 'RpcClient is not connected to the Vista server');
+    // }
 
     var args = _.toArray(arguments);
     callback = args.pop();
@@ -103,15 +167,57 @@ RpcClient.prototype.execute = function execute(rpcCall, callback) {
         rpcCallParams = _.first(rpcCallParams);
     }
 
-    this.logger.debug('rpcCallParams');
-    this.logger.debug(rpcCallParams);
-    var call = RpcCall.create(rpcCallParams);
+    this.logger.debug('RpcClient.execute(%s:%s) -> rpcCallParams: %s', this.config.host, this.config.port, rpcCallParams);
+    rpcCall = RpcCall.create(rpcCallParams);
 
-    if (!call) {
-        return callback('Invalid arguments for rpcCall');
+    if (!rpcCall) {
+        return setTimeout(callback, 0, 'Invalid arguments for rpcCall');
     }
 
-    this.sender.send(RpcSerializer.buildRpcString(call), callback);
+    var task = this._execute.bind(this, rpcCall);
+    task.callback = callback;
+    task.command = 'execute';
+
+    this._enqueue(task);
+};
+
+
+/*
+variadic function:
+_executeRpc(rpcCall, callback)
+_executeRpc(rpcName, [param]..., callback)
+*/
+RpcClient.prototype._execute = function _execute(rpcCall, callback) {
+    this.logger.debug('RpcClient._execute(%s:%s)', this.config.host, this.config.port);
+    this.logger.debug(rpcCall);
+
+    var rpcString = RpcSerializer.buildRpcString(rpcCall);
+
+    var self = this;
+    if (_.isUndefined(self.sender) || _.isNull(self.sender)) {
+        return setTimeout(callback, 0, 'Connection not initialized');
+        // return self._connect(function(error) {
+        //     if (error) {
+        //         return callback(error);
+        //     }
+
+        //     self.sender.send(rpcString, callback);
+        // });
+    }
+
+    this.sender.send(rpcString, function(error, result) {
+        // if (error) {
+        //     return self._connect(function(error) {
+        //         if (error) {
+        //             return callback(error);
+        //         }
+
+        //         self.sender.send(rpcString, callback);
+        //     });
+        // }
+
+        callback(error, result);
+    });
 };
 
 
@@ -119,6 +225,20 @@ RpcClient.prototype.close = function close(callback) {
     callback = callback || function() {};
     var self = this;
     self.logger.debug('RpcClient.close(%s:%s)', self.config.host, self.config.port);
+
+    var task = this._close.bind(this);
+    task.callback = callback;
+    task.command = 'close';
+    task.isConnector = true;
+
+    this._enqueue(task);
+};
+
+
+RpcClient.prototype._close = function _close(callback) {
+    callback = callback || function() {};
+    var self = this;
+    self.logger.debug('RpcClient._close(%s:%s)', self.config.host, self.config.port);
 
     if (_.isUndefined(self.sender) || _.isNull(self.sender)) {
         return callback();

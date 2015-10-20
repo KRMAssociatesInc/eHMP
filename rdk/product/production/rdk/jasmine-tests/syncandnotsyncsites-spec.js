@@ -1,7 +1,6 @@
-/*jslint node: true */
 'use strict';
 
-var prResource = require('../resources/patientrecord/patientrecordResource');
+var prResource = require('../resources/patient-record/patient-record-resource');
 
 
 

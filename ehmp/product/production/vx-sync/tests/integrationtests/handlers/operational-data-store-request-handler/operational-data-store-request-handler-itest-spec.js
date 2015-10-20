@@ -49,7 +49,7 @@ describe('operational-data-store-request-handler.js', function() {
         };
 
         it('handles an operational-store-record job', function() {
-            var jdsClient = new JdsClient(log, config);
+            var jdsClient = new JdsClient(log, log, config);
             var environment = {
                 jds: jdsClient,
                 publisherRouter: {
@@ -57,6 +57,7 @@ describe('operational-data-store-request-handler.js', function() {
                         callback();
                     }
                 },
+                metrics: log,
                 solr: {
                     add: function(record, callback) {
                         callback();

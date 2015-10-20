@@ -64,7 +64,7 @@ class ModifiedDropDown < AccessBrowserV2
   end
 end
 
-Then(/^the screen manager contains the following rows$/) do |table|
+Then(/^the screen manager contains the following rows$/) do |_table|
   driver = TestSupport.driver
   con = ModifiedDropDown.instance
   con.wait_until_action_element_visible("Coversheet", 60)
@@ -110,7 +110,7 @@ Then(/^the Workspace Manager has the following headers$/) do |table|
   expect(headers).to_not eq(0)
   expect(headers).to eq(table.rows.length)
   elements = ScreenManagerHeaders.instance
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     does_exist = elements.static_dom_element_exists? header_text[0]
     p "#{header_text[0]} was not found" unless does_exist
     expect(does_exist).to be_true
@@ -124,7 +124,7 @@ Then(/^the flyout menu contains$/) do |table|
   expect(items).to_not eq(0)
   expect(items).to eq(table.rows.length)
   elements = FlyoutMenu.instance
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     does_exist = elements.static_dom_element_exists? header_text[0]
     p "#{header_text[0]} was not found" unless does_exist
     expect(does_exist).to be_true
@@ -138,7 +138,7 @@ Then(/^the workspace 1 flyout menu contains$/) do |table|
   expect(items).to_not eq(0)
   expect(items).to eq(table.rows.length)
   elements = WorkspaceOneFlyoutMenu.instance
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     does_exist = elements.static_dom_element_exists? header_text[0]
     p "#{header_text[0]} was not found" unless does_exist
     expect(does_exist).to be_true

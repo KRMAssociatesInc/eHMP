@@ -1,0 +1,67 @@
+.patient-search-container {
+	.nav-tabs-sign-in {
+	    border-bottom: 0px;
+		font-size: 1.3em;
+		font-weight: 100;
+		margin-left: -5px;
+		li {
+			a {
+				background-color: $secondary;
+				border: none;
+				border-radius: 0;
+				color: $white;
+				line-height: 2em;
+				margin-right: 2px;
+				padding: 7px 20px;
+				&:hover, &:focus {
+					background-color: $primary;
+					border-style: none;
+					color: $white;
+				}
+			}
+			&.active a, &.active a:hover, &.active a:focus {
+				background-color: $primary;
+				border-style: none;
+				color: $white;
+			}
+		}
+	}
+	.tab-content {
+		.input-group-search {
+			margin-top: 0px;
+			.search-bar-big {
+				padding: 10px 20px;
+				min-height: 80px;
+				border: 1px solid #c0cfd4;
+				margin: -1px 0 10px;
+				&[placeholder] {
+					color: #949494;
+					font-size: 3.2em;
+					font-weight: 100;
+				}
+			}
+			.patient-search-btn {
+				background-color: $white;
+				border: none;
+			    position: absolute;
+				right: 20px;
+			    top: 12px;
+				.right-aarow-patient-search {
+					color: $secondary;
+					font-size: 5em;
+				}
+			}
+		}
+		.btn-group {
+			button {
+				background-color: $secondary;
+				border: none;
+				margin-right: 3px;
+			}
+			.active, .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+				background-color: $primary;
+				color: white;
+			}
+		}
+	}
+}

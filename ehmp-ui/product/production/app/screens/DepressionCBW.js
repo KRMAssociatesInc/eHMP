@@ -29,8 +29,7 @@ define([
             "filterName": "Filtered Depression",
             "maximizeScreen": "problems-full",
             "viewType": "gist"
-        },
-        {
+        }, {
             "id": "newsfeed",
             "title": "Timeline",
             "instanceId": "dpcbw-newfeed-1",
@@ -45,8 +44,7 @@ define([
             "dataSizeY": "6",
             "filterName": "Filtered Depression",
             "viewType": "summary"
-        },
-        {
+        }, {
             "id": "documents",
             "title": "Documents",
             "instanceId": "dpcbw-documents-1",
@@ -61,8 +59,7 @@ define([
             "dataSizeY": "6",
             "filterName": "Filtered Depression",
             "viewType": "summary"
-        },
-        {
+        }, {
             "id": "orders",
             "title": "Orders",
             "instanceId": "dpcbw-orders-1",
@@ -78,8 +75,7 @@ define([
             "filterName": "Filtered Depression",
             "maximizeScreen": "orders-full",
             "viewType": "summary"
-        },
-        {
+        }, {
             "id": "lab_results_grid",
             "title": "Lab Results",
             "instanceId": "dpcbw-lab_results_grid-1",
@@ -95,8 +91,7 @@ define([
             "filterName": "Filtered Depression",
             "maximizeScreen": "lab-results-grid-full",
             "viewType": "gist"
-        },
-        {
+        }, {
             "id": "appointments",
             "title": "Appointments & Visits",
             "instanceId": "dpcbw-appointments-1",
@@ -112,8 +107,7 @@ define([
             "filterName": "Filtered Depression",
             "maximizeScreen": "appointments-full",
             "viewType": "summary"
-        },
-        {
+        }, {
             "id": "cds_advice",
             "title": "Clinical Reminders",
             "instanceId": "dpcbw-cds_advice-1",
@@ -129,8 +123,7 @@ define([
             "filterName": "Filtered Depression",
             "maximizeScreen": "cds-advice-full",
             "viewType": "summary"
-        },
-        {
+        }, {
             "id": "medication_review_v2",
             "title": "Medications Review",
             "instanceId": "dpcbw-medication_review_v2-1",
@@ -155,10 +148,15 @@ define([
             if (channelName) {
                 if (!clickedResult.suppressModal) {
                     // display spinner in modal while detail view is loading
-                    ADK.showModal(ADK.Views.Loading.create(), {
-                        size: "large",
-                        title: "Loading..."
+
+                    var modal = new ADK.UI.Modal({
+                        view: ADK.Views.Loading.create(),
+                        options: {
+                            size: "large",
+                            title: "Loading..."
+                        }
                     });
+                    modal.show();
                 }
 
                 // request detail view from whatever applet is listening for this domain
@@ -167,10 +165,15 @@ define([
 
                 deferredDetailResponse.done(function(response) {
                     if (!clickedResult.suppressModal) {
-                        ADK.showModal(response.view, {
-                            size: "large",
-                            title: response.title
+
+                        var modal = new ADK.UI.Modal({
+                            view: response.view,
+                            options: {
+                                size: "large",
+                                title: response.title
+                            }
                         });
+                        modal.show();
                         deferredResponse.resolve();
                     } else {
                         deferredResponse.resolve({
@@ -186,10 +189,15 @@ define([
                 var detailView = new DefaultDetailView();
 
                 if (!clickedResult.suppressModal) {
-                    ADK.showModal(detailView, {
-                        size: "large",
-                        title: "Detail - Placeholder"
+
+                    var modalView2 = new ADK.UI.Modal({
+                        view: detailView,
+                        options: {
+                            size: "large",
+                            title: "Detail - Placeholder"
+                        }
                     });
+                    modalView2.show();
                     deferredResponse.resolve();
                 } else {
                     deferredResponse.resolve({

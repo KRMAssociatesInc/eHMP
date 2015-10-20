@@ -220,6 +220,9 @@ define([
                     case 'body mass index':
                         response.displayName = 'BMI';
                         break;
+                    case 'circumference/girth':
+                        response.displayName = 'CG';
+                        break;
                     default:
                         response.displayName = response.typeName;
                         //console.log(response.typeName);

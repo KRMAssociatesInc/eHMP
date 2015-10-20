@@ -1,10 +1,10 @@
-@DiscrepantDataIndicator @F365
+@DiscrepantDataIndicator @F365 @regression
 
 Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 
 # POC: Team Saturn
 
-@F365-4.1_DiscrepantDataOutPatientKodak @US4456 @US5587 @US5078
+@F365-4.1_DiscrepantDataOutPatientKodak @US4456 @US5587 @US5078 @DE1309 @DE1545
 	Scenario: Discrepancy icon in demographic drop down for Outpatient in Kodak
 	Given user is logged into eHMP-UI as kodak user
 	And user searches for and selects "twentythree,patient"
@@ -17,7 +17,7 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	And the Discrepant Data indicator icon displays for "Home Phone"
 	And the Discrepant Data indicator icon displays for "Cell Phone"
 	And the Discrepant Data indicator icon displays for "Work Phone"
-	And the Discrepant Data indicator icon displays for "Temp Address"	
+	And the Discrepant Data indicator icon displays for "Home Address"
 	And the Discrepant Data indicator icon displays for "Email_1"
 	And the Discrepant Data indicator icon displays for "Emergency Name"
 	And the Discrepant Data indicator icon displays for "Emergency Home Phone"
@@ -27,9 +27,9 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	And the Discrepant Data indicator icon displays for "NOK Home Phone"
 	And the Discrepant Data indicator icon displays for "NOK Work Phone"
 	And the Discrepant Data indicator icon displays for "NOK Address"
-	And the Discrepant Data indicator icon does not displays for "Home Address"
+	And the Discrepant Data indicator icon does not displays for "Temp Address"
 
-@F365-4.2_DiscrepantDataInPatientKodak @US4456 @US5587 @US5078
+@F365-4.2_DiscrepantDataInPatientKodak @US4456 @US5587 @US5078 @DE1309 @DE1601
 	Scenario: Discrepancy icon in demographic drop down for Inpatient in Kodak
 	Given user is logged into eHMP-UI as kodak user
 	And user searches for and selects "twentythree,inpatient"
@@ -65,12 +65,11 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	| patient name	| Twentythree,Patient		|
 	Then Cover Sheet is active
 	Then user selects Patient Name drop down
-	And the Discrepant Data indicator icon displays for "Home Phone"
 	And the Discrepant Data indicator icon displays for "Work Phone"
-	And the Discrepant Data indicator icon displays for "Home Address"
+	And the Discrepant Data indicator icon displays for "Temp Address"
 	And the Discrepant Data indicator icon displays for "NOK Name"
 
-	And the Discrepant Data indicator icon does not displays for "Temp Address"
+	And the Discrepant Data indicator icon does not displays for "Home Address"
 	And the Discrepant Data indicator icon does not displays for "Emergency Name"
 	And the Discrepant Data indicator icon does not displays for "Emergency Home Phone"
 	And the Discrepant Data indicator icon does not displays for "Emergency Work Phone"
@@ -86,6 +85,4 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	| patient name	| Twentythree,Inpatient		|
 	Then Cover Sheet is active
 	Then user selects Patient Name drop down
-	And the Discrepant Data indicator icon displays for "Home Address"	
-	
-	
+	And the Discrepant Data indicator icon displays for "Home Address"

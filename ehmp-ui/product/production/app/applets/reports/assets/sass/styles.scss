@@ -1,6 +1,4 @@
 $green: #549947;
-$red: red;
-$labelGrey: #a2a2a2;
 [data-appletid="reports"] {
 position: relative;
     #documentPanelHeader {
@@ -157,7 +155,7 @@ position: relative;
         padding-left: 7px;
     }
     .labelStyleColor {
-        color: $labelGrey;
+        color: $grey-darker;
     }
     a {
         cursor: pointer;

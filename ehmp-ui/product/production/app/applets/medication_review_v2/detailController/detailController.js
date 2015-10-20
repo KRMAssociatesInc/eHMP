@@ -54,11 +54,76 @@ define([
         return deferredResponse.promise();
     }
 
+
     var detailController = {
 
         // expose detail view through messaging
         initialize: function(appletId) {
             var channel = ADK.Messaging.getChannel(appletId);
+            channel.on('detailView', function(params) {
+
+                if(!params.applet){
+                    return;
+                }
+
+                // Get the model for the requested medication
+                var fetchOptions = {
+                    cache: true,
+                    criteria: {
+                        "uid": params.uid
+                    },
+                    resourceTitle: 'patient-record-med',
+                    viewModel: medicationViewModel,
+                };
+
+                // Once we have the model for this med, get all others that match it
+                fetchOptions.onSuccess = function(collection, resp) {
+                    var matchingMedsDeferredResponse = getMatchingMeds(params, collection.models[0]);
+
+                    matchingMedsDeferredResponse.done(function(matchingMedsCollection) {
+                        // Now that we have the set of meds for the detail, generate the view
+                        var groupedCollection = matchingMedsCollection.clone();
+                        groupedCollection.reset(MedicationCollectionFormatHelper.removeDuplicateMedsIfPresent(groupedCollection.models));
+                        var hasOverlappingMeds = MedicationCollectionFormatHelper.hasOverLappingMeds(groupedCollection.models);
+                        var groupedModels = MedicationCollectionFormatHelper.groupByFacility(groupedCollection, hasOverlappingMeds);
+
+                        groupedCollection.reset(groupedModels);
+                        console.log(groupedModels);
+                        // var detailView = new ExternalDetailView({
+                        //     model: new Backbone.Model({
+                        //         meds: matchingMedsCollection
+                        //     })
+                        // });
+                        // deferredResponse.resolve({
+                        //     view: detailView,
+                        //     title: "Medication - " + collection.first().get("name"),
+                        //     groupedMeds: groupedCollection
+                        // });
+
+                        var modal = new ADK.UI.Modal({
+                            view: new ExternalDetailView({
+                                model: new Backbone.Model({
+                                    meds: matchingMedsCollection
+                                })
+                            }),
+                            options: {
+                                size: "large",
+                                title: "Medication - " + collection.first().get("name"),
+                                groupedMeds: groupedCollection
+                            }
+                        });
+                        modal.show();
+
+
+                    });
+
+                };
+
+                ADK.PatientRecordService.fetchCollection(fetchOptions);
+
+
+            });
+
             channel.reply('detailView', function(params) {
                 var deferredResponse = $.Deferred();
                 // Get the model for the requested medication

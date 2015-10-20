@@ -4,7 +4,7 @@ define(['moment'], function() {
             chart: {},
             name: model.get('name'),
             xAxis: {
-                gridLineColor: '#BCBCBC',
+                gridLineColor: '$grey-dark',
                 gridLineWidth: 2,
                 plotLines: [],
                 labels: {
@@ -130,16 +130,20 @@ define(['moment'], function() {
 
                 var overallStart, stopped, dispenseDate, vaStatus, newStoppedDate, calculatedStopDate, vaType;
                 var modelInCollection = facilityModelCollection.at(u);
+                var uid = modelInCollection.get('uid');
                 localListGraphData.yAxis.categories[0].name = model.get('name');
-
                 localListGraphData.yAxis.categories[0].categories.push(facilityMoniker);
                 localListGraphData.xAxis.min = oldest;
                 localListGraphData.xAxis.max = newest;
-
+                localListGraphData.uid = uid;
                 var administered = modelInCollection.get('administrations');
                 var fills = modelInCollection.get('fills');
                 var dosages = modelInCollection.get('dosages');
-
+                if (dosages) {
+                    localListGraphData.instructions = dosages[0].instructions;
+                } else {
+                    localListGraphData.instructions = '--';
+                }
                 vaStatus = modelInCollection.get('standardizedVaStatus').toLowerCase();
                 overallStart = moment(modelInCollection.get('overallStart'), 'YYYYMMDD').valueOf();
                 stopped = moment(modelInCollection.get('stopped'), 'YYYYMMDD').valueOf();
@@ -243,7 +247,9 @@ define(['moment'], function() {
             yAxis: localListGraphData.yAxis,
             series: localListGraphData.series,
             name: localListGraphData.name,
-            xAxis: localListGraphData.xAxis
+            instructions: localListGraphData.instructions,
+            xAxis: localListGraphData.xAxis,
+            uid: localListGraphData.uid
         };
     }
     return chartBuilder;

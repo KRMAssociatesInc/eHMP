@@ -8,8 +8,13 @@ Given(/^user is logged into eHMP\-UI$/) do
   # end
   TestSupport.navigate_to_url(DefaultLogin.ehmpui_url)
   begin
-    TestSupport.driver.manage.window.maximize
-  rescue
+    # TestSupport.driver.manage.window.maximize
+    # target_size = Selenium::WebDriver::Dimension.new(1280, 800)
+    # TestSupport.driver.manage.window.size = target_size
+    TestSupport.driver.manage.window.resize_to(1280, 800)
+    p "Browser window size: #{TestSupport.driver.manage.window.size}"
+  rescue Exception => e 
+    p "Exception #{e}"
     p "Unable to maximize window - continuing anyway"
   end
 

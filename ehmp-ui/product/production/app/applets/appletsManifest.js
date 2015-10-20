@@ -8,12 +8,20 @@ define(function() {
         maximizeScreen: 'vitals-full',
         showInUDWSelection: true //true to show up in User Defined Workspace Carousel
     }, {
+        id: 'ui_components_demo',
+        title: 'UI Components Demo',
+        showInUDWSelection: false
+    }, {
         id: 'stackedGraph',
         title: 'Stacked Graphs',
         showInUDWSelection: true
     }, {
+        id: 'task_list',
+        title: 'Task List',
+        showInUDWSelection: true
+    }, {
         id: 'activeMeds',
-        title: 'Medications',
+        title: 'Active Medications',
         showInUDWSelection: true
     }, {
         id: 'problems',
@@ -120,6 +128,9 @@ define(function() {
         id: 'addOrder',
         title: 'Add New Order'
     }, {
+        id: 'addLabOrders',
+        title: "add-lab-orders"
+    },{
         id: 'addVitals',
         title: 'Add New Vitals'
     }, {
@@ -135,6 +146,9 @@ define(function() {
         id: 'visit_selection',
         title: 'Visit Selection'
     }, {
+        id: 'visit_new',
+        title: 'Visit New'
+    }, {
         id: "modalTest",
         title: "Modal Tests"
     }, {
@@ -149,6 +163,9 @@ define(function() {
     }, {
         id: "ssoLogon",
         title: "Auto Signing In"
+    }, {
+        id: "notesTray",
+        title: "Notes"
     }];
 
     appletsManifest.applets = applets;

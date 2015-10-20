@@ -93,9 +93,8 @@ var removedJob = {
 
 describe('record-enrichment-order-xformer.js', function() {
     it('transform order record', function() {
-        xformer(log, null, null, {
-            record: orderRecord
-        }, function(error, record) {
+        xformer(log, null, null, orderRecord,
+        function(error, record) {
             expect(error).toBeFalsy();
             expect(record).toBeTruthy();
             expect(record.clinicians.length).toBe(1);
@@ -136,7 +135,7 @@ describe('record-enrichment-order-xformer.js', function() {
             var environment = {};
 
             runs(function() {
-                xformer(log, null, environment, removedJob, function(error, record) {
+                xformer(log, null, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:order:DOD:0000000003:1000010340');

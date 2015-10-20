@@ -78,7 +78,7 @@ And the VPR results contain
       | result           | 50                                                                       |
       | units            | MG/DL                                                                    |
       | low              | 40                                                                       |
-      | high             | 60                                                                       |
+      | high             | 59                                                                       |
       | kind             | Laboratory                                                               |
       | resultNumber     | 50                                                                       |
       | abnormal         | false                                                                    |

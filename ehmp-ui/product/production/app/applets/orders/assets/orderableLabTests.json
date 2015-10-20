@@ -1,0 +1,4415 @@
+{
+    "data": [
+        {
+            "ien": "515",
+            "synonym": "1,25-DIHYDROXYVIT D",
+            "name": "1,25-DIHYDROXYVIT D"
+        },
+        {
+            "ien": "350",
+            "synonym": "11-DEOXYCORTISOL",
+            "name": "11-DEOXYCORTISOL"
+        },
+        {
+            "ien": "683",
+            "synonym": "17-HYDROXYCORTICOSTEROIDS",
+            "name": "17-HYDROXYCORTICOSTEROIDS"
+        },
+        {
+            "ien": "1339",
+            "synonym": "24 HR URINE CALCIUM",
+            "name": "24 HR URINE CALCIUM"
+        },
+        {
+            "ien": "3441",
+            "synonym": "24 HR URINE PROTEIN",
+            "name": "24 HR URINE PROTEIN"
+        },
+        {
+            "ien": "480",
+            "synonym": "25 OH VITAMIN D",
+            "name": "25 OH VITAMIN D"
+        },
+        {
+            "ien": "956",
+            "synonym": "3P\t<PROTAMINE SULFATE>",
+            "name": "PROTAMINE SULFATE"
+        },
+        {
+            "ien": "318",
+            "synonym": "5' NUCLEOTIDASE",
+            "name": "5' NUCLEOTIDASE"
+        },
+        {
+            "ien": "279",
+            "synonym": "5HIAA\t<URINE 5HIAA>",
+            "name": "URINE 5HIAA"
+        },
+        {
+            "ien": "596",
+            "synonym": "A&N\t<AMITRIPTYLINE & NORTRIPTYLINE>",
+            "name": "AMITRIPTYLINE & NORTRIPTYLINE"
+        },
+        {
+            "ien": "213",
+            "synonym": "A1C\t<HEMOGLOBIN A1C>",
+            "name": "HEMOGLOBIN A1C"
+        },
+        {
+            "ien": "1140",
+            "synonym": "abcdefghijklmno\t<ABCDEFGHIJKLMNOPQRSTUVWXYZ (123456789)>",
+            "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ (123456789)"
+        },
+        {
+            "ien": "1146",
+            "synonym": "ABCDEFGHIJKLMNOPQRSTUVWXYZ (123)",
+            "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ (123)"
+        },
+        {
+            "ien": "1140",
+            "synonym": "ABCDEFGHIJKLMNOPQRSTUVWXYZ (1234)\t<ABCDEFGHIJKLMNOPQRSTUVWXYZ (123456789)>",
+            "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ (123456789)"
+        },
+        {
+            "ien": "1140",
+            "synonym": "ABCDEFGHIJKLMNOPQRSTUVWXYZ (123456789)",
+            "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ (123456789)"
+        },
+        {
+            "ien": "1146",
+            "synonym": "ABCDEFGHIJKLMNOPQRSTUVWXYZ (ABC)\t<ABCDEFGHIJKLMNOPQRSTUVWXYZ (123)>",
+            "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ (123)"
+        },
+        {
+            "ien": "1140",
+            "synonym": "ABCEDFGHIJKLMNOPQRSTUVWXYZ (ABCDEFG)\t<ABCDEFGHIJKLMNOPQRSTUVWXYZ (123456789)>",
+            "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ (123456789)"
+        },
+        {
+            "ien": "585",
+            "synonym": "ABHBC\t<HEPATITIS B CORE ANTIBODY>",
+            "name": "HEPATITIS B CORE ANTIBODY"
+        },
+        {
+            "ien": "586",
+            "synonym": "ABHBS\t<HEPATITIS B SURFACE ANTIBODY>",
+            "name": "HEPATITIS B SURFACE ANTIBODY"
+        },
+        {
+            "ien": "1014",
+            "synonym": "ABO GROUP/RH TYPE\t<ABO/RH TYPING>",
+            "name": "ABO/RH TYPING"
+        },
+        {
+            "ien": "422",
+            "synonym": "ABO TITER",
+            "name": "ABO TITER"
+        },
+        {
+            "ien": "1014",
+            "synonym": "ABO/RH TYPING",
+            "name": "ABO/RH TYPING"
+        },
+        {
+            "ien": "405",
+            "synonym": "ACETAMINOPHEN",
+            "name": "ACETAMINOPHEN"
+        },
+        {
+            "ien": "309",
+            "synonym": "ACETONE",
+            "name": "ACETONE"
+        },
+        {
+            "ien": "521",
+            "synonym": "ACETYLCHOLINE RECEPTOR",
+            "name": "ACETYLCHOLINE RECEPTOR"
+        },
+        {
+            "ien": "1236",
+            "synonym": "ACID\t<C-ACID PHOS>",
+            "name": "C-ACID PHOS"
+        },
+        {
+            "ien": "310",
+            "synonym": "ACID PHOSPHATASE",
+            "name": "ACID PHOSPHATASE"
+        },
+        {
+            "ien": "5076",
+            "synonym": "ACPA\t<ANTI-CCP>",
+            "name": "ANTI-CCP"
+        },
+        {
+            "ien": "324",
+            "synonym": "ACTH",
+            "name": "ACTH"
+        },
+        {
+            "ien": "1017",
+            "synonym": "ADENOVIRUS TITER",
+            "name": "ADENOVIRUS TITER"
+        },
+        {
+            "ien": "5075",
+            "synonym": "ADNA\t<ANTI-dsDNA>",
+            "name": "ANTI-dsDNA"
+        },
+        {
+            "ien": "1030",
+            "synonym": "AFB CULTURE & SMEAR",
+            "name": "AFB CULTURE & SMEAR"
+        },
+        {
+            "ien": "623",
+            "synonym": "AFB SMEAR DIRECT",
+            "name": "AFB SMEAR DIRECT"
+        },
+        {
+            "ien": "1204",
+            "synonym": "AGLUCOSE",
+            "name": "AGLUCOSE"
+        },
+        {
+            "ien": "301",
+            "synonym": "ALB\t<ALBUMIN>",
+            "name": "ALBUMIN"
+        },
+        {
+            "ien": "301",
+            "synonym": "ALBUMIN",
+            "name": "ALBUMIN"
+        },
+        {
+            "ien": "3440",
+            "synonym": "ALBUMIN\t<MICRO ALBUMIN>",
+            "name": "MICRO ALBUMIN"
+        },
+        {
+            "ien": "536",
+            "synonym": "ALCOHOL PROFILE",
+            "name": "ALCOHOL PROFILE"
+        },
+        {
+            "ien": "536",
+            "synonym": "ALCOHOLS\t<ALCOHOL PROFILE>",
+            "name": "ALCOHOL PROFILE"
+        },
+        {
+            "ien": "342",
+            "synonym": "ALDOLASE",
+            "name": "ALDOLASE"
+        },
+        {
+            "ien": "343",
+            "synonym": "ALDOSTERONE",
+            "name": "ALDOSTERONE"
+        },
+        {
+            "ien": "304",
+            "synonym": "ALK\t<ALK PHOS>",
+            "name": "ALK PHOS"
+        },
+        {
+            "ien": "304",
+            "synonym": "ALK PHOS",
+            "name": "ALK PHOS"
+        },
+        {
+            "ien": "636",
+            "synonym": "ALK PHOSPHATASE, HEAT LABILE",
+            "name": "ALK PHOSPHATASE, HEAT LABILE"
+        },
+        {
+            "ien": "637",
+            "synonym": "ALK PHOSPHATASE, HEAT STABLE",
+            "name": "ALK PHOSPHATASE, HEAT STABLE"
+        },
+        {
+            "ien": "235",
+            "synonym": "ALPHA 1-ANTITRYPSIN\t<ALPHA-1-ANTITRYPSIN>",
+            "name": "ALPHA-1-ANTITRYPSIN"
+        },
+        {
+            "ien": "235",
+            "synonym": "ALPHA-1-ANTITRYPSIN",
+            "name": "ALPHA-1-ANTITRYPSIN"
+        },
+        {
+            "ien": "231",
+            "synonym": "ALPHA-FETOPROTEIN",
+            "name": "ALPHA-FETOPROTEIN"
+        },
+        {
+            "ien": "5062",
+            "synonym": "ALT",
+            "name": "ALT"
+        },
+        {
+            "ien": "744",
+            "synonym": "ALUMINUM",
+            "name": "ALUMINUM"
+        },
+        {
+            "ien": "282",
+            "synonym": "AM PHOSPHATE CRYSTALS",
+            "name": "AM PHOSPHATE CRYSTALS"
+        },
+        {
+            "ien": "281",
+            "synonym": "AM URATE CRYSTALS",
+            "name": "AM URATE CRYSTALS"
+        },
+        {
+            "ien": "1191",
+            "synonym": "AMIK\t<AMIKACIN>",
+            "name": "AMIKACIN"
+        },
+        {
+            "ien": "1191",
+            "synonym": "AMIKACIN",
+            "name": "AMIKACIN"
+        },
+        {
+            "ien": "406",
+            "synonym": "AMINOLEVULINIC ACID",
+            "name": "AMINOLEVULINIC ACID"
+        },
+        {
+            "ien": "327",
+            "synonym": "AMINOPHYLLINE\t<THEOPHYLLINE>",
+            "name": "THEOPHYLLINE"
+        },
+        {
+            "ien": "344",
+            "synonym": "AMITRIPTYLINE",
+            "name": "AMITRIPTYLINE"
+        },
+        {
+            "ien": "596",
+            "synonym": "AMITRIPTYLINE & NORTRIPTYLINE",
+            "name": "AMITRIPTYLINE & NORTRIPTYLINE"
+        },
+        {
+            "ien": "322",
+            "synonym": "AMMONIA",
+            "name": "AMMONIA"
+        },
+        {
+            "ien": "329",
+            "synonym": "AMPHETAMINES",
+            "name": "AMPHETAMINES"
+        },
+        {
+            "ien": "312",
+            "synonym": "AMY\t<AMYLASE>",
+            "name": "AMYLASE"
+        },
+        {
+            "ien": "596",
+            "synonym": "AMY\t<AMITRIPTYLINE & NORTRIPTYLINE>",
+            "name": "AMITRIPTYLINE & NORTRIPTYLINE"
+        },
+        {
+            "ien": "312",
+            "synonym": "AMYLASE",
+            "name": "AMYLASE"
+        },
+        {
+            "ien": "236",
+            "synonym": "ANA",
+            "name": "ANA"
+        },
+        {
+            "ien": "627",
+            "synonym": "ANA.\t<ANAEROBIC CULTURE>",
+            "name": "ANAEROBIC CULTURE"
+        },
+        {
+            "ien": "1079",
+            "synonym": "ANAEROBE IDENTIFICATION",
+            "name": "ANAEROBE IDENTIFICATION"
+        },
+        {
+            "ien": "627",
+            "synonym": "ANAEROBIC CULTURE",
+            "name": "ANAEROBIC CULTURE"
+        },
+        {
+            "ien": "407",
+            "synonym": "ANDROSTENEDIONE",
+            "name": "ANDROSTENEDIONE"
+        },
+        {
+            "ien": "330",
+            "synonym": "ANGIOTENSIN-1",
+            "name": "ANGIOTENSIN-1"
+        },
+        {
+            "ien": "330",
+            "synonym": "ANGIOTENSIN-1-CONV\t<ANGIOTENSIN-1>",
+            "name": "ANGIOTENSIN-1"
+        },
+        {
+            "ien": "339",
+            "synonym": "ANGIOTENSIN1\t<RENIN>",
+            "name": "RENIN"
+        },
+        {
+            "ien": "346",
+            "synonym": "ANTI MITOCHONDRIAL",
+            "name": "ANTI MITOCHONDRIAL"
+        },
+        {
+            "ien": "345",
+            "synonym": "ANTI SMOOTH MUSCLE",
+            "name": "ANTI SMOOTH MUSCLE"
+        },
+        {
+            "ien": "5076",
+            "synonym": "ANTI-CCP",
+            "name": "ANTI-CCP"
+        },
+        {
+            "ien": "5076",
+            "synonym": "Anti-citrulline Antibody\t<ANTI-CCP>",
+            "name": "ANTI-CCP"
+        },
+        {
+            "ien": "5076",
+            "synonym": "Anti-cyclic Citrullinated Peptide\t<ANTI-CCP>",
+            "name": "ANTI-CCP"
+        },
+        {
+            "ien": "603",
+            "synonym": "ANTI-DEOXYRIBONUCLEASE",
+            "name": "ANTI-DEOXYRIBONUCLEASE"
+        },
+        {
+            "ien": "408",
+            "synonym": "ANTI-DNA ANTIBODY",
+            "name": "ANTI-DNA ANTIBODY"
+        },
+        {
+            "ien": "5075",
+            "synonym": "ANTI-dsDNA",
+            "name": "ANTI-dsDNA"
+        },
+        {
+            "ien": "498",
+            "synonym": "ANTI-GLOM BASEMENT MEM",
+            "name": "ANTI-GLOM BASEMENT MEM"
+        },
+        {
+            "ien": "1036",
+            "synonym": "ANTI-HAV, IgM\t<HEPATITIS B SCREEN>",
+            "name": "HEPATITIS B SCREEN"
+        },
+        {
+            "ien": "409",
+            "synonym": "ANTI-HYALURONIDASE TITER",
+            "name": "ANTI-HYALURONIDASE TITER"
+        },
+        {
+            "ien": "410",
+            "synonym": "ANTI-MICROSOMAL ANTIBODY",
+            "name": "ANTI-MICROSOMAL ANTIBODY"
+        },
+        {
+            "ien": "411",
+            "synonym": "ANTI-MITOCHONDRIAL ANTIBODIES",
+            "name": "ANTI-MITOCHONDRIAL ANTIBODIES"
+        },
+        {
+            "ien": "413",
+            "synonym": "ANTI-PARIETAL CELL ANTIBODY",
+            "name": "ANTI-PARIETAL CELL ANTIBODY"
+        },
+        {
+            "ien": "414",
+            "synonym": "ANTI-THYROGLOBULIN ANTIBODY",
+            "name": "ANTI-THYROGLOBULIN ANTIBODY"
+        },
+        {
+            "ien": "624",
+            "synonym": "ANTIBIOTIC LEVEL",
+            "name": "ANTIBIOTIC LEVEL"
+        },
+        {
+            "ien": "543",
+            "synonym": "ANTIEPILEPTICS",
+            "name": "ANTIEPILEPTICS"
+        },
+        {
+            "ien": "412",
+            "synonym": "ANTIMONY",
+            "name": "ANTIMONY"
+        },
+        {
+            "ien": "236",
+            "synonym": "ANTINUCLEAR ANTIBODY\t<ANA>",
+            "name": "ANA"
+        },
+        {
+            "ien": "237",
+            "synonym": "ANTISTREPTOLYSIN SC",
+            "name": "ANTISTREPTOLYSIN SC"
+        },
+        {
+            "ien": "211",
+            "synonym": "ANTITHROMBIN III",
+            "name": "ANTITHROMBIN III"
+        },
+        {
+            "ien": "1223",
+            "synonym": "ANYTHING\t<MISC MARYLAND>",
+            "name": "MISC MARYLAND"
+        },
+        {
+            "ien": "370",
+            "synonym": "ARSENIC",
+            "name": "ARSENIC"
+        },
+        {
+            "ien": "238",
+            "synonym": "ASO",
+            "name": "ASO"
+        },
+        {
+            "ien": "306",
+            "synonym": "AST\t<SGOT>",
+            "name": "SGOT"
+        },
+        {
+            "ien": "1190",
+            "synonym": "ASTRA GLUCOSE",
+            "name": "ASTRA GLUCOSE"
+        },
+        {
+            "ien": "1204",
+            "synonym": "ASTRA GLUCOSE\t<AGLUCOSE>",
+            "name": "AGLUCOSE"
+        },
+        {
+            "ien": "211",
+            "synonym": "AT III\t<ANTITHROMBIN III>",
+            "name": "ANTITHROMBIN III"
+        },
+        {
+            "ien": "1083",
+            "synonym": "AUTOCLAVE STERILITY TESTING, BACT\t<STERILITY TEST>",
+            "name": "STERILITY TEST"
+        },
+        {
+            "ien": "398",
+            "synonym": "AUTOPSY",
+            "name": "AUTOPSY"
+        },
+        {
+            "ien": "734",
+            "synonym": "B 12\t<VITAMIN B-12>",
+            "name": "VITAMIN B-12"
+        },
+        {
+            "ien": "734",
+            "synonym": "B-12\t<VITAMIN B-12>",
+            "name": "VITAMIN B-12"
+        },
+        {
+            "ien": "593",
+            "synonym": "B-HCG\t<HCG BETA, QUANT.>",
+            "name": "HCG BETA, QUANT."
+        },
+        {
+            "ien": "1250",
+            "synonym": "B.P.T.\t<BRONX PROBLEM TEST>",
+            "name": "BRONX PROBLEM TEST"
+        },
+        {
+            "ien": "734",
+            "synonym": "B12\t<VITAMIN B-12>",
+            "name": "VITAMIN B-12"
+        },
+        {
+            "ien": "1077",
+            "synonym": "BACTERIAL IDENTIFICATION",
+            "name": "BACTERIAL IDENTIFICATION"
+        },
+        {
+            "ien": "203",
+            "synonym": "BASE EXCESS",
+            "name": "BASE EXCESS"
+        },
+        {
+            "ien": "3448",
+            "synonym": "BASIC METABOLIC PANEL",
+            "name": "BASIC METABOLIC PANEL"
+        },
+        {
+            "ien": "1241",
+            "synonym": "BATH TEST, PEAK",
+            "name": "BATH TEST, PEAK"
+        },
+        {
+            "ien": "1240",
+            "synonym": "BATH TEST, TROUGH",
+            "name": "BATH TEST, TROUGH"
+        },
+        {
+            "ien": "1255",
+            "synonym": "BB CBC-TEST",
+            "name": "BB CBC-TEST"
+        },
+        {
+            "ien": "1048",
+            "synonym": "BC\t<BLOOD CULTURE SET #1>",
+            "name": "BLOOD CULTURE SET #1"
+        },
+        {
+            "ien": "518",
+            "synonym": "BETHESDA ASY",
+            "name": "BETHESDA ASY"
+        },
+        {
+            "ien": "204",
+            "synonym": "BICARBONATE (SBC)",
+            "name": "BICARBONATE (SBC)"
+        },
+        {
+            "ien": "302",
+            "synonym": "BILIRUBIN,TOTAL\t<TOT. BIL>",
+            "name": "TOT. BIL"
+        },
+        {
+            "ien": "1031",
+            "synonym": "BILIRUBIN,TOTAL & DIRECT",
+            "name": "BILIRUBIN,TOTAL & DIRECT"
+        },
+        {
+            "ien": "188",
+            "synonym": "BLEEDING TIME",
+            "name": "BLEEDING TIME"
+        },
+        {
+            "ien": "1048",
+            "synonym": "BLOOD CULTURE SET #1",
+            "name": "BLOOD CULTURE SET #1"
+        },
+        {
+            "ien": "3359",
+            "synonym": "BLOOD CULTURE SET #2",
+            "name": "BLOOD CULTURE SET #2"
+        },
+        {
+            "ien": "5095",
+            "synonym": "BLOOD GAS AND CO\t<GAS AND CARBON MONOXIDE PANEL>",
+            "name": "GAS AND CARBON MONOXIDE PANEL"
+        },
+        {
+            "ien": "387",
+            "synonym": "BLOOD GASES",
+            "name": "BLOOD GASES"
+        },
+        {
+            "ien": "291",
+            "synonym": "BLOOD SUGAR\t<GLUCOSE>",
+            "name": "GLUCOSE"
+        },
+        {
+            "ien": "1046",
+            "synonym": "BLOOD SUGAR\t<GLUCOSE, OTHER>",
+            "name": "GLUCOSE, OTHER"
+        },
+        {
+            "ien": "290",
+            "synonym": "BLOOD UREA NITROGEN\t<UREA NITROGEN>",
+            "name": "UREA NITROGEN"
+        },
+        {
+            "ien": "5078",
+            "synonym": "BNP",
+            "name": "BNP"
+        },
+        {
+            "ien": "1250",
+            "synonym": "BPT\t<BRONX PROBLEM TEST>",
+            "name": "BRONX PROBLEM TEST"
+        },
+        {
+            "ien": "331",
+            "synonym": "BR\t<BROMIDE>",
+            "name": "BROMIDE"
+        },
+        {
+            "ien": "5078",
+            "synonym": "BRAIN NATRIURETIC PEPTIDE\t<BNP>",
+            "name": "BNP"
+        },
+        {
+            "ien": "331",
+            "synonym": "BROMIDE",
+            "name": "BROMIDE"
+        },
+        {
+            "ien": "1250",
+            "synonym": "BRONX\t<BRONX PROBLEM TEST>",
+            "name": "BRONX PROBLEM TEST"
+        },
+        {
+            "ien": "1250",
+            "synonym": "BRONX PROBLEM TEST",
+            "name": "BRONX PROBLEM TEST"
+        },
+        {
+            "ien": "1323",
+            "synonym": "BRONX PROFILE",
+            "name": "BRONX PROFILE"
+        },
+        {
+            "ien": "1322",
+            "synonym": "BRONX TEST",
+            "name": "BRONX TEST"
+        },
+        {
+            "ien": "415",
+            "synonym": "BRUCELLA AGGLUTINATION",
+            "name": "BRUCELLA AGGLUTINATION"
+        },
+        {
+            "ien": "188",
+            "synonym": "BT\t<BLEEDING TIME>",
+            "name": "BLEEDING TIME"
+        },
+        {
+            "ien": "1241",
+            "synonym": "BTP\t<BATH TEST, PEAK>",
+            "name": "BATH TEST, PEAK"
+        },
+        {
+            "ien": "1322",
+            "synonym": "BTST\t<BRONX TEST>",
+            "name": "BRONX TEST"
+        },
+        {
+            "ien": "1240",
+            "synonym": "BTT\t<BATH TEST, TROUGH>",
+            "name": "BATH TEST, TROUGH"
+        },
+        {
+            "ien": "290",
+            "synonym": "BUN\t<UREA NITROGEN>",
+            "name": "UREA NITROGEN"
+        },
+        {
+            "ien": "1176",
+            "synonym": "BUN 1",
+            "name": "BUN 1"
+        },
+        {
+            "ien": "1184",
+            "synonym": "BUN 2",
+            "name": "BUN 2"
+        },
+        {
+            "ien": "416",
+            "synonym": "BUTABARBITAL",
+            "name": "BUTABARBITAL"
+        },
+        {
+            "ien": "531",
+            "synonym": "BUTALBITAL",
+            "name": "BUTALBITAL"
+        },
+        {
+            "ien": "1041",
+            "synonym": "C DIFFICILE CULTURE/TOXIN",
+            "name": "C DIFFICILE CULTURE/TOXIN"
+        },
+        {
+            "ien": "1236",
+            "synonym": "C-ACID PHOS",
+            "name": "C-ACID PHOS"
+        },
+        {
+            "ien": "600",
+            "synonym": "C-DIFFICILE TOXIN\t<CIE: CLOSTRIDIUM DIFFICILE>",
+            "name": "CIE: CLOSTRIDIUM DIFFICILE"
+        },
+        {
+            "ien": "347",
+            "synonym": "C-PEPTIDE",
+            "name": "C-PEPTIDE"
+        },
+        {
+            "ien": "239",
+            "synonym": "C-REACTIVE PROTEIN",
+            "name": "C-REACTIVE PROTEIN"
+        },
+        {
+            "ien": "1328",
+            "synonym": "C.DIFFICILE (BUFFALO)",
+            "name": "C.DIFFICILE (BUFFALO)"
+        },
+        {
+            "ien": "625",
+            "synonym": "C/S\t<CULTURE & SUSCEPTIBILITY>",
+            "name": "CULTURE & SUSCEPTIBILITY"
+        },
+        {
+            "ien": "532",
+            "synonym": "C1 ESTERASE INHIBIT.",
+            "name": "C1 ESTERASE INHIBIT."
+        },
+        {
+            "ien": "432",
+            "synonym": "C2\t<COMPLEMENT C2>",
+            "name": "COMPLEMENT C2"
+        },
+        {
+            "ien": "376",
+            "synonym": "C20\t<CHEM 20>",
+            "name": "CHEM 20"
+        },
+        {
+            "ien": "241",
+            "synonym": "C3\t<COMPLEMENT C3>",
+            "name": "COMPLEMENT C3"
+        },
+        {
+            "ien": "242",
+            "synonym": "C4\t<COMPLEMENT C4>",
+            "name": "COMPLEMENT C4"
+        },
+        {
+            "ien": "433",
+            "synonym": "C5\t<COMPLEMENT C5>",
+            "name": "COMPLEMENT C5"
+        },
+        {
+            "ien": "296",
+            "synonym": "CA\t<CALCIUM>",
+            "name": "CALCIUM"
+        },
+        {
+            "ien": "284",
+            "synonym": "CA++ OXALATE CRYSTALS",
+            "name": "CA++ OXALATE CRYSTALS"
+        },
+        {
+            "ien": "417",
+            "synonym": "CADMIUM",
+            "name": "CADMIUM"
+        },
+        {
+            "ien": "332",
+            "synonym": "CALCITONIN",
+            "name": "CALCITONIN"
+        },
+        {
+            "ien": "296",
+            "synonym": "CALCIUM",
+            "name": "CALCIUM"
+        },
+        {
+            "ien": "617",
+            "synonym": "CALCULUS",
+            "name": "CALCULUS"
+        },
+        {
+            "ien": "1073",
+            "synonym": "CAMPYLOBACTER CULTURE",
+            "name": "CAMPYLOBACTER CULTURE"
+        },
+        {
+            "ien": "348",
+            "synonym": "CANDIDA PRECIPITANS",
+            "name": "CANDIDA PRECIPITANS"
+        },
+        {
+            "ien": "470",
+            "synonym": "CARBAMAZEPINE",
+            "name": "CARBAMAZEPINE"
+        },
+        {
+            "ien": "295",
+            "synonym": "CARBON DIOXIDE\t<CO2>",
+            "name": "CO2"
+        },
+        {
+            "ien": "418",
+            "synonym": "CARBON TETRACHLORIDE",
+            "name": "CARBON TETRACHLORIDE"
+        },
+        {
+            "ien": "396",
+            "synonym": "CARCINOEMBRYONIC ANTIGEN\t<CEA>",
+            "name": "CEA"
+        },
+        {
+            "ien": "620",
+            "synonym": "CARDIAC ENZYMES",
+            "name": "CARDIAC ENZYMES"
+        },
+        {
+            "ien": "526",
+            "synonym": "CARDIAC ISOENZYMES",
+            "name": "CARDIAC ISOENZYMES"
+        },
+        {
+            "ien": "3365",
+            "synonym": "CARDIAC PANEL",
+            "name": "CARDIAC PANEL"
+        },
+        {
+            "ien": "508",
+            "synonym": "CARISPRODAL",
+            "name": "CARISPRODAL"
+        },
+        {
+            "ien": "419",
+            "synonym": "CAROTENE",
+            "name": "CAROTENE"
+        },
+        {
+            "ien": "1223",
+            "synonym": "CATCHALL\t<MISC MARYLAND>",
+            "name": "MISC MARYLAND"
+        },
+        {
+            "ien": "365",
+            "synonym": "CATECHOLAMINES",
+            "name": "CATECHOLAMINES"
+        },
+        {
+            "ien": "575",
+            "synonym": "CATECHOLAMINES, FRACT.",
+            "name": "CATECHOLAMINES, FRACT."
+        },
+        {
+            "ien": "210",
+            "synonym": "CBC",
+            "name": "CBC"
+        },
+        {
+            "ien": "384",
+            "synonym": "CBC & DIFF (WITH MORPHOLOGY)",
+            "name": "CBC & DIFF (WITH MORPHOLOGY)"
+        },
+        {
+            "ien": "5085",
+            "synonym": "CBC + DIFF (AUTO)",
+            "name": "CBC + DIFF (AUTO)"
+        },
+        {
+            "ien": "5076",
+            "synonym": "CCP Antibody\t<ANTI-CCP>",
+            "name": "ANTI-CCP"
+        },
+        {
+            "ien": "1253",
+            "synonym": "CD4",
+            "name": "CD4"
+        },
+        {
+            "ien": "1254",
+            "synonym": "CD4 %",
+            "name": "CD4 %"
+        },
+        {
+            "ien": "1328",
+            "synonym": "CDF\t<C.DIFFICILE (BUFFALO)>",
+            "name": "C.DIFFICILE (BUFFALO)"
+        },
+        {
+            "ien": "396",
+            "synonym": "CEA",
+            "name": "CEA"
+        },
+        {
+            "ien": "394",
+            "synonym": "CELL COUNT (FLUID)",
+            "name": "CELL COUNT (FLUID)"
+        },
+        {
+            "ien": "349",
+            "synonym": "CERULOPLASMIN",
+            "name": "CERULOPLASMIN"
+        },
+        {
+            "ien": "3399",
+            "synonym": "CHEM 10 TEST (BRONX)",
+            "name": "CHEM 10 TEST (BRONX)"
+        },
+        {
+            "ien": "376",
+            "synonym": "CHEM 20",
+            "name": "CHEM 20"
+        },
+        {
+            "ien": "1161",
+            "synonym": "CHEM 3",
+            "name": "CHEM 3"
+        },
+        {
+            "ien": "1162",
+            "synonym": "CHEM 4",
+            "name": "CHEM 4"
+        },
+        {
+            "ien": "375",
+            "synonym": "CHEM 7",
+            "name": "CHEM 7"
+        },
+        {
+            "ien": "1326",
+            "synonym": "CHEM/RIA PANEL",
+            "name": "CHEM/RIA PANEL"
+        },
+        {
+            "ien": "1324",
+            "synonym": "CHEMISTRY ADMISSION PANEL",
+            "name": "CHEMISTRY ADMISSION PANEL"
+        },
+        {
+            "ien": "1227",
+            "synonym": "CHEMISTRY FLUIDS\t<FLUID CHEMISTRIES>",
+            "name": "FLUID CHEMISTRIES"
+        },
+        {
+            "ien": "1230",
+            "synonym": "CHEMISTRY FLUIDS\t<FLUID CHEMISTRIES>",
+            "name": "FLUID CHEMISTRIES"
+        },
+        {
+            "ien": "1072",
+            "synonym": "CHLAMYDIA CULTURE",
+            "name": "CHLAMYDIA CULTURE"
+        },
+        {
+            "ien": "1256",
+            "synonym": "CHLAMYDIA TEST (MANCHESTER)",
+            "name": "CHLAMYDIA TEST (MANCHESTER)"
+        },
+        {
+            "ien": "483",
+            "synonym": "CHLAMYDIA TITER",
+            "name": "CHLAMYDIA TITER"
+        },
+        {
+            "ien": "651",
+            "synonym": "CHLORDIAZEPOXIDE",
+            "name": "CHLORDIAZEPOXIDE"
+        },
+        {
+            "ien": "294",
+            "synonym": "CHLORIDE",
+            "name": "CHLORIDE"
+        },
+        {
+            "ien": "420",
+            "synonym": "CHLORPHENIRAMINE",
+            "name": "CHLORPHENIRAMINE"
+        },
+        {
+            "ien": "421",
+            "synonym": "CHLORPROMAZINE",
+            "name": "CHLORPROMAZINE"
+        },
+        {
+            "ien": "299",
+            "synonym": "CHOLESTEROL",
+            "name": "CHOLESTEROL"
+        },
+        {
+            "ien": "5092",
+            "synonym": "CHOLESTEROL HDL RATIO\t<CHOLESTEROL/HDL RATIO>",
+            "name": "CHOLESTEROL/HDL RATIO"
+        },
+        {
+            "ien": "5092",
+            "synonym": "CHOLESTEROL/HDL RATIO",
+            "name": "CHOLESTEROL/HDL RATIO"
+        },
+        {
+            "ien": "373",
+            "synonym": "CHOLINESTERASE",
+            "name": "CHOLINESTERASE"
+        },
+        {
+            "ien": "427",
+            "synonym": "CHOLYLGLYCINE",
+            "name": "CHOLYLGLYCINE"
+        },
+        {
+            "ien": "428",
+            "synonym": "CHORIONIC GONADOTROPIN",
+            "name": "CHORIONIC GONADOTROPIN"
+        },
+        {
+            "ien": "429",
+            "synonym": "CHROMIUM",
+            "name": "CHROMIUM"
+        },
+        {
+            "ien": "477",
+            "synonym": "CIE\t<CIE SCREEN>",
+            "name": "CIE SCREEN"
+        },
+        {
+            "ien": "477",
+            "synonym": "CIE SCREEN",
+            "name": "CIE SCREEN"
+        },
+        {
+            "ien": "600",
+            "synonym": "CIE: CLOSTRIDIUM DIFFICILE",
+            "name": "CIE: CLOSTRIDIUM DIFFICILE"
+        },
+        {
+            "ien": "527",
+            "synonym": "CIE: GROUP B STREPTOCOCCUS",
+            "name": "CIE: GROUP B STREPTOCOCCUS"
+        },
+        {
+            "ien": "601",
+            "synonym": "CIE: H. INFLUENZA",
+            "name": "CIE: H. INFLUENZA"
+        },
+        {
+            "ien": "528",
+            "synonym": "CIE: PNEUMOCOCCUS",
+            "name": "CIE: PNEUMOCOCCUS"
+        },
+        {
+            "ien": "5076",
+            "synonym": "Citrulline Antibody\t<ANTI-CCP>",
+            "name": "ANTI-CCP"
+        },
+        {
+            "ien": "1157",
+            "synonym": "CK PROFILE\t<CPK PROFILE>",
+            "name": "CPK PROFILE"
+        },
+        {
+            "ien": "294",
+            "synonym": "CL\t<CHLORIDE>",
+            "name": "CHLORIDE"
+        },
+        {
+            "ien": "1181",
+            "synonym": "CL 2",
+            "name": "CL 2"
+        },
+        {
+            "ien": "1173",
+            "synonym": "CL1",
+            "name": "CL1"
+        },
+        {
+            "ien": "1332",
+            "synonym": "CLEARANCE PANEL",
+            "name": "CLEARANCE PANEL"
+        },
+        {
+            "ien": "430",
+            "synonym": "CLONAZEPAM",
+            "name": "CLONAZEPAM"
+        },
+        {
+            "ien": "1041",
+            "synonym": "CLOSTRIDIUM DIFFICILE CULTURE/TOXIN\t<C DIFFICILE CULTURE/TOXIN>",
+            "name": "C DIFFICILE CULTURE/TOXIN"
+        },
+        {
+            "ien": "5077",
+            "synonym": "CMP\t<COMPREHENSIVE METABOLIC PANEL>",
+            "name": "COMPREHENSIVE METABOLIC PANEL"
+        },
+        {
+            "ien": "512",
+            "synonym": "CMV",
+            "name": "CMV"
+        },
+        {
+            "ien": "295",
+            "synonym": "CO2",
+            "name": "CO2"
+        },
+        {
+            "ien": "1174",
+            "synonym": "CO2 1",
+            "name": "CO2 1"
+        },
+        {
+            "ien": "1182",
+            "synonym": "CO2 2",
+            "name": "CO2 2"
+        },
+        {
+            "ien": "205",
+            "synonym": "CO2CT. (TCO2)",
+            "name": "CO2CT. (TCO2)"
+        },
+        {
+            "ien": "472",
+            "synonym": "COAG PROFILE",
+            "name": "COAG PROFILE"
+        },
+        {
+            "ien": "431",
+            "synonym": "COBALT",
+            "name": "COBALT"
+        },
+        {
+            "ien": "542",
+            "synonym": "COCAINE",
+            "name": "COCAINE"
+        },
+        {
+            "ien": "509",
+            "synonym": "CODEINE",
+            "name": "CODEINE"
+        },
+        {
+            "ien": "198",
+            "synonym": "COHB%",
+            "name": "COHB%"
+        },
+        {
+            "ien": "240",
+            "synonym": "COLD AGGLUTININS",
+            "name": "COLD AGGLUTININS"
+        },
+        {
+            "ien": "5077",
+            "synonym": "COMP METABOLIC PANEL\t<COMPREHENSIVE METABOLIC PANEL>",
+            "name": "COMPREHENSIVE METABOLIC PANEL"
+        },
+        {
+            "ien": "432",
+            "synonym": "COMPLEMENT C2",
+            "name": "COMPLEMENT C2"
+        },
+        {
+            "ien": "241",
+            "synonym": "COMPLEMENT C3",
+            "name": "COMPLEMENT C3"
+        },
+        {
+            "ien": "242",
+            "synonym": "COMPLEMENT C4",
+            "name": "COMPLEMENT C4"
+        },
+        {
+            "ien": "433",
+            "synonym": "COMPLEMENT C5",
+            "name": "COMPLEMENT C5"
+        },
+        {
+            "ien": "607",
+            "synonym": "COMPLEMENT CH50",
+            "name": "COMPLEMENT CH50"
+        },
+        {
+            "ien": "434",
+            "synonym": "COMPLEMENT DECAY RATE",
+            "name": "COMPLEMENT DECAY RATE"
+        },
+        {
+            "ien": "435",
+            "synonym": "COMPLEMENT TOTAL",
+            "name": "COMPLEMENT TOTAL"
+        },
+        {
+            "ien": "230",
+            "synonym": "COMPOUND F\t<CORTISOL>",
+            "name": "CORTISOL"
+        },
+        {
+            "ien": "350",
+            "synonym": "COMPOUND S\t<11-DEOXYCORTISOL>",
+            "name": "11-DEOXYCORTISOL"
+        },
+        {
+            "ien": "5077",
+            "synonym": "COMPREHENSIVE METABOLIC PANEL",
+            "name": "COMPREHENSIVE METABOLIC PANEL"
+        },
+        {
+            "ien": "445",
+            "synonym": "COOMBS, DIRECT/INDIRECT",
+            "name": "COOMBS, DIRECT/INDIRECT"
+        },
+        {
+            "ien": "340",
+            "synonym": "COPPER",
+            "name": "COPPER"
+        },
+        {
+            "ien": "436",
+            "synonym": "COPROPORPHYRIN",
+            "name": "COPROPORPHYRIN"
+        },
+        {
+            "ien": "324",
+            "synonym": "CORTICOTROPIN\t<ACTH>",
+            "name": "ACTH"
+        },
+        {
+            "ien": "230",
+            "synonym": "CORTISOL",
+            "name": "CORTISOL"
+        },
+        {
+            "ien": "313",
+            "synonym": "CPK ",
+            "name": "CPK "
+        },
+        {
+            "ien": "1212",
+            "synonym": "CPK ISO'S & TOTAL CPK",
+            "name": "CPK ISO'S & TOTAL CPK"
+        },
+        {
+            "ien": "1157",
+            "synonym": "CPK PROFILE",
+            "name": "CPK PROFILE"
+        },
+        {
+            "ien": "1177",
+            "synonym": "CREAT 1",
+            "name": "CREAT 1"
+        },
+        {
+            "ien": "1185",
+            "synonym": "CREAT 2",
+            "name": "CREAT 2"
+        },
+        {
+            "ien": "437",
+            "synonym": "CREATINE",
+            "name": "CREATINE"
+        },
+        {
+            "ien": "289",
+            "synonym": "CREATININE",
+            "name": "CREATININE"
+        },
+        {
+            "ien": "1135",
+            "synonym": "CREATININE CLEARANCE",
+            "name": "CREATININE CLEARANCE"
+        },
+        {
+            "ien": "1231",
+            "synonym": "CROSSMATCH\t<TRANSFUSION REQUEST>",
+            "name": "TRANSFUSION REQUEST"
+        },
+        {
+            "ien": "239",
+            "synonym": "CRP\t<C-REACTIVE PROTEIN>",
+            "name": "C-REACTIVE PROTEIN"
+        },
+        {
+            "ien": "438",
+            "synonym": "CRYOFIBRINOGEN",
+            "name": "CRYOFIBRINOGEN"
+        },
+        {
+            "ien": "243",
+            "synonym": "CRYOGLOBULINS",
+            "name": "CRYOGLOBULINS"
+        },
+        {
+            "ien": "796",
+            "synonym": "CRYPTOSPORIDIUM",
+            "name": "CRYPTOSPORIDIUM"
+        },
+        {
+            "ien": "195",
+            "synonym": "CRYSTALS",
+            "name": "CRYSTALS"
+        },
+        {
+            "ien": "3440",
+            "synonym": "CSF ALBUMIN\t<MICRO ALBUMIN>",
+            "name": "MICRO ALBUMIN"
+        },
+        {
+            "ien": "340",
+            "synonym": "CU\t<COPPER>",
+            "name": "COPPER"
+        },
+        {
+            "ien": "625",
+            "synonym": "CULT\t<CULTURE & SUSCEPTIBILITY>",
+            "name": "CULTURE & SUSCEPTIBILITY"
+        },
+        {
+            "ien": "625",
+            "synonym": "CULTURE & SUSCEPTIBILITY",
+            "name": "CULTURE & SUSCEPTIBILITY"
+        },
+        {
+            "ien": "439",
+            "synonym": "CYCLIC AMP",
+            "name": "CYCLIC AMP"
+        },
+        {
+            "ien": "1037",
+            "synonym": "CYCLOSPORIN",
+            "name": "CYCLOSPORIN"
+        },
+        {
+            "ien": "286",
+            "synonym": "CYSTINE CRYSTALS",
+            "name": "CYSTINE CRYSTALS"
+        },
+        {
+            "ien": "516",
+            "synonym": "CYSTINE QUANT",
+            "name": "CYSTINE QUANT"
+        },
+        {
+            "ien": "401",
+            "synonym": "CYTOLOGY",
+            "name": "CYTOLOGY"
+        },
+        {
+            "ien": "303",
+            "synonym": "D BILI\t<DIR. BILIRUBIN>",
+            "name": "DIR. BILIRUBIN"
+        },
+        {
+            "ien": "598",
+            "synonym": "D&N\t<DOXEPIN & N-DESMETHYLDOXEPIN>",
+            "name": "DOXEPIN & N-DESMETHYLDOXEPIN"
+        },
+        {
+            "ien": "1024",
+            "synonym": "DARK FIELD MICROSCOPIC EXAM",
+            "name": "DARK FIELD MICROSCOPIC EXAM"
+        },
+        {
+            "ien": "442",
+            "synonym": "DEOXYCORTICOSTERONE",
+            "name": "DEOXYCORTICOSTERONE"
+        },
+        {
+            "ien": "1046",
+            "synonym": "DEXTROSE\t<GLUCOSE, OTHER>",
+            "name": "GLUCOSE, OTHER"
+        },
+        {
+            "ien": "440",
+            "synonym": "DHEA",
+            "name": "DHEA"
+        },
+        {
+            "ien": "441",
+            "synonym": "DHEA-S",
+            "name": "DHEA-S"
+        },
+        {
+            "ien": "443",
+            "synonym": "DIAZEPAM",
+            "name": "DIAZEPAM"
+        },
+        {
+            "ien": "444",
+            "synonym": "DIBUCAINE NUMBER",
+            "name": "DIBUCAINE NUMBER"
+        },
+        {
+            "ien": "631",
+            "synonym": "DIC WORK-UP",
+            "name": "DIC WORK-UP"
+        },
+        {
+            "ien": "1084",
+            "synonym": "DIFF COUNT (FLUID)",
+            "name": "DIFF COUNT (FLUID)"
+        },
+        {
+            "ien": "222",
+            "synonym": "DIGITOXIN",
+            "name": "DIGITOXIN"
+        },
+        {
+            "ien": "223",
+            "synonym": "DIGOXIN",
+            "name": "DIGOXIN"
+        },
+        {
+            "ien": "635",
+            "synonym": "DIGOXIN (STAT)",
+            "name": "DIGOXIN (STAT)"
+        },
+        {
+            "ien": "446",
+            "synonym": "DIHYDROTESTOSTERONE",
+            "name": "DIHYDROTESTOSTERONE"
+        },
+        {
+            "ien": "326",
+            "synonym": "DILANTIN",
+            "name": "DILANTIN"
+        },
+        {
+            "ien": "303",
+            "synonym": "DIR. BILIRUBIN",
+            "name": "DIR. BILIRUBIN"
+        },
+        {
+            "ien": "445",
+            "synonym": "DIRECT/INDIRECT AHG TEST\t<COOMBS, DIRECT/INDIRECT>",
+            "name": "COOMBS, DIRECT/INDIRECT"
+        },
+        {
+            "ien": "337",
+            "synonym": "DISOPYRAMIDE",
+            "name": "DISOPYRAMIDE"
+        },
+        {
+            "ien": "5052",
+            "synonym": "DLDL\t<ZZDirect LDL>",
+            "name": "ZZDirect LDL"
+        },
+        {
+            "ien": "341",
+            "synonym": "DNA",
+            "name": "DNA"
+        },
+        {
+            "ien": "1289",
+            "synonym": "DONOR ALT",
+            "name": "DONOR ALT"
+        },
+        {
+            "ien": "576",
+            "synonym": "DOPAMINE",
+            "name": "DOPAMINE"
+        },
+        {
+            "ien": "533",
+            "synonym": "DOXEPIN",
+            "name": "DOXEPIN"
+        },
+        {
+            "ien": "598",
+            "synonym": "DOXEPIN & N-DESMETHYLDOXEPIN",
+            "name": "DOXEPIN & N-DESMETHYLDOXEPIN"
+        },
+        {
+            "ien": "5094",
+            "synonym": "DRUG SCREEN\t<DRUGS OF ABUSE 5 PANEL>",
+            "name": "DRUGS OF ABUSE 5 PANEL"
+        },
+        {
+            "ien": "1252",
+            "synonym": "DRUG SCREEN (BLOOD)",
+            "name": "DRUG SCREEN (BLOOD)"
+        },
+        {
+            "ien": "1211",
+            "synonym": "DRUG SCREEN (URINE)",
+            "name": "DRUG SCREEN (URINE)"
+        },
+        {
+            "ien": "1211",
+            "synonym": "DRUGS OF ABUSE\t<DRUG SCREEN (URINE)>",
+            "name": "DRUG SCREEN (URINE)"
+        },
+        {
+            "ien": "5094",
+            "synonym": "DRUGS OF ABUSE 5 PANEL",
+            "name": "DRUGS OF ABUSE 5 PANEL"
+        },
+        {
+            "ien": "5094",
+            "synonym": "DRUGS OF ABUSE 5 PNL UR SCN\t<DRUGS OF ABUSE 5 PANEL>",
+            "name": "DRUGS OF ABUSE 5 PANEL"
+        },
+        {
+            "ien": "5075",
+            "synonym": "dsDNA\t<ANTI-dsDNA>",
+            "name": "ANTI-dsDNA"
+        },
+        {
+            "ien": "469",
+            "synonym": "ELECTROLYTES\t<LYTES>",
+            "name": "LYTES"
+        },
+        {
+            "ien": "1336",
+            "synonym": "ELISA FOR HIV",
+            "name": "ELISA FOR HIV"
+        },
+        {
+            "ien": "1242",
+            "synonym": "EOSINO, ABSOLUTE",
+            "name": "EOSINO, ABSOLUTE"
+        },
+        {
+            "ien": "366",
+            "synonym": "EPINEPHRINE",
+            "name": "EPINEPHRINE"
+        },
+        {
+            "ien": "5074",
+            "synonym": "ERYTHROCYTE SEDIMENTATION RATE",
+            "name": "ERYTHROCYTE SEDIMENTATION RATE"
+        },
+        {
+            "ien": "447",
+            "synonym": "ERYTHROPOIETIN",
+            "name": "ERYTHROPOIETIN"
+        },
+        {
+            "ien": "395",
+            "synonym": "ESR\t<WESTERGREN SED RATE>",
+            "name": "WESTERGREN SED RATE"
+        },
+        {
+            "ien": "5074",
+            "synonym": "ESR\t<ERYTHROCYTE SEDIMENTATION RATE>",
+            "name": "ERYTHROCYTE SEDIMENTATION RATE"
+        },
+        {
+            "ien": "449",
+            "synonym": "ESTRADIOL RECEPTOR ASSAY",
+            "name": "ESTRADIOL RECEPTOR ASSAY"
+        },
+        {
+            "ien": "448",
+            "synonym": "ESTRADIOL, 17-B",
+            "name": "ESTRADIOL, 17-B"
+        },
+        {
+            "ien": "450",
+            "synonym": "ESTRIOL",
+            "name": "ESTRIOL"
+        },
+        {
+            "ien": "333",
+            "synonym": "ESTROGEN",
+            "name": "ESTROGEN"
+        },
+        {
+            "ien": "311",
+            "synonym": "ETHANOL",
+            "name": "ETHANOL"
+        },
+        {
+            "ien": "661",
+            "synonym": "ETHOSUXIMIDE",
+            "name": "ETHOSUXIMIDE"
+        },
+        {
+            "ien": "825",
+            "synonym": "ETHYLENE GLYCOL",
+            "name": "ETHYLENE GLYCOL"
+        },
+        {
+            "ien": "608",
+            "synonym": "FACTOR II",
+            "name": "FACTOR II"
+        },
+        {
+            "ien": "504",
+            "synonym": "FACTOR IX",
+            "name": "FACTOR IX"
+        },
+        {
+            "ien": "503",
+            "synonym": "FACTOR VII",
+            "name": "FACTOR VII"
+        },
+        {
+            "ien": "494",
+            "synonym": "FACTOR VIII ACTIVITY",
+            "name": "FACTOR VIII ACTIVITY"
+        },
+        {
+            "ien": "495",
+            "synonym": "FACTOR VIII ANTIGEN",
+            "name": "FACTOR VIII ANTIGEN"
+        },
+        {
+            "ien": "496",
+            "synonym": "FACTOR VIII MULTIMER",
+            "name": "FACTOR VIII MULTIMER"
+        },
+        {
+            "ien": "497",
+            "synonym": "FACTOR VIII PROFILE",
+            "name": "FACTOR VIII PROFILE"
+        },
+        {
+            "ien": "505",
+            "synonym": "FACTOR XII",
+            "name": "FACTOR XII"
+        },
+        {
+            "ien": "5093",
+            "synonym": "FASTING SUGAR\t<GLUCOSE FASTING>",
+            "name": "GLUCOSE FASTING"
+        },
+        {
+            "ien": "630",
+            "synonym": "FATTY ACIDS, FREE",
+            "name": "FATTY ACIDS, FREE"
+        },
+        {
+            "ien": "276",
+            "synonym": "FATTY CASTS",
+            "name": "FATTY CASTS"
+        },
+        {
+            "ien": "1190",
+            "synonym": "FBS\t<ASTRA GLUCOSE>",
+            "name": "ASTRA GLUCOSE"
+        },
+        {
+            "ien": "244",
+            "synonym": "FEBRILE AGGLUTINS",
+            "name": "FEBRILE AGGLUTINS"
+        },
+        {
+            "ien": "1075",
+            "synonym": "FECAL FAT",
+            "name": "FECAL FAT"
+        },
+        {
+            "ien": "1074",
+            "synonym": "FECAL LEUKOCYTES",
+            "name": "FECAL LEUKOCYTES"
+        },
+        {
+            "ien": "229",
+            "synonym": "FERRITIN",
+            "name": "FERRITIN"
+        },
+        {
+            "ien": "187",
+            "synonym": "FIBRIN SPLIT PRODUCTS",
+            "name": "FIBRIN SPLIT PRODUCTS"
+        },
+        {
+            "ien": "186",
+            "synonym": "FIBRINOGEN",
+            "name": "FIBRINOGEN"
+        },
+        {
+            "ien": "1321",
+            "synonym": "FINGERSTICK GLUCOSE",
+            "name": "FINGERSTICK GLUCOSE"
+        },
+        {
+            "ien": "3350",
+            "synonym": "FINSTICK GLUCOSE - BUFFALO",
+            "name": "FINSTICK GLUCOSE - BUFFALO"
+        },
+        {
+            "ien": "196",
+            "synonym": "FIO2",
+            "name": "FIO2"
+        },
+        {
+            "ien": "1227",
+            "synonym": "FLUID CHEMISTRIES",
+            "name": "FLUID CHEMISTRIES"
+        },
+        {
+            "ien": "1230",
+            "synonym": "FLUID CHEMISTRIES",
+            "name": "FLUID CHEMISTRIES"
+        },
+        {
+            "ien": "1227",
+            "synonym": "FLUID TESTS\t<FLUID CHEMISTRIES>",
+            "name": "FLUID CHEMISTRIES"
+        },
+        {
+            "ien": "1230",
+            "synonym": "FLUID TESTS\t<FLUID CHEMISTRIES>",
+            "name": "FLUID CHEMISTRIES"
+        },
+        {
+            "ien": "225",
+            "synonym": "FOLATE",
+            "name": "FOLATE"
+        },
+        {
+            "ien": "225",
+            "synonym": "FOLIC ACID\t<FOLATE>",
+            "name": "FOLATE"
+        },
+        {
+            "ien": "5070",
+            "synonym": "FOS\t<FOSPHENYTOIN>",
+            "name": "FOSPHENYTOIN"
+        },
+        {
+            "ien": "5070",
+            "synonym": "FOSPHENYTOIN",
+            "name": "FOSPHENYTOIN"
+        },
+        {
+            "ien": "424",
+            "synonym": "FREE T-4",
+            "name": "FREE T-4"
+        },
+        {
+            "ien": "424",
+            "synonym": "FREE THYROXINE\t<FREE T-4>",
+            "name": "FREE T-4"
+        },
+        {
+            "ien": "502",
+            "synonym": "FREE TRIIODOTHYRONINE",
+            "name": "FREE TRIIODOTHYRONINE"
+        },
+        {
+            "ien": "354",
+            "synonym": "FSH",
+            "name": "FSH"
+        },
+        {
+            "ien": "187",
+            "synonym": "FSP\t<FIBRIN SPLIT PRODUCTS>",
+            "name": "FIBRIN SPLIT PRODUCTS"
+        },
+        {
+            "ien": "245",
+            "synonym": "FTA",
+            "name": "FTA"
+        },
+        {
+            "ien": "256",
+            "synonym": "FUNGAL ANTIGEN",
+            "name": "FUNGAL ANTIGEN"
+        },
+        {
+            "ien": "1080",
+            "synonym": "FUNGAL IDENTIFICATION",
+            "name": "FUNGAL IDENTIFICATION"
+        },
+        {
+            "ien": "1071",
+            "synonym": "FUNGAL SEROLOGY",
+            "name": "FUNGAL SEROLOGY"
+        },
+        {
+            "ien": "628",
+            "synonym": "FUNGUS CULTURE\t<MYCOLOGY CULTURE>",
+            "name": "MYCOLOGY CULTURE"
+        },
+        {
+            "ien": "832",
+            "synonym": "G-6-PD, QUANTITATIVE",
+            "name": "G-6-PD, QUANTITATIVE"
+        },
+        {
+            "ien": "308",
+            "synonym": "GAMMA-GLUTAMYL TRANSPEPTIDASE",
+            "name": "GAMMA-GLUTAMYL TRANSPEPTIDASE"
+        },
+        {
+            "ien": "387",
+            "synonym": "GAS\t<BLOOD GASES>",
+            "name": "BLOOD GASES"
+        },
+        {
+            "ien": "5095",
+            "synonym": "GAS AND CARBON MONOXIDE PANEL",
+            "name": "GAS AND CARBON MONOXIDE PANEL"
+        },
+        {
+            "ien": "5095",
+            "synonym": "GAS AND CO PANEL\t<GAS AND CARBON MONOXIDE PANEL>",
+            "name": "GAS AND CARBON MONOXIDE PANEL"
+        },
+        {
+            "ien": "355",
+            "synonym": "GASTRIN",
+            "name": "GASTRIN"
+        },
+        {
+            "ien": "1045",
+            "synonym": "GC\t<GC CULTURE>",
+            "name": "GC CULTURE"
+        },
+        {
+            "ien": "1045",
+            "synonym": "GC CULTURE",
+            "name": "GC CULTURE"
+        },
+        {
+            "ien": "1199",
+            "synonym": "GENTAMICIN",
+            "name": "GENTAMICIN"
+        },
+        {
+            "ien": "334",
+            "synonym": "GENTAMICIN, RANDOM",
+            "name": "GENTAMICIN, RANDOM"
+        },
+        {
+            "ien": "1197",
+            "synonym": "GENTAMICIN, TROUGH",
+            "name": "GENTAMICIN, TROUGH"
+        },
+        {
+            "ien": "308",
+            "synonym": "GGT\t<GAMMA-GLUTAMYL TRANSPEPTIDASE>",
+            "name": "GAMMA-GLUTAMYL TRANSPEPTIDASE"
+        },
+        {
+            "ien": "1022",
+            "synonym": "GIEMSA STAIN",
+            "name": "GIEMSA STAIN"
+        },
+        {
+            "ien": "1224",
+            "synonym": "GLU\t<ZGLUCOSE*>",
+            "name": "ZGLUCOSE*"
+        },
+        {
+            "ien": "1175",
+            "synonym": "GLU 1",
+            "name": "GLU 1"
+        },
+        {
+            "ien": "1183",
+            "synonym": "GLU 2",
+            "name": "GLU 2"
+        },
+        {
+            "ien": "633",
+            "synonym": "GLUCAGON",
+            "name": "GLUCAGON"
+        },
+        {
+            "ien": "291",
+            "synonym": "GLUCOSE",
+            "name": "GLUCOSE"
+        },
+        {
+            "ien": "1183",
+            "synonym": "GLUCOSE\t<GLU 2>",
+            "name": "GLU 2"
+        },
+        {
+            "ien": "5093",
+            "synonym": "GLUCOSE\t<GLUCOSE FASTING>",
+            "name": "GLUCOSE FASTING"
+        },
+        {
+            "ien": "5093",
+            "synonym": "GLUCOSE FASTING",
+            "name": "GLUCOSE FASTING"
+        },
+        {
+            "ien": "1330",
+            "synonym": "GLUCOSE rtn",
+            "name": "GLUCOSE rtn"
+        },
+        {
+            "ien": "335",
+            "synonym": "GLUCOSE TOLERANCE TEST",
+            "name": "GLUCOSE TOLERANCE TEST"
+        },
+        {
+            "ien": "1046",
+            "synonym": "GLUCOSE, OTHER",
+            "name": "GLUCOSE, OTHER"
+        },
+        {
+            "ien": "1243",
+            "synonym": "GLUCOSE, STAT",
+            "name": "GLUCOSE, STAT"
+        },
+        {
+            "ien": "233",
+            "synonym": "GONADOTROPINS",
+            "name": "GONADOTROPINS"
+        },
+        {
+            "ien": "461",
+            "synonym": "GRAM STAIN",
+            "name": "GRAM STAIN"
+        },
+        {
+            "ien": "274",
+            "synonym": "GRANULAR CASTS",
+            "name": "GRANULAR CASTS"
+        },
+        {
+            "ien": "506",
+            "synonym": "GROWTH HORMONE",
+            "name": "GROWTH HORMONE"
+        },
+        {
+            "ien": "335",
+            "synonym": "GTT\t<GLUCOSE TOLERANCE TEST>",
+            "name": "GLUCOSE TOLERANCE TEST"
+        },
+        {
+            "ien": "1209",
+            "synonym": "H & H\t<HGB & HCT>",
+            "name": "HGB & HCT"
+        },
+        {
+            "ien": "1209",
+            "synonym": "H&H\t<HGB & HCT>",
+            "name": "HGB & HCT"
+        },
+        {
+            "ien": "212",
+            "synonym": "HAM'S TEST",
+            "name": "HAM'S TEST"
+        },
+        {
+            "ien": "246",
+            "synonym": "HAPTOGLOBIN",
+            "name": "HAPTOGLOBIN"
+        },
+        {
+            "ien": "584",
+            "synonym": "HAVAB\t<HEPATITIS A ANTIBODY>",
+            "name": "HEPATITIS A ANTIBODY"
+        },
+        {
+            "ien": "247",
+            "synonym": "HBSAG\t<HEPATITIS B SURFACE ANTIGEN>",
+            "name": "HEPATITIS B SURFACE ANTIGEN"
+        },
+        {
+            "ien": "228",
+            "synonym": "HCG",
+            "name": "HCG"
+        },
+        {
+            "ien": "593",
+            "synonym": "HCG BETA, QUANT.",
+            "name": "HCG BETA, QUANT."
+        },
+        {
+            "ien": "357",
+            "synonym": "HDL",
+            "name": "HDL"
+        },
+        {
+            "ien": "587",
+            "synonym": "HEAB\t<HEPATITIS E ANTIBODY>",
+            "name": "HEPATITIS E ANTIBODY"
+        },
+        {
+            "ien": "588",
+            "synonym": "HEAG\t<HEPATITIS E ANTIGEN>",
+            "name": "HEPATITIS E ANTIGEN"
+        },
+        {
+            "ien": "371",
+            "synonym": "HEAVY METAL\t<MERCURY>",
+            "name": "MERCURY"
+        },
+        {
+            "ien": "583",
+            "synonym": "HEAVY METALS SCREEN",
+            "name": "HEAVY METALS SCREEN"
+        },
+        {
+            "ien": "1113",
+            "synonym": "HELPER T CELLS",
+            "name": "HELPER T CELLS"
+        },
+        {
+            "ien": "213",
+            "synonym": "HEMOGLOBIN A1C",
+            "name": "HEMOGLOBIN A1C"
+        },
+        {
+            "ien": "278",
+            "synonym": "HEMOSIDERIN\t<URINE HEMOSIDERIN>",
+            "name": "URINE HEMOSIDERIN"
+        },
+        {
+            "ien": "584",
+            "synonym": "HEPATITIS A ANTIBODY",
+            "name": "HEPATITIS A ANTIBODY"
+        },
+        {
+            "ien": "585",
+            "synonym": "HEPATITIS B CORE ANTIBODY",
+            "name": "HEPATITIS B CORE ANTIBODY"
+        },
+        {
+            "ien": "1036",
+            "synonym": "HEPATITIS B SCREEN",
+            "name": "HEPATITIS B SCREEN"
+        },
+        {
+            "ien": "586",
+            "synonym": "HEPATITIS B SURFACE ANTIBODY",
+            "name": "HEPATITIS B SURFACE ANTIBODY"
+        },
+        {
+            "ien": "247",
+            "synonym": "HEPATITIS B SURFACE ANTIGEN",
+            "name": "HEPATITIS B SURFACE ANTIGEN"
+        },
+        {
+            "ien": "1335",
+            "synonym": "HEPATITIS C ANTIBODY",
+            "name": "HEPATITIS C ANTIBODY"
+        },
+        {
+            "ien": "587",
+            "synonym": "HEPATITIS E ANTIBODY",
+            "name": "HEPATITIS E ANTIBODY"
+        },
+        {
+            "ien": "588",
+            "synonym": "HEPATITIS E ANTIGEN",
+            "name": "HEPATITIS E ANTIGEN"
+        },
+        {
+            "ien": "513",
+            "synonym": "HERPES SIMPLEX,COMMON AG TITER",
+            "name": "HERPES SIMPLEX,COMMON AG TITER"
+        },
+        {
+            "ien": "356",
+            "synonym": "HETEROPHIL",
+            "name": "HETEROPHIL"
+        },
+        {
+            "ien": "1209",
+            "synonym": "HGB & HCT",
+            "name": "HGB & HCT"
+        },
+        {
+            "ien": "336",
+            "synonym": "HGB ELECTROPHORESIS",
+            "name": "HGB ELECTROPHORESIS"
+        },
+        {
+            "ien": "530",
+            "synonym": "HGB SERUM FREE",
+            "name": "HGB SERUM FREE"
+        },
+        {
+            "ien": "1209",
+            "synonym": "HGB&HCT\t<HGB & HCT>",
+            "name": "HGB & HCT"
+        },
+        {
+            "ien": "213",
+            "synonym": "HGBA1C\t<HEMOGLOBIN A1C>",
+            "name": "HEMOGLOBIN A1C"
+        },
+        {
+            "ien": "401",
+            "synonym": "HISTOLOGY\t<CYTOLOGY>",
+            "name": "CYTOLOGY"
+        },
+        {
+            "ien": "680",
+            "synonym": "HISTOPLASMA COMPLEMENT TITER",
+            "name": "HISTOPLASMA COMPLEMENT TITER"
+        },
+        {
+            "ien": "5063",
+            "synonym": "HIV\t<HIV/AB>",
+            "name": "HIV/AB"
+        },
+        {
+            "ien": "5064",
+            "synonym": "HIV\t<HIV Western Blot>",
+            "name": "HIV Western Blot"
+        },
+        {
+            "ien": "1251",
+            "synonym": "HIV SCREEN",
+            "name": "HIV SCREEN"
+        },
+        {
+            "ien": "5064",
+            "synonym": "HIV Western Blot",
+            "name": "HIV Western Blot"
+        },
+        {
+            "ien": "5063",
+            "synonym": "HIV/AB",
+            "name": "HIV/AB"
+        },
+        {
+            "ien": "564",
+            "synonym": "HLA B27",
+            "name": "HLA B27"
+        },
+        {
+            "ien": "565",
+            "synonym": "HLA B8",
+            "name": "HLA B8"
+        },
+        {
+            "ien": "602",
+            "synonym": "HOMOVANILLIC ACID",
+            "name": "HOMOVANILLIC ACID"
+        },
+        {
+            "ien": "228",
+            "synonym": "HUMAN CHORIONIC GONADOTROPIN\t<HCG>",
+            "name": "HCG"
+        },
+        {
+            "ien": "602",
+            "synonym": "HVA\t<HOMOVANILLIC ACID>",
+            "name": "HOMOVANILLIC ACID"
+        },
+        {
+            "ien": "273",
+            "synonym": "HYALINE CASTS",
+            "name": "HYALINE CASTS"
+        },
+        {
+            "ien": "546",
+            "synonym": "HYDROXYPROLINE-TOTAL",
+            "name": "HYDROXYPROLINE-TOTAL"
+        },
+        {
+            "ien": "455",
+            "synonym": "HYPERSEGMENTED NEUTROPHILS",
+            "name": "HYPERSEGMENTED NEUTROPHILS"
+        },
+        {
+            "ien": "597",
+            "synonym": "I&D\t<IMIPRAMINE & DESIPRAMINE>",
+            "name": "IMIPRAMINE & DESIPRAMINE"
+        },
+        {
+            "ien": "859",
+            "synonym": "IgA\t<IGA>",
+            "name": "IGA"
+        },
+        {
+            "ien": "861",
+            "synonym": "IgG\t<IGG>",
+            "name": "IGG"
+        },
+        {
+            "ien": "293",
+            "synonym": "K\t<POTASSIUM>",
+            "name": "POTASSIUM"
+        },
+        {
+            "ien": "1172",
+            "synonym": "K 1",
+            "name": "K 1"
+        },
+        {
+            "ien": "1180",
+            "synonym": "K 2",
+            "name": "K 2"
+        },
+        {
+            "ien": "1160",
+            "synonym": "KDA",
+            "name": "KDA"
+        },
+        {
+            "ien": "1205",
+            "synonym": "KDA GLUCOSE\t<KGLUCOSE>",
+            "name": "KGLUCOSE"
+        },
+        {
+            "ien": "5071",
+            "synonym": "KEPPRA",
+            "name": "KEPPRA"
+        },
+        {
+            "ien": "589",
+            "synonym": "KETONES",
+            "name": "KETONES"
+        },
+        {
+            "ien": "1205",
+            "synonym": "KGLUCOSE",
+            "name": "KGLUCOSE"
+        },
+        {
+            "ien": "1020",
+            "synonym": "KOH FUNGAL PREP",
+            "name": "KOH FUNGAL PREP"
+        },
+        {
+            "ien": "382",
+            "synonym": "LAB T",
+            "name": "LAB T"
+        },
+        {
+            "ien": "5069",
+            "synonym": "LACO\t<lacosamide>",
+            "name": "lacosamide"
+        },
+        {
+            "ien": "5069",
+            "synonym": "lacosamide",
+            "name": "lacosamide"
+        },
+        {
+            "ien": "315",
+            "synonym": "LACTATE\t<LACTIC ACID>",
+            "name": "LACTIC ACID"
+        },
+        {
+            "ien": "315",
+            "synonym": "LACTIC ACID",
+            "name": "LACTIC ACID"
+        },
+        {
+            "ien": "5067",
+            "synonym": "lamictal\t<lamotrigine>",
+            "name": "lamotrigine"
+        },
+        {
+            "ien": "5067",
+            "synonym": "LAMO\t<lamotrigine>",
+            "name": "lamotrigine"
+        },
+        {
+            "ien": "5067",
+            "synonym": "lamost\t<lamotrigine>",
+            "name": "lamotrigine"
+        },
+        {
+            "ien": "5067",
+            "synonym": "lamotrigine",
+            "name": "lamotrigine"
+        },
+        {
+            "ien": "1164",
+            "synonym": "LD PRO\t<LDH PROFILE>",
+            "name": "LDH PROFILE"
+        },
+        {
+            "ien": "305",
+            "synonym": "LDH",
+            "name": "LDH"
+        },
+        {
+            "ien": "1164",
+            "synonym": "LDH PROFILE",
+            "name": "LDH PROFILE"
+        },
+        {
+            "ien": "884",
+            "synonym": "LDL CHOLESTEROL",
+            "name": "LDL CHOLESTEROL"
+        },
+        {
+            "ien": "5052",
+            "synonym": "LDL Direct\t<ZZDirect LDL>",
+            "name": "ZZDirect LDL"
+        },
+        {
+            "ien": "214",
+            "synonym": "LE PREP",
+            "name": "LE PREP"
+        },
+        {
+            "ien": "372",
+            "synonym": "LEAD",
+            "name": "LEAD"
+        },
+        {
+            "ien": "1036",
+            "synonym": "LEDI HEP B SCREEN\t<HEPATITIS B SCREEN>",
+            "name": "HEPATITIS B SCREEN"
+        },
+        {
+            "ien": "3404",
+            "synonym": "LEDIPSA\t<PROSTATE SPECIFIC ANTIGEN>",
+            "name": "PROSTATE SPECIFIC ANTIGEN"
+        },
+        {
+            "ien": "1019",
+            "synonym": "LEG CUL\t<LEGIONELLA CULTURE>",
+            "name": "LEGIONELLA CULTURE"
+        },
+        {
+            "ien": "1018",
+            "synonym": "LEG DFA\t<LEGIONELLA DFA>",
+            "name": "LEGIONELLA DFA"
+        },
+        {
+            "ien": "1019",
+            "synonym": "LEGIONELLA CULTURE",
+            "name": "LEGIONELLA CULTURE"
+        },
+        {
+            "ien": "1018",
+            "synonym": "LEGIONELLA DFA",
+            "name": "LEGIONELLA DFA"
+        },
+        {
+            "ien": "287",
+            "synonym": "LEUCINE CRYSTALS",
+            "name": "LEUCINE CRYSTALS"
+        },
+        {
+            "ien": "1038",
+            "synonym": "LEUKOCYTE ALK PHOS SCORE",
+            "name": "LEUKOCYTE ALK PHOS SCORE"
+        },
+        {
+            "ien": "5071",
+            "synonym": "LEVETIRACETAM\t<KEPPRA>",
+            "name": "KEPPRA"
+        },
+        {
+            "ien": "374",
+            "synonym": "LFT\t<LIVER FUNCTION TEST>",
+            "name": "LIVER FUNCTION TEST"
+        },
+        {
+            "ien": "358",
+            "synonym": "LH ",
+            "name": "LH "
+        },
+        {
+            "ien": "314",
+            "synonym": "LI\t<LITHIUM>",
+            "name": "LITHIUM"
+        },
+        {
+            "ien": "651",
+            "synonym": "LIBRIUM\t<CHLORDIAZEPOXIDE>",
+            "name": "CHLORDIAZEPOXIDE"
+        },
+        {
+            "ien": "591",
+            "synonym": "LIDOCAINE",
+            "name": "LIDOCAINE"
+        },
+        {
+            "ien": "469",
+            "synonym": "LIGHTS\t<LYTES>",
+            "name": "LYTES"
+        },
+        {
+            "ien": "1249",
+            "synonym": "LIME DISEASE",
+            "name": "LIME DISEASE"
+        },
+        {
+            "ien": "316",
+            "synonym": "LIPASE",
+            "name": "LIPASE"
+        },
+        {
+            "ien": "568",
+            "synonym": "LIPID PHENOTYPE EVAL.",
+            "name": "LIPID PHENOTYPE EVAL."
+        },
+        {
+            "ien": "1081",
+            "synonym": "LIPID PROFILE",
+            "name": "LIPID PROFILE"
+        },
+        {
+            "ien": "629",
+            "synonym": "LIPIDS, QUALITATIVE",
+            "name": "LIPIDS, QUALITATIVE"
+        },
+        {
+            "ien": "544",
+            "synonym": "LIPIDS, TOTAL",
+            "name": "LIPIDS, TOTAL"
+        },
+        {
+            "ien": "568",
+            "synonym": "LIPOPROTEIN ELECTROPHORESIS\t<LIPID PHENOTYPE EVAL.>",
+            "name": "LIPID PHENOTYPE EVAL."
+        },
+        {
+            "ien": "191",
+            "synonym": "LIQUIFACTION",
+            "name": "LIQUIFACTION"
+        },
+        {
+            "ien": "469",
+            "synonym": "LITES\t<LYTES>",
+            "name": "LYTES"
+        },
+        {
+            "ien": "314",
+            "synonym": "LITHIUM",
+            "name": "LITHIUM"
+        },
+        {
+            "ien": "374",
+            "synonym": "LIVER FUNCTION TEST",
+            "name": "LIVER FUNCTION TEST"
+        },
+        {
+            "ien": "1342",
+            "synonym": "LIVER PANEL 2",
+            "name": "LIVER PANEL 2"
+        },
+        {
+            "ien": "374",
+            "synonym": "LIVER PROFILE\t<LIVER FUNCTION TEST>",
+            "name": "LIVER FUNCTION TEST"
+        },
+        {
+            "ien": "459",
+            "synonym": "LYMPHOCYTE ATYPIA, MEAN",
+            "name": "LYMPHOCYTE ATYPIA, MEAN"
+        },
+        {
+            "ien": "460",
+            "synonym": "LYMPHOCYTE ATYPIA, STA DEV",
+            "name": "LYMPHOCYTE ATYPIA, STA DEV"
+        },
+        {
+            "ien": "469",
+            "synonym": "LYTES",
+            "name": "LYTES"
+        },
+        {
+            "ien": "317",
+            "synonym": "MAGNESIUM",
+            "name": "MAGNESIUM"
+        },
+        {
+            "ien": "582",
+            "synonym": "MALARIA SMEAR",
+            "name": "MALARIA SMEAR"
+        },
+        {
+            "ien": "479",
+            "synonym": "MANGANESE",
+            "name": "MANGANESE"
+        },
+        {
+            "ien": "1206",
+            "synonym": "MANHATTEN",
+            "name": "MANHATTEN"
+        },
+        {
+            "ien": "634",
+            "synonym": "MANUAL LIVER",
+            "name": "MANUAL LIVER"
+        },
+        {
+            "ien": "594",
+            "synonym": "MAPROTILINE-LUDIOMIL",
+            "name": "MAPROTILINE-LUDIOMIL"
+        },
+        {
+            "ien": "353",
+            "synonym": "MENEPHS\t<METANEPHRINES, TOT>",
+            "name": "METANEPHRINES, TOT"
+        },
+        {
+            "ien": "1076",
+            "synonym": "MENINGITIS ANTIGEN SCREEN",
+            "name": "MENINGITIS ANTIGEN SCREEN"
+        },
+        {
+            "ien": "507",
+            "synonym": "MEPROBAMATE",
+            "name": "MEPROBAMATE"
+        },
+        {
+            "ien": "371",
+            "synonym": "MERCURY",
+            "name": "MERCURY"
+        },
+        {
+            "ien": "194",
+            "synonym": "MESOTHELIAL",
+            "name": "MESOTHELIAL"
+        },
+        {
+            "ien": "3448",
+            "synonym": "METABOLIC PANEL\t<BASIC METABOLIC PANEL>",
+            "name": "BASIC METABOLIC PANEL"
+        },
+        {
+            "ien": "353",
+            "synonym": "METANEPHRINES, TOT",
+            "name": "METANEPHRINES, TOT"
+        },
+        {
+            "ien": "901",
+            "synonym": "METHADONE",
+            "name": "METHADONE"
+        },
+        {
+            "ien": "537",
+            "synonym": "METHANOL",
+            "name": "METHANOL"
+        },
+        {
+            "ien": "199",
+            "synonym": "METHB%",
+            "name": "METHB%"
+        },
+        {
+            "ien": "907",
+            "synonym": "METHOTREXATE",
+            "name": "METHOTREXATE"
+        },
+        {
+            "ien": "317",
+            "synonym": "MG\t<MAGNESIUM>",
+            "name": "MAGNESIUM"
+        },
+        {
+            "ien": "1143",
+            "synonym": "MI TEST\t<MI TEST PANEL>",
+            "name": "MI TEST PANEL"
+        },
+        {
+            "ien": "1143",
+            "synonym": "MI TEST PANEL",
+            "name": "MI TEST PANEL"
+        },
+        {
+            "ien": "1067",
+            "synonym": "MIC/MBC",
+            "name": "MIC/MBC"
+        },
+        {
+            "ien": "3440",
+            "synonym": "MICRO ALBUMIN",
+            "name": "MICRO ALBUMIN"
+        },
+        {
+            "ien": "3440",
+            "synonym": "MICROALBUMIN\t<MICRO ALBUMIN>",
+            "name": "MICRO ALBUMIN"
+        },
+        {
+            "ien": "5091",
+            "synonym": "MICROALBUMIN CREATININE RATIO PANEL",
+            "name": "MICROALBUMIN CREATININE RATIO PANEL"
+        },
+        {
+            "ien": "3430",
+            "synonym": "MIKES NUMERIC TEST",
+            "name": "MIKES NUMERIC TEST"
+        },
+        {
+            "ien": "1331",
+            "synonym": "MIKES PANEL W/IN PANEL",
+            "name": "MIKES PANEL W/IN PANEL"
+        },
+        {
+            "ien": "1223",
+            "synonym": "MISC MARYLAND",
+            "name": "MISC MARYLAND"
+        },
+        {
+            "ien": "1088",
+            "synonym": "MISCELLANEOUS",
+            "name": "MISCELLANEOUS"
+        },
+        {
+            "ien": "1223",
+            "synonym": "MISCELLANEOUS\t<MISC MARYLAND>",
+            "name": "MISC MARYLAND"
+        },
+        {
+            "ien": "1343",
+            "synonym": "MJB CHEM TESTS",
+            "name": "MJB CHEM TESTS"
+        },
+        {
+            "ien": "479",
+            "synonym": "MN\t<MANGANESE>",
+            "name": "MANGANESE"
+        },
+        {
+            "ien": "250",
+            "synonym": "MONO SPOT ",
+            "name": "MONO SPOT "
+        },
+        {
+            "ien": "192",
+            "synonym": "MOTILITY",
+            "name": "MOTILITY"
+        },
+        {
+            "ien": "704",
+            "synonym": "MUCOPROTEIN",
+            "name": "MUCOPROTEIN"
+        },
+        {
+            "ien": "1078",
+            "synonym": "MYCOBACTERIAL IDENTIFICATION",
+            "name": "MYCOBACTERIAL IDENTIFICATION"
+        },
+        {
+            "ien": "628",
+            "synonym": "MYCOLOGY CULTURE",
+            "name": "MYCOLOGY CULTURE"
+        },
+        {
+            "ien": "1029",
+            "synonym": "MYCOLOGY SMEAR",
+            "name": "MYCOLOGY SMEAR"
+        },
+        {
+            "ien": "251",
+            "synonym": "MYCOPLASMA TITER",
+            "name": "MYCOPLASMA TITER"
+        },
+        {
+            "ien": "1033",
+            "synonym": "MYELIN BASIC PROTEIN",
+            "name": "MYELIN BASIC PROTEIN"
+        },
+        {
+            "ien": "705",
+            "synonym": "MYOGLOBIN",
+            "name": "MYOGLOBIN"
+        },
+        {
+            "ien": "359",
+            "synonym": "MYSOLINE",
+            "name": "MYSOLINE"
+        },
+        {
+            "ien": "369",
+            "synonym": "N-ACETYL PROCAINAMIDE",
+            "name": "N-ACETYL PROCAINAMIDE"
+        },
+        {
+            "ien": "599",
+            "synonym": "N-DESMETHYLDOXEPIN",
+            "name": "N-DESMETHYLDOXEPIN"
+        },
+        {
+            "ien": "292",
+            "synonym": "NA\t<SODIUM>",
+            "name": "SODIUM"
+        },
+        {
+            "ien": "1171",
+            "synonym": "NA1",
+            "name": "NA1"
+        },
+        {
+            "ien": "369",
+            "synonym": "NAPA\t<N-ACETYL PROCAINAMIDE>",
+            "name": "N-ACETYL PROCAINAMIDE"
+        },
+        {
+            "ien": "5078",
+            "synonym": "NATRIURETIC PEPTIDE B\t<BNP>",
+            "name": "BNP"
+        },
+        {
+            "ien": "384",
+            "synonym": "NEB-CBC\t<CBC & DIFF (WITH MORPHOLOGY)>",
+            "name": "CBC & DIFF (WITH MORPHOLOGY)"
+        },
+        {
+            "ien": "457",
+            "synonym": "NEUTROPHIL MATURITY, MEAN",
+            "name": "NEUTROPHIL MATURITY, MEAN"
+        },
+        {
+            "ien": "458",
+            "synonym": "NEUTROPHIL MATURITY, STA DEV",
+            "name": "NEUTROPHIL MATURITY, STA DEV"
+        },
+        {
+            "ien": "322",
+            "synonym": "NH3\t<AMMONIA>",
+            "name": "AMMONIA"
+        },
+        {
+            "ien": "545",
+            "synonym": "NITROGEN",
+            "name": "NITROGEN"
+        },
+        {
+            "ien": "541",
+            "synonym": "NORDIAZEPAM",
+            "name": "NORDIAZEPAM"
+        },
+        {
+            "ien": "534",
+            "synonym": "NORDOXEPIN",
+            "name": "NORDOXEPIN"
+        },
+        {
+            "ien": "367",
+            "synonym": "NOREPINEPHRINE",
+            "name": "NOREPINEPHRINE"
+        },
+        {
+            "ien": "337",
+            "synonym": "NORPACE\t<DISOPYRAMIDE>",
+            "name": "DISOPYRAMIDE"
+        },
+        {
+            "ien": "466",
+            "synonym": "NORTRIPTYLINE",
+            "name": "NORTRIPTYLINE"
+        },
+        {
+            "ien": "352",
+            "synonym": "NPTH\t<PTH (INTACT)>",
+            "name": "PTH (INTACT)"
+        },
+        {
+            "ien": "200",
+            "synonym": "O2CT.",
+            "name": "O2CT."
+        },
+        {
+            "ien": "197",
+            "synonym": "O2HB%  (SAT)",
+            "name": "O2HB%  (SAT)"
+        },
+        {
+            "ien": "1248",
+            "synonym": "OCCULT BLOOD",
+            "name": "OCCULT BLOOD"
+        },
+        {
+            "ien": "1320",
+            "synonym": "OPC-MAG",
+            "name": "OPC-MAG"
+        },
+        {
+            "ien": "319",
+            "synonym": "OSMOLALITY\t<OSMOLARITY>",
+            "name": "OSMOLARITY"
+        },
+        {
+            "ien": "319",
+            "synonym": "OSMOLARITY",
+            "name": "OSMOLARITY"
+        },
+        {
+            "ien": "215",
+            "synonym": "OSMOTIC FRAGILITY",
+            "name": "OSMOTIC FRAGILITY"
+        },
+        {
+            "ien": "1208",
+            "synonym": "OTHER TESTS (PROVIDENCE)",
+            "name": "OTHER TESTS (PROVIDENCE)"
+        },
+        {
+            "ien": "1200",
+            "synonym": "OVER 50 PANEL",
+            "name": "OVER 50 PANEL"
+        },
+        {
+            "ien": "1136",
+            "synonym": "P1 PROFILE 1",
+            "name": "P1 PROFILE 1"
+        },
+        {
+            "ien": "1137",
+            "synonym": "P2 PROFILE 2",
+            "name": "P2 PROFILE 2"
+        },
+        {
+            "ien": "1138",
+            "synonym": "P3\t<PROFILE 3 (ROUTINE)>",
+            "name": "PROFILE 3 (ROUTINE)"
+        },
+        {
+            "ien": "1207",
+            "synonym": "P3\t<PROFILE 3 (STAT)>",
+            "name": "PROFILE 3 (STAT)"
+        },
+        {
+            "ien": "1186",
+            "synonym": "P3 (BROCT.)",
+            "name": "P3 (BROCT.)"
+        },
+        {
+            "ien": "1178",
+            "synonym": "P3 (ROX)",
+            "name": "P3 (ROX)"
+        },
+        {
+            "ien": "626",
+            "synonym": "PARASITE EXAM",
+            "name": "PARASITE EXAM"
+        },
+        {
+            "ien": "1145",
+            "synonym": "PARASITOLOGY",
+            "name": "PARASITOLOGY"
+        },
+        {
+            "ien": "548",
+            "synonym": "PARTIAL THROMBOPLASTIN TIME\t<PTT>",
+            "name": "PTT"
+        },
+        {
+            "ien": "372",
+            "synonym": "PB\t<LEAD>",
+            "name": "LEAD"
+        },
+        {
+            "ien": "202",
+            "synonym": "PCO2",
+            "name": "PCO2"
+        },
+        {
+            "ien": "208",
+            "synonym": "PCO2 AT PT. TEMP",
+            "name": "PCO2 AT PT. TEMP"
+        },
+        {
+            "ien": "1286",
+            "synonym": "PEDIATRIC UNIT PREPARATION",
+            "name": "PEDIATRIC UNIT PREPARATION"
+        },
+        {
+            "ien": "620",
+            "synonym": "PG\t<CARDIAC ENZYMES>",
+            "name": "CARDIAC ENZYMES"
+        },
+        {
+            "ien": "266",
+            "synonym": "PH\t<URINE PH>",
+            "name": "URINE PH"
+        },
+        {
+            "ien": "201",
+            "synonym": "PH ",
+            "name": "PH "
+        },
+        {
+            "ien": "207",
+            "synonym": "PH AT PT. TEMP",
+            "name": "PH AT PT. TEMP"
+        },
+        {
+            "ien": "510",
+            "synonym": "PHENACETIN",
+            "name": "PHENACETIN"
+        },
+        {
+            "ien": "323",
+            "synonym": "PHENOBARBITAL",
+            "name": "PHENOBARBITAL"
+        },
+        {
+            "ien": "540",
+            "synonym": "PHENYLPROPANOLAMINE",
+            "name": "PHENYLPROPANOLAMINE"
+        },
+        {
+            "ien": "326",
+            "synonym": "PHENYTOIN\t<DILANTIN>",
+            "name": "DILANTIN"
+        },
+        {
+            "ien": "297",
+            "synonym": "PHOSPHORUS\t<PO4>",
+            "name": "PO4"
+        },
+        {
+            "ien": "1069",
+            "synonym": "PINWORM EXAM",
+            "name": "PINWORM EXAM"
+        },
+        {
+            "ien": "606",
+            "synonym": "PLATELET AGGREGATION",
+            "name": "PLATELET AGGREGATION"
+        },
+        {
+            "ien": "162",
+            "synonym": "PLATELET COUNT",
+            "name": "PLATELET COUNT"
+        },
+        {
+            "ien": "162",
+            "synonym": "PLT\t<PLATELET COUNT>",
+            "name": "PLATELET COUNT"
+        },
+        {
+            "ien": "173",
+            "synonym": "PLT\t<PLT (ESTM)>",
+            "name": "PLT (ESTM)"
+        },
+        {
+            "ien": "606",
+            "synonym": "PLT\t<PLATELET AGGREGATION>",
+            "name": "PLATELET AGGREGATION"
+        },
+        {
+            "ien": "173",
+            "synonym": "PLT (ESTM)",
+            "name": "PLT (ESTM)"
+        },
+        {
+            "ien": "393",
+            "synonym": "PMN",
+            "name": "PMN"
+        },
+        {
+            "ien": "455",
+            "synonym": "PMN'S\t<HYPERSEGMENTED NEUTROPHILS>",
+            "name": "HYPERSEGMENTED NEUTROPHILS"
+        },
+        {
+            "ien": "528",
+            "synonym": "PNEUMO\t<CIE: PNEUMOCOCCUS>",
+            "name": "CIE: PNEUMOCOCCUS"
+        },
+        {
+            "ien": "388",
+            "synonym": "PO2",
+            "name": "PO2"
+        },
+        {
+            "ien": "389",
+            "synonym": "PO2 AT PT. TEMP",
+            "name": "PO2 AT PT. TEMP"
+        },
+        {
+            "ien": "297",
+            "synonym": "PO4",
+            "name": "PO4"
+        },
+        {
+            "ien": "381",
+            "synonym": "PORPHOBILINOGEN",
+            "name": "PORPHOBILINOGEN"
+        },
+        {
+            "ien": "491",
+            "synonym": "PORPHYRINS",
+            "name": "PORPHYRINS"
+        },
+        {
+            "ien": "683",
+            "synonym": "PORTER SILBER\t<17-HYDROXYCORTICOSTEROIDS>",
+            "name": "17-HYDROXYCORTICOSTEROIDS"
+        },
+        {
+            "ien": "293",
+            "synonym": "POTASSIUM",
+            "name": "POTASSIUM"
+        },
+        {
+            "ien": "1235",
+            "synonym": "PRE-OP CROSSMATCH\t<TRANSFUSION REQUEST, PRE-OP>",
+            "name": "TRANSFUSION REQUEST, PRE-OP"
+        },
+        {
+            "ien": "520",
+            "synonym": "PREALBUMIN\t<TRANSTHYRETIN>",
+            "name": "TRANSTHYRETIN"
+        },
+        {
+            "ien": "1235",
+            "synonym": "PREOP CROSSMATCH\t<TRANSFUSION REQUEST, PRE-OP>",
+            "name": "TRANSFUSION REQUEST, PRE-OP"
+        },
+        {
+            "ien": "1235",
+            "synonym": "PREOP XMATCH\t<TRANSFUSION REQUEST, PRE-OP>",
+            "name": "TRANSFUSION REQUEST, PRE-OP"
+        },
+        {
+            "ien": "359",
+            "synonym": "PRIMIDONE\t<MYSOLINE>",
+            "name": "MYSOLINE"
+        },
+        {
+            "ien": "1138",
+            "synonym": "PRO 3\t<PROFILE 3 (ROUTINE)>",
+            "name": "PROFILE 3 (ROUTINE)"
+        },
+        {
+            "ien": "360",
+            "synonym": "PROCAINAMIDE",
+            "name": "PROCAINAMIDE"
+        },
+        {
+            "ien": "1210",
+            "synonym": "PROCAINAMIDES",
+            "name": "PROCAINAMIDES"
+        },
+        {
+            "ien": "1138",
+            "synonym": "PROFILE 3 (ROUTINE)",
+            "name": "PROFILE 3 (ROUTINE)"
+        },
+        {
+            "ien": "1207",
+            "synonym": "PROFILE 3 (STAT)",
+            "name": "PROFILE 3 (STAT)"
+        },
+        {
+            "ien": "361",
+            "synonym": "PROLACTIN",
+            "name": "PROLACTIN"
+        },
+        {
+            "ien": "360",
+            "synonym": "PRONESTYL\t<PROCAINAMIDE>",
+            "name": "PROCAINAMIDE"
+        },
+        {
+            "ien": "566",
+            "synonym": "PROPRANOLOL",
+            "name": "PROPRANOLOL"
+        },
+        {
+            "ien": "3404",
+            "synonym": "PROSTATE SPECIFIC ANTIGEN",
+            "name": "PROSTATE SPECIFIC ANTIGEN"
+        },
+        {
+            "ien": "956",
+            "synonym": "PROTAMINE SULFATE",
+            "name": "PROTAMINE SULFATE"
+        },
+        {
+            "ien": "1247",
+            "synonym": "PROTEIN,PERICARDIAL",
+            "name": "PROTEIN,PERICARDIAL"
+        },
+        {
+            "ien": "1245",
+            "synonym": "PROTEIN,PERITONEAL",
+            "name": "PROTEIN,PERITONEAL"
+        },
+        {
+            "ien": "1246",
+            "synonym": "PROTEIN,PLEURAL",
+            "name": "PROTEIN,PLEURAL"
+        },
+        {
+            "ien": "1244",
+            "synonym": "PROTEIN,SYNOVIAL",
+            "name": "PROTEIN,SYNOVIAL"
+        },
+        {
+            "ien": "547",
+            "synonym": "PROTHROMBIM TIME\t<PROTIME>",
+            "name": "PROTIME"
+        },
+        {
+            "ien": "547",
+            "synonym": "PROTHROMBIN\t<PROTIME>",
+            "name": "PROTIME"
+        },
+        {
+            "ien": "547",
+            "synonym": "PROTIME",
+            "name": "PROTIME"
+        },
+        {
+            "ien": "489",
+            "synonym": "PROTOPORPHYRIN",
+            "name": "PROTOPORPHYRIN"
+        },
+        {
+            "ien": "1239",
+            "synonym": "PROV URINE",
+            "name": "PROV URINE"
+        },
+        {
+            "ien": "3404",
+            "synonym": "PSA\t<PROSTATE SPECIFIC ANTIGEN>",
+            "name": "PROSTATE SPECIFIC ANTIGEN"
+        },
+        {
+            "ien": "547",
+            "synonym": "PT\t<PROTIME>",
+            "name": "PROTIME"
+        },
+        {
+            "ien": "3484",
+            "synonym": "PT INR\t<INR>",
+            "name": "INR"
+        },
+        {
+            "ien": "3484",
+            "synonym": "PT-INR\t<INR>",
+            "name": "INR"
+        },
+        {
+            "ien": "206",
+            "synonym": "PT. TEMP",
+            "name": "PT. TEMP"
+        },
+        {
+            "ien": "472",
+            "synonym": "PT/PTT\t<COAG PROFILE>",
+            "name": "COAG PROFILE"
+        },
+        {
+            "ien": "351",
+            "synonym": "PTH (C-TERMINAL)",
+            "name": "PTH (C-TERMINAL)"
+        },
+        {
+            "ien": "352",
+            "synonym": "PTH (INTACT)",
+            "name": "PTH (INTACT)"
+        },
+        {
+            "ien": "548",
+            "synonym": "PTT",
+            "name": "PTT"
+        },
+        {
+            "ien": "472",
+            "synonym": "PTT & PT\t<COAG PROFILE>",
+            "name": "COAG PROFILE"
+        },
+        {
+            "ien": "629",
+            "synonym": "QUALITATIVE FATS\t<LIPIDS, QUALITATIVE>",
+            "name": "LIPIDS, QUALITATIVE"
+        },
+        {
+            "ien": "1025",
+            "synonym": "QUANTITATIVE CULTURE",
+            "name": "QUANTITATIVE CULTURE"
+        },
+        {
+            "ien": "325",
+            "synonym": "QUINIDINE",
+            "name": "QUINIDINE"
+        },
+        {
+            "ien": "155",
+            "synonym": "RBC",
+            "name": "RBC"
+        },
+        {
+            "ien": "383",
+            "synonym": "RBC MORPHOLOGY",
+            "name": "RBC MORPHOLOGY"
+        },
+        {
+            "ien": "1149",
+            "synonym": "RBC TEST PANEL",
+            "name": "RBC TEST PANEL"
+        },
+        {
+            "ien": "155",
+            "synonym": "RED BLOOD COUNT\t<RBC>",
+            "name": "RBC"
+        },
+        {
+            "ien": "155",
+            "synonym": "RED COUNT\t<RBC>",
+            "name": "RBC"
+        },
+        {
+            "ien": "339",
+            "synonym": "RENIN",
+            "name": "RENIN"
+        },
+        {
+            "ien": "216",
+            "synonym": "RETIC\t<RETICULOCYTES>",
+            "name": "RETICULOCYTES"
+        },
+        {
+            "ien": "216",
+            "synonym": "RETIC COUNT\t<RETICULOCYTES>",
+            "name": "RETICULOCYTES"
+        },
+        {
+            "ien": "216",
+            "synonym": "RETICULOCYTES",
+            "name": "RETICULOCYTES"
+        },
+        {
+            "ien": "519",
+            "synonym": "RETINOL BINDING PROTEIN",
+            "name": "RETINOL BINDING PROTEIN"
+        },
+        {
+            "ien": "478",
+            "synonym": "REV T-3",
+            "name": "REV T-3"
+        },
+        {
+            "ien": "252",
+            "synonym": "RF\t<RHEUMATOID FACTOR>",
+            "name": "RHEUMATOID FACTOR"
+        },
+        {
+            "ien": "252",
+            "synonym": "RHEUMATOID FACTOR",
+            "name": "RHEUMATOID FACTOR"
+        },
+        {
+            "ien": "1325",
+            "synonym": "RIA PANEL",
+            "name": "RIA PANEL"
+        },
+        {
+            "ien": "1205",
+            "synonym": "ROUTINE GLUCOSE\t<KGLUCOSE>",
+            "name": "KGLUCOSE"
+        },
+        {
+            "ien": "253",
+            "synonym": "RPR",
+            "name": "RPR"
+        },
+        {
+            "ien": "514",
+            "synonym": "RUBELLA",
+            "name": "RUBELLA"
+        },
+        {
+            "ien": "320",
+            "synonym": "SALICYLATE",
+            "name": "SALICYLATE"
+        },
+        {
+            "ien": "1214",
+            "synonym": "SALINE PREP",
+            "name": "SALINE PREP"
+        },
+        {
+            "ien": "535",
+            "synonym": "SCREEN, ALCOHOLS",
+            "name": "SCREEN, ALCOHOLS"
+        },
+        {
+            "ien": "487",
+            "synonym": "SE\t<SELENIUM>",
+            "name": "SELENIUM"
+        },
+        {
+            "ien": "395",
+            "synonym": "SED RATE\t<WESTERGREN SED RATE>",
+            "name": "WESTERGREN SED RATE"
+        },
+        {
+            "ien": "487",
+            "synonym": "SELENIUM",
+            "name": "SELENIUM"
+        },
+        {
+            "ien": "385",
+            "synonym": "SEMEN ANALYSIS",
+            "name": "SEMEN ANALYSIS"
+        },
+        {
+            "ien": "724",
+            "synonym": "SEROTONIN",
+            "name": "SEROTONIN"
+        },
+        {
+            "ien": "530",
+            "synonym": "SERUM FREE HGB\t<HGB SERUM FREE>",
+            "name": "HGB SERUM FREE"
+        },
+        {
+            "ien": "3360",
+            "synonym": "SET OF CODES",
+            "name": "SET OF CODES"
+        },
+        {
+            "ien": "306",
+            "synonym": "SGOT",
+            "name": "SGOT"
+        },
+        {
+            "ien": "307",
+            "synonym": "SGPT",
+            "name": "SGPT"
+        },
+        {
+            "ien": "1068",
+            "synonym": "SIC/SBC",
+            "name": "SIC/SBC"
+        },
+        {
+            "ien": "217",
+            "synonym": "SICKLE CELL PREP",
+            "name": "SICKLE CELL PREP"
+        },
+        {
+            "ien": "533",
+            "synonym": "SINEQUAN\t<DOXEPIN>",
+            "name": "DOXEPIN"
+        },
+        {
+            "ien": "3383",
+            "synonym": "SKOGEE NOIS\t<ZZ NOT USED 2>",
+            "name": "ZZ NOT USED 2"
+        },
+        {
+            "ien": "1137",
+            "synonym": "SMA 12\t<P2 PROFILE 2>",
+            "name": "P2 PROFILE 2"
+        },
+        {
+            "ien": "375",
+            "synonym": "SMA 6\t<CHEM 7>",
+            "name": "CHEM 7"
+        },
+        {
+            "ien": "1138",
+            "synonym": "SMA 6\t<PROFILE 3 (ROUTINE)>",
+            "name": "PROFILE 3 (ROUTINE)"
+        },
+        {
+            "ien": "1136",
+            "synonym": "SMA I\t<P1 PROFILE 1>",
+            "name": "P1 PROFILE 1"
+        },
+        {
+            "ien": "456",
+            "synonym": "SMUDGE CELLS",
+            "name": "SMUDGE CELLS"
+        },
+        {
+            "ien": "292",
+            "synonym": "SODIUM",
+            "name": "SODIUM"
+        },
+        {
+            "ien": "590",
+            "synonym": "SOMATOMEDIN-C",
+            "name": "SOMATOMEDIN-C"
+        },
+        {
+            "ien": "259",
+            "synonym": "SPECIFIC GRAVITY",
+            "name": "SPECIFIC GRAVITY"
+        },
+        {
+            "ien": "338",
+            "synonym": "SPEP",
+            "name": "SPEP"
+        },
+        {
+            "ien": "193",
+            "synonym": "SPERM COUNT",
+            "name": "SPERM COUNT"
+        },
+        {
+            "ien": "386",
+            "synonym": "SPERM MORPHOLOGY",
+            "name": "SPERM MORPHOLOGY"
+        },
+        {
+            "ien": "1083",
+            "synonym": "SPORE STRIP\t<STERILITY TEST>",
+            "name": "STERILITY TEST"
+        },
+        {
+            "ien": "1026",
+            "synonym": "SPUTUM SCREEN",
+            "name": "SPUTUM SCREEN"
+        },
+        {
+            "ien": "1204",
+            "synonym": "STAT GLUCOSE\t<AGLUCOSE>",
+            "name": "AGLUCOSE"
+        },
+        {
+            "ien": "1083",
+            "synonym": "STERILITY TEST",
+            "name": "STERILITY TEST"
+        },
+        {
+            "ien": "617",
+            "synonym": "STONE\t<CALCULUS>",
+            "name": "CALCULUS"
+        },
+        {
+            "ien": "527",
+            "synonym": "STREP B\t<CIE: GROUP B STREPTOCOCCUS>",
+            "name": "CIE: GROUP B STREPTOCOCCUS"
+        },
+        {
+            "ien": "254",
+            "synonym": "STREPTOZYME",
+            "name": "STREPTOZYME"
+        },
+        {
+            "ien": "218",
+            "synonym": "SUCROSE HEMOLYSIS\t<SUGAR WATER TEST>",
+            "name": "SUGAR WATER TEST"
+        },
+        {
+            "ien": "291",
+            "synonym": "SUGAR\t<GLUCOSE>",
+            "name": "GLUCOSE"
+        },
+        {
+            "ien": "218",
+            "synonym": "SUGAR WATER TEST",
+            "name": "SUGAR WATER TEST"
+        },
+        {
+            "ien": "989",
+            "synonym": "SULFONAMIDES",
+            "name": "SULFONAMIDES"
+        },
+        {
+            "ien": "399",
+            "synonym": "SURGICAL PATHOLOGY",
+            "name": "SURGICAL PATHOLOGY"
+        },
+        {
+            "ien": "1233",
+            "synonym": "T & H\t<TYPE & HOLD>",
+            "name": "TYPE & HOLD"
+        },
+        {
+            "ien": "1232",
+            "synonym": "T & S\t<TYPE & SCREEN>",
+            "name": "TYPE & SCREEN"
+        },
+        {
+            "ien": "1233",
+            "synonym": "T&H\t<TYPE & HOLD>",
+            "name": "TYPE & HOLD"
+        },
+        {
+            "ien": "1232",
+            "synonym": "T&S\t<TYPE & SCREEN>",
+            "name": "TYPE & SCREEN"
+        },
+        {
+            "ien": "502",
+            "synonym": "T-3,FREE\t<FREE TRIIODOTHYRONINE>",
+            "name": "FREE TRIIODOTHYRONINE"
+        },
+        {
+            "ien": "224",
+            "synonym": "T-4",
+            "name": "T-4"
+        },
+        {
+            "ien": "595",
+            "synonym": "T-4 BINDING GLOBULIN",
+            "name": "T-4 BINDING GLOBULIN"
+        },
+        {
+            "ien": "234",
+            "synonym": "T3 RIA\t<TRIIODOTHYRONINE>",
+            "name": "TRIIODOTHYRONINE"
+        },
+        {
+            "ien": "1163",
+            "synonym": "T4, FREE & TOTAL",
+            "name": "T4, FREE & TOTAL"
+        },
+        {
+            "ien": "1153",
+            "synonym": "T5\t<TEST5>",
+            "name": "TEST5"
+        },
+        {
+            "ien": "1030",
+            "synonym": "TB CULTURE & SMEAR\t<AFB CULTURE & SMEAR>",
+            "name": "AFB CULTURE & SMEAR"
+        },
+        {
+            "ien": "623",
+            "synonym": "TB SMEAR\t<AFB SMEAR DIRECT>",
+            "name": "AFB SMEAR DIRECT"
+        },
+        {
+            "ien": "595",
+            "synonym": "TBG\t<T-4 BINDING GLOBULIN>",
+            "name": "T-4 BINDING GLOBULIN"
+        },
+        {
+            "ien": "622",
+            "synonym": "TCA\t<TRI CYCLIC ACID>",
+            "name": "TRI CYCLIC ACID"
+        },
+        {
+            "ien": "470",
+            "synonym": "TEGRETOL\t<CARBAMAZEPINE>",
+            "name": "CARBAMAZEPINE"
+        },
+        {
+            "ien": "1170",
+            "synonym": "TEST CBC/DIFF",
+            "name": "TEST CBC/DIFF"
+        },
+        {
+            "ien": "1152",
+            "synonym": "TEST2",
+            "name": "TEST2"
+        },
+        {
+            "ien": "1153",
+            "synonym": "TEST5",
+            "name": "TEST5"
+        },
+        {
+            "ien": "1140",
+            "synonym": "TEST567890 234567890 T3456789O ABCDEFXX\t<ABCDEFGHIJKLMNOPQRSTUVWXYZ (123456789)>",
+            "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ (123456789)"
+        },
+        {
+            "ien": "1140",
+            "synonym": "testitagainsam\t<ABCDEFGHIJKLMNOPQRSTUVWXYZ (123456789)>",
+            "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ (123456789)"
+        },
+        {
+            "ien": "1151",
+            "synonym": "TESTMICRO",
+            "name": "TESTMICRO"
+        },
+        {
+            "ien": "362",
+            "synonym": "TESTOSTERONE",
+            "name": "TESTOSTERONE"
+        },
+        {
+            "ien": "1188",
+            "synonym": "TESTPANEL",
+            "name": "TESTPANEL"
+        },
+        {
+            "ien": "3384",
+            "synonym": "TESTPANEL 4 WNY",
+            "name": "TESTPANEL 4 WNY"
+        },
+        {
+            "ien": "1189",
+            "synonym": "TESTPANEL2",
+            "name": "TESTPANEL2"
+        },
+        {
+            "ien": "327",
+            "synonym": "THEOPHYLLINE",
+            "name": "THEOPHYLLINE"
+        },
+        {
+            "ien": "995",
+            "synonym": "THIOCYANATE",
+            "name": "THIOCYANATE"
+        },
+        {
+            "ien": "189",
+            "synonym": "THROMBIN TIME",
+            "name": "THROMBIN TIME"
+        },
+        {
+            "ien": "423",
+            "synonym": "THYROID GROUP",
+            "name": "THYROID GROUP"
+        },
+        {
+            "ien": "226",
+            "synonym": "THYROID STIMULATING HORMONE\t<TSH>",
+            "name": "TSH"
+        },
+        {
+            "ien": "224",
+            "synonym": "THYROXINE\t<T-4>",
+            "name": "T-4"
+        },
+        {
+            "ien": "1196",
+            "synonym": "TOBRA\t<TOBRAMYCIN>",
+            "name": "TOBRAMYCIN"
+        },
+        {
+            "ien": "1196",
+            "synonym": "TOBRAMYCIN",
+            "name": "TOBRAMYCIN"
+        },
+        {
+            "ien": "5068",
+            "synonym": "topamax\t<topiramate>",
+            "name": "topiramate"
+        },
+        {
+            "ien": "5068",
+            "synonym": "topiramate",
+            "name": "topiramate"
+        },
+        {
+            "ien": "302",
+            "synonym": "TOT BIL\t<TOT. BIL>",
+            "name": "TOT. BIL"
+        },
+        {
+            "ien": "1217",
+            "synonym": "TOT EPI\t<ZZ URINE EPITH TOTAL>",
+            "name": "ZZ URINE EPITH TOTAL"
+        },
+        {
+            "ien": "300",
+            "synonym": "TOT PROT",
+            "name": "TOT PROT"
+        },
+        {
+            "ien": "302",
+            "synonym": "TOT. BIL",
+            "name": "TOT. BIL"
+        },
+        {
+            "ien": "607",
+            "synonym": "TOTAL COMPLEMENT CH50\t<COMPLEMENT CH50>",
+            "name": "COMPLEMENT CH50"
+        },
+        {
+            "ien": "300",
+            "synonym": "TOTAL PROTEIN\t<TOT PROT>",
+            "name": "TOT PROT"
+        },
+        {
+            "ien": "392",
+            "synonym": "TOTAL WHITE COUNT ON CYTOPREP",
+            "name": "TOTAL WHITE COUNT ON CYTOPREP"
+        },
+        {
+            "ien": "539",
+            "synonym": "TOX\t<TOX SCREEN>",
+            "name": "TOX SCREEN"
+        },
+        {
+            "ien": "539",
+            "synonym": "TOX SCREEN",
+            "name": "TOX SCREEN"
+        },
+        {
+            "ien": "1252",
+            "synonym": "TOX SCREEN (BLOOD)\t<DRUG SCREEN (BLOOD)>",
+            "name": "DRUG SCREEN (BLOOD)"
+        },
+        {
+            "ien": "1211",
+            "synonym": "TOX SCREEN (URINE)\t<DRUG SCREEN (URINE)>",
+            "name": "DRUG SCREEN (URINE)"
+        },
+        {
+            "ien": "1216",
+            "synonym": "TOX SCREEN, URINE",
+            "name": "TOX SCREEN, URINE"
+        },
+        {
+            "ien": "511",
+            "synonym": "TOXOPLASMA",
+            "name": "TOXOPLASMA"
+        },
+        {
+            "ien": "484",
+            "synonym": "TRANSFERRIN",
+            "name": "TRANSFERRIN"
+        },
+        {
+            "ien": "1231",
+            "synonym": "TRANSFUSION REQUEST",
+            "name": "TRANSFUSION REQUEST"
+        },
+        {
+            "ien": "1235",
+            "synonym": "TRANSFUSION REQUEST, PRE-OP",
+            "name": "TRANSFUSION REQUEST, PRE-OP"
+        },
+        {
+            "ien": "520",
+            "synonym": "TRANSTHYRETIN",
+            "name": "TRANSTHYRETIN"
+        },
+        {
+            "ien": "622",
+            "synonym": "TRI CYCLIC ACID",
+            "name": "TRI CYCLIC ACID"
+        },
+        {
+            "ien": "283",
+            "synonym": "TRI PHOSPHATE CRYSTALS",
+            "name": "TRI PHOSPHATE CRYSTALS"
+        },
+        {
+            "ien": "321",
+            "synonym": "TRIGLYCERIDE",
+            "name": "TRIGLYCERIDE"
+        },
+        {
+            "ien": "321",
+            "synonym": "TRIGS\t<TRIGLYCERIDE>",
+            "name": "TRIGLYCERIDE"
+        },
+        {
+            "ien": "234",
+            "synonym": "TRIIODOTHYRONINE",
+            "name": "TRIIODOTHYRONINE"
+        },
+        {
+            "ien": "3364",
+            "synonym": "TROPONIN",
+            "name": "TROPONIN"
+        },
+        {
+            "ien": "226",
+            "synonym": "TSH",
+            "name": "TSH"
+        },
+        {
+            "ien": "189",
+            "synonym": "TT\t<THROMBIN TIME>",
+            "name": "THROMBIN TIME"
+        },
+        {
+            "ien": "1233",
+            "synonym": "TYPE & HOLD",
+            "name": "TYPE & HOLD"
+        },
+        {
+            "ien": "1232",
+            "synonym": "TYPE & SCREEN",
+            "name": "TYPE & SCREEN"
+        },
+        {
+            "ien": "288",
+            "synonym": "TYROSINE CRYSTALS",
+            "name": "TYROSINE CRYSTALS"
+        },
+        {
+            "ien": "379",
+            "synonym": "UA\t<URINALYSIS>",
+            "name": "URINALYSIS"
+        },
+        {
+            "ien": "1238",
+            "synonym": "UA\t<URIC ACID>",
+            "name": "URIC ACID"
+        },
+        {
+            "ien": "269",
+            "synonym": "UBAC\t<URINE BACTERIA>",
+            "name": "URINE BACTERIA"
+        },
+        {
+            "ien": "262",
+            "synonym": "UBI\t<URINE BILIRUBIN>",
+            "name": "URINE BILIRUBIN"
+        },
+        {
+            "ien": "262",
+            "synonym": "UBIL\t<URINE BILIRUBIN>",
+            "name": "URINE BILIRUBIN"
+        },
+        {
+            "ien": "1063",
+            "synonym": "UBLD\t<URINE BLOOD>",
+            "name": "URINE BLOOD"
+        },
+        {
+            "ien": "272",
+            "synonym": "UCAS\t<URINE RBC CASTS>",
+            "name": "URINE RBC CASTS"
+        },
+        {
+            "ien": "377",
+            "synonym": "UCAS\t<URINE CASTS>",
+            "name": "URINE CASTS"
+        },
+        {
+            "ien": "257",
+            "synonym": "UCOL\t<URINE COLOR>",
+            "name": "URINE COLOR"
+        },
+        {
+            "ien": "378",
+            "synonym": "UCRY\t<URINE CRYSTALS>",
+            "name": "URINE CRYSTALS"
+        },
+        {
+            "ien": "268",
+            "synonym": "UEPI\t<URINE EPITH CELLS>",
+            "name": "URINE EPITH CELLS"
+        },
+        {
+            "ien": "264",
+            "synonym": "UGLU\t<URINE GLUCOSE>",
+            "name": "URINE GLUCOSE"
+        },
+        {
+            "ien": "263",
+            "synonym": "UKET\t<URINE KETONES>",
+            "name": "URINE KETONES"
+        },
+        {
+            "ien": "270",
+            "synonym": "UMUC\t<URINE MUCUS>",
+            "name": "URINE MUCUS"
+        },
+        {
+            "ien": "5073",
+            "synonym": "UPEP\t<URINE PROTEIN ELECTROPHORESIS>",
+            "name": "URINE PROTEIN ELECTROPHORESIS"
+        },
+        {
+            "ien": "266",
+            "synonym": "UPH\t<URINE PH>",
+            "name": "URINE PH"
+        },
+        {
+            "ien": "380",
+            "synonym": "URBC\t<URINE RBC/HPF>",
+            "name": "URINE RBC/HPF"
+        },
+        {
+            "ien": "290",
+            "synonym": "UREA NITROGEN",
+            "name": "UREA NITROGEN"
+        },
+        {
+            "ien": "290",
+            "synonym": "UREA NITROGEN, BLOOD\t<UREA NITROGEN>",
+            "name": "UREA NITROGEN"
+        },
+        {
+            "ien": "1238",
+            "synonym": "URIC ACID",
+            "name": "URIC ACID"
+        },
+        {
+            "ien": "285",
+            "synonym": "URIC ACID CRYSTALS",
+            "name": "URIC ACID CRYSTALS"
+        },
+        {
+            "ien": "379",
+            "synonym": "URINALYSIS",
+            "name": "URINALYSIS"
+        },
+        {
+            "ien": "279",
+            "synonym": "URINE 5HIAA",
+            "name": "URINE 5HIAA"
+        },
+        {
+            "ien": "3440",
+            "synonym": "URINE ALBUMIN\t<MICRO ALBUMIN>",
+            "name": "MICRO ALBUMIN"
+        },
+        {
+            "ien": "269",
+            "synonym": "URINE BACTERIA",
+            "name": "URINE BACTERIA"
+        },
+        {
+            "ien": "262",
+            "synonym": "URINE BILIRUBIN",
+            "name": "URINE BILIRUBIN"
+        },
+        {
+            "ien": "1063",
+            "synonym": "URINE BLOOD",
+            "name": "URINE BLOOD"
+        },
+        {
+            "ien": "377",
+            "synonym": "URINE CASTS",
+            "name": "URINE CASTS"
+        },
+        {
+            "ien": "257",
+            "synonym": "URINE COLOR",
+            "name": "URINE COLOR"
+        },
+        {
+            "ien": "378",
+            "synonym": "URINE CRYSTALS",
+            "name": "URINE CRYSTALS"
+        },
+        {
+            "ien": "258",
+            "synonym": "URINE DENSITY",
+            "name": "URINE DENSITY"
+        },
+        {
+            "ien": "3405",
+            "synonym": "URINE DIFF",
+            "name": "URINE DIFF"
+        },
+        {
+            "ien": "1211",
+            "synonym": "URINE DRUG SCREEN\t<DRUG SCREEN (URINE)>",
+            "name": "DRUG SCREEN (URINE)"
+        },
+        {
+            "ien": "1144",
+            "synonym": "URINE EPI BRONX",
+            "name": "URINE EPI BRONX"
+        },
+        {
+            "ien": "268",
+            "synonym": "URINE EPITH CELLS",
+            "name": "URINE EPITH CELLS"
+        },
+        {
+            "ien": "264",
+            "synonym": "URINE GLUCOSE",
+            "name": "URINE GLUCOSE"
+        },
+        {
+            "ien": "278",
+            "synonym": "URINE HEMOSIDERIN",
+            "name": "URINE HEMOSIDERIN"
+        },
+        {
+            "ien": "263",
+            "synonym": "URINE KETONES",
+            "name": "URINE KETONES"
+        },
+        {
+            "ien": "270",
+            "synonym": "URINE MUCUS",
+            "name": "URINE MUCUS"
+        },
+        {
+            "ien": "266",
+            "synonym": "URINE PH",
+            "name": "URINE PH"
+        },
+        {
+            "ien": "280",
+            "synonym": "URINE PORPHOBILINOGEN",
+            "name": "URINE PORPHOBILINOGEN"
+        },
+        {
+            "ien": "5073",
+            "synonym": "URINE PROTEIN ELECTROPHORESIS",
+            "name": "URINE PROTEIN ELECTROPHORESIS"
+        },
+        {
+            "ien": "272",
+            "synonym": "URINE RBC CASTS",
+            "name": "URINE RBC CASTS"
+        },
+        {
+            "ien": "380",
+            "synonym": "URINE RBC/HPF",
+            "name": "URINE RBC/HPF"
+        },
+        {
+            "ien": "1023",
+            "synonym": "URINE SCREEN",
+            "name": "URINE SCREEN"
+        },
+        {
+            "ien": "1216",
+            "synonym": "URINE TOX SCREEN\t<TOX SCREEN, URINE>",
+            "name": "TOX SCREEN, URINE"
+        },
+        {
+            "ien": "271",
+            "synonym": "URINE WBC CASTS",
+            "name": "URINE WBC CASTS"
+        },
+        {
+            "ien": "267",
+            "synonym": "URINE WBC/HPF",
+            "name": "URINE WBC/HPF"
+        },
+        {
+            "ien": "277",
+            "synonym": "URINE YEAST",
+            "name": "URINE YEAST"
+        },
+        {
+            "ien": "260",
+            "synonym": "UROBILINOGEN",
+            "name": "UROBILINOGEN"
+        },
+        {
+            "ien": "490",
+            "synonym": "UROPORPHYRIN",
+            "name": "UROPORPHYRIN"
+        },
+        {
+            "ien": "259",
+            "synonym": "USG\t<SPECIFIC GRAVITY>",
+            "name": "SPECIFIC GRAVITY"
+        },
+        {
+            "ien": "1216",
+            "synonym": "UTS\t<TOX SCREEN, URINE>",
+            "name": "TOX SCREEN, URINE"
+        },
+        {
+            "ien": "1166",
+            "synonym": "UURO\t<ZZUROBILINOGEN>",
+            "name": "ZZUROBILINOGEN"
+        },
+        {
+            "ien": "267",
+            "synonym": "UWBC\t<URINE WBC/HPF>",
+            "name": "URINE WBC/HPF"
+        },
+        {
+            "ien": "271",
+            "synonym": "UWCAS\t<URINE WBC CASTS>",
+            "name": "URINE WBC CASTS"
+        },
+        {
+            "ien": "443",
+            "synonym": "VALIUM\t<DIAZEPAM>",
+            "name": "DIAZEPAM"
+        },
+        {
+            "ien": "731",
+            "synonym": "VALPROIC ACID",
+            "name": "VALPROIC ACID"
+        },
+        {
+            "ien": "1169",
+            "synonym": "VANCOMYCIN",
+            "name": "VANCOMYCIN"
+        },
+        {
+            "ien": "255",
+            "synonym": "VDRL",
+            "name": "VDRL"
+        },
+        {
+            "ien": "1203",
+            "synonym": "VDRL(NORTHAMPTON)",
+            "name": "VDRL(NORTHAMPTON)"
+        },
+        {
+            "ien": "255",
+            "synonym": "VENEREAL DISEASE RESEARCH LABORATORY\t<VDRL>",
+            "name": "VDRL"
+        },
+        {
+            "ien": "1047",
+            "synonym": "VIBRIO CULTURE",
+            "name": "VIBRIO CULTURE"
+        },
+        {
+            "ien": "1007",
+            "synonym": "VIRAL CULTURE",
+            "name": "VIRAL CULTURE"
+        },
+        {
+            "ien": "3395",
+            "synonym": "VIRAL LOAD",
+            "name": "VIRAL LOAD"
+        },
+        {
+            "ien": "1070",
+            "synonym": "VIRAL SEROLOGY",
+            "name": "VIRAL SEROLOGY"
+        },
+        {
+            "ien": "190",
+            "synonym": "VISCOSITY",
+            "name": "VISCOSITY"
+        },
+        {
+            "ien": "481",
+            "synonym": "VITAMIN A",
+            "name": "VITAMIN A"
+        },
+        {
+            "ien": "734",
+            "synonym": "VITAMIN B-12",
+            "name": "VITAMIN B-12"
+        },
+        {
+            "ien": "567",
+            "synonym": "VITAMIN C",
+            "name": "VITAMIN C"
+        },
+        {
+            "ien": "515",
+            "synonym": "VITAMIN D 1,25 OH\t<1,25-DIHYDROXYVIT D>",
+            "name": "1,25-DIHYDROXYVIT D"
+        },
+        {
+            "ien": "480",
+            "synonym": "VITAMIN D 25 0H\t<25 OH VITAMIN D>",
+            "name": "25 OH VITAMIN D"
+        },
+        {
+            "ien": "482",
+            "synonym": "VITAMIN E",
+            "name": "VITAMIN E"
+        },
+        {
+            "ien": "515",
+            "synonym": "VITIMIN D 1,25 OH\t<1,25-DIHYDROXYVIT D>",
+            "name": "1,25-DIHYDROXYVIT D"
+        },
+        {
+            "ien": "368",
+            "synonym": "VMA",
+            "name": "VMA"
+        },
+        {
+            "ien": "492",
+            "synonym": "VOLUME",
+            "name": "VOLUME"
+        },
+        {
+            "ien": "275",
+            "synonym": "WAXY CASTS",
+            "name": "WAXY CASTS"
+        },
+        {
+            "ien": "395",
+            "synonym": "WESTERGREN SED RATE",
+            "name": "WESTERGREN SED RATE"
+        },
+        {
+            "ien": "1337",
+            "synonym": "WESTERN BLOT",
+            "name": "WESTERN BLOT"
+        },
+        {
+            "ien": "579",
+            "synonym": "WI\t<WINTROBE ESR & CBC>",
+            "name": "WINTROBE ESR & CBC"
+        },
+        {
+            "ien": "579",
+            "synonym": "WINTROBE ESR & CBC",
+            "name": "WINTROBE ESR & CBC"
+        },
+        {
+            "ien": "1027",
+            "synonym": "WINTROBE, WESTERGREN, CBC",
+            "name": "WINTROBE, WESTERGREN, CBC"
+        },
+        {
+            "ien": "1231",
+            "synonym": "X MATCH\t<TRANSFUSION REQUEST>",
+            "name": "TRANSFUSION REQUEST"
+        },
+        {
+            "ien": "1231",
+            "synonym": "XMATCH\t<TRANSFUSION REQUEST>",
+            "name": "TRANSFUSION REQUEST"
+        },
+        {
+            "ien": "1235",
+            "synonym": "XMATCH,PRE-OP\t<TRANSFUSION REQUEST, PRE-OP>",
+            "name": "TRANSFUSION REQUEST, PRE-OP"
+        },
+        {
+            "ien": "1235",
+            "synonym": "XMATCH,PREOP\t<TRANSFUSION REQUEST, PRE-OP>",
+            "name": "TRANSFUSION REQUEST, PRE-OP"
+        },
+        {
+            "ien": "277",
+            "synonym": "YEA\t<URINE YEAST>",
+            "name": "URINE YEAST"
+        },
+        {
+            "ien": "1040",
+            "synonym": "YERSINIA\t<YERSINIA CULTURE>",
+            "name": "YERSINIA CULTURE"
+        },
+        {
+            "ien": "1040",
+            "synonym": "YERSINIA CULTURE",
+            "name": "YERSINIA CULTURE"
+        },
+        {
+            "ien": "661",
+            "synonym": "ZARONTIN\t<ETHOSUXIMIDE>",
+            "name": "ETHOSUXIMIDE"
+        },
+        {
+            "ien": "1224",
+            "synonym": "ZGLUCOSE*",
+            "name": "ZGLUCOSE*"
+        },
+        {
+            "ien": "364",
+            "synonym": "ZINC",
+            "name": "ZINC"
+        },
+        {
+            "ien": "1341",
+            "synonym": "ZJMS\t<ZZJEANIE(GLUCOSE PANEL)>",
+            "name": "ZZJEANIE(GLUCOSE PANEL)"
+        },
+        {
+            "ien": "364",
+            "synonym": "ZN\t<ZINC>",
+            "name": "ZINC"
+        },
+        {
+            "ien": "493",
+            "synonym": "ZZ CBC & MORPHOLOGY (NO DIFF)",
+            "name": "ZZ CBC & MORPHOLOGY (NO DIFF)"
+        },
+        {
+            "ien": "1082",
+            "synonym": "ZZ CBC PROFILE",
+            "name": "ZZ CBC PROFILE"
+        },
+        {
+            "ien": "462",
+            "synonym": "ZZ CROSSMATCH",
+            "name": "ZZ CROSSMATCH"
+        },
+        {
+            "ien": "1159",
+            "synonym": "ZZ DUMMY",
+            "name": "ZZ DUMMY"
+        },
+        {
+            "ien": "249",
+            "synonym": "ZZ IMMUNOGLOBULINS",
+            "name": "ZZ IMMUNOGLOBULINS"
+        },
+        {
+            "ien": "1148",
+            "synonym": "ZZ JOHNTST",
+            "name": "ZZ JOHNTST"
+        },
+        {
+            "ien": "1220",
+            "synonym": "ZZ JOHNTST",
+            "name": "ZZ JOHNTST"
+        },
+        {
+            "ien": "3382",
+            "synonym": "ZZ NBUSED",
+            "name": "ZZ NBUSED"
+        },
+        {
+            "ien": "1141",
+            "synonym": "ZZ NEW TEST2",
+            "name": "ZZ NEW TEST2"
+        },
+        {
+            "ien": "1156",
+            "synonym": "ZZ NEW TEST2",
+            "name": "ZZ NEW TEST2"
+        },
+        {
+            "ien": "1139",
+            "synonym": "ZZ NEW TEST4",
+            "name": "ZZ NEW TEST4"
+        },
+        {
+            "ien": "1154",
+            "synonym": "ZZ NEW TEST4",
+            "name": "ZZ NEW TEST4"
+        },
+        {
+            "ien": "3383",
+            "synonym": "ZZ NOT USED 2",
+            "name": "ZZ NOT USED 2"
+        },
+        {
+            "ien": "1155",
+            "synonym": "ZZ NTEST",
+            "name": "ZZ NTEST"
+        },
+        {
+            "ien": "261",
+            "synonym": "ZZ OCCULT BLOOD",
+            "name": "ZZ OCCULT BLOOD"
+        },
+        {
+            "ien": "185",
+            "synonym": "ZZ PARTIAL THROMBOPLASTIN TIME",
+            "name": "ZZ PARTIAL THROMBOPLASTIN TIME"
+        },
+        {
+            "ien": "184",
+            "synonym": "ZZ PROTHROMBIN TIME",
+            "name": "ZZ PROTHROMBIN TIME"
+        },
+        {
+            "ien": "1221",
+            "synonym": "ZZ RBC TEST 1",
+            "name": "ZZ RBC TEST 1"
+        },
+        {
+            "ien": "1218",
+            "synonym": "ZZ TEST1",
+            "name": "ZZ TEST1"
+        },
+        {
+            "ien": "1142",
+            "synonym": "ZZ URINE EPITH TOTAL",
+            "name": "ZZ URINE EPITH TOTAL"
+        },
+        {
+            "ien": "1217",
+            "synonym": "ZZ URINE EPITH TOTAL",
+            "name": "ZZ URINE EPITH TOTAL"
+        },
+        {
+            "ien": "1147",
+            "synonym": "ZZ URINE UROBILINOGEN",
+            "name": "ZZ URINE UROBILINOGEN"
+        },
+        {
+            "ien": "1219",
+            "synonym": "ZZ URINE UROBILINOGEN",
+            "name": "ZZ URINE UROBILINOGEN"
+        },
+        {
+            "ien": "580",
+            "synonym": "ZZ WESTERGREN ESR & CBC",
+            "name": "ZZ WESTERGREN ESR & CBC"
+        },
+        {
+            "ien": "1338",
+            "synonym": "ZZCULTURE",
+            "name": "ZZCULTURE"
+        },
+        {
+            "ien": "5052",
+            "synonym": "ZZDirect LDL",
+            "name": "ZZDirect LDL"
+        },
+        {
+            "ien": "1215",
+            "synonym": "ZZGLUCOSE*",
+            "name": "ZZGLUCOSE*"
+        },
+        {
+            "ien": "1341",
+            "synonym": "ZZJEANIE(GLUCOSE PANEL)",
+            "name": "ZZJEANIE(GLUCOSE PANEL)"
+        },
+        {
+            "ien": "1166",
+            "synonym": "ZZUROBILINOGEN",
+            "name": "ZZUROBILINOGEN"
+        },
+        {
+            "ien": "3355",
+            "synonym": "`13055",
+            "name": "`13055"
+        }
+    ],
+    "status": 200
+}

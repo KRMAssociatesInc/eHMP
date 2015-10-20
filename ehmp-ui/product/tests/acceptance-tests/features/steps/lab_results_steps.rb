@@ -109,7 +109,7 @@ def click_lab_results_applet_row(is_panel)
         break
       end
     end # result_rows.each
-    break if desired_element != nil
+    break unless desired_element.nil?
 
     is_next_page_disabled = @lr.get_elements("applet - Disabled Next Page Arrow").size == 1
 
@@ -141,7 +141,7 @@ Then(/^the Lab Results Applet table displays No Records Found$/) do
 end
 
 Given(/^the user has filtered the lab results on the term "(.*?)" down to (\d+) rows$/) do |term, num_expected_rows|
-   #And the user clicks the control "Filter Toggle" in the "Lab Results applet"
+  #And the user clicks the control "Filter Toggle" in the "Lab Results applet"
   #And the user inputs "panel" in the "Text Filter" control in the "Lab Results applet"
   #Then the "Lab Results Applet" table contains 10 rows
   total_expected_rows = num_expected_rows.to_i + 1 # for header
@@ -152,7 +152,11 @@ Given(/^the user has filtered the lab results on the term "(.*?)" down to (\d+) 
 end
 
 When(/^the user clicks the Panel "(.*?)" in the Lab Results applet$/) do |arg1|
+  driver = TestSupport.driver
+  if arg1 == 'COAG PROFILE BLOOD PLASMA WC LB #2988' then sleep 1
+  end
   expect(LabResultsSpecificRows.instance.perform_action(arg1)).to be_true
+  driver.find_element(:id, "info-button-sidekick-detailView").click
 end
 
 When(/^the user clicks the Lab Test "(.*?)" in the Panel result details$/) do |arg1|
@@ -181,7 +185,7 @@ end
 # ######################## Then ########################
 
 # currently only supports Lab Results Container and the modal, but can easily be used later for further parents
-Then(/^the "(.*?)" input should be set to "(\d+)" months in the "(.*?)" (?:on|in) the "(.*?)"$/) do |control_name, month_value, time_direction, parent_name|
+Then(/^the "(.*?)" input should be set to "(\d+)" months in the "(.*?)" (?:on|in) the "(.*?)"$/) do |control_name, month_value, time_direction, _parent_name|
   actual_date = @lr.get_element("Control - applet - #{control_name}").attribute("value")
 
   expected_date = nil
@@ -244,7 +248,7 @@ Then(/the loading indicators are "(.*?)" in the Lab Results modal/) do |displaye
   end
 end
 
-Then(/^there is no brief display of data (?:on|in) the "(.*?)"$/) do |parent_name|
+Then(/^there is no brief display of data (?:on|in) the "(.*?)"$/) do |_parent_name|
   wait = Selenium::WebDriver::Wait.new(:timeout => 5)
 
   # this test is interesting because I look for and expect an exception/error
@@ -278,7 +282,7 @@ Then(/the Lab Results should be sorted by "(.*?)"/) do |column_name|
     "H" => 3,
     "L" => 4,
     "" => 5
-   }
+  }
 
   @lr.wait_until_element_present(table_key, 15)
   actual_table = @lr.get_element(table_key)
@@ -297,7 +301,7 @@ Then(/the Lab Results should be sorted by "(.*?)"/) do |column_name|
 end
 
 # currently only supports Lab Results Container and the modal, but can easily be used later for further parents
-Then(/^the number of "(.*?)" is "(\d*?)" (?:on|in) the "(.*?)"$/) do |element_name, expected_number, parent_name|
+Then(/^the number of "(.*?)" is "(\d*?)" (?:on|in) the "(.*?)"$/) do |element_name, expected_number, _parent_name|
   map_key = "modal - #{element_name}"
 
   wait = Selenium::WebDriver::Wait.new(:timeout => 15)
@@ -308,8 +312,8 @@ Then(/^the number of "(.*?)" is "(\d*?)" (?:on|in) the "(.*?)"$/) do |element_na
 end
 
 # currently only supports Lab Results Container and the modal, but can easily be used later for further parents
-Then(/^the "(.*?)" (?:on|in) the "(.*?)" are given as$/) do |element_name, parent_name, expected_value_table|
-  expected_values = Array.new
+Then(/^the "(.*?)" (?:on|in) the "(.*?)" are given as$/) do |element_name, _parent_name, expected_value_table|
+  expected_values = []
 
   # push to new array with only a single field from each cucumber table
   expected_value_table.rows.each do |row|
@@ -344,17 +348,21 @@ Given(/^the user is viewing the expanded view of the Lab Results Applet$/) do
   expect(@lr.wait_until_element_present('Lab Results single page')).to be_true
 end
 When(/^the user views the first non-panel lab result in a modal$/) do
+  driver = TestSupport.driver
   click_lab_results_applet_row(false)
+  driver.find_element(:id, "info-button-sidekick-detailView").click
   @uc.wait_until_action_element_visible("Modal", 15)
 end
 
 When(/^the user views the "(.*?)" lab result in a modal$/) do |arg1|
+  driver = TestSupport.driver
   counter = 0
   button_pushed = false
   modal_open = false
   loop do
-    counter = counter+1
-    button_pushed =LabResultsSpecificRows.instance.perform_action(arg1) 
+    counter += 1
+    button_pushed =LabResultsSpecificRows.instance.perform_action(arg1)
+    driver.find_element(:id, "info-button-sidekick-detailView").click
     modal_open = @uc.wait_until_element_present("Modal", 15)
     break if counter > 3
     break if button_pushed && modal_open
@@ -412,10 +420,10 @@ When(/^the user scrolls to the bottom of the Lab Results Applet$/) do
 end
 
 def verify_lab_test_column(expected_text)
-#  lab_tests = driver.find_elements(:css, '#data-grid-lab_results_grid tbody td:nth-child(2)')
+  #  lab_tests = driver.find_elements(:css, '#data-grid-lab_results_grid tbody td:nth-child(2)')
   driver = TestSupport.driver
   lab_tests = driver.find_elements(:css, '#data-grid-lab_results_grid tbody td:nth-child(2)')
-  lab_tests.each do | lab |
+  lab_tests.each do |lab|
     #expect(lab.text.downcase.include? arg2.downcase).to be_true, "#{lab.text} did not contain #{arg2}"
     return false unless lab.text.downcase.include? expected_text.downcase
   end
@@ -424,7 +432,7 @@ rescue
   return false
 end
 
-Then(/^the Lab Test column in the Lab Results Applet contains "(.*?)"$/) do | arg2|
+Then(/^the Lab Test column in the Lab Results Applet contains "(.*?)"$/) do |arg2|
   wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
   wait.until { verify_lab_test_column arg2 }
 end
@@ -459,7 +467,7 @@ end
 
 Then(/^no results should be found in the Lab Results applet$/) do
   lab_rows = LabResultsSpecificRows.instance
-  expect(lab_rows.wait_until_element_present('empty rows')).to be_true
+  expect(lab_rows.wait_until_element_present('No Records Found')).to be_true
 end
 
 Then(/^the Lab History table contains headers$/) do |table|

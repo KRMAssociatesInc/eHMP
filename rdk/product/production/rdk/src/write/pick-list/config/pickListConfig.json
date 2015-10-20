@@ -1,0 +1,124 @@
+{
+    "name": "Configuration data for cached pick-lists",
+    "pickListConfig": [{
+        "name": "allergies-symptoms",
+        "modulePath": "allergies/allergies-symptoms-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "largePickListRetry": 65
+    }, {
+        "name": "encounters-diagnosis-codes-for-clinic",
+        "modulePath": "encounters/encounters-diagnosis-codes-for-clinic-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["clinic"]
+    }, {
+        "name": "encounters-procedure-types",
+        "modulePath": "encounters/encounters-procedure-types-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["ien"],
+        "optionalParams": ["visitDate"]
+    }, {
+        "name": "encounters-procedures-cpt-modifier",
+        "modulePath": "encounters/encounters-procedures-cpt-modifier-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["cpt"],
+        "optionalParams": ["visitDate"]
+    }, {
+        "name": "encounters-visit-categories",
+        "modulePath": "encounters/encounters-visit-categories-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["ien"],
+        "optionalParams": ["visitDate"]
+    }, {
+        "name": "encounters-visit-disabilities",
+        "modulePath": "encounters/encounters-visit-disabilities-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["dfn"]
+    }, {
+        "name": "encounters-visit-service-connected",
+        "modulePath": "encounters/encounters-visit-service-connected-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "optionalParams": ["dfn", "visitDate", "loc"]
+    }, {
+        "name": "immunization-types",
+        "modulePath": "immunizations/immunization-types-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000
+    }, {
+        "name": "lab-all-samples",
+        "modulePath": "labs/lab-all-samples-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000
+    }, {
+        "name": "lab-collect-times",
+        "modulePath": "labs/lab-collect-times-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000
+    }, {
+        "name": "lab-order-dialog-def",
+        "modulePath": "labs/lab-order-dialog-def-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000
+    }, {
+        "name": "lab-order-max-days-continuous",
+        "modulePath": "labs/lab-order-max-days-continuous-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["location", "schedule"]
+    }, {
+        "name": "lab-order-orderable-items",
+        "modulePath": "labs/lab-order-orderable-items-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["labType"],
+        "largePickListRetry": 65,
+        "initialLoadDefaultParams" : {"labType": ["S.LAB", "S.IVA RX", "S.IVB RX"]}
+    }, {
+        "name": "lab-order-specimens",
+        "modulePath": "labs/lab-order-specimens-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000
+    }, {
+        "name": "lab-sample-specimen-urgency",
+        "modulePath": "labs/lab-sample-specimen-urgency-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["labTestIEN"]
+    }, {
+        "name": "medication-defaults",
+        "modulePath": "medications/medication-defaults-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["pharmacyType"],
+        "optionalParams": ["outpatientDfn", "locationIen"]
+    }, {
+        "name": "medication-order-defaults",
+        "modulePath": "medications/medication-order-defaults-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["pharmacyType"],
+        "optionalParams": ["ien", "outpatientDfn", "needPatientInstructions", "pkiEnabled"]
+    }, {
+        "name": "medication-orders",
+        "modulePath": "medications/medication-orders-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["ien", "first", "last"]
+    }, {
+        "name": "medication-schedules",
+        "modulePath": "medications/medication-schedules-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000
+    }, {
+        "name": "pki-enabled",
+        "modulePath": "site/pki-enabled-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000
+    }, {
+        "name": "printer-devices",
+        "modulePath": "printers/printer-devices-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000
+    }, {
+        "name": "progress-notes-titles-flags",
+        "modulePath": "progressnotes/progress-notes-titles-fetch-flags",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["ien"]
+    }, {
+        "name": "progress-notes-titles",
+        "modulePath": "progressnotes/progress-notes-titles-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000,
+        "requiredParams": ["class"],
+        "largePickListRetry": 65,
+        "initialLoadDefaultParams" : {"class": ["3"]}
+    }, {
+        "name": "vitals",
+        "modulePath": "vitals/vitals-fetch-list",
+        "dataNeedsRefreshAfterMinutes": 3000
+    }]
+}

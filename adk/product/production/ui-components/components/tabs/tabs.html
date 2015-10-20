@@ -1,0 +1,68 @@
+<h3>Tabs</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> The purpose of tabs are to display lengthy content in groups that will allow the user to quickly access information by selecting the individual tabs.</p>
+	<p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> By default the first tab is selected. To make any tab active, simply add the class of "active" to &lt;li&gt; and "active" to the &lt;div&gt; under tab-content. Be sure to only have 1 active class.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> For the tabs to be keyboard accessible, assure that the <strong>href="#"</strong> is present.</p>
+</div>
+
+<div id="tabCopy">
+	<div class="tab-container" role="tabpanel">
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" data-toggle="tab">Tab 1<span class="sr-only">You are currently on a tab. There is content below. Continue to arrow down until it indicates that the content is being read.</span></a></li>
+			<li role="presentation"><a href="#tab2" aria-controls="tab2" data-toggle="tab">Tab 2<span class="sr-only">You are currently on a tab. To select this tab, press enter. There is content below. Continue to arrow down until it indicates that the content is being read.</span></a></li>
+			<li role="presentation"><a href="#tab3" aria-controls="tab3"  data-toggle="tab">Tab 3<span class="sr-only">You are currently on a tab. To select this tab, press enter. There is content below. Continue to arrow down until it indicates that the content is being read.</span></a></li>
+		</ul>
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="tab1"><span class="sr-only">This is the content for Tab 1.</span>
+				<p>I am tab 1 content.</p>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="tab2"><span class="sr-only">This is the content for Tab 2.</span>
+				<p>I am tab 2 content.</p>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="tab3"><span class="sr-only">This is the content for Tab 3.</span>
+				<p>I am tab 3 content.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<hr />
+
+<div role="tabpanel" class="tabpanel">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active"><a href="#markup-tab" aria-controls="markup-tab" role="tab" data-toggle="tab">Tabs</a></li>
+	</ul>
+
+	<div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-tab">
+            <pre>
+&lt;div class="tab-container" role="tabpanel"&gt;
+	&lt;ul class="nav nav-tabs" role="tablist"&gt;
+		&lt;li role="presentation" class="active"&gt;&lt;a href="#tab1" aria-controls="tab1" data-toggle="tab"&gt;Tab 1&lt;span class="sr-only"&gt;
+		You are currently on a tab. There is content below. Continue to arrow down until it indicates that the content is being 
+		read.&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li role="presentation"&gt;&lt;a href="#tab2" aria-controls="tab2" data-toggle="tab"&gt;Tab 2&lt;span class="sr-only"&gt;
+		You are currently on a tab. To select this tab, press enter. There is content below. 
+		Continue to arrow down until it indicates that the content is being read.&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li role="presentation"&gt;&lt;a href="#tab3" aria-controls="tab3"  data-toggle="tab"&gt;Tab 3&lt;span class="sr-only"&gt;
+		You are currently on a tab. To select this tab, press enter. There is content below. 
+		Continue to arrow down until it indicates that the content is being read.&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;div class="tab-content"&gt;
+		&lt;div role="tabpanel" class="tab-pane active" id="tab1"&gt;&lt;span class="sr-only"&gt;This is the content for Tab 1.&lt;/span&gt;
+			&lt;p&gt;I am tab 1 content.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div role="tabpanel" class="tab-pane" id="tab2"&gt;&lt;span class="sr-only"&gt;This is the content for Tab 2.&lt;/span&gt;
+			&lt;p&gt;I am tab 2 content.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div role="tabpanel" class="tab-pane" id="tab3"&gt;&lt;span class="sr-only"&gt;This is the content for Tab 3.&lt;/span&gt;
+			&lt;p&gt;I am tab 3 content.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('tabCopy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        </div>
+	</div>
+</div>

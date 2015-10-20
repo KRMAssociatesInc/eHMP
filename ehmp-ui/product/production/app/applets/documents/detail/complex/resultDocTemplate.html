@@ -5,14 +5,14 @@
 	    <div class="resultsInfo" tabindex="0">{{localTitle}}&nbsp;</div>
 	<br>
 	<div class="resultsLabel labelStyleColor" tabindex="0">Date Of Note: </div>
-	{{#if imagingBool}}
+	{{#if radiologyReportBool}}
 	<div class="resultsInfo" tabindex="0">{{formatDate referenceDateTime "MM/DD/YYYY - HH:mm"}}&nbsp;</div>
 	{{else}}
 	<div class="resultsInfo" tabindex="0">{{formatDate entered "MM/DD/YYYY - HH:mm"}}&nbsp;</div>
 	{{/if}}
 	<br>
 	<div class="resultsLabel labelStyleColor" tabindex="0">Author: </div>
-	{{#if imagingBool}}
+	{{#if radiologyReportBool}}
 	<div class="resultsInfo" data-toggle="tooltip" data-placement="right" title="Signed: {{formatDate signedDateTime 'MM/DD/YYYY - HH:mm'}}" tabindex="0">{{authorDisplayName}}&nbsp;<span class="glyphicon glyphicon-pencil"></span></div>
 	{{else}}
 	<div class="resultsInfo" tabindex="0">{{authorDisplayName}}&nbsp;</div>
@@ -24,10 +24,10 @@
 	{{#if dodComplexNoteContent}}
 	<iframe id="dodContent" class="dodContent" seamless sandbox="allow-same-origin" src="#"></iframe>
 	{{else}}
-	{{#each text}}
 	<pre tabindex="0">{{content}}</pre>
-	{{/each}}
 	{{/if}}
+
+	<div class="document-detail-addenda-region"></div>
 	<br>
 	<br>
 </div>

@@ -2,35 +2,28 @@ define([
     "backbone",
     "marionette",
     "app/applets/patient_search/views/mySite/all/mySiteAllSearchInputView",
-    "app/applets/patient_search/views/filter/filterPatientInputView",
     "app/applets/patient_search/views/global/globalSearchInputView"
-], function(Backbone, Marionette, MySiteAllSearchInputView, FilterPatientInputView, GlobalSearchInputView) {
+], function(Backbone, Marionette, MySiteAllSearchInputView, GlobalSearchInputView) {
+
+    // constants
+    var MY_SITE = 'mySite';
+    var NATIONWIDE = 'global';
+    var NO_TAB = 'none';
+    var BLANK = '';
 
     var GlobalSearchInputModel = Backbone.Model.extend({
         defaults: {
-            'name-last': '',
-            'name-first': '',
-            'dob': '',
-            'ssn': '',
+            'name.last': BLANK,
+            'name.first': BLANK,
+            'date.birth': BLANK,
+            'ssn': BLANK,
             'isGlobalSearchErrorMessageDisplayed': false
         }
     });
 
     var MySiteAllSearchInputModel = Backbone.Model.extend({
         defaults: {
-            'searchString': ''
-        }
-    });
-
-    var MySiteFilterInputModel = Backbone.Model.extend({
-        defaults: {
-            'filterString': ''
-        }
-    });
-
-    var MyCPRSFilterInputModel = Backbone.Model.extend({
-        defaults: {
-            'filterString': ''
+            'searchString': BLANK
         }
     });
 
@@ -41,50 +34,38 @@ define([
         },
         initialize: function(options) {
             this.mySiteModel = new MySiteAllSearchInputModel();
-            this.globalModel = new GlobalSearchInputModel();
-            this.mySiteFilterModel = new MySiteFilterInputModel();
-            this.myCPRSModel = new MyCPRSFilterInputModel();
+            this.nationwideModel = new GlobalSearchInputModel();
 
             this.currentInputView = new MySiteAllSearchInputView();
             this.currentInputView.model = this.mySiteModel;
-            //this.changeView('mySite', 'all');
         },
         onRender: function() {
             this.inputViewRegion.show(this.currentInputView);
+            $("#patient-search-input input").first().focus();
         },
-        changeView: function(searchType, pillsType) {
-            if (searchType == "myCPRSList") {
-                this.createInputView(new FilterPatientInputView(), this.myCPRSModel);
-            } else if (searchType == "mySite") {
-                if (pillsType == "all") {
-                    this.createInputView(new MySiteAllSearchInputView(), this.mySiteModel);
-                } else {
-                    this.createInputView(new FilterPatientInputView(), this.mySiteFilterModel);
-                }
-            } else if (searchType == "global") {
-                this.createInputView(new GlobalSearchInputView(), this.globalModel);
-            } else {
+        changeView: function(searchType, tabType) {
+            if (searchType == MY_SITE) {
                 this.createInputView(new MySiteAllSearchInputView(), this.mySiteModel);
+            } else if (searchType == NATIONWIDE) {
+                this.createInputView(new GlobalSearchInputView(), this.nationwideModel);
             }
             this.render();
+        },
+        resetModels: function(){
+            if (this.mySiteModel) {
+                this.mySiteModel.clear({
+                silent: true
+                });
+            }
+            if (this.nationwideModel) {
+                this.nationwideModel.clear({
+                silent: true
+                });
+            }
         },
         createInputView: function(view, model) {
             this.currentInputView = view;
             this.currentInputView.model = model;
-        },
-        resetModels: function() {
-            this.mySiteModel.clear({
-                silent: true
-            });
-            this.mySiteFilterModel.clear({
-                silent: true
-            });
-            this.globalModel.clear({
-                silent: true
-            });
-            this.myCPRSModel.clear({
-                silent: true
-            });
         }
     });
 

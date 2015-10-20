@@ -30,11 +30,12 @@ task :syncCache, [:env] => [:environment_setup]
 desc 'Syncs and subscribes eHMP to a list of patients used for automated testing'
 task :syncCache do
   patient_sync_list = [
-#    "10104V248233",
+    "10104V248233",
+    "9E7A;100599",
     "5000000318V495398",
     "5000000342V438646",
     "10107V395912",
-#    "10108V420871",
+    "10108V420871",
     "10110V004877",
     "10117V810068",
     "10118V572553",
@@ -43,6 +44,7 @@ task :syncCache do
     "11016V630869",
     "5000000009V082878",
     "5000000116V912836",
+    "9E7A;100023",
     "5000000217V519385",
     "10101V964144",
     "5000000317V387446",
@@ -56,18 +58,10 @@ task :syncCache do
     "9E7A;287",
     "9E7A;71",
     "9E7A;737",
-    "C877;1",
-    "C877;100184",
-    "C877;737",
-    "C877;164",
     "10188V866369",
     "5000000339V988748",
     "9E7A;631",
     "5000000327V828570",
-    "C877;631",
-    "9E7A;100599",
-    "C877;100599",
-    "C877;287",
     "10105V001065",
     "10113V428140",
     "10114V651499",
@@ -75,15 +69,19 @@ task :syncCache do
     "10112V399621",
     "11010V543403",
     "9E7A;9",
-    "C877;9",
     "10123V057919",
     "9E7A;65",
     "11000V221996",
     "10119V246915",
     "10132V467385",
     "10102V813496",
-    "5000000232V962263"
+    "5000000232V962263",
+    "9E7A;100470",
+    "9E7A;100472"
   ]
+
+  # To synchronize all patients, use the assignment:
+  # patient_sync_list = PatientSynchronizer.get_all_pids("http://#{ENV["JDS_IP"]}:9080")
 
   PatientSynchronizer.wait_until_operational_data_loaded "http://#{ENV["JDS_IP"]}:9080", 600, ["9E7A", "C877"]
   PatientSynchronizer.synchronize_patient_list "http://#{ENV["VX_SYNC_IP"]}:8080", 3600, patient_sync_list
@@ -92,22 +90,22 @@ end
 desc 'Runs end-to-end acceptance tests'
 task :endToEndTests, :env do |t, args|
   # TODO: add first phase single-process test (selected by tag) followed by second-phase parallel tests
-  Parallel::Cucumber::Rake::Task.new(:endToEndTestsRun) do |x|
+  Cucumber::Rake::Task.new(:endToEndTestsRun) do |x|
     case args[:env]
     when "aws"
       p "Using aws cucumber parallel options"
-      x.cucumber_opts = 'features -o "--format pretty --tags ~@single --tags ~@future --tags ~@debug --tags ~@UI --profile parallel"'
+      x.cucumber_opts = 'features --format pretty --tags ~@single --tags ~@future --tags ~@debug --tags ~@UI --profile parallel'
     when "ede"
       p "Using ede cucumber parallel options"
-      x.cucumber_opts = 'features -o "--format pretty --tags ~@single --tags ~@future --tags ~@debug --tags ~@UI --profile parallel"'
+      x.cucumber_opts = 'features --format pretty --tags ~@single --tags ~@future --tags ~@debug --tags ~@UI --profile parallel'
     else
       p "Using virtualbox cucumber parallel options"
-      x.cucumber_opts = 'features -o "--format pretty --tags ~@single --tags ~@future --tags ~@debug --tags ~@UI --tags ~@multiple_server"'
+      x.cucumber_opts = 'features --format pretty --tags ~@single --tags ~@future --tags ~@debug --tags ~@UI --tags ~@multiple_server'
     end
     # NB: Force use of single process if ENV["PARALLEL_TEST_PROCESSORS"] is not set to some valid value
-    if ENV["PARALLEL_TEST_PROCESSORS"].nil?
-      x.cucumber_opts += ' -n 1'
-    end
+    #if ENV["PARALLEL_TEST_PROCESSORS"].nil?
+    #  x.cucumber_opts += ' -n 1'
+    #end
   end
 
   start_time = Time.now
@@ -167,29 +165,43 @@ task :environment_setup, :env do |task, args|
   environment_endpoints(env)
 end
 
+task :test_search do
+
+  puts knife_search_for_ip("jds")
+end
+
+def knife_search_for_ip(machine_name)
+  stack = ENV['JOB_NAME'] || ENV['USER']
+  if ENV.key?('BUNDLE_BIN_PATH')
+    raw_search = Bundler.with_clean_env { `/opt/chefdk/bin/knife search node \'name:#{machine_name}-#{stack}\' -Fj --config ~/Projects/vistacore/.chef/knife.rb` }
+  else
+    raw_search = `/opt/chefdk/bin/knife search node \'name:#{machine_name}-#{stack}\' -Fj --config ~/Projects/vistacore/.chef/knife.rb`
+  end
+  parsed_search = JSON.parse(raw_search)
+  fail "More than one node with that name found" if parsed_search["results"] > 1
+  fail "No node with that name found" if parsed_search["results"] == 0
+  ip = parsed_search["rows"][0]['automatic']['ipaddress']
+end
+
 def environment_endpoints(env)
   case env
   when "virtualbox"
     p "Running with virtualbox environments"
-    ENV["VX_SYNC_IP"] = Servers::VXSync.localIP
-    ENV["VE_API_IP"] = Servers::Mocks.localIP
-    ENV["JDS_IP"] = Servers::JDS.localIP
-    ENV["VE2_VE_API_IP"] = Servers::VE2_VE_API.localIP
-    ENV["VE2_JDS_IP"] = Servers::VE2_JDS.localIP
+    ENV["VX_SYNC_IP"] = knife_search_for_ip("vxsync")
+    ENV["VE_API_IP"] = knife_search_for_ip("mocks")
+    ENV["JDS_IP"] = knife_search_for_ip("jds")
+    ENV["PANORAMA_IP"] = knife_search_for_ip("vista-panorama")
+    ENV["KODAK_IP"] = knife_search_for_ip("vista-kodak")
+    ENV['WB_VX_SYNC_PORT'] = '9090' 
   when "aws"
     p "Running with aws environments"
-    ENV["VX_SYNC_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "vx-sync")
-    ENV["VE_API_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "mocks")
-    ENV["JDS_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "jds")
-    ENV["SOLR_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "solr")
-    ENV["VE2_VE_API_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "ve2-ve-api-local")
-    ENV["VE2_JDS_IP"] = VagrantfileUtil::AWS.get_private_ip("vista-exchange", "ve2-jds")
-    puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    puts "vx-sync = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "vx-sync")}"
-    puts "jds = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "jds")}"
-    puts "solr = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "solr")}"
-    puts "mocks = #{VagrantfileUtil::AWS.get_public_ip_address("vista-exchange", "mocks")}"
-    puts "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    ENV["VX_SYNC_IP"] = knife_search_for_ip("vxsync")
+    ENV["VE_API_IP"] = knife_search_for_ip("mocks")
+    ENV["JDS_IP"] = knife_search_for_ip("jds")
+    ENV["SOLR_IP"] = knife_search_for_ip("solr")
+    ENV["PANORAMA_IP"] = knife_search_for_ip("vista-panorama")
+    ENV["KODAK_IP"] = knife_search_for_ip("vista-kodak")
+    ENV['WB_VX_SYNC_PORT'] = '9090' 
   when "ede"
     p "Running with ede environments"
     # TODO: Update these when we decide on a permanent location for EDE IP addresses

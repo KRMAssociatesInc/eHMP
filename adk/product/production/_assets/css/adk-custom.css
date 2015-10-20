@@ -1,0 +1,493 @@
+body {
+    font-size: 11px;
+    font-family: 'Open Sans';
+    height: 100%;
+    overflow: hidden;
+    background: url("../img/gradient-bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    // filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src='../img/gradient-bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/gradient-bg.jpg', sizingMethod='scale')";
+}
+.data-grid table tr:nth-child(2n) {
+    background-color: #f2f8fe;
+}
+.grid-applet-heading {
+    padding: 4px 5px 0px 5px;
+}
+[data-appletid]{
+    
+}
+[data-appletid="logon"]{
+    background-color: transparent;
+}
+.white {
+    color: white;
+}
+.center {
+    text-align: center;
+}
+.expanded-row {
+    background: #f5f5f5;
+    white-space: normal;
+}
+.row-layout p {
+    clear: both;
+    width: 100%;
+    margin: 0;
+}
+.col-layout-sm {
+    padding-right: 5px;
+    padding-bottom: 1px;
+    width: 22%;
+    display: inline-block;
+}
+.col-layout-md {
+    padding-right: 5px;
+    padding-bottom: 1px;
+    width: 30%;
+    display: inline-block;
+}
+.col-layout-lg {
+    padding-right: 5px;
+    padding-bottom: 1px;
+    width: 40%;
+    display: inline-block;
+}
+.toolbar {
+    padding: 5px 0px 5px 0px;
+}
+.toolbar label {
+    width: 50px;
+}
+.toolbar .toolbar-button-sm {
+    width: 50px;
+}
+.toolbar .toolbar-button-md {
+    width: 100px;
+}
+.toolbar .toolbar-button-lg {
+    width: 150px;
+}
+.toolbar-spacer {
+    padding: 0px 20px 0px 0px;
+}
+.selectable {
+    cursor: pointer;
+    cursor: hand;
+}
+.btn-circle {
+    color: #66AFE9;
+    border-color: #66AFE9;
+    background: white;
+    width: 45px;
+    height: 45px;
+    padding: 0px;
+    font-size: 11px;
+    line-height: 1.33;
+    border-radius: 50%;
+}
+.btn-circle:hover , .btn-circle:active, .btn-circle:focus{
+    background-color: #66AFE9;
+    color: white;
+}
+.backgrid th {
+    text-align: left;
+}
+.backgrid td {
+    white-space: normal;
+}
+.grid-footer {
+    padding: 0px;
+}
+.grid-container h5 {
+    padding: 5px 10px;
+}
+.backgrid.table tr.empty td {
+    display: block;
+    line-height: 20px;
+    min-height: 40px;
+    padding: 10px;
+    text-align: left;
+    border: none;
+}
+.panel-body .grid-filter-daterange, .panel-body .grid-filter {
+    background-color: #f2f2f2;
+    padding: 10px 10px 7px 10px;
+    margin-bottom: 0px;
+}
+.panel-body .grid-filter-daterange .row > div:nth-child(2) {
+    padding-top: 10px;
+}
+.grid-applet-panel {
+    padding: 0;
+}
+.applet-error {
+    color: red;
+}
+.no-margin{
+    margin: 0;
+}
+#event-nav {
+    padding: 0px 12px 0px 0px;
+}
+/*--- TOP-REGION STYLES ---*/
+
+#top-region .appNav {
+    padding: 0;
+}
+#bottom-region .col-md-12 {
+    padding: 0, 15px;
+}
+#top-region .appNav nav {
+    min-height: 24px;
+    background-image: none;
+    background-color: #333333;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 0px;
+}
+#top-region .appNav ul.dropdown-menu {
+    min-width: 180px;
+    margin-top: 2px;
+}
+#top-region .appNav .dropdown-menu .navbar-text {
+    font-size: 12px;
+    text-align: center;
+    margin: 5px;
+    width: 100%;
+}
+#top-region .appNav a.dropdown-toggle {
+    padding: 5px 10px;
+    color: #FFFFFF;
+    text-shadow: none;
+    font-size: 10px;
+    line-height: 14px;
+}
+#top-region .appNav li.open a.dropdown-toggle {
+    background-color: #333333;
+}
+#top-region .appNav #patientSearchButton {
+    float: left;
+    height: 24px;
+    font-weight: 400;
+    font-size: 12px;
+    padding: 4px 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+#top-region .appNav #patientSearchButton:hover, #top-region .appNav #patientSearchButton:focus, #top-region .appNav #patientSearchButton:active {
+    background-color: #666666;
+}
+#top-region .appNav .navTitle p {
+    color: #FFFFFF;
+    margin: 0;
+    padding: 5px 10px;
+}
+#top-region .heightSmall nav {
+    /* for adk/applet test navs */
+    margin-bottom: 0;
+    min-height: 24px;
+    border: none;
+    box-shadow: none;
+    background: #e4e4e4;
+    border-radius: 0;
+}
+#top-region .heightSmall a {
+    padding: 4px 10px;
+}
+#top-region .heightSmall .navbar-brand {
+    height: auto;
+}
+.navbar-nav .dropdown-toggle:focus, .navbar-nav .dropdown-toggle:active, .navbar-nav .dropdown-toggle:hover {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 1) inset;
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 1) inset;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 1) inset;
+    background-color: #fff;
+    border-radius: 3px;
+}
+/*--- CENTER-REGION STYLES ---*/
+
+#center-region {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 600px;
+    margin: 30px 0 36px 0;
+}
+/*.patient-search-screen #center-region, .logon-screen #center-region {
+    background-color: transparent;
+}*/
+/*--- CONTENT REGION STYLES ---*/
+#content-region-wrapper {
+    padding: 0;
+}
+.contentPadding {
+    padding: 0 15px;
+}
+
+.applet-title-button {
+    font-size: 12px;
+    color: #628896;
+    text-decoration: none;
+}
+.applet-title-button-active {
+    color: black;
+}
+/*--- BOTTOM REGION STYLES ---*/
+
+#bottom-region .well {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #ebebeb;
+    background-image: none;
+    border: 0;
+    box-shadow: none;
+}
+/*--- Grid Custom Filter REGION STYLES ---*/
+
+.grid-filter-daterange {
+    margin-bottom: 7px;
+}
+.grid-filter-daterange .default-range {
+    background-color: #f2f2f2;
+    padding: 1px 2px;
+    font-size: 11px;
+    margin: 6px 4px;
+}
+.grid-filter-daterange .active-range {
+    background-color: #357ebd;
+    color: white;
+}
+.grid-filter-daterange .daterange:not(.active-range):hover {
+    background-color: #357ebd;
+    color: white;
+}
+.filter-button-open span {
+    color: black;
+}
+
+
+
+#patientDemographic-region .panel, #navigation-region .panel{
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+}
+#patientDemographic-region .panel-heading{
+    padding: 0;
+    min-height: 56px;
+    border-radius: 0;
+}
+#patientDemographic-region #patientDemographic-cwad .label {
+    display: inline-block;
+    margin: 2.5px;
+    padding: 3px 8px;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 11px;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+#patientDemographic-region #patientDemographic-cwad {
+    padding: 5px 15px;
+}
+#patientDemographic-region .media, #patientDemographic-providerInfo {
+    color: #333333;
+    font-size: 11px;
+}
+#patientDemographic-region .media-heading {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+}
+#patientDemographic-region .paddingRight {
+    padding-right: 20px;
+}
+#navigation-region .panel-heading{
+    padding: 10px 0px;
+    min-height: 45px;
+    border-radius: 0;
+}
+#patientDemographic-region #patientDemographic-cwad,
+#patientDemographic-region #patientDemographic-patientInfo,
+#patientDemographic-region #patientDemographic-providerInfo {
+    min-height: 55px;
+}
+
+#patientDemographic-region #patientDemographic-patientInfo {
+    padding-left: 0;
+}
+#patientDemographic-region #patientDemographic-providerInfo {
+    padding: 5px;
+}
+#navigation-region #navigationPanel{
+    background-color: transparent;
+}
+.media-object {
+    max-height: 55px;
+}
+#patientDemographic-region .borderRight {
+    border-width: 0 1px 0 0;
+    border-color: #D7d7d7;
+    border-style: solid;
+}
+#navigation-region #navigation-date {
+    font-size:16px;
+}
+#navigation-date #navigation-dateButton {
+    margin-left:5px;
+}
+#navigation-date #navigation-dateButton:hover, #navigation-date #navigation-dateButton:active, #navigation-date #navigation-dateButton:focus, #navigation-date #navigation-dateButton.active {
+    color:#FFF;
+}
+#navigation-date #hiddenDiv {
+    position: absolute;
+    margin: -3px 0 0 -7px;
+}
+.globalDatePicker-popupRegion {
+    padding:0;
+}
+/*.globalDatePicker-popupRegion .globalDatePickerButton,*/
+.globalDatePicker-popupRegion #globalDate-region,
+.globalDatePicker-popupRegion #globalDate-region2 {
+    padding: 9px 15px;
+}
+.globalDatePicker-popupRegion .globalDatePickerButton {
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #d7d7d7;
+    width: 100%;
+    text-align: left;
+    padding: 9px 7px;
+}
+.globalDatePickerButton:hover {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #628896;
+    -moz-box-shadow: 1px 1px 2px #3D5157;
+    -webkit-box-shadow: 1px 1px 2px #3D5157;
+    box-shadow: 1px 1px 2px #3D5157;
+}
+.globalDatePickerButton {
+    padding: 6px 15px;
+    background: #3D5157;
+    color: #FFF;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+
+}
+#navigation-navbar .pull-right {
+    background-color: none;
+}
+.globalDatePicker-popupRegion .inputHelperText {
+    padding: 0;
+    width: 13px;
+    display: inline-block;
+    float: left;
+    font-size: 13px;
+    line-height: 30px;
+}
+.globalDatePicker-popupRegion .col-lg-4, .globalDatePicker-popupRegion .col-lg-2 {
+    padding: 0 5px;
+}
+
+.panel-title {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: bold;
+  color: #628896;
+}
+
+th.sortable {
+    font-size: 10px;
+}
+.applet-nav-bar .nav-pills {
+    font-size: 12px;
+}
+
+.panel {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.panel-primary>.panel-heading {
+    background-color: rgba(239,246,254,.5);
+    background-image: none;
+    border-color: rgba(239,246,254,.75);
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    
+}
+
+.panel-footer {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    height:20px;
+}
+
+.panel-primary {
+    background: none;
+    border-color: rgba(239,246,254,.75);
+}
+
+.backgrid {
+    background-color: #FFF;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.backgrid th.sortable a {
+    color: #5596C9;
+}
+
+.text-muted {
+    color: #999999;
+}
+
+.modal-title {
+    font-weight: 700;
+    color: #3D5157;
+    font-size: 16px;
+}
+
+.navbar-fixed-top #header-region, .navbar-fixed-top #patientDemographic-region {
+    padding: 0;
+}
+
+#navigation-navbar .pull-right li a {
+    color: #FFF;
+    text-shadow: 1px 1px 2px #628896;
+}
+
+.nav-pills li.active a, .nav-pills li.active a:hover, .nav-pills li.active a:focus {
+    background-color: #628896;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.nav-pills li a:hover, .nav-pills li a:focus {
+    background-color: #7AA9B9;
+    -moz-box-shadow: 1px 1px 2px #3D5157;
+    -webkit-box-shadow: 1px 1px 2px #3D5157;
+    box-shadow: 1px 1px 2px #3D5157;
+}
+
+.applet-nav-bar .nav {
+    padding-bottom: 2px;
+}
+#top-region #navigation-region {
+    padding: 0 15px;
+}
+.app-med {
+    height:33vh;
+    overflow:auto;
+}

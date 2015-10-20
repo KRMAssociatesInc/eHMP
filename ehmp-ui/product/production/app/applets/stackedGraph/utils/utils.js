@@ -16,6 +16,27 @@ function onResolveDependencies(ADK, Backbone, Marionette, _) {
         },
         uid: "urn:va:vital:DOD:0000000003:1000000582"
     };
+
+    var UpdateOrderModel = Backbone.Model.extend({
+        sync: function(method, model, options) {
+
+            var params = {
+                type: 'PUT',
+                url: model.url(),
+                contentType: "application/json",
+                data: JSON.stringify(model.toJSON()),
+                dataType: "json"
+            };
+
+            $.ajax(_.extend(params, options));
+
+        },
+        url: function() {
+            //var pid = ADK.PatientRecordService.getCurrentPatient().get('pid');
+            return ADK.ResourceService.buildUrl('user-defined-stack'/*, {'pid' : pid}*/);
+        }
+    });
+
     var Utils = {
         onResultChosen: function(clickedResult) {
             var self = this;
@@ -27,6 +48,19 @@ function onResolveDependencies(ADK, Backbone, Marionette, _) {
                 self.renderChartFromApplet();
 
             });
+        },
+        buildUpdateModel: function(id, instanceId, collection){
+            var model = new UpdateOrderModel();
+            model.set('id', id);
+            model.set('instanceId', instanceId);
+
+            var graphs = [];
+            _.each(collection.models, function(graph){
+                graphs.push({ graphType: graph.get('graphType'), typeName: graph.get('typeName')});
+            });
+
+            model.set('graphs', graphs.reverse());
+            return model;
         }
     };
 

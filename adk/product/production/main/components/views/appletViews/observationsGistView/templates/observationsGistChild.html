@@ -1,3 +1,4 @@
+<div class="toolbarContainer"/>
 <div id="observations_{{displayName}}" class="row equalHeights noMargin gistItemInner" {{#if userWorkspace}} draggable='true' {{/if}}>
 {{#if vitalColumns}}
     <div class='col-sm-4 quickDraw selectable info-display noPadding'>
@@ -8,7 +9,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-8 quickDraw selectable noPadding" data-toggle="popover" data-content="{{tooltip}}">
+    <div class="col-sm-8 quickDraw selectable noPadding" data-toggle="popover" data-content="{{tooltip}}" tabindex="0">
         {{#if result}}
         <div class="row equalHeights noMargin noPadding">
             <div id="quickLook_{{id}}" class="quickviewOverlay right-side"></div>
@@ -44,7 +45,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-8 quickDraw selectable noPadding" id='quickDraw_{{id}}' data-toggle="popover" data-content="{{tooltip}}" >
+    <div class="col-sm-8 quickDraw selectable noPadding" id='quickDraw_{{id}}' data-toggle="popover" data-content="{{tooltip}}" tabindex="0">
         <div class="row equalHeights noMargin noPadding">
             <div id="quickLook_{{id}}" class="quickviewOverlay right-side"></div>
             <div class="border-vertical col-sm-5">

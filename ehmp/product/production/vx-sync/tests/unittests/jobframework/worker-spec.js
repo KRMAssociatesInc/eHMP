@@ -31,7 +31,7 @@ var handlerRegistry = {
 describe('worker.js', function() {
     describe('Worker()', function() {
         it('call with new', function() {
-            var worker = new Worker(logger, beanstalkJobTypeConfig, handlerRegistry);
+            var worker = new Worker(logger, beanstalkJobTypeConfig, /*metrics*/logger, handlerRegistry);
             expect(worker.logger).toBe(logger);
             expect(worker.beanstalkJobTypeConfig).toEqual(beanstalkJobTypeConfig);
             expect(worker.handlerRegistry).toBe(handlerRegistry);
@@ -41,7 +41,7 @@ describe('worker.js', function() {
 
         it('call as function', function() {
             /* jshint ignore:start */
-            var worker = Worker(logger, beanstalkJobTypeConfig, handlerRegistry);
+            var worker = Worker(logger, beanstalkJobTypeConfig, /*metrics*/logger, handlerRegistry);
             expect(worker.logger).toBe(logger);
             expect(worker.beanstalkJobTypeConfig).toEqual(beanstalkJobTypeConfig);
             expect(worker.handlerRegistry).toBe(handlerRegistry);
@@ -133,7 +133,8 @@ describe('worker.js', function() {
                         callback();
                     }
                 },
-                _receiveJob: function() {}
+                _receiveJob: function() {},
+                getTubeName: function() {}
             };
 
             callback = function() {
@@ -195,6 +196,7 @@ describe('worker.js', function() {
 
             instance = {
                 logger: logger,
+                metrics: logger,
                 _release: function() {},
                 _destroy: function() {},
                 _bury: function() {},
@@ -211,7 +213,13 @@ describe('worker.js', function() {
                     errorJobStatus: jasmine.createSpy().andCallFake(function(job, error, callback) {
                         callback(null, {}, job);
                     })
-                }
+                },
+                errorPublisher : {
+                    publishHandlerError: jasmine.createSpy().andCallFake(function(job, error, type, callback) {
+                        callback(null, {}, job);
+                    })
+                },
+                getTubeName : function(){}
             };
 
             callback = function() {
@@ -264,7 +272,7 @@ describe('worker.js', function() {
             });
         });
 
-        it('verify _release() called for transient error', function() {
+        it('verify _destroy() called for transient error', function() {
             var jobId = 1;
             var payload = '{ "type": "valid" }';
             instance.handlerRegistry.get = function() {
@@ -272,7 +280,7 @@ describe('worker.js', function() {
                     callback(errUtil.createTransient());
                 };
             };
-            spyOn(instance, '_release');
+            spyOn(instance, '_destroy');
             Worker.prototype._processJob.call(instance, jobId, payload, callback);
 
             waitsFor(function() {
@@ -280,12 +288,12 @@ describe('worker.js', function() {
             }, 'should be called', 100);
 
             runs(function() {
-                expect(instance._release).toHaveBeenCalledWith(jobId);
+                expect(instance._destroy).toHaveBeenCalledWith(jobId);
                 expect(instance.jobStatusUpdater.errorJobStatus).toHaveBeenCalled();
             });
         });
 
-        it('verify _bury() called other error types', function() {
+        it('verify _destroy() called other error types', function() {
             var jobId = 1;
             var payload = '{ "type": "invalid" }';
             instance.handlerRegistry.get = function() {
@@ -293,7 +301,7 @@ describe('worker.js', function() {
                     callback(errUtil.createFatal());
                 };
             };
-            spyOn(instance, '_bury');
+            spyOn(instance, '_destroy');
             Worker.prototype._processJob.call(instance, jobId, payload, callback);
 
             waitsFor(function() {
@@ -301,7 +309,7 @@ describe('worker.js', function() {
             }, 'should be called', 100);
 
             runs(function() {
-                expect(instance._bury).toHaveBeenCalledWith(jobId);
+                expect(instance._destroy).toHaveBeenCalledWith(jobId);
                 expect(instance.jobStatusUpdater.errorJobStatus).toHaveBeenCalled();
             });
         });
@@ -335,7 +343,8 @@ describe('worker.js', function() {
                 bury: function() {
                     called = true;
                 }
-            }
+            },
+            getTubeName : function(){}
         };
 
         it('verify client.bury() called', function() {
@@ -352,7 +361,8 @@ describe('worker.js', function() {
                 release: function() {
                     called = true;
                 }
-            }
+            },
+            getTubeName : function(){}
         };
 
         it('verify client.release() called', function() {
@@ -369,7 +379,8 @@ describe('worker.js', function() {
                 destroy: function() {
                     called = true;
                 }
-            }
+            },
+            getTubeName : function(){}
         };
 
         it('verify client.destroy() called', function() {
@@ -390,7 +401,8 @@ describe('worker.js', function() {
                 end: function() {
                     endCalled = true;
                 }
-            }
+            },
+            getTubeName : function(){}
         };
 
         it('verify listeners removed and client ended', function() {

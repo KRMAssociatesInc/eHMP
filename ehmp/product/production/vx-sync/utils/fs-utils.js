@@ -19,6 +19,9 @@ function rmDir(removeSelf, dirPath) {
             var filePath = dirPath + '/' + files[i];
             if (!deleteFile(filePath)) {
                 rmDir(true, filePath);
+                if (fs.statSync(filePath).isDirectory()) {
+                    fs.rmdirSync(filePath);
+                }
             }
         }
     }

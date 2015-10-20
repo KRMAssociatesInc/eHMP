@@ -1,0 +1,113 @@
+.accordion-container {
+	&.panel-group {
+		margin: 20px;
+		clear: both;
+		.panel {
+			border-radius: 0px;
+			.panel-heading {
+				background-image: none;
+	    		background-color: $primary-lightest;
+	    		cursor: default;
+	    		padding: 0 0 0 10px;
+	    		h4 {
+	    			margin: 0;
+	    			padding: 0;
+	    			> a {
+	    				display: block;
+	    			}
+	    		}
+				.accordion-toggle:before {
+				    content: "\f078";
+				    color: $primary;
+				    font-family: 'FontAwesome';
+				    padding: 0 8px 0 0;
+				    position: absolute;
+				    left: -3px;
+				    top: initial;
+				    width: 30px;
+				    text-align: center;
+				}
+				.accordion-toggle.collapsed:before {
+				    content: "\f054";
+				}
+				.panel-title {
+					color: $primary;
+					cursor: pointer;
+					position: relative;
+					padding-left: 24px;
+				}
+				a:hover, a:focus {
+					text-decoration: none;
+				}
+				.btn-remove { // Can remove - Jeff
+					float: right;
+					padding-right: 10px;
+				}
+			}
+			.panel-body{
+				&.no-padding {
+					padding:0;
+				}
+			}
+			.panel-title-library {
+				color: $primary;
+				cursor: pointer;
+				font-size: 20px;
+				font-weight: normal;
+				line-height: 1.9;
+				text-transform: none;
+				& a:hover {
+					text-decoration: none;
+				}
+			}
+		}
+		&.small {
+		    margin: 0;
+		    font-size: 100%;
+		    .panel {
+		        border-left: none;
+		        border-right: none;
+		        border-radius: 0;
+		        .panel-heading {
+		            position: relative;
+		            margin: 0;
+		            background-color: $primary-lightest;
+		            background-image: none;
+		            .accordion-toggle:before {
+		                content: "\f0d7";
+		            }
+		            .accordion-toggle.collapsed:before {
+		                content: "\f0da";
+		            }
+		            .panel-title {
+		                color: $black;
+		                position: relative;
+		                padding:0;
+		                padding-left: 18px;
+		            }
+		        }
+		        h5 {
+		            margin: 0;
+		            padding: 0;
+		            text-transform: capitalize;
+		        }
+		        .panel-body {
+		            padding: 0;
+		            ul:not([class]) {
+		                margin: 0;
+		                padding: 0;
+		                li:not([class]) {
+		                    border-top: 1px solid $grey-light;
+		                    display: flex;
+		                    list-style-type: none;
+		                    padding: 10px 0;
+		                    &:first-of-type {
+		                        border: none;
+		                    }
+		                }
+		            }
+		        }
+		    }
+		}
+	}
+}

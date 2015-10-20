@@ -13,6 +13,7 @@ var _ = require('underscore');
 
 var vx_sync_ip = require(global.VX_INTTESTS + 'test-config');
 
+var TerminologyUtil = require(global.VX_SUBSYSTEMS + 'terminology/terminology-utils');
 var val = require(global.VX_UTILS + 'object-utils').getProperty;
 var config = require(global.VX_ROOT + 'worker-config');
 config.terminology.host = vx_sync_ip;
@@ -81,17 +82,19 @@ var jdsCodedDodValue = {
     display: 'Disorder of hematopoietic structure (disorder)'
 };
 
+var terminologyUtil = new TerminologyUtil(log, log, config);
 describe('record-enrichment-problem-xformer', function() {
     describe('transformAndEnrichRecord()', function() {
         it('Normal path: VA data', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: terminologyUtil
+            };
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, {
-                    record: originalVaProblem
-                }, function(error, record) {
+                xformer(log, config, environment, originalVaProblem,
+                function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     // Verify that the code was inserted.
@@ -109,13 +112,14 @@ describe('record-enrichment-problem-xformer', function() {
         });
         it('Normal path: DOD data', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: terminologyUtil
+            };
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, {
-                    record: originalDodProblem
-                }, function(error, record) {
+                xformer(log, config, environment, originalDodProblem,
+                function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     // Verify that the code was inserted.

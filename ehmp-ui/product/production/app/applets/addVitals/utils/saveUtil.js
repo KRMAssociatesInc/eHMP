@@ -14,16 +14,14 @@ define([
         dateUtil = DateTimeUtil,
         SaveModel = Backbone.Model.extend({
             urlRoot: '',
+            defaults: {
+                'dfn': '',
+                //'duz' : '',
+                'locIEN': '',
+                'dateTime': '',
+                'vitals': {}
+            }
         });
-    var SaveModelParams = Backbone.Model.extend({
-        defaults: {
-            'dfn': '',
-            //'duz' : '',
-            'locIEN': '',
-            'dateTime': '',
-            'vitals': {}
-        }
-    });
 
     var callbacks = {
         error: function(model, resp) {
@@ -35,7 +33,7 @@ define([
         success: function(model, resp) {
             //close modal...we are done with it
             console.log('success');
-            ADK.hideModal();
+            ADK.UI.Modal.hide();
             setTimeout(function() {
                 //gridView.refresh({});
                 ADK.Messaging.getChannel('vitals').request('refreshGridView');
@@ -44,12 +42,14 @@ define([
     };
 
     var getSaveModel = function(vitalsModel) {
+        var save = new SaveModel();
+        var patient = ADK.PatientRecordService.getCurrentPatient();
+        save.set('dfn', vitalsModel.get('dfn'));
+        save.set('duz', patient.get('pid'));
 
-        var saveParams = new SaveModelParams();
-        saveParams.set('dfn', vitalsModel.get('dfn'));
-        saveParams.set('locIEN', vitalsModel.get('locIEN'));
+        save.set('locIEN', vitalsModel.get('locIEN'));
         var dateTime = dateUtil.getSaveDate(vitalsModel.getDate(), vitalsModel.getTime());
-        saveParams.set('dateTime', dateTime);
+        save.set('dateTime', dateTime);
         var isOnPass = vitalsModel.get('on-pass');
         var quals;
         var vitals = [];
@@ -103,8 +103,7 @@ define([
             }
         });
 
-        var id = '',
-            patient = ADK.PatientRecordService.getCurrentPatient();
+        var id = '';
 
         // Get the pid param in the same way as ADK.PatientRecordService.fetchCollection does
         if (patient.get("icn")) {
@@ -115,10 +114,7 @@ define([
             id = patient.get("id");
         }
 
-        saveParams.set('vitals', vitals);
-        var save = new SaveModel({
-            param: saveParams
-        });
+        save.set('vitals', vitals);
         save.urlRoot = ADK.ResourceService.buildUrl('write-back-save-vitals', {
             pid: id
         });

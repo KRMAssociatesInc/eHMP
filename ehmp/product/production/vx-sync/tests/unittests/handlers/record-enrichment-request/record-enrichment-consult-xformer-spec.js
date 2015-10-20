@@ -113,7 +113,7 @@ describe('record-enrichment-consult-xformer.js', function() {
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalVaConsultJob, function(error, record) {
+                xformer(log, config, environment, originalVaConsultJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 
@@ -163,7 +163,7 @@ describe('record-enrichment-consult-xformer.js', function() {
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalDodConsultJob, function(error, record) {
+                xformer(log, config, environment, originalDodConsultJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(typeof record.stampTime).toEqual('string');
@@ -239,7 +239,7 @@ describe('record-enrichment-consult-xformer.js', function() {
             };
 
             runs(function() {
-                xformer(log, config, environment, consultJob, function(error, record) {
+                xformer(log, config, environment, consultJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 
@@ -346,7 +346,7 @@ describe('record-enrichment-consult-xformer.js', function() {
             };
 
             runs(function() {
-                xformer(log, config, environment, consultJob, function(error, record) {
+                xformer(log, config, environment, consultJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 
@@ -406,27 +406,11 @@ describe('record-enrichment-consult-xformer.js', function() {
                 return finished;
             }, 'Call failed to return in time.', 500);
         });
-        it('Job.record was null', function() {
-            var finished = false;
-            var environment = {};
-
-            runs(function() {
-                xformer(log, config, environment, {}, function(error, record) {
-                    expect(error).toBeNull();
-                    expect(record).toBeNull();
-                    finished = true;
-                });
-            });
-
-            waitsFor(function() {
-                return finished;
-            }, 'Call failed to return in time.', 500);
-        });
         it('Job was removed', function() {
             var finished = false;
             var environment = {};
             runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:consult:DOD:0000000003:1000010340');

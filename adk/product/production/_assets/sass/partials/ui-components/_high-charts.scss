@@ -1,0 +1,28 @@
+/* demo purposes only*/
+#dateRangeCollapsed{
+	height:32px;
+	width:395px;
+}
+.dateRangeWrapper{
+	border:2px solid $secondary;
+	width: 600px;
+}
+.clear{
+	clear:both;
+}
+
+// causes adverse root level styling - removed by CS
+// .globalDatePickerButton{
+// 	width:195px;
+// }
+
+.highcharts-container {
+    overflow: visible;
+}
+
+#occurrance{
+	width:115px;
+	height:23px;
+	border:1px solid $grey-light;
+	border-radius:3px;
+}

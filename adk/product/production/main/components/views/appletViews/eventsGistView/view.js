@@ -23,7 +23,9 @@ define([
 
     var EventsGistView = BaseDisplayApplet.extend({
         initialize: function(options) {
+
             this._base = baseDisplayApplet.prototype;
+
             if (!this.options.appletConfig) {
                 this.options.appletConfig = {};
                 this.options.appletConfig.id = this.appletOptions.appletConfig.id;

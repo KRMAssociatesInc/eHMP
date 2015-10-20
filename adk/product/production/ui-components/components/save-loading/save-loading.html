@@ -1,0 +1,27 @@
+<h3>Save/Loading</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> When the user is performing an action with the application, a saving/loading/processing etc. icon with content will appear indicating to the user that the application is processing. During this time, the user should not perform any other action and should wait until the application is done processing (i.e. when the icon no longer displays on the screen).</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> A loading circle, or progress bar is necessary when data is being loaded/processing in the application. The application must inform the user that there is 'something happening'. </p>
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> It is usually best to always present a loading circle, or progress bar anytime the application is loading/processing regardless of the amount of time it takes to complete the action.</p>
+</div>
+
+<div id="save-loadingCopy">
+<h5><i class="fa fa-spinner fa-spin"></i> Loading&hellip;</h5>
+</div>
+
+<hr />
+
+<div role="tabpanel" class="tabpanel">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active"><a href="#markup-accordion" aria-controls="markup-accordion" role="tab" data-toggle="tab">Save/Loading</a></li>
+	</ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-accordion">
+            <pre>
+&lt;h5&gt;&lt;i class="fa fa-spinner fa-spin"&gt;&lt;/i&gt; Loading&hellip;&lt;/h5&gt;
+            </pre>
+            <a onclick="copyToClipboard('save-loadingCopy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+	</div>
+</div>

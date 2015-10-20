@@ -10,11 +10,11 @@ class VxSync
       pid_site_list_not_sync << site
     end
     
-    @@pid_site_list_not_sync << pid_site_list_not_sync
+    TestSupport.pid_site_list_not_sync << pid_site_list_not_sync
   end
   
   def check_pid_if_found_list_not_sync(pid, site_name_list)
-    found_pid = @@pid_site_list_not_sync.assoc(pid)
+    found_pid = TestSupport.pid_site_list_not_sync.assoc(pid)
     unless found_pid == nil
       site_names = site_name_list.split";"
       site_names = site_names.map(&:upcase)
@@ -91,6 +91,10 @@ class VxSync
   end
   
   def check_status_until_sync_process_completed(path, site_name_list, check_opd_pendeing, max_wait_time = 90)
+    pid_site = nil
+    pid = path.partition('=').last
+    pid_site = pid + "-" + site_name_list unless pid.empty?
+    
     @site_is_sync = []
     @old_inprogress_result = {}
     @old_job_status_result = {}
@@ -113,13 +117,13 @@ class VxSync
       json = nil
 
       p '-'*100
-      p "loop number #{i += 1}"
+      p "loop number #{i += 1} - #{pid}  site(s) #{site_name_list}"
       # p @@response.code
       json = find_sync_status_body(path)
       p json
       
       sync_site = check_all_sites_sync_completed(json, site_names) if @@response.code == 200
-      sync_jobs = check_pending_sync_jobs(json, site_names) if @@response.code == 200
+      sync_jobs = check_pending_sync_jobs(json, site_names) if sync_site
       
       sync_completed = sync_site & sync_jobs if check_opd_pendeing == false
       sync_completed = sync_site & !sync_jobs if check_opd_pendeing == true
@@ -138,7 +142,8 @@ class VxSync
         check_if_inprogress_still_have_change(json)
         sleep sleep_time
       end
-    end 
+    end
+    p "******** The sync completed for patient #{pid} at site(s) #{site_name_list} ********" if sync_completed && !pid_site.nil?
     return sync_completed
   end
   
@@ -157,18 +162,6 @@ class VxSync
       json = JSON.parse(@@response.body) if @@response.code == 200
     end
     
-      
-    # begin
-      # @response = HTTPartyWithBasicAuth.get_with_authorization(path, default_timeout)
-      # success_result = true
-      # json = JSON.parse(@response.body) 
-    # rescue Exception => err
-      # puts "An error has occured at Sync Status."
-      # puts err
-      # success_result = false
-    # end
-    # p @response
-    # fail "The Sync Status is failed! \n#{err}" if success_result == false
     return json
   end
   
@@ -288,8 +281,8 @@ class VxSync
     site_name = "9E7A"
     pan_operational_sync_completed = wait_until_site_operational_sync_is_completed(base_url, site_name)
     if pan_operational_sync_completed
-      p "The operational sync is completed for site #{site_name}"
-      p "This is the responce when syncing the OPD for Panorama \n #{JSON.parse(@@response.body)}"
+      p "***** The operational sync is completed for site #{site_name} *****"
+      # p "This is the responce when syncing the OPD for Panorama \n #{JSON.parse(@@response.body)}"
     else
       p "The operational sync did NOT complete for site #{site_name}"
       not_sync_site = site_name + "\n " 
@@ -298,16 +291,17 @@ class VxSync
     site_name = "C877"
     kod_operational_sync_completed = wait_until_site_operational_sync_is_completed(base_url, site_name)
     if kod_operational_sync_completed
-      p "The operational sync is completed for site #{site_name}"
-      p "This is the responce when syncing the OPD for Kodak \n #{JSON.parse(@@response.body)}"
+      p "***** The operational sync is completed for site #{site_name} *****"
+      # p "This is the responce when syncing the OPD for Kodak \n #{JSON.parse(@@response.body)}"
     else
       p "The operational sync did NOT complete for site #{site_name}"
       not_sync_site = not_sync_site + site_name
     end
     
-    @@operational_sync_been_checked = true
+    TestSupport.operational_sync_been_checked(true)
     if pan_operational_sync_completed == true && kod_operational_sync_completed == true
-      @@operational_data_synced = true 
+      # @@operational_data_synced = true
+      TestSupport.operational_data_synced(true) 
     else
       fail "The operational sync did not complete for site: \n #{not_sync_site}" 
     end
@@ -344,27 +338,33 @@ class VxSync
   end
   
   def check_site_jobs_pending(json, site_names)
-    site_jobs_pending = false
+    site_jobs_pending_empty = true
+    site_names = site_names.map(&:upcase)
     job_types = []
     json.each do |json_job|
       job_type = json_job["patientIdentifier"]["value"]
       job_type = job_type.split";"
       job_type = job_type[0]
-      job_types << job_type
+      
+      job_type_general = json_job["type"] unless json_job["type"].nil?
+      
+      if site_names.include? job_type
+        site_jobs_pending_empty = false
+        break
+      end
+      
+      if job_type_general == "enterprise-sync-request"
+        p "Job Status array has enterprise-sync-request"
+        site_jobs_pending_empty = false
+        break
+      end
+      
+      # job_types << job_type
     end
-    p "=*"*100
-    p job_types
-    p site_names = site_names.map(&:upcase)
-    match_job = job_types & site_names
-    if match_job.empty?
-      p "But Job Status array is empty for #{site_names}"
-      site_jobs_pending = true
-    # else
-      # p "Job Status array is not empty for #{match_job}"
-    end
- 
-    p "=*"*100
-    return site_jobs_pending
+    # p "=*"*100
+    p "But Job Status array is empty for #{site_names}" if site_jobs_pending_empty
+     
+    return site_jobs_pending_empty
   end
   
   def check_if_job_status_still_have_change(json)
@@ -417,5 +417,9 @@ class VxSync
     fail "The patient data clear request is failed! \n#{response}" if success_result == false
     
     return response
+  end
+  
+  def response
+    return @@response
   end
 end

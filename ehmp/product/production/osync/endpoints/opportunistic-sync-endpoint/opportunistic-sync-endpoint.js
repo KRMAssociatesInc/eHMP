@@ -9,6 +9,7 @@ require('../../env-setup');
 var bodyParser = require('body-parser');
 
 var express = require('express');
+var cron = require('node-schedule');
 
 var config = require(global.OSYNC_ROOT + 'worker-config');
 var logUtil = require(global.OSYNC_UTILS + 'log');
@@ -34,5 +35,23 @@ app.get('/ping', function(req, res) {
 app.listen(port);
 log.info('opportunistic-sync-request endpoint listening on port %s', port);
 
-log.info('opportunistic-sync-request endpoint: Calling initialSync...');
-handler.handle(log, config, environment);
+var rule = new cron.RecurrenceRule();
+rule.dayOfWeek = [5,6,0,1,2,3,4];
+rule.hour = Number(config.scheduledRunAtHour);
+rule.minute = Number(config.scheduledRunAtMinutes);
+
+log.info('opportunistic-sync-request endpoint: schedulejob...' + rule.hour);
+
+//handler.handle(log, config, environment);
+
+cron.scheduleJob(rule, function(){
+    log.debug(rule);
+    log.debug('starting handlers');
+    handler.handle(log, config, environment);
+});
+
+//cron.scheduleJob("0 */10 * * * *", function(){
+//    log.debug('Start handlers ...');
+//    handler.handle(log, config, environment);
+//});
+

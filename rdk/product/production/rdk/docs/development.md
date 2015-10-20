@@ -83,4 +83,4 @@ The Node-Inspector npm package allows debugging node.js programs from a Chrome t
 
 <br />
 ---
-Next: [Style Guide](style-guide.md)
+Back: [Contributing](contributing.md)

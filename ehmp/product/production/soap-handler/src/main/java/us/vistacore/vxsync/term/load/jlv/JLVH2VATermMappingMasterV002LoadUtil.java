@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Iterator;
 
+import org.apache.poi.hssf.record.RecordFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -117,9 +118,14 @@ public class JLVH2VATermMappingMasterV002LoadUtil implements IJLVH2PageLoadUtil 
 				
 				if ((lRowIndex > 0) ||
 					((lRowIndex == 0) && (!isTitleRow(oRow)))) {
-					
-					RowMapping oRowMapping = new RowMapping(oRow);
+					RowMapping oRowMapping;
 					RowProcessingStatus eStatus = null;
+					try {
+						oRowMapping = new RowMapping(oRow);
+					}
+					catch(RecordFormatException re) {
+						break;
+					}
 					try {
 						addRowToTermDatabase(oRowMapping);
 						eStatus = RowProcessingStatus.RECORD_WRITTEN;
@@ -279,19 +285,27 @@ public class JLVH2VATermMappingMasterV002LoadUtil implements IJLVH2PageLoadUtil 
 		
 		public RowMapping (Row oRow) {
 			if (oRow != null) {
-				String sId = JLVH2HelperUtil.getStringCellValue(oRow, CELL_ROW_ID);
-				rowId = Integer.parseInt(sId);
-				
-				String sMapPathwayId = JLVH2HelperUtil.getStringCellValue(oRow, CELL_MAP_PATHWAY_ID); 
-				mapPathwayId = Integer.parseInt(sMapPathwayId);
-				
-				sourceCode = JLVH2HelperUtil.getStringCellValue(oRow, CELL_SOURCE_CODE);
-				sourceCodeText = JLVH2HelperUtil.getStringCellValue(oRow, CELL_SOURCE_CODE_TEXT);
-				targetCode = JLVH2HelperUtil.getStringCellValue(oRow, CELL_TARGET_CODE);
-				targetCodeText = JLVH2HelperUtil.getStringCellValue(oRow, CELL_TARGET_CODE_TEXT);
-				optCode = JLVH2HelperUtil.getStringCellValue(oRow, CELL_OPT_CODE);
-				createDate = JLVH2HelperUtil.getStringCellValue(oRow, CELL_CREATE_DATE);
-				editDate = JLVH2HelperUtil.getStringCellValue(oRow, CELL_EDIT_DATE);
+				try {
+					String sId = JLVH2HelperUtil.getStringCellValue(oRow, CELL_ROW_ID);
+					
+					String sMapPathwayId = JLVH2HelperUtil.getStringCellValue(oRow, CELL_MAP_PATHWAY_ID); 
+					
+					sourceCode = JLVH2HelperUtil.getStringCellValue(oRow, CELL_SOURCE_CODE);
+					sourceCodeText = JLVH2HelperUtil.getStringCellValue(oRow, CELL_SOURCE_CODE_TEXT);
+					targetCode = JLVH2HelperUtil.getStringCellValue(oRow, CELL_TARGET_CODE);
+					targetCodeText = JLVH2HelperUtil.getStringCellValue(oRow, CELL_TARGET_CODE_TEXT);
+					optCode = JLVH2HelperUtil.getStringCellValue(oRow, CELL_OPT_CODE);
+					createDate = JLVH2HelperUtil.getStringCellValue(oRow, CELL_CREATE_DATE);
+					editDate = JLVH2HelperUtil.getStringCellValue(oRow, CELL_EDIT_DATE);
+					if(sId == null || sMapPathwayId == null) {
+						throw new RecordFormatException("Row is empty");
+					}
+					rowId = Integer.parseInt(sId);
+					mapPathwayId = Integer.parseInt(sMapPathwayId);
+				} catch(NumberFormatException e) {
+					System.out.println(sourceCode + '\t'+targetCode+'\t'+optCode);
+					throw e;
+				}
 			}
 		}
 
