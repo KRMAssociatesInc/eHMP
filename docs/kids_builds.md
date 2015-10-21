@@ -68,6 +68,6 @@ Install
 
 14) Take all defaults except when asked to rebuild menu entries and then type y or yes. Press Enter/Return until you get a message saying it’s been installed.
 
-15) Repeat steps 14 to 17 until all files are uploaded.
+15) Repeat steps 11 to 14 until all files are uploaded.
 
 16) Press enter until you reach the OSEHRA> prompt then type H to quit back to the linux prompt
