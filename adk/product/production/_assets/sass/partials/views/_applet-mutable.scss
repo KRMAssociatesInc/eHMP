@@ -1,0 +1,166 @@
+.this-class-does-not-go-to-adk{
+	width: 300px;
+	height: 250px;
+}
+
+$panel-header-height: 24px;
+$panel-footer-height: 4px;
+$filter-label-width: 65px;
+
+.applet-container{
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+	height:100%;
+	position: relative;
+	&.mutable{
+		// mutable specific classes
+	}
+	&.unmutable{
+		// unmutable specific classes
+		.panel-primary .panel-body .filter-toolbar .filter-tags-area{
+			display: block;
+			margin-top: 0;
+		}
+	}
+	.panel-primary{
+		border: 0;
+		height: 100%;
+		position: relative;
+		.panel-heading{
+			background-color: $primary-lightest;
+			border-bottom: 2px solid $secondary-light;
+			height: $panel-header-height;
+			overflow: hidden;
+			padding: 0 0 0 5px;
+			h3{
+				border: none;
+				color: $primary-light;
+			    float: left;
+			    font-size: 11px;
+			    font-weight: 700;
+			    margin: 0;
+			    padding: 6px 0;
+			    text-transform: uppercase;
+			}
+			ul{
+			    display: block;
+			    float: right;
+			    height: $panel-header-height;
+			    list-style: outside none none;
+			    margin: 0;
+			    padding: 0;
+			    white-space: nowrap;
+				li {
+				    float: left;
+				    button{
+				    	border-radius: 0;
+						color: $primary-light;
+						padding: 1px 6px;
+				    	&:hover, &:focus, &:active, &.active{
+				    		background: none;
+				    		box-shadow: none;
+							color: $primary;
+				    		outline: none;
+				    	}
+				    	.filter-name {
+						    font-size: 11px;
+						}
+				    }
+				}
+			}
+		}
+		.panel-sticky-upper-area{
+			position: absolute;
+			width: 100%;
+			z-index: 2;
+			.faux-table{
+				// added to achieve the header shadow effect
+				border: 0;
+				padding-bottom: 4px;
+			}
+		}
+		.panel-body{
+			height: calc(100% - #{$panel-header-height} - #{$panel-footer-height});
+    		overflow-y: scroll;
+    		padding: 0;
+			.filter-toolbar {
+			    background-color: $grey-lighter;
+			    display:none;
+			    .filter-tags-form, .filter-form {
+				    padding: 10px;
+				}
+			    .filter-name-form{
+			    	display: none;
+			    	padding: 10px 10px 0;
+
+			    	label{
+			    		font-size: 10px;
+			    		margin-bottom: 0;
+			    		width:$filter-label-width;
+			    	}
+				    .filter-name-input{
+				    	background-color: transparent;
+				    	border-top: none;
+				    	border-bottom: 1px solid #777;
+				    	border-right: none;
+				    	border-left: none;
+				    	width: calc(100% - #{$filter-label-width} - 5px);
+				    }
+			    }
+			    .filter-tags-area {
+				    background-color: $grey-lighter;
+				    border-top: 1px solid #ccc;
+				    display:none;
+				    margin-top: 10px;
+				    padding: 10px 10px 5px;
+				    position: relative;
+				    .filter-tags{
+				    	list-style: none;
+				    	margin:0;
+				    	padding:0;
+						li{
+						    background-color: white;
+						    border-radius: 3px;
+						    display: inline-block;
+						    margin: 0 5px 5px 0;
+						    padding: 3px 5px;
+						    .remove-filter-keyword {
+							    background-color: transparent;
+							    border: medium none;
+							    line-height: 10px;
+							    padding: 0;
+							}
+					    }
+				    }
+				    .filter-remove-all{
+				    	background-color: transparent;
+				    	border: none;
+				    	position: absolute;
+				    	right: 3px;
+				    	top: 3px;
+				    	&:hover{
+				    		color: $red;
+				    	}
+				    }
+				}
+			}
+    		.grid-container {
+			    overflow: hidden;
+			}
+		}
+		.grid-footer{
+			background-color: $white;
+			height: $panel-footer-height;
+		}
+
+		// faux table class set here because it is used in various elements below this hierarchy
+		.faux-table .header{
+			background-color: $white;
+			box-shadow: 0px 0px 4px 0px #999999;
+			color: $primary;
+			a{
+				// the anchors will be added later on by backgrid sorting
+				color: $primary;
+			}
+		}
+	}
+}

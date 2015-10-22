@@ -1,0 +1,24 @@
+ORWDAL32 SYMPTOMS
+
+The first piece (numeric) is the symptom IEN.  The second piece is the symptom name, included inside < >, the third piece is the symptom name again.
+example:
+
+ 
+Params ------------------------------------------------------------------
+literal 
+literal 1
+ 
+Results -----------------------------------------------------------------
+476^A FIB-FLUTTER <ATRIAL FIBRILLATION-FLUTTER>^ATRIAL FIBRILLATION-FLUTTER
+237^ABDOMINAL BLOATING
+236^ABDOMINAL CRAMPS
+429^ABDOMINAL DISCOMFORT
+235^ABDOMINAL PAIN
+430^ABNORMAL ECG
+477^ABNORMAL ECG <ECG ABNORMALITY>^ECG ABNORMALITY
+477^ABNORMAL EKG <ECG ABNORMALITY>^ECG ABNORMALITY
+some don't have the third piece.
+in this case they are set with out the enclosing < >
+
+...
+ah, the second piece is the synonym, and the third piece is the name.  Where there is not a third piece, the synonym and name are the same.

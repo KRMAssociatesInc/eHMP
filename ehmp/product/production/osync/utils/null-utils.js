@@ -64,6 +64,11 @@ function isNullish(object, properties) {
     });
 }
 
+var isNotNullish = function(value) {
+    return !(isNullish(value));
+};
+
 
 
 module.exports.isNullish = isNullish;
+module.exports.isNotNullish = isNotNullish;

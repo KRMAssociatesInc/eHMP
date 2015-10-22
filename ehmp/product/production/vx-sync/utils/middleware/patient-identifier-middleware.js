@@ -9,13 +9,11 @@ var inspect = require('../inspect');
 var idUtil = require('../patient-identifier-utils');
 var logUtil = require('../log');
 
-var JdsClient = require(global.VX_SUBSYSTEMS + 'jds/jds-client');
-
 var IDENTIFIER_QS_TYPES = ['dod', 'pid', 'icn'];
 
 function PatientIdentifierAPI(setLog, setConfig, jdsClient) {
     if (!(this instanceof PatientIdentifierAPI)) { return new PatientIdentifierAPI(setLog, setConfig, jdsClient); }
-    this.jdsClient = jdsClient || new JdsClient(setLog, setConfig);
+    this.jdsClient = jdsClient;
     this.log = logUtil.getAsChild('patient-identifier-util', setLog);
     this.config = setConfig;
 

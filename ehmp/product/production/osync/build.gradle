@@ -1,0 +1,77 @@
+ext.set('repo', 'releases')
+ext.set('groupId', 'us.vistacore.ehmp')
+ext.set('artifactId', 'osync')
+
+
+task cleanNPM(type: Exec) {
+  group "osync Tasks"
+  description "Clean up node_modules"
+  commandLine "npm", "prune"
+}
+
+task installNpm(type: Exec) {
+  group "osync Tasks"
+  description "installs package(s)"
+  commandLine "npm", "install"
+}
+installNpm.mustRunAfter cleanNPM
+
+build.dependsOn installNpm
+
+task npmCheck(type: Exec, dependsOn: [cleanNPM, installNpm]) {
+  group "osync Tasks"
+  description "installs package(s) and runs jshint"
+  commandLine "npm", "run-script", "check"
+}
+
+task unitTest(type: Exec) {
+  group "osync Tasks"
+  description "installs package(s) and runs unit tests"
+  commandLine "npm", "test"
+}
+unitTest.dependsOn installNpm
+test.dependsOn unitTest
+
+task osyncIntTests{
+  group "Opportunistic Sync Tasks"
+  description "installs package(s) and runs integration tests"
+  doLast{
+    exec {
+      executable = "rake"
+      args = ['inttest']
+    }
+  }
+}
+
+task osyncAllTests(dependsOn: [test, osyncIntTests]) {
+  group "Opportunistic Sync Tasks"
+  description "runs unit and integration tests"
+}
+
+task ziposync(type: Zip) {
+  extension = 'zip'
+  baseName = 'osync'
+  version = getVersionByCommitCountForProject(":production:osync")  
+  destinationDir buildDir
+  from projectDir
+  exclude 'build'
+  exclude 'logs'
+  exclude 'tests'
+}
+
+ziposync.dependsOn installNpm
+build.dependsOn ziposync
+uploadArchives.dependsOn ziposync
+
+artifacts {
+  archives ziposync.archivePath
+}
+
+task rebuildMetadata(type: Exec) {
+  commandLine "bash", "-c", "curl -s -u ${System.getenv()['NEXUS_USER_NAME']}:${System.getenv()['NEXUS_PASSWORD']} -X DELETE https://dl.vistacore.us/nexus/service/local/metadata/repositories/${->repo}/content/${->groupId.replaceAll('\\.','/')}/${->artifactId}/"
+}
+
+uploadArchives.finalizedBy rebuildMetadata
+
+//unitTest.mustRunAfter cleanNPM, installNpm
+osyncIntTests.mustRunAfter cleanNPM, installNpm

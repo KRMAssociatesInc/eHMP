@@ -9,7 +9,6 @@ define([
         }
     });
     var TabView = Backbone.Marionette.ItemView.extend({
-        //model: new TabModel(),
         template: tabTemplate,
         tagName: "ul",
         className: "nav nav-tabs",
@@ -25,8 +24,7 @@ define([
         },
         events: {
             'click #global': 'updateSearchType',
-            'click #mySite': 'updateSearchType',
-            'click #myCPRSList': 'updateSearchType'
+            'click #mySite': 'updateSearchType'
         },
         updateSearchType: function(event) {
             this.model.set({

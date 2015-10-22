@@ -73,4 +73,5 @@ class WebDriverFactory
   end
 
 # driver =  web_driver_factory()
+# driver.navigate.to "https://jlv.vistacore.us/jlv/"
 end

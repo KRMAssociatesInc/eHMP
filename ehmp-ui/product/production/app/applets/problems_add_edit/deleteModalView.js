@@ -92,7 +92,11 @@ define([
             'callShow': true
         };
 
-        ADK.showModal(modalView, modalOptions);
+        var modal = new ADK.UI.Modal({
+            view: modalView,
+            options: modalOptions
+        });
+        modal.show();
         //$('#modal-region').empty();
     }
 
@@ -152,7 +156,7 @@ define([
             reason = $('#reason').val();
             modalView.model.destroy({
                 success:function() {
-                    ADK.hideModal();
+                    ADK.UI.Modal.hide();
                 },
                 error: function(model) {
                     $('#deleteProblemModal #error-container').text('Remove Failed');

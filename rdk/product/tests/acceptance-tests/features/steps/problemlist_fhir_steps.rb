@@ -1,5 +1,5 @@
 When(/^the client requests problem list for the patient "(.*?)" in FHIR format$/) do |pid|
-  temp = QueryRDKAll.new("Condition")
+  temp = RDKQuery.new('condition-getProblems')
   temp.add_parameter("subject.identifier", pid)
   #temp.add_parameter("domain", "imun")
   temp.add_acknowledge("true")
@@ -8,7 +8,7 @@ When(/^the client requests problem list for the patient "(.*?)" in FHIR format$/
 end
 
 When(/^the client requests problem list for that sensitive patient "(.*?)"$/) do |pid|
-  temp = QueryRDKAll.new("Condition")
+  temp = RDKQuery.new('condition-getProblems')
   temp.add_parameter("subject.identifier", pid)
   #temp.add_parameter("domain", "imun")
   temp.add_acknowledge("false")
@@ -17,7 +17,7 @@ When(/^the client requests problem list for that sensitive patient "(.*?)"$/) do
 end
 
 When(/^the client breaks glass and repeats a request for problem list for that patient "(.*?)"$/) do |pid|
-  temp = QueryRDKAll.new("Condition")
+  temp = RDKQuery.new('condition-getProblems')
   temp.add_parameter("subject.identifier", pid)
   #temp.add_parameter("domain", "imun")
   temp.add_acknowledge("true")
@@ -26,7 +26,7 @@ When(/^the client breaks glass and repeats a request for problem list for that p
 end
 
 When(/^the client requests "(.*?)" problem list for the patient "(.*?)" in FHIR format$/) do |limit, pid|
-  temp = QueryRDKAll.new("Condition")
+  temp = RDKQuery.new('condition-getProblems')
   temp.add_parameter("subject.identifier", pid)
   temp.add_parameter("limit", limit)
   temp.add_acknowledge("true")

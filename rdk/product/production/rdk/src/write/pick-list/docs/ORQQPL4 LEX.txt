@@ -1,0 +1,38 @@
+https://github.com/OSEHRA/VistA-M/blob/master/Packages/Order%20Entry%20Results%20Reporting/Routines/ORQQPL4.m
+
+Entry from comment on that page
+LEXIEN^PREFTEXT^ICDCODE(S)^ICDIEN^CODESYS^CONCEPTID^DESIGID^ICDVER^PARENTSUBSCRIPT
+ 
+Actual Data returned
+7111251^Diarrhea^787.91^13169^SNOMED CT^62315008^103576018^ICD-9-CM
+ 
+I think those map up closely (except for PARENTSUBSCRIPT which would be missing).
+
+--From Ray Blank
+According to the ORQQPL4 LEX code comments, the output is supposed to be the same as ORWPCE4 LEX, with piece 9 being the PARENTSUBSCRIPT.  However, this data piece is not introduced until CPRS v.30  even for ORWPCE4 LEX.  It is used by CPRS v.30 to order the data returns under parents to build a tree structure. Unfortunately, the parent is not identifiable (to my eyes), in the return of the data.  So, I can't tell you how to build that tree.  It may take digging in CPRS Delphi CPRS v.30 source code to figure it out.  Unfortunately, I don't have Delphi or the v.30 Delphi source code.
+
+Example for CPRS v.30:
+
+ORQQPL4 LEX
+Ran at:03:36:38.976 p
+Run time:00:00:00.522
+
+Params ------------------------------------------------------------------
+literal  PNEUMONIA
+literal  PLS
+literal  3141230.1703
+literal  1
+
+Results -----------------------------------------------------------------
+7353673^Pneumonia^486.^9118^SNOMED CT^233604007^350049016^ICD-9-CM
+7236271^H/O: pneumonia^V12.61^14183^SNOMED CT^161525004^251712010^ICD-9-CM
+8231690^History of pneumonia^V12.61^14183^SNOMED CT^161525004^2986977014^ICD-9-CM^2
+7134963^Viral pneumonia^480.9^2740^SNOMED CT^75570004^125510013^ICD-9-CM
+7432627^Lobar pneumonia^486.^9118^SNOMED CT^278516003^415454018^ICD-9-CM
+7476527^Basal pneumonia^486.^9118^SNOMED CT^300999006^442211014^ICD-9-CM
+7771343^Lower lobe pneumonia^486.^9118^SNOMED CT^300999006^442212019^ICD-9-CM^6
+7353685^Fungal pneumonia^117.9/484.8^74^SNOMED CT^233613009^350060013^ICD-9-CM
+7287545^Anthrax pneumonia^022.1/484.5^8117^SNOMED CT^195902009^301388014^ICD-9-CM
+7734937^Pneumonia with anthrax^022.1/484.5^8117^SNOMED CT^195902009^301389018^ICD-9-CM^9
+7353675^Atypical pneumonia^486.^9118^SNOMED CT^233606009^350051017^ICD-9-CM
+8093085^Lingular pneumonia^486.^9118^SNOMED CT^426696003^2674103016^ICD-9-CM

@@ -1,0 +1,166 @@
+.gist-container {
+    &.tiles{
+        .header-bar{
+            > div{
+                height: 17px;
+                padding-top:5px;
+            }
+            h4{
+                margin: 0;
+                padding: 0;
+                font-size: 10px;
+            }
+        }
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .gist-item-list {
+            background-color: $grey-lighter;
+            margin-bottom: 0;
+            .gist-tile{
+                background-color: $white;
+                border-top: 1px solid $grey-light;
+                border-bottom: 1px solid $grey-light;
+                margin-bottom: 2px;
+                position: relative;
+                > div {
+                    padding-bottom: 5px;
+                    padding-top: 5px;
+                }
+                .chart-column{
+                    padding-bottom: 0;
+                    padding-right: 0;
+                    padding-top: 0;
+                    > .high-chart{
+                        height: 29px;
+                        width: 100%;
+                    }
+                }
+                &.first {
+                    border-bottom: none;
+                    margin-bottom: 0;
+                    > div{
+                        padding-bottom: 0;
+                    }
+                }
+                &.last{
+                    border-top: none;
+                }
+                &:last-child{
+                    margin-bottom: 0;
+                    border-bottom:0;
+                }
+                .label.applet-badges{
+                    cursor: default;
+                }
+                .label-light {
+                    background-color: $grey-lighter;
+                    border: 1px solid $grey-light;
+                    color: #777;
+                }
+                .row{
+                    padding-bottom: 0;
+                    padding-top: 0;
+                    > div {
+                        padding-bottom: 5px;
+                        padding-top: 5px;
+                    }
+                    .chart-column{
+                        padding-bottom: 0;
+                        padding-right: 0;
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+    }
+    &.pills{
+        .gist-item-list{
+            .gist-tile {
+                color: #666;
+                box-shadow: 0 1px 1px #999;
+                padding: 2px 5px;
+                border-radius: 5px;
+                float: left;
+                margin: 5px;
+                display: block;
+                background-color: $primary-lightester;
+                position: relative;
+                &:hover{
+                    color: $primary;
+                    background-color: $secondary-lighter;
+                }
+                .ac-items{
+                    &.active{
+                        border-top-left-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+    // tile menu
+    .ac-items {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        &.active{
+            border:2px solid $secondary;
+            border-radius: inherit;
+            .ac-items-buttons{
+                height: 24px;
+                left: -2px;
+            }
+            .ac-items-buttons-toggle {
+                background-color: $primary;
+                opacity: 0.075;
+            }
+        }
+        .ac-items-heading, .ac-itmes-buttons, .ac-items-buttons-toggle {
+            height: 100%;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        .ac-items-buttons {
+            float: left;
+            height: 0;
+            left: -9000px;
+            position: absolute;
+            top: -24px;
+            background-color: $secondary-light;
+            button {
+                background-color: $secondary;
+                border: none;
+                color: $white;
+                height: 24px;
+                margin: 0 1px 0 0;
+                padding: 0;
+                width: 24px;
+                &:hover, &:focus{
+                    background-color: $white;
+                    border:2px solid $secondary;
+                    color: $secondary;
+                }
+                &:last-child{
+                    margin: 0;
+                }
+            }
+        }
+        .ac-items-buttons-toggle {
+            background-color: $primary;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            &:hover, &:focus{
+                background-color: $primary;
+                opacity: 0.075;
+            }
+        }
+    }
+}

@@ -3,6 +3,8 @@
 
     "osync": {
         "configRefresh": 0,
+        "scheduledRunAtHour": 3,
+        "scheduledRunAtMinutes": 15,
         "rules": {
             "accept-all": {},
             "rapid-fire": {},
@@ -48,236 +50,6 @@
                 "method": "POST"
             }
         },
-
-        "hmp.server.id": "hmp-development-box",
-        "hmp.version": "0.7-S65",
-        "hmp.batch.size": "1000",
-        "hmp.extract.schema": "3.001",
-
-        "jmeadows": {
-            "domains": [
-                "allergy",
-                "appointment",
-                "consult",
-                "demographics",
-                "dischargeSummary",
-                "encounter",
-                "immunization",
-                "lab",
-                "medication",
-                "order",
-                "problem",
-                "progressNote",
-                "radiology",
-                "vital"
-            ],
-            "defaults": {
-                "host": "127.0.0.1",
-                "port": 54000,
-                "method": "GET",
-                "timeout": 60000
-            },
-            "allergy": {
-                "path": "/dod/allergy"
-            },
-            "appointment": {
-                "path": "/dod/appointment"
-            },
-            "consult": {
-                "path": "/dod/consult"
-            },
-            "demographics": {
-                "path": "/dod/demographics"
-            },
-            "dischargeSummary": {
-                "path": "/dod/dischargeSummary"
-            },
-            "document": {
-                "path": "/dod/document"
-            },
-            "encounter": {
-                "path": "/dod/encounter"
-            },
-            "immunization": {
-                "path": "/dod/immunization"
-            },
-            "lab": {
-                "path": "/dod/lab"
-            },
-            "medication": {
-                "path": "/dod/medication"
-            },
-            "order": {
-                "path": "/dod/order"
-            },
-            "problem": {
-                "path": "/dod/problem"
-            },
-            "progressNote": {
-                "path": "/dod/progressNote"
-            },
-            "radiology": {
-                "path": "/dod/radiology"
-            },
-            "vital": {
-                "path": "/dod/vital"
-            }
-        },
-        "hdr": {
-            "domains": [
-                "allergy",
-                "appointment",
-                "consult",
-                "cpt",
-                "document",
-                "education",
-                "exam",
-                "factor",
-                "immunization",
-                "image",
-                "lab",
-                "med",
-                "mh",
-                "order",
-                "pov",
-                "problem",
-                "procedure",
-                "skin",
-                "surgery",
-                "visit",
-                "vital"
-            ],
-            "defaults": {
-                "host": "localhost",
-                "port": 54000,
-                "method": "GET",
-                "timeout": 60000
-            },
-            "med": {
-                "path": "/hdr/getData?domain=med"
-            },
-            "treatment": {
-                "path": "/hdr/getData?domain=treatment"
-            },
-            "diagnosis": {
-                "path": "/hdr/getData?domain=diagnosis"
-            },
-            "visit": {
-                "path": "/hdr/getData?domain=visit"
-            },
-            "education": {
-                "path": "/hdr/getData?domain=education"
-            },
-            "pov": {
-                "path": "/hdr/getData?domain=pov"
-            },
-            "lab": {
-                "path": "/hdr/getData?domain=lab"
-            },
-            "vlerdocument": {
-                "path": "/hdr/getData?domain=vlerdocument"
-            },
-            "skin": {
-                "path": "/hdr/getData?domain=skin"
-            },
-            "surgery": {
-                "path": "/hdr/getData?domain=surgery"
-            },
-            "immunization": {
-                "path": "/hdr/getData?domain=immunization"
-            },
-            "obs": {
-                "path": "/hdr/getData?domain=obs"
-            },
-            "document": {
-                "path": "/hdr/getData?domain=document"
-            },
-            "order": {
-                "path": "/hdr/getData?domain=order"
-            },
-            "auxiliary": {
-                "path": "/hdr/getData?domain=auxiliary"
-            },
-            "mh": {
-                "path": "/hdr/getData?domain=mh"
-            },
-            "consult": {
-                "path": "/hdr/getData?domain=consult"
-            },
-            "procedure": {
-                "path": "/hdr/getData?domain=procedure"
-            },
-            "vital": {
-                "path": "/hdr/getData?domain=vital"
-            },
-            "task": {
-                "path": "/hdr/getData?domain=task"
-            },
-            "cpt": {
-                "path": "/hdr/getData?domain=cpt"
-            },
-            "image": {
-                "path": "/hdr/getData?domain=image"
-            },
-            "problem": {
-                "path": "/hdr/getData?domain=problem"
-            },
-            "factor": {
-                "path": "/hdr/getData?domain=factor"
-            },
-            "roadtrip": {
-                "path": "/hdr/getData?domain=roadtrip"
-            },
-            "appointment": {
-                "path": "/hdr/getData?domain=appointment"
-            },
-            "ptf": {
-                "path": "/hdr/getData?domain=ptf"
-            },
-            "exam": {
-                "path": "/hdr/getData?domain=exam"
-            },
-            "allergy": {
-                "path": "/hdr/getData?domain=allergy"
-            }
-        },
-        "vler": {
-            "domains": [
-                "vlerdocument"
-            ],
-            "defaults": {
-                "host": "localhost",
-                "port": 54000,
-                "method": "GET",
-                "timeout": 60000
-            },
-            "vlerdocument": {
-                "documentListPath": "/vler/documentList",
-                "documentPath": "/vler/document"
-            }
-        },
-        "recordEnrichment": {
-            "domains": [
-                "allergy",
-                "appointment",
-                "image",
-                "consult",
-                "cpt",
-                "document",
-                "factor",
-                "immunization",
-                "lab",
-                "med",
-                "order",
-                "patient",
-                "pov",
-                "procedure",
-                "problem",
-                "surgery",
-                "visit",
-                "vital"
-            ]
-        },
         "handlerProfiles": {
             "profileCollection": {
                 "default": "all",
@@ -286,8 +58,9 @@
                     "admission-request",
                     "appointment-request",
                     "sync",
-                    "validation",
-                    "store-job-status"
+                    "validation-request",
+                    "store-job-status",
+                    "patientlist-request"
                 ]
             }
         },
@@ -304,7 +77,7 @@
             },
             "repoDefaults": {
                 "host": "127.0.0.1",
-                "port": 5000,
+                "port": 5001,
                 "tubename": "osync",
                 "tubePrefix": "osync-",
                 "jobTypeForTube": true
@@ -315,12 +88,13 @@
                 "appointment-request": {},
                 "store-job-status": {},
                 "sync": {},
-                "validation": {}
+                "validation-request": {},
+                "patientlist-request": {}
             },
             "jobs": {
                 "activeUser": true,
-                "appointmentRequest": true,
-                "admissionRequest": true
+                "appointmentRequest": false,
+                "admissionRequest": false
             }
         },
 
@@ -331,15 +105,11 @@
             "timeout": 60000,
             "jdsSaveURI": "/user/set/this",
             "jdsGetURI": "/user/get",
-            "osyncjobfrequency": 172800000,
-            "getBlackListURI": "http://10.2.2.110:9080/user/get/osyncblacklist",
-            "postBlackListURI": "http://10.2.2.110:9080/user/set/this",
-            "getPatientSyncURI": "http://10.2.2.110:9080/user/get/osyncjobstatus",
-            "postPatientSyncURI": "http://10.2.2.110:9080/user/set/this"
+            "osyncjobfrequency": 172800000
         },
 
         "osync": {
-            "syncUrl": "http://10.3.3.6:8080/sync/doLoad?icn=",
+            "syncUrl": "http://10.3.3.6:8080/sync/doLoad?",
             "numToSyncSimultaneously": 3,
             "waitBetween": 1000
         },
@@ -402,8 +172,7 @@
             "localIP": "10.2.2.1",
             "localAddress": "localhost",
             "appointments": {
-                "startDate": "3150401",
-                "endDate": "3150425"
+                "daysInFuture": 1
             }
         },
         "admissionRequest" : {

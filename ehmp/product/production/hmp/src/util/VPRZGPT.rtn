@@ -1,0 +1,90 @@
+Cache for UNIX^INT^Create Many Random Patients^~Format=Cache.S~^RAW
+%RO on 01 Aug 2013   4:46 PM
+VPRZGPT^INT^1^63035,60231.954416^0
+VPRZGPT	; Generate patients to test load for operational data
+ ;
+GENPT ; Stuff patients into patient file
+ Q:'($D(DUZ)>9)  Q:'$D(U)  ; must be logged in
+ ;
+ N QUANTITY,FEMALE,DEAD,SENSITIV
+ S QUANTITY=250 ;000  ; add 250000 patients
+ S FEMALE=20        ; make 20% female
+ S DEAD=2           ; make 2% dead
+ S SENSITIV=0       ; none sensitive for now
+ N I,X,NAMES1,NAMES2,IDNUM,COUNT
+ F I=1:1:26 S X=$P($T(NAMES+I),";;",2,99),NAMES1(I)=$P(X," "),NAMES2(I)=$P(X," ",2)
+ ;
+ S IDNUM=$P(^DPT(0),"^",3),COUNT=0
+ F  D  Q:COUNT'<QUANTITY
+ . N PTNAME,SEX,DIED,SENS,DOB,Y,M,D,SSN,ICN,DFN
+ . S IDNUM=IDNUM+1,COUNT=COUNT+1 W:COUNT#100=0 "."
+ . S PTNAME=NAMES1($R(26)+1)_NAMES2($R(26)+1)_","_NAMES2($R(26)+1)_" "_NAMES1($R(26)+1)
+ . S SEX=$R(100),SEX=$S(SEX<FEMALE:"F",1:"M")
+ . S DIED=$R(100),DIED=$S(DIED<DEAD:3041014,1:0)
+ . S SENS=0
+ . S Y=($R(60)+220)*10000,M=($R(12)+1)*100,D=$R(28)+1,DOB=Y+M+D I $L(DOB)'=7
+ . S SSN=999000000+IDNUM,ICN=SSN_99
+ . I $L(DOB)'=7 W !,"DOB error" Q
+ . I $L(SSN)'=9 W !,"SSN error" Q
+ . ;W !,PTNAME,": ",SEX," ",DOB," ",SSN," ",ICN," ",DIED
+ . D ADDPT(PTNAME,SEX,DOB,SSN,ICN,DIED,SENS)
+ Q
+ADDPT(NAME,SEX,DOB,SSN,ICN,DIED,SENS) ; add one patient
+ N FDA,FDAIEN,DIERR,ERR
+ N DTHINFO,DEATHVAL ; (to prevent store errors)
+ S FDA(2,"+1,",.01)=NAME
+ S FDA(2,"+1,",.02)=SEX
+ S FDA(2,"+1,",.03)=DOB
+ S FDA(2,"+1,",.09)=SSN
+ S FDA(2,"+1,",.301)="Y"
+ S FDA(2,"+1,",391)=1
+ S FDA(2,"+1,",1901)="Y"
+ S FDA(2,"+1,",991.01)=ICN
+ I $G(DIED) S FDA(2,"+1,",.351)=DIED
+ D UPDATE^DIE("","FDA","FDAIEN","ERR")
+ I $D(DIERR) W !,"Update failed: ",NAME,! ZW ERR Q
+ I '$G(FDAIEN(1)) W "No IEN created",! Q
+ D CLEAN^DILF
+ ;I SENS D ADDSENS(FDAIEN(1)) ;need to figure out how to do this for DINUM'd file
+ Q
+ADDSENS(IEN) ; add sensitivity (need to do something different for DINUM'd file)
+ N FDA,FDAIEN,DIERR,ERR
+ S FDA(38.1,IEN_",",.01)=IEN
+ S FDA(38.1,IEN_",",2)=1
+ S FDA(38.1,IEN_",",3)=DUZ
+ S FDA(38.1,IEN_",",4)=$$NOW^XLFDT
+ D UPDATE^DIE("","FDA","FDAIEN","ERR")
+ I $D(DIERR) W !,"Add sensitivity failed: ",IEN,! ZW ERR
+ D CLEAN^DILF
+ Q
+ ;
+NAMES ;
+ ;;ALPHA ADAMS
+ ;;BRAVO BOSTON
+ ;;CHARLIE CHICAGO
+ ;;DELTA DENVER
+ ;;ECHO EASY
+ ;;FOXTROT FRANK
+ ;;GOLF GEORGE
+ ;;HOTEL HENRY
+ ;;INDIA IDA
+ ;;JULIET JOHN
+ ;;KILO KING
+ ;;LIMA LINCOLN
+ ;;MIKE MARY
+ ;;NOVEMBER NEWARK
+ ;;OSCAR OCEAN
+ ;;PAPA PETER
+ ;;QUEBEC QUEEN
+ ;;ROMEO ROGER
+ ;;SIERRA SUGAR
+ ;;TANGO THOMAS
+ ;;UNIFORM UNION
+ ;;VICTOR VICTORIA
+ ;;WHISKEY WILLIAM
+ ;;XRAY XRAY
+ ;;YANKEE YOUNG
+ ;;ZULU ZERO
+
+
+

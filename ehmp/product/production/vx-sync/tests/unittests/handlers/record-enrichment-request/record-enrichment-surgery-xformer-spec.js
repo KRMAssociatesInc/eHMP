@@ -75,7 +75,7 @@ describe('record-enrichment-surgery-xformer.js', function() {
             var vaSurgeryJob = JSON.parse(JSON.stringify(originalVaSurgeryJob));
 
             runs(function() {
-                xformer(log, config, environment, vaSurgeryJob, function(error, record) {
+                xformer(log, config, environment, vaSurgeryJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 
@@ -138,28 +138,12 @@ describe('record-enrichment-surgery-xformer.js', function() {
                 return finished;
             }, 'Call failed to return in time.', 500);
         });
-        it('Job.record was null', function() {
-            var finished = false;
-            var environment = {};
-
-            runs(function() {
-                xformer(log, config, environment, {}, function(error, record) {
-                    expect(error).toBeNull();
-                    expect(record).toBeNull();
-                    finished = true;
-                });
-            });
-
-            waitsFor(function() {
-                return finished;
-            }, 'Call failed to return in time.', 500);
-        });
         it('Job was removed', function() {
             var finished = false;
             var environment = {};
 
             runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:surgery:9E7A:3:10014');

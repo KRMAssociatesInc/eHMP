@@ -20,7 +20,7 @@ When(/^client requests problems in RDK format$/) do
   expect(@response.code).to eq(200)
 end
 
-Then(/^the VPR result contains more than (\d+) records$/) do |count|
+Then(/^the VPR result contains more than (\d+) records$/) do |_count|
   json = JSON.parse(@response.body)
   ValueArray = json["data"]["items"]
   p ValueArray.count
@@ -37,7 +37,6 @@ Then(/^the kind field is "(.*?)" for every record$/) do |kind|
 end
 
 Then(/^the VPR result contains$/) do |table|
-
   @json_object = JSON.parse(@response.body)
   json_verify = JsonVerifier.new
   result_array = @json_object["data"]["items"]
@@ -46,7 +45,6 @@ end
 
 #@US1892_Problem_List_Writeback
 When(/^the client puts data "(.*?)" using Postman$/) do |arg1|
-
   values = arg1.split("|")
     
   jsonreq = { :MST => values[0], :dateOfOnset => values[1], :dateRecorded => values[2], :enteredBy => values[3], :enteredByIEN => values[4], :headOrNeckCancer => values[5], :lexiconCode => values[6], :patientIEN => values[7], :patientName => values[8], :problemName => values[9], :problemText => values[10], :providerIEN => values[11], :recordingProvider => values[12], :responsibleProvider => values[13], :responsibleProviderIEN => values[14], :service => values[15], :status => values[16], :userIEBN => values[17] }
@@ -106,7 +104,7 @@ end
 When(/^the client posts data "(.*?)" using postman$/) do |arg1|
   values = arg1.split("|")
   jsonreq = { :responsibleProviderIEN => values[0], :providerIEN => values[1], :responsibleProvider => values[2], :userIEN => values[3], :status => values[4], :problemName => values[5], :problemText => values[6], :problemNumber => values[7], :dateLastModified => values[8], :dateOfOnset => values[9], :recordingProvider => values[10], :acuity => values[11], :headOrNeckCancer => values[12], :service => values[13] }
-#jsonreq["///"] ="/"
+  #jsonreq["///"] ="/"
   request = jsonreq.to_json
   #puts request
   url = QueryGenericRDK.new("problems").path
@@ -139,9 +137,9 @@ end
 When(/^the client runs data "(.*?)" using postman$/) do |arg1|
   values = arg1.split("|")
   jsonreq = { 
-      :problemIEN => values[0], 
-      :providerID => values[1]
-      }
+    :problemIEN => values[0], 
+    :providerID => values[1]
+  }
   request = jsonreq.to_json
   urlobj = QueryGenericRDK.new("problems")
   urlobj.add_parameter("accessCode", "pu1234")

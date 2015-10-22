@@ -1,5 +1,4 @@
 Then(/^data sync completion will be reported when successful$/) do |table|
-
   @json_object = JSON.parse(@response.body)
   json_verify = JsonVerifier.new
 

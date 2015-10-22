@@ -12,6 +12,7 @@ define([
         var context = {
             key: key,
             tooltip: utils.helpUtils.getTooltip(key),
+            tooltip_placement: utils.helpUtils.getTooltipPlacement(key),
             url: utils.helpUtils.getUrl(key)
         };
 

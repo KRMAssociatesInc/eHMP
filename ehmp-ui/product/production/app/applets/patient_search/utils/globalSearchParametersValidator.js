@@ -6,9 +6,9 @@ define([
     var globalSearchParametersValidator = {
 
         validateGlobalSearchParameterConfiguration: function(data) {
-            if (data['name-last'].trim() === "") {
+            if (data['name.last'].trim() === "") {
                 return "lastNameRequiredFailure";
-            } else if ((data['name-first'].trim() === "") && (data.dob === "") && (data.ssn === "")) {
+            } else if ((data['name.first'].trim() === "") && (data['date.birth'] === "") && (data.ssn === "")) {
                 return "twoFieldsRequiredFailure";
             } else {
                 return "success";
@@ -20,9 +20,9 @@ define([
             var ssnPattern = /^(\d{3})-?(\d{2})-?(\d{4})$/;
             var dobPattern = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
 
-            if (((data['name-last'].trim() !== "") && (data['name-last'].match(namePattern) === null)) || ((data['name-first'].trim() !== "") && (data['name-first'].match(namePattern) === null))) {
+            if (((data['name.last'].trim() !== "") && (data['name.last'].match(namePattern) === null)) || ((data['name.first'].trim() !== "") && (data['name.first'].match(namePattern) === null))) {
                 return "nameFormatFailure";
-            } else if ((data.dob.trim() !== "") && (data.dob.match(dobPattern) === null)) {
+            } else if ((data['date.birth'].trim() !== "") && (data['date.birth'].match(dobPattern) === null)) {
                 return "dobFormatFailure";
             } else if ((data.ssn.trim() !== "") && (data.ssn.match(ssnPattern) === null)) {
                 return "ssnFormatFailure";

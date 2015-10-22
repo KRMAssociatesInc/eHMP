@@ -9,7 +9,7 @@ Feature: F144 - eHMP Viewer GUI - Patient Search (Clinics)
     When the client requests for the patient name "10" starting with "0" and limited to "10" using clinics
     Then a successful response is returned
     And the client receives 10 VPR VistA result(s)
-    And the client receives 58 RDK result(s) with start index of 0 and results limit of 10 per page
+    And the client receives 72 RDK result(s) with start index of 0 and results limit of 10 per page
     And the VPR results contain
       | field       | value                                    |
       | localId     | 64                                       |
@@ -30,15 +30,15 @@ Feature: F144 - eHMP Viewer GUI - Patient Search (Clinics)
     When the client sends a request for the patient name "10" starting with "0" using clinics
     Then a successful response is returned
     #And the client receives 0 RDK result(s) with start index of 0
-    And the client receives 58 VPR VistA result(s)
+    And the client receives 72 VPR VistA result(s)
 
-  @F114_SearchClinics_3
+  @F114_SearchClinics_3 @debug @DE1544
   Scenario: User clinics searches for patient with patient limited to 1 and should not contain uidHref
     When the client requests for the patient name "10" starting with "0" and limited to "1" using clinics
     Then a successful response is returned
-    #And the client receives 1 RDK result(s) with start index of 0
+    #And the client receives 2 RDK result(s) with start index of 0
     And the client receives 1 VPR VistA result(s)
-    And the result(s) should not contain "uidHref"
+    And the result(s) should contain "uidHref"
 
 
     @F114_SearchClinics_4
@@ -51,14 +51,14 @@ Feature: F144 - eHMP Viewer GUI - Patient Search (Clinics)
     Scenario: User word searches for patient using siteCode
     When the client requests for the siteCode "C877" using clinics
     Then a successful response is returned
-    And the client receives 29 VPR VistA result(s)
+    And the client receives 36 VPR VistA result(s)
 
     @F114_SearchClinics_6 @debug @vxsync @enrich
     Scenario: clinics searches for patient using locationUid ,filter and startDate
-    When the client requests for the patient using locationUid "urn:va:location:9E7A:23" using filter "eq(familyName,"EIGHT")" and statdate "20010725"
+    When the client requests for the patient using locationUid "urn:va:location:9E7A:23" using filter "eq(familyName,"EIGHT")" and startdate "20010725"
 
     Then a successful response is returned
-    And the client receives 1 VPR VistA result(s)
+    And the client receives 4 VPR VistA result(s)
     And the VPR results contain
       | field       | value                            |
       | birthDate   | 19350407                         |
@@ -79,12 +79,12 @@ Feature: F144 - eHMP Viewer GUI - Patient Search (Clinics)
     Scenario: clinics searches for patient using locationUid ,filter 
     When the client requests for the patient with locationUid "urn:va:location:9E7A:23" using filter "eq(familyName,"EIGHT")"
     Then a successful response is returned
-   # And the client receives 1 VPR VistA result(s)
+   #And the client receives 1 VPR VistA result(s)
 
 
    @F114_SearchClinics_8 @debug
     Scenario: clinics searches for patient using locationUid ,filter , startDate and stopDate
-    When  client requests for the patient using locationUid "urn:va:location:9E7A:23" using filter "eq(familyName,"EIGHT")" statdate "20010725" and stopdate"20100725"
+    When  client requests for the patient using locationUid "urn:va:location:9E7A:23" using filter "eq(familyName,"EIGHT")" startdate "20010725" and stopdate"20100725"
     Then a successful response is returned
     And the client receives 1 VPR VistA result(s)
 

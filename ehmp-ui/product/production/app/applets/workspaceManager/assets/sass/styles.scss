@@ -4,7 +4,7 @@
         color: white;
     }
     #doneEditing {
-        padding: 5px 15px;
+        padding: 5px 0px;
         color: white;
         font-size: 3em;
         margin-top: 1em;
@@ -14,15 +14,18 @@
         cursor: pointer;
     }
     .tableBanner {
-        background: $primary;
-        color: $white;
+        background: $primary-lightest;
+        border-bottom: 2px solid #bdd1c7;
+        color: $primary-light;
         margin-left: 7%;
         padding: 5px;
         .btn{
         background: transparent;
         }
         .btn:hover, .btn:focus{
-            color: $white;
+            color: $primary;
+            background: none;
+            box-shadow: none;
         }
     }
     #searchScreens {
@@ -33,6 +36,7 @@
     .workspaceTable {
         height: 40em;
         margin-left: 7%;
+        background-color: $white;
     }
     #workspaceManager, #list-group {
         margin: 0 -10px;
@@ -42,11 +46,12 @@
         height: 100%;
         overflow-x: hidden;
         .row {
-            margin: 0px;
+            background-color: #e5e5e5;
             cursor: move;
+            margin: 0px;
+            padding: 1px;
         }
-        .fa-eye, .fa-ellipsis-v, .fa-share-alt {
-            font-size: 18px !important;
+        .fa-eye, .fa-ellipsis-v, .fa-tags {
             width: 100%;
             text-align: center;
             cursor: pointer;
@@ -59,17 +64,17 @@
     }
     .launch-screen{
         font-style: normal;
-        color: #37779E;
+        color: $blue;
         cursor: pointer;
     }
     .customize-screen{
         font-style: normal;
-        color: #37779E;
+        color: $blue;
         cursor: pointer;
     }
     .previewWorkspace{
         font-style: normal;
-        color: #37779E;
+        color: $blue;
         cursor: pointer;
     }
     .duplicate-worksheet, .rearrange-worksheet, .delete-worksheet{
@@ -112,23 +117,24 @@
         }
     }
     .tableHeader {
-      color: $white;
+      color: $primary;
       text-align:center;
-      background-color: $primary-light;
+      background-color: $white;
       font-weight: bold;
       padding: .5em 0;
       height: 2.5em;
-      border: 1px solid $primary-light;
+      border-bottom: 1px solid $grey-light;
         .col-xs-5 .col-xs-1 {
             padding-left: 0;
         }
     }
     .tableRow {
         position: relative;
-        height: 2em;
+        height: 3.5em;
         background-color: #fff;
         width: 100%;
-        line-height:1.8em;
+        line-height:2.9em;
+        padding-top: 2px;
         .default-row {
             text-align: center;
         }
@@ -140,7 +146,7 @@
         background-color: #F2F2F2;
     }
     .rearrange-row .tableRow {
-        border: 2px solid #00cccc!important;
+        border: 2px solid $primary-light;
         cursor: move;
     }
     #mainOverlayRegion {
@@ -149,6 +155,7 @@
     .complete-background {
         position: fixed;
         width: 100%;
+        margin: 0 auto;
     }
     .filterRegion {
         background: white;
@@ -170,7 +177,6 @@
         z-index: 999;
         .workspaceManagerForms {
             background-color: white;
-            border: 1px solid #333;
             -webkit-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
             -moz-box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.8);
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
@@ -201,17 +207,23 @@
             color: #455A71;
             padding: 1.5em 2em;
             text-align: left;
+            .wsTitle {
+                color: $primary-light;
+                display: block;
+                background: $primary-lightest;
+                padding: 10px;
+                border-bottom: 2px solid $secondary-light;
+            }
         }
         p {
             font-size: 1.2em;
+            color: $grey-darkest;
         }
         .previewArea {
             height: 50%;
             width: 80%;
-            margin: 15em auto auto;
-            background-color: RGBA(204, 204, 204, 1);
-            border: 8px solid white;
-            padding: 10px;
+            margin: 5em auto auto;
+            background-color: $primary-lighter;
             position: relative;
         }
         .closePreview {
@@ -232,9 +244,10 @@
                 color: #333333;
                 padding: 0px 5px;
                 font-weight: bold;
-                border-radius: 4px;
+                border-radius: 0px;
                 text-align: center;
                 word-break: break-all;
+                box-shadow: 2px 2px 1px rgba(0,0,0,0.12), 2px 2px 1px rgba(0,0,0,0.14);
             }
             .formatButtonText {
                 word-break: break-all;
@@ -242,6 +255,7 @@
         }
         .gridsterContainer {
             height: 100%;
+            padding: 15px;
         }
     }
     .addEditFormRegion {
@@ -291,7 +305,8 @@
         padding-bottom: 0;
     }
     .editor-row {
-        border: 1px solid gray;
+        border-bottom: 1px solid $grey-light;
+        border-top: 1px solid $grey-light;
     }
 
     .editor-title {
@@ -299,8 +314,6 @@
         .editor-input-element {
             padding: 0px;
             font-size: 11px;
-            line-height: 0px;
-            height: inherit;
         }
     }
 
@@ -328,12 +341,11 @@
     }
 
     .editor-glyphicon {
-        margin-top: -6px !important;
         cursor: default;
     }
 
     .editor-row:hover {
-        background-color: #E4EEF8;
+        background-color: $secondary-lighter;
     }
     .no-description {
         font-style: italic;
@@ -344,6 +356,8 @@
         width: 100%;
         background-color: transparent;
         color: #222;
+        height: 2.9em;
+        line-height: 2.9em;
     }
 
     .editor-input-element::-ms-clear {
@@ -351,13 +365,14 @@
     }
 
     .editor-input-element:focus {
-        padding:0px;
         height:inherit;
         font-size:11px;
         border: solid 1px #66afe9;
         color: #222;
         -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
         box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+        height: 2.9em;
+        line-height: 2.9em;
     }
     .editor-input-element-error {
         border: solid 1px Red;
@@ -374,14 +389,14 @@
         font-weight: bold;
     }
     .fa-star {
-        color: #37779E;
+        color: $blue;
         cursor: pointer;
     }
     .fa-star-o {
         cursor: pointer;
     }
     .madeDefault {
-            color: #37779E;
+            color: $blue;
     }
     .association-manager {
         input {
@@ -522,7 +537,7 @@
         border: solid 2px #69A4F;
     }
     .filterOpen{
-        color:$white !important;
+        color:$primary;
     }
     .applet-title-button{
         font-size:12px;
@@ -536,12 +551,10 @@
         }
     }
     .border-right{
-        border-right: 1px solid #999999;
-        height: 1.9em;
+        border-right: 1px solid $grey-light;
     }
     .border-left{
-        border-left: 1px solid #999999;
-        height: 1.9em;
+        border-left: 1px solid $grey-light;
     }
     .no-padding {
         padding: 0;

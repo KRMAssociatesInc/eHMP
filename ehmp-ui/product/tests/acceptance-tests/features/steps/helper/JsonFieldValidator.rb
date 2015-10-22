@@ -87,9 +87,9 @@ class JsonFieldValidator
     #I'm at an array, check each tag within the array
     if temp_obj.class.name.eql?("Array")
       @@debug_output.push("walk_the_object current obj is an array")
-      index=index+1
+      index+=1
       tempvalue = nil
-      (0..temp_obj.length-1).each do | i |
+      (0..temp_obj.length-1).each do |i|
         tempvalue = walk_the_object(index, steps_to_climb, temp_obj[i])
         #if tempvalue[0].class == NilClass
         if tempvalue.class == NilClass

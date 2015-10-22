@@ -23,9 +23,10 @@ define([
         visitChannel.on('set-visit-success:immunizations_add_edit', showImmunizationsView);
 
         if(currentPatient.get('visit')){
-            showImmunizationsView(immunizationModel);
-        }else {
             visitChannel.command('openVisitSelector', 'immunizations_add_edit');
+        }else {
+            
+            showImmunizationsView(immunizationModel);
         }
     }
 
@@ -44,7 +45,11 @@ define([
             model: currentModel
         });
 
-        ADK.showModal(modalView, modalOptions);
+        var modal = new ADK.UI.Modal({
+            view: modalView,
+            options: modalOptions
+        });
+        modal.show();
     }
     
     var FooterView = Backbone.Marionette.ItemView.extend({
@@ -59,10 +64,21 @@ define([
         submitImmunization: function(){
             ImmCollectionUtil.removePreviousErrors();
             var isFormValid = ImmCollectionUtil.validateFormInputAndShowErrors(modalView);
-            
+
             if(isFormValid){
-                console.log('attempting to submit immunization');
-                $('#mainModal').modal('hide');
+                var newImm = ImmCollectionUtil.buildSubmitModel(currentModel);
+                newImm.save(null, {
+                    success:function() {
+                        ADK.UI.Modal.hide();
+
+                        setTimeout(function() {
+                            $('div[data-appletid="immunizations"] .applet-refresh-button').trigger('click');
+                        }, 2000);
+                    },
+                    error: function(model, error) {
+                        $('#add-edit-imm-error').removeClass().addClass('error').attr('aria-hidden', false);
+                    }
+                });
             }
         }
     });
@@ -92,7 +108,7 @@ define([
             var provFetchOptions = {
                 resourceTitle: 'visits-providers',
                 criteria: {
-                    'fcode': siteCode,
+                    'facility.code': siteCode,
                     limit: 10
                 }
             };
@@ -115,7 +131,7 @@ define([
             var locationFetchOptions = {
                 resourceTitle: 'locations-clinics',
                 criteria: {
-                    'siteCode': siteCode,
+                    'site.code': siteCode,
                     limit: 10
                 }
             };
@@ -141,7 +157,7 @@ define([
             var opDataFetchOptions = {
                 resourceTitle: 'immunization-crud-getImmunizationsOperationalData',
                 criteria: {
-                    searchforName: currentModel.get('name'),
+                    name: currentModel.get('name'),
                     searchforID: currentModel.get('localId')
                 },
                 onSuccess: function(model, response){

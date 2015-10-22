@@ -1,0 +1,39 @@
+.collapsibleContainerHeaderRegion { /*These styles are for a button that toogles, an example can be found in the vitals tray,
+    eventually we need to standarize the expand and collapse and then move these specific write back styles into the writeback scss*/
+    .col-xs-1 {
+        margin: -9px 5px 0px -9px;
+        width: 20px;
+        button.icon-btn.collapsed:before {
+            content: "\f0da";
+            font-family: "FontAwesome";
+            font-size: 18px;
+        }
+        button.icon-btn:before {
+            content: "\f0d7";
+            font-family: "FontAwesome";
+            font-size: 18px;
+        }
+        .icon-btn {
+            margin: 3px 0px 0px 3px;
+            padding: 0px;
+        }
+    }
+    .input-group-addon {
+        background-color: $grey-lighter;
+        font-size: 11px;
+        padding: 4px;
+    }
+}
+.collapsibleContainerCollapseRegion {
+    select {
+        height: 22px;
+    }
+    .input-group-addon {
+        background-color: $grey-lighter;
+        font-size: 11px;
+        padding: 4px;
+    }
+}
+#openAllBtn { /*This is the stlying of the expand all button in vitals tray, line 78*/
+    margin-top: 27px;
+}

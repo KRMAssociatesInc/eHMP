@@ -1,5 +1,4 @@
 When(/^the client requests appointments summary for the patient "(.*?)" in RDK format$/) do |pid|
-
   apptpath = QueryRDKVisitAPI.new("appointments", pid).path
   @response = HTTPartyWithBasicAuth.get_with_authorization(apptpath)
   #p @response

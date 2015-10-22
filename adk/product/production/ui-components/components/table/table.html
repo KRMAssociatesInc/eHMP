@@ -1,0 +1,239 @@
+<h3>Table</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> A table’s purpose is to display data for the user. There are two types of tables, simple and complex. A simple table is a table that contains one header to a row and/or column, and a complex table is a table that contains more than one header to a row and/or column.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines</strong>/<strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> HTML5 does not allow the summary attribute, but a summary of the table is needed to pass 508; therefore, using a caption tag and adding the class .sr-only will hide it from the screen and it will only be avaiable through the screen reader. If the caption needs to be displayed on the screen, simply remove the .sr-class from the caption tag.</p>
+</div>
+
+<h4>Simple Table</h4>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> A simple table is a table that has one header to a row or column.</p>
+</div>
+
+<h5>Simple Table with Column Headers</h5>
+
+<div class="description">
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> For a simple table with only column headers to be 508 compliant, add the attribute of scope="col" to the &lt;th&gt; </p>
+</div>
+
+<div id="tableCopy1">
+<table class="table ehmp-table-default table-bordered">
+	<caption class="sr-only">This table represents data for &hellip;</caption>
+	<thead>
+    	<tr>
+		<th scope="col">Heading 1</th>
+		<th scope="col">Heading 2</th>
+		<th scope="col">Heading 3</th>
+		<th scope="col">Heading 4</th>
+	</tr>
+    </thead>
+    <tbody>
+    	<tr>
+		<td>Data</td>
+		<td>Data</td>
+		<td>Data</td>
+		 <td>Data</td>
+	</tr>
+    	<tr>
+		<td>Data</td>
+		<td>Data</td>
+		<td>Data</td>
+		<td>Data</td>
+	</tr>
+    </tbody>
+</table>
+</div>
+<hr />
+
+<h5>Simple Table with Column <strong>and</strong> Row Headers</h5>
+
+<div class="description">
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> For a simple table with column and row headers to be 508 compliant, add the attribute of scope="col" to the &lt;th&gt; for column headers and add the attribute of scope="row" to the &lt;th&gt; for row headers.</p>
+</div>
+
+<div id="tableCopy2">
+<table class="table ehmp-table-default table-bordered">
+	<caption class="sr-only">This table represents data for &hellip;</caption>
+	<thead>
+    	<tr>
+        	<td>&nbsp;</td>
+            <th scope="col">Heading 1</th>
+            <th scope="col">Heading 2</th>
+            <th scope="col">Heading 3</th>
+        </tr>
+    </thead>
+    <tbody>
+    	<tr>
+        	<th scope="row">Row Heading 1</th>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+    	<tr>
+        	<th scope="row">Row Heading 2</th>
+            <td>Data</td>
+            <td>Data</td>
+            <td>Data</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<hr />
+
+<h4>Complex Table</h4>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> A complex table is a table that has multiple headers to a row or column.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> For a complex table to be 508 compliant, id's are given to each header, then the data cells are given the attribute of "headers" to the &lt;td&gt; tag, for example, &lt;td headers=""&gt; that need to be linked with the id's given in the headers. For example, based on the table below, Kate indicates "No" to "Do You Like This Ice Cream?" and "Chocolate"; the data cell would be "&lt;td headers="ice-cream chocolate"&gt;No&lt;/td&gt;"</p>
+</div>
+
+<div id="tableCopy3">
+<table class="table ehmp-table-default table-bordered">
+	<caption class="sr-only">This table represents Kate and Jackson's preferred ice cream and pass time</caption>
+	<thead>
+    	<tr>	
+        	<td id="main-heading-empty">&nbsp;</td>
+        	<th colspan="2" id="ice-cream">Do You Like This Ice Cream?</th>
+            <th colspan="2" id="pass-time">Do you like This Pass Time?</th>
+        </tr>
+    	<tr>
+        	<th id="name">Name</th>
+        	<th id="chocolate">Chocolate</th>
+            <th id="vanilla">Vanilla</th>
+            <th id="watching-movies">Watching Movies</th>
+            <th id="reading">Reading</th>
+        </tr>
+    </thead>
+    <tbody>
+    	<tr>
+        	<td headers="name">Kate</td>
+            <td headers="ice-cream chocolate">No</td>
+            <td headers="ice-cream vanilla">Yes</td>
+            <td headers="pass-time watching-movies">Yes</td>
+            <td headers="pass-time reading">Yes</td>
+        </tr>
+        
+    	<tr>
+        	<td headers="name">Jackson</td>
+            <td headers="ice-cream chocolate">Yes</td>
+            <td headers="ice-cream vanilla">Yes</td>
+            <td headers="pass-time watching-movies">Yes</td>
+            <td headers="pass-time reading">No</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<hr />
+
+<div role="tabpanel" class="tabpanel">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active"><a href="#simple-table-col" aria-controls="simple-table-col" role="tab" data-toggle="tab">Simple Table with Column Headers</a></li>
+		<li><a href="#simple-table-col-row" aria-controls="simple-table-col-row" role="tab" data-toggle="tab">Simple Table with Column and Row Headers</a></li>
+        <li><a href="#complex-table" aria-controls="complex-table" role="tab" data-toggle="tab">Complex Table</a></li>
+	</ul>
+
+	<div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="simple-table-col">
+            <pre>
+&lt;table class="table ehmp-table-default table-bordered"&gt;
+    &lt;caption class="sr-only"&gt;This table represents data for &hellip;&lt;/caption&gt;
+    &lt;thead&gt;
+    	&lt;tr&gt;
+            &lt;th scope="col"&gt;Heading 1&lt;/th&gt;
+            &lt;th scope="col"&gt;Heading 2&lt;/th&gt;
+            &lt;th scope="col"&gt;Heading 3&lt;/th&gt;
+            &lt;th scope="col"&gt;Heading 4&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    	&lt;tr&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+        &lt;/tr&gt;
+    	&lt;tr&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+            </pre>
+            <a onclick="copyToClipboard('tableCopy1')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        
+        <div role="tabpanel" class="tab-pane fade" id="simple-table-col-row">
+            <pre>
+&lt;table class="table ehmp-table-default table-bordered"&gt;
+    &lt;caption class="sr-only"&gt;This table represents data for &hellip;&lt;/caption&gt;
+    &lt;thead&gt;
+    	&lt;tr&gt;
+            &lt;td&gt;&nbsp;&lt;/td&gt;
+            &lt;th scope="col"&gt;Heading 1&lt;/th&gt;
+            &lt;th scope="col"&gt;Heading 2&lt;/th&gt;
+            &lt;th scope="col"&gt;Heading 3&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    	&lt;tr&gt;
+            &lt;th scope="row"&gt;Row Heading 1&lt;/th&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+        &lt;/tr&gt;
+    	&lt;tr&gt;
+            &lt;th scope="row"&gt;Row Heading 2&lt;/th&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+            &lt;td&gt;Data&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+            </pre>
+            <a onclick="copyToClipboard('tableCopy2')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        
+        <div role="tabpanel" class="tab-pane fade" id="complex-table">
+            <pre>
+&lt;table class="table ehmp-table-default table-bordered"&gt;
+    &lt;caption class="sr-only"&gt;This table represents Kate and Jackson's preferred ice cream and pass time&lt;/caption&gt;
+    &lt;thead&gt;
+    	&lt;tr&gt;	
+            &lt;td id="main-heading-empty"&gt;&nbsp;&lt;/td&gt;
+            &lt;th colspan="2" id="ice-cream"&gt;Do You Like This Ice Cream?&lt;/th&gt;
+            &lt;th colspan="2" id="pass-time"&gt;Do you like This Pass Time?&lt;/th&gt;
+        &lt;/tr&gt;
+    	&lt;tr&gt;
+            &lt;th id="name"&gt;Name&lt;/th&gt;
+            &lt;th id="chocolate"&gt;Chocolate&lt;/th&gt;
+            &lt;th id="vanilla"&gt;Vanilla&lt;/th&gt;
+            &lt;th id="watching-movies"&gt;Watching Movies&lt;/th&gt;
+            &lt;th id="reading"&gt;Reading&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    	&lt;tr&gt;
+            &lt;td headers="name"&gt;Kate&lt;/td&gt;
+            &lt;td headers="ice-cream chocolate"&gt;No&lt;/td&gt;
+            &lt;td headers="ice-cream vanilla"&gt;Yes&lt;/td&gt;
+            &lt;td headers="pass-time watching-movies"&gt;Yes&lt;/td&gt;
+            &lt;td headers="pass-time reading"&gt;Yes&lt;/td&gt;
+        &lt;/tr&gt;
+        
+    	&lt;tr&gt;
+            &lt;td headers="name"&gt;Jackson&lt;/td&gt;
+            &lt;td headers="ice-cream chocolate"&gt;Yes&lt;/td&gt;
+            &lt;td headers="ice-cream vanilla"&gt;Yes&lt;/td&gt;
+            &lt;td headers="pass-time watching-movies"&gt;Yes&lt;/td&gt;
+            &lt;td headers="pass-time reading"&gt;No&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+            </pre>
+            <a onclick="copyToClipboard('tableCopy3')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+	</div>
+</div>

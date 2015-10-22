@@ -1,2 +1,2 @@
 #!/bin/sh
-node patientphoto-server.js "$@" | node_modules/.bin/bunyan
+node bin/rdk-patient-photo-server.js "$@" | node_modules/.bin/bunyan

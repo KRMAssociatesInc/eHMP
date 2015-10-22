@@ -106,13 +106,8 @@
         background-image: none;
     }
     .list-group-item:hover, .list-group-item:focus {
-        /**
-  color: #555;
-  background-color: #f5f5f5;
-  **/
-        
-        color: #fff;
-        background-color: #00CCCC;
+        color: $black;
+        background-color: $secondary-light;
         background-image: none;
         text-decoration: none;
         text-shadow: none;
@@ -432,17 +427,17 @@
     }
     .toggle-on, .toggle-on:hover, .toggle-on:focus, .toggle-on:active, .toggle-on.active {
         color: #ffffff;
-        background-color: #688790;
-        border-color: #cccccc
+        background-color: $primary-light;
+        border-color: $grey
     }
     .toggle-off {
         color: #333333;
         background-color: #ffffff;
-        border-color: #cccccc;
+        border-color: $grey;
     }
     .toggle-off:hover, .toggle-off:focus, .toggle-off:active, .toggle-off.active {
         color: #fff;
-        background-color: #688790;
+        background-color: $primary-light;
         /**border-color:#adadad**/
     }
     #severity-btns {
@@ -473,7 +468,7 @@
     .severity-none, .severity-none:focus {
         color: #333333;
         background-color: #ffffff;
-        border-color: #cccccc
+        border-color: $grey
     }
     .severity-none:hover, .severity-none:focus, .severity-none:active, .severity-none.active {
         color: #333;
@@ -483,17 +478,17 @@
     .severity-mild, .severity-mild:hover, .severity-mild:focus, .severity-mild:active, .bseverity-mild.active {
         color: #333333;
         background-color: #ffff00;
-        border-color: #cccccc
+        border-color: $grey
     }
     .severity-moderate, .severity-moderate:hover, .severity-moderate:focus, .severity-moderate:active, .bseverity-moderate.active {
         color: #ffffff;
         background-color: #ff6600;
-        border-color: #cccccc
+        border-color: $grey
     }
     .severity-severe, .severity-severe:hover, .severity-severe:focus, .severity-severe:active, .severity-severe.active {
         color: #ffffff;
         background-color: #ff0000;
-        border-color: #cccccc
+        border-color: $grey
     }
     .nav {
         padding-bottom: 5px;

@@ -135,6 +135,7 @@ end
 task :info do
   puts '=========================================================================='
   puts '#     Running codequality checks.                                        #'
+  puts '#     For details, see https://wiki.vistacore.us/display/VACORE/Ruby     #'
   puts '=========================================================================='
 end
 
@@ -163,10 +164,10 @@ def environment_endpoints(env)
   case env
   when "virtualbox"
     ip = Servers::EHMPUI.localIP
-    ENV["EHMPUI_IP"] = 'http://' + "#{ip}"
+    ENV["EHMPUI_IP"] = 'https://' + "#{ip}"
     ENV["LOCAL"] = "true"
   when "aws"
-    ip = VagrantfileUtil::AWS.get_private_ip("ehmp-ui", "ehmp-balancer")
+    ip = knife_search_for_ip("ehmp-balancer")
     ENV["EHMPUI_IP"] = 'https://' + "#{ip}"
     p "env #{ENV["EHMPUI_IP"]}"
   else
@@ -174,4 +175,11 @@ def environment_endpoints(env)
   end
 end
 
-
+def knife_search_for_ip(machine_name)
+  stack = ENV['JOB_NAME'] || ENV['USER']
+  raw_search = `/opt/chefdk/bin/knife search node \'name:#{machine_name}-#{stack}\' -Fj --config ~/Projects/vistacore/.chef/knife.rb`
+  parsed_search = JSON.parse(raw_search)
+  fail "More than one node with that name found" if parsed_search["results"] > 1
+  fail "No node with that name found" if parsed_search["results"] == 0
+  ip = parsed_search["rows"][0]['automatic']['ipaddress']
+end

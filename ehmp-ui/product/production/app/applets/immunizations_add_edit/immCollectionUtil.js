@@ -1,7 +1,24 @@
 define([
     'underscore'
 ], function(_){
-    
+    var AddImmunizationModel = Backbone.Model.extend({
+        sync: function(method, model, options) {
+            var params = {
+                type: 'POST',
+                url: model.url(),
+                contentType: "application/json",
+                data: JSON.stringify(model.toJSON()),
+                dataType: "json"
+            };
+
+            $.ajax(_.extend(params, options));
+
+        },
+        url: function() {
+            var pid = ADK.PatientRecordService.getCurrentPatient().get('pid');
+            return ADK.ResourceService.buildUrl('immunization-crud-AddImmunization', {'pid' : pid});
+        }
+    });
     var ImmCollectionUtil = {
         modifyInfoSourceCollection: function(collection){
             var newCollection = new Backbone.Collection();
@@ -105,6 +122,7 @@ define([
             return errorCount === 0;
         },
         removePreviousErrors: function(){
+            $('#add-edit-imm-error').attr('aria-hidden', true).addClass('hidden');
             $('#info-source-error').attr('aria-hidden', true).text('');
             $('#admin-provider-error').attr('aria-hidden', true).text('');
             $('#ordering-provider-error').attr('aria-hidden', true).text('');
@@ -136,8 +154,23 @@ define([
             });
             
             return newCollection;
+        },
+        buildSubmitModel: function(immModel){
+            var newImmModel = new AddImmunizationModel();
+            var visitDate = moment($('#admin-date-time').val(), 'MM/DD/YYYY').format('YYYYMMDD');
+            newImmModel.set('encounterServiceCategory', 'E');
+            newImmModel.set('visitDate', visitDate);
+            newImmModel.set('immunizationIEN', immModel.get('localId'));
+
+            var reaction = $('#reaction').val();
+
+            if(reaction){
+                newImmModel.set('reaction', Number(reaction));
+            }
+
+            return newImmModel;
         }
     };
-    
+
     return ImmCollectionUtil;
 });

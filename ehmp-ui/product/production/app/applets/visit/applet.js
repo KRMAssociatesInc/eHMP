@@ -36,20 +36,29 @@ define([
     function handleVisitWF(appletKey, param) {
         currentAppletKey = appletKey;
         modalView = new ModalView();
-        ADK.showWorkflowItem(modalView, modalOptions);
+
+        var modal = new ADK.UI.Modal({
+            view: modalView,
+            options: modalOptions
+        });
+        modal.show();
         $('#modal-lg-region').empty();
     }
 
     function handleOpenVisit(appletKey, options) {
         var closeVisit = function() {
-            ADK.hideModal();
+            ADK.UI.Modal.hide();
         };
         visitChannel.once(SET_VISIT_SUCCESS + ':' + appletKey, closeVisit);
         visitChannel.once(SET_VISIT_CANCEL + ':' + appletKey, closeVisit);
 
         currentAppletKey = appletKey;
         modalView = new ModalView();
-        ADK.showModal(modalView, modalOptions);
+        var modal = new ADK.UI.Modal({
+            view: modalView,
+            options: modalOptions
+        });
+        modal.show();
         $('#modal-lg-region').empty();
     }
 
@@ -59,7 +68,7 @@ define([
                 invokeApplet(options);
             });
             visitChannel.once(SET_VISIT_CANCEL + ':' + appletKey, function() {
-                ADK.closeWorkflow();
+                ADK.UI.Modal.hide();
             });
             handleVisitWF(appletKey, options);
         } else {
@@ -104,7 +113,14 @@ define([
 
     var VisitItemView = Backbone.Marionette.ItemView.extend({
         id: function() {
-            return this.model.get('uid');
+            //return this.model.get('uid');
+            var regex = /^\w+:\w+:(\w+)/;
+            var match = this.model.get('uid').match(regex);
+            var prefix = 'location_';
+            if (match[1]) {
+                prefix += match[1] + '_';
+            }
+            return prefix + this.model.collection.indexOf(this.model);
         },
         tagName: 'li',
         className: 'list-group-item',
@@ -147,7 +163,7 @@ define([
         emptyView: LoadingView,
         events: {
             'keydown': 'handleArrowSelection',
-            'focus' : function(event) {
+            'focus': function(event) {
                 this.$el.find('li').removeClass('focused');
                 this.$el.find('li:first-child').addClass('focused').focus();
 
@@ -253,7 +269,7 @@ define([
             fetchOptions.resourceTitle = "locations-clinics";
 
             fetchOptions.criteria = {
-                "siteCode": siteCode,
+                "site.code": siteCode,
                 limit: 10
             };
 
@@ -388,7 +404,8 @@ define([
         events: {
             'click #visitModal ul.nav-tabs a[href="#appts"]': 'changeToListTab',
             'click #visitModal ul.nav-tabs a[href="#admits"]': 'changeToListTab',
-            'click #visitModal ul.nav-tabs a[href="#new-visit"]': 'changeToNewVisitTab'
+            'click #visitModal ul.nav-tabs a[href="#new-visit"]': 'changeToNewVisitTab',
+            'click #encounter-btn' : 'openEncounterForm'
         },
         initialize: function() {
             this.selectedVisit = new Backbone.Model();
@@ -417,7 +434,7 @@ define([
                 viewModel: ProviderModel,
                 resourceTitle: "visits-providers",
                 criteria: {
-                    "fcode": siteCode,
+                    "facility.code": siteCode,
                     limit: 10
                 }
             };
@@ -479,6 +496,11 @@ define([
                 enableNextButton();
             }
             //this.newVisitView.resetLocationModel();
+        },
+         openEncounterForm: function(event) {
+            event.preventDefault();
+            var encounterFormChannel = ADK.Messaging.getChannel('encounterFormRequestChannel');
+             encounterFormChannel.command('openEncounterForm');
         },
         isDataValid: function() {
             return this.newVisitView.isDataValid();

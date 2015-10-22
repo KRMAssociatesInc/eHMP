@@ -34,10 +34,19 @@ Thumbs.db
 /product/example/build
 /product/build
 /product/production/rdk/build
+/product/production/rdk/coverage
+/product/production/rdk/xunit.xml
+/product/production/rdk/config/config.js
+/product/production/rdk/config/config.json
+/product/production/rdk/write/config/write-health-data-service-config.json
+/product/production/rdk/write/config/write-pick-list-service-config.json
+/product/production/rdk/config/rdk-fetch-server-config.json
+/product/production/rdk/config/rdk-write-server-config.json
+/product/production/rdk/config/rdk-pick-list-server-config.json
 /product/production/rdk/write/pick-list/logs
 /infrastructure/build
 
-node_modules
+node_modules/
 npm-debug.log
 
 #eclipse

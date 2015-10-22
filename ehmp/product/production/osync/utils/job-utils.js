@@ -29,8 +29,12 @@ function createSync(log, config, environment, handlerCallback, rootJob) {
     return create(syncRequestType(), rootJob);
 }
 
-function createValidationRequest(log, config, environment, handlerCallback, rootJob, result) {
-    return create(validationRequestType(), rootJob, result);
+function createValidationRequest(log, config, environment, handlerCallback, rootJob) {
+    return create(validationRequestType(), rootJob);
+}
+
+function createPatientListRequest(log, config, environment, handlerCallback, rootJob) {
+    return create(patientListRequestType(), rootJob);
 }
 
 function opportunisticSyncRequestType() {
@@ -58,7 +62,11 @@ function syncRequestType() {
 }
 
 function validationRequestType() {
-    return 'validation';
+    return 'validation-request';
+}
+
+function patientListRequestType() {
+    return 'patientlist-request';
 }
 
 function create(type, meta, result) {
@@ -68,10 +76,6 @@ function create(type, meta, result) {
 
     if (_.isUndefined(meta)) {
         meta = {};
-    }
-
-    if (_.isUndefined(result)) {
-        result = {};
     }
 
     if (!_.isUndefined(meta.jpid)) {
@@ -92,12 +96,20 @@ function create(type, meta, result) {
         job.jobId = meta.jobId;
     }
 
-    if (!_.isUndefined(result.source)) {
-        job.source = result.source;
+    if (!_.isUndefined(meta.source)) {
+        job.source = meta.source;
     }
 
-    if (!_.isUndefined(result.patients)) {
-        job.patients = result.patients;
+    if (!_.isUndefined(meta.patients)) {
+        job.patients = meta.patients;
+    }
+
+    if (!_.isUndefined(meta.users)) {
+        job.users = meta.users;
+    }
+
+    if (!_.isUndefined(meta.siteId)) {
+        job.siteId = meta.siteId;
     }
 
     return job;
@@ -142,6 +154,7 @@ fields[appointmentRequestType()] = [];
 fields[storeJobStatusRequestType()] = [];
 fields[syncRequestType()] = [];
 fields[validationRequestType()] = [];
+fields[patientListRequestType()] = [];
 
 module.exports = jobUtil;
 jobUtil.create = create;
@@ -155,6 +168,7 @@ jobUtil.createAppointmentRequest = createAppointmentRequest;
 jobUtil.createStoreJobStatus = createStoreJobStatus;
 jobUtil.createSync = createSync;
 jobUtil.createValidationRequest = createValidationRequest;
+jobUtil.createPatientListRequest = createPatientListRequest;
 
 jobUtil.opportunisticSyncRequestType = opportunisticSyncRequestType;
 jobUtil.activeUserRequestType = activeUserRequestType;
@@ -163,3 +177,4 @@ jobUtil.appointmentRequestType = appointmentRequestType;
 jobUtil.storeJobStatusRequestType = storeJobStatusRequestType;
 jobUtil.syncRequestType = syncRequestType;
 jobUtil.validationRequestType = validationRequestType;
+jobUtil.patientListRequestType = patientListRequestType;

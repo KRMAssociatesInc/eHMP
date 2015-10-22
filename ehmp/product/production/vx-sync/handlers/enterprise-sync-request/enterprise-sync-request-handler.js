@@ -24,7 +24,7 @@ var SourceSyncJobFactory = require('./source-sync-job-factory');
 // handlerCallback: function(error, jobsToPublish) - The handler to call when the job
 //                                              is done.
 //--------------------------------------------------------------------------------
-function handle(log, config, environment, job, handlerCallback) {
+function handle(log, config, environment, job, handlerCallback, touchBack) {
     // log = require('bunyan').createLogger({
     //     name: 'ptDemographics-utils',
     //     level: 'debug'
@@ -51,8 +51,10 @@ function handle(log, config, environment, job, handlerCallback) {
 
     async.waterfall([
         queryMVI.bind(options),
+        function(data, callback) { touchBack(); callback(null, data); },
         options.sourceSyncJobFactory.createVerifiedJobs.bind(options.sourceSyncJobFactory),
         createDemographics.bind(options),
+        function(data, callback) { touchBack(); callback(null, data); },
         publishJobs.bind(options),
     ], options.handlerCallback);
 }
@@ -80,7 +82,7 @@ var queryMVI = function(callback) {
 
         if (mviError) {
             self.log.error('enterprise-sync-request-handler.queryMVI : got the kind of error that we shouldn\'t get from MVI.  patient: %j error: %j', self.job.patientIdentifier, mviError);
-            return callback(mviError, mviResponse);
+            return callback(errorUtil.createFatal(mviError), mviResponse);
         }
 
         var jdsPatientIdentifiers = createValidIdentifiers.call(self, mviResponse);
@@ -203,6 +205,7 @@ var saveMviResults = function(patientIdentifiers, callback) {
     self.environment.jds.storePatientIdentifier(jdsSave, function(error) {
         if (error) {
             self.log.warn('enterprise-sync-request-handler.saveMviResults(): %j', error);
+            return callback(errorUtil.createTransient(error), patientIdentifiers);
         }
 
         return callback(null, patientIdentifiers);
@@ -230,7 +233,12 @@ var createDemographics = function(jobsToPublish, callback) {
     if ((jobsToPublish) && (jobsToPublish.length > 0)) {
         self.ptDemographicsUtil.createPtDemographics(self.job, jobsToPublish, function(error, filteredJobsToPublish) {
             self.log.debug('enterprise-sync-request-handler.createDemographics(..): Returned from calling createPtDemographics.  error: %s; filteredJobsToPublish: %j', error, filteredJobsToPublish);
-            return callback(error, filteredJobsToPublish);
+            if (error) {
+                return callback(errorUtil.createTransient(error), filteredJobsToPublish);
+            }
+            else {
+                return callback(null, filteredJobsToPublish);
+            }
         });
     } else {
         return callback(null, jobsToPublish);
@@ -259,7 +267,7 @@ var publishJobs = function(jobsToPublish, callback) {
         self.environment.publisherRouter.publish(jobsToPublish, function(error) {
             if (error) {
                 self.log.error('enterprise-sync-request-handler.publishJobs: publisher error: %s', error);
-                return callback(error);
+                return callback(errorUtil.createTransient(error));
             }
 
             self.log.debug('enterprise-sync-request-handler.publishJobs : jobs published, complete status. jobId: %s, jobsToPublish: %j', self.job.jobId, jobsToPublish);

@@ -38,7 +38,7 @@ Scenario: Date filtering - inclusion of the preset buttons.
 #Scenario: Default date range of the applet is 1yr.
   #Then the "Viewing __ to __" text is correctly set to "18" months in the past and "6" months in the future
 
-@f144_global_date_apply_enabled @US2640 @TA8566e @DE284 
+@f144_global_date_apply_enabled @US2640 @TA8566e @DE284
 Scenario: Custom filters should be enabled by default.
   When the user clicks the control "Date Filter Toggle" on the "Coversheet"
   Then the Custom date fields should be "enabled" on the "Coversheet"

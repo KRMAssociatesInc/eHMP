@@ -29,12 +29,45 @@ public class ASU
         loadDocumentDefinitionHierarchy();
     }
 
+/*
+      This class checks if a matching rule can be found from the passed input
 
-    public boolean isRulePresent(ArrayList<String> userClassUids,ArrayList<String> userRoleUids,String docDefUid,String docStatus)
+      @userClassUids - contains the class name of the current logged in GUI user along with all the parent
+      @class names of the current logged in user
+      @userRoleNames - contains the list of document role names
+      @docDefUid - contains the unique id of a document
+      @docStatus - contains the document status
+
+      @return value - true - This means the user can view the document. If false the user cannot view the document.
+
+      This is a sample rule from JDS. The passed input values must match a rule in the rule set in JDS for a user to be able
+      to view the document.
+{
+        "stampTime": "20150522232603",
+        "actionName": "VIEW",
+        "actionUid": "urn:va:doc-action:9E7A:7",
+        "description": "A clinical document with a status of Uncosigned may be viewed by individuals enrolled under the User Class, Clinical Service Chief.",
+        "docDefName": "CLINICAL DOCUMENTS",
+        "docDefUid": "urn:va:doc-def:9E7A:38",
+        "isAnd": false,
+        "localId": 100,
+        "statusName": "UNCOSIGNED",
+        "statusUid": "urn:va:doc-status:9E7A:6",
+        "uid": "urn:va:asu-rule:9E7A:100",
+        "userClassName": "CLINICAL SERVICE CHIEF",
+        "userClassUid": "urn:va:asu-class:9E7A:554"
+        "userRoleName": "EXPECTED COSIGNER",
+        "userRoleUid": "urn:va:asu-role:9E7A:4"
+      }
+
+
+ */
+    public boolean isRulePresent(ArrayList<String> userClassUids,ArrayList<String> userRoleNames,String docDefUid,String docStatus)
     {
         if(NullChecker.isNullish(asuRules))
             refresh();
 
+        //A document can have one or more parent document
         ArrayList<String> parentDocDefUids=getParentDocList(docDefUid);
         parentDocDefUids.add(docDefUid);
 
@@ -42,32 +75,42 @@ public class ASU
         {
             AsuRuleDef asuRule=(AsuRuleDef)asuRules.get(i);
 
+            //check if action name = VIEW in the rule
             if(asuRule!=null && asuRule.getActionName()!=null && asuRule.getActionName().equals("VIEW"))
             {
+                //check if the doc status of a rule matches the input docStatus
                 if(asuRule.getStatusName()!=null && asuRule.getStatusName().equalsIgnoreCase(docStatus))
                 {
                     for(String currDocDefUid:parentDocDefUids)
                     {
+                        //check if the input docdefuid or any of its parent docdefuid matches the docdefuid in the rule
                         if(asuRule.getDocDefUid().equals(currDocDefUid))
                         {
-                            boolean isMatchClassUids=isMatchClassUid(userClassUids,asuRule);
-                            boolean isMatchRoleUids=isMatchRoleUid(userRoleUids,asuRule);
+                            //check if user class uid or any of the parent class uid for the logged in user matches the
+                            //user class uid in the rule
+                            boolean isMatchClassUid=isMatchClassUid(userClassUids,asuRule);
+                            //check if any of the input role matches the role in the rule
+                            boolean isMatchRoleName= isMatchRoleName(userRoleNames, asuRule);
 
-                            if(asuRule.isAnd())
+                            //if isAnd flag in the rule is true both input class id and role name must match
+                            // for the result to be true.
+                            if(NullChecker.isNotNullish(asuRule.isAnd())
+                                    && asuRule.isAnd().equals("true"))
                             {
-                                if(isMatchClassUids && isMatchRoleUids)
+                                if(isMatchClassUid && isMatchRoleName)
                                 {
-                                    log.info("ASU.isRulePresent: Found match in rule - "
-                                            +asuRule.getUid()+ " for document "+docDefUid+" "+docStatus);
+                                    logRulePresentSuccess(userClassUids,userRoleNames,asuRule.getUid(),docDefUid,docStatus);
                                     return true;
                                 }
                             }
-                            else
+                            //if isAnd flag in the rule is false either input class id or role name must match
+                            //for the result to be true.
+                            if(NullChecker.isNotNullish(asuRule.isAnd())
+                                    && asuRule.isAnd().equals("false"))
                             {
-                                if(isMatchClassUids || isMatchRoleUids)
+                                if(isMatchClassUid || isMatchRoleName)
                                 {
-                                    log.info("ASU.isRulePresent: Found match in rule - "
-                                            +asuRule.getUid()+ " for document "+docDefUid+" "+docStatus);
+                                    logRulePresentSuccess(userClassUids,userRoleNames,asuRule.getUid(),docDefUid,docStatus);
                                     return true;
                                 }
                             }
@@ -76,9 +119,55 @@ public class ASU
                 }
             }
         }
-        log.info("ASU.isRulePresent: No match found for document " + docDefUid + " " + docStatus);
+        logRulePresentFailure(userClassUids,userRoleNames,docDefUid,docStatus);
         return false;
     }
+
+    private void logRulePresentSuccess(ArrayList<String> userClassUids,ArrayList<String> userRoleNames,
+                                       String ruleUid,String docDefUid,String docStatus)
+    {
+        StringBuffer sb=new StringBuffer();
+        sb.append("ASU.logRulePresentSuccess: Found match in rule - "
+                +ruleUid+ " for document "+docDefUid+" "+docStatus+" \r\n ");
+        logRoleNames(userRoleNames,sb);
+        sb.append(" \r\n ");
+        logUserClassUids(userClassUids,sb);
+        log.info(sb.toString());
+    }
+
+    private void logRulePresentFailure(ArrayList<String> userClassUids,ArrayList<String> userRoleNames,
+                                       String docDefUid,String docStatus)
+    {
+        StringBuffer sb=new StringBuffer();
+        sb.append("ASU.logRulePresentFailure: No rule match found for document " + docDefUid + " " + docStatus + " \r\n ");
+        logRoleNames(userRoleNames, sb);
+        sb.append(" \r\n ");
+        logUserClassUids(userClassUids, sb);
+        log.info(sb.toString());
+    }
+
+    private void logRoleNames(ArrayList<String> roleNames,StringBuffer sb)
+    {
+        sb.append(" roleName: ");
+        if(NullChecker.isNotNullish(roleNames))
+        {
+            for(String roleName:roleNames) {
+                sb.append(" " + roleName);
+            }
+        }
+    }
+
+    private void logUserClassUids(ArrayList<String> userClassUids,StringBuffer sb)
+    {
+        sb.append(" userClassUid: ");
+
+        if(NullChecker.isNotNullish(userClassUids))
+        {
+            for(String userClassUid:userClassUids) {
+                sb.append(" " + userClassUid);
+            }
+        }
+     }
 
 
     private boolean isMatchClassUid(ArrayList<String> userClassUids,AsuRuleDef asuRule)
@@ -98,20 +187,31 @@ public class ASU
         return false;
     }
 
-    private boolean isMatchRoleUid(ArrayList<String> roleUids,AsuRuleDef asuRule)
+    private boolean isMatchRoleName(ArrayList<String> roleNames, AsuRuleDef asuRule)
     {
-        if(NullChecker.isNullish(roleUids))
+        if(NullChecker.isNullish(roleNames))
             return false;
 
-        for(String roleUid:roleUids) {
-            if (NullChecker.isNotNullish(roleUid) &&
-                    NullChecker.isNotNullish(asuRule.getUserRoleUid()) &&
-                    asuRule.getUserRoleUid().equals(roleUid)) {
+        for(String roleName:roleNames) {
+            if (isMatchRoleName(roleName, asuRule.getUserRoleName()))
+            {
                 return true;
             }
-        }
+          }
+
         return false;
      }
+
+    private boolean isMatchRoleName(String roleName1, String roleName2)
+    {
+        if (NullChecker.isNotNullish(roleName1) &&
+                NullChecker.isNotNullish(roleName2) &&
+                roleName1.trim().toUpperCase().equals(roleName2.trim().toUpperCase()))
+        {
+            return true;
+        }
+        return false;
+    }
 
 
     private void loadDocumentDefinitionHierarchy() {

@@ -420,7 +420,8 @@ describe('source-sync-job-factory.js', function() {
             };
             var job = dummyJob(pidIdentifier.value, jpidValue);
             var environment = {
-                jobStatusFunction: jobStatusFunctionValue
+                jobStatusFunction: jobStatusFunctionValue,
+                metrics: log
             };
 
             var sourceSyncJobFactory = new SourceSyncJobFactory(log, options.config, job, environment);

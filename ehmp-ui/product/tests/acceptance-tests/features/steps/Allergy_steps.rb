@@ -12,8 +12,8 @@
     while i > 0
       element = TestSupport.driver.find_elements(:css, "#allergensLoadingIndicator")
       if element[0].displayed?
-        i = i + 1
-       # sleep 1
+        i += 1
+      # sleep 1
       else
         return
       end
@@ -124,8 +124,8 @@
     while i > 0
       element = TestSupport.driver.find_elements(:css, "#symptomsLoadingIndicator")
       if element[0].displayed?
-        i = i + 1
-       # sleep 1
+        i += 1
+      # sleep 1
       else
         return
       end
@@ -137,7 +137,7 @@
     include Singleton
     def initialize
       super
-     # add_action(CucumberLabel.new("Symptom"), ClickAction.new, AccessHtmlElement.new(:link_text, "PAIN IN EYE"))
+      # add_action(CucumberLabel.new("Symptom"), ClickAction.new, AccessHtmlElement.new(:link_text, "PAIN IN EYE"))
     end
   end # Symptom
 
@@ -231,7 +231,6 @@
     con.wait_until_action_element_visible(element, DefaultLogin.wait_time)
     expect(con.static_dom_element_exists?(element)).to be_true
     expect(con.perform_verification(element, '')).to be_true
-
   end
 
   Then(/^the Allergy search modal title is "(.*?)"$/) do |element|

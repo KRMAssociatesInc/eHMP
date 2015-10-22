@@ -1,0 +1,30 @@
+<div class="toolbarContainer"/>
+<div class="medsBorderStyle">
+<div class="capitalize col-sm-2 {{ attributes.firstFacilityMed.attributes.genericMedClass }}" title="{{ attributes.firstFacilityMed.attributes.displayName }}">{{displayName}}</div>
+ <div class="row">
+<div class="col-sm-2 minimumHeight noTopBottomBorderStyle">
+    {{#if noData}} -- {{/if}}
+    {{#each subMedsInternalGroupModels.models}}
+              <div class="row">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-7 {{ attributes.topBorderClass }} fullWidth"></div>
+            </div>
+            {{#if attributes.firstFacilityMed.attributes.isNotUserSiteMed}}
+                <div class="fa fa-globe globeIcon col-sm-2"></div>
+            {{else}}
+                <div class="col-sm-2" style="float:left"><img src="../../app/applets/stackedGraph/assets/img/placeholder.png"></div>
+            {{/if}}
+            <div id='sig_{{attributes.firstFacilityMed.attributes.id}}' class="col-sm-9 twentyOne
+            {{ attributes.firstFacilityMed.attributes.genericMedClass }}MedItemSig" title="{{attributes.firstFacilityMed.attributes.doseUnitRouteSchedule}}">
+                <div>
+                    <div class="ellipsisFormat">
+                            {{ attributes.firstFacilityMed.attributes.doseUnitRouteSchedule }}
+                    </div>
+                </div>
+            </div>
+    {{/each}}
+    </div>
+<div class="renderTo col-sm-8 minimumHeight" data-toggle="popover" data-content="{{tooltip}}"></div>
+</div>
+</div>
+

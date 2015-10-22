@@ -7,16 +7,18 @@ var querystring = require('querystring');
 var inspect = require(global.VX_UTILS + 'inspect');
 var errorUtil = require(global.VX_UTILS + 'error');
 var objUtil = require(global.VX_UTILS+'object-utils');
+var uuid = require('node-uuid');
 
 var async = require('async');
 var VistaClient = require(global.VX_SUBSYSTEMS + 'vista/vista-client');
 
-function MviClient(log, config, jdsClient) {
+function MviClient(log, metrics, config, jdsClient) {
     if (!(this instanceof MviClient)) {
-        return new MviClient(log, config);
+        return new MviClient(log, metrics, config);
     }
 
     this.log = log;
+    this.metrics = metrics;
     this.jds = jdsClient;
     this.mviConfig = config.mvi;
     this.rootConfig = config;
@@ -25,6 +27,8 @@ function MviClient(log, config, jdsClient) {
 MviClient.prototype.lookup = function(patientIdentifier, callback) {
     var self = this,
         url;
+    var process = uuid.v4();
+    self.metrics.debug('Beginning CorrespondingId Lookup',{'subsystem':'MVI','action':'correspondingId','pid':patientIdentifier.value, 'process':process, 'timer':'start'});
 
     if (_.isEmpty(self.mviConfig)) {
         return setTimeout(callback, 0, errorUtil.createFatal('No value passed for mvi configuration'));
@@ -89,7 +93,7 @@ MviClient.prototype.lookup = function(patientIdentifier, callback) {
             self.log.debug('Got results for patient: %s', inspect(patientIdentifier));
             self.log.trace(inspect(data));
 
-            self._parseRealMVIResponse(patientIdentifier, data, callback);
+            self._parseRealMVIResponse(patientIdentifier, data, process, callback);
         });
 
         return;
@@ -153,10 +157,10 @@ MviClient.prototype.lookup = function(patientIdentifier, callback) {
                             return callback('No stationNumber for' + hashDfn[0]);
                         }
 
-                        var vista = new VistaClient(self.log, rpcConfig);
-                        vista.getIds(rpcConfig, hashDfn[1], stationNumber, function(error, result) {
+                        var vista = new VistaClient(self.log, self.metrics, rpcConfig);
+                        vista.getIds(hashDfn[0], hashDfn[1], stationNumber, function(error, result) {
                             if (result) {
-                                self._parseVistaMVIResponse(patientIdentifier, result, function(err, result) {
+                                self._parseVistaMVIResponse(patientIdentifier, result, process, function(err, result) {
                                     if (!err) {
                                         patientIdentifiers = patientIdentifiers.concat(result.ids);
                                         //filter duplicates
@@ -181,8 +185,9 @@ MviClient.prototype.lookup = function(patientIdentifier, callback) {
     }
 };
 
-MviClient.prototype._parseRealMVIResponse = function(queryPatientIdentifier, data, callback) {
+MviClient.prototype._parseRealMVIResponse = function(queryPatientIdentifier, data, process, callback) {
     var self = this;
+    self.metrics.trace('Parsing MVI Response', {'subsystem':'MVI', 'action':'correspondingId','pid':queryPatientIdentifier.value, 'process':process});
     var responseCode;
     try {
         responseCode = data.controlActProcess.queryAck.queryResponseCode.code || 'ER';
@@ -197,34 +202,40 @@ MviClient.prototype._parseRealMVIResponse = function(queryPatientIdentifier, dat
             try {
                 var mviPatientIds = data.controlActProcess.subject[0].registrationEvent.subject1.patient.id || [];
                 idList = _.pluck(mviPatientIds, 'extension');
-                self._makePatientIdentifiers(queryPatientIdentifier, idList, callback);
+                self._makePatientIdentifiers(queryPatientIdentifier, idList, process, callback);
             } catch (e) {
                 self.log.error(e);
+                self.metrics.debug('MVI processing error',{'subsystem':'MVI', 'action':'correspondingId','pid':queryPatientIdentifier.value, 'process':process, 'timer':'stop'});
                 callback('No patient identifiers found in JSON structure');
             }
             break;
         case 'ER':
+            self.metrics.debug('MVI processing error',{'subsystem':'MVI', 'action':'correspondingId','pid':queryPatientIdentifier.value, 'process':process, 'timer':'stop'});
             callback('MVI response in unknown structure');
             break;
         case 'NF':
+            self.metrics.debug('MVI processing error',{'subsystem':'MVI', 'action':'correspondingId','pid':queryPatientIdentifier.value, 'process':process, 'timer':'stop'});
             callback('MVI could not find patient');
             break;
         case 'AE':
+            self.metrics.debug('MVI processing error',{'subsystem':'MVI', 'action':'correspondingId','pid':queryPatientIdentifier.value, 'process':process, 'timer':'stop'});
             callback('MVI was unable to fulfill request');
             break;
         default:
+            self.metrics.debug('MVI processing error',{'subsystem':'MVI', 'action':'correspondingId','pid':queryPatientIdentifier.value, 'process':process, 'timer':'stop'});
             callback('MVI gave unknown response code ' + responseCode);
     }
 };
 
-MviClient.prototype._parseVistaMVIResponse = function(queryPatientIdentifier, data, callback) {
+MviClient.prototype._parseVistaMVIResponse = function(queryPatientIdentifier, data, process, callback) {
     var self = this;
+    self.metrics.trace('Parsing MVI Response', {'subsystem':'MVI', 'action':'correspondingId','pid':queryPatientIdentifier.value, 'process':process});
     var idLines = data.split('\r\n') || [];
     self.log.debug('idLines: ' + idLines);
-    self._makePatientIdentifiers(queryPatientIdentifier, idLines, callback);
+    self._makePatientIdentifiers(queryPatientIdentifier, idLines, process, callback);
 };
 
-MviClient.prototype._makePatientIdentifiers = function(queryPatientIdentifier, idStrings, callback) {
+MviClient.prototype._makePatientIdentifiers = function(queryPatientIdentifier, idStrings, process, callback) {
     var self = this;
     var idList = [];
 
@@ -275,14 +286,17 @@ MviClient.prototype._makePatientIdentifiers = function(queryPatientIdentifier, i
             });
             if (idList.length > 0) {
                 self.log.debug('MVI Returning: ' + util.inspect(idList));
+                self.metrics.debug('Returning correspondingIds', {'subsystem':'MVI', 'action':'correspondingId','pid':queryPatientIdentifier.value, 'process':process, 'timer':'stop'});
                 return callback(null, {
                     ids: idList
                 });
             } else {
+                self.metrics.debug('Returning correspondingIds', {'subsystem':'MVI', 'action':'correspondingId','pid':queryPatientIdentifier.value, 'process':process, 'timer':'stop'});
                 return callback('no ids found for' + inspect(queryPatientIdentifier));
             }
         });
     } else {
+        self.metrics.debug('Returning correspondingIds', {'subsystem':'MVI', 'action':'correspondingId','pid':queryPatientIdentifier.value, 'process':process, 'timer':'stop'});
         return callback('mvi-client._makePatientIdentifiers() No ids in list');
     }
 };

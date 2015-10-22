@@ -60,7 +60,11 @@ define([
                         switch (error.status) {
                             case 401:
                                 if (error.responseText) {
-                                    var errorMessage = $.parseJSON(error.responseText).errorMessage;
+                                    var errorMessage = $.parseJSON(error.responseText);
+                                    if (errorMessage.message)
+                                        errorMessage = errorMessage.message;
+                                    else if (errorMessage.errorMessage)
+                                        errorMessage = errorMessage.errorMessage;
                                     thisItemView.$el.find('#errorMessage').html(errorMessage);
                                 } else {
                                     thisItemView.$el.find('#errorMessage').html('Authentication error.');

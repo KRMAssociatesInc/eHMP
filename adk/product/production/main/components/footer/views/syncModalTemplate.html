@@ -18,7 +18,7 @@
               <i class="fa fa-spinner fa-spin"></i>
           {{/compare}}
           {{#compare mySite.status 'needsRefresh'}}
-              <i class="fa fa-refresh"></i>
+              <i class="fa fa-clock-o"></i>
           {{/compare}}
           {{#compare mySite.status 'error'}}
               <i class="fa fa-exclamation-circle"></i>
@@ -35,7 +35,7 @@
         <div>
           {{#compare allVa.status 'completed'}}
               {{#if allVa.newDataSince}}
-                <i class="fa fa-refresh"></i>
+                <i class="fa fa-clock-o"></i>
               {{else}}
                 <i class="fa fa-check-circle"></i>
               {{/if}}
@@ -44,7 +44,7 @@
               <i class="fa fa-spinner fa-spin"></i>
           {{/compare}}
           {{#compare allVa.status 'needsRefresh'}}
-              <i class="fa fa-refresh"></i>
+              <i class="fa fa-clock-o"></i>
           {{/compare}}
           {{#compare allVa.status 'error'}}
               <i class="fa fa-exclamation-circle"></i>
@@ -52,7 +52,7 @@
           All VA
          </div>
          <div class="source-sync-details">
-            <div>Last synced {{#if allVa.mostRecentTime}}{{allVa.mostRecentTime}} {{#if allVa.leastRecentTime}} - {{allVa.leastRecentTime}}{{/if}} ago{{/if}}<div>
+            <div>Last refresh {{#if allVa.mostRecentTime}}{{allVa.mostRecentTime}} {{#if allVa.leastRecentTime}} - {{allVa.leastRecentTime}}{{/if}} ago{{/if}}<div>
             <div>New data since {{#if allVa.newDataSince}} {{allVa.newDataSince}} {{else}} Current {{/if}}</div>
          </div>
       </li>
@@ -72,7 +72,7 @@
           DoD
         </div>
         <div class="source-sync-details">
-          <div>Last synced {{#if dod.mostRecentTime}}{{dod.mostRecentTime}} ago{{/if}}<div>
+          <div>Last refresh {{#if dod.mostRecentTime}}{{dod.mostRecentTime}} ago{{/if}}<div>
         </div>
       </li>
     {{/if}}
@@ -91,7 +91,7 @@
           Communities
         </div>
         <div class="source-sync-details">
-          <div>Last synced {{#if communities.mostRecentTime}}{{communities.mostRecentTime}} ago{{/if}}<div>
+          <div>Last refresh {{#if communities.mostRecentTime}}{{communities.mostRecentTime}} ago{{/if}}<div>
         </div>
       </li>
     {{/if}}
@@ -100,7 +100,7 @@
   <div id="sync-site-detail" class="col-md-9">
     <div id="force-site-sync-status" class="row">
       {{#if msgSuccessfulSync}}
-        <p id="force-site-sync-status-success" class="bg-success"><b>{{currentDateTime}} - Sync was successful</b><button id="msg-successful-sync" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+        <p id="force-site-sync-status-success" class="bg-success"><b>{{currentDateTime}} - Refresh was successful</b><button id="msg-successful-sync" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
       {{/if}}
       {{#if msgFailedSync}}
         <p id="force-site-sync-status-error" class="bg-danger"><b>{{currentDateTime}} - Error detected during sync</b><button id="msg-failed-sync" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
@@ -108,12 +108,12 @@
     </div>
     <div id="sync-site-detail-header" class="row">
       <h4 class="col-md-4">{{selectedSource.sourceDisplayName}}</h4>
-      <button class="btn btn-default" id="force-source-sync"
+      <button class="btn btn-primary" id="force-source-sync"
       {{#compare forceSyncStatus 'inProgress'}}
-         disabled="disabled"><span><i class="fa fa-spinner fa-spin"></i> Sync in progress</span>
+         disabled="disabled"><span><i class="fa fa-spinner fa-spin"></i> Refreshing</span>
       {{/compare}}
       {{#compare forceSyncStatus 'completed'}}
-        >Sync {{selectedSource.sourceDisplayName}} to VX
+        >Refresh {{selectedSource.sourceDisplayName}}
       {{/compare}}
       </button>
     </div>
@@ -150,7 +150,7 @@
             {{/compare}}
           </th>
           <th scope="col" class="sortable renderable last-synced" id="sync-detail-header-last-synced">
-            <a>Last Synced to VX</a>
+            <a>Last Refresh</a>
             {{#compare sortColumn 'stampTime'}}
               <b class="fa 
               {{#compare sortOrder 'asc'}}
@@ -164,7 +164,7 @@
           </th>
           {{#compare selectedSource.sourceType 'primary'}}
           <th scope="col" class="sortable renderable new-data-since" id="sync-detail-header-new-data-since">
-            <a>New VX Data Since</a>
+            <a>New Data Since</a>
             {{#compare sortColumn 'newDataSince'}}
               <b class="fa 
               {{#compare sortOrder 'asc'}}
@@ -196,10 +196,10 @@
                 {{/compare}}
               {{/compare}}
               {{#compare this.status 'inProgress'}}
-                <span><i class="fa fa-spinner fa-spin"></i> Sync in progress</span>
+                <span><i class="fa fa-spinner fa-spin"></i> Refreshing</span>
               {{/compare}}
               {{#compare this.status 'error'}}
-                  <span class="sync-failed-text"><i class="fa fa-exclamation-circle"></i> Sync failed</span>
+                  <span class="sync-failed-text"><i class="fa fa-exclamation-circle"></i> Refresh failed</span>
               {{/compare}}
             </td>
             {{#compare ../selectedSource.sourceType 'primary'}}

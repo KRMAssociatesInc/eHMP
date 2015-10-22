@@ -1,8 +1,9 @@
+<div class="toolbarContainer"/>
 <div id='event_{{id}}' class="row equalHeights noMargin gistItemInner" {{#if userWorkspace}} draggable='true' {{/if}}>
     <div class='col-sm-6 quickDraw selectable info-display noPadding'>
         <div class="row equalHeights noMargin border-vertical">
-            <div id='event_name_{{id}}' class="col-sm-8 problem-name">
-                {{groupName}}
+            <div id='event_name_{{id}}' class="{{#if acuityName}} col-sm-8 {{else}} col-sm-12{{/if}} problem-name">
+                {{formatNewLine groupName}}
                 {{#if allGroupedComments}}
                 <sup>
                     <span id='comment_{{id}}' class="fa fa-comment"></span>
@@ -13,13 +14,15 @@
                 </sup>
                 {{/if}}
             </div>
+            {{#if acuityName}}
             <div id='acuity_{{id}}'
                  class="col-sm-4 eventsAcuity">
                     {{acuityName}}
             </div>
+            {{/if}}
         </div>
     </div>
-    <div class="col-sm-6 quickDraw selectable noPadding" id='quickDraw_{{id}}' data-toggle="popover" title="{{groupName}} {{acuityName}}" data-content="{{tooltip}}">
+    <div class="col-sm-6 quickDraw selectable noPadding" id='quickDraw_{{id}}' data-toggle="popover" title="{{groupName}} {{acuityName}}" data-content="{{tooltip}}" tabindex="0">
         <div class="row equalHeights noMargin">
             <div id="quickLook_{{id}}" class="quickviewOverlay right-side"></div>
             <div class="border-vertical col-sm-3">

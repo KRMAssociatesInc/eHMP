@@ -42,14 +42,14 @@ define([
                             contentType: 'application/json',
                             error: function(model, resp) {
                                 //add server side error container and call here
-                                //ADK.hideModal();
+                                //ADK.UI.Modal.hide();
                                 var a = 'dummy';
                                 //} else {
                                 console.log(resp, 'FAIL');
                                 //}
                             },
                             success: function(model, resp) {
-                                ADK.hideModal();
+                                ADK.UI.Modal.hide();
                                 setTimeout(function() {
                                     self.model.get('gridView').refresh({});
                                 }, 2000);
@@ -80,7 +80,12 @@ define([
                         }),
                         'footerView': footerView
                     };
-                    ADK.showModal(this, modalOptions);
+
+                    var modal = new ADK.UI.Modal({
+                        view: this,
+                        options: modalOptions
+                    });
+                    modal.show();
                 }
             });
         }

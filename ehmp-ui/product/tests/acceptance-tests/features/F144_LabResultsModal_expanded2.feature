@@ -1,7 +1,7 @@
 @F144_Lab_Results_Modal @Lab_Results @regression
 Feature: F144 - eHMP Viewer GUI - Lab Results in expanded view
 
-# Team: Andromeda
+# Team: Andromeda, inherited by Team Venus
 
 Background:
   Given user is logged into eHMP-UI
@@ -11,7 +11,7 @@ Background:
   And the user clicks the control "Expand View" in the "Lab Results applet"
   When the applet displays lab results
 
-  @f144_lab_results_panel_modal_traversal @US2327 @TA6665a @modal_test @DE387
+  @f144_lab_results_panel_modal_traversal @US2327 @TA6665a @modal_test @DE387 @DE1253 @triage @DE1617
 Scenario: Lab Results Modal - Moving through individual lab results as part of a panel in modal view.
   Given the user is viewing the expanded view of the Lab Results Applet
   And the user inputs "Panel" in the "Text Filter" control in the "Lab Results applet"
@@ -58,13 +58,14 @@ Scenario: Lab Results Modal - ensure that results with percent data (ex. HEMOGLO
     | Jan 01 2009  |
     | Jan 01 2010  |
 
-@f144_lab_results_modal_graph_date_axis_months @US2562 @TA7868b @modal_test 
+@f144_lab_results_modal_graph_date_axis_months @US2562 @TA7868b @modal_test @DE1249
 Scenario: Lab Results Modal - ensure data ranges are appropriate for number of tests.
   Given the user is viewing the expanded view of the Lab Results Applet
   When the user clicks the first non-Panel result in the Lab Results applet
   Then the modal is displayed
   And the modal's title is "Sodium, Blood Quantitative - PLASMA"
   And the user clicks the date control "All" in the "Lab Results modal"
+  And the user waits for 5 seconds 
   And the "Total Tests" label has the value "6"
   And the number of "Graph Points" is "6" in the "Lab Results modal"
   And the number of "Date Range labels" is "5" in the "Lab Results modal"

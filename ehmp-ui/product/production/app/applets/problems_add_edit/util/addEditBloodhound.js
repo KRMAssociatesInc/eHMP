@@ -5,11 +5,11 @@ define([
     var AddEditSearch = {};
     var siteCode = ADK.UserService.getUserSession().get('site');
     var locationClinicURL = ADK.ResourceService.buildUrl('locations-clinics', {
-            siteCode: siteCode,
+            "site.code": siteCode,
             limit: 10
         });
     var visitProviderURL = ADK.ResourceService.buildUrl('visits-providers', {
-            fcode: siteCode,
+            "facility.code": siteCode,
             limit: 10
         });
     

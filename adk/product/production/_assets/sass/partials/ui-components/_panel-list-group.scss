@@ -1,0 +1,24 @@
+/*.mssbs .panel-w-list-group,
+.popover-content > .row > .mssbs .panel-w-list-group {
+	> .panel-heading {
+		background-color: $primary-lighter;
+		border: 1px solid $primary-lighter;
+		color: $white;
+	}
+	.list-group {
+		height: 160px;
+		overflow-y: auto;
+		.list-group-item {
+			padding: 1px 15px;
+			.col-md-1.col-xs-1 {
+				padding: 0;
+			}
+			.col-xs-12 > p {
+				margin: 0;
+			}
+		}
+	}
+}*/
+.panel-w-list-group {
+	
+}

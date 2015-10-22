@@ -13,31 +13,10 @@ When(/^the client requests "(.*?)" for the patient "(.*?)" in VPR format$/) do |
     "SKIN" => "skin", "MENTAL HEALTH" => "mh", "EXAM" => "exam", "IMMUNIZATIONS" =>"immunization", "IMAGE" => "image" 
   }
   domain = all_domains[domain.upcase]
-  fail "Please check your step ruby file. \n This domain does not specify in our test." if domain.nil? || domain.empty? 
-
-  base_url = DefaultLogin.jds_url
-  p path = "#{base_url}/vpr/#{pid}/find/#{domain}"
+  fail "Please check your step ruby file. \n This domain does not specify in our test." if domain.nil? || domain.empty?
   
-  
-  @response = nil
-  default_timeout = 260
-  # start_time = Time.new
-  begin
-    @response = HTTPartyWithBasicAuth.get_with_authorization(path, default_timeout)
-  rescue Timeout::Error
-    p "Sync timed out"
-  end
-  # p "Waited #{Time.new - start_time} secs"
-   
-  if @response.nil?
-    response_code = "Nil"
-    response_body = "Nil"
-  else
-    response_code = @response.code
-    response_body = @response.body
-  end
-   
-  fail "Expected response code 200, received #{response_code} \n response body: #{response_body}" unless response_code == 200
+  vpr_formate = VprFormate.new 
+  @response = vpr_formate.call_vpr_formate(domain, pid)
 end
 
 Then(/^the VPR results contain "([^"]*)"$/) do |not_used, table|
@@ -102,4 +81,33 @@ Then(/^print the Json body "(.*?)"$/) do |arg1|
   p arg1
   p "*"*100
   p @response 
+end
+
+class VprFormate  
+  def call_vpr_formate(domain, pid)
+    base_url = DefaultLogin.jds_url
+    p path = "#{base_url}/vpr/#{pid}/find/#{domain}"
+    
+    
+    response = nil
+    default_timeout = 260
+    # start_time = Time.new
+    begin
+      response = HTTPartyWithBasicAuth.get_with_authorization(path, default_timeout)
+    rescue Timeout::Error
+      p "Sync timed out"
+    end
+    # p "Waited #{Time.new - start_time} secs"
+     
+    if response.nil?
+      response_code = "Nil"
+      response_body = "Nil"
+    else
+      response_code = response.code
+      response_body = response.body
+    end
+     
+    fail "Expected response code 200, received #{response_code} \n response body: #{response_body}" unless response_code == 200
+    return response
+  end
 end

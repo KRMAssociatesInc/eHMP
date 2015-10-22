@@ -30,6 +30,23 @@ define([
 
     ScreenDisplay.createScreen = function(screenModule, screenName, routeOptions, ADKApp) {
         if (screenModule) {
+            if (typeof OWA !== "undefined") {
+                try {
+                    OWATracker = new OWA.tracker();
+                    OWATracker.setSiteId('f6eca28945621473f2cbd850e859ab74');
+                    var screenChange = OWATracker.makeEvent();
+                    screenChange.setEventType("screenChange");
+                    screenChange.set("screenChange", screenName);
+                    screenChange.getProperties();
+                    OWATracker.trackEvent(screenChange);
+                    OWATracker.trackPageView();
+                    OWATracker.trackDomStream();
+                    // this capability is going to be made available in a future sprint
+                    //OWATracker.trackClicks();
+                } catch (err) {
+                    console.log("OWA error:  " + err);
+                }
+            }
             if (ADKApp.currentScreen && ADKApp.currentScreen.config && ADKApp.currentScreen.config.onStop) {
                 ADKApp.currentScreen.config.onStop();
             }
@@ -209,11 +226,11 @@ define([
                 viewType = appletConfig.viewType;
             }
             if (appletModule.viewTypes) {
-                if (Utils.appletViewTypes.isChromeEnabled(appletModule.appletConfig, viewType)) {
+                if (Utils.appletUtils.isChromeEnabled(appletModule.appletConfig, viewType)) {
                     AppletView = ChromeView.extend({
                         appletScreenConfig: appletConfig,
-                        appletViewConfig: Utils.appletViewTypes.getViewTypeConfig(appletModule.appletConfig, viewType),
-                        AppletView: Utils.appletViewTypes.getViewTypeConfig(appletModule.appletConfig, viewType).view,
+                        appletViewConfig: Utils.appletUtils.getViewTypeConfig(appletModule.appletConfig, viewType),
+                        AppletView: Utils.appletUtils.getViewTypeConfig(appletModule.appletConfig, viewType).view,
                         AppletController: AppletControllerView.extend({
                             viewType: viewType
                         }),

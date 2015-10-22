@@ -11,25 +11,30 @@ define([
     'app/applets/patient_search/views/closeButtonView'
 ], function(Backbone, Marionette, _, patientSearchTemplate, TabView, InputView, PillsView, SearchMainView, ConfirmationView, CloseButtonView) {
 
+    // constants
+    var MY_SITE = 'mySite';
+    var NATIONWIDE = 'global';
+    var BLANK = '';
+
     var PatientSearchModel = Backbone.Model.extend({
         defaults: {}
     });
 
     var AppletLayoutView = Backbone.Marionette.LayoutView.extend({
         events: {
-            'click #global': 'changePillsTemplate',
-            'click #mySite': 'changePillsTemplate',
-            'click #myCPRSList': 'changePillsTemplate'
+            'click #global': 'changePatientSearchScope',
+            'click #mySite': 'changePatientSearchScope',
+            'click #patient-search-input': 'setupPatientSearch'
         },
         className: 'searchApplet',
         template: patientSearchTemplate,
         regions: {
             closeButton: '#close-button-container',
-            input: '#patient-search-input',
-            tab: '#patient-search-tab',
-            pills: '#patient-search-pills',
+            patientSearchInput: '#patient-search-input',
+            searchType: '#patient-search-tab',
+            mySiteTabs: '#patient-search-pills',
             searchMain: '#patient-search-main',
-            confirmation: '#patient-search-confirmation'
+            patientSelectionConfirmation: '#patient-search-confirmation'
         },
         initialize: function() {
             this.initializeViews();
@@ -37,98 +42,114 @@ define([
         },
         initializeViews: function() {
             this.closeButtonView = new CloseButtonView();
-            this.inputView = new InputView();
-            this.tabView = new TabView();
-            this.pillsView = new PillsView();
-            this.changePillsTemplate();
+            this.patientSearchView = new InputView();
+            this.searchTypeView = new TabView();
+            this.mySiteTabsView = new PillsView();
             this.searchMainView = new SearchMainView({
                 searchApplet: this
             });
-            this.confirmationView = new ConfirmationView({
+            this.patientSelectionConfirmationView = new ConfirmationView({
                 searchApplet: this
             });
         },
         initializeListeners: function() {
-            this.listenTo(this.tabView.model, 'change:searchType', this.changeSearchInput);
-            this.listenTo(this.pillsView.model, 'change:pillsType', this.changeSearchInput);
-            this.listenTo(this.inputView.mySiteModel, 'change:searchString', this.executeSearch);
-            this.listenTo(this.inputView.mySiteFilterModel, 'change:filterString', this.executeSearch);
-            this.listenTo(this.inputView.myCPRSModel, 'change:filterString', this.executeSearch);
-            this.listenTo(this.inputView.globalModel, 'change:globalSearchParameters', this.executeSearch);
-            this.listenTo(this.inputView.globalModel, 'errorMessage', this.displayErrorMessage);
-            this.listenTo(this.inputView.globalModel, 'newGlobalSearch', this.clearPreviousGlobalSearchResults);
+            this.listenTo(this.searchTypeView.model, 'change:searchType', this.changeSearchInput);
+            this.listenTo(this.mySiteTabsView.model, 'change:pillsType', this.changeSubTab);
+            this.listenTo(this.patientSearchView.mySiteModel, 'change:searchString', this.executeSearch);
+            this.listenTo(this.patientSearchView.nationwideModel, 'change:globalSearchParameters', this.executeSearch);
+            this.listenTo(this.patientSearchView.nationwideModel, 'errorMessage', this.displayErrorMessage);
+            this.listenTo(this.patientSearchView.nationwideModel, 'newGlobalSearch', this.clearPreviousGlobalSearchResults);
         },
         onRender: function() {
-            this.input.show(this.inputView);
+            this.patientSearchInput.show(this.patientSearchView);
             this.closeButton.show(this.closeButtonView);
-            this.tab.show(this.tabView);
-            this.pills.show(this.pillsView);
+            this.searchType.show(this.searchTypeView);
+            this.mySiteTabs.show(this.mySiteTabsView);
             this.searchMain.show(this.searchMainView);
-            this.confirmation.show(this.confirmationView);
-            this.confirmation.$el.addClass('hide');
-
+            this.patientSelectionConfirmation.show(this.patientSelectionConfirmationView);
+            this.patientSelectionConfirmation.$el.addClass('hide');
         },
         onShow: function() {
-            $('#patient-search-input input').first().focus();
+            $("#patient-search-input input").first().focus();
+            $('ul a[role="tab"]').attr('tabindex',0);
         },
         displayErrorMessage: function(messagePayload) {
             this.searchMainView.clearErrorMessage();
-            var searchType = messagePayload[0];
+            var scope = messagePayload[0];
             var message = messagePayload[1];
-            this.searchMainView.displayErrorMessage(searchType, message);
+            this.searchMainView.displayErrorMessage(scope, message);
+        },
+        setupPatientSearch: function() {
+            this.mySiteTabsView.clearAllTabs();
+            this.patientSearchView.$('#patientSearchInput').focus();
         },
         clearPreviousGlobalSearchResults: function() {
-            this.searchMainView.clearPreviousGlobalSearchResults(this.tabView.model.get('searchType'));
+            this.searchMainView.clearPreviousGlobalSearchResults(this.searchTypeView.model.get('searchType'));
+        },
+        getPatientPhoto: function(patient,imageFetchOptions) {
+            var self = this;
+            var patientImageUrl;
+            patientImageUrl = ADK.ResourceService.buildUrl('patientphoto-getPatientPhoto', imageFetchOptions);
+                var response = $.ajax({
+                url: patientImageUrl,
+                success: function(data, statusMessage, xhr) {
+                    base64PatientPhoto = 'data:image/jpeg;base64,'+ data +'';
+                    patient.set({
+                        patientImage: base64PatientPhoto
+                    });
+                },
+                error: function(xhr, statusMessage, error) {
+                  console.info("There was an issue retrieving the patient image " + xhr.status);
+                },
+                async: true
+            });
         },
         patientSelected: function(patient) {
-            this.confirmationView.updateSelectedPatientModel(patient);
+            this.patientSelectionConfirmationView.updateSelectedPatientModel(patient);
         },
-        changePillsTemplate: function(event) {
-            this.pillsView.changeTemplate(this.tabView.model.get('searchType'));
-            $('#patient-search-input input').first().focus(); //Comment Out Later
+        changePatientSearchScope: function(event) {
+            this.patientSearchView.changeView(this.searchTypeView.model.get('searchType'));
         },
-        resetModels: function() {
-            this.inputView.resetModels();
-            this.pillsView.resetModels();
+        changeSubTab: function(event) {
+            $('#patient-search-input input').first().val(BLANK);
+            this.patientSearchView.mySiteModel.set('searchString', BLANK);
+            this.searchMainView.changeView(this.searchTypeView.model.get('searchType'), this.mySiteTabsView.getTabType());
+            this.searchMainView.mySiteAllSearchLayoutView.clearSearchResultsRegion();
+            $("#patientSearchInput").blur();
         },
         changeSearchInput: function() {
-            this.confirmationView.updateTemplateToBlank();
-            $("a.active").removeClass('active');
-            this.inputView.changeView(this.tabView.model.get('searchType'), this.pillsView.model.get('pillsType'));
-            this.updateSearchView();
+            this.patientSelectionConfirmationView.updateTemplateToBlank();
+            $('a.active').removeClass('active');
+            var scope = this.searchTypeView.model.get('searchType');
+            this.patientSearchView.changeView(scope);
+            this.mySiteTabsView.changeTemplate(scope);
+            this.searchMainView.changeView(scope, this.mySiteTabsView.getTabType());
             $('#patient-search-input input').first().focus();
         },
-        updateSearchView: function() {
-            this.searchMainView.changeView(this.tabView.model.get('searchType'), this.pillsView.model.get('pillsType'));
-            if (this.tabView.model.get('searchType') == 'mySite') {
-                this.executeSearch();
-            }
+        removePatientSelectionConfirmation: function() {
+            this.patientSelectionConfirmationView.updateTemplateToBlank();
+        },
+        resetModels: function() {
+            this.mySiteTabsView.resetModels();
+            this.patientSearchView.resetModels();
         },
         executeSearch: function() {
-            var searchType = this.tabView.model.get('searchType');
+            var searchType = this.searchTypeView.model.get('searchType');
             var searchParameters = {};
-            if (searchType == 'myCPRSList') {
-                searchParameters.searchString = this.inputView.myCPRSModel.get('filterString');
-            }
-            if (searchType == 'mySite') {
-                searchParameters.pillsType = this.pillsView.model.get('pillsType');
-                if (searchParameters.pillsType === "all") {
-                    searchParameters.searchString = this.inputView.mySiteModel.get('searchString');
-                    this.inputView.mySiteFilterModel.set('filterString', searchParameters.searchString, {
-                        silent: true
-                    });
-                } else {
-                    searchParameters.searchString = this.inputView.mySiteFilterModel.get('filterString');
-                    this.inputView.mySiteModel.set('searchString', searchParameters.searchString, {
+
+            if (searchType == MY_SITE) {
+                searchParameters.tabType = this.mySiteTabsView.getTabType();
+                if (searchParameters.tabType === 'none') {
+                    searchParameters.searchString = this.patientSearchView.mySiteModel.get('searchString');
+                    this.patientSearchView.mySiteModel.set('searchString', searchParameters.searchString, {
                         silent: true
                     });
                 }
-            } else if (searchType == 'global') {
-                this.inputView.globalModel.trigger("newGlobalSearch");
-                searchParameters.globalSearchParameters = this.inputView.globalModel.get('globalSearchParameters');
+            } else if (searchType == NATIONWIDE) {
+                searchParameters.globalSearchParameters = this.patientSearchView.nationwideModel.get('globalSearchParameters');
             }
 
-            this.confirmationView.updateTemplateToBlank();
+            this.patientSelectionConfirmationView.updateTemplateToBlank();
             this.searchMainView.clearErrorMessage(searchType);
             this.searchMainView.executeSearch(searchType, searchParameters);
         }

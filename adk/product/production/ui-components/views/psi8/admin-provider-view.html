@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>eHMP Bootstrap UI Library - Admin Provider View Mockup</title>
+        <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+        <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+        <link rel="stylesheet" href="../../app/css/applets.css">
+        <link rel="stylesheet" href="../../css/main-styles.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700" />
+        <script src="../../js/jquery-1.11.2.min.js"></script>
+    </head>
+    <body class="library">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="../../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../../views.html">Views</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../../color-palette.html">Color Palette</a></li>
+                                <li><a href="#">Style Guide</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--end navigation-->
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+                <li><a href="../../views.html">Views</a></li>
+                <li class="active">F421 - Provider Centric View & F457 - Access CAC User Admin View</li>
+            </ol>
+            <h1>F421 - Provider Centric View & F457 - Access CAC User Admin View</h1>
+            <div class="description">
+                <p><strong><i class="fa fa-leanpub"></i> Description:</strong> The following is a 508 compliant HTML/CSS static mock up of the eHMP top navigation bar with the Provider and CAC User Admin views. The fa-times-circle button should close the patient view. The dropdown to access the sign out button should dynamically announce collapsed and expanded when toggled.</p>
+                <p><strong><i class="fa fa-file-text-o"></i> Documents:</strong> Please also view <a href="http://wakirc.axshare.com/#p=v4_-_provider_centric_view">Provider Centric wireframe</a>, <a href="http://wakirc.axshare.com/#p=v1_-_access_cac_user_admin_view">Access CAC User Admin wireframe</a>, <a href="#">Workflow Diagram</a> <small>[PDF, XXKB]</small>, and <a href="#">Use Scenario Case Documentation</a> <small>[PDF, XXKB]</small> for full details on implementation.</p>
+            </div>
+
+            <!-- provider nav -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-patientSearch-provider">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#" title="Press enter to navigate to the patient selection page."><i class="fa fa-arrow-left"></i> Select Patient</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar-patientSearch-provider">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <a href="#" title="Press enter to navigate to My Workspace.">My Workspace</a>
+                            </li>
+                            <li>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default" title="Press enter to navigate to the patient view.">Eight, Patient</button>
+                                    <button type="button" class="btn btn-default" title="Close button. Press enter to remove the patient view from the navigation bar."><i class="fa fa-times-circle"></i></button>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="date-time">
+                                <div>Wed, 5/14/2015</div>
+                                <div>09:45</div>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panorama Clinician <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#" title="Return to the sign in page by selecting sign out and pressing enter to exit the application"><span class="fa fa-power-off"></span> Sign Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- admin provider nav -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-patientSearch-admin-provider">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#" title="Press enter to navigate to the patient selection page."><i class="fa fa-arrow-left"></i> Select Patient</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar-patientSearch-admin-provider">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <a href="#" title="Press enter to navigate to Provider View.">Provider View</a>
+                            </li>
+                            <li>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default" title="Press enter to navigate to the patient view.">Eight, Patient</button>
+                                    <button type="button" class="btn btn-default" title="Close button. Press enter to remove the patient view from the navigation bar.">
+                                        <i class="fa fa-times-circle"></i>
+                                    </button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" title="Press enter to navigate to CAC Admin View.">CAC Admin View</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="date-time">
+                                <div>Wed, 5/14/2015</div>
+                                <div>09:45</div>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panorama Clinician <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#" title="Return to the sign in page by selecting sign out and pressing enter to exit the application"><span class="fa fa-power-off"></span> Sign Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <script src="../../js/bootstrap.min.js"></script>
+    </body>
+</html>

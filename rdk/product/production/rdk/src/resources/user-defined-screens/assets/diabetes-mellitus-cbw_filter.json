@@ -1,0 +1,109 @@
+{
+    "_id": "diabetes-mellitus-cbw_filter",
+    "userdefinedfilters": {
+        "applets": [{
+                "filters": [
+                    "Admission",
+                    "Appointment",
+                    "Consult",
+                    "Discharge",
+                    "Immunization",
+                    "Procedure",
+                    "Surgery",
+                    "Visit"
+                ],
+                "instanceId": "dmcbw-newfeed-1"
+            }, {
+                "filters": [
+                    "Agent",
+                    "Orange",
+                    "Cardiology",
+                    "Diabetic",
+                    "Diabetology",
+                    "Diagnostic",
+                    "ED",
+                    "Emergency",
+                    "Endocrinology",
+                    "Geriatric",
+                    "Hyperlipidemia",
+                    "Internal",
+                    "Medicine",
+                    "Laboratory",
+                    "Medication",
+                    "Nephrology",
+                    "Nurse",
+                    "Nutrition",
+                    "Ophthalmology",
+                    "Optometry",
+                    "PCP",
+                    "Physician",
+                    "Podiatry",
+                    "Primary",
+                    "Care",
+                    "Procedure",
+                    "Progress",
+                    "Radiology",
+                    "Smoke",
+                    "Social",
+                    "Work",
+                    "Wound"
+                ],
+                "instanceId": "dmcbw-documents-1"
+            }, {
+                "filters": [
+                    "Eye",
+                    "Cardiology",
+                    "ED",
+                    "Emergency",
+                    "Endocrinology",
+                    "Internal",
+                    "Medicine",
+                    "Nephrology",
+                    "Neurology",
+                    "Nutrition",
+                    "Ophthalmology",
+                    "Optometry",
+                    "Podiatry",
+                    "Primary",
+                    "Care",
+                    "Wound"
+                ],
+                "instanceId": "dmcbw-appointments-1"
+            }, {
+                "filters": [
+                    "ACARBOSE",
+                    "ALBIGLUTIDE",
+                    "ALOGLIPTIN",
+                    "CANAGLIFLOZIN",
+                    "DAPAGLIFOZIN",
+                    "DETEMIR",
+                    "DULAGLUTIDE",
+                    "EMPAGLIFLOZIN",
+                    "EXENATIDE",
+                    "GLARGINE",
+                    "GLIMEPIRIDE",
+                    "GLIPIZIDE",
+                    "GLULISINE",
+                    "GLYBURIDE",
+                    "INSULIN",
+                    "LINAGLIPTIN",
+                    "LIRAGLUTIDE",
+                    "METFORMIN",
+                    "MIGLITOL",
+                    "NATEGLINIDE",
+                    "NPH",
+                    "PIOGLITAZONE",
+                    "PRAMLINTIDE",
+                    "REGULAR",
+                    "REPAGLINIDE",
+                    "ROSIGLITAZONE",
+                    "SAXAGLIPTIN",
+                    "SIMVASTATIN",
+                    "SITAGLIPTIN",
+                    "TROGLITAZONE"
+                ],
+                "instanceId": "dmcbw-medication_review_v2-1"
+            }
+        ]
+    }
+}

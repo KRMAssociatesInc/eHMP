@@ -91,7 +91,6 @@ When(/^the user clicks on plus sign of the problem applet$/) do
   con.perform_action("Add_Problem")
   sleep 5
   puts "clicked"
-
 end
 
 Then(/^the problem search modal title is "(.*?)"$/) do |arg1|

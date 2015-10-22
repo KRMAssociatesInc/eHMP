@@ -21,19 +21,20 @@ function handle(log, config, environment, job, handlerCallback) {
     if (!job.patientIdentifier || !job.patientIdentifier.type ||
         job.patientIdentifier.type !== 'pid' || !/^HDR;/.test(job.patientIdentifier.value)) {
         log.error('hdr-xform-domain-vpr-handler: expected a HDR job with patientIdentifier type and value');
-        return setTimeout(handlerCallback, 0, 'Expected HDR pid which contains icn as patient id, but it was not found.');
+        return setTimeout(handlerCallback, 0, errorUtil.createFatal('Expected HDR pid which contains icn as patient id, but it was not found.'));
     }
 
     if (_.isUndefined(job.record) || _.isUndefined(job.record.data) || ! _.isArray(job.record.data.items) || job.record.data.items.length < 1 || _.isUndefined(job.record.data.items[0].uid)) {
         log.error('hdr-xform-domain-vpr-handler: expected an HDR job with valid UID');
-        return setTimeout(handlerCallback, 0, 'Expected HDR job with a valid UID, but it was not found.');
+        // @TODO, figure out root cause of this problem.
+        return setTimeout(handlerCallback, 0, null, errorUtil.createFatal('No Valid Data Found'));
     }
 
     var domainCheck = config.hdr.domains;
 
     if (!_.contains(domainCheck, job.dataDomain)) {
         log.error(util.format('hdr-xform-domain-vpr-handler.handle: domain \'%s\' is not present on valid domain list: %j; config: %j', job.dataDomain, domainCheck, config));
-        return setTimeout(handlerCallback, 0, errorUtil.createFatal('Invalid domain type'));
+        return setTimeout(handlerCallback, 0, errorUtil.createTransient('Invalid domain type'));
     }
 
     log.debug('hdr-xform-domain-vpr-handler.handle: Transforming data for domain: %s to VPR', job.dataDomain);
@@ -45,7 +46,7 @@ function handle(log, config, environment, job, handlerCallback) {
 
     if (_.isEmpty(vprItems)) {
         log.error('hdr-xform-domain-vpr-handler.handle: No valid %s data found for %s icn %s', job.dataDomain, job.patientIdentifier.value, icn);
-        return setTimeout(handlerCallback, 0, null, 'NoValidDataFound');
+        return setTimeout(handlerCallback, 0, errorUtil.createFatal('No Valid Data Found'));
     }
 
     var record = {

@@ -3,8 +3,8 @@
 		tr {
 			color: #666;
 			&.selectable {
-				border-bottom: 2px solid #f3f3f3;
-				border-top: 2px solid #f3f3f3;
+				border-bottom: 2px solid $grey-lighter;
+				border-top: 2px solid $grey-lighter;
 			}
 		}
 		td.renderable {

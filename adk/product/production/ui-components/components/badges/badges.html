@@ -1,0 +1,28 @@
+<h3>Badges</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> Badges that appear in the applets, allows the user to quickly identify if the selected patient has an Abnormal High or Low lab results, Critical High or Low lab results, or was Admitted on a specific date and time.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> Badges are meant to display additional <strong>visual</strong> information. Adding the title attribute and helpful content will be sufficient enough to pass the 508-compliance test since the title attribute will be read by the screen reader.</p>
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> Badges are not actionable objects that be "tabbed" to. Also, these badges using the &lt;span&gt; tags are specifically to be embedded within the applet tiles.</p>
+</div>
+<h5>Applet Badges</h5>
+<div id="badges-copy">
+    <span class="label applet-badges label-critical" aria-label="L* - Critical Low" title="Critical Low">L*</span>
+    <span class="label applet-badges label-abnormal" aria-label="H - Abnormal High" title="Abnormal High">H</span>
+    <span class="label applet-badges label-panel" aria-label="Panel - Lab Result">Panel</span>
+</div>
+<hr />
+<div role="tabpanel" class="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#markup-badges" aria-controls="markup-badges" role="tab" data-toggle="tab">Badges</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-badges">
+            <pre>
+&lt;span class=&quot;label applet-badges label-critical&quot; aria-label=&quot;L* - Critical Low&quot; title=&quot;Critical Low&quot;&gt;L*&lt;/span&gt;
+&lt;span class=&quot;label applet-badges label-abnormal&quot; aria-label=&quot;H - Abnormal High&quot; title=&quot;Abnormal High&quot;&gt;H&lt;/span&gt;
+&lt;span class=&quot;label applet-badges label-panel&quot; aria-label=&quot;Panel - Lab Result&quot;&gt;Panel&lt;/span&gt;
+            </pre>
+            <a onclick="copyToClipboard('badges-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>

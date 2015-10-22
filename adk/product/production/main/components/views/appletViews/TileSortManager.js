@@ -6,11 +6,19 @@ define([
 
     var TileSortManager = {};
 
-    TileSortManager.getSortOptions = function(originalCollection, appletId, cb) {
+    TileSortManager.getSortOptions = function(originalCollection, appletId, sortAttribute, cb) {
+        var wasSorted = false;
+        var currentScreen = Messaging.request('get:current:screen');
 
-        if (Messaging.request('get:current:screen').config.id.indexOf('workspace') < 0)
+        if(_.isUndefined(sortAttribute)){
+            sortAttribute = 'uid';
+        }
+
+        if (currentScreen.config.predefined && typeof cb === 'function'){
+            cb(wasSorted, originalCollection);
             return;
-        var workspaceId = Messaging.request('get:current:screen').config.id + '_' + appletId;
+        }
+        var workspaceId = currentScreen.screenId + '_' + appletId;
         var SortedSaveCollection = Backbone.Collection.extend({
             url: ResourceService.buildUrl('user-defined-sort', {
                 'id': workspaceId
@@ -27,7 +35,7 @@ define([
 
                 if (obj === undefined) {
                     if (typeof cb === "function") {
-                        cb(wasSorted);
+                        cb(wasSorted, originalCollection);
                     }
                     return;
                 }
@@ -46,14 +54,11 @@ define([
                 }
 
                 if (typeof cb === "function") {
-                    cb(wasSorted);
+                    cb(wasSorted, originalCollection);
                 }
 
                 function customSort(currentItem) {
-                    if (obj.keyField === 'typeName')
-                        return currentItem.attributes.typeName == tileSortOrder[i];
-                    else
-                        return currentItem.attributes.uid == tileSortOrder[i];
+                    return currentItem.attributes[sortAttribute] == tileSortOrder[i];
                 }
             }
         };
@@ -61,28 +66,27 @@ define([
 
     };
 
-    TileSortManager.reorderRows = function(reorderObj, originalCollection, appletId, sortKey) {
+    TileSortManager.reorderRows = function(reorderObj, collection, sortId, sortKey) {
+        if(_.isUndefined(sortKey)){
+            sortKey = 'uid';
+        }
 
-        var temp = originalCollection.at(reorderObj.oldIndex);
-        originalCollection.remove(temp);
-        originalCollection.add(temp, {
+        var temp = collection.at(reorderObj.oldIndex);
+        collection.remove(temp);
+        collection.add(temp, {
             at: reorderObj.newIndex
         });
         var newSorted = [];
 
-        originalCollection.models.forEach(function(item) {
-            if (item.attributes === undefined)
+        collection.models.forEach(function(item) {
+            if (_.isUndefined(item.attributes) || _.isUndefined(item.attributes[sortKey])){
                 return;
-            if (item.attributes.typeName !== undefined && sortKey === 'typeName') {
-                newSorted.push(item.attributes.typeName);
-            } else {
-                if (item.attributes.uid !== undefined) {
-                    newSorted.push(item.attributes.uid);
-                }
+            }else {
+                newSorted.push(item.attributes[sortKey]);
             }
         });
 
-        var workspaceId = Messaging.request('get:current:screen').config.id + '_' + appletId;
+        var workspaceId = Messaging.request('get:current:screen').screenId + '_' + sortId;
         var SaveSortModel = Backbone.Model.extend({
             sync: function(method, model, options) {
 
@@ -106,7 +110,7 @@ define([
         });
 
         var obj = {};
-        obj.instanceId = appletId;
+        obj.instanceId = sortId;
         obj.keyField = sortKey;
         obj.orderAfter = "";
         obj.fieldValue = newSorted.join(",");
@@ -122,7 +126,7 @@ define([
 
     TileSortManager.removeSort = function(instanceId) {
 
-        var workspaceId = Messaging.request('get:current:screen').config.id + '_' + instanceId;
+        var workspaceId = Messaging.request('get:current:screen').screenId + '_' + instanceId;
         var fetchOptions = {
             resourceTitle: 'user-defined-sort',
             fetchType: 'DELETE',

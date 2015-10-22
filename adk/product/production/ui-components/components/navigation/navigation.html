@@ -1,0 +1,136 @@
+<h3>Navigation</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> The navigation is displayed at the top of the application allowing the user to perform actions such as searching for a patient or signing out of the application.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> The navigation contains links; therefore, to pass 508, all links must be keyboard accessible, and the screen reader should read each link. Users can navigate to the links in the drop down menu by tabbing to the menu and then pressing the up and down arrow keys.</p>
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To place the navigation at the top and make it fixed, add the class "navbar-fixed-top" to the nav tag</p>
+</div>
+
+<h4>Patient <em>Selection</em> Nav</h4>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This navigation bar contains static content <em>without</em> an icon to the left</p>
+</div>
+<div id="navigationCopy1">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-patientSearch">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">Patient Selection</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-patientSearch">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panorama Clinician <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"><span class="fa fa-power-off" title="Select sign out to sign out of the application and return to the sign in page"></span> Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<hr />
+
+<h4>Patient <em>Selection</em> Nav</h4>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This navigation bar contains static content <em>with</em> an icon to the left</p>
+</div>
+<div id="navigationCopy2">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-patientSearch2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand"><span class="fa fa-search"></span> Patient Search</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-patientSearch2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Panorama Clinician <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"><span class="fa fa-power-off" title="Select sign out to sign out of the application and return to the sign in page"></span> Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<hr />
+
+<div role="tabpanel" class="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#patient-selection-nav" aria-controls="simple-table-col" role="tab" data-toggle="tab">Patient Selection Nav</a></li>
+        <li><a href="#patient-search-nav" aria-controls="simple-table-col-row" role="tab" data-toggle="tab">Patient Search Nav</a></li>
+    </ul>
+    
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="patient-selection-nav">
+            <pre>
+&lt;nav class="navbar navbar-default"&gt;
+    &lt;div class="container-fluid"&gt;
+        &lt;div class="navbar-header"&gt;
+            &lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-patientSearch"&gt;
+                &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;a href="#" class="navbar-brand"&gt;Patient Selection&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="collapse navbar-collapse" id="navbar-patientSearch"&gt;
+            &lt;ul class="nav navbar-nav navbar-right"&gt;
+                &lt;li class="dropdown"&gt;
+                    &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"&gt;Panorama Clinician &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
+                    &lt;ul class="dropdown-menu" role="menu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;span class="fa fa-power-off" title="Select sign out to sign out of the application and return to the sign in page"&gt;&lt;/span&gt; Sign Out&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+            </pre>
+            <a onclick="copyToClipboard('navigationCopy1')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        
+        <div role="tabpanel" class="tab-pane fade" id="patient-search-nav">
+            <pre>
+&lt;nav class="navbar navbar-default"&gt;
+    &lt;div class="container-fluid"&gt;
+        &lt;div class="navbar-header"&gt;
+            &lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-patientSearch2"&gt;
+                &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;a href="#" class="navbar-brand"&gt;&lt;span class="fa fa-search"&gt;&lt;/span&gt; Patient Search2&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="collapse navbar-collapse" id="navbar-patientSearch"&gt;
+            &lt;ul class="nav navbar-nav navbar-right"&gt;
+                &lt;li class="dropdown"&gt;
+                    &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"&gt;Panorama Clinician &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
+                    &lt;ul class="dropdown-menu" role="menu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;span class="fa fa-power-off" title="Select sign out to sign out of the application and return to the sign in page"&gt;&lt;/span&gt; Sign Out&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+            </pre>
+            <a onclick="copyToClipboard('navigationCopy2')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>

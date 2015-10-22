@@ -52,9 +52,8 @@ function processJob(vistaId, pidSite, pid, tasks, log, handlerCallback) {
 	var actualResponse = '';
 	async.series(tasks, function (error, response) {
 		log.debug('vista-subscribe-request-handler.processJob: callback from async.series called.  error: %s; response: %j', error, response);
-		actualError = error;
+		actualError = error ? errorUtil.createFatal(error) : null;
 		actualResponse = response;
-
         handlerCallback(actualError, actualResponse);
 	});
 }

@@ -4,7 +4,7 @@ var _ = require('underscore');
 
 var repoDefaults = {
     host: '127.0.0.1',
-    port: 5000,
+    port: 5001,
     tubename: 'osync',
     tubePrefix: 'osync-',
     jobTypeForTube: false
@@ -22,8 +22,8 @@ var repoUniversal = {
 
 var jobs = {
     "activeUser": true,
-    "appointmentRequest": true,
-    "admissionRequest": true
+    "appointmentRequest": false,
+    "admissionRequest": false
 }
 
 /*

@@ -626,167 +626,6 @@ Used to check if the current user has the specified permission. Returns html ins
 
 The following are the available components that have been created thus far in the ADK:
 
-### Modal (window) ###
-
-#### Create clickable item ####
-
-Add a unique id to the HTML tag.  See example below:
-
-```HTML
-<button id="modalButton">CLICK ME</button>
-```
-
-#### Tie clickable item to event function ####
-Under the events field in the extend Backbone ItemView use the unique id assign to the clickable item to listen for a click event.
-The event should call a function that creates your new instance of your modal view and assigned this.model to be the model for that view.
-Finally use the ADK.showModal() function to display the view.  (see below)
-
-```JavaScript
-events: {
-    'click #modalButton': 'showModal'
-},
-showModal: function(event) {
-    event.preventDefault(); //prevent the page from jumping back to the top
-
-    //Note: the view shown in the modal window can be any view
-    var view = new exampleView();
-    view.model = this.model;
-
-    //Note: this is optional and only an example.
-    //      This example creates a view that has a "Exit" button, that will be displayed in the modal's footer
-    var footerView = Backbone.Marionette.ItemView.extend({
-        template: _.template("<button type='button' class='btn btn-default' data-dismiss='modal'>Exit</button>")
-    });
-
-    //Note: this is optional and only an example.
-    //Specifying your own header view will remove the default x-close button -> create your own if needed
-    // This example creates a view that has a title as well as a "Previous" and "Next" button
-    var headerView = Backbone.Marionette.ItemView.extend({
-        template: _.template("<h1>Hi I'm a Modal Header</h1><button type='button' class='btn btn-default'>Previous</button><button type='button' class='btn btn-default'>Next</button>")
-    });
-
-    //Note: passing in modalOptions is optional
-    var modalOptions = {
-        'title': this.model.get('name'),
-        'size': "medium",
-        'backdrop': true,
-        'keyboard': true,
-        'callShow': true,
-        'headerView': headerView,
-        'footerView': footerView
-    }
-    ADK.showModal(view, modalOptions);
-}
-```
-::: side-note
-_*Note:_ **ADK.showModal(view, modalOptions)** can take in two parameters.
-- The first parameter is the **view** that gets shown in the modal: _required_
-- The second paramter is an object variable with the **modalOptions**: _optional_
-  - valid options include:
-    - **"title"**  (_optional_)
-      -  displays a string as the title to the modal
-    - **"size"** (_optional_)
-      - valid modal sizes include: "xlarge" | "large" | "medium"
-      - default size: **"medium"**
-    - **"backdrop"** (_optional_)
-      - Includes a modal-backdrop element. Alternatively, specify static for a backdrop which doesn't close the modal on click.  true | false | "static"
-      - default: **true**
-    - **"keyboard"** (_optional_)
-      - Closes the modal when escape key is pressed: true | false
-      - default: **true**
-    - **"callShow"** (_optional_)
-      - Shows the modal when initialized: true | false
-      - default: **"true"**
-      - If the developer wishes to issue $("#mainModal").modal('show') or use data-toggle this MUST be set to false
-    - **"footerView"** (_optional_)
-      - overwrites the default modal footer (close button) with a specified view
-      - if set to '**none**' no footer region will be shown
-    - **"headerView"** (_optional_)
-      - overwrites the default modal header (x-close button and title) with a specified view
-
-**Note**: When ADK.showModal(view, modalOptions) is issued by some method other than an element with the data-toggle="modal" data-target="#modalElement" (such as through the channeling service or JavaScript), the modal must have the 'callShow' option set to true.
-
-**Also Note**: The ADK.showModal() method returns the modal Layout View which includes modal-header, modal-body and modal-footer.
-:::
-
-### Workflow Modal (window) ###
-#### Overview ####
-A Workflow Modal is a collection of modals that represent a writeback applet. Unlike a modal, which is a singleton and will destroy its make-up views when it is hidden, a workflow allows a developer to open multiple modals and persist the DOM elements until the workflow is abandonded or completes successfully. Since a workflow is an extension of Modal, it shares the same templates and basic functionality.
-
-The first thing to note is that a workflow should always be triggered programatically. Any button that either initiates the workflow, or adds another item to the workflow, needs to use event binding that triggers ADK.showWorkflowItem. Do not set 'data-toggle="modal" data-target="#mainModal"'' on the DOM element. This will cause unwanted behavior and is not supported.
-
-#### Usage ####
-Programatically, the most signifiant deviation from the functionality of ADK.showModal is that a workflow requires a regionName to be specified in the options. A typical invokation is as follows:
-
-```JavaScript
-var workflowOptions =  {
-    'title': 'someTitle',
-    'headerView': myHeaderView,
-    'footerView': myFooterView,
-    //The following parameter is required and must be unique per view instance
-    'regionName': 'addEditViewName'
-};
-
-ADK.showWorkflowItem(myViewInstance, workFlowOptions);
-```
-
-Every time ADK.showWorkflowItem is called with a new 'regionName', a new item is added to the workflow and displayed if 'callShow' is not explicitly set to false. If the 'regionName' already exists, the workflow item is simply made visible and all others hidden, unless 'replaceContents' is set to the true, and in that case, the view belonging to the supplied 'regionName' is destroyed and a new view instance is created and attached.
-
-If regions have been specified, a developer may optionally choose to use events to show certain items within the workflow. If a channel is not specified in the options, the 'channel' will be 'workflowChannel', and issuing show via the channel would be accomplished as follows:
-
-```JavaScript
-ADK.Messaging.getChannel('workflowChannel').trigger('show:' + regionName);
-```
-
-Once the item is displayed an any animations are complete, an event will be triggered that allows the user to know the item is visible:
-
-```JavaScript
-ADK.Messaging.getChannel('workflowChannel').on('shown:' + regionName, function(event) { //do something });
-```
-
-There are two ways to terminate a workflow. Like Modal, a developer can apply 'data-dismiss="modal"'' to a button and by default a click will close the workflow and destroy all associated views. Programatically, a developer can issue a ADK.closeWorkflow() call (for instance, in a 'success' callback) which will also terminate a workflow and destroy all views.
-
-::: side-note
-_*Note:_ **ADK.showWorkflowItem(view, modalOptions)** can take in two parameters.
-- The first parameter is the **view** that gets shown in the modal: _required_
-- The second paramter is an object variable with the **modalOptions**: _required_
-  - valid options include:
-    - **"regionName"**  (_required_)
-      -  A unique identifier that determines which region within the parent container the current view will occupy. The region will be
-         dynamically added if it does not exist.
-    - **"replaceContents"**  (_optional_)
-      -  If a 'regionName' has an assigned view, this parameter determines whether or not the current view will be destroyed and replaced
-         or simply made visible.
-    - **"channel"**  (_optional_)
-      -  By default the channel is set to 'workflowChannel', but a unique channel may be specified if a developer wishes. The channel is
-         used to inform a developer that an item has been fully displayed and may be used to show an item.
-    - **"title"**  (_optional_)
-      -  displays a string as the title to the modal
-    - **"size"** (_optional_)
-      - valid modal sizes include: "xlarge" | "large" | "medium"
-      - default size: **"medium"**
-    - **"backdrop"** (_optional_)
-      - Includes a modal-backdrop element. Alternatively, specify static for a backdrop which doesn't close the modal on click.  true | false | "static"
-      - default: **true**
-    - **"keyboard"** (_optional_)
-      - Closes the modal when escape key is pressed: true | false
-      - default: **true**
-    - **"callShow"** (_optional_)
-      - Shows the modal when initialized: true | false
-      - default: **"true"**
-    - **"footerView"** (_optional_)
-      - overwrites the default modal footer (close button) with a specified view
-    - **"headerView"** (_optional_)
-      - overwrites the default modal header (x-close button and title) with a specified view
-
-**Note**: When ADK.showModal(view, modalOptions) is issued by some method other than an element with the data-toggle="modal" data-target="#modalElement" (such as through the channeling service or JavaScript), the modal must have the 'callShow' option set to true.
-
-**Note**: A Workflow and a Modal cannot exist at the same time. They both occupy the same parent container and invoking ADK.showModal() while a Workflow is open will destroy the Workflow.
-
-**Note**: A Workflow can be treated exactly like a Modal in the context of ADK.showModal() except that a 'regionName' must be specified, and 'data-target' and 'data-toggle' must not.
-:::
-
-
 ### Global Date Range ###
 
 The ADK Global Date Range provides a standardized way to apply server side fetching based on selection of global date range options on the navigation bar by a user.
@@ -870,10 +709,10 @@ A popup is an extention of a Bootstrap popover which allows extra options to def
 
 ```JavaScript
 var myView = new Marionette.ItemView({
-    template: _.template('<div tabindex="0" data-toggle="popover">Click me to open popover</div>'),
+    template: Handlebars.compile('<div tabindex="0" data-toggle="popover">Click me to open popover</div>'),
     initialize: function() {
-        this.headerView = new Marionette.ItemView({template: _.template('<div>I\'m a header</div>')});
-        this.bodyView = new Mareiontte.ItemView({template: _.template('<div>I\'m a body</div>')});
+        this.headerView = new Marionette.ItemView({template: Handlebars.compile('<div>I\'m a header</div>')});
+        this.bodyView = new Mareiontte.ItemView({template: Handlebars.compile('<div>I\'m a body</div>')});
     },
     onRender: function() {
         this.headerView.render();
@@ -975,10 +814,11 @@ The following table describes the requirements for displaying the various elemen
 Below is an example of using applet chrome without with a custom view:
 
 ```JavaScript
-var dependencies = ['main/ADK', 'underscore'];
-define(dependencies, onResolveDependencies);
-
-function onResolveDependencies(ADK, _) {
+define([
+  'main/ADK',
+  'underscore',
+  'handlebars'
+], function (ADK, _, Handlebars) {
 
   var fetchOptions = {
     resourceTitle: 'example-resource',
@@ -986,15 +826,15 @@ function onResolveDependencies(ADK, _) {
   };
 
   var FilterView = Backbone.Marionette.ItemView.extend({
-    template: _.template("I am a filter view!")
+    template: Handlebars.compile("I am a filter view!")
   });
 
   var SimpleItemView = Backbone.Marionette.ItemView.extend({
-    template: _.template("<li>Tile: <%= title %></li>")
+    template: Handlebars.compile("<li>Tile: <%= title %></li>")
   });
 
   var CollectionView = Backbone.Marionette.CollectionView.extend({
-    template: _.template("<li>Tile: <%= title %></li>"),
+    template: Handlebars.compile("<li>Tile: <%= title %></li>"),
     childView: SimpleItemView
   });
 
@@ -1044,14 +884,15 @@ function onResolveDependencies(ADK, _) {
       collectionViewRegion: '.grid-container',
       textFilterRegion: '.grid-filter'
     },
-    template: _.template("
-      <div class="panel-body grid-applet-panel" id="grid-panel-{{instanceId}}">
-          <div id="grid-filter-{{instanceId}}" class="collapse">
-              <div class="grid-filter"></div>
-          </div>
-          <div class="grid-container"></div>
-      </div>
-    ")
+    // It is preferable to specify a separate html file, especially with larger/complex templates
+    template: Handlebars.compile([
+      '<div class="panel-body grid-applet-panel" id="grid-panel-{{instanceId}}">',
+      '<div id="grid-filter-{{instanceId}}" class="collapse">',
+      '<div class="grid-filter"></div>',
+      '</div>',
+      '<div class="grid-container"></div>',
+      '</div>'
+    ].join('\n'))
   });
 
   var appletConfig = {
@@ -1067,7 +908,7 @@ function onResolveDependencies(ADK, _) {
   };
 
   return appletConfig;
-}
+});
 ```
 
 ### Adding Additional Buttons to Chrome Container ###
@@ -1081,7 +922,7 @@ function onResolveDependencies(ADK, _) {
 ```JavaScript
 ...
 var ExampleButtonView = Backbone.Marionette.ItemView.extend({
-    template: _.template("<button>Sample Button</button>"),
+    template: Handlebars.compile("<button>Sample Button</button>"),
     tagName: 'span'
 });
 var applet = {
@@ -1128,13 +969,14 @@ ADK.Applets.BaseDisplayApplet has the following methods: _intitialize_, _onRende
 The following is an example of how an applet developer would use BaseDisplayApplet
 
 ```JavaScript
-var dependencies = ['main/ADK', 'underscore'];
-define(dependencies, onResolveDependencies);
-
-function onResolveDependencies(ADK, _) {
+define([
+  'main/ADK',
+  'underscore',
+  'handlebars'
+], function (ADK, _, Handlebars) {
 
   var SimpleView = Backbone.Marionette.ItemView.extend({
-      template: _.template("<li>Name: <%= name %> Age: <%= age %></li>")
+      template: Handlebars.compile("<li>Name: <%= name %> Age: <%= age %></li>")
   });
 
   var CollectionView = Backbone.Marionette.CollectionView.extend({
@@ -1143,7 +985,7 @@ function onResolveDependencies(ADK, _) {
   });
 
   var ToolBarView = Backbone.Marionette.ItemView.extend({
-    template: _.template("<div>I am a ToolBarView</div>")
+    template: Handlebars.compile("<div>I am a ToolBarView</div>")
   });
 
   var SampleView = ADK.Applets.BaseDisplayApplet.extend({
@@ -1186,7 +1028,7 @@ function onResolveDependencies(ADK, _) {
   };
 
   return appletConfig;
-}
+});
 ```
 
 ## ADK AppletViews ##
@@ -1263,10 +1105,10 @@ Much of the grouping functionality is modeled after Backgrid's sorting behavior.
 
 The following is a sample implementation of a GridView applet
 ```JavaScript
-var dependencies = ['main/ADK', 'underscore'];
-define(dependencies, onResolveDependencies);
-
-function onResolveDependencies(ADK, _) {
+define([
+  'main/ADK',
+  'underscore'
+], function (ADK, _) {
 
     var sampleColumns = [{      // Specifies which columns are included and enables column sorting
       name: 'name',           // field mapped to in collection
@@ -1356,7 +1198,7 @@ function onResolveDependencies(ADK, _) {
   };
 
   return appletConfig;
-}
+});
 
 ```
 
@@ -1377,10 +1219,10 @@ Below are the addiontial **appletOptions** available/required with PillsGistView
 The following is a sample implementation of a PillsGistView sample applet.
 
 ```JavaScript
-var dependencies = ['main/ADK', 'underscore'];
-define(dependencies, onResolveDependencies);
-
-function onResolveDependencies(ADK, _) {
+define([
+  'main/ADK',
+  'underscore'
+], function (ADK, _) {
 
     var fetchOptions = {
         resourceTitle: 'example-resource'
@@ -1422,7 +1264,7 @@ function onResolveDependencies(ADK, _) {
   };
 
   return appletConfig;
-}
+});
 
 ```
 
@@ -1443,10 +1285,10 @@ Below are the addiontial **appletOptions** available/required with Interventions
 The following is a sample implementation of a InterventionsGistView sample applet.
 
 ```JavaScript
-var dependencies = ['main/ADK', 'underscore'];
-define(dependencies, onResolveDependencies);
-
-function onResolveDependencies(ADK, _) {
+define([
+  'main/ADK',
+  'underscore'
+], function onResolveDependencies(ADK, _) {
 
     var fetchOptions = {
         resourceTitle: 'example-resource'
@@ -1514,7 +1356,7 @@ function onResolveDependencies(ADK, _) {
   };
 
   return appletConfig;
-}
+});
 
 ```
 
@@ -1537,10 +1379,10 @@ Below are the addiontial **appletOptions** available/required with EventsGistVie
 The following is a sample implementation of a EventsGistView sample applet.
 
 ```JavaScript
-var dependencies = ['main/ADK', 'underscore'];
-define(dependencies, onResolveDependencies);
-
-function onResolveDependencies(ADK, _) {
+define([
+  'main/ADK',
+  'underscore'
+], function (ADK, _) {
 
     var fetchOptions = {
         resourceTitle: 'example-resource'
@@ -1612,7 +1454,7 @@ function onResolveDependencies(ADK, _) {
   };
 
   return appletConfig;
-}
+});
 
 ```
 
@@ -1666,7 +1508,13 @@ onSync: function() {
 
 
 
+[adkSourceCode]: https://git.vistacore.us/git/adk.git
+[ehmpuiSourceCode]: https://git.vistacore.us/git/ehmp-ui.git
+[standardizedIdeWikiPage]: https://wiki.vistacore.us/display/VACORE/Team+Standardized+IDE+for+JavaScript+Development
+[workspaceSetupWikiPage]: https://wiki.vistacore.us/display/VACORE/Creating+DevOps+workspace+environment
 [sublimeWebsite]: http://www.sublimetext.com/3
+[sublimeSettingsWikiPage]: https://wiki.vistacore.us/x/RZsZ
+[adkBuildJenkins]: https://build.vistacore.us/view/adk/view/Next%20Branch/
 [bsCSS]: http://getbootstrap.com/css/
 [bsComponents]: http://getbootstrap.com/components/
 [bsJQ]: http://getbootstrap.com/javascript/

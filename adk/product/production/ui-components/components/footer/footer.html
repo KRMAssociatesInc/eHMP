@@ -1,0 +1,92 @@
+<h3>Footer</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> The footer is displayed at the bottom of the application informing the user of information pertaining to the application such as the version and build number. The footer will also provide additional information depending on where the user is currently located with information such as data sync status.</p>
+</div>
+<h4>Footer Without Sync Status</h4>
+<div id="footer-sync-copy">
+    <div id="bottom-region">
+        <footer>
+            <div class="row well">
+                <div class="col-xs-12">
+                    <p><strong>eHMP</strong> version <span id="appVersion">1.2.0</span> | <span id="appBuild">Build XX</span></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<hr />
+<h4>Footer With Sync Status</h4>
+<div id="footer-no-sync-copy">
+    <div id="bottom-region">
+        <footer>
+            <div class="row well">
+                <div class="col-xs-3">
+                    <p><strong>eHMP</strong> version <span id="appVersion">1.2.0</span> | <span id="appBuild">Build XX</span></p>
+                </div>
+                <div class="col-xs-9">
+                    <div class="patientSyncStatusRegion-container">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-refresh fa-iconBig"></i> Refresh all Data</a></li>
+                            <li data-toggle="tooltip" data-placement="top" data-html="true" title="Last My Site Sync Current" aria-label="Last My Site Sync Current"><i class="fa fa-times-circle fa-iconBig fail"></i> My Site</li>
+                            <li data-toggle="tooltip" data-placement="top" data-html="true" title="Last All VA Sync &lt; 1 hr ago" aria-label="Last All VA Sync &lt; 1 hr ago"><i class="fa fa-check-circle fa-iconBig success"></i> All VA</li>
+                            <li data-toggle="tooltip" data-placement="top" data-html="true" title="Last DoD Sync 3 hrs ago" aria-label="Last DoD Sync 3 hrs ago"><i class="fa fa-check-circle fa-iconBig success"></i> DoD</li>
+                            <li data-toggle="tooltip" data-placement="top" data-html="true" title="Last Community Current" aria-label="Last Community Current"><i class="fa fa-check-circle fa-iconBig success"></i> Community</li>
+                            <li><a href="#" role="button" title="eHMP Data Sources. To view details of eHMP data sources press enter to open a modal window."><i class="fa fa-arrow-circle-o-up fa-iconBig"><span class="sr-only">eHMP Data Sources icon</span></i></a></li>
+                            <li><a href="#" role="button" title="Help. To view additional help content of the status bar, press enter to open a new window."><i class="fa fa-question-circle fa-iconBig"><span class="sr-only">Help icon</span></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<hr />
+<div role="tabpanel" class="markup">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#footer" aria-controls="markup-accordion" role="tab" data-toggle="tab">Footer Without Sync Status</a></li>
+        <li><a href="#footer-sync" aria-controls="markup-accordion" role="tab" data-toggle="tab">Footer With Sync Status</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="footer">
+            <pre>
+&lt;div id="bottom-region"&gt;
+    &lt;footer&gt;
+        &lt;div class="row well"&gt;
+            &lt;div class="col-xs-12"&gt;
+                &lt;p&gt;&lt;strong&gt;eHMP&lt;/strong&gt; version &lt;span id="appVersion"&gt;1.2.0&lt;/span&gt; | &lt;span id="appBuild"&gt;Build XX&lt;/span&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('footer-sync-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="footer-sync">
+            <pre>
+&lt;div id=&quot;bottom-region&quot;&gt;
+    &lt;footer&gt;
+        &lt;div class=&quot;row well&quot;&gt;
+            &lt;div class=&quot;col-xs-3&quot;&gt;
+                &lt;p&gt;&lt;strong&gt;eHMP&lt;/strong&gt; version &lt;span id=&quot;appVersion&quot;&gt;1.2.0&lt;/span&gt; | &lt;span id=&quot;appBuild&quot;&gt;Build XX&lt;/span&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;col-xs-9&quot;&gt;
+                &lt;div class=&quot;patientSyncStatusRegion-container&quot;&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-refresh fa-iconBig&quot;&gt;&lt;/i&gt; Refresh all Data&lt;/a&gt;&lt;/li&gt;
+                        &lt;li data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; data-html=&quot;true&quot; title=&quot;Last My Site Sync Current&quot; aria-label=&quot;Last My Site Sync Current&quot;&gt;&lt;i class=&quot;fa fa-times-circle fa-iconBig fail&quot;&gt;&lt;/i&gt; My Site&lt;/li&gt;
+                        &lt;li data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; data-html=&quot;true&quot; title=&quot;Last All VA Sync &amp;lt; 1 hr ago&quot; aria-label=&quot;Last All VA Sync &amp;lt; 1 hr ago&quot;&gt;&lt;i class=&quot;fa fa-check-circle fa-iconBig success&quot;&gt;&lt;/i&gt; All VA&lt;/li&gt;
+                        &lt;li data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; data-html=&quot;true&quot; title=&quot;Last DoD Sync 3 hrs ago&quot; aria-label=&quot;Last DoD Sync 3 hrs ago&quot;&gt;&lt;i class=&quot;fa fa-check-circle fa-iconBig success&quot;&gt;&lt;/i&gt; DoD&lt;/li&gt;
+                        &lt;li data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; data-html=&quot;true&quot; title=&quot;Last Community Current&quot; aria-label=&quot;Last Community Current&quot;&gt;&lt;i class=&quot;fa fa-check-circle fa-iconBig success&quot;&gt;&lt;/i&gt; Community&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; role=&quot;button&quot; title=&quot;eHMP Data Sources. To view details of eHMP data sources press enter to open a modal window.&quot;&gt;&lt;i class=&quot;fa fa-arrow-circle-o-up fa-iconBig&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;eHMP Data Sources icon&lt;/span&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; role=&quot;button&quot; title=&quot;Help. To view additional help content of the status bar, press enter to open a new window.&quot;&gt;&lt;i class=&quot;fa fa-question-circle fa-iconBig&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;Help icon&lt;/span&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('footer-no-sync-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>

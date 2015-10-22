@@ -10,7 +10,6 @@ define([
     "app/applets/medication_review_v2/appletHelper"
 ],function(Backbone, Marionette, medicationTemplate, OrderDetailView, orderHistoryTemplate, infoButtonTemplate, infoButtonTemplate2, infoButtonPatientTemplate, appletHelper) {
 
-    var parent;
     var singleOrderView = Backbone.Marionette.ItemView.extend({
         template: orderHistoryTemplate,
         tagName: "li",
@@ -19,8 +18,8 @@ define([
             // "tabindex": 0,
             "role": "listitem"
         },
-        initialize: function() {
-            this.parentView = parent;
+        initialize: function(options) {
+            this.parentView = options.parent;
             //this.model.pickUpType = this.parentView.pickUpType;
         },
         events: {
@@ -49,8 +48,16 @@ define([
         attributes: {
             "role": "list"
         },
+        initialize: function(options){
+            this.parent = options.parentLayoutView;
+        },
         className: "orders-links-list",
         childView: singleOrderView,
+        childViewOptions: function(){
+            return {
+                parent: this.parent
+            };
+        },
         onRender: function() {
             $(this.$el).find('li').first().addClass('selectedOrder');
         }
@@ -90,7 +97,6 @@ define([
     var MedicationItemView = Backbone.Marionette.LayoutView.extend({
         initialize: function() {
             this._super = Backbone.Marionette.LayoutView.prototype;
-            parent = this;
             if (this.model.get("submeds")) {
                 this.collection = this.model.get("submeds");
             } else {
@@ -98,7 +104,7 @@ define([
             }
             this.orderHistoryListView = new orderHistoryView({
                 collection: this.collection,
-                parentLayoutView: parent
+                parentLayoutView: this
             });
 
             this.orderDetailView = new OrderDetailView({
@@ -342,7 +348,7 @@ define([
 
         templateHelpers: {
             isNonVa: function() {
-                if (parent.collection.models[0].get("vaType") === 'N') {
+                if (this.vaType === 'N') {
                     return true;
                 } else {
                     return false;

@@ -48,7 +48,7 @@ end
 Then(/^the user click the Vitals$/) do
   wireframe = Wireframe.instance
   driver = TestSupport.driver
-  wireframe.wait_until_action_element_visible("addVitals" , 60)
+  wireframe.wait_until_action_element_visible("addVitals", 60)
   expect(wireframe.static_dom_element_exists?("addVitals")).to be_true
   expect(wireframe.perform_action("addVitals")).to be_true
 end

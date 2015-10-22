@@ -43,7 +43,7 @@ define([
         },
         filterCollection: function(coll) {
             var KnownTypes = {
-                expanded: ['BP', 'P', 'R', 'T', 'PO2', 'PN', 'WT', 'HT', 'BMI'],
+                expanded: ['BP', 'P', 'R', 'T', 'PO2', 'PN', 'WT', 'HT', 'BMI', 'CG'],
                 summary: ['BP', 'P', 'R', 'T', 'PO2', 'PN', 'WT', 'BMI'],
                 gist: ['BPS', 'BPD', 'P', 'R', 'T', 'PO2', 'PN', 'WT', 'HT', 'BMI']
 

@@ -201,7 +201,6 @@ var xformItemCollection = function(log, domain, items, edipi, domainXformer, sta
                 vprItem.stampTime = stampTime;
             }
         } else {
-            console.log('null record');
             log.error('jmeadows-xform-domain-vpr-handler.xformItemCollection() pid: %s; domain: %s; could not transform record: %j', edipi, domain, item);
         }
         return vprItem;

@@ -1,4 +1,4 @@
-@F365 @DemographicQuickLooks
+@F365 @DemographicQuickLooks @regression
 
 Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 
@@ -17,11 +17,11 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	And the Demographics user clicks on the "Phone Group"
 	Then the "Phone Group QuickLook" popup is displayed
 	And the "Phone Group QuickLook" table contains headers
-	| VistA Site   | Home           | Cell | Work          |
+	| VistA Site   | Home   | Cell | Work          |
 	And the "Phone Group QuickLook" table contains rows
-	| VistA Site   | Home           | Cell | Work          |
-	| KODAK	       | (222) 555-8235	|      | (222) 555-7720 |
-	And the discrepant "Home Phone QuickLook Value" is highlighted
+	| VistA Site   | Home   | Cell | Work          |
+	| KODAK	       |     	|      | (222) 555-7720 |
+	#And the discrepant "Home Phone QuickLook Value" is highlighted
 	And the discrepant "Work Phone QuickLook Value" is highlighted
 	Then the Demographics user clicks on the "Phone Group"
 	Then the "Phone Group QuickLook" popup is hidden
@@ -39,12 +39,12 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	And the Demographics user clicks on the "Address Group"
 	Then the "Address Group QuickLook" popup is displayed
 	And the "Address Group QuickLook" table contains headers
-	| VistA Site   | Home                            | Temporary |
+	| VistA Site   | Home  | Temporary |
 	And the "Address Group QuickLook" table contains rows
-	| VistA Site   | Home                            | Temporary |
-	| KODAK	       | Any Street\nAny Town, WV, 99998 |           |
-	And the discrepant "Home Address QuickLook Value Line 1" is highlighted
-	And the discrepant "Home Address QuickLook Value Line 4" is highlighted
+	| VistA Site   | Home  | Temporary |
+	| KODAK	       |       | Temp Address\nWando, SC, 29492 |
+	And the discrepant "Temporary Address QuickLook Value Line 1" is highlighted
+	And the discrepant "Temporary Address QuickLook Value Line 4" is highlighted
 	Then the Demographics user clicks on the "Address Group"
 	Then the "Address Group QuickLook" popup is hidden
 
@@ -69,7 +69,19 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	Then the Demographics user clicks on the "Next Of Kin Group"
 	Then the "Next Of Kin Group QuickLook" popup is hidden
 
-@F365-5.2_DemographicQuickLooks4 @US5692 @US5461
+@F365-5.2_DemographicQuickLooks4 @US5692 @US5461 @DE1309 @DE1545
+	Scenario: Patient Phone Demographic Quick Looks (Kodak)
+	Given user is logged into eHMP-UI as kodak user
+	And user searches for and selects "twentythree,patient"
+	Then Cover Sheet is active
+	Then the "patient identifying traits" is displayed with information
+	| field			| value 				|
+	| patient name	| Twentythree,Patient   |
+	Then Cover Sheet is active
+	Then user selects Patient Name drop down
+	And the Demographics user clicks on the "Phone Group"
+
+@F365-5.2_DemographicQuickLooks4.1 @US5692 @US5461 @DE1309 @DE1545
 	Scenario: Patient Phone Demographic Quick Looks (Kodak)
 	Given user is logged into eHMP-UI as kodak user
 	And user searches for and selects "twentythree,patient"
@@ -85,14 +97,14 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	| VistA Site   | Home           | Cell          | Work          |
 	And the "Phone Group QuickLook" table contains rows
 	| VistA Site   | Home           | Cell          | Work          |
-	| PANORAMA     | (843) 555-3456	| (843) 555-5678 | (843) 555-2345 |
+	| PANORAMA     | (843) 555-1234 | (843) 555-5678 | (843) 555-2345 |
 	And the discrepant "Home Phone QuickLook Value" is highlighted
 	And the discrepant "Cell Phone QuickLook Value" is highlighted
 	And the discrepant "Work Phone QuickLook Value" is highlighted
 	Then the Demographics user clicks on the "Phone Group"
 	Then the "Phone Group QuickLook" popup is hidden
 
-@F365-5.2_DemographicQuickLooks5 @US5692 @US5461
+@F365-5.2_DemographicQuickLooks5 @US5692 @US5461 @DE1309 @DE1545
 	Scenario: Patient Address Demographic Quick Looks (Kodak)
 	Given user is logged into eHMP-UI as kodak user
 	And user searches for and selects "twentythree,patient"
@@ -107,14 +119,14 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	And the "Address Group QuickLook" table contains headers
 	| VistA Site   | Home | Temporary |
 	And the "Address Group QuickLook" table contains rows
-	| VistA Site   | Home | Temporary                      |
-	| PANORAMA     |      | Temp Address\nWando, SC, 29492 |
-	And the discrepant "Temporary Address QuickLook Value Line 1" is highlighted
-	And the discrepant "Temporary Address QuickLook Value Line 4" is highlighted
+	| VistA Site   | Home                                | Temporary |
+	| PANORAMA     | Home Address\nCharleston, SC, 29492 |           |
+	And the discrepant "Home Address QuickLook Value Line 1" is highlighted
+	And the discrepant "Home Address QuickLook Value Line 4" is highlighted
 	Then the Demographics user clicks on the "Address Group"
 	Then the "Address Group QuickLook" popup is hidden
 
-@F365-5.2_DemographicQuickLooks6 @US5692 @US5461
+@F365-5.2_DemographicQuickLooks6 @US5692 @US5461 @DE1309 @DE1592
 	Scenario: Patient Email Demographic Quick Looks (Kodak)
 	Given user is logged into eHMP-UI as kodak user
 	And user searches for and selects "twentythree,patient"
@@ -135,7 +147,7 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	Then the Demographics user clicks on the "Email Group"
 	Then the "Email Group QuickLook" popup is hidden
 
-@F365-5.2_DemographicQuickLooks7 @US5692 @US5461
+@F365-5.2_DemographicQuickLooks7 @US5692 @US5461  @DE1309 @DE1601
 	Scenario: Patient Emergency Contact Demographic Quick Looks (Kodak)
 	Given user is logged into eHMP-UI as kodak user
 	And user searches for and selects "twentythree,patient"

@@ -17,19 +17,19 @@ var recEnrichXformerUtil = require(global.VX_HANDLERS + 'record-enrichment-reque
 // log: The logger to send log messages to.
 // config: The configuration information
 // environment: The environment handles and context.
-// job: The record enrichment job to be processed.
+// record: The record enrichment object to be processed.
 // callback: This is the handler to call when the enrichment transformation is done.
 //                  function(error, record)  where:
 //                       Error is the error that occurred.
 //                       record is the transformed and enriched record.
 //--------------------------------------------------------------------------------
-function transformAndEnrichRecord(log, config, environment, job, callback) {
-	log.debug('record-enrichment-problem-xformer.transformAndEnrichRecord: Entered method.  job: %j', job);
+function transformAndEnrichRecord(log, config, environment, record, callback) {
+	log.debug('record-enrichment-problem-xformer.transformAndEnrichRecord: Entered method.  record: %j', record);
 
     // Make sure we have something to work with.
     //------------------------------------------
-    if ((!job) || (!job.record)) {
-        log.warn('record-enrichment-problem-xformer.transformAndEnrichRecord: Job either did not exist or did not contain a record.  job: %j', job);
+    if (!record) {
+        log.warn('record-enrichment-problem-xformer.transformAndEnrichRecord: Job either did not exist or did not contain a record.  record: %j', record);
         return setTimeout(callback, 0, null, null);
     }
 
@@ -39,8 +39,6 @@ function transformAndEnrichRecord(log, config, environment, job, callback) {
     } else {
         terminologyUtils = require(global.VX_SUBSYSTEMS + 'terminology/terminology-utils');
     }
-
-    var record = job.record;
 
     fixFieldDataTypes(record);
     addMissingFields(record);

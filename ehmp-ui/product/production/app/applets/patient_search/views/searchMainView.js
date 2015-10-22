@@ -10,6 +10,16 @@ define([
 
     var searchApplet;
 
+    // constants
+    var MY_SITE = 'mySite';
+    var NATIONWIDE = 'global';
+    var MY_CPRS_LIST_TAB = 'myCprsList';
+    var CLINICS_TAB = 'clinics';
+    var WARDS_TAB = 'wards';
+    var NO_TAB = 'none';
+    var BLANK = '';
+    var INPUT ='input';
+
     var SearchMainView = Backbone.Marionette.LayoutView.extend({
         template: searchMainTemplate,
         regions: {
@@ -29,11 +39,11 @@ define([
             });
             this.mySiteClinicsSearchLayoutView = new ClinicsWardsSearchLayoutView({
                 searchApplet: this.searchApplet,
-                locationType: 'clinics'
+                locationType: CLINICS_TAB
             });
             this.mySiteWardsSearchLayoutView = new ClinicsWardsSearchLayoutView({
                 searchApplet: this.searchApplet,
-                locationType: 'wards'
+                locationType: WARDS_TAB
             });
             this.globalSearchLayoutView = new GlobalSearchLayoutView({
                 searchApplet: this.searchApplet
@@ -42,32 +52,31 @@ define([
         onRender: function() {
             this.mySiteAllSearchLayoutView.searchApplet = this.searchApplet;
             this.globalSearchLayoutView.searchApplet = this.searchApplet;
-            this.changeView('mySite', 'all');
+            this.mainSearchMySiteAllResults.show(this.mySiteAllSearchLayoutView);
+            this.changeView(MY_SITE, NO_TAB);
         },
         changeView: function(searchType, pillsType) {
             this.hideAllResultViews();
-            this.mainSearchMySiteClinics.$el.find('input').val('');
-            this.mainSearchMySiteWards.$el.find('input').val('');
-            if (searchType == "myCPRSList") {
-                this.mainSearchMyCPRSList.$el.show();
-                this.mainSearchMyCPRSList.show(this.myCPRSListLayoutView);
-            }
-            else if (searchType == "mySite") {
-                if (pillsType == "all") {
-                    this.mainSearchMySiteAllResults.$el.show();
-                    this.mainSearchMySiteAllResults.show(this.mySiteAllSearchLayoutView);
-                } else if (pillsType == "clinics") {
+            this.mainSearchMySiteClinics.$el.find(INPUT).val(BLANK);
+            this.mainSearchMySiteWards.$el.find(INPUT).val(BLANK);
+            if (searchType == MY_SITE) {
+                if (pillsType == MY_CPRS_LIST_TAB){
+                    this.mainSearchMyCPRSList.$el.show();
+                    this.mainSearchMyCPRSList.show(this.myCPRSListLayoutView);
+                } else if (pillsType == CLINICS_TAB) {
                     this.mainSearchMySiteClinics.$el.show();
                     this.mainSearchMySiteClinics.show(this.mySiteClinicsSearchLayoutView);
-                } else if (pillsType == "wards") {
+                } else if (pillsType == WARDS_TAB) {
                     this.mainSearchMySiteWards.$el.show();
                     this.mainSearchMySiteWards.show(this.mySiteWardsSearchLayoutView);
+                } else if (pillsType == NO_TAB) {
+                    this.mainSearchMySiteAllResults.$el.show();
+                    this.mainSearchMySiteAllResults.show(this.mySiteAllSearchLayoutView);
                 }
-            } else if (searchType == "global") {
+                $('#patientSearchInput').focusout();
+            } else if (searchType == NATIONWIDE) {
                 this.mainSearchGlobalResults.$el.show();
                 this.mainSearchGlobalResults.show(this.globalSearchLayoutView);
-            } else {
-                this.mainSearchResults.$el.hide();
             }
         },
         hideAllResultViews: function() {
@@ -79,13 +88,13 @@ define([
             this.clearGlobalSearchErrorMessage();
         },
         clearErrorMessage: function(searchType) {
-            if (searchType == "global") {
+            if (searchType == NATIONWIDE) {
                 this.globalSearchLayoutView.clearSearchResultsRegion();
             }
         },
         clearGlobalSearchErrorMessage: function() {
             // FLAG: [isGlobalSearchErrorMessageDisplayed] is defined on globalModel in inputView.js
-            var refGlobalModel = this.searchApplet.inputView.globalModel;
+            var refGlobalModel = this.searchApplet.patientSearchView.nationwideModel;
             if (refGlobalModel.get('isGlobalSearchErrorMessageDisplayed'))
             {
                 // Note reset All input fields.
@@ -97,31 +106,20 @@ define([
             }
         },
         clearPreviousGlobalSearchResults: function(searchType) {
-            if (searchType == "global") {
+            if (searchType == NATIONWIDE) {
                 this.globalSearchLayoutView.clearSearchResultsRegion();
             }
         },
         displayErrorMessage: function(searchType, message) {
-            if (searchType == "global") {
+            if (searchType == NATIONWIDE) {
                 this.globalSearchLayoutView.displayErrorMessage(message);
             }
         },
         executeSearch: function(searchType, searchParameters) {
-            if (searchType == "myCPRSList") {
-                this.myCPRSListLayoutView.refineSearch(searchParameters.searchString);
-            }
-            else if (searchType == "mySite") {
-                if (searchParameters.pillsType == "all") {
-                    this.mySiteAllSearchLayoutView.executeSearch(searchParameters.searchString);
-                } else if (searchParameters.pillsType == "clinics") {
-                    this.mySiteClinicsSearchLayoutView.refineSearch(searchParameters.searchString, this.mySiteClinicsSearchLayoutView.patientSearchResults.currentView);
-                } else if (searchParameters.pillsType == "wards") {
-                    this.mySiteWardsSearchLayoutView.refineSearch(searchParameters.searchString, this.mySiteWardsSearchLayoutView.patientSearchResults.currentView);
-                }
-            } else if (searchType == "global") {
+            if (searchType == MY_SITE) {
+                this.mySiteAllSearchLayoutView.executeSearch(searchParameters.searchString);
+            } else if (searchType == NATIONWIDE) {
                 this.globalSearchLayoutView.executeSearch(searchParameters.globalSearchParameters);
-            } else {
-                //
             }
         }
     });

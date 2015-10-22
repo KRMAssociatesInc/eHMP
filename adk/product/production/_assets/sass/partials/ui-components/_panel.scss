@@ -1,0 +1,10 @@
+ul.list-group {
+	&.list-group-accordion {
+		border-left: none;
+		border-right: none;
+		margin: 0px -16px;
+	}
+	.list-group-item {
+		border-radius: 0px;
+	}
+}

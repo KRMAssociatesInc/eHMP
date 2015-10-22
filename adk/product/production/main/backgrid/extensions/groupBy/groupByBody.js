@@ -60,7 +60,7 @@ define([
             //if the groupBy and formatter functions are null, use defaults
             if(!this.groupByFunction) {
                 this.groupByFunction = function(item) {
-                    return item.model.get(column.name);
+                    return item.model.get(primaryColumn.name);
                 };
             }
             if(!this.groupByRowFormatter) {

@@ -74,70 +74,72 @@ define([
             this.setModel();
         },
         events: {
-            "click .fa-chevron-left":"scrollLeft",
-            "click .fa-chevron-right":"scrollRight"
-        }, scrollLeft: function(e) {
+            "click .fa-chevron-left": "scrollLeft",
+            "click .fa-chevron-right": "scrollRight"
+        },
+        scrollLeft: function(e) {
             var maxCol = this.getMaxCol();
             var windowWidth = $(window).width();
-            var gridsterWidth = (maxCol+10)*100;
+            var gridsterWidth = (maxCol + 10) * 100;
             var index = parseInt($(e.currentTarget).attr('data-slide-to'));
             var slides = Math.ceil(gridsterWidth / windowWidth);
             var $gridsterEl = this.$el.find(".gridster");
             var scrollX = Math.abs($gridsterEl.offset().left);
             var scrlLeft;
 
-            if(index >= 0) {
+            if (index >= 0) {
 
-                if(index === 0) {
-                    if(scrollX > (windowWidth-71)) {
+                if (index === 0) {
+                    if (scrollX > (windowWidth - 71)) {
                         index--;
                         $(e.currentTarget).attr('data-slide-to', (index));
                         $('li[name="right-scroll"]').attr("data-slide-to", (index));
 
-                        if(scrollX <= windowWidth-71) {
-                            $("div").scrollLeft(index*windowWidth-index*71);
+                        if (scrollX <= windowWidth - 71) {
+                            $("div").scrollLeft(index * windowWidth - index * 71);
                         } else {
-                            for(var i = index; i < slides; i++) {
-                                iScroll = i*windowWidth-i*(73+i);
-                                if(scrollX <= iScroll) {
-                                    $(e.currentTarget).attr('data-slide-to', (i-1));
-                                    $('li[name="left-scroll"]').attr("data-slide-to", (i-1));
-                                    $("div").scrollLeft((i-1)*windowWidth-(i-1)*(73+(i-1)));
-                                    i=slides;
+                            for (var i = index; i < slides; i++) {
+                                iScroll = i * windowWidth - i * (73 + i);
+                                if (scrollX <= iScroll) {
+                                    $(e.currentTarget).attr('data-slide-to', (i - 1));
+                                    $('li[name="left-scroll"]').attr("data-slide-to", (i - 1));
+                                    $("div").scrollLeft((i - 1) * windowWidth - (i - 1) * (73 + (i - 1)));
+                                    i = slides;
                                 }
                             }
                         }
                     }
-                } else if(index > 0) {
+                } else if (index > 0) {
                     index--;
                     $(e.currentTarget).attr('data-slide-to', (index));
                     $('li[name="right-scroll"]').attr("data-slide-to", (index));
-                    scrlLeft = index*windowWidth-index*(73+index);
+                    scrlLeft = index * windowWidth - index * (73 + index);
                     //$("div").scrollLeft(index*windowWidth-index*(73+index));
-                    if(scrollX > index*windowWidth-index*(73+index)) {
-                        $("div").scrollLeft(index*windowWidth-index*(73+index));
+                    if (scrollX > index * windowWidth - index * (73 + index)) {
+                        $("div").scrollLeft(index * windowWidth - index * (73 + index));
                     } else {
-                        for(var j = 1; j < slides; j++) {
-                            iScroll = j*windowWidth-j*(73+j);
-                            if(scrollX <= iScroll) {
-                                $(e.currentTarget).attr('data-slide-to', (j-1));
-                                $('li[name="left-scroll"]').attr("data-slide-to", (j-1));
-                                $("div").scrollLeft((j-1)*windowWidth-(j-1)*(73+(j-1)));
-                                j=slides;
+                        for (var j = 1; j < slides; j++) {
+                            iScroll = j * windowWidth - j * (73 + j);
+                            if (scrollX <= iScroll) {
+                                $(e.currentTarget).attr('data-slide-to', (j - 1));
+                                $('li[name="left-scroll"]').attr("data-slide-to", (j - 1));
+                                $("div").scrollLeft((j - 1) * windowWidth - (j - 1) * (73 + (j - 1)));
+                                j = slides;
                             }
                         }
                     }
                 }
             }
-        }, scrollRight: function(e) {
+        },
+        scrollRight: function(e) {
             var maxCol = this.getMaxCol();
             var windowWidth = $(window).width();
-            var gridsterWidth = (maxCol+10)*100;
+            var gridsterWidth = (maxCol + 10) * 100;
             var slides = Math.floor(gridsterWidth / windowWidth);
             var index = parseInt($(e.currentTarget).attr('data-slide-to'));
             var scrlRight;
 
-            if(index < (slides-1)) {
+            if (index < (slides - 1)) {
                 var $gridsterEl = this.$el.find(".gridster");
                 //leftOffset = $gridsterEl.offset().left;
                 var scrollX = Math.abs($gridsterEl.offset().left); //$(window).scrollLeft;
@@ -146,33 +148,33 @@ define([
                 $(e.currentTarget).attr('data-slide-to', index);
                 $('li[name="left-scroll"]').attr("data-slide-to", index);
 
-                if((index === 1)) {
-                    scrlRight = index*windowWidth-index*(73+index);
-                    if(scrollX <= index*windowWidth-index*71) {
-                        $("div").scrollLeft(index*windowWidth-index*71);
+                if ((index === 1)) {
+                    scrlRight = index * windowWidth - index * (73 + index);
+                    if (scrollX <= index * windowWidth - index * 71) {
+                        $("div").scrollLeft(index * windowWidth - index * 71);
                     } else {
-                        for(var i = slides; i > 1; i--) {
-                            iScroll = i*windowWidth-i*(73+i);
-                            if((scrollX >= iScroll) && (i >= index)) {
-                                $(e.currentTarget).attr('data-slide-to', (i+1));
-                                $('li[name="left-scroll"]').attr("data-slide-to", (i+1));
-                                $("div").scrollLeft((i+1)*windowWidth-(i+1)*(73+(i+1)));
-                                i=1;
+                        for (var i = slides; i > 1; i--) {
+                            iScroll = i * windowWidth - i * (73 + i);
+                            if ((scrollX >= iScroll) && (i >= index)) {
+                                $(e.currentTarget).attr('data-slide-to', (i + 1));
+                                $('li[name="left-scroll"]').attr("data-slide-to", (i + 1));
+                                $("div").scrollLeft((i + 1) * windowWidth - (i + 1) * (73 + (i + 1)));
+                                i = 1;
                             }
                         }
                     }
-                } else if(index > 1) {
-                    scrlRight = index*windowWidth-index*(73+index);
-                    if(scrollX <= index*windowWidth-index*(73+index)) {
-                        $("div").scrollLeft(index*windowWidth-index*(73+index));
+                } else if (index > 1) {
+                    scrlRight = index * windowWidth - index * (73 + index);
+                    if (scrollX <= index * windowWidth - index * (73 + index)) {
+                        $("div").scrollLeft(index * windowWidth - index * (73 + index));
                     } else {
-                        for(var j = slides; j > 1; j--) {
-                            iScroll = j*windowWidth-j*(73+j);
-                            if((scrollX >= jScroll) && (j >= index)) {
-                                $(e.currentTarget).attr('data-slide-to', (j+1));
-                                $('li[name="left-scroll"]').attr("data-slide-to", (j+1));
-                                $("div").scrollLeft((j+1)*windowWidth-(j+1)*(73+(j+1)));
-                                j=1;
+                        for (var j = slides; j > 1; j--) {
+                            iScroll = j * windowWidth - j * (73 + j);
+                            if ((scrollX >= jScroll) && (j >= index)) {
+                                $(e.currentTarget).attr('data-slide-to', (j + 1));
+                                $('li[name="left-scroll"]').attr("data-slide-to", (j + 1));
+                                $("div").scrollLeft((j + 1) * windowWidth - (j + 1) * (73 + (j + 1)));
+                                j = 1;
                             }
                         }
                     }
@@ -181,7 +183,7 @@ define([
         },
         setModel: function() {
             this.model.set({
-                'paginationHtml':  '<div class="paginationContainer">' + this.getPaginationHtml() + '</div>'
+                'paginationHtml': '<div class="paginationContainer">' + this.getPaginationHtml() + '</div>'
             });
         },
         getPaginationHtml: function() {
@@ -190,21 +192,21 @@ define([
             var windowHeight = $(window).height();
             var hashChar = '|';
             var maxCol = this.getMaxCol();
-            var gridsterWidth = (maxCol+10)*100;
+            var gridsterWidth = (maxCol + 10) * 100;
             var slides = Math.floor(gridsterWidth / windowWidth);
             var leftOffset = 18;
-            var hashArea = windowWidth-75-leftOffset;
-            var hashDistance = hashArea/slides;
+            var hashArea = windowWidth - 75 - leftOffset;
+            var hashDistance = hashArea / slides;
 
-            if(slides > 1) {
-                html+= '<div data-ride="pagination" style="position:fixed; z-index:9999; top:' + (windowHeight-70) + 'px; left:' + (windowWidth-50) + 'px;"><ol class="pagination">';
-                html+= '<li class="fa fa-chevron-left" data-target="#screenPagination" name="left-scroll" data-slide-to="0" class="active"></li>&nbsp;&nbsp;';
-                html+= '<li class="fa fa-chevron-right" data-target="#screenPagination" name="right-scroll" data-slide-to="0"></li>';
-                html+= '</ol></div>';
+            if (slides > 1) {
+                html += '<div data-ride="pagination" style="position:fixed; z-index:9999; top:' + (windowHeight - 70) + 'px; left:' + (windowWidth - 50) + 'px;"><ol class="pagination">';
+                html += '<li class="fa fa-chevron-left" data-target="#screenPagination" name="left-scroll" data-slide-to="0" class="active"></li>&nbsp;&nbsp;';
+                html += '<li class="fa fa-chevron-right" data-target="#screenPagination" name="right-scroll" data-slide-to="0"></li>';
+                html += '</ol></div>';
 
-                for(var i = 0; i <= slides; i++) {
-                    html+= '<div style="position:fixed; list-style:none; z-index:9999; top:' + (windowHeight-50) + 'px; left:' + Math.ceil(leftOffset) + 'px; ">|</div>';
-                    leftOffset+=hashDistance;
+                for (var i = 0; i <= slides; i++) {
+                    html += '<div style="position:fixed; list-style:none; z-index:9999; top:' + (windowHeight - 50) + 'px; left:' + Math.ceil(leftOffset) + 'px; ">|</div>';
+                    leftOffset += hashDistance;
                 }
             }
 
@@ -218,6 +220,8 @@ define([
             var self = this;
             var gridster;
             var $gridsterEl = this.$el.find(".gridster");
+            var screenId = Messaging.request('get:current:screen').id;
+            var appletsConfig;
 
             function getXSize() {
                 return ResizeUtils.getXSize();
@@ -229,15 +233,7 @@ define([
 
             function saveGridsterAppletsConfig(overrideThrottle) {
                 var screen = Messaging.request('get:current:screen').id;
-                var appletsConfig = UserDefinedScreens.serializeGridsterScreen($gridsterEl, screen);
-                // console.log('', JSON.stringify(appletsConfig.applets));
-
-                //                if (!self.saveThrottleProperties.lastSave) {
-                //                    self.saveThrottleProperties.lastSave = {
-                //                        time: getSaveTime(),
-                //                        numMoves: 0
-                //                    };
-                //                }
+                appletsConfig = UserDefinedScreens.serializeGridsterScreen($gridsterEl, screen);
                 // check if anything changed from last save
                 if (self.saveThrottleProperties.lastSave.currentScreenModule && UserDefinedScreens.getGridsterTemplate(self.saveThrottleProperties.lastSave.currentScreenModule) === UserDefinedScreens.getGridsterTemplate(appletsConfig)) {
                     // console.log("  nothing changed since last save, skipping save check and save");
@@ -245,6 +241,8 @@ define([
                     clearSaveGridsterAppletsConfigOnTimeout();
                     return;
                 }
+
+                ADK.UserDefinedScreens.setHasCustomize(screenId);
 
                 // save to the session
                 UserDefinedScreens.saveGridsterConfigToSession(appletsConfig, screen);
@@ -315,23 +313,17 @@ define([
                         return true;
                     }
                 };
+
+                $('.gridster').addClass('freeze-applets');
+
             } else {
                 resizable = {
                     enabled: true,
                     handle_append_to: '',
                     resize: function(e, ui, $widget) {
-                        /*
-                        var appletHeight = ui.pointer.diff_top + $widget.height();
-                        $widget.find('.panel-body').height(appletHeight - 35);
-                        $widget.find('.panel-body').height(appletHeight - 35);
-                        */
                         gridsterResizeSnap($widget);
                     },
                     stop: function(e, ui, $widget) {
-                        /*
-                        var appletHeight = $widget.height();
-                        $widget.find('.panel-body').height(appletHeight - 35);
-                        */
                         gridsterResizeSnap($widget);
                         saveGridsterAppletsConfig();
 
@@ -339,7 +331,7 @@ define([
                 };
 
                 draggable = {
-                    handle: "span.center-block.text-center.panel-title",
+                    handle: "div.panel-heading.grid-applet-heading > span.panel-title.center-block", 
                     stop: function(e, ui, $widget) {
                         saveGridsterAppletsConfig();
                     }
@@ -365,7 +357,7 @@ define([
                 var mod = sizeX % 2;
                 if (mod === 1) {
                     gridster.resize_widget($widget, sizeX + 1);
-                } 
+                }
             }
 
             function resetGridsterBase(callBack) {
@@ -390,7 +382,6 @@ define([
             function randomId() {
                 return S4() + S4() + S4();
             }
-
             $(window).resize(function() {
                 var paginationHtml = self.getPaginationHtml();
                 $('.paginationContainer').html(paginationHtml);
@@ -401,27 +392,19 @@ define([
             //call resizedw to set panel height correctly
             setGridsterContainerHeight();
 
-            //adjust applet panel body to have grid height - 35
-            /*setTimeout(function() {
-                gridster.$widgets.each(function(idx, w) {
-                    
-                    var $w = $(w);
-                    $w.find('.panel-body').height($w.height() - 30);
-                    
-                });
-            }, 1000);*/
-
-            Messaging.on('user:beginSessionEnd', function() {
+            this.listenTo(Messaging, 'user:beginSessionEnd', function() {
                 clearSaveGridsterAppletsConfigOnTimeout();
-                saveGridsterAppletsConfig(true);
+                if (appletsConfig)
+                    UserDefinedScreens.saveGridsterConfig(appletsConfig, screenId);
             });
 
-            Messaging.on('gridster:saveAppletsConfig', function() {
+            this.listenTo(Messaging, 'gridster:saveAppletsConfig', function() {
                 saveGridsterAppletsConfig(true);
             });
-
+        },
+        onBeforeDestroy: function() {
+            $(window).off('resize');
         }
-
     });
 
     return layoutView;

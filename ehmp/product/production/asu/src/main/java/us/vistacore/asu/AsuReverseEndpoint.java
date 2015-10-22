@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import us.vistacore.asu.rules.ASU;
 import us.vistacore.asu.rules.AccessDocument;
 import us.vistacore.asu.util.NullChecker;
+
+import javax.validation.constraints.Null;
 import java.util.ArrayList;
 
 @RestController
@@ -34,6 +36,12 @@ public class AsuReverseEndpoint {
         }
      }
 
+    /*
+    This end point checks if a logged in user in GUI can access the document or not
+
+    @return value - true - User can access the document
+                    false - user cannot access the document.
+     */
 
     @RequestMapping(value = "${uri.accessDocument}",
             consumes = "application/json",method = RequestMethod.POST
@@ -43,8 +51,34 @@ public class AsuReverseEndpoint {
        validateRuleEvaluationParameters(accessDocument.getUserClassUids(),accessDocument.getDocDefUid()
                 , accessDocument.getDocStatus());
 
-        return asu.isRulePresent(accessDocument.getUserClassUids(), accessDocument.getRoleUid(),
+        logAccessDocument(accessDocument);
+
+        return asu.isRulePresent(accessDocument.getUserClassUids(), accessDocument.getRoleNames(),
                 accessDocument.getDocDefUid(),accessDocument.getDocStatus());
+    }
+
+    private void logAccessDocument(AccessDocument accessDocument)
+    {
+        StringBuffer sb=new StringBuffer();
+        sb.append("AsuReverseEndpoint.logAccessDocument: docdefUid " + accessDocument.getDocDefUid() + " :docStatus " + accessDocument.getDocStatus() + " \r\n ");
+        ArrayList<String> roleNames=accessDocument.getRoleNames();
+        ArrayList<String> userClassUids=accessDocument.getUserClassUids();
+        sb.append(" ROLENAMES: ");
+        if(NullChecker.isNotNullish(roleNames))
+        {
+            for(String roleName:roleNames) {
+                sb.append(roleName+" ");
+            }
+        }
+        sb.append(" \r\n USER CLASS UID: ");
+
+        if(NullChecker.isNotNullish(userClassUids))
+        {
+            for(String userClassUid:userClassUids) {
+                sb.append(userClassUid+" ");
+            }
+        }
+        log.info(sb.toString());
     }
 
 

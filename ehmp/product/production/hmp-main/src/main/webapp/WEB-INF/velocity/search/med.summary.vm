@@ -1,9 +1,0 @@
-#set($doc=$docs[0])
-#set($summ = $doc.summary.split("\n")[0])
-#if($doc.va_type.equals("I"))
-    $summ#if($doc.last_give) (Last Give: $hmp.formatDate($!doc.last_give))#end
-#elseif($doc.va_type.equals("O"))
-    $summ#if($doc.last_filled) (Last Filled: $hmp.formatDate($!doc.last_filled))#end
-#else
-	$summ
-#end

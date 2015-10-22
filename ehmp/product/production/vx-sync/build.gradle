@@ -58,6 +58,8 @@ task zipVXSync(type: Zip) {
   exclude 'build'
   exclude 'logs'
   exclude 'tests'
+  exclude 'Gemfile'
+  exclude 'Gemfile.lock'
 }
 
 zipVXSync.dependsOn installNpm
@@ -67,6 +69,12 @@ uploadArchives.dependsOn zipVXSync
 artifacts {
   archives zipVXSync.archivePath
 }
+
+//task rebuildMetadata(type: Exec) {
+//  commandLine "bash", "-c", "curl -s -u ${System.getenv()['NEXUS_USER_NAME']}:${System.getenv()['NEXUS_PASSWORD']} -X DELETE https://dl.vistacore.us/nexus/service/local/metadata/repositories/${->repo}/content/${->groupId.replaceAll('\\.','/')}/${->artifactId}/"
+//}
+
+//uploadArchives.finalizedBy rebuildMetadata
 
 unitTest.mustRunAfter cleanNPM, installNpm
 vxsyncIntTests.mustRunAfter cleanNPM, installNpm

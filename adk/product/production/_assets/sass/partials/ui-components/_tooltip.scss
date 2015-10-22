@@ -1,0 +1,19 @@
+.tooltip {
+	&.top .tooltip-arrow {
+		border-top-color: $primary-lighter;
+	}
+	&.bottom .tooltip-arrow {
+		border-bottom-color: $primary-lighter;
+	}
+	&.right .tooltip-arrow {
+		border-right-color: $primary-lighter;
+	}
+	&.left .tooltip-arrow {
+		border-left-color: $primary-lighter;
+	}
+	.tooltip-inner {
+		color: $grey-darkest;
+		font-weight: 600;
+		background-color: $primary-lighter;
+	}
+}

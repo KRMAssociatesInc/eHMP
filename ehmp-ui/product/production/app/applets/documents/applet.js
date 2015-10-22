@@ -98,6 +98,7 @@ define([
             var docType = model.get('kind');
             var complexDocBool = model.get('complexDoc');
             var resultDocCollection;
+            var childDocCollection = appletHelper.getChildDocs(model);
 
             if (complexDocBool) {
                 //if(DEBUG) console.log(model);
@@ -121,7 +122,7 @@ define([
                 }
                 if (this.parent !== undefined) {
                     this.parent.hiddenColumns = true;
-                    this.parent.changeView(model, docType, resultDocCollection);
+                    this.parent.changeView(model, docType, resultDocCollection, childDocCollection);
                 }
                 // console.log('debug------model---', model);
 
@@ -138,7 +139,7 @@ define([
             } else {
 
                 if (this.parent !== undefined) {
-                    this.parent.changeModelView(model, docType, resultDocCollection);
+                    this.parent.changeModelView(model, docType, resultDocCollection, childDocCollection);
                 }
             }
         }
@@ -177,10 +178,14 @@ define([
             _super = GridApplet.prototype;
             dataGridOptions.parent = this;
             var self = this;
-            dataGridOptions.collection = ADK.PatientRecordService.createEmptyCollection();
+            dataGridOptions.collection = ADK.PatientRecordService.createEmptyCollection({ pageable: true });
             //dataGridOptions.columns = fullScreenColumns; //6.D Sprint requirement to only show Expanded
             dataGridOptions.appletConfig = options.appletConfig;
             dataGridOptions.groupable = this.options.groupView;
+            
+            dataGridOptions.onClickAdd = function(event) {
+                ADK.Messaging.getChannel('notesTray').trigger('addNewNote-btn',false);
+            };
 
             if (this.columnsViewType === "summary") {
                 dataGridOptions.columns = summaryColumns;
@@ -249,16 +254,16 @@ define([
         },
 
         fetchData: function(){
-            CollectionHandler.queryCollection(this);
+            CollectionHandler.queryCollection(this, this.dataGridOptions.collection);
         },
 
-        changeView: function(newModel, docType, resultDocCollection) {
+        changeView: function(newModel, docType, resultDocCollection, childDocCollection) {
             if (DEBUG) console.log("Doc Tab App -----> changeView");
             if (this.lastTypeClicked === docType) {
                 this.updateDetailView(newModel);
                 this.updateDetailTitle(DocDetailsDisplayer.getTitle(newModel, docType));
             } else {
-                var deferredViewResponse = DocDetailsDisplayer.getView(newModel, docType, resultDocCollection);
+                var deferredViewResponse = DocDetailsDisplayer.getView(newModel, docType, resultDocCollection, childDocCollection);
                 var self = this;
                 deferredViewResponse.done(function(results) {
                     self.docDetail.show(results.view);
@@ -267,16 +272,21 @@ define([
             }
             this.$("#doc-detail-wrapper").scrollTop(0);
         },
-        changeModelView: function(newModel, docType, resultDocCollection) {
+        changeModelView: function(newModel, docType, resultDocCollection, childDocCollection) {
             if (DEBUG) console.log("Doc Tab App -----> changeView");
 
-            var deferredViewResponse = DocDetailsDisplayer.getView(newModel, docType, resultDocCollection);
+            var deferredViewResponse = DocDetailsDisplayer.getView(newModel, docType, resultDocCollection, childDocCollection);
             deferredViewResponse.done(function(results) {
                 var modalOptions = {
                     'title': results.title || DocDetailsDisplayer.getTitle(newModel, docType),
                     'size': 'large' //,
                 };
-                ADK.showModal(results.view, modalOptions);
+
+                var modal = new ADK.UI.Modal({
+                    view: results.view,
+                    options: modalOptions
+                });
+                modal.show();
             });
 
         },

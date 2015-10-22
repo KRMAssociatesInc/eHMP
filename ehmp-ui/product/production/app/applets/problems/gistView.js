@@ -9,7 +9,7 @@ define([
 ], function(Backbone, ModalView, modalHeader, modalFooter, Util, tooltip, moment) {
     'use strict';
 
-    var problemChannel = ADK.Messaging.getChannel('problem-add-edit');
+    var problemChannel = ADK.Messaging.getChannel('problems');
     var allEncounterDateArray = [];
     var viewParseModel = {
         parse: function(response) {
@@ -34,14 +34,15 @@ define([
             resourceTitle: 'patient-record-problem',
             pageable: false,
             criteria: {
-                filter: 'ne(removed, true)'
+                filter: 'ne(removed, true),eq(statusName,"ACTIVE")'
             },
             cache: false,
             viewModel: viewParseModel
         },
+        enableTileSorting: true,
         transformCollection: function(collection) {
             var ProblemGroupModel = Backbone.Model.extend({});
-            var problemGroupsCollection = new Backbone.Collection();
+            var problemGroupsCollection = collection;
             problemGroupsCollection.comparator = function(problem) {
                 return -problem.get("timeSinceDate");
             };
@@ -55,13 +56,14 @@ define([
             });
             //map grouped problems and return the models
             var screenId = ADK.Messaging.request('get:current:screen').config.id;
-            var isWorkspaceScreen =  screenId.indexOf('workspace') > -1;
+            var isWorkspaceScreen = screenId.indexOf('workspace') > -1;
             var problemGroups = _.map(groups, function(problems, groupName) {
                 return new ProblemGroupModel({
                     groupName: groupName,
                     probs: problems,
                     allGroupedComments: [],
                     acuityName: problems[0].get('acuityName'),
+                    statusName: problems[0].get('statusDisplayName'),
                     timeSince: problems[0].get('timeSince'),
                     age: problems[0].get('age'),
                     timeSinceDateString: problems[0].get('timeSinceDateString'),
@@ -86,8 +88,7 @@ define([
                     comments: problems[0].get('comments'),
                     timeSinceDate: problems[0].get('timeSinceDate'),
                     applet_id: "problems",
-                    allGroupedEncounters: [],
-                    userWorkspace: isWorkspaceScreen
+                    allGroupedEncounters: []
                 });
             });
             problemGroupsCollection.reset(problemGroups);
@@ -181,11 +182,11 @@ define([
             var newDuration = moment.duration({
                 'months': 6
             });
-             // DE923
+            // DE923
             /*if (globalDateModel.get('selectedId') === "all-range-global") {
               if (globalDateModel.get('selectedId') === "all-range-global") { */
-                oDate = moment.utc(_.first(allEncounterDateArray), "YYYY").valueOf();
-                nDate = moment(now).add(newDuration).valueOf();
+            oDate = moment.utc(_.first(allEncounterDateArray), "YYYY").valueOf();
+            nDate = moment(now).add(newDuration).valueOf();
             // DE923
             /* } else {
                 oDate = moment.utc(globalDateModel.get('fromDate'), "MM/DD/YYYY").valueOf();
@@ -195,7 +196,7 @@ define([
                 model.get('graphData').oldestDate = oDate;
                 model.get('graphData').newestDate = nDate;
                 // Create QuickView html string(tooltip) 
-                model.set('tooltip',tooltip(model));
+                model.set('tooltip', tooltip(model));
             });
             return problemGroupsCollection;
         },
@@ -266,14 +267,12 @@ define([
         initialize: function(options) {
             var self = this;
             this._super = ADK.AppletViews.EventsGistView.prototype;
-            gistConfiguration.fetchOptions.onSuccess = function() {
-                self.appletOptions.collection.reset(self.appletOptions.collection.models);
-            };
             this.appletOptions = {
                 filterFields: gistConfiguration.filterFields,
                 collectionParser: gistConfiguration.transformCollection,
                 gistModel: gistConfiguration.gistModel,
                 gistHeaders: gistConfiguration.gistHeaders,
+                enableTileSorting: gistConfiguration.enableTileSorting,
                 binningOptions: gistConfiguration.binningOptions,
                 collection: ADK.PatientRecordService.fetchCollection(gistConfiguration.fetchOptions),
                 onClickRow: this.onClickRow,
@@ -322,7 +321,11 @@ define([
                         }
                     })
                 };
-                ADK.showModal(view, modalOptions);
+                var modal = new ADK.UI.Modal({
+                    view: view,
+                    options: modalOptions
+                });
+                modal.show();
             });
             // DE923
             /*gistConfiguration.fetchOptions.criteria = {
@@ -335,14 +338,14 @@ define([
              */
             if (ADK.UserService.hasPermission('add-patient-problem') && ADK.PatientRecordService.isPatientInPrimaryVista()) {
                 self.appletOptions.onClickAdd = function() {
-                    problemChannel.command('openProblemSearch', 'problem_search');
+                    problemChannel.command('addProblem');
                 };
             }
             this.appletOptions.collection = ADK.PatientRecordService.fetchCollection(gistConfiguration.fetchOptions);
             this._super.initialize.apply(this, arguments);
         },
 
-        onBeforeDestroy: function(){
+        onBeforeDestroy: function() {
             ADK.Messaging.getChannel('problems').off('detailView');
         }
     });

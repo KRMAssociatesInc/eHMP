@@ -25,8 +25,8 @@ class CoverSheet < AccessBrowserV2
     #add_verify(CucumberLabel.new("Cover Sheet Pill"), VerifyContainsClass.new, AccessHtmlElement.new(:css, "#applet-nav #cover-sheet-button"))
       
     add_verify(CucumberLabel.new("Cover Sheet Pill"), VerifyText.new, AccessHtmlElement.new(:css, "#screenName"))
-#    add_action(CucumberLabel.new("Coversheet Screen"), ClickAction.new, AccessHtmlElement.new(:link_text, "Coversheet"))
-#    add_action(CucumberLabel.new("Coversheet Dropdown"), ClickAction.new, AccessHtmlElement.new(:id, "screenName"))
+    #    add_action(CucumberLabel.new("Coversheet Screen"), ClickAction.new, AccessHtmlElement.new(:link_text, "Coversheet"))
+    #    add_action(CucumberLabel.new("Coversheet Dropdown"), ClickAction.new, AccessHtmlElement.new(:id, "screenName"))
       
     @@applet_count = AccessHtmlElement.new(:xpath, "//*[@data-appletid]")
     add_verify(CucumberLabel.new("Number of Applets"), VerifyXpathCount.new(@@applet_count), @@applet_count)
@@ -43,7 +43,6 @@ Then(/^the "(.*?)" is displayed with information$/) do |arg1, table|
     browser_access.wait_until_element_present(field_name)
     expect(browser_access.perform_verification(field_name, value)).to be_true, "Verification failed on #{field_name}"
   end
-
 end
 
 Then(/^Cover Sheet is active$/) do
@@ -84,7 +83,7 @@ class CoverSheetApplets < AccessBrowserV2
     add_verify(CucumberLabel.new("CONDITIONS"), VerifyContainsText.new, applet_panel_title("problems"))
     add_verify(CucumberLabel.new("LAB RESULTS"), VerifyContainsText.new, applet_panel_title("lab_results_grid"))
     add_verify(CucumberLabel.new("VITALS"), VerifyContainsText.new, applet_panel_title("vitals"))
-    add_verify(CucumberLabel.new("MEDICATIONS"), VerifyContainsText.new, applet_panel_title("activeMeds"))
+    add_verify(CucumberLabel.new("ACTIVE MEDICATIONS"), VerifyContainsText.new, applet_panel_title("activeMeds"))
     add_verify(CucumberLabel.new("ALLERGIES"), VerifyContainsText.new, applet_panel_title("allergy_grid"))
     add_verify(CucumberLabel.new("IMMUNIZATIONS"), VerifyContainsText.new, applet_panel_title("immunizations"))
     add_verify(CucumberLabel.new("ORDERS"), VerifyContainsText.new, applet_panel_title("orders"))

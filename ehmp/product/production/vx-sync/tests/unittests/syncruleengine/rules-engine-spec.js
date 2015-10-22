@@ -4,10 +4,15 @@ var SyncRulesEngine = require(global.VX_SYNCRULES + '/rules-engine');
 
 var _ = require('underscore');
 var log = {
-    debug: function() {}
+    debug: function() {},
+    warn: function(){},
+    trace: function(){},
+    info: function(){}
 };
 var config = {};
-var environment = {};
+var environment = {
+    metrics: log
+};
 var acceptAll = require(global.VX_SYNCRULES + '/accept-all-rule');
 var rejectAll = require(global.VX_SYNCRULES + '/reject-all-rule');
 

@@ -17,6 +17,7 @@ class TestClients
   @@users["9E7A;lu1234"] = "lu1234!!"
   @@users["9E7A;1tdnurse"] = "tdnurse1"
   @@users["9E7A;xx1234"] = "baduser"
+  @@users["9E7A;mx1234"] = "mx1234!!"
 
   def self.password_for(username)
     return @@users[username]

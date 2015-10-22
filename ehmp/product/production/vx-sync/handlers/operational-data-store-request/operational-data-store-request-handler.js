@@ -17,6 +17,9 @@ function handle(log, config, environment, job, handlerCallback) {
 	//     return handlerCallback(errorUtil.createFatal('Invalid format for job', job));
 	// }
 
+    if (!job) {
+        handlerCallback(errorUtil.createFatal('Job was not valid.'));
+    }
     // validate record
     if (_.isUndefined(job.record)) {
         log.error('store-record-request-handler.handle: Missing record.  Job: %j', job);
@@ -50,10 +53,6 @@ function handle(log, config, environment, job, handlerCallback) {
             }
 			handlerCallback(null, 'success');
 		});
-	}
-
-	if (!job) {
-		handlerCallback('Job was not valid.', null);
 	}
 
 }

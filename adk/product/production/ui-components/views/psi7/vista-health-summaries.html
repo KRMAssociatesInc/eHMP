@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vista Health Summaries</title>
+        <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+        <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+        <link rel="stylesheet" href="../../css/main-styles.css" />
+    </head>
+    <body class="library">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="../../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../../views.html">Views</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../../color-palette.html">Color Palette</a></li>
+                               <li><a href="#">Style Guide</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+                <li><a href="../../views.html">Views</a></li>
+                <li class="active">Vista Health Summaries</li>
+            </ol>
+            <h1>Vista Health Summaries</h1>
+            <div class="description">
+                <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This is the 508 compliant static HTML/CSS mock up of the Vista Health Summaries view. The health summary detail modal is accessed through VA Local Site Name <i class="fa fa-long-arrow-right"></i> Report Name/Type Open Modal.</p>
+                <p><strong><i class="fa fa-file-text-o"></i> Documentation:</strong> Please also view <a href="http://l2kp4v.axshare.com/#p=vista_health_summaries_1">Vista Health Summaries wireframe 1</a>, <a href="http://l2kp4v.axshare.com/#p=vista_health_summaries_2">Vista Health Summaries wireframe 2</a>, <a href="http://l2kp4v.axshare.com/#p=vista_health_summaries_3">Vista Health Summaries wireframe 3</a>, <a href="../../docs/workflow/psi7/workflow-health-summaries-vista.pdf">Workflow Diagram</a> <small>[PDF, 221KB]</small>, and <a href="#">Use Scenario Case Documentation</a> <small>[PDF, XX]</small> for full details on implementation.</p>
+            </div>
+
+            <div class="applet-chrome ftar-container">
+                <div class="applet-toolbar">
+                    <h3>Vista Health Summaries</h3>
+                    <p class="sr-only">A Health Summary is a clinically oriented, structured report that extracts many kinds of data from VISTA web and displays it in a standard format. The individual patient is the focus of health summaries. The data displayed covers a wide range of health-related information such as demographic data, allergies, current active medical problems, laboratory results, etc.</p>
+                    <!--<ul>
+                        <li>
+                            <button type="button" class="btn btn-xs btn-link applet-refresh-button" title="Press enter to refresh panel data">
+                                <i class="fa fa-refresh"></i>
+                                <span class="sr-only">Refresh panel data.</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-xs btn-link applet-filter-button" title="Press enter to toggle the filter toolbar">
+                                <i class="fa fa-filter"></i>
+                                <span class="filter-name"></span>
+                                <span class="sr-only">Toggle data filter toolbar.</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-xs btn-link applet-maximize-button" title="Press enter to maximize the current applet">
+                                <span class="fa fa-expand">
+                                    <span class="sr-only">Maximize Applet</span>
+                                </span>
+                            </button>
+                        </li>
+                    </ul>-->
+                </div>
+                <div class="main-header">
+                    <div class="percent-width-100"><span>Facility</span></div>
+                </div>
+                <div class="accordion-container panel-group small ftar applet-scrolling-data" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <div class="panel-title">
+                                <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expand the accordion press enter on the accordion heading.</span></div>
+                                    <div class="percent-width-100"><span>VA Local Site Name<span class="label applet-badges label-panel" aria-label="Lab Result">1</span></span></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <div class="faux-table-container">
+                                    <div class="faux-table no-margin">
+                                        <div class="header">
+                                            <div class="table-row">
+                                                <div class="percent-width-100">
+                                                    <div>Summary Name</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal" title="Press enter to view summary detail">Report Name/Type Open Modal</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <div class="panel-title">
+                                <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expand the accordion press enter on the accordion heading.</span></div>
+                                    <div class="percent-width-100"><span>VA Remote Site Name 1<span class="label applet-badges label-panel" aria-label="Lab Result"> 3</span></span></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div class="faux-table-container">
+                                    <div class="faux-table no-margin">
+                                        <div class="header">
+                                            <div class="table-row">
+                                                <div class="percent-width-100">
+                                                    <div>Summary Name</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-1" title="Press enter to view summary detail">Report Name 1/Type No Op</a>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-2" title="Press enter to view summary detail">Report Name 2/Type No Op</a>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-3" title="Press enter to view summary detail">Report Name 3/Type No Op</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <div class="panel-title">
+                                <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expand the accordion press enter on the accordion heading.</span></div>
+                                    <div class="percent-width-100"><span>VA Remote Site Name 2<span class="label applet-badges label-panel" aria-label="Lab Result"> 2</span></span></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <div class="faux-table-container">
+                                    <div class="faux-table no-margin">
+                                        <div class="header">
+                                            <div class="table-row">
+                                                <div class="percent-width-100">
+                                                    <div>Summary Name</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-4" title="Press enter to view summary detail">Report Name 4/Type No Op</a>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-5" title="Press enter to view summary detail">Report Name 5/Type No Op</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <div class="panel-title">
+                                <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                    <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expand the accordion press enter on the accordion heading.</span></div>
+                                    <div class="percent-width-100"><span>VA Remote Site Name 3<span class="label applet-badges label-panel" aria-label="Lab Result"> 5</span></span></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                            <div class="panel-body">
+                                <div class="faux-table-container">
+                                    <div class="faux-table no-margin">
+                                        <div class="header">
+                                            <div class="table-row">
+                                                <div class="percent-width-100">
+                                                    <div>Summary Name</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-6">Report Name 6/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-7">Report Name 7/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-8">Report Name 8/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-9">Report Name 9/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-10">Report Name 10/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFive">
+                            <div class="panel-title">
+                                <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                    <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expand the accordion press enter on the accordion heading.</span></div>
+                                    <div class="percent-width-100"><span>VA Remote Site Name 4<span class="label applet-badges label-panel" aria-label="Lab Result"> 4</span></span></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                            <div class="panel-body">
+                                <div class="faux-table-container">
+                                    <div class="faux-table no-margin">
+                                        <div class="header">
+                                            <div class="table-row">
+                                                <div class="percent-width-100">
+                                                    <div>Summary Name</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-11">Report Name 11/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-12">Report Name 12/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-13">Report Name 13/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-14">Report Name 14/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingSix">
+                            <div class="panel-title">
+                                <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                    <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expand the accordion press enter on the accordion heading.</span></div>
+                                    <div class="percent-width-100"><span>VA Remote Site Name 5<span class="label applet-badges label-panel" aria-label="Lab Result"> 10</span></span></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                            <div class="panel-body">
+                                <div class="faux-table-container">
+                                    <div class="faux-table no-margin">
+                                        <div class="header">
+                                            <div class="table-row">
+                                                <div class="percent-width-100">
+                                                    <div>Summary Name</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-15">Report Name 15/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-16">Report Name 16/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-17">Report Name 17/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-18">Report Name 18/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-19">Report Name 19/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-20">Report Name 20/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-21">Report Name 21/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-22">Report Name 22/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-23">Report Name 23/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-24">Report Name 24/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingSeven">
+                            <div class="panel-title">
+                                <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                                    <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expand the accordion press enter on the accordion heading.</span></div>
+                                    <div class="percent-width-100"><span>VA Remote Site Name 6<span class="label applet-badges label-panel" aria-label="Lab Result"> 3</span></span></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+                            <div class="panel-body">
+                                <div class="faux-table-container">
+                                    <div class="faux-table no-margin">
+                                   <div class="header">
+                                            <div class="table-row">
+                                                <div class="percent-width-100">
+                                                    <div>Summary Name</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-25">Report Name 25/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-26">Report Name 26/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-27">Report Name 27/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingEight">
+                            <div class="panel-title">
+                                <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                                    <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expand the accordion press enter on the accordion heading.</span></div>
+                                    <div class="percent-width-100"><span>VA Remote Site Name 7<span class="label applet-badges label-panel" aria-label="Lab Result"> 2</span></span></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+                            <div class="panel-body">
+                                <div class="faux-table-container">
+                                    <div class="faux-table no-margin">
+                                        <div class="header">
+                                            <div class="table-row">
+                                                <div class="percent-width-100">
+                                                    <div>Summary Name</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="body">
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-28">Report Name 28/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <a href="#" data-toggle="modal" data-target="#vistaHealthSummariesModal-29">Report Name 29/Type No Op</a>
+                                                    <span class="sr-only">Press enter to view summary details</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary detail modal -->
+            <div class="modal fade" id="vistaHealthSummariesModal" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-backdrop vista-health-summaries-modal-container">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div>
+                                <div class="row">
+                                    <div class="col-xs-7">
+                                        <h3 class="modal-title" id="vistaHealthSummariesModalHeader">TST1 - CAMP CPRS HEALTH SUMMARY</h3>
+                                        <h4>BCMA,EIGHT, 04/07/1935, 80y, 666-33-0008</h4>
+                                    </div>
+                                    <div class="col-xs-5 text-right">
+                                        <button type="button" class="btn btn-default" title="Press enter to navigate to the previous record">
+                                            <i class="fa fa-arrow-up"></i> Previous
+                                            <span class="sr-only">Navigate to previous record.</span>
+                                        </button>
+                                        <button type="button" class="btn btn-default" title="Press enter to navigate to the next record">
+                                            <i class="fa fa-arrow-down"></i> Next
+                                            <span class="sr-only">Navigate to next record.</span>
+                                        </button>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Press enter to close the record">
+                                            <span aria-hidden="true">×</span>
+                                            <span class="sr-only">Close the record</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <h4>Immunizations <a href="#">Back to Top</a></h4>
+                                <div class="well">
+                                    <table class="table ehmp-table-default table-bordered">
+                                    <caption class="sr-only">This table represents data for Immunizations</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Vaccine</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Refusal</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>influenza virus vaccine, inactivated</td>
+                                                <td>07/10/2013</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>Procedures <a href="#">Back to Top</a></h4>
+                                <div class="well">
+                                    <table class="table ehmp-table-default table-bordered">
+                                    <caption class="sr-only">This table represents data for Procedures</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Procedure Type</th>
+                                                <th scope="col">Body Site</th>
+                                                <th scope="col">Date of Procedure</th>
+                                                <th scope="col">Related Diagnosis</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Electrocardiographic procedure</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Intranasal oxygen therapy</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Electrocardiographic procedure</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Intranasal oxygen therapy</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Electrocardiographic procedure</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Intranasal oxygen therapy</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Electrocardiographic procedure</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Intranasal oxygen therapy</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Electrocardiographic procedure</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Intranasal oxygen therapy</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Electrocardiographic procedure</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Intranasal oxygen therapy</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Electrocardiographic procedure</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Intranasal oxygen therapy</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                                <td>07/10/2013 00:00:00 American/Chicago</td>
+                                                <td><span class="sr-only">No data for this field</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>Social History <a href="#">Back to Top</a></h4>
+                                <div class="well">
+                                    <table class="table ehmp-table-default table-bordered">
+                                    <caption class="sr-only">This table represents data for Social History</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Social History Type</th>
+                                                <th scope="col">Response</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Smoking Status</td>
+                                                <td>Never</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to close the record.">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="../../js/jquery-1.11.2.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/typeahead.js"></script>
+    </body>
+</html>

@@ -32,7 +32,7 @@ class JsonFieldDateValidator
 
     #loop through all json records and pull out all possible values for the provided path
     #this result could contain nil values if path does not exist in record
-    jsonobject.each do | onerecord |
+    jsonobject.each do |onerecord|
       save_all_values_of_path(0, steps, onerecord, allvalues)
     end # jsonobject.each
 
@@ -42,10 +42,10 @@ class JsonFieldDateValidator
       return false
     end
     matches = true
-    allvalues.each do | tempvalue |
+    allvalues.each do |_tempvalue|
       regexresult = dateformat.match(allvalues[0])
       was_found = !regexresult.nil?
-      matches = matches && was_found
+      matches &&= was_found
     end #allvalues.each
     unless matches
       @@defined_error_msg = "all values did not match provided dateformat: #{allvalues}"
@@ -63,7 +63,7 @@ class JsonFieldDateValidator
 
     #loop through all json records and pull out all possible values for the provided path
     #this result could contain nil values if path does not exist in record
-    jsonobject.each do | onerecord |
+    jsonobject.each do |onerecord|
       save_all_values_of_path(0, steps, onerecord, allvalues)
     end # jsonobject.each
 
@@ -112,7 +112,7 @@ class JsonFieldDateValidator
         @@debug_output.push("The value is an array, adding each array element")
         array_result.concat(temp_obj)
       else
-        @@debug_output.push("The value is an object, adding #{temp_obj.to_s}")
+        @@debug_output.push("The value is an object, adding #{temp_obj}")
         array_result.push(temp_obj.to_s)
       end
 
@@ -126,11 +126,10 @@ class JsonFieldDateValidator
     #we have encountered an array
     if temp_obj.class.name.eql?("Array")
       @@debug_output.push("at index #{index} for steps #{steps_to_climb} we found an array")
-      index=index+1
-      (0..temp_obj.length-1).each do | i |
+      index+=1
+      (0..temp_obj.length-1).each do |i|
         save_all_values_of_path(index, steps_to_climb, temp_obj[i], array_result)
         @@debug_output.push("returned: #{array_result} ")
-
       end # for
       return
 

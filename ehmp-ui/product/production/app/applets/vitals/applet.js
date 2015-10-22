@@ -162,15 +162,15 @@ define([
                 self.isFullscreen = false;
                 options.appletConfig.viewType = 'summary';
             }
-
+            options.appletConfig.tileSortingUniqueId = 'typeName';
             dataGridOptions.enableModal = true;
 
-            var table = setInterval(function() {
-                if ($(".panel.panel-primary[title='Vitals']").length) {
-                    clearInterval(table);
-                    $(".panel.panel-primary[title='Vitals']").find(".grid-footer.panel-footer").addClass("hidden");
-                }
-            }, 500);
+            // var table = setInterval(function() {
+            //     if ($(".panel.panel-primary[title='Vitals']").length) {
+            //         clearInterval(table);
+            //         $(".panel.panel-primary[title='Vitals']").find(".grid-footer.panel-footer").addClass("hidden");
+            //     }
+            // }, 500);
             // self.getExposure();
 
             this.listenTo(ADK.Messaging, 'globalDate:selected', function(dateModel) {
@@ -197,9 +197,20 @@ define([
                     } else {
                         collection.trigger('vitals:globalDateFetch');
                     }
-                    
+
                     var sortId = self.appletConfig.instanceId + '_' + self.appletConfig.id;
-                    ADK.TileSortManager.getSortOptions(collection, sortId);                                  
+                    var uniqueId;
+
+                    if (!_.isUndefined(self.dataGridOptions.appletConfiguration)) {
+                        uniqueId = self.dataGridOptions.appletConfiguration.tileSortingUniqueId;
+                    }
+
+                    if (_.isUndefined(uniqueId) && !_.isUndefined(self.dataGridOptions.appletConfig.tileSortingUniqueId)) {
+                        uniqueId = self.dataGridOptions.appletConfig.tileSortingUniqueId;
+                    }
+
+                    if (!_.isUndefined(uniqueId))
+                        ADK.TileSortManager.getSortOptions(collection, sortId, uniqueId);
                 };
 
                 ADK.PatientRecordService.fetchCollection(fetchOptions, self.dataGridOptions.collection);
@@ -276,7 +287,11 @@ define([
                     'regionName': 'vitalsDetailsDialog'
                 };
 
-                ADK.showWorkflowItem(view, modalOptions);
+                var modal = new ADK.UI.Modal({
+                    view: view,
+                    options: modalOptions
+                });
+                modal.show();
             };
 
             dataGridOptions.onClickRow = function(model, event, gridView) {
@@ -309,7 +324,13 @@ define([
                 template: itemTemplate,
                 events: {
                     'click td': function(e) {
-                        showModal(this.model, e);
+                        //showModal(this.model, e);
+
+                        ADK.utils.infoButtonUtils.onClickFunc(this, e, baseOnClickRow);
+
+                        function baseOnClickRow(that, event) {
+                            showModal(that.model, event);
+                        }
                     }
                 }
             });
@@ -373,7 +394,10 @@ define([
                     this.dataGridOptions.SummaryViewOptions = {
                         //collectionParser: gistConfiguration.transformCollection,
                         gistModel: gistConfiguration.gistModel,
-                        gistHeaders: gistConfiguration.gistHeaders
+                        gistHeaders: gistConfiguration.gistHeaders,
+                        enableTileSorting: true,
+                        tileSortingUniqueId: 'typeName'
+
                     };
                 } else {
                     this.dataGridOptions.SummaryView = VitalsLayoutView;
@@ -388,14 +412,16 @@ define([
             _super.onRender.apply(this, arguments);
 
         },
-        // onBeforeDestroy: function(){
-        //     this.stopListening();
-        //     console.log("not listening");
-        // },
-        // onSync: function() {
-        //     this.filterCollection();
-        //     _super.onSync.apply(this, arguments);
-        // },
+        onSync: function() {
+            if (this.columnsViewType === 'summary') {
+                this.dataGridOptions.tblRowSelector = '[data-appletid="vitals"] tr';
+                this.dataGridOptions.tblRowSelectorColumn = 'td:first';
+            } else {
+                this.dataGridOptions.tblRowSelector = '#data-grid-vitals tbody tr';
+                this.dataGridOptions.tblRowSelectorColumn = 'td:nth-child(2)';
+            }
+            _super.onSync.apply(this, arguments);
+        },
         filterCollection: collectionHandler.filterCollection
     });
 
@@ -411,20 +437,68 @@ define([
         } else {
             vitalsTitle = params.model.get('typeName');
         }
-        ADK.showModal(
-            new ModalView({
+        var modal = new ADK.UI.Modal({
+            view: new ModalView({
                 model: params.model,
                 navHeader: false
-            }), {
+            }),
+            options: {
                 size: "xlarge",
                 title: vitalsTitle
-            });
+            }
+        });
+        modal.show();
     });
 
-    channel.reply('chartInfo', function(params) {
-        var displayName = Util.getDisplayName({typeName:params.typeName}).displayName;
+    /* the following function is for tesxt search. please do not remove this code */
+    channel.reply('detailView', function(params) {
+        var fetchOptions = {
+            criteria: {
+                "uid": params.uid
+            },
+            patient: new Backbone.Model({
+                icn: params.patient.icn,
+                pid: params.patient.pid
+            }),
+            resourceTitle: 'patient-record-vital'
+        };
 
-        var VitalModel  =  Backbone.Model.extend({});
+        var response = $.Deferred();
+
+        var data = ADK.PatientRecordService.fetchCollection(fetchOptions),
+            pidSiteCode,
+            detailModel;
+        data.on('sync', function() {
+            detailModel = data.first();
+            var siteCode = ADK.UserService.getUserSession().get('site'),
+                pidSiteCode = detailModel.get('pid') ? detailModel.get('pid').split(';')[0] : '';
+            var vitalsTitle;
+            if (detailModel.get('typeName') == 'Blood Pressure Systolic' || detailModel.get('typeName') == 'Blood Pressure Diastolic') {
+                vitalsTitle = 'Blood Pressure';
+            } else {
+                vitalsTitle = detailModel.get('typeName');
+            }
+            response.resolve({
+                view: new ModalView({
+                    model: detailModel,
+                    collection: data,
+                    navHeader: false
+                }),
+                title: vitalsTitle,
+                modalSize: "xlarge",
+            });
+        }, this);
+
+        return response.promise();
+    });
+    /* end function for text search */
+    
+    channel.reply('chartInfo', function(params) {
+        var displayName = Util.getDisplayName({
+            typeName: params.typeName
+        }).displayName;
+
+        var VitalModel = Backbone.Model.extend({});
         var vitalModel = new VitalModel({
             typeName: params.typeName,
             displayName: displayName,

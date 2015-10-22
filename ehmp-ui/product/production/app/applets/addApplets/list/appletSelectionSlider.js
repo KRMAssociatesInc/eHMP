@@ -33,6 +33,11 @@ define([
                 self.render();
             });
         },
+
+        onBeforeDestroy: function(){
+            $(window).off('resize');
+        },
+
         getNumberPerSlides: function() {
             var windowWidth = $(window).width();
             return Math.ceil((windowWidth - 300) / 90);

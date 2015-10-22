@@ -1,0 +1,41 @@
+ORWDPS1 SCHALL
+
+Description:  This RPC retrieves the ward medication administration schedule.
+
+Input Parameters:
+DFN (R):  Pointer to the Patient file (#2) obtained when the patient is selected.
+locationIen:  Obtained when the Visit location is selected.     However, CPRS passes 0 for the locationIen.
+If a >0 locationIen is passed, there are duplicates, and there is a location specific schedule, the location specific take precedence.
+If there are no location specific schedules, the lowest schedule IEN takes precedence.
+If a 0 locationIen is passed, the lowest schedule IEN takes precedence.
+
+Output Parameters: A subset of orderable items based on the XREF passed to the RPC.
+scheduleName^outpatientExpansion^scheduleType^administrationTime
+
+Example:
+ORWDPS1 SCHALL
+
+Params ------------------------------------------------------------------
+literal    241
+literal    0
+
+Results -----------------------------------------------------------------
+3ID^^C^08-16-24
+3XW^^C^10
+5XD^^C^02-07-12-17-22
+AT ONSET^^O^
+BID^TWICE A DAY^C^09-17
+BID AC^^C^0630-1630
+CONTINUOUS DRIP^^C^
+ENS^^OC^
+HS^AT BEDTIME^C^
+MO+TU+WE^^D^09
+MO-WE-FR^^D^09
+NOW^^O^
+ON CALL^^OC^
+ONCE^^O^1711
+PER FS-ORDER^^OC^
+Q12H^EVERY 12 HOURS^C^0900-2100
+Q14D^^C^09
+Q24H^EVERY 24 HOURS^C^09
+Q2H^EVERY 2 HOURS^C^04-06-08-10-12-14-16-18-20-22-24

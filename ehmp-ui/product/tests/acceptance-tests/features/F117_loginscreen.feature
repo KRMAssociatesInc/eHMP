@@ -26,7 +26,7 @@ Scenario: Test logout after successful login
     Then the patient search screen is displayed
     Then the user attempts signout
 
-@NoCPRSTabAccessLogin @US2990 @DE685
+@NoCPRSTabAccessLogin @US2990 @DE685 @DE1477
 Scenario: Attempt login with No CPRS Tab Access
     Given user views the login screen
     When user attempts login
@@ -37,7 +37,7 @@ Scenario: Attempt login with No CPRS Tab Access
         |SignIn||
     Then the page displays "User is not authorized to access this system."
 
-@UnsuccessfulLogin @DE685
+@UnsuccessfulLogin @DE685 @DE1734
 Scenario: Attempt login with incorrect credentials
     Given user views the login screen
     When user attempts login

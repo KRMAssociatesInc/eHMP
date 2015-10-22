@@ -1,0 +1,519 @@
+div.toolbarActive {
+    background-color: $white;
+    border: 2px solid $white;
+    box-shadow: 5px 5px 10px #888888;
+    margin-bottom: 10px;
+}
+tr.toolbarActive {
+    outline: 2px solid $white;
+    background-color: #f5f5f5;
+    td {
+        box-shadow:0px 8px 12px -4px #888888;
+        border-collapse: separate;
+    }
+    td:first-child {
+        box-shadow: -8px 5px 10px 1px #888888;
+    }
+    td:last-child {
+        box-shadow: 5px 5px 10px #888888;
+    }
+}
+div.appletToolbar {
+    position: relative;
+    display: none;
+    .toolbarPopover {
+        display: block;
+        border: none;
+        background: none;
+        border-radius: 0;
+        box-shadow: 5px 0px 10px -1px #888888;
+        padding: 0;
+        z-index: 999;
+        position: absolute;
+        top: -25px;
+        left: -2px;
+        .btn-toolbar {
+            padding: 0;
+            margin: 0;
+            .btn-group {
+                margin: 0;
+                padding: 0;
+                .btn {
+                    background: $primary;
+                    border: 1px solid $white;
+                    border-right-width: 0;
+                    border-radius: 0;
+                    color: $white;
+                    font-size: 12px;
+                    width: 25px;
+                    height: 25px;
+                    padding: 3px;
+                    margin: auto;
+                    &:last-child {
+                        border-right-width: 1px;
+                    }
+                    &:hover, &:focus {
+                        background-color: $primary-dark;
+                        cursor: pointer;
+                    }
+                    &[disabled]{
+                        opacity: 1;
+                        background-color: lighten($primary-light, 35%);
+                    }
+                }
+                .btn-default:disabled, .btn-default[disabled] {
+                    opacity: 0.75;
+                    background-color: $grey-dark;
+                    color: rgba(132, 132, 132, 1);
+                }
+                .toolbar-btn-hover {
+                    background-color: $primary-dark;
+                }
+            }
+        }
+        div.dropdown {
+            float: left;
+            ul {
+                min-width: 175px;
+                box-shadow: 7px 7px 10px rgba(0,0,0,0.575);
+                li {
+                    font-size: 11px;
+                    a { 
+                        padding: 3px 5px;
+                        color: #09F;
+                        &:hover, &:focus {
+                            background-color: #D4E1FC;
+                            background-image: none;
+                        }
+                    }
+                }
+                li.appletToolbar-submenu-title { 
+                    font-weight: bold; 
+                    padding: 3px 5px;
+                }
+            }
+            a#submenu-button-toolbar {
+                width: 28px;
+                border-right-width: 1px;
+            }
+        }
+    }
+}
+.gs-w .panel-heading {
+    border-bottom: 2px solid $secondary-light;
+    padding: 0;
+}
+[gistviewtype="events"] {
+    .tilesort-remove-sort {
+        font-weight:normal;
+        font-style: italic;
+        a {
+            color: inherit;
+        }
+    }
+    .header-hide{
+        display: none;
+    }
+    .placeholder {
+        height: 30px;
+        padding: 6px;
+        margin: 3px;
+        border: 4px solid rgb(97, 157, 215);
+        border-radius: 3px;
+    }
+}
+
+[gistviewtype="interventions"] {
+    .displayRow {
+        display: table-row;
+    }
+    div.header-hover:hover {
+        cursor: pointer;
+    }
+    div.header {
+        margin-top: 3px;
+        white-space: nowrap;
+    }
+    .row.equalHeights {
+        display: table;
+        width: 100%;
+    }
+    .row.equalHeights > *[class*="col-"] {
+        display: table-cell;
+        float: none;
+        vertical-align: middle;
+    }
+    div.gistItem {
+        color: #666666;
+        border-radius: 0px;
+        background-color: white;
+        padding: 0px;
+        width: 100%;
+        display: table;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 2px solid #f0f0f0;
+    }
+    .gistList {
+        padding-top: 5px;
+    }
+    .clearBoth {
+        clear: both;
+    }
+    .emptyGistList {
+        font-style: italic;
+        color: gray;
+        min-height: 40px;
+        padding: 10px;
+    }
+    .quickviewOverlay {
+        display: none;
+        text-align: center;
+        z-index: 100;
+        min-height: 45px;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0);
+        width: 100%;
+        line-height: 40px;
+        color: #ffffff;
+    }
+    .quickDraw:hover {
+        background:none;
+        .quickviewOverlay {
+            display: block;
+        }
+    }
+    .quickDraw:focus {
+        background:none;
+        outline: 0;
+        .quickviewOverlay {
+            display: block;
+        }
+    }
+    .quickDraw {
+        height: 100%;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .popoverArea {
+        display: table-cell;
+        float: none;
+    }
+    .popoverAreaInner {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+    #gist-main-info {
+        padding-bottom: 5px;
+        padding-top: 5px;
+        display: table-cell;
+        float: none;
+        .gist-main-info-inner {
+            padding-left: 10px;
+        }
+    }
+    .changeArrow {
+        color: $blue;
+        font-size: 20px;
+    }
+    .header-bar {
+        box-shadow: 0px 0px 4px 0px #999999;
+        height: 20px;
+        margin-bottom: -2px;
+        font-weight: bold;
+        font-size: 10px;
+        #rightSideHeaders {
+            padding: 0;
+            #Age-header {
+                padding: 0;
+            }
+        }
+    }
+    .header {
+        margin-top: 3px;
+    }
+    .col-condensed {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .expiredMed {
+        color: #CC0000;
+        font-weight: bold;
+    }
+    .newMed {
+        color: rgb(0, 153, 255);
+        font-weight: bold;
+    }
+    .discontinuedMed {
+        color: #f0ad4e;
+        font-size: 15px;
+    }
+    .labelSizeCorrection {
+        font-size: inherit;
+    }
+    .headerCorrection {
+        left: 5.5%;
+    }
+    .virticalCenter {
+        height: 100%;
+        position: relative;
+        #count {
+            left: 35% !important;
+            right: 35% !important;
+        }
+    }
+    .verticalCenterInner {
+        left: 0;
+        margin-top: 25%;
+        position: absolute;
+        right: 0;
+    }
+    .noPadding {
+        padding: 0;
+    }
+    .border-vertical {
+        border-right: 1px solid $grey-light;
+    }
+    .tilesort-remove-sort {
+        font-weight:normal;
+        font-style: italic;
+        a {
+            color: inherit;
+        }
+    }
+    .placeholder {
+        height: 30px;
+        padding: 6px;
+        margin: 3px;
+        border: 4px solid rgb(97, 157, 215);
+        border-radius: 3px;
+    }
+    .header-hide{
+        display: none;
+    }
+}
+/*---Problems Gist---*/
+[data-appletid="problems"], [gistviewtype="panels"] {
+    span.header-hover:hover {
+        cursor: pointer;
+    }
+    .header {
+        margin-top: 3px;
+        white-space: nowrap;
+    }
+    div.gistItem {
+        border-bottom: 2px solid #f0f0f0;
+        border-top: 1px solid #e5e5e5;
+        background-color: white;
+        color: #666;
+        .sub-elements {
+            display: none;
+        }
+        &.toolbarActive {
+            border: 2px solid $white;
+        }
+    }
+    count-header1 {
+        padding-left: 0px;
+    }
+    /* Grow */
+    .hvr-grow {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        transition-duration: 0.3s;
+    }
+    .hvr-grow:focus,
+    .hvr-grow:active {
+        width: 101%;
+        position: relative;
+        z-index: 1000;
+        transform: translateX(-0.01);
+    }
+    .gistList .gistItem:nth-child(even) {
+        background-color: #f2f8fe;
+    }
+    .gistList .gistItem:hover {
+        color: #000000;
+        background-color: #F0F0F0;
+    }
+    .gistList {
+        padding: 5px;
+    }
+    .clearBoth {
+        clear: both;
+    }
+    .emptyGistList {
+        font-style: italic;
+        color: gray;
+        min-height: 40px;
+        padding: 10px;
+    }
+    .quickviewOverlay {
+        bottom: 0;
+        color: #fff;
+        display: block;
+        left: 0;
+        line-height: 40px;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        z-index: 100;
+    }
+    .popover {
+        max-width: 650px;
+    }
+    .changeArrow {
+        color: $blue;
+        font-size: 15px;
+    }
+    .header-bar {
+        box-shadow: 0px 0px 4px 0px #999999;
+        height: 20px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 10px;
+    }
+    .warning {
+        color: #CC0000;
+        font-weight: bold;
+    }
+    .problem-col-condensed {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: -10px;
+    }
+    .seven-top-padding {
+        padding-top: 7px;
+    }
+    .quickDraw:hover {
+        background:none;
+    }
+    .quickDraw:focus {
+        background:none;
+        outline: 0;
+    }
+    .noMargin {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .noPadding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .row.equalHeights {
+        display: table;
+        width: 100%;
+    }
+    .row.equalHeights > [class*="col-"] {
+        display: table-cell;
+        float: none;
+        vertical-align: middle;
+    }
+    .gChartMin {
+        height: 41px;
+    }
+    .gistItemInner {
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .problem-name {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        text-transform: capitalize;
+    }
+    .border-vertical {
+        border-right: 1px solid #e5e5e5;
+    }
+}
+/*---Observations Gist---*/
+[gistviewtype="observations"] {
+    div.toolbarActive {
+        background-color : $white;
+        border: 2px solid $white;
+        box-shadow: 5px 5px 10px #888888;
+        margin-bottom: 10px;
+    }
+    .gistItem{
+        .appletToolbar {
+            position: relative;
+            display: none;
+            .toolbarPopover {
+                display: block;
+                border: none;
+                background: none;
+                border-radius: 0;
+                box-shadow: 5px 0px 10px -1px #888888;
+                padding: 0;
+                z-index: 999 !important;
+                position: absolute;
+                top: -25px;
+                left: -2px;
+                .btn-toolbar {
+                    padding: 0;
+                    margin: 0;
+                    .btn-group {
+                        margin: 0;
+                        padding: 0;
+                        .btn {
+                            background: $primary;
+                            border-radius: 0!important;
+                            color: $white;
+                            font-size: 12px;
+                            width: 25px;
+                            height: 25px;
+                            padding: 3px;
+                            margin: auto;
+                        }
+                        .btn:first-child {
+                            border-left: 2px solid $white;
+                            width: 27px;
+                        }
+                        .btn:last-child {
+                            border-right-width: 1px;
+                        }
+                        .btn:hover {
+                            background-color: $primary-dark;
+                            cursor: pointer;
+                        }
+                        .btn:focus {
+                            background-color: $primary;
+                        }
+                        .toolbar-btn-hover {
+                            background-color: $primary-dark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tilesort-remove-sort {
+        font-weight:normal;
+        font-style: italic;
+        a {
+            color: inherit;
+        }
+    }
+    .placeholder {
+        height: 30px;
+        padding: 6px;
+        margin: 3px;
+        border: 4px solid rgb(97, 157, 215);
+        border-radius: 3px;
+    }
+}
+/*---END Observations Gist---*/
+
+[data-appletid=lab_results_grid] div.gistItem, [data-appletid=vitals] div.gistItem {
+    border-top: 1px solid $grey-light;
+}
+[data-appletid=lab_results_grid] .gistItemInner, [data-appletid=vitals] .gistItemInner {
+    border-bottom: 1px solid $grey-light;
+}
+
+
+

@@ -1,0 +1,70 @@
+.info-pill-container {
+	position: relative;
+	.gist-item {
+		background-color: $white;
+		border: 0px;
+		box-shadow: 0 1px 1px $grey-darkest;
+		padding: 2px 5px;
+		font-size: 11px;
+		&:hover {
+			background-color: $primary-lightest;
+			color: $grey-darkest;
+		}
+	}
+	.popover {
+		&.top {
+			border: none;
+			box-shadow: none;
+			margin-top: 0;
+			padding: 0;
+		}
+		.popover-content {
+			padding: 0;
+			margin-left: -5px;
+		}
+	}
+	.tabular-data {
+	    position: absolute;
+	}
+}
+.gist-tile-container {
+	border: 1px solid $grey-light;
+	.gist-tile {
+		.ac-items {
+			&.table-active {
+				.table-data {
+					visibility: visible;
+				}
+			}
+			.table-data  {
+				position: absolute;
+				top: 100%;
+				visibility: hidden;
+				z-index: 3;
+			}
+			.ac-items-table-toggle {
+				display: block;
+				height: 100%;
+				width: 100%;
+			}
+		}
+		.ac-items-heading {
+			width: 50%;
+		}
+		.ac-items-table-heading {
+			background-color: $primary;
+			cursor: pointer;
+			height: 100%;
+			margin: 0;
+			opacity: 0;
+			padding: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 50%;
+			&:hover {
+				opacity:0.075;
+			}
+		}
+	}
+}

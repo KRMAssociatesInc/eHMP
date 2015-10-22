@@ -340,16 +340,6 @@ define([
             }
             return found && found.length ? found[0].value : '';
         },
-        getVprDate: function(fmDate) {
-            try {
-                var fmYear = Math.floor(fmDate / 1e4) + 1700,
-                    fmMonth = ('0' + Math.floor((fmDate % 1e4) / 1e2)).slice(-2),
-                    fmDay = ('0' + Math.floor((fmDate % 1e2))).slice(-2);
-                return '' + fmYear + fmMonth + fmDay;
-            } catch (err) {
-                return '';
-            }
-        },
 
         getCityStateZip: function(address) {
             var ret = '';

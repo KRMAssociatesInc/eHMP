@@ -1,0 +1,119 @@
+<h3>Type Ahead</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> A type ahead functions as a search filter; it allows the user to view the search results as the user is typing below the input field.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> A type ahead uses the input field, which will follow the same guidelines as in the form elements section.</p>
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To make the type ahead component work with the screen reader, add the role="application".</p>
+</div>
+<form action="#" method="post" class="form-container">
+    <div id="type-aheadCopy">
+        <div class="form-group" role="application">
+            <label for="search-for-provider" class="sr-only">Search</label>
+            <input class="form-control typeahead" type="text" name="name" title="The type ahead feature will begin searching for content as you type. The results are listed below, use the up and down arrow keys to review the results." placeholder="Search" id="search-for-provider" autocomplete="off" spellcheck="false" />
+        </div>
+    </div>
+    <button type="button" class="sr-only" disabled="disabled">Submit</button>
+</form>
+<hr />
+<div role="tabpanel" class="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#typahead-markup" aria-controls="simple-table-col" role="tab" data-toggle="tab">Type Ahead</a></li>
+        <li><a href="#type-ahead-js" aria-controls="simple-table-col-row" role="tab" data-toggle="tab">Javascript Code</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="typahead-markup">
+            <pre>
+&lt;div class="form-group" role="application"&gt;
+    &lt;label for="search-for-provider" class="sr-only"&gt;Search&lt;/label&gt;
+    &lt;input class="form-control typeahead" type="text" name="name" 
+    title="The type ahead feature will begin searching for content as you type. 
+    The results are listed below, use the up and down arrow keys to review the results." placeholder="Search" id="search-for-provider" /&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('type-aheadCopy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="type-ahead-js">
+            <pre>
+&lt;script src=&quot;js/typeahead.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/bloodhound.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var options = [
+    &#39;option one&#39;,
+    &#39;option two&#39;,
+    &#39;option three&#39;,
+    &#39;option four&#39;,
+    &#39;option five&#39;,
+    &#39;option six&#39;,
+    &#39;option seven&#39;,
+    &#39;option eight&#39;,
+    &#39;option nine&#39;
+];
+$(document).ready(function() {
+    // constructs the suggestion engine
+    var my_Suggestion_class = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace(&#39;value&#39;),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        limit: 4,
+        local: $.map(options, function(filtered_items) {
+            return {
+                value: filtered_items
+            };
+        })
+    });
+    my_Suggestion_class.initialize();
+    $(&#39;.typeahead&#39;).typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 0
+    }, {
+        name: &#39;options&#39;,
+        displayKey: &#39;&#39;,
+        source: my_Suggestion_class.ttAdapter()
+    });
+});
+&lt;/script&gt;
+                    </pre>
+            <a onclick="copyToClipboard('type-aheadCopyJS')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>
+<div id="type-aheadCopyJS">
+    <script src="js/typeahead.js"></script>
+    <script src="js/bloodhound.js"></script>
+    <script type="text/javascript">
+    var options = [
+        'option one',
+        'option two',
+        'option three',
+        'option four',
+        'option five',
+        'option six',
+        'option seven',
+        'option eight',
+        'option nine',
+        'option one thousand'
+    ];
+    $(document).ready(function() {
+        // constructs the suggestion engine
+        var my_Suggestion_class = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            limit: 4,
+            local: $.map(options, function(filtered_items) {
+                return {
+                    value: filtered_items
+                };
+            })
+        });
+        my_Suggestion_class.initialize();
+        $('.typeahead').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 0
+        }, {
+            name: 'options',
+            displayKey: '',
+            source: my_Suggestion_class.ttAdapter()
+        });
+    });
+    </script>
+</div>

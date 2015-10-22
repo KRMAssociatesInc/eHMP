@@ -8,47 +8,6 @@ Background:
     When user searches for and selects "Eight,Patient"
     Then Overview is active
  
-@US3584_cwad_crisisnotes @DE979 @DE1045 @debug
-Scenario: The user should be able to view Crisis Notes details
-    Given the following postings are active
-      | Posting    |
-      | Crisis Notes |
-    When the user opens the "Crisis Notes" details view
-    Then the cwad details view contains 
-      | field          | value            |
-      | Crisis Note    | 05/21/2000       |
-      | Local Title    | CRISIS NOTE      |
-      | Standard Title |                  |
-      | Date of Note   | 05/21/2000 12:01 |
-      | Entry Date     | 05/21/2000 12:01 |
-      | Author         | VEHU TWENTYONE   |
-
-@US3584_cwad_allergies @DE979 @DE1045 @debug
-Scenario: The user should be able to view Allergies details
-    Given the following postings are active
-      | Posting    |
-      | Allergies  |
-    When the user opens the "Allergies" details view
-    Then the cwad details view contains 
-      | field               | value                                      |
-      | Drug Classes        | PENICILLINS AND BETA-LACTAM ANTIMICROBIALS |
-      #| Originator          | VEHU EIGHT                                 |
-      | Originated          | 03/17/2005 20:09                           |
-      | Verified            | 03/17/2005                                 |
-      | Nature of reaction  | Adverse Reaction                           |
-      | Observed/Historical | Historical                                 |
-
-@US3584_cwad_directives @DE979 @DE1045 @debug
-Scenario: The user should be able to view Directives details
-    Given the following postings are active
-      | Posting    |
-      | Directives  |
-    When the user opens the "Directives" details view
-    Then the cwad details view contains 
-      | field        | value                       |
-      | Local Title  | ADVANCE DIRECTIVE COMPLETED |
-      | Date of Note | 05/16/2007 09:50            |
-      | Entry Date   | 05/16/2007 09:50            |
 
 @US3584_4_cwad @DE979
 Scenario: The user can identify when a patient has postings (secondary test)
@@ -64,7 +23,7 @@ Scenario: The user can identify when a patient has postings (secondary test)
     
 
 
-@SyncStatus_1
+@SyncStatus_1 @DE1252
 Scenario: The user looks for patient-status-icon
     Then the region "Bottom Region" is displayed
     And "Bottom Region" contains "eHMP version"
@@ -73,6 +32,6 @@ Scenario: The user looks for patient-status-icon
 	   | My Site   |
 		 | All VA    |
 	   | DoD       |
-	   | Community |
+	   | Communities |
 
   

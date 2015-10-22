@@ -16,7 +16,8 @@ define([], function() {
 		},
 		"patient_search": {
 			"url": serverPath + "#_Toc415212106",
-			"tooltip": "Search for a patient"
+			"tooltip": "Search for a patient",
+			"tooltip_placement": "bottom"
 		},
 		"patient_search_confirm": {
 			"url": serverPath + "#_Toc415212111",
@@ -101,7 +102,7 @@ define([], function() {
 			"url": serverPath + "#_Toc415212119",
 			"tooltip": "View Navigation Buttons"
 		},
-		"documents_expanded":{
+		"documents_expanded": {
 			"url": serverPath + "#_Toc415212166",
 			"tooltip": "Documents view"
 		},
@@ -109,32 +110,36 @@ define([], function() {
 			"url": serverPath + "#_Toc415212164",
 			"tooltip": "Timeline view"
 		},
-		"myCPRSList":{
+		"myCPRSList": {
 			"url": serverPath + "#_Toc415212107",
 			"tooltip": "My CPRS List"
 		},
-		"mySite":{
+		"mySite": {
 			"url": serverPath + "#_Toc415212108",
 			"tooltip": "My Site"
 		},
-		"patient_search_button":{
+		"patient_search_button": {
 			"url": serverPath + "#_Toc415212115",
 			"tooltip": "Patient search"
 		},
-		"user_info":{
+		"user_info": {
 			"url": serverPath + "#_Toc415212116",
 			"tooltip": "User information"
 		},
-		"status_bar":{
+		"status_bar": {
 			"url": serverPath + "#_Toc415212121",
 			"tooltip": "Refresh and status bar"
 		},
-		"ehmp_header":{
+		"ehmp_header": {
 			"url": serverPath + "#_Toc415212122",
 			"tooltip": "The eHMP Header"
 		},
 		"page_not_found": {
 			"url": "help/eHMP_Page Not Found.htm"
+		},
+		"help_unavailable": {
+			"url": "help/eHMP_Help Content Not Available.htm",
+			"tooltip": "Help content not available"
 		}
 	};
 

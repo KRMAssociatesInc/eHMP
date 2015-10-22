@@ -1,0 +1,45 @@
+#bottom-region {
+	.well {
+		margin: 0;
+		border-radius: 0;
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		background-image: none;
+		background-color: #3f6d7a;
+		border: 0;
+		box-shadow: none;
+		filter: none;
+		color: #fff;
+		padding: 0 0 0 10px;
+		overflow: visible;
+		p {
+			margin: 3px 0px 0px 0px;	
+		}
+	}
+	.patientSyncStatusRegion-container {
+		margin: 9px 0 0 141px;
+		ul {
+			list-style: none;	
+			padding: 0px;
+			float: right;
+			li {
+				color: white;
+				display: inline;
+				padding-right: 10px;
+					a {
+						color: white;	
+						text-decoration: none;
+					}
+				.fa-iconBig {
+					font-size: 16px;
+					&.success {
+						color: #A4CDB0;
+					}
+					&.fail {
+						color: #FFD2CB;
+					}
+				}
+			}
+		}
+	}
+}

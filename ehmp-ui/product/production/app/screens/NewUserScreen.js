@@ -1,7 +1,8 @@
 define([
     'app/screens/AllergyGridFull',
-    'app/screens/VitalsFull'
-], function(AllergyGridFull, VitalsFull) {
+    'app/screens/VitalsFull',
+    'app/screens/ImmunizationsFull'
+], function(AllergyGridFull, VitalsFull, ImmunizationsFull) {
     'use strict';
     var detailAppletChannels = {
         // mapping of domain --> appletId
@@ -21,27 +22,39 @@ define([
 
             if (channelName) {
                 // display spinner in modal while detail view is loading
-                ADK.showModal(ADK.Views.Loading.create(), {
-                    size: "large",
-                    title: "Loading..."
+                var modal = new ADK.UI.Modal({
+                    view: ADK.Views.Loading.create(),
+                    options: {
+                        size: "large",
+                        title: "Loading..."
+                    }
                 });
+                modal.show();
 
                 // request detail view from whatever applet is listening for this domain
                 var channel = ADK.Messaging.getChannel(channelName),
                     deferredResponse = channel.request('detailView', clickedResult);
 
                 deferredResponse.done(function(response) {
-                    ADK.showModal(response.view, {
-                        size: "large",
-                        title: response.title
+                    var modal = new ADK.UI.Modal({
+                        view: response.view,
+                        options: {
+                            size: "large",
+                            title: response.title
+                        }
                     });
+                    modal.show();
                 });
             } else {
                 // no detail view available; use the default placeholder view
-                ADK.showModal(new DefaultDetailView(), {
-                    size: "large",
-                    title: "Detail - Placeholder"
+                var modalView = new ADK.UI.Modal({
+                    view: new DefaultDetailView(),
+                    options: {
+                        size: "large",
+                        title: "Detail - Placeholder"
+                    }
                 });
+                modalView.show();
             }
         },
         onStart: function() {
@@ -49,6 +62,7 @@ define([
             VitalsFull.setUpEvents();
             var searchAppletChannel = ADK.Messaging.getChannel("activeMeds");
             searchAppletChannel.on('resultClicked', this.onResultClicked);
+            ImmunizationsFull.setUpEvents();
         },
         onStop: function() {
             var searchAppletChannel = ADK.Messaging.getChannel("activeMeds");

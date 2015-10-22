@@ -25,7 +25,7 @@ Given(/^user views screen "(.*?)" in the ADK$/) do |screen_name|
   user_views_screen(DefaultLogin.adk_url, screen_name)
 end
 
-Then(/^"(.*?)" is active$/) do | screen_name |
+Then(/^"(.*?)" is active$/) do |screen_name|
   browser_access = ActiveScreen.instance
   expect(browser_access.wait_until_element_present("Active Screen", DefaultLogin.wait_time)).to be_true
   expect(browser_access.perform_verification("Active Screen", screen_name)).to be_true

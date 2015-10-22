@@ -10,6 +10,7 @@ define([
     'use strict';
     //Data Grid Columns
     var priorityCol = {
+        name: 'priorityText',
         label: 'Priority',
         cell: 'handlebars',
         template: PriorityTemplate,
@@ -86,7 +87,7 @@ define([
                 summaryColumns: summaryColumns,
                 fullScreenColumns: fullScreenColumns,
                 enableModal: true,
-                filterEnabled: !fetchOptions.pageable,
+                filterEnabled: true,
                 onClickRow: function(model, event) { //Row click event handler
                     self.onClickRowHandler(model, event);
                 },
@@ -122,7 +123,7 @@ define([
             var fetchOptions = {
                 resourceTitle: 'cds-advice-detail',
                 criteria: {
-                    adviceId: model.get('id'),
+                    id: model.get('id'),
                     use: selectedUse
                 }
             };

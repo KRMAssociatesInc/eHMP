@@ -5,7 +5,7 @@ Feature: F144- Default Patient Search
 
 # Team Andromeda
 
-@f144_defaultPatientSearch @US1972 @vimm
+@f144_defaultPatientSearch @US1972 @vimm @DE1589
 Scenario: default patient search
     Given user views the login screen
     When user attempts login

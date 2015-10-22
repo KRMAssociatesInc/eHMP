@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>eHMP Bootstrap UI Library - CPRS Encounters</title>
+    <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../../css/main-styles.css" />
+</head>
+
+<body class="library">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a href="../../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a> </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../../views.html">Views</a>
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../../color-palette.html">Color Palette</a></li>
+                                <li><a href="#">Style Guide</a></li>
+                            </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav><!--end navigation-->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+            <li><a href="../../views.html">Views</a></li>
+            <li class="active">F413 - Encounters Workflow</li>
+        </ol>
+        <h1>F413 - Encounters Workflow</h1>
+        <div class="description">
+            <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This is the 508 compliant static HTML/CSS mock up of the Encounters view.</p>
+            <p><strong><i class="fa fa-file-text-o"></i> Documents:</strong> Please also view <a href="http://wakirc.axshare.com/#p=v4_-_encounter_workflow__single_form_">CPRS Encounters wireframe</a>, <a href="../../docs/workflow/psi8/workflow-encounters.pdf">Workflow Diagram</a> <small>[PDF, 465KB]</small>, and <a href="../../docs/use-case/psi8/use-case-encounters.pdf">Use Scenario Case Documentation</a> <small>[PDF, 140KB]</small> for full details on implementation.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="workflow-region">
+            <div class="workflow-container">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-xs-10 col-xs-10">
+                                    <h4 class="modal-title">Encounter Form for <span id="encounters-patient">Eight, Patient</span> (<span id="encountersDateTime">Apr 13, 2015 @14:11</span>)</h4>
+                                </div>
+                                <div class="col-xs-2 col-xs-2">
+                                    <div class="header-btns">
+                                        <div class="control form-group">
+                                            <button type="button" class="close" title="Press enter to close."><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="scroll-enter-form">
+                                            <div class="row bottom-pad-xs">
+                                                <div class="col-xs-12">
+                                                    <h5>Diagnosis Lists</h5>
+                                                </div>
+                                            </div>
+                                            <div class="row bottom-pad-xs">
+                                                <div class="col-xs-11">
+                                                    <div class="row">
+                                                        <div class="control form-group">
+                                                            <div class="col-xs-3 left-pad-md right-pad-xs">
+                                                                <label for="diagnosesSection" class="sr-only">Diagnoses Section</label>
+                                                                <select class="form-control open-select" name="diagnosesSection" title="Press up and down arrow keys to view options. Press enter to select." size="13" id="diagnosesSection">
+                                                                    <option value="Problem List Items" selected>Problem List Items</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-xs-9 left-pad-xs">
+                                                                <div class="well read-only-well">
+                                                                    <fieldset class="control form-group scroll checklist-control">
+                                                                        <legend>Problem List Items</legend>
+                                                                        <div class="childView-container">
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="conditionListItem1">
+                                                                                        <input type="checkbox" checked value="option1" name="conditionList" title="Press tab to view options. Press spacebar to select." id="conditionListItem1" /> Adverse effect of Calcium-Channel Blockers, Initial Encount&hellip;
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="conditionListItem2">
+                                                                                        <input type="checkbox" value="option2" name="conditionList" title="Press tab to view options. Press spacebar to select." id="conditionListItem2" /> Hypertension
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="conditionListItem3">
+                                                                                        <input type="checkbox" value="option3" name="conditionList" title="This option is already selected and cannot be unselected" id="conditionListItem3" /> Hyperlipidemia
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="conditionListItem4">
+                                                                                        <input type="checkbox" value="option4" name="conditionList" title="Press tab to view options. Press spacebar to select." id="conditionListItem4" /> Acute myocardial infarction, unspecified site, episode of car&hellip;
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="conditionListItem5">
+                                                                                        <input type="checkbox" value="option5" name="conditionList" title="Press tab to view options. Press spacebar to select." id="conditionListItem5" /> Chronic Systolic Heart failure
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="conditionListItem6">
+                                                                                        <input type="checkbox" value="option6" name="conditionList" title="Press tab to view options. Press spacebar to select." id="conditionListItem6" /> Diabetes Mellitus Type II or unspecified
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="conditionListItem11">
+                                                                                        <input type="checkbox" value="option1" name="conditionList" title="Press tab to view options. Press spacebar to select." id="conditionListItem11" /> Adverse effect of Calcium-Channel Blockers, Initial Encount&hellip;
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="conditionListItem22">
+                                                                                        <input type="checkbox" value="option2" name="conditionList" title="Press tab to view options. Press spacebar to select." id="conditionListItem22" /> Hypertension
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="conditionListItem33">
+                                                                                        <input type="checkbox" value="option3" name="conditionList" title="This option is already selected and cannot be unselected" id="conditionListItem33" /> Hyperlipidemia
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="conditionListItem44">
+                                                                                        <input type="checkbox" value="option4" name="conditionList" title="Press tab to view options. Press spacebar to select." id="conditionListItem44" /> Acute myocardial infarction, unspecified site, episode of car&hellip;
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-1">
+                                                    <button type="button" class="btn btn-default btn-sm offset-btn" data-toggle="popover" title="Press enter to add other diagnoses." data-content="" disabled="disabled">Add Other</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="ftar-container">
+                                                        <div class="sr-only">This table represents Selected Diagnoses catagorized by Diagnosis, Comments, Add to Condition List, and Primary Diagnoses.</div>
+                                                        <div class="main-header">
+                                                            <div class="percent-width-55">
+                                                                <span><strong>Selected Diagnoses</strong></span>
+                                                            </div>
+                                                            <div class="percent-width-10 text-center">
+                                                                <span><strong>Comments</strong></span>
+                                                            </div>
+                                                            <div class="percent-width-15 text-center">
+                                                                <span><strong>Add to Condition List</strong></span>
+                                                            </div>
+                                                            <div class="percent-width-15 text-center">
+                                                                <span><strong>Primary Diagnoses</strong></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-container panel-group small ftar" id="accordion1" role="tablist" aria-multiselectable="true">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading" role="tab" id="headingOne">
+                                                                    <div class="panel-title">
+                                                                        <p>No Diagnoses Selected (this will only appear if no diagnoses is selected)</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading" role="tab" id="headingOne">
+                                                                    <div class="panel-title">
+                                                                        <div class="sr-only no-display"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                                                                        <div class="percent-width-55">
+                                                                            <span>Hypertension</span>
+                                                                        </div>
+                                                                        <div class="percent-width-10 text-center">
+                                                                            <a title="Press enter to add a comment" data-toggle="collapse" href="#diagnosesOne" aria-expanded="true" aria-controls="diagnosesOne">Add</a>
+                                                                        </div>
+                                                                        <div class="percent-width-15 text-center">
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label class="checkbox-inline" for="diagnoses1">
+                                                                                        <input type="checkbox" value="option1" title="Press spacebar to add this diagnoses to the condition list" id="diagnoses1">
+                                                                                        <span class="sr-only" aria-hidden="true">Add diagnosis</span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="percent-width-15 text-center">
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label class="checkbox-inline" for="primary">
+                                                                                        <input type="checkbox" checked value="primary" title="This diagnosis is set as primary" id="primary"> <span class="sr-only">Primary</span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="btn-remove">
+                                                                            <button class="btn icon-btn icon-btn-mini" type="button" title="Press enter to remove"><i class="fa fa-times-circle"><span class="sr-only">Press enter to remove</span></i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="diagnosesOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                                    <div class="panel-body">
+                                                                        <div class="comment-box">
+                                                                            <div class="faux-table-container">
+                                                                                <div class="faux-table no-margin">
+                                                                                    <div class="body">
+                                                                                        <div class="table-row">
+                                                                                            <div>
+                                                                                                <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                                                                            </div>
+                                                                                            <div class="pixel-width-67 text-right">
+                                                                                                <span>
+                                                                                                    <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                                                                    <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="table-row">
+                                                                                            <div>
+                                                                                                <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                                                                            </div>
+                                                                                            <div class="pixel-width-67 text-right">
+                                                                                                <span>
+                                                                                                    <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                                                                    <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="comment">
+                                                                                <div class="control form-group col-xs-10">
+                                                                                    <label for="comment1" class="sr-only">Comment</label>
+                                                                                    <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="comment1" />
+                                                                                    <span class="help-block">60 characters remaining&hellip;</span>
+                                                                                    <label for="comment11" class="sr-only hidden">Comment</label>
+                                                                                    <input class="form-control hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="comment11" />
+                                                                                    <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <div class="col-xs-6 hidden">
+                                                                                        <button type="button" class="btn btn-default btn-xs" title="Press enter to cancel">Cancel</button>
+                                                                                    </div>
+                                                                                    <div class="col-xs-6 hidden">
+                                                                                        <button type="button" class="btn btn-default btn-xs" title="Press enter to save comment">Save</button>
+                                                                                    </div>
+                                                                                    <div class="col-xs-6">
+                                                                                        <button type="button" class="btn btn-default btn-xs" title="Press enter to add a comment">Add Comment</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading" role="tab" id="headingTwo">
+                                                                    <div class="panel-title">
+                                                                        <div class="sr-only no-display"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                                                                        <div class="percent-width-55">
+                                                                            <span>Hypertension</span>
+                                                                        </div>
+                                                                        <div class="percent-width-10 text-center">
+                                                                            <a class="btn icon-btn" data-toggle="collapse" href="#diagnosesTwo" aria-expanded="true" aria-controls="diagnosesTwo" title="Press enter to view comments"><i class="fa fa-file-text"></i></a>
+                                                                        </div>
+                                                                        <div class="percent-width-15 text-center">
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label class="checkbox-inline" for="diagnoses2">
+                                                                                        <input type="checkbox" value="option1" title="Press spacebar to add this diagnosis to the condition list" id="diagnoses2">
+                                                                                        <span class="sr-only" aria-hidden="true">Add diagnosis</span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="percent-width-15 text-center">
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label class="checkbox-inline" for="setPrimary">
+                                                                                        <input type="checkbox" value="Set Primary" title="Press spacebar to set as primary" id="setPrimary"> <span class="sr-only">Set Primary</span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="btn-remove">
+                                                                            <button class="btn icon-btn icon-btn-mini" type="button" title="Press enter to remove"><i class="fa fa-times-circle"><span class="sr-only">Press enter to remove</span></i></button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="diagnosesTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                                    <div class="panel-body">
+                                                                        <div class="comment-box">
+                                                                            <div class="faux-table-container">
+                                                                                <div class="faux-table no-margin">
+                                                                                    <div class="body">
+                                                                                        <div class="table-row">
+                                                                                            <div>
+                                                                                                <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                                                                            </div>
+                                                                                            <div class="pixel-width-67 text-right">
+                                                                                                <span>
+                                                                                                    <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                                                                    <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="table-row">
+                                                                                            <div>
+                                                                                                <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                                                                            </div>
+                                                                                            <div class="pixel-width-67 text-right">
+                                                                                                <span>
+                                                                                                     <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                                                                     <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="comment">
+                                                                                <div class="control form-group col-xs-10">
+                                                                                    <label for="comment2" class="sr-only">Comment</label>
+                                                                                    <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="comment2" />
+                                                                                    <span class="help-block">60 characters remaining&hellip;</span>
+                                                                                    <label for="comment22" class="sr-only hidden">Comment</label>
+                                                                                    <input class="form-control hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="comment22" />
+                                                                                    <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <div class="col-xs-6">
+                                                                                        <button type="button" class="btn btn-default btn-xs" title="Press enter to cancel">Cancel</button>
+                                                                                    </div>
+                                                                                    <div class="col-xs-6">
+                                                                                        <button type="button" class="btn btn-default btn-xs" title="Press enter to save comment">Save</button>
+                                                                                    </div>
+                                                                                    <div class="col-xs-12 hidden">
+                                                                                        <button type="button" class="btn btn-default btn-xs" title="Press enter to add a comment">Add Comment</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end diagnosis section-->
+
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <h5>Service Connected</h5>
+                                                </div>
+                                                <div class="col-xs-12 top-pad-xs">
+                                                    <div class="row row-eq-height">
+                                                        <div class="col-xs-6 well well-flex">
+                                                            <p>Service Connected: %</p>
+                                                            <ul class="">
+                                                                <li>Vitamin Deficiency (10% SC)</li>
+                                                                <li>Hemorrhoids (10% SC)</li>
+                                                                <li>Inguinal Hernia (0% SC)</li>
+                                                                <li>Gastric Ulcer (20% SC)</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-xs-6 well well-flex">
+                                                            <fieldset>
+                                                                <legend>Visit Related To</legend>
+                                                                    <div class="control form-group radio-control">
+                                                                        <p class="faux-label">Service Connected Condition</p>
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="serviceConnectedCondition" id="service-connected-condition-yes" value="Yes" title="Press enter to select, to view next option use arrow keys."> Yes
+                                                                        </label>
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="serviceConnectedCondition" id="service-connected-condition-no" value="No" title="Press enter to select, to view next option use arrow keys."> No
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="control form-group radio-control">
+                                                                        <p class="faux-label">Combat Vet (Combat Related)</p>
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="combatVet" id="combat-vet-yes" value="Yes" title="Press enter to select, to view next option use arrow keys."> Yes
+                                                                        </label>
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="combatVet" id="combat-vet-no" value="No" title="Press enter to select, to view next option use arrow keys."> No
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="control form-group radio-control">
+                                                                        <p class="faux-label">Agent Orange Exposure</p>
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="agentOrange" id="agent-orange-yes" value="Yes" title="Press enter to select, to view next option use arrow keys."> Yes
+                                                                        </label>
+                                                                        <label class="radio-inline">
+                                                                            <input type="radio" name="agentOrange" id="agent-orange-no" value="No" title="Press enter to select, to view next option use arrow keys."> No
+                                                                        </label>
+                                                                    </div>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end service connected section-->
+
+                                            <div class="row bottom-pad-xs">
+                                                <div class="col-xs-12">
+                                                    <h5>Visit Type</h5>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-8 left-pad-md">
+                                                    <div class="control form-group">
+                                                        <div class="row">
+                                                            <div class="col-xs-4 right-pad-xs">
+                                                                <label for="typeOfVisit" class="sr-only">Type of Visit</label>
+                                                                <select class="form-control open-select" name="diagnosesSection" title="Press up and down arrow keys to view options. Press enter to select." size="13" id="typeOfVisit">
+                                                                    <option value="Consultation" selected>Consultation</option>
+                                                                    <option value="New Patient">New Patient</option>
+                                                                    <option value="Established Patient">Established Patient</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-xs-8 left-pad-xs right-pad-xs">
+                                                                <div class="well read-only-well">
+                                                                    <fieldset class="control form-group scroll checklist-control">
+                                                                        <legend>Consultation</legend>
+                                                                        <div class="childView-container">
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="visitListItem1">
+                                                                                        <input type="checkbox" checked value="option1" name="visitList" title="Press tab to view options. Press spacebar to select." id="visitListItem1" /> Intermediate (30min)
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="visitListItem2">
+                                                                                        <input type="checkbox" value="option2" name="visitList" title="Press tab to view options. Press spacebar to select." id="visitListItem2" /> Extended (40min)
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="control form-group">
+                                                                                <div class="checkbox">
+                                                                                    <label for="visitListItem3">
+                                                                                        <input type="checkbox" value="option3" name="visitList" title="This option is already selected and cannot be unselected" id="visitListItem3" /> Comprehensive (1hr)
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <div class="control form-group">
+                                                        <div id="popoverButtonRegion">
+                                                            <div class="control visible-inline popover-control add-visit-modifiers-popover">
+                                                                <button type="button" class="btn btn-default btn-sm btn-block" title="Press enter to add modifier">Add Modifiers&hellip;</button>
+                                                            </div>
+                                                        </div>
+                                                        <div id="popoverContentRegion">
+                                                            <div class="hidden popover-control add-visit-modifiers-popover">
+                                                                <div class="row section-add-modifiers">
+                                                                    <div class="col-xs-12">
+                                                                        <div class="row control multiselectSideBySide-control availableVistModifiers">
+                                                                            <div class="mssbs">
+                                                                                <div class="available-modifiers-region col-md-6">
+                                                                                    <div class="availableVistModifiers">
+                                                                                        <div class="panel panel-default panel-w-list-group">
+                                                                                            <div class="panel-heading">
+                                                                                                <div class="mssbs-header">
+                                                                                                    Available Modifiers
+                                                                                                </div>
+                                                                                                <div class="mssbs-input">
+                                                                                                    <div class="control form-group">
+                                                                                                        <label for="available-Modifiers-modifiers-filter-results" class="sr-only">Filter</label>
+                                                                                                        <input id="available-Modifiers-modifiers-filter-results" type="text" class="form-control input-sm filter" name="available-Modifiers-filter" title="Enter text to filter the Available Modifiers results" placeholder="Filter Results">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <ul class="list-group childView-container">
+                                                                                                <li class="list-group-item">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-md-11 col-xs-11">Modifier name</div>
+                                                                                                        <div class="col-md-1 col-xs-1">
+                                                                                                            <button type="button" class="btn icon-btn icon-btn-mini checked-false" title="Press enter to add Modifier name."><i class="fa fa-plus"></i></button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                                <li class="list-group-item">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-md-11 col-xs-11">Modifier name</div>
+                                                                                                        <div class="col-md-1 col-xs-1">
+                                                                                                            <button type="button" class="btn icon-btn icon-btn-mini checked-false" title="Press enter to add Modifier name."><i class="fa fa-plus"></i></button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                                <li class="list-group-item">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-md-11 col-xs-11">Modifier name</div>
+                                                                                                        <div class="col-md-1 col-xs-1">
+                                                                                                            <button type="button" class="btn icon-btn icon-btn-mini checked-false" title="Press enter to add Modifier name."><i class="fa fa-plus"></i></button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                                <li class="list-group-item">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-md-11 col-xs-11">Modifier name</div>
+                                                                                                        <div class="col-md-1 col-xs-1">
+                                                                                                            <button type="button" class="btn icon-btn icon-btn-mini checked-false" title="Press enter to add Modifier name."><i class="fa fa-plus"></i></button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                                <li class="list-group-item">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-md-11 col-xs-11">Modifier name</div>
+                                                                                                        <div class="col-md-1 col-xs-1">
+                                                                                                            <button type="button" class="btn icon-btn icon-btn-mini checked-false" title="Press enter to add Modifier name."><i class="fa fa-plus"></i></button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                                <li class="list-group-item">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-md-11 col-xs-11">Modifier name</div>
+                                                                                                        <div class="col-md-1 col-xs-1">
+                                                                                                            <button type="button" class="btn icon-btn icon-btn-mini checked-false" title="Press enter to add Modifier name."><i class="fa fa-plus"></i></button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                                <li class="list-group-item">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-md-11 col-xs-11">Modifier name</div>
+                                                                                                        <div class="col-md-1 col-xs-1">
+                                                                                                            <button type="button" class="btn icon-btn icon-btn-mini checked-false" title="Press enter to add Modifier name."><i class="fa fa-plus"></i></button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="selected-modifiers-region col-md-6">
+                                                                                    <div class="availableVistModifiers">
+                                                                                        <div class="panel panel-default panel-w-list-group">
+                                                                                            <div class="panel-heading">
+                                                                                                <div class="mssbs-header">
+                                                                                                    Selected Modifiers
+                                                                                                </div>
+                                                                                                <div class="mssbs-input">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <ul class="list-group childView-container">
+                                                                                                <li class="list-group-item">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-md-11 col-xs-11">Modifier name</div>
+                                                                                                        <div class="col-md-1 col-xs-1">
+                                                                                                            <button type="button" class="btn icon-btn icon-btn-mini checked-true" title="Press enter to remove Modifier name."><i class="fa fa-times-circle"></i></button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                                <li class="list-group-item">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-md-11 col-xs-11">Modifier name</div>
+                                                                                                        <div class="col-md-1 col-xs-1">
+                                                                                                            <button type="button" class="btn icon-btn icon-btn-mini checked-true" title="Press enter to remove Modifier name."><i class="fa fa-times-circle"></i></button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                                <li class="list-group-item">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-md-11 col-xs-11">Modifier name</div>
+                                                                                                        <div class="col-md-1 col-xs-1">
+                                                                                                            <button type="button" class="btn icon-btn icon-btn-mini checked-true" title="Press enter to remove Modifier name."><i class="fa fa-times-circle"></i></button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xs-12">
+                                                                        <div class="text-right">
+                                                                            <div class="control visible-inline button-control">
+                                                                                <button type="button" class="btn btn-primary btn-sm" title="Press enter to close." id="add-visit-modifiers-close-btn">Close</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="well read-only-well">
+                                                        <ul class="list-inline">
+                                                            <li>'opt Out' Phys/Pract Emerg Or Urgent Service</li>
+                                                            <li>Actual Item/Service Ordered</li>
+                                                            <li>Amcc Test For Esrd Or Mcp MD</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="mssbs">
+                                                    <div class="col-xs-6 available-modifiers-region right-pad-xs">
+                                                        <div class="providerList">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-6">
+                                                                            <h6>Available Providers</h6>
+                                                                        </div>
+                                                                        <div class="col-xs-6">
+                                                                            <div class="control form-group">
+                                                                                <label for="available-Providers-modifiers-filter-results" class="sr-only">Filter</label>
+                                                                                <input id="available-Providers-modifiers-filter-results" type="text" class="form-control input-sm filter" name="available-Providers-filter" title="Enter text to filter available providers" placeholder="Filter Results">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="list-group">
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, One</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to add provider"><i class="fa fa-plus"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, Two</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to add provider"><i class="fa fa-plus"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, Three</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to add provider"><i class="fa fa-plus"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, Four</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to add provider"><i class="fa fa-plus"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, Five</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to add provider"><i class="fa fa-plus"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, Six</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to add provider"><i class="fa fa-plus"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, Seven</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to add provider"><i class="fa fa-plus"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, Eight</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to add provider"><i class="fa fa-plus"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, Nine</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to add provider"><i class="fa fa-plus"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, Ten</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to add provider"><i class="fa fa-plus"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6 selected-modifiers-region left-pad-xs">
+                                                        <div class="providerList">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-6">
+                                                                            <h6>Selected Providers</h6>
+                                                                        </div>
+                                                                        <div class="col-xs-6">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="list-group">
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, One (Primary)</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to remove provider"><i class="fa fa-times-circle"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, Two</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to remove provider"><i class="fa fa-times-circle"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <div class="row">
+                                                                            <div class="col-md-11 col-xs-11">Vehu, Three</div>
+                                                                            <div class="col-md-1 col-xs-1">
+                                                                                <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to remove provider"><i class="fa fa-times-circle"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-6">
+                                                    <div class="form-group control">
+                                                        <label for="primary-provider">Primary provider</label>
+                                                        <select class="form-control" name="options" title="Press up and down arrow keys to view options. Press enter to select." id="primary-provider">
+                                                            <option> </option>
+                                                            <option>Vehu, One</option>
+                                                            <option>Vehu, Two</option>
+                                                            <option>Vehu, Three</option>
+                                                            <option>Vehu, Four</option>
+                                                            <option>Vehu, Five</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end visit type section-->
+
+                                            <div class="row bottom-pad-xs">
+                                                <div class="col-xs-12">
+                                                    <h5>Procedure</h5>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-11">
+                                                    <div class="row">
+                                                        <div class="col-xs-3 left-pad-md right-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="procedureSection" class="sr-only">Procedure Section</label>
+                                                                <select class="form-control open-select" name="procedureSection" title="Press up and down arrow keys to view options. Press enter to select." size="13" id="procedureSection">
+                                                                    <option value="Cardiac Cath Lab Procedure" selected>Cardiac Cath Lab Procedure</option>
+                                                                    <option value="Intervent Procedures">Intervent Procedures</option>
+                                                                    <option value="EP Procedures">EP Procedures</option>
+                                                                    <option value="Peripheral Diagnostic Procedures">Peripheral Diagnostic Procedures</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-9 left-pad-xs">
+                                                            <div class="well read-only-well">
+                                                                <fieldset class="control form-group scroll checklist-control">
+                                                                    <legend>Cardiac Cath Lab Procedure</legend>
+                                                                    <div class="childView-container">
+                                                                        <div class="control form-group">
+                                                                            <div class="checkbox">
+                                                                                <label for="procedureListItem1">
+                                                                                    <input type="checkbox" checked value="Coronary Angiogram" name="procedureList" title="Press tab to view options. Press spacebar to select." id="procedureListItem1" /> Coronary Angiogram
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="control form-group">
+                                                                            <div class="checkbox">
+                                                                                <label for="procedureListItem2">
+                                                                                    <input type="checkbox" value="Heart Cath For Monitoring" name="procedureList" title="Press tab to view options. Press spacebar to select." id="procedureListItem2" /> Heart Cath For Monitoring
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="control form-group">
+                                                                            <div class="checkbox">
+                                                                                <label for="procedureListItem3">
+                                                                                    <input type="checkbox" value="IMA Angiogram" name="procedureList" title="Press tab to view options. Press spacebar to select." id="procedureListItem3" /> IMA Angiogram
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="control form-group">
+                                                                            <div class="checkbox">
+                                                                                <label for="procedureListItem4">
+                                                                                    <input type="checkbox" value="Illiac Stent Placement" name="procedureList" title="Press tab to view options. Press spacebar to select." id="procedureListItem4" /> Illiac Stent Placement
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="control form-group">
+                                                                            <div class="checkbox">
+                                                                                <label for="procedureListItem5">
+                                                                                    <input type="checkbox" value="Above w/radiology interp" name="procedureList" title="Press tab to view options. Press spacebar to select." id="procedureListItem5" /> Above w/radiology interp
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </fieldset>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-1">
+                                                    <button type="button" class="btn btn-default btn-sm offset-btn" data-toggle="popover" title="Press enter to add other procedure." data-content="">Add Other</button>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="ftar-container">
+                                                        <div class="sr-only">This table represents Selected Diagnoses catagorized by Diagnosis, Comments, Add to CL, and Primary.</div>
+                                                        <div class="main-header">
+                                                            <div class="percent-width-55">
+                                                                <div>Selected Procedures</div>
+                                                            </div>
+                                                            <div class="percent-width-8 text-center">
+                                                                <div>Comments</div>
+                                                            </div>
+                                                            <div class="percent-width-8 text-center">
+                                                                <div>Quantity</div>
+                                                            </div>
+                                                            <div class="percent-width-14 text-center">
+                                                                <div>Provider</div>
+                                                            </div>
+                                                            <div class="percent-width-10 text-center">
+                                                                <div>Add Modifiers</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-container panel-group small ftar" id="accordion2" role="tablist" aria-multiselectable="true">
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading" role="tab" id="headingOne">
+                                                                    <div class="panel-title">
+                                                                        <p>No Procedure Selected (this will only appear if no procedure is selected)</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading" role="tab" id="headingThree">
+                                                                    <div class="panel-title">
+                                                                        <div class="sr-only no-display">
+                                                                            <span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span>
+                                                                        </div>
+                                                                        <div class="percent-width-55">
+                                                                            <span>Item 12345 - modifier name, another modifier name, another&hellip;</span>
+                                                                        </div>
+                                                                        <div class="percent-width-8 text-center">
+                                                                            <a title="Press enter to add a comment" data-toggle="collapse" href="#proceduresOne" aria-expanded="true" aria-controls="proceduresOne">Add</a>
+                                                                        </div>
+                                                                        <div class="percent-width-8 text-center">
+                                                                            <div class="control form-group">
+                                                                                <label for="quantity1" class="sr-only">Quanity</label>
+                                                                                <input class="form-control percent-width-40 center-margin" type="text" title="Enter in numeric value" placeholder="1" id="quantity1" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="percent-width-14">
+                                                                            <div class="control form-group">
+                                                                                <label for="procedure-provider1" class="sr-only">Select Provider</label>
+                                                                                <select class="form-control percent-width-90 no-margin" name="options" title="To view options, use the up and down arrow keys and press enter to select" id="procedure-provider1">
+                                                                                    <option value="">Select a provider</option>
+                                                                                    <option value="provider">Select Provider</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <div class="control form-group">
+                                                                                <a href="#" data-toggle="popover" title="Press enter to add modifier" data-placement="left" data-content="<div class='row'>
+                                                                                        <div class='mssbs'>
+                                                                                            <div class='col-md-6'>
+                                                                                                <div class='panel panel-default panel-w-list-group'>
+                                                                                                    <div class='panel-heading'>
+                                                                                                        <div class='mssbs-header'>
+                                                                                                            Available Modifiers
+                                                                                                        </div>
+                                                                                                        <div class='mssbs-input'>
+                                                                                                            <div class='control form-group'>
+                                                                                                                <label for='available-modifiers-filter-results' class='sr-only'>Filter Results</label>
+                                                                                                                <input id='available-modifiers-filter-results' class='form-control' type='text' name='name' title='Please enter in a filter' placeholder='Filter Results' />
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <ul class='list-group'>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Modifier name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Modifier name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Modifier name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Modifier name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Modifier name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class='col-md-6'>
+                                                                                                <div class='panel panel-default panel-w-list-group'>
+                                                                                                    <div class='panel-heading'>
+                                                                                                        <div class='mssbs-header'>
+                                                                                                            Selected Modifiers
+                                                                                                        </div>
+                                                                                                        <div class='mssbs-input'>
+                                                                                                            <div class='control form-group'>
+                                                                                                                <label for='available-modifiers-filter-results' class='sr-only'>Filter Results</label>
+                                                                                                                <input id='available-modifiers-filter-results' class='form-control' type='text' name='name' title='Please enter in a filter' placeholder='Filter Results' />
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <ul class='list-group'>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Selected name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Selected name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Selected name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Selected name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Selected name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class='text-right'>
+                                                                                        <button type='button' class='btn btn-primary btn-sm' title='Press enter to cancel'>Cancel</button>
+                                                                                        <button type='button' class='btn btn-primary btn-sm' title='Press enter to add'>Add</button>
+                                                                                    </div>">Add Modifiers&hellip;</a>
+                                                                                <div class="modal fade" id="procedureProvider1Modal" aria-hidden="true">
+                                                                                    <div class="modal-dialog modal-dialog-backdrop">
+                                                                                        <div class="modal-content">
+                                                                                            <div class="modal-header">
+                                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Press enter to close."><span aria-hidden="true">×</span></button>
+                                                                                                <h4 class="modal-title" id="procedureProvider1Label">Add Modifiers</h4>
+                                                                                            </div>
+                                                                                            <div class="modal-body">
+                                                                                                <div class="control form-group">
+                                                                                                    <div class="form-group" role="application">
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-md-6">
+                                                                                                                <div class="panel panel-default panel-w-list-group">
+                                                                                                                    <div class="panel-heading">
+                                                                                                                        Available Modifiers
+                                                                                                                    </div>
+                                                                                                                    <ul class="list-group">
+                                                                                                                        <li class="list-group-item">
+                                                                                                                            <div class="row">
+                                                                                                                                <div class="col-xs-10">
+                                                                                                                                    Modifier name
+                                                                                                                                </div>
+                                                                                                                                <div class="col-xs-2">
+                                                                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="list-group-item">
+                                                                                                                            <div class="row">
+                                                                                                                                <div class="col-xs-10">
+                                                                                                                                    Modifier name
+                                                                                                                                </div>
+                                                                                                                                <div class="col-xs-2">
+                                                                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="list-group-item">
+                                                                                                                            <div class="row">
+                                                                                                                                <div class="col-xs-10">
+                                                                                                                                    Modifier name
+                                                                                                                                </div>
+                                                                                                                                <div class="col-xs-2">
+                                                                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="list-group-item">
+                                                                                                                            <div class="row">
+                                                                                                                                <div class="col-xs-10">
+                                                                                                                                    Modifier name
+                                                                                                                                </div>
+                                                                                                                                <div class="col-xs-2">
+                                                                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="list-group-item">
+                                                                                                                            <div class="row">
+                                                                                                                                <div class="col-xs-10">
+                                                                                                                                    Modifier name
+                                                                                                                                </div>
+                                                                                                                                <div class="col-xs-2">
+                                                                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                    </ul>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="col-md-6">
+                                                                                                                <div class="panel panel-default panel-w-list-group">
+                                                                                                                    <div class="panel-heading">
+                                                                                                                        Selected Modifiers
+                                                                                                                    </div>
+                                                                                                                    <ul class="list-group">
+                                                                                                                        <li class="list-group-item">
+                                                                                                                            <div class="row">
+                                                                                                                                <div class="col-xs-10">
+                                                                                                                                    Selected name
+                                                                                                                                </div>
+                                                                                                                                <div class="col-xs-2">
+                                                                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="list-group-item">
+                                                                                                                            <div class="row">
+                                                                                                                                <div class="col-xs-10">
+                                                                                                                                    Selected name
+                                                                                                                                </div>
+                                                                                                                                <div class="col-xs-2">
+                                                                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="list-group-item">
+                                                                                                                            <div class="row">
+                                                                                                                                <div class="col-xs-10">
+                                                                                                                                    Selected name
+                                                                                                                                </div>
+                                                                                                                                <div class="col-xs-2">
+                                                                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="list-group-item">
+                                                                                                                            <div class="row">
+                                                                                                                                <div class="col-xs-10">
+                                                                                                                                    Selected name
+                                                                                                                                </div>
+                                                                                                                                <div class="col-xs-2">
+                                                                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                        <li class="list-group-item">
+                                                                                                                            <div class="row">
+                                                                                                                                <div class="col-xs-10">
+                                                                                                                                    Selected name
+                                                                                                                                </div>
+                                                                                                                                <div class="col-xs-2">
+                                                                                                                                    <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </li>
+                                                                                                                    </ul>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="modal-footer">
+                                                                                                <button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to cancel">Cancel</button>
+                                                                                                <button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to add">Add</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="btn-remove">
+                                                                            <button class="btn icon-btn icon-btn-mini" type="button" title="Press enter to remove"><i class="fa fa-times-circle"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="proceduresOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                                    <div class="panel-body">
+                                                                        <div class="comment-box">
+                                                                            <div class="faux-table-container">
+                                                                                <div class="faux-table no-margin">
+                                                                                    <div class="body">
+                                                                                        <div class="table-row">
+                                                                                            <div>
+                                                                                                <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                                                                            </div>
+                                                                                            <div class="pixel-width-67 text-right">
+                                                                                                <span>
+                                                                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                                                                    </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="table-row">
+                                                                                            <div>
+                                                                                                <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                                                                            </div>
+                                                                                            <div class="pixel-width-67 text-right">
+                                                                                                <span>
+                                                                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                                                                    </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="comment">
+                                                                                <div class="form-group col-xs-10">
+                                                                                    <label for="procedure-comment1" class="sr-only">Comment</label>
+                                                                                    <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="procedure-comment1" />
+                                                                                    <span class="help-block">60 characters remaining&hellip;</span>
+                                                                                    <label for="procedure-comment11" class="sr-only hidden">Comment</label>
+                                                                                    <input class="form-control hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="procedure-comment11" />
+                                                                                    <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <div class="col-xs-6 hidden">
+                                                                                        <button type="button" class="btn btn-default btn-xs" title="Press enter to cancel">Cancel</button>
+                                                                                    </div>
+                                                                                    <div class="col-xs-6 hidden">
+                                                                                        <button type="button" class="btn btn-default btn-xs" title="Press enter to save comment">Save</button>
+                                                                                    </div>
+                                                                                    <div class="col-xs-6">
+                                                                                        <button type="button" class="btn btn-default btn-xs" title="Press enter to add a comment">Add Comment</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading" role="tab" id="headingFour">
+                                                                    <div class="panel-title">
+                                                                        <div class="sr-only no-display"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                                                                        <div class="percent-width-55">
+                                                                            <span>Item 67890 - modifier name, another modifier name, another&hellip;</span>
+                                                                        </div>
+                                                                        <div class="percent-width-8 text-center">
+                                                                            <a class="btn icon-btn" data-toggle="collapse" href="#proceduresTwo" aria-expanded="true" aria-controls="proceduresTwo" title="Press enter to view comments"><i class="fa fa-file-text"></i></a>
+                                                                        </div>
+                                                                        <div class="percent-width-8 text-center">
+                                                                            <div class="control form-group">
+                                                                                <label for="quantity2" class="sr-only">Quanity</label>
+                                                                                <input class="form-control percent-width-40 center-margin" type="text" title="Enter in numeric value" placeholder="1" id="quantity2" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="percent-width-14">
+                                                                            <div class="control form-group">
+                                                                                <label for="procedure-provider2" class="sr-only">Select Provider</label>
+                                                                                <select class="form-control percent-width-90 no-margin" name="options" title="Use up and down arrow keys to view options and press enter to select" id="procedure-provider2">
+                                                                                    <option value="">Select a provider</option>
+                                                                                    <option value="provider">Select Provider</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <div class="control form-group">
+                                                                                <a href="#" data-toggle="popover" title="Press enter to add modifiers" data-placement="left" data-content="<div class='row'>
+                                                                                        <div class='mssbs'>
+                                                                                            <div class='col-md-6'>
+                                                                                                <div class='panel panel-default panel-w-list-group'>
+                                                                                                    <div class='panel-heading'>
+                                                                                                        <div class='mssbs-header'>
+                                                                                                            Available Modifiers
+                                                                                                        </div>
+                                                                                                        <div class='mssbs-input'>
+                                                                                                            <div class='control form-group'>
+                                                                                                                <label for='available-modifiers-filter-results' class='sr-only'>Filter Results</label>
+                                                                                                                <input id='available-modifiers-filter-results' class='form-control' type='text' name='name' title='Please enter in a filter' placeholder='Filter Results' />
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <ul class='list-group'>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Modifier name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Modifier name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Modifier name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Modifier name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Modifier name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class='col-md-6'>
+                                                                                                <div class='panel panel-default panel-w-list-group'>
+                                                                                                    <div class='panel-heading'>
+                                                                                                        <div class='mssbs-header'>
+                                                                                                            Selected Modifiers
+                                                                                                        </div>
+                                                                                                        <div class='mssbs-input'>
+                                                                                                            <div class='control form-group'>
+                                                                                                                <label for='available-modifiers-filter-results' class='sr-only'>Filter Results</label>
+                                                                                                                <input id='available-modifiers-filter-results' class='form-control' type='text' name='name' title='Please enter in a filter' placeholder='Filter Results' />
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <ul class='list-group'>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Selected name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Selected name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Selected name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Selected name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        <li class='list-group-item'>
+                                                                                                            <div class='row'>
+                                                                                                                <div class='col-md-11 col-xs-11'>
+                                                                                                                    Selected name
+                                                                                                                </div>
+                                                                                                                <div class='col-md-1 col-xs-1'>
+                                                                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class='text-right'>
+                                                                                        <button type='button' class='btn btn-primary btn-sm' title='Press enter to cancel'>Cancel</button>
+                                                                                        <button type='button' class='btn btn-primary btn-sm' title='Press enter to add'>Add</button>
+                                                                                    </div>">Add Modifiers&hellip;</a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="btn-remove">
+                                                                            <button class="btn icon-btn icon-btn-mini" type="button" title="Press enter to remove"><i class="fa fa-times-circle"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="proceduresTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                                                    <div class="panel-body">
+                                                                        <div class="comment-box">
+                                                                            <div class="faux-table-container">
+                                                                                <div class="faux-table no-margin">
+                                                                                    <div class="body">
+                                                                                        <div class="table-row">
+                                                                                            <div>
+                                                                                                <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                                                                            </div>
+                                                                                            <div class="pixel-width-67 text-right">
+                                                                                                <span>
+                                                                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                                                                    </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="table-row">
+                                                                                            <div>
+                                                                                                <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                                                                            </div>
+                                                                                            <div class="pixel-width-67 text-right">
+                                                                                                <span>
+                                                                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                                                                    </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="comment">
+                                                                                <div class="form-group col-xs-10">
+                                                                                    <label for="procedure-comment2" class="sr-only">Comment</label>
+                                                                                    <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="procedure-comment2" />
+                                                                                    <span class="help-block">60 characters remaining&hellip;</span>
+                                                                                    <label for="procedure-comment22" class="sr-only hidden">Comment</label>
+                                                                                    <input class="form-control hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="procedure-comment22" />
+                                                                                    <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                                                                </div>
+                                                                                <div class="col-xs-2">
+                                                                                    <div class="col-xs-6">
+                                                                                        <button type="button" class="btn btn-default btn-xs" title="Press enter to cancel">Cancel</button>
+                                                                                    </div>
+                                                                                    <div class="col-xs-6">
+                                                                                        <button type="button" class="btn btn-default btn-xs" title="Press enter to save comment">Save</button>
+                                                                                    </div>
+                                                                                    <div class="col-xs-6 hidden">
+                                                                                        <button type="button" class="btn btn-default btn-xs" title="Press enter to add a comment">Add Comment</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end procedure section-->
+
+                                        </div><!--end scroll-enter-form-->
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!--end workflow-controller-->
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <p aria-hidden="true">(* indicates as a required field.)</p>
+                                    <p><span id="immunization-historical-saved-at">Saved at 08:27</span></p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="control control-button visible-inline">
+                                         <button type="button" class="btn btn-primary btn-sm" title="Press enter to cancel">Cancel</button>
+                                    </div>
+                                    <div class="control control-button visible-inline">
+                                        <button type="submit" class="btn btn-primary btn-sm" title="Press enter to submit">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/typeahead.js"></script>
+    <script>
+    $(function() {
+        $('[data-toggle="popover"]').popover({
+            html: true
+        });
+    });
+    </script>
+</body>
+</html>

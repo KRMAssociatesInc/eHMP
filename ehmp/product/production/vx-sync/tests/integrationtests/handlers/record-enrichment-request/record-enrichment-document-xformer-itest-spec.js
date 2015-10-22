@@ -13,6 +13,7 @@ var vx_sync_ip = require(global.VX_INTTESTS + 'test-config');
 var config = require(global.VX_ROOT + 'worker-config');
 config.terminology.host = vx_sync_ip;
 
+var TerminologyUtil = require(global.VX_SUBSYSTEMS + 'terminology/terminology-utils');
 var val = require(global.VX_UTILS + 'object-utils').getProperty;
 var xformer = require(global.VX_HANDLERS + 'record-enrichment-request/record-enrichment-document-xformer');
 var log = require(global.VX_UTILS + '/dummy-logger');
@@ -132,21 +133,20 @@ var originalDodDocumentRecord = {
 var originalDodDocumentJob = {
     record: originalDodDocumentRecord
 };
-var jdsCodedDodValue = {
-    code: '11488-4',
-    display: 'Consultation Note (Provider) Document',
-    system: 'http://loinc.org'
-};
+var jdsCodedDodValue = { system : 'http://loinc.org', code : '11488-4', display : null };
 
+var terminologyUtil = new TerminologyUtil(log, log, config);
 describe('record-enrichment-document-xformer.js', function() {
     describe('transformAndEnrichRecord()', function() {
         it('Happy Path with VA Allergy', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: terminologyUtil
+            };
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalVaDocumentJob, function(error, record) {
+                xformer(log, config, environment, originalVaDocumentJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 
@@ -165,11 +165,13 @@ describe('record-enrichment-document-xformer.js', function() {
         });
         it('Happy Path with Dod Allergy', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: terminologyUtil
+            };
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalDodDocumentJob, function(error, record) {
+                xformer(log, config, environment, originalDodDocumentJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 

@@ -17,6 +17,7 @@ class ConditionsGist <  ADKContainer
     add_action(CucumberLabel.new("Hx Occurrence Header"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=problems] #problems-event-gist #count-header1"))
     add_action(CucumberLabel.new("Last Header"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=problems] #problems-event-gist #count-header2"))
     add_action(CucumberLabel.new("Manic Disorder"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=problems] .gistItem:nth-child(3) .col-sm-6.quickDraw.selectable.info-display.noPadding"))
+    add_verify(CucumberLabel.new("No Records Found"), VerifyText.new, AccessHtmlElement.new(:css, "[data-appletid=problems] .emptyGistList"))
 
     #Chronic sinusitiscol-sm-6 quickDraw selectable info-display noPadding
     add_action(CucumberLabel.new("Chronic sinusitis"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=problems] .gistItem:nth-child(2) .col-sm-6.quickDraw.selectable.border-vertical.info-display.noPadding"))
@@ -24,8 +25,8 @@ class ConditionsGist <  ADKContainer
     
     
     #menu  
-    add_action(CucumberLabel.new("Quick View Icon"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=problems] div.toolbarActive #quick-look-button-toolbar"))
-    add_action(CucumberLabel.new("Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=problems] div.toolbarActive #detailView-button-toolbar"))
+    add_action(CucumberLabel.new("Quick View Icon"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=problems] div.toolbarActive [button-type=quick-look-button-toolbar]"))
+    add_action(CucumberLabel.new("Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=problems] div.toolbarActive [button-type=detailView-button-toolbar]"))
     
     # START COMMENT
     # originally these buttons were found through css selectors.
@@ -34,9 +35,9 @@ class ConditionsGist <  ADKContainer
     #     a. laptop terminal against laptop vms with browser phantomjs
     #     b. laptop terminal against jenkins acc test job url with browser phantomjs
     manic_disorder_xpath = "//*[@id='event_urn_va_problem_9E7A_711_141']"
-    applet_toolbar_xpath = "preceding-sibling::div[@class='appletToolbar']"
-    add_action(CucumberLabel.new("Mainic Disorder Quick View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{manic_disorder_xpath}/#{applet_toolbar_xpath}/descendant::*[@id='quick-look-button-toolbar']"))
-    add_action(CucumberLabel.new("Mainic Disorder Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{manic_disorder_xpath}/#{applet_toolbar_xpath}/descendant::*[@id='detailView-button-toolbar']"))
+    applet_toolbar_xpath = "/preceding-sibling::div[@class='toolbarContainer']/div[@class='appletToolbar']"
+    add_action(CucumberLabel.new("Mainic Disorder Quick View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{manic_disorder_xpath}/#{applet_toolbar_xpath}/descendant::*[@button-type='quick-look-button-toolbar']"))
+    add_action(CucumberLabel.new("Mainic Disorder Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{manic_disorder_xpath}/#{applet_toolbar_xpath}/descendant::*[@button-type='detailView-button-toolbar']"))
     # END COMMENT
   end
 end 
@@ -104,7 +105,7 @@ Then(/^the conditions gist detail view contains$/) do |table|
   aa = ProblemList.instance
   expect(@cg.wait_until_action_element_visible("ConditionsGridVisible", DefaultLogin.wait_time)).to be_true
     
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification(row[0] + " - Problem", row[0])).to be_true, "The value #{row[0]} is not present in the conditions gist"
     expect(aa.perform_verification(row[0] + " - Acuity", row[1])).to be_true, "The value #{row[1]} is not present in the conditions gist"
     expect(aa.perform_verification(row[0] + " - Occurrence", row[2])).to be_true, "The value #{row[2]} is not present in the conditions gist"
@@ -116,7 +117,7 @@ Then(/^the conditions gist detail view has headers$/) do |table|
   
   expect(@cg.wait_until_action_element_visible("ConditionsGridVisible", DefaultLogin.wait_time)).to be_true
     
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(@cg.perform_verification('conditions column header', row[0])).to be_true, "The value #{row[0]} is not present in the conditions detail headers"
   end
 end
@@ -149,7 +150,7 @@ Then(/^it should show the detail modal of the most recent for this problem$/) do
   expect(@cg.wait_until_action_element_visible("Main Modal Label", DefaultLogin.wait_time)).to be_true
 end
 
-When(/^user clicks on the column header "(.*?)" in Conditions Gist$/) do | name_column_header |
+When(/^user clicks on the column header "(.*?)" in Conditions Gist$/) do |name_column_header|
   expect(@cg.wait_until_action_element_visible("ConditionsGridVisible", DefaultLogin.wait_time)).to be_true
   expect(@cg.perform_action(name_column_header + " Header", "")).to be_true
 end
@@ -171,9 +172,9 @@ Then(/^"(.*?)" column is sorted in ascending order in Conditions Gist$/) do |col
     fail "**** No function found! Check your script ****"
   end
   
-  element_column_values.each do | row |
-#    print "selenium data ----"
-#    p row.text   
+  element_column_values.each do |row|
+    #    print "selenium data ----"
+    #    p row.text   
     if column_name == "Hx Occurrence"
       column_values_array << row.text.downcase.to_i
     else
@@ -181,8 +182,8 @@ Then(/^"(.*?)" column is sorted in ascending order in Conditions Gist$/) do |col
     end
     
   end
-#  print "sorted data -----"
-#  p column_values_array.sort { |x, y| x <=> y }    
+  #  print "sorted data -----"
+  #  p column_values_array.sort { |x, y| x <=> y }    
   (column_values_array == column_values_array.sort { |x, y| x <=> y }).should == true
 end
 
@@ -202,9 +203,9 @@ Then(/^"(.*?)" column is sorted in descending order in Conditons Gist$/) do |col
     fail "**** No function found! Check your script ****"
   end
      
-  element_column_values.each do | row |
-#    print "selenium data ----"
-#    p row.text
+  element_column_values.each do |row|
+    #    print "selenium data ----"
+    #    p row.text
     if column_name == "Hx Occurrence"
       column_values_array << row.text.downcase.to_i
     else
@@ -215,17 +216,34 @@ Then(/^"(.*?)" column is sorted in descending order in Conditons Gist$/) do |col
   (column_values_array == column_values_array.sort { |x, y| y <=> x }).should == true
 end
 
-Then(/^Last column is sorted in "(.*?)" order in Conditions Gist$/) do |arg1, table|
+Then(/^Last column is sorted in "(.*?)" order in Conditions Gist$/) do |_arg1|
   driver = TestSupport.driver
   expect(@cg.wait_until_action_element_visible("ConditionsGridVisible", DefaultLogin.wait_time)).to be_true
   element_column_values = driver.find_elements(css: '#problems-event-gist-items div.eventsTimeSince.counter2.text-center')
   column_values_array = []
-  element_column_values.each do | row |
-    column_values_array << row.text.downcase
+  element_column_values.each do |row|
+    #column_values_array << row.text.downcase
+    column_values_array << (/\d+/.match(row.text.downcase)).to_s
   end
+  p column_values_array
   
-  cucumber_array = table.headers  
-  (column_values_array == cucumber_array).should == true
+  if _arg1.eql?('descending')
+    p 'check ascending'
+    higher_placement = column_values_array[0].to_i
+    column_values_array.each do |year|
+      lower_placement = year.to_i
+      expect(higher_placement).to be >= lower_placement, "#{higher_placement} is not >= #{lower_placement}"
+    end
+  else
+    p 'check descending'
+    higher_placement = column_values_array[0].to_i
+    column_values_array.each do |year|
+      lower_placement = year.to_i
+      expect(higher_placement).to be <= lower_placement, "#{higher_placement} is not <= #{lower_placement}"
+    end
+  end
+  #cucumber_array = table.headers  
+  #(column_values_array == cucumber_array).should == true
 end
 
 Then(/^a Menu appears on the Conditions Gist$/) do
@@ -247,7 +265,7 @@ end
 
 Then(/^the Conditions Gist Applet table contains headers$/) do |table|
   headers = ConditionsGistHeaders.instance
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(headers.perform_verification(row[0], row[0])).to be_true
   end
 end
@@ -277,3 +295,44 @@ Then(/^user selects the "(.*?)" quick view icon in Conditions Gist$/) do |arg1|
   p label
   expect(@cg.perform_action(label)).to be_true
 end
+
+Then(/^"(.*?)" message is displayed in Conditions Gist$/) do |no_records_message|
+  expect(@cg.wait_until_action_element_visible("ConditionsGridVisible", DefaultLogin.wait_time)).to be_true
+  expect(@cg.perform_verification(no_records_message, no_records_message))
+end
+
+When(/^hovering over the "(.*?)" side of the tile "(.*?)"$/) do |direction, _problem_text|
+  
+  driver = TestSupport.driver
+  expect(@cg.wait_until_action_element_visible("ConditionsGridVisible", DefaultLogin.wait_time)).to be_true
+  wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
+       
+  case direction
+  when 'right'
+    hover = wait.until { driver.find_element(:css, "#quickLook_urn_va_problem_9E7A_711_139") }
+    driver.action.move_to(hover).perform 
+    p hover.css_value("background-color")    
+  when 'left'
+    hover = wait.until { driver.find_element(:css, "[data-appletid=problems] #event_urn_va_problem_9E7A_711_139 .col-sm-6.quickDraw.selectable.info-display.noPadding") }
+    driver.action.move_to(hover).perform 
+    p hover.css_value("background-color")  
+  else
+    fail "**** No function found! Check your script ****"
+  end
+end
+
+Then(/^right half of the tile "(.*?)" changes color to indicate that there are more records that can be review$/) do |_arg1|
+  driver = TestSupport.driver
+  expect(@cg.wait_until_action_element_visible("ConditionsGridVisible", DefaultLogin.wait_time)).to be_true
+  element = driver.find_element(:css, "#quickLook_urn_va_problem_9E7A_711_139")
+  p element.css_value("background-color")
+end
+
+Then(/^left half of the tile "(.*?)" changes color to indicate that the user can go to the detailed view$/) do |_arg1|
+  driver = TestSupport.driver
+  expect(@cg.wait_until_action_element_visible("ConditionsGridVisible", DefaultLogin.wait_time)).to be_true
+  element = driver.find_element(:css, "[data-appletid=problems] #event_urn_va_problem_9E7A_711_139 .col-sm-6.quickDraw.selectable.info-display.noPadding")
+  p element.css_value("background-color")
+end
+
+

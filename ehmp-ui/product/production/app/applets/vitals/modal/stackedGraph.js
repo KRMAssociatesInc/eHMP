@@ -290,7 +290,7 @@ define([
                 crosshairs: true,
                 shared: true,
                 style: {
-                    padding: 10,
+                    padding: 4,
                     zIndex: 9999
                 },
                 useHTML: true

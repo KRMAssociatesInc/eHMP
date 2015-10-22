@@ -36,7 +36,7 @@ var mockEnvironment = {
     jds: jdsClientDummy
 };
 var mockHandlerCallback = {
-    callback: function(error, response) {
+    callback: function() {
         // console.log('callback');
         // console.log(error);
         // console.log(response);
@@ -503,8 +503,17 @@ describe('jmeadows-xform-domain-vpr-handler', function() {
                         }
                     }];
 
-                    expect(jobsPublished).toEqual(expectedJobs);
+                    var jobIds = _.every(jobsPublished, function(job) {
+                        return _.has(job, 'jobId');
+                    });
 
+                    expect(jobIds).toBe(true);
+
+                    jobsPublished = _.map(jobsPublished, function(job) {
+                        delete job.jobId;
+                        return job;
+                    });
+                    expect(jobsPublished).toEqual(expectedJobs);
                 });
             });
         });
@@ -539,11 +548,11 @@ describe('jmeadows-xform-domain-vpr-handler', function() {
             });
 
             it('ensure getDemographicsIcnFromJds called', function() {
-                var done = false;
-
                 var expectedJdsResponse = [{
                     statusCode: 200,
-                }, {statusCode: 200}];
+                }, {
+                    statusCode: 200
+                }];
                 var expectedJdsResult = {
                     jpid: 'aaa-aaaaa-aaaaaaaaaaa',
                     patientIdentifiers: [
@@ -633,12 +642,12 @@ describe('jmeadows-xform-domain-vpr-handler', function() {
         });
         var vprObjects = _.map(allXformers, function(xformer) {
             return xformer({
-                accession: 'TEST ACC^ESSION',    //Labs only
-                orderDate: mockDodLabOrderDate,     //Labs only
-                resultDate: mockDodLabOrderDate,    //Labs only
-                codes: [{                       //Labs only
-                    code:'20215',
-                    system:'DOD_NCID'
+                accession: 'TEST ACC^ESSION', //Labs only
+                orderDate: mockDodLabOrderDate, //Labs only
+                resultDate: mockDodLabOrderDate, //Labs only
+                codes: [{ //Labs only
+                    code: '20215',
+                    system: 'DOD_NCID'
                 }],
                 cdrEventId: mockCdrEventId
             }, mockEdipi);
@@ -649,17 +658,16 @@ describe('jmeadows-xform-domain-vpr-handler', function() {
             var vprDomain = jmeadowsDomainsToVpr[jmeadowsDomain] || jmeadowsDomain;
             var expectUid;
 
-            if(vprDomain === 'lab') {
+            if (vprDomain === 'lab') {
                 var expectDodVprLabObserved = moment(mockDodLabOrderDate, 'x').format('YYYYMMDDHHmmss');
                 expectUid = 'urn:va:lab:DOD:00001:' + expectDodVprLabObserved + '_TEST-ACC-ESSION_20215';
-            }
-            else if(vprDomain === 'patient'){
-             expectUid = 'urn:va:' + vprDomain + ':DOD:' + mockEdipi + ':' + mockEdipi;
+            } else if (vprDomain === 'patient') {
+                expectUid = 'urn:va:' + vprDomain + ':DOD:' + mockEdipi + ':' + mockEdipi;
             } else {
-             expectUid = 'urn:va:' + vprDomain + ':DOD:' + mockEdipi + ':' + mockCdrEventId;
+                expectUid = 'urn:va:' + vprDomain + ':DOD:' + mockEdipi + ':' + mockCdrEventId;
             }
             it('Check DOD ' + jmeadowsDomain + ' to VPR transformation for correct uid', function() {
-                if(_.isArray(vprObject)) {
+                if (_.isArray(vprObject)) {
                     expect(vprObject.length).toBeGreaterThan(0);
                     expect(vprObject[0].uid).toEqual(expectUid);
                 } else {
@@ -667,7 +675,7 @@ describe('jmeadows-xform-domain-vpr-handler', function() {
                 }
             });
             it('Check DOD ' + jmeadowsDomain + ' to VPR transformation for correct pid', function() {
-                if(_.isArray(vprObject)) {
+                if (_.isArray(vprObject)) {
                     expect(vprObject.length).toBeGreaterThan(0);
                     expect(vprObject[0].pid).toEqual('DOD;' + mockEdipi);
                 } else {

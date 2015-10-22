@@ -9,7 +9,7 @@ define([
     'use strict';
 
     var rect;
-    var selectionColor = '#9AE4E6';
+    var selectionColor = '#003E4F';
 
     return {
         chartConfig: {

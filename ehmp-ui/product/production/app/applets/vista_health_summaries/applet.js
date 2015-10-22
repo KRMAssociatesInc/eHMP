@@ -22,14 +22,17 @@ define([
     var channel = ADK.Messaging.getChannel(applet.id);
 
     channel.on('detailView', function(params) {
-        ADK.showModal(
-            new ModalView({
+        var modal = new ADK.UI.Modal({
+            view: new ModalView({
                 model: params.model,
                 navHeader: false
-            }), {
+            }),
+            options: {
                 size: "large",
                 title: params.model.get('facilityMoniker') + ' - ' + params.model.get('hsReport')
-            });
+            }
+        });
+        modal.show();
     });
 
     return applet;

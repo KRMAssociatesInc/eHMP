@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>eHMP Bootstrap UI Library - Mutable Applet</title>
+        <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+        <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+        <link rel="stylesheet" href="../../app/css/applets.css">
+        <link rel="stylesheet" href="../../css/main-styles.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700" />
+        <script src="../../js/jquery-1.11.2.min.js"></script>
+    </head>
+    <body class="library">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../../views.html">Views</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="../../color-palette.html">Color Palette</a></li>
+                                    <li><a href="#">Style Guide</a></li>
+                                </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--end navigation-->
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+                <li><a href="../../views.html">Views</a></li>
+                <li class="active">F239 - User-Defined Applet Filters</li>
+            </ol>
+            <h1>F239 - User-Defined Applet Filters</h1>
+            <div class="description">
+                <p><strong><i class="fa fa-leanpub"></i> Description:</strong> The following is a 508 compliant HTML/CSS static mock up of applets with mutable and unmutable filtering capabilities.</p>
+                <p><strong><i class="fa fa-file-text-o"></i> Documents:</strong> Please also view <a href="https://wiki.vistacore.us/pages/viewpage.action?pageId=4730691">User-Defined Applet Filters wireframe</a>, <a href="../../docs/workflow/psi7/workflow-applet.pdf">Workflow Diagram</a> <small>[PDF, 297KB]</small>, and <a href="../../docs/psi7/use-case/.pdf">Use Scenario Case Documentation</a> <small>[PDF, XXKB]</small> for full details on implementation.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <h2>Mutable Applet</h2>
+                    <div class="this-class-does-not-go-to-adk">
+                        <!-- applet code starts here -->
+                        <div class="applet-container mutable">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3>Panel Title</h3>
+                                    <p class="sr-only">Description of the information contained inside this panel</p>
+                                    <ul>
+                                        <li>
+                                            <button type="button" class="btn btn-xs btn-link applet-refresh-button " title="Press enter to refresh panel data">
+                                                <i class="fa fa-refresh"></i>
+                                                <span class="sr-only">Refresh panel data.</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="btn btn-xs btn-link applet-filter-button" title="Press enter to toggle the filter toolbar">
+                                                <i class="fa fa-filter"></i>
+                                                <span class="filter-name"></span>
+                                                <span class="sr-only">Toggle data filter toolbar.</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="btn btn-xs btn-link applet-maximize-button" title="Press enter to maximize the current applet">
+                                                <span class="fa fa-expand">
+                                                    <span class="sr-only">Maximize Applet</span>
+                                                </span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="panel-sticky-upper-area" id="stickyUpperArea-yourPanelId" aria-hidden="true">
+                                    <!-- here is where sticky stuff gets dropped by JS -->
+                                </div>
+                                <div class="panel-body">
+                                    <div id="grid-filter-yourPanelId" class="filter-toolbar">
+                                        <h4 class="sr-only">Data Filter toolbar</h4>
+                                        <form class="filter-tags-form" action="javascript:;">
+                                            <h5 class="sr-only">Keyword filtering form</h5>
+                                            <fieldset>
+                                                <legend class="sr-only">Add keywords to filter the applet data by submitting this form. You can add as many filtering keywords as you like.</legend>
+                                                <div class="input-group">
+                                                    <label for="filterInputYourPanelId" class="sr-only">Add Filter Keyword</label>
+                                                    <input id="filterInputYourPanelId" class="form-control input-sm filter-input" name="filterInputYourPanelId" placeholder="Type filter expressions" title="Type a filter expression and submit to add a filtering criteria to the dataset" required="required" autocomplete="off" />
+                                                    <span class="input-group-btn">
+                                                        <button type="submit" class="btn btn-default btn-sm">Add<span class="sr-only"> filtering keyword</span></button>
+                                                    </span>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                        <form class="filter-name-form" action="javascript:;">
+                                            <h5 class="sr-only">Filter criteria fixation form</h5>
+                                            <fieldset>
+                                                <legend class="sr-only">Use this form to give a name to your filtering criteria.</legend>
+                                                <label for="filterNameInput-yourPanelId">Filter Name:</label>
+                                                <input id="filterNameInput-yourPanelId" type="text" class="filter-name-input" placeholder="Filter Name" title="Type the desired name for your filtering criteria. It will be saved automatically as you type" autocomplete="off" />
+                                            </fieldset>
+                                        </form>
+                                        <div class="filter-tags-area">
+                                            <h5 class="sr-only">Filter Tags</h5>
+                                            <p class="sr-only">The following list contains the filter criteria of the information presented on this panel.</p>
+                                            <ul class="filter-tags"></ul>
+                                            <button class="filter-remove-all" type="button" title="Remove All Filtering Keywords"><span class="fa fa-times"></span><span class="sr-only"> Remove All Filtering Keywords</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="grid-toolbar">
+                                    </div>
+                                    <div class="grid-container">
+                                        <div class="faux-table" data-sticky-header="true">
+                                            <div class="sr-only">This faux table represents a simple faux table</div>
+                                            <div class="header sticky" data-wrapping-element="div" data-wrapping-element-class="faux-table" data-sticky-target="#stickyUpperArea-yourPanelId" data-sticky-scroller=".panel-body">
+                                                <div class="table-row">
+                                                    <div>
+                                                        <div>Header 1</div>
+                                                    </div>
+                                                    <div>
+                                                        <div>Header 2</div>
+                                                    </div>
+                                                    <div>
+                                                        <div>Header 3</div>
+                                                    </div>
+                                                    <div>
+                                                        <div>Header 4</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="body">
+                                                <div class="table-row">
+                                                    <div>
+                                                        <span>Table Content 1</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 2</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 3</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 4</span>
+                                                    </div>
+                                                </div>
+                                                <div class="table-row">
+                                                    <div>
+                                                        <span>Table Content 1</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 2</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 3</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 4</span>
+                                                    </div>
+                                                </div>
+                                                <div class="table-row">
+                                                    <div>
+                                                        <span>Table Content 1</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 2</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 3</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 4</span>
+                                                    </div>
+                                                </div>
+                                                <div class="table-row">
+                                                    <div>
+                                                        <span>Table Content 1</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 2</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 3</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 4</span>
+                                                    </div>
+                                                </div>
+                                                <div class="table-row">
+                                                    <div>
+                                                        <span>Table Content 1</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 2</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 3</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 4</span>
+                                                    </div>
+                                                </div>
+                                                <div class="table-row">
+                                                    <div>
+                                                        <span>Table Content 1</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 2</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 3</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 4</span>
+                                                    </div>
+                                                </div>
+                                                <div class="table-row">
+                                                    <div>
+                                                        <span>Table Content 1</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 2</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 3</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Table Content 4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-sticky-lower-area" aria-hidden="true">
+                                    <!-- here is where you drop info you'd like to be sticky at the bottom -->
+                                </div>
+                                <div class="grid-footer"></div>
+                            </div>
+                        </div>
+                        <!-- applet code ends here -->
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <h2>Unmutable Applet</h2>
+                    <div class="this-class-does-not-go-to-adk">
+                        <!-- applet code starts here -->
+                        <div class="applet-container unmutable">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3>Panel Title</h3>
+                                    <p class="sr-only">Description of the information contained inside this panel</p>
+                                    <h4 class="sr-only">General Actions</h4>
+                                    <ul>
+                                        <li>
+                                            <button type="button" class="applet-refresh-button btn btn-xs btn-link" title="Press enter to refresh panel data">
+                                                <i class="fa fa-refresh"></i>
+                                                <span class="sr-only">Refresh panel data.</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="applet-filter-button btn btn-xs btn-link" title="Press enter to toggle the filter toolbar">
+                                                <i class="fa fa-filter"></i>
+                                                <span class="filter-name">Diabetes</span>
+                                                <span class="sr-only">Toggle data filter toolbar.</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="applet-maximize-button btn btn-xs btn-link" title="Press enter to maximize the current applet">
+                                                <span class="fa fa-expand">
+                                                    <span class="sr-only">Maximize Applet</span>
+                                                </span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="panel-sticky-upper-area" id="stickyUpperArea-yourPanelId2" aria-hidden="true">
+                                    <!-- here is where sticky stuff gets dropped by JS -->
+                                </div>
+                                <div class="panel-body">
+                                    <div id="grid-filter-yourPanelId2" class="filter-toolbar">
+                                        <h4 class="sr-only">Data Filter toolbar</h4>
+                                        <form class="filter-form" action="javascript:;">
+                                            <h5 class="sr-only">Keyword filtering form</h5>
+                                            <fieldset>
+                                                <legend class="sr-only">Filter the current dataset by using an expression</legend>
+                                                <label for="filterInputYourPanelId2" class="sr-only">Filter Expression</label>
+                                                <input id="filterInputYourPanelId2" class="form-control input-sm filter-input-unmutable" name="filterInputYourPanelId2" placeholder="Type filter expressions" required="required" title="Enter a filter expression to narrow down the results in the dataset as you type." autocomplete="off" />
+                                            </fieldset>
+                                        </form>
+                                        <div class="filter-tags-area">
+                                            <h5 class="sr-only">Filter Tags</h5>
+                                            <p class="sr-only">The following list contains the filter criteria of the information presented on this panel.</p>
+                                            <ul class="filter-tags">
+                                                <li>keyword 1</li>
+                                                <li>keyword 2</li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="grid-toolbar">
+                                    </div>
+                                    <div class="grid-container">
+                                        <div class="faux-table" data-sticky-header="true">
+                                            <div class="sr-only">This faux table represents a simple faux table</div>
+                                            <div class="header sticky" data-wrapping-element="div" data-wrapping-element-class="faux-table" data-sticky-target="#stickyUpperArea-yourPanelId2" data-sticky-scroller=".panel-body">
+                                                <div>
+                                                    <div>
+                                                        <div>Header 1</div>
+                                                    </div>
+                                                    <div>
+                                                        <div>Header 2</div>
+                                                    </div>
+                                                    <div>
+                                                        <div>Header 3</div>
+                                                    </div>
+                                                    <div>
+                                                        <div>Header 4</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="body">
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 1</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 2</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 3</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 4</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 1</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 2</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 3</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 4</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 1</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 2</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 3</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 4</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 1</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 2</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 3</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 4</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 1</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 2</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 3</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 4</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 1</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 2</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 3</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 4</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 1</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 2</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 3</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div>
+                                                            <span>Table Content 4</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-sticky-lower-area" aria-hidden="true">
+                                    <!-- here is where you drop info you'd like to be sticky at the bottom -->
+                                </div>
+                                <div class="grid-footer"></div>
+                            </div>
+                        </div>
+                        <!-- applet code ends here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script>
+            // ze code
+            (function($) {
+                // plugin for header cell width fixation
+                $.fn.fixHeadingsWidth = function(){
+                    this.each(function(){
+                        var t = $(this);
+                        // fix header width in percentage
+                        var tableWidth = t.width();
+                        //first fix the width of the cells in percentage mode
+                        var tableArrayPx = [];
+                        var tableArraySumPx = 0;
+                        var lastCells = t.find('th');
+                        lastCells.each(function() {
+                            var cell = $(this);
+                            var cw = cell.outerWidth();
+                            if (cell.css('display') != 'none') {
+                                tableArrayPx.push(cw);
+                                tableArraySumPx += cw;
+                            } else {
+                                tableArrayPx.push(0);
+                            }
+                        });
+                        var tableArray = [];
+                        var tableArraySum = 0;
+                        var cn = 0;
+                        // port everything to percentages
+                        for (var i = 0; i < tableArrayPx.length; i++) {
+                            cn = tableArrayPx[i] * 100 / tableArraySumPx;
+                            tableArray.push(cn);
+                            tableArraySum += cn;
+                        }
+                        if (tableArraySum > 100) tableArray[0] = tableArray[0] + (tableArraySum - 100);
+                        if (tableArraySum < 100) tableArray[0] = tableArray[0] + (100 - tableArraySum);
+                        // create css rules for tables instead of appending width as style
+                        lastCells.each(function(i) {
+                            $(this).css('width',tableArray[i]+'%');
+                        });
+                    });
+
+                };
+                // plugin for making random id strings
+                $.makeId = function() {
+                    var text = "";
+                    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+                    for (var i = 0; i < 5; i++) {
+                        text += possible.charAt(Math.floor(Math.random() * possible.length));
+                    }
+                    return text;
+                };
+                /*IE detection function*/
+                $.ie = function(){
+                    return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\\.0-9]{0,})").exec(navigator.userAgent) !== null)));
+                };
+            })(jQuery);
+            $(document).ready(function(){
+                // Make headers sticky
+                $('[data-sticky-header=true]').each(function(){
+                    var t = $(this),
+                        stickyElement = t.find('.sticky'),
+                        stickyElementWidth = stickyElement.width(),
+                        stickyPosition = stickyElement.data('sticky-target'),
+                        wrappingElement = stickyElement.data('wrapping-element'),
+                        wrappingElementClass = stickyElement.data('wrapping-element-class'),
+                        scrollingDiv = stickyElement.data('sticky-scroller');
+
+                    if (wrappingElement=='table'){
+                        t.fixHeadingsWidth();
+                    }
+
+                    var stickyElementClone = stickyElement.clone(true);
+                    var cloneId = $.makeId();
+                    stickyElementClone.attr('id',cloneId).removeClass('sticky').removeData();
+                    stickyElement.data('sticky-copy','#'+cloneId);
+
+                    var wrapper;
+                    if (wrappingElement){
+                        wrapper = $(document.createElement(wrappingElement));
+                        wrapper.append(stickyElementClone);
+                    } else {
+                        wrapper = stickyElementClone;
+                    }
+                    wrapper.css('display','none').addClass(wrappingElementClass);
+                    $(stickyPosition).append(wrapper);
+                    var stickyPositionWidth = $(stickyPosition).width();
+                    if(stickyPositionWidth>stickyElementWidth) $(stickyPosition).css('width','calc(100% - '+(stickyPositionWidth-stickyElementWidth)+'px)');
+
+                    // function that triggers the sticky header visibility on scroll.
+                    t.closest(scrollingDiv).on('scroll',function(){
+                        var panel = $(this);
+                        if (stickyElement.length>0) {
+                            var scrolled = panel.scrollTop();
+                            if (stickyElement.offset().top < panel.offset().top) {
+                                if(!wrapper.is(':visible')) wrapper.show();
+                            } else {
+                                if(wrapper.is(':visible')) wrapper.hide();
+                            }
+                        }
+                    });
+
+                });
+                console.log($.ie());
+                if ($.ie()){
+                    $('body').addClass('is-ie');
+                }
+                $(document).on('click.appletFilterButtons','.applet-filter-button',function(){
+                    // function for opening filtering panel
+                    var button = $(this);
+                    button.toggleClass('active');
+                    var filterDiv = button.closest('.panel').find('.filter-toolbar').slideToggle('fast',function(){
+                        var t = $(this);
+                        if (t.is(':visible')) {
+                            t.closest('.panel').find('.filter-input').focus();
+                        }
+                    });
+                }).on('keyup.filterNameInput','.filter-name-input',function(){
+                    // function for adding the filter name to the button
+                    var input = $(this);
+                    var val = input.val();
+                    input.closest('.panel').find('.filter-name').text(val);
+                }).on('submit.filterTagForms','.filter-tags-form',function(){
+                    // function to add a filtering keyword to the list
+                    var form = $(this);
+                    var filterInput = form.find('.filter-input');
+                    var filterKeyword = filterInput.val();
+                    var panel = form.closest('.panel');
+                    var filterList = panel.find('.filter-tags');
+                    filterList.append('<li>'+filterKeyword+' <button class="remove-filter-keyword"><span class="fa fa-close"></span><span class="sr-only">Press enter to remove '+filterKeyword+' keyword from filtering criteria</span></button></li>');
+                    panel.find('.filter-name-form').slideDown();
+                    panel.find('.filter-tags-area').slideDown();
+
+                    filterInput.val('').blur().focus();
+                }).on('click.removeFilterKeyword','.remove-filter-keyword',function(){
+                    var t = $(this);
+                    var panel = t.closest('.panel');
+                    var listItem = t.parent();
+                    var list = listItem.parent();
+                    listItem.remove();
+                    var listlength = list.find('li').length;
+                    if(listlength === 0){
+                        console.log(panel);
+                        panel.find('.filter-tags').empty();
+                        panel.find('.filter-name-input').val('');
+                        panel.find('.filter-name').empty();
+                        panel.find('.filter-input').focus();
+                        panel.find('.filter-name-form').slideUp();
+                        panel.find('.filter-tags-area').slideUp();
+                    }
+                }).on('click.filterRemoveAll','.filter-remove-all',function(){
+                    // function to prompt for filter keyword cleanup
+                    var filterToolbarId = $(this).closest('.filter-toolbar').attr('id');
+                    $('#filterClearModal').remove();
+                    var modalHtml = ''+
+                    '<div class="modal fade" id="filterClearModal" tabindex="-1" role="dialog">'+
+                    '   <div class="modal-dialog">'+
+                    '       <div class="modal-content">'+
+                    '           <div class="modal-header">'+
+                    '               <button type="button" class="close" data-dismiss="modal" aria-label="Close Modal"><span aria-hidden="true">×</span></button>'+
+                    '               <h4 class="modal-title">Filtering keywords removal confirmation</h4>'+
+                    '           </div>'+
+                    '           <div class="modal-body">'+
+                    '               <p>Are you sure you want to clear all the filtering keywords?</p>'+
+                    '           </div>'+
+                    '           <div class="modal-footer">'+
+                    '               <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button> <button id="clearFilterConfirm" type="button" class="btn btn-primary" data-filter-id="'+filterToolbarId+'">Confirm</button>'+
+                    '           </div>'+
+                    '       </div>'+
+                    '   </div>'+
+                    '</div>';
+                    $('body').append(modalHtml);
+                    $('#filterClearModal').modal('show');
+                }).on('click.clearFilterConfirm','#clearFilterConfirm',function(){
+                    // function for filter keyword cleanup
+                    $('#filterClearModal').modal('hide');
+                    var panel = $('#'+$(this).data('filter-id'));
+                    panel.find('.filter-tags').empty();
+                    panel.find('.filter-name-input').val('');
+                    panel.find('.filter-name').empty();
+                    panel.find('.filter-input').focus();
+                    panel.find('.filter-name-form').slideUp();
+                    panel.find('.filter-tags-area').slideUp();
+                });
+            });
+        </script>
+    </body>
+</html>

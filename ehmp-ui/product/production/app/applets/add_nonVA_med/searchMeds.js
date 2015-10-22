@@ -89,7 +89,12 @@ define([
             'callShow': true
         };
 
-        ADK.showWorkflowItem(view, options);
+        var modal = new ADK.UI.Modal({
+            view: view,
+            options: options
+        });
+        modal.show();
+
         if ($('#locationDisplayName span').text() === "No visit set") {
             $('#btn-add-non-va-med-accept').prop('disabled', false);
         }
@@ -109,7 +114,11 @@ define([
     });
 
     var showModal = function() {
-        ADK.showWorkflowItem(new SearchView(), searchMedsModalOptions);
+        var modal = new ADK.UI.Modal({
+            view: new SearchView(),
+            options: searchMedsModalOptions
+        });
+        modal.show();
     };
 
     var SearchView = Backbone.Marionette.LayoutView.extend({
@@ -168,14 +177,22 @@ define([
                 'callShow': true
             };
 
-            ADK.showWorkflowItem(view, options);
+            var modal = new ADK.UI.Modal({
+                view: view,
+                options: options
+            });
+            modal.show();
             if ($('#locationDisplayName span').text() !== "Not set" && $('#provider-name span').text() !== "Not set") {
                 $('#btn-add-non-va-med-accept').prop('disabled', false);
             }
         },
 
         showModal: function() {
-            ADK.showWorkflowItem(this, searchMedsModalOptions);
+            var modal = new ADK.UI.Modal({
+                view: this,
+                options: searchMedsModalOptions
+            });
+            modal.show();
         },
 
         editMed: function(inMedModel) {
@@ -213,7 +230,11 @@ define([
                 'replaceContents': true
             };
 
-            ADK.showWorkflowItem(editView, options);
+            var modal = new ADK.UI.Modal({
+                view: editView,
+                options: options
+            });
+            modal.show();
 
             var fetchOptions = {
                 patient: ADK.PatientRecordService.getCurrentPatient(),

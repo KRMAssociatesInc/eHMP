@@ -1,0 +1,380 @@
+html {
+    overflow: hidden;
+    height: 100%;
+}
+body {
+    color: $grey-darkest;
+    font-size: 11px;
+    font-family: 'Open Sans';
+    height: 100%;
+    overflow: hidden;
+    background-color: $primary-lighter;
+    #center-region {
+        overflow-y: hidden;
+        margin: 30px 0 36px 0;
+    }
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+/*:focus, a:focus, .btn:focus {
+    outline: none;
+}Commented out by T, why are we taking out the focus outline? */
+
+/*--- Label colors ---*/
+.label {
+    color: #FFFFFF;
+    box-shadow: 0px 1px 1px #999999;
+    padding: 2px 5px 2px 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.label-danger {
+    background-color: $tertiary;
+    color: $grey-darkest;
+    &:hover {
+    background-color:  $tertiary-hover;
+    }
+}
+.label-success {
+    background-color: #339900;
+}
+.label-info {
+    background-color: #666666;
+}
+.label-error {
+    background-color: #CC0000;
+}
+.activeStatus {
+    background-color: #01cccc;
+}
+.expiredStatus {
+    background-color: #999999;
+}
+.discontinuedStatus {
+    background-color: #ffa6a3;
+}
+/*--- Colors ---*/
+.text-muted {
+    color: $grey-darkest;
+}
+.white {
+    color: white;
+}
+/*--- General Global Styles ---*/
+.no-side-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.col-layout-sm {
+    padding-right: 5px;
+    padding-bottom: 1px;
+    width: 22%;
+    display: inline-block;
+}
+.col-layout-md {
+    padding-right: 5px;
+    padding-bottom: 1px;
+    width: 30%;
+    display: inline-block;
+}
+.col-layout-lg {
+    padding-right: 5px;
+    padding-bottom: 1px;
+    width: 40%;
+    display: inline-block;
+}
+.bold {
+    font-weight: bold;
+}
+.center {
+    text-align: center;
+}
+.expanded-row {
+    background: #f5f5f5;
+    white-space: normal;
+}
+.no-margin {
+    margin: 0;
+}
+.row-layout {
+    p {
+        clear: both;
+        width: 100%;
+        margin: 0;
+    }
+}
+.selectable {
+    cursor: pointer;
+    cursor: hand;
+}
+.selectable:hover{
+background: none;
+}
+.paddingRight {
+    padding-right: 20px;
+}
+/*--- Button Styling ---*/
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: alpha(opacity=50);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .5;
+}
+.btn-link{
+    background: $primary;
+    border-radius:4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    color:#fff;
+    padding: 6px 15px;
+}
+.btn-link:hover {
+    text-decoration: none;
+    color: #FFF;
+    background-color: #00b6cd;
+    -moz-box-shadow: 1px 1px 2px #3D5157;
+    -webkit-box-shadow: 1px 1px 2px #3D5157;
+    box-shadow: 1px 1px 2px #3D5157;
+    /* IE10 Consumer Preview */
+    background-image: -ms-linear-gradient(top, #00BCD4 0%, #00ACC1 100%);
+    /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(top, #00BCD4 0%, #00ACC1 100%);
+    /* Opera */
+    background-image: -o-linear-gradient(top, #00BCD4 0%, #00ACC1 100%);
+    /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00BCD4), color-stop(1, #00ACC1));
+    /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(top, #00BCD4 0%, #00ACC1 100%);
+    /* W3C Markup, IE10 Release Preview */
+    background-image: linear-gradient(to bottom, #00BCD4 0%, #00ACC1 100%);
+}
+.tl_reset {
+    margin: 3px 3px 0 0;
+}
+.btn-xs {
+    background: transparent;
+    color: $primary-light;
+    font-size: 12px;
+    padding: 2px 6px;
+    text-decoration: none;
+}
+.btn-default {
+    text-shadow: none;
+    background-color: $white;
+    border: 1px solid $grey;
+    background-image: none;
+    &#custom-range-apply {
+        background-color: $secondary;
+        color: $white;
+        border-color: $secondary;
+        box-shadow: none;
+        &:hover {
+            background-color: $secondary-dark;
+            border-color: $secondary-dark;
+        }
+    }
+}
+.btn-default.btn-xs {
+    text-shadow: 0 1px 0 #fff;
+    background-image: -webkit-linear-gradient(top,#fff 0,#e0e0e0 100%);
+    background-image: -o-linear-gradient(top,#fff 0,#e0e0e0 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#e0e0e0));
+    background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    background-repeat: repeat-x;
+    border-color: #ccc;
+}
+.btn-default.btn-xs:hover {
+    color: #333;
+    background-color: #e0e0e0;
+    background-position: 0 -15px;
+}
+.btn-xs:hover, .btn-xs:focus, .btn-xs:active {
+    color: #FFFFFF;
+    background-color: $primary-light;
+    background-image: none;
+}
+.btn-xs.filterOpen {
+    color:$grey-darkest;
+}
+.btn-primary {
+    background-color: $secondary;
+    background-image: none;
+    border: none;
+    border-radius: 3px;
+    &:disabled, [disabled] {
+        background-color: $grey-dark;
+    }
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: $secondary-dark;
+}
+.btn-primary.disabled {
+    background-color: $grey-dark;
+    opacity: 1;
+}
+.btn-danger {
+    background-image: none;
+    border: none;
+    background-color: $red;
+    &:hover {
+        background-color: $red-dark;
+    }
+}
+.btn-transparent {
+    text-shadow: none;
+    background-color: transparent;
+    border: none;
+    background-image: none;
+    padding: 0;
+}
+.nav-pills {
+    font-size: 12px;
+}
+.nav {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-right: 0px;
+    &.nav-tabs{
+        border: none;
+    }
+}
+/*--- Applet Styling ---*/
+.panel-title {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    color: $primary-light;
+    line-height: 23px;
+}
+th.sortable {
+    font-size: 10px;
+}
+.panel-group {
+    .panel {
+        border-radius: 0;
+    }
+}
+.panel {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.panel-primary>.panel-heading, .panel-info>.panel-heading {
+    color: $primary-light;
+    background: $primary-lightest;
+    background-image: none;
+    border: none;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    filter: none;
+}
+.panel-default>.panel-heading {
+    background-image: none;
+    background-color: $primary-lightest;
+    }
+.panel-heading {
+    padding: 2px 15px;
+    border-radius: 0px;
+}
+.panel-primary>.panel-heading.panel-heading-filtered {
+    background-color: $primary-light;
+
+    .panel-title-label {
+        color: white;
+    }
+    .applet-filter-title {
+    }
+    .btn-xs {
+        color: white;
+    }
+    .btn-xs.filterOpen {
+        background: none;
+        color: $tertiary;
+    }
+    .btn-xs:focus {
+        background: none;
+        color: $tertiary;
+    }
+    .btn-xs:hover {
+        background: none;
+        color: $tertiary;
+    }
+    .btn-xs:active {
+        background: none;
+        color: $tertiary;
+    }
+}
+.filter-title {
+    cursor: pointer;
+    margin: 1px;
+}
+.filter-title:hover {
+    cursor: hand;
+    margin: 0;
+    border: 1px solid gray;
+}
+.panel-footer {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    height: auto;
+    background: white;
+}
+.panel-primary {
+    background: none;
+    border: none;
+    box-shadow: 2px 2px 1px rgba(0,0,0,0.12),2px 2px 1px rgba(0,0,0,0.14);
+}
+.modal-open .modal {
+    overflow-y: hidden;
+}
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    background-image: none;
+    color: $primary;
+    text-shadow: none;
+    background-color: $secondary-light;
+    border-color: $white;
+}
+
+//
+// Team Comet CSS Reset - DO NOT EDIT
+// --------------------------------------------------
+
+hr {
+    clear: both;
+}
+h1 {
+    font-size: 20px;
+    color: $primary;
+}
+h2 {
+    font-size: 18px;
+}
+h3 {
+    border-bottom: 1px solid $grey-darkest;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+h4 {
+    font-size: 14px;
+}
+h5 {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+h3, h4, h5 {
+    color: $primary;
+    font-weight: bold;
+    padding: 10px 0px;
+}
+.small {
+    font-size: 11px;
+}

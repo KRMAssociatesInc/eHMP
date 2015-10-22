@@ -215,25 +215,25 @@ BeanstalkClient.prototype.reserve = makeBeanstalkCommand('reserve', 'RESERVED');
 // reserve_with_timeout(timeoutSecs, callback)
 BeanstalkClient.prototype.reserve_with_timeout = makeBeanstalkCommand('reserve-with-timeout', 'RESERVED');
 
-// destroy(jobId, callback)
+// destroy(beanstalkJobId, callback)
 BeanstalkClient.prototype.destroy = makeBeanstalkCommand('delete', 'DELETED');
 
-// release(jobId, priority, delaySec, callback)
+// release(beanstalkJobId, priority, delaySec, callback)
 BeanstalkClient.prototype.release = makeBeanstalkCommand('release', 'RELEASED');
 
-// bury(jobId, priority, callback)
+// bury(beanstalkJobId, priority, callback)
 BeanstalkClient.prototype.bury = makeBeanstalkCommand('bury', 'BURIED');
 
-// touch(jobId, callback)
+// touch(beanstalkJobId, callback)
 BeanstalkClient.prototype.touch = makeBeanstalkCommand('touch', 'TOUCHED');
 
 // kick(bound, callback)
 BeanstalkClient.prototype.kick = makeBeanstalkCommand('kick', 'KICKED');
 
-// kick_job(jobId, callback)
+// kick_job(beanstalkJobId, callback)
 BeanstalkClient.prototype.kick_job = makeBeanstalkCommand('kick-job', 'KICKED');
 
-// peek(jobId, callback)
+// peek(beanstalkJobId, callback)
 BeanstalkClient.prototype.peek = makeBeanstalkCommand('peek', 'FOUND');
 
 // peek_ready(callback)
@@ -262,7 +262,7 @@ BeanstalkClient.prototype.list_tubes_watched = makeBeanstalkCommand('list-tubes-
 // stats(callback)
 BeanstalkClient.prototype.stats = makeBeanstalkCommand('stats', 'OK');
 
-// stats_job(jobId, callback)
+// stats_job(beanstalkJobId, callback)
 BeanstalkClient.prototype.stats_job = makeBeanstalkCommand('stats-job', 'OK');
 
 // stats_tube(tubename, callback)

@@ -1,3 +1,8 @@
+.chef/local-mode-cache/
+.chef/vms/
+.chef/keys
+nodes/
+clients/
 
 # Gradle
 ################################
@@ -95,6 +100,7 @@ product/production/hmp-main/data/solr/index/segments.gen
 product/production/hmp-main/data/solr/index/segments_1
 product/artifact_versions
 infrastructure/vagrant/virtualbox/**/dist-file
+infrastructure/chef/cookbooks/**/files/default/dist-file
 
 product/production/ALFA/src-gen/
 

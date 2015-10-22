@@ -1,0 +1,1043 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Faux Table Accordion Row Examples</title>
+    <link rel="stylesheet" href="../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../../app/css/applets.css" />
+    <link rel="stylesheet" href="../css/main-styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700" />
+    <script src="../js/jquery-1.11.2.min.js"></script>
+</head>
+
+<body style="background: #fff;">
+    <!-- Nested Comments  -->
+    <div class="container">
+        <h2 class="text-center">Nested Comments Add</h2>
+        <div class="nested-comment-box ftar-container">
+            <div class="sr-only">This table represents Selected Diagnoses catagorized by Diagnosis, Comments, Add to CL, and Primary.</div>
+            <div class="main-header">
+                <div class="percent-width-51">
+                    <span>Diagnosis</span>
+                </div>
+                <div class="percent-width-15 text-center">
+                    <span>Comments</span>
+                </div>
+                <div class="percent-width-13 text-center">
+                    <span>Add to CL</span>
+                </div>
+                <div class="percent-width-16">
+                    <span>Primary</span>
+                </div>
+            </div>
+            <div class="accordion-container panel-group small ftar" id="accordion1" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <div class="panel-title">
+                            <div class="sr-only no-display"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                            <div class="percent-width-51">
+                                <span>Hypertension (ICD-9-CM 401.9)</span>
+                            </div>
+                            <div class="percent-width-15 text-center">
+                                <a title="Press enter to add comment" data-toggle="collapse" href="#diagnosesOne" aria-expanded="true" aria-controls="diagnosesOne">Add</a>
+                            </div>
+                            <div class="percent-width-13 text-center">
+                                <div class="control form-group">
+                                    <div class="checkbox">
+                                        <label class="checkbox-inline" for="diagnoses1">
+                                            <input type="checkbox" value="option1" aria-label="To add this diagnoses to the CL, press the spacebar" id="diagnoses1">
+                                            <span class="sr-only" aria-hidden="true">Add diagnosis</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="percent-width-16">
+                                <span><a title="This diagnosis is set as primary">Primary</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="diagnosesOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <div class="comment-box">
+                                <div class="faux-table-container comments-container">
+                                    <div class="faux-table no-margin">
+                                        <div class="body">
+                                            <div class="table-row">
+                                                <div>
+                                                    <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                                </div>
+                                                <div class="pixel-width-67 text-right">
+                                                    <span>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                                </div>
+                                                <div class="pixel-width-67 text-right">
+                                                    <span>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comment">
+                                    <div class="form-group col-xs-8">
+                                        <label for="comment1" class="sr-only">Comment</label>
+                                        <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="comment1" />
+                                        <span class="help-block">60 characters remaining&hellip;</span>
+
+                                        <label for="comment11" class="sr-only hidden">Comment</label>
+                                        <input class="form-control input-sm hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="comment11" />
+                                        <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <div class="col-xs-6 hidden">
+                                            <button type="button" class="btn btn-default btn-sm" title="Press enter to cancel">Cancel</button>
+                                        </div>
+                                        <div class="col-xs-6 hidden">
+                                            <button type="button" class="btn btn-default btn-sm" title="Press enter to save comment">Save</button>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to add comment">Add Comment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <div class="panel-title">
+                            <div class="sr-only no-display"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                            <div class="percent-width-51">
+                                <span>Hypertension (ICD-9-CM 401.9)</span>
+                            </div>
+                            <div class="percent-width-15 text-center">
+                                <a class="btn icon-btn" data-toggle="collapse" href="#diagnosesTwo" aria-expanded="true" aria-controls="diagnosesTwo" title="Press enter tp view comments"><i class="fa fa-file-text"></i></a>
+                            </div>
+                            <div class="percent-width-13 text-center">
+                                <div class="control form-group">
+                                    <div class="checkbox">
+                                        <label class="checkbox-inline" for="diagnoses2">
+                                            <input type="checkbox" value="option1" aria-label="To add this diagnoses to the CL, press the spacebar" id="diagnoses2">
+                                            <span class="sr-only" aria-hidden="true">Add diagnosis</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="percent-width-16">
+                                <span><a title="Press enter to set as primary diagnosis">Set Primary</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="diagnosesTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <div class="comment-box">
+                                <div class="faux-table-container comments-container">
+                                    <div class="faux-table no-margin">
+                                        <div class="body">
+                                            <div class="table-row">
+                                                <div>
+                                                    <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                                </div>
+                                                <div class="pixel-width-67 text-right">
+                                                    <span>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                                </div>
+                                                <div class="pixel-width-67 text-right">
+                                                    <span>
+                                                         <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                         <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comment">
+                                    <div class="form-group col-xs-8">
+                                        <label for="comment2" class="sr-only">Comment</label>
+                                        <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="comment2" />
+                                        <span class="help-block">60 characters remaining&hellip;</span>
+
+                                        <label for="comment22" class="sr-only hidden">Comment</label>
+                                        <input class="form-control hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="comment22" />
+                                        <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <div class="col-xs-6">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to cancel">Cancel</button>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to save comment">Save</button>
+                                        </div>
+                                        <div class="col-xs-12 hidden">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to add comment">Add Comment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /><br />
+    </div>
+
+    <!-- Nested Comments Alt  -->
+    <div class="container">
+        <h2 class="text-center">Nested Comments Edit</h2>
+        <div class="nested-comment-box nested-comment-box-alt ftar-container">
+            <div class="sr-only">This table represents Selected Diagnoses catagorized by Diagnosis, Comments, Add to CL, and Primary.</div>
+            <div class="main-header">
+                <div class="percent-width-40">
+                    <div>Procedure</div>
+                </div>
+                <div class="percent-width-10 text-center">
+                    <div>Comments</div>
+                </div>
+                <div class="percent-width-13 text-center">
+                    <div>Quantity</div>
+                </div>
+                <div class="percent-width-16">
+                    <div>Provider</div>
+                </div>
+                <div class="percent-width-14">
+                    <div>Add Modifiers</div>
+                </div>
+            </div>
+            <div class="accordion-container panel-group small ftar" id="accordion2" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <div class="panel-title">
+                            <div class="sr-only no-display"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                            <div class="percent-width-40">
+                                <span>Item 12345 - modifier name, another modifier name, another&hellip;</span>
+                            </div>
+                            <div class="percent-width-10 text-center">
+                                <a title="Press enter to add comment" data-toggle="collapse" href="#proceduresOne" aria-expanded="true" aria-controls="proceduresOne">Add</a>
+                            </div>
+                            <div class="percent-width-13 text-center">
+                                <div class="control form-group">
+                                    <label for="quantity1" class="sr-only">Quanity</label>
+                                    <input class="form-control input-sm percent-width-60 center-margin" type="text" title="Enter in numeric value" placeholder="1" id="quantity1" />
+                                </div>
+                            </div>
+                            <div class="percent-width-16">
+                                <div class="control form-group">
+                                    <label for="procedure-provider1" class="sr-only">Select Provider</label>
+                                    <select class="form-control input-sm percent-width-90 no-margin" name="options" title="To view options, use the up and down arrow keys and press enter to select" id="procedure-provider1">
+                                        <option value="">Select a provider</option>
+                                        <option value="provider">Select Provider</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="control form-group">
+                                    <a data-toggle="popover" title="Add Modifiers" data-placement="left" data-content="<div class='row'>
+                                        <div class='mssbs-small'>
+                                            <div class='col-md-6'>
+                                                <div class='panel panel-default panel-w-list-group'>
+                                                    <div class='panel-heading'>
+                                                        <div class='mssbs-header'>
+                                                            Available Modifiers
+                                                        </div>
+                                                        <div class='mssbs-input'>
+                                                            <div class='control form-group'>
+                                                                <label for='available-modifiers-filter-results' class='sr-only'>Filter Results</label>
+                                                                <input id='available-modifiers-filter-results' class='form-control input-sm' type='text' name='name' title='Please enter in a filter' placeholder='Filter Results' />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <ul class='list-group'>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Modifier name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Modifier name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Modifier name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Modifier name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Modifier name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-6'>
+                                                <div class='panel panel-default panel-w-list-group'>
+                                                    <div class='panel-heading'>
+                                                        <div class='mssbs-header'>
+                                                            Selected Modifiers
+                                                        </div>
+                                                        <div class='mssbs-input'>
+                                                            <div class='control form-group'>
+                                                                <label for='available-modifiers-filter-results' class='sr-only'>Filter Results</label>
+                                                                <input id='available-modifiers-filter-results' class='form-control input-sm' type='text' name='name' title='Please enter in a filter' placeholder='Filter Results' />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <ul class='list-group'>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Selected name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Selected name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Selected name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Selected name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Selected name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='text-right'>
+                                        <button type='button' class='btn btn-primary btn-sm' title='Press enter to cancel'>Cancel</button>
+                                        <button type='button' class='btn btn-primary btn-sm' title='Press enter to add'>Add</button>
+                                    </div>">Add Modifiers&hellip;</a>
+                                    <div class="modal fade" id="procedureProvider1Modal" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-backdrop">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Press enter to close."><span aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title" id="procedureProvider1Label">Add Modifiers</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="control form-group">
+                                                        <div class="form-group" role="application">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="panel panel-default panel-w-list-group">
+                                                                        <div class="panel-heading">
+                                                                            Available Modifiers
+                                                                        </div>
+                                                                        <ul class="list-group">
+                                                                            <li class="list-group-item">
+                                                                                <div class="row">
+                                                                                    <div class="col-xs-10">
+                                                                                        Modifier name
+                                                                                    </div>
+                                                                                    <div class="col-xs-2">
+                                                                                        <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="list-group-item">
+                                                                                <div class="row">
+                                                                                    <div class="col-xs-10">
+                                                                                        Modifier name
+                                                                                    </div>
+                                                                                    <div class="col-xs-2">
+                                                                                        <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="list-group-item">
+                                                                                <div class="row">
+                                                                                    <div class="col-xs-10">
+                                                                                        Modifier name
+                                                                                    </div>
+                                                                                    <div class="col-xs-2">
+                                                                                        <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="list-group-item">
+                                                                                <div class="row">
+                                                                                    <div class="col-xs-10">
+                                                                                        Modifier name
+                                                                                    </div>
+                                                                                    <div class="col-xs-2">
+                                                                                        <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="list-group-item">
+                                                                                <div class="row">
+                                                                                    <div class="col-xs-10">
+                                                                                        Modifier name
+                                                                                    </div>
+                                                                                    <div class="col-xs-2">
+                                                                                        <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-plus"></i></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="panel panel-default panel-w-list-group">
+                                                                        <div class="panel-heading">
+                                                                            Selected Modifiers
+                                                                        </div>
+                                                                        <ul class="list-group">
+                                                                            <li class="list-group-item">
+                                                                                <div class="row">
+                                                                                    <div class="col-xs-10">
+                                                                                        Selected name
+                                                                                    </div>
+                                                                                    <div class="col-xs-2">
+                                                                                        <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="list-group-item">
+                                                                                <div class="row">
+                                                                                    <div class="col-xs-10">
+                                                                                        Selected name
+                                                                                    </div>
+                                                                                    <div class="col-xs-2">
+                                                                                        <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="list-group-item">
+                                                                                <div class="row">
+                                                                                    <div class="col-xs-10">
+                                                                                        Selected name
+                                                                                    </div>
+                                                                                    <div class="col-xs-2">
+                                                                                        <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="list-group-item">
+                                                                                <div class="row">
+                                                                                    <div class="col-xs-10">
+                                                                                        Selected name
+                                                                                    </div>
+                                                                                    <div class="col-xs-2">
+                                                                                        <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="list-group-item">
+                                                                                <div class="row">
+                                                                                    <div class="col-xs-10">
+                                                                                        Selected name
+                                                                                    </div>
+                                                                                    <div class="col-xs-2">
+                                                                                        <button title="Press enter to add modifier" class="btn icon-btn icon-btn-mini" type="button"><i class="fa fa-times-circle"></i></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to cancel">Cancel</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal" title="Press enter to add">Add</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="proceduresOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <div class="comment-box">
+                                <div class="faux-table-container comments-container">
+                                    <div class="faux-table no-margin">
+                                        <div class="body">
+                                            <div class="table-row">
+                                                <div>
+                                                    <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                                </div>
+                                                <div class="pixel-width-67 text-right">
+                                                    <span>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                                </div>
+                                                <div class="pixel-width-67 text-right">
+                                                    <span>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comment">
+                                    <div class="form-group col-xs-8">
+                                        <label for="procedure-comment1" class="sr-only">Comment</label>
+                                        <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="procedure-comment1" />
+                                        <span class="help-block">60 characters remaining&hellip;</span>
+
+                                        <label for="procedure-comment11" class="sr-only hidden">Comment</label>
+                                        <input class="form-control input-sm hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="procedure-comment11" />
+                                        <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <div class="col-xs-6 hidden">
+                                            <button type="button" class="btn btn-default btn-sm" title="Press enter to cancel">Cancel</button>
+                                        </div>
+                                        <div class="col-xs-6 hidden">
+                                            <button type="button" class="btn btn-default btn-sm" title="Press enter to save comment">Save</button>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to add comment">Add Comment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default"> 
+                    <div class="panel-heading" role="tab" id="headingFour">
+                        <div class="panel-title">
+                            <div class="sr-only no-display"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                            <div class="percent-width-40">
+                                <span>Item 67890 - modifier name, another modifier name, another&hellip;</span>
+                            </div>
+                            <div class="percent-width-10 text-center">
+                                <a class="btn icon-btn" data-toggle="collapse" href="#proceduresTwo" aria-expanded="true" aria-controls="proceduresTwo" title="Press enter tp view comments"><i class="fa fa-file-text"></i></a>
+                            </div>
+                            <div class="percent-width-13 text-center">
+                                <div class="control form-group">
+                                    <label for="quantity2" class="sr-only">Quanity</label>
+                                    <input class="form-control input-sm percent-width-60 center-margin" type="text" title="Enter in numeric value" placeholder="1" id="quantity2" />
+                                </div>
+                            </div>
+                            <div class="percent-width-16">
+                                <div class="control form-group">
+                                    <label for="procedure-provider2" class="sr-only">Select Provider</label>
+                                    <select class="form-control input-sm percent-width-90 no-margin" name="options" title="Use up and down arrow keys to view options and press enter to select" id="procedure-provider2">
+                                        <option value="">Select a provider</option>
+                                        <option value="provider">Select Provider</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="control form-group">
+                                    <a data-toggle="popover" title="Add Modifiers" data-placement="left" data-content="<div class='row'>
+                                        <div class='mssbs-small'>
+                                            <div class='col-md-6'>
+                                                <div class='panel panel-default panel-w-list-group'>
+                                                    <div class='panel-heading'>
+                                                        <div class='mssbs-header'>
+                                                            Available Modifiers
+                                                        </div>
+                                                        <div class='mssbs-input'>
+                                                            <div class='control form-group'>
+                                                                <label for='available-modifiers-filter-results' class='sr-only'>Filter Results</label>
+                                                                <input id='available-modifiers-filter-results' class='form-control input-sm' type='text' name='name' title='Please enter in a filter' placeholder='Filter Results' />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <ul class='list-group'>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Modifier name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Modifier name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Modifier name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Modifier name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Modifier name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to add modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-plus'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-6'>
+                                                <div class='panel panel-default panel-w-list-group'>
+                                                    <div class='panel-heading'>
+                                                        <div class='mssbs-header'>
+                                                            Selected Modifiers
+                                                        </div>
+                                                        <div class='mssbs-input'>
+                                                            <div class='control form-group'>
+                                                                <label for='available-modifiers-filter-results' class='sr-only'>Filter Results</label>
+                                                                <input id='available-modifiers-filter-results' class='form-control input-sm' type='text' name='name' title='Please enter in a filter' placeholder='Filter Results' />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <ul class='list-group'>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Selected name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Selected name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Selected name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Selected name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class='list-group-item'>
+                                                            <div class='row'>
+                                                                <div class='col-md-11 col-xs-11'>
+                                                                    Selected name
+                                                                </div>
+                                                                <div class='col-md-1 col-xs-1'>
+                                                                    <button title='Press enter to remove modifier' class='btn icon-btn icon-btn-mini' type='button'><i class='fa fa-times-circle'></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='text-right'>
+                                        <button type='button' class='btn btn-primary btn-sm' title='Press enter to cancel'>Cancel</button>
+                                        <button type='button' class='btn btn-primary btn-sm' title='Press enter to add'>Add</button>
+                                    </div>">Add Modifiers&hellip;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="proceduresTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            <div class="comment-box">
+                                <div class="faux-table-container comments-container">
+                                    <div class="faux-table no-margin">
+                                        <div class="body">
+                                            <div class="table-row">
+                                                <div>
+                                                    <span>The patient is lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 01/26/2015 08:12 - Vehu, Five</span>
+                                                </div>
+                                                <div class="pixel-width-67 text-right">
+                                                    <span>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="table-row">
+                                                <div>
+                                                    <span>The patient is lorem ipsum dolor sit amet. 01/26/2015 08:12 - Vehu, Five</span>
+                                                </div>
+                                                <div class="pixel-width-67 text-right">
+                                                    <span>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to edit comment"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn no-pad right-pad-sm" title="Press enter to delete comment"><i class="fa fa-trash"></i></button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comment">
+                                    <div class="form-group col-xs-8">
+                                        <label for="procedure-comment2" class="sr-only">Comment</label>
+                                        <input class="form-control" type="text" name="name" title="Please edit comment" placeholder="Add Comment&hellip;" id="procedure-comment2" />
+                                        <span class="help-block hidden">60 characters remaining&hellip;</span>
+
+                                        <label for="procedure-comment22" class="sr-only hidden">Comment</label>
+                                        <input class="form-control hidden" type="text" name="name" title="Please enter in comment" placeholder="Add Comment&hellip;" id="procedure-comment22" />
+                                        <span class="help-block hidden">60 characters remaining&hellip;</span>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <div class="col-xs-6">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to cancel">Cancel</button>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to save comment">Save</button>
+                                        </div>
+                                        <div class="col-xs-12 hidden">
+                                            <button type="button" class="btn btn-default btn-block" title="Press enter to add comment">Add Comment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /><br />
+    </div>
+
+    <!-- Patient Info PopOver  -->
+    <div class="container">
+        <h2 class="text-center">Patient Care Info Popover</h2>
+        <div class="patient-info-revealed ftar-container">
+            <div class="main-header">
+                <div><span>Provider Title</span></div>
+                <div><span>Name</span></div>
+                <div><span>Analog Pager</span></div>
+                <div><span>Digital Pager</span></div>
+                <div><span>Office Phone</span></div>
+            </div>
+            <div class="accordion-container panel-group small ftar" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <div class="panel-title">
+                                <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                                    <div><span>Inpatient Provider</span></div>
+                                    <div><span>Last, First</span></div>
+                                    <div><span>Not specified</span></div>
+                                    <div><span>Not specified</span></div>
+                                    <div><span>Not specified</span></div>
+                                </a>
+                            </div>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <div class="faux-table-container">
+                                <div class="main-header">
+                                    <div>Other Site Care Providers</div>
+                                </div>
+                                <div class="faux-table no-margin">
+                                    <div class="header">
+                                        <div class="table-row">
+                                            <div>
+                                                <div>Facility</div>
+                                            </div>
+                                            <div>
+                                                <div>Name</div>
+                                            </div>
+                                            <div>
+                                                <div>Analog Pager</div>
+                                            </div>
+                                            <div>
+                                                <div>Digital Pager</div>
+                                            </div>
+                                            <div>
+                                                <div>Office Phone</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body">
+                                        <div class="table-row">
+                                            <div>
+                                                <span>TST1</span>
+                                            </div>
+                                            <div>
+                                                <span>John Doe</span>
+                                            </div>
+                                            <div>
+                                                <span>(123) 456-7890</span>
+                                            </div>
+                                            <div>
+                                                <span>(123) 456-7890</span>
+                                            </div>
+                                            <div>
+                                                <span>(123) 456-7890</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <div class="panel-title">
+                            <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                                    <div><span>Inpatient Provider</span></div>
+                                    <div><span>Last, First</span></div>
+                                    <div><span>Not specified</span></div>
+                                    <div><span>Not specified</span></div>
+                                    <div><span>Not specified</span></div>
+                                </a>
+                        </div>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <div class="faux-table-container">
+                                <div class="main-header">
+                                    <div>Other Site Care Providers</div>
+                                </div>
+                                <div class="faux-table no-margin">
+                                    <div class="header">
+                                        <div class="table-row">
+                                            <div>
+                                                <div>Facility</div>
+                                            </div>
+                                            <div>
+                                                <div>Name</div>
+                                            </div>
+                                            <div>
+                                                <div>Analog Pager</div>
+                                            </div>
+                                            <div>
+                                                <div>Digital Pager</div>
+                                            </div>
+                                            <div>
+                                                <div>Office Phone</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body">
+                                        <div class="table-row">
+                                            <div>
+                                                <span>TST1</span>
+                                            </div>
+                                            <div>
+                                                <span>John Doe</span>
+                                            </div>
+                                            <div>
+                                                <span>(123) 456-7890</span>
+                                            </div>
+                                            <div>
+                                                <span>(123) 456-7890</span>
+                                            </div>
+                                            <div>
+                                                <span>(123) 456-7890</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <div class="panel-title">
+                            <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <div class="sr-only"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+                                <div><span>Inpatient Provider</span></div>
+                                <div><span>Last, First</span></div>
+                                <div><span>Not specified</span></div>
+                                <div><span>Not specified</span></div>
+                                <div><span>Not specified</span></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <div class="faux-table-container">
+                                <div class="main-header">
+                                    <div>Other Site Care Providers</div>
+                                </div>
+                                <div class="faux-table no-margin">
+                                    <div class="header">
+                                        <div class="table-row">
+                                            <div>
+                                                <div>Facility</div>
+                                            </div>
+                                            <div>
+                                                <div>Name</div>
+                                            </div>
+                                            <div>
+                                                <div>Analog Pager</div>
+                                            </div>
+                                            <div>
+                                                <div>Digital Pager</div>
+                                            </div>
+                                            <div>
+                                                <div>Office Phone</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body">
+                                        <div class="table-row">
+                                            <div>
+                                                <span>TST1</span>
+                                            </div>
+                                            <div>
+                                                <span>John Doe</span>
+                                            </div>
+                                            <div>
+                                                <span>(123) 456-7890</span>
+                                            </div>
+                                            <div>
+                                                <span>(123) 456-7890</span>
+                                            </div>
+                                            <div>
+                                                <span>(123) 456-7890</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.11.2.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/typeahead.js"></script>
+
+</body>
+
+</html>

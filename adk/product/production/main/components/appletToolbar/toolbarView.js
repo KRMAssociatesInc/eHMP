@@ -1,3 +1,9 @@
+/*
+==========================
+DEPRECATED:  TO BE REMOVED
+see appletToolbarView.js
+==========================
+*/
 define([
     "jquery",
     "underscore",
@@ -40,8 +46,10 @@ define([
             el.on('click keydown', function(e) {
                 if (e.type === 'click' || ((e.type === 'keydown') && (e.which === 13 || e.which === 32))) {
                     that.toolbarPopover.fadeIn(100);
+                    $('.toolbar-btn-hover').removeClass('toolbar-btn-hover');
                     el.addClass('toolbarActive');
-                    //$('.btn:first', that.toolbarPopover).focus();
+                    $('.btn:first', that.toolbarPopover).focus();
+
                 }
             });
         },

@@ -1,0 +1,1012 @@
+KIDS Distribution saved on Jun 20, 2015@13:21:19
+Final Cut US6734 and US7724 - 062015
+**KIDS**:HMP*2.0*150618^
+
+**INSTALL NAME**
+HMP*2.0*150618
+"BLD",9080,0)
+HMP*2.0*150618^HEALTH MANAGEMENT PLATFORM^0^3150620^y
+"BLD",9080,1,0)
+^^1^1^3150417^
+"BLD",9080,1,1,0)
+Merge S68 changes into eHMP.
+"BLD",9080,4,0)
+^9.64PA^800000^1
+"BLD",9080,4,800000,0)
+800000
+"BLD",9080,4,800000,2,0)
+^9.641^800000^1
+"BLD",9080,4,800000,2,800000,0)
+HMP SUBSCRIPTION  (File-top level)
+"BLD",9080,4,800000,2,800000,1,0)
+^9.6411^91^1
+"BLD",9080,4,800000,2,800000,1,91,0)
+CONCURRENT UPDATE CALLS
+"BLD",9080,4,800000,222)
+y^y^p^^^^n^^n
+"BLD",9080,4,800000,224)
+
+"BLD",9080,4,"APDD",800000,800000)
+
+"BLD",9080,4,"APDD",800000,800000,91)
+
+"BLD",9080,4,"B",800000,800000)
+
+"BLD",9080,6.3)
+32
+"BLD",9080,"INIT")
+POST^HMPP3I
+"BLD",9080,"KRN",0)
+^9.67PA^779.2^20
+"BLD",9080,"KRN",.4,0)
+.4
+"BLD",9080,"KRN",.401,0)
+.401
+"BLD",9080,"KRN",.402,0)
+.402
+"BLD",9080,"KRN",.403,0)
+.403
+"BLD",9080,"KRN",.5,0)
+.5
+"BLD",9080,"KRN",.84,0)
+.84
+"BLD",9080,"KRN",3.6,0)
+3.6
+"BLD",9080,"KRN",3.8,0)
+3.8
+"BLD",9080,"KRN",9.2,0)
+9.2
+"BLD",9080,"KRN",9.8,0)
+9.8
+"BLD",9080,"KRN",9.8,"NM",0)
+^9.68A^^0
+"BLD",9080,"KRN",19,0)
+19
+"BLD",9080,"KRN",19,"NM",0)
+^9.68A^^0
+"BLD",9080,"KRN",19.1,0)
+19.1
+"BLD",9080,"KRN",101,0)
+101
+"BLD",9080,"KRN",101,"NM",0)
+^9.68A^^0
+"BLD",9080,"KRN",409.61,0)
+409.61
+"BLD",9080,"KRN",409.61,"NM",0)
+^9.68A^^0
+"BLD",9080,"KRN",771,0)
+771
+"BLD",9080,"KRN",779.2,0)
+779.2
+"BLD",9080,"KRN",870,0)
+870
+"BLD",9080,"KRN",8989.51,0)
+8989.51
+"BLD",9080,"KRN",8989.51,"NM",0)
+^9.68A^3^3
+"BLD",9080,"KRN",8989.51,"NM",1,0)
+HMP DOMAIN SIZES^^0
+"BLD",9080,"KRN",8989.51,"NM",2,0)
+HMP EXTRACT DISK SIZE LIMIT^^0
+"BLD",9080,"KRN",8989.51,"NM",3,0)
+HMP EXTRACT TASK REQUEUE SECS^^0
+"BLD",9080,"KRN",8989.51,"NM","B","HMP DOMAIN SIZES",1)
+
+"BLD",9080,"KRN",8989.51,"NM","B","HMP EXTRACT DISK SIZE LIMIT",2)
+
+"BLD",9080,"KRN",8989.51,"NM","B","HMP EXTRACT TASK REQUEUE SECS",3)
+
+"BLD",9080,"KRN",8989.52,0)
+8989.52
+"BLD",9080,"KRN",8994,0)
+8994
+"BLD",9080,"KRN","B",.4,.4)
+
+"BLD",9080,"KRN","B",.401,.401)
+
+"BLD",9080,"KRN","B",.402,.402)
+
+"BLD",9080,"KRN","B",.403,.403)
+
+"BLD",9080,"KRN","B",.5,.5)
+
+"BLD",9080,"KRN","B",.84,.84)
+
+"BLD",9080,"KRN","B",3.6,3.6)
+
+"BLD",9080,"KRN","B",3.8,3.8)
+
+"BLD",9080,"KRN","B",9.2,9.2)
+
+"BLD",9080,"KRN","B",9.8,9.8)
+
+"BLD",9080,"KRN","B",19,19)
+
+"BLD",9080,"KRN","B",19.1,19.1)
+
+"BLD",9080,"KRN","B",101,101)
+
+"BLD",9080,"KRN","B",409.61,409.61)
+
+"BLD",9080,"KRN","B",771,771)
+
+"BLD",9080,"KRN","B",779.2,779.2)
+
+"BLD",9080,"KRN","B",870,870)
+
+"BLD",9080,"KRN","B",8989.51,8989.51)
+
+"BLD",9080,"KRN","B",8989.52,8989.52)
+
+"BLD",9080,"KRN","B",8994,8994)
+
+"BLD",9080,"QDEF")
+^^^^NO^^^^NO^^NO
+"BLD",9080,"QUES",0)
+^9.62^^
+"BLD",9080,"REQB",0)
+^9.611^^
+"FIA",800000)
+HMP SUBSCRIPTION
+"FIA",800000,0)
+^HMP(800000,
+"FIA",800000,0,0)
+800000
+"FIA",800000,0,1)
+y^y^p^^^^n^^n
+"FIA",800000,0,10)
+
+"FIA",800000,0,11)
+
+"FIA",800000,0,"RLRO")
+
+"FIA",800000,0,"VR")
+2.0^HMP
+"FIA",800000,800000)
+1
+"FIA",800000,800000,91)
+
+"INIT")
+POST^HMPP3I
+"KRN",8989.51,855,-1)
+0^1
+"KRN",8989.51,855,0)
+HMP DOMAIN SIZES^HMP Average Domain Sizes^1^Domain^Size (in bytes)
+"KRN",8989.51,855,1)
+N^0:9999999999:0^Enter the average size in bytes for each domain item.
+"KRN",8989.51,855,6)
+F^1:30^Enter the internal name for the domain (3rd UID piece).
+"KRN",8989.51,855,20,0)
+^^3^3^3150225^
+"KRN",8989.51,855,20,1,0)
+ This parameter contains a list of VPR extract domains and their average
+"KRN",8989.51,855,20,2,0)
+ sizes.  The sizes are used in computing the approximate size of an item
+"KRN",8989.51,855,20,3,0)
+ with limiting the freshness calls by size.
+"KRN",8989.51,855,30,0)
+^8989.513I^1^1
+"KRN",8989.51,855,30,1,0)
+10^9.4
+"KRN",8989.51,856,-1)
+0^2
+"KRN",8989.51,856,0)
+HMP EXTRACT DISK SIZE LIMIT^Extracts Size Limit (MBs)^^^HMP XTMP Megabytes
+"KRN",8989.51,856,1)
+N^10:2000:0^Enter the # of megabytes of data that triggers a requeue (10-2000)
+"KRN",8989.51,856,20,0)
+^^16^16^3150225^
+"KRN",8989.51,856,20,1,0)
+Maximum size (megabytes) of all VPR extracts in ^XTMP("VPRFX~*") waiting
+"KRN",8989.51,856,20,2,0)
+ to be sent to HMP servers as part of getPtUpdates.
+"KRN",8989.51,856,20,3,0)
+ 
+"KRN",8989.51,856,20,4,0)
+ If maximum is reached, patient domain extract TasKman jobs will be
+"KRN",8989.51,856,20,5,0)
+ requeued to a future time, as specified in the VPR EXTRACT TASK REQUEUE
+"KRN",8989.51,856,20,6,0)
+ SECS parameter. At that time, this maximum check will be performed again.
+"KRN",8989.51,856,20,7,0)
+ 
+"KRN",8989.51,856,20,8,0)
+ Also, this maximum check occurs when an executing extract job is about to
+"KRN",8989.51,856,20,9,0)
+ start another domain extract. If maximum size has been reached, the job
+"KRN",8989.51,856,20,10,0)
+ will hang the number of seconds specified by the VPR EXTRACT TASK REQUEUE
+"KRN",8989.51,856,20,11,0)
+ SECS parameter. The maximum check will occur again after the hang time
+"KRN",8989.51,856,20,12,0)
+ has expired.
+"KRN",8989.51,856,20,13,0)
+ 
+"KRN",8989.51,856,20,14,0)
+ This limit is needed to insure the ^XTMP global does not get too big
+"KRN",8989.51,856,20,15,0)
+ during initial/resync domain extract processing and cause disk full 
+"KRN",8989.51,856,20,16,0)
+ errors.
+"KRN",8989.51,856,30,0)
+^8989.513I^1^1
+"KRN",8989.51,856,30,1,0)
+1^4.2
+"KRN",8989.51,857,-1)
+0^3
+"KRN",8989.51,857,0)
+HMP EXTRACT TASK REQUEUE SECS^seconds to requeue task or hang job^^^Requeue/Hang seconds
+"KRN",8989.51,857,1)
+N^5:60:0^Enter 5 to 60 seconds
+"KRN",8989.51,857,20,0)
+^^11^11^3150225^
+"KRN",8989.51,857,20,1,0)
+When extract task cannot be run because of possible ^XTMP disk concerns,
+"KRN",8989.51,857,20,2,0)
+ this parameter is used to requeue the task to a future date/time or hang
+"KRN",8989.51,857,20,3,0)
+ an extract job currently executing.
+"KRN",8989.51,857,20,4,0)
+ 
+"KRN",8989.51,857,20,5,0)
+ ^XTMP disk space frees up as other already generated extracts are sent to
+"KRN",8989.51,857,20,6,0)
+ the various HMP servers.
+"KRN",8989.51,857,20,7,0)
+ 
+"KRN",8989.51,857,20,8,0)
+ Allowed Values:  5 to 60     (5 seconds to 1 minute)
+"KRN",8989.51,857,20,9,0)
+ 
+"KRN",8989.51,857,20,10,0)
+        Default: 10           (if parameter not set)
+"KRN",8989.51,857,20,11,0)
+    Initialized: 10           (set in post-init during first install)
+"KRN",8989.51,857,30,0)
+^8989.513I^1^1
+"KRN",8989.51,857,30,1,0)
+1^4.2
+"MBREQ")
+0
+"ORD",20,8989.51)
+8989.51;20;;;PAR1E1^XPDTA2;PAR1F1^XPDIA3;PAR1E1^XPDIA3;PAR1F2^XPDIA3;;PAR1DEL^XPDIA3(%)
+"ORD",20,8989.51,0)
+PARAMETER DEFINITION
+"PKG",578,-1)
+1^1
+"PKG",578,0)
+HEALTH MANAGEMENT PLATFORM^HMP^Access patient medical records from all VistA's
+"PKG",578,20,0)
+^9.402P^^
+"PKG",578,22,0)
+^9.49I^1^1
+"PKG",578,22,1,0)
+2.0^3150415^3150619^1
+"PKG",578,22,1,"PAH",1,0)
+150618^3150620^1
+"PKG",578,22,1,"PAH",1,1,0)
+^^1^1^3150620
+"PKG",578,22,1,"PAH",1,1,1,0)
+Merge S68 changes into eHMP.
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"RTN")
+1
+"RTN","HMPP3I")
+0^^B110981531
+"RTN","HMPP3I",1,0)
+HMPP3I ;SLC/AGP -- HMP patch 3 post install ; 2/18/15 5:43pm
+"RTN","HMPP3I",2,0)
+ ;;2.0;HEALTH MANAGEMENT PLATFORM;**1**;Oct 10, 2014;Build 32
+"RTN","HMPP3I",3,0)
+ ;
+"RTN","HMPP3I",4,0)
+ENV ; -- environment check to prevent production installation
+"RTN","HMPP3I",5,0)
+ I $$PROD^XUPROD D
+"RTN","HMPP3I",6,0)
+ .W !,"You are attempting to install this software into your production account.",!,"At this time, this software is not ready for a production install."
+"RTN","HMPP3I",7,0)
+ .W !!,"Please verify the account you're attempting to install into and",!,"if you believe you're correct, contact Ron Massey or Tana Defa.",!!,"INSTALLATION ABORTED!"
+"RTN","HMPP3I",8,0)
+ .S XPDABORT=1
+"RTN","HMPP3I",9,0)
+ Q
+"RTN","HMPP3I",10,0)
+ ;
+"RTN","HMPP3I",11,0)
+PRE ; -- clean out HMP SUBSCRIPTION and ^XTMP("HMP") entries for testing
+"RTN","HMPP3I",12,0)
+ N HMPDT S HMPDT="HMP-1111111"
+"RTN","HMPP3I",13,0)
+ F  S HMPDT=$O(^XTMP(HMPDT)) Q:HMPDT'?1"HMP-"7N  K ^XTMP(HMPDT)
+"RTN","HMPP3I",14,0)
+ S HMPDT="HMPEF-1111111"
+"RTN","HMPP3I",15,0)
+ F  S HMPDT=$O(^XTMP(HMPDT)) Q:HMPDT'?1"HMPEF-"7N  K ^XTMP(HMPDT)
+"RTN","HMPP3I",16,0)
+ K ^XTMP("HMP"),^TMP("HMPX")
+"RTN","HMPP3I",17,0)
+ I $$VERCMP($$VERSRV(),"0.7-S54")>0 D  ; if current < S54
+"RTN","HMPP3I",18,0)
+ . K ^HMP(800000)
+"RTN","HMPP3I",19,0)
+ . S ^HMP(800000,0)="HMP SUBSCRIPTION^800000^^"
+"RTN","HMPP3I",20,0)
+ ;D CLEARPAR
+"RTN","HMPP3I",21,0)
+ I $D(^DD(800000.04)) D  ;remove old Subscription sub-files
+"RTN","HMPP3I",22,0)
+ . N DIU S DIU(0)="S"
+"RTN","HMPP3I",23,0)
+ . S DIU=800000.04 D EN^DIU2
+"RTN","HMPP3I",24,0)
+ . S DIU=800000.03 D EN^DIU2
+"RTN","HMPP3I",25,0)
+ I $D(^DD(800000.01,.03)) D  ; remote old PID field
+"RTN","HMPP3I",26,0)
+ . S DIK="^DD(800000.01,",DA=.03,DA(1)=800000.01
+"RTN","HMPP3I",27,0)
+ . D ^DIK
+"RTN","HMPP3I",28,0)
+ ;D TASKCONV
+"RTN","HMPP3I",29,0)
+ D ADDRSRC ; add resource for throttling extract tasks
+"RTN","HMPP3I",30,0)
+ S ^XTMP("HMP-LAST-SCHEMA",0)=$$HTFM^XLFDT(+$H+7)_U_$$HTFM^XLFDT(+$H)_U_"JSON schema before install"
+"RTN","HMPP3I",31,0)
+ S ^XTMP("HMP-LAST-SCHEMA",1)=+$P($$GET^XPAR("PKG","HMP JSON SCHEMA"),".")
+"RTN","HMPP3I",32,0)
+ Q
+"RTN","HMPP3I",33,0)
+ ;
+"RTN","HMPP3I",34,0)
+CLEARPAR ;
+"RTN","HMPP3I",35,0)
+ N ENT,ERROR,INST,LIST,PAR,TYPE,X,UID
+"RTN","HMPP3I",36,0)
+ ;S PAR="" F  S PAR=$O(^XTV(8989.51,"B","HMP PARAMETERS","")) I PAR>0 Q
+"RTN","HMPP3I",37,0)
+ S PAR=$O(^XTV(8989.51,"B","HMP PARAMETERS","")) Q:PAR'>0
+"RTN","HMPP3I",38,0)
+ S X="" F  S X=$O(^XTV(8989.5,"AC",PAR,X)) Q:X=""  D
+"RTN","HMPP3I",39,0)
+ .S TYPE=$S(X["VA":"USR",X["DIC":"SYS",1:"") I TYPE="" Q
+"RTN","HMPP3I",40,0)
+ .S ENT=TYPE_".`"_+X
+"RTN","HMPP3I",41,0)
+ .S UID="" F  S UID=$O(^XTV(8989.5,"AC",PAR,X,UID)) Q:UID=""  D
+"RTN","HMPP3I",42,0)
+ ..D DEL^XPAR(ENT,"HMP PARAMETERS",UID,.ERROR)
+"RTN","HMPP3I",43,0)
+ Q
+"RTN","HMPP3I",44,0)
+ ;
+"RTN","HMPP3I",45,0)
+ ; VERSRV and VERCMP are also in HMPUTILS, but not until after the install
+"RTN","HMPP3I",46,0)
+ ; of this patch (HMP*2*3), so they are reproduced here.
+"RTN","HMPP3I",47,0)
+ ;
+"RTN","HMPP3I",48,0)
+VERSRV()   ; Return server version of option name
+"RTN","HMPP3I",49,0)
+ N HMPLST,VAL
+"RTN","HMPP3I",50,0)
+ D FIND^DIC(19,"",1,"X","HMP UI CONTEXT",1,,,,"HMPLST")
+"RTN","HMPP3I",51,0)
+ S VAL=$G(HMPLST("DILIST","ID",1,1))
+"RTN","HMPP3I",52,0)
+ Q $$UP^XLFSTR($P(VAL,"version ",2))
+"RTN","HMPP3I",53,0)
+ ;
+"RTN","HMPP3I",54,0)
+VERCMP(CUR,VAL) ; Returns 1 if CUR<VAL, -1 if CUR>VAL, 0 if equal
+"RTN","HMPP3I",55,0)
+ N CURMAJOR,CURMINOR,CURSNAP,VALMAJOR,VALMINOR,VALSNAP
+"RTN","HMPP3I",56,0)
+ S CURMAJOR=$P(CUR,"-"),CURMINOR=$P(CUR,"-",2),CURSNAP=$E($P(CUR,"-",3),1,4)="SNAP"
+"RTN","HMPP3I",57,0)
+ S VALMAJOR=$P(VAL,"-"),VALMINOR=$P(VAL,"-",2),VALSNAP=$E($P(VAL,"-",3),1,4)="SNAP"
+"RTN","HMPP3I",58,0)
+ I $E(VALMINOR)="P" S VALMINOR=$E(VALMINOR,2,99)     ; "P"ilot versions (old)
+"RTN","HMPP3I",59,0)
+ I $E(CURMINOR)="P" S CURMINOR=$E(VALMINOR,2,99)
+"RTN","HMPP3I",60,0)
+ I $E(VALMINOR)="S" S VALMINOR=$E(VALMINOR,2,99)*10  ; "S"print versions
+"RTN","HMPP3I",61,0)
+ I $E(CURMINOR)="S" S CURMINOR=$E(CURMINOR,2,99)*10
+"RTN","HMPP3I",62,0)
+ Q:VALMAJOR>CURMAJOR 1   Q:VALMAJOR<CURMAJOR -1  ; compare major versions
+"RTN","HMPP3I",63,0)
+ Q:VALMINOR>CURMINOR 1   Q:VALMINOR<CURMINOR -1  ; compare minor versions
+"RTN","HMPP3I",64,0)
+ Q:(CURSNAP&'VALSNAP) 1  Q:(VALSNAP&'CURSNAP) -1 ; "SNAPSHOT" < released
+"RTN","HMPP3I",65,0)
+ Q 0
+"RTN","HMPP3I",66,0)
+ ;
+"RTN","HMPP3I",67,0)
+ ;
+"RTN","HMPP3I",68,0)
+POST ; -- set up new Tx data
+"RTN","HMPP3I",69,0)
+ ;D CREATEUS
+"RTN","HMPP3I",70,0)
+ N HMPLVER
+"RTN","HMPP3I",71,0)
+ S HMPLVER=$$VERSRV()
+"RTN","HMPP3I",72,0)
+ D VERSION
+"RTN","HMPP3I",73,0)
+ D EN^HMPIDX
+"RTN","HMPP3I",74,0)
+ D OBJCNT
+"RTN","HMPP3I",75,0)
+ I $$VERCMP(HMPLVER,"0.7-S58")>0 D PARPID            ; if current < S58
+"RTN","HMPP3I",76,0)
+ I $G(^XTMP("HMP-LAST-SCHEMA",1))<2 D CVTPAT,CVTSEL  ; if existing schema < 2.0
+"RTN","HMPP3I",77,0)
+ K ^XTMP("HMP-LAST-SCHEMA")
+"RTN","HMPP3I",78,0)
+ ;D CREATE^HMPAP1  ;BL;V5-6 Protocols now attached via KIDs build not post routine
+"RTN","HMPP3I",79,0)
+ D POST^HMPPRXY2
+"RTN","HMPP3I",80,0)
+ D DISABLE^HMPZ0218
+"RTN","HMPP3I",81,0)
+ D SETPARMS ;US7724 - set throttling parameter values
+"RTN","HMPP3I",82,0)
+ Q
+"RTN","HMPP3I",83,0)
+ ;
+"RTN","HMPP3I",84,0)
+VERSION ; -- update V# parameter
+"RTN","HMPP3I",85,0)
+ D PUT^XPAR("PKG","HMP VERSION",1,"2.00")
+"RTN","HMPP3I",86,0)
+ D PUT^XPAR("SYS","HMP SYSTEM NAME",1,$$SYS^HMPUTILS)
+"RTN","HMPP3I",87,0)
+ Q
+"RTN","HMPP3I",88,0)
+ ;
+"RTN","HMPP3I",89,0)
+OBJCNT ; -- create count index for HMP OBJECT file
+"RTN","HMPP3I",90,0)
+ Q:$D(^HMP(800000.11,"ACNT"))
+"RTN","HMPP3I",91,0)
+ N DIK,DA
+"RTN","HMPP3I",92,0)
+ S DIK="^HMP(800000.11,"
+"RTN","HMPP3I",93,0)
+ S DIK(1)=".03^ACNT"
+"RTN","HMPP3I",94,0)
+ D ENALL^DIK
+"RTN","HMPP3I",95,0)
+ Q
+"RTN","HMPP3I",96,0)
+CREATEUS ;
+"RTN","HMPP3I",97,0)
+ N DIV,FDA,IC,IEN,IENS,NAME,SER,HMPERR
+"RTN","HMPP3I",98,0)
+ ;do not create the user if the patch is already installed or if the user is already created
+"RTN","HMPP3I",99,0)
+ I $$PATCH^XPDUTL("HMP*1.0*3") Q
+"RTN","HMPP3I",100,0)
+ D EN^DDIOL("Creating HMP Sync User")
+"RTN","HMPP3I",101,0)
+ ;
+"RTN","HMPP3I",102,0)
+ S NAME="HMP,USER SYNC"
+"RTN","HMPP3I",103,0)
+ S IEN=$$CREATE^XUSAP(NAME,"","HMP SYNCHRONIZATION CONTEXT")
+"RTN","HMPP3I",104,0)
+ I IEN=0 D EN^DDIOL("User already exists") Q
+"RTN","HMPP3I",105,0)
+ I IEN<0 D EN^DDIOL("Cannot create user") Q
+"RTN","HMPP3I",106,0)
+ S IENS="?"_IEN_","
+"RTN","HMPP3I",107,0)
+ S DIV=$$ASK(4) I DIV'>0 D EN^DDIOL("A division needs to be selected.") Q
+"RTN","HMPP3I",108,0)
+ S SER=$$ASK(49) I SER'>0 D EN^DDIOL("A service needs to be selected.") Q
+"RTN","HMPP3I",109,0)
+ S FDA(200,IENS,.01)=NAME
+"RTN","HMPP3I",110,0)
+ S FDA(200,IENS,7.2)=1
+"RTN","HMPP3I",111,0)
+ S FDA(200,IENS,29)=$P(SER,U)
+"RTN","HMPP3I",112,0)
+ S FDA(200,IENS,200.04)=1
+"RTN","HMPP3I",113,0)
+ S FDA(200,IENS,200.1)=99999
+"RTN","HMPP3I",114,0)
+ ;S FDA(200.03,"?+2,"_IENS,.01)="HMP SYNCHRONIZATION CONTEXT"
+"RTN","HMPP3I",115,0)
+ ;S FDA(200.03,"?+3,"_IENS,.01)="HMP UI CONTEXT"
+"RTN","HMPP3I",116,0)
+ S FDA(200.02,"?+4,"_IENS,.01)=$P(DIV,U)
+"RTN","HMPP3I",117,0)
+ S FDA(200.02,"?+4,"_IENS,1)=1
+"RTN","HMPP3I",118,0)
+ D UPDATE^DIE("","FDA","","HMPERR")
+"RTN","HMPP3I",119,0)
+ I $D(HMPERR) D  Q
+"RTN","HMPP3I",120,0)
+ .D EN^DDIOL("Update failed, UPDATE^DIE returned the following error message.")
+"RTN","HMPP3I",121,0)
+ .S IC="HMPERR"
+"RTN","HMPP3I",122,0)
+ .F  S IC=$Q(@IC) Q:IC=""  W !,IC,"=",@IC
+"RTN","HMPP3I",123,0)
+ .D EN^DDIOL("Examine the above error message for the reason.")
+"RTN","HMPP3I",124,0)
+ .H 2
+"RTN","HMPP3I",125,0)
+ D EN^DDIOL("Add ACCESS/VERIFY codes to the "_NAME)
+"RTN","HMPP3I",126,0)
+ Q
+"RTN","HMPP3I",127,0)
+ ;
+"RTN","HMPP3I",128,0)
+ASK(FILENUM) ;
+"RTN","HMPP3I",129,0)
+ N DIC,Y
+"RTN","HMPP3I",130,0)
+ S DIC=FILENUM,DIC(0)="AEQMZ",DIC("A")="Select "_$S(FILENUM=4:"division: ",1:"service/section: ")
+"RTN","HMPP3I",131,0)
+ I FILENUM=4 S DIC("S")="S DINUM=X K:$S($D(^XUSEC(""XUMGR"",DUZ)):0,'$$TF^XUAF4(X):1,1:0) X,DINUM"
+"RTN","HMPP3I",132,0)
+ D ^DIC
+"RTN","HMPP3I",133,0)
+ Q Y
+"RTN","HMPP3I",134,0)
+ ;
+"RTN","HMPP3I",135,0)
+TASKCONV ;
+"RTN","HMPP3I",136,0)
+ N COLL,I,IEN,NODE,PAT,TEMP,UID,UPDATE,HMPY
+"RTN","HMPP3I",137,0)
+ K ^TMP($J,"HMPY"),^TMP($J,"HMPTEMP")
+"RTN","HMPP3I",138,0)
+ S HMPY=$NA(^TMP($J,"HMPY")),TEMP=$NA(^TMP($J,"HMPTEMP"))
+"RTN","HMPP3I",139,0)
+ S PAT=0 F  S PAT=$O(^HMP(800000.1,"C",PAT)) Q:PAT'>0  D
+"RTN","HMPP3I",140,0)
+ .S IEN=0 F  S IEN=$O(^HMP(800000.1,"C",PAT,"task",IEN)) Q:IEN'>0  D
+"RTN","HMPP3I",141,0)
+ ..S NODE=$G(^HMP(800000.1,IEN,0))
+"RTN","HMPP3I",142,0)
+ ..S UID=$P(NODE,U) I UID="" Q
+"RTN","HMPP3I",143,0)
+ ..S UPDATE=0
+"RTN","HMPP3I",144,0)
+ ..S I=0 F  S I=$O(^HMP(800000.1,IEN,1,I)) Q:I<1  S X=$G(^(I,0)),HMPY(I)=X
+"RTN","HMPP3I",145,0)
+ ..D DECODE^HMPJSON("HMPY","TEMP","ERROR")
+"RTN","HMPP3I",146,0)
+ ..I $D(ERROR) D EN^DDIOL("Error in decoding JSON Object") Q
+"RTN","HMPP3I",147,0)
+ ..K HMPY,^TMP($J,"HMPY")
+"RTN","HMPP3I",148,0)
+ ..I $G(@TEMP@("assignToCode"))'="" S @TEMP@("createdByCode")=@TEMP@("assignToCode"),UPDATE=1 K @TEMP@("assignToCode")
+"RTN","HMPP3I",149,0)
+ ..I $G(@TEMP@("assignToName"))'="" S @TEMP@("createdByName")=@TEMP@("assignToName"),UPDATE=1 K @TEMP@("assignToName")
+"RTN","HMPP3I",150,0)
+ ..I $G(@TEMP@("ownerName"))'="" S UPDATE=1 K @TEMP@("ownerName")
+"RTN","HMPP3I",151,0)
+ ..I $G(@TEMP@("ownerCode"))'="" S UPDATE=1 K @TEMP@("ownerCode")
+"RTN","HMPP3I",152,0)
+ ..I UPDATE=0 Q
+"RTN","HMPP3I",153,0)
+ ..;
+"RTN","HMPP3I",154,0)
+ ..S HMPY=$NA(^TMP($J,"HMPY"))
+"RTN","HMPP3I",155,0)
+ ..D ENCODE^HMPJSON("TEMP","HMPY","ERROR")
+"RTN","HMPP3I",156,0)
+ ..I $D(ERROR) D EN^DDIOL("Error in encoding JSON Object") Q
+"RTN","HMPP3I",157,0)
+ ..D EN^DDIOL("Updating task uid: "_UID)
+"RTN","HMPP3I",158,0)
+ ..D PUT^HMPDJ1(.HMP,PAT,"task",.HMPY)
+"RTN","HMPP3I",159,0)
+ K ^TMP($J,"HMPY"),^TMP($J,"HMPTEMP")
+"RTN","HMPP3I",160,0)
+ Q
+"RTN","HMPP3I",161,0)
+ADDRSRC ; Add resource device
+"RTN","HMPP3I",162,0)
+ N RNAME,RDESC,RSLOT,RTYPE,RIEN
+"RTN","HMPP3I",163,0)
+ S RNAME="HMP EXTRACT RESOURCE"
+"RTN","HMPP3I",164,0)
+ S RDESC="Controls the number of HMP extract jobs that run simultaneously."
+"RTN","HMPP3I",165,0)
+ S RSLOT=10
+"RTN","HMPP3I",166,0)
+ S RTYPE="P-OTHER"
+"RTN","HMPP3I",167,0)
+ S RIEN=$$RES^XUDHSET(RNAME,RNAME,RSLOT,RDESC,RTYPE)
+"RTN","HMPP3I",168,0)
+ Q
+"RTN","HMPP3I",169,0)
+CVTPAT ; resend all the patient objects
+"RTN","HMPP3I",170,0)
+ D BMES^XPDUTL("Updating HMP patient objects")
+"RTN","HMPP3I",171,0)
+ N HMPIEN,DFN,CNT
+"RTN","HMPP3I",172,0)
+ K ^TMP("HMPCVT",$J)
+"RTN","HMPP3I",173,0)
+ S CNT=0
+"RTN","HMPP3I",174,0)
+ S HMPIEN=0 F  S HMPIEN=$O(^HMP(800000,HMPIEN)) Q:'HMPIEN  D
+"RTN","HMPP3I",175,0)
+ . S DFN=0 F  S DFN=$O(^HMP(800000,HMPIEN,1,DFN)) Q:'DFN  D
+"RTN","HMPP3I",176,0)
+ . . Q:$D(^TMP("HMPCVT",$J,DFN))
+"RTN","HMPP3I",177,0)
+ . . D POST^HMPDJFS(DFN,"patient",DFN,"","")
+"RTN","HMPP3I",178,0)
+ . . S ^TMP("HMPCVT",$J,DFN)=""
+"RTN","HMPP3I",179,0)
+ . . S CNT=CNT+1 I '(CNT#1000) D MES^XPDUTL("  "_CNT_" patient objects converted")
+"RTN","HMPP3I",180,0)
+ K ^TMP("HMPCVT",$J)
+"RTN","HMPP3I",181,0)
+ Q
+"RTN","HMPP3I",182,0)
+CVTSEL ; resend all patient selection objects
+"RTN","HMPP3I",183,0)
+ N HMPIEN
+"RTN","HMPP3I",184,0)
+ D BMES^XPDUTL("Updating patient select objects")
+"RTN","HMPP3I",185,0)
+ S HMPIEN=0 F  S HMPIEN=$O(^HMP(800000,HMPIEN)) Q:'HMPIEN  D
+"RTN","HMPP3I",186,0)
+ . Q:$P(^HMP(800000,HMPIEN,0),U,3)'=2  ; operational sync not completed
+"RTN","HMPP3I",187,0)
+ . N HMPSRV,BATCH,DOMAINS,HMPFERR
+"RTN","HMPP3I",188,0)
+ . S HMPSRV=$P(^HMP(800000,HMPIEN,0),U)
+"RTN","HMPP3I",189,0)
+ . S BATCH="HMPFX~"_HMPSRV_"~OPD"
+"RTN","HMPP3I",190,0)
+ . S DOMAINS(1)="pt-select"
+"RTN","HMPP3I",191,0)
+ . D QUINIT^HMPDJFSP(BATCH,"OPD",.DOMAINS)
+"RTN","HMPP3I",192,0)
+ . I $D(HMPFERR) D MES^XPDUTL("Error tasking pt-select objects for server "_HMPSRV)
+"RTN","HMPP3I",193,0)
+ Q
+"RTN","HMPP3I",194,0)
+PARPID ; Loop thru HMP PARAMETERS and switch ICN to qualified DFN
+"RTN","HMPP3I",195,0)
+ N PAR,ENT,UID,HMPWP,HMPERR,I,HMPSYS
+"RTN","HMPP3I",196,0)
+ S HMPSYS=$$GET^XPAR("SYS","HMP SYSTEM NAME")
+"RTN","HMPP3I",197,0)
+ S PAR=$O(^XTV(8989.51,"B","HMP PARAMETERS","")) Q:PAR'>0
+"RTN","HMPP3I",198,0)
+ S ENT="" F  S ENT=$O(^XTV(8989.5,"AC",PAR,ENT)) Q:ENT=""  D
+"RTN","HMPP3I",199,0)
+ . S UID="" F  S UID=$O(^XTV(8989.5,"AC",PAR,ENT,UID)) Q:UID=""  D  ;INST=UID
+"RTN","HMPP3I",200,0)
+ . . I $P(UID,":",6,7)'="HMP USER PREF:0" Q
+"RTN","HMPP3I",201,0)
+ . . N HMPWP,HMPERR,JSON,OBJ,ERR,DFN,RSLT
+"RTN","HMPP3I",202,0)
+ . . D GETWP^XPAR(.HMPWP,ENT,PAR,UID,.HMPERR)
+"RTN","HMPP3I",203,0)
+ . . I +HMPERR D WRERR(UID,$P(HMPERR,U,2,99)) Q
+"RTN","HMPP3I",204,0)
+ . . I $D(HMPWP)<10 Q                         ; no JSON found
+"RTN","HMPP3I",205,0)
+ . . S I=0 F  S I=$O(HMPWP(I)) Q:'I  S JSON(I)=HMPWP(I,0)
+"RTN","HMPP3I",206,0)
+ . . D DECODE^HMPJSON("JSON","OBJ","ERR")
+"RTN","HMPP3I",207,0)
+ . . I $D(ERR) D WRERR(UID,"Error decoding JSON") Q
+"RTN","HMPP3I",208,0)
+ . . I '$L($G(OBJ("cpe.context.patient"))) Q  ; nothing there
+"RTN","HMPP3I",209,0)
+ . . I OBJ("cpe.context.patient")[";" Q       ; already DFN
+"RTN","HMPP3I",210,0)
+ . . S DFN=$$GETDFN^MPIF001(OBJ("cpe.context.patient"))
+"RTN","HMPP3I",211,0)
+ . . I DFN<1 D WRERR(UID,"Error converting ICN: "_$P(DFN,U,2)) Q
+"RTN","HMPP3I",212,0)
+ . . S OBJ("cpe.context.patient")=HMPSYS_";"_DFN
+"RTN","HMPP3I",213,0)
+ . . K JSON
+"RTN","HMPP3I",214,0)
+ . . D ENCODE^HMPJSON("OBJ","JSON","ERR")
+"RTN","HMPP3I",215,0)
+ . . I $D(ERR) D WRERR(UID,"Error encoding JSON") Q
+"RTN","HMPP3I",216,0)
+ . . D PUTBYUID^HMPPARAM(.RSLT,UID,.JSON)
+"RTN","HMPP3I",217,0)
+ Q
+"RTN","HMPP3I",218,0)
+WRERR(UID,MSG) ; Write out error (from post-init in KIDS build)
+"RTN","HMPP3I",219,0)
+ D MES^XPDUTL("Error: "_MSG_" for UID "_UID)
+"RTN","HMPP3I",220,0)
+ Q
+"RTN","HMPP3I",221,0)
+ ;
+"RTN","HMPP3I",222,0)
+SETPARMS ; -- set various XPAR parameter values      US7724
+"RTN","HMPP3I",223,0)
+ ; 
+"RTN","HMPP3I",224,0)
+ ; -- add/edit latest domain object average size in bytes
+"RTN","HMPP3I",225,0)
+ D BMES^XPDUTL(" Adding domain object average sizes to HMP DOMAIN SIZES parameter...")
+"RTN","HMPP3I",226,0)
+ D PTADD
+"RTN","HMPP3I",227,0)
+ D ODCADD
+"RTN","HMPP3I",228,0)
+ ;
+"RTN","HMPP3I",229,0)
+ ; -- set to 100 megabytes if not currently defined
+"RTN","HMPP3I",230,0)
+ I $$GET^XPAR("SYS","HMP EXTRACT DISK SIZE LIMIT",1,"Q")="" D
+"RTN","HMPP3I",231,0)
+ . D EN^XPAR("SYS","HMP EXTRACT DISK SIZE LIMIT",1,100)
+"RTN","HMPP3I",232,0)
+ ;
+"RTN","HMPP3I",233,0)
+ ; -- set to 10 seconds if not currently defined
+"RTN","HMPP3I",234,0)
+ I $$GET^XPAR("SYS","HMP EXTRACT TASK REQUEUE SECS",1,"Q")="" D
+"RTN","HMPP3I",235,0)
+ . D EN^XPAR("SYS","HMP EXTRACT TASK REQUEUE SECS",1,10)
+"RTN","HMPP3I",236,0)
+ Q
+"RTN","HMPP3I",237,0)
+ ;
+"RTN","HMPP3I",238,0)
+PTADD ; -- add patient domain average sizes
+"RTN","HMPP3I",239,0)
+ N I,X,DOMAIN,SIZE,ERR
+"RTN","HMPP3I",240,0)
+ S I=0 F  S I=I+1,X=$P($T(PTDOM+I),";;",2) Q:X="zzzzz"  D
+"RTN","HMPP3I",241,0)
+ . S DOMAIN=$P(X,";",1),SIZE=$P(X,";",2)
+"RTN","HMPP3I",242,0)
+ . D PUT^XPAR("PKG","HMP DOMAIN SIZES",DOMAIN,SIZE,.ERR)
+"RTN","HMPP3I",243,0)
+ . I $G(ERR) D BMES^XPDUTL("Error: "_ERR)
+"RTN","HMPP3I",244,0)
+ D MES^XPDUTL("   o  patient domain sizes added")
+"RTN","HMPP3I",245,0)
+ Q
+"RTN","HMPP3I",246,0)
+ ;
+"RTN","HMPP3I",247,0)
+ODCADD ; -- add OPD domain average sizes
+"RTN","HMPP3I",248,0)
+ N I,X,DOMAIN,SIZE,ERR
+"RTN","HMPP3I",249,0)
+ S I=0 F  S I=I+1,X=$P($T(ODCDOM+I),";;",2) Q:X="zzzzz"  D
+"RTN","HMPP3I",250,0)
+ . S DOMAIN=$P(X,";",1),SIZE=$P(X,";",2)
+"RTN","HMPP3I",251,0)
+ . D PUT^XPAR("PKG","HMP DOMAIN SIZES",DOMAIN,SIZE,.ERR)
+"RTN","HMPP3I",252,0)
+ . I $G(ERR) D BMES^XPDUTL("Error: "_ERR)
+"RTN","HMPP3I",253,0)
+ D MES^XPDUTL("   o  operational domain sizes added")
+"RTN","HMPP3I",254,0)
+ Q
+"RTN","HMPP3I",255,0)
+ ;
+"RTN","HMPP3I",256,0)
+PTDOM ; patient domains
+"RTN","HMPP3I",257,0)
+ ;;allergy;690
+"RTN","HMPP3I",258,0)
+ ;;appointment;742
+"RTN","HMPP3I",259,0)
+ ;;auxiliary;749
+"RTN","HMPP3I",260,0)
+ ;;consult;545
+"RTN","HMPP3I",261,0)
+ ;;cpt;487
+"RTN","HMPP3I",262,0)
+ ;;diagnosis;331
+"RTN","HMPP3I",263,0)
+ ;;document;3993
+"RTN","HMPP3I",264,0)
+ ;;education;415
+"RTN","HMPP3I",265,0)
+ ;;exam;338
+"RTN","HMPP3I",266,0)
+ ;;factor;550
+"RTN","HMPP3I",267,0)
+ ;;image;1038
+"RTN","HMPP3I",268,0)
+ ;;immunization;550
+"RTN","HMPP3I",269,0)
+ ;;lab;1231
+"RTN","HMPP3I",270,0)
+ ;;med;5340
+"RTN","HMPP3I",271,0)
+ ;;mh;4827
+"RTN","HMPP3I",272,0)
+ ;;obs;754
+"RTN","HMPP3I",273,0)
+ ;;order;999
+"RTN","HMPP3I",274,0)
+ ;;patient;3294
+"RTN","HMPP3I",275,0)
+ ;;pov;450
+"RTN","HMPP3I",276,0)
+ ;;problem;756
+"RTN","HMPP3I",277,0)
+ ;;procedure;278
+"RTN","HMPP3I",278,0)
+ ;;ptf;397
+"RTN","HMPP3I",279,0)
+ ;;roadtrip;370
+"RTN","HMPP3I",280,0)
+ ;;skin;388
+"RTN","HMPP3I",281,0)
+ ;;surgery;852
+"RTN","HMPP3I",282,0)
+ ;;task;401
+"RTN","HMPP3I",283,0)
+ ;;treatment;1071
+"RTN","HMPP3I",284,0)
+ ;;visit;911
+"RTN","HMPP3I",285,0)
+ ;;vital;462
+"RTN","HMPP3I",286,0)
+ ;;zzzzz
+"RTN","HMPP3I",287,0)
+ ;
+"RTN","HMPP3I",288,0)
+ODCDOM ; operational domains
+"RTN","HMPP3I",289,0)
+ ;;asu-class;226
+"RTN","HMPP3I",290,0)
+ ;;asu-rule;509
+"RTN","HMPP3I",291,0)
+ ;;category;117
+"RTN","HMPP3I",292,0)
+ ;;charttab;991
+"RTN","HMPP3I",293,0)
+ ;;doc-def;381
+"RTN","HMPP3I",294,0)
+ ;;labgroup;737
+"RTN","HMPP3I",295,0)
+ ;;labpanel;267
+"RTN","HMPP3I",296,0)
+ ;;location;278
+"RTN","HMPP3I",297,0)
+ ;;orderable;773
+"RTN","HMPP3I",298,0)
+ ;;page;901
+"RTN","HMPP3I",299,0)
+ ;;personphoto;15445
+"RTN","HMPP3I",300,0)
+ ;;pointofcare;241
+"RTN","HMPP3I",301,0)
+ ;;pt-select;419
+"RTN","HMPP3I",302,0)
+ ;;qo;97
+"RTN","HMPP3I",303,0)
+ ;;roster;3862
+"RTN","HMPP3I",304,0)
+ ;;route;157
+"RTN","HMPP3I",305,0)
+ ;;schedule;116
+"RTN","HMPP3I",306,0)
+ ;;syncerror;18323
+"RTN","HMPP3I",307,0)
+ ;;syncstatus;1207
+"RTN","HMPP3I",308,0)
+ ;;team;812
+"RTN","HMPP3I",309,0)
+ ;;teamposition;533
+"RTN","HMPP3I",310,0)
+ ;;user;639
+"RTN","HMPP3I",311,0)
+ ;;usertabprefs;3029
+"RTN","HMPP3I",312,0)
+ ;;viewdefdef;5742
+"RTN","HMPP3I",313,0)
+ ;;viewdefdefcoldefconfigtemplate;440
+"RTN","HMPP3I",314,0)
+ ;;HMPupdate;128
+"RTN","HMPP3I",315,0)
+ ;;zzzzz
+"VER")
+8.0^22.0
+"^DD",800000,800000,91,0)
+CONCURRENT UPDATE CALLS^NJ3,0^^91;1^K:+X'=X!(X>999)!(X<0)!(X?.E1"."1N.N) X
+"^DD",800000,800000,91,3)
+Type a number between 0 and 999, 0 decimal digits.
+"^DD",800000,800000,91,21,0)
+^^3^3^3150218^
+"^DD",800000,800000,91,21,1,0)
+This field is used to track the number of simultaneous calls to 
+"^DD",800000,800000,91,21,2,0)
+getPtUpdates in API^HMPDJFS. This allows checkHealth to report if a 
+"^DD",800000,800000,91,21,3,0)
+getPtUpdates RPC is in progress.
+"^DD",800000,800000,91,"DT")
+3150218
+**END**
+**END**

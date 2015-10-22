@@ -1,0 +1,117 @@
+<div class="panel-heading" role="tab">
+    <div class="panel-title">
+        <div class="sr-only no-display"><span>You are on an accordion heading. The accordion is collapsed. To expanded the accordion press enter on the accordion heading.</span></div>
+        <div class="pixel-width-5"></div>
+        <div class="pixel-width-50">
+            <div class="handOff-status{{#if trifectaHandOff}} bg-warning{{else}}{{#if devHandOff}} bg-success{{else}} bg-danger{{/if}}{{/if}}" title="Team Hand-off Status"></div>
+        </div>
+        <div class="percent-width-40">
+            {{#if exampleForm}}<a href="#" id="buttonID" class="demo feature-title">{{else}}<span class="feature-title">{{/if}}<b>F{{featureNumber}}</b>{{#if title}} - {{title}}{{/if}}{{#if exampleForm}}</a>{{else}}</span>{{/if}}
+        </div>
+        <div class="percent-width-10">
+            <!-- <a title="Press enter to add comment" data-toggle="collapse" href="#proceduresOne" aria-expanded="true" aria-controls="proceduresOne" class="collapsed">Add</a> -->
+            {{#if wireframe}}<a href="{{wireframe}}" target="_blank">Wireframe</a>{{/if}}
+        </div>
+        <div class="percent-width-15">
+            {{#if workflowPath}}<a href="{{workflowPath}}" target="_blank">Workflow Diagram</a> <small>[PDF{{#if workflowSize}}, {{workflowSize}}{{/if}}]</small>{{/if}}
+        </div>
+        <div class="percent-width-20">
+            {{#if useCaseScenarioPath}}<a href="{{useCaseScenarioPath}}" target="_blank">useCaseScenario</a> <small>[PDF{{#if useCaseScenarioSize}}, {{useCaseScenarioSize}}{{/if}}]</small>{{/if}}
+        </div>
+        <div class="pull-right pixel-width-1">
+            {{#if formControls}}
+            <div class="accordion-toggle collapsed text-color-white" data-toggle="collapse" href="#collapseFeature-F{{featureNumber}}" aria-expanded="false" aria-controls="collapseFeature-F{{featureNumber}}" title="Click to view feature components"> </div>{{/if}}
+        </div>
+    </div>
+</div>
+<div class="collapse" id="collapseFeature-F{{featureNumber}}">
+    <div class="panel-body">
+        <div class="row">
+            {{#if formControls}}
+            <div class="col-xs-6">
+                <p class="no-margin">Form Controls/Methods Needed for the Wireframe</p>
+                <div class="faux-table top-margin-sm">
+                    <div class="header">
+                        <div class="table-row">
+                            <div class="pixel-width-15">
+                                <div>Status</div>
+                            </div>
+                            <div>
+                                <div>Control Name</div>
+                            </div>
+                            <div>
+                                <div>User Story</div>
+                            </div>
+                            <div>
+                                <div>Documentation</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body">
+                        {{#each formControls}}
+                        <div class="table-row">
+                            <div class="pixel-width-15">
+                                {{#if developmentStatus}}{{#if cometStatus}}<div class="handOff-status no-margin left-margin-md bg-success"></div>{{else}}<div class="handOff-status no-margin left-margin-md bg-warning"></div>{{/if}}{{else}}<div class="handOff-status no-margin left-margin-md bg-danger"></div>{{/if}}
+                            </div>
+                            <div>
+                                <span>{{label}}</span>
+                            </div>
+                            <div>
+                                <span>US{{storyNumber}}</span>
+                            </div>
+                            <div>
+                                {{#if documentationURL}}<a href="{{documentationURL}}" class="documentation-link" target="_blank">(click here)</a>{{/if}}
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{/if}} {{#if adkComponents}}
+            <div class="col-xs-6">
+                <p class="no-margin">ADK Componenets/Methods Needed for the Wireframe</p>
+                <div class="faux-table top-margin-sm">
+                    <div class="header">
+                        <div class="table-row">
+                            <div class="pixel-width-15">
+                                <div>Status</div>
+                            </div>
+                            <div>
+                                <div>Control Name</div>
+                            </div>
+                            <div>
+                                <div>User Story</div>
+                            </div>
+                            <div>
+                                <div>Documentation</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body">
+                        {{#each adkComponents}}
+                        <div class="table-row">
+                            <div class="pixel-width-15">
+                                {{#if developmentStatus}}{{#if cometStatus}}<div class="handOff-status no-margin left-margin-md bg-success"></div>{{else}}<div class="handOff-status no-margin left-margin-md bg-warning"></div>{{/if}}{{else}}<div class="handOff-status no-margin left-margin-md bg-danger"></div>{{/if}}
+                            </div>
+                            <div>
+                                <span>{{label}}</span>
+                            </div>
+                            <div>
+                                <span>US{{storyNumber}}</span>
+                            </div>
+                            <div>
+                                {{#if documentationURL}}<a href="{{documentationURL}}" class="documentation-link" target="_blank">(click here)</a>{{/if}}
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{/if}} {{#if notes}}
+            <div class="col-xs-12">
+                <p class="extra-notes underline bg-warning"><b>Notes: </b>{{notes}}</p>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

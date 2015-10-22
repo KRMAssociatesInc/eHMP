@@ -20,6 +20,7 @@ Scenario: User uses the active problems coversheet to view modal
      |SNOMED CT: |  |
      | Onset: | 05/02/1998 | 
      | Acuity:| Chronic |
+     | Status:| Active |
      | Provider: | Vehu,Eight |
      |Facility:  | CAMP MASTER | 
      |Location:  | Primary Care | 
@@ -31,8 +32,9 @@ Scenario: User uses the active problems coversheet to view modal
 	 | Headers |
 	 | Description |
 	 | Acuity |
+	 | Status |
 	#And the Problems table contains the rows
-	 #| Description | Acuity | 	 
+	 #| Description | Acuity | Status |
      #|Acute myocardial infarction, unspecified site, episode of care unspecified|  <!-- \n  \n    <span class="text-muted">Unknown</span>\n  \n -->\n\n<span class="acuityType">Unknown</span> | 
 	 #| Hyperlipidemia | <!-- \n  <span class="text-muted">Chronic</span>\n -->\n\n<span class="acuityType">Chronic</span>| 
 	 
@@ -50,17 +52,18 @@ Scenario: User uses the active problems coversheet to filter and sort
 	 | Headers |
 	 | Description |
 	 | Acuity |
+	 | Status|
 	Then the Problems table contains the first row
-	 | Description | Acuity | 
-	 | Diabetes Mellitus Type II or unspecified | Chronic |
+	 | Description | Acuity | Status |
+	 | Diabetes Mellitus Type II or unspecified | Chronic | Active |
 	When the user clicks the "Problems Description"
 	When the user clicks the "Problems Filter Button"
 	And the user enters "Dia" into the "Problems Filter Field"
 	And the "Problems table" contain 5 items
 	#And the Problems coversheet contains 1 pages
   	Then the Problems table contains the first row
-	 | Description | Acuity |
-	 | Diabetes Mellitus Type II or unspecified |Chronic|
+	 | Description | Acuity | Status |
+	 | Diabetes Mellitus Type II or unspecified |Chronic|Active|
 
 @US2411c @DE1056
 Scenario: User uses the active problems expanded to view modal
@@ -72,7 +75,7 @@ Given user is logged into eHMP-UI
 		| patient name	| Eight,Patient			|
 	When the user clicks the "Problems Expand Button"
 	When the user clicks the "Diabetes Mellitus Type II or unspecified"	
-    And the "Modal Body" contain 11 items
+    And the "Modal Body" contain 12 items
     And the modal body contains the rows
       | Primary ICD-9-CM:| 250.00 |
      |SNOMED CT: |  |
@@ -89,14 +92,15 @@ Given user is logged into eHMP-UI
 	 | Description |
 	 | Standardized Description |
 	 | Acuity |
+	 | Status |
 	 | Onset Date | 
 	 | Last Updated| 
 	 | Provider| 
 	 | Facility | 
 	 | Comments | 
 	And the Problems table contains the rows
-	 | Description | Standardized Description | Acuity | Onset Date | Last Updated | Provider | Facility | Comments | 
-	 | limb swelling | Swelling of limb (finding) | <!-- \n  <span class="text-muted">Chronic</span>\n -->\n\n<span class="acuityType">Chronic</span> | 12/05/2013 | 12/05/2013| Midtier, Cgl Two | DOD | <span class="fa fa-transparent-comment"></span> | 
+	 | Description | Standardized Description | Acuity | Status | Onset Date | Last Updated | Provider | Facility | Comments |
+	 | limb swelling | Swelling of limb (finding) | <!-- \n  <span class="text-muted">Chronic</span>\n -->\n\n<span class="acuityType">Chronic</span> | Active| 12/05/2013 | 12/05/2013| Midtier, Cgl Two | DOD | <span class="fa fa-transparent-comment"></span> |
 
 @US2411d @DE1056
 Scenario: User uses the active problems expanded to filter and sort
@@ -112,14 +116,15 @@ Scenario: User uses the active problems expanded to filter and sort
 	 | Description |
 	 | Standardized Description |
 	 | Acuity |
+	 | Status |
 	 | Onset Date | 
 	 | Last Updated| 
 	 | Provider| 
 	 | Facility | 
 	 | Comments | 
 	Then the Problems table contains the first row
-	 | Description | Standardized Description | Acuity | Onset Date | Last Updated | Provider | Facility | Comments |
-	 |Diabetes Mellitus Type II or unspecified| |Chronic | 05/02/1998 | 03/30/2004|Vehu,Eight|  TST1 | |
+	 | Description | Standardized Description | Acuity | Status | Onset Date | Last Updated | Provider | Facility | Comments |
+	 |Diabetes Mellitus Type II or unspecified| | Chronic | Active | 05/02/1998 | 03/30/2004 | Vehu,Eight|  TST1 | |
 	When the user clicks the "Problems Acuity"
 	And the "Problems table" contain 27 items
 	And the user clicks the "Problems Filter Button"

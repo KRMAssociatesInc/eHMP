@@ -1,0 +1,41 @@
+<h3>Breadcrumbs</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> Indicate the current page's location within a navigational hierarchy.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> The instructions for the breadcrumb will need to be dynamic depending on the navigational hierarchy.</p>
+</div>
+<div id="breadcrumbs-copy">
+    <ol class="breadcrumb">
+        <li class="active">eHMP UI Bootstrap Library<span class="sr-only">Currently on this page.</span></li>
+    </ol>
+    <ol class="breadcrumb">
+        <li><a href="#">eHMP UI Bootstrap Library<span class="sr-only">This is the first page visited, press enter to navigate to it.</span></a></li>
+        <li class="active">Views<span class="sr-only">Currently on this page.</span></li>
+    </ol>
+    <ol class="breadcrumb">
+        <li><a href="#">eHMP UI Bootstrap Library<span class="sr-only">This is the first page visited, press enter to navigate to it.</span></a></li>
+        <li><a href="#">Views<span class="sr-only">This is the second page visited, press enter to navigate to it.</span></a></li>
+        <li class="active">Mockup<span class="sr-only">Currently on this page.</span></li>
+    </ol>
+</div>
+<hr />
+<div role="tabpanel" class="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#breadcrumbs" aria-controls="breadcrumbs" role="tab" data-toggle="tab">Breadcrumbs</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="breadcrumbs">
+            <pre>
+&lt;ol class="breadcrumb"&gt;
+    &lt;li&gt;
+        &lt;a href="#"&gt;eHMP UI Bootstrap Library&lt;span class="sr-only"&gt;This is the first page visited, press enter to navigate to it.&lt;/span&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href="#"&gt;Views&lt;span class="sr-only"&gt;This is the second page visited, press enter to navigate to it.&lt;/span&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="active"&gt;Mockup&lt;span class="sr-only"&gt;Currently on this page.&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+            </pre>
+            <a onclick="copyToClipboard('breadcrumbs-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>

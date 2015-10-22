@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>eHMP Bootstrap UI Library - Notes</title>
+    <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../../css/main-styles.css" />
+</head>
+
+<body class="library">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../../views.html">Views</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../../color-palette.html">Color Palette</a></li>
+                                <li><a href="#">Style Guide</a></li>
+                            </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end navigation-->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+            <li><a href="../../views.html">Views</a></li>
+            <li class="active">F226 - Enter and Review Free Text Progress Notes</li>
+        </ol>
+        <h1>F226 - Enter and Review Fee Text Progress Notes</h1>
+        <div class="description">
+            <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This is the 508 compliant static HTML/CSS mock up of Notes.</p>
+            <p><strong><i class="fa fa-lightbulb-o"></i> DOCUMENT:</strong> Please also view <a href="http://wakirc.axshare.com/v6_-_free_text_progress_notes_-_tray.html">Enter and Store Vital wireframe</a>, <a href="../../docs/psi8/workflow/workflow-notes.pdf">Workflow Diagram</a> <small>[PDF, 1.2MB]</small>, and <a href="../../docs/use-case/psi8/use-case-notes.pdf">Use Scenario Case Documentation</a> <small>[PDF, 129KB]</small> for full details on implementation.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6">
+                                    <h4 class="modal-title">All Notes</h4>
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <div class="header-btns">
+                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#newNotesModal" aria-label="Press enter to create a new note"><i class="fa fa-plus"></i> New Note</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="newNotesModal" role="dialog" aria-labelledby="newNotesModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="To close the modal press enter"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="newNotesModalLabel"><i class="fa fa-exclamation-triangle"></i> Missing Encounter Information</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>This note title is marked to prompt for the following missing encounter information:</p>
+                                        <ul>
+                                            <li>A diagnosis11.</li>
+                                            <li>A visit type or procedure.</li>
+                                        </ul>
+                                        <p>You must enter the encounter information before you can sign the note. Would you like to access the form now?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                        <button type="button" class="btn btn-primary">Yes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end new note modal-->
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="row row-sort">
+                                            <div class="col-md-6 col-xs-6">
+                                                <label for="notes-arrange-by">Arrange by: </label>
+                                                <select id="notes-arrange-by" title="Arrange Notes by selecting from the drop down list">
+                                                    <option value="Location">Location</option>
+                                                    <option value="Author">Author</option>
+                                                    <option value="Status">Status</option>
+                                                    <option value="Title">Title</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6 text-right">
+                                                <label for="notes-sort-by" class="sr-only">Sort by</label>
+                                                <select id="notes-sort-by" title="Sort Notes by selecting from the drop down list">
+                                                    <option value="Type 1">Most recent</option>
+                                                    <option value="Type 2">Least recent</option>
+                                                    <option value="Type 3">Chronological</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-container panel-group small" id="accordion" role="tablist">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-notes-unsigned">
+                                                    <h4>
+                                                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-notes-unsigned" aria-expanded="true" aria-controls="collapse-notes-unsigned">Un-Signed<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                                </h4>
+                                                </div>
+                                                <div id="collapse-notes-unsigned" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-notes-unsigned">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6">
+                                                                        <h5>Primary Care General Note</h5>
+                                                                        <p><span id="unsigned-date1">01/13/2014</span> - <span id="unsigned-time1">17:55</span></p>
+                                                                        <p>Un-Signed</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-notes-uncosigned">
+                                                    <h4>
+                                                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-heading-notes-uncosigned" aria-expanded="false" aria-controls="collapse-heading-notes-uncosigned">Un-CoSigned<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                                </h4>
+                                                </div>
+                                                <div id="collapse-heading-notes-uncosigned" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-notes-uncosigned">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6">
+                                                                        <h5>Primary Care General Note</h5>
+                                                                        <p><span id="uncosigned-date1">01/13/2014</span> - <span id="uncosigned-time1">17:55</span></p>
+                                                                        <p>Un-CoSigned</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-notes-recently-signed">
+                                                    <h4>
+                                                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-heading-notes-recently-signed" aria-expanded="false" aria-controls="collapse-heading-notes-recently-signed">Recently Signed<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                                </h4>
+                                                </div>
+                                                <div id="collapse-heading-notes-recently-signed" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-notes-recently-signed">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6">
+                                                                        <h5>Primary Care General Note</h5>
+                                                                        <p><span id="recently-signed-date1">01/13/2014</span> - <span id="recently-signed-time1">17:55</span></p>
+                                                                        <p>Signed</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#notesDeleteModal" title="Press enter to delete the note">Delete</button>
+                                                </div>
+                                                <div class="control visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#notesModal" title="Press enter to view the details of the note">View</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                    <div class="modal fade" id="notesModal" role="dialog" aria-labelledby="notesModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="tray-settings">
+                                                        <p class="sr-only">This is the toolbar that allows you to perform actions</p>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to edit note" aria-label="Edit"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to print note" aria-label="Print"><i class="fa fa-print"></i></button>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to close note" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                                                    </div>
+                                                    <h4 class="modal-title" id="notesModalLabel">Primary Care General Note<br />
+                                                <span class="small">04/11/2015 - 03:30</span><br />
+                                                <span class="small">Doe, John Q</span></h4>
+                                                    <h5>Signed</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus, est eget sodales vestibulum, lorem erat fringilla felis, vel vestibulum dolor turpis sed orci. Aenean lacinia quis risus eget laoreet. Pellentesque rhoncus justo ac urna sollicitudin egestas.</p>
+                                                    <p>Suspendisse malesuada ipsum nisi, sed sollicitudin arcu condimentum a. Nulla facilisi. Sed hendrerit enim lacus, id tempor arcu euismod dapibus.</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus, est eget sodales vestibulum, lorem erat fringilla felis, vel vestibulum dolor turpis sed orci. Aenean lacinia quis risus eget laoreet. Pellentesque rhoncus justo ac urna sollicitudin egestas.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="notesDeleteModal" role="dialog" aria-labelledby="notesDeleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="tray-settings">
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                                                    </div>
+                                                    <h4 class="modal-title" id="notesDeleteModalLabel">Mark as Entered in Error</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="well well-sm">
+                                                        <h4>Problem Name<br />
+                                                    <span class="small">06/13/2015  17:55</span></h4>
+                                                    </div>
+                                                    <div class="control form-group">
+                                                        <label for="entered-error" class="sr-only">Add Annotation</label>
+                                                        <input class="form-control" type="text" name="name" title="Please enter in annotation" placeholder="Add Annotation&hellip;" id="entered-error" />
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div class="control trash visible-inline">
+                                                        <button type="button" class="btn icon-btn" title="Press enter to cancel">Cancel</button>
+                                                    </div>
+                                                    <div class="control trash visible-inline">
+                                                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" title="Press enter to remove">Remove</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-10 col-xs-10">
+                                    <h4 class="modal-title">New Note <small class="sr-only">(* indicates as a required field.)</small></h4>
+                                </div>
+                                <div class="col-md-2 col-xs-2">
+                                    <div class="header-btns">
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="dropdown">
+                                                <button class="btn icon-btn dropdown-toggle" type="button" id="notes-settings" data-toggle="dropdown" aria-expanded="true">
+                                                    <i class="fa fa-gear"><span class="sr-only">Settings for vitals</span></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="notes-settings">
+                                                    <li role="presentation"><a role="menuitem" href="#">Preview</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Print</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <button type="button" class="btn icon-btn" title="Press enter to open the popover view"><i class="fa fa-expand"><span class="sr-only">Press enter to open the popover view</span></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="scroll-enter-form">
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <div class="form-group control">
+                                                        <label for="title">Title *</label>
+                                                        <select class="form-control typeahead-select" id="title" title="Press enter to browse through select options">
+                                                            <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                                <option value="AK">Alaska</option>
+                                                                <option value="HI">Hawaii</option>
+                                                                <option value="AK">Alaska</option>
+                                                                <option value="HI">Hawaii</option>
+                                                                <option value="AK">Alaska</option>
+                                                                <option value="HI">Hawaii</option>
+                                                                <option value="AK">Alaska</option>
+                                                                <option value="HI">Hawaii</option>
+                                                                <option value="AK">Alaska</option>
+                                                                <option value="HI">Hawaii</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group control">
+                                                        <label for="notesCalendar">Date *</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                            <input type="text" id="notesCalendar" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group control">
+                                                        <label for="notesTime">Time *</label>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                                                            <input type="text" id="notesTime" class="form-control timepicker" title="Please enter in a time in the following format, HH:MM" placeholder="HH:MM" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--<div class="row">
+                                                <div class="col-md-6 col-xs-6">
+                                                    <div class="form-group control">
+                                                        <label for="notesCalendar">Date *</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                            <input type="text" id="notesCalendar" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-xs-6">
+                                                    <div class="form-group control">
+                                                        <label for="notesTime">Time *</label>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                                                            <input type="text" id="notesTime" class="form-control timepicker" title="Please enter in a time in the following format, HH:MM" placeholder="HH:MM" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group control">
+                                                        <label for="moreInfo">Note *</label>
+                                                        <textarea class="form-control" rows="16" name="moreInfo" title="Please enter in note details" id="moreInfo"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p aria-hidden="true">(* indicates as a required field.)</p>
+                                                <p><span id="notes-saved-at-view2">Saved at 08:27</span></p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="control visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to save and close note">Close</button>
+                                                </div>
+                                                <div class="control visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#signNotesModal" title="Press enter to sign note">Sign</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                    <div class="modal fade" id="signNotesModal" role="dialog" aria-labelledby="signNotesModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="tray-settings">
+                                                        <p class="sr-only">This is the toolbar that allows you to perform actions</p>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to edit note" aria-label="Edit"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to print note" aria-label="Print"><i class="fa fa-print"></i></button>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to close note" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                                                    </div>
+                                                    <h4 class="modal-title" id="signNotesModalLabel">Sign<br />
+                                                <span class="small">04/11/2015 - 03:30</span><br />
+                                                <span class="small">Doe, John Q</span></h4>
+                                                    <h5>Signed</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus, est eget sodales vestibulum, lorem erat fringilla felis, vel vestibulum dolor turpis sed orci. Aenean lacinia quis risus eget laoreet. Pellentesque rhoncus justo ac urna sollicitudin
+                                                        <p>Suspendisse malesuada ipsum nisi, sed sollicitudin arcu condimentum a. Nulla facilisi. Sed hendrerit enim lacus, id tempor arcu euismod dapibus.</p>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus, est eget sodales vestibulum, lorem erat fringilla felis, vel vestibulum dolor turpis sed orci. Aenean lacinia quis risus eget laoreet. Pellentesque rhoncus justo ac urna sollicitudin egestas.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/select2.full.js"></script>
+    <script>
+    $(function() {
+        // Toggle selected items within accordion
+        $('.panel-body.multi-select-list').on('click', 'li', function() {
+            $(this).toggleClass('list-item-selected');
+        });
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        // we assign the width to 100% so that the parent element decides the width of the select such as in bootstrap
+        // otherwise the width of 100% is not assigned if the select is created when it's not visible
+        $(".typeahead-select").select2({
+            width: '100%'
+        });
+    });
+    </script>
+</body>
+
+</html>

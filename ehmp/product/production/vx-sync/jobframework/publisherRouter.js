@@ -6,14 +6,15 @@ var Publisher = require('./publisher');
 var _ = require('underscore');
 var async = require('async');
 
-function Router(log, config, jobStatusUpdater, PublisherClass) {
+function Router(log, config, metrics, jobStatusUpdater, PublisherClass) {
     if(!(this instanceof Router)) {
-        return new Router(log, config, PublisherClass);
+        return new Router(log, config, metrics, PublisherClass);
     }
 
     this.log = log;
     this.log.debug('publisherRouter.Router() : Enter');
-    this.beanstalkConfig = config.beanstalk;
+    this.metrics = metrics;
+    this.config = config;
     this.jobStatusUpdater = jobStatusUpdater;
 
     // This parameter is for unit testing, otherwise just leave it undefined.
@@ -66,8 +67,9 @@ Router.prototype.publish = function(jobs, options, callback) {
 
 
 Router.prototype.getPublisherForJob = function(job) {
-    this.log.debug('publisherRouter.getPublisherForJob() : (%s)', job.type);
-    this.log.debug(inspect(job));
+    var self = this;
+    self.log.debug('publisherRouter.getPublisherForJob() : (%s)', job.type);
+    self.log.debug(inspect(job));
 
     // TODO: What if there is no publisher for the job?
     if (_.isEmpty(job)) {
@@ -76,13 +78,11 @@ Router.prototype.getPublisherForJob = function(job) {
 
     var type = job.type;
 
-    var publisher = this.publishers[type];
+    var publisher = self.publishers[type];
     if (!publisher) {
-        this.log.debug('publisherRouter.getPublisherForJob(): publisher not already created / in cache, creating publisher [%s]', type);
-
-        // publisher = new this.PublisherClass(logUtil.getAsChild('publisher[' + type + ']', this.log), this.config, type);
-        publisher = new this.PublisherClass(this.log, this.beanstalkConfig, type);
-        this.publishers[type] = publisher;
+        self.log.debug('publisherRouter.getPublisherForJob(): publisher not already created / in cache, creating publisher [%s]', type);
+        publisher = new self.PublisherClass(self.log, self.metrics, self.config, type);
+        self.publishers[type] = publisher;
     }
 
     return publisher;

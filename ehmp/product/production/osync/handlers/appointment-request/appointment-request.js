@@ -6,6 +6,8 @@ var RpcClient = require(global.OSYNC_VISTAJS + 'RpcClient').RpcClient;
 var nullUtils = require(global.OSYNC_UTILS + 'null-utils');
 var jobUtil = require(global.OSYNC_UTILS + 'job-utils');
 var parseRpcResponseAppointments = require(global.OSYNC_UTILS + 'patient-sync-utils').parseRpcResponseAppointments;
+var filemanDateUtil = require(global.OSYNC_UTILS + 'filemanDateUtil');
+var moment = require('moment');
 
 
 /**
@@ -17,11 +19,9 @@ var parseRpcResponseAppointments = require(global.OSYNC_UTILS + 'patient-sync-ut
  * @param handlerCallback The callback method you want invoked passing in errorMsg as the first argument.
  */
 function logError(log, errorMsg, handlerCallback) {
-    console.log("ERROR: " + errorMsg); //Since logger won't print to console, do it here
-   // log.error("ERROR: " + errorMsg);
-   // handlerCallback("ERROR: " + errorMsg);
+    log.error("ERROR: " + errorMsg);
+    handlerCallback("ERROR: " + errorMsg);
 }
-
 
 /**
  * Takes a job and validates all of the fields of that job to make sure it's a valid one.<br/>
@@ -103,9 +103,8 @@ function validateConfig(log, config, handlerCallback) {
 
     if (validateConfigEntry(log, config.appointmentRequest.appointments, "config.appointmentRequest.appointments", handlerCallback) === false)
         return false;
-    if (validateConfigEntry(log, config.appointmentRequest.appointments.startDate, "config.appointmentRequest.appointments.startDate", handlerCallback) === false)
-        return false;
-    if (validateConfigEntry(log, config.appointmentRequest.appointments.endDate, "config.appointmentRequest.appointments.endDate", handlerCallback) === false)
+
+    if (validateConfigEntry(log, config.appointmentRequest.appointments.daysInFuture, "config.appointmentRequest.appointments.daysInFuture", handlerCallback) === false)
         return false;
 
     return true;
@@ -130,36 +129,54 @@ function handle(log, config, environment, job, handlerCallback) {
     if (validateConfig(log, config, handlerCallback) === false)
         return;
 
-    //per requirements beginning/end date are configurable and will be set in config file
-    var startDate = config.appointmentRequest.appointments.startDate;
-    var endDate = config.appointmentRequest.appointments.endDate;
+    //Does an RPC call to vista to get a list of patients with up coming appointments in the next 24 hours (period set in configuration).
+    var now = moment();
+    var startDate = filemanDateUtil.getFilemanDate(now.toDate());
+    var future = now.add(config.appointmentRequest.appointments.daysInFuture, 'days');
+    var endDate = filemanDateUtil.getFilemanDate(future.toDate());
     var patients = [];
 
-    var result = {
-        source: 'appointments',
-        patients: patients
-    };
 
-    RpcClient.callRpc(log, config.appointmentRequest, 'HMP PATIENT SCHED SYNC', startDate, endDate, function(error, data) {
-    //RpcClient.callRpc(log, config, 'ORWPT APPTLST', '100022', function(error, data) {
-        if (error) {
-            logError(log, 'An error occurred retrieving appointments: ' + error + ", data contained: " + data, handlerCallback);
-        }
+    var configVistaSites = config.vistaSites;
+    var sites = _.keys(configVistaSites);
+    log.debug("sites " + JSON.stringify(sites));
+    if(_.isArray(sites) && sites.length > 0) {
+        _.each(sites, function(site) {
+            var appointmentRequest = config.appointmentRequest;
+            appointmentRequest.host = configVistaSites[site].host;
+            appointmentRequest.port = configVistaSites[site].port;
+            RpcClient.callRpc(log, appointmentRequest, 'HMP PATIENT SCHED SYNC', startDate, endDate, function(error, data) {
+                //RpcClient.callRpc(log, config, 'ORWPT APPTLST', '100022', function(error, data) {
+                if (error) {
+                    logError(log, 'An error occurred retrieving appointments: ' + error + ", data contained: " + data, handlerCallback);
+                }
 
-        if (nullUtils.isNullish(data) === false && _.isEmpty(data) === false) {
-            patients = parseRpcResponseAppointments(data);
-        }
-        log.debug("***result created " + JSON.stringify(result));
+                log.debug('appointment-request.handle data %s', JSON.stringify(data));
 
-        if (config.inttest === true) {
-            handlerCallback(null, result);
-        }
-        else {
-            var jobToPublish = jobUtil.createValidationRequest(log, config, environment, handlerCallback, job, result);
+                if (config.inttest === true) {
+                    handlerCallback(null, job);
+                }
 
-            environment.publisherRouter.publish(jobToPublish, handlerCallback);
-        }
-    });
+                if (nullUtils.isNullish(data) === false && _.isEmpty(data) === false) {
+                    patients = parseRpcResponseAppointments(data);
+                    job.source = 'appointments';
+                    job.patients = patients;
+                    job.siteId = site;
+
+                    log.debug('appointment-request.handle patients %s', JSON.stringify(patients));
+                    var jobToPublish = jobUtil.createValidationRequest(log, config, environment, handlerCallback, job);
+
+                    environment.publisherRouter.publish(jobToPublish, handlerCallback);
+                } else {
+                    log.debug("There are no appointments to process")
+                    handlerCallback(null, job);
+                    return;
+                }
+
+            });
+
+        });
+    }
 }
 
 module.exports = handle;

@@ -125,21 +125,21 @@ def debug_on_jenkins
   driver = TestSupport.driver
   headers = driver.find_elements(:xpath, "//*[@data-instanceid='newsfeed']/descendant::th")
   p "number of headers #{headers.length}"
-  headers.each do | th |
+  headers.each do |th|
     p "header: #{th.attribute('id')} with value #{th.attribute('value')} #{th.text}"
   end
 end
 
 Then(/^the newsfeed table contains headers$/) do |table|
   aa = NewsFeedColumnHeader.instance
-  table.rows.each do | key, value |
+  table.rows.each do |key, value|
     result_of_verification = aa.perform_verification(key, value)
     debug_on_jenkins unless result_of_verification
     expect(result_of_verification).to be_true
   end #table
 end
 
-Then(/^the user sees "(.*?)" and "(.*?)" highlighted in orange$/) do |admitted, discharged|
+Then(/^the user sees "(.*?)" and "(.*?)" highlighted in orange$/) do |_admitted, _discharged|
   driver = TestSupport.driver
   matched = false
   text_color = ""
@@ -168,7 +168,7 @@ Then(/^when the user types "(.*?)" in input box$/) do |search_field|
   expect(aa.perform_action("NewsFeed Filter input", search_field)).to be_true
 end
 
-Then(/^the user clicks on the event "(.*?)" in NewsFeedApplet$/) do | table_cell |
+Then(/^the user clicks on the event "(.*?)" in NewsFeedApplet$/) do |table_cell|
   driver = TestSupport.driver  
   aa = NewsFeedApplet.instance
   #expect(aa.wait_until_xpath_count_greater_than("Number of Newsfeed Applet Rows", 2)).to be_true
@@ -178,9 +178,9 @@ end
 Then(/^the user sees modal pop\-up title "(.*?)"$/) do |modal_popup_title|
   driver = TestSupport.driver
   aa = NewsFeedApplet.instance
-#  aa.wait_until_element_present("Search Spinner")
-#  wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time) # seconds # wait until list opens
-#  wait.until { driver.find_element(:id, "searchSpinner").attribute("style").strip =="display: none;" } # wait until specific list element is NOT
+  #  aa.wait_until_element_present("Search Spinner")
+  #  wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time) # seconds # wait until list opens
+  #  wait.until { driver.find_element(:id, "searchSpinner").attribute("style").strip =="display: none;" } # wait until specific list element is NOT
   
   expect(aa.wait_until_action_element_visible("modalPopUpTitle", DefaultLogin.wait_time)).to be_true
   #loading_text = aa.perform_verification("modalPopUpTitle", "Loading...")
@@ -191,7 +191,7 @@ end
 Then(/^the user sees the modal pop\-up$/) do |table|
   aa = NewsFeedApplet.instance
   expect(aa.wait_until_action_element_visible("CloseButton", DefaultLogin.wait_time)).to be_true
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification('Newsfeed Modal Details', row[0])).to be_true, "The value #{row[0]} is not present in the newsfeed modal details"
     expect(aa.perform_verification('Newsfeed Modal Details', row[1])).to be_true, "The value #{row[1]} is not present in the newsfeed modal details"
   end 
@@ -200,7 +200,7 @@ end
 Then(/^the user sees modal details$/) do |table|
   aa = NewsFeedApplet.instance
   expect(aa.wait_until_action_element_visible("CloseButton", DefaultLogin.wait_time)).to be_true
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification('Newsfeed Modal Details', row[0])).to be_true, "The value #{row[0]} is not present in the newsfeed modal details"
   end
 end
@@ -225,7 +225,7 @@ Then(/^the user sees the following groups in Newsfeed Applet$/) do |table|
   aa = NewsFeedGroup.instance
   cc = NewsFeedApplet.instance
   expect(cc.wait_until_xpath_count_greater_than("Number of Newsfeed Applet Rows", 2)).to be_true
-  table.rows.each do | key, value |
+  table.rows.each do |key, value|
     expect(aa.perform_verification(key, value)).to be_true
   end #table
 end
@@ -236,7 +236,7 @@ When(/^the user clicks on date\/time "(.*?)" in the newsfeed applet$/) do |dateT
   expect(aa.perform_action(dateTime, "")).to be_true
 end
 
-Then(/^the date\/time collapses and shows "(.*?)" result for "(.*?)" in the newsfeed applet$/) do |visit_count , visit_year|
+Then(/^the date\/time collapses and shows "(.*?)" result for "(.*?)" in the newsfeed applet$/) do |visit_count, visit_year|
   aa = NewsFeedApplet.instance
   driver = TestSupport.driver
   #expect(aa.wait_until_action_element_visible("isTableVisible", DefaultLogin.wait_time)).to be_true
@@ -258,7 +258,7 @@ Then(/^the default sorting by Date\/Time is in descending in Newsfeed Applet$/) 
   expect(aa.perform_verification("row_last", element_last.text)).to be_true
 end
 
-When(/^user clicks on "(.*?)" column header in Newsfeed Applet$/) do | groupBy |
+When(/^user clicks on "(.*?)" column header in Newsfeed Applet$/) do |groupBy|
   aa = NewsFeedColumnHeader.instance
   cc = NewsFeedApplet.instance
   expect(cc.wait_until_xpath_count_greater_than("Number of Newsfeed Applet Rows", 2)).to be_true
@@ -286,13 +286,13 @@ Then(/^the user sees title "(.*?)", "(.*?)" in Newsfeed Applet$/) do |title1, ti
   expect(aa.perform_verification("title2", title2)).to be_true
 end
 
-Then(/^the first row is as below when grouped by "(.*?)" in Newsfeed Applet$/) do |groupBy, table|
+Then(/^the first row is as below when grouped by "(.*?)" in Newsfeed Applet$/) do |_groupBy, table|
   aa = NewsFeedApplet.instance
   expect(aa.wait_until_xpath_count_greater_than("Number of Newsfeed Applet Rows", 2)).to be_true
   verify_table_rows_newsfeed(table)
 end
 
-Then(/^the last row is as below when grouped by "(.*?)" in Newsfeed Applet$/) do |groupBy, table|
+Then(/^the last row is as below when grouped by "(.*?)" in Newsfeed Applet$/) do |_groupBy, table|
   aa = NewsFeedApplet.instance
   expect(aa.wait_until_xpath_count_greater_than("Number of Newsfeed Applet Rows", 2)).to be_true
   verify_table_rows_newsfeed(table)
@@ -306,7 +306,7 @@ Then(/^the search results say "(.*?)" in NewsFeed Applet$/) do |search_result_te
   expect(aa.perform_verification("No Records Found", search_result_text)).to be_true
 end
 
-Then(/^only (?:these|this) (\d+) (?:row|rows) (?:is|are) visible in Newfeed Applet$/) do |expected_rows | 
+Then(/^only (?:these|this) (\d+) (?:row|rows) (?:is|are) visible in Newfeed Applet$/) do |expected_rows| 
   driver = TestSupport.driver
   aa = NewsFeedApplet.instance
   displayed = false
@@ -348,3 +348,15 @@ def verify_table_rows_newsfeed(table)
   wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time * 2)
   wait.until { VerifyTableValue.compare_specific_row(table, '[data-instanceid=newsfeed] #data-grid-newsfeed') }
 end
+
+Then(/^the NewsFeed Applet table contains rows$/) do |table|
+  wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time * 2)
+  table_verifier = VerifyTableValue.new
+  driver = TestSupport.driver
+
+  wait.until {  
+    browser_elements_list = driver.find_elements(:css, "#data-grid-newsfeed tbody tr")  
+    table_verifier.perform_table_verification(browser_elements_list, "//*[@id='news-feed']/descendant::table[@id='data-grid-newsfeed']", table)
+  }
+end
+

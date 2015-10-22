@@ -12,7 +12,7 @@ define([
             this.collection = options.collection;
             this.menuItems = options.menuItems;
             this.sharedModel = options.sharedModel;
-            this.service = ADK.SessionStorage.getAppletStorageModel('orders', 'activeMenuItem') || 'ALL';
+            this.service = ADK.SessionStorage.getAppletStorageModel('orders', 'activeMenuItem', false) || 'ALL';
         },
 
         template: ordersFilterTemplate,
@@ -26,12 +26,12 @@ define([
         clearSearchText: function() {
 
             $('#grid-filter-orders').find('.clear').click();
-            ADK.SessionStorage.setAppletStorageModel('orders', 'filterText', '');
+            ADK.SessionStorage.setAppletStorageModel('orders', 'filterText', '', false);
 
         },
 
         setActiveType: function(menuItems, activeService) {
-            ADK.SessionStorage.setAppletStorageModel('orders', 'activeMenuItem', activeService);
+            ADK.SessionStorage.setAppletStorageModel('orders', 'activeMenuItem', activeService, false);
         },
 
         filterChange: function() {
@@ -49,7 +49,7 @@ define([
             }));
 
             //set the drop-down default to the active item
-            this.$('#order-type-options').val(ADK.SessionStorage.getAppletStorageModel('orders', 'activeMenuItem') || 'ALL');
+            this.$('#order-type-options').val(ADK.SessionStorage.getAppletStorageModel('orders', 'activeMenuItem', false) || 'ALL');
         }
 
     });

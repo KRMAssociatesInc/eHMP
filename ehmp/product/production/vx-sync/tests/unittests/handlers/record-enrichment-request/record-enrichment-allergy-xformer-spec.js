@@ -164,7 +164,7 @@ describe('record-enrichment-allergy-xformer.js', function() {
             };
 
             runs(function() {
-                xformer(log, config, environment, originalVaAllergyJob, function(error, record) {
+                xformer(log, config, environment, originalVaAllergyJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.products).toBeTruthy();
@@ -214,7 +214,7 @@ describe('record-enrichment-allergy-xformer.js', function() {
             };
 
             runs(function() {
-                xformer(log, config, environment, originalDodAllergyJob, function(error, record) {
+                xformer(log, config, environment, originalDodAllergyJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.products).toBeTruthy();
@@ -245,7 +245,7 @@ describe('record-enrichment-allergy-xformer.js', function() {
             };
 
             runs(function() {
-                xformer(log, config, environment, originalNonVaNonDodAllergyJob, function(error, record) {
+                xformer(log, config, environment, originalNonVaNonDodAllergyJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.products).toBeTruthy();
@@ -280,28 +280,18 @@ describe('record-enrichment-allergy-xformer.js', function() {
                 return finished;
             }, 'Call failed to return in time.', 500);
         });
-        it('Job.record was null', function() {
-            var finished = false;
-            var environment = {};
-
-            runs(function() {
-                xformer(log, config, environment, {}, function(error, record) {
-                    expect(error).toBeNull();
-                    expect(record).toBeNull();
-                    finished = true;
-                });
-            });
-
-            waitsFor(function() {
-                return finished;
-            }, 'Call failed to return in time.', 500);
-        });
         it('Job was removed', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                metrics: log,
+                terminologyUtils: {
+                    CODE_SYSTEMS: CODE_SYSTEMS,
+                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode
+                }
+            };
 
             runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:allergy:DOD:0000000003:1000010340');

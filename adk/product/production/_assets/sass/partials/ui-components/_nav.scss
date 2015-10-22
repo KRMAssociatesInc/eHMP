@@ -1,0 +1,121 @@
+$navbar-padding: 7px 12px;
+.navbar {
+    background-color: $primary;
+    background-image: none;
+    min-height: 0px;
+    border-radius: 0;
+    .navbar-header {
+        .navbar-toggle {
+            margin: 4px;
+            padding: 5px;
+            .icon-bar {
+                width: 17px;
+            }
+        }
+        a.navbar-brand {
+            color: white;
+            font-size: 12px;
+            height: auto;
+            padding: $navbar-padding;
+            &:hover, &:active, &:focus {
+                background-color: $secondary;
+                color: $white;
+            }
+        }
+    }
+    &.navbar-default .navbar-nav li a {
+        color: $white;
+    }
+    &.navbar-default .navbar-nav > .open > a,
+    &.navbar-default .navbar-nav > .open > a:hover,
+    &.navbar-default .navbar-nav > .open > a:focus {
+        background-color: $secondary;
+        color: $white;
+    }
+    &.navbar-default .navbar-nav .open ul.dropdown-menu li.active {
+        background-color: $secondary;
+        padding: 10px;
+    }
+    &.navbar-default .navbar-nav .open ul.dropdown-menu li a {
+        color: $grey-darkest;
+        &:hover, &:focus, &:active {
+            background-color: $secondary;
+            background-image: none;
+            color: $white;
+        }
+    }
+    .nav {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .navbar-collapse {
+        padding: 0px;
+        ul.navbar-nav {
+            li a {
+                padding: $navbar-padding;
+                &:hover, &:focus, &:active {
+                    background-color: $secondary;
+                    outline: none;
+                    //outline: dotted $white thin;
+                }
+            }
+        }
+    }
+    .btn-group {
+        .btn {
+            background-color: $primary;
+            border: 0;
+            border-radius: 0;
+            color: $white;
+            display: block;
+            font-size: 12px;
+            padding: 8.5px 10px;
+            &.btn-default {
+                &:hover, &:focus, &:active, &.active {
+                    background-color: $secondary;
+                    color: $white;
+                    box-shadow: none;
+                }
+                &:focus, &:active, &.active {
+                    outline: dotted $white thin;
+                }
+                &:nth-of-type(2) {
+                    padding-left: 0;
+                    padding-right: 5px; 
+                    background: none;           
+                    i {
+                        opacity: .7;
+                    }
+                    &:hover {
+                        i {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .date-time {
+        color: $white;
+        font-size: 11px;
+        padding: 9px;
+        > div {
+            display: inline;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .navbar {
+        &.navbar-default .navbar-nav .open ul.dropdown-menu {
+            background-color: $white;
+            box-shadow: initial;
+            min-width: 0px;
+            width: 100%;
+            border-radius: 0px;
+        }
+        .navbar-right, .navbar-left {
+            width: 100%;
+        }
+
+    }
+}

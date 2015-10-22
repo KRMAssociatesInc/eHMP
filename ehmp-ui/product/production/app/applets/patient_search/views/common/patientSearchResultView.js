@@ -3,11 +3,13 @@ define([
     "marionette",
     "jquery",
     "hbs!app/applets/patient_search/templates/singleSearchResultTemplate",
+    "hbs!app/applets/patient_search/templates/singleSearchResult_clinicsTemplate",
     "hbs!app/applets/patient_search/templates/singleSearchResult_roomBedIncludedTemplate"
-], function(Backbone, Marionette, $, singleSearchResultTemplate, singleSearchResult_roomBedIncludedTemplate) {
+], function(Backbone, Marionette, $, singleSearchResultTemplate, singleSearchResult_clinicsTemplate, singleSearchResult_roomBedIncludedTemplate) {
 
     var ENTER_KEY = 13;
     var SPACE_KEY = 32;
+
     var base64PatientPhoto;
     var PatientSearchResultView = Backbone.Marionette.ItemView.extend({
         source: '',
@@ -34,43 +36,22 @@ define([
             }
         },
         getTemplate: function() {
-            if (this.templateName && (this.templateName === 'roomBedIncluded')) {
+            if (this.templateName && (this.templateName === 'clinics')) {
+                return singleSearchResult_clinicsTemplate;
+            } else if (this.templateName && (this.templateName === 'roomBedIncluded')) {
                 return singleSearchResult_roomBedIncludedTemplate;
             } else {
                 return singleSearchResultTemplate;
             }
         },
-        getPatientPhoto: function(event) {
-            var self = this;
-            var dataToBeSent = this.model.attributes;
-            var patientImageUrl = ADK.ResourceService.buildUrl('patientphoto-getPatientPhoto', {
-                pid: dataToBeSent.icn
-            });
-            var currentPatient = self.model;
-            var response = $.ajax({
-                url: patientImageUrl,
-                success: function(data, statusMessage, xhr) {
-                    base64PatientPhoto = 'data:image/jpeg;base64,'+ data +'';
-                    if (self.source === 'global') {
-                        self.mviGetCorrespondingIds();
-                    }
-                    currentPatient.set({
-                        patientImage: base64PatientPhoto
-                    });
-                },
-                error: function(xhr, statusMessage, error) {
-                  console.info("Refresh Session Error");
-                },
-                async: true
-            });
-            self.searchApplet.patientSelected(currentPatient);
-
-        },
         selectPatient: function(event) {
             if (event.keyCode !== undefined && (event.keyCode != ENTER_KEY && event.keyCode != SPACE_KEY)) {
                 return;
             }
-
+            var currentPatient = this.model;
+            if (this.source === 'global') {
+                this.mviGetCorrespondingIds();
+            }
             $("#patient-search-results a.active").removeClass('active');
             $("#patient-search-confirmation").removeClass('hide');
             $("#global-search-results a.active").removeClass('active');
@@ -78,7 +59,7 @@ define([
 
             $(event.currentTarget).siblings('.active').removeClass('active');
             $(event.currentTarget).addClass('active');
-             this.getPatientPhoto();
+             this.searchApplet.patientSelected(this.model);
         },
         mviGetCorrespondingIds: function() {
             var response = $.Deferred();

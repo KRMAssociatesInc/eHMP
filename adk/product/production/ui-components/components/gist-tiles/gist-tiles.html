@@ -1,0 +1,338 @@
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> placeholder</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> placeholder</p>
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> placeholder</p>
+</div>
+<h2>Single-row Gist Tile Toolbar</h2>
+<!-- Tile Headers -->
+<div class="demo-tiles-wrapper">
+    <div class="gist-container tiles">
+        <div class="gist-header row no-padding header-bar" aria-hidden="true">
+            <div class="col-xs-3">
+                <h4>Name</h4>
+            </div>
+            <div class="col-xs-2">
+                <h4>Sig</h4>
+            </div>
+            <div class="col-xs-1">
+                <h4>Last<span class="sort-icon" aria-hidden="true"> Δ</span><span class="sr-only">Press enter to sort the Last column in ascending order. To sort the Last column in descending order, press enter again.</span></h4>
+            </div>
+            <div class="col-xs-1">
+                <h4>Fillable</h4>
+            </div>
+            <div class="col-xs-5 chart-header">
+                <div class="high-chart" aria-hidden="true">&nbsp;</div>
+            </div>
+        </div>
+        <!-- end tile headers -->
+        <ul class="gist-item-list media-list">
+            <li class="gist-tile row no-padding">
+                <div class="col-xs-3">
+                    <span class="sr-only">Medication Name:</span> Atorvastatin
+                </div>
+                <div class="col-xs-2">
+                    <span class="sr-only">Medication Dosage:</span> 40 mg PO QDAY
+                </div>
+                <div class="col-xs-1">
+                    <span class="sr-only">Dosage period and trend:</span>
+                    <span aria-hidden="true">10m</span><span class="sr-only">10 months</span> <span class="fa fa-arrow-up trend-increase" title="Increase"></span><span class="sr-only">Increase</span>
+                </div>
+                <div class="col-xs-1">
+                    <span class="sr-only">Refill:</span>
+                    <span class="label applet-badges label-critical" aria-hidden="true" title="2 months left">2m</span><span class="sr-only">in 2 months</span>
+                </div>
+                <div class="col-xs-5 chart-column">
+                    <div class="high-chart" aria-hidden="true">
+                        <!--place high-chart here-->
+                    </div>
+                    <div class="sr-only">
+                        <!-- this table describes what is seen on the highchart in written/verbal format for screen readers -->
+                        <table>
+                            <caption>This table represents the history of the patient's prescription and intake behavior categories by date range and behavior</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Date Range</th>
+                                    <th scope="col">Behavior</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2013/05 - 2015/03</td>
+                                    <td>Prescribed and taken</td>
+                                </tr>
+                                <tr>
+                                    <td>2011/05 - 2013/03</td>
+                                    <td>Not used</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="toolbar-copy">
+                    <div class="ac-items">
+                        <!-- this is the button menu with the wrapping border that comes up whenever you click on a tile -->
+                        <h4 class="ac-items-heading"><span class="sr-only">Tile Tools</span><button class="ac-items-buttons-toggle" aria-hidden="true"></button></h4>
+                        <div class="ac-items-buttons">
+                            <button class="ac-item-button info-button" title="Infobutton" type="button"><span class="fa fa-info" aria-hidden="true"></span><span class="sr-only"> Press enter to view details</span></button>
+                            <button class="ac-item-button detail-button" title="Detail" type="button"><span class="fa fa-file-text-o" aria-hidden="true"></span><span class="sr-only"> Press enter to view historical information</span></button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<h2>Multiple-row Gist Tile Toolbar</h2>
+<!-- Tile Headers -->
+<div class="demo-tiles-wrapper">
+    <div class="gist-container tiles">
+        <div class="gist-header row no-padding header-bar" aria-hidden="true">
+            <div class="col-xs-3">
+                <h4>Name</h4>
+            </div>
+            <div class="col-xs-2">
+                <h4>Sig</h4>
+            </div>
+            <div class="col-xs-1">
+                <h4>Last<span class="sort-icon" aria-hidden="true"> Δ</span><span class="sr-only">Press enter to sort the Last column in ascending order. To sort the Last column in descending order, press enter again.</span></h4>
+            </div>
+            <div class="col-xs-1">
+                <h4>Fillable</h4>
+            </div>
+            <div class="col-xs-5 chart-header">
+                <div class="high-chart" aria-hidden="true">&nbsp;</div>
+            </div>
+        </div>
+        <!-- end tile headers -->
+        <ul class="gist-item-list media-list">
+            <li class="gist-tile row no-padding">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <span class="sr-only">Medication Name:</span> Furosemide
+                    </div>
+                    <div class="col-xs-2">
+                        <span class="sr-only">Medication Dosage:</span> 40 mg PO QDAY
+                    </div>
+                    <div class="col-xs-1">
+                        <span class="sr-only">Dosage period and trend:</span>
+                        <span aria-hidden="true">8m</span>
+                        <span class="sr-only">8 months</span>
+                        <span class="fa fa-arrow-down trend-decrease" title="Decrease" aria-hidden="true"></span><span class="sr-only">Decrease</span>
+                    </div>
+                    <div class="col-xs-1">
+                        <span class="sr-only">Refill:</span>
+                        <span class="label applet-badges label-abnormal" title="4 months left" aria-hidden="true">4m</span>
+                        <span class="sr-only">in 4 months</span>
+                    </div>
+                    <div class="col-xs-5 chart-column">
+                        <div class="high-chart" aria-hidden="true">
+                            <!--place highchart here-->
+                        </div>
+                        <div class="sr-only">
+                            <!-- this table describes what is seen on the highchart in written/verbal format for screen readers -->
+                            <table>
+                                <caption>This table represents the history of the patient's prescription and intake behavior categories by date range and behavior</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Date Range</th>
+                                        <th scope="col">Behavior</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2013/05 - 2015/03</td>
+                                        <td>Prescribed and taken</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2011/05 - 2013/03</td>
+                                        <td>Not used</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- second row of same medication -->
+                <div class="row">
+                    <div class="col-xs-3">
+                        <span class="sr-only">Medication Name:</span>
+                        <span class="sr-only">Furosemide - Second Order</span>
+                        <span class="fa fa-globe pull-right" title="This medication order originated at KODAK" aria-hidden="true"></span><span class="sr-only">This medication order originated at KODAK</span>
+                    </div>
+                    <div class="col-xs-2">
+                        <span class="sr-only">Medication Dosage:</span> 40 mg PO QDAY
+                    </div>
+                    <div class="col-xs-1">
+                        <span class="sr-only">Dosage Period and trend:</span> -
+                        <span class="sr-only"> No Change</span>
+                    </div>
+                    <div class="col-xs-1">
+                        <span class="sr-only">Refill:</span>
+                        <span class="label applet-badges label-critical" title="-24days | Expired" aria-hidden="true">-24d Exp</span>
+                        <span class="sr-only">This medication refill expired 24 days ago</span>
+                    </div>
+                    <div class="col-xs-5 chart-column">
+                        <div class="high-chart" aria-hidden="true">
+                            <!--place highchart here-->
+                        </div>
+                        <div class="sr-only">
+                            <!-- this table describes what is seen on the highchart in written/verbal format for screen readers -->
+                            <table>
+                                <caption>This table represents the history of the patient's prescription and intake behavior categories by date range and behavior</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Date Range</th>
+                                        <th scope="col">Behavior</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2013/05 - 2015/03</td>
+                                        <td>Prescribed and taken</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2011/05 - 2013/03</td>
+                                        <td>Not used</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="ac-items">
+                    <h4 class="ac-items-heading"><span class="sr-only">Tile Tools</span><button class="ac-items-buttons-toggle" aria-hidden="true"></button></h4>
+                    <div class="ac-items-buttons">
+                        <button class="ac-item-button info-button" title="Infobutton" type="button"><span class="fa fa-info" aria-hidden="true"></span><span class="sr-only"> Press enter to view details</span></button>
+                        <button class="ac-item-button detail-button" title="Detail" type="button"><span class="fa fa-file-text-o" aria-hidden="true"></span><span class="sr-only"> Press enter to view historical information</span></button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<h2>Pill Gist Tile Toolbar</h2>
+<div class="gist-container pills">
+    <ul class="gist-item-list media-list">
+        <li class="gist-tile">
+            Pill 1 content
+            <div class="ac-items">
+                <!-- this is the button menu with the wrapping border that comes up whenever you click on a tile -->
+                <h4 class="ac-items-heading"><span class="sr-only">Tile Tools</span><button class="ac-items-buttons-toggle" aria-hidden="true"></button></h4>
+                <div class="ac-items-buttons">
+                    <button class="ac-item-button info-button" title="Infobutton" type="button"><span class="fa fa-info" aria-hidden="true"></span><span class="sr-only"> Press enter to view details</span></button>
+                    <button class="ac-item-button detail-button" title="Detail" type="button"><span class="fa fa-file-text-o" aria-hidden="true"></span><span class="sr-only"> Press enter to view historical information</span></button>
+                </div>
+            </div>
+        </li>
+        <li class="gist-tile">
+            Pill 2 content
+            <div class="ac-items">
+                <!-- this is the button menu with the wrapping border that comes up whenever you click on a tile -->
+                <h4 class="ac-items-heading"><span class="sr-only">Tile Tools</span><button class="ac-items-buttons-toggle" type="button"></button></h4>
+                <div class="ac-items-buttons">
+                    <button class="ac-item-button info-button" title="Infobutton" type="button"><span class="fa fa-info" aria-hidden="true"></span><span class="sr-only"> Press enter to view details</span></button>
+                    <button class="ac-item-button detail-button" title="Detail" type="button"><span class="fa fa-file-text-o" aria-hidden="true"></span><span class="sr-only"> Press enter to view historical information</span></button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<!-- Gist tile code ends here -->
+<hr />
+<div role="tabpanel" class="tabpanel">
+    <ul role="tablist" class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#markup-gist-tile-toolbar" aria-controls="markup-gist-tile-toolbar" role="tab" data-toggle="tab">HTML Code</a></li>
+        <li role="presentation"><a href="#gist-tile-toolbar-js" aria-controls="gist-tile-toolbar-js" role="tab" data-toggle="tab">JavaScript Code</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="markup-gist-tile-toolbar">
+            <pre>
+&lt;!-- add the toolbar at the end of your wrapping container, the container has to have position relative also --&gt;
+&lt;div class=&quot;ac-items&quot;&gt;
+    &lt;h4 class=&quot;ac-items-heading&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;Tile Tools&lt;/span&gt;&lt;button class=&quot;ac-items-buttons-toggle&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;/button&gt;&lt;/h4&gt;
+    &lt;div class=&quot;ac-items-buttons&quot;&gt;
+        &lt;button class=&quot;ac-item-button info-button&quot; title=&quot;Infobutton&quot; type=&quot;button&quot;&gt;
+        &lt;span class=&quot;fa fa-info&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sr-only&quot;&gt; Press enter to view details&lt;/span&gt;&lt;/button&gt;
+        &lt;button class=&quot;ac-item-button detail-button&quot; title=&quot;Detail&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;fa fa-file-text-o&quot; aria-hidden=&quot;true&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;sr-only&quot;&gt; Press enter to view historical information&lt;/span&gt;&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+           </pre>
+            <a onclick="copyToClipboard('toolbar-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="gist-tile-toolbar-js">
+            <pre>
+$(function() {
+    $(document).on(&#39;click focus&#39;, &#39;.ac-items-buttons-toggle&#39;, function() {
+        var $clickt = $(this);
+        var $cp = $clickt.parent().parent();
+        if (!$cp.hasClass(&#39;active&#39;)) {
+            $cp.addClass(&#39;active&#39;);
+            $(&#39;body&#39;).bind(&#39;click.blurActionableItems&#39;, function(e) {
+                var $tg = $(e.target);
+                var isbutton = ($tg.is(&#39;button.ac-item-button&#39;) || $tg.parent().is(&#39;button.ac-item-button&#39;) ? true : false);
+                if (!isbutton) {
+                    $(&#39;body&#39;).unbind(&#39;click.blurActionableItems&#39;);
+                    $cp.removeClass(&#39;active&#39;);
+                }
+            });
+        }
+    }).on(&#39;blur&#39;, &#39;.ac-items-buttons-toggle&#39;, function() {
+        // set timeout added to overcome click/focus swapped event order in firefox.
+        setTimeout(function(){
+            $(this).parent().parent().removeClass(&#39;active&#39;);
+        },1);
+    }).on(&#39;focus&#39;, &#39;.ac-item-button&#39;, function() {
+        $(this).parent().parent().addClass(&#39;active&#39;);
+    }).on(&#39;blur&#39;, &#39;.ac-item-button&#39;, function() {
+        $(this).parent().parent().removeClass(&#39;active&#39;);
+    });
+    $(document).on(&#39;click.gistTileInfoButton&#39;, &#39;.ac-item-button.info-button&#39;, function() {
+        alert(&#39;Show information action triggered&#39;);
+    });
+    $(document).on(&#39;click.gistTileInfoButton&#39;, &#39;.ac-item-button.detail-button&#39;, function() {
+        alert(&#39;Show detail action triggered&#39;);
+    });
+});
+            </pre>
+            <a onclick="copyToClipboard('toolbar-js-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>
+<div id="toolbar-js-copy">
+    <script>
+    $(function() {
+        $(document).on('click focus', '.ac-items-buttons-toggle', function() {
+            var $clickt = $(this);
+            var $cp = $clickt.parent().parent();
+            if (!$cp.hasClass('active')) {
+                $cp.addClass('active');
+                $('body').bind('click.blurActionableItems', function(e) {
+                    var $tg = $(e.target);
+                    var isbutton = ($tg.is('button.ac-item-button') || $tg.parent().is('button.ac-item-button') ? true : false);
+                    if (!isbutton) {
+                        $('body').unbind('click.blurActionableItems');
+                        $cp.removeClass('active');
+                    }
+                });
+            }
+        }).on('blur', '.ac-items-buttons-toggle', function() {
+            // set timeout added to overcome click/focus swapped event order in firefox.
+            setTimeout(function() {
+                $(this).parent().parent().removeClass('active');
+            }, 1);
+        }).on('focus', '.ac-item-button', function() {
+            $(this).parent().parent().addClass('active');
+        }).on('blur', '.ac-item-button', function() {
+            $(this).parent().parent().removeClass('active');
+        });
+        $(document).on('click.gistTileInfoButton', '.ac-item-button.info-button', function() {
+            alert('Show information action triggered');
+        });
+        $(document).on('click.gistTileInfoButton', '.ac-item-button.detail-button', function() {
+            alert('Show detail action triggered');
+        });
+    });
+    </script>
+</div>

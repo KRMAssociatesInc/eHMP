@@ -98,7 +98,7 @@ var removedJob = {
 
 describe('record-enrichment-factor-xformer.js', function(){
     it('transform factor record',function(){
-        xformer(log, null, null, {record: factorRecord1}, function(error, record){
+        xformer(log, null, null, factorRecord1, function(error, record){
             expect(error).toBeFalsy();
             expect(record).toBeTruthy();
             expect(record.categoryName).toBe(factorTransformedRecord1.categoryName);
@@ -123,7 +123,7 @@ describe('record-enrichment-factor-xformer.js', function(){
         });
     });
     it('transform factor record null location',function(){
-        xformer(log, null, null, {record: factorRecord2}, function(error, record){
+        xformer(log, null, null, factorRecord2, function(error, record){
             expect(error).toBeFalsy();
             expect(record).toBeTruthy();
             expect(record.categoryName).toBe(factorTransformedRecord2.categoryName);
@@ -149,10 +149,9 @@ describe('record-enrichment-factor-xformer.js', function(){
     });
   it('Job was removed', function() {
       var finished = false;
-      var environment = {};
 
       runs(function() {
-          xformer(log, null, null, removedJob, function(error, record) {
+          xformer(log, null, null, removedJob.record, function(error, record) {
               expect(error).toBeNull();
               expect(record).toBeTruthy();
               expect(record.uid).toEqual('urn:va:factor:9E7A:3:56');

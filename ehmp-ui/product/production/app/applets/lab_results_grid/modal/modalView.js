@@ -342,7 +342,7 @@ define([
             // console.log("modalView.js", "typeName=" + this.model.attributes.typeName);
 
             this.fetchOptions.criteria = {
-                'type-name': this.model.attributes.typeName, // "Calcium, Serum or Plasma Quantitative",
+                'type.name': this.model.attributes.typeName, // "Calcium, Serum or Plasma Quantitative",
                 pid: this.model.attributes.pid // "10108V420871"
             };
 

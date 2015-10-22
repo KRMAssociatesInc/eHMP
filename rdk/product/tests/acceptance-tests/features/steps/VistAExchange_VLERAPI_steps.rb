@@ -24,5 +24,5 @@ end
 
 Then(/^in section "(.*?)" the response contains (\d+) "(.*?)"s$/) do |section, number_of_results, collection|
   runtime_json_object = JSON.parse(@response.body)
-  expect(runtime_json_object[section][collection].length).to eq(number_of_results.to_i)
+  expect(runtime_json_object['data'][section][collection].length).to eq(number_of_results.to_i)
 end

@@ -1,0 +1,21 @@
+.label.applet-badges {
+	border-radius: 4px;
+    box-shadow: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 400;
+    margin: 1px 0;
+    padding: 3px 6px;
+
+	&.label-abnormal {
+		background-color: $tertiary;
+		color: $black;
+	}
+	&.label-critical {
+		background-color: $red;
+	}
+	&.label-panel {
+		background-color: $grey-darkest;
+	}
+}

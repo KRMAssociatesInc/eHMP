@@ -1,0 +1,42 @@
+<div class="list-group-item-text row" style="cursor:pointer;cursor:hand">
+		<div class="col-md-5 no-padding-right patientDisplayName user_info-ps-td-name">
+			<!--span aria-hidden="true" class="hidden user_info-ps-sm-th">Patient Name:</span-->
+			<span class="sr-only">Patient record, name</span>
+			{{fullName}}
+		</div>
+		<div class="col-md-2 no-padding-left user_info-ps-td-ssn">
+			<span aria-hidden="true" class="hidden user_info-ps-sm-th">SSN:</span>
+			<span class="sr-only">. Social security number</span>
+			{{#if sensitive}}
+				*SENSITIVE*
+			{{else}}
+				{{formatSSN ssn}}
+			{{/if}}
+		</div>
+		<div class="col-md-3 no-padding user_info-ps-td-datetime">
+			<span aria-hidden="true" class="hidden user_info-ps-sm-th">Date/Time:</span>
+			<span class="sr-only">. Appointment date and time</span>
+			{{#if appointmentTime}}
+				{{formatDate appointmentTime "MM/DD/YYYY HH:mm"}}
+			{{else}}
+				No Appointment Date
+			{{/if}}
+		</div>
+		<div class="col-md-2 no-padding user_info-ps-td-adob">
+			<span aria-hidden="true" class="hidden user_info-ps-sm-th">DOB:</span>
+			<span class="sr-only">. Date of birth</span>
+			{{#if sensitive}}
+				*SENSITIVE*
+			{{else}}
+				{{formatDate birthDate "MM/DD/YYYY"}}
+				<span class="sr-only">. Age</span>
+				({{getAge birthDate}}y)
+			{{/if}}
+		</div>
+		<div class="col-md-1 user_info-ps-td-gender">
+			<span aria-hidden="true" class="hidden user_info-ps-sm-th">Gender:</span>
+			<span class="sr-only">. Gender</span>
+			{{genderName}}
+		</div>
+		<span class="sr-only">. Press enter to select this patient.</span>
+</div>

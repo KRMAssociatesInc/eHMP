@@ -660,8 +660,11 @@ define([
                 'regionName': 'vitalsDetailsDialog',
                 'replaceContents': true
             };
-
-            ADK.showWorkflowItem(view, modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: view,
+                options: modalOptions
+            });
+            modal.show();
         },
         getModals: function() {
             modals = [];
@@ -743,7 +746,7 @@ define([
 
             var resultColl = [];
             var allTypes = $.unique(coll.pluck('displayName'));
-            var knownTypes = ['BP', 'P', 'R', 'T', 'PO2', 'PN', 'WT', 'HT', 'BMI'];
+            var knownTypes = ['BP', 'P', 'R', 'T', 'PO2', 'PN', 'WT', 'HT', 'BMI', 'CG'];
             var displayTypes = knownTypes.filter(function(el) {
                 return allTypes.indexOf(el) != -1;
             });

@@ -35,21 +35,45 @@ module.exports = {
         context: 'HMP UI CONTEXT'
     },
     vistaSites: {
-        '34C5': {
-            name: 'krm',
-            division: '1',
-            host: '192.168.33.10',
-            localIP: '192.168.33.12',
+        "C877": {
+            name: "KODAK",
+            division: "500",
+            host: "10.2.2.101",
+            localIP: '10.2.2.1',
             localAddress: 'localhost',
-            port: 9430,
+            port: 9210,
             production: false,
-            accessCode: 'SM1234',
-            verifyCode: 'SM1234!!!',
+            accessCode: "ep1234",
+            verifyCode: "ep1234!!",
             infoButtonOid: '1.3.6.1.4.1.3768'
-        }
+        },
+        "9E7A": {
+            name: "PANORAMA",
+            division: "500",
+            host: "10.2.2.102",
+            localIP: '10.2.2.1',
+            localAddress: 'localhost',
+            port: 9210,
+            production: false,
+            accessCode: "ep1234",
+            verifyCode: "ep1234!!",
+            infoButtonOid: '1.3.6.1.4.1.3768'
+        },
+        "808D": {
+            name: "polaroid",
+            division: "500",
+            host: "10.2.2.103",
+            localIP: '10.2.2.1',
+            localAddress: 'localhost',
+            port: 9210,
+            production: false,
+            accessCode: "ep1234",
+            verifyCode: "ep1234!!",
+            infoButtonOid: '1.3.6.1.4.1.3768'
+        },
     },
     mvi: {
-        host: '10.4.4.205',
+        host: "10.4.4.205",
         protocol: 'http',
         senderCode: '200EHMP',
         port: 8896,
@@ -61,7 +85,7 @@ module.exports = {
         }
     },
     vhic: {
-        host: '10.4.4.205',
+        host: "10.4.4.205",
         protocol: 'http',
         senderCode: '200EHMP',
         port: 8896,
@@ -74,21 +98,17 @@ module.exports = {
     },
     responseTimeoutMillis: 420000,
     hmpServer: {
-        host: '192.168.33.10',
+        host: '10.3.3.4',
         port: 8443,
-        accessCode: '34C5;1',
-        verifyCode: 'SM1234;SM1234!!!'
+        accessCode: '9E7A;500',
+        verifyCode: 'ep1234;ep1234!!'
     },
     vxSyncServer: {
-        //host: '192.168.200.30',
-        //host: '192.168.200.31',
-        //host: '192.168.43.198',
-        //host: '192.168.2.8',
-        host: '192.168.33.12',
+        host: "10.3.3.6",
         port: 8080
     },
     solrServer: {
-        host: '10.3.3.10',
+        host: "10.3.3.10",
         port: '8983',
         path: '/solr/vpr'
     },
@@ -104,11 +124,11 @@ module.exports = {
         }
     },
     jdsServer: {
-        host: '192.168.33.10',
+        host: "10.2.2.110",
         port: 9080
     },
     generalPurposeJdsServer: {
-        host: '192.168.33.10',
+        host: "10.2.2.110",
         port: 9080
     },
     jdsSync: {

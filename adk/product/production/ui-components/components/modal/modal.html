@@ -1,0 +1,74 @@
+<h3>Modal</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> The modal is the child window that requires a user interaction before returning to the parent application.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> When a modal window is present, the focus must be placed on the modal window. When the modal window closes, the focus must be returned to the object that triggered the modal.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+    <div id="modalCopy">
+        <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#myModal" title="Select the button to open up a modal window">View modal </button>
+        <div class="modal fade" id="myModal" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="row">
+                            <div class="col-md-10 col-xs-10">
+                                <h4 class="modal-title" id="myModalLabel">Title</h4>
+                            </div>
+                            <div class="col-md-2 col-xs-2">
+                                <button type="button" class="close" data-dismiss="modal" title="To close the modal, select the close button."><span aria-hidden="true">&times;</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                   	 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div class="modal-footer">
+                    	<button type="button" class="btn btn-default" data-dismiss="modal" title="To close the modal, select the close button.">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<hr />
+
+<div role="tabpanel" class="tabpanel">
+    <ul role="tablist" class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" role="tab" aria-controls="markup-modal" href="#markup-modal">Modal</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-modal">
+            <pre>
+&lt;button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#myModal" title="Select the button to open up a modal window"&gt;View modal &lt;/button&gt;
+&lt;div class="modal fade" id="myModal" aria-labelledby="myModalLabel" aria-hidden="true"&gt;
+    &lt;div class="modal-dialog modal-dialog-backdrop"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-10 col-xs-10"&gt;
+                        &lt;h4 class="modal-title" id="myModalLabel"&gt;Title&lt;/h4&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-2 col-xs-2"&gt;
+                        &lt;button type="button" class="close" data-dismiss="modal" title="To close the modal, select the close button."&gt;&lt;span aria-hidden="true"&gt;&#38;times;&lt;/span&gt;&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-footer"&gt;
+            &lt;button type="button" class="btn btn-default" data-dismiss="modal" title="To close the modal, select the close button."&gt;Close&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+	        </pre>
+            <a onclick="copyToClipboard('modalCopy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>

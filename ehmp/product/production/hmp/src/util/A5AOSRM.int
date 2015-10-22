@@ -1,0 +1,144 @@
+A5AOSRM ; SLC/KCM -- remove packages
+ ;
+PREVIEW ; show preview of package removal
+ N A5ADEL S A5ADEL=0
+ G DOIT
+ ;
+DELETE ; really do the package removal
+ N A5ADEL S A5ADEL=1
+ G DOIT
+ ;
+DOIT ; remove packages (by namespace) from VistA system
+ Q:'$D(A5ADEL)  ; only enter by PREVIEW and DELETE entry points
+ ;
+ N A5ANMSP,A5AFILES,A5ACOMPS,A5ABLDS,A5AINST ; global across entry points
+ N NM,IEN,FN,I,X
+ F A5ANMSP="VEJD","DSSI","DSIC","DSIF","DSIR","DSIV","DENTV" D
+ . S NM=A5ANMSP F  S NM=$O(^XPD(9.6,"B",NM)) Q:$E(NM,1,$L(A5ANMSP))'=A5ANMSP  D
+ . . S IEN=0 F  S IEN=$O(^XPD(9.6,"B",NM,IEN)) Q:'IEN  D BYBUILD(IEN,A5ANMSP)
+ . S NM=A5ANMSP F  S NM=$O(^XPD(9.7,"B",NM)) Q:$E(NM,1,$L(A5ANMSP))'=A5ANMSP  D
+ . . S IEN=0 F  S IEN=$O(^XPD(9.7,"B",NM,IEN)) Q:'IEN  S A5AINST(IEN)=NM
+ . F I=1:1 S X=$P($T(COMPS+I),";;",2) Q:X="zzzzz"  D BYFILE(+X,A5ANMSP)
+ ; also clean up files not in builds
+ F I=1:1 S X=$P($T(DENTAL+I),";;",2) Q:X="zzzzz"  D
+ . S IEN=+X I $D(^DIC(IEN)) S A5AFILES(IEN)=$P($G(^DIC(IEN,0)),U)
+ F I=1:1 S X=$P($T(DEPRAC+I),";;",2) Q:X="zzzzz"  D
+ . S IEN=+X I $D(^DIC(IEN)) S A5AFILES(IEN)=$P($G(^DIC(IEN,0)),U)
+ ;
+ W !,"Components"
+ S FN=0 F  S FN=$O(A5ACOMPS(FN)) Q:'FN  D
+ . W !,?5,A5ACOMPS(FN)
+ . S NM="" F  S NM=$O(A5ACOMPS(FN,NM)) Q:'$L(NM)  D DELENTRY(FN,NM)
+ W !,"Files"
+ S FN=0 F  S FN=$O(A5AFILES(FN)) Q:'FN  D DELFILE(FN)
+ W !,"Builds"
+ S IEN=0 F  S IEN=$O(A5ABLDS(IEN)) Q:'IEN  D DELENTRY(9.6,A5ABLDS(IEN))
+ W !,"Installs"
+ S IEN=0 F  S IEN=$O(A5AINST(IEN)) Q:'IEN  D DELBYIEN(9.7,IEN,A5AINST(IEN))
+ Q
+BYFILE(FN,NMSP) ; add components by file number
+ N NM,ROOT
+ S A5ACOMPS(FN)=$P($G(^DIC(FN,0)),"^"),ROOT=$G(^DIC(FN,0,"GL"))_"""B"")"
+ S NM=NMSP F  S NM=$O(@ROOT@(NM)) Q:$E(NM,1,$L(NMSP))'=NMSP  S A5ACOMPS(FN,NM)="" 
+ Q
+BYBUILD(IEN,NMSP) ; gather components / files by build
+ N BLDNAME,FILENUM,FILENAME,D1,D2,ENTRY
+ S BLDNAME=$P(^XPD(9.6,IEN,0),"^"),A5ABLDS(IEN)=BLDNAME
+ ; components
+ S D1=0 F  S D1=$O(^XPD(9.6,IEN,"KRN",D1)) Q:'D1  D
+ . S FILENUM=$P($G(^XPD(9.6,IEN,"KRN",D1,0)),"^")
+ . S FILENAME=$P($G(^DIC(FILENUM,0)),"^")
+ . S A5ACOMPS(FILENUM)=FILENAME
+ . S D2=0 F  S D2=$O(^XPD(9.6,IEN,"KRN",D1,"NM",D2)) Q:'D2  D
+ . . S ENTRY=$P($G(^XPD(9.6,IEN,"KRN",D1,"NM",D2,0)),"^")
+ . . I $E(ENTRY,1,$L(A5ANMSP))'=A5ANMSP Q  ; skip anything outside namespace
+ . . S A5ACOMPS(FILENUM,ENTRY)=""
+ ; files
+ S D1=0 F  S D1=$O(^XPD(9.6,IEN,4,D1)) Q:'D1  D
+ . S FILENUM=$P($G(^XPD(9.6,IEN,4,D1,0)),"^")
+ . S FILENAME=$P($G(^DIC(FILENUM,0)),"^")
+ . I $E(FILENAME,1,$L(A5ANMSP))'=A5ANMSP Q  ; skip anything outside namespace
+ . S A5AFILES(FILENUM)=FILENAME
+ Q
+DELENTRY(FN,NM) ; Deletes an entry by file number and entry name
+ N DIK,DA,ERR
+ S DA=$$FIND1^DIC(FN,"","BX",NM,"","","ERR")
+ I $D(ERR) W !,"Error finding: ",FN,":",NM
+ Q:'DA
+ S DIK=$G(^DIC(FN,0,"GL")) I '$L(DIK) W !,"Error in Global Root ",FN Q
+ I A5ADEL D ^DIK
+ W !,?10,NM,$S(A5ADEL:" deleted",1:" would be deleted")
+ ;
+ I FN=9.8 D  ; also delete the routine itself
+ . N X S X=NM
+ . I A5ADEL X ^%ZOSF("DEL")
+ . W !,?10,X,$S(A5ADEL:" routine deleted",1:" routine would be deleted")
+ Q
+DELBYIEN(FN,DA,NM) ; Deletes an entry by file number and ien (optional NM)
+ N DIK
+ S DIK=$G(^DIC(FN,0,"GL")) I '$L(DIK) W !,"Error in Global Root ",FN Q
+ I A5ADEL D ^DIK
+ W !,?10,$G(NM)," (",DA,") ",$S(A5ADEL:"deleted",1:"would be deleted")
+ Q
+DELFILE(FN) ; Deletes the DD and data given the file number in FN
+ N DIU
+ S DIU=$G(^DIC(FN,0,"GL")),DIU(0)="DET"
+ I A5ADEL D EN^DIU2
+ W !,?10,"file number ",FN,$S(A5ADEL:" deleted",1:" would be deleted")
+ Q
+COMPS ; list of files to remove entries from
+ ;;.4^PRINT TEMPLATE
+ ;;.401^SORT TEMPLATE
+ ;;.402^INPUT TEMPLATE
+ ;;.403^FORM
+ ;;.5^FUNCTION
+ ;;.84^DIALOG
+ ;;3.6^BULLETIN
+ ;;3.8^MAIL GROUP
+ ;;9.2^HELP FRAME
+ ;;9.8^ROUTINE
+ ;;19^OPTION
+ ;;19.1^SECURITY KEY
+ ;;101^PROTOCOL
+ ;;409.61^LIST TEMPLATE
+ ;;771^HL7 APPLICATION PARAMETER
+ ;;779.2^HLO APPLICATION REGISTRY
+ ;;870^HL LOGICAL LINK
+ ;;8989.51^PARAMETER DEFINITION
+ ;;8989.52^PARAMETER TEMPLATE
+ ;;8994^REMOTE PROCEDURE
+ ;;zzzzz
+DENTAL ; list of dental files
+ ;;220^DENTAL PATIENT
+ ;;220.1^DENTAL TOOTH STATUS CODE
+ ;;220.2^DENTAL CLASSIFICATION
+ ;;220.3^DENTAL TYPE OF SERVICE
+ ;;220.4^DENTAL BED SECTION
+ ;;220.5^DENTAL PROVIDER
+ ;;220.51^DENTAL PROVIDER TYPE
+ ;;220.52^DENTAL PROVIDER SPECIALTY
+ ;;220.6^DENTAL SCREEN (USER)
+ ;;221^DENTAL TREATMENT (AMIS)
+ ;;222^DENTAL FEE BASIS (AMIS)
+ ;;223^DENTAL CLASS I-VI (AMIS)
+ ;;224^DENTAL PERSONNEL (AMIS)
+ ;;225^DENTAL SITE PARAMETERS
+ ;;226^DENTAL NON CLINICAL TIME
+ ;;228^DENTAL CPT CODE MAPPING
+ ;;228.1^DENTAL HISTORY
+ ;;228.2^TREATMENT PLAN TRANSACTION/EXAM
+ ;;228.25^DES/HL7 TRANSMISSION
+ ;;228.3^TREATMENT PLAN CONSTANT DATA
+ ;;228.4^TOOTH
+ ;;228.42^DENTAL GROUPING FOR VA-DSS
+ ;;228.5^DENTAL FEE BASIS EXTRACT
+ ;;228.6^DENTAL TP NOTES
+ ;;228.7^DENTAL TP RESERVE
+ ;;228.8^DENTAL CODING CHECKS
+ ;;zzzzz
+DEPRAC ; list of deprecated files
+ ;;19620.5
+ ;;19620.6
+ ;;19620.7
+ ;;19621
+ ;;zzzzz

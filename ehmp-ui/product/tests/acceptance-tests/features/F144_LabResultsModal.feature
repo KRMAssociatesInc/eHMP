@@ -1,7 +1,7 @@
 @F144_Lab_Results_Modal @Lab_Results @regression
 Feature: F144 - eHMP Viewer GUI - Lab Results
 
-# Team: Andromeda
+# Team: Andromeda, inherited by Team Venus
 
 Background:
   Given user is logged into eHMP-UI
@@ -11,22 +11,10 @@ Background:
   And the applet displays lab results
   
 
-#adding debug tag since we are getting different no. of counts
-@f144_2_lab_results_coversheet_panel_modal @US2034 @TA5012a @DE387
-Scenario: Opening and closing the modal from a coversheet - Panel result.
-  Given the user has filtered the lab results on the term "2988" down to 2 rows
-  When the user clicks the Panel "COAG PROFILE BLOOD PLASMA WC LB #2988" in the Lab Results applet
-  And the user clicks the Lab Test "PROTIME - PLASMA" in the Panel result details
-  Then the modal is displayed
-  When the user closes modal by clicking the "Close" control
-  Then the coversheet is displayed
 
-@f144_2_lab_results_coversheet_modal @US2034 @TA5012b 
-Scenario: Opening and closing the modal from a coversheet - non-Panel result.
-  When the user clicks the first non-Panel result in the Lab Results applet
-  Then the modal is displayed
-  When the user closes modal by clicking the "Close" control
-  Then the coversheet is displayed
+
+
+
 
 @f144_lab_results_modal_traversal @US2339 @TA6893a @modal_test
 Scenario: Lab Results Modal - full traversal through a page of Lab Result modals from within the modal view using Previous/Next buttons.
@@ -114,8 +102,8 @@ Scenario: Lab Results Modal - Ensuring data within modal is updated when steppin
     | 02/22/2013 - 08:28 |   L  | 135 mEq/L  | DOD      |
 
 
-
-@f144_lab_results_modal_non_numeric_table @US2498 @TA7551 @modal_test @vimm
+# f144_US2498_labresults_spec.rb
+@f144_lab_results_modal_non_numeric_table @US2498 @TA7551 @modal_test @vimm @reworked_in_firefox
 Scenario: Lab Results Modal - history table containing non-numerical result types.
   Given user searches for and selects "Bcma,Eight"
   And Cover Sheet is active

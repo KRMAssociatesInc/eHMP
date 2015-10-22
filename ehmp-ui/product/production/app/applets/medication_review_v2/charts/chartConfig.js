@@ -47,15 +47,14 @@ define([
                         max = pointX2;
                     }
                 });
-                if (max > xAxis.max) {
-                    series.xAxis.setExtremes(xAxis.min, max, true);
-                }
+                // if (max > xAxis.max) {
+                //     series.xAxis.setExtremes(xAxis.min, max, true);
+                // }
             }
         });
     }(Highcharts));
 
     function chartConfig(graphData) {
-        // console.log(graphData);
         (function(chartConfig) {
             var comparator = function(a, b) {
                 return a.x - b.x;
@@ -72,7 +71,7 @@ define([
                 timezoneOffset: 5 * 60
             },
             chart: {
-                plotBorderColor: '#BCBCBC',
+                plotBorderColor: '$grey-dark',
                 plotBorderWidth: 1,
                 plotBackgroundColor: graphData.chart.plotBackgroundColor,
                 height: graphData.chart.height,

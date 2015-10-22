@@ -19,7 +19,10 @@ define([
             view.model = this.model;
             console.log(view.model);
 
-            ADK.showModal(view);
+            var modal = new ADK.UI.Modal({
+                view: view
+            });
+            modal.show();
         }
     });
 

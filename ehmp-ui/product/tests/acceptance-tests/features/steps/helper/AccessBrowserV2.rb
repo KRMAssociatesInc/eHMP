@@ -49,7 +49,7 @@ class AccessBrowserV2
         sleep 1
         #p "wait_until_xpath_count greater then #{results_limit} (#{current_xpath_count})::xpath count hasn't updated, wait 1 second"
       end
-      i = i + 1
+      i += 1
     end
     return verification_passed
   end
@@ -145,7 +145,7 @@ class AccessBrowserV2
     return false
   end #method
 
-  def verify_element_hidden?(map_key, value)
+  def verify_element_hidden?(map_key, _value)
     driver = TestSupport.driver
     driver = TestSupport.driver
     what = get_what(map_key)
@@ -275,7 +275,7 @@ class AccessBrowserV2
 
   def error_message_generator(error_messages)
     text_error_message = "\n"+'    | Field Name         | Expected Value          | Runtime Value         |' + "\n"
-    (0..error_messages.size-1).each do | i |
+    (0..error_messages.size-1).each do |i|
       text_error_message = text_error_message + (i+1).to_s + " - "+ error_messages[i]+"\n\n"
     end
     return text_error_message

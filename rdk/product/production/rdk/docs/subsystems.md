@@ -11,8 +11,8 @@ Use subsystems to enable writing [DRY](http://en.wikipedia.org/wiki/Don%27t_repe
 ## Developing a Subsystem
 Subsystems are developed similarly to resources.
 
-The JDS subsystem located at `/product/production/rdk/subsystems/jds/jdsSubsystem.js` is a good example subsystem. Use this to complement the reading below.
-A simpler example subsystem can be found at `_example/exampleSubsystem.js` in the subsystems folder.
+The JDS subsystem located at `/product/production/rdk/subsystems/jds/jds-subsystem.js` is a good example subsystem. Use this to complement the reading below.
+A simpler example subsystem can be found at `_example/example-subsystem.js` in the subsystems folder.
 
 ### Before you create a subsystem
  * Ensure that it does not already exist
@@ -24,10 +24,10 @@ A simpler example subsystem can be found at `_example/exampleSubsystem.js` in th
     * Each subsystem should have its own subdirectory. Consider extending the functionality of or adding another function to an existing subsystem if what you want to create is similar.
 
  * The convention of creating a subsystem file is:
-    * `/subsystems/(functionality)/(functionality)Subsystem.js`
-    * where the functionality is a camelCase identifier.  
+    * `/subsystems/(functionality)/(functionality)-subsystem.js`
+    * where the functionality is a dash-separated identifier.  
  * For example, the JDS subsystem file is:
-    * `/subsystems/jds/jdsSubsystem.js`
+    * `/subsystems/jds/jds-subsystem.js`
 
 ### Create the subsystem configuration
  * The resource server will register the configuration of the subsystem with the system.

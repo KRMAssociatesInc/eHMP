@@ -32,6 +32,8 @@ define([
         // set a default of 15 seconds to refresh the token
         _this.tokenInterval = 15000;
 
+        var REFRESH_EVENTS = 'mouseup.autologoff mousedown.autologoff mousemove.autologoff keyup.autologoff keydown.autologoff';
+
         /**
          * Do the refreshing of token expiration on the server
          * @return {undefined}
@@ -59,8 +61,8 @@ define([
         var envokePopupModal = function(popup) {
             if (_.isObject(popup)) {
                 refreshAllowed = false;
-                popupView.setModel(popup, false);
-                popupView.show();
+                popupView.setModel(popup);
+                stopRefreshEvents();
             }
         };
         /**
@@ -72,14 +74,22 @@ define([
                 refreshAllowed = false;
                 popupView.logout(popup);
             }
-
         };
 
         /**
          * Stops all refresh events on the document
          */
         var stopRefreshEvents = function() {
-            $(document).off('mouseup.autologoff mousedown.autologoff mousemove.autologoff keyup.autologoff keydown.autologoff');
+            $(document).off(REFRESH_EVENTS);
+        };
+
+        /**
+         * Start all refresh events on the document
+         */
+        var startRefreshEvents = function() {
+            $(document).on(REFRESH_EVENTS, function(e) {
+                refreshAllowed = true;
+            });
         };
 
         /**
@@ -161,9 +171,7 @@ define([
             if (!timersStarted) {
                 //set up the event listners for a user's interactions
                 stopRefreshEvents();
-                $(document).on('mouseup.autologoff mousedown.autologoff mousemove.autologoff keyup.autologoff keydown.autologoff', function(e) {
-                    refreshAllowed = true;
-                });
+                startRefreshEvents();
 
                 //kickoff the LogoffTimer
                 resetLogoffTimer();
@@ -182,8 +190,6 @@ define([
             clearTokenTimer();
             //remove the event listeners
             stopRefreshEvents();
-            //sliently reset the model for the popupView
-            popupView.setModel(popupView.getDefaultModel(), true);
             //timers stopped
             timersStarted = false;
         };
@@ -192,18 +198,17 @@ define([
         Messaging.on('user:sessionStart user:sessionCheck', function() {
             if (UserService.getStatus() === UserService.STATUS.LOGGEDIN) {
                 startTimers();
+                refreshAllowed = true;
             }
         });
-        Messaging.on('user:sessionEnd', stopTimers);
+        Messaging.on('app:logout', stopTimers);
         Messaging.on('autologoff:continue', function() {
             refreshAllowed = true;
             refreshToken();
             resetLogoffTimer();
             stopRefreshEvents();
             //set up the event listners for a user's interactions
-            $(document).on('mouseup.autologoff mousedown.autologoff mousemove.autologoff keyup.autologoff keydown.autologoff', function(e) {
-                refreshAllowed = true;
-            });
+            startRefreshEvents();
         });
 
         return _this;

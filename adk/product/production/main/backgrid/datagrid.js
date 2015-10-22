@@ -82,13 +82,25 @@ define([
                 'keydown tr.selectable': 'onEnterRow',
                 'keydown th': 'onEnterHeader'
             },
-            onBeforeDestroy: function() {
-                this.gridView = null;
-                _.each(this.options.columns, function(column) {
-                    if (typeof column.sortValue !== "undefined") {
-                        column.sortValue = null;
+            onDestroy: function() {
+                try {
+                    if (this.loadingView && !this.loadingView.isDestroyed) {
+                        this.loadingView.destroy();
+                        this.loadingView = null;
                     }
-                });
+                } catch (e) {
+                    console.error('Error destroying loadingView in applet:', this.appletConfig.id, e);
+                }
+                
+                try {
+                    if (this.gridView && !this.gridView.isDestroyed) {
+                        if(_.isFunction(this.gridView.destroy))
+                            this.gridView.destroy();
+                        this.gridView = null;
+                    }
+                } catch (e) {
+                    console.error('Error destroying gridView in applet:', this.appletConfig.id, e);
+                }
             },
             onEnterRow: function(event) {
                 if (event.which == 13 || event.which == 32) {

@@ -45,7 +45,12 @@ define([
             model: currentModel
         });
 
-        ADK.showModal(modalView, modalOptions);
+        var modal = new ADK.UI.Modal({
+            view: modalView,
+            options: modalOptions
+        });
+        modal.show();
+
         $('#modal-lg-region').empty();
 
         setTimeout(function() {
@@ -421,7 +426,7 @@ define([
                 var  saveModel = buildSaveObject();
                 saveModel.save(null, {
                     success:function() {
-                        ADK.hideModal();
+                        ADK.UI.Modal.hide();
 
                         setTimeout(function() {
                             $('div[data-appletid="problems"] .applet-refresh-button').trigger('click');
@@ -444,7 +449,7 @@ define([
                 var  saveModel = buildSaveObject();
                 saveModel.save(null, {
                     success:function() {
-                        ADK.hideModal();
+                        ADK.UI.Modal.hide();
 
                         // refresh problem list
                         setTimeout(function() {
@@ -475,7 +480,7 @@ define([
 
                 deferredResponse.done(function(response) {
                     var problemDetailApplet = response.view;
-                    ADK.showModal(problemDetailApplet, { title : 'test' } );
+                    ADK.UI.Modal.show(problemDetailApplet, { title : 'test' } );
                 });
             },
             */
@@ -522,7 +527,7 @@ define([
             fetchOptions.resourceTitle = "locations-clinics";
 
             fetchOptions.criteria = {
-                "siteCode": siteCode,
+                "site.code": siteCode,
                 limit: 10
             };
 
@@ -541,7 +546,7 @@ define([
             var provFetchOptions = {
                 resourceTitle: "visits-providers",
                 criteria: {
-                    "fcode": siteCode,
+                    "facility.code": siteCode,
                     limit: 10
                 }
             };

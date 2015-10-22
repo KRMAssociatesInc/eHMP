@@ -130,13 +130,14 @@ define([
                             useHTML: false,
                             backgroundColor: bkColor,
                             borderRadius: 2.25,
+                            y: -6,
+                            padding: 2.5,
                             formatter: function() {
                                 return interpretationCode[i];
                             },
                             style: {
                                 color: '#ffffff',
                                 fontSize: "9px",
-                                padding: '1.8px 5.4px 2.7px 5.4px'
                             }
                         },
                         x: Date.UTC(mo.year(), mo.month(), mo.date(), mo.hour(), mo.minute())
@@ -164,7 +165,7 @@ define([
                 crosshairs: true,
                 shared: true,
                 style: {
-                    padding: 10,
+                    padding: 4,
                     zIndex: 9999
                 },
                 useHTML: true,
@@ -208,8 +209,8 @@ define([
             this.fetchOptions.resourceTitle = "patient-record-labsbytype";
             var fetchName = this.model.attributes.typeName;
             this.fetchOptions.criteria = {
-                'type-name': this.model.attributes.typeName,
-                'date-end': moment().format('YYYYMMDD')
+                'type.name': this.model.attributes.typeName,
+                'date.end': moment().format('YYYYMMDD')
             };
             this.fetchOptions.viewModel = {
                 parse: AppletHelper.parseLabResponse

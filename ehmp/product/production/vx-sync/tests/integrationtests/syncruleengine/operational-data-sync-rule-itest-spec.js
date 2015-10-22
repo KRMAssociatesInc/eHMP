@@ -118,7 +118,7 @@ describe('operational-data-sync-rule integration test', function() {
 
     beforeEach(function() {
         //Clear the metastamps for the sites used in these tests
-        var jdsClient = new JdsClient(log, config);
+        var jdsClient = new JdsClient(log, log, config);
         var done1 = false;
         var done2 = false;
         runs(function() {
@@ -136,9 +136,10 @@ describe('operational-data-sync-rule integration test', function() {
 
     it('Normal path: no primary sites associated with patient have completed OPD sync', function() {
         var done = false;
-        var jdsClient = new JdsClient(log, config);
+        var jdsClient = new JdsClient(log, log, config);
         var environment = {
-            jds: jdsClient
+            jds: jdsClient,
+            metrics: log
         };
         //No metastamp in JDS
         var engine = new SyncRulesEngine(log, config, environment);
@@ -157,9 +158,10 @@ describe('operational-data-sync-rule integration test', function() {
 
     it('Normal path: some primary sites associated with patient have completed OPD sync', function() {
         var done1, done2, done3, done4 = false;
-        var jdsClient = new JdsClient(log, config);
+        var jdsClient = new JdsClient(log, log, config);
         var environment = {
-            jds: jdsClient
+            jds: jdsClient,
+            metrics: log
         };
 
         //Send operational metastamps to JDS
@@ -200,9 +202,10 @@ describe('operational-data-sync-rule integration test', function() {
 
     it('Normal path: all primary sites associated with patient have completed OPD sync', function() {
         var done1, done2, done3, done4, done5, done6 = false;
-        var jdsClient = new JdsClient(log, config);
+        var jdsClient = new JdsClient(log, log, config);
         var environment = {
-            jds: jdsClient
+            jds: jdsClient,
+            metrics: log
         };
         //Send operational metastamps to JDS
         runs(function() {
@@ -255,7 +258,7 @@ describe('operational-data-sync-rule integration test', function() {
             })
         };
         //Clear the metastamps for the sites used in these tests
-        var jdsClient = new JdsClient(log, config);
+        var jdsClient = new JdsClient(log, log, config);
         var done1 = false;
         var done2 = false;
         runs(function() {

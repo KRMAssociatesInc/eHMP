@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Faux Table Examples</title>
+    <link rel="stylesheet" href="../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../css/main-styles.css" />
+</head>
+
+<body style="background: #fff;">
+	<!-- Only Tabular Date - Default Layout  -->
+	<div class="container">
+		<h2 class="text-center">Only Tabular Date - Default Layout</h2>
+		<div class="faux-table-container">
+		    <div class="faux-table">
+		        <div class="header">
+		            <div class="table-row">
+		                <div>
+		                    <div>Facility</div>
+		                </div>
+		                <div>
+		                    <div>Name</div>
+		                </div>
+		                <div>
+		                    <div>Analog Pager</div>
+		                </div>
+		                <div>
+		                    <div>Digital Pager</div>
+		                </div>
+		                <div>
+		                    <div>Office Phone</div>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="body">
+		            <div class="table-row">
+		                <div>
+		                    <span>TST1</span>
+		                </div>
+		                <div>
+		                    <span>John Doe</span>
+		                </div>
+		                <div>
+		                    <span>(123) 456-7890</span>
+		                </div>
+		                <div>
+		                    <span>(123) 456-7890</span>
+		                </div>
+		                <div>
+		                    <span>(123) 456-7890</span>
+		                </div>
+		            </div>
+		            <div class="table-row">
+		                <div>
+		                    <span>TST1</span>
+		                </div>
+		                <div>
+		                    <span>John Doe</span>
+		                </div>
+		                <div>
+		                    <span>(123) 456-7890</span>
+		                </div>
+		                <div>
+		                    <span>(123) 456-7890</span>
+		                </div>
+		                <div>
+		                    <span>(123) 456-7890</span>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<br /><br /><br />
+	</div>
+
+	<!-- Entire row linking / single entire cell linking / content within cell linking -->
+	<div>
+		<h2 class="text-center">Entire row linking / single entire cell linking / content within cell linking</h2>
+		<div class="container faux-table-container">
+		    <div class="faux-table">
+		        <div class="header">
+		            <div class="table-row">
+		                <div>
+		                    <div>Table Content</div>
+		                </div>
+		                <div>
+		                    <div>Faux Table Header 2</div>
+		                </div>
+		                <div>
+		                    <div>Faux Table Header 3</div>
+		                </div>
+		                <div>
+		                    <div>Faux Table Header 4</div>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="body">
+		            <div class="table-row">
+		                <div>
+		                    <span>Table Content</span>
+		                </div>
+		                <div>
+		                    <span>Exampe of long content with link inside, <a href="#">text link</a> - Lorem ipsum dolor sit amet, consectetur adipisicing edivt. Soluta amet, commodi placeat voluptatibus, quos sapiente natus sequi quidem animi, doloribus reiciendis assumenda? Ipsum aspernatur praesentium vero totam placeat voluptatibus molestiae? </span>
+		                </div>
+		                <div>
+		                    <a href="">An example of an ahref text link within the faux table cell</a>
+		                </div>
+		                <div>
+		                    <span>Table Content</span>
+		                </div>
+		            </div>
+		            <div class="table-row">
+		                <div>
+		                    <span>Table Content</span>
+		                </div>
+		                <div>
+		                    <span>Table Content</span>
+		                </div>
+		                <div>
+		                    <span>Table Content</span>
+		                </div>
+		                <div>
+		                    <span>Table Content</span>
+		                </div>
+		            </div>
+		            <a href="" class="table-row">
+		                <div>
+		                    <span>Entire row</span>
+		                </div>
+		                <div>
+		                    <span>Entire row links</span>
+		                </div>
+		                <div>
+		                    <span>Entire row links</span>
+		                </div>
+		                <div>
+		                    <span>Entire row links</span>
+		                </div>
+		            </a>
+		        </div>
+		    </div>
+		</div>
+		<br />
+		<br />
+	</div>
+
+	<!-- Enter Store Allergies  -->
+	<div class="container">
+		<h2 class="text-center">Enter Store Allergies </h2>
+		<div class="faux-table">
+			 <div class="sr-only">This table represents symptoms categorized by date and time.</div>
+		     <div class="header">
+		          	<div class="table-row">
+						<div>
+						    <div>Symptoms</div>
+						</div>
+						<div>
+						    <div>Date</div>
+						</div>
+						<div>
+						    <div>Time</div>
+						</div>
+						<div>
+						    <div></div>
+						</div>
+		          	</div>
+		     </div>
+		     <div class="body">
+		          <div class="table-row">
+		               <div>
+		                    <span>Itchy Watery Eyes</span>
+		               </div>
+		               <div>
+		               		<div>
+			                    <div class="control form-group">
+								    <label for="date1" class="sr-only">Calendar</label>
+								    <div class="input-group date">
+								        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+								        <input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="date1" />
+								    </div>
+								</div>
+							</div>
+		               </div>
+		               <div>
+		               		<div>
+								<div class="control form-group">
+								    <label for="time1" class="sr-only">Time Picker</label>
+								    <div class="input-group bootstrap-timepicker">
+								        <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+								        <input type="text" class="form-control timepicker" title="Please enter in a time in the following format, HH:MM." placeholder="HH:MM" id="time1" />
+								    </div>
+								</div>
+							</div>
+		               </div>
+		               <div>
+		                    <span>
+		                    	<button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to remove symptom">
+		                    		<i class="fa fa-times-circle"></i>
+		                    	</button>
+		                    </span>
+		               </div>
+		          </div>
+		          <div class="table-row">
+		               <div>
+		                    <span>Symptom Name</span>
+		               </div>
+		               <div>
+		               		<div>
+			                    <div class="control form-group">
+								    <label for="date2" class="sr-only">Calendar</label>
+								    <div class="input-group date">
+								        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+								        <input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="date2" />
+								    </div>
+								</div>
+							</div>
+		               </div>
+		               <div>
+		               		<div>
+								<div class="control form-group">
+								    <label for="time2" class="sr-only">Time Picker</label>
+								    <div class="input-group bootstrap-timepicker">
+								        <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+								        <input type="text" class="form-control timepicker" title="Please enter in a time in the following format, HH:MM." placeholder="HH:MM" id="time2" />
+								    </div>
+								</div>
+							</div>
+		               </div>
+		               <div>
+		                    <span>
+		                    	<button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to remove symptom">
+		                    		<i class="fa fa-times-circle"></i>
+		                    	</button>
+		                    </span>
+		               </div>
+		          </div>
+		     </div>
+		</div>
+	</div> 
+
+	<!-- Encounter Visit Management -->
+	<div class="container">
+		<h2 class="text-center">Encounter Visit Management</h2>
+		<div class="faux-table-container">
+			<div class="faux-table">
+			<div class="sr-only">This faux table represents data on hospital admissions categorized by date, details, and location.</div>
+				<div class="header">
+					<div class="table-row">
+						<div>
+							<div>Date</div>
+						</div>
+						<div>
+							<div>Details</div>
+						</div>
+						<div>
+							<div>Location</div>
+						</div>
+					</div>
+				</div>
+				<div class="body dual-cell-linking">
+					<a href="#" class="table-row">
+						<div>
+							<span>05/09/2015 - 12:00</span>
+						</div>
+						<div>
+							<span>Lorem ipsum dolor sit amet</span>
+						</div>
+						<div>
+							<span>Primary Care</span>
+						</div>
+					</a>
+					<a href="#" class="table-row">
+						<div>
+							<span>05/05/2015 - 16:00</span>
+						</div>
+						<div>
+							<span>Lorem ipsum dolor sit amet</span>
+						</div>
+						<div>
+							<span>General Medicine</span>
+						</div>
+					</a>
+					<a href="#" class="table-row">
+						<div>
+							<span>04/22/2015 - 08:00</span>
+						</div>
+						<div>
+							<span>Lorem ipsum dolor sit amet</span>
+						</div>
+						<div>
+							<span>Primary Care</span>
+						</div>
+					</a>
+					<a href="#" class="table-row">
+						<div>
+							<span>03/08/2015 - 09:00</span>
+						</div>
+						<div>
+							<span>Lorem ipsum dolor sit amet</span>
+						</div>
+						<div>
+							<span>Primary Care</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Workspace Manager - Customize Layout (some columns are pixel based widths)  -->
+	<div class="container">
+    	<h2 class="text-center">Workspace Manager</h2>
+    	<div class="faux-table-container workspace-manager-container">
+    	    <div class="toolbar">
+    	        <div class="col-xs-9">
+    	            <h2>Workspace Manager</h2>
+    	        </div>
+    	        <div class="col-xs-3">
+    	            <button type="button" class="btn" title="This button adds a new workspace.">
+    	                <span class="sr-only">Press enter to add a new workspace.</span>
+    	                <i class="fa fa-plus"></i>
+    	            </button>
+    	            <button type="button" class="btn" title="This buttons displays a filter text box.">
+    	                <span class="sr-only">Press enter to open the filter text box. To close the filter text box, press enter again.</span>
+    	                <i class="fa fa-filter"></i>
+    	            </button>
+    	        </div>
+    	    </div>
+    	    <form action="#" method="post" class="form-container">
+    	        <div class="faux-table visible-overflow no-margin">
+    	            <div class="header">
+    	                <div class="table-row">
+    	                    <div>
+    	                        <span class="sr-only">Default Selector.</span>
+    	                    </div>
+    	                    <div class="">
+    	                        <div>Title</div>
+    	                    </div>
+    	                    <div>
+    	                        <span class="sr-only">Association Conditions Manager.</span>
+    	                    </div>
+    	                    <div>
+    	                        <div>Description</div>
+    	                    </div>
+    	                    <div>
+    	                        <div>Author</div>
+    	                    </div>
+    	                    <div>
+    	                        <span class="sr-only">Duplicate Workspace.</span>
+    	                    </div>
+    	                    <div>
+    	                        <span class="sr-only">Rearrange Workspace.</span>
+    	                    </div>
+    	                    <div>
+    	                        <span class="sr-only">Delete Workspace.</span>
+    	                    </div>
+    	                    <div>
+    	                        <span class="sr-only">Preview.</span>
+    	                    </div>
+    	                    <div>
+    	                        <span class="sr-only">Launch or Customize.</span>
+    	                    </div>
+    	                </div>
+    	            </div>
+    	            <div class="body">
+    	                <div class="table-row locked">
+    	                    <div class="pixel-width-32">
+    	                        <button type="button" class="btn icon" title="This button sets the default workspace.">
+    	                            <span class="sr-only">Press enter to set this workspace as the default.</span>
+    	                            <i class="fa fa-star"></i>
+    	                        </button>
+    	                    </div>
+    	                    <div class="bold-font">
+    	                        <span>
+    	                            <i class="fa fa-lock"></i>&nbsp;Overview
+    	                        </span>
+    	                    </div>
+    	                    <div class="pixel-width-32">
+    	                        <a href="#" id="no-association-conditions" class="btn icon close-popover" data-toggle="popover" data-placement="bottom">
+    	                            <span class="sr-only">Press enter to open the association conditions menu, then press tab to enter the menu.</span>
+    	                            <i class="fa fa-share-alt"></i>&nbsp;0
+    	                        </a>
+    	                    </div>
+    	                    <div>
+    	                        <span class="sr-only">A premade workspace does not have a description.</span>
+    	                    </div>
+    	                    <div>
+    	                        <span>Panorama User</span>
+    	                    </div>
+    	                    <div class="pixel-width-32">
+    	                        <button type="button" class="btn icon" title="This button duplicates the workspace.">
+    	                            <span class="sr-only">Press enter to duplicate the workspace.</span>
+    	                            <i class="fa fa-files-o"></i>
+    	                        </button>
+    	                    </div>
+    	                    <div class="pixel-width-32">
+    	                        <button type="button" class="btn icon" title="This button rearranges the workspace.">
+    	                            <span class="sr-only">Hold enter and press the up or down arrow key to rearrange the workspace.</span>
+    	                            <i class="fa fa-arrows-v"></i>
+    	                        </button>
+    	                    </div>
+    	                    <div class="pixel-width-32">
+    	                        <button type="button" class="btn icon" title="This button opens a dialog to delete the workspace." disabled>
+    	                            <span class="sr-only">This is a premade workspace and cannot be deleted.</span>
+    	                            <i class="fa fa-lock"></i>
+    	                        </button>
+    	                    </div>
+    	                    <div>
+    	                        <a href="#" title="This button is used to preview the workspace.">Preview
+    	                            <span class="sr-only">Press enter to preview the workspace at this time.</span>
+    	                        </a>
+    	                    </div>
+    	                    <div>
+    	                        <a href="#" title="This button launches the workspace.">Launch
+    	                            <span class="sr-only">Press enter to launch the workspace.</span>
+    	                        </a>
+    	                    </div>
+    	                </div>
+    	                <div class="table-row">
+    	                    <div>
+    	                        <button type="button" class="btn icon" title="This button sets the default workspace.">
+    	                            <span class="sr-only">Press enter to set this workspace as the default.</span>
+    	                            <i class="fa fa-star-o"></i>
+    	                        </button>
+    	                    </div>
+    	                    <div>
+    	                        <div>
+    	                        	<div class="form-group">
+    	                        	    <label for="overviewTitleCopy" class="sr-only">Workspace title. Type to</label>
+    	                        	    <input id="overviewTitleCopy" type="text" name="overviewTitleCopy" class="form-control" value="Overview Copy" maxlength="30" title="This input field is used to change the title of the workspace.">
+    	                        	    <span class="sr-only">Begin typing to change the title of this workspace</span>
+    	                        	</div>
+    	                        	<button type="submit" class="sr-only" disabled="disabled">Submit</button>
+    	                        </div>
+    	                    </div>
+    	                    <div>
+    	                        <a href="#" id="association-conditions" class="btn icon close-popover" data-toggle="popover" data-placement="bottom">
+    	                            <span class="sr-only">Press enter to open the association conditions menu, then press tab to enter the menu.</span>
+    	                            <i class="fa fa-share-alt"></i>&nbsp;3
+    	                        </a>
+    	                    </div>
+    	                    <div>
+    	                        <div>
+    	                        	<div class="form-group">
+    	                        	    <label for="overviewDescriptionCopy" class="sr-only">Workspace description. Type to</label>
+    	                        	    <input id="overviewDescriptionCopy" type="text" name="overviewDescriptionCopy" class="form-control" value="Description of the overview copy workspace" maxlength="140" title="This input field is used to change the description of the workspace.">
+    	                        	    <span class="sr-only">Begin typing to change the description of the workspace.</span>
+    	                        	</div>
+    	                        	<button type="submit" class="sr-only" disabled="disabled">Submit</button>
+    	                        </div>
+    	                    </div>
+    	                    <div>
+    	                        <span>Panorama User</span>
+    	                    </div>
+    	                    <div>
+    	                        <button type="button" class="btn icon" title="This button duplicates the workspace.">
+    	                            <span class="sr-only">Press enter to duplicate the workspace.</span>
+    	                            <i class="fa fa-files-o"></i>
+    	                        </button>
+    	                    </div>
+    	                    <div>
+    	                        <button type="button" class="btn icon" title="This button rearranges the workspace.">
+    	                            <span class="sr-only">Hold enter and press the up or down arrow key to rearrange the workspace.</span>
+    	                            <i class="fa fa-arrows-v"></i>
+    	                        </button>
+    	                    </div>
+    	                    <div>
+    	                        <button type="button" class="btn icon" title="This button opens a dialog to delete the workspace.">
+    	                            <span class="sr-only">Press enter to open the dialog to delete the workspace.</span>
+    	                            <i class="fa fa-trash-o"></i>
+    	                        </button>
+    	                    </div>
+    	                    <div>
+    	                        <a href="#" class="locked" title="This button to preview the workspace is disabled.">Preview
+    	                            <span class="sr-only">Unable to preview the workspace at this time.</span>
+    	                        </a>
+    	                    </div>
+    	                    <div>
+    	                        <a href="#" title="This button launches the workspace.">Customize
+    	                            <span class="sr-only">Press enter to customize the workspace.</span>
+    	                        </a>
+    	                    </div>
+    	                </div>
+    	            </div>
+    	        </div>
+    	    </form>
+    	</div>
+    	<br />
+    	<br />
+    </div>
+
+	<!-- Patient Care -->
+    <div class="container">
+    	<h2 class="text-center">Patient Care</h2>
+    	<div class="faux-table-container">
+    	    <div class="faux-table">
+    	        <div class="header">
+    	            <div class="table-row">
+    	                <div>
+    	                    <div>Facility</div>
+    	                </div>
+    	                <div>
+    	                    <div>Name</div>
+    	                </div>
+    	                <div>
+    	                    <div>Analog Pager</div>
+    	                </div>
+    	                <div>
+    	                    <div>Digital Pager</div>
+    	                </div>
+    	                <div>
+    	                    <div>Office Phone</div>
+    	                </div>
+    	            </div>
+    	        </div>
+    	        <div class="body">
+    	            <div class="table-row">
+    	                <div>
+    	                    <span>TST1</span>
+    	                </div>
+    	                <div>
+    	                    <span>John Doe</span>
+    	                </div>
+    	                <div>
+    	                    <span>(123) 456-7890</span>
+    	                </div>
+    	                <div>
+    	                    <span>(123) 456-7890</span>
+    	                </div>
+    	                <div>
+    	                    <span>(123) 456-7890</span>
+    	                </div>
+    	            </div>
+    	        </div>
+    	    </div>
+    	</div>
+    </div>
+	
+	<!-- Encounters Applet -->
+    <div class="container">
+    	<h2 class="text-center">Encounters Applet</h2>
+		<div class="faux-table-container">
+	        <div class="faux-table no-margin">
+	            <div class="header">
+	                <div class="table-row">
+	                    <div class="percent-width-35">
+	                        <div>Visit Type</div>
+	                    </div>
+	                    <div class="percent-width-19">
+	                        <div>Occurance</div>
+	                    </div>
+	                    <div class="percent-width-2">
+	                        <div>Last</div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="body">
+	                <div class="table-row">
+	                    <div>
+	                        <span>Clinic</span>
+	                    </div>
+	                    <div class="num-chart">
+	                        <span><span>41</span><span class="high-chart-placeholder" aria-hidden="true"></span></span>
+	                    </div>
+	                    <div>
+	                        <span>3h</span>
+	                    </div>
+	                </div>
+	                <div class="table-row">
+	                    <div>
+	                        <span>Clinic</span>
+	                    </div>
+	                    <div class="num-chart">
+	                        <span><span>41</span><span class="high-chart-placeholder" aria-hidden="true"></span></span>
+	                    </div>
+	                    <div>
+	                        <span>10d</span>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<!-- ABC  -->
+	<div class="container">
+		<h2 class="text-center">Encounters example </h2>
+		<div class="faux-table">
+			 <div class="sr-only">This table represents symptoms categorized by date and time.</div>
+		     <div class="header">
+		          	<div class="table-row">
+						<div>
+						    <div>ABC</div>
+						</div>
+						<div class="percent-width-20">
+						    <div>Primary</div>
+						</div>
+		          	</div>
+		     </div>
+		     <div class="body">
+		          <div class="table-row">
+		               <div>
+		                    <span>Itchy Watery Eyes</span>
+		               </div>
+		               <div>
+		               		<span>
+								<div class="control form-group">
+                                    <div class="checkbox pull-left">
+                                        <label class="checkbox-inline" for="diagnoses1">
+                                            <input type="checkbox" value="option1" aria-label="To add this diagnoses to the CL, press the spacebar" id="diagnoses1">
+                                            <span class="sr-only" aria-hidden="true">Add diagnosis</span></label>
+                                    </div>
+                                </div>
+                                <div class="control form-group">
+                                    <button type="button" class="btn icon-btn icon-btn-mini pull-right" title="Press enter to remove symptom">
+                                    	<i class="fa fa-times-circle"></i>
+                                    </button>
+                                </div>
+							</span>
+		               </div>
+		          </div>
+		     </div>
+		</div>
+	</div> 
+
+	<!--  Dual cells linking as one - needs to be refactored | DO NOT USE / DELETE YET -->
+<!-- 	<div>
+		<h2 class="text-center">Faux 2 Column Link Example</h2>
+		<div class="container faux-table-container">
+		    <div class="faux-table">
+		        <div class="header">
+		            <div>
+		                <div>
+		                    <div>Table Content</div>
+		                </div>
+		                <div>
+		                    <div>Faux Table Header 2</div>
+		                </div>
+		                <div>
+		                    <div>Faux Table Header 3</div>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="body dual-cell-linking">
+		            <div class="table-row">
+		                <div>
+		                    <span>Table Content</span>
+		                </div>
+		                <div>
+		                    <span>Table Content</span>
+		                </div>
+		                <a href="">
+		                    <div>
+		                        <span>1 of 2 linking cells</span>
+		                    </div>
+		                    <div>
+		                        <span>1 of 2 linking cells</span>
+		                    </div>
+		                </a>
+		            </div>
+		            <div class="table-row">
+		                <div>
+		                    <a href="">Table Content linking</a>
+		                </div>
+		                <div>
+		                    <span>Table Content</span>
+		                </div>
+		                <a href="">
+		                    <div>
+		                        <span>1 of 2 linking cells</span>
+		                    </div>
+		                    <div>
+		                        <span>1 of 2 linking cells</span>
+		                    </div>
+		                </a>
+		            </div>
+		            <div class="table-row">
+		                <div>
+		                    <a href="">Table Content linking</a>
+		                </div>
+		                <div>
+		                    <a href="">Table Content linking</a>
+		                </div>
+		                <a href="">
+		                    <div>
+		                        <span>1 of 2 linking cells</span>
+		                    </div>
+		                    <div>
+		                        <span>1 of 2 linking cells</span>
+		                    </div>
+		                </a>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<br />
+		<br />
+	</div> -->
+
+    <script src="../js/jquery-1.11.2.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/typeahead.js"></script>
+</body>
+
+</html>

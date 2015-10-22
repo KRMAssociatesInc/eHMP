@@ -11,13 +11,15 @@ import org.slf4j.LoggerFactory;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
+import java.net.SocketTimeoutException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
+import us.vistacore.vxsync.ConnectionException;
+import us.vistacore.vxsync.ServerException;
 import us.vistacore.vxsync.utility.DataConverter;
-import us.vistacore.vxsync.utility.NullChecker;
 import us.vistacore.vxsync.utility.Utils;
 
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -66,10 +68,23 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsAllergy: results size "+oaAllergy.size());
 			return (DataConverter.convertObjectToJSON(oaAllergy));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
 			LOG.error("getJMeadowsAllergy() error" + e);
-			return null;
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsAllergy() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -94,10 +109,23 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsLab: results "+oaLabResults.size());
 			return(DataConverter.convertObjectToJSON(oaLabResults));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
 			LOG.error("getJMeadowsLab() error" + e);
-			return null;
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsLab() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -121,10 +149,23 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsAppointment: results "+oaPatientAppointment.size());
 			return(DataConverter.convertObjectToJSON(oaPatientAppointment));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
 			LOG.error("getJMeadowsAppointment() error" + e);
-			return null;
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsAppointment() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -148,10 +189,23 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsImmunization: results "+oaImmunization.size());
 			return(DataConverter.convertObjectToJSON(oaImmunization));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
 			LOG.error("getJMeadowsImmunization() error" + e);
-			return null;
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsImmunization() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -175,10 +229,23 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsEncounter: results "+oaPatientEncounter.size());
 			return(DataConverter.convertObjectToJSON(oaPatientEncounter));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
 			LOG.error("getJMeadowsEncounter() error" + e);
-			return null;
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsEncounter() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -202,10 +269,23 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsDemographics: results "+oaDemographicsResults.size());
 			return(DataConverter.convertObjectToJSON(oaDemographicsResults));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
 			LOG.error("getJMeadowsDemographics() error" + e);
-			return null;
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsDemographics() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -229,10 +309,23 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsConsult: results "+oConsults.size());
 			return(DataConverter.convertObjectToJSON(transformConsultNotes(oConsults)));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
-			LOG.error("getJMeadowsConsultRequest() error" + e);
-			return null;
+			LOG.error("getJMeadowsConsult() error" + e);
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsConsult() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -270,10 +363,23 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsMedication: results "+oaMedication.size());
 			return(DataConverter.convertObjectToJSON(oaMedication));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
 			LOG.error("getJMeadowsMedication() error" + e);
-			return null;
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsMedication() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -297,10 +403,23 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsOrder: results "+oaOrder.size());
 			return(DataConverter.convertObjectToJSON(oaOrder));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
 			LOG.error("getJMeadowsOrder() error" + e);
-			return null;
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsOrder() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -324,10 +443,23 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsProblems: results "+oaProblemResults.size());
 			return(DataConverter.convertObjectToJSON(oaProblemResults));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
-			LOG.error("getJMeadowsProblems() error" + e);
-			return null;
+			LOG.error("getJMeadowsProblem() error" + e);
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsProblem() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -351,10 +483,23 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsRadiology: results "+oaRads.size());
 			return(DataConverter.convertObjectToJSON(oaRads));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
 			LOG.error("getJMeadowsRadiology() error" + e);
-			return null;
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsRadiology() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -378,10 +523,22 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsVital: results "+oaVital.size());
 			return(DataConverter.convertObjectToJSON(oaVital));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
 			LOG.error("getJMeadowsVital() error" + e);
-			return null;
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) {
+			LOG.error("getJMeadowsVital() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -411,10 +568,23 @@ public class JMeadowsSoapHandler
 				return null;
 
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
-			LOG.error("getJMeadowsProgressNotes() error" + e);
-			return null;
+			LOG.error("getJMeadowsProgressNote() error" + e);
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsProgressNote() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -438,10 +608,23 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsDischargeSummaries: results size "+progressNote.size());
 			return(DataConverter.convertObjectToJSON(transformProgressNotes(progressNote)));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
-			LOG.error("getJMeadowsDischargeSummaries() error" + e);
-			return null;
+			LOG.error("getJMeadowsDischargeSummary() error" + e);
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) 
+		{
+			LOG.error("getJMeadowsDischargeSummary() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 	
@@ -458,10 +641,22 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getJMeadowsDocument: results size " + document.getNoteBytes().length);
 			return new String(document.getNoteBytes());
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
-			LOG.error("getJMeadowsDocument() error"+e);
-			return null;
+			LOG.error("getJMeadowsDocument() error" + e);
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) {
+			LOG.error("getJMeadowsDocument() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 
@@ -485,10 +680,22 @@ public class JMeadowsSoapHandler
 			LOG.debug("JMeadowsSoapHandler.getVlerDocuments: results size "+vlerDocumentList.size());
 			return(DataConverter.convertObjectToJSON(vlerDocumentList));
 		}
-		catch (Exception e)
+		catch(javax.xml.ws.WebServiceException e)
 		{
 			LOG.error("getVlerDocuments() error" + e);
-			return null;
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) {
+			LOG.error("getVlerDocuments() error" + e);
+			throw new ServerException("Error reported from JMeadows");
 		}
 	}
 

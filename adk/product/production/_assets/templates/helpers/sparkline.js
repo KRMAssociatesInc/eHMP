@@ -4,6 +4,16 @@
 'use strict';
 define(['handlebars', 'hbs!_assets/templates/sparkline'], function(Handlebars, sparklineTemplate) {
 
+
+    var resizeHandler = setInterval(function() {
+        _.each($('svg.gistTrendGraph'), function(item) {
+            if (item && item.parentNode && item.clientWidth != item.parentNode.clientWidth) {
+                item.setAttribute('width', 1);
+                item.setAttribute('width', item.parentNode.clientWidth);
+            }
+        });
+    }, 100);
+
     function calculateStarPoints(centerX, centerY, arms, outerRadius, innerRadius) {
         var results = "";
 

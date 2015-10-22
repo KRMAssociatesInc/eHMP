@@ -1,4 +1,4 @@
-@AllergyAdd_EIE @US2283 @F132 @onc
+@AllergyAdd_EIE @US2283 @F132 @future
 
 Feature: F132 - Allergies (write-back)
 

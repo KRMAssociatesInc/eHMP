@@ -17,10 +17,10 @@ define([
 
     var ScreensManifest = Messaging.request('ScreensManifest');
     var ADKApp = new Backbone.Marionette.Application();
-        ADKApp.initAllRoutersPromise = new $.Deferred();
-        ADKApp.session = Session;
-        ADKApp.predefinedDefaultScreen = ScreensManifest.predefinedDefaultScreen;
-        ADKApp.userSelectedDefaultScreen = ADKApp.predefinedDefaultScreen;
+    ADKApp.initAllRoutersPromise = new $.Deferred();
+    ADKApp.session = Session;
+    ADKApp.predefinedDefaultScreen = ScreensManifest.predefinedDefaultScreen;
+    ADKApp.userSelectedDefaultScreen = ADKApp.predefinedDefaultScreen;
 
     ADKApp.on('start', function() {
         // save the original defaultscreen in case it gets changed
@@ -36,51 +36,69 @@ define([
         ADKApp.router.navigate(screenName);
         ADKApp.execute('screen:display', screenName, routeOptions);
     });
-
+    var hasPermission = function(screenModule) {
+        if (!_.isUndefined(screenModule.config) && !_.isUndefined(screenModule.config.hasPermission)) {
+            if (_.isFunction(screenModule.config.hasPermission)) {
+                var permission = screenModule.config.hasPermission();
+                if (!_.isBoolean(permission)) {
+                    return false;
+                }
+                return permission;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    };
     ADKApp.commands.setHandler('screen:display', function(screenName, routeOptions) {
         console.log('Command display:screen received, screenName:', screenName);
-        if (!screenName) {
-            // if not logged in don't call navigate, we don't want to see the cover-sheet route.
-            if (UserService.checkUserSession()) {
-                screenName = ADKApp.userSelectedDefaultScreen;
-                Navigation.navigate(screenName);
-            }
+
+        if (_.isUndefined(screenName)) {
+            screenName = ADKApp.userSelectedDefaultScreen || ScreensManifest.predefinedDefaultScreen;
         }
-         //TODO Find a more elegant approach that utilizes the code already
-        if ($('#mainModal').hasClass('in') || $('#mainOverlay').hasClass('in') || $('.modal-backdrop').hasClass('in')) {
-            $('#mainModal, #mainOverlay').modal('hide');
+
+        var loggedIn = UserService.checkUserSession();
+        if (!loggedIn && screenName !== ScreensManifest.ssoLogonScreen) {
+            if (_.isUndefined(ScreensManifest.logonScreen)) {
+                console.warn('logonScreen is undefined - unable to navigate.  Update ScreensManifest with logonScreen.');
+                return;
+            }
+            screenName = ScreensManifest.logonScreen;
+        }
+
+        //TODO Find a more elegant approach that utilizes the code already
+        _.each([ADKApp.modalRegion, ADKApp.workflowRegion, ADKApp.alertRegion], function(region) {
+            if (region.hasView()) {
+                region.currentView.$el.modal('hide');
+            }
+        });
+        if ($('.modal-backdrop').hasClass('in')) {
             $('#mainModal').trigger('close.bs.modal');
         }
-        var screenModule;
-        if (!UserService.checkUserSession()) {
-            if (screenName !== ScreensManifest.ssoLogonScreen) {
-                screenName = ScreensManifest.logonScreen;
-                screenModule = ADKApp[screenName];
+
+        var screenModule = ADKApp[screenName];
+        if (_.isUndefined(screenModule)) {
+            console.warn('Screen module is undefined for screen ' + screenName + '. Redirecting to default screen');
+            screenName = ADKApp.userSelectedDefaultScreen || ScreensManifest.predefinedDefaultScreen;
+            screenModule = ADKApp[screenName];
+        }
+
+        if (screenName && screenModule) {
+            screenModule.buildPromise.done(function() {
+                if (hasPermission(screenModule) === false) {
+                    console.warn('User does not have permission to access screen ' + screenName + '. Redirecting to default screen');
+                    screenName = ADKApp.userSelectedDefaultScreen || ScreensManifest.predefinedDefaultScreen;
+                    ADKApp.router.navigate(screenName);
+                    screenModule = ADKApp[screenName];
+                }
+                if ($.isEmptyObject(ResourceService.patientRecordService.getCurrentPatient().attributes) && (screenModule.config.patientRequired === true)) {
+                    screenName = ScreensManifest.patientSearchScreen;
+                    ADKApp.router.navigate(screenName);
+                    screenModule = ADKApp[screenName];
+                    console.log('No Patient Selected: rerouting to patient-search-screen');
+                }
                 ScreenDisplay.createScreen(screenModule, screenName, routeOptions, ADKApp);
-            }
-            if (!screenName) {
-                console.log('logonScreen is undefined.  Update ScreensManifest with logonScreen.');
-            }
-        } else {
-            if (_.isUndefined(ADKApp[screenName])) {
-                console.warn('Screen module is undefined for screen ' + screenName + '. Redirecting to default screen');
-                Navigation.navigate(ADK.ADKApp.userSelectedDefaultScreen, {
-                    trigger: false
-                });
-            } else {
-                ADKApp.initAllRoutersPromise.done(function() {
-                    ADKApp[screenName].buildPromise.done(function() {
-                        if ($.isEmptyObject(ResourceService.patientRecordService.getCurrentPatient().attributes) && (ADKApp[screenName].config.patientRequired === true)) {
-                            screenName = ScreensManifest.patientSearchScreen;
-                            ADKApp.router.navigate(screenName);
-                            screenModule = ADKApp[screenName];
-                            console.log('No Patient Selected: rerouting to patient-search-screen');
-                        }
-                        screenModule = ADKApp[screenName];
-                        ScreenDisplay.createScreen(screenModule, screenName, routeOptions, ADKApp);
-                    });
-                });
-            }
+            });
         }
     });
 
@@ -91,7 +109,9 @@ define([
         SessionStorage.addModel('patient', patient);
     });
 
-    Messaging.reply('get:current:screen', function(){ return ADKApp.currentScreen;});
+    Messaging.reply('get:current:screen', function() {
+        return ADKApp.currentScreen;
+    });
 
     /**
      * This is the part that WILL take the user to the login screen
@@ -107,7 +127,12 @@ define([
         topRegion: '#top-region',
         centerRegion: '#center-region',
         bottomRegion: '#bottom-region',
-        modalRegion: '#modal-region'
+        modalRegion: '#modal-region',
+        workflowRegion: '#workflow-region',
+        alertRegion: '#alert-region'
+    });
+    Messaging.reply('get:adkApp:region', function(regionName) {
+        return ADKApp[regionName];
     });
 
     var Router = Marionette.AppRouter.extend({
@@ -140,7 +165,7 @@ define([
         controller: new AppController()
     });
 
-    ADKApp.initAllRouters = function(){
+    ADKApp.initAllRouters = function() {
         var promise = ScreenBuilder.initAllRouters(ADKApp);
         promise.done(function() {
             ScreenBuilder.buildAll(ADKApp);
@@ -161,8 +186,8 @@ define([
         titleExists: function(title) {
             return ScreenBuilder.titleExists(title);
         },
-        addNewScreen: function(options, app, index){
-            return ScreenBuilder.addNewScreen(options, app, index);
+        addNewScreen: function(options, app, index, callback){
+            return ScreenBuilder.addNewScreen(options, app, index, callback);
         }
     };
 

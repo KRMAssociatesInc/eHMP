@@ -1,0 +1,103 @@
+#header-region {
+    padding: 0;
+    .appNav {
+        padding: 0;
+    }
+    nav {
+        background-image: none;
+        background-color: $primary-light;
+        border: 0;
+        box-shadow: none;
+        border-radius: 0;
+        margin-bottom: 0;
+        min-height: 0;
+        font-size: 11px;
+        .navTitle p {
+            color: $white;
+            margin: 0;
+            padding: 6px 10px;
+            .navbar-text {
+                text-align: center;
+                margin: 0px;
+                width: 100%;
+            }
+        }
+        #patientSearchButton {
+            float: left;
+            height: 30px;
+            padding: 6px 10px;
+            color: $white;
+            cursor: pointer;
+            background-color: $primary;
+            &:hover, &:focus, &:active {
+                background: $primary-dark;
+            }
+        }
+        .helpIconLinkLeft {
+            float: left;
+            position: relative;
+            margin: 1px 0 0 5px;
+        }
+        .navbar-right {
+            ul.navbar-nav {
+                padding:0;
+                li a {
+                    border:none;
+                    color:$white;
+                    cursor: pointer;
+                    padding: 5px 10px;
+                    &:hover, &:focus, &:active {
+                        background-color: $primary-dark;
+                        color: $white;
+                        outline:none;
+                    }
+                }
+            }
+            .dropdown {
+                a.dropdown-toggle {
+                    padding: 5px 10px;
+                    color: $white;
+                    text-shadow: none;
+                    border:none;
+                    background: $primary;
+                    &:hover {
+                        background: $primary-dark;
+                    }
+                }
+                &.open a.dropdown-toggle {
+                    background: $primary-dark;
+                    color: $white;
+                    a:hover, a:focus, a:active {
+                        cursor: pointer;
+                        color: $white;
+                        background: $secondary;
+                        border-radius:0;
+                    }
+                    #logoutButton {
+                        background-color: $secondary;
+                    }
+                }
+                ul.dropdown-menu {
+                    min-width: 180px;
+                    margin-top: -1px;
+                    padding-left: 7px;
+                    padding-right: 7px;
+                    box-shadow: 1px 1px 2px $primary;
+                    font-size: 13px;
+                    a {
+                        color: $grey-darkest;
+                        &:hover, &:focus, &:active {
+                            color: $white;
+                            background: $primary;
+                        }
+                    }
+                    .navbar-text {
+                        text-align: center;
+                        margin: 5px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

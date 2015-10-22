@@ -25,7 +25,25 @@ $(function() {
             .use(window.markdownitContainer, 'page-description')
             .use(window.markdownitContainer, 'callout')
             .use(window.markdownitContainer, 'side-note')
-            .use(window.markdownitContainer, 'definition');
+            .use(window.markdownitContainer, 'definition')
+            .use(window.markdownitContainer, 'showcode', {
+
+                validate: function(params) {
+                    return params.trim().match(/^showcode\s+(.*)$/);
+                },
+                render: function(tokens, idx) {
+                    var m = tokens[idx].info.trim().match(/^showcode\s+(.*)$/);
+
+                    if (tokens[idx].nesting === 1) {
+                        // opening tag
+                        return '<details><summary>' + m[1] + '</summary>\n';
+
+                    } else {
+                        // closing tag
+                        return '</details>\n';
+                    }
+                }
+            });
         console.log('Rendering with markdown-it');
     } else if (window.marked) {
         console.log('Rendering with marked');
@@ -240,7 +258,7 @@ $(function() {
                         var rdkPath = ReadmeApp.mainModel.get('rdkPath');
                         $tag.attr('src', rdkPath + path);
                     } else {
-                        $tag.attr('src', _.compact([pageBasename ,path]).join('/'));
+                        $tag.attr('src', _.compact([pageBasename, path]).join('/'));
                     }
                 }
             }
@@ -301,7 +319,7 @@ $(function() {
                 .html('Back to top &uarr;');
             var container = $('<div />');
             container.append(toc);
-            if($(toc).find('li').length) {
+            if ($(toc).find('li').length) {
                 container.append(backToTop2);
             }
             this.$el.html(container);
@@ -598,18 +616,18 @@ $(function() {
             }
             this.$el.html(
                 '<div id="mainContent" class="container">' +
-                    '<div class="row">' +
-                        '<div id="markdown" class="col-md-8"></div>' +
-                            '<div class="col-md-4">' +
-                                '<div id="toc"></div>' +
-                            '</div>' +
-                            '<div class="row" id="bottom-row">' +
-                            '<img class="img-responsive center-block hidden very-special" src="dist/image/manatee_watches_you_scroll.png" style="position: fixed;top: 0;right: ' + (document.body.clientWidth - 350) + 'px;" />' +
-                            '<div class="specialButton" onClick="$(\'.very-special\').toggleClass(\'hidden\')" style="position:fixed;bottom:30px;right:0;background-color:transparent;height:20px;width:20px;"></div>' +
-                        '</div>' +
-                    '</div>' +
+                '<div class="row">' +
+                '<div id="markdown" class="col-md-8"></div>' +
+                '<div class="col-md-4">' +
+                '<div id="toc"></div>' +
                 '</div>' +
-            '<div id="bottomImage"></div>'
+                '<div class="row" id="bottom-row">' +
+                '<img class="img-responsive center-block hidden very-special" src="dist/image/manatee_watches_you_scroll.png" style="position: fixed;top: 0;right: ' + (document.body.clientWidth - 350) + 'px;" />' +
+                '<div class="specialButton" onClick="$(\'.very-special\').toggleClass(\'hidden\')" style="position:fixed;bottom:30px;right:0;background-color:transparent;height:20px;width:20px;"></div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div id="bottomImage"></div>'
             );
 
             //this.$el.parent().append(scrollyFooter);
@@ -621,19 +639,19 @@ $(function() {
     function fetchRdkPath(customDeferred) {
         var deferred = customDeferred || Q.defer();
         var savedRdkPath = ReadmeApp.mainModel.get('rdkPath');
-        if(savedRdkPath) {
+        if (savedRdkPath) {
             deferred.resolve(savedRdkPath);
             return deferred.promise;
         }
         $.ajax({
-            url: '/app.json',
-            dataType: 'json',
-            mimeType: 'application/json; charset=utf-8'
-        })
+                url: '/app.json',
+                dataType: 'json',
+                mimeType: 'application/json; charset=utf-8'
+            })
             .done(function(data) {
-                var rdkPath = data.resourceDirectoryPath;
+                var rdkPath = data.resourceDirectoryPathFetch;
                 rdkPath = rdkPath.match(/(.*)resourcedirectory$/)[1] || '';
-                if(!/resource/.test(rdkPath)) {
+                if (!/resource/.test(rdkPath)) {
                     rdkPath += 'resource/';
                 }
                 rdkPath += 'docs/';

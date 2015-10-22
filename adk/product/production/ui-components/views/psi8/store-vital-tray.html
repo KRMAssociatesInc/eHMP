@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>eHMP Bootstrap UI Library - Immunization</title>
+    <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../../css/main-styles.css" />
+</head>
+
+<body class="library">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../../views.html">Views</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../../color-palette.html">Color Palette</a></li>
+                                <li><a href="#">Style Guide</a></li>
+                            </ul>
+                        </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end navigation-->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+            <li><a href="../../views.html">Views</a></li>
+            <li class="active">F423 - Enter & Store a Vital Tray</li>
+        </ol>
+        <!--end breadcrumb-->
+        <h1>F423 - Enter and Store Vital Tray</h1>
+        <div class="description">
+            <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This is the 508 compliant static HTML/CSS mock up of the Enter and Store Vital Tray.</p>
+            <p><strong><i class="fa fa-lightbulb-o"></i> DOCUMENT:</strong> Please also view <a href="http://wakirc.axshare.com/#p=v1__enter___store_a_vital__old_">Enter and Store Vital wireframe</a>, <a href="../../docs/workflow/psi8/workflow-enter-and-store-a-vital.pdf">Workflow Diagram</a> <small>[PDF, 364KB]</small>, and <a href="../../docs/use-case/psi8/use-case-enter-and-store-a-vital.pdf">Use Scenario Case Documentation</a> <small>[PDF, 184KB]</small> for full details on implementation.</p>
+        </div>
+    </div>
+    <!--end description-->
+    <div class="container">
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6">
+                                    <h4 class="modal-title">All Observations</h4>
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <div class="header-btns">
+                                        <button type="button" class="btn btn-primary btn-sm" title="Press enter to create a new observation"><i class="fa fa-pencil"></i> Create New Observation</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="row row-sort">
+                                            <div class="col-md-6 col-xs-6">
+                                                <label for="observation-arrange-by">Arrange by:</label>
+                                                <select id="observation-arrange-by" title="Arrange observations by selecting from the drop down list">
+                                                    <option value="status">Status</option>
+                                                    <option value="type">Type</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6 text-right">
+                                                <label for="observation-sort-by" class="sr-only">Sort by</label>
+                                                <select id="observation-sort-by" title="Sort observations by selecting from the drop down list">
+                                                    <option value="most-recent">Most recent</option>
+                                                    <option value="least-recent">Least recent</option>
+                                                    <option value="chronological">Chronological</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-container panel-group small" id="accordion" role="tablist">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-observation-immunization">
+                                                    <h4>
+                                                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-observation-immunization" aria-expanded="true" aria-controls="collapse-observation-immunization">Immunization<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                            </h4>
+                                                </div>
+                                                <div id="collapse-observation-immunization" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-observation-immunization">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Administered</strong></p>
+                                                                        <p>Last Saved: <span id="immunization-last-saved1">09/09/2015 03:35</span></p>
+                                                                        <p>Date Created: <span id="immunization-date-created1">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Historical</strong></p>
+                                                                        <p>Date signed: <span id="immunization-date-signed1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="immunization-date-created2">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Administered</strong></p>
+                                                                        <p>Date accepted: <span id="immunization-date-accepted1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="immunization-date-created3">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end immunization-->
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-observation-nonvameds">
+                                                    <h4>
+                                                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-observation-nonvameds" aria-expanded="true" aria-controls="collapse-observation-nonvameds">Non-VA Meds<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                            </h4>
+                                                </div>
+                                                <div id="collapse-observation-nonvameds" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-observation-nonvameds">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Last Saved: <span id="nonvameds-last-saved1">09/09/2015 03:35</span></p>
+                                                                        <p>Date Created: <span id="nonvameds-date-created1">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Date signed: <span id="nonvameds-date-signed1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="nonvameds-date-created2">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Date accepted: <span id="nonvameds-date-accepted1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="nonvameds-date-created3">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end Non-VA Meds-->
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-observation-vitals">
+                                                    <h4>
+                                                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-observation-vitals" aria-expanded="true" aria-controls="collapse-observation-vitals">Vitals<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                            </h4>
+                                                </div>
+                                                <div id="collapse-observation-vitals" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-observation-vitals">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Last Saved: <span id="vitals-last-saved1">09/09/2015 03:35</span></p>
+                                                                        <p>Date Created: <span id="vitals-date-created1">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Date signed: <span id="vitals-date-signed1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="vitals-date-created2">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Date accepted: <span id="vitals-date-accepted1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="vitals-date-created3">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end Vitals-->
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to delete note">Delete</button>
+                                                </div>
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#notesModal" title="Psress enter to view the details of the note">View</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4 class="modal-title">Add New Observation</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item">Allergies<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item">Immunization<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item">Meds, Non-VA<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item">Problems<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item"><i class="fa fa-ellipsis-v"></i>  Vitals<i class="fa fa-chevron-right pull-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to go back to observations summary">Back to Observations Summary</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
+        <div class="workflow-container">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="row">
+                            <div class="col-md-10 col-xs-10">
+                                <h4 class="modal-title">Enter Vitals</h4>
+                            </div>
+                            <div class="col-md-2 col-xs-2">
+                                <div class="header-btns">
+                                    <div class="col-md-6 col-xs-6">
+                                        <div class="dropdown">
+                                            <button class="btn icon-btn dropdown-toggle" type="button" id="immunization-settings3" data-toggle="dropdown" aria-expanded="true">
+                                                <i class="fa fa-gear"><span class="sr-only">Settings for vitals</span></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="immunization-settings3">
+                                                <li role="presentation"><a role="menuitem" href="#">Preview</a></li>
+                                                <li role="presentation"><a role="menuitem" href="#">Print</a></li>
+                                                <li role="presentation"><a role="menuitem" href="#">Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xs-6">
+                                        <button type="button" class="btn icon-btn"><i class="fa fa-expand"><span class="sr-only">Press enter to open the popover view</span></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="workflow-controller">
+                        <div>
+                            <form action="#" method="post" class="form-container adk-form">
+                                <div class="modal-body">
+                                    <div class="scroll-enter-form">
+                                        <div class="row row-subheader">
+                                            <div class="col-xs-4">
+                                                <div class="control form-group">
+                                                    <label for="date-taken">Date Taken *</label>
+                                                    <div class="input-group date">
+                                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                        <input type="text" id="date-taken" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <div class="control form-group">
+                                                    <label for="time-taken">Time Taken</label>
+                                                    <div class="input-group bootstrap-timepicker">
+                                                        <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                                                        <input type="text" id="time-taken" class="form-control timepicker" title="Please enter in a time in the following format, HH:MM." placeholder="HH:MM" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <div class="control form-group">
+                                                    <!--<div class="checkbox">
+                                                        <label for="checkbox-pass-vital">
+                                                            <input type="checkbox" value="option2" name="checkBox" title="To check or uncheck pass for this Vital, press enter" id="checkbox-pass-vital" /> PASS
+                                                        </label>
+                                                    </div>-->
+                                                    <button type="button" class="btn btn-default btn-xs top-margin-md" title="Press enter to pass">PASS</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <button id="openAllBtn" type="button" class="btn icon-btn icon-btn-mini pull-right" title="Press enter to expand all vitals">Expand All</button>
+                                            </div>
+                                        </div><!-- end row-subheader-->
+
+                                        <div class="row">
+                                            <div class="well well-collapse">
+                                                <div class="collapsibleContainerHeaderRegion">
+                                                    <div class="col-sm-12 left-pad-none">
+                                                        <div class="col-xs-11 left-pad-none right-margin-sm">
+                                                            <div class="col-xs-6 left-pad-xs">
+                                                                <div class="control form-group">
+                                                                    <label for="blood-pressure-measurement">Blood Pressure</label>
+                                                                    <div class="input-group">
+                                                                        <input id="blood-pressure-measurement" name="input-blood-pressure" type="text" class="form-control" title="Please enter in a numeric value" />
+                                                                        <span class="input-group-addon">mmHg</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <p class="faux-label sr-only">Blood pressure radios label</p>
+                                                                    <div class="radio">
+                                                                        <label for="bp-unavailable">
+                                                                            <input name="bloodPressure" type="radio" name="input-blood-pressure-radio-response" title="Press up and down arrow keys to view options and press spacebar to select." id="bp-unavailable" /> Unavailable
+                                                                        </label>
+                                                                        <label for="bp-refused">
+                                                                            <input name="bloodPressure" type="radio" name="input-blood-pressure-radio-response" title="Press up and down arrow keys to view options and press spacebar to select." id="bp-refused" /> Refused
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-1 no-margin">
+                                                            <button class="btn btn-sm icon-btn collapsed" type="button" data-toggle="collapse" data-target="#collapsibleContainerCollapseRegion-blood-pressure" aria-expanded="false" aria-controls="options-blood-pressure" title="Press enter to expand or collapse section.">
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="collapsibleContainerCollapseRegion collapse" id="collapsibleContainerCollapseRegion-blood-pressure">
+                                                    <div class="col-xs-12 left-pad-none">
+                                                        <div class="col-md-3 col-xs-3 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="bp-cuff-size">Cuff Size</label>
+                                                                <select name="Cuff Size options" id="bp-cuff-size" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3 col-xs-3 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="bp-position">Position</label>
+                                                                <select name="Position options" id="bp-position" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3 col-xs-3 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="bp-method">Method</label>
+                                                                <select name="Method options" id="bp-method" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3 col-xs-3 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="bp-location">Location</label>
+                                                                <select name="Location options" id="bp-location" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--end blood pressure-->
+
+                                        <div class="row">
+                                            <div class="well well-collapse">
+                                                <div class="collapsibleContainerHeaderRegion">
+                                                    <div class="col-sm-12 left-pad-none">
+                                                        <div class="col-xs-11 left-pad-none right-margin-sm">
+                                                           <div class="col-xs-3 left-pad-xs">
+                                                                <div class="control form-group">
+                                                                    <label for="input-temperature">Temperature</label>
+                                                                    <input type="text" class="form-control" id="input-temperature" name="input-temperature" maxlength="255" value="" title="Please enter a temperature" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-3 no-pad top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <div class="radio-inline">
+                                                                        <label for="input-temperature-f-radio">
+                                                                            <input type="radio" name="input-temperature-radio-units" id="input-temperature-f-radio" value="fahrenheit" title="fahrenheit" checked="checked"> F
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="radio-inline">
+                                                                        <label for="input-temperature-c-radio">
+                                                                            <input type="radio" id="input-temperature-c-radio" name="input-temperature-radio-units" title="celsius"> C
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <p class="faux-label sr-only">Temperature radio label</p>
+                                                                    <div class="radio">
+                                                                        <label for="temperature-unavailable">
+                                                                            <input name="tempChoices" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="temperature-unavailable"> Unavailable
+                                                                        </label>
+                                                                        <label for="temperature-refused">
+                                                                            <input name="tempChoices" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="temperature-refused"> Refused
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-1 no-margin">
+                                                            <button class="btn btn-sm icon-btn collapsed" type="button" data-toggle="collapse" data-target="#collapsibleContainerCollapseRegion-temperature" aria-expanded="false" aria-controls="options-temperature" title="Press enter to expand or collapse section.">
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="collapsibleContainerCollapseRegion collapse" id="collapsibleContainerCollapseRegion-temperature">
+                                                    <div class="col-xs-12 left-pad-none">
+                                                        <div class="col-md-6 col-xs-6 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="temperature-location">Location</label>
+                                                                <select name="Location options" id="temperature-location" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--end temperature-->
+
+                                        <div class="row">
+                                            <div class="well well-collapse">
+                                                <div class="collapsibleContainerHeaderRegion">
+                                                    <div class="col-sm-12 left-pad-none">
+                                                        <div class="col-xs-11 left-pad-none right-margin-sm">
+                                                            <div class="col-xs-6 left-pad-xs">
+                                                                <div class="control form-group">
+                                                                    <label for="input-pulse">Pulse</label>
+                                                                    <div class="input-group">
+                                                                        <input id="input-pulse" name="input-pulse" type="text" class="form-control" title="Please enter in a numeric value" />
+                                                                        <span class="input-group-addon">/min</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                           <div class="col-xs-6 top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <p class="faux-label sr-only">Pulse radios label</p>
+                                                                    <div class="radio">
+                                                                        <label for="pulse-unavailable">
+                                                                            <input name="input-pulse-radio-response" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="pulse-unavailable" /> Unavailable
+                                                                        </label>
+                                                                        <label for="pulse-refused">
+                                                                            <input name="input-pulse-radio-response" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="pulse-refused" /> Refused
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-1 no-margin">
+                                                            <button class="btn btn-sm icon-btn collapsed" type="button" data-toggle="collapse" data-target="#collapsibleContainerCollapseRegion-pulse" aria-expanded="false" aria-controls="options-pulse" title="Press enter to expand or collapse section.">
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="collapsibleContainerCollapseRegion collapse" id="collapsibleContainerCollapseRegion-pulse">
+                                                    <div class="col-xs-12 left-pad-none">
+                                                        <div class="col-md-3 col-xs-3 col-xs-3 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="pulse-site">Site</label>
+                                                                <select name="Site options" id="pulse-site" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3 col-xs-3 col-xs-3 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="pulse-position">Position</label>
+                                                                <select name="Position options" id="pulse-position" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3 col-xs-3 col-xs-3 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="pulse-method">Method</label>
+                                                                <select name="Method options" id="pulse-method" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3 col-xs-3 col-xs-3 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="pulse-location">Location</label>
+                                                                <select name="Location options" id="pulse-location" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--end pulse-->
+
+                                        <div class="row">
+                                            <div class="well well-collapse">
+                                                <div class="collapsibleContainerHeaderRegion">
+                                                    <div class="col-sm-12 left-pad-none">
+                                                        <div class="col-xs-11 left-pad-none right-margin-sm">
+                                                            <div class="col-xs-6 left-pad-xs">
+                                                                <div class="control form-group">
+                                                                    <label for="resipiration-measurement">Respiration</label>
+                                                                    <div class="input-group">
+                                                                        <input id="resipiration-measurement" type="text" class="form-control" title="Please enter in a numeric value" />
+                                                                        <span class="input-group-addon">/min</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <p class="faux-label sr-only">Respiration radios label</p>
+                                                                    <div class="radio">
+                                                                        <label for="respiration-unavailable">
+                                                                            <input name="respiration" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="respiration-unavailable" /> Unavailable
+                                                                        </label>
+                                                                        <label for="respiration-refused">
+                                                                            <input name="respiration" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="respiration-refused" /> Refused
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-1 no-margin">
+                                                            <button class="btn btn-sm icon-btn collapsed" type="button" data-toggle="collapse" data-target="#collapsibleContainerCollapseRegion-respiration" aria-expanded="false" aria-controls="options-respiration" title="Press enter to expand or collapse section.">
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="collapsibleContainerCollapseRegion collapse" id="collapsibleContainerCollapseRegion-respiration">
+                                                    <div class="col-xs-12 left-pad-none">
+                                                        <div class="col-xs-6 col-xs-6 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="resipiration-position">Position</label>
+                                                                <select name="Position options" id="resipiration-position" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6 col-xs-6 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="resipiration-method">Method</label>
+                                                                <select name="Method options" id="resipiration-method" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--end respiration-->
+
+                                        <div class="row">
+                                            <div class="well well-collapse">
+                                                <div class="collapsibleContainerHeaderRegion">
+                                                    <div class="col-sm-12 left-pad-none">
+                                                        <div class="col-xs-11 left-pad-none right-margin-sm">
+                                                            <div class="col-xs-6 left-pad-xs">
+                                                                <div class="control form-group">
+                                                                    <label for="pulse-oximetry-concentration">Pulse Oximetry</label>
+                                                                    <div class="input-group">
+                                                                        <input id="pulse-oximetry-concentration" type="text" class="form-control" title="Please enter in a numeric value" />
+                                                                        <span class="input-group-addon">%</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <p class="faux-label sr-only">Pulse oximetry radios label</p>
+                                                                    <div class="radio">
+                                                                        <label for="pulse-oximetry-unavailable">
+                                                                            <input name="pulse-oximetry" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="pulse-oximetry-unavailable" /> Unavailable
+                                                                        </label>
+                                                                        <label for="pulse-oximetry-refused">
+                                                                            <input name="pulse-oximetry" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="pulse-oximetry-refused" /> Refused
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-1 no-margin">
+                                                            <button class="btn btn-sm icon-btn collapsed" type="button" data-toggle="collapse" data-target="#collapsibleContainerCollapseRegion-pulse-oximetry" aria-expanded="false" aria-controls="options-pulse-oximetry" title="Press enter to expand or collapse section.">
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="collapsibleContainerCollapseRegion collapse" id="collapsibleContainerCollapseRegion-pulse-oximetry">
+                                                    <div class="col-xs-12 left-pad-none">
+                                                        <div class="col-xs-6 col-xs-6 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="po-measurement">Flow Rate</label>
+                                                                <div class="input-group">
+                                                                    <input id="po-measurement" type="text" class="form-control" title="Please enter in a numeric value" />
+                                                                    <span class="input-group-addon">(liters/minute)</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6 col-xs-6 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="po-method">Method</label>
+                                                                <select name="Method options" id="po-method" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--end pulse oximetry-->
+
+                                        <div class="row">
+                                            <div class="well well-collapse">
+                                                <div class="collapsibleContainerHeaderRegion">
+                                                    <div class="col-sm-12 left-pad-none">
+                                                        <div class="col-xs-11 left-pad-none right-margin-sm">
+                                                            <div class="col-xs-3 left-pad-xs">
+                                                                <div class="control form-group">
+                                                                    <label for="input-height">Height</label>
+                                                                    <input type="text" class="form-control" id="input-height" name="input-height" maxlength="255" value="" title="Please enter a height" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-3 no-pad top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <div class="radio-inline">
+                                                                        <label for="input-height-in-radio">
+                                                                            <input type="radio" name="input-height-in-radio" id="input-height-in-radio" value="inches" title="inches" checked="checked"> in
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="radio-inline">
+                                                                        <label for="input-height-cm-radio">
+                                                                            <input type="radio" id="input-height-cm-radio" name="input-height-cm-radio" title="centimeters"> cm
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <p class="faux-label sr-only">Height radios label</p>
+                                                                    <div class="radio">
+                                                                        <label for="height-unavailable">
+                                                                            <input name="height" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="height-unavailable" /> Unavailable
+                                                                        </label>
+                                                                        <label for="height-refused">
+                                                                            <input name="height" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="height-refused" /> Refused
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-1 no-margin">
+                                                            <button class="btn btn-sm icon-btn collapsed" type="button" data-toggle="collapse" data-target="#collapsibleContainerCollapseRegion-height" aria-expanded="false" aria-controls="options-height" title="Press enter to expand or collapse section.">
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="collapsibleContainerCollapseRegion collapse" id="collapsibleContainerCollapseRegion-height">
+                                                    <div class="col-xs-12 left-pad-none">
+                                                        <div class="col-md-6 col-xs-6 col-xs-3 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="height-quality">Quality</label>
+                                                                <select name="Height Quality" id="height-quality" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--end height-->
+
+                                        <div class="row">
+                                            <div class="well well-collapse">
+                                                <div class="collapsibleContainerHeaderRegion">
+                                                    <div class="col-sm-12 left-pad-none">
+                                                        <div class="col-xs-11 left-pad-none right-margin-sm">
+                                                            <div class="col-xs-3 left-pad-xs">
+                                                                <div class="control form-group">
+                                                                    <label for="input-weight">Weight</label>
+                                                                    <input type="text" class="form-control" id="input-weight" name="input-weight" maxlength="255" value="" title="Please enter a weight" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-3 no-pad top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <div class="radio-inline">
+                                                                        <label for="input-weight-lb-radio">
+                                                                            <input type="radio" name="input-weight-lb-radio" id="input-weight-lb-radio" value="pounds" title="pounds" checked="checked"> lbs
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="radio-inline">
+                                                                        <label for="input-weight-kg-radio">
+                                                                            <input type="radio" id="input-weight-kg-radio" name="input-weight-kg-radio" title="kilograms"> kg
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <p class="faux-label sr-only">weight radios label</p>
+                                                                    <div class="radio">
+                                                                        <label for="weight-unavailable">
+                                                                            <input name="weight" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="weight-unavailable" /> Unavailable
+                                                                        </label>
+                                                                        <label for="weight-refused">
+                                                                            <input name="weight" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="weight-refused" /> Refused
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-1 no-margin">
+                                                            <button class="btn btn-sm icon-btn collapsed" type="button" data-toggle="collapse" data-target="#collapsibleContainerCollapseRegion-weight" aria-expanded="false" aria-controls="options-weight" title="Press enter to expand or collapse section.">
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="collapsibleContainerCollapseRegion collapse" id="collapsibleContainerCollapseRegion-weight">
+                                                    <div class="col-xs-12 left-pad-none">
+                                                        <div class="col-md-6 col-xs-6 col-xs-3 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="weight-quality">Quality</label>
+                                                                <select name="Weight Quality" id="weight-quality" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--end weight-->
+
+                                        <div class="row">
+                                            <div class="well well-collapse">
+                                                <div class="collapsibleContainerHeaderRegion">
+                                                    <div class="col-sm-12 left-pad-none">
+                                                        <div class="col-xs-11 left-pad-none right-margin-sm">
+                                                            <div class="col-xs-2 left-pad-xs">
+                                                                <div class="control form-group">
+                                                                    <label for="pain">Pain</label>
+                                                                    <input type="text" id="pain" class="form-control" placeholder="0 - 10" title="Please enter in a numeric value for pain from 0 to 10, 0 being no pain and 10 being the greatest amount of pain" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-4 no-pad top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <div class="checkbox">
+                                                                        <label for="pain-unable">
+                                                                            <input name="pain" type="checkbox" title="To select this checkbox, press spacebar" id="pain-unable" /> Unable to respond
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <p class="faux-label sr-only">pain radios label</p>
+                                                                    <div class="radio">
+                                                                        <label for="pain-unavailable">
+                                                                            <input name="pain" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="pain-unavailable" /> Unavailable
+                                                                        </label>
+                                                                        <label for="pain-refused">
+                                                                            <input name="pain" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="pain-refused" /> Refused
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-1 no-margin">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--end pain-->
+
+                                        <div class="row">
+                                            <div class="well well-collapse">
+                                                <div class="collapsibleContainerHeaderRegion">
+                                                    <div class="col-sm-12 left-pad-none">
+                                                        <div class="col-xs-11 left-pad-none right-margin-sm">
+                                                            <div class="col-xs-3 left-pad-xs">
+                                                                <div class="control form-group">
+                                                                    <label for="input-circumference">Circumference/Girth</label>
+                                                                    <input type="text" class="form-control" id="input-circumference" name="input-circumference" maxlength="255" value="" title="Please enter a circumference" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-3 no-pad top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <div class="radio-inline">
+                                                                        <label for="input-circumference-in-radio">
+                                                                            <input type="radio" name="input-circumference-in-radio" id="input-circumference-in-radio" value="inches" title="inches" checked="checked"> in
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="radio-inline">
+                                                                        <label for="input-circumference-cm-radio">
+                                                                            <input type="radio" id="input-circumference-cm-radio" name="input-circumference-cm-radio" title="centimeters"> cm
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6 top-margin-md">
+                                                                <div class="control form-group">
+                                                                    <p class="faux-label sr-only">circumference radios label</p>
+                                                                    <div class="radio">
+                                                                        <label for="circumference-unavailable">
+                                                                            <input name="circumference" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="circumference-unavailable" /> Unavailable
+                                                                        </label>
+                                                                        <label for="circumference-refused">
+                                                                            <input name="circumference" type="radio" title="Press up and down arrow keys to view options and press spacebar to select." id="circumference-refused" /> Refused
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-1 no-margin">
+                                                            <button class="btn btn-sm icon-btn collapsed" type="button" data-toggle="collapse" data-target="#collapsibleContainerCollapseRegion-circumference" aria-expanded="false" aria-controls="options-circumference" title="Press enter to expand or collapse section.">
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="collapsibleContainerCollapseRegion collapse" id="collapsibleContainerCollapseRegion-circumference">
+                                                    <div class="col-xs-12 left-pad-none">
+                                                        <div class="col-xs-6 col-xs-6 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="circumference-site">Site</label>
+                                                                <select name="Site options" id="circumference-site" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6 col-xs-6 left-pad-xs">
+                                                            <div class="control form-group">
+                                                                <label for="circumference-location">Location</label>
+                                                                <select name="Location options" id="circumference-location" class="form-control" title="To select an option, use the up and down arrow keys then press enter to select">
+                                                                    <option value=""></option>
+                                                                    <option value="option 1">option 1</option>
+                                                                    <option value="option 2">option 2</option>
+                                                                    <option value="option 3">option 3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!--end circumference-->
+                                    </div>
+                                </div><!--end modal body-->
+                                <div class="modal-footer">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p aria-hidden="true">(* indicates as a required field.)</p>
+                                            <p><span id="immunization-historical-saved-at">Saved at 08:27</span></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="control control-button trash visible-inline">
+                                                <button type="button" class="btn btn-primary btn-sm" title="Press enter to delete vital">Delete</button>
+                                            </div>
+                                            <div class="control control-button trash visible-inline">
+                                                <button type="button" class="btn btn-primary btn-sm" title="Press enter to close vital">Close</button>
+                                            </div>
+                                            <div class="control control-button cancel visible-inline">
+                                                <button type="button" class="btn btn-primary btn-sm" title="Press enter to add vital">Add</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--end modal footer-->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#openAllBtn').on('click', function() {
+                $('.collapse').collapse('toggle');
+            });
+        });
+    </script>
+</body>
+</html>

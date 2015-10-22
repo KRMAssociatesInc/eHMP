@@ -1,4 +1,3 @@
-/*jslint node: true */
 'use strict';
 
 // var writebacksaveallergy = require('../resources/writebackallergy/writebackallergysaveResource');

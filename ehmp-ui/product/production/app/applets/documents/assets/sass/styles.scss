@@ -1,6 +1,4 @@
 $green: #549947;
-$red: red;
-$labelGrey: #a2a2a2;
 [data-appletid="documents"] {
     #documentPanelHeader {
         padding: 0;
@@ -34,6 +32,10 @@ $labelGrey: #a2a2a2;
             margin: 0;
             padding: 0;
         } */
+
+        #grid-panel-documents {
+            overflow-y: visible;
+        }
 
         #applet-main {
             padding: 0;
@@ -156,9 +158,15 @@ $labelGrey: #a2a2a2;
         padding-left: 7px;
     }
     .labelStyleColor {
-        color: $labelGrey;
+        color: $grey-darker;
     }
     a {
         cursor: pointer;
+    }
+    .resultDoc {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+        margin-bottom: 12px;
     }
 }

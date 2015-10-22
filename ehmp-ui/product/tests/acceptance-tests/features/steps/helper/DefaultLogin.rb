@@ -2,7 +2,8 @@ require 'DefaultTiming.rb'
 # Valid Login information to be used for most tests
 class DefaultLogin
   @@adk_url = ENV.keys.include?('ADK_IP') ? 'http://' + ENV['ADK_IP'] : "http://10.1.1.200/"
-  @@ehmpui_url = ENV.keys.include?('EHMPUI_IP') ? ENV['EHMPUI_IP'] : "http://10.1.1.150"
+  @@ehmpui_url = ENV.keys.include?('EHMPUI_IP') ? ENV['EHMPUI_IP'] : "https://10.1.1.150"
+  #@@ehmpui_url = 'https://ehmp.vistacore.us'
   @@default_wait_time = DefaultTiming.default_wait_time
 
   @@facility_index = 1

@@ -22,7 +22,11 @@ define([
                 'callShow': true
             };
 
-            ADK.showModal(this.getModalView(bodyText), modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: this.getModalView(bodyText),
+                options: modalOptions
+            });
+            modal.show();
 
         },
         getFooterView: function(CCOWService, patient){
@@ -35,9 +39,9 @@ define([
                 },
                 cancelContextChange: function(){
                     CCOWService.cancelContextChange(function(){
-                        ADK.hideModal();
+                        ADK.UI.Modal.hide();
                     }, function(){
-                        ADK.hideModal();
+                        ADK.UI.Modal.hide();
                     });
                 },
                 breakContextLink: function(){

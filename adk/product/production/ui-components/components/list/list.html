@@ -1,0 +1,126 @@
+<h3>List</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> There are three types of lists to display information. The lists are:</p>
+    <ul>
+        <li>Ordered List – An ordered list provides information in a numerical order (ex. 1, 2, etc.)</li>
+        <li>Unordered List - An unordered list is information presented in a bulleted manner, without a defined order</li>
+        <li>Definition List - A definition list provides a list of terms with corresponding definitions</li>
+    </ul>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> For nested items, the screen reader will inform the user that there is a nested list within a list, read the list group, and then identify the item itself.</p>
+</div>
+
+<h4>Ordered List</h4>
+<div id="listCopy1">
+<ol>
+	<li>Item 1
+    	<ol>
+        	<li>Nested Item 1</li>
+        </ol>
+    </li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ol>
+</div>
+<hr />
+
+<h4>Unordered List</h4>
+<div id="listCopy2">
+<ul>
+	<li>Item 1
+    	<ul>
+        	<li>Nested Item 1</li>
+        </ul>
+    </li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+</div>
+<hr />
+
+<h4>Definition List</h4>
+<div id="listCopy3">
+<dl>
+    <dt>First Item</dt>
+    <dd>Description of First Item</dd>
+
+    <dt>Second Item</dt>
+    <dd>Description of Second Item</dd>
+</dl>
+</div>
+<hr />
+
+<h4>Inline List Without Bullets</h4>
+<div id="listCopy4">
+<ul class="list-inline">
+	<li>Item One</li>
+	<li>Item Two</li>
+	<li>Item Three</li>
+</ul>
+</div>
+<hr />
+
+<div role="tabpanel" class="tabpanel">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active"><a href="#markup-list-ordered" aria-controls="markup-list-ordered" role="tab" data-toggle="tab">Ordered List Mark Up</a></li>
+        <li><a href="#markup-list-unordered" aria-controls="markup-list-unordered" role="tab" data-toggle="tab">Unordered List Mark Up</a></li>
+        <li><a href="#markup-list-definition" aria-controls="markup-list-definition" role="tab" data-toggle="tab">Definition List Mark Up</a></li>
+		<li><a href="#markup-inline-list" aria-controls="markup-inline-list" role="tab" data-toggle="tab">Inline List Without Bullets Mark Up</a></li>
+	</ul>
+
+	<div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-list-ordered">
+            <pre>
+&lt;ol&gt;
+    &lt;li&gt;Item 1
+    	&lt;ol&gt;
+    	   &lt;li&gt;Nested Item 2&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ol&gt;
+            </pre>
+            <a onclick="copyToClipboard('listCopy1')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        
+        <div role="tabpanel" class="tab-pane fade in" id="markup-list-unordered">
+            <pre>
+&lt;ul&gt;
+    &lt;li&gt;Item 1
+    	&lt;ul&gt;
+    	   &lt;li&gt;Nested Item 2&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+            <a onclick="copyToClipboard('listCopy2')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade in" id="markup-list-definition">
+            <pre>
+&lt;dl&gt;
+    &lt;dt&gt;First Item&lt;/dt&gt;
+    &lt;dd&gt;Description of First Item&lt;/dd&gt;
+                    
+    &lt;dt&gt;Second Item&lt;/dt&gt;
+    &lt;dd&gt;Description of Second Item&lt;/dd&gt;
+&lt;/dl&gt;
+            </pre>
+            <a onclick="copyToClipboard('listCopy3')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+		
+        <div role="tabpanel" class="tab-pane fade in" id="markup-inline-list">
+            <pre>
+&lt;ul class="list-inline"&gt;
+    &lt;li&gt;Item One&lt;/li&gt;
+    &lt;li&gt;Item Two&lt;/li&gt;
+    &lt;li&gt;Item Three&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+            <a onclick="copyToClipboard('listCopy4')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+	</div>
+</div>

@@ -1,0 +1,177 @@
+.workflow-container {
+    .modal-dialog {
+        .modal-content {
+            background-color: $primary-lightester;
+            border-radius: 0px;
+            .modal-header {
+                background-color: $white;
+                border-bottom: 2px solid $secondary-light;
+            }/*modal header*/
+            .modal-body {
+                margin-bottom: 0px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                padding: 0px;
+                .row-sort {
+                    background-color: $white;
+                    margin: 0px;
+                    padding: 10px 0px;
+                }/*row sort*/
+                .panel-group {
+                    .panel-heading {
+                        border-radius: 0px;
+                    }
+                    .panel-body {
+                        font-size: 11px;
+                        p {
+                            margin: 0;
+                        }
+                    }/*panel-body*/
+                }/*panel-group*/
+                .list-group,
+                .list-group-item:first-child,
+                .list-group-item:last-child {
+                    border-radius: 0px;
+                }
+                .scroll-enter-form {
+                    padding: 0px 10px;
+                    .row-subheader {
+                        border-bottom: 1px solid $grey-light;
+                        margin-bottom: 10px;
+                        #openAllBtn {
+                            margin-top: 27px;
+                        }
+                        > .col-xs-3 .checkbox {
+                            margin: 17px 0px 0px -10px;
+                        }
+                    }
+                    h5 {
+                        border-bottom: 1px solid $grey-light;
+                        padding: 0;
+                        margin: 5px 0px;
+                        &.section-title { /* This style is being used in e-sig feature, let's see if we can revisit this since this is only one off*/
+                            background-color: $primary-lightest;
+                            border-bottom: 1px solid $grey-light;
+                            border-top: 1px solid $grey-light;
+                            margin: 15px 0px 15px -10px;
+                            padding-bottom: 10px;
+                            padding: 7px 7px 7px 10px;
+                            width: 106%;
+                            &.first {
+                                margin-top: -15px;
+                            }
+                        }
+                    }
+                    h6 {
+                        margin: 3px 0px;
+                        padding-bottom: 10px;
+                    }
+                    .section-divider {
+                        border-bottom: 1px solid $primary-light;
+                        padding: 10px 0px;
+                        &:last-child {
+                            border: none;
+                        }
+                    }
+                    .small {
+                        font-size: 11px;
+                    }
+                    // Record Review Problem - button style
+                    .row > .col-md-3.col-xs-3 {
+                        margin-top: 8px;
+                    }
+                    .order-preview {
+                        background-color: $primary-lightest;
+                        margin: 0px -15px;
+                        min-height: 100px;
+                        padding: 5px 10px;
+                    }
+                    .dropdown-toggle {
+                        margin-top: 21px;
+                    }
+                    .progress-list-bar {
+                        margin: 20px 0px;
+                        li {
+                            line-height: 0px;
+                            width: 50%;
+                            &.active {
+                                width: 48%;
+                            }
+                        }
+                    }
+                    .col-xs-2 {
+                        .pull-right {
+                            .checkbox {
+                                margin: 14px 0px 0px 0px;
+                            }
+                        }
+                    }
+                    .col-xs-12 {
+                        .icon-mini {
+                            margin: -12px -9px -7px 0px; /*This is the expand and collape all button in the vitals tray*/
+                        }
+                    }
+                    
+                }
+            }/*modal body*/
+            .modal-footer {
+                background-color: $white;
+                .fa-trash {
+                    font-size: 20px;
+                }
+            }
+        }/* modal-content */
+    }/* modal-dialog */
+}
+
+
+/*--- MODAL-BODY HEIGHT & POSITIONING RELATED CHANGES ---*/
+
+.workflow-container > .modal-dialog .modal-content {
+    margin: 85px auto 30px auto;
+    .workflow-controller .modal-body, .modal-body {
+        // 240px    : header and patient information bar height
+        max-height: calc(100vh - 240px);
+        min-height: 385px;
+    }
+    &.with-progress-indicator .workflow-controller .modal-body, &.with-progress-indicator .modal-body {
+        // 240px    : header and patient information bar height
+        // 57px     : progress bar height
+        max-height: calc(100vh - 240px - 57px);
+    }
+}//57px
+
+.tray-region {
+    > .workflow-container > .modal-dialog > .modal-content {
+        > .workflow-controller .modal-body {
+            // 240px    : header and patient information bar height
+            height: calc(100vh - 240px);
+        }
+        &.with-progress-indicator > .workflow-controller .modal-body {
+            // 240px    : header and patient information bar height
+            // 57px     : progress bar height
+            height: calc(100vh - 240px - 57px);
+        }
+    }
+}
+
+///////////*These styles are for Mercury specific*///////
+.workflow-region {
+    .modal-body {
+        .scroll-enter-form {
+            .row-subheader {
+                .progress-list-bar {
+                    margin: 65px 0px 10px 240px;
+                }
+            }
+        }
+    }
+}
+.tray-region {
+    width: 450px;
+    > .workflow-container > .modal-dialog {
+        margin: 0;
+        width: 100%;
+    }
+}
+///////////*These styles are for Mercury specific*///////

@@ -1,3 +1,7 @@
 [data-appletid="problems"] {
-    
+	div.gistItem .quickDraw.selectable:focus {
+		outline-color: -webkit-focus-ring-color;
+    	outline-style: auto;
+    	outline-width: 5px;
+	}
 }

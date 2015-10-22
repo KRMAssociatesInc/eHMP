@@ -3,7 +3,6 @@
 /*-----Set label colors, fonts, and backgrounds-----*/
 // [data-appletid="medication_review"] {
 
-$labelGrey: #a2a2a2;
 $backgroundGrey: #eeeeee;
 
 /*-----Set label colors, fonts, and backgrounds-----*/
@@ -49,7 +48,7 @@ $backgroundGrey: #eeeeee;
 
     /*sets default text color for some areas to grey*/
     .labelStyleColor {
-        color: $labelGrey;
+        color: $grey-darker;
     }
 
     /*sets default text color for the schedule and route to dark grey*/
@@ -346,44 +345,36 @@ $backgroundGrey: #eeeeee;
 
     .order-dates-range {
         margin-top: 10px;
+        padding: 5px 0;
+        cursor: pointer;
     }
     .order-dates {
         padding-left: 15px;
     }
     .order-dates-range:hover {
-     /*   background-color: #red;*/
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        -moz-border-radius: 4px;
-        -webkit-box-shadow: 1px 2px 3px 0px rgba(50, 50, 50, 0.75);
-        -moz-box-shadow: 3px 4px 5px 0px rgba(50, 50, 50, 0.75);
-        box-shadow: 1px 2px 3px 0px rgba(50, 50, 50, 0.75);
+     background-color: $secondary-lighter;
     }
     .order-dates:active {
         background-color: #ffffff;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        -moz-border-radius: 4px;
-        -webkit-box-shadow: 1px 2px 3px 0px rgba(50, 50, 50, 0.75);
-        -moz-box-shadow: 3px 4px 5px 0px rgba(50, 50, 50, 0.75);
-        box-shadow: 1px 2px 3px 0px rgba(50, 50, 50, 0.75);
+        -webkit-box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.25);
     }
     .selectedOrder {
         background-color: #ffffff;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        -webkit-box-shadow: 1px 2px 3px 0px rgba(50, 50, 50, 0.75);
-        -moz-box-shadow: 3px 4px 5px 0px rgba(50, 50, 50, 0.75);
-        box-shadow: 1px 2px 3px 0px rgba(50, 50, 50, 0.75);
+        -webkit-box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        &:hover{
+            background-color: $white;
+        }
     }
 
     #order-detail-panel {
         background-color: #ffffff;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        -webkit-box-shadow: 3px 4px 5px 0px rgba(50, 50, 50, 0.75);
-        -moz-box-shadow: 3px 4px 5px 0px rgba(50, 50, 50, 0.75);
-        box-shadow: 3px 4px 5px 0px rgba(50, 50, 50, 0.75);
+        -webkit-box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.25);
+        box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.25);
         display: inline-block;
         min-height: 400px;
         padding: 10px;
@@ -442,7 +433,7 @@ $backgroundGrey: #eeeeee;
 
     /*sets default text color for some areas to grey*/
     .labelStyleColor {
-        color: $labelGrey;
+        color: $grey-darker;
     }
 
     .light-grey-background {

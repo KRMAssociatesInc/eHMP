@@ -2,15 +2,15 @@
 
 require('../../env-setup');
 var inspect = require('util').inspect;
-var RpcClient = require(global.VX_VISTAJS + 'RpcClient').RpcClient;
+var RpcClient = require('vista-js').RpcClient;
 
 var argv = require('yargs')
 	.usage('Usage: $0 [options...]')
 	.demand(['host', 'port'])
 	.describe('host', 'IP Address of the VistA host')
 	.describe('port', 'Port of the VistA host')
-	.describe('accessCode', 'Value to use for accessCode for validation. Defaults to pu1234')
-	.describe('verifyCode', 'Value to use for verifyCode for validation. Defaults to pu1234!!')
+	.describe('accessCode', 'Value to use for accessCode for validation. Defaults to ep1234')
+	.describe('verifyCode', 'Value to use for verifyCode for validation. Defaults to ep1234!!')
 	.describe('context', 'Context to set for running the RPC. Defaults to VPR SYNCHRONIZATION CONTEXT or HMP SYNCHRONIZATION CONTEXT')
 	.describe('lastUpdate', 'Value of the lastUpdate received. Defaults to 0')
 	.describe('hmpServerId', 'Value for the hmpServerId parameter. Defaults to hmp-development-box')
@@ -26,8 +26,8 @@ var logger = require('bunyan').createLogger({
 var config = {
 	host: argv.host,
 	port: argv.port,
-	accessCode: argv.accessCode || 'pu1234',
-	verifyCode: argv.verifyCode || 'pu1234!!',
+	accessCode: argv.accessCode || 'ep1234',
+	verifyCode: argv.verifyCode || 'ep1234!!',
 	localIP: '127.0.0.1',
 	localAddress: 'localhost',
 	context: argv.context || 'HMP SYNCHRONIZATION CONTEXT',

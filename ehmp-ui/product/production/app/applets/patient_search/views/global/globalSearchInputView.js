@@ -10,6 +10,10 @@ define([
     var ENTER_KEY = 13; // find a home for these
     var SPACE_KEY = 32;
 
+    // constants
+    var MY_SITE = 'mySite';
+    var NATIONWIDE = 'global';
+
     var GlobalSearchInputView = Backbone.Marionette.ItemView.extend({
         template: globalSearchInputTemplate,
         events: {
@@ -26,11 +30,7 @@ define([
             });
 
             this.applyInputMasking();
-            this.updateSearchInputView();
             this.$el.find('#mySite a').attr('tabindex', '0');
-            console.log('onRender:Global: Begin');
-            console.log( (this.$el.find("#mySite a")).attr("tabindex", 0) );
-            console.log('onRender:Global: End');
         },
         applyInputMasking: function() {
             // Backslash is the escape character. Javascript weirdness: you have to escape square brackets with TWO backslashes
@@ -111,18 +111,18 @@ define([
                 return;
             }
 
-            // this.triggerNewGlobalSearchEvent();
+            this.triggerNewGlobalSearchEvent();
 
             var params = this.retrieveGlobalSearchParameters();
 
             var configValidatorResponseCode = searchParamsValidator.validateGlobalSearchParameterConfiguration(params);
 
             if (configValidatorResponseCode === "lastNameRequiredFailure") {
-                this.triggerErrorMessage("global", "Error: The patient's last name is a required field.");
+                this.triggerErrorMessage(NATIONWIDE, "Error: The patient's last name is a required field.");
                 this.markInvalidInputFields([this.$el.find('#globalSearchLastName')]);
                 return;
             } else if (configValidatorResponseCode === "twoFieldsRequiredFailure") {
-                this.triggerErrorMessage("global", "Error: Enter the patient's last name and at least one other field to display results.");
+                this.triggerErrorMessage(NATIONWIDE, "Error: Enter the patient's last name and at least one other field to display results.");
                 this.markInvalidInputFields([this.$el.find('#globalSearchFirstName'), this.$el.find('#globalSearchDob'), this.$el.find('#globalSearchSsn')]);
                 return;
             }
@@ -130,15 +130,15 @@ define([
             var formattingValidatorResponseCode = searchParamsValidator.validateGlobalSearchParameterFormatting(params);
 
             if (formattingValidatorResponseCode === "nameFormatFailure") {
-                this.triggerErrorMessage("global", "Error: Names may not contain numbers or special characters other than commas, apostrophes, or hyphens.");
+                this.triggerErrorMessage(NATIONWIDE, "Error: Names may not contain numbers or special characters other than commas, apostrophes, or hyphens.");
                 this.markInvalidInputFields([this.$el.find('#globalSearchLastName'), this.$el.find('#globalSearchFirstName')]);
                 return;
             } else if (formattingValidatorResponseCode === "dobFormatFailure") {
-                this.triggerErrorMessage("global", "Error: DOB must be entered in MM/DD/YYYY format.");
+                this.triggerErrorMessage(NATIONWIDE, "Error: DOB must be entered in MM/DD/YYYY format.");
                 this.markInvalidInputFields([this.$el.find('#globalSearchDob')]);
                 return;
             } else if (formattingValidatorResponseCode === "ssnFormatFailure") {
-                this.triggerErrorMessage("global", "Error: SSN must match the format: 123-45-6789 or 123456789.");
+                this.triggerErrorMessage(NATIONWIDE, "Error: SSN must match the format: 123-45-6789 or 123456789.");
                 this.markInvalidInputFields([this.$el.find('#globalSearchSsn')]);
                 return;
             }
@@ -149,9 +149,9 @@ define([
         },
         retrieveGlobalSearchParameters: function() {
             var params = {
-                'name-last': this.$el.find('#globalSearchLastName').val().trim().toUpperCase(),
-                'name-first': this.$el.find('#globalSearchFirstName').val().trim().toUpperCase(),
-                dob: this.$el.find('#globalSearchDob').val(),
+                'name.last': this.$el.find('#globalSearchLastName').val().trim().toUpperCase(),
+                'name.first': this.$el.find('#globalSearchFirstName').val().trim().toUpperCase(),
+                'date.birth': this.$el.find('#globalSearchDob').val(),
                 ssn: this.$el.find('#globalSearchSsn').val()
             };
             return params;

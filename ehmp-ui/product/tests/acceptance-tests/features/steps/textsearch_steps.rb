@@ -96,7 +96,7 @@ end
 
 def group_search_results(grouped_list, table)
   matched = false
-  table.rows.each do |item, k|
+  table.rows.each do |item, _k|
     grouped_list.each do |grouped_item| 
       #p "item is + #{grouped_item.text}, #{item}"
      
@@ -128,7 +128,7 @@ def search_text_and_clicking(search_value)
   con.wait_until_action_element_visible("Search Results", 70)
 end
 
-def search_result_message(search_value, count)
+def search_result_message(_search_value, count)
   con = TextSearchContainer.instance
   driver = TestSupport.driver
   expected_msg = "#{count} results"
@@ -146,7 +146,7 @@ def search_text_click_submit(search_value)
   expect(con.perform_action("submit", "")).to be_true, "was not able to click on the submit button"
 end
 
-def search_suggetions_count(search_value, expected_num)
+def search_suggetions_count(_search_value, expected_num)
   con = TextSearchContainer.instance
   driver = TestSupport.driver
   num_seconds = 30
@@ -184,7 +184,6 @@ Then(/^text search result contains$/) do |table|
 
   wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
   wait.until { check_group_results table }
-
 end
 
 Then(/^sub grouped search result for "(.*?)" contains$/) do |sub_group_category, table|
@@ -275,7 +274,7 @@ When(/^the user enters "(.*?)" in the "(.*?)" control$/) do |input_text, control
   expect(aa.perform_action(control, input_text)).to be_true, "element did not display"
 end
 
-Then(/^user type <text> term and the page displays total no of suggestions "(.*?)"$/) do |arg1, table|
+Then(/^user type <text> term and the page displays total no of suggestions "(.*?)"$/) do |_arg1, table|
   table.rows.each do |text, total_items|
     p "search #{text}"
     search_text(text)
@@ -293,7 +292,7 @@ Then(/^the following date time filter option should be displayed$/) do |table|
   expect(matched).to be_true   
 end
    
-Then(/^the "(.*?)" contains$/) do |name, table|
+Then(/^the "(.*?)" contains$/) do |_name, table|
   driver = TestSupport.driver
   con = Documents.instance
   browser_elements_list = driver.find_elements(:xpath, "//*[@id='modal-body']/descendant::div")
@@ -319,13 +318,13 @@ Then(/^search result header displays (\d+) number of results$/) do |arg1|
   wait_until_numberofresults arg1
 end
 
-Then(/^the user sees the search text "(.*?)" in yellow$/) do |search_text|
+Then(/^the user sees the search text "(.*?)" in yellow$/) do |_search_text|
   driver = TestSupport.driver
   matched = false
   text_color = ""
   browser_elements_list = driver.find_elements(:css, ".cpe-search-term-match")
   p browser_elements_list.length
-  browser_elements_list.each do | element|
+  browser_elements_list.each do |element|
     text_color = element.css_value("background-color")
 
     #check only rgb value in string since alpha value is inconsistent across build environments
@@ -350,11 +349,11 @@ end
 Then(/^the following subgroups data are not loaded$/) do |table|
   driver = TestSupport.driver
   
-  table.rows.each do | rows_value |
+  table.rows.each do |rows_value|
     element_id = "result-subGroup-" + rows_value[0] + "-1"
     #element_id = "result-subGroup"
-    matched = driver.find_element(:id , element_id).displayed?
-    expect(!matched).to be_true , "#{element_id} is loaded"
+    matched = driver.find_element(:id, element_id).displayed?
+    expect(!matched).to be_true, "#{element_id} is loaded"
   end
 end
 
@@ -379,7 +378,7 @@ Then(/^user searches for "(.*?)" with no duplicates in the results dropdown$/) d
   for i in 0..15
     #p "#{i}"
     word = ""
-    driver.find_elements(:xpath, "//li[@id='SuggestItem#{i}']/a/span").each { |td| word = word + td.text }
+    driver.find_elements(:xpath, "//li[@id='SuggestItem#{i}']/a/span").each { |td| word += td.text }
     #p word
     suggest[i] = word
   end
@@ -389,14 +388,14 @@ end
 
 Then(/^the modal contains highlighted "(.*?)"$/) do |searchterm|
   driver = TestSupport.driver
-  no_elem = Array.new
+  no_elem = []
   expect(driver.find_element(:xpath, "//*[@id='modal-body']//mark[@class='cpe-search-term-match']").text == searchterm)
 end
 
 Then(/^user searches for "(.*?)" and verifies suggestions$/) do |text, table|
   driver = TestSupport.driver
   wait = Selenium::WebDriver::Wait.new(:timeout => 60)
-  suggest = Array.new
+  suggest = []
 
   search_text(text)
 
@@ -405,14 +404,14 @@ Then(/^user searches for "(.*?)" and verifies suggestions$/) do |text, table|
 
   for i in 0..suggestions.length-1
     word = ""
-    driver.find_elements(:xpath, "//li[@id='SuggestItem#{i}']/a/span").each { |td| word = word + td.text }
+    driver.find_elements(:xpath, "//li[@id='SuggestItem#{i}']/a/span").each { |td| word += td.text }
     suggest[i] = word
   end
   j = 1
-  table.rows.each do | rows_value |
+  table.rows.each do |rows_value|
     #p rows_value[0]
     #p suggest[j]
-    expect(rows_value[0] == suggest[j]).to be_true
+    expect(rows_value[0] == suggest[j]).to be_true, "looking for #{rows_value[0]} but found #{suggest[j]}"
     j += 1
   end
 end

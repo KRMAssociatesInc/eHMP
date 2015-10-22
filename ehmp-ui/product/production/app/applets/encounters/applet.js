@@ -2,14 +2,15 @@
 // Name:        Encounters Gist
 // Files:       applet.js, appConfig.js GistView.js appUtil.js templets/item.html templets/itemList.html
 // Screen:      Overview.js
-// Version:     1.1
+// Version:     1.2
 // Date:        2014-12-17
-// Modified:    2015-04-15
-// Team:        Jupiter
+// Modified:    2015-05-08
+// Team:        Jupiter/Saturn
 // Description: Provides gist view (widget) for patient encounters
 //
 //----------------------------------------
 define([
+    "handlebars",
     "underscore",
     "backbone",
     "marionette",
@@ -17,8 +18,9 @@ define([
     "app/applets/encounters/GistView",
     "app/applets/encounters/appConfig",
     "app/applets/encounters/appUtil",
-    "app/applets/encounters/gistConfig"
-], function(_, Backbone, Marionette, Crossfilter, GistView , CONFIG, util, gistConf ) {
+    "app/applets/encounters/gistConfig",
+    "app/applets/encounters/writeback/encounterForm"
+], function(Handlebars, _, Backbone, Marionette, Crossfilter, GistView , CONFIG, util, gistConf, WritebackForm  ) {
     'use strict';
     // Switch ON/OFF debug info
     var DEBUG = CONFIG.debug;
@@ -62,12 +64,13 @@ define([
             }
             if(util.isProcedure(response)) {
                 response.service = response.service || "Unknown";
-                response.procName = response.name || response.consultProcedure || "Unknown"; //  response.consultProcedure ||
+                response.procName = response.name || response.consultProcedure || "Unknown"; 
                 response.custom_filter_field = response.procName;
             }
             if(util.isAdmission(response)) {
                 //response.custom_filter_field = response.locationDisplayName+" - "+response.facilityName;
-                response.reasonName = response.reasonName || "Unknown";
+                //response.reasonName = response.reasonName || "Unknown";
+                response.reasonName = util.admissionDiagnosis(response);
                 response.custom_filter_field = response.reasonName;
             }
             if(util.isVisit(response)){
@@ -187,7 +190,6 @@ define([
                     if(TOP_ORDER[result.kind.toLowerCase()]){
                         if(TOP_ORDER[result.kind.toLowerCase()].sort_direction === "future"){
                             var recentFuture = util.getRecentForFuture(arrSortByTime);//recent/next 5 events for 1st level of gist & binary Future flag
-                            // result.recent = recentFuture.aResult;
                             result.futureTime = recentFuture.bFutureTime;
                         }
                     }                                        
@@ -222,7 +224,6 @@ define([
                                     if(GROUPING[result.kind.toLowerCase()].sort_direction === "future"){
                                         // check for future 
                                         result.grouping.group[x].time = ADK.utils.getTimeSince(util.getTimeSinceForFuture(subListRecent)).timeSince;
-                                        //result.grouping.group[x].recent = util.getRecentForFuture(subListRecent).aResult;
                                     }else{
                                         result.grouping.group[x].time = ADK.utils.getTimeSince(subListRecent[0].dateTime).timeSince;
                                     }
@@ -235,9 +236,8 @@ define([
                              result.grouping.group[x].kind = result.kind;
                              result.grouping.group[x].elKind = result.elKind;
                              result.grouping.group[x].subKind = result.grouping.group[x].key.trim() !== "" ? result.grouping.group[x].key : "UNKNOWN";
-                             result.grouping.group[x].elSubKind = util.clanUpItem(result.grouping.group[x].subKind);// .replace(/[\s\\/()!?*&:;,.^%]/g, '');
+                             result.grouping.group[x].elSubKind = util.clanUpItem(result.grouping.group[x].subKind);
                              result.grouping.group[x].count = result.grouping.group[x].value;      
-                             //result.grouping.group[x].recent.forEach(AggregationFunctions.changeDateFormat);
                              result.grouping.group[x].processed = true;
                              result.grouping.group[x][result.kind.toLowerCase()] = true;
                              result.grouping.group[x].kind = TOP_ORDER[result.kind.toLowerCase()].title;
@@ -252,10 +252,12 @@ define([
                              var series = [];
                              var max =0;
                              var count = 0;
-                             //result.grouping.group[x].chartData = (subListDimByDate.dimension(AggregationFunctions.dimentionByDateTime)).group().order(AggregationFunctions.orderValue).all();
                              result.grouping.group[x].firstEvent = util.selectStartStopPoint(FirstEventForPatient).start;//FirstEventForPatient;
                              result.grouping.group[x].maxChart = util.selectStartStopPoint(FirstEventForPatient).stop;
                              // Conversion chart data for ADK gist view
+                             if(result.grouping.group[x].elSubKind.length > 50){
+                                result.grouping.group[x].elSubKind = result.grouping.group[x].elSubKind.substring(0,50)+"-"+Math.round(Math.random()*100);
+                             }
                              result.grouping.group[x].id = "encounters-"+result.grouping.group[x].elKind+"-"+result.grouping.group[x].elSubKind;
                              if(!GROUPING[result.kind.toLowerCase()].specialChart){  // Sub level has a non standart chart
                                  result.grouping.group[x].chartData = (subListDimByDate.dimension(AggregationFunctions.dimentionByDateTime)).group().order(AggregationFunctions.orderValue).all();
@@ -402,8 +404,8 @@ define([
             dataGridOptions.enableModal = true;
             dataGridOptions.filterEnabled = true;
             dataGridOptions.shadowCollection = new Backbone.Collection();
-            //dataGridOptions.filterFields = ["kind", "count", "timeSinceLast"];
             var self = this;
+            this.trgStart = true;
             dataGridOptions.refresh = function(obj){
                 CollectionHandler.queryCollection(obj);
             };
@@ -419,9 +421,7 @@ define([
             if (DEBUG) console.log(ADK.SessionStorage.getModel_SessionStoragePreference('globalDate').get("selectedId"));
             window.aggregationScale = util.setAggregationScale(ADK.SessionStorage.getModel_SessionStoragePreference('globalDate').get("selectedId"));
             this.dataGridOptions = dataGridOptions;
-           this.dataGridOptions.collection = new Backbone.Collection();
-           CollectionHandler.queryCollection(this);
-           // this.dataGridOptions.collection = CollectionHandler.queryCollection(this);
+            this.dataGridOptions.collection = CollectionHandler.queryCollection(this);
             /*this.dataGridOptions.collection.on("reset", function() {
                 if (DEBUG) console.log("EncGist ----->> Collection reset --->> this.dataGridOptions.collection");
                 if (DEBUG) console.log(this.dataGridOptions.collection);
@@ -452,30 +452,33 @@ define([
             var silentReset = !isFiltering;
              // reset JDS filter criteria for collection !!!
             // if(!_.isUndefined(result.fetchOptions))  this.dataGridOptions.collection.fetchOptions.criteria.filter = result.fetchOptions.criteria.filter;
-             this.dataGridOptions.collection.reset(result.models, { silent: silentReset });//, {reindex: true});
+            this.dataGridOptions.collection.reset(result.models, { silent: silentReset });
 
-            if(this.gridContainer !== undefined){
-            // set encounters applet view
-             // this.gridContainer.show(this.dataGridView, {preventDestroy: true});
-             this.gridContainer.show(this.dataGridView, {preventDestroy: true});
-            } else{
-             //this.createDataGridView();
-             this.dataGridView = new this.dataGridOptions.SummaryView(this.dataGridOptions);
+            if (this.dataGridView.isDestroyed) {
+                this.dataGridView = new this.dataGridOptions.SummaryView(this.dataGridOptions);
             }
+
+            var options = {}; 
+            options.preventDestroy = (this.gridContainer.currentView == this.loadingView);
+            this.gridContainer.show(this.dataGridView, options);
         },
 
         onDataOriginal: function(result){
             if (DEBUG) console.log("EncGist data ----->> clone");
             if (DEBUG) console.log(result);
-             this.dataGridOptions.shadowCollection.reset(result.models);//, {reindex: true});
+             this.dataGridOptions.shadowCollection.reset(result.models);
         },
 
         onFilterCollection: function(search){
             if (DEBUG) console.log("EncGist filter ----->> custom filter");
             if (DEBUG) console.log(search);
-             var filtered = this.dataGridOptions.shadowCollection.filter( function(item){
-                   return search.test(item.get("custom_filter_field"));
-             });
+            if(this.trgStart){ // bypass filtering on applet's start
+                this.trgStart = false;
+                return;
+            }
+            var filtered = this.dataGridOptions.shadowCollection.filter( function(item){
+                       return search.test(item.get("custom_filter_field"));
+                 });
             var filteredCollection = new Backbone.Collection(filtered);
             collectionAggregator(filteredCollection, true);
         },
@@ -495,11 +498,6 @@ define([
             if(DEBUG) console.log("detailView --->>");
             util.showDetailView(params,"documents");
         },
-
-        onRender: function() {
-            _super.onRender.apply(this, arguments);
-        },
-
         onBeforeDestroy: function() {
             ADK.Messaging.off('globalDate:selected', this.onGlobalDateSelected, this);
 
@@ -518,12 +516,89 @@ define([
         }
     });
 
+    var encounterChannel = ADK.Messaging.getChannel('encounterFormRequestChannel');
+    encounterChannel.comply('openEncounterForm', handleChannel);
+    function handleChannel(appletKey) {
+        var currentPatient = ADK.PatientRecordService.getCurrentPatient();
+        if (currentPatient.get('visit')){
+            //ADK.UI.Modal.hide();
+            var writebackView = ADK.utils.appletUtils.getAppletView('encounters', 'writeback');
+            //Construct our model
+            var FormModel = Backbone.Model.extend({
+                defaults: {}
+            });
+            var formModel = new FormModel({
+                //Service Connected Section
+                serviceConnected: '%',
+                ratedDisabilities: '',
+                //Visit Type Section
+                selectedPrimaryProvider: '',
+                primaryProvider: new Backbone.Collection(),
+                providerList: new Backbone.Collection(),
+                availableVistModifiers: new Backbone.Collection(),
+                visitTypeSelection: '',
+                visitCollection: new Backbone.Collection(),
+                //Diagnoses Section
+                diagnosesSection: '',
+                addOtherDiagnosisSearchString: '',
+                DiagnosisCollection: new Backbone.Collection(),
+                //Procedure Section
+                procedureSection: '',
+                addOtherProcedureSearchString: '',
+                ProcedureCollection: new Backbone.Collection(),
+            });
+            //Construct the workflow
+            var workflowOptions = {
+                title: 'Encounter Form',
+                size: 'large',
+                showProgress: false,
+                keyboard: true,
+                steps: [{
+                    view: writebackView,
+                    viewModel: formModel,
+                    stepTitle: 'Step 1',
+                    showHeader: false
+                }]
+            };
+            //Launch the workflow
+            var workflow = new ADK.UI.Workflow(workflowOptions);
+            workflow.show();
+        } else {
+            var footerView = Backbone.Marionette.ItemView.extend({
+                template: Handlebars.compile(
+                    '{{ui-button "Continue" classes="btn-primary alert-continue" title="Click to continue"}}'
+                ),
+                events: {
+                    'click button': function() {
+                        ADK.UI.Alert.hide();
+                    }
+                }
+            });
+            var locAlertView = new ADK.UI.Alert({
+                title: 'Missing Encounter Location',
+                messageView: Backbone.Marionette.ItemView.extend({
+                    template: Handlebars.compile(
+                        '<p>You must set an encounter location before accessing the encounter form.</p>'
+                    )
+                }),
+                footerView: footerView
+            });
+            locAlertView.show();
+        }
+
+    }
+
     var applet = {
         id: "encounters",
         viewTypes: [{
             type: 'gist',
             view: AppletLayoutView,
             chromeEnabled: true
+        },
+        {
+            type: 'writeback',
+            view: WritebackForm,
+            chromeEnabled: false
         }],
         defaultViewType: 'gist'
     };

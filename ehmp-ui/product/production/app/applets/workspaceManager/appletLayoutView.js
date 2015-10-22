@@ -38,10 +38,10 @@ define([
             'keydown [tabindex]:not(input)': 'handleSpacebarOrEnter'
         },
         hideOverlay: function() {
-            ADK.hideFullscreenOverlay();
-            ADK.Navigation.navigate(Backbone.history.fragment);
+            ADK.UI.FullScreenOverlay.hide();
+            ADK.Messaging.trigger('close:workspaceManager');
         },
-        onRender: function() {
+        onBeforeAttach: function() {
             this.managerRegion.show(new WorkspaceCollectionView());
         },
         handleSpacebarOrEnter: function(e) {
@@ -56,9 +56,15 @@ define([
             var filterText = this.$el.find('#searchScreens').val();
             this.managerRegion.currentView.filterScreens(filterText);
             if (filterText) {
-                this.$el.find('#clearSearch').css({'display': 'inline', 'background-color': 'transparent', 'border': '0'});
-            }else {
-                this.$el.find('#clearSearch').css({'display': 'none'});
+                this.$el.find('#clearSearch').css({
+                    'display': 'inline',
+                    'background-color': 'transparent',
+                    'border': '0'
+                });
+            } else {
+                this.$el.find('#clearSearch').css({
+                    'display': 'none'
+                });
             }
         },
         clearSearch: function() {
@@ -94,7 +100,7 @@ define([
             this.previewRegion.empty();
         },
         showFilterField: function(e) {
-            $('.hiddenRow' ).toggle();
+            $('.hiddenRow').toggle();
         }
 
     });
@@ -108,7 +114,7 @@ define([
             this.screenId = options.screenId;
             this.model = new Backbone.Model();
             this.model.set({
-                screenTitle : this.screenTitle
+                screenTitle: this.screenTitle
             });
         },
         events: {
@@ -117,12 +123,16 @@ define([
         },
         deleteActive: function() {
             ADK.ADKApp.ScreenPassthrough.deleteUserScreen(this.screenId);
-            ADK.hideFullscreenOverlay();
+            ADK.UI.FullScreenOverlay.hide();
             var channel = ADK.Messaging.getChannel('workspaceManagerChannel');
             channel.trigger('workspaceManager', function() {
-                var view = ADK.showFullscreenOverlay(new AppletLayoutView(), {
-                    'callShow': true
+                var view = new ADK.UI.FullScreenOverlay({
+                    view: new AppletLayoutView(),
+                    options: {
+                        'callShow': true
+                    }
                 });
+                view.show();
             });
         },
         cancelAction: function() {

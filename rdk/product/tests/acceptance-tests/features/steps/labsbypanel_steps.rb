@@ -3,7 +3,7 @@ class LabsByPanel < BuildQuery
   def initialize(parameter_hash_table)
     super()
     title = "patient-record-labsbypanel"
-    domain_path = RDClass.resourcedirectory.get_url(title)
+    domain_path = RDClass.resourcedirectory_fetch.get_url(title)
     p "domain path: #{domain_path}"
     @path.concat(domain_path)
     @number_parameters = 0

@@ -1,7 +1,7 @@
 # Valid Login information to be used for most tests
 class DefaultLoginKodak
   @@adk_url = ENV.keys.include?('ADK_IP') ? 'http://' + ENV['ADK_IP'] : "http://10.1.1.200/"
-  @@ehmpui_url = ENV.keys.include?('EHMPUI_IP') ? ENV['EHMPUI_IP'] : "http://10.1.1.150"
+  @@ehmpui_url = ENV.keys.include?('EHMPUI_IP') ? ENV['EHMPUI_IP'] : "https://10.1.1.150"
   @@default_wait_time = 30
 
   @@facility_index = 2

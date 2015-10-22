@@ -21,7 +21,7 @@ var httpConfig = {
     port: 8089,
     host: vx_sync_ip,
     qs: _.clone(query),
-    url: 'http://' + vx_sync_ip + ':8089/documents',
+    url: 'http://' + vx_sync_ip + ':8080/documents',
     timeout: 60000
 };
 
@@ -98,12 +98,44 @@ describe('document-retrieval-endpoint.js', function() {
     });
     it('Malformatted dir parameter', function() {
         var testConfig = _.extend({}, httpConfig);
+        testConfig.qs.dir = '&*#)@$$#)@';
+        var complete = false;
+        runs(function() {
+            request(testConfig, function(err, response) {
+                expect(response).toBeDefined();
+                expect(val(response, 'statusCode')).toEqual(400);
+                httpConfig.qs = _.clone(query);
+                complete = true;
+            });
+        });
+        waitsFor(function() {
+            return complete;
+        }, 'HTTP request for document', 4000);
+    });
+    it('Illegal dir parameter', function() {
+        var testConfig = _.extend({}, httpConfig);
         testConfig.qs.dir = '../../../../etc/pwd';
         var complete = false;
         runs(function() {
             request(testConfig, function(err, response) {
                 expect(response).toBeDefined();
                 expect(val(response, 'statusCode')).toEqual(403); //intercepted by express
+                httpConfig.qs = _.clone(query);
+                complete = true;
+            });
+        });
+        waitsFor(function() {
+            return complete;
+        }, 'HTTP request for document', 4000);
+    });
+    it('Dir not found', function() {
+        var testConfig = _.extend({}, httpConfig);
+        testConfig.qs.dir = 'etc/pwd1234';
+        var complete = false;
+        runs(function() {
+            request(testConfig, function(err, response) {
+                expect(response).toBeDefined();
+                expect(val(response, 'statusCode')).toEqual(404); //intercepted by express
                 httpConfig.qs = _.clone(query);
                 complete = true;
             });

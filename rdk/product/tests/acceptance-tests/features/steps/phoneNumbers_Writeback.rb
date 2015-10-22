@@ -3,7 +3,6 @@ require 'uri'
 require 'net/http'
 
 When(/^the client saves homephone \| CellPhone \| WorkPhone \| EmergencyPhone \| KinPhone  "(.*?)" for the patient "(.*?)" in RDK format$/) do |input, pid|
-
   url =  QueryGenericRDK.new("resource/writeback/demographics", pid, "save").path
   input = "8586050836|8581111234|3453453456|8788786789|6783451234"
 
@@ -15,7 +14,6 @@ When(/^the client saves homephone \| CellPhone \| WorkPhone \| EmergencyPhone \|
   p reqjson
   @response =  HTTPartyWithBasicAuth.post_json_with_authorization(url, reqjson)
   puts @response
-
 end
 
 Then(/^a  temporary Not implemented response is returned$/) do

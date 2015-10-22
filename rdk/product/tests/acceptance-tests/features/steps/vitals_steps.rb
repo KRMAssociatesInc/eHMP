@@ -3,7 +3,7 @@
 ### Closest Reading US2459 Steps ###
 
 When(/^the client requests the closest reading of type "(.*?)" for a patient with dfn "(.*?)"$/) do |vitalType, dfn|
-  path = String.new(DefaultLogin.rdk_url)
+  path = String.new(DefaultLogin.rdk_fetch_url)
   @response = HTTPartyWithBasicAuth.get_with_authorization(path+'/resource/vitals/closest?dfn='+dfn+'&ts=&type='+vitalType+'&flag=&pid=10108V420871')
 end
 
@@ -28,7 +28,7 @@ end
 ### All Vitals US1957 Test Steps ###
 
 When(/^the client requests all vitals for patient DFN: "(.*?)" from FileMan dates "(.*?)" to "(.*?)"$/) do |dfn, start, stop|
-  path = String.new(DefaultLogin.rdk_url)
+  path = String.new(DefaultLogin.rdk_fetch_url)
   @response = HTTPartyWithBasicAuth.get_with_authorization(path+'/resource/vitals/all?dfn='+dfn+'&start='+start+'&end='+stop+'&pid=10108V420871')
 end
 
@@ -79,18 +79,18 @@ end
 
 When(/^the client saves an vital for "(.*?)" with the paramters$/) do |pid, table|
   # table is a Cucumber::Ast::Table
-  path = String.new(DefaultLogin.rdk_url)
+  path = String.new(DefaultLogin.rdk_writeback_url)
   params = table.rows_hash
   params[:vitals] = JSON.parse(params[:vitals])
   @response = HTTPartyWithBasicAuth.post_json_with_authorization("#{path}/resource/writeback/vitals/save?pid=#{pid}", Hash["param", params].to_json, { "Content-Type"=>"application/json" })
 end
 
 Then(/^the new vital is stored in the patientrecord for "(.*?)" with "(.*?)" field "(.*?)"$/) do |pid, field, value|
-  path = String.new(DefaultLogin.rdk_url)
+  path = String.new(DefaultLogin.rdk_fetch_url)
   @response = HTTPartyWithBasicAuth.get_with_authorization("#{path}/resource/patientrecord/domain/vital?filter=eq(#{field},#{value})&pid=#{pid}")
   num_records = @response.parsed_response['data']['totalItems']
   unless num_records == 1
-    fail "There were #{num_records} vitals for #{pid}; there should have been exactly 1." 
+    fail "There were #{num_records} vitals for #{pid}; there should have been exactly 1."
   end
   @ien = @response.parsed_response['data']['items'][0]['localId']
   @pid = pid
@@ -98,7 +98,7 @@ end
 
 Then(/^the new vital can be marked in error$/) do
   p "Deleting vital with ien=#{@ien}"
-  path = String.new(DefaultLogin.rdk_url)
+  path = String.new(DefaultLogin.rdk_writeback_url)
   @response = HTTPartyWithBasicAuth.put_json_with_authorization("#{path}/resource/writeback/vitals/error?pid=#{@pid}", "{\"ien\":\"#{@ien}\",\"reason\":\"1\" }", { "Content-Type"=>"application/json" })
   unless @response.parsed_response['data']['success']
     fail "Response was not successful: #{@response}"
@@ -106,12 +106,12 @@ Then(/^the new vital can be marked in error$/) do
 end
 
 When(/^the client requests the CAT QUAL$/) do
-  path = String.new(DefaultLogin.rdk_url)
+  path = String.new(DefaultLogin.rdk_fetch_url)
   @response = HTTPartyWithBasicAuth.get_with_authorization(path+'/vitals/qualifiers')
 end
 
 When(/^the client requests the CAT QUAL with type: "(.*?)"$/) do |type|
-  path = String.new(DefaultLogin.rdk_url)
+  path = String.new(DefaultLogin.rdk_fetch_url)
   @response = HTTPartyWithBasicAuth.get_with_authorization(path+'/vitals/qualifiers?types='+type)
 end
 

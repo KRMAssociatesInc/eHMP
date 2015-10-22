@@ -10,7 +10,7 @@ module DriverUtility
     @driver = Watir::Browser.new browser_name
     @driver.cookies.clear
     @driver.goto(base_url)
-    @driver.driver.manage.window.maximize
+    @driver.driver.manage.window.resize_to(1280, 1024)
   end
 
   def goto_here(baseUrl)
@@ -57,6 +57,7 @@ module DriverUtility
     @driver.refresh
   end
 
+  # DEPRICATED  - USE CHRONIC GEM INSTEAD
   def calculate_patient_age(dob)
     today = Date.today
     age = today.year - dob.year
@@ -64,6 +65,7 @@ module DriverUtility
     age
   end
 
+  # DEPRICATED - USE CHRONIC GEM INSTEAD
   #### Date Functions #######
 
   # format=%Y-%m-%d"

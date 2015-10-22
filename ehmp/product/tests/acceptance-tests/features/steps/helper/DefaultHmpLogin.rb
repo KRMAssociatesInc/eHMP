@@ -20,6 +20,9 @@ class DefaultLogin
     @@fhir_url = ENV.keys.include?('VE_API_IP') ? 'https://' + ENV['VE_API_IP'] : "https://10.3.3.5"
     @@solr_url = ENV.keys.include?('SOLR_IP') ? 'http://' + ENV['SOLR_IP'] + ":8983" : "http://10.3.3.10:8983"
     @@vx_sync_url = ENV.keys.include?('VX_SYNC_IP') ? 'http://' + ENV['VX_SYNC_IP'] +":8080" : "http://10.3.3.6:8080"
+    @@wb_vx_sync_url = ENV.keys.include?('WB_VX_SYNC_PORT') && ENV.keys.include?('VX_SYNC_IP') ? 'http://' + ENV['VX_SYNC_IP'] +":"+ENV['WB_VX_SYNC_PORT'] : "http://10.3.3.6:9090"
+    @@panorama_url = ENV.keys.include?('PANORAMA_IP') ? ENV['PANORAMA_IP'] +":9210" : "10.2.2.101:9210"
+    @@kodak_url = ENV.keys.include?('KODAK_IP') ? ENV['KODAK_IP'] +":9210" : "10.2.2.102:9210"
   end
 
   @@facility = "PANORAMA"
@@ -93,6 +96,18 @@ class DefaultLogin
   
   def self.vx_sync_url
     return @@vx_sync_url
+  end
+  
+  def self.wb_vx_sync_url
+    return @@wb_vx_sync_url
+  end
+  
+  def self.panorama_url
+    return @@panorama_url
+  end
+  
+  def self.kodak_url
+    return @@kodak_url
   end
   
 end

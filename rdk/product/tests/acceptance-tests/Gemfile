@@ -10,3 +10,4 @@ gem 'jsonpath'
 
 gem 'fog',                    '=1.21.0'
 gem 'macaddr',                '=1.6.7'
+gem 'nokogiri'

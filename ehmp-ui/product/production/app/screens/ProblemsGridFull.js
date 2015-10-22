@@ -1,4 +1,8 @@
-define(function() {
+define([
+    "backbone",
+    "marionette",
+    'app/applets/problems_add_edit/views/problemsAddView'
+], function(Backbone, Marionette, AddView) {
     'use strict';
     var screenConfig = {
         id: 'problems-full',
@@ -12,6 +16,13 @@ define(function() {
             fullScreen: true,
             viewType: 'expanded'
         }],
+        onStart: function(){
+            this.setUpEvents();
+        },
+        setUpEvents: function(){
+            //var problemsChannel = ADK.Messaging.getChannel('problems');
+            //problemsChannel.comply('addProblem', AddView.handleShowView);
+        },
         patientRequired: true,
         globalDatepicker: false
     };

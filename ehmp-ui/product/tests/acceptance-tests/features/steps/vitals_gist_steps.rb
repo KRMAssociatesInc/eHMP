@@ -55,4 +55,4 @@ Then(/^the Vitals gist contains the data$/) do |table|
   expect(driver.find_element(:id, "vitals_problem_result_WT").text).to eq(table.rows[7][1])
   expect(driver.find_element(:id, "vitals_problem_result_HT").text).to eq(table.rows[8][1])
   expect(driver.find_element(:id, "vitals_problem_result_BMI").text).to eq(table.rows[9][1])
-end#Vitals Coversheet rows
+end #Vitals Coversheet rows

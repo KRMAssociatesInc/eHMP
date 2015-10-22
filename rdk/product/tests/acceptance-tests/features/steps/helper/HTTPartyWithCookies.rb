@@ -14,8 +14,8 @@ class HTTPartyWithCookies
   def self.post_with_cookies(path)
     cookie_string = return_cookies_from_browser
     default_cookies.add_cookies(cookie_string)
-#    p "AFTER ADDITION: #{self.default_cookies}"
-#    p "PATH: #{path}"
+    #    p "AFTER ADDITION: #{self.default_cookies}"
+    #    p "PATH: #{path}"
     directory = post(path, { :verify => false })
     log_id = directory.headers['logid']
     p "logId: #{log_id}" if log_id
@@ -25,8 +25,8 @@ class HTTPartyWithCookies
   def self.get_with_cookies(path)
     cookie_string = return_cookies_from_browser
     default_cookies.add_cookies(cookie_string)
-#    p "AFTER ADDITION: #{self.default_cookies}"
-#    p "PATH: #{path}"
+    #    p "AFTER ADDITION: #{self.default_cookies}"
+    #    p "PATH: #{path}"
     directory = get(path, { :verify => false })
     log_id = directory.headers['logid']
     p "logId: #{log_id}" if log_id
@@ -42,11 +42,10 @@ class HTTPartyWithCookies
 
   def self.build_cookie_string(cookie_array)
     mycookies = ""
-    cookie_array.each do | single |
+    cookie_array.each do |single|
       new_string = ""
       new_string << single[:name] << "=" << single[:value]
       mycookies << new_string << ";"
-
     end
     return mycookies
   end

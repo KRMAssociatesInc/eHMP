@@ -1,5 +1,6 @@
 define([
     'api/Navigation',
+    'main/ADKApp',
     'backbone',
     'marionette',
     'underscore',
@@ -16,7 +17,7 @@ define([
     'main/components/text_search/textSearchInputView',
     'main/components/applet_header/views/workspaceSelect'
 
-], function(Navigation, Backbone, Marionette, _, hand, Utils, SessionStorage, UserDefinedScreens, navTemplate, GdrMinimizedHeader, GdrExtendedHeader, GdrSelector, SpikeLineView, TrendHistoryView, TextSearchInputView, WorkspaceSelectView) {
+], function(Navigation, ADKApp, Backbone, Marionette, _, hand, Utils, SessionStorage, UserDefinedScreens, navTemplate, GdrMinimizedHeader, GdrExtendedHeader, GdrSelector, SpikeLineView, TrendHistoryView, TextSearchInputView, WorkspaceSelectView) {
     'use strict';
 
     var timelineSummaryHasBeenInitialized = false;
@@ -31,7 +32,6 @@ define([
             this.model = sessionGlobalDate;
         }
     });
-
     var navLayoutView = Backbone.Marionette.LayoutView.extend({
         //return Marionette.LayoutView.extend({
         template: navTemplate,
@@ -50,6 +50,27 @@ define([
             'keydown #globalDatePicker-compact': 'handleEnterOrSpaceBar',
             'keydown #gdr-spikeline': 'handleEnterOrSpaceBar',
         },
+        provisionPredefinedScreens: function(predefinedScreensArray) {
+            var finalPredefinedScreens = [];
+            _.each(predefinedScreensArray, function(predefinedScreen) {
+                var hasPermission = true;
+                if (!_.isUndefined(predefinedScreen.hasPermission)) {
+                    if (_.isFunction(predefinedScreen.hasPermission)) {
+                        var permission = predefinedScreen.hasPermission();
+                        if (!_.isBoolean(permission)) {
+                            permission = false;
+                        }
+                        hasPermission = permission;
+                    } else {
+                        hasPermission = false;
+                    }
+                }
+                if (hasPermission === true) {
+                    finalPredefinedScreens.push(predefinedScreen);
+                }
+            });
+            return finalPredefinedScreens;
+        },
         initialize: function() {
             timelineSummaryHasBeenInitialized = false;
 
@@ -66,14 +87,21 @@ define([
             this.workspaceSelectView = new WorkspaceSelectView({
                 model: workspaceSelectModel
             });
+            var isNonPatientCentricView = (!_.isUndefined(this.model.get("currentScreen").nonPatientCentricView) &&
+                this.model.get("currentScreen").nonPatientCentricView === true);
 
-            this.textSearchInputView = new TextSearchInputView();
+            if (!isNonPatientCentricView) {
+                this.textSearchInputView = new TextSearchInputView();
+            } else {
+                this.model.set('isNonPatientCentricView', true);
+            }
 
             var self = this;
             var promise = UserDefinedScreens.getScreensConfig();
             self.collection = new Backbone.Collection();
             promise.done(function(screensConfig) {
-                self.collection.reset(screensConfig.screens);
+                var provisionedPredefinedScreens = self.provisionPredefinedScreens(screensConfig.screens);
+                self.collection.reset(provisionedPredefinedScreens);
             });
 
         },
@@ -99,10 +127,14 @@ define([
             this.gdrSpikeline.show(this.spikeLineView);
             this.screenSelectionRegion.show(this.workspaceSelectView);
             this.toogleGlobalDate();
+            var isNonPatientCentricView = (!_.isUndefined(this.model.get("currentScreen").nonPatientCentricView) &&
+                this.model.get("currentScreen").nonPatientCentricView === true);
 
-            this.textSearchInput.show(this.textSearchInputView, {
-                preventDestroy: true
-            });
+            if (!isNonPatientCentricView) {
+                this.textSearchInput.show(this.textSearchInputView, {
+                    preventDestroy: true
+                });
+            }
 
             // var self = this;
 
@@ -207,6 +239,5 @@ define([
             $('#hiddenDiv').off('mousedown', this.hiddenDivMousedown);
         }
     });
-
     return navLayoutView;
 });

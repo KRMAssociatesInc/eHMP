@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>eHMP Bootstrap UI Library - Immunization</title>
+    <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../../css/main-styles.css" />
+</head>
+
+<body class="library">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../../views.html">Views</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../../color-palette.html">Color Palette</a></li>
+                                <li><a href="#">Style Guide</a></li>
+                            </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end navigation-->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+            <li><a href="../../views.html">Views</a></li>
+            <li class="active">F360 - Immunization Write-Back</li>
+        </ol>
+        <h1>F360 - Immunization Write-Back</h1>
+        <div class="description">
+            <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This is the 508 compliant static HTML/CSS mock up of Immunizations.</p>
+            <p><strong><i class="fa fa-lightbulb-o"></i> Documentation:</strong> Please also view <a href="http://wakirc.axshare.com/#p=v4_-_enter_and_store_immunizations">Immunization Write-Back wireframe</a>, <a href="../../docs/workflow/psi8/workflow-enter-and-store-immunizations.pdf">Workflow Diagram</a> <small>[PDF, 381KB]</small>, and <a href="../../docs/use-case/psi8/use-case-immunization.pdf">Use Scenario Case Documentation</a> <small>[PDF, XX]</small> for full details on implementation.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6">
+                                    <h4 class="modal-title">My Observations</h4>
+                                </div>
+                                <div class="col-md-6 col-xs-6">
+                                    <div class="header-btns">
+                                        <div class="control form-group">
+                                            <button type="button" class="btn btn-primary btn-sm" title="Press enter to create a new observation"><i class="fa fa-plus"></i> New Entry</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="row row-sort">
+                                            <div class="col-md-6 col-xs-6">
+                                                <label for="observation-arrange-by">Arrange by:</label>
+                                                <select id="observation-arrange-by" title="Arrange observations by selecting from the drop down list">
+                                                    <option value="status">Status</option>
+                                                    <option value="type">Type</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6 text-right">
+                                                <label for="observation-sort-by" class="sr-only">Sort by</label>
+                                                <select id="observation-sort-by" title="Sort observations by selecting from the drop down list">
+                                                    <option value="most-recent">Most recent</option>
+                                                    <option value="least-recent">Least recent</option>
+                                                    <option value="chronological">Chronological</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-container panel-group small" id="accordion" role="tablist">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-observation-immunization">
+                                                    <h4>
+                                                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-observation-immunization" aria-expanded="true" aria-controls="collapse-observation-immunization">Immunization<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                                </h4>
+                                                </div>
+                                                <div id="collapse-observation-immunization" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-observation-immunization">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Administered</strong></p>
+                                                                        <p>Last Saved: <span id="immunization-last-saved1">09/09/2015 03:35</span></p>
+                                                                        <p>Date Created: <span id="immunization-date-created1">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Historical</strong></p>
+                                                                        <p>Date signed: <span id="immunization-date-signed1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="immunization-date-created2">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Administered</strong></p>
+                                                                        <p>Date accepted: <span id="immunization-date-accepted1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="immunization-date-created3">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end immunization-->
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-observation-nonvameds">
+                                                    <h4>
+                                                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-observation-nonvameds" aria-expanded="true" aria-controls="collapse-observation-nonvameds">Non-VA Meds<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                                </h4>
+                                                </div>
+                                                <div id="collapse-observation-nonvameds" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-observation-nonvameds">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Last Saved: <span id="nonvameds-last-saved1">09/09/2015 03:35</span></p>
+                                                                        <p>Date Created: <span id="nonvameds-date-created1">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Date signed: <span id="nonvameds-date-signed1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="nonvameds-date-created2">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Date accepted: <span id="nonvameds-date-accepted1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="nonvameds-date-created3">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end Non-VA Meds-->
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-observation-vitals">
+                                                    <h4>
+                                                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-observation-vitals" aria-expanded="true" aria-controls="collapse-observation-vitals">Vitals<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                                </h4>
+                                                </div>
+                                                <div id="collapse-observation-vitals" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-observation-vitals">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Last Saved: <span id="vitals-last-saved1">09/09/2015 03:35</span></p>
+                                                                        <p>Date Created: <span id="vitals-date-created1">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Date signed: <span id="vitals-date-signed1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="vitals-date-created2">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-md-6 col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>Location</p>
+                                                                        <p>Provider</p>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-xs-6 text-right">
+                                                                        <p><strong>Status</strong></p>
+                                                                        <p>Date accepted: <span id="vitals-date-accepted1">09/09/2015 03:35</span></p>
+                                                                        <p>Date created: <span id="vitals-date-created3">08/08/2015 09:00</span></p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end Vitals-->
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#notesDeleteModal" title="Press enter to delete the note">Delete</button>
+                                                </div>
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#notesModal" title="Press enter to view the details of the note">View</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                    <div class="modal fade" id="notesModal" role="dialog" aria-labelledby="notesModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="tray-settings">
+                                                        <p class="sr-only">This is the toolbar that allows you to perform actions</p>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to edit note" aria-label="Edit"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to print note" aria-label="Print"><i class="fa fa-print"></i></button>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to close note" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                                                    </div>
+                                                    <h4 class="modal-title" id="notesModalLabel">Primary Care General Note<br />
+                                                <span class="small">04/11/2015 - 03:30</span><br />
+                                                <span class="small">Doe, John Q</span></h4>
+                                                    <h5>Signed</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus, est eget sodales vestibulum, lorem erat fringilla felis, vel vestibulum dolor turpis sed orci. Aenean lacinia quis risus eget laoreet. Pellentesque rhoncus justo ac urna sollicitudin egestas.</p>
+                                                    <p>Suspendisse malesuada ipsum nisi, sed sollicitudin arcu condimentum a. Nulla facilisi. Sed hendrerit enim lacus, id tempor arcu euismod dapibus.</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus, est eget sodales vestibulum, lorem erat fringilla felis, vel vestibulum dolor turpis sed orci. Aenean lacinia quis risus eget laoreet. Pellentesque rhoncus justo ac urna sollicitudin egestas.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="notesDeleteModal" role="dialog" aria-labelledby="notesDeleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="tray-settings">
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                                                    </div>
+                                                    <h4 class="modal-title" id="notesDeleteModalLabel">Mark as Entered in Error</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="well well-sm">
+                                                                <h4>Problem Name<br />
+                                                            <span class="small">06/13/2015  17:55</span></h4>
+                                                            </div>
+                                                            <div class="control form-group">
+                                                                <label for="entered-error" class="sr-only">Add Annotation</label>
+                                                                <input class="form-control" type="text" name="name" title="Please enter in annotation" placeholder="Add Annotation&hellip;" id="entered-error" />
+                                                                <span class="help-block">60 characters</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div class="control control-button trash visible-inline">
+                                                        <button type="button" class="btn icon-btn" title="Press enter to cancel">Cancel</button>
+                                                    </div>
+                                                    <div class="control control-button trash visible-inline">
+                                                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" title="Press enter to remove">Remove</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4 class="modal-title">New Entry</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item">Allergies<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item"><i class="fa fa-ellipsis-v"></i> Immunization<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item">Meds, Non-VA<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item">Problems<i class="fa fa-chevron-right pull-right"></i></a>
+                                            <a href="#" class="list-group-item">Vitals<i class="fa fa-chevron-right pull-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to go back to observations summary">Back to Observations Summary</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-10 col-xs-10">
+                                    <h4 class="modal-title">Enter Immunization</h4>
+                                </div>
+                                <div class="col-md-2 col-xs-2">
+                                    <div class="header-btns">
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="dropdown">
+                                                <button class="btn icon-btn dropdown-toggle" type="button" id="immunization-settings" data-toggle="dropdown" aria-expanded="true">
+                                                    <i class="fa fa-gear"><span class="sr-only">Settings for vitals</span></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="immunization-settings">
+                                                    <li role="presentation"><a role="menuitem" href="#">Preview</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Print</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <button type="button" class="btn icon-btn" title="Press enter to open the popover view"><i class="fa fa-expand"><span class="sr-only">Press enter to open the popover view</span></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <ul class="progress-indicator">
+                                <li><div class="completed"><span class="bubble"></span>Select an Immunization Type<span class="sr-only">You are currently on step 1 of 2</span></div></li>
+                                <li><div><span class="bubble"></span>Enter Immunization Info</div></li>
+                            </ul>
+                        </div><!--end progress bar-->
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="scroll-enter-form">
+                                            <div class="row section-divider">
+                                                <div class="col-md-12">
+                                                    <p>* indicates a required field.</p>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="control form-group">
+                                                        <p class="faux-label">1. Choose an option. *</p>
+                                                        <div class="radio">
+                                                            <label for="example1-option1" class="radio-inline">
+                                                                <input type="radio" name="immunizationOptions" value="Administered" id="example1-option1" /> Administered
+                                                            </label>
+                                                            <label for="example1-option2" class="radio-inline">
+                                                                <input type="radio" name="immunizationOptions" value="Historical" id="example1-option2" /> Historical
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="control form-group">
+                                                        <label for="example1-option3">2. Select an immunization type. *</label>
+                                                        <input class="form-control typeahead" type="text" name="name" title="The type ahead feature will begin searching for content as you type. The results are listed below, use the up and down arrow keys to review the results." placeholder="Search for available immunization types…" autocomplete="off" spellcheck="false" disabled="disabled" id="example1-option3" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn icon-btn btn-sm" data-dismiss="modal" title="Press enter to delete order"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                                <div class="control control-button cancel visible-inline">
+                                                    <button type="button" class="btn btn-default btn-sm disabled" aria-disabled="true" title="Press enter to proceed to the next step">Next</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-10 col-xs-10">
+                                    <h4 class="modal-title">Enter Immunization</h4>
+                                </div>
+                                <div class="col-md-2 col-xs-2">
+                                    <div class="header-btns">
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="dropdown">
+                                                <button class="btn icon-btn dropdown-toggle" type="button" id="immunization-settings2" data-toggle="dropdown" aria-expanded="true">
+                                                    <i class="fa fa-gear"><span class="sr-only">Settings for vitals</span></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="immunization-settings2">
+                                                    <li role="presentation"><a role="menuitem" href="#">Preview</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Print</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <button type="button" class="btn icon-btn" title="Press enter to open the popover view"><i class="fa fa-expand"><span class="sr-only">Press enter to open the popover view</span></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <ul class="progress-indicator">
+                                <li><div class="completed"><span class="bubble"></span>Select an Immunization Type</div></li>
+                                <li><div class="completed"><span class="bubble"></span>Enter Immunization Info<span class="sr-only">You are currently on step 2 of 2</span></div></li>
+                            </ul>
+                        </div><!--end progress bar-->
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="scroll-enter-form">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h5>Flu Shot, Whole<br />
+                                                <span class="small">Administered</span></h5>
+                                                    <hr />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-highlight">
+                                                    <div class="col-md-12">
+                                                        <div class="control form-group">
+                                                            <label for="administered-lot-number">Lot Number *</label>
+                                                            <select class="form-control" title="To select an option, use the up and down arrow keys then press enter to select" id="administered-lot-number" required>
+                                                                <option value=""></option>
+                                                                <option value="Option 1">Option 1</option>
+                                                                <option value="Option 2">Option 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="control form-group">
+                                                            <label for="administered-expiration-date">Expiration Date</label>
+                                                            <div class="input-group date">
+                                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                <input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" readonly="readonly" id="administered-expiration-date" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="control form-group">
+                                                            <label for="administered-manufacturer">Manufacturer</label>
+                                                            <input class="form-control" type="text" title="Please enter in manufacturer" readonly="readonly" id="administered-manufacturer" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="administered-administration-date">Administration Date *</label>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                            <input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" required id="administered-administration-date" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group" role="application">
+                                                        <label for="administered-administratering-provider">Administering Provider *</label>
+                                                        <select class="form-control typeahead-select" id="administered-administratering-provider" title="Press enter to browse through select options">
+                                                            <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                                <option value="AK">Alaska</option>
+                                                                <option value="HI">Hawaii</option>
+                                                            </optgroup>
+                                                            <optgroup label="Pacific Time Zone">
+                                                                <option value="CA">California</option>
+                                                                <option value="NV">Nevada</option>
+                                                                <option value="OR">Oregon</option>
+                                                                <option value="WA">Washington</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group" role="application">
+                                                        <label for="administered-ordering-provider">Ordering Provider *</label>
+                                                        <select class="form-control typeahead-select" id="administered-ordering-provider" title="Press enter to browse through select options">
+                                                            <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                                <option value="AK">Alaska</option>
+                                                                <option value="HI">Hawaii</option>
+                                                            </optgroup>
+                                                            <optgroup label="Pacific Time Zone">
+                                                                <option value="CA">California</option>
+                                                                <option value="NV">Nevada</option>
+                                                                <option value="OR">Oregon</option>
+                                                                <option value="WA">Washington</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group" role="application">
+                                                        <label for="administered-encounter-location">Encounter Location</label>
+                                                        <select class="form-control typeahead-select" id="administered-encounter-location" title="Press enter to browse through select options">
+                                                            <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                                <option value="AK">Alaska</option>
+                                                                <option value="HI">Hawaii</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="administered-route-administration">Route of Administration</label>
+                                                        <select class="form-control" title="Use up and down arrow keys to view options and press enter to select." id="administered-route-administration">
+                                                            <option> </option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="administered-anatomic-location">Anatomic Location</label>
+                                                        <select class="form-control" title="Use up and down arrow keys to view options and press enter to select." id="administered-anatomic-location">
+                                                            <option> </option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <div class="input-group">
+                                                            <label for="administered-dosage-unit-text">Dosage/Unit</label>
+                                                            <input class="form-control" type="text" title="Please enter in dsage/unit" id="administered-dosage-unit-text" />
+                                                            <div class="input-group-btn">
+                                                                <label for="administered-dosage-unit-select" class="sr-only">Dosage Unit</label>
+                                                                <select class="form-control btn-form-control" title="Please select from the list" id="administered-dosage-unit-select">
+                                                                    <option> </option>
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="administered-series">Series</label>
+                                                        <select class="form-control" title="To select an option, use the up and down arrow keys then press enter to select" id="administered-series">
+                                                            <option value=""></option>
+                                                            <option value="Option 1">Option 1</option>
+                                                            <option value="Option 2">Option 2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="administered-information-statement">Information Statement</label>
+                                                        <select multiple class="form-control" title="Use up and down arrow keys to view 
+                                                        options and press enter to select. To select multiple options hold down the shift key 
+                                                        and use arrow keys." id="administered-information-statement" size="2">
+                                                            <option> </option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="administered-vis-date-offered">VIS Date Offered</label>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                            <input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="administered-vis-date-offered" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="control form-group">
+                                                        <label for="comments1">Comments</label>
+                                                        <textarea class="form-control" rows="7" name="moreInfo" title="Please enter in more information" id="comments1" maxlength="245"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <p><span id="immunization-administered-saved-at">Saved at 08:27</span></p>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn icon-btn btn-sm" title="Press enter to delete immunization"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to close immunization">Close</button>
+                                                </div>
+                                                <div class="control control-button cancel visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to go back to the previous step">Back</button>
+                                                </div>
+                                                <div class="control control-button cancel visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to add immunization">Add</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-md-10 col-xs-10">
+                                    <h4 class="modal-title">Enter Immunization</h4>
+                                </div>
+                                <div class="col-md-2 col-xs-2">
+                                    <div class="header-btns">
+                                        <div class="col-md-6 col-xs-6">
+                                            <div class="dropdown">
+                                                <button class="btn icon-btn dropdown-toggle" type="button" id="immunization-settings3" data-toggle="dropdown" aria-expanded="true">
+                                                    <i class="fa fa-gear"><span class="sr-only">Settings for vitals</span></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="immunization-settings3">
+                                                    <li role="presentation"><a role="menuitem" href="#">Preview</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Print</a></li>
+                                                    <li role="presentation"><a role="menuitem" href="#">Delete</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <button type="button" class="btn icon-btn" title="Press enter to open the popover view"><i class="fa fa-expand"><span class="sr-only">Press enter to open the popover view</span></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <ul class="progress-indicator">
+                                <li><div class="completed"><span class="bubble"></span>Select an Immunization Type</div></li>
+                                <li><div class="completed"><span class="bubble"></span>Enter Immunization Info<span class="sr-only">You are currently on step 2 of 2</span></div></li>
+                            </ul>
+                        </div><!--end progress bar-->
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="scroll-enter-form">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h5>Flu Shot, Whole<br />
+                                                <span class="small">Historical</span></h5>
+                                                    <hr />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-highlight">
+                                                    <div class="col-md-12">
+                                                        <div class="control form-group">
+                                                            <label for="historical-lot-number">Lot Number</label>
+                                                            <input class="form-control" type="text" title="Please enter in lot number" id="historical-lot-number" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="control form-group">
+                                                            <label for="historical-expiration-date">Expiration Date</label>
+                                                            <div class="input-group date">
+                                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                <input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="historical-expiration-date" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="control form-group">
+                                                            <label for="historical-manufacturer">Manufacturer</label>
+                                                            <input class="form-control" type="text" title="Please enter in manufacturer" id="historical-manufacturer" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="control form-group">
+                                                            <label for="historical-information-source">Information Source</label>
+                                                            <select class="form-control" title="To select an option, use the up and down arrow keys then press enter to select" id="historical-information-source">
+                                                                <option value=""></option>
+                                                                <option value="Option 1">Option 1</option>
+                                                                <option value="Option 2">Option 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="historical-administration-date">Administration Date</label>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                            <input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="historical-administration-date" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="historical-administratering-provider">Administering Provider</label>
+                                                        <input class="form-control" type="text" title="Please enter in administering provider" id="historical-administratering-provider" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="historical-ordering-provider">Ordering Provider</label>
+                                                        <input class="form-control" type="text" title="Please enter in ordering provider" id="historical-ordering-provider" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group" role="application">
+                                                        <label for="historical-encounter-location">Encounter Location</label>
+                                                        <select class="form-control typeahead-select" id="historical-encounter-location" title="Press enter to browse through select options">
+                                                            <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                                <option value="AK">Alaska</option>
+                                                                <option value="HI">Hawaii</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="historical-route-administration">Route of Administration</label>
+                                                        <select class="form-control" title="To select an option, use the up and down arrow keys then press enter to select" id="historical-route-administration">
+                                                            <option value=""></option>
+                                                            <option value="Option 1">Option 1</option>
+                                                            <option value="Option 2">Option 2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="historical-anatomic-location">Anatomic Location</label>
+                                                        <select class="form-control" title="To select an option, use the up and down arrow keys then press enter to select" id="historical-anatomic-location">
+                                                            <option value=""></option>
+                                                            <option value="Option 1">Option 1</option>
+                                                            <option value="Option 2">Option 2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <div class="input-group">
+                                                            <label for="historical-dosage-unit-text">Dosage/Unit</label>
+                                                            <input class="form-control" type="text" title="Please enter in dsage/unit" id="historical-dosage-unit-text" />
+                                                            <div class="input-group-btn">
+                                                                <label for="historical-dosage-unit-select" class="sr-only">Dosage Unit</label>
+                                                                <select class="form-control btn-form-control" title="Please select from the list" id="historical-dosage-unit-select">
+                                                                    <option> </option>
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="historical-series">Series</label>
+                                                        <select class="form-control" title="To select an option, use the up and down arrow keys then press enter to select" id="historical-series">
+                                                            <option value=""></option>
+                                                            <option value="Option 1">Option 1</option>
+                                                            <option value="Option 2">Option 2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="historical-information-statement">Information Statement</label>
+                                                        <select multiple class="form-control" title="Use up and down arrow keys to view 
+                                                        options and press enter to select. To select multiple options hold down the shift key 
+                                                        and use arrow keys." id="historical-information-statement" size="2">
+                                                            <option> </option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="control form-group">
+                                                        <label for="historical-vis-date-offered">VIS Date Offered</label>
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                            <input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="historical-vis-date-offered" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="control form-group">
+                                                        <label for="comments2">Comments</label>
+                                                        <textarea class="form-control" rows="7" name="moreInfo" title="Please enter in more information" id="comments2"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <p><span id="immunization-historical-saved-at">Saved at 08:27</span></p>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn icon-btn btn-sm" title="Press enter to delete immunization"><i class="fa fa-trash"></i></button>
+                                                </div>
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to close immunization">Close</button>
+                                                </div>
+                                                <div class="control control-button cancel visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to go back to the previous step">Back</button>
+                                                </div>
+                                                <div class="control control-button cancel visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" title="Press enter to add immunization">Add</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </div>
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap-datepicker.js"></script>
+    <script src="../../js/select2.full.js"></script>
+    <script src="../../js/typeahead.js"></script>
+    <script>
+    $(function() {
+        // Toggle selected items within accordion
+        $('.panel-body.multi-select-list').on('click', 'li', function() {
+            $(this).toggleClass('list-item-selected');
+        });
+
+        $('.input-group.date').datepicker({
+            todayBtn: "linked",
+            orientation: "top left",
+            autoclose: true,
+            todayHighlight: true
+        });
+
+        $(".typeahead-select").select2({width: '100%' });
+    });
+    </script>
+    <script type="text/javascript">
+    var options = [
+        'option one',
+        'option two',
+        'option three',
+        'option four',
+        'option five',
+        'option six',
+        'option seven',
+        'option eight',
+        'option nine',
+        'option one thousand'
+    ];
+    $(document).ready(function() {
+        // constructs the suggestion engine
+        var my_Suggestion_class = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            limit: 4,
+            local: $.map(options, function(filtered_items) {
+                return {
+                    value: filtered_items
+                };
+            })
+        });
+        my_Suggestion_class.initialize();
+        $('.typeahead').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 0
+        }, {
+            name: 'options',
+            displayKey: '',
+            source: my_Suggestion_class.ttAdapter()
+        });
+    });
+    </script>
+</body>
+
+</html>

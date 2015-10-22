@@ -40,8 +40,7 @@ For more information/documentation on SASS please visit their website at:http://
 	font-weight: 400;
 	padding: 3px 20px 3px 40px
 }
-.multiselect-container>li>a>label.radio,
-.multiselect-container>li>a>label.checkbox {
+.multiselect-container>li>a>label.radio, .multiselect-container>li>a>label.checkbox {
 	margin: 0
 }
 .multiselect-container>li>a>label>input[type="checkbox"] {
@@ -51,14 +50,20 @@ For more information/documentation on SASS please visit their website at:http://
 	border-top-left-radius: 4px;
 	border-bottom-left-radius: 4px
 }
-.form-inline .multiselect-container label.checkbox,
-.form-inline .multiselect-container label.radio {
+.form-inline .multiselect-container label.checkbox, .form-inline .multiselect-container label.radio {
 	padding: 3px 20px 3px 40px
 }
-.form-inline .multiselect-container li a label.checkbox input[type="checkbox"],
-.form-inline .multiselect-container li a label.radio input[type="radio"] {
+.form-inline .multiselect-container li a label.checkbox input[type="checkbox"], .form-inline .multiselect-container li a label.radio input[type="radio"] {
 	margin-left: -20px;
 	margin-right: 0
+}
+
+.placeholder-tile-sort {
+    height: 50px;
+    padding: 6px;
+    margin: 3px;
+    border: 4px solid rgb(97, 157, 215);
+    border-radius: 3px;
 }
 
 /* !
@@ -113,8 +118,7 @@ do not edit it by hand. */
 .capitalize {
 	text-transform: capitalize;
 }
-.chosen-container .search-choice .group-name,
-.chosen-container .chosen-single .group-name {
+.chosen-container .search-choice .group-name, .chosen-container .chosen-single .group-name {
 	margin-right: 4px;
 	overflow: hidden;
 	white-space: nowrap;
@@ -122,8 +126,7 @@ do not edit it by hand. */
 	font-weight: normal;
 	color: #999999;
 }
-.chosen-container .search-choice .group-name:after,
-.chosen-container .chosen-single .group-name:after {
+.chosen-container .search-choice .group-name:after, .chosen-container .chosen-single .group-name:after {
 	content: ":";
 	padding-left: 2px;
 	vertical-align: top;
@@ -368,7 +371,7 @@ do not edit it by hand. */
 .chosen-container-multi .chosen-choices li.search-choice-disabled {
 	padding-right: 5px;
 	border: 1px solid #ccc;
-	background-color: #e4e4e4;
+	background-color: $grey-light;
 	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
 	background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
 	background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
@@ -481,8 +484,7 @@ do not edit it by hand. */
 	right: auto;
 	left: 4px;
 }
-.chosen-rtl.chosen-container-single-nosearch .chosen-search,
-.chosen-rtl .chosen-drop {
+.chosen-rtl.chosen-container-single-nosearch .chosen-search, .chosen-rtl .chosen-drop {
 	left: 9999px;
 }
 .chosen-rtl.chosen-container-single .chosen-results {
@@ -512,16 +514,8 @@ do not edit it by hand. */
 /* @end */
 
 /* @group Retina compatibility */
-@media only screen and (-webkit-min-device-pixel-ratio:1.5),
-only screen and (min-resolution:144dpi),
-only screen and (min-resolution:1.5dppx) {
-	.chosen-rtl .chosen-search input[type="text"],
-	.chosen-container-single .chosen-single abbr,
-	.chosen-container-single .chosen-single div b,
-	.chosen-container-single .chosen-search input[type="text"],
-	.chosen-container-multi .chosen-choices .search-choice .search-choice-close,
-	.chosen-container .chosen-results-scroll-down span,
-	.chosen-container .chosen-results-scroll-up span {
+@media only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min-resolution:144dpi), only screen and (min-resolution:1.5dppx) {
+	.chosen-rtl .chosen-search input[type="text"], .chosen-container-single .chosen-single abbr, .chosen-container-single .chosen-single div b, .chosen-container-single .chosen-search input[type="text"], .chosen-container-multi .chosen-choices .search-choice .search-choice-close, .chosen-container .chosen-results-scroll-down span, .chosen-container .chosen-results-scroll-up span {
 		background-image: url('chosen-sprite@2x.png') !important;
 		background-size: 52px 37px !important;
 		background-repeat: no-repeat !important;
@@ -544,7 +538,7 @@ only screen and (min-resolution:1.5dppx) {
 		font-size: 12px;
 		text-align: left;
 		background-color: #ffffff;
-		border: 1px solid#cccccc;
+		border: 1px solid $grey;
 		border: 1px solid rgba(0, 0, 0, 0.15);
 		border-radius: 4px;
 		-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -554,7 +548,7 @@ only screen and (min-resolution:1.5dppx) {
 		overflow-y: auto;
 		width: 100%;
 	}
-	span.twitter-typeahead .tt-suggestion > p {
+	span.twitter-typeahead .tt-suggestion p {
 		display: block;
 		padding: 3px 20px;
 		margin-bottom: 0px;
@@ -564,16 +558,18 @@ only screen and (min-resolution:1.5dppx) {
 		color: #333333;
 		white-space: nowrap;
 	}
-	span.twitter-typeahead .tt-suggestion > p:hover,
-	span.twitter-typeahead .tt-suggestion > p:focus {
+	span.twitter-typeahead .tt-suggestion > p:hover, span.twitter-typeahead .tt-suggestion > p:focus {
 		color: #333333;
 		text-decoration: none;
 		outline: 0;
-		background-color: #428bca;
+		background-color: #000;
 	}
 	span.twitter-typeahead .tt-suggestion.tt-cursor {
-		color: #ffffff;
-		background-color: #428bca;
+		color: $grey-darkest;
+		background-color: #f2f7fc;
+		.text-muted {
+			color:#6B5E5E;
+		}
 	}
 	span.twitter-typeahead {
 		width: 100%;
@@ -635,7 +631,7 @@ only screen and (min-resolution:1.5dppx) {
 		font-weight: 500;
 		font-size: medium;
 	}
-	.highcharts-grid {
+	.no-grid .highcharts-grid {
 		display: none;
 	}
 	.appletToolbar {
@@ -655,6 +651,7 @@ only screen and (min-resolution:1.5dppx) {
 		z-index: 999 !important;
 	}
 	.noGraphDrop {
+
 		/* margin: 0px -6px; */
 		padding: 80px 0px;
 		border-style: double;
@@ -664,8 +661,8 @@ only screen and (min-resolution:1.5dppx) {
 		box-shadow: inset 0 0 10px #888;
 		background-color: #D7D7D7;
 		font-weight: 600;
-		height:100%;
-		text-align:center;
+		height: 100%;
+		text-align: center;
 	}
 	.no-padding {
 		padding: 0;
@@ -714,7 +711,6 @@ only screen and (min-resolution:1.5dppx) {
 	.graphContainer .row {
 		margin: 0 !important;
 	}
-	
 	.graphContainer {
 		bottom: 10px;
 		left: 10px;
@@ -724,5 +720,40 @@ only screen and (min-resolution:1.5dppx) {
 		right: 0;
 		top: 28px;
 		width: 98.7%;
+	}
+	.ellipsisFormat {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding-right: 10px;
+	}
+	.redTopBorder {
+		border-top: 1px solid #CC0000;
+		padding: 0px;
+		margin: 0px;
+	}
+	.grayTopBorder {
+		border-top: 1px solid #e5e5e5;
+		padding: 0px;
+		margin: 0px;
+	}
+	.fullWidth {
+		width: 100%;
+	}
+	.twentyOne {
+		height: 21px;
+	}
+	.minimumHeight {
+		min-height: 100px;
+	}
+	.noTopBottomBorderStyle {
+		border-color: #A9A9A9;
+		border-style: solid;
+		border-width: 0px 1px 0px 1px;
+	}
+	.medsBorderStyle {
+		border-color: #A9A9A9;
+		border-style: solid;
+		border-width: 1px 0px 1px 0px;
 	}
 }

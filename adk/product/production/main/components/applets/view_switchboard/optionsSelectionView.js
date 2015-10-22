@@ -47,7 +47,8 @@ define([
         className: 'viewType-optionsBox col-xs-3',
         initialize: function() {
             var displayType = getViewTypeDisplay(this.model.get('type'));
-            this.template = Handlebars.compile('<div class="options-box {{type}}" tabindex="0" data-viewtype="{{type}}"></div><div class="formatButtonText">' + displayType + ' View</div>');
+            this.template = Handlebars.compile('<div id="view-option" class="options-box {{type}}" tabindex="0" data-viewtype="{{type}}"></div><div class="formatButtonText">' + displayType + ' View</div>');
+
             var offset = this.model.get('paddingOffset');
             if (offset !== 0 && !_.isUndefined(offset)) {
                 this.$el.addClass("col-xs-offset-" + offset);
@@ -143,6 +144,7 @@ define([
                     }
                 };
                 ResourceService.fetchCollection(fetchOptions);
+                ADK.UserDefinedScreens.removeAllStackedGraphFromSession(this.workspaceId, this.appletConfig.instanceId);
             }
         },
         returnGridster: function() {

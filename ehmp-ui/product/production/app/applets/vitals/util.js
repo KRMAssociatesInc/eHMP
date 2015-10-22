@@ -50,6 +50,10 @@ define([
         'HT': {
             descriptionColumn: 'Ht',
             observationType: 'vitals',
+        },
+        'CG': {
+            descriptionColumn: 'Circum/Girth',
+            observationType: 'Vitals'
         }
     };
 
@@ -118,9 +122,6 @@ define([
     };
 
     Util.buildCollection = function(collection) {
-        var screenId = ADK.Messaging.request('get:current:screen').config.id;
-        var isWorkspaceScreen = screenId.indexOf('workspace') > -1;
-
         var newcol = Util.splitBloodPressure(collection);
         //add normalized names,columndescriptions,valid result flag
         newcol.each(function(model) {
@@ -152,7 +153,6 @@ define([
             model.attributes.numericTime = Util.getNumericTime(model.attributes.timeSince);
             model.attributes.observationType = 'vitals';
             model.attributes.vitalColumns = true;
-            model.attributes.userWorkspace = isWorkspaceScreen;
         });
 
         collection.reset(newcol.models);

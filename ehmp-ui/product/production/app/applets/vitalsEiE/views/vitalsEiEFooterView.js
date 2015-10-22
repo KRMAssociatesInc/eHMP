@@ -127,7 +127,7 @@ define([
                 view.showLoadingTextOnButton(e, false);
                 if (errors.length <= 0) {
                     //set the button back and flag error
-                    ADK.hideModal();
+                    ADK.UI.Modal.hide();
                     //refresh gridview that was passed in from the extend on the bodyView
                     setTimeout(function() {
                           ADK.Messaging.getChannel('vitals').request('refreshGridView');

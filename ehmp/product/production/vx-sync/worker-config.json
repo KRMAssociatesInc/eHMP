@@ -1,5 +1,5 @@
 {
-    "VXSYNC_IP": "192.168.33.12",
+    "VXSYNC_IP": "10.3.3.6",
 
     "vxsync": {
         "configRefresh": 0,
@@ -13,14 +13,26 @@
             }
         },
         "vistaSites": {
-            "34C5": {
-                "name": "krm",
-                "host": "192.168.33.10",
-                "port": 9430,
-                "accessCode": "SM1234",
-                "verifyCode": "SM1234!!!",
+            "9E7A": {
+                "name": "panorama",
+                "host": "10.2.2.101",
+                "port": 9210,
+                "accessCode": "ep1234",
+                "verifyCode": "ep1234!!",
                 "localIP": "127.0.0.1",
-                "stationNumber": 6100,
+                "stationNumber": 500,
+                "localAddress": "localhost",
+                "connectTimeout": 3000,
+                "sendTimeout": 20000
+            },
+            "C877": {
+                "name": "kodak",
+                "host": "10.2.2.102",
+                "port": 9210,
+                "accessCode": "ep1234",
+                "verifyCode": "ep1234!!",
+                "localIP": "127.0.0.1",
+                "stationNumber": 500,
                 "localAddress": "localhost",
                 "connectTimeout": 3000,
                 "sendTimeout": 20000
@@ -268,6 +280,9 @@
         "handlerProfiles": {
             "profileCollection": {
                 "default": "all",
+                "error": [
+                    "error-request"
+                ],
                 "primary": [
                     "enterprise-sync-request",
                     "vista-operational-subscribe-request",
@@ -466,7 +481,7 @@
             "repoUniversal": {
                 "priority": 10,
                 "delay": 0,
-                "ttr": 60,
+                "ttr": 120,
                 "timeout": 10,
                 "initMillis": 1000,
                 "maxMillis": 15000,
@@ -480,6 +495,8 @@
                 "jobTypeForTube": true
             },
             "jobTypes": {
+                "error-request": {},
+
                 "enterprise-sync-request": {},
                 "vista-operational-subscribe-request": {},
 
@@ -588,10 +605,11 @@
 
         "jds": {
             "protocol": "http",
-            "host": "192.168.33.10",
+            "host": "10.2.2.110",
             "port": 9080,
-            "timeout": 60000
+            "timeout": 300000
         },
+        "maxMetastampSize": 10485760,
 
         "solrClient": {
             "host": "10.3.3.10",
@@ -628,8 +646,22 @@
                 "path": "/tmp/vxsync/documents/published",
                 "permissions": "400"
             },
-            "uriRoot": "http://127.0.0.1:8089/documents",
+            "uriRoot": "http://127.0.0.1:8080/documents",
             "officeLocation": "/Applications/LibreOffice.app/Contents/MacOS/"
+        },
+
+        "error-handling": {
+            "writers": ["log-error-writer", "jds-error-writer"],
+            "log-error-writer": {
+                "logger": {
+                    "name": "errors",
+                    "streams": [{
+                        "level": "debug",
+                        "type": "file",
+                        "path": "logs/vxsync-errors.log"
+                    }]
+                }
+            }
         },
 
         "loggers": [{
@@ -641,6 +673,19 @@
                 "period": "1h",
                 "count": 2
             }]
-        }]
+        }],
+        "metrics": [{
+            "name": "metrics",
+            "streams": [{
+                "level": "warn",
+                "type": "file",
+                "path": "logs/vxsync-metrics.log"
+            }]
+        }],
+        "healthcheck": {
+            "heartbeatEnabled": true,
+            "heartbeatIntervalMillis": 300000,
+            "heartbeatStaleAgeMillis": 600000
+        }
     }
 }

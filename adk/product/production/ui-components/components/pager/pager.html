@@ -1,0 +1,68 @@
+<h3>Pager</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> The pagination allows the user to view set a amount of objects in the frame. The user can move forward or backward using the buttons.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> The instructions in the title attribute of the anchor tag should be updated depending on the functionality of the pager.</p>
+</div>
+<h4>Pager</h4>
+<div class="description">
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> To add icons to the pager, view the <a href="docs/font-awesome-icons.pdf">Selected Fontawesome Icons</a> <span class="small">[PDF, 881KB]</span>, place the class inside the &lt;i&gt; tag then place that in the anchor tag.</p>
+</div>
+<div id="pagerCopy1">
+    <ul class="pager">
+        <li><a href="#" title="Press enter to load the previous page.">Previous</a></li>
+        <li><a href="#" title="Press enter to load the next page.">Next</a></li>
+    </ul>
+</div>
+<hr />
+<h4>Aligned Pager</h4>
+<div id="pagerCopy2">
+    <ul class="pager">
+        <li class="previous"><a href="#" title="Press enter to load the previous page."><i class="fa fa-chevron-left"></i><span class="sr-only">Previous</span></a></li>
+        <li class="next"><a href="#" title="Press enter to load the next page."><i class="fa fa-chevron-right"></i><span class="sr-only">Next</span></a></li>
+    </ul>
+</div>
+<hr />
+<h4>Disabled State Pager</h4>
+<div id="pagerCopy3">
+    <ul class="pager">
+        <li class="disabled"><a href="#" title="Loading the previous page has been disabled, there is no previous page."><i class="fa fa-chevron-left"></i> Previous</a></li>
+        <li><a href="#" title="Press enter to load the next page.">Next <i class="fa fa-chevron-right"></i></a></li>
+    </ul>
+</div>
+<hr />
+<div role="tabpanel" class="tabpanel">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active"><a href="#markup-pager" aria-controls="markup-pager" role="tab" data-toggle="tab">Pager</a></li>
+        <li><a href="#markup-aligned-pager" aria-controls="markup-aligned-pager" role="tab" data-toggle="tab">Aligned Pager</a></li>
+        <li><a href="#markup-disabled-pager" aria-controls="markup-disabled-pager" role="tab" data-toggle="tab">Disabled State Pager</a></li>
+	</ul>
+	<div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-pager">
+            <pre>
+&lt;ul class="pager"&gt;
+    &lt;li&gt;&lt;a href="#" title="Press enter to load the previous page."&gt;Previous&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" title="Press enter to load the next page."&gt;Next&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+            <a onclick="copyToClipboard('pagerCopy1')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="markup-aligned-pager">
+            <pre>
+&lt;ul class="pager"&gt;
+    &lt;li class="previous"&gt;&lt;a href="#" title="Press enter to load the previous page."&gt;&lt;i class="fa fa-chevron-left"&gt;&lt;/i&gt;&lt;span class="sr-only"&gt;Previous&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="next"&gt;&lt;a href="#" title="Press enter to load the next page."&gt;&lt;i class="fa fa-chevron-right"&gt;&lt;/i&gt;&lt;span class="sr-only"&gt;Next&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+            <a onclick="copyToClipboard('pagerCopy2')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="markup-disabled-pager">
+            <pre>
+&lt;ul class="pager"&gt;
+    &lt;li class="disabled"&gt;&lt;a href="#" title="Loading the previous page has been disabled, there is no previous page."&gt;&lt;i class="fa fa-chevron-left"&gt; Previous&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" title="Press enter to load the next page."&gt;Next &lt;i class="fa fa-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+            <a onclick="copyToClipboard('pagerCopy3')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+	</div>
+</div>

@@ -5,35 +5,38 @@ var async = require('async');
 var S = require('string');
 var moment = require('moment');
 
-//var errorUtil = require(global.OSYNC_UTILS + 'error');
+var nullUtil = require(global.OSYNC_UTILS + 'null-utils');
 var jobUtil = require(global.OSYNC_UTILS + 'job-utils');
 var jdsUtil = require(global.OSYNC_UTILS + 'jds-utils');
 var users_list_screen_id = 'osyncusers';
-
-var cprs_list_field_name = 'patientList';
-var pid_field_name = 'pid';
-
 var active_user_threshold = 30.0;
 
 function handle(log, config, environment, job, handlerCallback) {
+    log.debug('active-user.handle : received request to save %s', JSON.stringify(job));
+
+    if (nullUtil.isNullish(job.type) || job.type !== 'active-user') {
+        log.debug("active-user-request.handle: No Job type or incorrect job type received ");
+        return;
+    }
 
     async.series({
         get: function (cb) {
             jdsUtil.getFromJDS(log, config, users_list_screen_id, cb);
         }
     }, function(getError, getResponse) {
-        var result = process(filterForActiveUsers(getResponse.get.users, moment()), handlerCallback);
-        var jobToPublish = jobUtil.createValidationRequest(log, config, environment, handlerCallback, job);
+        if (_.isUndefined(getResponse.get.users) || _.isUndefined(getResponse.get.users)) {
+            log.debug("active-user-request.handle: No users in JDS to process");
+            return;
+        }
+        var result = filterForActiveUsers(getResponse.get.users, moment());
+        job.source = 'active-user';
+        job.users = result;
+
+        var jobToPublish = jobUtil.createPatientListRequest(log, config, environment, handlerCallback, job);
+        log.debug("active-user-request.handle: "+ jobToPublish.toString());
 
         environment.publisherRouter.publish(jobToPublish, handlerCallback);
     });
-}
-
-function process(activeUsersList, handlerCallback) {
-    var activeUsersCprsLists = _.pluck(activeUsersList, cprs_list_field_name);
-    var activeUsersPatients = _.flatten(activeUsersCprsLists);
-    var activeUsersPatientsPids = _.uniq(_.pluck(activeUsersPatients, pid_field_name));
-    handlerCallback(activeUsersPatientsPids);
 }
 
 function filterForActiveUsers(usersList, now) {
@@ -52,8 +55,3 @@ function fixDateString(date) {
 }
 
 module.exports = handle;
-module.exports.handle = handle;
-
-module.exports.process = process;
-module.exports.filterForActiveUsers = filterForActiveUsers;
-module.exports.fixDateString = fixDateString;

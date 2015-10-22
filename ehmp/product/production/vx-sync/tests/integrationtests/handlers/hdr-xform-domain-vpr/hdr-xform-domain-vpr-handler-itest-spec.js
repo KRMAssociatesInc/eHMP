@@ -46,7 +46,8 @@ describe('hdr-xfom-domain-vpr-handler integration test', function() {
     describe('record enrichment pathway', function() {
         var jdsClientDummy = new JdsClientDummy(logger, config);
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics: logger
         };
         var expectedJdsResponse = {
             statusCode: 200
@@ -75,14 +76,15 @@ describe('hdr-xfom-domain-vpr-handler integration test', function() {
 
 
     describe('test JDS communications', function() {
-        var jdsClient = new JdsClient(logger, config);
+        var jdsClient = new JdsClient(logger, logger, config);
         var environment = {
             jds: jdsClient,
             publisherRouter: {
                 publish: function(job, callback) {
                     callback();
                 }
-            }
+            },
+            metrics: logger
         };
 
         var hdrAllergyItems = require('../../../data/secondary/hdr/allergy');
@@ -102,23 +104,28 @@ describe('hdr-xfom-domain-vpr-handler integration test', function() {
         };
 
         it('verify metastamp is stored in JDS', function() {
-            var setUpDone = 0;
+            var cleanUpDone = false;
             runs(function() {
-
                 environment.jds.deletePatientByPid(testPatientIdentifier.value, function() {
-                    setUpDone++;
+                    cleanUpDone = true;
                 });
+            });
+            waitsFor(function(){
+                return cleanUpDone;
+            }, 'JDS cleanup', 10000);
 
+            var setUpDone = false;
+            runs(function() {
                 environment.jds.storePatientIdentifier({
                     'patientIdentifiers': [testPatientIdentifier.value]
                 }, function() {
-                    setUpDone++;
+                    setUpDone = true;
                 });
 
             });
 
             waitsFor(function() {
-                return setUpDone === 2;
+                return setUpDone;
             }, 'JDS setup', 10000);
 
             var handleDone = false;

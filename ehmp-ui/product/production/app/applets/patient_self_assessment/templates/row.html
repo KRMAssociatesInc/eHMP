@@ -1,0 +1,14 @@
+{{#each qna}}
+<div class="grid-container">
+	{{#if type}}
+		<div class="row noMargin text-center header"><strong>{{displayText}}</strong></div>
+	{{else}}
+		{{#each this}}
+		<div class="row noMargin content">
+			<div class="col-sm-8">{{displayText}}</div>
+			<div class="col-sm-4">{{response}}</div>
+		</div>
+		{{/each}}
+	{{/if}}
+</div>
+{{/each}}

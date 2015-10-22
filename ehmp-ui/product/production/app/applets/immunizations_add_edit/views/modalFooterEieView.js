@@ -6,7 +6,7 @@ define([
 ], function(Backbone, Marionette, _, FooterTemplate) {
     'use strict';
 
-    var immunizationChannel = ADK.Messaging.getChannel('immunization');
+    //var immunizationChannel = ADK.Messaging.getChannel('immunization');
 
     return Backbone.Marionette.ItemView.extend({
         events: {

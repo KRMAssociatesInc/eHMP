@@ -45,11 +45,11 @@ define([
             return dateRangeText + medOrderInfo;
         },
         isPRN: function(medDomainData) {
-            if (medDomainData.sig && medDomainData.sig.toUpperCase().indexOf("AS NEEDED") != -1) {
+            if (medDomainData.sig && medDomainData.sig.toString().toUpperCase().indexOf("AS NEEDED") != -1) {
                 return true;
-            } else if (medDomainData.scheduleType == "PRN") {
+            } else if (medDomainData.scheduleName && medDomainData.scheduleName.toString() == "PRN") {
                 return true;
-            } else if (medDomainData.scheduleName && medDomainData.scheduleName.indexOf("PRN") != -1) {
+            } else if (medDomainData.scheduleName && medDomainData.scheduleName.toString().indexOf("PRN") != -1) {
                 return true;
             } else {
                 return false;

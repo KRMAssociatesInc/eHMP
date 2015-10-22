@@ -1,0 +1,209 @@
+.patient-search-container {
+    background-color: $primary-lighter;
+    padding-top: 0px;
+    overflow: hidden;
+    //!important helper class that can be used elsewhere too
+    .calendar-sm {
+        .input-group-addon {
+            padding: 0px 6px;
+        }
+        input {
+            font-size: 12px;
+            height: 23px;
+            padding: 3px;
+        }
+    }
+    @media(min-width: 1355px){
+        .patient-search-filters {
+            #clinics-tab .filter-list {
+                height: calc(100% - 174px);
+            }
+            .clinics-calendars {
+                .form-group {
+                    width: 41.66666667%;
+                }
+                .btn {
+                    min-width: 42px;
+                    vertical-align: bottom;
+                }
+            }
+        }
+    }
+    @media(min-width: 1110px) and (max-width: 1354px) {
+        .patient-search-filters {
+            #clinics-tab .filter-list {
+                height: calc(100% - 186px);
+            }
+            .clinics-calendars {
+                .form-group {
+                    width: 49%;
+                }
+                .btn {
+                    float: right;
+                    margin: 5px 1%;
+                    min-width: 50px;
+                }
+            }
+        }
+    }
+    @media(min-width: 1110px) {
+        .patient-search-header{
+            #nationwide .form-group {
+                width: 195px;
+            }
+        }
+        .patient-search-filters {
+            padding: 20px;
+            .clinics-calendars {
+                .btn {
+                    width: 14.66666667%;
+                }
+            }
+        }
+        .results-table-container {
+            height: 100%;
+            width: 41.66666667%;
+        }
+         .patient-selection-container {
+            margin-top: 20px;
+            vertical-align: top;
+            width: 290px;
+        }
+    }
+    @media(max-width: 1110px){
+        .patient-search-header{
+            #nationwide {
+                .form-group {
+                    min-width: 150px;
+                    width: 18%;
+                }
+                .form-group:nth-of-type(3){
+                    min-width: 175px;
+                    .input-group-addon{
+                        padding: 6px 8px;
+                    }
+                    input {
+                        padding: 6px 4px;
+                    }
+                }
+            }
+        }
+        .patient-search-filters {
+            padding: 15px;
+            ul.nav-tabs li a {
+                padding: 3px 2px;
+            }
+            #clinics-tab .filter-list {
+                height: calc(100% - 229px);
+            }
+            .clinics-calendars {
+                .form-group {
+                    width: 100%;
+                }
+                .btn {
+                    float: right;
+                    margin: 5px 1%;
+                    min-width: 42px;
+                    width: 14.66666667%;
+                }
+            }
+        }
+        .results-table-container {
+            height: 55%;
+            width: 74%;
+        }
+        .patient-selection-container {
+            height: 40%;
+            margin-left: 15%;
+            max-height: 240px;
+            overflow-y: scroll;
+            width: 40%;
+        }
+    }
+    .patient-search-header {
+        background-color: $primary-lightester;
+        padding: 50px 5px 0px 10px;
+        #my-site .input-group {
+            margin-bottom: 20px;
+        }
+        #nationwide {
+            form {
+                display: block;
+                .form-group, .btn {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                .btn{
+                    max-width: 150px;
+                    min-width: 70px;
+                }
+            }
+        }
+        p {
+            margin: 0px 0px 3px;
+        }
+    }
+    .patient-search-body {
+        height: calc(100% - 203px);
+        .patient-search-filters {
+            background: $primary-lightester;
+            box-shadow: inset 0 6px 4px -2px rgba(0, 0, 0, .11);
+            .tab-content {
+                height: calc(100% - 11px);
+            }
+            .clinics-filter-buttons {
+                padding: 5px 0px;
+                text-align: center;
+            }
+            .clinics-calendars {
+                display: block;
+                .form-group,
+                .btn {
+                    display: inline-block;
+                }
+            }
+            #wards-tab .filter-list {
+                height: calc(100% - 63px);
+                overflow-y: scroll;
+            }
+            #clinics-tab .filter-list {
+                overflow-y: scroll;
+            }
+            .filter-list li {
+                padding: 5px 10px;
+                &:hover {
+                    background-color: $secondary-lighter;
+                }
+                a {
+                    color: $grey-darkest;
+                    &:hover, &:focus {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .results-table-container {
+            display: inline-block;
+            padding: 0px 20px;
+            .results-table {
+                background-color: $white;
+                height: calc(100% - 40px);
+                margin-top: 20px;
+                overflow-y: scroll; //This will need to be changed once faux table gets a sticky header
+                padding: 10px;
+            }
+        }
+        .patient-selection-container {
+            background-color: white;
+            border: none;
+            display: inline-block;
+            padding: 10px 20px 20px;
+        }
+    }
+    ul.nav-tabs {
+        margin-left: 10px;
+    }
+    .form-group {
+        margin-bottom: 0px;
+    }
+}

@@ -1,8 +1,0 @@
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
-
-    <bean id="osgiFramework" class="gov.va.hmp.plugins.osgi.OsgiFrameworkLauncherFactoryBean"/>
-    <bean id="osgiBundleContext" factory-bean="osgiFramework" factory-method="getBundleContext"/>
-</beans>

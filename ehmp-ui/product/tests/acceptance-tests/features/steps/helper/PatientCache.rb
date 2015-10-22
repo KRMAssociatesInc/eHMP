@@ -51,7 +51,7 @@ class PatientCache
 
   def print_json_verify(json_verify)
     output = json_verify.output
-    output.each do | msg|
+    output.each do |msg|
       p msg
     end #output.each
   end
@@ -78,7 +78,7 @@ class PatientCache
     data = []
     data.push([tag, value])
     data.push(["syncStatusByVistaSystemId.#{system_id}.syncComplete", "true"])
-    data.each do | set |
+    data.each do |set|
       fieldpath = set[0]
       fieldvaluestring = set[1]
       json_verify.reset_output

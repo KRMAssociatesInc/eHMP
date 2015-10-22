@@ -1087,7 +1087,7 @@ Scenario: For a patient a collection of data is made successfully
 	Then in section "encounters" the response contains 0 "encounter"s
 	Then in section "encounters" the response contains 0 "document"s
 	Then in section "allergies" the response contains 5 "allergy"s
-	Then in section "medications" the response contains 42 "medication"s
+	Then in section "medications" the response contains 43 "medication"s
 	Then in section "vitalsigns" the response contains 301 "vitalsign"s
 	Then in section "procedures" the response contains 26 "procedure"s
 	Then in section "immunizations" the response contains 3 "immunization"s

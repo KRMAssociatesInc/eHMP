@@ -1,0 +1,52 @@
+{
+    "_id": "diabetes-mellitus-cbw_stacked",
+    "userdefinedgraphs": {
+        "applets": [
+            {
+                "graphs": [
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "HEMOGLOBIN A1C"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "GLUCOSE"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "CREATININE"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "HDL"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "LDL CHOLESTEROL"
+                    },
+                    {
+                        "graphType": "Lab Tests",
+                        "typeName": "O2HB%  (SAT)"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "PULSE"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "PULSE OXIMETRY"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "BLOOD PRESSURE"
+                    },
+                    {
+                        "graphType": "Vitals",
+                        "typeName": "RESPIRATION"
+                    }
+                ],
+                "instanceId": "dmcbw-stackedGraph-1"
+            }
+        ]
+    }
+}

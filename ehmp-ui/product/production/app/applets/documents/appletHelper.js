@@ -18,6 +18,9 @@ define([
                 return false;
             }
         },
+        hasChildDocs: function(data) {
+            return (data.get('isInterdisciplinary') === true || data.get('isInterdisciplinary') === 'true') && data.get('interdisciplinaryType').toLowerCase() === 'parent';
+        },
         isRadiology: function(docType) {
             if(docType.toLowerCase() == "radiology"){
                 return true;
@@ -27,25 +30,6 @@ define([
             if(docType.toLowerCase() == "imaging"){ //||(docType == "Radiology"))
                 return true;
             }else{return false;}
-        },
-        parseChildDocResponse: function(response) {
-            if (response.kind) {
-                var docType =response.kind;
-                if(docType.toLowerCase() == "radiology report"){
-                    response.imagingBool = true;
-                }else{
-                    response.imagingBool = false;
-                }
-            }
-            if (response.statusDisplayName) {
-                var sdn = response.statusDisplayName.toLowerCase();
-                if (sdn === 'completed') {
-                    response.statusDisplayClass = 'text-success';
-                } else if (sdn === 'rejected') {
-                    response.statusDisplayClass = 'text-danger';
-                }
-            }
-            return response;
         },
         isConsult: function(docType) {
             if(docType.toLowerCase() == "consult"){
@@ -107,7 +91,7 @@ define([
                         resourceTitle: 'patient-record-document',
                         viewModel:  {
                             parse: function(response) {
-                                return appletHelper.parseChildDocResponse(response);
+                                return appletHelper.parseDocResponse(response);
                             }
                         },
                         criteria: {
@@ -130,6 +114,32 @@ define([
                 }
             }
             return resultDocCollection;
+        },
+
+        getChildDocs: function(data) {
+            if (this.hasChildDocs(data)) {
+                var childDocCollection = new Backbone.Collection();
+                // query documents index for other docs that have a parentUid equal to this document's UID
+                var fetchOptions = {
+                    resourceTitle: 'patient-record-document',
+                    viewModel:  {
+                        parse: function(response) {
+                            return appletHelper.parseDocResponse(response);
+                        }
+                    },
+                    criteria: {
+                        filter: 'eq(parentUid,"' + data.get('uid') + '")',
+                        order: DETAIL_CHILD_DOC_SORT_FIELD + ' ASC'
+                    },
+                    onSuccess: function(response) {
+                        childDocCollection.reset(response.models);
+                    }
+                };
+
+                ADK.PatientRecordService.fetchCollection(fetchOptions);
+                return childDocCollection;
+            }
+            return null;
         },
 
         parseDocResponse: function(response) {
@@ -204,6 +214,8 @@ define([
                         response.authorDisplayName = response.providerDisplayName;
                     }
                 }
+
+                response.radiologyReportBool = response.kind.toLowerCase() === "radiology report";
             }
 
             if (response.authorDisplayName === undefined || response.authorDisplayName === "") {
@@ -255,6 +267,12 @@ define([
                 if (sn === 'complete' || sn === 'completed') {
                     response.statusClass = 'text-success';
                 }
+            }
+
+            if ((response.isInterdisciplinary === 'true' || response.isInterdisciplinary === true) && response.interdisciplinaryType === 'parent') {
+                response.interdisciplinaryBool = true;
+            } else {
+                response.interdisciplinaryBool = false;
             }
 
             response.addendaText = appletHelper.formatAddenda(response);

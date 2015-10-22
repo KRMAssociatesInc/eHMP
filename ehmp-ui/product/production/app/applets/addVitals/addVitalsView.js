@@ -178,7 +178,11 @@ define([
                 'regionName': 'addVitalsDialog'
             };
 
-            ADK.showWorkflowItem(this, options);
+            var modal = new ADK.UI.Modal({
+                view: this,
+                options: options
+            });
+            modal.show();
         }
 
     });

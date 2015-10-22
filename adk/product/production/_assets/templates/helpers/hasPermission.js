@@ -1,18 +1,7 @@
 define(['handlebars', 'api/UserService', 'underscore'], function(Handlebars, UserService, _) {
     function hasPermission(args, options) {
         'use strict';
-        var authorized;
-        var permissions = args.split(/[|&]/);
-
-        if (args.match(/&/)) {
-            authorized = _.all(permissions, function(permission) {
-                return UserService.hasPermission(permission);
-            });
-        } else {
-            authorized = _.any(permissions, function(permission) {
-                return UserService.hasPermission(permission);
-            });
-        }
+        var authorized = UserService.hasPermissions(args);
 
         if (authorized) {
             return options.fn(this);

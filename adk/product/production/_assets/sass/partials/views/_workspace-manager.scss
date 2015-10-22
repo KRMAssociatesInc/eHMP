@@ -1,0 +1,79 @@
+.workspace-manager-container {
+    .toolbar {
+        background-color: $primary;
+        overflow: hidden;
+        padding: 5px;
+        width: 100%;
+        > .col-xs-3 {
+            text-align: right;
+            .btn {
+                background: transparent;
+                color: $white;
+                font-size: 11px;
+                padding: 3px 6px;
+            }
+        }
+        h2 {
+            border: none;
+            color: $white;
+            font-size: 14px;
+            margin: 4px 0 0 0;
+            padding: 0;
+            text-transform: uppercase;
+        }
+    }
+    .popover {
+        padding: 10px 0px 0px 0px;
+        .arrow {
+            padding: 0px
+        }
+        .popover-inner {
+            padding: 0px;
+            .popover-content {
+                min-width: 250px;
+                padding: 0px;
+                .association-conditions-wrapper {
+                    > div {
+                        &:first-child {
+                            padding: 0px 10px;
+                            input {
+                                min-width: 200px;
+                            }
+                        }
+                        &:nth-of-type(2) {
+                            > div {
+                                padding: 10px 0px;
+                                h3 {
+                                    border: none;
+                                    color: transparentize($grey-darkest, .4);
+                                    font-size: 11px;
+                                    font-style: italic;
+                                    font-weight: initial;
+                                    margin: 0px;
+                                    padding: 0px 10px;
+                                    padding-bottom: 10px;
+                                }
+                                .association-condition {
+                                        border-top: 1px solid $grey-light;
+                                        padding: 3px 10px;
+                                    &:active, &:focus, &:hover {
+                                        background-color: $primary-lightest;
+                                    }
+                                    &:last-child {
+                                        border-bottom: 1px solid $grey-light;
+                                    }
+                                    > button {
+                                        background-color: transparent;
+                                        float: right;
+                                        font-size: 11px;
+                                        padding: 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -9,11 +9,37 @@
 @import "variables";
 
 //
-//  adk
+//  reset
 //  --------------------------------------------------
-@import "adk-base";
+@import "partials/adk/reset";							// resets
+@import "partials/adk/helper-classes";					// helper classes
 
 //
-//  ehmp theme
+//  regions of the app
 //  --------------------------------------------------
-@import "ehmp-theme";
+@import "partials/adk/header-region"; 					// header
+@import "partials/adk/patient-demographic-region"; 		// patient information
+@import "partials/adk/navigation-region"; 				// navigation
+@import "partials/adk/center-region";					// main content
+@import "partials/adk/bottom-region";					// footer
+@import "partials/adk/sign";							// sign
+
+//
+//  to be moved back into the region partials
+//  --------------------------------------------------
+@import "partials/adk/misc";							// still being sorted out
+
+//
+//  layout
+//  --------------------------------------------------
+@import "partials/adk/layout";							// layout
+
+//
+//  to be moved back into ehmp-ui once cleaned up
+//  --------------------------------------------------
+@import "partials/adk/gist";							// applet box(s) related
+
+//
+//  comet's 1.3 classes
+//  --------------------------------------------------
+@import "ui-components";

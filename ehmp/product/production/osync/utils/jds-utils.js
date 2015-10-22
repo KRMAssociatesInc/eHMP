@@ -3,6 +3,9 @@
 var _ = require('lodash');
 var url = require('url');
 var request = require('request');
+var S = require('string');
+var nullUtil = require(global.OSYNC_UTILS + 'null-utils');
+
 
 function saveToJDS(log, config, key, value, cb) {
 
@@ -58,5 +61,18 @@ function getFromJDS(log, config, key, cb) {
     });
 }
 
+function isIcn(pid) {
+    if (nullUtil.isNotNullish(pid) && S(pid).contains(';')) {
+        return false;
+    }
+
+    if (nullUtil.isNotNullish(pid)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 module.exports.saveToJDS = saveToJDS;
 module.exports.getFromJDS = getFromJDS;
+module.exports.isIcn = isIcn;

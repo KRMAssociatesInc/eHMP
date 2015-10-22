@@ -199,7 +199,7 @@ define([
 
             if (ADK.UserService.hasPermission('add-patient-immunization') && ADK.PatientRecordService.isPatientInPrimaryVista()) {
                 dataGridOptions.onClickAdd = function() {
-                    immunizationChannel.command('openImmunizationSearch', 'immunization_add');
+                    immunizationChannel.command('addImmunization');
                 };
             }
 
@@ -259,12 +259,17 @@ define([
                         */
                     };
 
-                    ADK.showModal(view, modalOptions);
+                    var modal = new ADK.UI.Modal({
+                        view: view,
+                        options: modalOptions
+                    });
+                    modal.show();
+
+
                 }
             };
 
             fetchOptions.onSuccess = function() {
-                dataGridOptions.collection.reset(dataGridOptions.collection.originalModels);
                 if (dataGridOptions.collection.length > 0) {
                     $('#data-grid-immunizations tbody tr').each(function() {
                         $(this).attr("data-infobutton", $(this).find('td:first').text());
@@ -284,6 +289,11 @@ define([
     });
     // expose gist detail view through messaging
     var channel = ADK.Messaging.getChannel('immunizations');
+    
+    channel.on('addView', function() {
+        immunizationChannel.command('addImmunization');
+    });    
+    
     channel.on('getDetailView', function(params) {
         if (DEBUG) console.log("Immunizations gistDetailView ----->>");
         var view = new ModalView({
@@ -310,7 +320,11 @@ define([
                 theView: view
             }),
         };
-        ADK.showModal(view, modalOptions);
+        var modal = new ADK.UI.Modal({
+            view: view,
+            options: modalOptions
+        });
+        modal.show();
     });
     // expose detail view through messaging
     channel.reply('detailView', function(params) {
@@ -349,15 +363,17 @@ define([
         initialize: function(options) {
             var self = this;
             this._super = ADK.AppletViews.PillsGistView.prototype;
-            fetchOptions.onSuccess = function() {
-                self.appletOptions.collection.reset(self.appletOptions.collection.models);
-            };
             this.appletOptions = {
                 filterFields: ["name"],
                 collectionParser: gistConfiguration.transformCollection,
                 gistModel: gistConfiguration.gistModel,
                 collection: ADK.PatientRecordService.fetchCollection(fetchOptions)
             };
+            if (ADK.UserService.hasPermission('add-patient-immunization') && ADK.PatientRecordService.isPatientInPrimaryVista()) {
+                this.appletOptions.onClickAdd = function(){
+                    immunizationChannel.command('addImmunization');
+                };
+            }
             this._super.initialize.apply(this, arguments);
         }
     });

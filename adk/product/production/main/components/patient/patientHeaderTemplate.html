@@ -1,5 +1,5 @@
 <div class="panel panel-default no-margin bg-info">
-    <div class="panel-heading container-fluid">
+    <div class="panel-heading container-fluid row">
         <div id="patientDemographic-patientInfo" class="dropdown col-md-3 borderRight {{#if useCcow}}{{#unless ccowConnected}}warning{{/unless}}{{/if}}">
         <form>
             <div id="patientDemographic-patientInfo-detail" class="media" role="button" data-toggle="dropdown" tabindex="0">
@@ -83,7 +83,7 @@
             </span>
             <div id="cwad-details" class="well well-sm hidden" data-current-cwad="none"></div>
         </div>
-        {{#hasPermission 'patient-visit'}}
+        {{#hasPermission 'edit-patient-visit'}}
         <div id="patientDemographic-visitInfo" class="col-md-2 borderRight">
             <div class="row" type="button" id="setVisitContextBtn" tabindex="0">
                 <div class="col-md-12">
@@ -93,7 +93,7 @@
                         <span class="text-muted">Location:</span> {{ifnull visit.locationDisplayName 'No visit set'}}
                     </div>
                     <div>
-                        <span class="text-muted">Provider:</span> {{ifnull visit.selectedProvider.displayName 'unassigned'}}
+                        <span class="text-muted">Provider:</span> {{ifnull visit.selectedProvider.name 'unassigned'}}
                     </div>
                 </div>
             </div>
@@ -197,10 +197,12 @@
                 </form>
             </div>
         </div>
+        <!--
+        // commented out during css re-architect bc it is breaking the layout
         <div id="patientDemographic-btn" class="col-md-2">
-            <!--<div id="new-order" type="button" class="btn" data-toggle="dropdown">
+            <div id="new-order" type="button" class="btn" data-toggle="dropdown">
                 + New Order
-            </div>-->
+            </div>
             <div class="dropdown-menu new-order-dropdown">
                     <div id="sidebar-wrapper">
                         <ul class="sidebar-nav">
@@ -228,10 +230,10 @@
         </div>
         <div>
 
-        </div>
+        </div>-->
          {{#if isInVista}}
         {{#hasPermission 'add-patient-problem|add-patient-allergy|add-patient-vital'}}
-        <div id="patientDemographic-btn" class="col-md-2">
+        <div id="patientDemographic-newObservation" class="col-md-2">
             <div id="new-observation" type="button" class="btn" data-toggle="dropdown">
             + New Observation
             </div>
@@ -278,12 +280,26 @@
                             <!--<li type="button" class="applet-add-button" tabindex="0" title="Add Item">
                                     Smoking Status
                             </li>-->
+                            <li type="button" id="addSignature" class="applet-add-button" tabindex="0" title="Add Signature">
+                                    <div class="center-block text-center panel-title">Sign</div>
+                                            <span class="fa fa-edit">
+                                            <span class="sr-only">Add Signature</span>
+                                            </span>
+                            </li>
                         </ul>
                     </div>
             </div>
 
         </div>
         {{/hasPermission}}
+        <div id="patientDemographic-notes" class="dropdown col-md-2">
+            <button id="notes-list-btn" type="button" class="btn" data-toggle="dropdown">
+            Notes
+            </button>
+            <div id="notes-tray-dropdown-menu" class="dropdown-menu notes-slider">
+                <form id="notes-tray" tabIndex="1" class="note-form-height" data-toggle="popover"></form>
+            </div>
+        </div>
         {{/if}}
     </div>
 </div>

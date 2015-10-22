@@ -123,7 +123,7 @@ define([
             //     })
             // };
 
-            // ADK.showModal(view, modalOptions);
+            // ADK.UI.Modal.show(view, modalOptions);
             var AppletUiHelper = require('app/applets/lab_results_grid/appletUiHelpers');
             AppletUiHelper.getDetailView(model, null, dataCollection, true, AppletUiHelper.showModal, AppletUiHelper.showErrorModal);
         }

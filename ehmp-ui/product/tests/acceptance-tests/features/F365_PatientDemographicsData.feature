@@ -1,10 +1,10 @@
-@F365 @PatientDemoData
+@F365 @PatientDemoData @regression
 
 Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 
 # POC: Team Saturn
 
-@F365-3.OutPatientPanorama @US5116 @US5587 @US4456
+@F365-3.OutPatientPanorama @US5116 @US5587 @US4456 @DE1455
 	Scenario: Patient Information: Demographic drop down "Data" in Panorama for Outpatient
 	Given user is logged into eHMP-UI
 	And user searches for and selects "twentythree,patient"
@@ -15,12 +15,12 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	Then Cover Sheet is active
 	Then user selects Patient Name drop down
 	#Field data
-	And the Patient's "Home Phone" is "(843) 555-3456"
+	And the Patient's "Home Phone" is "(843) 555-1234"
 	And the Patient's "Cell Phone" is "(843) 555-5678"
 	And the Patient's "Work Phone" is "(843) 555-2345"
 	And the Patient's "Home Address line1" is ""
-	And the Patient's "Temp Address line1" is "temp address"
-	And the Patient's "Temp Address line2" is "wando, SC, 29492"
+	And the Patient's "Home Address line1" is "home address"
+	And the Patient's "Home Address line2" is "charleston, SC, 29492"
 	And the Patient's "Email_1" is "23@EXAMPLE.COM "
 	And the Patient's "Sister" is "veteran,sister"
 	And the Patient's "Emergency Home Phone" is "(843) 555-0987"
@@ -88,7 +88,7 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	And the Patient's "Marital Status" is "never married"
 	And the Patient's "Religion" is "confucianism"
 
-@F365-3.3_InPatientKodak @US5116 @US5587 
+@F365-3.3_InPatientKodak @US5116 @US5587 @DE1309
 	Scenario: Patient Information: Demographic drop down "Data" in Kodak for Inpatient
 	Given user is logged into eHMP-UI as kodak user
 	And user searches for and selects "twentythree,inpatient"
@@ -100,6 +100,18 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	Then user selects Patient Name drop down
 	#Field data
 	And the Patient's "Home Phone" is "(555) 555-0083"
+
+@F365-3.3_InPatientKodak2 @US5116 @US5587 @DE1309
+	Scenario: Patient Information: Demographic drop down "Data" in Kodak for Inpatient
+	Given user is logged into eHMP-UI as kodak user
+	And user searches for and selects "twentythree,inpatient"
+	Then Cover Sheet is active
+	Then the "patient identifying traits" is displayed with information
+	| field			| value 				|
+	| patient name	| Twentythree,Inpatient		|
+	Then Cover Sheet is active
+	Then user selects Patient Name drop down
+	#Field data
 	And the Patient's "Cell Phone" is "(555) 555-9833"
 	And the Patient's "Work Phone" is "(555) 555-9832"
 	And the Patient's "Home Address line1" is "Any Street"
@@ -111,7 +123,7 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	And the Patient's "Service Connected" is "No"
 	And the Patient's "Veteran Status" is "Yes"
 
-@F365-3.4_OutPatientKodak @US5116 @US5587
+@F365-3.4_OutPatientKodak @US5116 @US5587 @DE1309
 	Scenario: Patient Information: Demographic drop down "Data" in Kodak for Outpatient
 	Given user is logged into eHMP-UI as kodak user
 	And user searches for and selects "twentythree,patient"
@@ -122,10 +134,9 @@ Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 	Then Cover Sheet is active
 	Then user selects Patient Name drop down
 	#Field data
-	And the Patient's "Home Phone" is "(222) 555-8235"
 	And the Patient's "Work Phone" is "(222) 555-7720"
-	And the Patient's "Home Address line1" is "Any Street"
-	And the Patient's "Home Address line2" is "Any Town, WV, 99998"
+	And the Patient's "Temp Address line1" is "Temp Address"
+	And the Patient's "Temp Address line2" is "Wando, SC, 29492"
 	And the Patient's "NOK Brother" is "veteran,brother"
 	And the Patient's "Service Connected" is "Yes"
 	And the Patient's "Insurance Name" is "MEDICARE"

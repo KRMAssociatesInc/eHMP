@@ -12,6 +12,8 @@ class ActiveMedications < AccessBrowserV2
   def initialize
     super
     
+    add_action(CucumberLabel.new("Amoxapine Tablet Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "//*[data-appletid=activeMeds]/descendant::a[@id='info-button-sidekick-detailView']"))
+    
   end
 end
 
@@ -24,7 +26,20 @@ When(/^the user clicks the row that contains "(.*?)" in the Active Medications A
   expect(active_medications.perform_action("Row to click")).to be_true
 end
 
+Then(/^user selects the "(.*?)" detail icon in Active Medications Applet$/) do |arg1|
+  label = "#{arg1} Detail View Icon"
+  active_medications = ActiveMedications.instance
+  expect(active_medications.perform_action(label)).to be_true
+end
+
 Then(/^the Active Medications Applet table contains rows$/) do |table|
   wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
-  wait.until { VerifyTableValue.compare_specific_row(table, '[data-appletid=activeMeds] #grid-panel-activeMeds') }
+  con = VerifyTableValue.new 
+  driver = TestSupport.driver
+  wait.until {  
+    browser_elements_list = driver.find_elements(:css, "#data-grid-activeMeds tbody tr")  
+    con.perform_table_verification(browser_elements_list, "//table[@id='data-grid-activeMeds']", table)
+  }
 end
+
+

@@ -1,0 +1,163 @@
+// .faux-table styles
+.faux-table {
+    border-collapse: collapse;
+    display: table;
+    line-height: normal;
+    overflow: hidden;
+    padding: 0;
+    margin: 20px 0px;
+    margin-bottom: 9px;
+    width: 100%;
+    .header {
+        display: table-header-group;
+        margin: 0;
+        background-color: $primary-lightest;
+        font-weight: normal;
+        color: $grey-darkest;
+        border-top: 1px solid $grey-light;
+        font-weight: bold;
+        border-right: 1px solid $grey-light;
+        border-left: 1px solid $grey-light;
+        > div {
+            display: table-row;
+            > div {
+                display: table-cell;
+                vertical-align: middle;
+                white-space: nowrap;
+                > div {
+                    display: block;
+                    position: relative;
+                    margin: 0 6px;
+                }
+            }
+        }
+    }
+    .body {
+        display: table-row-group;
+        word-break: break-word;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        border-right: 1px solid $grey-light;
+        border-left: 1px solid $grey-light;
+        > div, > a {
+            list-style: none;
+            display: table-row;
+            background: $white;
+			&.table-row {
+                &:nth-of-type(1) {
+                    border-top: 1px solid $grey-light;
+                }
+                &:last-child {
+                    border-bottom: 1px solid $grey-light;
+                }
+                &.locked {
+                    background: $grey-lighter;
+                    .icon:hover {
+                        color: inherit;
+                    }
+                    &:hover {
+                        background-color: $secondary-lighter;
+                    }
+                }
+				&.active {
+					background-color: $secondary-light;
+					color: $grey-darkest;
+				}
+                .num-chart {
+                    width: 2%;
+                    > span > * {
+                        display: inline-block;
+                        vertical-align: middle;
+                        &:first-child {
+                            width: 12%;
+                            text-align: center;
+                        }
+                        &.high-chart-placeholder {
+                            width: 78%;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+			}
+            > div {
+                display: table-cell;
+                vertical-align: middle;
+                .icon {
+                    background-color: transparent;
+                    font-size: 11px;
+                }
+                input {
+                    padding: 2px 10px;
+                    width: 100%;
+                }
+                a {
+                    color: $black;
+                    &.locked {
+                        color: transparentize($grey-darkest, .4);
+                        cursor: default;
+                    }
+                }
+                .form-group {
+                    margin-bottom: 0px;
+                    > input {
+                        font-size: 11px;
+                        height: 24px;
+                        width: 100%;
+                        word-break: initial;
+                    }
+                    .checkbox input {
+                        margin-top: -6px;
+                    }
+                }
+                .icon-btn-mini {
+                    padding: 2px;
+                }
+                > * {
+                    display: block;
+                    padding: 0px 5px;
+                }
+            }
+            &:nth-child(2n) {
+                background-color: $primary-lightest;
+            }
+            &:active, &:focus, &:hover {
+                background-color: $secondary-lighter;
+            }
+            a {
+                text-decoration: none;
+            }
+        }
+        > a {
+            text-decoration: none;
+        }
+        [role="button"], [role="link"] {
+          cursor: pointer;
+        }
+        .form-group {
+            margin: 0px;
+            padding: 0px;
+            .checkbox {
+                margin: 0px;
+            }
+        }
+    }
+}
+
+
+// .faux-table-container and main-header styles, ONLY!
+// not all faux-tables will have a main header. those that do should use a 
+// div with a class of .faux-table-container as a wrapper element that will 
+// contain .main-header element (styled below) and .faux-table element (styled above)  
+.faux-table-container {
+    .main-header {
+        background-color: $primary-lightest;
+        color: $primary;
+        border-right: 1px solid $grey-light;
+        border-left: 1px solid $grey-light;
+        border-top: 1px solid $grey-light;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 0 10px;
+    }
+}

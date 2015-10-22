@@ -566,7 +566,7 @@ describe('enterprise-sync-request-handler.js', function() {
             }, 'should return an error that is ', 1000);
 
             runs(function() {
-                expect(expectedError).toEqual('mvi error');
+                expect(expectedError.message).toEqual('mvi error');
             });
         });
 

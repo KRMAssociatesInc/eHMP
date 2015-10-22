@@ -8,7 +8,7 @@ define([
         //this should get stripped out when server sorting works. To do that
         //we need a common date field across every record (referenceDateTime is created after the data is loaded
         //into the applet.
-        collection.comparator = function(left, right) {
+        collection.fullCollection.comparator = function(left, right) {
             var l=left.get('referenceDateTime'), r=right.get('referenceDateTime');
             if(l === r) {
                 return 0;
@@ -16,17 +16,18 @@ define([
             else if(l < r) return 1;
             else return -1;
         };
-        collection.sort();
+        collection.fullCollection.sort();
 
         this.trigger("resetCollection", collection);
     }
 
     var CollectionHandler = {
-        queryCollection: function(obj) {
+        queryCollection: function(context, existingCollection) {
             console.log('documents queryCollection');
+            var self = this;
             var fetchOptions = {
                 cache: false,
-                pageable: false,
+                pageable: true,
                 collectionConfig: {},
                 resourceTitle: 'patient-record-document-view',
                 viewModel: {
@@ -35,14 +36,14 @@ define([
                     }
                 },
                 criteria:{
-                    filter: 'or(' + obj.buildJdsDateFilter('referenceDateTime') + ',' + obj.buildJdsDateFilter('dateTime') + '),' +
+                    filter: 'or(' + context.buildJdsDateFilter('referenceDateTime') + ',' + context.buildJdsDateFilter('dateTime') + '),' +
                         'not(and(in(kind,["Consult","Imaging","Procedure"]),ne(statusName,"COMPLETE")))' //fill out incomplete consults, images and procedures.
 
-                }
+                },
+                onSuccess: _.bind(processCollection, this)
             };
 
-            this.docItems = ADK.PatientRecordService.fetchCollection(fetchOptions);
-            this.docItems.on("sync", processCollection, this);
+            ADK.PatientRecordService.fetchCollection(fetchOptions, existingCollection);
         }
     };
 

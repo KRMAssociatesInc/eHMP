@@ -3,7 +3,7 @@ Feature: F281-Intervention Gist View
 
 #POC: Team Jupiter
 
-@F281_1_Overview @US3489 
+@F281_1_Overview @US3489
 Scenario: User views the Overview screen
 	Given user is logged into eHMP-UI
 	And user searches for and selects "BCMA,Eight"
@@ -18,5 +18,5 @@ Scenario: User views the Overview screen
 		| VITALS				|
 		| IMMUNIZATIONS			|
 		| LAB RESULTS			|
-		| MEDICATIONS			|
+		| ACTIVE MEDICATIONS			|
     

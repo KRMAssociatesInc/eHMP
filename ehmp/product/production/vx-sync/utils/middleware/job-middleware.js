@@ -7,7 +7,6 @@ var format = require('util').format;
 var logUtil = require('../log');
 var inspect = require('../inspect');
 
-var JdsClient = require(global.VX_SUBSYSTEMS + 'jds/jds-client');
 var JobStatusUpdater = require(global.VX_JOBFRAMEWORK + 'JobStatusUpdater');
 
 /**
@@ -17,7 +16,7 @@ function JobAPI(setLog, setConfig, setEnvironment) {
     if (!(this instanceof JobAPI)) { return new JobAPI(setLog, setConfig, setEnvironment); }
     if (_.isUndefined(setEnvironment)) { setEnvironment = {}; }
     this.jobStatusUpdater = setEnvironment.jobStatusUpdater || new JobStatusUpdater(setLog, setConfig);
-    this.jdsClient = setEnvironment.jds || new JdsClient(setLog, setConfig);
+    this.jdsClient = setEnvironment.jds;
     this.log = logUtil.getAsChild('job-util', setLog);
     // this.log = setLog;
     this.config = setConfig;
@@ -136,7 +135,7 @@ var jobVerification = function(allowedStatus, req, res, next) {
             res.currentJob = currentJob;
             next();
         } else {
-            res.status(200).json(currentJob);
+            res.status(200).json(currentJob[0]);
         }
     } else {
         next();

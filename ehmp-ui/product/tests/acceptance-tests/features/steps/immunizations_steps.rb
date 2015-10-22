@@ -43,7 +43,7 @@ Then(/^the immunizations table contains rows$/) do |table|
   driver = TestSupport.driver
   num_of_rows = driver.find_elements(:css, "#data-grid-immunizations>tbody>tr")
   #Loop through rows in cucumber   
-  table.rows.each do | row_defined_in_cucumber |
+  table.rows.each do |row_defined_in_cucumber|
     matched = false
     p "Checking new row"
     #Loop through UI rows
@@ -64,7 +64,7 @@ Then(/^the immunizations table contains rows$/) do |table|
     p "could not match data: #{row_defined_in_cucumber}" unless matched  
     driver.save_screenshot("incorrect_rows.png") unless matched
     expect(matched).to be_true
-  end#do loop  
+  end #do loop  
 end #Problems coversheet
 
 #Check the number of pages
@@ -91,7 +91,7 @@ def verify_immunizations_primary_table_headers(access_browser_instance, table)
   expect(headers.length).to_not eq(0)
   expect(headers.length).to eq(table.rows.length)
   elements = access_browser_instance
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     does_exist = elements.static_dom_element_exists? header_text[0]
     p "#{header_text[0]} was not found" unless does_exist
     expect(does_exist).to be_true

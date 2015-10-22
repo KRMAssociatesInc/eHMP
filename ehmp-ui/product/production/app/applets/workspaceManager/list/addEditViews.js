@@ -439,10 +439,10 @@
 //                     $('.editScreenForm').hide();
 //                 }else{
 //                     ScreenBuilder.deleteUserScreen(screenId);
-//                     ADK.hideFullscreenOverlay();
+//                     ADK.UI.FullScreenOverlay.hide();
 //                     var channel = ADK.Messaging.getChannel('workspaceManagerChannel');
 //                     channel.trigger('workspaceManager', function() {
-//                         var view = ADK.showFullscreenOverlay(new AppletLayoutView(), {
+//                         var view = ADK.UI.FullScreenOverlay.show(new AppletLayoutView(), {
 //                             'callShow': true
 //                         });
 //                     });
@@ -458,10 +458,10 @@
 //                 var self = this;
 //                 var screenTitle = $.find('.editScreenForm form #screen-title')[0].value;
 //                 ScreenBuilder.deleteUserScreen(screenTitle);
-//                 ADK.hideFullscreenOverlay();
+//                 ADK.UI.FullScreenOverlay.hide();
 //                 var channel = ADK.Messaging.getChannel('workspaceManagerChannel');
 //                 channel.trigger('workspaceManager', function() {
-//                     var view = ADK.showFullscreenOverlay(new AppletLayoutView(), {
+//                     var view = ADK.UI.FullScreenOverlay.show(new AppletLayoutView(), {
 //                         'callShow': true
 //                     });
 //                 });

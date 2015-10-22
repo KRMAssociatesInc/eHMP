@@ -1,0 +1,57 @@
+.datepicker {
+    .datepicker-days {
+        table thead tr {
+            &:last-of-type {
+                border: 1px solid $primary-light;
+            }
+            th.dow {
+                background-color: $primary-light;
+                border-radius: 0;
+                color: white;
+            }
+
+        }
+        table tbody tr td {
+            border: 1px solid #BABABA;
+            color: $grey-darkest;
+        }
+    }
+    table tr {
+        &:nth-child(even) {
+            background-color: inherit;
+        }
+        td, th {
+            border-radius: 0;
+        }
+        td {
+            &.old, &.new {
+                color: $grey-darkest;
+                background-color: $primary-lightest;
+            }
+            &.today.day.active {
+                color: $white;
+            }
+            &.today,
+            &.today:hover,
+            &.today.disabled,
+            &.today.disabled:hover,
+            &.today:hover,
+            &.today:hover:hover {
+                border: 1px solid #BABABA;
+            }
+            &.active.active,
+            &.active.active,
+            &.active:hover.active {
+                border: 1px solid #BABABA;
+            }
+        }
+    }
+    .datepicker-days table thead tr th.prev:before,
+    .datepicker-days table thead tr th.next:before,
+    .datepicker-months table thead tr th.prev:before,
+    .datepicker-months table thead tr th.next:before,
+    .datepicker-years table thead tr th.prev:before,
+    .datepicker-years table thead tr th.next:before {
+        content: ""
+    }
+}

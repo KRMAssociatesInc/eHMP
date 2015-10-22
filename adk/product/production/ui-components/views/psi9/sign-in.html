@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>eHMP Bootstrap UI Library - Sign In</title>
+        <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+        <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+        <link rel="stylesheet" href="../../../app/css/applets.css">
+        <link rel="stylesheet" href="../../css/main-styles.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700" />
+        <script src="../../js/jquery-1.11.2.min.js"></script>
+    </head>
+    <body>
+        <div class="container sign-in-container">
+            <header>
+            	<div class="row">
+                	<div class="col-md-12">
+                    	<img src="../../img/logo-dpt-va.png" width="130" height="130" class="img-responsive logo pull-left" alt="Department of Veteran Affairs Logo" />
+                        <h1 class="sign-in-heading">Enterprise Health Management Platform</h1>
+                    </div>
+                </div>
+            </header>
+
+            <div class="row">
+                <div class="col-md-6" id="disclaimer">
+                	<a href="#sign-in" class="sr-only">Skip to sign in</a>
+                    <h2>eHMP Disclaimer</h2>
+                        
+                    <p>This site is intended to be used by authorized VA network users for viewing and retrieving information only except as otherwise explicitly authorized. VA information resides on and transmits through computer systems and networks funded by VA; all use is considered to be understanding and acceptance that there is no reasonable expectation of privacy for any data or transmissions on Government Intranet or Extranet (non-public) networks or systems.  All transactions that occur on this system other than the viewing and downloading of Web site information and all data transmitted through this system are subject to review and action including (but not limited to) monitoring, recording, retrieving, copying, auditing, inspecting, investigating, restricting access, blocking, tracking, disclosing to authorized personnel, or any other authorized actions by all authorized VA and law enforcement personnel. All use of this system constitutes understanding and unconditional acceptance of these terms.</p>
+                        
+                    <p>Unauthorized attempts or acts to either (1) access, upload, change, or delete information on this system, (2) modify this system, (3) deny access to this system, or (4) accrue resources for unauthorized use on this system are strictly prohibited. Such attempts or acts are subject to action that may result in criminal, civil, or administrative penalties.</p>
+
+                    <p>Browser support: Internet Explorer 9+</p>
+                        
+                    <p>Recommended window size: 1280 x 800px</p>
+                </div>
+                <div class="col-md-6" id="sign-in">
+                    <h2>User Sign In</h2>
+                    <form action="#" method="post">
+                        <div class="form-group input-group">
+                            <label for="facility" class="sr-only">Facility</label>
+                            <span class="input-group-addon"><i class="fa fa-hospital-o"></i></span>
+                            <select class="form-control" name="facility" title="Please select a facility" id="facility" required>
+                                <option disabled selected>Facility</option>
+                                <option value="panorama">Panorama</option>
+                                <option value="kodak">Kodak</option>
+                            </select>
+                        </div>
+                            
+                        <div class="form-group input-group">
+                            <label for="access-code" class="sr-only">Access Code</label>
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input class="form-control" type="text" name="access-code" title="Please enter in your access code" id="access-code" placeholder="Access Code" required />
+                        </div>  
+                            
+                        <div class="form-group input-group">
+                            <label for="verify-code" class="sr-only">Verify Code</label>
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input class="form-control" type="text" name="verify-code" title="Please verify access code" id="verify-code" placeholder="Verify Code" required />
+                        </div>     
+                            
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-default btn-block" value="Sign In" />
+                        </div>               
+    
+                        <p><a href="#">Need help with signing in?</a></p>
+                    </form>	
+                </div>
+            </div>
+		</div><!--end container-->
+    </body>
+</html>

@@ -32,6 +32,14 @@ define([
     //      appletConfig            : {id, instanceId, fullscreen}
     // }
 
+    function markInfobuttonData(that) {
+        if (that.appletOptions.collection.length > 0 && !_.isUndefined(that.appletOptions.tblRowSelector)) {
+            $(that.appletOptions.tblRowSelector).each(function() {
+                $(this).attr("data-infobutton", $(this).find('td:nth-child(2)').text().replace('Panel', ''));
+            });
+        }
+    }
+
     var baseDisplayApplet = BaseDisplayApplet;
 
     var GridView = BaseDisplayApplet.extend({
@@ -72,6 +80,11 @@ define([
             }
             this.appletOptions.AppletView = DataGrid.returnView(this.appletOptions);
             this._base.initialize.apply(this, arguments);
+
+            this.appletOptions.collection.markInfobutton = {
+                'that': this,
+                'func': markInfobuttonData
+            };
         },
         onRender: function() {
             this._base.onRender.apply(this, arguments);
@@ -82,7 +95,6 @@ define([
                         self.fetchRows(event);
                     });
                 }
-
             }
         },
         fetchRows: function(event) {
@@ -90,18 +102,29 @@ define([
             if ((e.scrollTop + e.clientHeight + SCROLL_TRIGGERPOINT > e.scrollHeight) && this.appletOptions.collection.hasNextPage()) {
                 event.preventDefault();
                 this.appletOptions.collection.setPageSize(this.appletOptions.collection.state.pageSize + SCROLL_ADDITIONAL_ROWS);
-                if (this.filterView) {
+                var filterText = SessionStorage.getAppletStorageModel(this.appletConfig.instanceId, 'filterText',false);
+                if (this.filterView && (this.filterView.userDefinedFilters.length > 0 || (!_.isUndefined(filterText) && !_.isNull(filterText) && filterText !== ''))) {
                     this.filterView.doSearch();
+                }
+                if (this.appletOptions.collection.length > 0 && !_.isUndefined(this.appletOptions.tblRowSelector)) {
+                    $(this.appletOptions.tblRowSelector).each(function() {
+                        $(this).attr("data-infobutton", $(this).find('td:nth-child(2)').text().replace('Panel', ''));
+                    });
                 }
             }
         },
         onSync: function() {
+            if (this.filterView) {
+                this.filterView.doSearch();
+            }
             this._base.onSync.apply(this, arguments);
             if (this.appletOptions.collection instanceof Backbone.PageableCollection) {
                 if (this.appletConfig.fullScreen || this.appletConfig.fullScreen === true) {
                     var self = this;
                     var elementToScroll;
-                    if (this.$el.find('#grid-panel-' + this.appletConfig.instanceId).length > 0) {
+                    if (!_.isUndefined(this.appletOptions.toolbarView)) {
+                        elementToScroll = this.$el.find('.data-grid');
+                    }else if (this.$el.find('#grid-panel-' + this.appletConfig.instanceId).length > 0) {
                         elementToScroll = this.$el.find('#grid-panel-' + this.appletConfig.instanceId);
                     } else {
                         elementToScroll = this.$el.find('.data-grid-' + this.appletConfig.instanceId);
@@ -144,7 +167,11 @@ define([
             this.loading();
 
             this.displayAppletView = DataGrid.create(this.appletOptions);
-            collection.reset();
+            if (collection instanceof Backbone.PageableCollection) {
+                collection.fullCollection.reset();
+            } else {
+                collection.reset();
+            }
             ResourceService.fetchCollection(collection.fetchOptions, collection);
         },
         expandRowDetails: function(routeParam) {

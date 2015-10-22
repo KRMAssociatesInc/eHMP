@@ -1,0 +1,114 @@
+.esignature-container {
+	.scroll-enter-form {
+		padding-top: 15px!important;
+		.related-conditions-container {
+			display: block;
+			float: left;
+			padding: 0 10px;
+			width: 100%;
+			.related-conditions-header {
+				display: flex;
+				float: right;
+				margin: 1px -1px 0 1px;
+				.radios-header {
+					background-color: $white;
+					border-top-left-radius: 3px;
+					border-top-right-radius: 3px;
+					border: 1px solid $grey;
+					border-bottom: none;
+					margin: 0 2px;
+					padding: 2px;
+					width: 50px;
+					&:last-child {
+						margin-right: 1px;
+					}
+					a {
+						font-size: 11px;
+						padding: 3px;
+						width: 100%;
+					}
+				}
+			}
+			.related-conditions-row {
+				background-color: $white;
+				border: 1px solid $grey;
+				margin-bottom: 2px;
+				overflow: hidden;
+				width: 100%;
+				&.validation-warning {
+					border-color: $red;
+				}
+				&.row-disabled {
+					opacity: .5;
+				}
+				fieldset {
+					.orders-flex-container {
+						display: -ms-flexbox;
+    					display: -webkit-flex;
+						display: flex;
+						p.faux-legend {
+							-webkit-flex: 1;
+						    -ms-flex: 1;
+							flex: 1;
+							margin: 0;
+							padding-left: 5px;
+						}
+						.related-conditions-radios {
+							display: flex;
+							float: right;
+							margin-right: -1px;
+							.control.form-group {
+								border: 1px solid $grey;
+								border-bottom: none;
+								border-top: none;
+								margin: 0 2px;
+								overflow: hidden;
+								padding: 0 0 2px 4px;
+								width: 50px;
+								&:last-child {
+									border-right: 0;
+									margin-right: 0;
+								}
+								.radio {
+									margin: 2px 0;
+									label {
+										display: block;
+										input {
+											margin-top: 2px;
+										}
+									}
+								}
+							}
+						}
+					}
+					.related-conditions-signing {
+						float: left;
+						padding: 0 10px;
+						width: 100%;
+					}
+					&.multiple-orders {
+						.orders-flex-container {
+							.orders-checkbox {
+								float: left;
+							    margin-left: 30px;
+							    margin-top: 10px;
+							    position: absolute;
+							}
+							p.faux-legend {
+								padding-left: 25px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.order-preview {
+		clear:both;
+		p {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

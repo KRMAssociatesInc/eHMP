@@ -5,7 +5,7 @@ $LOAD_PATH.unshift path unless $LOAD_PATH.include?(path)
 require 'VerifyJsonRuntimeValue.rb'
 
 When(/^the client requests global patient search with lname "(.*?)" and fname "(.*?)" and ssn "(.*?)" and dob "(.*?)" and Content-Type "(.*?)"$/) do |lname, fname, ssn, dob, content_type|
-  resource_query = GlobalPatientSearch.new
+  resource_query = RDKQuery.new('search-global-search')
   jsonreq = {}  # "lname"=> lname, "fname" => fname, "ssn" => ssn, "dob" => dob }
   jsonreq["name.last"] = lname unless lname.eql? "NOT DEFINED"
   jsonreq["name.first"] = fname unless fname.eql? "NOT DEFINED"
@@ -24,7 +24,8 @@ Then(/^the global patient result contains$/) do |table|
 end
 
 Then(/^the global response contains "(.*?)" message$/) do |arg1|
-  expect(@response.body).to eq(arg1)
+  @json_object = JSON.parse(@response.body)
+  expect(@json_object['message']).to eq(arg1)
 end
 
 Then(/^the global response for too many results contains error message$/) do |table|

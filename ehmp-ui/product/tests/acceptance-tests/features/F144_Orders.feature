@@ -33,7 +33,7 @@ Scenario: Opening and closing of the Orders single page view.
   Then the "Orders Applet" table contains headers
     | Order Date | Status | Order | Type | Provider Name | Start Date | Stop Date | Facility |
 
-@f144_orders_consult_modal @US2462 @TA7322 @modal_test
+@f144_orders_consult_modal @US2462 @TA7322 @modal_test @DE1232
 Scenario: Viewing modal details for Consult Order.
   Given user searches for and selects "Eight,Patient"
   And Cover Sheet is active
@@ -42,6 +42,7 @@ Scenario: Viewing modal details for Consult Order.
 
   And the applet displays orders
   When the user selects "Consult" in the Orders applet Order Type dropdown
+  Then the "Orders" applet is finished loading
   #And clicks the first result in the "Orders Applet"
   And the user selects order "01AUDIOLOGY OUTPATIENT Cons Consultant's Choice"
   Then the modal is displayed
@@ -58,8 +59,7 @@ Scenario: Viewing modal details for Consult Order.
   And under the "Current Data" headers there are the following fields
     | Field                     |
     | Attending Physician       |
-    | Treating Speciality       |
-    | Ordering Facility         |
+    | Ordering Location         |
     | Start Date/Time           |
     | Stop Date/Time            |
     | Current Status            |
@@ -92,8 +92,7 @@ Scenario: Viewing modal details for Dietetics Order.
   And under the "Current Data" headers there are the following fields
     | Field                     |
     | Attending Physician       |
-    | Treating Speciality       |
-    | Ordering Facility         |
+    | Ordering Location         |
     | Start Date/Time           |
     | Stop Date/Time            |
     | Current Status            |
@@ -103,7 +102,7 @@ Scenario: Viewing modal details for Dietetics Order.
     | Diet                      |
     | Effective Date            |
 
-@f144_orders_lab_modal @US2463 @TA7329 @modal_test @debug @DE814
+@f144_orders_lab_modal @US2463 @TA7329 @modal_test 
 Scenario: Viewing modal details for Laboratory.
   Given user searches for and selects "Eight,Patient"
   And Cover Sheet is active
@@ -114,7 +113,7 @@ Scenario: Viewing modal details for Laboratory.
   Then the "Orders" applet is finished loading
   And clicks the first result in the "Orders Applet"
   Then the modal is displayed
-  And the modal's title is "HDL BLOOD SERUM WC LB #17433"
+  And the modal's title is "CULTURE & SUSCEPTIBILITY UNKNOWN WC LB #18424"
   And the modal has the following section headers
     | Section Header       |
     | Activity             |
@@ -127,8 +126,7 @@ Scenario: Viewing modal details for Laboratory.
   And under the "Current Data" headers there are the following fields
     | Field                |
     | Attending Physician  |
-    | Treating Speciality  |
-    | Ordering Facility    |
+    | Ordering Location    |
     | Start Date/Time      |
     | Stop Date/Time       |
     | Current Status       |
@@ -136,14 +134,12 @@ Scenario: Viewing modal details for Laboratory.
   And under the "Order" headers there are the following fields
     | Field                |
     | Lab Test             |
+    | Lab #                |
     | Collected By         |
     | Collection Sample    |
     | Specimen             |
-  And the user sees the modal pop-up order
-    | field       | value         |
-    | Order #     | 33089         |
 
-@f144_orders_medication_modal @US1924 @TA5917a @modal_test
+@f144_orders_medication_modal @US1924 @TA5917a @modal_test 
 Scenario: Viewing modal details for Medication, Inpatient.
   Given user searches for and selects "Bcma,Eight"
   Then Cover Sheet is active
@@ -154,7 +150,7 @@ Scenario: Viewing modal details for Medication, Inpatient.
   When the user selects "Medication, Inpatient" in the Orders applet Order Type dropdown
   And clicks the first result in the "Orders Applet"
   Then the modal is displayed
-  And the modal's title is "IBUPROFEN TAB 800MG PO Q8H"
+  And the modal's title is "ACETAMINOPHEN TAB 325MG PO Q4H"
   And the modal has the following section headers
     | Section Header        |
     | Activity              |
@@ -167,8 +163,7 @@ Scenario: Viewing modal details for Medication, Inpatient.
   And under the "Current Data" headers there are the following fields
     | Field                 |
     | Attending Physician   |
-    | Treating Speciality   |
-    | Ordering Facility     |
+    | Ordering Location     |
     | Start Date/Time       |
     | Stop Date/Time        |
     | Current Status        |
@@ -188,7 +183,7 @@ Scenario: Viewing modal details for Medication, Non-VA.
   When the user selects "Medication, Non-VA" in the Orders applet Order Type dropdown
   And clicks the first result in the "Orders Applet"
   Then the modal is displayed
-  And the modal's title is "Non-VA CANDESARTAN TAB 16MG TAKE ONE TABLET BY MOUTH 3XW"
+  And the modal's title is "Non-VA ASPIRIN TAB,EC 81MG TAKE ONE TABLET BY MOUTH EVERY MORNING Non-VA medication recommended by VA provider."
   And the modal has the following section headers
     | Section Header        |
     | Activity              |
@@ -201,8 +196,7 @@ Scenario: Viewing modal details for Medication, Non-VA.
   And under the "Current Data" headers there are the following fields
     | Field                 |
     | Attending Physician   |
-    | Treating Speciality   |
-    | Ordering Facility     |
+    | Ordering Location     |
     | Start Date/Time       |
     | Stop Date/Time        |
     | Current Status        |
@@ -212,7 +206,7 @@ Scenario: Viewing modal details for Medication, Non-VA.
     | Medication, Non-VA    |
 
 # May need to look into sorting order for applet - doesn't appear to be working properly
-@f144_orders_medication_modal @US1924 @TA5917c @modal_test
+@f144_orders_medication_modal @US1924 @TA5917c @modal_test @DE1232
 Scenario: Viewing modal details for Medication, Outpatient.
   Given user searches for and selects "Eight,Patient"
   Then Cover Sheet is active
@@ -237,8 +231,7 @@ Scenario: Viewing modal details for Medication, Outpatient.
   And under the "Current Data" headers there are the following fields
     | Field                 |
     | Attending Physician   |
-    | Treating Speciality   |
-    | Ordering Facility     |
+    | Ordering Location     |
     | Start Date/Time       |
     | Stop Date/Time        |
     | Current Status        |
@@ -273,8 +266,7 @@ Scenario: Viewing modal details for Nursing Order.
   And under the "Current Data" headers there are the following fields
     | Field                     |
     | Attending Physician       |
-    | Treating Speciality       |
-    | Ordering Facility         |
+    | Ordering Location         |
     | Start Date/Time           |
     | Stop Date/Time            |
     | Current Status            |
@@ -286,7 +278,7 @@ Scenario: Viewing modal details for Nursing Order.
     | Clerk                     |
     | Chart Review              |
 
-@f144_orders_radiology_modal @US2465 @TA7342 @modal_test
+@f144_orders_radiology_modal @US2465 @TA7342 @modal_test @DE1232
 Scenario: Viewing modal details for Radiology Order.
   Given user searches for and selects "Eight,Patient"
   Then Cover Sheet is active
@@ -310,16 +302,15 @@ Scenario: Viewing modal details for Radiology Order.
     | Signature                 |
   And under the "Current Data" headers there are the following fields
     | Field                       |
-    | Current Attending Physician |
-    | Treating Speciality         |
-    | Ordering Facility           |
+    | Attending Physician         |
+    | Ordering Location           |
     | Start Date/Time             |
     | Stop Date/Time              |
     | Current Status              |
     | Order #                     |
 
 
-@f144_orders_infusion_modal @US2756 @TA8884 @modal_test @triage
+@f144_orders_infusion_modal @US2756 @TA8884 @modal_test @DE1452 @debug
 Scenario: Viewing modal details for IV Fluid Order.
   Given user searches for and selects "Ten,Patient"
   And Cover Sheet is active
@@ -339,9 +330,9 @@ Scenario: Viewing modal details for IV Fluid Order.
     | Signature                 |
   And under the "Current Data" headers there are the following fields
     | Field                       |
+    | Current Primary Provider    |
     | Current Attending Physician |
-    | Treating Speciality         |
-    | Ordering Facility           |
+    | Ordering Location           |
     | Start Date/Time             |
     | Stop Date/Time              |
     | Current Status              |
@@ -399,79 +390,46 @@ Scenario: Stepping through the Orders in the list.
   When the user clicks the control "Previous Button" in the "Orders modal"
   Then the modal's title is "01AUDIOLOGY OUTPATIENT Cons Consultant's Choice"
 
-@f144_orders_stepping_all @US2338 @TA6760b @modal_test @vimm
-Scenario: Stepping through the Orders in the list - across pages.
-  Given user searches for and selects "Eight,Patient"
-  Then Cover Sheet is active
 
-  #When the user clicks the control "Date Filter Toggle" on the "Coversheet"
-  #And the user waits for 5 seconds 
-  #And the user clicks the date control "All" on the "Coversheet"
-  #And the user clicks the control "Apply" on the "Coversheet"
-  And the user has selected All within the global date picker
 
-  When the user selects "All" in the Orders applet Order Type dropdown
-  #And clicks the first result in the "Orders Applet"
-  When the user selects order "01AUDIOLOGY OUTPATIENT Cons Consultant's Choice"
-  Then the modal is displayed
-  When the user clicks the control "Next Button" in the "Orders modal"
-  When the user clicks the control "Next Button" in the "Orders modal"
-  When the user clicks the control "Next Button" in the "Orders modal"
-  When the user clicks the control "Next Button" in the "Orders modal"
-  When the user clicks the control "Next Button" in the "Orders modal"
-  When the user clicks the control "Next Button" in the "Orders modal"
-  When the user clicks the control "Next Button" in the "Orders modal"
-  When the user clicks the control "Next Button" in the "Orders modal"
-  # Next item is the last item on the 1st page
-  When the user clicks the control "Next Button" in the "Orders modal"
-  Then the modal's title is "REGULAR Diet <Discharge>"
-  # Next item is the first item on the 2nd page
-  When the user clicks the control "Next Button" in the "Orders modal"
-  Then the modal's title is "HDL BLOOD SERUM WC LB #17433"
-  # Next item is the last item on the 1st page
-  When the user clicks the control "Previous Button" in the "Orders modal"
-  Then the modal's title is "REGULAR Diet <Discharge>"
 
-@f144_orders_filter_clearing @US2497 @TA7853
+# replace data specific, row counting test with f144_orders_filter_clearingb
+# @f144_orders_filter_clearing @US2497 @TA7853 @DE1237 @triage @reworked_in_firefox
+# Scenario: Orders - Clear text filters when switching quick filters.
+#   Given user searches for and selects "Eight,Patient"
+#   And Cover Sheet is active
+#   And the user has selected All within the global date picker
+#   When the user scrolls to the bottom of the Orders Applet
+#   And the "Orders Applet" table contains 447 rows
+#   When the user clicks the control "Filter Toggle" in the "Orders applet"
+#   And the user inputs "Cardiology" in the "Text Filter" control in the "Orders applet"
+#   Then the "Orders Applet" table contains 4 rows
+#   And the "Orders Applet" table contains rows
+#     | Order Date | Status   | Order                               | Facility |
+#     | 05/21/2000 | COMPLETE | CARDIOLOGY Cons Consultant's Choice | BAY      |
+#     | 05/21/2000 | COMPLETE | CARDIOLOGY Cons Consultant's Choice | BAY      |
+#   When the user selects "Lab" in the Orders applet Order Type dropdown
+#   And the user clicks the control "Filter Toggle" in the "Orders applet"
+#   And the "Text Filter" input should have the value "" in the Orders applet
+#   When the user scrolls to the bottom of the Orders Applet
+#   Then the "Orders Applet" table contains 349 rows
+
+@f144_orders_filter_clearingb @US2497 @TA7853 @DE1237 @triage 
 Scenario: Orders - Clear text filters when switching quick filters.
   Given user searches for and selects "Eight,Patient"
   And Cover Sheet is active
   And the user has selected All within the global date picker
   When the user scrolls to the bottom of the Orders Applet
-  And the "Orders Applet" table contains 445 rows
+  #And the "Orders Applet" table contains 447 rows
   When the user clicks the control "Filter Toggle" in the "Orders applet"
-  And the user inputs "Cardiology" in the "Text Filter" control in the "Orders applet"
-  Then the "Orders Applet" table contains 2 rows
-  And the "Orders Applet" table contains rows
-    | Order Date | Status   | Order                               | Facility |
-    | 05/21/2000 | COMPLETE | CARDIOLOGY Cons Consultant's Choice | BAY      |
-    | 05/21/2000 | COMPLETE | CARDIOLOGY Cons Consultant's Choice | BAY      |
+  When the user filters the Orders Applet by text "Cardiology"
   When the user selects "Lab" in the Orders applet Order Type dropdown
   And the user clicks the control "Filter Toggle" in the "Orders applet"
   And the "Text Filter" input should have the value "" in the Orders applet
   When the user scrolls to the bottom of the Orders Applet
-  Then the "Orders Applet" table contains 349 rows
+  Then the Orders Applet is not filtered by text "Cardiology"
 
-@f144_orders_filter_button_persistence @US2496 @TA7984a
-Scenario: Filter button is persisted when switching Orders applet views.
-  Given user searches for and selects "Bcma,Eight"
-  Then Cover Sheet is active
-
-  And the user has selected All within the global date picker
-  When the user scrolls to the bottom of the Orders Applet
-  And the "Orders Applet" table contains 56 rows
-  When the user selects "Laboratory" in the Orders applet Order Type dropdown
-  Then the "Orders" applet is finished loading
-  And the "Orders Applet" table contains 7 rows
-  When the user clicks the control "Expand View" in the "Orders applet"
-  Then the "Orders" single page view is displayed
-  And the "Orders Applet" table contains 7 rows
-  And the selected Order type is "Laboratory"
-  When the user clicks the "Minimize" button in the Orders applet
-  Then the coversheet is displayed
-  And the selected Order type is "Laboratory"
-
-@f144_orders_filter_text_persistence @US2496 @TA7984b 
+@f144_orders_filter_text_persistence @US2496 @TA7984b @DE1080
 Scenario: Filter text is persisted when switching Orders applet views.
   Given user searches for and selects "Eight,Patient"
   Then Cover Sheet is active
@@ -487,7 +445,7 @@ Scenario: Filter text is persisted when switching Orders applet views.
   Then the coversheet is displayed
   And the "Text Filter" input should have the value "Cardiology" in the Orders applet
 
-@f144_orders_filter_button_and_text_persistence @US2496 @TA7984c
+@f144_orders_filter_button_and_text_persistence @US2496 @TA7984c @DE1080
 Scenario: Filter text and button are both persisted when switching Orders applet views.
   Given user searches for and selects "Eight,Patient"
   Then Cover Sheet is active
@@ -559,7 +517,7 @@ Scenario: Date filtering using the preset buttons.
   When the user clicks the date control "24hr" in the "Orders applet"
   Then no results should be found in the "Orders applet"
 
-@f144_orders_date_filter_custom_from_to @US2926 @TA9674d
+@f144_orders_date_filter_custom_from_to @US2926 @TA9674d @DE1262
 Scenario: Date filtering using the Custom button.
   Given user searches for and selects "Five,Patient"
   Then Cover Sheet is active
@@ -571,12 +529,12 @@ Scenario: Date filtering using the Custom button.
   Then the "Orders Applet" table contains 6 rows
   And the "Orders Applet" table contains rows
     | Order Date | Status  | Order                                                                                      | Type                   | Provider Name | Start Date | Stop Date  | Facility |
-    | 02/27/2010 | EXPIRED | METFORMIN TAB,SA 500MG TAKE ONE TABLET MOUTH TWICE A DAY Quantity: 180 Refills: 0          | Medication, Outpatient | Provider,One  | 02/26/2010 | 05/27/2010 | TST1     |
-    | 02/27/2010 | EXPIRED | METOPROLOL TARTRATE TAB 50MG TAKE ONE TABLET BY MOUTH TWICE A DAY Quantity: 180 Refills: 3 | Medication, Outpatient | Provider,One  | 02/26/2010 | 02/27/2011 | TST1     |
-    | 02/27/2010 | EXPIRED | SIMVASTATIN TAB 40MG TAKE ONE TABLET BY MOUTH EVERY EVENING Quantity: 90 Refills: 3        | Medication, Outpatient | Provider,One  | 02/26/2010 | 02/27/2011 | TST1     |
-    | 02/27/2010 | EXPIRED | METFORMIN TAB,SA 500MG TAKE ONE TABLET MOUTH TWICE A DAY Quantity: 180 Refills: 0          | Medication, Outpatient | Provider,One  | 02/26/2010 | 05/27/2010 | TST2     |
-    | 02/27/2010 | EXPIRED | METOPROLOL TARTRATE TAB 50MG TAKE ONE TABLET BY MOUTH TWICE A DAY Quantity: 180 Refills: 3 | Medication, Outpatient | Provider,One  | 02/26/2010 | 02/27/2011 | TST2     |
-    | 02/27/2010 | EXPIRED | SIMVASTATIN TAB 40MG TAKE ONE TABLET BY MOUTH EVERY EVENING Quantity: 90 Refills: 3        | Medication, Outpatient | Provider,One  | 02/26/2010 | 02/27/2011 | TST2     |
+    | 02/27/2010 | EXPIRED | METFORMIN TAB,SA 500MG TAKE ONE TABLET MOUTH TWICE A DAY Quantity: 180 Refills: 0          | Medication, Outpatient | Provider,One  | 02/27/2010 | 05/28/2010 | TST1     |
+    | 02/27/2010 | EXPIRED | METOPROLOL TARTRATE TAB 50MG TAKE ONE TABLET BY MOUTH TWICE A DAY Quantity: 180 Refills: 3 | Medication, Outpatient | Provider,One  | 02/27/2010 | 02/28/2011 | TST1     |
+    | 02/27/2010 | EXPIRED | SIMVASTATIN TAB 40MG TAKE ONE TABLET BY MOUTH EVERY EVENING Quantity: 90 Refills: 3        | Medication, Outpatient | Provider,One  | 02/27/2010 | 02/28/2011 | TST1     |
+    | 02/27/2010 | EXPIRED | METFORMIN TAB,SA 500MG TAKE ONE TABLET MOUTH TWICE A DAY Quantity: 180 Refills: 0          | Medication, Outpatient | Provider,One  | 02/27/2010 | 05/28/2010 | TST2     |
+    | 02/27/2010 | EXPIRED | METOPROLOL TARTRATE TAB 50MG TAKE ONE TABLET BY MOUTH TWICE A DAY Quantity: 180 Refills: 3 | Medication, Outpatient | Provider,One  | 02/27/2010 | 02/28/2011 | TST2     |
+    | 02/27/2010 | EXPIRED | SIMVASTATIN TAB 40MG TAKE ONE TABLET BY MOUTH EVERY EVENING Quantity: 90 Refills: 3        | Medication, Outpatient | Provider,One  | 02/27/2010 | 02/28/2011 | TST2     |
 
 
 @f144_orders_modal_order_number @US1775 @DE263 @modal_test
@@ -600,7 +558,7 @@ Scenario: Ensure order number format is correct.
   When the user clicks the control "Next Button" in the "Orders modal"
   Then the "Order #" is in the correct format: all digits
 
-@f144_orders_modal_order_start_stop_date @US1775 @DE262 @modal_test
+@f144_orders_modal_order_start_stop_date @US1775 @DE262 @modal_test @triage
 Scenario: Ensure order number format is correct.
   Given user searches for and selects "Eight,Patient"
   Then Cover Sheet is active
@@ -627,23 +585,7 @@ Scenario: Ensure order number format is correct.
   Then the "Start Date/Time" is in the correct format: mm/dd/yyyy hh:mm
   And the "Stop Date/Time" is in the correct format: mm/dd/yyyy hh:mm
 
-  @f144_4_lab_results_base_applet_single_page @US2033 @vimm @triage
-  Scenario: View ALL orders on Expand View
-  Given user searches for and selects "Seven,Patient"
-  Then Cover Sheet is active
-  And the user clicks the control "Expand View" in the "Orders applet"
-  Then the "Date Filter" should be "Displayed" in the "Orders applet"
-  When the user clicks the date control "All" in the "Orders applet"
-  Then the "Orders" applet is finished loading
-  When the user scrolls to the bottom of the Orders Applet
-  And the user inputs "Diet" in the "Text Filter" control in the "Orders applet"
-  Then the "Orders Applet" table contains 2 rows
-  And the "Orders Applet" table contains rows
-| Order Date | Status       | Order                     | Type                  | Provider Name          | Start Date | Stop Date  | Facilty |
-| 03/25/2004 | DISCONTINUED | REGULAR Diet <Discharge>  | Dietetics Order       | Labtech,Fortyeight     | 03/24/2004 | 03/25/2004 | BAY     |
-| 03/25/2004 | DISCONTINUED | REGULAR Diet <Discharge>  | Dietetics Order       | Labtech,Fortyeight     | 03/24/2004 | 03/25/2004 | BAY     |
-
-@f144_order_applet_loads_new_rows @DE510 @DE599 @triage
+@f144_order_applet_loads_new_rows @DE510 @DE599 @DE1398 @triage
   Scenario: Verify scrolling to the bottom of the order applet loads more records
   Given user searches for and selects "Eighteen,Patient"
   Then Cover Sheet is active
@@ -658,6 +600,7 @@ Scenario: Ensure order number format is correct.
   Then the "Orders Applet" table contains 389 rows
   When the user clicks the control "Expand View" in the "Orders applet"
   Then the "Orders" single page view is displayed
+  Then the "Orders" applet is finished loading
   When the user scrolls to the bottom of the Orders Applet
   And the "Orders Applet" table contains 389 rows
   When the user clicks the "Minimize" button in the Orders applet
@@ -665,5 +608,4 @@ Scenario: Ensure order number format is correct.
   Then the "Orders" applet is finished loading
   When the user scrolls to the bottom of the Orders Applet
   Then the "Orders Applet" table contains 389 rows
-
 

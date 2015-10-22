@@ -1,0 +1,108 @@
+<!--<div class='info' id='api_info'>-->
+    <!--{{#if info}}-->
+        <!--<div class="info_title">{{info.title}}</div>-->
+        <!--<div class="info_description markdown">{{{info.description}}}</div>-->
+        <!--{{#if externalDocs}}-->
+            <!--<h5>More documentations</h5>-->
+            <!--<p>{{externalDocs.description}}</p>-->
+            <!--<a href="{{externalDocs.url}}" target="_blank">{{externalDocs.url}}</a>-->
+        <!--{{/if}}-->
+        <!--{{#if info.termsOfServiceUrl}}<div class="info_tos"><a href="{{info.termsOfServiceUrl}}">Terms of service</a></div>{{/if}}-->
+        <!--{{#if info.contact.name}}<div class='info_name'>Created by {{info.contact.name}}</div>{{/if}}-->
+        <!--{{#if info.contact.url}}<div class='info_url'>See more at <a href="{{info.contact.url}}">{{info.contact.url}}</a></div>{{/if}}-->
+        <!--{{#if info.contact.email}}<div class='info_email'><a href="mailto:{{info.contact.email}}?subject={{info.title}}">Contact the developer</a></div>{{/if}}-->
+        <!--{{#if info.license}}<div class='info_license'><a href='{{info.license.url}}'>{{info.license.name}}</a></div>{{/if}}-->
+    <!--{{/if}}-->
+<!--</div>-->
+
+{{#eq info.host 'local'}}
+    <!-- local -->
+    <script type="text/javascript">
+        var path = '/documentation/#/sdk';
+        if (window.location.hostname === '10.4.4.105') {
+            path = '//10.1.1.150' + path;
+        } else if (window.location.hostname === 'localhost') {
+            path = 'https://ehmp.vistacore.us' + path;
+        } else {
+            path = window.location.origin + path;
+        }
+        document.getElementById("sdkDocsLink").href = path;
+    </script>
+{{else}}
+    <!-- remote -->
+    <script type="text/javascript">
+        var path = '/documentation/#/sdk';
+        path = window.location.origin + path;
+        document.getElementById("sdkDocsLink").href = path;
+    </script>
+{{/eq}}
+
+<div class="row-fluid">
+    <div class="span4" id="sidebar">
+    <!--<div class="span4" id="sidebar" role="navigation" data-spy="scroll" data-target=.nav" data-offset="100">-->
+        <!-- documentation -->
+
+        <!--<ul class="nav nav-list">-->
+            <!--<li><a href="#info-a" data-toggle="" data-target="#info-a-sub">Consuming the API</a>-->
+                <!--<ul class="nav" id="info-a-sub">-->
+                    <!--<li><a href="#info-a.1"></a></li>-->
+                    <!--<li><a href="#info-a.2"></a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+        <!--</ul>-->
+
+        <div class="row-fluid">
+            <div class="documentation">
+
+                <section><h1>Consuming the API</h1>
+
+                    <section class="subsection"><h2>Authentication</h2>
+                        <p>To begin, use the <code>authentication-authentication</code> resource to establish a session.</p>
+                    </section><!-- end authentication -->
+
+                    <section class="subsection"><h2>Parameters</h2>
+
+                        <section><h3><code>pid</code></h3>
+                            <p>Resources that deal with patient information accept a patient id as icn, site;dfn, or dfn.</p>
+                        </section>
+
+                        <section><h3><code>fields</code></h3>
+                            <p>Define which fields to return using:</p>
+                            <ul>
+                                <li>- a,b,c comma-separated list to select multiple fields</li>
+                                <li>- a/b/c path to select a field from its parent</li>
+                                <li>- a(b,c) sub-selection to select many fields from a parent</li>
+                            </ul>
+                            Reference: <a href="https://github.com/nemtsov/json-mask">json-mask</a>
+                        </section>
+
+                        <section><h3><code>filter</code></h3>
+                            <p>*jds filter placeholder*</p>
+                        </section>
+
+                    </section><!-- end parameters -->
+                </section>
+
+            </div><!-- end documentation -->
+        </div><!-- end nested row -->
+
+    </div><!-- end sidebar -->
+
+    <div class='container span8' id='resources_container'>
+      <ul id='resources'></ul>
+    </div><!-- end resources -->
+
+    <footer class="footer navbar-fixed-bottom">
+        <div class="bs container">
+            <h4 style="color: #999">[ <span style="font-variant: small-caps">base url</span>: {{basePath}}
+            {{#if info.version}}
+            , <span style="font-variant: small-caps">api version</span>: {{info.version}}
+            {{/if}}]
+            {{#if validatorUrl}}
+            <span style="float:right"><a href="{{validatorUrl}}/debug?url={{url}}"><img id="validator" src="{{validatorUrl}}?url={{url}}"></a>
+            </span>
+            {{/if}}
+            </h4>
+        </div>
+    </footer>
+</div><!-- end main row -->

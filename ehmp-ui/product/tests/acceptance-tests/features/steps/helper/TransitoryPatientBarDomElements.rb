@@ -10,7 +10,7 @@ class TransPatientBarHTMLElements < AccessBrowserV2
     return "//div[contains(@class, 'patientName')][contains(string(), '#{text}')]"
   end
 
-  def build_table_contents_xpath(header, text)
+  def build_table_contents_xpath(_header, text)
     newxpath = "//div[contains(@class, 'patientInfo')]/div[contains(string(), '#{text}')]"
     return newxpath
   end

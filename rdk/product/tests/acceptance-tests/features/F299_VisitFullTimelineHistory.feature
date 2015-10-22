@@ -4,7 +4,7 @@ Feature: F299 - Global Timeline Date Filter
 #http://10.4.4.105:8888/resource/globaltimeline?pid=9E7A;100022
 #test patient is BCMA,EIGHT, patient has one admission and one Visit
 
-@F299_global_timeline_history @US4119 @TA13943 @patient @9E7A100022
+@F299_global_timeline_history @US4119 @TA13943 @patient @9E7A100022 @F299-3.8
 Scenario: For a patient full history of encounters is returned correctly
 
 	Given the client requests visits for the patient "9E7A;100022"

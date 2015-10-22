@@ -1,4 +1,4 @@
-@F365 @PatientDemographics
+@F365 @PatientDemographics @regression
 
 Feature: F365 - Enhance Patient Header - Include Non-Local Demographics by Site
 

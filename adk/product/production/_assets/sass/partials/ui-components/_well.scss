@@ -1,0 +1,63 @@
+.well {
+	background-color: $grey-lightest;
+	background-image: none;
+	border-radius: 0px;
+	&.read-only-well {
+		// height: 167px; /*This class is for encounters and visit managament read only wells that need a specific height*/
+		// overflow-x: hidden;
+		// overflow-y: hidden;
+        min-height: 144px;
+		padding: 0px 5px 0px;
+		margin: 0px;
+        /* Removed and being added under .control.checklist-control in _form-elements.scss -Jeff */
+        // .childView-container {
+        //     height: 145px;
+        //     overflow-y: auto;
+        //     margin-left: 5px;
+        //     .row {
+        //         margin: 0px;
+        //         > .col-md-7.col-xs-7, > .col-md-5.col-xs-5 {
+        //             padding: 0 10px 0 0;
+        //             > p.faux-label {
+        //                 margin: 3px 0 0 0;
+        //             }
+        //             .form-group {
+        //                 margin: 0;
+        //             }
+        //         }
+        //     }
+        // }
+	}
+	&.well-collapse {
+        margin: 0px 9px 1px;
+        overflow: hidden;
+        padding: 2px 2px 0px;
+	}
+	> p {
+		margin-top: 4px;
+	}
+    &.well-flex {/*This allows 2 boxes next to each other to be the height of the box with the longer content, this can be seen in encounters line 395*/
+        &:nth-child(1) {
+            margin: 0px 10px 10px 15px;
+            padding: 0px 0px 0px 5px;
+        }
+        &:nth-child(2) {
+            margin: 0px 16px 10px 0px;
+            padding: 0px 0px 0px 5px;
+        }
+        p { /*Encoutners, line 387*/
+            margin-bottom: 1px;
+        }
+        ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+        .radio-control { /*Encoutners, line 398*/
+            border-bottom: 1px solid $grey-light;
+            margin: 0px;
+        }
+        .radio-control:last-child {
+            border-bottom: 0px;
+        }
+    }
+}

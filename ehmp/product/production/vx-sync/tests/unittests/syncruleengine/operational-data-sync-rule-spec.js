@@ -115,7 +115,8 @@ describe('operational-data-sync-rule', function() {
         var jdsClientDummy = new JdsClientDummy(log, config);
         jdsClientDummy._setResponseData(['Error', 'Error'], null, null);
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics: log
         };
         var engine = new SyncRulesEngine(log, config, environment);
         //engine.rules = [rule];
@@ -148,7 +149,8 @@ describe('operational-data-sync-rule', function() {
         var jdsClientDummy = new JdsClientDummy(log, config);
         jdsClientDummy._setResponseData(null, null, null);
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics: log
         };
 
         var engine = new SyncRulesEngine(log, config, environment);
@@ -184,7 +186,8 @@ describe('operational-data-sync-rule', function() {
             statusCode: 200
         }, null);
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics: log
         };
 
         var engine = new SyncRulesEngine(log, config, environment);
@@ -220,7 +223,8 @@ describe('operational-data-sync-rule', function() {
             statusCode: 403
         }, {});
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics: log
         };
 
         var engine = new SyncRulesEngine(log, config, environment);
@@ -262,7 +266,8 @@ describe('operational-data-sync-rule', function() {
             'stampTime': 20150219134300
         }]);
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics: log
         };
         var engine = new SyncRulesEngine(log, config, environment);
         //engine.rules = [rule];
@@ -303,7 +308,8 @@ describe('operational-data-sync-rule', function() {
             'completedStamp': sampleOpDataStamp2
         }]);
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics: log
         };
         var engine = new SyncRulesEngine(log, config, environment);
         //engine.rules = [rule];
@@ -340,7 +346,8 @@ describe('operational-data-sync-rule', function() {
             statusCode: 404
         }], [{}, {}]);
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics: log
         };
         var engine = new SyncRulesEngine(log, config, environment);
         //engine.rules = [rule];
@@ -377,7 +384,8 @@ describe('operational-data-sync-rule', function() {
             statusCode: 404
         }], [{}, {}]);
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics: log
         };
         var engine = new SyncRulesEngine(log, config, environment);
         runs(function() {

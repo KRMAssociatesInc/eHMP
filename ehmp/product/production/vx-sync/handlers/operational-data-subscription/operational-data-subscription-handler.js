@@ -2,7 +2,7 @@
 
 var util = require('util');
 var errorUtil = require(global.VX_UTILS + 'error');
-var Vista = require(global.VX_VISTAJS + 'RpcClient').RpcClient;
+var Vista = require('vista-js').RpcClient;
 var _ = require('underscore');
 //var inspect = require(global.VX_UTILS + 'inspect');
 

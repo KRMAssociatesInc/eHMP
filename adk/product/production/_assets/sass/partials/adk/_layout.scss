@@ -1,0 +1,538 @@
+svg:not(:root) {
+    overflow: visible;
+}
+[class$="-full"]{
+    #center-region > div,
+    #content-region-wrapper,
+    #content-region,
+    .contentPadding,
+    .contentPadding > div,
+    .contentPadding > div > div,
+    [data-instanceid],
+    .gridContainer,
+    .grid-container,
+    .gridContainer > div,
+    .grid-container > div,
+    .panel-body,
+    .data-grid {
+        height: 100%;
+    }
+    #center-region > div {
+        height: 100%; /* phantomJS fallback */
+        height: calc(100% - 15px);
+    }
+    div.panel-body{
+        overflow-y:hidden !important;
+    }
+}
+
+
+/*  ------------------------------------------------------------------------ */
+/*  --  Rows in the grid                                                  -- */
+/*  ------------------------------------------------------------------------ */
+$defaultRowHeight: 13px;
+$defaultLineHeight: 13px; /* would prefer EM or REM, but messes up 23px tile height */
+$defaultRowPadding: 5px 0;
+$defaultChartHeight: 23px; /* with negative margins; so we can have the mid-height vertical separator */
+$rowBorderBottom: #f0f0f0;
+$rowBorderTop: #e5e5e5;
+$rowBackgroundColor: #fff;
+$rowEmptyRowColor: gray; /* Why the named color.  should be hex */
+div.gistItem {
+    color: $grey-darkest;
+    background-color: $rowBackgroundColor;
+    border-radius: 0;
+    border-top: 0;
+    border-bottom: 0;
+    .gistItem {
+        background-color: $primary-lightester;
+    }
+}
+.row {
+    /* equalHeights for 23px rows of a single row elements */
+    &.equalHeights {
+        display: table;
+        height: $defaultRowHeight + 10px;
+        line-height: $defaultLineHeight;
+        min-height: $defaultRowHeight +10px;
+        width: 100%;
+
+        & > *[class*="col-"] {
+            display: table-cell;
+            float: none;
+            line-height: $defaultLineHeight;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            vertical-align: middle;
+
+            &.info-display {
+                padding-right: 0;
+            }
+
+            &:hover {
+                background: $secondary-lighter;
+            }
+        }
+        & > .row.equalHeights {
+            padding-left: 10px;
+            margin-left: 0;
+        }
+
+        .gistList {
+            padding-top: 5px;
+        }
+        /* should be global, not nested? */
+        .clearBoth {
+            clear: both;
+        }
+        .emptyGistList {
+            color: $rowEmptyRowColor;
+            font-style: italic;
+            line-height: $defaultLineHeight;
+            min-height: $defaultRowHeight;
+            padding: 10px;
+        }
+        .gChartMin,
+        .gChartMinEnc {
+            height: $defaultChartHeight;
+            line-height: $defaultLineHeight;
+            min-height: $defaultChartHeight;
+            margin-top: -5px;
+            margin-bottom: -5px;
+        }
+    }
+}
+    /*--- Grid Custom Filter REGION STYLES ---*/
+.grid-filter-daterange {
+    margin-bottom: 7px;
+    .default-range {
+        background-color: #f2f2f2;
+        padding: 1px 2px;
+        font-size: 11px;
+        margin: 6px 4px;
+    }
+    .active-range {
+        background-color: #7aa9b9;
+        color: white;
+    }
+    .daterange:not(.active-range):hover, .daterange:not(.active-range):focus {
+        background-color: $primary;
+        color: white;
+    }
+}
+
+.backgrid {
+    background-color: #FFF;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.backgrid .ascending .sort-caret {
+    border-bottom: 4px solid #5596C9;
+}
+.backgrid .descending .sort-caret {
+    border-top: 4px solid #5596C9;
+}
+.backgrid-paginator {
+    background-image: none;
+    background: $primary-lightest;
+}
+.js-backgrid .backgrid-paginator ul {
+    padding: 0;
+    margin-bottom: 0;
+}
+.backgrid-paginator ul > li:nth-last-child(2) > a, .backgrid-paginator ul > li:last-child >a {
+    border-left: 1px solid $primary-lighter;
+}
+.backgrid-paginator ul > li:nth-last-child(2) > a:before, .backgrid-paginator ul > li:last-child >a:before {
+    color: $primary-light;
+}
+.backgrid-paginator ul > li > a:hover:before {
+    background: $primary-light;
+    color: $white;
+}
+.backgrid-paginator ul > li.disabled > a:hover:before {
+    background: none;
+    color: $primary-light;
+}
+    /*--- Modal Styling ---*/
+    .modal-xlg {
+        width: 97%;
+    }
+    .modal-md {
+        width: 450px;
+    }
+    .modal-title {
+        font-weight: 700;
+        color: #3D5157;
+        font-size: 16px
+    }
+    #mainModalDialog.modal-dialog {
+        padding-top: 50px;
+    }
+    .cpe-search-term-match {
+        background-color: rgba(255, 255, 0, .6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0, .075), 0 0 8px rgba(255, 255, 0, .6);
+    }
+    div.sectionHeader {
+        font-family: "Open Sans", Helvetica, Arial;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 16px;
+        text-align: left;
+        line-height: 18px;
+        color: #000;
+        border-bottom: 1px solid #ccc;
+        margin: 10px 40px;
+    }
+    div.dataValue {
+        font-family: "Open Sans", Helvetica, Arial;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 20px;
+        font-size: 13px;
+        color: #333;
+        text-align: left;
+    }
+    .contentPadding .col-md-4 {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .contentPadding .panel {
+        margin-bottom: 10px;
+    }
+    #appts-filter-bar .btn {
+        font-size: 11px;
+        height: 22px;
+        line-height: 22px;
+        padding: 0 5px;
+    }
+    .grid-toolbar .btn {
+        font-size: 11px;
+        height: 22px;
+        line-height: 22px;
+        padding: 0 5px;
+    }
+    .dropdown-menu.patient-info-dropdown {
+        background: white;
+        box-shadow: 2px 2px 10px rgba(100,100,100,.5);
+    }
+    #ali-span {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:45px;
+    }
+    .nav>li>a:hover, .nav>li>a:focus {
+        background-color: $primary-dark;
+        color: #FFF;
+    }
+    .backgrid tbody tr.empty {
+        color: $grey-darker;
+    }
+    #med-review-applet-main {
+        max-height: 69vh;
+        overflow-y: scroll;
+    }
+    #search-applet-main {
+        #searchResultsArea{
+            max-height:600px;
+            overflow-y: scroll;
+            margin-top: 60px;
+            height: 60vh;
+        }
+    }
+    @media screen and ( max-height: 730px ){
+        #med-review-applet-main {
+            max-height: 55vh;
+        }
+    }
+    @media screen and ( max-height: 585px ){
+        #search-applet-main #searchResultsArea {
+            height: 40vh;
+        }
+    }
+    @media screen and ( max-height: 520px ){
+        #med-review-applet-main {
+            max-height: 45vh;
+        }
+    }
+    /*--------- This file removes responsiveness below 1024px -------*/
+    #applet-nav {
+        min-width: 640px;
+        display: block;
+    }
+    #patientDemographic-region .panel-heading {
+        min-width: 1024px;
+        display: block;
+    }
+    #patientDemographic-region .panel-heading > div {
+        float: left;
+    }
+    #navigation-region #navigationPanel #navigation-date {
+        float: left;
+    }
+    #navigation-region #navigationPanel .panel-heading {
+        min-width: 1000px;
+        display: block;
+    }
+    #content-region-wrapper {
+        display: block;
+    }
+    #center-region {
+        min-width: 995px;
+        display: block;
+    }
+    .navbar-nav {
+        float: left;
+        margin: 0;
+    }
+    .navbar-right {
+        float: right;
+    }
+    .navbar-center {
+        text-align: center
+    }
+    .documents-list .data-grid {
+        min-width: 50%;
+    }
+    [data-appletid="medication_review"] #medNavButtons {
+        min-width: 975px;
+    }
+
+    /* ---- PATIENT SEARCH ------*/
+    [data-appletid="patient_search"] .patient-search-output .pillsAndHeader {
+        min-width: 700px;
+        float: left;
+    }
+    [data-appletid="patient_search"] .patient-search-output #patient-search-confirmation {
+        min-width: 284px;
+        float: left;
+    }
+    [data-appletid="patient_search"] .patient-search-output .pillsAndHeader #patient-search-pills .nav-pills li {
+        margin-left: 5px;
+    }
+    [data-appletid="patient_search"] #patient-search-input #input-view-region .form-inline .form-control {
+        float: left;
+        margin-right: 8px;
+        margin-top: 2px;
+    }
+    [data-appletid="patient_search"] #patient-search-input{
+        float: left;
+        width: 80%;
+    }
+    @media (max-width: 991px) {
+        [data-appletid="patient_search"] #patient-search-main .searchResults{
+            float: left;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .col-md-4 {
+            width: 331px;
+            display: block;
+            float: left;
+        }
+        .logonSection .col-md-4, #patient-search-results .col-md-4{
+            width: 33%;
+            display: block;
+            float: left;
+        }
+    }
+    @media (min-width: 768px) {
+        .logonSection .col-sm-pull-4 {
+        right: 33.33333333%;
+        margin-left: 16.66666667%;
+    }
+    }
+    // Jeff Kopra and TT: Commenting out becuase it is causing the flow of workflow form cols to not align properly
+    // @media (min-width: 1px) {
+    //     .col-md-12 {
+    //     width: 100%;
+    //     }
+    //     .col-md-2 {
+    //     width: 16.66666667%;
+    //     float: left;
+    //     }
+    //     .col-md-6 {
+    //     width: 50%;
+    //     float: left;
+    //     }
+    // }
+    @media (max-width: 1290px) {
+        #patientDemographic-providerInfo .dropdown-menu.patient-info-dropdown {
+            right: 0;
+            left: inherit;
+        }
+    }
+
+    /*--- Data Grid Styling, needed? ---*/
+    .cover-sheet .data-grid {
+        overflow-y: hidden;
+        height: auto;
+    }
+    .overview .data-grid {
+        overflow: hidden;
+        height: auto;
+    }
+    .data-grid {
+        overflow-y: scroll;
+        height: 63vh;
+        table tr:nth-child(2n) {
+            background-color: $primary-lightester;
+        }
+    }
+    .gridster .data-grid {
+        overflow-y: hidden;
+        height: 100%;
+    }
+    .backgrid-filter.form-search {
+        height: auto;
+        width: 100%;
+        margin-bottom: 2px !important;
+    }
+    .backgrid-filter{
+        input[type="search"]
+        {
+            position: inherit;
+        }
+        .search{
+            top: 14px;
+        }
+        .clear{
+            top: 14px;
+            left: 228px;
+        }
+    }
+
+
+
+
+    .panel-body {
+        .grid-filter-daterange {
+            background-color: #f2f2f2;
+            margin-bottom: 0px;
+            .row > div:nth-child(2) {
+                padding-top: 10px;
+            }
+        }
+        .backgrid-filter input[type="search"]
+        {
+            position: inherit;
+        }
+        .grid-filter {
+            background-color: #f2f2f2;
+            padding: 10px 10px 7px 10px;
+            margin-bottom: 0px;
+            overflow-x:auto;
+            border-bottom: 1px solid #818181;
+        }
+        .filter-title-input {
+            height: 16px;
+        }
+        .filter-container{
+            width: 100%;
+        }
+        .filter-wrapper {
+            padding: 5px 0px;
+        }
+        .udaf-border {
+            margin-left: -10px;
+            margin-right: -10px;
+            height: 2px;
+            border-bottom: solid thin #818181;
+            box-shadow: 0 2px 2px #999;
+        }
+        .udaf {
+            display:inline-block;
+            vertical-align:middle;
+            width:100%;
+            max-height: 83px;
+            overflow-y: auto;
+            margin-top: 5px;
+        }
+            .udaf-height {
+                max-height:83px;
+                overflow: scroll;
+                margin-top: 4px;
+            }
+        .udaf-tag{
+            padding-right: 5px;
+        }
+        .filter-add{
+            display: inline-block;
+            position: absolute;
+            left: 252px;
+            top: 0px;
+            height: 30px;
+            padding: 5px 7px;
+        }
+        .clear-udaf-tag {
+            z-index:1000;
+            margin-left: 5px;
+            color:gray;
+        }
+        .remove-all-div {
+            float: right;
+        }
+        .filter-name {
+            float: left;
+        }
+    }
+    b {
+        font-family: "Open Sans", Helvetica, Arial;
+    }
+    .grid-applet-heading {
+        padding: 1px 5px;
+    }
+    .grid-applet-panel {
+        padding: 0;
+        background-color: white;
+    }
+    .grid-footer {
+        padding: 0px;
+    }
+    .grid-container {
+        h5 {
+            padding: 5px 10px;
+        }
+    }
+    .backgrid {
+        th {
+            text-align: left;
+        }
+        td {
+            white-space: normal;
+        }
+    }
+    .backgrid.table {
+        tr.empty td {
+            display: block;
+            line-height: 20px;
+            min-height: 40px;
+            padding: 10px;
+            text-align: left;
+            border: none;
+        }
+    }
+    .table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
+        background-color: $secondary-lighter;
+        }
+
+
+
+    .grid-applet-panel .header-bar {
+        background: $white;
+        color: $primary;
+    }
+    .backgrid thead {
+        background: $white;
+        th {
+            background: none;
+            color: $grey-darkest;
+            &.sortable a {
+                color: $primary-light;
+            }
+        }
+    }

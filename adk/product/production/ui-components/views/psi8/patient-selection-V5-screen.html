@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>eHMP Bootstrap UI Library - Patient Search View</title>
+    <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../../css/main-styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700" />
+</head>
+
+<body class="patient-search-container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../../views.html">Views</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="menuitem"><a href="../../color-palette.html">Color Palette</a></li>
+                            <li role="menuitem"><a href="#">Style Guide</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end navigation-->
+    <div class="patient-search-header row">
+        <div class="col-xs-12">
+            <div class="tab-container">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="tab" class="active"><a href="#my-site" aria-controls="my-site" data-toggle="tab">My Site<span class="sr-only">You are currently on a tab. There is content below. Continue to arrow down until it indicates that the content is being read.</span></a></li>
+                    <li role="tab"><a href="#nationwide" aria-controls="nationwide" data-toggle="tab">Nationwide<span class="sr-only">You are currently on a tab. To select this tab, press enter. There is content below. Continue to arrow down until it indicates that the content is being read.</span></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="my-site"><span class="sr-only">This is the content for the My Site tab.</span>
+                        <p class="no-pad">Enter the patient's last and first name, or first initial of the last name and last four digits of SSN to display results.</p>
+                        <form action="#" method="post">
+                            <div class="col-xs-4 no-pad">
+                                <div class="input-group">
+                                    <label for="patient-searchbar" class="sr-only">Select Patient</label>
+                                    <input type="text" class="form-control" placeholder="Select Patient" title="Please enter in text to search for a patient record." id="patient-searchbar" />
+                                    <span class="input-group-btn">
+                                    <button class="text-search-accessible btn btn-default" type="button" title="Submit button. Press enter to search for a patient record.">
+                                        <i class="fa fa-search" title="Submit Search"></i>
+                                    </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="nationwide"><span class="sr-only">This is the Nationwide search tab content.</span>
+                        <p class="no-pad">Enter the patient's last name and at least one other field to display results.</p>
+                        <form action="#" method="post">
+                            <div class="control form-group">
+                                <label class="sr-only" for="patient-lName">Last Name</label>
+                                <input class="form-control" type="text" name="patient-lName" title="Please enter in the patient's last name only" id="patient-lName" placeholder="Last Name" required />
+                            </div>
+                            <div class="control form-group">
+                                <label class="sr-only" for="patient-fName">First Name</label>
+                                <input class="form-control" type="text" name="patient-fName" title="Please enter in the patient's first name only" id="patient-fName" placeholder="First Name" />
+                            </div>
+                            <div class="control form-group">
+                                <label class="sr-only" for="patient-dob">Date of Birth</label>
+                                <div class="input-group date">
+                                    <span class="input-group-addon" aria-hidden="true"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" id="patient-dob" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="DOB: MM/DD/YYYY" />
+                                </div>
+                            </div>
+                            <div class="control form-group">
+                                <label class="sr-only" for="patient-ssn">SSN:</label>
+                                <input class="form-control" type="text" name="patient-ssn" title="Please enter in the patient's social security number" id="patient-ssn" placeholder="SSN: ###-##-####" />
+                            </div>
+                            <button type="button" class="btn btn-default" title="Press enter to search">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="patient-search-body row">
+        <div class="patient-search-filters col-xs-3 full-height">
+            <div class="tab-container full-height">
+                <!-- Tab Navigation -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="tab" class="active"><a href="#cprs-list-tab" aria-controls="cprs-list-tab" data-toggle="tab">My CPRS List<span class="sr-only">You are currently on a tab. The panel for this tab has no content. </span></a></li>
+                    <li role="tab"><a href="#clinics-tab" aria-controls="clinics-tab" data-toggle="tab">Clinics<span class="sr-only">You are currently on a tab. To select this tab, press enter. There is content below. Continue to arrow down until it indicates that the content is being read.</span></a></li>
+                    <li role="tab"><a href="#wards-tab" aria-controls="wards-tab" data-toggle="tab">Wards<span class="sr-only">You are currently on a tab. To select this tab, press enter. There is content below. Continue to arrow down until it indicates that the content is being read.</span></a></li>
+                </ul>
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane full-height active" id="cprs-list-tab"><span class="sr-only">This is the content for the My CPRS List tab. This panel is empty</span>
+                    </div>
+                    <div role="tabpanel" class="tab-pane full-height" id="clinics-tab"><span class="sr-only">This is the content for the Clinics tab.</span>
+                        <form action="#" method="post">
+                            <div class="form-group" role="application">
+                                <label for="search-for-clinics" class="sr-only">Filter Clinics</label>
+                                <input class="form-control typeahead" type="text" name="name" title="The type ahead feature will begin searching for content as you type. The results are listed below, use the up and down arrow keys to review the results." placeholder="Filter Clinics" id="search-for-clinics" />
+                            </div>
+                            <div class="clinics-filter-buttons">
+                                <button type="button" class="btn btn-xs btn-default active" title="Press enter to select Last 30 days">Last 30d</button>
+                                <button type="button" class="btn btn-xs btn-default" title="Press enter to select Last 7 days">Last 7d</button>
+                                <button type="button" class="btn btn-xs btn-default" title="Press enter to select">Yesterday</button>
+                                <button type="button" class="btn btn-xs btn-default" title="Press enter to select">Today</button>
+                                <button type="button" class="btn btn-xs btn-default" title="Press enter to select">Tomorrow</button>
+                                <button type="button" class="btn btn-xs btn-default" title="Press enter to select Next 7 days">Next 7d</button>
+                            </div>
+                            <div class="clinics-calendars">
+                                <span class="sr-only">To filter clinics by a date range, please enter a from and through date.</span>
+                                <div class="control form-group no-pad">
+                                    <label for="searchClinicsFromDate">From</label>
+                                    <div class="input-group date calendar-sm">
+                                        <span class="input-group-addon" aria-hidden="true"><i class="fa fa-calendar"></i></span>
+                                        <input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="searchClinicsFromDate" />
+                                    </div>
+                                </div>
+                                <div class="control form-group no-pad">
+                                    <label for="searchClinicsThroughDate">Through</label>
+                                    <div class="input-group date calendar-sm">
+                                        <span class="input-group-addon" aria-hidden="true"><i class="fa fa-calendar"></i></span>
+                                        <input type="text" class="form-control" title="Please enter in a date in the following format, MM/DD/YYYY" placeholder="MM/DD/YYYY" id="searchClinicsThroughDate" />
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-xs btn-primary" title="Press enter to select" disabled>Apply</button>
+                            </div>
+                        </form>
+                        <hr aria-hidden="true" />
+                        <ul class="no-pad filter-list">
+                            <li><a href="#">Audiology Clinic</a></li>
+                            <li><a href="#">Cardiology Clinic</a></li>
+                            <li><a href="#">Comp and Pen Clinic</a></li>
+                            <li><a href="#">Cwt Clinic</a></li>
+                            <li><a href="#">Dental Clinic</a></li>
+                            <li><a href="#">Dermatology</a></li>
+                            <li><a href="#">Diabetic Clinic</a></li>
+                            <li><a href="#">Diabetic Teieret Reader Local Clinic</a></li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane full-height" id="wards-tab"><span class="sr-only">This is the content for the Wards tab.</span>
+                        <form action="#" method="post">
+                            <div class="form-group" role="application">
+                                <label for="search-for-wards" class="sr-only">Filter Wards</label>
+                                <input class="form-control typeahead" type="text" name="name" title="The type ahead feature will begin searching for content as you type. The results are listed below, use the up and down arrow keys to review the results." placeholder="Filter Wards" id="search-for-wards" />
+                            </div>
+                        </form>
+                        <hr aria-hidden="true" />
+                        <ul class="no-pad filter-list">
+                            <li><a href="#">7A Surg</a></li>
+                            <li><a href="#">7B</a></li>
+                            <li><a href="#">Domicillary</a></li>
+                            <li><a href="#">Gen Med</a></li>
+                            <li><a href="#">Icu/ccu</a></li>
+                            <li><a href="#">Icu/neuro Surgery</a></li>
+                            <li><a href="#">Icu/orthopedic</a></li>
+                            <li><a href="#">Nhcu</a></li>
+                            <li><a href="#">Spinal Cord Injury Ward</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="results-table-container">
+            <div class="results-table">
+                <div class="faux-table no-margin full-height">
+                    <div class="sr-only">This table represents patients that match the search criteria categorized by patient name, social security number or abbreviated as SSN, date/time, date of birth and gender</div>
+                    <div class="header">
+                        <div class="table-row">
+                            <div>
+                                <div>Patient Name</div>
+                            </div>
+                            <div>
+                                <div><span aria-hidden="true">SSN</span><span class="sr-only">Social security number</span></div>
+                            </div>
+                            <div>
+                                <div>Date/Time</div>
+                            </div>
+                            <div>
+                                <div>Date of Birth</div>
+                            </div>
+                            <div>
+                                <div>Gender</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                        <a href="#" class="table-row">
+                            <div>
+                                <span>EIGHT, PATIENT</span>
+                            </div>
+                            <div>
+                                <span>***-**-8080</span>
+                            </div>
+                            <div>
+                                <span>04/05/2015 - 09:15</span>
+                            </div>
+                            <div>
+                                <span>04/15/1953 (62y)</span>
+                            </div>
+                            <div>
+                                <span>Male</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="patient-selection-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">Eight, Patient</h1>
+                    <div class="btn-xs helpIconLink helpIconInverted">
+                        <a id="linkHelp-patient_search_confirm" class="helpIconLinkAnchor" href="#">
+                            <i class="fa fa-question-circle fa-lg" title="Learn about accessing an unrestricted patient record">
+                </i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row patientInfo">
+                <div class="col-xs-5">
+                    <img src="../../img/photo.jpg" class="center-block" alt="Eight, Patient" width="100" height="100" />
+                </div>
+                <div class="col-xs-7">
+                    <table>
+                        <caption class="sr-only">This table contains the patient's selected P.I.I.: the date of birth, age, gender and social security number.</caption>
+                        <tbody>
+                            <tr>
+                                <th class="pull-right" scope="row">DOB:</th>
+                                <td>04/07/1935</td>
+                            </tr>
+                            <tr>
+                                <th class="pull-right" scope="row">Age:</th>
+                                <td>80y</td>
+                            </tr>
+                            <tr>
+                                <th class="pull-right" scope="row">Gender:</th>
+                                <td>Male</td>
+                            </tr>
+                            <tr>
+                                <th class="pull-right" scope="row">SSN:</th>
+                                <td>666-00-0008</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-primary btn-block" title="Please confirm this is the patient you want to select.">Confirm Selection</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom-region">
+        <div class="col-md-12 navbar-fixed-bottom">
+            <div class="well well-sm">
+                <span id="appVersion"><b>eHMP</b> version 1.3.0</span>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap-datepicker.js"></script>
+    <script>
+    $(function() {
+        $('.input-group.date').each(function() {
+            $(this).datepicker({
+                todayBtn: "linked",
+                orientation: "top left",
+                autoclose: true,
+                todayHighlight: true,
+                showOnFocus: false
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>

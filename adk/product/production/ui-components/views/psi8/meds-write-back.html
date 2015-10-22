@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>eHMP Bootstrap UI Library - Meds Write Bcak</title>
+    <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+    <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+    <link rel="stylesheet" href="../../css/main-styles.css" />
+</head>
+
+<body class="library">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../../index.html" class="navbar-brand">eHMP UI Bootstrap Library (v2.0)</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../../views.html">Views</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documentation <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="../../color-palette.html">Color Palette</a></li>
+                                <li><a href="#">Style Guide</a></li>
+                            </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end navigation-->
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="../../index.html">eHMP UI Bootstrap Library</a></li>
+            <li><a href="../../views.html">Views</a></li>
+            <li class="active">F433 - Meds Write-Back</li>
+        </ol>
+        <h1>F433 - Meds Write-Back</h1>
+        <div class="description">
+            <p><strong><i class="fa fa-leanpub"></i> Description:</strong> This is the 508 compliant static HTML/CSS mock up of Meds Write-Back.</p>
+            <p><strong><i class="fa fa-lightbulb-o"></i> Documentation:</strong> Please also view <a href="http://wakirc.axshare.com/#p=v3_-_enter_and_store_pharmacy__medication__orders">Meds Write-Back wireframe</a>, <a href="../docs/workflow/psi8/.pdf">Workflow Diagram</a> <small>[PDF, xxKB]</small>, and <a href="../../docs/use-case/psi8/.pdf">Use Scenario Case Documentation</a> <small>[PDF, XX]</small> for full details on implementation.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tray-region">
+            <div class="workflow-container">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h4 class="modal-title">All Tasks</h4>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="header-btns">
+                                        <div class="control form-group">
+                                            <button type="button" class="btn btn-primary btn-sm" title="Press enter to create a new observation"><i class="fa fa-pencil"></i> Add New Task</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="workflow-controller">
+                            <div>
+                                <form action="#" method="post" class="form-container adk-form">
+                                    <div class="modal-body">
+                                        <div class="row row-sort">
+                                            <div class="col-xs-6">
+                                                <label for="observation-arrange-by">Arrange by:</label>
+                                                <select id="observation-arrange-by" title="Arrange observations by selecting from the drop down list">
+                                                    <option value="status">Status</option>
+                                                    <option value="type">Type</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-6 text-right">
+                                                <label for="observation-sort-by" class="sr-only">Sort by</label>
+                                                <select id="observation-sort-by" title="Sort observations by selecting from the drop down list">
+                                                    <option value="most-recent">Most recent</option>
+                                                    <option value="least-recent">Least recent</option>
+                                                    <option value="chronological">Chronological</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-container panel-group small" id="accordion" role="tablist">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="heading-observation-immunization">
+                                                    <h4>
+                                                <a href="#collapse-observation-immunization" class="panel-title accordion-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="collapse-observation-immunization">Drafts<span class="sr-only">You are on an accordion heading. The accordion is expanded. To collapse the accordion press enter on the accordion heading.</span></a>
+                                            </h4>
+                                                </div>
+                                                <div id="collapse-observation-immunization" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-observation-immunization">
+                                                    <div class="panel-body multi-select-list">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-xs-6">
+                                                                        <h5>Medication Name</h5>
+                                                                        <p>01/13/2014 17:55</p>
+                                                                        <p>Draft 1</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>01/12/2014 17:54</p>
+                                                                        <p>Draft 2</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#li-item">
+                                                                    <div class="col-xs-6">
+                                                                        <h5>Observation Name</h5>
+                                                                        <p>01/11/2014 17:53</p>
+                                                                        <p>Draft 3</p>
+                                                                    </div>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal body-->
+                                    <div class="modal-footer">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                            </div>
+                                            <div class="col-xs-9">
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#notesDeleteModal" title="Press enter to delete the note">Delete</button>
+                                                </div>
+                                                <div class="control control-button trash visible-inline">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#notesModal" title="Press enter to view the details of the note">View</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end modal footer-->
+                                    <div class="modal fade" id="notesModal" role="dialog" aria-labelledby="notesModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="tray-settings">
+                                                        <p class="sr-only">This is the note toolbar that allows you to perform actions associated with this note</p>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to edit note" aria-label="Edit"><i class="fa fa-pencil"></i></button>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to print note" aria-label="Print"><i class="fa fa-print"></i></button>
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to close note" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                                                    </div>
+                                                    <h4 class="modal-title" id="notesModalLabel">Primary Care General Note<br />
+                                                <span class="small">04/11/2015 - 03:30</span><br />
+                                                <span class="small">Doe, John Q</span></h4>
+                                                    <h5>Signed</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus, est eget sodales vestibulum, lorem erat fringilla felis, vel vestibulum dolor turpis sed orci. Aenean lacinia quis risus eget laoreet. Pellentesque rhoncus justo ac urna sollicitudin egestas.</p>
+                                                    <p>Suspendisse malesuada ipsum nisi, sed sollicitudin arcu condimentum a. Nulla facilisi. Sed hendrerit enim lacus, id tempor arcu euismod dapibus.</p>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dapibus, est eget sodales vestibulum, lorem erat fringilla felis, vel vestibulum dolor turpis sed orci. Aenean lacinia quis risus eget laoreet. Pellentesque rhoncus justo ac urna sollicitudin egestas.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="notesDeleteModal" role="dialog" aria-labelledby="notesDeleteModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="tray-settings">
+                                                        <button type="button" class="btn icon-btn icon-btn-mini" title="Press enter to close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                                                    </div>
+                                                    <h4 class="modal-title" id="notesDeleteModalLabel">Mark as Entered in Error</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="well well-sm">
+                                                        <h4>Problem Name<br />
+                                                    <span class="small">06/13/2015  17:55</span></h4>
+                                                    </div>
+                                                    <div class="control form-group">
+                                                        <label for="entered-error" class="sr-only">Add Annotation</label>
+                                                        <input class="form-control" type="text" name="name" title="Please enter in annotation" placeholder="Add Annotation&hellip;" id="entered-error" />
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <div class="control control-button trash visible-inline">
+                                                        <button type="button" class="btn icon-btn" title="Press enter to cancel">Cancel</button>
+                                                    </div>
+                                                    <div class="control control-button trash visible-inline">
+                                                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" title="Press enter to remove">Remove</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="tray-region">
+                <div class="workflow-container">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h4 class="modal-title">Add New Task</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="workflow-controller">
+                                <div>
+                                    <form action="#" method="post" class="form-container adk-form">
+                                        <div class="modal-body">
+                                            <div class="list-group">
+                                                <a href="#" class="list-group-item">Allergies<i class="fa fa-chevron-right pull-right"></i></a>
+                                                <a href="#" class="list-group-item">Immunization<i class="fa fa-chevron-right pull-right"></i></a>
+                                                <a href="#" class="list-group-item"><i class="fa fa-ellipsis-v"></i> Meds, Non-VA<i class="fa fa-chevron-right pull-right"></i></a>
+                                                <a href="#" class="list-group-item">Problems<i class="fa fa-chevron-right pull-right"></i></a>
+                                                <a href="#" class="list-group-item">Vitals<i class="fa fa-chevron-right pull-right"></i></a>
+                                            </div>
+                                        </div>
+                                        <!--end modal body-->
+                                        <div class="modal-footer">
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                </div>
+                                                <div class="col-xs-9">
+                                                    <div class="control control-button trash visible-inline">
+                                                        <button type="button" class="btn btn-primary btn-sm" title="Press enter to go back to observations summary">Back to Task Summary</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end modal footer-->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="tray-region">
+                <div class="workflow-container">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="row">
+                                    <div class="col-xs-10">
+                                        <h4 class="modal-title">Enter a Task</h4>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="header-btns">
+                                            <div class="col-xs-6">
+                                                <div class="dropdown">
+                                                    <button class="btn icon-btn dropdown-toggle" type="button" id="immunization-settings" data-toggle="dropdown" aria-expanded="true">
+                                                        <i class="fa fa-gear"><span class="sr-only">Settings for vitals</span></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="immunization-settings">
+                                                        <li role="presentation"><a role="menuitem" href="#">Preview</a></li>
+                                                        <li role="presentation"><a role="menuitem" href="#">Print</a></li>
+                                                        <li role="presentation"><a role="menuitem" href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn icon-btn" title="Press enter to open the popover view"><i class="fa fa-expand"><span class="sr-only">Press enter to open the popover view</span></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <ul class="progress-indicator">
+                                    <li><div class="completed"><span class="bubble"></span>Select a Task<span class="sr-only">You are currently on step step 1 of 2</span></div></li>
+                                    <li><div><span class="bubble"></span>Enter Order Info</div></li>
+                                </ul>
+                            </div><!--end progress bar-->
+                             <div class="workflow-controller">
+                                <div>
+                                    <form action="#" method="post" class="form-container adk-form">
+                                        <div class="modal-body">
+                                            <div class="scroll-enter-form">
+                                                <div class="row row-subheader">
+                                                    <div class="col-xs-12">
+                                                        <div class="control form-group form-alert-banner alertBanner-control alertMessage">
+                                                            <div class="alert alert-warning alert-dismissible alert-user" role="alert">
+                                                                <div class="alert-content">
+                                                                    <p><strong><i class="fa fa-warning"></i> DRUG-ALLERY INTERACTION</strong></p>
+                                                                    <p>Patient is currently prescribed Coumadin. Using Sodium Bicarbonate and Coumadin together may cause excessive bleeding.</p>
+                                                                </div>
+                                                                <button title="To close this alert, press enter" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="control form-group form-alert-banner alertBanner-control alertMessage">
+                                                            <div class="alert alert-warning alert-dismissible alert-user" role="alert">
+                                                                <div class="alert-content">
+                                                                    <p><strong><i class="fa fa-warning"></i> DRUG-DRUG INTERACTION</strong></p>
+                                                                    <p>Patient has known allergy to Sodium Bicarbonate.</p>
+                                                                </div>
+                                                                <button title="To close this alert, press enter" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="control form-group form-alert-banner alertBanner-control alertMessage">
+                                                            <div class="alert alert-warning alert-dismissible alert-user" role="alert">
+                                                                <div class="alert-content">
+                                                                    <p><strong><i class="fa fa-warning"></i> DUPLICATE ORDER</strong></p>
+                                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                                                </div>
+                                                                <button title="To close this alert, press enter" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row section-divider">
+                                                    <div class="col-xs-12">
+                                                        <p>* indicates a required field.</p>
+                                                        <fieldset>
+                                                            <legend>Select an Outpatient Med *</legend>
+                                                            <div class="control form-group" role="application">
+                                                                <label for="example1-select-problem" class="sr-only">Select a Problem</label>
+                                                                <input class="form-control typeahead" type="text" name="name" title="The type ahead feature will begin searching for content as you type. The results are listed below, use the up and down arrow keys to review the results." placeholder="Search for available Outpatient Meds…" autocomplete="off" spellcheck="false" id="example1-select-problem" />
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end modal body-->
+                                        <div class="modal-footer">
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <p><span id="immunization-administered-saved-at1">Saved at 08:27</span></p>
+                                                </div>
+                                                <div class="col-xs-9">
+                                                    <div class="control control-button trash visible-inline">
+                                                        <button type="button" class="btn icon-btn btn-sm" data-dismiss="modal" title="Press enter to delete order"><i class="fa fa-trash"></i></button>
+                                                    </div>
+                                                    <div class="control control-button cancel visible-inline">
+                                                        <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#medNextModal" title="Press enter to proceed to the next step">Next</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end modal footer-->
+                                        <div class="modal fade" id="medNextModal" aria-labelledby="medNextModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-backdrop">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="To close the modal, select the close button."><span aria-hidden="true">×</span></button>
+                                                        <h4 class="modal-title" id="medNextModalLabel">Warning</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="control form-group form-alert-banner alertMessage">
+                                                            <div class="alert alert-warning alert-dismissible" role="alert">
+                                                                <button type="button" class="close" data-dismiss="alert" title="To close this alert, press enter"><span aria-hidden="true">&times;</span></button>
+                                                                <p><strong><i class="fa fa-warning"></i> DRUG-ALLERY INTERACTION</strong></p>
+                                                                <p>Patient is currently prescribed Coumadin. Using Sodium Bicarbonate and Coumadin together may cause excessive bleeding.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="control form-group form-alert-banner alertMessage">
+                                                            <div class="alert alert-warning alert-dismissible" role="alert">
+                                                                <button type="button" class="close" data-dismiss="alert" title="To close this alert, press enter"><span aria-hidden="true">&times;</span></button>
+                                                                <p><strong><i class="fa fa-warning"></i> DRUG-DRUG INTERACTION</strong></p>
+                                                                <p>Patient has known allergy to Sodium Bicarbonate.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="control form-group form-alert-banner alertMessage">
+                                                            <div class="alert alert-warning alert-dismissible" role="alert">
+                                                                <button type="button" class="close" data-dismiss="alert" title="To close this alert, press enter"><span aria-hidden="true">&times;</span></button>
+                                                                <p><strong><i class="fa fa-warning"></i> DUPLICATE ORDER</strong></p>
+                                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal" title="To close the modal, select the close button.">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="tray-region">
+                <div class="workflow-container">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="row">
+                                    <div class="col-xs-10">
+                                        <h4 class="modal-title">Enter Task</h4>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="header-btns">
+                                            <div class="col-xs-6">
+                                                <div class="dropdown">
+                                                    <button class="btn icon-btn dropdown-toggle" type="button" id="immunization-settings2" data-toggle="dropdown" aria-expanded="true">
+                                                        <i class="fa fa-gear"><span class="sr-only">Settings for vitals</span></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="immunization-settings2">
+                                                        <li role="presentation"><a role="menuitem" href="#">Preview</a></li>
+                                                        <li role="presentation"><a role="menuitem" href="#">Print</a></li>
+                                                        <li role="presentation"><a role="menuitem" href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn icon-btn" title="Press enter to open the popover view"><i class="fa fa-expand"><span class="sr-only">Press enter to open the popover view</span></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <ul class="progress-indicator">
+                                    <li><div class="completed"><span class="bubble"></span>Select a Task</div></li>
+                                    <li><div class="completed"><span class="bubble"></span>Enter Order Info<span class="sr-only">You are currently on step step 2 of 2</span></div></li>
+                                </ul>
+                            </div><!--end progress bar-->
+                            <div class="workflow-controller">
+                                <div>
+                                    <form action="#" method="post" class="form-container adk-form">
+                                        <div class="modal-body">
+                                            <div class="scroll-enter-form">
+                                                <div class="row row-subheader">
+                                                    <div class="col-xs-12">
+                                                        <div class="control form-group form-alert-banner alertMessage">
+                                                            <div class="alert alert-warning alert-dismissible" role="alert">
+                                                                <button type="button" class="close" data-dismiss="alert" title="To close this alert, press enter"><span aria-hidden="true">&times;</span></button>
+                                                                <p><strong><i class="fa fa-warning"></i> DRUG-ALLERY INTERACTION</strong></p>
+                                                                <p>Patient is currently prescribed Coumadin. Using Sodium Bicarbonate and Coumadin together may cause excessive bleeding.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <h5>Sodium Bicarbonate</h5>
+                                                        <hr />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="control form-group">
+                                                            <label for="dosage">Dosage *</label>
+                                                            <select class="form-control" title="To select an option, use the up and down arrow keys then press enter to select" id="dosage" required>
+                                                                <option value="">Select a dosage</option>
+                                                                <option value="Option 1">Option 1</option>
+                                                                <option value="Option 2">Option 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="control form-group">
+                                                            <label for="route">Route *</label>
+                                                            <select class="form-control" title="To select an option, use the up and down arrow keys then press enter to select" id="route" required>
+                                                                <option value="">Select a route</option>
+                                                                <option value="Option 1">Option 1</option>
+                                                                <option value="Option 2">Option 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="control form-group">
+                                                            <label for="schedule">Schedule *</label>
+                                                            <select class="form-control" title="To select an option, use the up and down arrow keys then press enter to select" id="schedule" required>
+                                                                <option value="">Select a schedule</option>
+                                                                <option value="Option 1">Option 1</option>
+                                                                <option value="Option 2">Option 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="control form-group">
+                                                            <div class="checkbox">
+                                                                <label for="prn">
+                                                                    <input type="checkbox" checked title="Press spacebar to select" id="prn" /> PRN
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="control form-group">
+                                                            <label for="day-supply">Day Supply *</label>
+                                                            <input class="form-control" type="text" title="Please enter in Day Supply" required id="day-supply" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="control form-group">
+                                                            <label for="quantity">Quantity *</label>
+                                                            <input class="form-control" type="text" title="Please enter in quantity" required id="quantity" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <div class="control form-group">
+                                                            <label for="refills">Refills</label>
+                                                            <input class="form-control" type="text" title="Please enter in refills" id="refills" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="control form-group">
+                                                            <p class="faux-label">Pick Up</p>
+                                                            <div class="radio">
+                                                                <label class="radio-inline" for="clinic">
+                                                                    <input type="radio" id="clinic" value="Clinic" name="pickUp"> Clinic
+                                                                </label>
+                                                                <label class="radio-inline" for="mail">
+                                                                    <input type="radio" id="mail" value="Mail" name="pickUp"> Mail
+                                                                </label>
+                                                                <label class="radio-inline" for="window">
+                                                                    <input type="radio" id="window" value="Window" name="pickUp"> Window
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <div class="control form-group">
+                                                            <p class="faux-label">Priority</p>
+                                                            <div class="radio">
+                                                                <label class="radio-inline" for="asap">
+                                                                    <input type="radio" id="asap" value="ASAP" name="Priority"> ASAP
+                                                                </label>
+                                                                <label class="radio-inline" for="done">
+                                                                    <input type="radio" id="done" value="Done" name="Priority"> Done
+                                                                </label>
+                                                                <label class="radio-inline" for="routine">
+                                                                    <input type="radio" id="routine" value="Routine" name="Priority"> Routine
+                                                                </label>
+                                                                <label class="radio-inline" for="stat">
+                                                                    <input type="radio" id="stat" value="Stat" name="Priority"> Stat
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <div class="control form-group">
+                                                            <label for="comment">Comment</label>
+                                                            <textarea class="form-control" rows="3" title="Please enter in more information" id="comment"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="order-preview">
+                                                    <h5>Order Preview</h5>
+                                                    <p>Sodium Bicarbonate 1gm, Take two tablets by mouth 5XD, Quantity: 300, Refill: 0</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end modal body-->
+                                        <div class="modal-footer">
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    <p><span id="immunization-administered-saved-at2">Saved at 08:27</span></p>
+                                                </div>
+                                                <div class="col-xs-9">
+                                                    <div class="control visible-inline">
+                                                        <button type="button" class="btn icon-btn btn-sm" title="Press enter to delete immunization"><i class="fa fa-trash"></i></button>
+                                                    </div>
+                                                    <div class="control visible-inline">
+                                                        <button type="button" class="btn btn-primary btn-sm" title="Press enter to close immunization">Close</button>
+                                                    </div>
+                                                    <div class="control visible-inline">
+                                                        <button type="button" class="btn btn-primary btn-sm" title="Press enter to go back to the previous step">Back</button>
+                                                    </div>
+                                                    <div class="control visible-inline">
+                                                        <div class="btn-group">
+                                                            <button type="button" class="btn btn-primary btn-sm" title="Please enter to accept">Accept</button>
+                                                            <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <span class="caret"></span>
+                                                                <span class="sr-only">Toggle Dropdown</span>
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a href="#" title="Please enter to accept">Accept</a></li>
+                                                                <li><a href="#" title="Please enter to accept and add another">Accept & Add Another</a></li>
+                                                                <li><a href="#" title="Please enter to accept and sign">Accept & Sign</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end modal footer-->
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <script src="../../js/jquery-1.11.2.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/typeahead.js"></script>
+    <script>
+    $(function() {
+        // Toggle selected items within accordion
+        $('.panel-body.multi-select-list').on('click', 'li', function() {
+            $(this).toggleClass('list-item-selected');
+        });
+    });
+    </script>
+    <script type="text/javascript">
+    var options = [
+        'option one',
+        'option two',
+        'option three',
+        'option four',
+        'option five',
+        'option six',
+        'option seven',
+        'option eight',
+        'option nine',
+        'option one thousand'
+    ];
+    $(document).ready(function() {
+        // constructs the suggestion engine
+        var my_Suggestion_class = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            limit: 4,
+            local: $.map(options, function(filtered_items) {
+                return {
+                    value: filtered_items
+                };
+            })
+        });
+        my_Suggestion_class.initialize();
+        $('.typeahead').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 0
+        }, {
+            name: 'options',
+            displayKey: '',
+            source: my_Suggestion_class.ttAdapter()
+        });
+    });
+    </script>
+</body>
+
+</html>

@@ -5,6 +5,12 @@
         <span class="search-icon-text">Patient Selection</span>
     </div>
     {{{helpIconLink 'patient_search_button' 'helpIconLinkLeft'}}}
+    {{#if patientName}}
+    <button type="button" class="btn navigation-tab btn-sm" title="{{toTitleCase patientNavTabTitle}}" id="current-patient-nav-header-tab">{{toTitleCase patientName}}</button>
+    {{/if}}
+    {{#each navTabs}}
+    <button type="button" class="btn navigation-tab btn-sm" title="{{toTitleCase finalTitle}}" id="{{toLowerCase finalID}}">{{toTitleCase title}}</button>
+    {{/each}}
     <!--<div>
         <ul class="nav navbar-nav">
             <li class="dropdown">

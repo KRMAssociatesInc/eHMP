@@ -1,0 +1,87 @@
+.fill {
+width:100%
+}
+#dp-collection {
+width: 105px;
+}
+
+#collectionDate {
+clear: both;
+}
+
+.horizontal_line {
+border-top: 1px solid #e5e5e5;
+}
+.row-buffer{
+	  padding: 10px 0px;
+}
+
+.add-lab-order-styles .padded {
+padding: 5px;
+}
+.grid-filter {
+background-color: #f2f2f2;
+padding: 10px 10px 7px 10px;
+margin-bottom: 0px;
+}
+
+#add-lab-order-form div.col-sm-5.right{
+text-align:right;
+}
+
+
+#add-lab-order-form .row.row-buffer.labTests{
+padding-bottom: 15px;
+}
+#add-lab-order-form label {
+	font-size:10px;
+}
+#orders-search-term{
+	font-size:10px;
+}
+.show-anticoagulant{
+	display: none;
+}
+.show-herpes-simplex-common-a{
+	display: none;
+}
+.show-last-draw-time{
+	display:none;
+}
+#lab-tests-form{
+	width:240px;
+}
+#encounters-form{
+	border:none;
+}
+.show-draw-time-options {
+	display:none;
+	label{
+		font-weight: normal;
+	  	font-size: 9px;
+	}
+}
+input#pop-up-notification{
+	line-height:12px;
+	font-size:10px;
+	border:none;
+}
+.notification-box{
+	display:none;
+	margin-bottom: 15px;
+}
+#labTestSearchSpinner {
+	display: none;
+}
+.collection-notification p{
+	font-weight: normal;
+	 font-size: 8px;
+}
+.immediate-collection{
+	margin-left: -20px;
+  	width: 145%;
+  	display:none;
+}
+.element-spacing{
+	padding-top:10px;
+}

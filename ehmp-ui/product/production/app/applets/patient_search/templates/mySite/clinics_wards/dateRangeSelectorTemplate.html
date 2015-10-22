@@ -1,12 +1,23 @@
-<button id="past-month-clinicDate" name="past-month-clinicDate" type="button" class="daterange btn btn-xs default-range" tabindex="0">
-    <span class="sr-only">Past Month</span>1mo</button>
-<button id="past-week-clinicDate" name="past-week-clinicDate" type="button" class="daterange btn btn-xs default-range" tabindex="0">
-    <span class="sr-only">Past Week</span>7d</button>
-<button id="yesterday-clinicDate" name="yesterday-clinicDate" type="button" class="daterange btn btn-xs default-range" tabindex="0">
-    <span class="sr-only">Yesterday</span>1d</button>
-<button id="today-clinicDate" name="today-clinicDate" type="button" class="daterange btn btn-xs default-range active-range" tabindex="0">
-    <span class="sr-only">Today</span>Today</button>
-<button id="tomorrow-clinicDate" name="tomorrow-clinicDate" type="button" class="daterange btn btn-xs default-range" tabindex="0">
-    <span class="sr-only">Tomorrow</span>Tomorrow</button>
-<button id="next-week-clinicDate" name="next-week-clinicDate" type="button" class="daterange btn btn-xs default-range" tabindex="0">
-    <span class="sr-only">Next Week</span>Next Week</button>
+<div class="location-list-filter-input input-group input-sm">
+    <div class="grid-filter-daterange">
+        <button id="past-month-clinicDate" name="past-month-clinicDate" type="button" class="daterange btn btn-xs default-range" title="Last 30 Days">Last 30d</button>
+        <button id="past-week-clinicDate" name="past-week-clinicDate" type="button" class="daterange btn btn-xs default-range" title="Last 7 Days">Last 7d</button>
+        <button id="yesterday-clinicDate" name="yesterday-clinicDate" type="button" class="daterange btn btn-xs default-range" title="Yesterday">Yesterday</button>
+        <button id="today-clinicDate" name="today-clinicDate" type="button" class="daterange btn btn-xs default-range active-range" title="Today">Today</button>
+        <button id="tomorrow-clinicDate" name="tomorrow-clinicDate" type="button" class="daterange btn btn-xs default-range" title="Tomorrow">Tomorrow</button>
+        <button id="next-week-clinicDate" name="next-week-clinicDate" type="button" class="daterange btn btn-xs default-range" title="Next 7 Days">Next 7d</button>
+    </div>
+    <div class="form-inline">
+        <div class="input-group date pull-left" id="custom-date-from-clinic">
+            <span class="input-group-addon" tabindex="0"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input type="text" class="input-sm" id="filter-from-date-clinic" name="filter-from-date-clinic" title="Please select a date in the past." aria-label="Custom date range start" autocomplete="off">
+        </div>
+        <span class="location-list-filter-input inputHelperText pull-left">to</span>
+        <div class="input-group date pull-left" id="custom-date-to-clinic">
+            <span class="input-group-addon" tabindex="0"><i class="glyphicon glyphicon-calendar"></i></span>
+            <input type="text" autocomplete="off" class="input-sm" id="filter-to-date-clinic" name="filter-to-date-clinic" title="Please select a date that is not in the past." aria-label="Custom date range finish" autocomplete="off">
+        </div>
+        <button id="custom-range-apply" name="custom-range-apply-location" type="button" class="btn btn-xs btn-filter grid-filter-daterange default-range daterange pull-right" title="Apply location date range filtering." aria-label="Apply custom date range filtering" disabled="disabled">Apply</button>
+    </div>
+    <div class="clearfix"></div>
+</div>

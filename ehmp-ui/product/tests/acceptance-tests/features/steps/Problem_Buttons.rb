@@ -35,13 +35,12 @@ end
 
 #//*[@id="left"]/div/div/div[1]/span[2]/span[4]/span/button
 When(/^the user clicks on the expand view of Problem Applet$/) do
-#TestSupport.driver.manage.window.maximize
+  #TestSupport.driver.manage.window.maximize
   con = ProblemDOD.instance
   driver = TestSupport.driver
   #con.wait_until_action_element_visible("Acuity", 120)
   #expect(con.static_dom_element_exists?("Problem Applet max")).to be_true
   expect(con.perform_action("Problem Applet max", "")).to be_true
-
 end
 
 When(/^the user clicks on DOD patients$/) do

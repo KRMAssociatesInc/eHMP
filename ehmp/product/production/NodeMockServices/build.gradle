@@ -25,3 +25,9 @@ task zipNodeMockServices(type: Zip, dependsOn: [installNpm]) {
 artifacts {
   archives zipNodeMockServices
 }
+
+task rebuildMetadata(type: Exec) {
+  commandLine "bash", "-c", "curl -s -u ${System.getenv()['NEXUS_USER_NAME']}:${System.getenv()['NEXUS_PASSWORD']} -X DELETE https://dl.vistacore.us/nexus/service/local/metadata/repositories/${->repo}/content/${->groupId.replaceAll('\\.','/')}/${->artifactId}/"
+}
+
+uploadArchives.finalizedBy rebuildMetadata

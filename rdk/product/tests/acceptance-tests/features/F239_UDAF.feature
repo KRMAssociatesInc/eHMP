@@ -2,7 +2,7 @@
 
 Feature: F239 – User-Defined Applet Filters
 
-@F239_save_a_user_defined_filter @US4381
+@F239_save_a_user_defined_filter @US4381 @F239-1.1
 Scenario: Adding a user defined filter 
   When the client saves a UDAF with test "TEST1" filter "filter1" and instance "1234" in a workspace
   Then a successful response is returned
@@ -18,7 +18,7 @@ Scenario: Adding a user defined filter
   Then a successful response is returned
   And the response is "{}"
 
-@F239_remove_all_user_defined_filters @US5507
+@F239_remove_all_user_defined_filters @US5507 @F239-2.1
 Scenario: Removing all user defined filters 
   When the client saves a UDAF with test "TEST1" filter "filter1" and instance "1234" in a workspace
   Then a successful response is returned

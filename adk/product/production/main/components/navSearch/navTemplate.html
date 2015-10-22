@@ -1,13 +1,16 @@
 <nav role="navigation" class="navbar navbar-default">
     <div class="navTitle">
-        <p class="navbar-text" alt="Patient Selection">Patient Selection</p>
+        <p class="navbar-text" alt="Patient Selection">Patient Selection
+        {{#each navTabs}}
+        <button type="button" route-id="{{routeName}}" class="btn navigation-tab btn-sm" title="{{toTitleCase finalTitle}}" id="{{toLowerCase finalID}}">{{toTitleCase title}}</button>
+        {{/each}}
+        </p>
     </div>
     <div class="navbar-right">
         <ul class="nav navbar-nav">
             <li class="dropdown">
                 <a id="eHMP-CurrentUser" data-target="#" class="dropdown-toggle" data-toggle="dropdown" tabIndex="0">
-                    <span class="fa fa-user"></span><span class="sr-only">, Current user menu, Press enter, to open menu, , current user,</span>
-                    {{lastname}}, {{firstname}}
+                    <span class="fa fa-user"></span><span class="sr-only">, Current user menu, Press enter, to open menu, , current user,</span> {{lastname}}, {{firstname}}
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu" role="menu">

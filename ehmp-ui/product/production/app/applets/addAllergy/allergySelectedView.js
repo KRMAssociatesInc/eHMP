@@ -207,7 +207,7 @@ define([
                     },
                     success: function(model, resp) {
                         //close modal...we are done with it
-                        ADK.hideModal();
+                        ADK.UI.Modal.hide();
                         setTimeout(function() {
                             that.gridView.refresh({});
                         }, 2000);
@@ -343,7 +343,7 @@ define([
                 template: Handlebars.compile("<button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>×</span><span class='sr-only'>Close</span></button><h4 class='modal-title'>Enter Allergy/Adverse Reaction for <b> {{name}} </b></h4>")
             });
 
-            ADK.showWorkflowItem(this, {
+            var modal = new ADK.UI.Modal(this, {
                 title : 'Enter Allergy/Adverse Reaction',
                 headerView : titleView.extend({
                     model: this.model
@@ -352,6 +352,7 @@ define([
                                 'regionName': 'addEditAllergy',
                 'replaceContents': destroy
             });
+            moda.show();
         }
     });
 

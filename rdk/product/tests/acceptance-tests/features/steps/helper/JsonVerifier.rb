@@ -40,14 +40,14 @@ class JsonVerifier
       allvalues = []
       #loop through all json records, if the fieldpath contains the fieldvalues, save the record in a subarray
       index = 0
-      jsonobject.each do | onerecord |
+      jsonobject.each do |onerecord|
         allvalues = []
         save_all_values_of_path(0, steps, onerecord, @@output, allvalues)
         if allvalues.include? fieldvalues
           @@output.push("adding row to subarray #{index}")
           @subarry.push(onerecord)
         end #if
-        index = index + 1
+        index += 1
       end # jsonobject.each
       @@output.push("subarry length #{subarry.length}")
       if subarry.length == 0
@@ -71,16 +71,16 @@ class JsonVerifier
 
       #loop through all json records and pull out all possible values for the provided path
       #this result could contain nil values if path does not exist in record
-      jsonobject.each do | onerecord |
+      jsonobject.each do |onerecord|
         save_all_values_of_path(0, steps, onerecord, @@output, allvalues)
       end # jsonobject.each
       @@output.push("check for #{fieldvalues} within #{allvalues}")
 
-      (0..fieldvalues.size-1).each do | i |
+      (0..fieldvalues.size-1).each do |i|
         #our fieldvalues might have extra quotations, remove these for comparisons
         temp = fieldvalues[i].gsub("\"", '')
         found = false
-        allvalues.each do | tempvalue |
+        allvalues.each do |tempvalue|
           if tempvalue.include? temp
             found = true
 
@@ -114,11 +114,11 @@ class JsonVerifier
 
       #loop through all json records and pull out all possible values for the provided path
       #this result could contain nil values if path does not exist in record
-      jsonobject.each do | onerecord |
+      jsonobject.each do |onerecord|
         save_all_values_of_path(0, steps, onerecord, @@output, allvalues)
       end # jsonobject.each
       @@output.push("check for #{fieldvalues} within #{allvalues}")
-      (0..fieldvalues.size-1).each do | i |
+      (0..fieldvalues.size-1).each do |i|
         #our fieldvalues might have extra quotations, remove these for comparisons
         temp = fieldvalues[i].gsub("\"", '')
         unless allvalues.include? temp
@@ -198,7 +198,7 @@ class JsonVerifier
         @@output.push("The value is an array, adding each array element")
         array_result.concat(temp_obj)
       else
-        @@output.push("The value is an object, adding #{temp_obj.to_s}")
+        @@output.push("The value is an object, adding #{temp_obj}")
         array_result.push(temp_obj.to_s)
       end
 
@@ -212,11 +212,10 @@ class JsonVerifier
     #we have encountered an array
     if temp_obj.class.name.eql?("Array")
       @@output.push("at index #{index} for steps #{steps_to_climb} we found an array")
-      index=index+1
-      (0..temp_obj.length-1).each do | i |
+      index+=1
+      (0..temp_obj.length-1).each do |i|
         save_all_values_of_path(index, steps_to_climb, temp_obj[i], output_string, array_result)
         @@output.push("returned: #{array_result} ")
-
       end # for
       return
 
@@ -236,7 +235,7 @@ class JsonVerifier
 
       #loop through all json records and pull out all possible values for the provided path
       #this result could contain nil values if path does not exist in record
-      jsonobject.each do | onerecord |
+      jsonobject.each do |onerecord|
         save_all_values_of_path(0, steps, onerecord, @@output, allvalues)
       end # jsonobject.each
       @@output.push("check that #{fieldvalues} matches #{allvalues}")

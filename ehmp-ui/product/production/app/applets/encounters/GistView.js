@@ -38,7 +38,7 @@ define([
                             zoomType: '',
                             type: 'column',
                             spacing: [1,1,1,1],
-                            backgroundColor: '#f3f3f3',
+                            backgroundColor: '#F2F2F2',
                             events: {
                                 click: function(e) {
                                     $(e.target).closest('[data-toggle=popover]').trigger('click');
@@ -131,7 +131,7 @@ define([
             {
                 data: [],
                 type: 'column',
-                color: '#206473',
+                color: '#406E7B',
                 name: "now",
                 //dashStyle: 'shortdot',
                 pointRange: 24 * 3600 * 1000 *30
@@ -140,42 +140,28 @@ define([
         }};    
     var gistUtil = {
         setPopover: function(obj){
-          //  if (DEBUG) console.log(obj.$el.find('.gistList').position());
-            var self = obj;
-            obj.$el.find('.has-popover').popover({//has-popover//[data-toggle=popover]
-                 trigger: 'manual', // click
+
+            obj.$el.find('.has-popover').popup({//has-popover//[data-toggle=popover]
+                 trigger: 'click', // click
                  html:'true',
                  container: 'body',
                  template:'<div class="popover popover-custom" style="max-width:100%" role="tooltip"> <div style="font-size:12px;padding:5px 5px;" class="popover-title"></div><div class="popover-content"></div></div>',   //<div class="arrow"></div>
-                 //selector: 'has-popover',
-                // viewport: { selector: 'body', padding: 0 },
-                 placement: function(tip, element) { //$this is implicit
+                 /*placement: function(tip, element) { //$this is implicit
                     var position = $(element).position();
                     if (DEBUG) console.log("Position object ----->>"+ JSON.stringify(position));
                     return "bottom";
-                }
-             }).click(function(evt) {
-                self.showPopover(evt, obj);
-            }).focus(function(evt) {
-                evt.preventDefault();
-                evt.stopImmediatePropagation();
-                $(obj).keyup(function(e) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-                    if (e.keyCode === 13 || e.keyCode === 32) {
-                        self.showPopover(evt, obj);
-                    }
-                });
-
-            });        
+                },*/
+                placement: 'bottom',
+                //referenceEl: obj.$el// if we want to center it
+             });        
         },
        
         reflowHChart: function(e){
                 if (DEBUG) console.log("Enc Gist sub gist ----->> reflow chart");
-                $( ".gChartMin" ).each(function() { // target each element with the .contains-chart class
+                $('.gChartMin', e.target).each(function() { // target each element with the .contains-chart class
                     if(!_.isUndefined($(this).highcharts())) $(this).highcharts().reflow(); // target the chart itself
                 });            
-        },
+        },/*
         setChartReflow: function(){
         // fix dimensions of chart that was in a hidden element
           $('#panel-encGist').on( 'shown.bs.collapse', this.reflowHChart);
@@ -183,7 +169,7 @@ define([
         offChartReflow: function(){
         // remove event handler
             $('#panel-encGist').off( 'shown.bs.collapse', this.reflowHChart);
-        },
+        },*/
         showChart: function(obj) {
             if (DEBUG) console.log("Show Enc Gist showChart ----->> show gist item");
             // Reset Chart options 
@@ -241,8 +227,8 @@ define([
                     else{
                         pointer = '#encounter-chart-container-' + model.get("elKind");
                     }
-                    if (typeof ($(pointer).highcharts()) !== 'undefined' ){
-                        $(pointer).highcharts().reflow();
+                    if (typeof (obj.$(pointer).highcharts()) !== 'undefined' ){
+                        obj.$(pointer).highcharts().reflow();
                     }
         },
         binning_normal_function: function(val){return Math.log((val*val*val+1)/0.1);},  // Data normalization function
@@ -267,7 +253,7 @@ define([
                     input.oldestDate = util.convertChartDate(model.get("firstEvent"));
                     input.newestDate = util.convertChartDate(model.get("maxChart"));
                     binned =  ADK.utils.chartDataBinning(input, config);               
-                    $(pointer).highcharts().series[0].setData(binned);
+                    obj.$(pointer).highcharts().series[0].setData(binned);
                 }                
             }
         }
@@ -284,7 +270,7 @@ define([
         chartPointer: null,
         initialize: function(){
             if(DEBUG) console.log("initialize ----->> iItem");
-            $('[data-toggle=popover]').popover('hide'); 
+            //$('[data-toggle=popover]').popover('hide'); 
             this.collection = this.model.get("node");
             
         },
@@ -307,18 +293,18 @@ define([
             }else{
                 return wrongView;
             }
-        },       
+        },    
         events: {
             'click .left-side': 'onClickLeftSide',
             'click .right-side': 'onClickRightSide',
-            'focus .info-display': function(event) {
-                var gistItem = $(document.activeElement);
-                gistItem.keypress(function(e) {
-                    if (e.which === 13 || e.which === 32) {
-                        gistItem.trigger('click');
-                    }
-                });
-            },            
+            //'focus .info-display': function(event) {
+            //    var gistItem = $(document.activeElement);
+            //    gistItem.keypress(function(e) {
+            //        if (e.which === 13 || e.which === 32) {
+            //            gistItem.trigger('click');
+            //        }
+            //    });
+            //},            
             },
         caretStatus: false,
         caretOn: function(){
@@ -336,7 +322,7 @@ define([
                 this.$el.find("#caret").attr("arrowPosition", "right");
                 this.$el.find("#caret").attr("class","right-caret");
             }    
-        },
+        },/*
         showPopover: function(e,obj) {
             e.preventDefault();
             var popoverElement = obj.$el.find('.has-popover');
@@ -345,7 +331,7 @@ define([
             }else{
                 $('[data-toggle=popover]').not(popoverElement).popover('hide');  
             }
-        },         
+        },*/         
         onClickRightSide: function(event){
             if(DEBUG) console.log(this.model.get('kind')+"-top-right-side");
             //this.$el.find('.has-popover').popover('show');
@@ -404,9 +390,9 @@ define([
         initialize: function(options) {
             //this.$el.find('.has-popover').popover('hide');
             var self = this;
-            $('html').click(function() {
+            /*$('html').click(function() {
                 self.$('[data-toggle=popover]').popover('hide');
-            });
+            });*/
             this.collection = options.collection;
             this.maximizeScreen = options.appletConfig.maximizeScreen;
              this._super = Backbone.Marionette.CompositeView.prototype;
@@ -414,23 +400,26 @@ define([
             // this.collection.on("filterDone", function() {
             //    // this.render();
             // }, this); 
-            this.collection.on("customfilter", onCustomFilter, this);
-            this.collection.on("clear_customfilter", onClearCustomFilter, this);
-           this.collection.on("reset", function() {
+            this.listenTo(this.collection, "customfilter", onCustomFilter);
+            this.listenTo(this.collection, "clear_customfilter", onClearCustomFilter);
+           this.listenTo(this.collection, "reset", function() {
                 if (DEBUG)  console.log("EncGist ----->> Collection reset -->>GistView");
                 if (DEBUG)  console.log(this.collection);
-            }, this);                         
+            });                         
         },
        onShow: function(){
         if (DEBUG) console.log("Show Enc Gist onShow ----->>");
-         gistUtil.setChartReflow();  
+         this.$('#panel-encGist').on( 'shown.bs.collapse', gistUtil.reflowHChart);
         },
       onBeforeDestroy: function(){
         if (DEBUG) console.log("Enc Gist onBeforeDestroy ----->>");
-          gistUtil.offChartReflow();
+          //gistUtil.offChartReflow();
 
           this.collection.off("customfilter", onCustomFilter, this);
           this.collection.off("clear_customfilter", onClearCustomFilter, this);
+      },
+      onDestroy: function() {
+        this.$('#panel-encGist').off();
       }
     });
     

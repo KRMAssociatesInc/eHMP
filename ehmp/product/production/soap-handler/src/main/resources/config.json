@@ -86,6 +86,7 @@
     "port" : 8896,
     "protocol" : "http",
     "method" : "POST",
+    "senderCode" : "200EHMP",
     "wsdl" : "MockMVI/psim_webservice/IdMWebService?wsdl"
   },
   "h2" : {

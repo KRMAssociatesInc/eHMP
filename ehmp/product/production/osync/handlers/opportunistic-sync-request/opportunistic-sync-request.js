@@ -9,24 +9,37 @@ var logUtil = require(global.OSYNC_UTILS + 'log');
 var async = require('async');
 var config= require(global.OSYNC_ROOT + 'worker-config');
 
-function handle(log, configA, environment, handlerCallback) {
-    var log = logUtil.getAsChild('opportunistic-sync-request');
-
+function handle(log, config, environment, handlerCallback) {
     var jobs = [];
-
     if (!_.isUndefined(config.beanstalk.jobs.activeUser)) {
-        log.info("starting osync-active user job");
-        jobs = jobs.concat( jobUtil.createActiveUserRequest(log, config, environment, handlerCallback));
+        var str = config.beanstalk.jobs.activeUser.toString().toLowerCase();
+        if(str=== 'true' || str === 'yes' || str === 'on') {
+            log.debug("starting osync-active user job");
+            jobs = jobs.concat(jobUtil.createActiveUserRequest(log, config, environment, handlerCallback));
+        }
     }
 
     if (!_.isUndefined(config.beanstalk.jobs.appointmentRequest)) {
-        log.info("starting appointment request job");
-        jobs = jobs.concat( jobUtil.createAppointmentRequest(log, config, environment, handlerCallback));
+        var str = config.beanstalk.jobs.appointmentRequest.toString().toLowerCase();
+        if(str=== 'true' || str === 'yes' || str === 'on') {
+            log.debug("Starting appointment request job");
+            jobs = jobs.concat(jobUtil.createAppointmentRequest(log, config, environment, handlerCallback));
+        }
     }
 
     if (!_.isUndefined(config.beanstalk.jobs.admissionRequest)) {
-        log.info("opportunistic-sync-request. starting admission request job");
-        jobs = jobs.concat(jobUtil.createAdmissionRequest(log, config, environment, handlerCallback));
+        var str = config.beanstalk.jobs.admissionRequest.toString().toLowerCase();
+        if(str=== 'true' || str === 'yes' || str === 'on') {
+            log.debug("Starting admission request job");
+            jobs = jobs.concat(jobUtil.createAdmissionRequest(log, config, environment, handlerCallback));
+        }
+    }
+
+    if (_.isEmpty(jobs) ) {
+        var errorMsg = 'There are no jobs to publish';
+        log.error("ERROR: " + errorMsg);
+        handlerCallback("ERROR: " + errorMsg);
+        return false;
     }
 
     // make sure that there is something to publish.
@@ -40,7 +53,7 @@ function handle(log, configA, environment, handlerCallback) {
                     return callback(error);
                 }
 
-                log.debug('opportunistic-sync-request.publishJobs : jobs published, complete status. jobId: %s, jobs: %j', job);
+                log.debug('opportunistic-sync-request.publishJobs : jobs published, complete status. jobId: %s, jobs: %j', job.jobId);
                 return callback(null, job);
             });
         }, function(result) {

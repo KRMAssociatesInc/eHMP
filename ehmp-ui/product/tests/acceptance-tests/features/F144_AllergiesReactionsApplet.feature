@@ -1,7 +1,7 @@
 #@Team Neptune
 @US2169 @DE389 @DE549 @regression
 Feature:F144-eHMP Viewer GUI-Allergies Applet
-
+ @debug @DE1478
 Scenario: Users will be able to navigate coversheet, expanded and modal view
     Given user is logged into eHMP-UI
     And user searches for and selects "Eight,Patient"
@@ -29,5 +29,3 @@ Scenario: Users will be able to navigate coversheet, expanded and modal view
 
     When the user clicks the "Modal Close Button"
     Then the modal closes
-    And the user clicks the "Allergies Filter Button"
-    When the user enters "CHOCOLATE" into the "Allergies Filter Field"

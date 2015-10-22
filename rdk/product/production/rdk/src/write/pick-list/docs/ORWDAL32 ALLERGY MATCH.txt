@@ -1,0 +1,43 @@
+ORWDAL32 ALLERGY MATCH
+
+OUTPUT FROM WHAT FILE: REMOTE PROCEDURE//
+Select REMOTE PROCEDURE NAME: ORWDAL32 ALLERGY MATCH
+ANOTHER ONE:
+STANDARD CAPTIONED OUTPUT? Yes//   (Yes)
+Include COMPUTED fields:  (N/Y/R/B): NO//  - No record number (IEN), no Computes
+NAME: ORWDAL32 ALLERGY MATCH            TAG: ALLSRCH
+  ROUTINE: ORWDAL32                     RETURN VALUE TYPE: ARRAY
+ DESCRIPTION:
+ Given a text string, return a list of possible matches from several
+ different sources.
+INPUT PARAMETER: user input string      PARAMETER TYPE: LITERAL
+  MAXIMUM DATA LENGTH: 32               REQUIRED: YES
+
+
+The top level data is what gets returned if no matches are found – for example passing in '   '.
+Top level items always have 5 ^'s whereas the items under it have 4 ^'s.
+
+Top Level
+1-IEN
+2-Name
+3,4-Not populated
+5-Always "TOP"
+6-Always "+"
+
+Regular Data
+1-IEN (internal entry number)
+2-Name
+3-file (file it came out of)
+4-foodDrugOther (F,D,O - or any combination of those - stands for Food, Drug, Other)
+5-source (1,3,4,5,6,7 ==> 1 - VA Allergies File, 3 - National Drug File - Generic Drug Name, 4 - National Drug file - Trade Name, 5 - Local Drug File, 6 - Drug Ingredients File, 7 - VA Drug Class File)
+
+1^VA Allergies File^^^TOP^+
+583^CARBONATED BEVERAGES^GMRD(120.82,"B")^F^1
+582^CARDBOARD^GMRD(120.82,"B")^O^1
+581^CARPETS^GMRD(120.82,"B")^O^1
+…
+3^National Drug File - Generic Drug Name^^^TOP^+
+163^CAROTENE,BETA^PSNDF(50.6,"B")^D^3
+225^CARBAMAZEPINE^PSNDF(50.6,"B")^D^3
+…
+4^National Drug file - Trade Name^^^TOP^+

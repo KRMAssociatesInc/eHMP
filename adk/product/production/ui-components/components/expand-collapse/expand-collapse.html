@@ -1,0 +1,124 @@
+<h3>Expand and Collapse</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> An expand and collapse allows the user to view multiple lengthly content in groups. The user can choose to view one content group at a time or view all of them at once. The view is dictated by the user.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> In order to make expand and collapses 508 complaint for a keyboard user, adding href="#" to the heading will allow the user to tab to the link and select Enter on the keyboard to open and close the expand and collapse.</p>
+    <p><strong><i class="fa fa-lightbulb-o"></i> TIP:</strong> The expand and collapse can be all expanded by default or adding or removing the class "in"</p>
+</div>
+<hr>
+<div id="expand-collapse-copy">
+    <div class="accordion-container panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading-one">
+                <h4>
+                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-one" aria-expanded="true" aria-controls="collapse-one">Sample Heading 1<span class="sr-only">You are on an expandable and collapsible heading. To expand or collapsed the content inside, press enter on the heading.</span></a>
+            </h4>
+            </div>
+            <div id="collapse-one" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-one">
+                <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading-two">
+                <h4>
+                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-two" aria-expanded="false" aria-controls="collapse-two">Sample Heading 2<span class="sr-only">You are on an expandable and collapsible heading. To expand or collapsed the content inside, press enter on the heading.</span></a>
+            </h4>
+            </div>
+            <div id="collapse-two" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-two">
+                <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading-three">
+                <h4>
+                <a class="panel-title accordion-toggle" data-toggle="collapse" href="#collapse-three" aria-expanded="false" aria-controls="collapse-three">Sample Heading 3<span class="sr-only">You are on an expandable and collapsible heading. To expand or collapsed the content inside, press enter on the heading.</span></a>
+            </h4>
+            </div>
+            <div id="collapse-three" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-three">
+                <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div role="tabpanel" class="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#markup-accordion" aria-controls="markup-accordion" role="tab" data-toggle="tab">Expand and Collapse</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-accordion">
+            <pre>
+&lt;div class=&quot;accordion-container panel-group&quot; id=&quot;accordion&quot; role=&quot;tablist&quot; aria-multiselectable=&quot;true&quot;&gt;
+    &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;div class=&quot;panel-heading&quot; role=&quot;tab&quot; id=&quot;heading-one&quot;&gt;
+            &lt;h4&gt;
+                &lt;a  class=&quot;panel-title accordion-toggle&quot; data-toggle=&quot;collapse&quot; href=&quot;#collapse-one&quot; 
+            aria-expanded=&quot;true&quot; aria-controls=&quot;collapse-one&quot;&gt;Sample Heading 1&lt;span class=&quot;sr-only&quot;&gt;You are on an expandable and 
+                collapsible heading. To expand or collapsed the content inside, press enter on 
+                the heading.&lt;/span&gt;&lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;collapse-one&quot; class=&quot;panel-collapse collapse in&quot; role=&quot;tabpanel&quot; 
+        aria-labelledby=&quot;heading-one&quot;&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                mollit anim id est laborum.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;div class=&quot;panel-heading&quot; role=&quot;tab&quot; id=&quot;heading-two&quot;&gt;
+            &lt;h4&gt;
+                &lt;a class=&quot;panel-title accordion-toggle&quot; data-toggle=&quot;collapse&quot; href=&quot;#collapse-two&quot; 
+            aria-expanded=&quot;false&quot; aria-controls=&quot;collapse-two&quot;&gt;Sample Heading 2&lt;span class=&quot;sr-only&quot;&gt;You are on an expandable and 
+                collapsible heading. To expand or collapsed the content inside, press enter on 
+                the heading.&lt;/span&gt;&lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;collapse-two&quot; class=&quot;panel-collapse collapse in&quot; role=&quot;tabpanel&quot; 
+        aria-labelledby=&quot;heading-two&quot;&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                mollit anim id est laborum.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;div class=&quot;panel-heading&quot; role=&quot;tab&quot; id=&quot;heading-three&quot;&gt;
+            &lt;h4&gt;
+                &lt;a class=&quot;panel-title accordion-toggle&quot; data-toggle=&quot;collapse&quot; href=&quot;#collapse-three&quot; 
+            aria-expanded=&quot;false&quot; aria-controls=&quot;collapse-three&quot;&gt;Sample Heading 3&lt;span class=&quot;sr-only&quot;&gt;You are on an expandable and 
+                collapsible heading. To expand or collapsed the content inside, press enter on 
+                the heading.&lt;/span&gt;&lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;collapse-three&quot; class=&quot;panel-collapse collapse in&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;heading-three&quot;&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                mollit anim id est laborum.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('expand-collapse-copy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+    </div>
+</div>

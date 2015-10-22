@@ -79,7 +79,7 @@ Then(/^user sees the search problems text field$/) do
   expect(aa.wait_until_element_present("Search Problem Text field", DefaultLogin.wait_time)).to be_true, "Search Problmes screen did not display"
 end
 
-When(/^user enters "(.*?)" in the search problems text field$/) do | problem_text |
+When(/^user enters "(.*?)" in the search problems text field$/) do |problem_text|
   aa = CIW.instance
   expect(aa.wait_until_element_present("Search Problem Text field", DefaultLogin.wait_time)).to be_true, "Search Problmes screen did not display"
   expect(aa.perform_action("Search Problem Text field", problem_text)).to be_true, "Error when attempting to enter text on Search Problem button"
@@ -90,7 +90,7 @@ Then(/^a suggestion list is displayed to the user$/) do
   expect(aa.wait_until_element_present("Problem Result", DefaultLogin.wait_time)).to be_true, "List of suggested problems didn't display"
 end
 
-Then(/^user chooses "(.*?)" from the suggestion list$/) do | problem_text |
+Then(/^user chooses "(.*?)" from the suggestion list$/) do |problem_text|
   aa = CIW.instance
   expect(aa.wait_until_element_present(problem_text + " - Problem Text", DefaultLogin.wait_time)).to be_true, "User not able to choose this particular problem from suggestion list"
   expect(aa.perform_action(problem_text + " - Problem Text")).to be_true, "Unable to choose the selected problem"

@@ -1,0 +1,718 @@
+KIDS Distribution saved on Jul 13, 2015@12:52:25
+FIXING RPC NAME
+**KIDS**:HMP_RRB 2.0^
+
+**INSTALL NAME**
+HMP_RRB 2.0
+"BLD",9337,0)
+HMP_RRB 2.0^^0^3150713^n
+"BLD",9337,4,0)
+^9.64PA^^
+"BLD",9337,6.3)
+3
+"BLD",9337,"KRN",0)
+^9.67PA^779.2^20
+"BLD",9337,"KRN",.4,0)
+.4
+"BLD",9337,"KRN",.401,0)
+.401
+"BLD",9337,"KRN",.402,0)
+.402
+"BLD",9337,"KRN",.403,0)
+.403
+"BLD",9337,"KRN",.5,0)
+.5
+"BLD",9337,"KRN",.84,0)
+.84
+"BLD",9337,"KRN",3.6,0)
+3.6
+"BLD",9337,"KRN",3.8,0)
+3.8
+"BLD",9337,"KRN",9.2,0)
+9.2
+"BLD",9337,"KRN",9.8,0)
+9.8
+"BLD",9337,"KRN",19,0)
+19
+"BLD",9337,"KRN",19,"NM",0)
+^9.68A^1^1
+"BLD",9337,"KRN",19,"NM",1,0)
+HMP UI CONTEXT^^0
+"BLD",9337,"KRN",19,"NM","B","HMP UI CONTEXT",1)
+
+"BLD",9337,"KRN",19.1,0)
+19.1
+"BLD",9337,"KRN",101,0)
+101
+"BLD",9337,"KRN",409.61,0)
+409.61
+"BLD",9337,"KRN",771,0)
+771
+"BLD",9337,"KRN",779.2,0)
+779.2
+"BLD",9337,"KRN",870,0)
+870
+"BLD",9337,"KRN",8989.51,0)
+8989.51
+"BLD",9337,"KRN",8989.52,0)
+8989.52
+"BLD",9337,"KRN",8994,0)
+8994
+"BLD",9337,"KRN",8994,"NM",0)
+^9.68A^3^2
+"BLD",9337,"KRN",8994,"NM",2,0)
+HMP WRITEBACK MED SAVE ORDER^^0
+"BLD",9337,"KRN",8994,"NM",3,0)
+HMP MED ORDER CHECKS^^0
+"BLD",9337,"KRN",8994,"NM","B","HMP MED ORDER CHECKS",3)
+
+"BLD",9337,"KRN",8994,"NM","B","HMP WRITEBACK MED SAVE ORDER",2)
+
+"BLD",9337,"KRN","B",.4,.4)
+
+"BLD",9337,"KRN","B",.401,.401)
+
+"BLD",9337,"KRN","B",.402,.402)
+
+"BLD",9337,"KRN","B",.403,.403)
+
+"BLD",9337,"KRN","B",.5,.5)
+
+"BLD",9337,"KRN","B",.84,.84)
+
+"BLD",9337,"KRN","B",3.6,3.6)
+
+"BLD",9337,"KRN","B",3.8,3.8)
+
+"BLD",9337,"KRN","B",9.2,9.2)
+
+"BLD",9337,"KRN","B",9.8,9.8)
+
+"BLD",9337,"KRN","B",19,19)
+
+"BLD",9337,"KRN","B",19.1,19.1)
+
+"BLD",9337,"KRN","B",101,101)
+
+"BLD",9337,"KRN","B",409.61,409.61)
+
+"BLD",9337,"KRN","B",771,771)
+
+"BLD",9337,"KRN","B",779.2,779.2)
+
+"BLD",9337,"KRN","B",870,870)
+
+"BLD",9337,"KRN","B",8989.51,8989.51)
+
+"BLD",9337,"KRN","B",8989.52,8989.52)
+
+"BLD",9337,"KRN","B",8994,8994)
+
+"BLD",9337,"QDEF")
+^^^^NO^^^^NO^^NO
+"BLD",9337,"QUES",0)
+^9.62^^
+"BLD",9337,"REQB",0)
+^9.611^^
+"KRN",19,14321,-1)
+0^1
+"KRN",19,14321,0)
+HMP UI CONTEXT^HMP UI CONTEXT version 0.7-S62^^B^^^^^^^^
+"KRN",19,14321,1,0)
+^19.06^1^1^3150709^^^
+"KRN",19,14321,1,1,0)
+This option allows the HMP UI access to the VistA system.
+"KRN",19,14321,99.1)
+62990,29647
+"KRN",19,14321,"RPC",0)
+^19.05P^96^96
+"KRN",19,14321,"RPC",1,0)
+HMPCORD RPC
+"KRN",19,14321,"RPC",2,0)
+HMPCPAT RPC
+"KRN",19,14321,"RPC",3,0)
+HMPFPTC CHKS
+"KRN",19,14321,"RPC",4,0)
+HMPFPTC LOG
+"KRN",19,14321,"RPC",5,0)
+HMP APPOINTMENTS
+"KRN",19,14321,"RPC",6,0)
+HMP DATA VERSION
+"KRN",19,14321,"RPC",7,0)
+HMP DELETE ROSTER
+"KRN",19,14321,"RPC",8,0)
+HMP GET PATIENT DATA
+"KRN",19,14321,"RPC",9,0)
+HMP GET SOURCE
+"KRN",19,14321,"RPC",10,0)
+HMP INPATIENTS
+"KRN",19,14321,"RPC",11,0)
+HMP PREVIEW ROSTER
+"KRN",19,14321,"RPC",12,0)
+HMP ROSTER PATIENTS
+"KRN",19,14321,"RPC",13,0)
+HMP ROSTERS
+"KRN",19,14321,"RPC",14,0)
+HMP SUBSCRIBE
+"KRN",19,14321,"RPC",15,0)
+HMP UPDATE ROSTER
+"KRN",19,14321,"RPC",16,0)
+HMPCRPC RPC
+"KRN",19,14321,"RPC",19,0)
+XHD GET PARAMETER DEF LIST
+"KRN",19,14321,"RPC",20,0)
+HMP PUT PATIENT DATA
+"KRN",19,14321,"RPC",21,0)
+HMP PUT OBJECT
+"KRN",19,14321,"RPC",22,0)
+HMP DELETE OBJECT
+"KRN",19,14321,"RPC",23,0)
+HMP GET OBJECT
+"KRN",19,14321,"RPC",24,0)
+HMP GET ROSTER LIST
+"KRN",19,14321,"RPC",25,0)
+HMPCPRS RPC
+"KRN",19,14321,"RPC",26,0)
+ORQPT WARDS
+"KRN",19,14321,"RPC",27,0)
+ORQPT WARD PATIENTS
+"KRN",19,14321,"RPC",28,0)
+ORQPT SPECIALTIES
+"KRN",19,14321,"RPC",29,0)
+ORQPT SPECIALTY PATIENTS
+"KRN",19,14321,"RPC",30,0)
+ORWU CLINLOC
+"KRN",19,14321,"RPC",31,0)
+ORQPT CLINIC PATIENTS
+"KRN",19,14321,"RPC",32,0)
+ORWU NEWPERS
+"KRN",19,14321,"RPC",33,0)
+ORQPT PROVIDER PATIENTS
+"KRN",19,14321,"RPC",34,0)
+ORWRP COLUMN HEADERS
+"KRN",19,14321,"RPC",35,0)
+ORWLR CUMULATIVE REPORT
+"KRN",19,14321,"RPC",36,0)
+ORWLRR INTERIM
+"KRN",19,14321,"RPC",37,0)
+ORWRP REPORT TEXT
+"KRN",19,14321,"RPC",38,0)
+ORWRP3 EXPAND COLUMNS
+"KRN",19,14321,"RPC",39,0)
+HMP PUT DEMOGRAPHICS
+"KRN",19,14321,"RPC",40,0)
+HMPCRPC RPCCHAIN
+"KRN",19,14321,"RPC",41,0)
+ORQPT DEFAULT PATIENT LIST
+"KRN",19,14321,"RPC",42,0)
+ORWU USERINFO
+"KRN",19,14321,"RPC",43,0)
+YTQ ALLKEYS
+"KRN",19,14321,"RPC",44,0)
+ORWPT BYWARD
+"KRN",19,14321,"RPC",45,0)
+ORQQPX REMINDERS LIST
+"KRN",19,14321,"RPC",46,0)
+ORQQPX REMINDER DETAIL
+"KRN",19,14321,"RPC",47,0)
+ORQQPL4 LEX
+"KRN",19,14321,"RPC",48,0)
+ORWRP REPORT LISTS
+"KRN",19,14321,"RPC",49,0)
+HMP PATIENT ADMIT SYNC
+"KRN",19,14321,"RPC",50,0)
+HMP PATIENT SCHED SYNC
+"KRN",19,14321,"RPC",51,0)
+ORWPT LIST ALL
+"KRN",19,14321,"RPC",52,0)
+ORWPT APPTLST
+"KRN",19,14321,"RPC",53,0)
+PX SAVE DATA
+"KRN",19,14321,"RPC",54,0)
+GMV ADD VM
+"KRN",19,14321,"RPC",55,0)
+GMV VITALS/CAT/QUAL
+"KRN",19,14321,"RPC",56,0)
+GMV MARK ERROR
+"KRN",19,14321,"RPC",57,0)
+ORWDAL32 SAVE ALLERGY
+"KRN",19,14321,"RPC",58,0)
+ORWDAL32 CLINUSER
+"KRN",19,14321,"RPC",59,0)
+ORWDAL32 ALLERGY MATCH
+"KRN",19,14321,"RPC",60,0)
+ORWDAL32 SYMPTOMS
+"KRN",19,14321,"RPC",61,0)
+HMP CHKXTMP
+"KRN",19,14321,"RPC",62,0)
+HMP GLOBAL SIZE
+"KRN",19,14321,"RPC",63,0)
+ORQQPL ADD SAVE
+"KRN",19,14321,"RPC",64,0)
+ORQQPL DELETE
+"KRN",19,14321,"RPC",65,0)
+ORQQPL EDIT SAVE
+"KRN",19,14321,"RPC",66,0)
+ORQQVI NOTEVIT
+"KRN",19,14321,"RPC",67,0)
+ORWPCE HASVISIT
+"KRN",19,14321,"RPC",68,0)
+ORWPCE NOTEVSTR
+"KRN",19,14321,"RPC",69,0)
+ORWU DT
+"KRN",19,14321,"RPC",70,0)
+ORWU EXTNAME
+"KRN",19,14321,"RPC",71,0)
+TIU AUTHORIZATION
+"KRN",19,14321,"RPC",72,0)
+TIU CREATE ADDENDUM RECORD
+"KRN",19,14321,"RPC",73,0)
+TIU CREATE RECORD
+"KRN",19,14321,"RPC",74,0)
+TIU DOCUMENTS BY CONTEXT
+"KRN",19,14321,"RPC",75,0)
+TIU GET DOCUMENT TITLE
+"KRN",19,14321,"RPC",76,0)
+TIU GET RECORD TEXT
+"KRN",19,14321,"RPC",77,0)
+TIU GET REQUEST
+"KRN",19,14321,"RPC",78,0)
+TIU IS THIS A CONSULT?
+"KRN",19,14321,"RPC",79,0)
+TIU IS THIS A SURGERY?
+"KRN",19,14321,"RPC",80,0)
+TIU ISPRF
+"KRN",19,14321,"RPC",81,0)
+TIU LOCK RECORD
+"KRN",19,14321,"RPC",82,0)
+TIU LONG LIST OF TITLES
+"KRN",19,14321,"RPC",83,0)
+TIU REQUIRES COSIGNATURE
+"KRN",19,14321,"RPC",84,0)
+TIU SET DOCUMENT TEXT
+"KRN",19,14321,"RPC",85,0)
+TIU SIGN RECORD
+"KRN",19,14321,"RPC",86,0)
+TIU UNLOCK RECORD
+"KRN",19,14321,"RPC",87,0)
+TIU UPDATE RECORD
+"KRN",19,14321,"RPC",88,0)
+ORCNOTE GET TOTAL
+"KRN",19,14321,"RPC",89,0)
+HMP SAVE NOTE STUB
+"KRN",19,14321,"RPC",90,0)
+ORWPCE LEX
+"KRN",19,14321,"RPC",91,0)
+ORWPCE SAVE
+"KRN",19,14321,"RPC",92,0)
+ORQQPL USER PROB LIST
+"KRN",19,14321,"RPC",93,0)
+TIU DELETE RECORD
+"KRN",19,14321,"RPC",94,0)
+HMP PUT OPERATIONAL DATA
+"KRN",19,14321,"RPC",95,0)
+HMP MED ORDER CHECKS
+"KRN",19,14321,"RPC",96,0)
+HMP WRITEBACK MED SAVE ORDER
+"KRN",19,14321,"U")
+HMP UI CONTEXT VERSION 0.7-S62
+"KRN",8994,3532,-1)
+0^3
+"KRN",8994,3532,0)
+HMP MED ORDER CHECKS^ORCHECK^HMPWBM1^4^^^^1^1
+"KRN",8994,3532,1,0)
+^8994.01^4^4^3150625^^
+"KRN",8994,3532,1,1,0)
+This RPC wraps the broker calls for both ORWDXC ACCEPT and ORCHECK 
+"KRN",8994,3532,1,2,0)
+GETXTRA into a single call.  It will use the same inputs as the ORWDXC 
+"KRN",8994,3532,1,3,0)
+ACCEPT RPC; but will combine the outputs from both broker calls into a 
+"KRN",8994,3532,1,4,0)
+single return.
+"KRN",8994,3532,2,0)
+^8994.02A^7^7
+"KRN",8994,3532,2,1,0)
+DFN^1^30^1^1
+"KRN",8994,3532,2,1,1,0)
+^^1^1^3150625^
+"KRN",8994,3532,2,1,1,1,0)
+Patient IEN found in the PATIENT FILE (#2)
+"KRN",8994,3532,2,2,0)
+FID^1^20^1^2
+"KRN",8994,3532,2,2,1,0)
+^^2^2^3150625^
+"KRN",8994,3532,2,2,1,1,0)
+FILLER ID, aka namespace.  Acquired by passing the selected 
+"KRN",8994,3532,2,2,1,2,0)
+orderDialogIen from the ORWDX WRLST RPC output to the ORWDXC FILLID RPC.
+"KRN",8994,3532,2,3,0)
+STRT^1^30^^3
+"KRN",8994,3532,2,3,1,0)
+^^2^2^3150625^
+"KRN",8994,3532,2,3,1,1,0)
+Desired date in Mmm DD,YYYY@HH:SS format  (Does not apply to pharmacy 
+"KRN",8994,3532,2,3,1,2,0)
+orders)
+"KRN",8994,3532,2,4,0)
+ORL^1^20^1^4
+"KRN",8994,3532,2,4,1,0)
+^^1^1^3150625^
+"KRN",8994,3532,2,4,1,1,0)
+Ordering Location (locationIen from the Visit)
+"KRN",8994,3532,2,5,0)
+OIL^4^256^1^5
+"KRN",8994,3532,2,5,1,0)
+^^4^4^3150625^
+"KRN",8994,3532,2,5,1,1,0)
+An ordered list (array) of orderable items for Radiology, Lab, Pharmacy, 
+"KRN",8994,3532,2,5,1,2,0)
+etc.  Note:  Pharmacy orders contains orderable items + package 
+"KRN",8994,3532,2,5,1,3,0)
+information (inpatient, infusion, non-VA, and outpatient medication 
+"KRN",8994,3532,2,5,1,4,0)
+orders) as appropriate.
+"KRN",8994,3532,2,6,0)
+ORIFN^1^30^^6
+"KRN",8994,3532,2,6,1,0)
+^^3^3^3150625^
+"KRN",8994,3532,2,6,1,1,0)
+This is only available and required for existing orders that are being
+"KRN",8994,3532,2,6,1,2,0)
+copied, changed, or renewed.  New orders do not have an orderIen until
+"KRN",8994,3532,2,6,1,3,0)
+they are saved.
+"KRN",8994,3532,2,7,0)
+ORREN^1^1^^7
+"KRN",8994,3532,2,7,1,0)
+^^2^2^3150625^
+"KRN",8994,3532,2,7,1,1,0)
+Is the order being renewed.  Input is a boolean 1 or 0
+"KRN",8994,3532,2,7,1,2,0)
+The ORIFN is required if ORREN is set to 1.
+"KRN",8994,3532,2,"B","DFN",1)
+
+"KRN",8994,3532,2,"B","FID",2)
+
+"KRN",8994,3532,2,"B","OIL",5)
+
+"KRN",8994,3532,2,"B","ORIFN",6)
+
+"KRN",8994,3532,2,"B","ORL",4)
+
+"KRN",8994,3532,2,"B","ORREN",7)
+
+"KRN",8994,3532,2,"B","STRT",3)
+
+"KRN",8994,3532,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3532,2,"PARAMSEQ",2,2)
+
+"KRN",8994,3532,2,"PARAMSEQ",3,3)
+
+"KRN",8994,3532,2,"PARAMSEQ",4,4)
+
+"KRN",8994,3532,2,"PARAMSEQ",5,5)
+
+"KRN",8994,3532,2,"PARAMSEQ",6,6)
+
+"KRN",8994,3532,2,"PARAMSEQ",7,7)
+
+"KRN",8994,3532,3,0)
+^^14^14^3150625^
+"KRN",8994,3532,3,1,0)
+orderIen^orderCheckIen^CDL^message
+"KRN",8994,3532,3,2,0)
+    orderIen = NEW for new orders.
+"KRN",8994,3532,3,3,0)
+    CDL = Clinic Danger Level.  If CDL = 1, an override comment will be
+"KRN",8994,3532,3,4,0)
+required during processing order checks during the signing process.
+"KRN",8994,3532,3,5,0)
+ 
+"KRN",8994,3532,3,6,0)
+Each order check returned will be evaluated for extra lines:
+"KRN",8994,3532,3,7,0)
+ 
+"KRN",8994,3532,3,8,0)
+    Example:  NEW^25^2^||63679,54957,NEW&These checks could not be
+"KRN",8994,3532,3,9,0)
+completed for this patient:
+"KRN",8994,3532,3,10,0)
+      Note:  An order check that is returned with the double pipe (||) as 
+"KRN",8994,3532,3,11,0)
+noted above is the indication that this RPC needs to be run.
+"KRN",8994,3532,3,12,0)
+ 
+"KRN",8994,3532,3,13,0)
+Final output may contain a mix of order checks with and without extra 
+"KRN",8994,3532,3,14,0)
+lines.
+"KRN",8994,3533,-1)
+0^2
+"KRN",8994,3533,0)
+HMP WRITEBACK MED SAVE ORDER^ORSAVE^HMPWBM2^2^^^^1^1
+"KRN",8994,3533,1,0)
+^8994.01^7^7^3150709^^
+"KRN",8994,3533,1,1,0)
+The remote procedure call uses the ORWDX SAVE broker routine that is 
+"KRN",8994,3533,1,2,0)
+currently used by CPRS to save orders.  However, a call to the GET^HMPDJ 
+"KRN",8994,3533,1,3,0)
+utility is made to generate JSON output for all orders associated with 
+"KRN",8994,3533,1,4,0)
+the patient for consumption by eHMP instead of returning the data for the
+"KRN",8994,3533,1,5,0)
+single order being created or saved.
+"KRN",8994,3533,1,6,0)
+ 
+"KRN",8994,3533,1,7,0)
+Inputs are the same as for the ORWDX SAVE RPC.
+"KRN",8994,3533,2,0)
+^8994.02A^12^12
+"KRN",8994,3533,2,1,0)
+DFN^1^30^1^1
+"KRN",8994,3533,2,1,1,0)
+^^1^1^3150629^
+"KRN",8994,3533,2,1,1,1,0)
+Patient IEN found in the PATIENT FILE (#2)
+"KRN",8994,3533,2,2,0)
+DUZ^1^30^1^2
+"KRN",8994,3533,2,2,1,0)
+^^1^1^3150629^
+"KRN",8994,3533,2,2,1,1,0)
+Provider IEN acquired during login.  NEW PERSON File (#200)
+"KRN",8994,3533,2,3,0)
+LOCIEN^1^20^1^3
+"KRN",8994,3533,2,3,1,0)
+^8994.021^1^1^3150629^^
+"KRN",8994,3533,2,3,1,1,0)
+Ordering Location (locationIen from the Visit)
+"KRN",8994,3533,2,4,0)
+DLG^1^60^1^4
+"KRN",8994,3533,2,4,1,0)
+^^2^2^3150629^
+"KRN",8994,3533,2,4,1,1,0)
+This equates to the internalDialogName acquired from the ORWDXM DLGNAME 
+"KRN",8994,3533,2,4,1,2,0)
+remote procedure call.
+"KRN",8994,3533,2,5,0)
+ORDG^1^10^1^5
+"KRN",8994,3533,2,5,1,0)
+^^2^2^3150629^
+"KRN",8994,3533,2,5,1,1,0)
+The Display Group pointer associated with the order type selected from 
+"KRN",8994,3533,2,5,1,2,0)
+the ORWDX WRLST RPC.
+"KRN",8994,3533,2,6,0)
+ORIT^1^20^1^6
+"KRN",8994,3533,2,6,1,0)
+^^1^1^3150629^
+"KRN",8994,3533,2,6,1,1,0)
+The orderDialogIen acquired from teh ORWDX WRLST RPC.
+"KRN",8994,3533,2,7,0)
+ORIFN^1^30^^7
+"KRN",8994,3533,2,7,1,0)
+^^3^3^3150629^
+"KRN",8994,3533,2,7,1,1,0)
+The orderIen, pointer to the ORDER FILE (#100).  This is only available 
+"KRN",8994,3533,2,7,1,2,0)
+for existing orders that are being changed or renewed.  New orders do not 
+"KRN",8994,3533,2,7,1,3,0)
+have an orderIen until they are saved.
+"KRN",8994,3533,2,8,0)
+ORDIALOG^4^255^1^8
+"KRN",8994,3533,2,8,1,0)
+^^15^15^3150629^
+"KRN",8994,3533,2,8,1,1,0)
+This is an ordered array consisting of the following:
+"KRN",8994,3533,2,8,1,2,0)
+ 
+"KRN",8994,3533,2,8,1,3,0)
+     A map of the input screen entries to the dialog question subscripts 
+"KRN",8994,3533,2,8,1,4,0)
+     returned from the ORWDX DLGDEF RPC.
+"KRN",8994,3533,2,8,1,5,0)
+ 
+"KRN",8994,3533,2,8,1,6,0)
+     Order checks from the HMP WRITEBACK MED ORDER CHECKS RPC.  (Note:
+"KRN",8994,3533,2,8,1,7,0)
+     these do not include the extra lines of order checks.)
+"KRN",8994,3533,2,8,1,8,0)
+     
+"KRN",8994,3533,2,8,1,9,0)
+          Include:
+"KRN",8994,3533,2,8,1,10,0)
+               ("ORCHECK") = number of order checks
+"KRN",8994,3533,2,8,1,11,0)
+               ("ORCHECK",Piece 1, Piece 3, increment) = Piece 2 through
+"KRN",8994,3533,2,8,1,12,0)
+                          Piece 4 of the order checks delimited by "^"
+"KRN",8994,3533,2,8,1,13,0)
+    
+"KRN",8994,3533,2,8,1,14,0)
+     ("ORTS") = treating specialty.  Will be set to 0 (zero) if not
+"KRN",8994,3533,2,8,1,15,0)
+     available. (Only applies to inpatient locations.)
+"KRN",8994,3533,2,9,0)
+ORDEA^1^30^^9
+"KRN",8994,3533,2,9,1,0)
+^^1^1^3150629^
+"KRN",8994,3533,2,9,1,1,0)
+Digital signature
+"KRN",8994,3533,2,10,0)
+ORAPPT^1^30^^10
+"KRN",8994,3533,2,10,1,0)
+^^1^1^3150629^
+"KRN",8994,3533,2,10,1,1,0)
+Date.Time stamp of visit in VA format.
+"KRN",8994,3533,2,11,0)
+ORSRC^1^20^^11
+"KRN",8994,3533,2,11,1,0)
+^^1^1^3150629^
+"KRN",8994,3533,2,11,1,1,0)
+Order source
+"KRN",8994,3533,2,12,0)
+OREVTDF^1^30^^12
+"KRN",8994,3533,2,12,1,0)
+^8994.021^1^1^3150709^^
+"KRN",8994,3533,2,12,1,1,0)
+Event Default : only used for delayed orders.
+"KRN",8994,3533,2,"B","DFN",1)
+
+"KRN",8994,3533,2,"B","DLG",4)
+
+"KRN",8994,3533,2,"B","DUZ",2)
+
+"KRN",8994,3533,2,"B","LOCIEN",3)
+
+"KRN",8994,3533,2,"B","ORAPPT",10)
+
+"KRN",8994,3533,2,"B","ORDEA",9)
+
+"KRN",8994,3533,2,"B","ORDG",5)
+
+"KRN",8994,3533,2,"B","ORDIALOG",8)
+
+"KRN",8994,3533,2,"B","OREVTDF",12)
+
+"KRN",8994,3533,2,"B","ORIFN",7)
+
+"KRN",8994,3533,2,"B","ORIT",6)
+
+"KRN",8994,3533,2,"B","ORSRC",11)
+
+"KRN",8994,3533,2,"PARAMSEQ",1,1)
+
+"KRN",8994,3533,2,"PARAMSEQ",2,2)
+
+"KRN",8994,3533,2,"PARAMSEQ",3,3)
+
+"KRN",8994,3533,2,"PARAMSEQ",4,4)
+
+"KRN",8994,3533,2,"PARAMSEQ",5,5)
+
+"KRN",8994,3533,2,"PARAMSEQ",6,6)
+
+"KRN",8994,3533,2,"PARAMSEQ",7,7)
+
+"KRN",8994,3533,2,"PARAMSEQ",8,8)
+
+"KRN",8994,3533,2,"PARAMSEQ",9,9)
+
+"KRN",8994,3533,2,"PARAMSEQ",10,10)
+
+"KRN",8994,3533,2,"PARAMSEQ",11,11)
+
+"KRN",8994,3533,2,"PARAMSEQ",12,12)
+
+"KRN",8994,3533,3,0)
+^8994.03^2^2^3150709^^
+"KRN",8994,3533,3,1,0)
+An array of all orders for the selected patient in JSON name value 
+"KRN",8994,3533,3,2,0)
+pair context for consumption by eHMP.
+"MBREQ")
+0
+"ORD",16,8994)
+8994;16;1;;;;;;;RPCDEL^XPDIA1
+"ORD",16,8994,0)
+REMOTE PROCEDURE
+"ORD",18,19)
+19;18;;;OPT^XPDTA;OPTF1^XPDIA;OPTE1^XPDIA;OPTF2^XPDIA;;OPTDEL^XPDIA
+"ORD",18,19,0)
+OPTION
+"QUES","XPF1",0)
+Y
+"QUES","XPF1","??")
+^D REP^XPDH
+"QUES","XPF1","A")
+Shall I write over your |FLAG| File
+"QUES","XPF1","B")
+YES
+"QUES","XPF1","M")
+D XPF1^XPDIQ
+"QUES","XPF2",0)
+Y
+"QUES","XPF2","??")
+^D DTA^XPDH
+"QUES","XPF2","A")
+Want my data |FLAG| yours
+"QUES","XPF2","B")
+YES
+"QUES","XPF2","M")
+D XPF2^XPDIQ
+"QUES","XPI1",0)
+YO
+"QUES","XPI1","??")
+^D INHIBIT^XPDH
+"QUES","XPI1","A")
+Want KIDS to INHIBIT LOGONs during the install
+"QUES","XPI1","B")
+NO
+"QUES","XPI1","M")
+D XPI1^XPDIQ
+"QUES","XPM1",0)
+PO^VA(200,:EM
+"QUES","XPM1","??")
+^D MG^XPDH
+"QUES","XPM1","A")
+Enter the Coordinator for Mail Group '|FLAG|'
+"QUES","XPM1","B")
+
+"QUES","XPM1","M")
+D XPM1^XPDIQ
+"QUES","XPO1",0)
+Y
+"QUES","XPO1","??")
+^D MENU^XPDH
+"QUES","XPO1","A")
+Want KIDS to Rebuild Menu Trees Upon Completion of Install
+"QUES","XPO1","B")
+NO
+"QUES","XPO1","M")
+D XPO1^XPDIQ
+"QUES","XPZ1",0)
+Y
+"QUES","XPZ1","??")
+^D OPT^XPDH
+"QUES","XPZ1","A")
+Want to DISABLE Scheduled Options, Menu Options, and Protocols
+"QUES","XPZ1","B")
+NO
+"QUES","XPZ1","M")
+D XPZ1^XPDIQ
+"QUES","XPZ2",0)
+Y
+"QUES","XPZ2","??")
+^D RTN^XPDH
+"QUES","XPZ2","A")
+Want to MOVE routines to other CPUs
+"QUES","XPZ2","B")
+NO
+"QUES","XPZ2","M")
+D XPZ2^XPDIQ
+"VER")
+8.0^22.0
+**END**
+**END**

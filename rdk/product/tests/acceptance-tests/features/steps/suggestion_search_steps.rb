@@ -5,8 +5,10 @@ $LOAD_PATH.unshift path unless $LOAD_PATH.include?(path)
 require 'VerifyJsonRuntimeValue.rb'
 
 When(/^the user types three letters of "(.*?)" for the patient "(.*?)" in VPR format$/) do |text, pid|
- # path = QueryRDKSearchSuggestion.new(pid, text).path
-  path = QueryRDKSearchSuggestion.new(pid, text).path
+  query_rdk_search_suggestion = RDKQuery.new('patient-record-search-suggest')
+  query_rdk_search_suggestion.add_parameter("pid", pid)
+  query_rdk_search_suggestion.add_parameter("query", text)
+  path = query_rdk_search_suggestion.path
   @response = HTTPartyWithBasicAuth.get_with_authorization(path)
 end
 

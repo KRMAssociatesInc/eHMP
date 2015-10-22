@@ -4,11 +4,13 @@ define([
     'underscore',
     'highcharts',
     'hbs!app/applets/stackedGraph/list/rowItemViewTemplate',
+    'hbs!app/applets/stackedGraph/list/rowItemViewMedicationsTemplate',
     'app/applets/stackedGraph/utils/utils',
+    'app/applets/stackedGraph/tilesorting/rowItemParentView',
     'hbs!app/applets/stackedGraph/list/popoverTemplate',
     'typeahead',
     'highcharts-more'
-], function(Backbone, Marionette, _, Highcharts, RowItemViewTemplate, Utils, PopoverTemplate) {
+], function(Backbone, Marionette, _, Highcharts, RowItemViewTemplate, RowItemViewMedicationsTemplate, Utils, RowItemParentView, PopoverTemplate) {
 
     /**
      * Detect Element Resize Plugin for jQuery
@@ -184,18 +186,19 @@ define([
         };
     }(jQuery));
 
-    var RowItemView = Backbone.Marionette.ItemView.extend({
+    var RowItemView = RowItemParentView.extend({
         tagName: 'div',
-        className: 'row',
+        className: 'row gistItem',
         attributes: {
             'tabindex': 0
         },
-        events: {
-            'click': function(e) {
-                e.stopPropagation();
+        getTemplate: function() {
+            if (this.model.get('graphType') === "Medications") {
+                return RowItemViewMedicationsTemplate;
+            } else {
+                return RowItemViewTemplate;
             }
         },
-        template: RowItemViewTemplate,
         templateHelpers: function() {
             return {
                 displayName: this.model.get('typeName').toLowerCase()
@@ -207,20 +210,20 @@ define([
             } else {
                 this.model.attributes.last = '--';
             }
-
+            this.applet = 'stackedGraph';
             this.options = options;
             this.options.AppletID = 'stackedGraph';
             this.activeCharts = options.activeCharts;
             this.timeLineCharts = options.timeLineCharts;
             this.pointers = options.pointers;
-
+            this._base = RowItemParentView.prototype;
         },
         onDestroy: function() {
 
             $.each(this.activeCharts, function(i, chart) {
                 $(chart.container).off('.stackedGraph');
             });
-
+            this._base.onDestroy.apply(this, arguments);
 
         },
         onRender: function() {
@@ -236,6 +239,9 @@ define([
                     }
 
                     $.extend(true, chartInfo, {
+                        title: {
+                            text: null
+                        },
                         tooltip: {
                             crosshairs: false,
                             shared: true,
@@ -274,7 +280,8 @@ define([
                         },
                         chart: {
                             zoomType: '',
-                            height: 100,
+                            // height: 100,
+                            panning: false,
                             margin: 0,
                             spacing: 0,
                             backgroundColor: 'rgba(0,0,0,0)',
@@ -309,11 +316,12 @@ define([
                         }
                     });
 
+
                     var chart = $renderTo.highcharts(chartInfo, function(chart) {
                         chart.line = chart.renderer.rect(100, 0, 2, chart.chartHeight)
                             .attr({
                                 fill: 'black',
-                                zIndex: 3
+                                zIndex: 6
                             })
                             .css({
                                 visibility: 'hidden'
@@ -323,16 +331,11 @@ define([
 
                     $renderTo.resize(function() {
                         var width = $(this).width();
-                        chart.setSize(
-                            width,
-                            null
-                        );
+                        chart.reflow();
 
                         $.each(self.timeLineCharts, function(i, chart) {
-                            chart.setSize(
-                                width,
-                                null
-                            );
+                           chart.reflow();
+
                         });
                     });
 
@@ -351,12 +354,36 @@ define([
                         e.setSize($renderTo.width(), null);
                     });
 
-                    var tlbrOpts = {
-                        targetElement: self,
-                        buttonTypes: ['infoButton', 'detailsviewbutton', 'quicklookbutton', 'deleteStackedGraphButton']
+                    self.$el.model = self.model;
+                    self.$el.$ =  function(selector){
+                         return self.$el.find(selector);
                     };
 
-                    self.toolbar = new ADK.Views.ToolbarView(tlbrOpts);
+                    self.tlbrOpts = {
+                        targetElement: self.$el,
+                        buttonTypes: ['infoButton', 'detailsviewbutton', 'quicklookbutton', 'deleteStackedGraphButton'],
+                        appletID: self.model.get('applet_id'),
+                        model: self.model
+                    };
+
+                    // if (self.model.get('graphType') !== 'Medications') {
+                    //     self.tlbrOpts.buttonTypes.splice(2, 0, 'quicklookbutton');
+                    // }
+
+                    self._base.onRender.apply(self, arguments);
+
+                    if (self.model.get('graphType') === "Medications") {
+
+                        self.listenTo(ADK.Messaging, 'globalDate:selected', function(dateModel) {
+                            var medicationGroupType = self.model.get('medicationGroupType');
+                            var buildchart = new self.model.attributes.ChartBuilder(medicationGroupType);
+                            var medicationChartConfig = new self.model.attributes.GraphConfig(buildchart);
+                            _.each(chart.series, function(e, i) {
+                                chart.series[i].setData(medicationChartConfig.series[i].data, true);
+                            });
+
+                        });
+                    }
                 }
 
             }, 500);
@@ -405,6 +432,7 @@ define([
         },
         onBeforeDestroy: function() {
             $('[data-toggle=popover]').popover('hide');
+            $('.mainAppletToolbar').remove();
         }
 
     });

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -14,6 +15,9 @@ import javax.ws.rs.QueryParam;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import us.vistacore.vxsync.ConnectionException;
+import us.vistacore.vxsync.ServerException;
 
 import com.codahale.metrics.annotation.Timed;
 
@@ -105,11 +109,23 @@ public class HdrSoapHandler {
 
             return(hdrOutput.toString());
         }
-        catch (Exception e)
-        {
-            LOG.error("Error getting HDR Data for all hdr domains - icn "+icn+" "+e);
-        }
-        return null;
+		catch(javax.xml.ws.WebServiceException e)
+		{
+			LOG.error("Error getting HDR Data for all hdr domains - icn "+icn+" "+e);
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) {
+			LOG.error("Error getting HDR Data for all hdr domains - icn "+icn+" "+e);
+			throw new ServerException("Error reported from JMeadows");
+		}
     }
 
    /*
@@ -146,10 +162,22 @@ public class HdrSoapHandler {
             conn.disconnect();
             return(hdrOutput.toString());
         }
-        catch (Exception e)
-        {
-            LOG.error("Error getting HDR Data for domain "+domain+" icn "+icn+" "+e);
-        }
-        return null;
+		catch(javax.xml.ws.WebServiceException e)
+		{
+			LOG.error("Error getting HDR Data for domain "+domain+" icn "+icn+" "+e);
+		    Throwable cause = e; 
+		    while ((cause = cause.getCause()) != null)
+		    {
+		        if(cause instanceof SocketTimeoutException)
+		        {
+					throw new ConnectionException("Error reported from JMeadows");
+		        }
+		    }
+			throw new ServerException("Error reported from JMeadows");
+		}
+		catch (Exception e) {
+			LOG.error("Error getting HDR Data for domain "+domain+" icn "+icn+" "+e);
+			throw new ServerException("Error reported from JMeadows");
+		}
     }
 }

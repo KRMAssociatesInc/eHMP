@@ -1,0 +1,9 @@
+ORWU DEVICE
+INPUT:
+    FROM (PARTIAL SEARCH STRING)
+    DIR (1 = forward, the default in CPRS)
+
+Output: A list of devices
+
+IEN;Name^DisplayName^Location^RMar^PLen
+

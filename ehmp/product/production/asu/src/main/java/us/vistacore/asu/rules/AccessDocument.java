@@ -1,9 +1,6 @@
 package us.vistacore.asu.rules;
 
-import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by kumblep on 4/23/15.
@@ -12,16 +9,16 @@ public class AccessDocument
 {
     //This contains one or more current class uid and parent class uids of the current class
     ArrayList userClassUids;
-    ArrayList roleUid;
+    ArrayList roleNames;
     String docDefUid;
     String docStatus;
 
-    public ArrayList getRoleUid() {
-        return roleUid;
+    public ArrayList getRoleNames() {
+        return roleNames;
     }
 
-    public void setRoleUid(ArrayList roleUid) {
-        this.roleUid = roleUid;
+    public void setRoleNames(ArrayList roleNames) {
+        this.roleNames = roleNames;
     }
 
     public String getDocDefUid() {

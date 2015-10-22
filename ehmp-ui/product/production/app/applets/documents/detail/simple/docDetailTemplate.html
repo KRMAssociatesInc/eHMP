@@ -31,24 +31,10 @@
         {{/if}}
     {{/if}}
 	{{#if addendaText}}
-	<div tabindex="0"><strong>Addenda</strong><br>{{textDateTime}} &nbsp; Added by {{textAuthor}}</div>
-	<br>
 	<pre tabindex="0">{{content}}</pre><br>
-
-	{{#each addendaText}}
-	<div class="addendaLabel labelStyleColor" tabindex="0">Date of Addendum: </div>
-	<div class="addendaInfo" tabindex="0">{{addendaDateTime}}&nbsp;</div>
-	<br>
-	<div class="addendaLabel labelStyleColor" tabindex="0">Author: </div>
-	<div class="addendaInfo" tabindex="0">{{authorDisplayName}}&nbsp;</div>
-	<br>
-	<div class="addendaLabel labelStyleColor" tabindex="0">Status: </div>
-	<div class="addendaInfo {{status}}" tabindex="0">{{status}}&nbsp;</div>
-	<br>
-	<pre tabindex="0">{{content}}</pre> <br>
-
-	{{/each}}
-	{{else}}
+	{{/if}}
+	<div class="document-detail-addenda-region"></div>
+	{{#unless addendaText}}
 	    {{#unless radiologyBool}}
 	    	{{#if dodComplexNoteContent}}
 	    	<iframe id="dodContent" class="dodContent" seamless sandbox="allow-same-origin" src="#"></iframe>
@@ -56,6 +42,6 @@
 	    	<pre tabindex="0">{{content}}</pre>
 	    	{{/if}}
 	    {{/unless}}
-	{{/if}}
+	{{/unless}}
 
 </div>

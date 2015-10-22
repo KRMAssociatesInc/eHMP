@@ -53,8 +53,8 @@ function setUpEnvironment() {
 	};
 
 	var environment = {
-		vistaClient: new VistaClient(dummyLogger, config),
-		jds: new JdsClient(dummyLogger, config)
+		vistaClient: new VistaClient(dummyLogger, dummyLogger, config),
+		jds: new JdsClient(dummyLogger, dummyLogger, config)
 	};
 
 	return environment;

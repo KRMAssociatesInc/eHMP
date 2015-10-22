@@ -324,7 +324,11 @@ define([
                 */
             };
 
-            ADK.showModal(view, modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: view,
+                options: modalOptions
+            });
+            modal.show();
         },
         regions: {
             leftColumn: '.js-backgrid',

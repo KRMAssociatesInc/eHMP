@@ -12,7 +12,7 @@ Scenario: Client can request free text allergies in FHIR format
       Then a successful response is returned
       And the results contain
             | name         | value |
-            | totalResults | 8     |
+            | total | 9     |
       And the FHIR results contain "allergy"
             | allergies_field_list            | panorama_allergies_values                                |
             | content.resourceType            | AdverseReaction                                          |
@@ -50,7 +50,7 @@ Scenario: Client can request observed allergies in FHIR format
       Then a successful response is returned
       And the results contain
       | name         | value |
-      | totalResults | 40    |
+      | total | 40    |
       And the FHIR results contain "allergy"
       | allergies_field_list                | panorama_allergies_values       |
       | content.contained.type.text         | ERYTHROMYCIN                    |
@@ -67,7 +67,7 @@ Scenario: Client can request historical allergies in FHIR format
       Then a successful response is returned
       And the results contain
       | name         | value |
-      | totalResults | 8     |
+      | total | 8     |
       And the FHIR results contain "allergy"
       | allergies_field_list                  | panorama_allergies_values                                |
       | content.text.status                   | generated                                                |
@@ -95,6 +95,7 @@ Scenario: Client can request observed allergies in FHIR format
       And a patient with pid "5000000339V988748" has been synced through the RDK API
       When the client requests "10" allergies for the patient "5000000339V988748" in FHIR format
       Then a successful response is returned
+      And total returned resources are "10"
       And the results contain
       | name         | value |
-      | totalResults | 10    |
+      | total | 28    |

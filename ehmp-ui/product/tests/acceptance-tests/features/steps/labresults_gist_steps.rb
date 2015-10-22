@@ -49,7 +49,7 @@ Then(/^the first coloumn of the Lab Results gist contains the rows for patient "
     expect(driver.find_element(:id, "labs_problem_name_Erythrocyte_Distribution_Width_CV__RBC_Quantitative_Automated_Count").text == table.rows[12][0]).to be_true
     expect(driver.find_element(:id, "labs_problem_name_Erythrocytes__Blood_Quantitative_Automated_Count").text == table.rows[13][0]).to be_true
     expect(driver.find_element(:id, "labs_problem_name_Hematocrit__Blood_Quantitative_Automated_Count").text == table.rows[14][0]).to be_true
-# elsif (patient == "Five,Patient")
+  # elsif (patient == "Five,Patient")
 
   when "Five,Patient"
     expect(vg.wait_until_action_element_visible("Lab Results Five Check", 60)).to be_true
@@ -69,4 +69,4 @@ Then(/^the first coloumn of the Lab Results gist contains the rows for patient "
   end
 
   expect(matched_patient).to be_true
-end#Lab Results Coversheet rows
+end #Lab Results Coversheet rows

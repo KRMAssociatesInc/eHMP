@@ -4,7 +4,7 @@ define([
 
     var siteCode = ADK.UserService.getUserSession().get('site');
     var problemSearchURL = ADK.ResourceService.buildUrl('problems-getProblems', {
-            siteCode: siteCode,
+            "site.code": siteCode,
             limit: 10
         });
     return new Bloodhound({
@@ -18,21 +18,25 @@ define([
                         if($('#uncodedNew').prop('checked')){
                             url += '&uncoded=1';
                         }
-                        url+= '&searchfor=' + query;
+                        url+= '&query=' + query;
 
                         return url;
                     },
                     filter: function (data) {
-                        return $.map(data.data.items, function (problemItem) {
-                            return {
-                                value: problemItem.problem,
-                                problemNumber: problemItem.problemNumber,
-                                icd9: problemItem.icd9,
-                                lexiconCode: problemItem.lexiconCode,
-                                snomed: problemItem.snomed,
-                                problemText: problemItem.problemText
-                            };
-                        });
+                        if(data && data.data.items !== 'No data'){
+                            return $.map(data.data.items, function (problemItem) {
+                                return {
+                                    value: problemItem.problem,
+                                    problemNumber: problemItem.problemNumber,
+                                    icd: problemItem.icd,
+                                    lexiconCode: problemItem.lexiconCode,
+                                    snomed: problemItem.snomed,
+                                    problemText: problemItem.problemText
+                                };
+                            });
+                        } else {
+                            return {};
+                        }
                     },
                     ajax: {
                         beforeSend: function(){ 

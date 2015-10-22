@@ -24,7 +24,7 @@ end
 
 Then(/^the Allergies Gist view contains$/) do |table|  
   expect(@ag.wait_until_action_element_visible("AllergiesGridVisible", DefaultLogin.wait_time)).to be_true    
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(@ag.perform_verification('Allergy Details', row[0])).to be_true, "The value #{row[0]} is not present in the allergy details"
   end
 end
@@ -34,7 +34,7 @@ Then(/^the Allergies Applet title is "(.*?)"$/) do |title|
   expect(@ag.perform_verification("Allergies Gist Applet Title", title)).to be_true
 end
 
-When(/^Allegies Gist Applet contains only "(.*?)"$/) do | allergy_type |
+When(/^Allegies Gist Applet contains only "(.*?)"$/) do |allergy_type|
   expect(@ag.wait_until_action_element_visible("AllergiesGridVisible", DefaultLogin.wait_time)).to be_true
   expect(@ag.perform_verification("Allergies Gist Applet Filter Result", allergy_type)).to be_true
 end

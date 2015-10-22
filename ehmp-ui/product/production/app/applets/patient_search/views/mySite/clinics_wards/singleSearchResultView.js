@@ -17,8 +17,8 @@ define([
             href: ""
         },
         events: {
-            "click": "selectPatient",
-            "keyup": "selectPatient"
+            "click": "selectItem",
+            "keyup": "selectItem"
         },
         initialize: function(options) {
             this.searchView = options.searchView;
@@ -26,12 +26,12 @@ define([
             this.searchApplet = options.searchApplet;
             this.model.set('locationType', options.locationType.substr(0, options.locationType.length-1));
         },
-        selectPatient: function(event) {
+        selectItem: function(event) {
             if (event.keyCode !== undefined && (event.keyCode != ENTER_KEY && event.keyCode != SPACE_KEY)) {
                 return;
             }
             var currentLocation = this.model;
-            this.searchApplet.confirmationView.updateTemplateToBlank();
+            this.searchApplet.removePatientSelectionConfirmation();
             this.searchView.locationSelected(currentLocation);
             this.searchView.selectedLocationModel = currentLocation;
             this.locationCollectionView.$el.find("a.activeItem").removeClass('activeItem');

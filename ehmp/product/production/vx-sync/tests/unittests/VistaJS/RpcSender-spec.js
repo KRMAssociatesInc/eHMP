@@ -2,7 +2,7 @@
 
 require('../../../env-setup');
 
-var RpcSender = require(global.VX_VISTAJS + 'RpcSender');
+var RpcSender = require('vista-js').RpcSender;
 
 var extractSecurityErrorMessage = RpcSender.extractSecurityErrorMessage;
 var parseMessage = RpcSender.parseMessage;

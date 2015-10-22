@@ -19,6 +19,7 @@ var log = require(global.VX_UTILS + '/dummy-logger');
 
 var vx_sync_ip = require(global.VX_INTTESTS + 'test-config');
 
+var TerminologyUtil = require(global.VX_SUBSYSTEMS + 'terminology/terminology-utils');
 var val = require(global.VX_UTILS + 'object-utils').getProperty;
 var config = require(global.VX_ROOT + 'worker-config');
 config.terminology.host = vx_sync_ip;
@@ -93,15 +94,18 @@ var jdsCodedDodValue = {
 };
 
 
+var terminologyUtil = new TerminologyUtil(log, null, config);
 describe('record-enrichment-vital-xformer.js', function() {
     describe('transformAndEnrichRecord()', function() {
         xit('Happy Path with VA Vitals', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: terminologyUtil
+            };
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalVaVitalJob, function(error, record) {
+                xformer(log, config, environment, originalVaVitalJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     // Verify that the code was inserted.
@@ -119,11 +123,13 @@ describe('record-enrichment-vital-xformer.js', function() {
         });
         it('Happy Path with Dod Vitals', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: terminologyUtil
+            };
             var config = {};
 
             runs(function() {
-                xformer(log, config, environment, originalDodVitalJob, function(error, record) {
+                xformer(log, config, environment, originalDodVitalJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(_.isObject(record)).toBe(true);
                     // Verify that the code was inserted.

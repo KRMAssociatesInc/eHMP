@@ -10,15 +10,14 @@ define([
                 this._super = ADK.AppletViews.ObservationsGistView.prototype;
                 var patientType = ADK.PatientRecordService.getCurrentPatient().attributes.patientStatusClass;
 
-                GistConfig.fetchOptions.onSuccess = function() {
-                    self.appletOptions.collection.reset(self.appletOptions.collection.models);
-                };
                 this.appletOptions = {
                     filterFields: GistConfig.filterFields,
                     gistModel: GistConfig.gistModel,
                     collection: CollectionHandler.fetchVitalsCollection(GistConfig.fetchOptions, patientType, 'gist'),
                     collectionParser: GistConfig.transformCollection,
                     gistHeaders: GistConfig.gistHeaders,
+                    enableTileSorting: GistConfig.enableTileSorting,
+                    tileSortingUniqueId: GistConfig.tileSortingUniqueId,
                     onClickRow: function(model, event) {
                         var uid = model.get('uid');
                         var currentPatient = ADK.PatientRecordService.getCurrentPatient();

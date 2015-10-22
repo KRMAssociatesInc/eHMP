@@ -16,7 +16,8 @@ define([
         ENFORCE_VISIT_SELECTION = 'enforceVisitSelection',
         defaultCallback = function(event, options) {
             return function(response) {
-                response.view.showModal(event, options);
+                ADK.hideAllModals();
+                response.view.buildView();
             };
         },
         defaultChannelConfig = function(command, callback) {

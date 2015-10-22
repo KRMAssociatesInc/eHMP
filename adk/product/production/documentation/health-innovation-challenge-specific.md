@@ -19,11 +19,11 @@ There instructions cover the installation, download and configuration of the eHM
 
     If git is not installed, use the 'Download ZIP' link on `https://github.com/VHAINNOVATIONS/ehmp-app` and extract to `/Users/<USERNAME>/Sites/ehmp-app`.
 
-- Verify the resourceDirectoryPath in `/Users/<USERNAME>/Sites/ehmp-app/app.json`
+- Verify the resourceDirectoryPathFetch in `/Users/<USERNAME>/Sites/ehmp-app/app.json`
 
     Line 6 should look like :
      ```
-     "resourceDirectoryPath": "http://54.196.168.222:8888/resourcedirectory",
+     "resourceDirectoryPathFetch": "http://54.196.168.222:8888/resourcedirectory",
      ```
 
 - Type the following command : `sudo vim /etc/apache2/httpd.conf`
@@ -91,11 +91,11 @@ There instructions cover the installation, download and configuration of the eHM
 
     If git is not installed, use the 'Download ZIP' link on `https://github.com/VHAINNOVATIONS/ehmp-app` and extract to `C:\Users\<USERNAME>\ehmp-app`.
 
-- Verify the resourceDirectoryPath in `C:\Users\<USERNAME>\ehmp-app\app.json`
+- Verify the resourceDirectoryPathFetch in `C:\Users\<USERNAME>\ehmp-app\app.json`
 
     Line 6 should look like :
      ```
-     "resourceDirectoryPath": "http://54.196.168.222:8888/resourcedirectory",
+     "resourceDirectoryPathFetch": "http://54.196.168.222:8888/resourcedirectory",
      ```
 
 - Edit the following file : <br />
@@ -161,11 +161,11 @@ There instructions cover the installation, download and configuration of the eHM
 
     If git is not installed, use the 'Download ZIP' link on `https://github.com/VHAINNOVATIONS/ehmp-app` and extract to `/var/www/ehmp-app`.
 
-- Verify the resourceDirectoryPath in `/var/www/ehmp-app/app.json`
+- Verify the resourceDirectoryPathFetch in `/var/www/ehmp-app/app.json`
 
     Line 6 should look like :
      ```
-     "resourceDirectoryPath": "http://54.196.168.222:8888/resourcedirectory",
+     "resourceDirectoryPathFetch": "http://54.196.168.222:8888/resourcedirectory",
      ```
 
 - Type the following command : `sudo vim /etc/httpd/httpd.conf`

@@ -12,7 +12,7 @@ Scenario: Client can request operational sync status from multiple sites and dom
       | asu-class			| 
       | asu-rule			|
       | doc-def				|
-      | immunization-list	|
+      | immunization	|
       | labgroup			|
       | labpanel			|
       | location			|
@@ -22,11 +22,11 @@ Scenario: Client can request operational sync status from multiple sites and dom
       | roster				|
       | route				|
       | schedule			|
-      | signssymptoms-list	|
+      | sign-symptom	|
       | user				|
-      | vitalcategory-list	|
-      | vitalqualifier-list	|
-      | vitaltypes-list		|
+      | vital-category	|
+      | vital-qualifier	|
+      | vital-type		|
       
   When the client requests operational sync status for "C877" site
   Then the operational data results contain different domains from "C877"
@@ -34,7 +34,7 @@ Scenario: Client can request operational sync status from multiple sites and dom
       | asu-class			| 
       | asu-rule			|
       | doc-def				|
-      | immunization-list	|
+      | immunization    	|
       | labgroup			|
       | labpanel			|
       | location			|
@@ -44,9 +44,9 @@ Scenario: Client can request operational sync status from multiple sites and dom
       | roster				|
       | route				|
       | schedule			|
-      | signssymptoms-list	|
+      | sign-symptom       	|
       | user				|
-      | vitalcategory-list	|
-      | vitalqualifier-list	|
-      | vitaltypes-list		|
+      | vital-category  	|
+      | vital-qualifier 	|
+      | vital-type  		|
   

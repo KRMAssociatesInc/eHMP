@@ -8,11 +8,23 @@ task installNpm(type: Exec) {
   commandLine "npm", "install"
 }
 
-task cleanNPM(type: Delete) {
+task ccowInstallNpm(type: Exec) {
+  workingDir './ccow'
+  group "RDK Tasks"
+  description "installs package(s) for ccow"
+  commandLine "npm", "install"
+}
+
+task writeInstallNpm(type: Exec) {
+  workingDir './src/write'
+  group "RDK Tasks"
+  description "installs package(s) for write back"
+  commandLine "npm", "install"
+}
+
+task cleanNPM() {
   group "RDK Tasks"
   description "Clean up node_modules"
-  //commandLine "rm -rf ${projectDir}/node_modules"
-  delete "${projectDir}/node_modules"
 }
 clean.dependsOn cleanNPM
 
@@ -44,7 +56,7 @@ task rdkAllTests(dependsOn: [test, rdkIntTests]) {
   description "runs unit and integration tests"
 }
 
-task zipRDK(type: Zip, dependsOn: [build]) {
+task zipRDK(type: Zip, dependsOn: [build, ccowInstallNpm, writeInstallNpm]) {
   extension = 'zip'
   baseName = 'rdk'
   version = version
@@ -52,6 +64,14 @@ task zipRDK(type: Zip, dependsOn: [build]) {
   from projectDir
 }
 
+uploadArchives.dependsOn zipRDK
+
 artifacts {
   archives zipRDK
 }
+
+task rebuildMetadata(type: Exec) {
+  commandLine "bash", "-c", "curl -s -u ${System.getenv()['NEXUS_USER_NAME']}:${System.getenv()['NEXUS_PASSWORD']} -X DELETE https://dl.vistacore.us/nexus/service/local/metadata/repositories/${->repo}/content/${->groupId.replaceAll('\\.','/')}/${->artifactId}/"
+}
+
+uploadArchives.finalizedBy rebuildMetadata

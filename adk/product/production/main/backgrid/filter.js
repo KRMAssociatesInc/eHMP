@@ -35,6 +35,7 @@ define([
     Filter.create = function(options) {
         // Customize Backgrid's default ClientSideFilter
         Backgrid.ClientSideFilterWithDateRangePickerFilter = Backgrid.Extension.ClientSideFilter.extend({
+            preFilterCollection: null,
             dateField: null,
             setDateField: function(dateField) {
                 this.dateField = dateField;
@@ -115,6 +116,7 @@ define([
                 e.preventDefault();
                 WorkspaceFilters.removeAllFiltersFromApplet(this.workspaceId, this.instanceId);
                 this.userDefinedFilters.reset();
+                this.clear();
                 this.doSearch();
                 this.$('.udaf').html('');
                 this.userDefinedFiltersCollectionChanged();
@@ -150,12 +152,9 @@ define([
                 }
             },
             onShow: function() {
-                //if (this.onUserWorkspace) {
                 var self = this;
                 WorkspaceFilters.onRetrieveWorkspaceFilters(self.instanceId, function(args) {
                     var j, filterCount, userDefinedFilter, udafTag;
-                    var filterTitle = self.$el.parents('.gs-w').attr('data-filter-name');
-                    self.getFilterLabel().text(filterTitle);
                     filterCount = args.applet ? args.applet.filters.length : 0;
                     for (j = 0; j < filterCount; j++) {
                         userDefinedFilter = new UserDefinedFilter({
@@ -172,9 +171,7 @@ define([
                         self.$('.udaf').append(udafTag.render().el);
                         self.listenTo(self.userDefinedFilters, 'model: remove', self.onUserDefinedFilterRemove);
                     }
-                    if (!self.$el.parent().parent().hasClass('in')) {
-                        self.$el.parent().parent().toggleClass('collapse');
-                    }
+
                     self.userDefinedFiltersCollectionChanged.call(self);
                     var self2 = self;
                     var counter = 0;
@@ -182,8 +179,7 @@ define([
                         if (self2.collection.size() > 0 || counter >= 10) {
                             self2.search();
                             clearInterval(interval);
-                        }
-                        else {
+                        } else {
                             counter++;
                         }
                     }, 500);
@@ -191,11 +187,22 @@ define([
                 });
 
                 this.listenTo(Messaging, 'globalDate:selected', this.onCollectionChange);
-                //}
             },
             render: function() {
+                var self = this;
+                var filterTitle;
+                var numOftimes = 0;
                 this.$el.html(this.template(this));
                 Utils.applyMaskingForSpecialCharacters(this.$el.find('.filter-title-input'));
+                var interval = setInterval(function() {
+                    if (self.$el.parents('.gs-w').length > 0 || numOftimes >= 10) {
+                        clearInterval(interval);
+                        filterTitle = self.$el.parents('.gs-w').attr('data-filter-name');
+                        self.getFilterLabel().text(filterTitle);
+                    } else {
+                        numOftimes++;
+                    }
+                }, 100);
                 return this;
             },
             initialize: function(options) {
@@ -232,7 +239,7 @@ define([
                 this.userDefinedFiltersCollectionChanged();
             },
             search: function() {
-                var originalModelsCount = 0;
+                 var originalModelsCount = 0;
                 // custom filter
                 if (this.collection._events.customfilter !== undefined) {
                     var query = this.searchBox().val().trim();
@@ -290,6 +297,10 @@ define([
                 });
             },
             doSearch: function(e) {
+                 // capture pre-filtered collections for restoring collections on clearing of filters.
+                if ( this.preFilterCollection === null) {
+                    this.preFilterCollection = this.collection.clone();
+                }
                 var filterValues = this.getFilterValues();
                 var query = _.reduce(filterValues, function(queryThusFar, filterValue) {
                     var seperator = (queryThusFar === '' ? '' : ' ');
@@ -310,6 +321,9 @@ define([
                 col.reset(this.shadowCollection.filter(matcher), {
                     reindex: false
                 });
+                if (col.markInfobutton) {
+                    col.markInfobutton.func(col.markInfobutton.that);
+                }
             },
 
             clear: function() {
@@ -325,8 +339,9 @@ define([
                 this.searchBox().focus();
                 if (this.userDefinedFilters.length > 0) {
                     this.doSearch();
+                } else if (options.collection.markInfobutton) {
+                    options.collection.markInfobutton.func(options.collection.markInfobutton.that);
                 }
-
             },
             invalidInput: function(string) {
                 var pattern = /[^\%&\^$\!]/gi;

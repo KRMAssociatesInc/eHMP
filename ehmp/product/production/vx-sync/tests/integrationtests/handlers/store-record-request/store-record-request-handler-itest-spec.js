@@ -25,7 +25,7 @@ describe('store-record-request-handler.js', function() {
     };
 
     var setUpEnvironment = {
-        jds: new JdsClient(log, setUpconfig),
+        jds: new JdsClient(log, log, setUpconfig),
     };
 
     var setupForTest = function(testPatientIdentifier, metastampToStore) {
@@ -58,7 +58,7 @@ describe('store-record-request-handler.js', function() {
         });
         runs(function() {
             setUpEnvironment.jds.saveSyncStatus(metastampToStore, testPatientIdentifier, function(error, response) {
-                expect(error).toBeNull();
+                expect(error).toBeFalsy();
                 expect(val(response, 'statusCode')).toBe(200);
                 syncStatusFinished = true;
             });
@@ -156,7 +156,7 @@ describe('store-record-request-handler.js', function() {
 
             setupForTest(patientIdentifier, allergyMetaStamp);
 
-            var jdsClient = new JdsClient(log, config);
+            var jdsClient = new JdsClient(log, log, config);
             var environment = {
                 jds: jdsClient,
                 publisherRouter: {
@@ -164,6 +164,7 @@ describe('store-record-request-handler.js', function() {
                         callback();
                     }
                 },
+                metrics: log,
                 solr: {
                     add: function(record, callback) {
                         callback();
@@ -177,7 +178,7 @@ describe('store-record-request-handler.js', function() {
                     expect(error).toBeNull();
                     expect(result).toEqual('success');
                     finished = true;
-                });
+                }, function() {});
             });
 
             waitsFor(function() {
@@ -290,7 +291,7 @@ describe('store-record-request-handler.js', function() {
             };
 
             setupForTest(patientIdentifier, allergyMetaStamp);
-            var jdsClient = new JdsClient(log, config);
+            var jdsClient = new JdsClient(log, log, config);
             var environment = {
                 jds: jdsClient,
                 publisherRouter: {
@@ -298,6 +299,7 @@ describe('store-record-request-handler.js', function() {
                         callback();
                     }
                 },
+                metrics: log,
                 solr: {
                     add: function(record, callback) {
                         callback();
@@ -312,7 +314,7 @@ describe('store-record-request-handler.js', function() {
                     expect(error).toBeNull();
                     expect(result).toEqual('success');
                     finished = true;
-                });
+                }, function() {});
             });
 
             waitsFor(function() {
@@ -373,7 +375,7 @@ describe('store-record-request-handler.js', function() {
             var updateMetastampFinished = false;
             runs(function() {
                 environment.jds.saveSyncStatus(deletedAllergyMetaStamp, patientIdentifier, function(error, response) {
-                    expect(error).toBeNull();
+                    expect(error).toBeFalsy();
                     expect(val(response, 'statusCode')).toBe(200);
                     updateMetastampFinished = true;
                 });
@@ -389,7 +391,7 @@ describe('store-record-request-handler.js', function() {
                     expect(error).toBeNull();
                     expect(result).toEqual('success');
                     finished5 = true;
-                });
+                }, function() {});
             });
 
             waitsFor(function() {
@@ -428,12 +430,13 @@ describe('store-record-request-handler.js', function() {
             tearDownAfterTest(patientIdentifier);
         });
         it('throws an error for jobs with missing records or records missing data', function() {
-            var jdsClient = new JdsClient(log, config);
+            var jdsClient = new JdsClient(log, log, config);
             var environment = {
                 jds: jdsClient,
                 publisherRouter: {
                     publish: function() {}
                 },
+                metrics: log,
                 solr: {
                     add: function() {}
                 }
@@ -455,7 +458,7 @@ describe('store-record-request-handler.js', function() {
                     expect(val(error, 'message')).toEqual('Missing UID');
                     expect(result).toBeUndefined();
                     finished = true;
-                });
+                }, function() {});
             });
 
             waitsFor(function() {

@@ -10,6 +10,7 @@ var timeUtil = require(global.VX_UTILS + 'time-utils');
 var errorUtil = require(global.VX_UTILS + 'error');
 var uidUtils = require(global.VX_UTILS + 'uid-utils');
 var metastampUtil = require(global.VX_UTILS + 'metastamp-utils');
+var uuid = require('node-uuid');
 
 function handle(log, config, environment, job, handlerCallback) {
     log.debug('vler-sync-request-handler.handle : received request to VLER %s', job);
@@ -32,13 +33,17 @@ function handle(log, config, environment, job, handlerCallback) {
     var documentListConfig = getVlerDocumentListConfiguration(log, config, job);
     if (documentListConfig === null) {
         log.warn('vler-sync-request-handler.handle: No configuration for job: %j', job);
-        return handlerCallback('vler-sync-request-handler.handle: No configuration');
+        return handlerCallback(errorUtil.createFatal('vler-sync-request-handler.handle: No configuration'));
     }
+    var metricsObj = {'timer':'start','process':uuid.v4(),'pid':job.patientIdentifier.value,'subsystem':'VLER','action':'sync','jobId':job.jobId,'rootJobId':job.rootJobId,'jpid':job.jpid};
+    environment.metrics.debug('VLER domain sync',metricsObj);
+    metricsObj.timer='stop';
 
     log.debug('vler-sync-request-handler.handle: sending request to VLER for icn: %s; config: %j.', idUtil.extractIcnFromPid(job.patientIdentifier.value), documentListConfig);
     request(documentListConfig, function(error, response, body) {
         log.debug('vler-sync-request-handler,handle: Received VLER document list response.  error: %s; ', error);
         if ((!error) && (response) && (response.statusCode === 200)) {
+            environment.metrics.debug('VLER domain sync',metricsObj);
             log.debug('vler-sync-request-handler.handle: response body (string form): %s', body);
             var jsonObj;
             if (typeof body !== 'object') {
@@ -47,7 +52,7 @@ function handle(log, config, environment, job, handlerCallback) {
                     jsonObj = JSON.parse(body);
                 } catch (e) {
                     log.error('vler-sync-request-handler.handle: Failed to parse JSON.  body: %s', body);
-                    return handlerCallback('Failed to parse JMeadows response.');
+                    return handlerCallback(errorUtil.createFatal('Failed to parse JMeadows response.'));
                 }
             } else {
                 log.debug('vler-sync-request-handler.handle: was an object - no parsing necessary.', body);
@@ -112,12 +117,13 @@ function handle(log, config, environment, job, handlerCallback) {
             });
 
         } else {
+            environment.metrics.debug('VLER domain sync in Error',metricsObj);
             var statusCode;
             if ((response) && (response.statusCode)) {
                 statusCode = response.statusCode;
             }
             log.error(format('vler-sync-request-handler.handle: Unable to retrieve VLER document list for %s because %s', inspect(job.patientIdentifier), statusCode));
-            return handlerCallback('unable to sync');
+            return handlerCallback(errorUtil.createFatal('unable to sync'));
         }
     });
 

@@ -20,20 +20,27 @@ class SeleniumCommand
     begin
       @web_driver =  web_driver_factory.getback_web_driver()
     rescue Exception => e
-      puts e.message
+      p "Error while opening driver: #{e.message}" 
+      # Shouldn't we re-raise this exception since presumably it's fatal
+      raise
     end
     return @web_driver
   end
 
   def self.driver
     if @web_driver == nil
+      p 'Driver is nil; opening browser'
       @web_driver = open_browser
     end
     #  //if the browser down bring it up
     webdrive = @web_driver
     begin
-      webdrivehandel = webdrive.window_handle()
+      # Get window to test health of the driver
+      webdrivehandle = webdrive.window_handle()
     rescue Exception => e
+      p "Closing driver and re-opening browser because of error with existing driver: #{e.message}"
+      # Should "quit", "close" or similar be called on the existing driver?
+      # Are we confident that no test code has a reference to the driver and that it will be garbage-collected properly?
       @web_driver = nil
       @web_driver = open_browser
     end
@@ -49,6 +56,7 @@ class SeleniumCommand
   end
 
   def self.find_element(method = "SEARCH_ID_NAME_XPATH_LINK", locator)
+    # This works but is bad form I think since the driver method manages the instance variable
     @web_driver = driver
     find_element = FindElementFactory.new
     element =  nil
@@ -76,12 +84,13 @@ class SeleniumCommand
     when 'SEARCH_ID_NAME_XPATH_LINK'
       element = find_element.search_all(locator)
     else
-    fail "**** No function found! Check your script ****"
+      fail "**** No function found! Check your script ****"
     end
     return element
   end
 
   def self.find_elements(method, locator)
+    # This works but is bad form I think since the driver method manages the instance variable
     @web_driver = driver
     find_element = FindElementsFactory.new
     element =  nil
@@ -107,7 +116,7 @@ class SeleniumCommand
     when 'CSS'
       element = find_element.by_css(locator)
     else
-    fail "**** No function found! Check your script ****"
+      fail "**** No function found! Check your script ****"
     end
     return element
   end
@@ -244,7 +253,6 @@ class SeleniumCommand
   def self.value(method = "SEARCH_ID_NAME_XPATH_LINK", locator)
     element = find_element(method, locator)
     return element.attribute('value')
-
   end
 
   def self.wait_until_a_element_displayed(timeout_sec = 80)
@@ -264,7 +272,4 @@ class SeleniumCommand
   def scroll_web_pages_to_bottom_of_element
     driver.execute_script("document.querySelector('.formButtons').scrollIntoView(false)")
   end
-  
-  
-
 end #class

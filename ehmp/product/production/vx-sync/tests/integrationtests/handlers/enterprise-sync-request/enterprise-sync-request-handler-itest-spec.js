@@ -37,82 +37,82 @@ describe('enterprise-sync-request-handler.js', function() {
     var port = 5000;
     var tubename = 'vx-sync-test';
 
-    // var beanstalkConfig = queueConfig.createFullBeanstalkConfig({
-    //     repoUniversal: {
-    //         priority: 10,
-    //         delay: 0,
-    //         ttr: 60,
-    //         timeout: 10,
-    //         initMillis: 1000,
-    //         maxMillis: 15000,
-    //         incMillis: 1000
-    //     },
-    //     repoDefaults: {
-    //         host: host,
-    //         port: port,
-    //         tubename: tubename,
-    //         tubePrefix: 'vxs-',
-    //         jobTypeForTube: false
-    //     },
-    //     jobTypes: {
-    //         'enterprise-sync-request': {},
-    //         'vista-operational-subscribe-request': {},
+    var beanstalkConfig = ({
+        repoUniversal: {
+            priority: 10,
+            delay: 0,
+            ttr: 60,
+            timeout: 10,
+            initMillis: 1000,
+            maxMillis: 15000,
+            incMillis: 1000
+        },
+        repoDefaults: {
+            host: host,
+            port: port,
+            tubename: tubename,
+            tubePrefix: 'vxs-',
+            jobTypeForTube: false
+        },
+        jobTypes: {
+            'enterprise-sync-request': {},
+            'vista-operational-subscribe-request': {},
 
-    //         'vista-9E7A-subscribe-request': {},
-    //         'vista-C877-subscribe-request': {},
+            'vista-9E7A-subscribe-request': {},
+            'vista-C877-subscribe-request': {},
 
-    //         'hdr-sync-request': {},
-    //         'vler-sync-request': {},
-    //         'pgd-sync-request': {},
-    //         'jmeadows-sync-request': {},
+            'hdr-sync-request': {},
+            'vler-sync-request': {},
+            'pgd-sync-request': {},
+            'jmeadows-sync-request': {},
 
-    //         'hdr-xform-vpr': {},
-    //         'vler-xform-vpr': {},
-    //         'pgd-xform-vpr': {},
+            'hdr-xform-vpr': {},
+            'vler-xform-vpr': {},
+            'pgd-xform-vpr': {},
 
-    //         'jmeadows-sync-allergy-request': {},
-    //         'jmeadows-sync-appointment-request': {},
-    //         'jmeadows-sync-consult-request': {},
-    //         'jmeadows-sync-demographics-request': {},
-    //         'jmeadows-sync-dischargeSummary-request': {},
-    //         'jmeadows-sync-encounter-request': {},
-    //         'jmeadows-sync-immunization-request': {},
-    //         'jmeadows-sync-lab-request': {},
-    //         'jmeadows-sync-medication-request': {},
-    //         'jmeadows-sync-note-request': {},
-    //         'jmeadows-sync-order-request': {},
-    //         'jmeadows-sync-problem-request': {},
-    //         'jmeadows-sync-progressNote-request': {},
-    //         'jmeadows-sync-radiology-request': {},
-    //         'jmeadows-sync-vital-request': {},
+            'jmeadows-sync-allergy-request': {},
+            'jmeadows-sync-appointment-request': {},
+            'jmeadows-sync-consult-request': {},
+            'jmeadows-sync-demographics-request': {},
+            'jmeadows-sync-dischargeSummary-request': {},
+            'jmeadows-sync-encounter-request': {},
+            'jmeadows-sync-immunization-request': {},
+            'jmeadows-sync-lab-request': {},
+            'jmeadows-sync-medication-request': {},
+            'jmeadows-sync-note-request': {},
+            'jmeadows-sync-order-request': {},
+            'jmeadows-sync-problem-request': {},
+            'jmeadows-sync-progressNote-request': {},
+            'jmeadows-sync-radiology-request': {},
+            'jmeadows-sync-vital-request': {},
 
-    //         'jmeadows-xform-allergy-vpr': {},
-    //         'jmeadows-xform-appointment-vpr': {},
-    //         'jmeadows-xform-consult-vpr': {},
-    //         'jmeadows-xform-demographics-vpr': {},
-    //         'jmeadows-xform-dischargeSummary-vpr': {},
-    //         'jmeadows-xform-encounter-vpr': {},
-    //         'jmeadows-xform-immunization-vpr': {},
-    //         'jmeadows-xform-lab-vpr': {},
-    //         'jmeadows-xform-medication-vpr': {},
-    //         'jmeadows-xform-note-vpr': {},
-    //         'jmeadows-xform-order-vpr': {},
-    //         'jmeadows-xform-problem-vpr': {},
-    //         'jmeadows-xform-progressNote-vpr': {},
-    //         'jmeadows-xform-radiology-vpr': {},
-    //         'jmeadows-xform-vital-vpr': {},
+            'jmeadows-xform-allergy-vpr': {},
+            'jmeadows-xform-appointment-vpr': {},
+            'jmeadows-xform-consult-vpr': {},
+            'jmeadows-xform-demographics-vpr': {},
+            'jmeadows-xform-dischargeSummary-vpr': {},
+            'jmeadows-xform-encounter-vpr': {},
+            'jmeadows-xform-immunization-vpr': {},
+            'jmeadows-xform-lab-vpr': {},
+            'jmeadows-xform-medication-vpr': {},
+            'jmeadows-xform-note-vpr': {},
+            'jmeadows-xform-order-vpr': {},
+            'jmeadows-xform-problem-vpr': {},
+            'jmeadows-xform-progressNote-vpr': {},
+            'jmeadows-xform-radiology-vpr': {},
+            'jmeadows-xform-vital-vpr': {},
 
-    //         'jmeadows-rtf-document-transform': {},
-    //         'jmeadows-document-retrieval': {},
+            'jmeadows-rtf-document-transform': {},
+            'jmeadows-document-retrieval': {},
 
-    //         'record-enrichment': {},
-    //         'store-record': {},
-    //         'vista-prioritization-request': {},
-    //         'operational-store-record': {},
-    //         'publish-data-change-event': {},
-    //         'patient-data-state-checker': {}
-    //     }
-    // });
+            'record-enrichment': {},
+            'store-record': {},
+            'vista-prioritization-request': {},
+            'operational-store-record': {},
+            'publish-data-change-event': {},
+            'patient-data-state-checker': {}
+        }
+    });
 
 
 
@@ -141,7 +141,7 @@ describe('enterprise-sync-request-handler.js', function() {
                 'sendTimeout': 10000
             })
         },
-        // beanstalk: beanstalkConfig,
+        beanstalkConfig: beanstalkConfig,
         mvi: {
             protocol: 'http',
             host: vx_sync_ip,
@@ -156,7 +156,7 @@ describe('enterprise-sync-request-handler.js', function() {
         rules: {
             'accept-all': {},
             'rapid-fire': {},
-            'operational-data-sync': {},
+            // 'operational-data-sync': {},
             'expiration': {
                 'default': 3600000,
                 'dod': 3600000
@@ -167,9 +167,10 @@ describe('enterprise-sync-request-handler.js', function() {
 
     var environment = {
         // publisherRouter: {},
-        mvi: new MviClient(logger, config),
-        jds: new JdsClient(logger, config),
-        vistaClient: new VistaClient(logger, config, null)
+        mvi: new MviClient(logger, logger, config),
+        jds: new JdsClient(logger, logger, config),
+        metrics: logger,
+        vistaClient: new VistaClient(logger, logger, config, null)
     };
     environment.jobStatusUpdater = new JobStatusUpdater(logger, config, environment.jds);
     // environment.publisherRouter = new PublisherRouter(logger, config, environment.jobStatusUpdater);
@@ -183,7 +184,9 @@ describe('enterprise-sync-request-handler.js', function() {
         // jobUtil.jmeadowsSyncRequestType()    //5000000126V406128 does not have a DOD record
     ];
 
-    testHandler(handler, logger, config, environment, host, port, tubename, job, matchingJobTypes, 90000);
+    testHandler(handler, logger, config, environment, host, port, tubename, job, matchingJobTypes, 90000, function(result) {
+        expect(result).toBeTruthy();
+    });
 
     describe('tests handler for storing patient identifiers', function() {
         it('verify JDS has stored patient identifiers', function() {

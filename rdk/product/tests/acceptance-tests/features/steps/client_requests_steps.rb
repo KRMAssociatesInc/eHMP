@@ -91,7 +91,9 @@ When(/^the client requests newsfeed for the patient "(.*?)" in RDK format$/) do 
 end
 
 When(/^the client requests timeline for the patient "(.*?)" in RDK format$/) do |pid|
-  path = QueryTimeline.new(pid).path
+  query_timeline = RDKQuery.new('patient-record-timeline')
+  query_timeline.add_parameter("pid", pid)
+  path = query_timeline.path
   @response = HTTPartyWithBasicAuth.get_with_authorization(path)
 end
 
@@ -101,7 +103,7 @@ When(/^the client requests medication for the patient "(.*?)" in RDK format$/) d
 end
 
 When(/^the client requests labs for the patient "(.*?)" in FHIR format$/) do |pid|
-  temp = QueryRDKAll.new("DiagnosticReport")
+  temp = RDKQuery.new('diagnosticreport-diagnosticreport')
   temp.add_parameter("subject.identifier", pid)
   temp.add_parameter("domain", "lab")
   temp.add_acknowledge("true")
@@ -110,7 +112,7 @@ When(/^the client requests labs for the patient "(.*?)" in FHIR format$/) do |pi
 end
 
 When(/^the client requests "(.*?)" labs for the patient "(.*?)" in FHIR format$/) do |limit, pid|
-  temp = QueryRDKAll.new("DiagnosticReport")
+  temp = RDKQuery.new('diagnosticreport-diagnosticreport')
   temp.add_parameter("subject.identifier", pid)
   temp.add_parameter("domain", "lab")
   temp.add_acknowledge("true")
@@ -120,7 +122,7 @@ When(/^the client requests "(.*?)" labs for the patient "(.*?)" in FHIR format$/
 end
 
 When(/^the client requests radiology report results for the patient "(.*?)" in FHIR format$/) do |pid|
-  temp = QueryRDKAll.new("DiagnosticReport")
+  temp = RDKQuery.new('diagnosticreport-diagnosticreport')
   temp.add_parameter("subject.identifier", pid)
   temp.add_parameter("domain", "rad")
   temp.add_acknowledge("true")
@@ -129,7 +131,7 @@ When(/^the client requests radiology report results for the patient "(.*?)" in F
 end
 
 When(/^the client requests "(.*?)" radiology report results for the patient "(.*?)" in FHIR format$/) do |limit, pid|
-  temp = QueryRDKAll.new("DiagnosticReport")
+  temp = RDKQuery.new('diagnosticreport-diagnosticreport')
   temp.add_parameter("subject.identifier", pid)
   temp.add_parameter("domain", "rad")
   temp.add_parameter("limit", limit)
@@ -139,7 +141,7 @@ When(/^the client requests "(.*?)" radiology report results for the patient "(.*
 end
 
 When(/^the client requests radiology report results for the patient "(.*?)" in FHIR format with no domain param$/) do |pid|
-  temp = QueryRDKAll.new("DiagnosticReport")
+  temp = RDKQuery.new('diagnosticreport-diagnosticreport')
   temp.add_parameter("subject.identifier", pid)
   temp.add_acknowledge("true")
   p temp.path
@@ -147,7 +149,7 @@ When(/^the client requests radiology report results for the patient "(.*?)" in F
 end
 
 When(/^the client requests out-patient medication results for the patient "(.*?)" in FHIR format$/) do |pid|
-  temp = QueryRDKAll.new("MedicationDispense")
+  temp = RDKQuery.new('medicationdispense-getMedicationDispense')
   temp.add_parameter("subject.identifier", pid)
   temp.add_acknowledge("true")
   p temp.path
@@ -155,7 +157,7 @@ When(/^the client requests out-patient medication results for the patient "(.*?)
 end
 
 When(/^the client requests in-patient medication results for the patient "(.*?)" in FHIR format$/)  do |pid|
-  temp = QueryRDKAll.new("MedicationAdministration")
+  temp = RDKQuery.new('medicationadministration-medicationAdministration')
   temp.add_parameter("subject.identifier", pid)
   temp.add_acknowledge("true")
   p temp.path
@@ -163,7 +165,7 @@ When(/^the client requests in-patient medication results for the patient "(.*?)"
 end
 
 When(/^the client requests out-patient medication statement for the patient "(.*?)" in FHIR format$/) do |pid|
-  temp = QueryRDKAll.new("MedicationStatement")
+  temp = RDKQuery.new('medicationdstatement-getMedicationStatement')
   temp.add_parameter("subject.identifier", pid)
   temp.add_acknowledge("true")
   p temp.path
@@ -171,7 +173,7 @@ When(/^the client requests out-patient medication statement for the patient "(.*
 end
 
 When(/^the client requests "(.*?)" out-patient medication results for the patient "(.*?)" in FHIR format$/) do |limit, pid|
-  temp = QueryRDKAll.new("MedicationDispense")
+  temp = RDKQuery.new('medicationdispense-getMedicationDispense')
   temp.add_parameter("subject.identifier", pid)
   temp.add_acknowledge("true")
   temp.add_parameter("limit", limit)
@@ -180,7 +182,7 @@ When(/^the client requests "(.*?)" out-patient medication results for the patien
 end
 
 When(/^the client requests "(.*?)" in-patient medication results for the patient "(.*?)" in FHIR format$/)  do |limit, pid|
-  temp = QueryRDKAll.new("MedicationAdministration")
+  temp = RDKQuery.new('medicationadministration-medicationAdministration')
   temp.add_parameter("subject.identifier", pid)
   temp.add_acknowledge("true")
   temp.add_parameter("limit", limit)

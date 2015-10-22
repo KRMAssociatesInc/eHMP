@@ -2,7 +2,7 @@
 
 require('../../../../env-setup');
 var log = require(global.OSYNC_UTILS + 'dummy-logger');
-var handler = require(global.OSYNC_HANDLERS + 'validation/validation');
+var handler = require(global.OSYNC_HANDLERS + 'validation-request/validation-request');
 
 var mockHandlerCallback = {
     callback: function(error, response) {
@@ -14,11 +14,7 @@ var mockConfig = {
         protocol: 'http',
         host: '10.2.2.110',
         port: 9080,
-        osyncjobfrequency: 172800000,
-        getBlackListURI: 'http://10.2.2.110:9080/user/get/osyncblacklist',
-        postBlackListURI: 'http://10.2.2.110:9080/user/set/this',
-        getPatientSyncURI: 'http://10.2.2.110:9080/user/get/osyncjobstatus',
-        postPatientSyncURI: 'http://10.2.2.110:9080/user/set/this'
+        osyncjobfrequency: 172800000
     }
 };
 
@@ -83,7 +79,7 @@ describe('validation unit test', function() {
 
             runs(function () {
                 var job = {};
-                job.type = 'validation';
+                job.type = 'validation-request';
 
                 var mockEnvironment = null;
                 handler(log, mockConfig, mockEnvironment, job, function () {
@@ -106,7 +102,7 @@ describe('validation unit test', function() {
 
             runs(function () {
                 var job = {};
-                job.type = 'validation';
+                job.type = 'validation-request';
                 job.source = 'bogus';
 
                 var mockEnvironment = null;
@@ -130,7 +126,7 @@ describe('validation unit test', function() {
 
             runs(function () {
                 var job = {};
-                job.type = 'validation';
+                job.type = 'validation-request';
                 job.source = 'appointments';
 
                 var mockEnvironment = null;
@@ -156,7 +152,7 @@ describe('validation unit test', function() {
 
             runs(function () {
                 var job = {};
-                job.type = 'validation';
+                job.type = 'validation-request';
                 job.source = 'appointments';
 
                 patients.push(patient);

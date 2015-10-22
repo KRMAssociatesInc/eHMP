@@ -3,7 +3,7 @@ require 'QueryRDK.rb'
 class BuildQueryWithTitle < BuildQuery
   def initialize(title)
     super()
-    domain_path = RDClass.resourcedirectory.get_url(title)
+    domain_path = RDClass.resourcedirectory_fetch.get_url(title)
     p "domain path: #{domain_path}"
     @path.concat(domain_path)
     @number_parameters = 0
@@ -11,7 +11,7 @@ class BuildQueryWithTitle < BuildQuery
 end
 
 When(/^client requests the authentication list without authentication$/) do
-  path = RDClass.resourcedirectory.get_url('authentication-list')
+  path = RDClass.resourcedirectory_fetch.get_url('authentication-list')
   p path
   @response = HTTParty.get(path)
 end
@@ -24,7 +24,6 @@ Then(/^the authentication list response contains fields$/) do |table|
 end
 
 Given(/^the client has logged in with a cookie$/) do
-
   # The code used in this function was pulled from an example 
   # https://github.com/jnunemaker/httparty/blob/master/examples/tripit_sign_in.rb
   default_auth = HTTPartyWithBasicAuth.auth
@@ -35,7 +34,7 @@ Given(/^the client has logged in with a cookie$/) do
   jsonreq = { "accessCode"=> access_code, "verifyCode" => verify_code, "site" => site } 
   reqjson = jsonreq.to_json
 
-  authentication_path = Authentication.new.path
+  authentication_path = RDKQuery.new('authentication-authentication').path
   authentication_response = HTTParty.get(authentication_path)
   @response = HTTPartyWithBasicAuth.post_json_with_authorization(authentication_path, reqjson, { 'Content-Type' => 'application/json', 'Cookie' => authentication_response.headers['Set-Cookie'] })
 
@@ -60,7 +59,7 @@ Given(/^the client has requested a restricted resource$/) do
 end
 
 When(/^the client refreshes the session$/) do
-  path = RDClass.resourcedirectory.get_url('authentication-refreshToken')
+  path = RDClass.resourcedirectory_fetch.get_url('authentication-refreshToken')
   p path
   @response = HTTParty.get path, headers: { 'Cookie' => @cookie }
 end
@@ -71,7 +70,7 @@ Given(/^the client has verified it can access a restricted resource$/) do
 end
 
 When(/^the client destroys the sesion$/) do
-  path = RDClass.resourcedirectory.get_url('authentication-destroySession')
+  path = RDClass.resourcedirectory_fetch.get_url('authentication-destroySession')
   p path
   @response = HTTParty.delete path, headers: { 'Cookie' => @cookie }
 end

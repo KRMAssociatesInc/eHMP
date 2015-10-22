@@ -4,8 +4,9 @@ define([
     "app/applets/patient_search/views/common/loadingView",
     "app/applets/patient_search/views/common/patientSearchResultView",
     'hbs!app/applets/patient_search/templates/patientSearchResultWrapper',
+    'hbs!app/applets/patient_search/templates/patientSearchResultsWrapper_clinics',
     'hbs!app/applets/patient_search/templates/patientSearchResultsWrapper_roomBedIncluded'
-], function(Backbone, Marionette, LoadingView, PatientSearchResultView, PatientSearchResultWrapper, patientSearchResultsWrapper_roomBedIncluded) {
+], function(Backbone, Marionette, LoadingView, PatientSearchResultView, PatientSearchResultWrapper, patientSearchResultsWrapper_clinics, patientSearchResultsWrapper_roomBedIncluded) {
     var SearchResultsCollectionView = Backbone.Marionette.CompositeView.extend({
         searchApplet: undefined,
         source: '',
@@ -18,7 +19,9 @@ define([
             }
         },
         getTemplate: function(){
-            if (this.templateName && (this.templateName === 'roomBedIncluded')){
+            if (this.templateName && (this.templateName === 'clinics')){
+                return patientSearchResultsWrapper_clinics;
+            } else if (this.templateName && (this.templateName === 'roomBedIncluded')){
                 return patientSearchResultsWrapper_roomBedIncluded;
             } else {
                 return PatientSearchResultWrapper;

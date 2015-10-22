@@ -3,65 +3,109 @@ define([
     'marionette',
     'underscore',
     'app/applets/ccd_grid/util',
-    'hbs!app/applets/ccd_grid/modal/modalTemplate',
+    'hbs!app/applets/ccd_grid/modal/modalSectionsTemplate',
+    'hbs!app/applets/ccd_grid/modal/modalFullHtmlTemplate',
     'app/applets/ccd_grid/modal/modalHeaderView'
-], function(Backbone, Marionette, _, Util, modalTemplate, modalHeader) {
+], function(Backbone, Marionette, _, Util, modalSectionsTemplate, modalFullHtmlTemplate, modalHeader) {
     'use strict';
+
+    function writeCcdIframe(fullHtml) {
+        var ccdContent = $('.ccdContent');
+        if (ccdContent.size() > 0) {
+            var iframeCcd = ccdContent[0].contentWindow.document;
+            var content = fullHtml;
+            iframeCcd.open();
+            iframeCcd.write(content);
+            iframeCcd.close();
+            $('#ccdContent', 'display', 'block');
+        }
+    }
+
+    function showCcdContent(modalModel) {
+        var fullHtml = modalModel.get('fullHtml') ? modalModel.get('fullHtml') : '';
+
+        var $iframe = $('iframe.dodContent');
+        if ($iframe.size() === 0) {
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    for (var i = 0; i < mutation.addedNodes.length; i++) {
+
+                        $iframe = $(mutation.addedNodes[i]).find('iframe.ccdContent');
+                        if ($iframe.size() > 0) {
+                            observer.disconnect();
+                            writeCcdIframe(fullHtml);
+                        }
+                    }
+                });
+            });
+            observer.observe($('#modal-region')[0], {
+                childList: true,
+                attributes: false,
+                characterData: true,
+                subtree: true
+            });
+        }
+    }
 
     var modelUids = [],
         dataCollection;
 
     var viewParseModel = {
         parse: function(response) {
-            if (response.kind == "C32 Document") {
-                if (response.name) {
-                    response.localTitle = response.name;
-                }
-                if (response.creationTime) {
-                    response.referenceDateTime = response.creationTime;
-                } else if (response.dateTime) {
-                    response.referenceDateTime = response.dateTime;
-                }
-                response.referenceDateDisplay = ADK.utils.formatDate(response.referenceDateTime);
-                if (response.referenceDateDisplay === '') {
-                    response.referenceDateDisplay = 'N/A';
-                }
-
-                response.referenceDateTimeDisplay = ADK.utils.formatDate(response.referenceDateTime, 'MM/DD/YYYY - HH:mm');
-                if (response.referenceDateTimeDisplay === '') {
-                    response.referenceDateTimeDisplay = 'N/A';
-                }
-
-                if (response.authorList) {
-                    if (response.authorList.length > 0) {
-                        if (response.authorList[0].institution) {
-                            response.authorDisplayName = response.authorList[0].institution;
-                        }
-                    } else {
-                        response.authorDisplayName = "N/A";
-                    }
-                }
-                response.facilityName = "VLER";
+            if (response.name) {
+                response.localTitle = response.name;
             }
+            if (response.creationTime) {
+                response.referenceDateTime = response.creationTime;
+            } else if (response.dateTime) {
+                response.referenceDateTime = response.dateTime;
+            }
+            response.referenceDateDisplay = ADK.utils.formatDate(response.referenceDateTime);
+            if (response.referenceDateDisplay === '') {
+                response.referenceDateDisplay = 'N/A';
+            }
+
+            response.referenceDateTimeDisplay = ADK.utils.formatDate(response.referenceDateTime, 'MM/DD/YYYY - HH:mm');
+            if (response.referenceDateTimeDisplay === '') {
+                response.referenceDateTimeDisplay = 'N/A';
+            }
+
+            if (response.authorList) {
+                if (response.authorList.length > 0) {
+                    if (response.authorList[0].institution) {
+                        response.authorDisplayName = response.authorList[0].institution;
+                    }
+                } else {
+                    response.authorDisplayName = "N/A";
+                }
+            }
+            response.facilityName = "VLER";
             return response;
         }
     };
 
     var ModalView = Backbone.Marionette.ItemView.extend({
-        template: modalTemplate,
+        getTemplate: function() {
+            if(this.model.get('fullHtml')) {
+                return modalFullHtmlTemplate;
+            } else {
+                return modalSectionsTemplate;
+            }
+        },
         initialize: function(options) {
-            this.model = options.model;
+            var self = this;
 
-            this.collection = options.collection;
+            self.model = options.model;
+
+            self.collection = options.collection;
             dataCollection = options.collection;
 
 
-            this.getModelUids();
-
+            self.getModelUids();
 
             if(options.initCount === 0) {
                 options.initCount++;
-                var next = _.indexOf(modelUids, this.model.get('uid'));
+                var next = _.indexOf(modelUids, self.model.get('uid'));
                 var modelUid = modelUids[next];
 
 
@@ -100,9 +144,17 @@ define([
                         })
                     };
 
-                    ADK.showModal(view, modalOptions);
+                    if (modalModel.get('fullHtml')) {
+                        showCcdContent(modalModel);
+                    }
 
-                    //ADK.showModal(modalModel, modalOptions);
+                    var modal = new ADK.UI.Modal({
+                        view: view,
+                        options: modalOptions
+                    });
+                    modal.show();
+
+                    //ADK.UI.Modal.show(modalModel, modalOptions);
                 };
 
                 var modalCollection = ADK.PatientRecordService.fetchCollection(modalFetchOptions);
@@ -169,7 +221,15 @@ define([
                     })
                 };
 
-                ADK.showModal(view, modalOptions);
+                if (modalModel.get('fullHtml')) {
+                    showCcdContent(modalModel);
+                }
+
+                var modal = new ADK.UI.Modal({
+                    view: view,
+                    options: modalOptions
+                });
+                modal.show();
             };
 
             var modalCollection = ADK.PatientRecordService.fetchCollection(modalFetchOptions);
@@ -224,7 +284,15 @@ define([
                     })
                 };
 
-                ADK.showModal(view, modalOptions);
+                if (modalModel.get('fullHtml')) {
+                    showCcdContent(modalModel);
+                }
+
+                var modal = new ADK.UI.Modal({
+                    view: view,
+                    options: modalOptions
+                });
+                modal.show();
             };
 
             var modalCollection = ADK.PatientRecordService.fetchCollection(modalFetchOptions);
@@ -273,7 +341,11 @@ define([
                 })
             };
 
-            ADK.showModal(view, modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: view,
+                options: modalOptions
+            });
+            modal.show();
         },
     });
 

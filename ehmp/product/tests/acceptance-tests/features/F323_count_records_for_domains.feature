@@ -76,7 +76,7 @@ Scenario: Client can request med in VPR format
 	Then the client receives 6 record(s) for site "9E7A"
 	And the client receives 6 record(s) for site "C877"
 	And the client receives 0 record(s) for site "DOD"
-	And the client receives 0 record(s) for site "HDR"
+	And the client receives 1 record(s) for site "HDR"
 	Then the VPR results contain "meds"
 		| field             | value     |
 		| facilityName 		| ALL_SET 	|
@@ -287,7 +287,7 @@ Scenario: Client can request vler document in VPR format
 	Then the client receives 11 record(s) for site "VLER"
 	And the VPR results contain "vler document"
 		| field             | value       |
-		| sections		 	| ALL_SET 	  |
+		| fullHtml		 	| ALL_SET 	  |
       	| kind     			| ALL_SET      |
       	| name		    	| ALL_SET      |  
       	
@@ -347,7 +347,7 @@ Scenario: Client can request med in VPR format
 	Then the client receives 151 record(s) for site "9E7A"
 	And the client receives 151 record(s) for site "C877"
 	And the client receives 11 record(s) for site "DOD"
-	And the client receives 0 record(s) for site "HDR"
+	And the client receives 1 record(s) for site "HDR"
 	Then the VPR results contain "meds"
 		| field             | value     |
 		| facilityName 		| ALL_SET 	|

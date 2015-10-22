@@ -66,10 +66,10 @@ An applet is made up of marionette "views".  Each applet should have an **applet
 
 The following is an example **applet.js** file.
 ```JavaScript
-define([], function () {
+define(['handlebars'], function (Handlebars) {
 
   var AppletGistView = Backbone.Marionette.ItemView.extend({
-      template: _.template('<div>I am a simple Item View</div>'),
+      template: Handlebars.compile('<div>I am a simple Item View</div>'),
   });
   var AppletLayoutView = Backbone.Marionette.LayoutView.extend({
       initialize: function() {
@@ -78,7 +78,7 @@ define([], function () {
       onRender: function() {
           this.appletMain.show(this.sampleView);
       },
-      template: _.template('<div id="sample-applet-main"></div>'),
+      template: Handlebars.compile('<div id="sample-applet-main"></div>'),
       regions: {
           appletMain: "#sample-applet-main"
       }
@@ -125,7 +125,7 @@ To use any libraries or include any files into your current javascript, follow t
     <br />e.g. ".../product/production/app/applets/sampleApplet/template.html" &#10140; "hbs!app/applets/sampleApplet/template"
 
 2. Add a parameter name to the onResolveDependencies function that is used as a reference to the file.
-    - Note: **Order of the array strings and function parameters are very important!** (need to make up to each other)
+    - Note: **Order of the array strings and function parameters is very important!** (need to match up to each other)
 
 See below for a full example:
 ```JavaScript
@@ -153,8 +153,8 @@ define([
 ```
 
 ## How to build screens ##
-A screen is javascript file that returns a "screen config" object.
-To build a screen start off by creating a javascript file in the **"screens" directory** (follow lower camelCase naming convention) and then follow the steps for adding a screen config.
+A screen is a javascript file that returns a "screen config" object.
+To build a screen, start off by creating a javascript file in the **"screens" directory** (follow lower camelCase naming convention) then follow the steps for adding a screen config.
 
 > **Important**: The screen must also be added to the **screensManifest** _(/screens/ScreensManifest.js)_ by pushing new screen object to the screenManifest's **screens array** (example code below)
 > ```JavaScript
@@ -165,18 +165,30 @@ To build a screen start off by creating a javascript file in the **"screens" dir
 > ```
 
 ### Screen Config ###
-A screen configuration describes the screen and how it should be built. There are several component options available to keep in mind while building a screen. The configuration determines which applet layout to use and which applets go in which regions within that layout. Various components can be specified to be placed in various regions around the screen. Below is a complete list of accecpted screen config attributes.
+A screen configuration describes the screen and how it should be built. There are several component options available to keep in mind while building a screen. The configuration determines which applet layout to use and which applets go in which regions within that layout. Various components can be specified to be placed in various regions around the screen. Below is a complete list of accepted screen config attributes.
 
 | Required         | Attributes              | Description   |
 |:----------------:|-------------------------|---------------|
-| <i class="fa fa-check-circle center"></i> | **id**                  | **unqiue identifier** that will also be the **url path** to get to the screen <br /> When specifying an id one should always use hypens versus camel case. (e.g. _sample-screen_) |
+| <i class="fa fa-check-circle center"></i> | **id**                  | **unique identifier** that will also be the **url path** to get to the screen <br /> When specifying an id, one should always use hypens versus camel case. (e.g. _sample-screen_) |
 | <i class="fa fa-check-circle center"></i> | **applets**             | array of **applet screen config objects** to render on the screen <br /> _(see below for more details on a applet screen config)_ |
 |                  | **contentRegionLayout** | name of layout to use for center/applet region <br /> _(see choices below)_ |
 | <i class="fa fa-check-circle center"></i> | **requiresPatient**     | boolean used to show or hide patient demographic header |
 |                  | **onStart**             | method that gets called when the screen is shown  |
 |                  | **onStop**              | method that gets called before screen is changed |
+|                  | **hasPermission**              | method that gets called before to check if the user has permission to view the page |
 
 **Note**: _the onStart and onStop methods are generally the place to start and stop listening to the screen's applets on their respective channels using ADK.Messaging..._
+
+**Note**: _the hasPermission method must be a function that returns a boolean value. Otherwise the screen will not be viewable to any user. If the screen is a predefined screen you will need to add a dependancy for the screen config file and add a 'hasPermission' attribute to the specific screen in PreDefinedScreens.js which will point to the screen config file's 'hasPermission function.<br />
+ex:  ...{<br />
+        title: 'Some Screen',<br />
+        id: 'some-screen',<br />
+        screenId: --id--,<br />
+        routeName: 'some-screen',<br />
+        description: '',<br />
+        predefined: true,<br />
+        hasPermission: SomeScreen.hasPermission()<br />
+    }..._
 
 ::: definition
 ### Applet Screen Config Object ###
@@ -185,7 +197,7 @@ An applet screen config object contains the following attributes:
 - **title** : _(string)_ visible to user when using [Applet Chrome][AppletChrome]
 - **region** : _(string)_ region of the _contentRegionLayout_ in which to display the applet (see below for a list of regions)
 - **fullScreen** : _(boolean)(optional)_ true if the applet is the only one on the screen
-- **maximizeSceen** : _(string)(optional)_ id of the screen to navigate to when the applet's chrome maximize event is called ([applet chrome details][AppletChrome])
+- **maximizeScreen** : _(string)(optional)_ id of the screen to navigate to when the applet's chrome maximize event is called ([applet chrome details][AppletChrome])
 - **viewType** : _(string)_ name of the applet's viewType to display
 
 ### Content Region Layouts ###
@@ -228,7 +240,13 @@ define([], function () {
 });
 ```
 
+[adkSourceCode]: https://git.vistacore.us/git/adk.git
+[ehmpuiSourceCode]: https://git.vistacore.us/git/ehmp-ui.git
+[standardizedIdeWikiPage]: https://wiki.vistacore.us/display/VACORE/Team+Standardized+IDE+for+JavaScript+Development
+[workspaceSetupWikiPage]: https://wiki.vistacore.us/display/VACORE/Creating+DevOps+workspace+environment
 [sublimeWebsite]: http://www.sublimetext.com/3
+[sublimeSettingsWikiPage]: https://wiki.vistacore.us/x/RZsZ
+[adkBuildJenkins]: https://build.vistacore.us/view/adk/view/Next%20Branch/
 [bsCSS]: http://getbootstrap.com/css/
 [bsComponents]: http://getbootstrap.com/components/
 [bsJQ]: http://getbootstrap.com/javascript/

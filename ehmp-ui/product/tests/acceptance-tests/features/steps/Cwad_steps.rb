@@ -8,7 +8,7 @@ end
 
 Then(/^the cwad details view contains$/) do |table|
   cwad =CwadCoverSheet.instance
-  table.rows.each do | label, value |
+  table.rows.each do |label, value|
     expect(cwad.perform_verification('cwad details', label)).to be_true, "The label #{label} is not present in the cwad details"
     expect(cwad.perform_verification('cwad details', value)).to be_true, "The value #{value} is not present in the cwad details"
   end
@@ -43,7 +43,7 @@ end
 Then(/^the following postings are active$/) do |table|
   driver = TestSupport.driver
   wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
-  table.rows.each do | data_original_title |
+  table.rows.each do |data_original_title|
     begin
       css_string = "#patientDemographic-cwad span[data-original-title='#{data_original_title[0]}'] span"
       posting_element = driver.find_element(:css, css_string)
@@ -58,7 +58,7 @@ end
 Then(/^the following postings are active and open the details view$/) do |table|
   driver = TestSupport.driver
   wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
-  table.rows.each do | column |
+  table.rows.each do |column|
     data_original_title = column[0]
     begin
       css_string = "#patientDemographic-cwad span[data-original-title='#{data_original_title}'] span"
@@ -86,7 +86,7 @@ end
 Then(/^the following postings are inactive$/) do |table|
   driver = TestSupport.driver
   wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
-  table.rows.each do | data_original_title |
+  table.rows.each do |data_original_title|
     begin
       css_string = "#patientDemographic-cwad span[data-original-title='#{data_original_title[0]}'] span"
       posting_element = driver.find_element(:css, css_string)

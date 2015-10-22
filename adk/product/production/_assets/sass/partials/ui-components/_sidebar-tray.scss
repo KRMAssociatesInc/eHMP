@@ -1,0 +1,39 @@
+.sidebar {
+    width: auto;
+    padding: 0;
+    .sidebar-tray {
+        position: fixed;
+        background: #FFF;
+        width: 450px;
+        border-radius: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        z-index: 100;
+        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
+        transition: all 0.2s ease-out;
+        -webkit-transition: all 0.2s ease-out;
+        visibility: hidden;
+        &.right {
+            left: 100vw;
+            transform: translateX(0);
+            -webkit-transform: translateX(0);
+        }
+        &.left {
+            left: 0;
+            transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+        }
+    }
+    &.open > .sidebar-tray {
+        visibility: visible;
+        &.right {
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+        }
+        &.left {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+    }
+}

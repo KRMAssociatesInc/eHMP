@@ -35,7 +35,7 @@ class ScreenEditor < AccessBrowserV2
     workspace_xpath = "//p[contains(string(),'#{workspace_name}')]"
     p workspace_xpath
     add_action(CucumberLabel.new("My Workspace Name"), ClickAction.new, AccessHtmlElement.new(:xpath, workspace_xpath))
-  # deliberate use of wait time other then the DefaultLogin.wait_time
+    # deliberate use of wait time other then the DefaultLogin.wait_time
     return false unless wait_until_element_present("My Workspace Name", 60)
     return perform_action("My Workspace Name")
   end 

@@ -15,7 +15,7 @@ Scenario: User views the cover sheet
 		| CONDITIONS	 			|
 		| LAB RESULTS				|
 		| VITALS 					|
-		| MEDICATIONS				|
+		| ACTIVE MEDICATIONS		|
 		| ALLERGIES					|
 		| IMMUNIZATIONS				|
 		| ORDERS					|

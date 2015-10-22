@@ -40,6 +40,14 @@ define([
             this.listenTo(this.collection, "change", this.render());
         },
         addError: function(msg, title) {
+            if (_.isString(msg)) {
+                try {
+                    msg = JSON.parse(msg);
+                } catch (e) {}
+            }
+            if (_.isObject(msg) && _.has(msg, 'message')) {
+                msg = msg.message;
+            }
             this.collection.add(new Error({
                 errormsg: msg,
                 prefix: title

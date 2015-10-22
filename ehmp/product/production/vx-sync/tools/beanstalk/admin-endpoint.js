@@ -28,6 +28,8 @@ app.get('/beanstalk/pause-tube/:tube', pauseTube);
 app.get('/beanstalk/pause-tube', pauseTube);
 app.get('/beanstalk/kick/:tube', kick);
 app.get('/beanstalk/kick', kick);
+app.get('/beanstalk/delete/:tube', deleteJobs);
+app.get('/beanstalk/delete', deleteJobs);
 
 
 function stats(req, res) {
@@ -147,6 +149,26 @@ function kick(req, res) {
         }
 
         res.status(200).send('KICKED');
+    }
+}
+
+function deleteJobs(req, res) {
+    var host = req.query.host || beanstalkHost;
+    var port = req.query.port || beanstalkPort;
+    var tubeName = req.params.tube;
+
+    if (tubeName) {
+        return adminUtils.deleteAllJobsFromOneTube(logger, host, port, tubeName, callback);
+    }
+
+    adminUtils.deleteAllJobsFromAllTubes(logger, host, port, callback);
+
+    function callback(error) {
+        if (error) {
+            return res.status(500).send(error);
+        }
+
+        res.status(200).send('DELETED');
     }
 }
 

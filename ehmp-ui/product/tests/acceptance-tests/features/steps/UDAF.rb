@@ -23,9 +23,9 @@ class UDAF < AccessBrowserV2
     add_verify(CucumberLabel.new("Header Filter Title"), VerifyContainsText.new, AccessHtmlElement.new(:css, "#grid-filter-button-applet-1 > span > span.applet-filter-title"))
     add_action(CucumberLabel.new("Filter Name"), ClickAction.new, AccessHtmlElement.new(:css, "#grid-filter-applet-1 > div.grid-filter > form > fieldset > div > div.filter-wrapper > div.filter-name > span"))
     add_verify(CucumberLabel.new("Filter Name Text"), VerifyContainsText.new, AccessHtmlElement.new(:xpath, "//*[@id='grid-filter-applet-1']/div[2]/form/fieldset/div/div[1]/div[1]/span"))
-    add_action(CucumberLabel.new("Filter Rename"), SendKeysAndEnterAction.new, AccessHtmlElement.new(:css, "#grid-filter-applet-1 > div.grid-filter > form > fieldset > div > div.filter-wrapper > div.filter-name > input"))
+    add_action(CucumberLabel.new("Filter Rename"), SendKeysAction.new, AccessHtmlElement.new(:css, "#grid-filter-applet-1 > div.grid-filter > form > fieldset > div > div.filter-wrapper > div.filter-name > input"))
     add_verify(CucumberLabel.new("Filter Title"), VerifyContainsText.new, AccessHtmlElement.new(:css, "#grid-filter-button-applet-1 > span > span.applet-filter-title.text.include? 'Filtered'"))
-    add_action(CucumberLabel.new("Lauch duplicated UDS"), ClickAction.new, AccessHtmlElement.new(:css, "#user-defined-workspace-1-copy > div > div.col-xs-5 > div:nth-child(6) > i"))
+    add_action(CucumberLabel.new("Lauch duplicated UDS"), ClickAction.new, AccessHtmlElement.new(:css, "#user-defined-workspace-1-copy > div > div.col-xs-3 > div.col-xs-4.launch-screen"))
     add_verify(CucumberLabel.new("Filter Tooltip Message"), VerifyContainsText.new, AccessHtmlElement.new(:css, ".tooltip-inner"))
     add_action(CucumberLabel.new("Med Review expanded view"), ClickAction.new, AccessHtmlElement.new(:css, "#applet-1 > div > div.options-list > ul > li.viewType-optionsBox.col-xs-3.col-xs-offset-3 > div.options-box.expanded"))
     add_action(CucumberLabel.new("Med Review - Search"), ClickAction.new, AccessHtmlElement.new(:css, "#grid-filter-button-applet-1 > span"))
@@ -72,8 +72,8 @@ rescue => e
     p "!! Error attempting input on - #{control_name} !!"
     raise e
   end # if/else
-#else # succesful begin
-#  p "Input - #{control_name}"
+  #else # succesful begin
+  #  p "Input - #{control_name}"
 end
 
 # Then(/^user clicks next page button on the carousel$/) do
@@ -175,8 +175,12 @@ When(/^enters "(.*?)" to the filter name field$/) do |new_name|
   screen = UDAF.instance
   screen.wait_until_action_element_visible("Filter Rename", DefaultLogin.wait_time)
   input_element = screen.get_element("Filter Rename")
+
+  for i in 0...input_element.attribute("value").size
+    input_element.send_keys(:backspace)
+  end
   expect(screen.perform_action("Filter Rename", new_name)).to be_true
-  # input_element.send_keys:return
+  input_element.send_keys [:tab]
 end
 
 Then(/^a filter tooltip is displayed containing message "(.*?)"$/) do |tooltip_text|

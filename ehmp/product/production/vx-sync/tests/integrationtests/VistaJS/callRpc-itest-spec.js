@@ -10,7 +10,7 @@ var logger = require('bunyan').createLogger({
 });
 
 var wConfig = require(global.VX_ROOT + 'worker-config');
-var callRpc = require(global.VX_VISTAJS + 'RpcClient').RpcClient.callRpc;
+var callRpc = require('vista-js').RpcClient.callRpc;
 
 var config = _.defaults(wConfig.vistaSites['9E7A'], {
 	host: '10.2.2.101',

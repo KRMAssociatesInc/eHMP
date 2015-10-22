@@ -45,7 +45,8 @@ describe('jmeadows-xfom-domain-vpr-handler integration test', function() {
     describe('record enrichment pathway', function() {
         var jdsClientDummy = new JdsClientDummy(logger, config);
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics:logger
         };
         var expectedJdsResponse = {
             statusCode: 200
@@ -75,7 +76,8 @@ describe('jmeadows-xfom-domain-vpr-handler integration test', function() {
     xdescribe('document retrieval pathway: consult that contains link to rtf document', function() {
         var jdsClientDummy = new JdsClientDummy(logger, config);
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics:logger
         };
         var expectedJdsResponse = {
             statusCode: 200
@@ -105,7 +107,8 @@ describe('jmeadows-xfom-domain-vpr-handler integration test', function() {
     describe('document retrieval pathway: progressNote that contains link to rtf document', function() {
         var jdsClientDummy = new JdsClientDummy(logger, config);
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics:logger
         };
         var expectedJdsResponse = {
             statusCode: 200
@@ -140,7 +143,8 @@ describe('jmeadows-xfom-domain-vpr-handler integration test', function() {
     describe('record enrichment pathway: dischargeSummary that does not link to rtf document', function() {
         var jdsClientDummy = new JdsClientDummy(logger, config);
         var environment = {
-            jds: jdsClientDummy
+            jds: jdsClientDummy,
+            metrics:logger
         };
         var expectedJdsResponse = {
             statusCode: 200
@@ -169,14 +173,15 @@ describe('jmeadows-xfom-domain-vpr-handler integration test', function() {
     });
 
     describe('test JDS communications', function() {
-        var jdsClient = new JdsClient(logger, config);
+        var jdsClient = new JdsClient(logger, logger, config);
         var environment = {
             jds: jdsClient,
             publisherRouter: {
                 publish: function(job, callback) {
                     callback();
                 }
-            }
+            },
+            metrics:logger
         };
         // var expectedJdsResponse = {
         //     statusCode: 200
@@ -200,23 +205,28 @@ describe('jmeadows-xfom-domain-vpr-handler integration test', function() {
         };
 
         it('verify metastamp is stored in JDS', function() {
-            var setUpDone = 0;
+            var cleanUpDone = true;
             runs(function() {
-
                 environment.jds.deletePatientByPid(testPatientIdentifier.value, function() {
-                    setUpDone++;
+                    cleanUpDone = true;
                 });
+            });
 
+            waitsFor(function(){
+                return cleanUpDone;
+            });
+
+            var setUpDone = false;
+            runs(function() {
                 environment.jds.storePatientIdentifier({
                     'patientIdentifiers': [testPatientIdentifier.value]
                 }, function() {
-                    setUpDone++;
+                    setUpDone = true;
                 });
-
             });
 
             waitsFor(function() {
-                return setUpDone === 2;
+                return setUpDone;
             });
 
             var handleDone = false;

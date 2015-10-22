@@ -150,7 +150,7 @@ describe('record-enrichment-problem-xformer', function(){
             var finished = false;
 
             runs(function(){
-                xformer(log, config, environment, {record: originalVaProblem}, function(error, record){
+                xformer(log, config, environment, originalVaProblem, function(error, record){
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.summary).toEqual('Diabetes Mellitus Type II or unspecified (ICD-9-CM 250.00)');
@@ -187,7 +187,7 @@ describe('record-enrichment-problem-xformer', function(){
             var finished = false;
 
             runs(function(){
-                xformer(log, config, environment, {record: originalDodProblem}, function(error, record){
+                xformer(log, config, environment, originalDodProblem, function(error, record){
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.summary).toEqual('visit for: daycare exam');
@@ -223,7 +223,7 @@ describe('record-enrichment-problem-xformer', function(){
             var finished = false;
 
             runs(function(){
-                xformer(log, config, environment, {record: originalNonVaDodProblem}, function(error, record){
+                xformer(log, config, environment, originalNonVaDodProblem, function(error, record){
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.summary).toEqual('Occasional, uncontrolled chest pain (ICD-9-CM 411.1)');
@@ -269,26 +269,12 @@ describe('record-enrichment-problem-xformer', function(){
                 return finished;
             });
         });
-        it('Error path: no job.record', function(){
-            var finished = false;
-
-            runs(function(){
-                xformer(log, config, environment, {}, function(error, record){
-                    expect(error).toBeNull();
-                    expect(record).toBeNull();
-                    finished = true;
-                });
-            });
-            waitsFor(function(){
-                return finished;
-            });
-        });
         it('Job was removed', function() {
             var finished = false;
             var environment = {};
 
             runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:problem:9E7A:3:183');

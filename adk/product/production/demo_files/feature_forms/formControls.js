@@ -1,0 +1,333 @@
+define([
+    'backbone',
+    'marionette',
+    'jquery',
+    'handlebars'
+], function(Backbone, Marionette, $, Handlebars) {
+
+    return [{
+      id: 'toggleOptionsChecklist',
+      label: 'Toggle Options Checklist',
+      developmentStatus: false,
+      cometStatus: false,
+      exampleForm: true,
+      supportsErrorMessage: true,
+      storyNumber: 8090,
+      documentationURL: ""
+    },{
+        id: 'fieldset',
+        label: 'Fieldset',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: false,
+        supportsErrorMessage: false,
+        storyNumber: 6807,
+        documentationURL: ""
+    }, {
+        id: 'container_showingModelData',
+        label: 'Container - (supports displaying model data)',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: false,
+        supportsErrorMessage: false,
+        storyNumber: 7667,
+        documentationURL: ""
+    }, {
+      id: 'collapsibleContainer',
+      label: 'Collapsible Container',
+      developmentStatus: true,
+      cometStatus: true,
+      exampleForm: true,
+      supportsErrorMessage: false,
+      storyNumber: 9999,
+      documentationURL: ""
+    }, {
+        id: 'popover',
+        label: "Popover",
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: false,
+        storyNumber: 8405,
+        documentationURL: ""
+    }, {
+        id: 'button',
+        label: 'Button',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: false,
+        storyNumber: 6807,
+        documentationURL: ""
+    }, {
+        id: 'dropdown',
+        label: 'Dropdown',
+        developmentStatus: true,
+        cometStatus: false,
+        exampleForm: true,
+        supportsErrorMessage: false,
+        storyNumber: 8072,
+        documentationURL: ""
+    }, {
+        id: 'input',
+        label: 'Input',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: true,
+        storyNumber: 6807,
+        documentationURL: ""
+    }, {
+        id: 'input_showUnit',
+        label: 'Input - (supports showing units)',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: false,
+        supportsErrorMessage: true,
+        storyNumber: 7541,
+        documentationURL: ""
+    }, {
+        id: 'input_chooseUnitRadio',
+        label: 'Input - (supports choosing unit with radio buttons)',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: false,
+        supportsErrorMessage: true,
+        storyNumber: 7541,
+        documentationURL: ""
+    }, {
+        id: 'input_chooseUnitDropdown',
+        label: 'Input - (supports choosing unit with a select dropdown)',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: false,
+        supportsErrorMessage: true,
+        storyNumber: 8170,
+        documentationURL: ""
+    }, {
+        id: 'input_showCharacterCount',
+        label: 'Input - (supports character count)',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: false,
+        supportsErrorMessage: true,
+        storyNumber: 8073,
+        documentationURL: ""
+    }, {
+        id: 'typeahead',
+        label: 'Typeahead',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: true,
+        storyNumber: 7438,
+        documentationURL: ""
+    }, {
+        id: 'typeahead_footerButton',
+        label: 'Typeahead (supports having an extend search button in the dropdown list)',
+        developmentStatus: false,
+        cometStatus: false,
+        exampleForm: false,
+        supportsErrorMessage: true,
+        storyNumber: 8395,
+        documentationURL: ""
+    }, {
+        id: 'typeahead_dynamicFetching',
+        label: 'Typeahead (supports dynamic fetching of picklist items)',
+        developmentStatus: false,
+        cometStatus: false,
+        exampleForm: false,
+        supportsErrorMessage: true,
+        storyNumber: 8402,
+        documentationURL: ""
+    }, {
+        id: 'radio',
+        label: 'Radio',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: true,
+        storyNumber: 6807,
+        documentationURL: ""
+    }, {
+        id: 'checkbox',
+        label: 'Checkbox',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: true,
+        storyNumber: 6807,
+        documentationURL: ""
+    }, {
+        id: 'checklist',
+        label: 'Checklist',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: true,
+        storyNumber: 7629,
+        documentationURL: ""
+    }, {
+        id: 'yesNoChecklist',
+        label: 'Yes / No / Undefined Checklist',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: true,
+        storyNumber: 7436,
+        documentationURL: ""
+    },  {
+        id: 'select',
+        label: 'Select',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: true,
+        storyNumber: 6807,
+        documentationURL: ""
+    }, {
+        id: 'select_showMultiple',
+        label: 'Select (support showing multiple items at once)',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: false,
+        supportsErrorMessage: true,
+        storyNumber: 7440,
+        documentationURL: ""
+    }, {
+        id: 'select_filtering',
+        label: 'Select - (supports filtering)',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: false,
+        supportsErrorMessage: true,
+        storyNumber: 8070,
+        documentationURL: ""
+    }, {
+        id: 'select_dynamicFetching',
+        label: 'Select - (supports dynamic fetching of picklist items)',
+        developmentStatus: false,
+        cometStatus: false,
+        exampleForm: false,
+        supportsErrorMessage: true,
+        storyNumber: 8071,
+        documentationURL: ""
+    }, {
+        id: 'select_selectMultiple',
+        label: 'Select - (supports selecting multiple items)',
+        developmentStatus: false,
+        cometStatus: false,
+        exampleForm: false,
+        supportsErrorMessage: true,
+        storyNumber: 8069,
+        documentationURL: ""
+    }, {
+        id: 'multiselectSideBySide',
+        label: 'Multi-Select Side By Side',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: false,
+        storyNumber: 7437,
+        documentationURL: ""
+    }, {
+        id: 'datepicker',
+        label: 'Datepicker',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: true,
+        storyNumber: 7443,
+        documentationURL: ""
+    }, {
+        id: 'timepicker',
+        label: 'Timepicker',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: true,
+        storyNumber: 7445,
+        documentationURL: ""
+    }, {
+        id: 'textarea',
+        label: 'Textarea',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: true,
+        storyNumber: 6807,
+        documentationURL: ""
+    }, {
+        id: 'alertBanner',
+        label: 'Alert Banner',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: false,
+        storyNumber: 7665,
+        documentationURL: ""
+    }, {
+        id: 'rangeSlider',
+        label: 'Range Slider',
+        developmentStatus: true,
+        cometStatus: false,
+        exampleForm: true,
+        supportsErrorMessage: false,
+        storyNumber: 7542,
+        documentationURL: ""
+    }, {
+        id: 'tableSelectableRows',
+        label: 'Table with Selectable Rows',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: false,
+        storyNumber: 7678,
+        documentationURL: ""
+    }, {
+        id: 'tabs',
+        label: 'Tabs',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: false,
+        storyNumber: 7545,
+        documentationURL: ""
+    }, {
+        id: 'collapsableContainer',
+        label: 'Collapsable Containers',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: false,
+        supportsErrorMessage: false,
+        storyNumber: 8422,
+        documentationURL: ""
+    }, {
+        id: 'popover',
+        label: 'Popover Container',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: false,
+        supportsErrorMessage: false,
+        storyNumber: 8405,
+        documentationURL: ""
+    }, {
+        id: 'nestedCommentBox',
+        label: 'Nested Comment Box',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: false,
+        storyNumber: 7439,
+        documentationURL: ""
+    }, {
+        id: 'commentBox',
+        label: 'Comment Box',
+        developmentStatus: true,
+        cometStatus: true,
+        exampleForm: true,
+        supportsErrorMessage: false,
+        storyNumber: 8091,
+        documentationURL: ""
+    }];
+});

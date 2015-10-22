@@ -1,0 +1,734 @@
+<h3>Applet Boxes</h3>
+
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> An applet displays specific medical information pertaining to a patient. An applet allows the user to utilize the filters to narrow down the medical content. As the user is scrolling through the data, the title of the applet along with the filters will be prominent for ease of accessibility.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> 508 Guidelines for Applet Boxes are to come when applet designs are complete.</p>
+</div>
+
+<!-- code to display modal dimed screen -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#appletDemoModal" id="showDemoApplet">
+  Show Demo Applet
+</button>
+<div class="modal fade" id="appletDemoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog text-center">
+		<button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-primary"><span class="glyphicon glyphicon-remove"></span> Close Applet Demo</button>
+	</div>
+</div>
+<!-- end of modal dimmed screen -->
+<div class="row margin-bottom">
+	<div class="col-sm-4 col-sm-offset-4">
+		<div id="demoApplet" data-appletid="tabularDataGridHidingFilter" data-instanceid="tabularDataGridHidingFilter" class="applet-boxes-container">
+			<div class="gridContainer">
+				<div>
+					<div title="Tabular data grid" class="panel panel-primary">
+						<div class="panel-heading grid-applet-heading">
+							<span class="panel-title">
+								Gist Title
+							</span>
+							<div class="toolset">
+								<button title="Refresh" tabindex="0" class="applet-refresh-button btn btn-xs btn-link grid-refresh-button" type="button">
+									<span class="applet-title-button fa fa-refresh"></span>
+									<span class="sr-only">Refresh Data</span>
+								</button>
+								<button type="button" id="grid-filter-button-appointments" data-toggle="collapse" data-target="#grid-filter-FilterID" class="applet-filter-button btn btn-xs btn-link" tabindex="0" title="Show Filter" tooltip-data-key="Show Filter" role="tab" aria-selected="false" aria-expanded="false">
+									<span class="applet-title-button fa fa-filter"></span>
+									<span class="sr-only">Show Filter</span>
+								</button>
+								<button title="Maximize Applet" tabindex="0" class="grid-resize applet-maximize-button btn btn-xs btn-link" type="button">
+									<span class="applet-title-button fa fa-expand"></span>
+									<span class="sr-only">Maximize Applet</span>
+								</button>
+							</div>
+						</div>
+						<!-- start of applet wrappig code -->
+						<div class="appletDiv_ChromeContainer">
+							<div>
+								<div class="gridContainer">
+									<div>
+										<div class="panel-body grid-applet-panel sticky" id="grid-panel-appointments">
+											<div id="grid-filter-FilterID" class="collapse">
+												<div class="grid-filter-daterange"></div>
+												<div class="grid-filter">
+													<form class="backgrid-filter form-search" style="margin-left: 0px; margin-top: 0px; margin-bottom: 6px;">
+														<fieldset>
+															<legend class="sr-only">Search for filter</legend>
+															<label class="sr-only" for="input-filter-search">Enter Filter</label>
+															<span class="search">&nbsp;</span>
+															<input pattern="[^\*%&amp;\^$#\!]*" id="input-filter-search" type="search" title="Enter Filter (special characters not allowed)" placeholder="Enter your text filter" name="q-appointments" tabindex="0">
+															<a class="clear" data-backgrid-action="clear" href="#">
+																<span class="fa fa-times"></span>
+																<span class="sr-only">Press enter to clear filter text</span>
+															</a>
+															<div class="filter-container hidden">
+																<div class="filter-wrapper">
+																	<div class="filter-name">
+																		<label for="filtername">Filter Name:</label>
+																		<span class="text-left filter-title">Filtered</span>
+																		<input id="filtername" class="input-mini filter-title-input hidden" type="text" maxlength="30" tabindex="0">
+																	</div>
+																	<div class="remove-all-div"><a href="javascript:" title="Remove All" class="remove-all">Remove All</a></div>
+																</div>
+															</div>
+														</fieldset>
+													</form>
+												</div>
+											</div>
+											<div class="grid-toolbar"></div><!-- this should be hidden when there is none -->
+											<div class="grid-container">
+												<!-- START OF GIST SPECIFIC CODE -->
+												<div>	
+													<div class="data-grid">
+														<table id="data-grid-appointments" class="backgrid table table-hover">
+															<thead class="">
+																<tr>
+																	<th tabindex="0" scope="col" class="sortable renderable dateTimeFormatted" id="appointments-dateTimeFormatted"><a tooltip-data-key="visits_date">Date<b class="sort-caret"></b></a></th><th tabindex="0" scope="col" class="sortable renderable formattedDescription" id="appointments-formattedDescription"><a tooltip-data-key="visits_description">Description<b class="sort-caret"></b></a></th><th tabindex="0" scope="col" class="sortable renderable locationName" id="appointments-locationName"><a data-toggle="tooltip" data-placement="auto top" data-original-title="Location" data-container="body">Location<b class="sort-caret"></b></a></th><th tabindex="0" scope="col" class="sortable renderable facilityMoniker" id="appointments-facilityMoniker"><a tooltip-data-key="visits_facility">Facility<b class="sort-caret"></b></a></th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr tabindex="0" class="selectable" id="urn-va-visit-DOD-0000000003-1000000382">
+																	<td class="string-cell sortable renderable">01/10/2014 - 17:08</td><td class="string-cell sortable renderable">DoD Encounter</td><td class="string-cell sortable renderable">Family Practice Clinic</td><td class="string-cell sortable renderable">DOD</td>
+																</tr>
+																<tr tabindex="0" class="selectable" id="urn-va-visit-DOD-0000000003-1000000380">
+																	<td class="string-cell sortable renderable">01/09/2014 - 20:02</td><td class="string-cell sortable renderable">DoD Encounter</td><td class="string-cell sortable renderable">Family Practice Clinic</td><td class="string-cell sortable renderable">DOD</td>
+																</tr>
+																<tr tabindex="0" class="selectable" id="urn-va-visit-DOD-0000000003-1000000378">
+																	<td class="string-cell sortable renderable">12/05/2013 - 17:14</td><td class="string-cell sortable renderable">DoD Encounter</td><td class="string-cell sortable renderable">Family Practice Clinic</td><td class="string-cell sortable renderable">DOD</td>
+																</tr>
+																<tr tabindex="0" class="selectable" id="urn-va-visit-DOD-0000000003-1000000375">
+																	<td class="string-cell sortable renderable">12/03/2013 - 16:03</td><td class="string-cell sortable renderable">DoD Encounter</td><td class="string-cell sortable renderable">Family Practice Clinic</td><td class="string-cell sortable renderable">DOD</td>
+																</tr>
+																<tr tabindex="0" class="selectable" id="urn-va-visit-DOD-0000000003-1000010371">
+																	<td class="string-cell sortable renderable">12/02/2013 - 21:00</td><td class="string-cell sortable renderable">DoD Encounter</td><td class="string-cell sortable renderable">Family Practice Clinic</td><td class="string-cell sortable renderable">DOD</td>
+																</tr>
+																<tr tabindex="0" class="selectable" id="urn-va-appointment-9E7A-3-A-3131202-13-23">
+																	<td class="string-cell sortable renderable">12/02/2013 - 13:00</td><td class="string-cell sortable renderable">VA Visit</td><td class="string-cell sortable renderable">GENERAL MEDICINE</td><td class="string-cell sortable renderable">TST1</td>
+																</tr>
+																<tr tabindex="0" class="selectable" id="urn-va-appointment-C877-3-A-3131202-13-23">
+																	<td class="string-cell sortable renderable">12/02/2013 - 13:00</td><td class="string-cell sortable renderable">VA Visit</td><td class="string-cell sortable renderable">GENERAL MEDICINE</td><td class="string-cell sortable renderable">TST2</td>
+																</tr>
+																<tr tabindex="0" class="selectable" id="urn-va-visit-9E7A-3-9300">
+																	<td class="string-cell sortable renderable">12/02/2013 - 13:00</td><td class="string-cell sortable renderable">VA Visit</td><td class="string-cell sortable renderable">GENERAL MEDICINE</td><td class="string-cell sortable renderable">TST1</td>
+																</tr>
+																<tr tabindex="0" class="selectable" id="urn-va-visit-9E7A-3-9301">
+																	<td class="string-cell sortable renderable">12/02/2013 - 13:00</td><td class="string-cell sortable renderable">Other</td><td class="string-cell sortable renderable">GENERAL MEDICINE</td><td class="string-cell sortable renderable">TST1</td>
+																</tr>
+																<tr tabindex="0" class="selectable" id="urn-va-visit-C877-3-9300">
+																	<td class="string-cell sortable renderable">12/02/2013 - 13:00</td><td class="string-cell sortable renderable">VA Visit</td><td class="string-cell sortable renderable">GENERAL MEDICINE</td><td class="string-cell sortable renderable">TST2</td>
+																</tr>
+																<tr tabindex="0" class="selectable" id="urn-va-visit-C877-3-9301">
+																	<td class="string-cell sortable renderable">12/02/2013 - 13:00</td><td class="string-cell sortable renderable">Other</td><td class="string-cell sortable renderable">GENERAL MEDICINE</td><td class="string-cell sortable renderable">TST2</td>
+																</tr>
+																<tr tabindex="0" class="selectable" id="urn-va-visit-DOD-0000000003-1000010366">
+																	<td class="string-cell sortable renderable">11/19/2013 - 20:25</td><td class="string-cell sortable renderable">DoD Encounter</td><td class="string-cell sortable renderable">Family Practice Clinic</td><td class="string-cell sortable renderable">DOD</td>
+																</tr>
+																<tr tabindex="0" class="selectable" id="urn-va-visit-DOD-0000000003-1000010364">
+																	<td class="string-cell sortable renderable">11/18/2013 - 17:09</td><td class="string-cell sortable renderable">DoD Encounter</td><td class="string-cell sortable renderable">Family Practice Clinic</td><td class="string-cell sortable renderable">DOD</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+												<!-- END OF GIST SPECIFIC CODE -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end of applet wrapper code -->
+						<div class="grid-footer">
+							<span class="gs-resize-handle gs-resize-handle-both"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<hr />
+
+<div role="tabpanel" class="markup">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active"><a href="#applet-markup" aria-controls="applet-markup" role="tab" data-toggle="tab">Applet Boxes</a></li>
+        <li><a href="#applet-js" aria-controls="applet-js" role="tab" data-toggle="tab">Javascript Code</a></li>
+	</ul>
+        <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="applet-markup">
+            <pre>
+&lt;div id=&quot;demoApplet&quot; data-appletid=&quot;tabularDataGridHidingFilter&quot; data-instanceid=&quot;tabularDataGridHidingFilter&quot; class=&quot;applet-boxes-container&quot;&gt;
+	&lt;div class=&quot;gridContainer&quot;&gt;
+		&lt;div&gt;
+			&lt;div title=&quot;Tabular data grid&quot; class=&quot;panel panel-primary&quot;&gt;
+				&lt;div class=&quot;panel-heading grid-applet-heading&quot;&gt;
+					&lt;span class=&quot;panel-title&quot;&gt;
+						Gist Title
+					&lt;/span&gt;
+					&lt;div class=&quot;toolset&quot;&gt;
+						&lt;button title=&quot;Refresh&quot; tabindex=&quot;0&quot; class=&quot;applet-refresh-button btn btn-xs btn-link grid-refresh-button&quot; type=&quot;button&quot;&gt;
+							&lt;span class=&quot;applet-title-button fa fa-refresh&quot;&gt;&lt;/span&gt;
+							&lt;span class=&quot;sr-only&quot;&gt;Refresh Data&lt;/span&gt;
+						&lt;/button&gt;
+						&lt;button type=&quot;button&quot; id=&quot;grid-filter-button-appointments&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#grid-filter-FilterID&quot; class=&quot;applet-filter-button btn btn-xs btn-link&quot; tabindex=&quot;0&quot; title=&quot;Show Filter&quot; tooltip-data-key=&quot;Show Filter&quot; role=&quot;tab&quot; aria-selected=&quot;false&quot; aria-expanded=&quot;false&quot;&gt;
+							&lt;span class=&quot;applet-title-button fa fa-filter&quot;&gt;&lt;/span&gt;
+							&lt;span class=&quot;sr-only&quot;&gt;Show Filter&lt;/span&gt;
+						&lt;/button&gt;
+						&lt;button title=&quot;Maximize Applet&quot; tabindex=&quot;0&quot; class=&quot;grid-resize applet-maximize-button btn btn-xs btn-link&quot; type=&quot;button&quot;&gt;
+							&lt;span class=&quot;applet-title-button fa fa-expand&quot;&gt;&lt;/span&gt;
+							&lt;span class=&quot;sr-only&quot;&gt;Maximize Applet&lt;/span&gt;
+						&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;!-- start of applet wrappig code --&gt;
+				&lt;div class=&quot;appletDiv_ChromeContainer&quot;&gt;
+					&lt;div&gt;
+						&lt;div class=&quot;gridContainer&quot;&gt;
+							&lt;div&gt;
+								&lt;div class=&quot;panel-body grid-applet-panel sticky&quot; id=&quot;grid-panel-appointments&quot;&gt;
+									&lt;div id=&quot;grid-filter-FilterID&quot; class=&quot;collapse&quot;&gt;
+										&lt;div class=&quot;grid-filter-daterange&quot;&gt;&lt;/div&gt;
+										&lt;div class=&quot;grid-filter&quot;&gt;
+											&lt;form class=&quot;backgrid-filter form-search&quot; style=&quot;margin-left: 0px; margin-top: 0px; margin-bottom: 6px;&quot;&gt;
+												&lt;fieldset&gt;
+													&lt;legend class=&quot;sr-only&quot;&gt;Search for filter&lt;/legend&gt;
+													&lt;label class=&quot;sr-only&quot; for=&quot;input-filter-search&quot;&gt;Enter Filter&lt;/label&gt;
+													&lt;span class=&quot;search&quot;&gt;&amp;nbsp;&lt;/span&gt;
+													&lt;input pattern=&quot;[^\*%&amp;amp;\^$#\!]*&quot; id=&quot;input-filter-search&quot; type=&quot;search&quot; title=&quot;Enter Filter (special characters not allowed)&quot; placeholder=&quot;Enter your text filter&quot; name=&quot;q-appointments&quot; tabindex=&quot;0&quot;&gt;
+													&lt;a class=&quot;clear&quot; data-backgrid-action=&quot;clear&quot; href=&quot;#&quot;&gt;
+														&lt;span class=&quot;fa fa-times&quot;&gt;&lt;/span&gt;
+														&lt;span class=&quot;sr-only&quot;&gt;Press enter to clear filter text&lt;/span&gt;
+													&lt;/a&gt;
+													&lt;div class=&quot;filter-container hidden&quot;&gt;
+														&lt;div class=&quot;filter-wrapper&quot;&gt;
+															&lt;div class=&quot;filter-name&quot;&gt;
+																&lt;label for=&quot;filtername&quot;&gt;Filter Name:&lt;/label&gt;
+																&lt;span class=&quot;text-left filter-title&quot;&gt;Filtered&lt;/span&gt;
+																&lt;input id=&quot;filtername&quot; class=&quot;input-mini filter-title-input hidden&quot; type=&quot;text&quot; maxlength=&quot;30&quot; tabindex=&quot;0&quot;&gt;
+															&lt;/div&gt;
+															&lt;div class=&quot;remove-all-div&quot;&gt;&lt;a href=&quot;javascript:&quot; title=&quot;Remove All&quot; class=&quot;remove-all&quot;&gt;Remove All&lt;/a&gt;&lt;/div&gt;
+														&lt;/div&gt;
+													&lt;/div&gt;
+												&lt;/fieldset&gt;
+											&lt;/form&gt;
+										&lt;/div&gt;
+									&lt;/div&gt;
+									&lt;div class=&quot;grid-toolbar&quot;&gt;&lt;/div&gt;&lt;!-- this should be hidden when there is none --&gt;
+									&lt;div class=&quot;grid-container&quot;&gt;
+										&lt;!-- START OF GIST SPECIFIC CODE --&gt;
+										&lt;div&gt;	
+											&lt;div class=&quot;data-grid&quot;&gt;
+												&lt;table id=&quot;data-grid-appointments&quot; class=&quot;backgrid table table-hover&quot;&gt;
+													&lt;thead class=&quot;&quot;&gt;
+														&lt;tr&gt;
+															&lt;th tabindex=&quot;0&quot; scope=&quot;col&quot; class=&quot;sortable renderable dateTimeFormatted&quot; id=&quot;appointments-dateTimeFormatted&quot;&gt;&lt;a tooltip-data-key=&quot;visits_date&quot;&gt;Date&lt;b class=&quot;sort-caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;&lt;/th&gt;&lt;th tabindex=&quot;0&quot; scope=&quot;col&quot; class=&quot;sortable renderable formattedDescription&quot; id=&quot;appointments-formattedDescription&quot;&gt;&lt;a tooltip-data-key=&quot;visits_description&quot;&gt;Description&lt;b class=&quot;sort-caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;&lt;/th&gt;&lt;th tabindex=&quot;0&quot; scope=&quot;col&quot; class=&quot;sortable renderable locationName&quot; id=&quot;appointments-locationName&quot;&gt;&lt;a data-toggle=&quot;tooltip&quot; data-placement=&quot;auto top&quot; data-original-title=&quot;Location&quot; data-container=&quot;body&quot;&gt;Location&lt;b class=&quot;sort-caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;&lt;/th&gt;&lt;th tabindex=&quot;0&quot; scope=&quot;col&quot; class=&quot;sortable renderable facilityMoniker&quot; id=&quot;appointments-facilityMoniker&quot;&gt;&lt;a tooltip-data-key=&quot;visits_facility&quot;&gt;Facility&lt;b class=&quot;sort-caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;&lt;/th&gt;
+														&lt;/tr&gt;
+													&lt;/thead&gt;
+													&lt;tbody&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-visit-DOD-0000000003-1000000382&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;01/10/2014 - 17:08&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DoD Encounter&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;Family Practice Clinic&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DOD&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-visit-DOD-0000000003-1000000380&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;01/09/2014 - 20:02&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DoD Encounter&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;Family Practice Clinic&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DOD&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-visit-DOD-0000000003-1000000378&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;12/05/2013 - 17:14&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DoD Encounter&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;Family Practice Clinic&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DOD&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-visit-DOD-0000000003-1000000375&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;12/03/2013 - 16:03&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DoD Encounter&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;Family Practice Clinic&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DOD&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-visit-DOD-0000000003-1000010371&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;12/02/2013 - 21:00&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DoD Encounter&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;Family Practice Clinic&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DOD&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-appointment-9E7A-3-A-3131202-13-23&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;12/02/2013 - 13:00&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;VA Visit&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;GENERAL MEDICINE&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;TST1&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-appointment-C877-3-A-3131202-13-23&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;12/02/2013 - 13:00&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;VA Visit&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;GENERAL MEDICINE&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;TST2&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-visit-9E7A-3-9300&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;12/02/2013 - 13:00&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;VA Visit&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;GENERAL MEDICINE&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;TST1&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-visit-9E7A-3-9301&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;12/02/2013 - 13:00&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;Other&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;GENERAL MEDICINE&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;TST1&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-visit-C877-3-9300&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;12/02/2013 - 13:00&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;VA Visit&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;GENERAL MEDICINE&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;TST2&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-visit-C877-3-9301&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;12/02/2013 - 13:00&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;Other&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;GENERAL MEDICINE&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;TST2&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-visit-DOD-0000000003-1000010366&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;11/19/2013 - 20:25&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DoD Encounter&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;Family Practice Clinic&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DOD&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr tabindex=&quot;0&quot; class=&quot;selectable&quot; id=&quot;urn-va-visit-DOD-0000000003-1000010364&quot;&gt;
+															&lt;td class=&quot;string-cell sortable renderable&quot;&gt;11/18/2013 - 17:09&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DoD Encounter&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;Family Practice Clinic&lt;/td&gt;&lt;td class=&quot;string-cell sortable renderable&quot;&gt;DOD&lt;/td&gt;
+														&lt;/tr&gt;
+													&lt;/tbody&gt;
+												&lt;/table&gt;
+											&lt;/div&gt;
+										&lt;/div&gt;
+										&lt;!-- END OF GIST SPECIFIC CODE --&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;!-- end of applet wrapper code --&gt;
+				&lt;div class=&quot;grid-footer&quot;&gt;
+					&lt;span class=&quot;gs-resize-handle gs-resize-handle-both&quot;&gt;&lt;/span&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="applet-js">
+        	<pre>
+&lt;script&gt;
+// underscore functions
+var _ = {
+	isUndefined: function(value){
+		if (typeof(value)=='undefined') return true;
+		return false;
+	}
+};
+// jquery plugins
+(function($) {
+	$.fn.resizeEnd = function(a) {
+		var args = $.extend({
+			sr: function() {},
+			cb: function() {},
+			namespace: '',
+			duration: 100,
+			timeoutName: 'resizeTimeout',
+			timeoutCallbackName: 'resizeCallback',
+			timeoutFunctionName: 'resizeFunction'
+		}, a);
+		this.each(function() {
+
+			var t = $(this);
+			t.data(args.timeoutCallbackName, args.cb);
+			t.data(args.timeoutFunctionName, function() {
+				clearTimeout($(this).data(args.timeoutName));
+				$(this).data(args.timeoutName, setTimeout(function() {
+					args.cb();
+				}), args.duration);
+			});
+			t.bind('resize' + (args.namespace === '' ? '' : '.' + args.namespace), function() {
+				args.sr();
+				clearTimeout($(this).data(args.timeoutName));
+				$(this).data(args.timeoutName, setTimeout(function() {
+					clearTimeout($(this).data('resizeTimeout'));
+					$(this).data(args.timeoutName, setTimeout(function() {
+						args.cb();
+					}), args.duration);
+				}, args.duration));
+			});
+		});
+	};
+	$.makeId = function() {
+		var text = "";
+		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+		for (var i = 0; i &lt; 5; i++) {
+			text += possible.charAt(Math.floor(Math.random() * possible.length));
+		}
+		return text;
+	};
+	$.fn.tableToBlocks = function(a) {
+		var args = $.extend({
+			blockClass: 'tbtb-blockTable',
+			callback: function() {}
+		}, a);
+		this.each(function() {
+			var table = $(this);
+			var th = table.find('thead th');
+			var lastCells = table.find('tbody tr:last-child td').not('[colspan]');
+			if (lastCells.length === 0) lastCells = th;
+			var tableId = table.attr('id');
+
+			//assign an id if there is none
+			if (_.isUndefined(tableId)) {
+				tableId = $.makeId();
+				table.attr('id', thId);
+			}
+
+			$('#shts_' + tableId).remove();
+			table.removeClass(args.blockClass);
+
+			var tableWidth = table.width();
+			//first fix the width of the cells in percentage mode
+			var tableArrayPx = [];
+			var tableArraySumPx = 0;
+			lastCells.each(function() {
+				var cell = $(this);
+				var cw = cell.outerWidth();
+				if (cell.css('display') != 'none') {
+					tableArrayPx.push(cw);
+					tableArraySumPx += cw;
+				} else {
+					tableArrayPx.push(0);
+				}
+			});
+			var tableArray = [];
+			var tableArraySum = 0;
+			var cn = 0;
+			// port everything to percentages
+			for (var i = 0; i &lt; tableArrayPx.length; i++) {
+				cn = Math.floor(tableArrayPx[i] * 100 / tableArraySumPx);
+				tableArray.push(cn);
+				tableArraySum += cn;
+			}
+			if (tableArraySum &gt; 100) tableArray[0] = tableArray[0] + (tableArraySum - 100);
+			if (tableArraySum &lt; 100) tableArray[0] = tableArray[0] + (100 - tableArraySum);
+			// create css rules for tables instead of appending width as style
+			var columnStyles = '';
+			var colLen = (tableArray.length + 1);
+			for (i = 1; i &lt; colLen; i++) {
+
+				var currentStyle = '#' + tableId + ' th:nth-child(' + i + '), #' + tableId + ' td:not([colspan]):nth-child(' + i + '){width:' + tableArray[i - 1] + '%;}' + String.fromCharCode(13);
+				columnStyles += currentStyle;
+
+				var addedWidth = 0;
+				var currentColspan = 0;
+				for (var j = i; j &lt; colLen; j++) {
+					currentColspan += 1;
+					addedWidth += tableArray[j - 1];
+					if (currentColspan &gt; 1) {
+						columnStyles += '#' + tableId + ' td[colspan="' + currentColspan + '"]:nth-child(' + i + '){width:' + addedWidth + '%;}' + String.fromCharCode(13);
+					}
+				}
+			}
+			// append cell sizes as css classes so we do not add a style tag to each element.
+			table.after('&lt;style id="shts_' + tableId + '" type="text/css"&gt;' + columnStyles + '&lt;/style&gt;');
+			table.addClass(args.blockClass);
+		});
+		args.callback();
+	};
+})(jQuery);
+$(document).ready(function(){
+	var tbtbCallback = function(hElement, hElementType) {
+		// set up divs for stickyness
+		var th = (hElementType == 'table' ? hElement.find('thead') : hElement);
+		th.addClass('shReady');
+		th.closest('.panel-body').addClass('sticky');
+		// fix the width of the header (it will go to position fixed, so we need this)
+		th.addClass('floating');
+		var fh = th.children();
+		if (th.hasClass("col-sm-12")) {
+			fh.width(th.width() - 20);
+		} else {
+			fh.width(th.width());
+		}
+		// hide and show previous divs when the user scrolls past 0 (he wants to see the data)
+		var outerScroller = th.closest('.panel-body');
+		if ((outerScroller.css('overflow-y') == 'scroll') || (outerScroller.css('overflow-y') == 'auto')) {
+			outerScroller.bind('scroll.shOuterScroll', function() {
+				var os = $(this);
+				if (os.scrollTop() &gt; 0) {
+					os.addClass('stuck');
+				} else {
+					os.removeClass('stuck');
+				}
+
+			});
+		}
+		// look for the filter button and add routine to filter toggling
+		var aid = th.closest('[data-appletid]');
+		var filterButton = aid.find('.applet-filter-button');
+		aid.on('hide.bs.collapse show.bs.collapse', filterButton, function() {
+			var pb = $(this).closest('[data-appletid]').find('.panel-body');
+			pb.toggleClass('filterToggle');
+		}).on('hidden.bs.collapse', filterButton, function() {
+			if ($(this).data('ofFixed')) {
+				$(this).find('.panel-body').css('overflow-y', 'scroll');
+			}
+		}).on('shown.bs.collapse', filterButton, function() {
+			var hasEmpties = $(this).find('tr.empty, div.emptyGistList').length;
+			if (hasEmpties) {
+				$(this).find('.panel-body').css('overflow-y', 'hidden');
+				$(this).data('ofFixed', true);
+			}
+		});
+	};
+
+
+	$('#appletDemoModal').on('hide.bs.modal', function (e) {
+		$('#demoApplet').removeClass('inSight');
+	}).on('shown.bs.modal', function (e) {
+		if (_.isUndefined($(document).data('appletTriggered'))){
+			$('#demoApplet').addClass('inSight');
+
+
+
+
+			$('.backgrid.table').each(function(){
+				var table = $(this);
+				table.tableToBlocks(tbtbCallback(table, 'table'));
+			});
+
+			var svAdjustHeight = function(obj) {
+				var sh = 0;
+				obj.siblings().each(function() {
+					if ($(this).is(':visible')) {
+						sh += $(this).height();
+					}
+				});
+				obj.height(obj.parent().height() - sh);
+			};
+
+			var collapsingDiv = $('div[id^="grid-filter"]');
+			collapsingDiv.each(function(){
+				var scrollingView = $(this).siblings('.grid-container');
+				collapsingDiv.on('hidden.bs.collapse', function() {
+					svAdjustHeight(scrollingView);
+				});
+				collapsingDiv.on('shown.bs.collapse', function() {
+					svAdjustHeight(scrollingView);
+				});
+			});
+			$('.panel-body').on('scroll',function(){
+				var os = $(this);
+				if (os.scrollTop() &gt; 0) {
+					os.addClass('stuck');
+				} else {
+					os.removeClass('stuck');
+				}
+			});
+
+
+
+		} else {
+			$('#demoApplet').addClass('inSight');
+		}
+
+	});
+});
+&lt;/script&gt;
+            </pre>
+        </div>
+	</div>
+</div>
+
+<script>
+// underscore functions
+var _ = {
+	isUndefined: function(value){
+		if (typeof(value)=='undefined') return true;
+		return false;
+	}
+};
+// jquery plugins
+(function($) {
+	$.fn.resizeEnd = function(a) {
+		var args = $.extend({
+			sr: function() {},
+			cb: function() {},
+			namespace: '',
+			duration: 100,
+			timeoutName: 'resizeTimeout',
+			timeoutCallbackName: 'resizeCallback',
+			timeoutFunctionName: 'resizeFunction'
+		}, a);
+		this.each(function() {
+
+			var t = $(this);
+			t.data(args.timeoutCallbackName, args.cb);
+			t.data(args.timeoutFunctionName, function() {
+				clearTimeout($(this).data(args.timeoutName));
+				$(this).data(args.timeoutName, setTimeout(function() {
+					args.cb();
+				}), args.duration);
+			});
+			t.bind('resize' + (args.namespace === '' ? '' : '.' + args.namespace), function() {
+				args.sr();
+				clearTimeout($(this).data(args.timeoutName));
+				$(this).data(args.timeoutName, setTimeout(function() {
+					clearTimeout($(this).data('resizeTimeout'));
+					$(this).data(args.timeoutName, setTimeout(function() {
+						args.cb();
+					}), args.duration);
+				}, args.duration));
+			});
+		});
+	};
+	$.makeId = function() {
+		var text = "";
+		var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+		for (var i = 0; i < 5; i++) {
+			text += possible.charAt(Math.floor(Math.random() * possible.length));
+		}
+		return text;
+	};
+	$.fn.tableToBlocks = function(a) {
+		var args = $.extend({
+			blockClass: 'tbtb-blockTable',
+			callback: function() {}
+		}, a);
+		this.each(function() {
+			var table = $(this);
+			var th = table.find('thead th');
+			var lastCells = table.find('tbody tr:last-child td').not('[colspan]');
+			if (lastCells.length === 0) lastCells = th;
+			var tableId = table.attr('id');
+
+			//assign an id if there is none
+			if (_.isUndefined(tableId)) {
+				tableId = $.makeId();
+				table.attr('id', thId);
+			}
+
+			$('#shts_' + tableId).remove();
+			table.removeClass(args.blockClass);
+
+			var tableWidth = table.width();
+			//first fix the width of the cells in percentage mode
+			var tableArrayPx = [];
+			var tableArraySumPx = 0;
+			lastCells.each(function() {
+				var cell = $(this);
+				var cw = cell.outerWidth();
+				if (cell.css('display') != 'none') {
+					tableArrayPx.push(cw);
+					tableArraySumPx += cw;
+				} else {
+					tableArrayPx.push(0);
+				}
+			});
+			var tableArray = [];
+			var tableArraySum = 0;
+			var cn = 0;
+			// port everything to percentages
+			for (var i = 0; i < tableArrayPx.length; i++) {
+				cn = Math.floor(tableArrayPx[i] * 100 / tableArraySumPx);
+				tableArray.push(cn);
+				tableArraySum += cn;
+			}
+			if (tableArraySum > 100) tableArray[0] = tableArray[0] + (tableArraySum - 100);
+			if (tableArraySum < 100) tableArray[0] = tableArray[0] + (100 - tableArraySum);
+			// create css rules for tables instead of appending width as style
+			var columnStyles = '';
+			var colLen = (tableArray.length + 1);
+			for (i = 1; i < colLen; i++) {
+
+				var currentStyle = '#' + tableId + ' th:nth-child(' + i + '), #' + tableId + ' td:not([colspan]):nth-child(' + i + '){width:' + tableArray[i - 1] + '%;}' + String.fromCharCode(13);
+				columnStyles += currentStyle;
+
+				var addedWidth = 0;
+				var currentColspan = 0;
+				for (var j = i; j < colLen; j++) {
+					currentColspan += 1;
+					addedWidth += tableArray[j - 1];
+					if (currentColspan > 1) {
+						columnStyles += '#' + tableId + ' td[colspan="' + currentColspan + '"]:nth-child(' + i + '){width:' + addedWidth + '%;}' + String.fromCharCode(13);
+					}
+				}
+			}
+			// append cell sizes as css classes so we do not add a style tag to each element.
+			table.after('<style id="shts_' + tableId + '" type="text/css">' + columnStyles + '</style>');
+			table.addClass(args.blockClass);
+		});
+		args.callback();
+	};
+})(jQuery);
+$(document).ready(function(){
+	var tbtbCallback = function(hElement, hElementType) {
+		// set up divs for stickyness
+		var th = (hElementType == 'table' ? hElement.find('thead') : hElement);
+		th.addClass('shReady');
+		th.closest('.panel-body').addClass('sticky');
+		// fix the width of the header (it will go to position fixed, so we need this)
+		th.addClass('floating');
+		var fh = th.children();
+		if (th.hasClass("col-sm-12")) {
+			fh.width(th.width() - 20);
+		} else {
+			fh.width(th.width());
+		}
+		// hide and show previous divs when the user scrolls past 0 (he wants to see the data)
+		var outerScroller = th.closest('.panel-body');
+		if ((outerScroller.css('overflow-y') == 'scroll') || (outerScroller.css('overflow-y') == 'auto')) {
+			outerScroller.bind('scroll.shOuterScroll', function() {
+				var os = $(this);
+				if (os.scrollTop() > 0) {
+					os.addClass('stuck');
+				} else {
+					os.removeClass('stuck');
+				}
+
+			});
+		}
+		// look for the filter button and add routine to filter toggling
+		var aid = th.closest('[data-appletid]');
+		var filterButton = aid.find('.applet-filter-button');
+		aid.on('hide.bs.collapse show.bs.collapse', filterButton, function() {
+			var pb = $(this).closest('[data-appletid]').find('.panel-body');
+			pb.toggleClass('filterToggle');
+		}).on('hidden.bs.collapse', filterButton, function() {
+			if ($(this).data('ofFixed')) {
+				$(this).find('.panel-body').css('overflow-y', 'scroll');
+			}
+		}).on('shown.bs.collapse', filterButton, function() {
+			var hasEmpties = $(this).find('tr.empty, div.emptyGistList').length;
+			if (hasEmpties) {
+				$(this).find('.panel-body').css('overflow-y', 'hidden');
+				$(this).data('ofFixed', true);
+			}
+		});
+	};
+
+
+	$('#appletDemoModal').on('hide.bs.modal', function (e) {
+		$('#demoApplet').removeClass('inSight');
+	}).on('shown.bs.modal', function (e) {
+		if (_.isUndefined($(document).data('appletTriggered'))){
+			$('#demoApplet').addClass('inSight');
+
+
+
+
+			$('.backgrid.table').each(function(){
+				var table = $(this);
+				table.tableToBlocks(tbtbCallback(table, 'table'));
+			});
+
+			var svAdjustHeight = function(obj) {
+				var sh = 0;
+				obj.siblings().each(function() {
+					if ($(this).is(':visible')) {
+						sh += $(this).height();
+					}
+				});
+				obj.height(obj.parent().height() - sh);
+			};
+
+			var collapsingDiv = $('div[id^="grid-filter"]');
+			collapsingDiv.each(function(){
+				var scrollingView = $(this).siblings('.grid-container');
+				collapsingDiv.on('hidden.bs.collapse', function() {
+					svAdjustHeight(scrollingView);
+				});
+				collapsingDiv.on('shown.bs.collapse', function() {
+					svAdjustHeight(scrollingView);
+				});
+			});
+			$('.panel-body').on('scroll',function(){
+				var os = $(this);
+				if (os.scrollTop() > 0) {
+					os.addClass('stuck');
+				} else {
+					os.removeClass('stuck');
+				}
+			});
+
+
+
+		} else {
+			$('#demoApplet').addClass('inSight');
+		}
+
+	});
+});
+</script>

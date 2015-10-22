@@ -218,3 +218,4 @@ module.exports.extractPidFromJob = extractPidFromJob;
 module.exports.extractPidBySite = extractPidBySite;
 module.exports.isSecondarySitePid = isSecondarySitePid;
 module.exports.isVistaSitePid = isVistaSitePid;
+module.exports.validFormats = _.clone(validFormats);

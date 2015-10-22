@@ -108,24 +108,41 @@ define([
                     channelName = detailAppletChannels[domain] || channelObject.channelName;
 
                 if (channelName) {
-                    ADK.showModal(ADK.Views.Loading.create(), {
-                        size: "large",
-                        title: "Loading..."
+
+                    var modal = new ADK.UI.Modal({
+                        view: ADK.Views.Loading.create(),
+                        options:  {
+                            size: "large",
+                            title: "Loading..."
+                        }
                     });
+                    modal.show();
+
                     var channel = ADK.Messaging.getChannel(channelName),
                         deferredResponse = channel.request('detailView', channelObject);
 
                     deferredResponse.done(function(response) {
-                        ADK.showModal(response.view, {
-                            size: "large",
-                            title: response.title
+
+                        var modal = new ADK.UI.Modal({
+                            view: response.view,
+                            options:  {
+                                size: "large",
+                                title: response.title
+                            }
                         });
+                        modal.show();
+
                     });
                 } else {
-                    ADK.showModal(new DefaultDetailView(), {
-                        size: "large",
-                        title: "Detail - Placeholder"
+
+                    var modalView = new ADK.UI.Modal({
+                        view: new DefaultDetailView(),
+                        options:  {
+                            size: "large",
+                            title: "Detail - Placeholder"
+                        }
                     });
+                    modalView.show();
                 }
             }
         };

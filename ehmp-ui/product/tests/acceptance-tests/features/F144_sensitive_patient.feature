@@ -6,9 +6,11 @@ Feature: user selects sensitive patient
 Background:
     Given user is logged into eHMP-UI
 
-@select_sensitive_patient
+@select_sensitive_patient @triage
 Scenario: user selects sensitive patient
-    And the User selects mysite and All
+    #And the User selects mysite and All
+    And the User selects mysite
+    And the User click on MySiteSearch
     And user enters full last name "zzzretfivefifty"
     And the user select patient name "ZZZRETFIVEFIFTY,PATIENT"
     And the user click on acknowledge restricted record

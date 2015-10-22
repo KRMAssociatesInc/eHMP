@@ -10,7 +10,20 @@ class AllergiesApplet < AccessBrowserV2
     @@allergies_applet_data_grid_rows = AccessHtmlElement.new(:xpath, "//table[@id='data-grid-allergy_grid']/descendant::tr")
     add_verify(CucumberLabel.new("Number of Allergies Applet Rows"), VerifyXpathCount.new(@@allergies_applet_data_grid_rows), @@allergies_applet_data_grid_rows)
     add_action(CucumberLabel.new("Standardized Allergen"), ClickAction.new, AccessHtmlElement.new(:link_text, "Standardized Allergen"))
+    add_action(CucumberLabel.new("Allergen Name"), ClickAction.new, AccessHtmlElement.new(:link_text, "Allergen Name"))
+   
     add_verify(CucumberLabel.new("Allergy Modal Details"), VerifyContainsText.new, AccessHtmlElement.new(:css, "#modal-body > div"))
+
+    add_action(CucumberLabel.new('Allergy Maximize Button'), ClickAction.new, AccessHtmlElement.new(:css, '[data-appletid=allergy_grid] .applet-maximize-button'))
+    add_action(CucumberLabel.new('Empty Allergy Row'), ClickAction.new, AccessHtmlElement.new(:css, '#data-grid-allergy_grid tr.empty")'))
+  end
+
+  def applet_grid_loaded
+    return true if am_i_visible? 'Empty Allergy Row'
+    return TestSupport.driver.find_elements(:css, '#data-grid-allergy_grid tr.selectable').length > 0
+  rescue => e 
+    p e
+    false
   end
 end 
 
@@ -23,12 +36,12 @@ end
 Then(/^the Allergies Applet view contains$/) do |table|
   aa = AllergiesApplet.instance 
   expect(aa.wait_until_action_element_visible("AllergiesGridVisible", DefaultLogin.wait_time)).to be_true    
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification('Allergy Details', row[0])).to be_true, "The value #{row[0]} is not present in the allergy details"
   end
 end
 
-When(/^the user clicks on the allergy pill "(.*?)"$/) do | vaccine_name |
+When(/^the user clicks on the allergy pill "(.*?)"$/) do |vaccine_name|
   driver = TestSupport.driver
   aa = AllergiesApplet.instance
   expect(aa.wait_until_action_element_visible("AllergiesGridVisible", DefaultLogin.wait_time)).to be_true
@@ -60,7 +73,7 @@ end
 Then(/^the allergy applet modal detail contains$/) do |table|
   aa = AllergiesDetails.instance
   
-  table.rows.each do | row |
+  table.rows.each do |row|
     #expect(aa.perform_verification('Allergy Modal Details', row[0])).to be_true, "The value #{row[0]} is not present in the allergy modal details"
     expect(aa.perform_verification(row[0], row[1])).to be_true, "The value #{row[1]} for field #{row[0]} is not present in the allergy modal details"
   end
@@ -73,11 +86,32 @@ end
 
 When(/^user sorts by the Standardized Allergen$/) do
   aa = AllergiesApplet.instance
-  expect(aa.wait_until_xpath_count_greater_than("Number of Allergies Applet Rows", 5)).to be_true
+  # expect(aa.wait_until_xpath_count_greater_than("Number of Allergies Applet Rows", 5)).to be_true
   expect(aa.perform_action("Standardized Allergen", "")).to be_true
 end
 
 Then(/^the Allergies Applet is sorted in alphabetic order based on Standardized Allergen$/) do
   wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
   wait.until { VerifyTableValue.verify_alphabetic_sort_caseinsensitive('data-grid-allergy_grid', 2, true) }
+end
+
+When(/^user sorts by the Allergen Name$/) do
+  aa = AllergiesApplet.instance
+  # xpect(aa.wait_until_xpath_count_greater_than("Number of Allergies Applet Rows", 5)).to be_true
+  expect(aa.perform_action("Allergen Name", "")).to be_true
+end
+
+Then(/^the Allergies Applet is sorted in alphabetic order based on Allergen Name$/) do
+  wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
+  wait.until { VerifyTableValue.verify_alphabetic_sort_caseinsensitive('data-grid-allergy_grid', 1, true) }
+end
+
+When(/^the user expands the Allergies Applet$/) do
+  wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time)
+  aa = AllergiesApplet.instance
+  expect(aa.perform_action('Allergy Maximize Button')).to be_true
+  expect(aa.wait_until_action_element_visible("Allergy Applet Title", DefaultLogin.wait_time)).to be_true
+  expect(aa.perform_verification("Allergy Applet Title", 'ALLERGIES')).to be_true
+
+  wait.until {  aa.applet_grid_loaded }
 end

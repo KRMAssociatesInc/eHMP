@@ -19,6 +19,7 @@ require.config({
         "backgrid-moment-cell":                 "_assets/libs/bower/backgrid/backgrid-moment-cell/backgrid-moment-cell.min",
         "backgrid.filter":                      "_assets/libs/bower/backgrid/backgrid-filter/backgrid-filter.min",
         "bootstrap-datepicker":                 "_assets/libs/bower/bootstrap/bootstrap-datepicker/bootstrap-datepicker",
+        "backbone.component":                   "_assets/libs/bower/backbone/backbone_component/backbone-component.min",
         "crossfilter":                          "_assets/libs/bower/crossfilter/crossfilter.min",
         "fastclick":                            "_assets/libs/bower/fastclick/fastclick",
         "highcharts":                           "_assets/libs/bower/highstock-release/highstock.src",
@@ -32,12 +33,18 @@ require.config({
         "placeholders":                         "_assets/libs/bower/placeholders/utils",
         "underscore":                           "_assets/libs/bower/lodash/lodash.underscore.min",  // code requires lodash instead of backbone's underscore
         "libphonenumber":                       "_assets/libs/bower/libphonenumberjs/libphonenumber",
+        "puppetForm":                           "_assets/libs/custom/puppetForm/puppetForm",
 
         // involve vendor.scss changes
         "backgrid":                             "_assets/libs/bower/backgrid/backgrid.min",
         "bootstrap":                            "_assets/libs/bower/bootstrap/bootstrap.min",
-        "bootstrap-timepicker":                 "_assets/libs/bower/bootstrap/bootstrap-timepicker/bootstrap-timepicker.min",
+        "bootstrap-timepicker":                 "_assets/libs/bower/bootstrap/bootstrap-timepicker/bootstrap-timepicker",
         "gridster":                             "_assets/libs/bower/gridster/jquery.gridster.min",
+        "nouislider":                           "_assets/libs/bower/nouislider/jquery.nouislider.all.min",
+        "bootstrap-notify":                     "_assets/libs/bower/bootstrap/remarkable-bootstrap-notify/bootstrap-notify",
+
+        "jds-filter":                           "_assets/libs/bower/jds-filter/jds-filter.min",
+        "queryString":                          "_assets/libs/bower/query-string/query-string",
 
         // custom libraries (avoid doing this if possible)
         "hbs":                                  "_assets/libs/custom/handlebars/hbs-0.4.0-custom",
@@ -61,8 +68,10 @@ require.config({
         // Plugins
         "typeahead":                            "_assets/libs/bower/typeahead.js/typeahead.bundle.min",
 
+        "select2":                              "_assets/libs/custom/select2/select2.full",
+
         "text":                                 "_assets/libs/custom/require/plugins/text",
-        "jasminejquery":                        "_assets/libs/custom/jquery/plugins/jasmine-jquery",
+        "jasminejquery":                        "_assets/libs/bower/jasmine-jquery/jasmine-jquery",
         "jquery.form":                          "_assets/libs/custom/jquery/plugins/jquery.form.min-20130616",
         "jquery.formparams":                    "_assets/libs/custom/jquery/plugins/jquery.formparams",
         "jquery-datatable":                     "_assets/libs/custom/jquery/jquery-datatable/jquery.dataTables.min",
@@ -88,8 +97,7 @@ require.config({
             "deps": ["jquery"]
         },
         "typeahead": {
-            "deps": ["jquery"],
-            "exports": "Typeahead"
+            "deps": ["jquery"]
         },
         "jquery-scroll": {
             "deps": ["jquery"]
@@ -129,6 +137,10 @@ require.config({
         "jasmine-html": {
             "deps": ["jasmine"],
             "exports": "jasmine"
+        },
+        "jasminejquery": {
+            "deps": ["jasmine"],
+            "exports": "jasminejquery"
         },
         "modernizr": {
             "exports": "modernizr"
@@ -172,6 +184,10 @@ require.config({
         },
         "gridster": {
             "deps": ["jquery"]
+        },
+        "puppetForm": {
+            "deps": ["marionette", "bootstrap"],
+            "exports": "PuppetForm"
         },
         "crossfilter": {
             "deps": [],

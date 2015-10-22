@@ -65,7 +65,7 @@ define([
                     self.$el.find('.input-group.date#custom-date-to-global').datepicker('update', newCustomToDate);
                     self.$el.find('#custom-range-apply-global').removeAttr('disabled');
                 } else { // all-range-global case
-                    var firstEventDate = moment(dateRange.from).format('MM/DD/YYYY'),
+                    var firstEventDate = moment(ResourceService.patientRecordService.getCurrentPatient().get('birthDate'), 'YYYYMMDD').format('MM/DD/YYYY'),
                         lastEventDate = moment(dateRange.to).format('MM/DD/YYYY');
 
                     formattedDateRange = {
@@ -177,12 +177,14 @@ define([
                 fromDatePicker = this.$('.input-group.date#custom-date-from-global')
                 .datepicker({
                     format: 'mm/dd/yyyy',
-                    endDate: '-1d'
+                    endDate: '-1d',
+                    showOnFocus: false
                 }),
                 toDatePicker = this.$('.input-group.date#custom-date-to-global')
                 .datepicker({
                     format: 'mm/dd/yyyy',
-                    startDate: today
+                    startDate: today,
+                    showOnFocus: false
                 });
 
             fromDatePicker
@@ -197,10 +199,6 @@ define([
                         evt.preventDefault();
                         evt.stopPropagation();
                     });
-                })
-                .on('changeDate', function(ev) {
-                    $(this).datepicker('hide');
-                    self.$el.find('#filter-from-date-global').focus();
                 });
 
             toDatePicker
@@ -210,10 +208,6 @@ define([
                         evt.preventDefault();
                         evt.stopPropagation();
                     });
-                })
-                .on('changeDate', function(ev) {
-                    $(this).datepicker('hide');
-                    self.$el.find('#filter-to-date-global').focus();
                 });
 
             this.$('#filter-from-date-global, #filter-to-date-global').datepicker('remove');
@@ -238,6 +232,7 @@ define([
 
             if (selectedId === 'cancel-global') {
                 this.closeExpandedGDT();
+                $('globalDatePickerButton').blur();
                 return;
             }
 
@@ -322,6 +317,7 @@ define([
                     SessionStorage.addModel('globalDate', this.model);
                     Messaging.trigger('globalDate:selected', this.model);
                 }
+                $('globalDatePickerButton').blur();
             } else {
                 this.setCustomDateRange(fromDate, toDate, true);
                 this.model.set('selectedId', selectedId);

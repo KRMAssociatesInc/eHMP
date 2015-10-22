@@ -12,7 +12,7 @@
         </div>
 
         <div id="navigation-navbar" class="applet-nav-bar">
-            <div class="nav nav-pills navbar-right">
+            <div class="nav nav-pills {{#if isNonPatientCentricView}} navbar-center {{else}} navbar-right {{/if}}">
                 <div class="btn-group" id="nav-workspaceSelect"></div>
                 <div class="btn-group" id="text-search-input"></div>
             </div>

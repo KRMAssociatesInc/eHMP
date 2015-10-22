@@ -1,0 +1,87 @@
+Cache for UNIX^INT^Convert object UID's from one system id to another^~Format=Cache.S~^RAW
+%RO on 09 Aug 2013   6:15 PM
+VPRZKCM1^INT^1^63033,69747.335972^0
+VPRZKCM1	; Convert System ID's in Object Files
+ ;
+CONV(FROMSYS) ; FROMSYS is the system id to be converted
+ N TOSYS,FDAIEN
+ S TOSYS=$$SYS^VPRHTTP()
+ S FDAIEN=0 F  S FDAIEN=$O(^VPR(560.11,FDAIEN)) Q:'FDAIEN  D CONV1(FDAIEN,FROMSYS,TOSYS)
+ Q
+CONV1(FDAIEN,FROMSYS,TOSYS) ; convert one record
+ N X0,UID,SYS,WPORIG,WPNEW,VAL
+ S X0=$G(^VPR(560.11,FDAIEN,0)),UID=$P(X0,"^",1),SYS=$P(UID,":",4)
+ Q:SYS=TOSYS
+ S $P(UID,":",4)=TOSYS
+ M WPORIG=^VPR(560.11,FDAIEN,1)
+ S VAL=$$WP2X(.WPORIG)
+ S VAL=$$SWAP(VAL,":"_FROMSYS_":",":"_TOSYS_":")
+ D X2WP(VAL,.WPNEW)
+ D SAVE(FDAIEN,UID,.WPNEW)
+ Q
+SHOW(JSON) ;
+ . N LINE,LONG,TOTAL
+ . S LONG=0,LINES=0,TOTAL=0
+ . S LINE=0 F  S LINE=$O(JSON(LINE)) Q:'LINE  D
+ . . S LINES=LINES+1
+ . . S TOTAL=TOTAL+$L(JSON(LINE,0))
+ . . S LONG=$S(LONG>$L(JSON(LINE,0)):LONG,1:$L(JSON(LINE,0)))
+ . W !,UID,?40,"Lines: ",LINES,"   Longest: ",LONG,"   Total: ",TOTAL
+ Q
+SWAP(X,FIND,REPLACE) ; swap string FIND with string REPLACE in X
+ S Y="",POS=0,SIZE=$L(FIND)
+ F  S POS=$F(X,FIND,POS) Q:'POS  S $E(X,POS-SIZE,POS-1)=REPLACE
+ Q X
+ ;
+WP2X(WP) ; Return a single string by concatenating the WP fields
+ N I,X,ERR
+ S X="",ERR=0
+ S I=0 F  S I=$O(WP(I)) Q:'I  D  Q:ERR
+ . I ($L(X)+$L(WP(I,0)))>32000 D  Q
+ . . S ERR=1,X=""
+ . . W !,"Can't convert documents longer than 32K",!
+ . S X=X_WP(I,0)
+ Q X
+X2WP(X,WP,SIZE) ; Convert a string to WP field with strings no longer than SIZE
+ N START,STOP,LINE,IDX
+ S SIZE=$G(SIZE,245)-1 Q:'SIZE
+ S START=1,IDX=0
+ F  Q:START>$L(X)  D
+ . S STOP=START+SIZE,LINE=$E(X,START,STOP),START=STOP+1
+ . I $L(LINE) S IDX=IDX+1,WP(IDX,0)=LINE
+ Q
+SAVE(FDAIEN,UID,WP) ;
+ N FDA,DIERR,ERR
+ S FDA(560.11,FDAIEN_",",.01)=UID
+ D FILE^DIE("","FDA","ERR")
+ I $D(DIERR) W !,"Save failed for UID: ",UID,! ZW ERR Q
+ D WP^DIE(560.11,FDAIEN_",",1,"","WP")
+ I $D(DIERR) W !,"Save failed for WP: ",UID,! ZW ERR Q
+ D CLEAN^DILF
+ Q
+TX2WP ;
+ N INPUT,OUTPUT
+ S INPUT="abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz"
+ D X2WP(INPUT,.OUTPUT,5)  W ! ZW OUTPUT K OUTPUT
+ D X2WP(INPUT,.OUTPUT,10) W ! ZW OUTPUT K OUTPUT
+ S INPUT=$E(INPUT,1,25)
+ D X2WP(INPUT,.OUTPUT,5)  W ! ZW OUTPUT 
+ Q
+TSWAP ;
+ ;;{"uid":"urn:va:personphoto:F484:1123","summary":"gov.va.cpe.vpr.PersonPhoto@266713c1","personUid":"urn:va:user:F484:1123"}
+ N X
+ S X=$P($T(TSWAP+1),";;",2,99)
+ W !,X
+ S X=$$SWAP(X,":F484:",":0F0F:")
+ W !,X,!
+ Q
+TSAVE ;
+ S IEN=$O(^VPR(560.11,"B","urn:va:personphoto:2222:123",0)) Q:'IEN
+ W !,"IEN:",IEN
+ D CONV1(IEN,"2222","3333")
+ Q
+ ;
+ 
+
+
+

@@ -167,7 +167,6 @@ define([
             this.listenTo(ADK.Messaging, 'globalDate:selected', function(dateModel) {
                 self.dataGridOptions.collection.fetchOptions.criteria.filter = 'and(ne(categoryName,"Admission"),' + self.buildJdsDateFilter("dateTime") + ')';
                 self.dataGridOptions.collection.fetchOptions.onSuccess = function(collection) {
-                    dataGridOptions.collection.reset(dataGridOptions.collection.models);
                     if (self.isFullscreen) {
                         toolBarView.filterResultsDefault(collection);
                     }
@@ -206,7 +205,6 @@ define([
                 };
 
                 fetchOptions.onSuccess = function(collection) {
-                    dataGridOptions.collection.reset(dataGridOptions.collection.models);
                     if (self.isFullscreen) {
                         var siteItem = siteMenuItems.findWhere({
                             'active': true
@@ -242,7 +240,11 @@ define([
                 })
             };
 
-            ADK.showModal(view, modalOptions);
+            var modal = new ADK.UI.Modal({
+                view: view,
+                options: modalOptions
+            });
+            modal.show();
         }
     });
 

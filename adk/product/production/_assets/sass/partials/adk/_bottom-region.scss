@@ -1,0 +1,165 @@
+#bottom-region {
+    #patientSyncStatusRegion {
+        background:none;
+        padding-right: 10px;
+        .patient-status-icon {
+            padding: 0px 5px;
+            display: inline-block;
+            color: #fff;
+            background: none;
+            text-transform: none;
+            .fa {
+                padding: 2px;
+            }
+            .text-success {
+                color: #9aff9a;
+            }
+            .text-error {
+                color: #ff0101;
+            }
+            .text-warning {
+                color: #ffcc00;
+            }
+        }
+        #refresh-patient-data, #open-sync-modal {
+            cursor: pointer;
+            background: none;
+            color: #FFFFFF;
+            font-size: 11px;
+            text-shadow: none;
+            &:hover{
+                background: none;
+            }
+        }
+        #refresh-patient-data {
+            padding: 1px 6px;
+        }
+        #open-sync-modal {
+            padding: 0 6px;
+        }
+        #open-sync-modal .fa-2x {
+            font-size: 1.3em;
+        }
+        .tooltip-inner {
+            font-size: 10px;
+            margin: 0 5px;
+        }
+        .bg-danger {
+            background-color: #b51802;
+        }
+        .loading-muted {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .helpIconLink {
+            position: inherit;
+            padding: 3px 5px;
+            display: inline-block;
+        }
+    }
+    .col-md-12 {
+        padding: 0;
+    }
+    .well {
+        margin-bottom: 0;
+        border-radius: 0;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        background-image: none;
+        background-color: $primary-light;
+        border: 0;
+        box-shadow: none;
+        filter: none;
+        color: $white;
+        padding: 0 0 0 10px;
+        overflow: hidden;
+        #appVersion {
+            line-height: 2.8;
+        }
+        #patientSyncStatusRegion > div > span {
+            margin-top: 6px;
+        }
+        #patientSyncStatusRegion > div > button {
+            margin-top: 5px;
+        }
+    }
+}
+
+#sync-status-modal {
+    margin: -15px;
+    height: 350px;
+    background-color: $white;
+    #sync-site-detail-header {
+        background-color: #e7ebf0;
+    }
+    .fa-exclamation-circle, .sync-failed-text {
+        color: #CC0000;
+    }
+    #source-list-panel {
+        padding: 0;
+        p {
+            padding: 5px;
+        }
+        #sync-source-sites {
+            list-style-type: none;
+            padding-left: 0;
+            .fa-check-circle {
+                color: green;
+            }
+            li {
+                cursor: pointer;
+                padding: 5px 5px 5px 5px;
+                .source-sync-details {
+                    padding-left: 20px;
+                }
+            }
+            li:hover, li.selected {
+                color: $primary;
+                background-color: $secondary-light;
+            }
+        }
+    }
+    #sync-site-detail {
+        height: auto;
+        padding: 0px 0 10px 0;
+        border-left: 1px solid #e5e5e5;
+        background-color: $white;
+        .row {
+            margin: 0;
+        }
+        #force-site-sync-status p {
+            margin: 5px;
+            padding: 5px
+        }
+        table {
+            width: 100%;
+            thead {
+                border-top: 2px solid #e5e5e5;
+                border-bottom: 2px solid #e5e5e5;
+            }
+            th {
+                cursor: pointer;
+            }
+            th, td {
+                width: 25%;
+                padding-left: 15px;
+            }
+        }
+        #force-source-sync {
+            float: right;
+            margin: 3px 5px 0 0;
+            p{
+                margin: 0 15px 15px 15px;
+                padding: 5px;
+            }
+        }
+        a {
+            color: $primary;
+        }
+    }
+}
+
+
+
+
+
+

@@ -27,6 +27,9 @@ define([
                 var allMedicationDetailViewAccordions = $(".medicationReviewDetail.collapse.in");
                 var notActiveAccordions = allMedicationDetailViewAccordions.not(activeAccordion);
                 notActiveAccordions.collapse('toggle');
+            },
+            'click .clickDetail': function(event) {
+                this.showDetail();
             }
         },
 
@@ -88,10 +91,6 @@ define([
             }
         },
         onRender: function() {
-            if (this.detailView) {
-                this.showChildView('detailRegion', this.detailView);
-            }
-
             this.toolbar = new ADK.Views.ToolbarView({
                 targetElement: this,
                 buttonTypes: ['infobutton', 'detailsviewbutton']
@@ -103,6 +102,11 @@ define([
 
             this.$el.find('#chart_' + meds.get('id')).highcharts(medChartConfig);
 
+        },
+        showDetail: function() {
+            if (this.detailView) {
+                this.showChildView('detailRegion', this.detailView);
+            }
         }
     });
 
@@ -166,7 +170,7 @@ define([
                         labels: {
                             enabled: true
                         },
-                        tickColor: '#BCBCBC',
+                        tickColor: '$grey-dark',
                         tickLength: 12,
                         tickWidth: 2,
                         tickPosition: 'outside'

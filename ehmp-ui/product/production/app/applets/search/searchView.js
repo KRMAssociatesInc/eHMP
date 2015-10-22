@@ -2,7 +2,6 @@ define([
     "backbone",
     "marionette",
     "moment",
-    "api/SessionStorage",
     "app/applets/search/searchUtil",
     "hbs!app/applets/search/templates/searchTemplate",
     "hbs!app/applets/search/templates/searchSuggestTemplate",
@@ -11,7 +10,7 @@ define([
     "jquery.inputmask",
     "bootstrap-datepicker",
     "underscore"
-], function(Backbone, Marionette, Moment, SessionStorage, searchUtil, searchTemplate, searchSuggestTemplate, searchResultTemplate, searchResultGroupTemplate, inputmask, datepicker, underscore) {
+], function(Backbone, Marionette, Moment, searchUtil, searchTemplate, searchSuggestTemplate, searchResultTemplate, searchResultGroupTemplate, inputmask, datepicker, underscore) {
 
     var SuggestResultsModel = Backbone.Model.extend({
             defaults: {}
@@ -39,16 +38,16 @@ define([
         //
         initialize: function() {
             var self = this;
-            var storageText = SessionStorage.getAppletStorageModel('search', 'searchText');
+            var storageText = ADK.SessionStorage.getAppletStorageModel('search', 'searchText');
 
             this.clearDateFilters();
             // this.listenTo(ADK.Messaging, 'globalDate:selected', function(dateModel) {});
             this.listenTo(ADK.Messaging.getChannel('search'), 'newSearch', function() {
-                storageText = SessionStorage.getAppletStorageModel('search', 'searchText');
+                storageText = ADK.SessionStorage.getAppletStorageModel('search', 'searchText');
                 if (storageText) {
                     self.searchTerm = storageText.searchTerm;
 
-                    self.filterType = SessionStorage.getAppletStorageModel('search', 'filterType');
+                    self.filterType = ADK.SessionStorage.getAppletStorageModel('search', 'filterType');
                     if (self.filterType === "all") {
                         self.$('.active-range').removeClass('active-range');
                         self.$('#all-range-text-search').addClass('active-range');
@@ -75,7 +74,7 @@ define([
                         self.$('#24hr-range-text-search').addClass('active-range');
                     } else if (self.filterType === "custom") {
                         self.$('.active-range').removeClass('active-range');
-                        var customDates = SessionStorage.getAppletStorageModel('search', 'customDates');
+                        var customDates = ADK.SessionStorage.getAppletStorageModel('search', 'customDates');
                         //console.log(customDates);
                         this.toDate = moment(customDates.toDate).format('MM/DD/YYYY');
                         this.fromDate = moment(customDates.fromDate).format('MM/DD/YYYY');
@@ -381,8 +380,8 @@ define([
             var fetchOptions = {
                 criteria: {
                     "query": query,
-                    "group-field": group_field,
-                    "group-value": group_value
+                    "group.field": group_field,
+                    "group.value": group_value
                 },
                 cache: true,
             };
@@ -509,110 +508,46 @@ define([
             this.formatDates();
 
         },
-        doAllDateFilter: function() {
-
-            this.fromDate = moment().subtract('years', 100);
+        doDateFilterCommon: function(dateRange, textSearchId, dateRangeId, selectedId) {
+            this.fromDate = dateRange;
             this.toDate = moment();
-            this.doDateFilter(true, null, null);
+            if (dateRangeId === 'all') {
+                this.doDateFilter(true, null, null);
+            }
+            else {
+                this.doDateFilter(false);
+            }
             this.$('.active-range').removeClass('active-range');
-            this.$('#all-range-text-search').addClass('active-range');
+            this.$(textSearchId).addClass('active-range');
             this.clearDateFilters();
-            ADK.SessionStorage.setAppletStorageModel('search', 'filterType', 'all');
+            ADK.SessionStorage.setAppletStorageModel('search', 'filterType', dateRangeId);
             ADK.SessionStorage.setAppletStorageModel('search', 'modalOptions', {
-                selectedId: 'all-range'
+                selectedId: selectedId
             });
-
+        },
+        doAllDateFilter: function() {
+            this.doDateFilterCommon(moment().subtract('years', 100), '#all-range-text-search', 'all', 'all-range');
         },
         do2YDateFilter: function() {
-
-            this.fromDate = moment().subtract('years', 2);
-            this.toDate = moment();
-            this.doDateFilter(false);
-            this.$('.active-range').removeClass('active-range');
-            this.$('#2yr-range-text-search').addClass('active-range');
-            this.clearDateFilters();
-            ADK.SessionStorage.setAppletStorageModel('search', 'filterType', '2y');
-            ADK.SessionStorage.setAppletStorageModel('search', 'modalOptions', {
-                selectedId: '2yr-range'
-            });
+            this.doDateFilterCommon(moment().subtract('years', 2), '#2yr-range-text-search', '2y', '2yr-range');
         },
         do1YDateFilter: function() {
-
-            this.fromDate = moment().subtract('years', 1);
-            this.toDate = moment();
-            this.doDateFilter(false);
-            this.$('.active-range').removeClass('active-range');
-            this.$('#1yr-range-text-search').addClass('active-range');
-            this.clearDateFilters();
-            ADK.SessionStorage.setAppletStorageModel('search', 'filterType', '1y');
-            ADK.SessionStorage.setAppletStorageModel('search', 'modalOptions', {
-                selectedId: '1yr-range'
-            });
+            this.doDateFilterCommon(moment().subtract('years', 1), '#1yr-range-text-search', '1y', '1yr-range');
         },
         do3MDateFilter: function() {
-
-            this.fromDate = moment().subtract('months', 3);
-            this.toDate = moment();
-            this.doDateFilter(false);
-            this.$('.active-range').removeClass('active-range');
-            this.$('#3mo-range-text-search').addClass('active-range');
-            this.clearDateFilters();
-            ADK.SessionStorage.setAppletStorageModel('search', 'filterType', '3m');
-            ADK.SessionStorage.setAppletStorageModel('search', 'modalOptions', {
-                selectedId: '3mo-range'
-            });
+            this.doDateFilterCommon(moment().subtract('months', 3), '#3mo-range-text-search', '3m', '3mo-range');
         },
         do1MDateFilter: function() {
-
-            this.fromDate = moment().subtract('months', 1);
-            this.toDate = moment();
-            this.doDateFilter(false);
-            this.$('.active-range').removeClass('active-range');
-            this.$('#1mo-range-text-search').addClass('active-range');
-            this.clearDateFilters();
-            ADK.SessionStorage.setAppletStorageModel('search', 'filterType', '1m');
-            ADK.SessionStorage.setAppletStorageModel('search', 'modalOptions', {
-                selectedId: '1mo-range'
-            });
+            this.doDateFilterCommon(moment().subtract('months', 1), '#1mo-range-text-search', '1m', '1mo-range');
         },
         do7DDateFilter: function() {
-
-            this.fromDate = moment().subtract('days', 7);
-            this.toDate = moment();
-            this.doDateFilter(false);
-            this.$('.active-range').removeClass('active-range');
-            this.$('#7d-range-text-search').addClass('active-range');
-            this.clearDateFilters();
-            ADK.SessionStorage.setAppletStorageModel('search', 'filterType', '7d');
-            ADK.SessionStorage.setAppletStorageModel('search', 'modalOptions', {
-                selectedId: '7d-range'
-            });
+            this.doDateFilterCommon(moment().subtract('days', 7), '#7d-range-text-search', '7d', '7d-range');
         },
         do72HrDateFilter: function() {
-
-            this.fromDate = moment().subtract('hours', 72);
-            this.toDate = moment();
-            this.doDateFilter(false);
-            this.$('.active-range').removeClass('active-range');
-            this.$('#72hr-range-text-search').addClass('active-range');
-            this.clearDateFilters();
-            ADK.SessionStorage.setAppletStorageModel('search', 'filterType', '72hr');
-            ADK.SessionStorage.setAppletStorageModel('search', 'modalOptions', {
-                selectedId: '72hr-range'
-            });
+            this.doDateFilterCommon(moment().subtract('hours', 72), '#72hr-range-text-search', '72hr', '72hr-range');
         },
         do24HrDateFilter: function() {
-
-            this.fromDate = moment().subtract('hours', 24);
-            this.toDate = moment();
-            this.doDateFilter(false);
-            this.$('.active-range').removeClass('active-range');
-            this.$('#24hr-range-text-search').addClass('active-range');
-            this.clearDateFilters();
-            ADK.SessionStorage.setAppletStorageModel('search', 'filterType', '24hr');
-            ADK.SessionStorage.setAppletStorageModel('search', 'modalOptions', {
-                selectedId: '24hr-range'
-            });
+            this.doDateFilterCommon(moment().subtract('hours', 24), '#24hr-range-text-search', '24hr', '24hr-range');
         },
         doCustomDateFilter: function() {
             this.$('.active-range').removeClass('active-range');

@@ -1,0 +1,184 @@
+ZZKMSUBS ; SLC/KCM -- Test Subscripting
+ ;
+SETUP ; Set up some data
+ N I,J,K
+ K ^ZZK("my-index")
+ F I=1:1:50 F J=1:1:100 F K=1:1:10 S ^ZZK("my-index",I,J,K)=I_","_J_","_K
+ S ^ZZK("my-index","tree","apple","red")="4"
+ S ^ZZK("my-index","tree","apple","yellow")="5"
+ S ^ZZK("my-index","bush","strawberry","red")="1"
+ S ^ZZK("my-index","root","potato","brown")="3"
+ S ^ZZK("my-index","root","carrot","orange")="2"
+ S ^ZZK("my-index","tree","banana","yellow")="6"
+ Q
+TSTIDX
+ S IDX="my-index",LEVEL=3
+T1 ; test loop
+ S X1="" F  S X1=$O(^ZZK(IDX,X1)) Q:X1=""  D
+ . I LEVEL>1 D T2 Q
+ . W !,"Adding:",X1
+ Q
+T2 ; test loop
+ S X2="" F  S X2=$O(^ZZK(IDX,X1,X2)) Q:X2=""  D
+ . I LEVEL>2 D T3 Q
+ . W !,"Adding:",X1,",",X2
+ Q
+T3 ; test loop
+ S X3="" F  S X3=$O(^ZZK(IDX,X1,X2,X3)) Q:X3=""  D
+ . I LEVEL>3 D T4 Q
+ . W !,"Adding:",X1,",",X2,",",X3
+ Q
+T4 ; test loop
+ S X4="" F  S X4=$O(^ZZK(IDX,X1,X2,X3,X4)) Q:X4=""  D
+ . I LEVEL>4 D T5 Q
+ . W !,"Adding:",X1,",",X2,",",X3,",",X4
+ Q
+T5 ;
+ Q
+TM1 ;
+ S X1="" F  S X1=$O(^ZZK(IDX,X1)) Q:X1=""  D
+ . W !,"Adding:",X1
+ Q
+TM2 ;
+ S X1="" F  S X1=$O(^ZZK(IDX,X1)) Q:X1=""  D
+ . S X2="" F  S X2=$O(^ZZK(IDX,X1,X2)) Q:X2=""  D
+ . . W !,"Adding:",X1,",",X2
+ Q 
+TM3 ;
+ S X1="" F  S X1=$O(^ZZK(IDX,X1)) Q:X1=""  D
+ . S X2="" F  S X2=$O(^ZZK(IDX,X1,X2)) Q:X2=""  D
+ . . S X3="" F  S X3=$O(^ZZK(IDX,X1,X2,X3)) Q:X3=""  D
+ . . . W !,"Adding:",X1,",",X2,",",X3
+ Q
+TM4 ;
+ S X1="" F  S X1=$O(^ZZK(IDX,X1)) Q:X1=""  D
+ . S X2="" F  S X2=$O(^ZZK(IDX,X1,X2)) Q:X2=""  D
+ . . S X3="" F  S X3=$O(^ZZK(IDX,X1,X2,X3)) Q:X3=""  D
+ . . . S X4="" F  S X4=$O(^ZZK(IDX,X1,X2,X3,X4)) Q:X4=""  D
+ . . . . W !,"Adding:",X1,",",X2,",",X3,",",X4
+ Q
+S1(SUBS,UID) ;
+S2(SUBS,UID) ;
+S3(SUBS,UID) ;
+S4(SUBS,UID) ;
+S5(SUBS,UID) ;
+SN(SUBS,UID,LEN) ;
+ ;
+ S BASE="my-index"
+NXT ;
+ S SUB="" F  S SUB=$O(^(BASE,SUB)) Q:SUB=""  D NXT
+ S ROOT="^ZZK(""my-index"")"
+LOOP(ROOT) ; 
+ N SUB S SUB=""
+ F  S SUB=$O(@ROOT@(SUB)) Q:SUB=""  D
+ Q
+ ;
+STRAT ; test using strategy
+ N INDEX,LIMIT,STOP,VPRDATA,X,I,DIR
+ K ^ZZK("results")
+ S START=$ZH
+ S INDEX="my-index",LIMIT=99999,VPRDATA=0,DIR=1
+ F I=1:1:3 S STOP(I)=$C(255)
+ D STRAT3
+ W !,$ZH-START
+ Q
+STRAT3 ; 3 level strategy
+ S X(1)="" F  S X(1)=$O(^ZZK(INDEX,X(1)),DIR) Q:X(1)=""  Q:X(1)]]STOP(I)  Q:VPRDATA'<LIMIT  D
+ . S X(2)="" F  S X(2)=$O(^ZZK(INDEX,X(1),X(2)),DIR) Q:X(2)=""  Q:X(2)]]STOP(I)  Q:VPRDATA'<LIMIT  D
+ . . S X(3)="" F  S X(3)=$O(^ZZK(INDEX,X(1),X(2),X(3)),DIR) Q:X(3)=""  Q:X(3)]]STOP(I)  Q:VPRDATA'<LIMIT  D ADDIT
+ Q
+SUBIN ; test using subscript indirection
+ N LEVEL,LIMIT,STOP,VPRDATA,X,I,REF,DIR
+ K ^ZZK("results")
+ S START=$ZH
+ S REF="^ZZK(""my-index"")",LEVEL=3,LIMIT=99999,VPRDATA=0,DIR=1
+ F I=1:1:3 S STOP(I)=$C(255)
+ D EACH(1,REF)
+ W !,$ZH-START
+ Q
+EACH(I,REF)
+ S X(I)="" F  S X(I)=$O(@REF@(X(I)),DIR) Q:X(I)=""  Q:X(I)]]STOP(I)  Q:VPRDATA'<LIMIT  D:I<LEVEL EACH(I+1,$NA(@REF@(X(I)))) D:I=LEVEL ADDIT
+ Q
+ADDIT ;
+ S VPRDATA=VPRDATA+1
+ S ^ZZK("results",X(1),X(2),X(3))=VPRDATA
+ Q
+INDIR ; test indirection
+ ;;,"ACETAMINOPHEN","20100809","250MG","urn:va:4:med:3","dosage.1"
+ S SUBS=$P($T(INDIR+1),";;",2,99),PID=2,IDXNAME="test-idx"
+ S GREF="^ZZK("_PID_",""attr"","""_IDXNAME_""""_SUBS_")"
+ W !,GREF
+ S @GREF=$G(VALUES("DATA"))
+ Q
+SA3
+ S ^ZZK(PID,"attr",IDXNAME,VALUE(1),VALUE(2),VALUE(3),KEY,VALUE("inst"))=""
+ Q
+TRYIF
+ S X=1
+ F I=0:1:4 S A(I)=I
+ S START=$ZH
+ F I=1:1:500000 S A=A(I#10) D
+ . I A=0 D C0 Q
+ . I A=1 D C1 Q
+ . I A=2 D C2 Q
+ . I A=3 D C3 Q
+ . I A=4 D C4 Q
+ . I A=5 D C5 Q
+ . I A=6 D C6 Q
+ . I A=7 D C7 Q
+ . I A=8 D C8 Q
+ . I A=9 D C9 Q
+ W !,"IF STUFF: ",$ZH-START
+ Q
+TRYID
+ S X=1
+ F I=0:1:4 S A(I)="C"_I
+ S START=$ZH
+ F I=1:1:500000 S A=A(I#10) D @A
+ W !,"INDIRECT: ",$ZH-START
+ Q
+C0 S X=X+1 Q
+C1 S X=X+1 Q
+C2 S X=X+1 Q
+C3 S X=X+1 Q
+C4 S X=X+1 Q
+C5 S X=X+1 Q
+C6 S X=X+1 Q
+C7 S X=X+1 Q
+C8 S X=X+1 Q
+C9 S X=X+1 Q
+ ;
+GD ;
+ S START=$ZH
+ K ^ZZK(2)
+ F I=1:1:50000 S ^ZZK(2,"myindex",I)=""
+ W !,"GD: ",$ZH-START
+ Q
+GI ;
+ S START=$ZH
+ K ^ZZK(2)
+ F I=1:1:50000 S GR="^ZZK(2,""myindex"","_I_")",@GR=""
+ W !,"GI: ",$ZH-START
+ Q
+COMBO ; 
+ S MULTS("dosages",1)=""
+ S MULTS("dosages",2)=""
+ S MULTS("orders",1)=""
+ S MULTS("products",1)=""
+ S MULTS("products",2)=""
+ S MULTS("products",3)=""
+ S INITIAL=$O(MULTS("")) 
+ S MULT="" F  S MULT=$O(MULTS(MULT)) Q:MULT=""  D
+ . 
+ Q
+COMBINE(NAME) ;
+ S I="" F  S I=$O(MULT(NAME,I)) Q:'I  
+ Q
+CRC ;
+ S X="/vpr/32/index/alltime/summary?order=observed desc&filter=gt(""myField"",2)"
+ W !,$ZH
+ F I=1:1:10000 S Y=$$CRC32^XLFCRC(X)
+ W !,$ZH
+ F I=1:1:10000 S Y=$ZCRC(X,7)
+ W !,$ZH
+ Q

@@ -93,7 +93,6 @@ When(/^the user clicks the date control "(.*?)" (?:on|in) the "(.*?)"$/) do |con
   wait.until { element.displayed? }
 
   element.click
-
 end
 
 # ######################## Then ########################
@@ -142,7 +141,6 @@ Then(/^the following choices should be displayed for the "(.*?)" Date Filter$/) 
 end
 
 Then(/^the Custom date fields should be "(.*?)" (?:on|in) the "(.*?)"/) do |enabled_or_disabled, parent_name|
-
   from_element = nil
   to_element = nil
 
@@ -225,7 +223,7 @@ Then(/^there is no active date control (?:on|in) the "(.*?)"$/) do |parent_name|
   expect(number_active_controls).to eq(0)
 end
 
-Then(/^the "(.*?)" text is correctly set to "(\d+)" months in the past and "(\d+)" months in the future$/) do |checked_text, months_past, months_future|
+Then(/^the "(.*?)" text is correctly set to "(\d+)" months in the past and "(\d+)" months in the future$/) do |_checked_text, months_past, months_future|
   date_format_template = "%m/%d/%Y"
 
   expected_from_date = DateTime.now.prev_month(months_past.to_i).strftime(date_format_template)
@@ -239,7 +237,7 @@ Then(/^the "(.*?)" text is correctly set to "(\d+)" months in the past and "(\d+
   #verify_elements_equal(expected_text, actual_text)
 end
 
-When(/^the "(.*?)" text is correctly set to "(.*?)" days in the past and "(.*?)" months in the future$/) do |checked_text, days_past, months_future|
+When(/^the "(.*?)" text is correctly set to "(.*?)" days in the past and "(.*?)" months in the future$/) do |_checked_text, days_past, months_future|
   date_format_template = "%m/%d/%Y"
 
   expected_from_date = DateTime.now.prev_day(days_past.to_i).strftime(date_format_template)
@@ -253,7 +251,7 @@ When(/^the "(.*?)" text is correctly set to "(.*?)" days in the past and "(.*?)"
   expect(@cc.perform_verification('Element - Range Text', expected_text)).to be_true
 end
 
-Then(/^the "(.*?)" input is correctly set to "(\d+)" months in the "(.*?)"$/) do |custom_field, months, time|
+Then(/^the "(.*?)" input is correctly set to "(\d+)" months in the "(.*?)"$/) do |_custom_field, months, time|
   date_format_template = "%m/%d/%Y"
 
   if time == "past"
@@ -270,7 +268,7 @@ Then(/^the "(.*?)" input is correctly set to "(\d+)" months in the "(.*?)"$/) do
   end
 end
 
-Then(/^the "(.*?)" input is correctly set to "(\d+)" days in the "(.*?)"$/) do |custom_field, days, time|
+Then(/^the "(.*?)" input is correctly set to "(\d+)" days in the "(.*?)"$/) do |_custom_field, days, time|
   date_format_template = "%m/%d/%Y"
 
   if time == "past"
@@ -286,7 +284,7 @@ Then(/^the "(.*?)" input is correctly set to "(\d+)" days in the "(.*?)"$/) do |
   end
 end
 
-Then(/^the "(.*?)" text is correctly set to "(.*?)"$/) do |checked_text, expected_text|
+Then(/^the "(.*?)" text is correctly set to "(.*?)"$/) do |_checked_text, expected_text|
   actual_text = @cc.get_element("Element - Range Text").text
 
   # the actual word of "Viewing" is not being tested here, just that "All","Any", etc is being used

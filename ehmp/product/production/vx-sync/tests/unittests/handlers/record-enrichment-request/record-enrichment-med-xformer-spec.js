@@ -8,7 +8,6 @@
 require('../../../../env-setup');
 
 var _ = require('underscore');
-var ncUtil = require(global.VX_UTILS + 'namecase-utils');
 
 var xformer = require(global.VX_HANDLERS + 'record-enrichment-request/record-enrichment-med-xformer');
 var log = require(global.VX_UTILS + '/dummy-logger');
@@ -564,23 +563,33 @@ function getVAConceptMappingTo_ReturnNoCode(concept, targetCodeSystem, callback)
     return callback(null, null);
 }
 
+function TerminologyUtil(){}
+TerminologyUtil.prototype.CODE_SYSTEMS = CODE_SYSTEMS;
+TerminologyUtil.prototype.getJlvMappedCode = getJlvMappedCode_ReturnValidCode;
+TerminologyUtil.prototype.getJlvMappedCodeList = getJlvMappedCodeList_ReturnValidCode;
+TerminologyUtil.prototype.getVADrugConcept = getVADrugConcept_ReturnValidCode;
+TerminologyUtil.prototype.getVAConceptMappingTo = getVAConceptMappingTo_ReturnValidCode;
+var goodTerminology = new TerminologyUtil();
+
+function TerminologyUtilNoCode(){}
+TerminologyUtilNoCode.prototype.CODE_SYSTEMS = CODE_SYSTEMS;
+TerminologyUtilNoCode.prototype.getJlvMappedCode = getJlvMappedCode_ReturnValidCode;
+TerminologyUtilNoCode.prototype.getJlvMappedCodeList = getJlvMappedCodeList_ReturnValidCode;
+TerminologyUtilNoCode.prototype.getVADrugConcept = getVADrugConcept_ReturnNoCode;
+TerminologyUtilNoCode.prototype.getVAConceptMappingTo = getVAConceptMappingTo_ReturnNoCode;
+var noCodeTerminology = new TerminologyUtilNoCode();
+
 describe('record-enrichment-med-xformer.js', function() {
     describe('transformAndEnrichRecord()', function() {
         it('Happy Path with VA Medication using VA terminology database transformation', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnValidCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnValidCode
-                }
+                terminologyUtils: goodTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 
@@ -685,21 +694,22 @@ describe('record-enrichment-med-xformer.js', function() {
                     // Verify the values in the rxncodes attribute
                     //--------------------------------------------
                     expect(_.isEmpty(record.rxncodes)).toBe(false);
-                    expect(record.rxncodes.length).toEqual(11);
-                    expect(record.rxncodes).toEqual([
-                        'urn:vandf:4020400',
-                        'urn:ndfrt:N0000007106',
-                        'urn:ndfrt:N0000000002',
-                        'urn:ndfrt:N0000007676',
-                        'urn:ndfrt:N0000007973',
-                        'urn:ndfrt:N0000008280',
-                        'urn:ndfrt:N0000007809',
-                        'urn:ndfrt:N0000008229',
-                        'urn:ndfrt:N0000008164',
-                        'urn:rxnorm:36567',
-                        'urn:ndfrt:N0000148200'
-                    ]);
-
+                    if(record.rxncodes) {
+                        expect(record.rxncodes.length).toEqual(11);
+                        expect(record.rxncodes).toEqual([
+                            'urn:vandf:4020400',
+                            'urn:ndfrt:N0000007106',
+                            'urn:ndfrt:N0000000002',
+                            'urn:ndfrt:N0000007676',
+                            'urn:ndfrt:N0000007973',
+                            'urn:ndfrt:N0000008280',
+                            'urn:ndfrt:N0000007809',
+                            'urn:ndfrt:N0000008229',
+                            'urn:ndfrt:N0000008164',
+                            'urn:rxnorm:36567',
+                            'urn:ndfrt:N0000148200'
+                        ]);
+                    }
                     // Verify that the code was inserted.
                     //-----------------------------------
                     expect(record.codes).toBeTruthy();
@@ -717,18 +727,12 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication using JLV transformation', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 
@@ -753,19 +757,13 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate for setting overallStart', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.overallStart = undefined;
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.overallStart).toBe(record.orders[0].ordered);
@@ -781,19 +779,13 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 1 for setting overallStop', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.overallStop = undefined;
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.overallStop).toBe(record.stopped);
@@ -809,20 +801,14 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 2 for setting overallStop', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.overallStop = 20030306;
             vaMedJob.record.stopped = 20030304;
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.overallStop).toBe('20030304');
@@ -838,20 +824,14 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 3 for setting overallStop', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.overallStop = undefined;
             vaMedJob.record.stopped = undefined;
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.overallStop).toBe(record.orders[0].ordered);
@@ -867,19 +847,13 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 1 for setting lastAdmin', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.administrations[0].status = 'INFUSING';
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.lastAdmin).toBe(record.administrations[0].dateTime);
@@ -895,19 +869,13 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 1 for setting units', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.dosages = undefined;
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.units).toBeUndefined();
@@ -923,13 +891,7 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 2 for setting units', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.dosages = [{
@@ -939,7 +901,7 @@ describe('record-enrichment-med-xformer.js', function() {
             }];
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.units).toBe('MG');
@@ -955,19 +917,13 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 1 for setting kind', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.supply = true;
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.kind).toBe('Medication, Supply');
@@ -983,20 +939,14 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 2 for setting kind', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.supply = false;
             vaMedJob.record.IMO = true;
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.kind).toBe('Medication, Clinic Order');
@@ -1012,13 +962,7 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 3 for setting kind', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.supply = false;
@@ -1026,7 +970,7 @@ describe('record-enrichment-med-xformer.js', function() {
             vaMedJob.record.vaType = undefined;
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.kind).toBe('Medication');
@@ -1042,13 +986,7 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 1 for setting root level summary', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.medType = 'urn:sct:105903003';
@@ -1060,7 +998,7 @@ describe('record-enrichment-med-xformer.js', function() {
             }];
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.summary).toBe('Name1, Name2(historical)\n TAKE ONE TABLET BY BY MOUTH EVERY EVENING');
@@ -1076,13 +1014,7 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 2 for setting root level summary', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.medType = 'urn:sct:105903003';
@@ -1106,7 +1038,7 @@ describe('record-enrichment-med-xformer.js', function() {
 
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.summary).toBe('Name1A, Name1B in Name2A, Name2B(historical)\n TAKE ONE TABLET BY BY MOUTH EVERY EVENING100 50 SchedName for a total of 10');
@@ -1122,13 +1054,7 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 3 for setting root level summary', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.medType = 'urn:sct:105903003';
@@ -1136,7 +1062,7 @@ describe('record-enrichment-med-xformer.js', function() {
             vaMedJob.record.products = undefined;
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.summary).toBe(record.qualifiedName + '(historical)\n TAKE ONE TABLET BY BY MOUTH EVERY EVENING');
@@ -1152,19 +1078,13 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 1 for setting product.ingredientRXNCode summary', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.products[0].ingredientRXNCode = 'SomeTextGoesHere';
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.products[0].ingredientRXNCode).toBe('SomeTextGoesHere');
@@ -1180,19 +1100,13 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 1 for setting administration.given', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.administrations[0].status = 'INFUSING';
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.administrations[0].given).toBe(true);
@@ -1208,19 +1122,13 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 2 for setting administration.given', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.administrations[0].status = 'STOPPED';
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.administrations[0].given).toBe(true);
@@ -1236,19 +1144,13 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 3 for setting administration.given', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.administrations[0].status = 'SOMETHINGELSE';
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.administrations[0].given).toBe(false);
@@ -1264,13 +1166,7 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 1 for setting dosage fields', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.dosages[0].start = undefined;
@@ -1278,7 +1174,7 @@ describe('record-enrichment-med-xformer.js', function() {
             vaMedJob.record.dosages[0].med = { medType: 'urn:sct:105903003' };
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.dosages[0].startDateString).toBeUndefined();
@@ -1295,13 +1191,7 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with VA Medication alternate 2 for setting dosage fields', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode,
-                    getJlvMappedCodeList: getJlvMappedCodeList_ReturnValidCode,
-                    getVADrugConcept: getVADrugConcept_ReturnNoCode,
-                    getVAConceptMappingTo: getVAConceptMappingTo_ReturnNoCode
-                }
+                terminologyUtils: noCodeTerminology
             };
             var vaMedJob = JSON.parse(JSON.stringify(originalVaMedJob));
             vaMedJob.record.dosages[0].start = undefined;
@@ -1311,7 +1201,7 @@ describe('record-enrichment-med-xformer.js', function() {
 
 
             runs(function() {
-                xformer(log, config, environment, vaMedJob, function(error, record) {
+                xformer(log, config, environment, vaMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.dosages[0].startDateString).toBe('Start + 2 days 2 hours 2 minutes');
@@ -1327,15 +1217,12 @@ describe('record-enrichment-med-xformer.js', function() {
         it('Happy Path with Dod Document', function() {
             var finished = false;
             var environment = {
-                terminologyUtils: {
-                    CODE_SYSTEMS: CODE_SYSTEMS,
-                    getJlvMappedCode: getJlvMappedCode_ReturnValidCode
-                }
+                terminologyUtils: goodTerminology
             };
             var dodMedJob = JSON.parse(JSON.stringify(originalDodMedJob));
 
             runs(function() {
-                xformer(log, config, environment, dodMedJob, function(error, record) {
+                xformer(log, config, environment, dodMedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
 
@@ -1428,28 +1315,14 @@ describe('record-enrichment-med-xformer.js', function() {
                 return finished;
             }, 'Call failed to return in time.', 500);
         });
-        it('Job.record was null', function() {
-            var finished = false;
-            var environment = {};
-
-            runs(function() {
-                xformer(log, config, environment, {}, function(error, record) {
-                    expect(error).toBeNull();
-                    expect(record).toBeNull();
-                    finished = true;
-                });
-            });
-
-            waitsFor(function() {
-                return finished;
-            }, 'Call failed to return in time.', 500);
-        });
         it('Job was removed', function() {
             var finished = false;
-            var environment = {};
+            var environment = {
+                terminologyUtils: goodTerminology
+            };
 
             runs(function() {
-                xformer(log, config, environment, removedJob, function(error, record) {
+                xformer(log, config, environment, removedJob.record, function(error, record) {
                     expect(error).toBeNull();
                     expect(record).toBeTruthy();
                     expect(record.uid).toEqual('urn:va:med:DOD:0000000003:1000010340');

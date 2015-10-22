@@ -3,21 +3,21 @@ Given(/^"(.*?)"$/) do |arg1|
 end
 
 When(/^client requests the healthcheck details in RDK format$/) do
-  path = RDClass.resourcedirectory.get_url("healthcheck-detail")
+  path = RDClass.resourcedirectory_fetch.get_url("healthcheck-detail")
   @response = HTTPartyWithBasicAuth.get_with_authorization(path)
 end
 
 Then(/^the RDK healthcheck response contains$/) do |table|
   @json_object = JSON.parse(@response.body)
 
-  result_array = @json_object["subChecks"]
+  result_array = @json_object["data"]["subChecks"]
   search_json(result_array, table)
 end
 
 Then(/^the RDK healthcheck response "(.*?)" contains$/) do |arg1, table|
   @json_object = JSON.parse(@response.body)
 
-  result_array = @json_object[arg1]
+  result_array = @json_object["data"][arg1]
   p result_array 
   found = true
   table.rows.each do |field_path, field_value_string|
@@ -30,16 +30,18 @@ Then(/^the RDK healthcheck response "(.*?)" contains$/) do |arg1, table|
 end
 
 When(/^client requests the healthcheck healthy flag$/) do
-  path = RDClass.resourcedirectory.get_url("healthcheck-healthy")
+  path = RDClass.resourcedirectory_fetch.get_url("healthcheck-healthy")
   @response = HTTPartyWithBasicAuth.get_with_authorization(path)
 end
 
 Then(/^the response is "(.*?)"$/) do |arg1|
-  expect(@response.body).to eq(arg1)
+  @json_object = JSON.parse(@response.body)
+  @json_object.delete("status")
+  expect(@json_object.to_s).to eq(arg1)
 end
 
 When(/^client requests the healthcheck details html in RDK format$/) do
-  path = RDClass.resourcedirectory.get_url("healthcheck-detail-html")
+  path = RDClass.resourcedirectory_fetch.get_url("healthcheck-detail-html")
   @response = HTTPartyWithBasicAuth.get_with_authorization(path)
 end
 
@@ -51,30 +53,30 @@ end
 
 Then(/^the RDK healthcheck detail response for "(.*?)" contains$/) do |arg1, table|
   @json_object = JSON.parse(@response.body)
-  result_array = @json_object[arg1]
+  result_array = @json_object["data"][arg1]
   p result_array
 
   result_array = []
-  result_array[0] = @json_object[arg1]
+  result_array[0] = @json_object["data"][arg1]
   search_json(result_array, table)
 end
 
 When(/^client requests the healthcheck noupdate on demand in RDK format$/) do
-  path = RDClass.resourcedirectory.get_url("healthcheck-noupdate")
+  path = RDClass.resourcedirectory_fetch.get_url("healthcheck-noupdate")
   @response = HTTPartyWithBasicAuth.get_with_authorization(path)
 end
 
 When(/^client requests the healthcheck checks in RDK format$/) do
-  path = RDClass.resourcedirectory.get_url("healthcheck-checks")
+  path = RDClass.resourcedirectory_fetch.get_url("healthcheck-checks")
   @response = HTTPartyWithBasicAuth.get_with_authorization(path)
 end
 
 Then(/^the RDK healthcheck checks response for "(.*?)" contains dependencies$/) do |arg1, table|
   @json_object = JSON.parse(@response.body)
-  result_array = @json_object[arg1]
+  result_array = @json_object["data"][arg1]
   dependencies = result_array["dependencies"]
   p dependencies
-  table.rows.each do | depend |
+  table.rows.each do |depend|
     expect(dependencies.include? depend[0]).to be_true, "#{dependencies} did not include required #{depend}"
   end 
 end

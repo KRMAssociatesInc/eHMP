@@ -33,7 +33,7 @@ These tools are not optional. Please run your code through these tools with the 
    ```
  * Use the drilldown utility for accessing deep object properties.
    ```JavaScript
-   var dd = rdk.utils.dd;
+   var dd = require('drilldown');
    var response1 = {data: {error: 'Something went wrong'}};
    var response2 = {data: {items: [{foo: 1},{foo: 2}]}};
 
@@ -73,6 +73,8 @@ These tools are not optional. Please run your code through these tools with the 
 ## General Programming Guidelines
  * Always use braces for `if`, `while`, and `for` blocks
  * Function names should be verbs/actions
+ * Boolean names should be positive. For example, use `ready` instead of `notReady` and use `finished` instead of `unfinished`.
+ * Boolean variables should not be compared against boolean literals.
  * Bail early; `return` at the top of a function if an error occurs instead of using long if-else blocks.
     * This reduces levels of indentation and makes identifying bugs easier.
  * Words in variable names must be fully spelled out unless an acronym or shorthand is very common
@@ -184,4 +186,4 @@ function getVprDateTime(fmDate) {
 
 <br />
 ---
-Next: [Resources](resources.md)
+Next: [Code Organization](code-organization.md)

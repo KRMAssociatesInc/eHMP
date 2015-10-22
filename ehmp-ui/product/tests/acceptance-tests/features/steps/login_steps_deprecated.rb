@@ -36,7 +36,6 @@ Given(/^user is logged into ADK$/) do
     login_screen.perform_action("Sign in", "")
     TestSupport.successfully_loggedin=true
   end # unless
-
 end
 
 # logs into eHMP-UI and goes to the cover sheet for a particular patient

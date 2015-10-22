@@ -5,7 +5,7 @@ $LOAD_PATH.unshift path unless $LOAD_PATH.include?(path)
 require 'VerifyJsonRuntimeValue.rb'
 
 When(/^the client requests medication results for that patient "(.*?)"$/) do |pid|
-  temp = QueryFhir.new("MedicationDispense")
+  temp = RDKQuery.new('medicationdispense-getMedicationDispense')
   temp.add_parameter("subject.identifier", pid)
   temp.add_format("json")
   temp.add_acknowledge("true")
@@ -22,7 +22,7 @@ Then(/^the results contain medication results$/) do |table|
 end
 
 When(/^the client breaks glass and repeats a request for out\-patient medication results for that patient "(.*?)"$/) do |pid|
-  temp = QueryRDKAll.new("MedicationDispense")
+  temp = RDKQuery.new('medicationdispense-getMedicationDispense')
   temp.add_parameter("subject.identifier", pid)
   #temp.add_parameter("domain", "imun")
   temp.add_acknowledge("true")
@@ -31,7 +31,7 @@ When(/^the client breaks glass and repeats a request for out\-patient medication
 end
 
 When(/^the client requests out\-patient medication results for that sensitive patient "(.*?)"$/) do |pid|
-  temp = QueryRDKAll.new("MedicationDispense")
+  temp = RDKQuery.new('medicationdispense-getMedicationDispense')
   temp.add_parameter("subject.identifier", pid)
   #temp.add_parameter("domain", "imun")
   temp.add_acknowledge("false")
@@ -40,7 +40,7 @@ When(/^the client requests out\-patient medication results for that sensitive pa
 end
 
 When(/^the client breaks glass and repeats a request for in\-patient medication results for that patient "(.*?)"$/) do |pid|
-  temp = QueryRDKAll.new("MedicationAdministration")
+  temp = RDKQuery.new('medicationadministration-medicationAdministration')
   temp.add_parameter("subject.identifier", pid)
   #temp.add_parameter("domain", "imun")
   temp.add_acknowledge("true")
@@ -49,7 +49,7 @@ When(/^the client breaks glass and repeats a request for in\-patient medication 
 end
 
 When(/^the client requests in\-patient medication results for that sensitive patient "(.*?)"$/) do |pid|
-  temp = QueryRDKAll.new("MedicationAdministration")
+  temp = RDKQuery.new('medicationadministration-medicationAdministration')
   temp.add_parameter("subject.identifier", pid)
   #temp.add_parameter("domain", "imun")
   temp.add_acknowledge("false")
@@ -58,7 +58,7 @@ When(/^the client requests in\-patient medication results for that sensitive pat
 end
 
 When(/^the client breaks glass and repeats a request for out\-patient medication statement for that patient "(.*?)"$/) do |pid|
-  temp = QueryRDKAll.new("MedicationStatement")
+  temp = RDKQuery.new('medicationdstatement-getMedicationStatement')
   temp.add_parameter("subject.identifier", pid)
   #temp.add_parameter("domain", "imun")
   temp.add_acknowledge("true")
@@ -67,7 +67,7 @@ When(/^the client breaks glass and repeats a request for out\-patient medication
 end
 
 When(/^the client requests out\-patient medication statement for that sensitive patient "(.*?)"$/) do |pid|
-  temp = QueryRDKAll.new("MedicationStatement")
+  temp = RDKQuery.new('medicationdstatement-getMedicationStatement')
   temp.add_parameter("subject.identifier", pid)
   #temp.add_parameter("domain", "imun")
   temp.add_acknowledge("false")

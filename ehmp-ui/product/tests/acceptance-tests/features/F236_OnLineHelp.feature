@@ -1,10 +1,10 @@
-@F236_OnLineHelp
+@F236_OnLineHelp @regression
 
 Feature: F236 - OnLineHelp
 #"As an an eHMP user, I need to be able to click on help icons in strategic areas in he eHMP UI in order to display contextual help information and create PDF documents;  so that I can access and print PDF documents of help content."
 
 #POC: Team Venus
-@F236_1_OnLineHelp @US4520
+@F236_1_OnLineHelp @US4520 @DE1591
 Scenario: Verify if OnLineHelp icons are present
   Given the On-line Help icon on login page of eHMP-UI
   Then user is logged into eHMP-UI
@@ -26,7 +26,7 @@ Scenario: Verify if OnLineHelp icon is clickable
   Given user is logged into eHMP-UI
   Then the On-line Help page is opened by clicking on the On-line Help icon
 
-@F236_3_OnLineHelp @US6110
+@F236_3_OnLineHelp @US6110 @debug @DE1169
 Scenario: Verify if tooltips are present
   Given user is logged into eHMP-UI
   And user searches for and selects "Four,Patient"

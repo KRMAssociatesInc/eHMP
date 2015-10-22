@@ -38,11 +38,13 @@ module.exports = function (grunt) {
                     junit: {
                         path: "test/build/junit-reports"
                     },
-                    specs: "test/unit/**/*.js",
+                    specs: "test/unit/**/*Spec.js",
                     template: require('grunt-template-jasmine-requirejs'),
                     templateOptions: {
                         requireConfigFile: ['config.js' ]
-                    }
+                    },
+                    //display: 'short',
+                    summary: true
                 }
             },
             inttest: {
@@ -64,7 +66,8 @@ module.exports = function (grunt) {
                 options: {
                     data: {
                         debug: false,
-                        adkMin: false
+                        adkMin: false,
+                        owa:true
                     },
                     pretty: true
                 },
@@ -82,7 +85,8 @@ module.exports = function (grunt) {
                 options: {
                     data: {
                         debug: false,
-                        adkMin: true
+                        adkMin: true,
+                        owa:true
                     },
                     pretty: true
                 },

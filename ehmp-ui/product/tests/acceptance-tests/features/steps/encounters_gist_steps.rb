@@ -28,8 +28,8 @@ class EncountersGist <  ADKContainer
     #Quick View
     add_verify(CucumberLabel.new("Quick View Table Title"), VerifyText.new, AccessHtmlElement.new(:css, ".overview .popover-title"))
     #menu
-    add_action(CucumberLabel.new("Quick View Icon"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=encounters] div.toolbarActive #quick-look-button-toolbar"))
-    add_action(CucumberLabel.new("Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=encounters] div.toolbarActive #detailView-button-toolbar"))
+    add_action(CucumberLabel.new("Quick View Icon"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=encounters] div.toolbarActive [button-type=quick-look-button-toolbar]"))
+    add_action(CucumberLabel.new("Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid=encounters] div.toolbarActive [button-type=detailView-button-toolbar]"))
     #modal title
     add_verify(CucumberLabel.new("Main Modal Label"), VerifyContainsText.new, AccessHtmlElement.new(:id, "mainModalLabel"))       
     add_verify(CucumberLabel.new("Modal Details"), VerifyContainsText.new, AccessHtmlElement.new(:id, "modal-body"))
@@ -59,7 +59,7 @@ class VisitObject <  ADKContainer
     add_action(CucumberLabel.new("Visit Type-GENERAL INTERNAL MEDICINE Right Click"), ClickAction.new, AccessHtmlElement.new(:css, "#encountersVisits-event-gist #quickLook_encounters-Visit-GENERALINTERNALMEDICINE"))
     #add_action(CucumberLabel.new("Visit Type-GENERAL INTERNAL MEDICINE Left Click"), ClickAction.new, AccessHtmlElement.new(:css, "#encountersVisits-event-gist #event_name_encounters-Visit-GENERALINTERNALMEDICINE"))      
     visit_tab_id_left = 'event_name_encounters-Visit-GENERALINTERNALMEDICINE'
-  #  add_action(CucumberLabel.new("Visit Type-GENERAL INTERNAL MEDICINE Left Click"), FocusInAction.new(visit_tab_id_left), AccessHtmlElement.new(:css, "[data-appletid='encounters'] ##{visit_tab_id_left}"))
+    #  add_action(CucumberLabel.new("Visit Type-GENERAL INTERNAL MEDICINE Left Click"), FocusInAction.new(visit_tab_id_left), AccessHtmlElement.new(:css, "[data-appletid='encounters'] ##{visit_tab_id_left}"))
     add_action(CucumberLabel.new("Visit Type-GENERAL INTERNAL MEDICINE Left Click"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid='encounters'] ##{visit_tab_id_left}"))
     
     #sorting header definitions  
@@ -98,7 +98,7 @@ class ProcedureObject <  ADKContainer
     add_action(CucumberLabel.new("Procedures Right Click"), ClickAction.new, AccessHtmlElement.new(:css, "#panel--Procedures #button_Procedures"))
     add_action(CucumberLabel.new("Procedure Name-PULMONARY FUNCTION INTERPRET Right Click"), ClickAction.new, AccessHtmlElement.new(:css, "#encountersProcedures-event-gist #quickLook_encounters-Procedure-PULMONARYFUNCTIONINTERPRET"))      
     procedure_tab_id_left = 'event_name_encounters-Procedure-PULMONARYFUNCTIONINTERPRET'
-#    add_action(CucumberLabel.new("Procedure Name-PULMONARY FUNCTION INTERPRET Left Click"), FocusInAction.new(procedure_tab_id_left), AccessHtmlElement.new(:css, "[data-appletid='encounters'] ##{procedure_tab_id_left}"))
+    #    add_action(CucumberLabel.new("Procedure Name-PULMONARY FUNCTION INTERPRET Left Click"), FocusInAction.new(procedure_tab_id_left), AccessHtmlElement.new(:css, "[data-appletid='encounters'] ##{procedure_tab_id_left}"))
    
     add_action(CucumberLabel.new("Procedure Name-PULMONARY FUNCTION INTERPRET Left Click"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid='encounters'] ##{procedure_tab_id_left}"))
       
@@ -126,7 +126,7 @@ class AppointmentObject <  ADKContainer
     add_action(CucumberLabel.new("Appointments Right Click"), ClickAction.new, AccessHtmlElement.new(:css, "#panel--Appointments #button_Appointments"))
     add_action(CucumberLabel.new("Appointment Type-GENERAL INTERNAL MEDICINE Right Click"), ClickAction.new, AccessHtmlElement.new(:css, "#encountersAppointments-event-gist #quickLook_encounters-Appointment-GENERALINTERNALMEDICINE"))      
     appointment_tab_id_left = 'event_name_encounters-Appointment-GENERALINTERNALMEDICINE'
-   # add_action(CucumberLabel.new("Appointment Type-GENERAL INTERNAL MEDICINE Left Click"), FocusInAction.new(appointment_tab_id_left), AccessHtmlElement.new(:css, "[data-appletid='encounters'] ##{appointment_tab_id_left}"))
+    # add_action(CucumberLabel.new("Appointment Type-GENERAL INTERNAL MEDICINE Left Click"), FocusInAction.new(appointment_tab_id_left), AccessHtmlElement.new(:css, "[data-appletid='encounters'] ##{appointment_tab_id_left}"))
       
     add_action(CucumberLabel.new("Appointment Type-GENERAL INTERNAL MEDICINE Left Click"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid='encounters'] ##{appointment_tab_id_left}"))
       
@@ -158,7 +158,7 @@ class AdmissionObject <  ADKContainer
     add_action(CucumberLabel.new("Admissions Right Click"), ClickAction.new, AccessHtmlElement.new(:css, "#panel--Admissions #button_Admissions"))
     add_action(CucumberLabel.new("Diagnosis-OBSERVATION Right Click"), ClickAction.new, AccessHtmlElement.new(:css, "#encountersAdmissions-event-gist #quickLook_encounters-Admission-OBSERVATION"))      
     admission_tab_id_left = 'event_name_encounters-Admission-OBSERVATION'
-#    add_action(CucumberLabel.new("Diagnosis-OBSERVATION Left Click"), FocusInAction.new(admission_tab_id_left), AccessHtmlElement.new(:css, "[data-appletid='encounters'] ##{admission_tab_id_left}"))
+    #    add_action(CucumberLabel.new("Diagnosis-OBSERVATION Left Click"), FocusInAction.new(admission_tab_id_left), AccessHtmlElement.new(:css, "[data-appletid='encounters'] ##{admission_tab_id_left}"))
     
     add_action(CucumberLabel.new("Diagnosis-OBSERVATION Left Click"), ClickAction.new, AccessHtmlElement.new(:css, "[data-appletid='encounters'] ##{admission_tab_id_left}"))
       
@@ -173,18 +173,18 @@ Then(/^the Encounters Gist Applet details view has headers$/) do |table|
   
   expect(aa.wait_until_action_element_visible("EncountersGridVisible", DefaultLogin.wait_time)).to be_true
     
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification(row[0]+"-header", row[1])).to be_true, "The value #{row[0]} is not present in the encounter detail headers"
   end
 end
 
 Then(/^the Encounters Gist Applet detail view contains$/) do |table|
   aa = EncountersGist.instance  
-  expect(aa.wait_until_action_element_visible("EncountersGridVisible", DefaultLogin.wait_time)).to be_true    
-  table.rows.each do | row |
+  expect(aa.wait_until_action_element_visible("EncountersGridVisible", DefaultLogin.wait_time+60)).to be_true    
+  table.rows.each do |row|
     expect(aa.perform_verification(row[0], row[0])).to be_true, "The value #{row[0]} is not present in the encounter Description"
-    expect(aa.perform_verification(row[0], row[1])).to be_true, "The value #{row[1]} is not present in the encounter Hx Occurrence"
-    expect(aa.perform_verification(row[0], row[2])).to be_true, "The value #{row[2]} is not present in the encounter Last"
+    expect(aa.perform_verification(row[0], row[1])).to be_true, "The value #{row[1]} is not present in the encounter Hx Occurence"
+    #  expect(aa.perform_verification(row[0], row[2])).to be_true, "The value #{row[2]} is not present in the encounter Last"
   end
 end
 
@@ -213,20 +213,22 @@ Then(/^there is a dynamic arrow next to visits in Encounters Gist Applet$/) do
   #expect(arrow_position).to eq("right")
 end
 
-When(/^the user expands "(.*?)" in Encounters Gist Applet$/) do | element |
+When(/^the user expands "(.*?)" in Encounters Gist Applet$/) do |element|
   aa = EncountersGist.instance
   expect(aa.wait_until_action_element_visible("Expand_"+element, DefaultLogin.wait_time)).to be_true
   expect(aa.perform_action("Expand_"+element, "")).to be_true, "#{element} could not be expanded"
+  #wait for animation to complete
+  sleep(1)
 end
 
-When(/^the user expands "(.*?)" in Encounters Gist Applet with css$/) do | element |
+When(/^the user expands "(.*?)" in Encounters Gist Applet with css$/) do |element|
   aa = EncountersGist.instance
   procedure_access = AccessHtmlElement.new(:css, '[data-appletid=encounters] #Procedures #caret')
   aa.add_action(CucumberLabel.new('Procedure with css'), ClickAction.new, procedure_access)
   expect(aa.perform_action('Procedure with css')).to be_true, "#{element} could not be expanded"
 end
 
-When(/^the user expands "(.*?)" in Encounters Gist Applet with xpath$/) do | element |
+When(/^the user expands "(.*?)" in Encounters Gist Applet with xpath$/) do |element|
   aa = EncountersGist.instance
   procedure_access = AccessHtmlElement.new(:xpath, "//div[@id='Procedures']/descendant::*[@id='caret']")
   aa.add_action(CucumberLabel.new('Procedure with xpath'), ClickAction.new, procedure_access)
@@ -268,10 +270,10 @@ Then(/^the Encounters Gist Applet "(.*?)" grouping expanded view contains$/) do 
     fail "**** No function found! Check your script ****"
   end
   expected_headers = table.headers
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification(row[0], row[0])).to be_true, "The value #{row[0]} is not present in the encounter #{object_type}"
     expect(aa.perform_verification(row[0] + " #{expected_headers[1]}", row[1])).to be_true, "The value #{row[1]} is not present in the encounter #{object_type}"
-    expect(aa.perform_verification(row[0] + " #{expected_headers[2]}", row[2])).to be_true, "The value #{row[2]} is not present in the encounter #{object_type}"
+    #  expect(aa.perform_verification(row[0] + " #{expected_headers[2]}", row[2])).to be_true, "The value #{row[2]} is not present in the encounter #{object_type}"
   end  
 end
 
@@ -334,7 +336,7 @@ Then(/^a Menu appears on the Encounters Gist$/) do
   expect(aa.wait_until_action_element_visible("Detail View Icon", DefaultLogin.wait_time)).to be_true, "Menu Detail View icon is not displayed"    
 end
 
-When(/^user select the menu "(.*?)" in Encounters Gist$/) do | icon_type |
+When(/^user select the menu "(.*?)" in Encounters Gist$/) do |icon_type|
   aa = EncountersGist.instance
   expect(aa.wait_until_action_element_visible(icon_type, DefaultLogin.wait_time)).to be_true
   expect(aa.perform_action(icon_type, "")).to be_true, "#{icon_type} can't be clicked"
@@ -347,7 +349,7 @@ end
 
 Then(/^the "(.*?)" modal contains data$/) do |object_type, table|
   aa = EncountersGist.instance
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification("Modal Details", row[0])).to be_true, "The #{row[0]} not found in the #{object_type} modal details"
     expect(aa.perform_verification("Modal Details", row[1])).to be_true, "The #{row[1]} not found in the #{object_type} modal details"
   end
@@ -379,7 +381,7 @@ Then(/^Quick View draw box for "(.*?)" closes$/) do |object_type|
   wait.until { !aa.am_i_visible?("Quick View " + object_type) }
 end
 
-When(/^user clicks on the column header "(.*?)" in Encounters Gist$/) do | name_column_header |
+When(/^user clicks on the column header "(.*?)" in Encounters Gist$/) do |name_column_header|
   aa = VisitObject.instance
   expect(aa.wait_until_action_element_visible(name_column_header + " Header", DefaultLogin.wait_time)).to be_true
   expect(aa.perform_action(name_column_header + " Header", "")).to be_true
@@ -401,9 +403,9 @@ Then(/^"(.*?)" column is sorted in ascending order in Encounters Gist$/) do |col
     fail "**** No function found! Check your script ****"
   end
 
-  element_column_values.each do | row |
-#    print "selenium data ----"
-#    p row.text
+  element_column_values.each do |row|
+    #    print "selenium data ----"
+    #    p row.text
     if column_name == "Hx Occurrence"
       column_values_array << row.text.downcase.to_i
     else
@@ -412,7 +414,6 @@ Then(/^"(.*?)" column is sorted in ascending order in Encounters Gist$/) do |col
   end
 
   (column_values_array == column_values_array.sort { |x, y| x <=> y }).should == true
-
 end
 
 Then(/^"(.*?)" column is sorted in descending order in Encounters Gist$/) do |column_name|
@@ -430,9 +431,9 @@ Then(/^"(.*?)" column is sorted in descending order in Encounters Gist$/) do |co
     fail "**** No function found! Check your script ****"
   end
      
-  element_column_values.each do | row |
-#    print "selenium data ----"
-#    p row.text
+  element_column_values.each do |row|
+    #    print "selenium data ----"
+    #    p row.text
     if column_name == "Hx Occurrence"
       column_values_array << row.text.downcase.to_i
     else
@@ -443,16 +444,16 @@ Then(/^"(.*?)" column is sorted in descending order in Encounters Gist$/) do |co
   (column_values_array == column_values_array.sort { |x, y| y <=> x }).should == true
 end
 
-Then(/^Last column is sorted in "(.*?)" order in Encounters Gist$/) do |arg1, table|
+Then(/^Last column is sorted in "(.*?)" order in Encounters Gist$/) do |_arg1, table|
   aa = EncountersGist.instance
   driver = TestSupport.driver
   expect(aa.wait_until_action_element_visible("EncountersGridVisible", DefaultLogin.wait_time)).to be_true
   element_column_values = driver.find_elements(css: '#encountersVisits-event-gist-items div.eventsTimeSince.counter2.text-center')
   column_values_array = []
  
-  element_column_values.each do | row |
-#    print "selenium data ----"
-#    p row.text
+  element_column_values.each do |row|
+    #    print "selenium data ----"
+    #    p row.text
     column_values_array << row.text.downcase
   end
   
@@ -464,25 +465,25 @@ class SpecificEncounterRows < AccessBrowserV2
   include Singleton
   def initialize
     super
-    applet_toolbar_xpath = "preceding-sibling::div[@class='appletToolbar']"
+    applet_toolbar_xpath = "/preceding-sibling::div[@class='toolbarContainer']/div[@class='appletToolbar']"
 
     pulmonary_function_interpret_xpath = "//*[@id='event_encounters-Procedure-PULMONARYFUNCTIONINTERPRET']"
-    add_action(CucumberLabel.new("PULMONARY FUNCTION INTERPRET Info View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{pulmonary_function_interpret_xpath}/#{applet_toolbar_xpath}/descendant::*[@id='info-button-toolbar']"))
-    add_action(CucumberLabel.new("PULMONARY FUNCTION INTERPRET Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{pulmonary_function_interpret_xpath}/#{applet_toolbar_xpath}/descendant::*[@id='detailView-button-toolbar']"))
-    add_action(CucumberLabel.new("PULMONARY FUNCTION INTERPRET Quick View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{pulmonary_function_interpret_xpath}/#{applet_toolbar_xpath}/descendant::*[@id='quick-look-button-toolbar']"))
+    add_action(CucumberLabel.new("PULMONARY FUNCTION INTERPRET Info View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{pulmonary_function_interpret_xpath}/#{applet_toolbar_xpath}/descendant::*[@button-type='info-button-toolbar']"))
+    add_action(CucumberLabel.new("PULMONARY FUNCTION INTERPRET Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{pulmonary_function_interpret_xpath}/#{applet_toolbar_xpath}/descendant::*[@button-type='detailView-button-toolbar']"))
+    add_action(CucumberLabel.new("PULMONARY FUNCTION INTERPRET Quick View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{pulmonary_function_interpret_xpath}/#{applet_toolbar_xpath}/descendant::*[@button-type='quick-look-button-toolbar']"))
  
 
     #GENERAL INTERNAL MEDICINE
     pulmonary_function_interpret_xpath = "//*[@id='event_encounters-Appointment-GENERALINTERNALMEDICINE']"
-    add_action(CucumberLabel.new("GENERAL INTERNAL MEDICINE Info View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{pulmonary_function_interpret_xpath}/#{applet_toolbar_xpath}/descendant::*[@id='info-button-toolbar']"))
-    add_action(CucumberLabel.new("GENERAL INTERNAL MEDICINE Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{pulmonary_function_interpret_xpath}/#{applet_toolbar_xpath}/descendant::*[@id='detailView-button-toolbar']"))
-    add_action(CucumberLabel.new("GENERAL INTERNAL MEDICINE Quick View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{pulmonary_function_interpret_xpath}/#{applet_toolbar_xpath}/descendant::*[@id='quick-look-button-toolbar']"))
+    add_action(CucumberLabel.new("GENERAL INTERNAL MEDICINE Info View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{pulmonary_function_interpret_xpath}/#{applet_toolbar_xpath}/descendant::*[@button-type='info-button-toolbar']"))
+    add_action(CucumberLabel.new("GENERAL INTERNAL MEDICINE Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{pulmonary_function_interpret_xpath}/#{applet_toolbar_xpath}/descendant::*[@button-type='detailView-button-toolbar']"))
+    add_action(CucumberLabel.new("GENERAL INTERNAL MEDICINE Quick View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{pulmonary_function_interpret_xpath}/#{applet_toolbar_xpath}/descendant::*[@button-type='quick-look-button-toolbar']"))
  
     #event_name_encounters-Admission-OBSERVATION
     observation_xpath = "//*[@id='event_encounters-Admission-OBSERVATION']"
-    add_action(CucumberLabel.new("OBSERVATION Info View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{observation_xpath}/#{applet_toolbar_xpath}/descendant::*[@id='info-button-toolbar']"))
-    add_action(CucumberLabel.new("OBSERVATION Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{observation_xpath}/#{applet_toolbar_xpath}/descendant::*[@id='detailView-button-toolbar']"))
-    add_action(CucumberLabel.new("OBSERVATION Quick View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{observation_xpath}/#{applet_toolbar_xpath}/descendant::*[@id='quick-look-button-toolbar']"))
+    add_action(CucumberLabel.new("OBSERVATION Info View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{observation_xpath}/#{applet_toolbar_xpath}/descendant::*[@button-type='info-button-toolbar']"))
+    add_action(CucumberLabel.new("OBSERVATION Detail View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{observation_xpath}/#{applet_toolbar_xpath}/descendant::*[@button-type='detailView-button-toolbar']"))
+    add_action(CucumberLabel.new("OBSERVATION Quick View Icon"), ClickAction.new, AccessHtmlElement.new(:xpath, "#{observation_xpath}/#{applet_toolbar_xpath}/descendant::*[@button-type='quick-look-button-toolbar']"))
  
   end
 end
@@ -491,7 +492,7 @@ Then(/^a Menu appears on the Encounters Gist for the item "(.*?)"$/) do |arg1|
   aa = EncountersGist.instance
   expect(aa.wait_until_action_element_visible("EncountersGridVisible", DefaultLogin.wait_time)).to be_true
   ser = SpecificEncounterRows.instance
-#  expect(ser.wait_until_action_element_visible("#{arg1} Info View Icon", DefaultLogin.wait_time)).to be_true, "Info view icon is not displayed"
+  #  expect(ser.wait_until_action_element_visible("#{arg1} Info View Icon", DefaultLogin.wait_time)).to be_true, "Info view icon is not displayed"
   expect(ser.wait_until_action_element_visible("#{arg1} Detail View Icon", DefaultLogin.wait_time)).to be_true, "Detail view icon is not displayed"
   expect(ser.wait_until_action_element_visible("#{arg1} Quick View Icon", DefaultLogin.wait_time)).to be_true, "Quick view icon is not displayed"    
 end
@@ -507,4 +508,14 @@ Then(/^user selects the "(.*?)" quick view icon in Encounters Gist$/) do |arg1|
   label = "#{arg1} Quick View Icon"
   p label
   expect(ser.perform_action(label)).to be_true
+end
+
+Then(/^the user can view and interact with the "(.*?)" control$/) do |control|
+  container = EncountersGist.instance
+  control_accesor = "Control - modal - #{control}"
+  element = TestSupport.driver.find_element(:id => 'modal-close-button')
+  element.location_once_scrolled_into_view
+  expect(element.displayed?).to be_true
+  expect(element.enabled?).to be_true
+  take_screenshot("encounters_close")
 end

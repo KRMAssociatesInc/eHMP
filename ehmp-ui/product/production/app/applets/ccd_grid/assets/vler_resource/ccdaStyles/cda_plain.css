@@ -1,0 +1,293 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	background: #fff;
+	color: #000;
+	font: 14px/1.5 'Open Sans', Helvetica, Arial, Verdana, sans-serif;
+	margin: 0;
+/*	padding: 140px 0 0;*/
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: normal;
+	font-weight: 400;
+}
+
+.clearfix {
+	*zoom: 1;
+	
+	&::before,
+	&::after {
+		content: " ";
+		display: table;
+	}
+	&::after {
+		clear: both;
+	}
+}
+
+.columns {
+	overflow: hidden;
+	width: 100%;
+}
+
+.col-2 {
+	float: left;
+	width: 47.45%;
+}
+
+.col-2 + .col-2 {
+	margin-left: 4.95%;
+}
+
+.col-3 {
+	float: left;
+	width: 29.95%;
+}
+
+.col-3 + .col-3 {
+	margin-left: 4.95%;
+}
+
+.episode-note-container,
+.titlebar {
+	max-width: 960px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.titlebar-container.fixed {
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.titlebar {
+	background: #fff;
+	border-bottom: 2px solid #222;
+	padding: 20px;
+}
+
+.titlebar h1,
+.titlebar h2 {
+	font-size: 2em;
+}
+
+.titlebar span.cell {
+	display: inline-block;
+	text-align: right;
+	width: 120px;
+}
+
+.titlebar p {
+	margin-bottom: 0;
+}
+
+.infobar {
+	padding: 5px;
+}
+
+.titlebar h1,
+.titlebar h2,
+.infobar h1,
+.infobar h2 {
+	margin: 0;
+}
+
+.backtotop {
+	background: #fff;
+	border: 2px solid #222;
+	border-top: none;
+	border-radius: 0 0 3px 3px;
+	color: #222;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 12px;
+	left: 50%;
+	line-height: 1;
+	outline: none;
+	margin: 0 0 0 -55px;
+	padding: 6px 0;
+	position: absolute;
+	text-align: center;
+	top: -28px;
+	width: 110px;
+	-webkit-transition: top 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	-moz-transition: top 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	-ms-transition: top 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	-o-transition: top 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	transition: top 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+
+.backtotop.active {
+	top: 0;
+}
+
+.backtotop:hover {
+	background: #222;
+	color: #fff;
+	padding: 12px 0 6px;
+}
+
+.toc {
+	text-align: center;
+}
+
+.toc p {
+	margin: 0 auto .5em;
+}
+
+.toc ul {
+	font-size: 0; /* fix for whitespace bug */
+	list-style: none;
+	margin: 16px 0 0;
+	padding: 0;
+}
+
+.toc li {
+	display: inline;
+}
+
+.toc a {
+	background: #fff;
+	border-radius: 3px;
+	border: 2px solid #222;
+	color: #222;
+	display: inline-block;
+	font-size: 12px;
+	margin: 4px 2px 0;
+	padding: 3px 6px;
+	text-decoration: none;
+}
+
+.toc a:hover {
+	background: #222;
+	color: #fff;
+}
+
+.toc a.disabled,
+.toc a.disabled:hover {
+	background: #fff;
+	border-color: #ccc;
+	color: #aaa;
+}
+
+section {
+	padding: 20px 20px 30px;
+}
+
+section + section {
+	border-top: 2px solid #222;
+}
+
+section header p {
+	color: #999;
+	font-size: .9285714286em;
+	line-height: 1.2;
+}
+
+section header p strong {
+	font-weight: normal;
+}
+
+section header h2 {
+	margin: 0 auto .5em;
+}
+
+section header h2 + p {
+	margin-top: 0;
+}
+
+section header h2 span {
+	color: #ccc;
+	color: rgba(0,0,0,.35);
+	display: inline-block;
+	font-size: .75em;
+	padding-left: .5em;
+}
+
+span.count {
+	background-color: #222;
+	border-radius: 5px;
+	color: #fff;
+	display: inline-block;
+	font-weight: normal;
+	margin-left: .5em;
+	padding: 0 5px;
+}
+
+span.badge {
+	background-color: #222;
+	border-radius: 5px;
+	color: #fff;
+	display: inline-block;
+	font-size: 11px;
+	padding: 2px 5px;
+}
+
+table {
+	background: #fff;
+	border-collapse: collapse;
+	font-size: 12px;
+	text-align: left;
+	width: 100%;
+}
+
+table td,
+table th {
+	padding: 8px 6px;
+}
+
+table th {
+	font-weight: normal;
+}
+
+table thead tr th {
+	background: #222;
+	border-right: 1px solid rgba(255,255,255,.5);
+	color: #fff;
+}
+table thead tr th:last-child {
+	border-right: 1px solid #ccc;
+}
+
+table tbody tr td,
+table tbody tr th {
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+table tbody em {
+	color: rgba(0,0,0,.4);
+}
+
+table tbody tr > *:first-child {
+	border-left: 1px solid #ccc;
+}
+
+table.sectioned tbody tr td,
+table.sectioned tbody tr th {
+	background: none;
+}
+
+table tbody tr:hover td,
+table tbody tr:hover th {
+	background: #fffff0 !important;
+}
+
+table tbody tr td:hover,
+table tbody tr th:hover {
+	background: #fffac7 !important;
+}
+
+/*table.sectioned tbody tr td.empty,
+table.sectioned tbody tr th.empty {
+	background-color: rgba(0,0,0,.05) !important;
+}*/

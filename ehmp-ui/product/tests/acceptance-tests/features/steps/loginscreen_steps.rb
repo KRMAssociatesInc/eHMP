@@ -32,7 +32,6 @@ end
 
 Then(/^the patient search screen is displayed$/) do
   elements = PatientSearch.instance
-  expect(elements.wait_until_element_present("myCPRSList")).to be_true
   expect(elements.wait_until_element_present("mySite")).to be_true
   expect(elements.wait_until_element_present("global")).to be_true
 end
@@ -69,7 +68,7 @@ def wait_until_dom_has_signin_or_signout
   completed = false
   counter = 0
   loop do
-    counter = counter+1
+    counter += 1
     if counter > DefaultLogin.wait_time / 2 && !has_refreshed
       TestSupport.driver.navigate.refresh
       has_refreshed = true
@@ -104,7 +103,7 @@ def select_default_facility
     p "Issue with facility list - performing refresh of page"
     TestSupport.driver.navigate.refresh
     wait_until_dom_has_signin_or_signout
-    attempts = attempts + 1
+    attempts += 1
   end
   return successful
 end
@@ -114,7 +113,6 @@ Given(/^user views the login screen$/) do
 end
 
 Given(/^user Login to ehmpui_url$/) do
-
   con= LoginHTMLElements.instance
   TestSupport.navigate_to_url(DefaultLogin.ehmpui_url+'/#logon-screen')
   TestSupport.driver.manage.window.maximize
@@ -138,10 +136,10 @@ end
 
 Given(/^user attempts login$/) do |table|
   con = LoginHTMLElements.instance
-  table.rows.each do |field, value |
+  table.rows.each do |field, value|
     begin
       expect(con.wait_until_element_present(field)).to be_true 
-     # con.wait_until_element_present(field, 60)
+      # con.wait_until_element_present(field, 60)
       expect(con.perform_action(field, value)).to be_true
     rescue Exception => e
       p "exception while waiting for #{field}: #{e}"
@@ -182,7 +180,7 @@ end
 
 Then(/^user is redirected to SignIn page$/) do
   con= LoginHTMLElements.instance
- # TestSupport.wait_for_page_loaded
+  # TestSupport.wait_for_page_loaded
   expect(con.wait_until_element_present("SignIn")).to be_true 
   expect(con.static_dom_element_exists?("SignIn")).to eq(true)
 end

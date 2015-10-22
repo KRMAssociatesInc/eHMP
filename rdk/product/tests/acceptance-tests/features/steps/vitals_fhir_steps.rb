@@ -4,7 +4,7 @@ When(/^the client requests vitals for the patient "(.*?)" in FHIR format$/) do |
   #  p path
   #  @response = HTTPartyWithBasicAuth.get_with_authorization(path)
   #
-  temp = QueryRDKAll.new("Observation")
+  temp = RDKQuery.new('vitals-observation')
   temp.add_parameter("subject.identifier", pid)
   #temp.add_format("json")
   #temp.add_acknowledge("true")
@@ -13,7 +13,7 @@ When(/^the client requests vitals for the patient "(.*?)" in FHIR format$/) do |
 end
 
 When(/^the client "(.*?)" requests vitals for the patient "(.*?)" in FHIR format$/) do |user, pid|
-  temp = QueryRDKAll.new("Observation")
+  temp = RDKQuery.new('vitals-observation')
   temp.add_parameter("subject.identifier", pid)
   p temp.path
   @response = HTTPartyWithBasicAuth.get_with_authorization_for_user(temp.path, user, "pu1234!!")
@@ -27,7 +27,7 @@ Then(/^the FHIR results contain vitals/) do |table|
   json_verify = JsonVerifier.new
 
   result_array = @json_object["entry"]
-  table.rows.each do | fieldpath, fieldvaluestring |
+  table.rows.each do |fieldpath, fieldvaluestring|
     json_verify.reset_output
     if fieldvaluestring.eql? "IS_FORMATTED_DATE"
       found = json_verify.all_matches_date_format(fieldpath, dateformat, result_array)
@@ -54,13 +54,13 @@ Then(/^the FHIR results contain vitals/) do |table|
       puts json_verify.error_message
       #
     end # if found == false
-    expect(found).to be_true
+    expect(found).to eq(true)
     expect(result_array.length).to_not eq(0)
   end # table.rows.each
 end
 
 When(/^the client requests "(.*?)" vitals for the patient "(.*?)" in FHIR format$/) do |limit, pid|
-  temp = QueryRDKAll.new("Observation")
+  temp = RDKQuery.new('vitals-observation')
   temp.add_parameter("subject.identifier", pid)
   temp.add_parameter("limit", limit)
   p temp.path

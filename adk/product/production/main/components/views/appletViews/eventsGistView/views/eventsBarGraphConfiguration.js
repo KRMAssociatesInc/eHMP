@@ -16,7 +16,7 @@ define([
                 zoomType: '',
                 type: 'column',
                 spacing: [1, 1, 1, 1],
-                backgroundColor: '#f3f3f3',
+                backgroundColor: '#F2F2F2',
                 events: {
                     click: function(e) {
                         $(e.target).closest('[data-toggle=popover]').trigger('click');

@@ -1,0 +1,89 @@
+.growl-alert{
+	font-size: 14px;
+	[data-notify="icon"]{
+		display: block;
+		float: left;
+		font-size: 36px;
+		line-height: 32px;
+		margin-right: 10px;
+	}
+	.notify-message{
+		display:block;
+		[data-notify="title"]{
+			display: block;
+			font-weight: 700;
+		}
+		[data-notify="message"]{
+			display:block;
+		}
+	}
+	&.alert-custom{
+		background-color:rgba(0, 0, 0, 0.8);
+		color:#fff;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+		&.success, &.danger, &.warning, &.info{
+			[data-notify="icon"]{
+				font-family: FontAwesome;
+				color: $secondary;
+				line-height: 32px;
+				padding:2px;
+				position: absolute;
+				width: 35px;
+			}
+			.notify-message{
+				margin-left:45px;
+			}
+		}
+		&.success, &.danger, &.info{
+			[data-notify="icon"]{
+				line-height: 30px;
+				padding:0px;
+				width: 30px;
+				background-color: #fff;
+				border-radius: 24px;
+			}
+		}
+		&.success{
+			[data-notify="icon"]{
+				color: $secondary-dark;
+				&::before{
+					content:"\f058";
+				}
+			}
+		}
+		&.danger{
+			[data-notify="icon"]{
+				color: $red;
+				&::before{
+					content:"\f057";
+				}
+			}
+		}
+		&.warning{
+			[data-notify="icon"]{
+				color: $tertiary;
+				&::before{
+					content:"\f071";
+				}
+			}
+		}
+		&.info{
+			[data-notify="icon"]{
+				color: $red;
+				&::before{
+					content:"\f06a";
+				}
+			}
+		}
+		button.close{
+			color: rgba(255, 255, 255, 0.5);
+		}
+	}
+	[data-notify="dismiss"]{
+		padding:0;
+		position: absolute;
+		right: 10px;
+		top: 5px;
+		z-index: 1033;
+	}
+}

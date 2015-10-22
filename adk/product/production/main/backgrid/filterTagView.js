@@ -24,6 +24,11 @@ define('main/backgrid/filterTagView', [
 
         clear: function(e) {
             e.preventDefault();
+            // Execute remove all filters if this is the only filter.
+            if (this.model.collection.length === 1) {
+                this.$el.parent().parent().find('.remove-all').click();
+                return;
+            }
             //when deleting a filter, the onUserDefinedFilterRemove event will be triggered in the Filter view.
             var workspaceId, instanceId, filter;
             filter = this.model.get('name');

@@ -48,36 +48,34 @@ define([
 
     var viewParseModel = {
         parse: function(response) {
-            if (response.kind == "C32 Document") {
-                if (response.name) {
-                    response.localTitle = response.name;
-                }
-                if (response.creationTime) {
-                    response.referenceDateTime = response.creationTime;
-                } else if (response.dateTime) {
-                    response.referenceDateTime = response.dateTime;
-                }
-                response.referenceDateDisplay = ADK.utils.formatDate(response.referenceDateTime);
-                if (response.referenceDateDisplay === '') {
-                    response.referenceDateDisplay = 'N/A';
-                }
-
-                response.referenceDateTimeDisplay = ADK.utils.formatDate(response.referenceDateTime, 'MM/DD/YYYY - HH:mm');
-                if (response.referenceDateTimeDisplay === '') {
-                    response.referenceDateTimeDisplay = 'N/A';
-                }
-
-                if (response.authorList) {
-                    if (response.authorList.length > 0) {
-                        if (response.authorList[0].institution) {
-                            response.authorDisplayName = response.authorList[0].institution;
-                        }
-                    } else {
-                        response.authorDisplayName = "N/A";
-                    }
-                }
-                response.facilityName = "VLER";
+            if (response.name) {
+                response.localTitle = response.name;
             }
+            if (response.creationTime) {
+                response.referenceDateTime = response.creationTime;
+            } else if (response.dateTime) {
+                response.referenceDateTime = response.dateTime;
+            }
+            response.referenceDateDisplay = ADK.utils.formatDate(response.referenceDateTime);
+            if (response.referenceDateDisplay === '') {
+                response.referenceDateDisplay = 'N/A';
+            }
+
+            response.referenceDateTimeDisplay = ADK.utils.formatDate(response.referenceDateTime, 'MM/DD/YYYY - HH:mm');
+            if (response.referenceDateTimeDisplay === '') {
+                response.referenceDateTimeDisplay = 'N/A';
+            }
+
+            if (response.authorList) {
+                if (response.authorList.length > 0) {
+                    if (response.authorList[0].institution) {
+                        response.authorDisplayName = response.authorList[0].institution;
+                    }
+                } else {
+                    response.authorDisplayName = "N/A";
+                }
+            }
+            response.facilityName = "VLER";
             return response;
         }
     };
@@ -118,10 +116,6 @@ define([
             //     format: "YYYYMMDD"
             // };
 
-            fetchOptions.onSuccess = function() {
-                dataGridOptions.collection.reset(dataGridOptions.collection.models);
-            };
-
             var self = this;
             this.dataGridOptions = dataGridOptions;
 
@@ -147,7 +141,11 @@ define([
                     })
                 };
 
-                ADK.showModal(view, modalOptions);
+                var modal = new ADK.UI.Modal({
+                    view: view,
+                    options: modalOptions
+                });
+                modal.show();
 
             };
 
@@ -217,4 +215,3 @@ define([
 
     return applet;
 });
-

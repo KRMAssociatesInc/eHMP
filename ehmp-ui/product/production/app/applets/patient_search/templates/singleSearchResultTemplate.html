@@ -5,13 +5,21 @@
 	</div>
 	<div class="col-md-2 no-padding-left ">
 		<span class="sr-only">. Social security number</span>
-		{{formatSSN ssn}}
+		{{#if sensitive}}
+			*SENSITIVE*
+		{{else}}
+			{{formatSSN ssn}}
+		{{/if}}
 	</div>
 	<div class="col-md-2 no-padding">
 		<span class="sr-only">. Date of birth</span>
-		{{formatDate birthDate "MM/DD/YYYY"}}
-		<span class="sr-only">. Age</span>
-		({{getAge birthDate}}y)
+		{{#if sensitive}}
+			*SENSITIVE*
+		{{else}}
+			{{formatDate birthDate "MM/DD/YYYY"}}
+			<span class="sr-only">. Age</span>
+			({{getAge birthDate}}y)
+		{{/if}}
 	</div>
 	<div class="col-md-2">
 		<span class="sr-only">. Gender</span>

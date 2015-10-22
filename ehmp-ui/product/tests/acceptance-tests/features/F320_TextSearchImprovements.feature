@@ -1,4 +1,4 @@
-@F320_TextSearchImprovements
+@F320_TextSearchImprovements @regression
 
 Feature: F320 : TextSearchImprovements
 #This feature will enhance the current text search engine used within eHMP to improve areas such as predications, synonyms, misspellings, duplicates, suggestions, as well as others.
@@ -33,7 +33,7 @@ Scenario: The application needs to be able to highlight the same search terms wh
   And the user clicks the modal "Close Button"
   And the modal is closed
 
-@F320_4_TextSearchImprovements @US4542
+@F320_4_TextSearchImprovements @US4542 @debug @DE1793
 Scenario: The application needs to be able to highlight the same search terms when the details of the search results are displayed.
   Given user is logged into eHMP-UI
   And user searches for and selects "Ten,Patient"
@@ -48,7 +48,7 @@ Scenario: The application needs to be able to highlight the same search terms wh
   And the user clicks the modal "Close Button"
   And the modal is closed
 
-@F320_5_TextSearchImprovements @US5866
+@F320_5_TextSearchImprovements @US5866 @DE1200 @triage
 Scenario: Verify results for suggestions while searching for specific word
   Given user is logged into eHMP-UI
   And user searches for and selects "Seven,Patient"
@@ -61,7 +61,7 @@ Scenario: Verify results for suggestions while searching for specific word
   | schipper            |
   | leper               |
 
-@F320_6_TextSearchImprovements @US4543
+@F320_6_TextSearchImprovements @US4543 @DE1660 @debug @DE1838
 Scenario: Verify Related terms, Drug classes and Predications relevant to the initail search term are display in the search results
   Given user is logged into eHMP-UI
   And user searches for and selects "Seven,Patient"
@@ -75,27 +75,27 @@ Scenario: Verify Related terms, Drug classes and Predications relevant to the in
   | aspirinrast         |
   | aspiringiven        |
   | rectalaspirin       |
-  | aspirinextract      |
   | aspirin+glycine     |
+  | aspirinextract      |
   | aspirinallergy      |
+  | aspirinoverdose     |
   | bufferedaspirin     |
   | containsaspirin     |
   | aluminumaspirin     |
-  | aspirinoverdose     |
-  | aspirinpoisoning    |
-  | aspirin+ codeine    |
-  | aspirinnot given    |
-  | aspirinindicated    |
   | oral formaspirin    |
-  | aspirin+ caffeine   |
+  | aspirinindicated    |
+  | aspirinpoisoning    |
+  | aspirinnot given    |
+  | aspirin+ codeine    |
   | already onaspirin   |
-  | aspirin+papaveretum |
-  | aspirinprophylaxis  |
+  | aspirin+ caffeine   |
   | aspirin+pravastatin |
+  | aspirin+papaveretum |
   | aspirin75mg tablet  |
+  | aspirinprophylaxis  |
   | aspirinmeasurement  |
 
-@F320_6_TextSearchImprovements @US4543
+@F320_7_TextSearchImprovements @US4543 @DE1661 @debug @DE1838
 Scenario: Verify Related terms, Drug classes and Predications relevant to the initail search term are display in the search results
   Given user is logged into eHMP-UI
   And user searches for and selects "Ten,Patient"
@@ -109,18 +109,19 @@ Scenario: Verify Related terms, Drug classes and Predications relevant to the in
   #Inferred Drug Class
   | iv solutions without electrolytes |
   | iv solutions with electrolytes    |
-  #Snomed Terminology
-  | penicillinv       |
+  # #Snomed Terminology
   | penicilling       |
+  | penicillinv       |
   | penicillinase     |
   | penicillinrast    |
-  | penicilling rast  |
   | penicillinv rast  |
-  | penicillinallergy |
+  | penicilling rast  |
   | naturalpenicillin |
+  | penicillinallergy |
   | penicillinamidase |
 
-@F320_7_TextSearchImprovements @US5514
+
+@F320_8_TextSearchImprovements @US5514 @debug @DE1793
 Scenario: User enters several queries known to have acceptable synonyms and variants.
   Given user is logged into eHMP-UI
   And user searches for and selects "Fortysix,Patient"

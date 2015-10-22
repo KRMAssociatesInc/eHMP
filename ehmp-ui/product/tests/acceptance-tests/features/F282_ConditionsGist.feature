@@ -3,30 +3,52 @@ Feature: F82 - Conditions Gist View
 
 #TEAM JUPITER
 	
-@F282_1_conditionsGist_problems @US3390 @US4317 @base
+@F282-1.1 @F282-2.1 @F282_1_conditionsGist_problems @US3390 @US4317 @triage
 Scenario: User views the conditions gist view
 	Given user is logged into eHMP-UI
 	And user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"	
-  Then Overview is active
-  And user sees Conditions Gist
-  And the user has selected All within the global date picker
-  And the conditions gist detail view has headers
+  	Then Overview is active
+  	And user sees Conditions Gist
+  	And the user has selected All within the global date picker
+  	And the conditions gist detail view has headers
   	  | Headers       |
       | Problem       |
       | Acuity        |
       | Hx Occurrence |
       | Last          |
 	And the conditions gist detail view contains
-	    | Problem                                    | Acuity  | Occurrence | Last |
-      | MANIC DISORDER-MILD                          | Chronic | 6          | 16y  |
-      | UPPER EXTREMITY                              | Unknown | 2          | 15y  |
-      | Essential Hypertension                       | Acute   | 12         | 16y  |
-      | ALCOH DEP NEC/NOS-REMISS                     | Unknown | 16         | 16y  |
-      | Adjustment Reaction With Physical Symptoms   | Unknown | 14         | 17y  |
-      | Chronic Sinusitis                            | Acute   | 2          | 16y  |
+	  | Problem                                      | Acuity  | Occurrence | Last |
+      | UPPER EXTREMITY                              | Unknown | 2          |      |
+      | Chronic Sinusitis                            | Acute   | 2          |      |
+      | MANIC DISORDER-MILD                          | Chronic | 6          |      |
+      | ALCOH DEP NEC/NOS-REMISS                     | Unknown | 16         |      |
+      | Essential Hypertension                       | Acute   | 12         |      |
+      | Adjustment Reaction With Physical Symptoms   | Unknown | 14         |      |
+    
 
+@F282-1.2 @US3390 @US4317 @base
+Scenario: User views the conditions gist view
+	Given user is logged into eHMP-UI
+	And user searches for and selects "Sixhundred,PATIENT"	
+  	Then Overview is active
+  	And user sees Conditions Gist
+  	And "No Records Found" message is displayed in Conditions Gist
 
-@F282_2_conditionsGist_ExpandView @US3390 @4317 @vimm_observed 
+#@F282-3.1 @US3390 @US4317
+#since the color is not attached to the correct id, this test case is moved as being manual.
+#Scenario: User views the conditions gist view
+#	Given user is logged into eHMP-UI
+#	And user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"	
+#  	Then Overview is active
+#  	And user sees Conditions Gist
+#  	When hovering over the "right" side of the tile "UPPER EXTREMITY" 
+#  	Then right half of the tile "UPPER EXTREMITY" changes color to indicate that there are more records that can be review
+#    When hovering over the "left" side of the tile "UPPER EXTREMITY" 
+#  	Then left half of the tile "UPPER EXTREMITY" changes color to indicate that the user can go to the detailed view
+
+#@F282-3.2 is a manual test case
+  	
+@F282-5.1 @F282_2_conditionsGist_ExpandView @US3390 @4317 @DE1576
 Scenario: View Conditions Applet Single Page by clicking on Expand View
   Given user is logged into eHMP-UI
   And user searches for and selects "FORTYSIX,PATIENT"
@@ -44,20 +66,20 @@ Scenario: View Conditions Applet Single Page by clicking on Expand View
     | Provider | 
     | Facility |
   And the Conditions Gist contains rows
-  | DESCRIPTION                                                                | STANDARDIZED DESCRIPTION                  | ACUITY  | ONSET DATE | LAST UPDATED | PROVIDER          | FACILITY | Comment |
-  | Chronic Systolic Heart failure                                             | Chronic systolic heart failure (disorder) | Chronic | 03/15/2004 | 04/02/2004 | Vehu,Fortysix  | TST1     |         |
-  | Diabetes Mellitus Type II or unspecified                                   |                                           | Chronic |            | 04/01/2004 | Vehu,Fortysix  | TST1     |         |
-  | Acute myocardial infarction, unspecified site, episode of care unspecified |                                           | Unknown | 03/17/2005 | 03/19/2005 | Vehu,Fortysix  | TST1     |         |
-  | Hypertension                                                               | Essential hypertension (disorder)         | Chronic | 04/07/2005 | 04/10/2007 | Vehu,Onehundred| TST1     |         |
-  | Hyperlipidemia                                                             |                                           | Chronic | 04/07/2005 | 04/10/2007 | Vehu,Onehundred| TST1     |         |
-  | Occasional, uncontrolled chest pain                                        | Impending infarction (disorder)           | Acute   | 03/15/1996 | 05/14/1996 | Programmer,Twenty | NJS      |         |
-  | Chronic Systolic Heart failure                                             | Chronic systolic heart failure (disorder) | Chronic | 03/15/2004 | 04/02/2004 | Vehu,Fortysix  | TST2     |         |
-  | Diabetes Mellitus Type II or unspecified                                   |                                           | Chronic |            | 04/01/2004 | Vehu,Fortysix  | TST2     |         |
-  | Acute myocardial infarction, unspecified site, episode of care unspecified |                                           | Unknown | 03/17/2005 | 03/19/2005 | Vehu,Fortysix  | TST2     |         |
-  | Hypertension                                                               | Essential hypertension (disorder)         | Chronic | 04/07/2005 | 04/10/2007 | Vehu,Onehundred| TST2     |         |
-  | Hyperlipidemia                                                             |                                           | Chronic | 04/07/2005 | 04/10/2007 | Vehu,Onehundred| TST2     |         |
+  | DESCRIPTION                                                                | STANDARDIZED DESCRIPTION                  | ACUITY  | Status	| ONSET DATE | LAST UPDATED | PROVIDER          | FACILITY | Comment |
+  | Chronic Systolic Heart failure                                             | Chronic systolic heart failure (disorder) | Chronic | Active	| 03/15/2004 | 04/02/2004 | Vehu,Fortysix  | TST1     |         |
+  | Diabetes Mellitus Type II or unspecified                                   |                                           | Chronic | Active   |			 | 04/01/2004 | Vehu,Fortysix  | TST1     |         |
+  | Acute myocardial infarction, unspecified site, episode of care unspecified |                                           | Unknown | Active	| 03/17/2005 | 03/19/2005 | Vehu,Fortysix  | TST1     |         |
+  | Hypertension                                                               | Essential hypertension (disorder)         | Chronic | Active	| 04/07/2005 | 04/10/2007 | Vehu,Onehundred| TST1     |         |
+  | Hyperlipidemia                                                             |                                           | Chronic | Active	| 04/07/2005 | 04/10/2007 | Vehu,Onehundred| TST1     |         |
+  | Occasional, uncontrolled chest pain                                        | Impending infarction (disorder)           | Acute   | Active	| 03/15/1996 | 05/14/1996 | Programmer,Twenty | NJS      |         |
+  | Chronic Systolic Heart failure                                             | Chronic systolic heart failure (disorder) | Chronic | Active	| 03/15/2004 | 04/02/2004 | Vehu,Fortysix  | TST2     |         |
+  | Diabetes Mellitus Type II or unspecified                                   |                                           | Chronic | Active   | 			 | 04/01/2004 | Vehu,Fortysix  | TST2     |         |
+  | Acute myocardial infarction, unspecified site, episode of care unspecified |                                           | Unknown | Active	| 03/17/2005 | 03/19/2005 | Vehu,Fortysix  | TST2     |         |
+  | Hypertension                                                               | Essential hypertension (disorder)         | Chronic | Active	| 04/07/2005 | 04/10/2007 | Vehu,Onehundred| TST2     |         |
+  | Hyperlipidemia                                                             |                                           | Chronic | Active	| 04/07/2005 | 04/10/2007 | Vehu,Onehundred| TST2     |         |
 
-@F282_3_conditionsGist_filter_capability @US3390 @4317 @vimm_observed 
+@F282-4.1 @F282_3_conditionsGist_filter_capability @US3390 @4317 @triage @reworked_in_firefox
 Scenario: Conditions Applet Gist - filter problems
   Given user is logged into eHMP-UI
   Given user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
@@ -68,10 +90,10 @@ Scenario: Conditions Applet Gist - filter problems
   And the user inputs "Acute" in the "Text Filter" control in the "Conditions Gist applet"
   And the conditions gist detail view contains
 	| Problem									| Acuity	| Hx Occurrence	| Last	|
-	| Essential Hypertension					| Acute		| 12		    | 16y	|
-	| Chronic Sinusitis  						| Acute		| 2				| 16y	|
+	| Essential Hypertension					| Acute		| 12		    | 	    |
+	| Chronic Sinusitis  						| Acute		| 2				| 	    |
 
-@F282_4_conditionsGist_global_datefilter @US3390 @4317 @vimm_observed 
+@F282_4_conditionsGist_global_datefilter @US3390 @4317 @vimm_observed
 Scenario: Conditions gist applet is able to filter data based date filter search
  Given user is logged into eHMP-UI
   And user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
@@ -84,10 +106,10 @@ Scenario: Conditions gist applet is able to filter data based date filter search
   And the user clicks the control "Apply" on the "Overview"
   And the conditions gist detail view contains
 	| Problem									| Acuity	| Occurrence	| Last	|
-	| MANIC DISORDER-MILD 						| Chronic	| 6				| 16y	|
-	| UPPER EXTREMITY							| Unknown	| 2				| 15y	|
+	| MANIC DISORDER-MILD 						| Chronic	| 6				| 	    |
+	| UPPER EXTREMITY							| Unknown	| 2				|  	    |
 
-@F282_5_conditionsGist_quick_view @US4155 @4317 @vimm_observed @triage
+@F282-7.1 @F282_5_conditionsGist_quick_view @US4155 @4317 @DE1321
 Scenario: Conditions Applet Gist - quick view of problems
   Given user is logged into eHMP-UI
   Given user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
@@ -106,7 +128,7 @@ Scenario: Conditions Applet Gist - quick view of problems
 	| 02/03/1999  	| MANIC DISORDER-MILD		| FT. LOGAN		|
   And clicking a second time on the "quick view" hover button will result in the closure of the quick draw data box
 
-@F282_6_conditionsGist_Column_Sorting_Problem @US4684
+@F282-9.1 @F282_6_conditionsGist_Column_Sorting_Problem @US4684 @DE1371
   Scenario: Conditions Gist Applet is sorted by the column header Problems
     Given user is logged into eHMP-UI
     And user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
@@ -118,19 +140,19 @@ Scenario: Conditions Applet Gist - quick view of problems
     When user clicks on the column header "Problem" in Conditions Gist
     Then "Problem" column is sorted in descending order in Conditons Gist
   
-@F282_7_conditionsGist_Column_Sorting_Problem @US4684
-Scenario: Conditions Gist Applet is sorted by the column header Problems
-  Given user is logged into eHMP-UI
-  And user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
-  Then Overview is active
-  And user sees Conditions Gist
-  And the user has selected All within the global date picker
-  When user clicks on the column header "Problem" in Conditions Gist
-  Then "Problem" column is sorted in ascending order in Conditions Gist
-  When user clicks on the column header "Problem" in Conditions Gist
-  Then "Problem" column is sorted in descending order in Conditons Gist
+#@F282-9.1 @F282_7_conditionsGist_Column_Sorting_Problem @US4684
+#Scenario: Conditions Gist Applet is sorted by the column header Problems
+#  Given user is logged into eHMP-UI
+#  And user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
+#  Then Overview is active
+#  And user sees Conditions Gist
+#  And the user has selected All within the global date picker
+#  When user clicks on the column header "Problem" in Conditions Gist
+#  Then "Problem" column is sorted in ascending order in Conditions Gist
+#  When user clicks on the column header "Problem" in Conditions Gist
+#  Then "Problem" column is sorted in descending order in Conditons Gist
   
-@F282_8_conditionsGist_Column_Sorting_Acuity @US4684
+@F282-9.1 @F282_8_conditionsGist_Column_Sorting_Acuity @US4684
 Scenario: Conditions Gist Applet is sorted by the column header Acuity
   Given user is logged into eHMP-UI
   And user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
@@ -142,7 +164,7 @@ Scenario: Conditions Gist Applet is sorted by the column header Acuity
   When user clicks on the column header "Acuity" in Conditions Gist
   Then "Acuity" column is sorted in descending order in Conditons Gist
   
-@F282_9_conditionsGist_Column_Sorting_Hx_Occurrence @US4684
+@F282-9.1 @F282_9_conditionsGist_Column_Sorting_Hx_Occurrence @US4684
 Scenario: Conditions Gist Applet is sorted by the column header Hx Occrrence
   Given user is logged into eHMP-UI
   And user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
@@ -154,7 +176,7 @@ Scenario: Conditions Gist Applet is sorted by the column header Hx Occrrence
   When user clicks on the column header "Hx Occurrence" in Conditions Gist
   Then "Hx Occurrence" column is sorted in descending order in Conditons Gist
 
-@F282_10_conditionsGist_Column_Sorting_last @US4684 
+@F282-9.1 @F282_10_conditionsGist_Column_Sorting_last @US4684 @triage
 Scenario: Conditions Gist Applet is sorted by the column header Last
   Given user is logged into eHMP-UI
   And user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
@@ -162,13 +184,13 @@ Scenario: Conditions Gist Applet is sorted by the column header Last
   And user sees Conditions Gist
   And the user has selected All within the global date picker
   When user clicks on the column header "Last" in Conditions Gist
-  Then Last column is sorted in "ascending" order in Conditions Gist
-  | 19y | 17y | 16y | 16y | 16y | 16y | 15y |
-  When user clicks on the column header "Last" in Conditions Gist
   Then Last column is sorted in "descending" order in Conditions Gist
-  | 15y | 16y | 16y | 16y | 16y | 17y | 19y |
+  # | 19y | 17y | 17y | 16y | 16y | 16y | 15y |
+  When user clicks on the column header "Last" in Conditions Gist
+  Then Last column is sorted in "ascending" order in Conditions Gist
+  # | 15y | 16y | 16y | 16y | 17y | 17y | 19y |
   
-@F282_11_conditionsGist_menu @US4317 @US4805
+@F282_11_conditionsGist_menu @US4317 @US4805 @debug @DE1400
 Scenario: Conditions Applet Gist - menu appears in any chosen problem 
   Given user is logged into eHMP-UI
   Given user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
@@ -178,7 +200,7 @@ Scenario: Conditions Applet Gist - menu appears in any chosen problem
   When user clicks on the left hand side of the item "Manic Disorder" 
   Then a Menu appears on the Conditions Gist for item "Mainic Disorder"
 
-@F282_12_conditionsGist_detail_view @US4317 @US4805
+@F282-6.1 @F282_12_conditionsGist_detail_view @US4317 @US4805 @debug @DE1400
 Scenario: Conditions Applet Gist - detail view of most recent problem 
   Given user is logged into eHMP-UI
   Given user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"
@@ -191,8 +213,9 @@ Scenario: Conditions Applet Gist - detail view of most recent problem
   Then user selects the "Mainic Disorder" detail icon in Conditions Gist
   Then it should show the detail modal of the most recent for this problem
   And the modal's title is "MANIC DISORDER-MILD (ICD-9-CM 296.01)"
-  
-@F282_13_conditionsGist_quick_view_from_menu @US4317 @US4805
+
+#This test works well in browsers. In phantomJs it doesn't work consistently.  So attached a debug tag.  
+@F282-7.1 @F282_13_conditionsGist_quick_view_from_menu @US4317 @US4805 @debug
 Scenario: Conditions Applet Gist - quick view of chosen problem 
   Given user is logged into eHMP-UI
   Given user searches for and selects "ZZZRETFOURFIFTYEIGHT,PATIENT"

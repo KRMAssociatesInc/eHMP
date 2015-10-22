@@ -1,0 +1,80 @@
+<h3>Multi-Select List</h3>
+<div class="description">
+    <p><strong><i class="fa fa-leanpub"></i> Description:</strong> Multi-Select Lists allow the user to select multiple list items.</p>
+    <p><strong><i class="fa fa-wheelchair"></i> 508 Guidelines:</strong> A multi-select list is built using list items and in order to pass 508, you must wrap all content within the list item with an anchor tag to make each item keyboard accessible.</p>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+    <div id="multi-select-listCopy">
+        <div class="panel-body multi-select-list">
+            <ul class="list-borders">
+                <li>
+                    <a href="#li-item">
+                        <div class="col-xs-12">Selectable List Item 1</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#li-item">
+                        <div class="col-xs-12">Selectable List Item 2</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#li-item">
+                        <div class="col-xs-12">Selectable List Item 3</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <hr />
+</div>
+<div role="tabpanel" class="tabpanel">
+    <ul role="tablist" class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#markup-multi-select-list" aria-controls="markup-multi-select-list" role="tab" data-toggle="tab">Multi-Select List</a></li>
+        <li role="presentation"><a href="#javascript-multi-select-list" aria-controls="javascript-multi-select-list" role="tab" data-toggle="tab">Multi-Select List</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="markup-multi-select-list">
+            <pre>
+&lt;div class=&quot;panel-body multi-select-list&quot;&gt;
+    &lt;ul class=&quot;list-borders&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#li-item&quot;&gt;
+                &lt;div class=&quot;col-xs-12&quot;&gt;Selectable List Item 1&lt;/div&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#li-item&quot;&gt;
+                &lt;div class=&quot;col-xs-12&quot;&gt;Selectable List Item 2&lt;/div&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#li-item&quot;&gt;
+                &lt;div class=&quot;col-xs-12&quot;&gt;Selectable List Item 3&lt;/div&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+            </pre>
+            <a onclick="copyToClipboard('multi-select-listCopy')" role="button" tabindex="0" class="btn btn-default" data-trigger="focus" data-toggle="popover" data-placement="top" data-content="Copied" data-template='<div class="popover popover-sm" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'>Copy</a>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="javascript-multi-select-list">
+            <pre>
+$(function() {
+    $('.multi-select-list').on('click', 'li', function() {
+        $(this).toggleClass('list-item-selected');
+    });
+});
+            </pre>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(function() {
+    // Toggle selected items within accordion
+    $('.multi-select-list').on('click', 'li', function() {
+        $(this).toggleClass('list-item-selected');
+    });
+});
+</script>

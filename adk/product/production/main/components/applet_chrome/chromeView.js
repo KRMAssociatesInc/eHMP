@@ -106,7 +106,7 @@ define([
                 this.refreshButtonView = new RefreshButtonView();
             }
 
-            var viewConfig = Utils.appletViewTypes.getViewTypeConfig(this.options, this.model.get('viewType'));
+            var viewConfig = Utils.appletUtils.getViewTypeConfig(this.options, this.model.get('viewType'));
             if (dd(viewConfig)('chromeOptions')('additionalButtons').val && viewConfig.chromeOptions.additionalButtons instanceof Array) {
                 _.forEach(viewConfig.chromeOptions.additionalButtons, function(item) {
                     if (item.id && item.view) {

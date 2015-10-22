@@ -53,7 +53,12 @@ define([
                 'regionName': 'vitalsObservationDialog'
             };
             //show the modal so we can deal with the grid
-            ADK.showWorkflowItem(this, modalOptions);
+
+            var modal = new ADK.UI.Modal({
+                view: this,
+                options: modalOptions
+            });
+            modal.show();
 
             observationListCollection = collection;
 

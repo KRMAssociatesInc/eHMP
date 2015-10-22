@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>eHMP Bootstrap UI Library - Applet Toolbar</title>
+        <link rel="stylesheet" href="../../../_assets/css/vendor.css" />
+        <link rel="stylesheet" href="../../../_assets/css/adk.css" />
+        <link rel="stylesheet" href="../../app/css/applets.css">
+        <link rel="stylesheet" href="../../css/main-styles.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700" />
+        <script src="../../js/jquery-1.11.2.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../_assets/libs/bower/highcharts/highcharts.js"></script>
+    </head>
+
+    <body class="library">
+        <div class="container">
+            <h1>Applet Toolbar for Pills and Tiles</h1>
+
+            <div class="description"><p><strong><i class="fa fa-leanpub"></i> Description:</strong> The following code is an implementation of the gist tiles for infobutton, detailed view button and quicklook button. When the pill button is clicked, the quicklook button must be active and the data graph has to be shown by default. (javaScript functionality required)</p></div>
+
+            <h4>Pill View</h4>
+            <div class="info-pill-container">
+                <button type="button" class="btn gist-item" title="To open the toolbar, press enter." data-placement="top" data-toggle="popover" data-animation="false" data-content-element-id="infoPillHiddenContent" id="infoPill" data-template='<div class="popover" role="tooltip"><div class="popover-content"></div></div>' data-html="true">Hep B - Adult<span class="sr-only">To open the toolbar, press enter.</span></button>
+                <div id="infoPillHiddenContent" class="hidden">
+                    <button type="button" class="btn btn-toolbar" title="This is the information button. To view more information press enter to open a new window within the application" data-toggle="tooltip" data-placement="top"><i class="fa fa-info"></i><span class="sr-only">This is the information button. To view more information press enter to open a new window within the application</span></button>
+                    <button type="button" class="btn btn-toolbar" title="This is the details view button. To view more information press enter to open a new window within the application" data-toggle="tooltip" data-placement="top"><i class="fa fa-file-text-o"></i><span class="sr-only">This is the details view button. To view more information press enter to open a new window within the application</span></button>
+                    <button type="button" class="btn btn-toolbar" title="This is the summary view button. To view more information press enter to open a data table below" data-toggle="collapse" data-target="#collapseDataTable" aria-expanded="true" aria-controls="collapseDataTable" data-placement="top"><i class="fa fa-eye"></i><span class="sr-only">This is the summary view button. To view more information press enter to open a data table below</span></button>
+                </div>
+                <div class="collapse tabular-data" id="collapseDataTable">
+                    <table class="table ehmp-table-default table-bordered">
+                        <caption class="sr-only">This table represents the patient's immunization records categorized by date, series, reaction, and date</caption>
+                        <thead>
+                            <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Series</th>
+                            <th scope="col">Reaction</th>
+                            <th scope="col">Since</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>01/09/2014</td>
+                            <td>2</td>
+                            <td>No</td>
+                             <td>16m</td>
+                        </tr>
+                            <tr>
+                            <td>11/15/2013</td>
+                            <td>1</td>
+                            <td>No</td>
+                             <td>17m</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+               
+			<hr />
+
+            <h4>Tile View</h4>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="med-review-container gist-tile-container">
+                        <div class="gist-header row no-pad header-bar">
+                            <div class="col-sm-3">
+                                <strong>Name:</strong>
+                            </div>
+                            <div class="col-sm-2">
+                                <strong>Sig:</strong>
+                            </div>
+                            <div class="col-sm-1">
+                                <strong>Last</strong>
+                            </div>
+                            <div class="col-sm-1">
+                                <strong>Fillable:</strong>
+                            </div>
+                            <div class="col-sm-5 chartHeader">
+                                <div class="high-chart" aria-hidden="true">&nbsp;</div>
+                            </div>
+                        </div>
+                        <ul class="gist-item-list media-list">
+                            <li class="gist-tile row no-pad">
+                                <div class="col-xs-3">
+                                    <span class="sr-only">Medication Name:</span>
+                                    Metoptrolol
+                                </div>
+                                <div class="col-xs-2">
+                                    <span class="sr-only">Medication Dosage:</span>
+                                    50 mg PO BID
+                                </div>
+                                <div class="col-xs-1">
+                                    <span class="sr-only">Dosage period and trend:</span>
+                                    <span aria-hidden="true">3y</span>
+                                    <span class="sr-only">3 years</span>
+                                    <span class="fa fa-arrow-down trend-decrease" title="Decrease" aria-hidden="true"></span><span class="sr-only">Decrease</span>
+                                </div>
+                                <div class="col-xs-1">
+                                    <span class="sr-only">Refill:</span>
+                                    <span class="label applet-badges label-critical" title="-4 months | Expired" aria-hidden="true">-4m Exp</span>
+                                    <span class="sr-only">Expired 4 months ago</span>
+                                </div>
+                                <div class="col-xs-5 chart-column">
+                                    <div class="high-chart" aria-hidden="true">
+                                        <!--place highchart here-->
+                                    </div>
+                                    <div class="sr-only">
+                                        <!-- this table describes what is seen on the highchart in written/verbal format for screen readers -->
+                                        <table>
+                                            <caption>This table represents the history of the patient's prescription and intake behavior categories by date range and behavior</caption>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Date Range</th>
+                                                    <th scope="col">Behavior</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2013/05 - 2015/03</td>
+                                                    <td>Prescribed and taken</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2011/05 - 2013/03</td>
+                                                    <td>Not used</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="ac-items">
+                                    <h4 class="ac-items-heading"><span class="sr-only">Interaction Options</span><a class="ac-items-buttons-toggle" aria-hidden="true"></a></h4>
+                                        <div class="ac-items-buttons">
+                                            <button class="ac-item-button info-button" tabindex="0" title="Infobutton" type="button"><span class="fa fa-info" aria-hidden="true"></span><span class="sr-only"> Display Information. Press enter to view detailed information about medication overlapping orders.</span></button><button class="ac-item-button detail-button" tabindex="0" title="Detail" type="button"><span class="fa fa-file-text-o" aria-hidden="true"></span><span class="sr-only"> Detailed View. Press enter to view historic information of the medication prescription, dosage and intake history.</span></button>
+                                        </div>
+                                    <h4 class="ac-items-table-heading"><span class="sr-only">This is the patient's immunization records data. To view more information press enter to open a data table below</span><a class="ac-items-table-toggle" aria-hidden="true"></a></h4>
+                                    <table class="table ehmp-table-default table-bordered table-data">
+		                                <caption class="sr-only">This table represents the patient's immunization records categorized by date, series, reaction, and date</caption>
+		                                <thead>
+		                                    <tr>
+		                                    <th scope="col">Date</th>
+		                                    <th scope="col">Series</th>
+		                                    <th scope="col">Reaction</th>
+		                                    <th scope="col">Since</th>
+		                                </tr>
+		                                </thead>
+		                                <tbody>
+		                                    <tr>
+		                                    <td>01/09/2014</td>
+		                                    <td>2</td>
+		                                    <td>No</td>
+		                                     <td>16m</td>
+		                                </tr>
+		                                    <tr>
+		                                    <td>11/15/2013</td>
+		                                    <td>1</td>
+		                                    <td>No</td>
+		                                     <td>17m</td>
+		                                </tr>
+		                                </tbody>
+		                            </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        $(function() {
+            $('.gist-item').each(function() {
+                var t = $(this);
+                t.popover({
+                    html: true,
+                    content: $('#' + t.data('content-element-id')).html(),
+                    title: t.data('title')
+                });
+            });
+            $('[data-toggle="popover"]').popover();
+            $('[data-toggle="tooltip"]').tooltip();
+            // $('.gistItem').on('click', function() {
+            //     var toggleTable = $(this).attr('data-content-element-id');
+            //     console.log(">>>>> ", toggleTable);
+            //     $('.quicklookButton').click();
+            // });
+        });
+        $(function () {
+            $(document).on('click','.ac-items-buttons-toggle',function(){
+                var $clickt = $(this);
+                var $cp = $clickt.parent().parent();
+                $cp.removeClass('table-active');
+                if (!$cp.hasClass('active')){
+                    $cp.addClass('active');
+                    $('body').bind('click.blurActionableItems',function(e){
+                        var $tg = $(e.target);
+                        var isbutton = ($tg.is('button.ac-item-button')||$tg.parent().is('button.ac-item-button')?true:false);
+                        if(!isbutton){
+                            $('body').unbind('click.blurActionableItems');
+                            $cp.removeClass('active');
+                        }
+                    });
+                }
+            });
+            $(document).on('click','.ac-items-table-toggle',function(){
+                var $clickt = $(this);
+                var $cp = $clickt.parent().parent().toggleClass('table-active');
+            });
+            // code from meds review
+            $(document).on('click.gistTileInfoButton','.info-button',function(){
+                alert('Show information action triggered');
+            });
+            $(document).on('click.gistTileInfoButton','.detail-button',function(){
+                alert('Show Medication Review action triggered');
+            });
+        });
+        </script>
+    </body>
+</html>

@@ -4,18 +4,25 @@ define([
     'underscore',
     'highcharts',
     'hbs!app/applets/stackedGraph/list/stackedGraphViewTemplate',
+    'app/applets/stackedGraph/list/deleteConfirmationView',
     'app/applets/stackedGraph/list/chartsCompositeView',
     'app/applets/stackedGraph/utils/utils',
+    'app/applets/medication_review_v2/medicationCollectionHandler',
+    'app/applets/medication_review_v2/medicationResourceHandler',
+    "app/applets/medication_review_v2/charts/chartBuilder",
+    "app/applets/medication_review_v2/charts/chartConfig",
     'app/applets/lab_results_grid/applet',
     'app/applets/vitals/applet',
+    'app/applets/medication_review_v2/applet',
     'typeahead',
     'highcharts-more'
-], function(Backbone, Marionette, _, Highcharts, StackedGraphViewTemplate, ChartsCompositeView, Utils) {
+], function(Backbone, Marionette, _, Highcharts, StackedGraphViewTemplate, ConfirmationView, ChartsCompositeView, Utils, CollectionHandler, MedsResource, ChartBuilder, GraphConfig) {
 
 
     // var FilterView = Backbone.Marionette.ItemView.extend({
     //     template: _.template("I am a filter view!")
-    // });
+    // 
+
 
     return Backbone.Marionette.LayoutView.extend({
         template: StackedGraphViewTemplate,
@@ -33,7 +40,7 @@ define([
                 if (index !== -1) {
                     self.allReadyAdded.splice(index, 1);
                 }
-                if(collection.length === 0){
+                if (collection.length === 0) {
                     self.chartsCompositeView.$noGraph.show();
                 }
             });
@@ -54,7 +61,7 @@ define([
                 if (response.response.requesterInstanceId === self.instanceId) {
                     self.chartsCompositeView.$noGraph.hide();
                     self.chartOptionsCollection.unshift(response.response);
-                    self.allReadyAdded.unshift(response.response.typeName);
+                    self.allReadyAdded.unshift(response.response.typeName.toUpperCase());
                     readyToChart = true;
                 }
             });
@@ -65,7 +72,7 @@ define([
                 var toDate = moment(sessionGlobalDate.get('toDate'), 'MM/DD/YYYY');
 
                 //add 1 day to toDate to enusure red line for current date is always displayed on the chart
-                toDate.add(1,'d');
+                toDate.add(1, 'd');
                 _.each(this.activeCharts, function(e, i) {
                     e.xAxis[0].setExtremes(Date.UTC(fromDate.year(), fromDate.month(), fromDate.date()), Date.UTC(toDate.year(), toDate.month(), toDate.date()));
                 });
@@ -81,81 +88,109 @@ define([
                     return;
                 }
 
-                var pickListPersistanceFetchOptions = {
-                    resourceTitle: 'user-defined-stack',
-                    fetchType: 'DELETE',
-                    criteria: {
-                        id: ADK.ADKApp.currentScreen.config.id,
-                        instanceId: self.instanceId,
-                        graphType: response.model.attributes.graphType,
-                        typeName: response.model.attributes.typeName.toUpperCase()
-                    },
+                //display confirmation view
+                var ConfirmView = new ConfirmationView({
+                    graphTitle: response.model.attributes.typeName,
+                    callback: function() {
+                        var pickListPersistanceFetchOptions = {
+                            resourceTitle: 'user-defined-stack',
+                            fetchType: 'DELETE',
+                            criteria: {
+                                id: ADK.ADKApp.currentScreen.config.id,
+                                instanceId: self.instanceId,
+                                graphType: response.model.attributes.graphType,
+                                typeName: response.model.attributes.typeName.toUpperCase()
+                            },
 
-                    onSuccess: function() {
-                        self.chartOptionsCollection.remove(response.model);
+                            onSuccess: function() {
+                                var filter = self.chartOptionsCollection.filter(function(model){
+                                    return model.get('typeName').toUpperCase() === response.model.get('typeName').toUpperCase();
+                                });
+                                self.chartOptionsCollection.remove(filter);
+                            }
+                        };
+
+                        ADK.ResourceService.fetchCollection(pickListPersistanceFetchOptions);
+
+                        ADK.UserDefinedScreens.removeOneStackedGraphFromSession(
+                            ADK.ADKApp.currentScreen.config.id,
+                            self.instanceId,
+                            response.model.attributes.graphType,
+                            response.model.attributes.typeName.toUpperCase());
 
                     }
+                });
+                var modalOptions = {
+                    'size': "medium",
+                    'backdrop': true,
+                    'keyboard': true,
+                    'callShow': true,
+                    'footerView': 'none'
                 };
 
-                ADK.ResourceService.fetchCollection(pickListPersistanceFetchOptions);
-
+                var modal = new ADK.UI.Modal({
+                    view: ConfirmView,
+                    options: modalOptions
+                });
+                modal.show();
             });
 
-            var pickListPersistanceFetchOptions = {
-                resourceTitle: 'user-defined-stack',
-                fetchType: 'GET',
-                criteria: {
-                    id: ADK.ADKApp.currentScreen.config.id,
-                    predefined: this.predefined
-                }
-            };
+            var persistedPickList = ADK.UserDefinedScreens.getStackedGraphForOneAppletFromSession(ADK.ADKApp.currentScreen.config.id, self.instanceId);
 
-            pickListPersistanceFetchOptions.onSuccess = function(pickListCollection) {
-                var persistedPickList;
-                if (pickListCollection.models.length > 0 && pickListCollection.models[0].attributes.userdefinedgraphs !== undefined) {
-                    var applet = _.find(pickListCollection.models[0].attributes.userdefinedgraphs.applets, function(applet) {
-                        return applet.instanceId === self.instanceId;
-                    });
 
-                    if (applet !== undefined) {
-                        persistedPickList = applet.graphs;
-                    }
-                }
+            if (persistedPickList) {
+                var ind = 0;
+                var interval = setInterval(function() {
+                    if (persistedPickList.length === ind) {
+                        clearInterval(interval);
 
-                if (persistedPickList !== undefined) {
-                    var ind = 0;
-                    var interval = setInterval(function() {
-                        if (persistedPickList.length === ind) {
-                            clearInterval(interval);
+                    } else {
+                        if (readyToChart) {
+                            readyToChart = false;
+                            var persistedPickListItem = persistedPickList[ind];
+                            var params = {
+                                typeName: persistedPickListItem.typeName,
+                                instanceId: self.instanceId,
+                                graphType: persistedPickListItem.graphType
 
-                        } else {
-                            if (readyToChart) {
-                                readyToChart = false;
-                                var persistedPickListItem = persistedPickList[ind];
-                                var params = {
-                                    typeName: persistedPickListItem.typeName,
-                                    instanceId: self.instanceId,
-                                    graphType: persistedPickListItem.graphType
+                            };
+                            var channel;
+                            var $deferred = $.Deferred();
 
-                                };
-                                var channel;
-                                if (persistedPickListItem.graphType === 'Vitals') {
-                                    channel = ADK.Messaging.getChannel('vitals');
+                            if (persistedPickListItem.graphType === 'Vitals') {
+                                channel = ADK.Messaging.getChannel('vitals');
+                                $deferred.resolve({
+                                    collection: null
+                                });
 
-                                } else if (persistedPickListItem.graphType === 'Lab Tests') {
-                                    channel = ADK.Messaging.getChannel('lab_results_grid');
-                                }
 
+                            } else if (persistedPickListItem.graphType === 'Lab Tests') {
+                                channel = ADK.Messaging.getChannel('lab_results_grid');
+                                $deferred.resolve({
+                                    collection: null
+                                });
+                            } else if (persistedPickListItem.graphType === 'Medications') {
+                                channel = ADK.Messaging.getChannel('meds_review');
+                                CollectionHandler.fetchAllMeds(false, function(collection) {
+                                    var groupNames = MedsResource.getMedicationGroupNames(collection);
+                                    $deferred.resolve({
+                                        collection: collection
+                                    });
+                                });
+                            }
+
+                            $deferred.done(function(response) {
+                                params.collection = response.collection;
                                 channel.request('chartInfo', params);
                                 ind = ind + 1;
-                            }
+                            });
+
+
                         }
+                    }
 
-                    }, 100);
-                }
-            };
-
-            ADK.ResourceService.fetchCollection(pickListPersistanceFetchOptions);
+                }, 100);
+            }
             //end of intialize
         },
         onShow: function() {
@@ -212,7 +247,10 @@ define([
                 // hidePointer();
 
                 $.each(self.activeCharts, function(i, chart) {
-                    chart.tooltip.hide();
+                    if (chart.tooltip) {
+                        chart.tooltip.hide();
+                    }
+                    // chart.tooltip.hide();
                     if (chart.line) {
                         chart.line.
                         css({
@@ -246,7 +284,6 @@ define([
                     });
                 },
                 'mousemove.stackedGraph': function(evt) {
-                    // console.log(evt.currentTarget);
                     evt.stopPropagation();
                     if (self.activeCharts.length < 1) {
                         return;
@@ -312,6 +349,7 @@ define([
             },
             plotOptions: {},
             series: [{
+
                 data: [],
                 visible: false
             }]

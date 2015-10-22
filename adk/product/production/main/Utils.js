@@ -3,7 +3,7 @@ define([
     "main/adk_utils/dateUtils",
     "main/adk_utils/resizeUtils",
     "main/adk_utils/collectionUtils",
-    "main/adk_utils/appletViewTypesUtils",
+    "main/adk_utils/appletUtils",
     "main/adk_utils/helpUtils",
     "main/adk_utils/pdfUtils",
     "main/adk_utils/infoButtonUtils",
@@ -12,14 +12,14 @@ define([
     "moment",
     "underscore",
     "main/adk_utils/tooltipUtils"
-], function(Backbone, DateUtils, ResizeUtils, CollectionUtils, AppletViewTypesUtils, HelpUtils, PdfUtils, InfoButtonUtils, Session, SortedCollection,  moment, _, TooltipUtils) {
+], function(Backbone, DateUtils, ResizeUtils, CollectionUtils, AppletUtils, HelpUtils, PdfUtils, InfoButtonUtils, Session, SortedCollection,  moment, _, TooltipUtils) {
 
     var Utils = {};
 
     Utils.dateUtils = DateUtils;
     Utils.resize = ResizeUtils;
     Utils.collection = CollectionUtils;
-    Utils.appletViewTypes = AppletViewTypesUtils;
+    Utils.appletUtils = AppletUtils;
     Utils.helpUtils = HelpUtils;
     Utils.pdfUtils = PdfUtils;
     Utils.infoButtonUtils = InfoButtonUtils;

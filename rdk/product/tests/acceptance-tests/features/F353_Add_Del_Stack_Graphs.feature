@@ -1,4 +1,4 @@
-@AddDelStackGraphs @F353
+@debug @AddDelStackGraphs @F353
 
 Feature: F353 - Add and Delete Stack Graphs
 

@@ -91,7 +91,7 @@ define([
             "viewType": "summary"
         }, {
             "id": "activeMeds",
-            "title": "Medications",
+            "title": "Active Medications",
             "region": "041456e4af17",
             "dataRow": "9",
             "dataCol": "5",
@@ -101,13 +101,14 @@ define([
             "dataMinSizeY": "2",
             "dataMaxSizeX": "6",
             "dataMaxSizeY": "12",
-            "viewType": "summary"
+            "viewType": "summary",
+            "maximizeScreen": 'medication-review'
         }, {
             "id": "lab_results_grid",
             "title": "Lab Results",
             "maximizeScreen": "lab-results-grid-full",
             "region": "9dc9f289d846",
-            "dataRow": "8",
+            "dataRow": "5",
             "dataCol": "5",
             "dataSizeX": "4",
             "dataSizeY": "4",
@@ -135,7 +136,7 @@ define([
             "title": "Community Health Summaries",
             "maximizeScreen": "ccd-list-full",
             "region": "76fed10ec8c0",
-            "dataRow": "8",
+            "dataRow": "5",
             "dataCol": "9",
             "dataSizeX": "4",
             "dataSizeY": "4",
@@ -155,10 +156,14 @@ define([
             if (channelName) {
                 if (!clickedResult.suppressModal) {
                     // display spinner in modal while detail view is loading
-                    ADK.showModal(ADK.Views.Loading.create(), {
-                        size: "large",
-                        title: "Loading..."
+                    var modal = new ADK.UI.Modal({
+                        view: ADK.Views.Loading.create(),
+                        options: {
+                            size: "large",
+                            title: "Loading..."
+                        }
                     });
+                    modal.show();
                 }
 
                 // request detail view from whatever applet is listening for this domain
@@ -167,15 +172,17 @@ define([
 
                 deferredDetailResponse.done(function(response) {
                     if (!clickedResult.suppressModal) {
-                        ADK.showModal(response.view, {
-                            size: "large",
-                            title: response.title
+                        var modal = new ADK.UI.Modal({
+                            view: response.view,
+                            options: {
+                                size: "large",
+                                title: response.title
+                            }
                         });
+                        modal.show();
                         deferredResponse.resolve();
                     } else {
-                        deferredResponse.resolve({
-                            view: response.view
-                        });
+                        deferredResponse.resolve(response);
                     }
                 });
                 deferredDetailResponse.fail(function(response) {
@@ -186,10 +193,14 @@ define([
                 var detailView = new DefaultDetailView();
 
                 if (!clickedResult.suppressModal) {
-                    ADK.showModal(detailView, {
-                        size: "large",
-                        title: "Detail - Placeholder"
+                    var modalView2 = new ADK.UI.Modal({
+                        view: detailView,
+                        options: {
+                            size: "large",
+                            title: "Detail - Placeholder"
+                        }
                     });
+                    modalView2.show();
                     deferredResponse.resolve();
                 } else {
                     deferredResponse.resolve({

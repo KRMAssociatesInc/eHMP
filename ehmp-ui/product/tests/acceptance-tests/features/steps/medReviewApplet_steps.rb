@@ -109,9 +109,9 @@ end
 Then(/^medication applet summary results contain "(.*?)" with the details$/) do |med_name, table|
   aa = MedReviewApplet2.instance
   lowercase_item = med_name.downcase
-#  expect(aa.wait_until_action_element_visible("inpatient count", DefaultLogin.wait_time)).to be_true
+  #  expect(aa.wait_until_action_element_visible("inpatient count", DefaultLogin.wait_time)).to be_true
   aa.add_verify(CucumberLabel.new("Med Details"), VerifyContainsText.new, AccessHtmlElement.new(:xpath, "//span[contains(string(), '#{lowercase_item}')]/ancestor::div[@id='medGroupItem']"))
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification("Med Details", row[1])).to be_true, "The value #{row[1]} is not present in the med details"
   end
 end
@@ -148,10 +148,10 @@ Then(/^the user sees the heading "(.*?)"$/) do |header_name|
   expect(aa.perform_verification(header_name, header_name)).to be_true  
 end
 
-Then(/^the user sees following links under "(.*?)" heading$/) do |not_used, table|
+Then(/^the user sees following links under "(.*?)" heading$/) do |_not_used, table|
   aa = MedReviewApplet2.instance
   expect(aa.wait_until_action_element_visible("Clinical Pharmacology", DefaultLogin.wait_time)).to be_true
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification(row[0], " "+row[0]+" ")).to be_true
   end 
 end
@@ -173,7 +173,7 @@ Then(/^"(.*?)" medication details results contain$/) do |med_name, table|
     fail "**** No function found! Check your script ****"
   end
   
-  table.rows.each do | row |
+  table.rows.each do |row|
     expect(aa.perform_verification("Med Details", row[1])).to be_true, "The value #{row[1]} is not present in the med details"
   end
 end
@@ -190,16 +190,16 @@ Then(/^the fill history table contains rows$/) do |table|
   verify_table_rows_med(table) 
 end
 
-Then(/^the user sees the text "(.*?)" and "(.*?)" in red$/) do |expired_text, date_text|
+Then(/^the user sees the text "(.*?)" and "(.*?)" in red$/) do |_expired_text, _date_text|
   driver = TestSupport.driver
   matched = false
   text_color = ""
-#  browser_elements_list = driver.find_elements(:class, "Expired")
+  #  browser_elements_list = driver.find_elements(:class, "Expired")
   browser_elements_list = driver.find_elements(:xpath, "//*[@class='Expired']/descendant::span")
   p browser_elements_list.length
-  browser_elements_list.each do | element|
+  browser_elements_list.each do |element|
     text_color = element.css_value("color") 
-#    p text_color
+    #    p text_color
     if text_color == "rgba(255, 59, 48, 1)"
       matched = true
     else
@@ -213,18 +213,18 @@ Then(/^the Order Hx Date are grouped as below$/) do |table|
   aa = MedReviewOrderHxGroup.instance
   expect(aa.wait_until_action_element_visible("startstoppanorama1", DefaultLogin.wait_time)).to be_true
   
-  table.rows.each do | key, value |
+  table.rows.each do |key, value|
     expect(aa.perform_verification(key, value)).to be_true
   end #table  
 end
 
-Then(/^the user sees a "(.*?)" dot for "(.*?)" medication "(.*?)"$/) do |color, medStatus, medName|
+Then(/^the user sees a "(.*?)" dot for "(.*?)" medication "(.*?)"$/) do |color, _medStatus, _medName|
   driver = TestSupport.driver
   matched = false
   text_color = ""
   browser_elements_list = driver.find_elements(:css, "div.row.statusBadge.activeStatus")
   #p browser_elements_list.length
-  browser_elements_list.each do | element|
+  browser_elements_list.each do |element|
     #text_color = element.css_value("color") 
     text_color = element.css_value("background-color")  
     if text_color == "rgba(76, 217, 100, 1)"

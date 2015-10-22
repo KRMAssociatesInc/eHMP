@@ -15,6 +15,9 @@ define([
         initialize: function(options) {
             this.searchApplet = options.searchApplet;
         },
+        clearSearchResultsRegion: function() {
+            this.patientSearchResults.show(new BlankView());
+        },
         executeSearch: function(fullNameFilter) {
             if (fullNameFilter && fullNameFilter !== '') {
                 if (fullNameFilter.length < 3) {
@@ -64,8 +67,8 @@ define([
                     patientsCollection.once('sync', function() {
                         if (this.length === 0) {
                             criteria = {
-                                "name-full": fullNameFilter,
-                                "max-rows": 100
+                                "name.full": fullNameFilter,
+                                "rows.max": 100
                             };
                             searchOptions.resourceTitle = 'patient-search-full-name';
                             searchOptions.criteria = criteria;
@@ -73,8 +76,6 @@ define([
                         }
                     });
                 }
-            } else {
-                this.patientSearchResults.show(new BlankView());
             }
         }
     });

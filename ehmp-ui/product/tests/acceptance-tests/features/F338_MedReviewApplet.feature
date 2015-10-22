@@ -4,7 +4,7 @@ Feature: F338 - Meds Review Sparkline 2 -  Med Review applet display
 
 #POC:Team Jupiter
 
-@f338_1_medReviewApplet_navigation_thro_dropdown @US5421
+@f338_1_medReviewApplet_navigation_thro_dropdown @US5421 @base
 Scenario: User navigates to Meds Review Applet from default screen.
   Given user is logged into eHMP-UI
   And user searches for and selects "fourteen,Patient"
@@ -12,7 +12,7 @@ Scenario: User navigates to Meds Review Applet from default screen.
   When user selects Meds Review from drop down menu
   Then "Meds Review" is active
   
-@f338_2_medication_grouping @US5421
+@F338-1.7 @f338_2_medication_grouping @US5421
 Scenario: Display of medication grouping by medication type for inpatient and outpatient
   Given user is logged into eHMP-UI
   And user searches for and selects "fourteen,Patient"
@@ -21,7 +21,7 @@ Scenario: Display of medication grouping by medication type for inpatient and ou
   And the title of the page says "MEDICATION REVIEW" in Meds Review Applet
   And user sees "Outpatient Meds Group" and "Inpatient Meds Group" in Meds Review Applet
   
-@f338_3_medication_summary_outpatient_meds @US5421 @US4608 @US5429
+@F338-1 @F338-1.6 @F338-1.9 @F1.16 @f338_3_medication_summary_outpatient_meds @US5421 @US4608 @US5429
 Scenario: Display of medication summary for outpatient medications
   Given user is logged into eHMP-UI
   And user searches for and selects "fourteen,Patient"
@@ -39,7 +39,7 @@ Scenario: Display of medication summary for outpatient medications
   | WARFARIN TAB            | 5MG PO QD-WARF |      | Discontinued 8y  	|
   | ASPIRIN TAB,EC          | 81MG PO QAM    |      | Non VA 			|
 
-@f338_4_medication_detail_outpatient_meds @US5421 @traige
+@F338-8 @f338_4_medication_detail_outpatient_meds @US5421 @triage @DE1421 @DE1564
 Scenario: Display of medication details for outpatient medications
   Given user is logged into eHMP-UI
   And user searches for and selects "fourteen,Patient"
@@ -68,16 +68,18 @@ Scenario: Display of medication details for outpatient medications
   |row index| dispensedate  | quantityAnddaysSupplyDispensed | routing | empty  |
   | 1   	| 06/04/2006    | 30 For 30 Days                 | Window  |        |  
 
-@f338_5_medication_column_default_and_sorting_name @US5903
+@f338_5_medication_column_default_and_sorting_name @US5903 @DE1479
 Scenario: Med Review Applet is sorted by the status first and then by name in alpha order.
   Given user is logged into eHMP-UI
   Given user searches for and selects "EIGHT,INPATIENT"
   When user navigates to Meds Review Applet
   Then "Meds Review" is active
   And the user has selected All within the global date picker
+  When user expands "Outpatient Meds Group" in Meds Review Applet
   Then "Name" column is sorted in default sorting order in Med Review Applet
   | med names			|  
   | ascorbic acid tab	|
+  | methocarbamol tab   |
   | phytonadione tab	|  
   | acetaminophen		|
   | astemizole			|  
@@ -117,7 +119,7 @@ Scenario: Med Review Applet is sorted by the column header Last.
   Then "Last" column is sorted in "ascending" order in Med Review Applet
   | 4y | 4y | 4y | 4y | 5y | 5y | 8y | 8y | 8y | 8y |
   
-@f338_8_medication_summary_inpatient_meds @US5421
+@F338-2 @F338-2.1 @f338_8_medication_summary_inpatient_meds @US5421
 Scenario: Display of medication summary for inpatient medications
   Given user is logged into eHMP-UI
   And user searches for and selects "zzzretiredonenineteen,Patient"
@@ -134,7 +136,7 @@ Scenario: Display of medication summary for inpatient medications
   | DIGOXIN TAB                                | TAB Give:       |      | Expired 16y	|
   | FUROSEMIDE TAB                             | 40 MG TAB Give: |      | Expired 16y	|
   
-@f338_9_medication_detail_inpatient_meds @US5421 @traige
+@f338_9_medication_detail_inpatient_meds @US5421 @triage @DE1421 @DE1564
 Scenario: Display of medication details for inpatient medications
   Given user is logged into eHMP-UI
   And user searches for and selects "zzzretiredonenineteen,Patient"
@@ -151,7 +153,7 @@ Scenario: Display of medication details for inpatient medications
   | Status_Digoxin        | EXPIRED       |
   | Sig_Digoxin           | Give:         |
  
-@f338_10_medication_global_datefilter @US5421 @future
+@F338-6 @F338-1.4 @f338_10_medication_global_datefilter @US5421 @future
 Scenario: Display of medication summary for outpatient for a custom date range
   Given user is logged into eHMP-UI
   And user searches for and selects "Fourteen,Patient"
@@ -175,7 +177,6 @@ Scenario: Display of medication summary for outpatient for a custom date range
   
 
 @f338_11_medication_filtering @US5421
-
 Scenario: Display of medication summary for outpatient medications after searching for a specific string
   Given user is logged into eHMP-UI
   And user searches for and selects "fourteen,Patient"

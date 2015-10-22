@@ -5,7 +5,6 @@ require('./env-setup');
 var format = require('util').format;
 var cluster = require('cluster');
 var _ = require('underscore');
-// var express = require('express');
 
 var Worker = require(global.VX_JOBFRAMEWORK + 'worker');
 var HandlerRegistry = require(global.VX_JOBFRAMEWORK + 'handlerRegistry');
@@ -13,40 +12,49 @@ var jobUtil = require(global.VX_UTILS + 'job-utils');
 var pollerUtils = require(global.VX_UTILS + 'poller-utils');
 var config = require(global.VX_ROOT + 'worker-config');
 var logUtil = require(global.VX_UTILS + 'log');
+var moment = require('moment');
 logUtil.initialize(config.loggers);
 
 var logger = logUtil.get('subscriberHost', 'host');
+var healthcheckUtils = require(global.VX_UTILS + 'healthcheck-utils');
 
 //////////////////////////////////////////////////////////////////////////////
 //  EXECUTE ON STARTUP
 //////////////////////////////////////////////////////////////////////////////
 
-var options = pollerUtils.parseSubscriberOptions(logger, config, 8770);
+var options = pollerUtils.parseSubscriberOptions(logger, config);
 var workers = [];
 var startup = null;
+var profile = options.profile;
+var processName = process.env.VXSYNC_LOG_SUFFIX;
+var processStartTime = moment().format('YYYYMMDDHHmmss');
 
-config.addChangeCallback(function(){
+config.addChangeCallback(function() {
     logger.info('subscriberHost  config change detected. Stopping workers');
-    _.each(workers, function(worker){
+    _.each(workers, function(worker) {
         worker.stop();
     });
     logger.info('subscriberHost  starting new workers');
-    if(startup) {
+    if (startup) {
         startup();
     }
 }, false);
 
-// var app = express();
+process.on('SIGURG', function() {
+    logger.debug('subscriberHost process id ' + process.pid + ': Got SIGURG.');
+    console.log('subscriberHost process id ' + process.pid + ': Got SIGURG.');
+    pauseWorkers(workers);
+    listenForShutdownReady(workers);
+
+    //TODO: move time to wait into configuration
+    setTimeout(timeoutOnWaitingForShutdownReady, 30000, workers).unref();
+});
 
 // if only one profile with only one instance, then do not use node.fork:
 if (cluster.isMaster) {
-    // if (options.endpoint) {
-    //     app.listen(options.port);
-    //     logger.info('subscriberEndpoint() endpoint listening on port %s', options.port);
-    // }
 
     if (options.processList.length === 1) {
-        startup = startSubscriberHost.bind(null,logger, config, options.port, _.first(options.processList));
+        startup = startSubscriberHost.bind(null, logger, config, options.port, _.first(options.processList));
         startup();
         return;
     }
@@ -58,10 +66,9 @@ if (cluster.isMaster) {
     });
 } else {
     console.log('process: %s  profile "%s"', process.pid, process.env.vxsprofile);
-    startup = startSubscriberHost.bind(null, logger, config, options.port, process.env.vxsprofile);
+    startup = startSubscriberHost.bind(null, logger, config, options.port, profile);
     startup();
 }
-
 
 //////////////////////////////////////////////////////////////////////////////
 // NOTE: this file should not be cleaned out of dead code as there is much
@@ -80,11 +87,7 @@ function startSubscriberHost(logger, config, port, profile) {
 
     workers = startWorkers(config, handlerRegistry, environment, profileJobTypes, options.autostart);
 
-
-    // This starts an endpoint to allow pause, resume, reset, etc.
-    // if (options.endpoint) {
-    //     pollerUtils.buildSubscriberEndpoint('subscriberHost', app, logger, workers, []);
-    // }
+    healthcheckUtils.startHeartbeat(logger, config, environment, processName, profile, processStartTime);
 }
 
 
@@ -92,6 +95,8 @@ function registerHandlers(logger, config, environment) {
     var jmeadowsDomains = config.jmeadows.domains;
     var hdrDomains = config.hdr.domains;
     var handlerRegistry = new HandlerRegistry(environment);
+
+    handlerRegistry.register(logger, config, environment, jobUtil.errorRequestType(), require(global.VX_HANDLERS + 'error-request/error-request-handler'));
 
     handlerRegistry.register(logger, config, environment, jobUtil.enterpriseSyncRequestType(), require(global.VX_HANDLERS + 'enterprise-sync-request/enterprise-sync-request-handler'));
     handlerRegistry.register(logger, config, environment, jobUtil.vistaOperationalSubscribeRequestType(), require(global.VX_HANDLERS + 'operational-data-subscription/operational-data-subscription-handler'));
@@ -143,7 +148,7 @@ function startWorkers(config, handlerRegistry, environment, profileJobTypes, aut
 
     var connectionMap = {};
     _.each(profileJobTypes, function(jobType) {
-        if(!_.isUndefined(config.beanstalk.jobTypes[jobType]) && !_.isUndefined(config.beanstalk.jobTypes[jobType].host)) {
+        if (!_.isUndefined(config.beanstalk.jobTypes[jobType]) && !_.isUndefined(config.beanstalk.jobTypes[jobType].host)) {
             var connectInfo = config.beanstalk.jobTypes[jobType];
             var beanstalkString = format('%s:%s/%s', connectInfo.host, connectInfo.port, connectInfo.tubename);
             connectionMap[beanstalkString] = connectInfo;
@@ -154,7 +159,7 @@ function startWorkers(config, handlerRegistry, environment, profileJobTypes, aut
 
     var workers = _.map(connectionMap, function(beanstalkJobTypeConfig, beanstalkString) {
         logger.debug('subscriberHost.startWorkers(): creating worker %s', beanstalkString);
-        return new Worker(logUtil.get('worker'), beanstalkJobTypeConfig, handlerRegistry, environment.jobStatusUpdater, autostart);
+        return new Worker(logUtil.get('worker'), beanstalkJobTypeConfig, environment.metrics, handlerRegistry, environment.jobStatusUpdater, environment.errorPublisher, autostart);
     });
 
     _.each(workers, function(worker) {
@@ -167,4 +172,58 @@ function startWorkers(config, handlerRegistry, environment, profileJobTypes, aut
     });
 
     return workers;
+}
+
+function pauseWorkers(workers) {
+    logger.info('subscriberHost process id ' + process.pid + ': pausing workers.');
+    console.log('subscriberHost process id ' + process.pid + ': pausing workers.');
+    _.each(workers, function(worker) {
+        worker.pause();
+    });
+}
+
+function listenForShutdownReady(workers) {
+    var readyToShutdown = _.every(workers, function(worker) {
+        return worker.isReadyToShutdown();
+    });
+
+    var remainingWorkers = getListOfWorkersNotReadyForShutdown(workers);
+
+    if (!readyToShutdown) {
+        logger.info('subscriberHost process id ' + process.pid + ': Still waiting for workers to finish current job. Remaining workers: %s', remainingWorkers);
+        console.log('subscriberHost process id ' + process.pid + ': Still waiting for workers to finish current job. Remaining workers: %s', remainingWorkers);
+        setTimeout(listenForShutdownReady, 1000, workers);
+    } else {
+        logger.info('subscriberHost process id ' + process.pid + ': Shutting down!');
+        console.log('subscriberHost process id ' + process.pid + ': Shutting down!');
+        process.exit(0);
+    }
+}
+
+function getListOfWorkersNotReadyForShutdown(workers) {
+    var remainingWorkers = _.filter(workers, function(worker) {
+        return !worker.isReadyToShutdown();
+    });
+
+    var remainingWorkerNames = _.map(remainingWorkers, function(worker) {
+        return worker.getTubeName();
+    });
+
+    return remainingWorkerNames;
+}
+
+//Quits process if workers are taking too long to finish
+//Displays list of workers that will be interrupted
+function timeoutOnWaitingForShutdownReady(workers) {
+    var remainingWorkers = _.filter(workers, function(worker) {
+        return !worker.isReadyToShutdown();
+    });
+
+    var remainingWorkerNames = _.map(remainingWorkers, function(worker) {
+        return worker.getTubeName();
+    });
+
+    logger.error('subscriberHost process id ' + process.pid + ': Timeout on waiting for workers to finish current jobs. Interrupting workers: %s', remainingWorkerNames);
+    console.log('subscriberHost process id ' + process.pid + ': Timeout on waiting for workers to finish current jobs. Interrupting workers: %s', remainingWorkerNames);
+    process.exit(1);
 }

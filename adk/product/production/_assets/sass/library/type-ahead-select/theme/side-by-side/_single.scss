@@ -1,0 +1,134 @@
+.select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    .select2-selection__rendered {
+        color: #444;
+        line-height: 22px;
+    }
+    .select2-selection__clear {
+        cursor: pointer;
+        float: right;
+        font-weight: bold;
+    }
+    .select2-selection__placeholder {
+        color: #999;
+    }
+    .select2-selection__arrow {
+        height: 22px;
+        position: absolute;
+        top: 0px;
+        right: 1px;
+        width: 20px;
+        b {
+            border-color: #888 transparent transparent transparent;
+            border-style: solid;
+            border-width: 5px 4px 0 4px;
+            height: 0;
+            left: 50%;
+            margin-left: -4px;
+            margin-top: -2px;
+            position: absolute;
+            top: 50%;
+            width: 0;
+        }
+    }
+}
+
+&[dir="rtl"] {
+    .select2-selection--single {
+        .select2-selection__clear {
+            float: left;
+        }
+        .select2-selection__arrow {
+            left: 1px;
+            right: auto;
+        }
+    }
+}
+
+&.select2-container--disabled {
+    .select2-selection--single {
+        background-color: #eee;
+        cursor: default;
+        .select2-selection__clear {
+            display: none;
+        }
+    }
+}
+
+&.select2-container {
+    display: block;
+}
+
+// SORRY ABOUT THE IMPORTANTS, THEY ARE NECESSARY TO OVERRIDE INLINE STYLES SET BY THE SCRIPT.
+&.select2-container--open {
+    display: none;
+    &:last-of-type {
+        display: block;
+        clear: both;
+        left: auto !important;
+        height: 100%;
+        position: relative !important;
+        top: auto !important;
+        z-index: 0;
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .select2-dropdown {
+            background-color: transparent;
+            border: none;
+            position: relative;
+            width: 100% !important;
+            height: 100%;
+            .select2-results {
+                > .select2-results__options {
+                    li {
+                        span {
+                            padding: 10px 6px;
+                            border-top: 1px solid #ccc;
+                            &::after {
+                                font-family: FontAwesome;
+                                content: "\f067";
+                                float: right;
+                                color: #003e4f;
+                                margin-right: 5px;
+                            }
+                            &.sel-FETCH {
+                                background-color: white;
+                                border: 1px solid #ccc;
+                                border-radius: 3px;
+                                color: black;
+                                margin: 5px;
+                                &::after {
+                                    content: "\f002";
+                                }
+                            }
+                        }
+                        &.select2-results__option--highlighted {
+                            span {
+                                &::after{
+                                    color:#003e4f;
+                                }
+                                &.sel-FETCH {
+                                    background-color: #cbe0d7;
+                                    box-shadow: 2px 2px 5px 2px #cbe0d7 inset;
+                                    color: #555;
+                                }
+                            }
+                        }
+                    }
+                    > li {
+                        &:first-child{
+                            > span:not(.sel-FETCH) {
+                                border-top: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

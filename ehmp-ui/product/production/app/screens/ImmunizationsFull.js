@@ -1,10 +1,8 @@
 define([
     "backbone",
     "marionette",
-    'app/applets/immunizations_add_edit/views/immunizationSearchView',
-    'app/applets/immunizations_add_edit/views/enteredInErrorView'
-
-], function(Backbone, Marionette, SearchView, EieView ) {
+    'app/applets/immunizations_add_edit/views/immunizationAddView'
+], function(Backbone, Marionette, AddView, EieView ) {
     'use strict';
 
     var dataGridConfig = {
@@ -24,9 +22,7 @@ define([
         },
         setUpEvents: function(){
             var immunizationChannel = ADK.Messaging.getChannel('immunization');
-            immunizationChannel.comply('openImmunizationSearch', SearchView.handleMessage);
-            immunizationChannel.comply('immunizationEiE:clicked', EieView.handleMessage);
-
+            immunizationChannel.comply('addImmunization', AddView.handleShowView);
         },
         patientRequired: true,
         globalDatepicker: false

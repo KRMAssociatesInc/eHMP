@@ -17,7 +17,6 @@ var configChangeCallback = null;
 
 
 if (process.env.OSYNC_IP) {
-    console.log('Using environment variable for O-SYNC: %s', process.env.OSYNC_IP);
     var osync = nconf.get('OSYNC_IP');
     osync = process.env.OSYNC_IP;
 }
@@ -36,18 +35,15 @@ function reloadConfig() {
     // console.log('refreshing config');
     //if file refresh changed, redo the file polling
     if(newconfig.configRefresh !== config.configRefresh) {
-        console.log('updating refresh timer');
         clearInterval(reloadTimer);
         reloadTimer = setInterval(reloadConfig, newconfig.configRefresh);
     }
     if( JSON.stringify(newconfig.vistaSites) !== JSON.stringify(config.vistaSites) ) {
-        console.log('vista site change found');
         vistaSitesChanged = true;
     }
     //update configuration with new settings
     var newConfigString = JSON.stringify(newconfig);
     if(cachedConfig !== newConfigString) {
-        console.log('updating config');
         var keys = _.keys(newconfig);
         _.each(keys, function(key){
             config[key] = newconfig[key];
@@ -58,7 +54,6 @@ function reloadConfig() {
     //run any registered callbacks
     if(configChangeCallback !== null) {
         if(vistaSitesChanged) {
-            console.log('running callbacks');
             _.each(configChangeCallback, function(callbackConfig){
                     var delay = refreshTime; //use the old refresh time to ensure cross process coordination
                     if(!callbackConfig.useDelay) {

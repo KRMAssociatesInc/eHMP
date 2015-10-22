@@ -1,5 +1,5 @@
 When(/^the client marks the saved allergy as Entered in Error for patient "(.*?)" with comment "(.*?)"$/) do |pid, comment|
-  path = String.new(DefaultLogin.rdk_url)
+  path = String.new(DefaultLogin.rdk_writeback_url)
   content = {
     param: {
       comments: comment,
@@ -10,7 +10,7 @@ When(/^the client marks the saved allergy as Entered in Error for patient "(.*?)
 end
 
 When(/^the client saves an allergy for patient "(.*?)" with content "(.*?)"$/) do |pid, content|
-  path = String.new(DefaultLogin.rdk_url)
+  path = String.new(DefaultLogin.rdk_writeback_url)
   @response = HTTPartyWithBasicAuth.post_json_with_authorization(path+"/resource/writeback/allergy/save?pid=#{pid}", content, { "Content-Type"=>"application/json" })
 end
 
@@ -36,7 +36,7 @@ Then(/^the VPR results do not contain$/) do |table|
 end
 
 Then(/^the response includes a document id for the Entered in Error note$/) do
-  @document_id = JSON.parse(@response.body)['result'].split('^')[1]
+  @document_id = JSON.parse(@response.body)['data']['result'].split('^')[1]
   expect(@document_id.length).to_not eq(0)
   p "document id = " + @document_id
 end

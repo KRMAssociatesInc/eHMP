@@ -6,12 +6,15 @@
     <span class="caret"></span>
 </button>
 <ul class="dropdown-menu" role="menu">
-<form>
-<li><input type="text" name="searchDropdownScreens "id="dropdown-search-element" placeholder="Filter workspace by keyword" maxlength='25' title="Input text to Filter workspace by keyword"><button class="clear" id="clearSearch">
+<div class="dropdownContainer">
+
+<form >
+<li><input type="text" name="searchDropdownScreens "id="dropdown-search-element" placeholder="Filter workspace by keyword" onfocus="this.value = this.value;" maxlength='25' title="Input text to Filter workspace by keyword"><button class="clear" id="clearSearch">
     <i class="fa fa-times"></i>
     <span class="sr-only">Press enter to clear filter text</span>
 </button></li>
 </form>
+
     {{#each screens}}
     <li role="presentation" class="{{routeName}}-button"> <a href="#{{routeName}}" role="button">
         {{#if defaultScreen}}
@@ -20,7 +23,10 @@
         {{title}}</a>
     </li>
     {{/each}}
+
+</div>
 </ul>
+
 <button type="button" id="plus-button" class="btn btn-default" title="Workspace Editor">
     <i class="fa fa-plus-square"><span class="sr-only">Screen Builder Page</span></i>
 </button>

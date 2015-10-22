@@ -1,39 +1,39 @@
 {{#if predefined}}
 <div class="tableRow editor-row predefined-screen-row">
     <div class="col-xs-7 no-padding">
-        <div class="col-xs-6 no-padding">
+        <div class="col-xs-4 no-padding">
             <div class="col-xs-1 default-row border-right no-padding"><i class="fa fa-star-o showDefault" aria-label="Set default" tabindex="0"></i></div>
 
-            <div class="col-xs-11 editor-title border-right"><i class="fa fa-lock"></i>&nbsp;<span class="predefined-title">{{title}}<span></div>
+            <div class="col-xs-11 editor-title border-right"><i class="fa fa-lock"></i>&nbsp;<span class="predefined-title">{{title}}</span></div>
         </div>
-        <div class="col-xs-1 show-associations border-right no-padding" id="association-trigger-{{ id }}" data-toggle="popover" tabindex="0" title="Manage Problem Associations" role="button">
+        <div class="col-xs-1 show-associations border-right border-left no-padding" id="association-trigger-{{ id }}" data-toggle="popover" tabindex="0" title="Manage Problem Associations" role="button">
             <span class="sr-only">Associations button, click to open association manager, number of associations,</span>
             <div class="col-xs-6 no-padding">
-                <i class="fa fa-share-alt"></i>
+                <i class="fa fa-tags"></i>
             </div>
             <div class="col-xs-6 no-padding text-center">
                 <div class="associations-counter associations-counter-region"></div>
             </div>
         </div>
-        <div class="col-xs-5 description border-right">{{description}}</div>
+        <div class="col-xs-7 description border-right">{{description}}</div>
 
     </div>
 
 {{else}}
 <div class="tableRow editor-row">
     <div class="col-xs-7 no-padding">
-        <div class="col-xs-6 no-padding">
+        <div class="col-xs-4 no-padding">
             <div class="col-xs-1 default-row border-right no-padding"><i class="fa fa-star-o showDefault" aria-label="Set default" tabindex="0"></i></div>
-            <div class="col-xs-11 editor-title border-right form-group has-feedback">
+            <div class="col-xs-11 editor-title form-group has-feedback">
                 <label class="control-label sr-only" for="title-{{id}}" aria-hidden="true"></label>
                 <input id="tile-{{id}}" type="text" class="editor-title-element editor-input-element form-control" value="{{title}}" origValue="{{title}}" maxlength='30'>
                 <span class="glyphicon form-control-feedback editor-glyphicon" aria-hidden="true"></span>
             </div>
         </div>
-        <div class="col-xs-1 show-associations border-right no-padding" id="association-trigger-{{ id }}" data-toggle="popover" tabindex="0" title="Manage Problem Associations" role="button">
+        <div class="col-xs-1 show-associations border-right border-left no-padding" id="association-trigger-{{ id }}" data-toggle="popover" tabindex="0" title="Manage Problem Associations" role="button">
             <span class="sr-only">Associations button, click to open association manager, number of associations,</span>
             <div class="col-xs-6 no-padding">
-                <i class="fa fa-share-alt"></i>
+                <i class="fa fa-tags"></i>
             </div>
             <div class="col-xs-6 no-padding text-center">
                 <div class="associations-counter associations-counter-region"></div>
@@ -41,7 +41,7 @@
         </div>
     <!-- </div> -->
 
-        <div class="col-xs-5 editor-description description border-right has-feedback">
+        <div class="col-xs-7 editor-description description border-right has-feedback">
             <label class="control-label sr-only" for="description-{{id}}" aria-hidden="true"></label>
             <input type="text" class="editor-input-element" value="{{description}}" origValue="{{description}}" placeholder="Add description" maxlength='140'>
             <span class="glyphicon form-control-feedback editor-glyphicon" aria-hidden="true"></span>
@@ -62,16 +62,22 @@
                 <div class="rearrange-worksheet" title="Rearrange" tabindex="0" aria-label="Rearrange workspace"><i class="fa fa-arrows-v"></i></div>
             </div>
             <div class="col-xs-4 border-right no-padding text-center">
-                {{#unless predefined}}
+                {{#if predefined}} 
+                <div title="Locked - Cannot Delete" tabindex="0" aria-label="Cannot delete predefined workspace"><i class="fa fa-lock"></i></div>
+                {{else}}
                 <div class="delete-worksheet" title="Delete" tabindex="0" aria-label="Delete workspace"><i class="fa fa-trash-o"></i></div>
-                {{/unless}}
+                {{/if}}
             </div>
         </div>
             {{#if hasApplets}}
             <div class="col-xs-4 border-right previewWorkspace preview" tabindex="0" aria-label="Preview workspace" title="Preview workspace">Preview</div> {{else}}
             <div class="col-xs-4 border-right noPreview unclickable preview">Preview</div> {{/if}}
             {{#if hasApplets}}
-            <div class="col-xs-4 launch-screen" tabindex="0" aria-label="Launch workspace">Launch</div> {{else}}
+                {{#if hasCustomize}}
+                <div class="col-xs-4 customize-screen" tabindex="0" aria-label="Customize workspace">Customize</div>
+                {{else}}
+                <div class="col-xs-4 launch-screen" tabindex="0" aria-label="Launch workspace">Launch</div>{{/if}}
+            {{else}}
             <div class="col-xs-4 customize-screen" tabindex="0" aria-label="Customize workspace">Customize</div> {{/if}}
     </div>
 </div>

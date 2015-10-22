@@ -1,19 +1,23 @@
-
-
 class PatientSearch < AccessBrowserV2
   include Singleton
   def initialize
     super
     add_action(CucumberLabel.new("patientSearch"), ClickAction.new, AccessHtmlElement.new(:id, "patientSearchButton"))
-    add_action(CucumberLabel.new("myCPRSList"), ClickAction.new, AccessHtmlElement.new(:id, "myCPRSList"))
+    add_action(CucumberLabel.new("myCPRSList"), ClickAction.new, AccessHtmlElement.new(:css, "#patient-search-pills li:nth-of-type(1)"))
     add_action(CucumberLabel.new("defaultSearchInput"), SendKeysAndEnterAction.new, AccessHtmlElement.new(:id, "patientFilterInput"))
     add_action(CucumberLabel.new("patientSearchInput"), SendKeysAndEnterAction.new, AccessHtmlElement.new(:id, "patientSearchInput"))
     add_action(CucumberLabel.new("mySite"), ClickAction.new, AccessHtmlElement.new(:id, "mySite"))
+
+    #added for patient search functionality after removing the "All" tab from the UI
+    add_action(CucumberLabel.new("mySiteSearch"), ClickAction.new, AccessHtmlElement.new(:css, "div#patient-search-input"))
     add_action(CucumberLabel.new("global"), ClickAction.new, AccessHtmlElement.new(:id, "global"))
     add_action(CucumberLabel.new("mySiteClinics"), ClickAction.new, AccessHtmlElement.new(:id, "mySiteClinics"))
     add_action(CucumberLabel.new("mySiteWards"), ClickAction.new, AccessHtmlElement.new(:id, "mySiteWards"))
-    add_action(CucumberLabel.new("mySiteAll"), ClickAction.new, AccessHtmlElement.new(:css, "#all > a"))
-    add_action(CucumberLabel.new("patientSearchInput"), SendKeysAndEnterAction.new, AccessHtmlElement.new(:id, "patientSearchInput"))
+
+    #below commented out -- the "All" button has been removed from the UI
+    #add_action(CucumberLabel.new("mySiteAll"), ClickAction.new, AccessHtmlElement.new(:css, "#all > a"))
+
+    #add_action(CucumberLabel.new("patientSearchInput"), SendKeysAndEnterAction.new, AccessHtmlElement.new(:id, "patientSearchInput"))
     add_action(CucumberLabel.new("center"), ClickAction.new, AccessHtmlElement.new(:id, "patient-search-main"))
     add_action(CucumberLabel.new("Search Tab"), ClickAction.new,  AccessHtmlElement.new(:class, "patientDisplayName"))
     #add_action(CucumberLabel.new("Confirm"), ClickAction.new, AccessHtmlElement.new(:xpath, "//div[contains(@id, 'patient-search-confirmation')]/div/button"))
@@ -28,7 +32,6 @@ class PatientSearch < AccessBrowserV2
     add_action(CucumberLabel.new("globalSearchDob"), SendKeysAndEnterAction.new, AccessHtmlElement.new(:id, "globalSearchDob"))
     add_action(CucumberLabel.new("globalSearchSsn"), SendKeysAndEnterAction.new, AccessHtmlElement.new(:id, "globalSearchSsn"))
     add_action(CucumberLabel.new("globalSearch"), ClickAction.new, AccessHtmlElement.new(:id, "globalSearchButton"))
-    
     add_verify(CucumberLabel.new("acknowledgement message"), VerifyContainsText.new, AccessHtmlElement.new(:id, "ackMessagePanel"))
     add_action(CucumberLabel.new("Patient Result"), ClickAction.new,  AccessHtmlElement.new(:xpath, "//div[@id='location-list-results']/descendant::div[contains(@class, 'list-group')]/descendant::p[contains(@class, 'list-group-item row-layout active')]"))
     add_verify(CucumberLabel.new("Error Message"), VerifyContainsText.new, AccessHtmlElement.new(:id, "error-message"))
@@ -119,10 +122,9 @@ class PatientSearch2 < PatientSearch
   end
 end
 
-Then(/^the User selects mysite and All$/) do
+Then(/^the User selects mysite$/) do
   patient_search= PatientSearch.instance
   wait_until_present_and_perform_action(patient_search, 'mySite')
-  wait_until_present_and_perform_action(patient_search, 'mySiteAll')
 end
 
 #MyCPRSList or Default tab
@@ -131,12 +133,20 @@ Then(/^the User selects MyCPRSList$/) do
   wait_until_present_and_perform_action(con, 'myCPRSList')
 end
 
+#User clicks on patient search input
+Then(/^the User click on MySiteSearch$/) do
+  con= PatientSearch.instance
+  TestSupport.wait_for_page_loaded
+  wait_until_present_and_perform_action(con, 'mySiteSearch')
+end
+
 #Default search
 Then(/^user enters full last name in default search "(.*?)"$/) do  |search_value|
   patient_search= PatientSearch.instance
   wait_until_present_and perform_action(patient_search, 'defaultSearchInput', search_value)
 end
 
+#User clicks on Nationwide search
 Then(/^the User selects All Patient$/) do
   con= PatientSearch.instance
   wait_until_present_and_perform_action(con, "global")
@@ -201,7 +211,7 @@ end
 
 Then(/^user enters full last name "(.*?)"$/) do  |search_value|
   con= PatientSearch.instance
- # TestSupport.wait_for_page_loaded
+  # TestSupport.wait_for_page_loaded
   wait_until_present_and_perform_action(con, 'patientSearchInput', search_value)
   wait_until_present_and_perform_action(con, 'center')
 end
@@ -255,7 +265,7 @@ end
 
 Then(/^user cannot find patient name "(.*?)"$/) do  |name|
   con= PatientSearch.instance
- # TestSupport.wait_for_page_loaded
+  # TestSupport.wait_for_page_loaded
   con.wait_until_element_present("Search Tab", 10)
   wait_until_present_and_perform_action('Search Tab', name)
   TestSupport.wait_for_page_loaded
@@ -289,29 +299,29 @@ Then(/^user looks for  My site$/) do
   wait_until_present_and_perform_action(con, 'mySite')
 end
 
-Then(/^On my site User looks for All$/) do
-  con= PatientSearch.instance
-  wait_until_present_and_perform_action(con, 'mySite')
-  wait_until_present_and_perform_action(con, 'mySiteAll')
-end
+# Then(/^On my site User looks for All$/) do
+#   con= PatientSearch.instance
+#   wait_until_present_and_perform_action(con, 'mySite')
+#   wait_until_present_and_perform_action(con, 'mySiteAll')
+# end
 
 Then(/^the VPR results for "(.*?)" contain:$/) do |patient, table|
   error_messages=[]
   patient_details = TransPatientBarHTMLElements.instance
   ps = PatientSearch.instance
-#  TestSupport.wait_for_jquery_completed
+  #  TestSupport.wait_for_jquery_completed
   header_xpath = patient_details.build_header_xpath(patient)
   p header_xpath
   expect(ps.wait_until_action_element_visible("patient identifying name", DefaultLogin.wait_time)).to be_true
   element_found = (patient_details.dynamic_dom_element_exists?("xpath", header_xpath))
   error_messages.push("Header for #{patient} was not element_found") unless element_found
-  table.rows.each do | row|
+  table.rows.each do |row|
     table_xpath = patient_details.build_table_contents_xpath(header_xpath, row[0])
     table_element_found = patient_details.dynamic_dom_element_exists?("xpath", table_xpath)
     error_messages.push("#{row[0]} was not element_found") unless table_element_found
     element_found = table_element_found && element_found
   end
-  error_messages.each do | message |
+  error_messages.each do |message|
     p message
   end
   expect(element_found).to be_true
@@ -319,9 +329,9 @@ end
 
 Then(/^no results are displayed in patient search$/) do
   con= PatientSearch.instance
-#  TestSupport.wait_for_page_loaded
+  #  TestSupport.wait_for_page_loaded
   #con.wait_until_action_element_visible("Patient Result", 60)
- # expect(con.static_dom_element_exists?("Patient Result")).to eq(false)
+  # expect(con.static_dom_element_exists?("Patient Result")).to eq(false)
   wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time) # seconds # wait until list opens
   wait.until { con.static_dom_element_exists?("Patient Result") == false }
 end
@@ -329,7 +339,7 @@ end
 Then(/^no results are displayed in word$/) do
   con= PatientSearch.instance
   #TestSupport.wait_for_page_loaded
- # expect(!con.static_dom_element_exists?("locationDisplayName")).to eq(true)
+  # expect(!con.static_dom_element_exists?("locationDisplayName")).to eq(true)
   wait = Selenium::WebDriver::Wait.new(:timeout => DefaultLogin.wait_time) # seconds # wait until list opens
   wait.until { con.static_dom_element_exists?("locationDisplayName") == false }
 end
@@ -370,7 +380,7 @@ end
 
 Then(/^the user verifies word "(.*?)"$/)  do  |error|
   patient_search = PatientSearch.instance
- # driver = TestSupport.driver 
+  # driver = TestSupport.driver 
   expect(patient_search.wait_until_action_element_visible("error message padding", 60)).to be_true
   expect(patient_search.static_dom_element_exists?("error message padding")).to be_true
   expect(patient_search.perform_verification("error message padding", error)).to be_true
@@ -424,7 +434,7 @@ def verify_table_headers_parient(access_browser_instance, table)
   expect(headers.length).to_not eq(0)
   expect(headers.length).to eq(table.rows.length)
   elements = access_browser_instance
-  table.rows.each do | header_text |
+  table.rows.each do |header_text|
     does_exist = elements.dynamic_dom_element_exists?("xpath", "//div[@id='columnHeader']/descendant::div[contains(string(), '#{header_text[0]}')]") 
     p "#{header_text[0]} was not found" unless does_exist
     expect(does_exist).to be_true
@@ -452,4 +462,3 @@ end
 Then(/^the user waits 10 seconds for sync to complete$/) do
   sleep 10
 end
-

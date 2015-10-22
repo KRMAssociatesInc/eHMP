@@ -1,50 +1,35 @@
 'use strict';
 
-var argv = require('yargs')
-    .usage('Usage: $0 --port <port>')
-    .demand(['port'])
-    .argv;
+var docUtil = require(global.VX_UTILS + 'doc-utils');
+var path = require('path');
 
-require('../../env-setup');
+function registerDocAPI(log, config, environment, app) {
+    app.get('/documents', getDocument.bind(null, log));
 
-var express = require('express');
-
-var config = require(global.VX_ROOT + 'worker-config');
-var logUtil = require(global.VX_UTILS + 'log');
-logUtil.initialize(config.loggers);
-var log = logUtil.get('doc-endpoint');
-
-
-var app = express();
-var port = argv.port;
-
-app.get('/documents', getDocument.bind(null, log));
-
-
-app.get('/ping', function(req, res) {
-    res.send('ACK');
-});
-
-function getDocument(log, request, response) {
-    var dir = request.param('dir');
-    var file = request.param('file');
-    if (!dir || !/[a-fA-F0-9]+/.test(dir)) {
-        return response.status(400).send('Invalid directory parameter');
-    }
-    if (!file || !/[a-zA-Z0-9-]+\.[a-z]{3,4}/.test(file)) {
-        return response.status(400).send('Invalid file parameter');
-    }
-    var filePath = config.documentStorage.publish.path + '/' + dir + '/' + file;
-    response.sendFile(filePath, {
-        dotfiles: 'deny'
-    }, function(err) {
-        if (err) {
-            log.error(err);
-            response.status(err.status).end();
-        } else {
-            log.info('document-retrieval-endpoint.getDocument : Sent:' + filePath);
+    function getDocument(log, request, response) {
+        var dir = request.param('dir');
+        var file = request.param('file');
+        if (!dir || !/[a-fA-F0-9]+/.test(dir)) {
+            return response.status(400).send('Invalid directory parameter');
         }
-    });
+        if (!file || !/[a-zA-Z0-9-]+\.[a-z]{3,4}/.test(file)) {
+            return response.status(400).send('Invalid file parameter');
+        }
+        var rootPath = docUtil.getDocOutPath('', config); // specify the root dir
+        var filePath = path.join(dir, file);
+
+        response.sendFile(filePath, {
+            dotfiles: 'deny',
+            root: rootPath
+        }, function(err) {
+            if (err) {
+                log.error(err);
+                response.status(err.status).end();
+            } else {
+                log.info('document-retrieval-endpoint.getDocument : Sent:' + filePath);
+            }
+        });
+    }
 }
-app.listen(port);
-log.info('document-retrieval endpoint listening on port %s', port);
+
+module.exports = registerDocAPI;

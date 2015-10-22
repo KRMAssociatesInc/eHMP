@@ -5,6 +5,7 @@ var nullUtil = require(global.OSYNC_UTILS + 'null-utils');
 var errorUtil = require(global.OSYNC_UTILS + 'error');
 var jobUtil = require(global.OSYNC_UTILS + 'job-utils');
 var request = require('request');
+var jdsUtil = require(global.OSYNC_UTILS + 'jds-utils');
 
 /**
  * logs an error using the specified logger and then invokes the callback function.<br/>
@@ -15,7 +16,6 @@ var request = require('request');
  * @param handlerCallback The callback method you want invoked passing in errorMsg as the first argument.
  */
 function logError(log, errorMsg, handlerCallback) {
-    console.log("ERROR: " + errorMsg); //Since logger won't print to console, do it here
     log.error("ERROR: " + errorMsg);
     handlerCallback("ERROR: " + errorMsg);
 }
@@ -38,8 +38,7 @@ function logDebugValidate(log, msg) {
  * @param msg The message you want to have logged.
  */
 function logDebug(log, msg) {
-    //console.log(msg); //Since logger won't print to console, do it here
-    log.debug(msg);
+   log.debug(msg);
 }
 
 /**
@@ -143,8 +142,9 @@ function validateConfig(log, config, handlerCallback) {
  * @returns {boolean} True if no errors exist with config.
  */
 function validateSync(log, response, handlerCallback) {
-    if (response.statusCode !== 202) {
-        logError(log, "sync.validateSync: get didn't return a 202 response: " + response.statusCode + "\nBody: " + response.body, handlerCallback);
+    logDebug(log, "response in validatesync "  + JSON.stringify(response));
+    if (nullUtil.isNullish(response) === false && ( response.statusCode !== 200 && response.statusCode !== 202)) {
+        logError(log, "sync.validateSync: get didn't return a 200 or 202 response: " + response.statusCode + "\nBody: " + response.body, handlerCallback);
         return false;
     }
 
@@ -161,16 +161,17 @@ function validateSync(log, response, handlerCallback) {
  * with syncing this specific patient.  If an error occurs, the first parameter of the callback will be populated with
  * a non-null value.
  */
-function syncPatient(log, syncUrl, ien, handlerCallback)
+function syncPatient(log, syncUrl, handlerCallback)
 {
-    logDebug(log, syncUrl + ien);
-
-    request.get(syncUrl + ien, function(error, response, body) {
-        if (validateSync(log, response, handlerCallback) === false)
+    request.get(syncUrl, function(error, response, body) {
+        if(error) {
+            logError(log, "sync.validateSync: There is error in sync: " + error, handlerCallback);
             return;
+        }
+        if (validateSync(log, response, handlerCallback) === false) {
+            return;
+        }
 
-        logDebug(log, "Got response: " + response.statusCode + ", for ien " + ien);
-        //TODO - Add any publishing to a tube
         handlerCallback(null, body);
     }).on('error', function(error) {
         logError(log, "sync.syncPatient: Got error: " + error, handlerCallback);
@@ -194,9 +195,7 @@ function syncPatient(log, syncUrl, ien, handlerCallback)
  * a non-null value.
  */
 function handle(log, config, environment, job, handlerCallback) {
-    logDebug(log, 'sync.handle : received request to save ' + job);
-
-    var result;
+    logDebug(log, 'sync.handle : received request to save  %s' + JSON.stringify(job));
 
     if (validate(log, job, handlerCallback) === false)
         return;
@@ -206,21 +205,33 @@ function handle(log, config, environment, job, handlerCallback) {
     var patients = job.patients;
     var waitBetween = config.osync.waitBetween;
     var numToSyncSimultaneously = config.osync.numToSyncSimultaneously;
-    var syncUrl = config.osync.syncUrl;
+
     var counter = 0;
     var batchNum = 0;
 
     _.forEach(patients, function(n) {
-        setTimeout(function () {syncPatient(log, syncUrl, n.ien, handlerCallback);}, batchNum * waitBetween);
+        var syncUrl = config.osync.syncUrl;
+        if (jdsUtil.isIcn(n.ien)) {
+            syncUrl = syncUrl + "icn="+ n.ien;
+        } else {
+            syncUrl = syncUrl + "pid="+ job.siteId+";"+ n.dfn;
+        }
+        setTimeout(function () {syncPatient(log, syncUrl, handlerCallback);}, batchNum * waitBetween);
         if ((++counter) % numToSyncSimultaneously === 0) {
             counter = 0;
             batchNum++;
         }
     });
 
-    var jobToPublish = jobUtil.createStoreJobStatus(log, config, environment, handlerCallback, job);
+    if (config.inttest === true) {
+        handlerCallback(null, job);
+        return ;
+    }
+    else {
+        var jobToPublish = jobUtil.createStoreJobStatus(log, config, environment, handlerCallback, job);
 
-    environment.publisherRouter.publish(jobToPublish, handlerCallback);
+        environment.publisherRouter.publish(jobToPublish, handlerCallback);
+    }
 }
 
 module.exports = handle;

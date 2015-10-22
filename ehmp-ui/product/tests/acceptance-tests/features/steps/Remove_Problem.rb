@@ -23,7 +23,7 @@ When(/^user clicks on Chronic Systolic Heart failure$/) do
   con.perform_action("Chronic Systolic Heart failure")
 end
 
-Then(/^the user selects "(.*?)" for location$/) do |arg1|
+Then(/^the user selects "(.*?)" for location$/) do |_arg1|
   con = ProblemRemove.instance
   con.wait_until_action_element_visible("Audiology", 120)
   con.perform_action("Audiology")

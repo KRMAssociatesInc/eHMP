@@ -1,0 +1,62 @@
+A5AGIT1 ;SLC/KCM -- Supporting calls for git utilities
+ ;;1.0;GIT Tools;;Feb 8, 2013
+ ;
+PROMPT(PROMPT,DEFAULT,TYPE,HELP) ; Return value for a prompt
+ N X,MSG
+ S DEFAULT=$G(DEFAULT),HELP=$G(HELP)
+RETRY ;
+ W !,PROMPT,": ",$S($L(DEFAULT):" "_DEFAULT_"// ",1:" ")
+ R X:300 Q:X="^" X
+ I X="?",$L(HELP) W !,HELP,! G RETRY
+ I X="" S X=DEFAULT Q X
+ I TYPE="N",$L(X),'X W !,"Numeric input required." G RETRY
+ I TYPE["^",$L($T(@TYPE)) X "S MSG=$$"_TYPE_"(X)" I $L(MSG) W "  ",MSG G RETRY
+ Q X
+ ;
+CHECK(FILES) ; list routines where the git directory and this account differ
+ N NMSP,DIR,RTNS,I,X
+ S NMSP=$G(^A5AGIT("wildcards")) Q:'$L(NMSP)
+ S DIR=$G(^A5AGIT("directory")) Q:'$L(DIR)
+ ; get lists of files & routines and checksum them
+ F I=1:1:$L(NMSP,",") D FILESET^A5AGITC(DIR,$P(NMSP,",",I),.FILES)
+ S X="" F  S X=$O(FILES(X)) Q:X=""  S FILES(X)=$$FILESUM(X)
+ F I=1:1:$L(NMSP,",") D RTNSET^A5AGITC($P(NMSP,",",I),.RTNS)
+ S X="" F  S X=$O(RTNS(X)) Q:X=""  S RTNS(X)=$$DBSUM(X)
+ ; compare checksums between the files and routines
+ S X="" F  S X=$O(FILES(X)) Q:X=""  D
+ . I '$D(RTNS(X)) S FILES(X)="G" Q  ; not in this M account
+ . I FILES(X)=RTNS(X) K FILES(X),RTNS(X) Q  ; same
+ . S FILES(X)="D" K RTNS(X) ; differs
+ S X="" F  S X=$O(RTNS(X)) Q:X=""  S FILES(X)="M" ;"not in the git directory"
+ Q
+ ;
+DBSUM(X) ; Returns the CRC32 for a routine in the database
+ N BODY
+ D LOADRTN^A5AGITC(X,.BODY)
+ Q $$ARYCRC(.BODY)
+ ;
+FILESUM(X) ; Returns the CRC32 for a routine in the file system
+ N BODY,FNAME
+ S FNAME=$$FULLNAME^A5AGITC(X_".int")
+ D LOADFILE^A5AGITC(FNAME,.BODY)
+ Q $$ARYCRC(.BODY)
+ ;
+ARYCRC(BODY) ; Returns the CRC32 for concat of lines in an array
+ N STR,LINE,I
+ S STR=""
+ F I=1:1 Q:'$D(BODY(I,0))  S LINE=$TR(BODY(I,0),$C(9)," "),STR=STR_LINE 
+ Q $$CRC32^A5AGITC(STR)
+ ;
+ADDRTN(RTN,ROOT,LINE) ; Add routine (RTN) to global (ROOT) starting at LINE
+ N BODY
+ D LOADRTN^A5AGITC(X,.BODY)
+ S I=0 F  S I=$O(BODY(I)) Q:'I  S LINE=LINE+1,@ROOT@(LINE)=BODY(I,0)
+ S LINE=LINE+1,@ROOT@(LINE)=""
+ Q
+ADDFILE(FILE,ROOT,LINE) ; Add routine (RTN) to global (ROOT) starting at LINE
+ N BODY,FNAME
+ S FNAME=$$FULLNAME^A5AGITC(X_".int")
+ D LOADFILE^A5AGITC(FNAME,.BODY)
+ S I=0 F  S I=$O(BODY(I)) Q:'I  S LINE=LINE+1,@ROOT@(LINE)=BODY(I,0)
+ S LINE=LINE+1,@ROOT@(LINE)=""
+ Q

@@ -4,7 +4,7 @@ path = File.expand_path '../../../shared-test-ruby', __FILE__
 $LOAD_PATH.unshift path unless $LOAD_PATH.include?(path)
 require 'VerifyJsonRuntimeValue.rb'
 
-Then(/^the VPR results contain "(.*?)"$/) do |arg1, table|
+Then(/^the VPR results contain "(.*?)"$/) do |_arg1, table|
   @json_object = JSON.parse(@response.body)
   result_array = @json_object["data"]["items"]
 
@@ -12,7 +12,7 @@ Then(/^the VPR results contain "(.*?)"$/) do |arg1, table|
   json_verify.verify_json_runtime_vlaue(result_array, table)
 end
 
-Then(/^the FHIR results contain "(.*?)"$/) do |arg1, table|
+Then(/^the FHIR results contain "(.*?)"$/) do |_arg1, table|
   @json_object = JSON.parse(@response.body)
   result_array = @json_object["entry"]
 

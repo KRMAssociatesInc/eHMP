@@ -1,0 +1,30 @@
+= VistaRPC4r
+VistaRPC4r provides a Ruby interface to the Veterans Administration's almost opensource electronic health record called VistA.
+The VistA architecture is old school client/server.  The typical client is a Windows based GUI.  The typical server is an Linux or Windows based server.  The server is primarily written in MUMPS or M.  
+VistA provides an RPC-style interface to its core functions using TCP sockets and a custom message format
+VistaRPC4r implements the socket layer and message format and provides methods which can initiate RPC requests and returns the RPC output.
+The VistA server requires each connection to have a username/password authentication.  
+
+This gem has been tested with Medsphere's OpenVista server distribution.
+
+== Future features
+* Ruby classes for primary VistA data object
+* Some sort of connection pooling
+* ActiveRecord interface to VistA (nasty one, but cool)
+* 
+
+== Usage
+
+=== Installation
+You may get the latest stable version from Rubyforge.
+
+$ gem install vistarpc4r
+
+=== An Example
+Check out the examples in the examples directory, until I get the time to write more extensive documentation
+
+== Copyright
+
+Copyright (c) 2011 Mike Cham. See LICENSE.txt for
+further details.
+

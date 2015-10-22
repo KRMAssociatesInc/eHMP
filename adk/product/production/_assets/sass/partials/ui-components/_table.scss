@@ -1,0 +1,23 @@
+.ehmp-table-default.table {
+	background-color: white; 
+	thead {
+		background-color: $primary;
+		color: white;
+		th {
+			background-color: $primary;
+		}
+	}
+	tbody {
+		tr:nth-child(2n) {
+			background-color: transparentize($primary, .90);
+		}
+		tr:hover {
+			background-color: transparentize($secondary, .75);
+		}
+		td {
+			a {
+				color: $grey-darkest;
+			}
+		}
+	}
+}

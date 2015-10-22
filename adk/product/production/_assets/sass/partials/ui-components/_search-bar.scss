@@ -1,0 +1,28 @@
+.dropdown-search-bar-container {
+	margin-bottom: 20px;
+		.dropdown-search-bar-right {
+			.search-bar-right {
+				display: none;
+				margin: -1px 0px 0px 0px;
+				input {
+					border-radius: 0px 4px 4px 4px;
+				}
+				.dropdown-search-bar-right-close {
+					margin: -27px 7px 0px 0px;
+				}
+			}
+		}
+		.dropdown-search-bar-left {
+			.search-bar-left {
+				display: none;
+				margin-top: 34px;
+				width: 100%;
+			input {
+				border-radius: 4px 0px 4px 4px;
+			}
+			.dropdown-search-bar-left-close {
+				margin: -27px 7px 0px 0px;
+			}
+		}
+	}
+}
