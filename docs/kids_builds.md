@@ -1,6 +1,16 @@
 Kids Builds Installation
 ========================
 
+Prerequisites
+-------------
+ * Vagrant v1.72 - [Link](https://www.vagrantup.com/downloads.html)
+
+ * VirtualBox 4.32 - [Link](http://download.virtualbox.org/virtualbox/4.3.2/)
+
+
+Installation 
+------------
+
 1) Start by downloading the OSEHRA VistA git repository and installing VistA:
 ```
 https://github.com/OSEHRA/VistA/blob/master/Documentation/Install/Vagrant.rst
@@ -9,7 +19,7 @@ https://github.com/OSEHRA/VistA/blob/master/Documentation/Install/Vagrant.rst
 2) Move the kids files to the server once finished installing.  Use the shared folder for the VistA Ubuntu box.  Copy the open EHMP directory
 ```
 mkdir VistA/Scripts/Install/Ubuntu/VistA
-cp ehmp/dependencies/VISTA/* VistA/Scripts/Install/Ubuntu
+cp eHMP/dependencies/VISTA/* VistA/Scripts/Install/Ubuntu
 ```
 
 3) Next SSH into the system and copy the files to root
@@ -23,7 +33,6 @@ sudo chown osehra:osehra /home/osehra/*.KID
 sudo su - osehra
 dos2unix *.KID
 ```
-Note: repeat this step until all files are converted
 
 5) Get a Mumps prompt
 Type:
@@ -33,7 +42,9 @@ mumps -dir
 
 6) Once logged in you should now see the prompted has changed to OSEHRA>, this means that you’re logged into the GT.m system.
 
-7) We’ll navigate to the EVE menu, start by entering
+7) We’ll navigate to the EVE menu, start by entering: 
+
+Note: These commands are case-sensitive. Enter them in upper-case
 ```
 S DUZ=1  
 D ^XUP
