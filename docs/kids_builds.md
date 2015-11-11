@@ -16,14 +16,18 @@ Installation
 https://github.com/OSEHRA/VistA/blob/master/Documentation/Install/Vagrant.rst
 ```
 
-2) Move the kids files to the server once finished installing.  Use the shared folder for the VistA Ubuntu box.  Copy the open EHMP directory
-```
-mkdir VistA/Scripts/Install/Ubuntu/VistA
-cp eHMP/dependencies/VISTA/* VistA/Scripts/Install/Ubuntu
-```
+2) Download EHMP git repo and move the kids files to the server once finished installing.  Use the shared folder for the VistA Ubuntu box.  Copy the open EHMP directory
+
+.. parsed-literal::
+
+    ~/Development$ :usertype:`git clone https://github.com/KRMAssociatesInc/eHMP.git`
+    ~/Development$ :usertype:`mkdir VistA/Scripts/Install/Ubuntu/VistA`
+    ~/Development$ :usertype:`cp eHMP/dependencies/VISTA/* VistA/Scripts/Install/Ubuntu/VistA`
+
 
 3) Next SSH into the system and copy the files to root
 ```
+cd VistA/Scripts/Install/Ubuntu
 vagrant ssh
 cp /vagrant/Ubuntu/VistA/*.KID /home/osehra
 sudo chown osehra:osehra /home/osehra/*.KID
