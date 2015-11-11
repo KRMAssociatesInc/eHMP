@@ -62,8 +62,16 @@ Install
 
 10) There only 2 options on this menu that will be used:  1 Load A Distribution and 6 Install Packages
 
+Note: Steps 11-14 must be repeated for each KID file. 
+These are the files that must be installed, in this order: 
+* HMPEJK_US5647_1.KID
+* TIU_TEMP_1.KID
+* USR_TEMP_1.KID
+* HMPM_2-0.KID
+* HMP_2-0.KID
+
 11) Select 1 Load A Distribution, this option will ask you to provide the path to the KIDS file, if directions were followed above, it’ll be /home/osehra/<kids file name>.KID
- WARNING: Follow the order in which to install kids builds, it’s located in the base EHMP directory, under a file called eHMP_build.pdf (you can skip all builds after HMP_2-0.KID as they are included with HMP_2-0.KID)
+
  ```
  1
 /home/osehra/<kids file name>.KID
