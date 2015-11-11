@@ -20,9 +20,9 @@ https://github.com/OSEHRA/VistA/blob/master/Documentation/Install/Vagrant.rst
 
 .. parsed-literal::
 
-    ~/Development$ :usertype:`git clone https://github.com/KRMAssociatesInc/eHMP.git`
-    ~/Development$ :usertype:`mkdir VistA/Scripts/Install/Ubuntu/VistA`
-    ~/Development$ :usertype:`cp eHMP/dependencies/VISTA/* VistA/Scripts/Install/Ubuntu/VistA`
+    ~/Development$ git clone https://github.com/KRMAssociatesInc/eHMP.git
+    ~/Development$ mkdir VistA/Scripts/Install/Ubuntu/VistA
+    ~/Development$ cp eHMP/dependencies/VISTA/* VistA/Scripts/Install/Ubuntu/VistA
 
 
 3) Next SSH into the system and copy the files to root
