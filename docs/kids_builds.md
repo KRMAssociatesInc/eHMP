@@ -8,7 +8,7 @@ Prerequisites
  * VirtualBox 4.32 - [Link](http://download.virtualbox.org/virtualbox/4.3.2/)
 
 
-Installation 
+Installation
 ------------
 
 1) Start by downloading the OSEHRA VistA git repository and installing VistA:
@@ -46,7 +46,7 @@ mumps -dir
 
 6) Once logged in you should now see the prompted has changed to OSEHRA>, this means that you’re logged into the GT.m system.
 
-7) We’ll navigate to the EVE menu, start by entering: 
+7) We’ll navigate to the EVE menu, start by entering:
 
 Note: These commands are case-sensitive. Enter them in upper-case
 ```
@@ -66,8 +66,9 @@ Install
 
 10) There only 2 options on this menu that will be used:  1 Load A Distribution and 6 Install Packages
 
-Note: Steps 11-14 must be repeated for each KID file. 
-These are the files that must be installed, in this order: 
+Note: Steps 11-14 must be repeated for each KID file.
+
+These are the files that must be installed, in this order:
 * HMPEJK_US5647_1.KID
 * TIU_TEMP_1.KID
 * USR_TEMP_1.KID
@@ -89,7 +90,7 @@ These are the files that must be installed, in this order:
 <space bar><enter>
 ```
 
-14) Take all defaults except when asked to rebuild menu entries and then type y or yes. Press Enter/Return until you get a message saying it’s been installed.
+14) When asked to rebuild menu entries type y or yes. Then take all defaults, Press Enter/Return until you get a message saying it’s been installed.
 
 15) Repeat steps 11 to 14 until all files are uploaded.
 
