@@ -11,9 +11,9 @@ var auditUtil = require('../../utils/audit/auditUtil');
 module.exports = performPatientSearch;
 module.exports.parameters = {
     get: {
-        'name.full': {
+        'name-full': {
             required: true,
-            regex: /\w\d{4}/,
+            regex: /[a-zA-Z]+/,
             description: 'first letter of last name + last 4 digits of SSN'
         },
         start: {
@@ -44,7 +44,7 @@ module.exports.apiDocs = {
         summary: 'Search for a patient by full name',
         notes: '',
         parameters: [
-            rdk.docs.swagger.paramTypes.query('name.full', 'name of patient', 'string', true),
+            rdk.docs.swagger.paramTypes.query('name-full', 'name of patient', 'string', true),
             rdk.docs.commonParams.jds.start,
             rdk.docs.commonParams.jds.limit,
             rdk.docs.commonParams.jds.order,
@@ -55,7 +55,7 @@ module.exports.apiDocs = {
 };
 
 function performPatientSearch(req, res, next) {
-    var fullName = req.param('name.full');
+    var fullName = req.param('name-full');
     var limit = req.param('limit') || req.param('itemsPerPage');
     var start = req.param('start') || req.param('startIndex') || 0;
     var resultsRecordType = req.param('resultsRecordType') || '';
