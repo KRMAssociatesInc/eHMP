@@ -6,11 +6,11 @@
    2. In the Vista Vagrantfile comment out all the forwarded ports and create a private network by adding this line:
       `config.vm.network :private_network, ip: "192.168.33.10"`
    3. Reload Vagrant and ssh in:
-      ```
-      vagrant Reload
-      vagrant ssh
-      sudo su - osehra
-      ```
+    ```
+    vagrant reload
+    vagrant ssh
+    sudo su - osehra
+    ```
    4. Modify XUSRB1.m to contain the correct hash. This is the version to replace it with:
       ```
       cd /home/osehra/r
