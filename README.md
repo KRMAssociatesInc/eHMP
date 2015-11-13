@@ -3,15 +3,24 @@
 ### Configuration
 1. Install VISTA and KIDS Builds.
    1. Directions are in: `docs/KIDS_builds.md`
-   2. In the Vista Vagrantfile comment out all the forwarded ports and create a private network by adding this line
-          `config.vm.network :private_network, ip: "192.168.33.10"`
-   3. Modify XUSRB1.m to contain the correct hash. This is the version to replace it with:
-          https://github.com/OSEHRA/VistA-M/raw/d0c8aac7ba36da048f69a2db8e453e06577480d5/Packages/Kernel/Routines/XUSRB1.m
-   4. Configure Robert Alexander to have access to eHMP on the OSEHRA VistA VM:
-      * `sudo su - osehra`  
+   2. In the Vista Vagrantfile comment out all the forwarded ports and create a private network by adding this line:
+      `config.vm.network :private_network, ip: "192.168.33.10"`
+   3. Reload Vagrant and ssh in:
+    ```
+    vagrant reload
+    vagrant ssh
+    sudo su - osehra
+    ```
+   4. Modify XUSRB1.m to contain the correct hash. This is the version to replace it with:
+      ```
+      cd /home/osehra/r
+      wget https://github.com/OSEHRA/VistA-M/raw/d0c8aac7ba36da048f69a2db8e453e06577480d5/Packages/Kernel/Routines/XUSRB1.m
+      ```
+
+   5. Configure Robert Alexander to have access to eHMP on the OSEHRA VistA VM:
       * `mumps -dir`  
       * `S DUZ=1 D Q^DI`
-      * `ENTER`
+      * `ENTER` Note: This must be typed out
       * `NEW PERSON`
       * `SECONDARY MENU OPTIONS`
       * `<ENTER>`
@@ -33,7 +42,7 @@
    5. Type: `sudo cp /vagrant/JDS-GTM/*.m /home/jds/r`
    6. Type: `sudo chown jds:jds /home/jds/r/*.m`
    7. Type: `sudo chomd ugo-x /home/jds/r/*.m`
-   8. Type: `sudo chmod g w /home/jds/r/*.m`
+   8. Type: `sudo chmod g+w /home/jds/r/*.m`
    9. Run `sudo su - jds`
    10. Run `source etc/env`
    11. Run `mumps -dir` This will open a prompt
@@ -42,31 +51,32 @@
 
 3. Configuring Vx-Sync & Running Operational Data Sync
    1. Install vagrant-berkshelf: `vagrant plugin install vagrant-berkshelf`
-   2. Install chef-dk: https://downloads.chef.io/chef-dk/
-   3. Run `vagrant up`
-   4. (Optional if local changes were done to Vagrantfile) Modify line 2 in    `ehmp/product/production/vx-sync/worker-config.json` to reflect the ehmp VM's IP
+   2. Install vagrant-omnibus: `vagrant plugin install vagrant-omnibus`
+   3. Install chef-dk: https://downloads.chef.io/chef-dk/
+   4. Run `vagrant up`
+   5. (Optional if local changes were done to Vagrantfile) Modify line 2 in    `ehmp/product/production/vx-sync/worker-config.json` to reflect the ehmp VM's IP
    Lines 15-28 tell VxSync where VistA is and what credentials are needed.
           Lines 589-594 tell VxSync where JDS is.
           Ensure these lines all have the correct values.
-   5. Run `cd /vagrant/ehmp/product/production/vx-sync`
-   6. Run `npm install`
-   7. Run `mkdir logs`
-   8. Run `./scripts/startVxSync-parallel.sh`
-   9. Run `ps aux |grep node |grep -v grep` to ensure VX-Sync processes are running - you should see    beanstalk and more than a couple of subscriberHost and
+   6. Run `cd /vagrant/ehmp/product/production/vx-sync`
+   7. Run `npm install`
+   8. Run `mkdir logs`
+   9. Run `./scripts/startVxSync-parallel.sh`
+   10. Run `ps aux |grep node |grep -v grep` to ensure VX-Sync processes are running - you should see    beanstalk and more than a couple of subscriberHost and
           a couple of endpoints
-   10. Run `node tools/rpc/rpc-unsubscribe-all.js --host 192.168.33.10 --port 9430` to make sure all subscriptions are reset
-   11. Using Postman, run a GET request on: `http://192.168.33.12:8088/data/doLoad?sites=34C5` The IP should be the IP of the eHMP VM. If all went well you should see a 201 response.
-   12. To check if the operational data sync completed, check the Operational Data Sync status.
+   11. Run `node tools/rpc/rpc-unsubscribe-all.js --host 192.168.33.10 --port 9430` to make sure all subscriptions are reset
+   12. Using Postman, run a GET request on: `http://192.168.33.12:8088/data/doLoad?sites=34C5` The IP should be the IP of the eHMP VM. If all went well you should see a 201 response.
+   13. To check if the operational data sync completed, check the Operational Data Sync status.
           GET http://192.168.33.10:9080/statusod/34C5
           If the Operational Data Sync completed successfully you should see a long JSON response multiple `"syncCompleted": true`
-   13. VxSync is now connected to JDS and VistA.
+   14. VxSync is now connected to JDS and VistA.
 
 4. Configuring RDK
    1. Type `cd /vagrant/rdk/product/production/rdk`
    2. Run `npm install`
    3. (Optional) Modify config/config.js (if you use something outside of the configuration specified in this document)
    4. (Optional) There are two VistA sites listed; remove the second one and modify the first to match the one you setup.
-   5. The OSEHRA VistA divsion can be set to '6100'
+   5. The OSEHRA VistA division can be set to '6100'
    6. (Optional) Find the `hmpServer: ` block and update it to point to the VistA instance.
    7. (Optional) Find the `vxSyncServer: ` block and update it to point to the VM VxSync is running on.
    8. (Optional) Find the `generalPurposeJdsServer:` and `jdsServer:` block to update to point to the Vista/JDS VM
