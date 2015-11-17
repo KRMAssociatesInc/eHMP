@@ -71,13 +71,18 @@
    2. Install vagrant-berkshelf: `vagrant plugin install vagrant-berkshelf`
    3. Install vagrant-omnibus: `vagrant plugin install vagrant-omnibus`
    4. Install chef-dk: https://downloads.chef.io/chef-dk/
-   5. Run `vagrant up`
-   6. (Optional if local changes were done to Vagrantfile) Modify line 2 in    `ehmp/product/production/vx-sync/worker-config.json` to reflect the ehmp VM's IP
+   5. Start vagrant and ssh to the vm
+      ```
+      vagrant up
+      vagrant ssh
+      ```
+
+   6. (Optional if local changes were done to Vagrantfile) Modify line 2 in `ehmp/product/production/vx-sync/worker-config.json` to reflect the ehmp VM's IP
    Lines 15-28 tell VxSync where VistA is and what credentials are needed.
           Lines 589-594 tell VxSync where JDS is.
           Ensure these lines all have the correct values.
    7. Run `cd /vagrant/ehmp/product/production/vx-sync`
-   8. Run `npm install`
+   8. Run `sudo npm install`
    9. Run `mkdir logs`
    10. Run `./scripts/startVxSync-parallel.sh`
    11. Run `ps aux |grep node |grep -v grep` to ensure VX-Sync processes are running - you should see    beanstalk and more than a couple of subscriberHost and
