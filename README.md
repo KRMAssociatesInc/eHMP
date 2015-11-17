@@ -1,5 +1,10 @@
 # eHMP
 
+This guide is intended for installation on a Unix machine; a Windows guide will be coming soon.
+
+### Windows guide
+Coming soon 
+
 ### Configuration
 1. Install VISTA and KIDS Builds.
    1. Directions are in: `docs/KIDS_builds.md` Follow those steps before moving on to the following steps
