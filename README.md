@@ -1,9 +1,7 @@
 # eHMP
 
-This guide is intended for installation on a Unix machine; a Windows guide will be coming soon.
+This guide is for the installation of eHMP on a Unix-based OS. It has not yet been tested on Windows. 
 
-### Windows guide
-Coming soon 
 
 ### Configuration
 1. Install VISTA and KIDS Builds.
