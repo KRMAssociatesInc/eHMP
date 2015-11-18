@@ -1,5 +1,8 @@
 # eHMP
 
+This guide is for the installation of eHMP on a Unix-based OS. It has not yet been tested on Windows. 
+
+
 ### Configuration
 1. Install VISTA and KIDS Builds.
    1. Directions are in: `docs/KIDS_builds.md` Follow those steps before moving on to the following steps
