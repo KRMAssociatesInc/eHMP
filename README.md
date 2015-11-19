@@ -93,6 +93,7 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
    11. Run `mumps -dir` This will open a prompt
    12. Type `D FULLRSET^VPRJ`. JDS should now be  (you may see errors appear in the terminal - these can  be ignored since they are protected and only for CACHE)
    13. To verify JDS is running, run the following curl command. If JDS is okay, you should see this JSON response `{"status":"running"}`
+
       ```
       curl -X GET http://192.168.33.10:9080/ping
       ```
@@ -120,13 +121,18 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
    11. Run `ps aux |grep node |grep -v grep` to ensure VX-Sync processes are running - you should see    beanstalk and more than a couple of subscriberHost and
           a couple of endpoints
    12. Run `node tools/rpc/rpc-unsubscribe-all.js --host 192.168.33.10 --port 9430` to make sure all subscriptions are reset
-   13. Run a get request with curl or another rest client against VX-Sync. The IP should be the IP of the eHMP VM. If all went well you should see a 201 response.
+   13. Run a get request with curl or another rest client against VX-Sync. The IP should be the IP of the eHMP VM. You should get see a 201 response if it worked correctly.
+
       ```
       curl -I http://192.168.33.12:8088/data/doLoad?sites=34C5
       ```
-   14. To check if the operational data sync completed, check the Operational Data Sync status.
-          GET http://192.168.33.10:9080/statusod/34C5
-          If the Operational Data Sync completed successfully you should see a long JSON response multiple `"syncCompleted": true`
+
+   14. To check if the operational data sync completed, check the Operational Data Sync status. If the Operational Data Sync completed successfully you should see a long JSON response with multiple `"syncCompleted": true`
+
+      ```
+      curl -X GET http://192.168.33.10:9080/statusod/34C5
+      ```
+
    15. VxSync is now connected to JDS and VistA.
 
 4. Configuring RDK
@@ -183,7 +189,7 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
 
 ### Troubleshooting
 The following endpoints can be helpful in troubleshooting the connection of VxSync, JDS, and VistA.
-* Detailed stats of jobs in Beanstalk queue: [http://192.168.33.12:9999/beanstalk/stats-tube/]
+* Detailed stats of jobs in Beanstalk queue: `curl -X GET http://192.168.33.12:9999/beanstalk/stats-tube/`
 * To view the Job's queue inside VistA to see if any are running or have run:
   1. In the Vista prompt type `s DUZ=1 D ^XUP`
   2. `hmpmgr`
@@ -191,4 +197,4 @@ The following endpoints can be helpful in troubleshooting the connection of VxSy
   4. `hmp`
   5. Press enter to refresh.
 
-  * If either JDS or VistA are redeployed or cleared (by typing D FULLRSET^VPRJ in JDS) VistA remembers the subscriptions that were there previously, you will need to reset all subscriptions to sync operational data or patients. To reset all subscriptions on the eHMP VM type `cd /vagrant/ehmp/vx-sync` then run `node tools/rpc/rpc-unsubscribe-all --host 192.168.33.10 --port 9430`
+  * If either JDS or VistA are redeployed or cleared (by typing D FULLRSET^VPRJ in JDS) VistA remembers the subscriptions that were there previously, you will need to reset all subscriptions to sync operational data or patients. To reset all subscriptions on the eHMP VM type `cd /vagrant/ehmp/product/production/vx-sync` then run `node tools/rpc/rpc-unsubscribe-all --host 192.168.33.10 --port 9430`
