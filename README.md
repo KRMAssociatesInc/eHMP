@@ -1,5 +1,7 @@
 # eHMP
 
+![alt text](https://github.com/khollida/eHMP-1/blob/master/docs/KRM-LOGO-0708.png "KRM Associates")
+
 This guide is for the installation of eHMP on a Unix-based OS. It has not yet been tested on Windows.
 
 ### Summary of eHMP
@@ -46,7 +48,7 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
       wget https://github.com/OSEHRA/VistA-M/raw/d0c8aac7ba36da048f69a2db8e453e06577480d5/Packages/Kernel/Routines/XUSRB1.m
       ```
 
-   5. Configure Robert Alexander to have access to eHMP on the OSEHRA VistA VM:
+   5. Configure the test doctor Robert Alexander to have access to eHMP on the OSEHRA VistA VM:
       * `mumps -dir`  
       * `S DUZ=1 D Q^DI`
       * `ENTER` Note: This must be typed out
@@ -145,12 +147,19 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
    7. (Optional) Find the `vxSyncServer: ` block and update it to point to the VM VxSync is running on.
    8. (Optional) Find the `generalPurposeJdsServer:` and `jdsServer:` block to update to point to the Vista/JDS VM
    9. After saving the config, to start RDK run `./run.sh --config config/config.js`
-   10. There will be a lot of output, the key is the health metrics. All of them should come as success except for MVI and Solr.
+   10. There will be a lot of output, the key is the health metrics. All of them should come as success except for MVI and Solr as they are not included.
+   11. RDK runs in the foreground; therefore you will need an additional terminal window to continue after this.
 
 5. Configuring ADK and UI
-   1. Go to ADK directory on the VM, `cd /vagrant/adk/product/production/`
-   2. Modify ADK's app.json - The attribute resourceDirectoryPath should point to the ip address of RDK: 192.168.33.12:8888.
-   3. Run the following commands to install necessary packages:
+   1. In a new console window navigate to ehmp and ssh into the VM
+
+      ```
+      cd ~/Development/eHMP
+      vagrant ssh
+      ```
+   2. Go to ADK directory on the VM, `cd /vagrant/adk/product/production/`
+   3. Modify ADK's app.json - The attribute resourceDirectoryPath should point to the ip address of RDK: 192.168.33.12:8888.
+   4. Run the following commands to install necessary packages:
       ```
       sudo apt-get install ruby-full -y
       sudo add-apt-repository ppa:cwchien/gradle
@@ -162,30 +171,31 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
       sudo npm install -g bower
       sudo npm install -g bower-installer
       sudo npm install -g grunt
+      sudo npm install -g grunt-cli
       sudo npm install
       grunt compass
       ```
 
-   4. Fix npm permissions: `sudo chown -R vagrant:vagrant /home/vagrant/.npm`
-   5. Move up a directory: `cd /vagrant/adk/product/`
-   6. Run `gradle clean test grunt_deploy`
+   5. Fix npm permissions: `sudo chown -R vagrant:vagrant /home/vagrant/.npm`
+   6. Move up a directory: `cd /vagrant/adk/product/`
+   7. Run `gradle clean test grunt_deploy`
       This will build adk to `/vagrant/adk/product/production/build/adk.tgz`
-   7. Change to ehmp-ui directory: `cd /vagrant/ehmp-ui/product/production`
-   8. Modify eHMP-UI's app.json - The attribute resourceDirectoryPath should point to the ip address of RDK: 192.168.33.12:8888.
-   9. Move up a directory `cd /vagrant/ehmp-ui/product/`
-   10. Run `gradle clean test zipEhmpuiApp`
+   8. Change to ehmp-ui directory: `cd /vagrant/ehmp-ui/product/production`
+   9. Modify eHMP-UI's app.json - The attribute resourceDirectoryPath should point to the ip address of RDK: 192.168.33.12:8888.
+   10. Move up a directory `cd /vagrant/ehmp-ui/product/`
+   11. Run `gradle clean test zipEhmpuiApp`
       This will build adk to `/vagrant/ehmp-ui/product/build/ehmp-ui-x.x.x.zip`
-   11. Install NginX: `sudo apt-get install nginx -y`
-   12. Type `cd /usr/share/nginx/www`
-   13. Type `sudo rm *.html`
-   14. Type `sudo tar xvzf /vagrant/adk/product/production/build/adk.tgz`
-   15. Type `sudo mkdir app && cd app`
-   16. Type `sudo unzip /vagrant/ehmp-ui/product/build/ehmp-ui-1.2.0.?.zip`
-   17. Type `cd ..`
-   18. Fix the permissions `sudo chown -R www-data:www-data .`
-   19. Start nginx: `sudo service nginx start`
-   20. If your webserver is running, as well as the rest of the infrastructure (RDK, VxSync, JDS, VistA), you may open EHMP in your browser and login.
-   21. The user login must have ehmp-ui context access in VistA. access: fakedoc1 verify: 1Doc!@#$
+   12. Install NginX: `sudo apt-get install nginx -y`
+   13. Type `cd /usr/share/nginx/www`
+   14. Type `sudo rm *.html`
+   15. Type `sudo tar xvzf /vagrant/adk/product/production/build/adk.tgz`
+   16. Type `sudo mkdir app && cd app`
+   17. Type `sudo unzip /vagrant/ehmp-ui/product/build/ehmp-ui-1.2.0.?.zip`
+   18. Type `cd ..`
+   19. Fix the permissions `sudo chown -R www-data:www-data .`
+   20. Start nginx: `sudo service nginx start`
+   21. If your webserver is running, as well as the rest of the infrastructure (RDK, VxSync, JDS, VistA), you may open EHMP in your browser and login.
+   22. The user login must have ehmp-ui context access in VistA. access: fakedoc1 verify: 1Doc!@#$
 
 ### Troubleshooting
 The following endpoints can be helpful in troubleshooting the connection of VxSync, JDS, and VistA.
