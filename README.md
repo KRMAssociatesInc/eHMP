@@ -1,6 +1,30 @@
 # eHMP
 
-This guide is for the installation of eHMP on a Unix-based OS. It has not yet been tested on Windows. 
+This guide is for the installation of eHMP on a Unix-based OS. It has not yet been tested on Windows.
+
+### Summary of eHMP
+
+The next evolution of VistA requires a world-class, open, modular, and extensible user experience. eHMP is a new web-based clinical application that migrates the current functionality in VistA’s existing user interface, Computerized Patient Record System (CPRS).
+
+eHMP leverages and integrates the enhanced graphical user interface, standards-based data, and core clinical applications deployed during the User Experience project, Joint Legacy Viewer (JLV), and Health Informatics Initiative (Hi2).
+
+
+A key objective of the VistA Evolution Program is to enhance cross-Agency (DoD/VA) interoperability by providing all clinically relevant data at the point of care for Veterans. eHMP is targeted to be the replacement for the CPRS application.
+eHMP accomplishes this by integrating an enhanced graphical user interface, standards-based data, and integrating core clinical applications.
+
+
+#### Original Code Source
+
+This project's source code came from [OSEHRA](http://code.osehra.org/journal/journal/view/519)
+
+#### Summary of major changes
+* GT.M support
+* Removed terminology
+* Minimized needed VM's to two
+* Added Vagrant installer
+
+#### Screenshots and Documents
+Screenshots of eHMP-UI, as well as additional documents can be found in the `docs` directory.
 
 
 ### Configuration
@@ -18,6 +42,7 @@ This guide is for the installation of eHMP on a Unix-based OS. It has not yet be
    4. Modify XUSRB1.m to contain the correct hash. This is the version to replace it with:
       ```
       cd /home/osehra/r
+      sudo rm -f XUSRB1.m
       wget https://github.com/OSEHRA/VistA-M/raw/d0c8aac7ba36da048f69a2db8e453e06577480d5/Packages/Kernel/Routines/XUSRB1.m
       ```
 
