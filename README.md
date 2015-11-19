@@ -54,7 +54,6 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
       * `S DUZ=1 D Q^DI`
       * `ENTER OR EDIT FILE ENTRIES`
 
-      Screenshot of steps 1-3
       ![alt text](https://github.com/khollida/eHMP-1/blob/master/docs/steps/step1_hmp.png "Steps 1,2,3")
 
       * `NEW PERSON`
@@ -62,7 +61,6 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
       * `<PRESS ENTER>`
       * `<PRESS ENTER>`
 
-      Screenshot of steps 4-7
       ![alt text](https://github.com/khollida/eHMP-1/blob/master/docs/steps/step2_hmp.png "Steps 4,5,6,7")
 
       * `alex`
@@ -74,7 +72,6 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
       * `<PRESS ENTER>`
       * `H`
 
-      Screenshot of steps 8-15
       ![alt text](https://github.com/khollida/eHMP-1/blob/master/docs/steps/step3_hmp.png "Steps 8-15")
 
 
