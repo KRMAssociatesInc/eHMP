@@ -1,6 +1,7 @@
-# eHMP
-
 ![alt text](https://github.com/khollida/eHMP-1/blob/master/docs/KRM-LOGO-0708.png "KRM Associates")
+
+
+# eHMP
 
 This guide is for the installation of eHMP on a Unix-based OS. It has not yet been tested on Windows.
 
