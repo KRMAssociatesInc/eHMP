@@ -39,7 +39,7 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
       sudo su - osehra
       ```
 
-   4. Delete and replace XUSRB1.m to contain the correct cipher hash. 
+   4. Delete and replace XUSRB1.m to contain the correct cipher hash.
       ```
       cd /home/osehra/r
       sudo rm -f XUSRB1.m
@@ -160,26 +160,26 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
       grunt compass
       ```
 
-   9. Fix npm permissions: `sudo chown -R vagrant:vagrant /home/vagrant/.npm`
-   10. Move up a directory: `cd /vagrant/adk/product/`
-   11. Run `gradle clean test grunt_deploy`
+   4. Fix npm permissions: `sudo chown -R vagrant:vagrant /home/vagrant/.npm`
+   5. Move up a directory: `cd /vagrant/adk/product/`
+   6. Run `gradle clean test grunt_deploy`
       This will build adk to `/vagrant/adk/product/production/build/adk.tgz`
-   12. Change to ehmp-ui directory: `cd /vagrant/ehmp-ui/product/production`
-   13. Modify eHMP-UI's app.json - The attribute resourceDirectoryPath should point to the ip address of RDK: 192.168.33.12:8888.
-   14. Move up a directory `cd /vagrant/ehmp-ui/product/`
-   15. Run `gradle clean test zipEhmpuiApp`
+   7. Change to ehmp-ui directory: `cd /vagrant/ehmp-ui/product/production`
+   8. Modify eHMP-UI's app.json - The attribute resourceDirectoryPath should point to the ip address of RDK: 192.168.33.12:8888.
+   9. Move up a directory `cd /vagrant/ehmp-ui/product/`
+   10. Run `gradle clean test zipEhmpuiApp`
       This will build adk to `/vagrant/ehmp-ui/product/build/ehmp-ui-x.x.x.zip`
-   16. Install NginX: `sudo apt-get install nginx -y`
-   17. Type `cd /usr/share/nginx/www`
-   18. Type `sudo rm *.html`
-   18. Type `sudo tar xvzf /vagrant/adk/product/production/build/adk.tgz`
-   19. Type `sudo mkdir app && cd app`
-   20. Type `sudo unzip /vagrant/ehmp-ui/product/build/ehmp-ui-1.2.0.?.zip`
-   21. Type `cd ..`
-   22. Fix the permissions `sudo chown -R www-data:www-data .`
-   23. Start nginx: `sudo service nginx start`
-   24. If your webserver is running, as well as the rest of the infrastructure (RDK, VxSync, JDS, VistA), you may open EHMP in your browser and login.
-   25. The user login must have ehmp-ui context access in VistA. access: fakedoc1 verify: 1Doc!@#$
+   11. Install NginX: `sudo apt-get install nginx -y`
+   12. Type `cd /usr/share/nginx/www`
+   13. Type `sudo rm *.html`
+   14. Type `sudo tar xvzf /vagrant/adk/product/production/build/adk.tgz`
+   15. Type `sudo mkdir app && cd app`
+   16. Type `sudo unzip /vagrant/ehmp-ui/product/build/ehmp-ui-1.2.0.?.zip`
+   17. Type `cd ..`
+   18. Fix the permissions `sudo chown -R www-data:www-data .`
+   19. Start nginx: `sudo service nginx start`
+   20. If your webserver is running, as well as the rest of the infrastructure (RDK, VxSync, JDS, VistA), you may open EHMP in your browser and login.
+   21. The user login must have ehmp-ui context access in VistA. access: fakedoc1 verify: 1Doc!@#$
 
 ### Troubleshooting
 The following endpoints can be helpful in troubleshooting the connection of VxSync, JDS, and VistA.
