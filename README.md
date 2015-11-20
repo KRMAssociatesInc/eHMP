@@ -1,4 +1,4 @@
-![alt text](https://github.com/khollida/eHMP-1/blob/master/docs/KRM-LOGO-0708.png "KRM Associates")
+![alt text](https://github.com/KRMAssociatesInc/eHMP/blob/master/docs/KRM-LOGO-0708.png "KRM Associates")
 
 
 # eHMP - Enterprise Health Management Platform
@@ -54,14 +54,14 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
       * `S DUZ=1 D Q^DI`
       * `ENTER OR EDIT FILE ENTRIES`
 
-      ![alt text](https://github.com/khollida/eHMP-1/blob/master/docs/steps/step1_hmp.png "Steps 1,2,3")
+      ![alt text](https://github.com/KRMAssociatesInc/eHMP/blob/master/docs/steps/step1_hmp.png "Steps 1,2,3")
 
       * `NEW PERSON`
       * `SECONDARY MENU OPTIONS`
       * `<PRESS ENTER>`
       * `<PRESS ENTER>`
 
-      ![alt text](https://github.com/khollida/eHMP-1/blob/master/docs/steps/step2_hmp.png "Steps 4,5,6,7")
+      ![alt text](https://github.com/KRMAssociatesInc/eHMP/blob/master/docs/steps/step2_hmp.png "Steps 4,5,6,7")
 
       * `alex`
       * `hmp ui context`
@@ -72,7 +72,7 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
       * `<PRESS ENTER>`
       * `H`
 
-      ![alt text](https://github.com/khollida/eHMP-1/blob/master/docs/steps/step3_hmp.png "Steps 8-15")
+      ![alt text](https://github.com/KRMAssociatesInc/eHMP/blob/master/docs/steps/step3_hmp.png "Steps 8-15")
 
 
 2. Install and Configure JDS on same VM as VISTA
