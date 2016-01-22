@@ -93,23 +93,25 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
       cd Ubuntu
       vagrant ssh
       ```
-
-   4. Run the createJDSinstance.sh script that is in the mounted Vagrant folder. You must supply an instance name. We named ours jds.
+   4. cd /vagrant
+   5. Type: `dos2unix createJDSinstance.sh`
+   6. Run the createJDSinstance.sh script that is in the mounted Vagrant folder. You must supply an instance name. We named ours jds.
       `sudo ./createJDSinstance.sh -i jds`
-   5. Type: `sudo cp /vagrant/JDS-GTM/*.m /home/jds/r`
-   6. Type: `sudo chown jds:jds /home/jds/r/*.m`
-   7. Type: `sudo chmod ugo-x /home/jds/r/*.m`
-   8. Type: `sudo chmod g+w /home/jds/r/*.m`
-   9. Run `sudo su - jds`
-   10. Run `source etc/env`
-   11. Run `mumps -dir` This will open a prompt
-   12. Type `D FULLRSET^VPRJ`. JDS should now be  (you may see errors appear in the terminal - these can  be ignored since they are protected and only for CACHE)
-   13. To verify JDS is running, run the following curl command. If JDS is okay, you should see this JSON response `{"status":"running"}`
+   7. Type: `sudo cp /vagrant/JDS-GTM/*.m /home/jds/r`
+   8. Type: `sudo dos2unix /home/jds/r/*.m`
+   9. Type: `sudo chown jds:jds /home/jds/r/*.m`
+   10. Type: `sudo chmod ugo-x /home/jds/r/*.m`
+   11. Type: `sudo chmod g+w /home/jds/r/*.m`
+   12. Run `sudo su - jds`
+   13. Run `source etc/env`
+   14. Run `mumps -dir` This will open a prompt
+   15. Type `D FULLRSET^VPRJ`. JDS should now be  (you may see errors appear in the terminal - these can  be ignored since they are protected and only for CACHE)
+   16. To verify JDS is running, run the following curl command. If JDS is okay, you should see this JSON response `{"status":"running"}`
 
       ```
       curl -X GET http://192.168.33.10:9080/ping
       ```
-   14. Exit out of the VM, type `Exit`
+   17. Exit out of the VM, type `Exit`
 
 3. Configuring Vx-Sync & Running Operational Data Sync
    1. Switch to the eHMP directory `cd ~/Development/eHMP`
@@ -127,7 +129,7 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
           Lines 589-594 tell VxSync where JDS is.
           Ensure these lines all have the correct values.
    7. Run `cd /vagrant/ehmp/product/production/vx-sync`
-   8. Run `sudo npm install`
+   8. Run `sudo npm install --no-bin-link`
    9. Run `mkdir logs`
    10. Run `./scripts/startVxSync-parallel.sh`
    11. Run `ps aux |grep node |grep -v grep` to ensure VX-Sync processes are running - you should see    beanstalk and more than a couple of subscriberHost and
