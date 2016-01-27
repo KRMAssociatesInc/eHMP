@@ -26,12 +26,31 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.network :private_network, ip: "192.168.33.10"
   config.vm.network :private_network, ip: "192.168.33.12"
 
-
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
 
   #config.vm.network :public_network
+
+  # To configure Vagrant to use Amazon Web Services (AWS) as the provider in 
+  # lieu of VirtualBox, uncomment the following section and set the parameters
+  # according to your credentials and keypair used in AWS.
+  
+  # config.vm.provider :aws do|aws, override|
+  #  # set to your access_key_id
+  #  aws.access_key_id="youraccesskeyid"
+  #  # set to your secret_access_key
+  #  aws.secret_access_key="yoursecretaccesskey"
+  #  # set to your preferred aws region
+  #  aws.region="us-east-1" 
+  #  aws.keypair_name="yourkeyname"
+  #  # set to your Ubuntu 12.04 ami file.  The official Ubuntu ami doesn't support this use case :(
+  #  aws.ami="ami-xxxxxxxx"
+  #  # set to your preferred username
+  #  override.ssh.username="ec2-user"
+  #  # set to your path to the keypair you will log in as
+  #  override.ssh.private_key_path="/home/username/yourkeyname.pem"
+  # end
 
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
