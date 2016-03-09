@@ -114,7 +114,7 @@ useradd -c "$instance instance owner" -m -U $instance -s /bin/bash
 # Make instance Directories
 su $instance -c "mkdir -p $basedir/{r,r/$gtmver,g,j,etc,etc/xinetd.d,log,tmp,bin,lib,www,backup}"
 # Copy shared JDS directory to R
-su $instance -c "cp -R /vagrant/VISTA/JDS-GTM/. $basedir/r"
+su $instance -c "cp -R /vagrant/JDS-GTM/. $basedir/r"
 
 # Copy standard etc and bin items from repo
 #su $instance -c "cp -R etc $basedir"

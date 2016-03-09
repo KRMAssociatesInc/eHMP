@@ -79,7 +79,7 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
    1. Copy the JDS Instance script `JDS/createJDSinstance.sh` into the mounted vagrant folder of the VISTA VM.
       ```
       cd ~/Development
-      cp eHMP/JDS/createJDSinstance.sh /VistA/Scripts/Install
+      cp eHMP/JDS/createJDSinstance.sh VistA/Scripts/Install
       ```
 
    2. Clone JDS into the mounted vagrant folder for VISTA.
@@ -95,9 +95,9 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
       ```
    4. cd /vagrant
    5. Type: `dos2unix createJDSinstance.sh`
-   6. Run the createJDSinstance.sh script that is in the mounted Vagrant folder. You must supply an instance name. We named ours jds.
+   6. Type: `sudo chmod +x createJDSinstance.sh`
+   7. Run the createJDSinstance.sh script that is in the mounted Vagrant folder. You must supply an instance name. We named ours jds.
       `sudo ./createJDSinstance.sh -i jds`
-   7. Type: `sudo cp /vagrant/JDS-GTM/*.m /home/jds/r`
    8. Type: `sudo dos2unix /home/jds/r/*.m`
    9. Type: `sudo chown jds:jds /home/jds/r/*.m`
    10. Type: `sudo chmod ugo-x /home/jds/r/*.m`
