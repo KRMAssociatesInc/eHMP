@@ -61,7 +61,7 @@ dependencies {
     compile group: 'org.apache.lucene', name: 'lucene-queryparser', version: '4.0.0'
     compile group: 'org.apache.lucene', name: 'lucene-core', version: '4.0.0'
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-smile', version: '2.2.3'
-    compile "commons-collections:commons-collections:3.2.1"
+    compile "commons-collections:commons-collections:3.2.2"
     compile 'joda-time:joda-time:2.2'
     compile("org.apache.poi:poi:3.10-FINAL")
     compile("org.apache.poi:poi-ooxml:3.10-FINAL")
