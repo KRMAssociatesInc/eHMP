@@ -82,7 +82,7 @@
         <guvnor.war.path>
             ${settings.localRepository}/org/drools/drools-guvnor-va-hmp/${drools.version}/drools-guvnor-va-hmp-${drools.version}.war
         </guvnor.war.path>
-        <tomcat.version>7.0.47</tomcat.version>
+        <tomcat.version>7.0.107</tomcat.version>
         <spring.profiles.active>development,vpr-datastore-json,vpr-datastore-solr</spring.profiles.active>
         <!-- server settings -->
         <hmp.server.port.http>8080</hmp.server.port.http>
