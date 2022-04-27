@@ -52,7 +52,7 @@
         <dependency>
             <groupId>org.owasp.esapi</groupId>
             <artifactId>esapi</artifactId>
-            <version>2.0GA</version>
+            <version>2.3.0.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-configuration</groupId>
