@@ -72,7 +72,7 @@
         <h2.version>1.3.175</h2.version>
         <ehcache.version>2.6.0</ehcache.version>
         <solr.version>4.7.2</solr.version>
-        <drools.version>5.4.0.Final</drools.version>
+        <drools.version>7.60.0.Final</drools.version>
         <probe.version>2.3.3</probe.version>
         <yuicompressor.version>2.4.7</yuicompressor.version>
         <!-- this is a little bit smelly, use maven-dependency-plugin:resources? -->
