@@ -5,7 +5,7 @@ gem 'rake',                   '=10.1.1'
 gem 'rspec',                  '=2.14.1'
 gem 'httparty',               '=0.13.0'
 gem 'rubocop',                '=0.18.1'
-gem 'activesupport',          '=4.0.4'
+gem 'activesupport',          '6.1.7.1'
 gem 'rspec-extra-formatters', '=1.0.0'
 
 # VagrantfileUtil.rb dependencies
